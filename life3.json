@@ -1,0 +1,1590 @@
+{
+ "events": [
+  {
+   "id": "lf_open_school",
+   "cat": "life",
+   "when": {
+    "age": [
+     30,
+     70
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "notFlags": [
+     "own_school",
+     "sect_head"
+    ]
+   },
+   "weight": 3,
+   "text": "You have enough skill and enough of a name to open your own martial school. A merchant offers you an old warehouse in the county town for a fair price.",
+   "choices": [
+    {
+     "text": "Open a school",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "taels": -200,
+      "flag": "own_school",
+      "fame": 10,
+      "log": "You paint the signboard yourself. On the first day, three students arrive. One of them is only there because it was raining."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "You tell the merchant maybe next year. He has heard that before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_school_thrives",
+   "cat": "life",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "flags": [
+     "own_school"
+    ]
+   },
+   "weight": 3,
+   "text": "Your school has grown. Forty students in the yard every morning, and a waiting list. A rival school across the street is not happy about it.",
+   "choices": [
+    {
+     "text": "Challenge the rival master to a friendly bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 10,
+      "taels": 150,
+      "log": "You win, then invite him to teach at your school. Half the town's children now train with both of you."
+     },
+     "fail": {
+      "fame": -3,
+      "health": -15,
+      "log": "He wins. Some of your students move across the street. The ones who stay are the ones you wanted."
+     }
+    },
+    {
+     "text": "Send him a gift of tea",
+     "effects": {
+      "alignment": 4,
+      "taels": 80,
+      "log": "He sends back wine. By autumn, your schools hold joint festivals."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_school_student_prodigy",
+   "cat": "life",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "flags": [
+     "own_school"
+    ],
+    "chance": 0.5
+   },
+   "weight": 2,
+   "text": "One of your students, a quiet farmer's daughter, copies your hardest technique after seeing it once.",
+   "choices": [
+    {
+     "text": "Teach her everything",
+     "effects": {
+      "fame": 8,
+      "comprehension": 2,
+      "log": "In ten years she is better than you. You have never been prouder of anything."
+     }
+    },
+    {
+     "text": "Recommend her to a great sect",
+     "effects": {
+      "fame": 5,
+      "taels": 50,
+      "log": "The sect accepts her at once. She writes to you every New Year for the rest of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_spouse_anniversary",
+   "cat": "life",
+   "npc": {
+    "role": "spouse"
+   },
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "married": true
+   },
+   "weight": 2,
+   "text": "It is your wedding anniversary with {npc}. {He} has cooked the meal you ate on your wedding day, burned exactly the way it was burned then.",
+   "choices": [
+    {
+     "text": "Eat every bite",
+     "effects": {
+      "mem": {
+       "deed": "married",
+       "w": 12,
+       "note": "ate the burned wedding dinner again"
+      },
+      "health": 5,
+      "log": "It is terrible. It is perfect. You both laugh until the candles burn down."
+     }
+    },
+    {
+     "text": "Take {him} to the best restaurant in town",
+     "req": {
+      "minTaels": 30
+     },
+     "effects": {
+      "taels": -30,
+      "mem": {
+       "deed": "married",
+       "w": 10,
+       "note": "took me to the best restaurant in town"
+      },
+      "charm": 1,
+      "log": "The food is excellent. On the way home, {npc} admits {he} liked the burned version better."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "lf_spouse_danger",
+   "cat": "danger",
+   "npc": {
+    "role": "spouse"
+   },
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "married": true,
+    "minFame": 40
+   },
+   "weight": 2,
+   "text": "Your enemies cannot reach you, so they have taken {npc}. A note, pinned to the door with a knife, names a place and a time.",
+   "choices": [
+    {
+     "text": "Go alone, as the note demands",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "Your enemies"
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 50,
+       "note": "came for me alone"
+      },
+      "fame": 15,
+      "log": "You walk into the trap and walk out of it carrying {npc}. Your enemies will think twice before touching your family again."
+     },
+     "fail": {
+      "health": -65,
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "nearly died coming for me"
+      },
+      "deathCause": "a trap laid for a hero",
+      "log": "You get {npc} out. You nearly do not get yourself out."
+     }
+    },
+    {
+     "text": "Bring your friends and a plan",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 45,
+       "note": "rescued me with a clever plan"
+      },
+      "fame": 10,
+      "log": "Four friends, three distractions, one rooftop. The kidnappers never see you coming."
+     },
+     "fail": {
+      "health": -30,
+      "mem": {
+       "deed": "saved_life",
+       "w": 35,
+       "note": "rescued me"
+      },
+      "log": "The plan goes wrong in the most dramatic way possible. It works anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_child_first_steps",
+   "cat": "family",
+   "when": {
+    "age": [
+     22,
+     45
+    ],
+    "married": true,
+    "notFlags": [
+     "has_child"
+    ]
+   },
+   "weight": 3,
+   "text": "Your child is born at dawn, red-faced and furious at the world. The midwife says the grip on your finger is the strongest she has ever seen.",
+   "effects": {
+    "flag": "has_child",
+    "charm": 2,
+    "alignment": 3,
+    "log": "You hold the baby all morning. For the first time in years, you forget to train.",
+    "spawn": {
+     "role": "child",
+     "ageAbs": 0,
+     "opinion": 60,
+     "surname": "mine",
+     "tag": "own_child"
+    }
+   },
+   "choices": []
+  },
+  {
+   "id": "lf_child_wants_murim",
+   "cat": "family",
+   "when": {
+    "age": [
+     32,
+     80
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "weight": 3,
+   "text": "{npc} is old enough now, and wants to join the murim like you. You know exactly what the murim does to people.",
+   "choices": [
+    {
+     "text": "Train them yourself",
+     "effects": {
+      "flag": "trained_child",
+      "fame": 3,
+      "log": "Every dawn, in the yard, the two of you. You are a harder master than yours ever was. They never complain."
+     }
+    },
+    {
+     "text": "Steer them toward the civil exams",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "They pass the county exam at nineteen. They still sneak out to practise stances when they think you are not watching."
+     }
+    },
+    {
+     "text": "Let them choose their own master",
+     "effects": {
+      "charm": 2,
+      "log": "They choose a sect across the country. You cry at the gate. They pretend not to see."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 12,
+    "maxAge": 15
+   },
+   "mw": true
+  },
+  {
+   "id": "lf_child_surpasses",
+   "cat": "family",
+   "when": {
+    "age": [
+     45,
+     999
+    ],
+    "flags": [
+     "trained_child"
+    ],
+    "npcAge": [
+     18,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "{npc}, your child, challenges you to a spar in the yard, as they have a hundred times. Today, for the first time, they win.",
+   "effects": {
+    "fame": 8,
+    "charm": 2,
+    "log": "You lie in the dirt, laughing. The student has surpassed the master. That was always the point."
+   },
+   "choices": [],
+   "npc": {
+    "role": "child"
+   }
+  },
+  {
+   "id": "lf_grandchild",
+   "cat": "family",
+   "when": {
+    "age": [
+     50,
+     999
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "weight": 2,
+   "text": "{npc}'s youngest climbs into your lap and asks you to tell them about the time you fought the tiger.",
+   "choices": [
+    {
+     "text": "Tell the true story",
+     "effects": {
+      "charm": 2,
+      "log": "It was a small tiger and you mostly ran. The grandchild is deeply disappointed, then laughs until they hiccup."
+     }
+    },
+    {
+     "text": "Tell the legend",
+     "effects": {
+      "fame": 1,
+      "charm": 2,
+      "log": "In your version there are three tigers and a dragon. By next New Year, the whole village has heard it."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 20
+   }
+  },
+  {
+   "id": "lf_rival_old_reunion",
+   "cat": "life",
+   "npc": {
+    "role": "rival"
+   },
+   "when": {
+    "age": [
+     55,
+     999
+    ],
+    "npcAge": [
+     50,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "{npc} is old now too. You meet by chance at a teahouse. Decades of rivalry sit between you on the table like a third cup.",
+   "choices": [
+    {
+     "text": "Pour {him} tea",
+     "effects": {
+      "settle": "grudge",
+      "mem": {
+       "deed": "friend",
+       "w": 30,
+       "note": "poured me tea after all those years"
+      },
+      "alignment": 5,
+      "log": "You talk until the teahouse closes. Neither of you apologises. Neither of you needs to."
+     }
+    },
+    {
+     "text": "One last duel, for old times' sake",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 5,
+      "mem": {
+       "deed": "spar",
+       "w": 15,
+       "note": "gave me one last good duel"
+      },
+      "log": "You win. {npc} laughs so hard {he} has to sit down. 'Finally,' {he} says. 'Now I can stop training.'"
+     },
+     "fail": {
+      "health": -10,
+      "mem": {
+       "deed": "spar",
+       "w": 15,
+       "note": "gave me one last good duel"
+      },
+      "log": "{npc} wins. {He} is so happy about it that you cannot even be annoyed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_friend_dies",
+   "cat": "life",
+   "npc": {
+    "role": "friend"
+   },
+   "when": {
+    "age": [
+     50,
+     999
+    ],
+    "chance": 0.4,
+    "npcAge": [
+     55,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A letter arrives in unfamiliar handwriting. {npc} died peacefully last month. {His} last request was that you be told.",
+   "effects": {
+    "npcDie": "old age",
+    "alignment": 2,
+    "comprehension": 2,
+    "log": "You climb the hill behind your house and pour a cup of wine into the wind. It is the kind {he} liked. You pour the rest after it."
+   },
+   "choices": []
+  },
+  {
+   "id": "lf_pass_the_sword",
+   "cat": "aging",
+   "when": {
+    "age": [
+     60,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 3,
+   "text": "Your sword has been with you for most of your life. Your hands are not what they were. It is time to decide who carries it next.",
+   "choices": [
+    {
+     "text": "Give it to the most promising young fighter you know",
+     "effects": {
+      "fame": 8,
+      "alignment": 3,
+      "log": "They receive it on their knees. The next morning, you hear them practising at dawn, your old form, their own way."
+     }
+    },
+    {
+     "text": "Bury it at the place of your greatest duel",
+     "effects": {
+      "fame": 5,
+      "comprehension": 2,
+      "log": "You drive it into the earth where you once fought for your life. Years later, pilgrims leave flowers there."
+     }
+    },
+    {
+     "text": "Keep it. You are not done yet",
+     "effects": {
+      "strength": 2,
+      "log": "Your hands shake less when they hold it. You train at dawn, as always."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_see_the_sea",
+   "cat": "aging",
+   "when": {
+    "age": [
+     55,
+     999
+    ],
+    "region": [
+     "central",
+     "jiangnan",
+     "sichuan",
+     "north",
+     "west"
+    ]
+   },
+   "weight": 2,
+   "text": "In all your years in the murim, you have never once seen the sea.",
+   "choices": [
+    {
+     "text": "Go now",
+     "effects": {
+      "health": 5,
+      "comprehension": 3,
+      "log": "Three weeks of travel. You stand on the shore at dawn and watch the waves for a whole day. You finally understand what the old masters meant about endless qi."
+     }
+    },
+    {
+     "text": "Maybe next year",
+     "effects": {
+      "log": "You say that every year."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lf_memoir",
+   "cat": "aging",
+   "when": {
+    "age": [
+     65,
+     999
+    ],
+    "minFame": 50
+   },
+   "weight": 2,
+   "text": "A young scholar asks to write down your life story. 'People should know what really happened,' he says.",
+   "choices": [
+    {
+     "text": "Tell him everything",
+     "effects": {
+      "fame": 10,
+      "alignment": 3,
+      "log": "It takes a whole winter. The book sells well. The chapter about your first failed breakthrough is somehow the most popular."
+     }
+    },
+    {
+     "text": "Tell him only the good parts",
+     "effects": {
+      "fame": 12,
+      "alignment": -2,
+      "log": "The book makes you a legend. You know better. So, you suspect, does the scholar."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_old_mountain_hermit",
+   "cat": "aging",
+   "when": {
+    "age": [
+     70,
+     999
+    ],
+    "notFlags": [
+     "sect_head",
+     "imp_emperor",
+     "alliance_leader",
+     "job_alliance_leader"
+    ]
+   },
+   "weight": 2,
+   "text": "The murim has forgotten your face, if not your name. A small hut on a quiet mountain is for sale.",
+   "choices": [
+    {
+     "text": "Retire to the mountain",
+     "effects": {
+      "health": 10,
+      "qi": 10,
+      "log": "You grow vegetables, argue with the local monkeys and meditate at sunrise. Young martial artists sometimes climb up to ask for advice. You give it to the ones who bring snacks."
+     }
+    },
+    {
+     "text": "Stay in the world",
+     "effects": {
+      "charm": 2,
+      "log": "You are not done with people yet. They are not done with you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lf_last_student",
+   "cat": "aging",
+   "npc": {
+    "spawn": {
+     "role": "disciple",
+     "ageAbs": 10,
+     "opinion": 30,
+     "tag": "last_student"
+    }
+   },
+   "when": {
+    "age": [
+     70,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "notFlags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 2,
+   "text": "A ragged child named {npc} climbs your mountain and refuses to leave until you teach {him}. You are old. {He} is stubborn. It is familiar.",
+   "choices": [
+    {
+     "text": "Teach {him}, one last time",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "taught me when no one else would"
+      },
+      "fame": 5,
+      "alignment": 5,
+      "log": "Your last student. The best one. Of course."
+     }
+    },
+    {
+     "text": "Send {him} down with a letter to a sect that owes you a favour",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "sent me to a real sect"
+      },
+      "log": "The letter opens every door. {npc} visits every year until you die."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_transcendent_mountain",
+   "cat": "misc",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     5,
+     6
+    ]
+   },
+   "weight": 2,
+   "text": "At Transcendent, the world feels different: you can hear a leaf fall three valleys away. The masters of old used to wander to the highest peaks to seek what lay beyond.",
+   "choices": [
+    {
+     "text": "Climb the highest peak",
+     "effects": {
+      "qi": 20,
+      "comprehension": 5,
+      "health": -10,
+      "log": "At the summit, in the thin air, you sit for nine days. Something opens a crack. Not enough. Not yet."
+     }
+    },
+    {
+     "text": "Stay among people",
+     "effects": {
+      "charm": 3,
+      "alignment": 3,
+      "log": "You decide that whatever lies beyond, it is not worth leaving your friends for. Not yet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_transcendent_challenge",
+   "cat": "danger",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     5,
+     6
+    ]
+   },
+   "weight": 2,
+   "text": "Word that you have reached Transcendent draws the few people in the world who can match you. The first one is waiting on your roof, eating one of your persimmons.",
+   "choices": [
+    {
+     "text": "Duel on the rooftops",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 30,
+      "log": "The duel lasts until dawn and ruins nine roofs. You pay for all of them. You also win."
+     },
+     "fail": {
+      "fame": 10,
+      "health": -30,
+      "log": "You lose, narrowly. The stranger bows, finishes the persimmon and leaves. You will meet again."
+     }
+    },
+    {
+     "text": "Offer tea instead",
+     "effects": {
+      "comprehension": 4,
+      "log": "You talk about martial arts until sunrise. It is better than any duel."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_transcendent_intent",
+   "cat": "misc",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "sword_aura"
+    ],
+    "notFlags": [
+     "sword_intent"
+    ]
+   },
+   "weight": 3,
+   "text": "You no longer need the sword. You look at a falling leaf, think of cutting it, and it falls in two. Sword intent: the heart itself becomes the blade.",
+   "effects": {
+    "flag": "sword_intent",
+    "fame": 25,
+    "comprehension": 5,
+    "log": "You put the sword away, and do not draw it again for a year. You do not need to."
+   },
+   "choices": []
+  },
+  {
+   "id": "lf_funny_lost_hat",
+   "cat": "funny",
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "The wind steals your straw hat and carries it straight into the courtyard of a rival sect.",
+   "choices": [
+    {
+     "text": "Go in and ask for it back",
+     "effects": {
+      "fame": 1,
+      "charm": 1,
+      "log": "Fifty disciples stare at you in total silence while the sect master himself hands you your hat. It is the longest walk of your life."
+     }
+    },
+    {
+     "text": "Buy a new hat",
+     "effects": {
+      "taels": -1,
+      "log": "A year later, you see a rival disciple wearing your old hat. He looks good in it. You let it go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_funny_matchmaker",
+   "cat": "funny",
+   "when": {
+    "age": [
+     20,
+     45
+    ],
+    "married": false
+   },
+   "weight": 2,
+   "text": "A matchmaker has decided you are her greatest challenge. She has ambushed you in the market, at the well and once, somehow, in the middle of a duel.",
+   "choices": [
+    {
+     "text": "Agree to one meeting",
+     "effects": {
+      "charm": 2,
+      "log": "The meeting is a disaster. You both agree on this so strongly that you become friends."
+     }
+    },
+    {
+     "text": "Use lightness skill to escape her",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You escape across three rooftops. She is waiting at your door when you get home. You have met a true master."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "She catches your sleeve mid-leap. You have never been so thoroughly defeated."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_funny_drinking_contest",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     70
+    ]
+   },
+   "weight": 1,
+   "text": "A famous glutton master challenges anyone in the tavern to an eating contest. The prize: his gourd, said to hold a hidden technique.",
+   "choices": [
+    {
+     "text": "Accept, and cheat with internal energy",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "qi": 8,
+      "log": "You burn the dumplings away with internal energy as fast as you swallow them. He notices, laughs and gives you the gourd anyway. Inside is a note: 'Nice try.' And a tip about breathing."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You wake up on the tavern roof, too full to move, with a new tattoo of a gourd."
+     }
+    },
+    {
+     "text": "Decline",
+     "effects": {
+      "log": "He calls you a coward and falls asleep mid-sentence."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_funny_legend_wrong",
+   "cat": "funny",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "minFame": 40
+   },
+   "weight": 1,
+   "text": "A storyteller in the market is telling the tale of your greatest deed. He has your face wrong, your hometown wrong and your ending wrong. The crowd loves it.",
+   "choices": [
+    {
+     "text": "Correct him",
+     "effects": {
+      "fame": -1,
+      "log": "The crowd boos you. They prefer his version. So, honestly, do you."
+     }
+    },
+    {
+     "text": "Tip him",
+     "effects": {
+      "taels": -2,
+      "fame": 3,
+      "log": "He winks. By next month, his version has an extra dragon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_funny_student_nap",
+   "cat": "funny",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "flags": [
+     "own_school"
+    ]
+   },
+   "weight": 1,
+   "text": "You catch your whole class asleep in the training yard, snoring in perfect formation.",
+   "choices": [
+    {
+     "text": "Dump a bucket of cold water on them",
+     "effects": {
+      "fame": 1,
+      "log": "Forty students leap up screaming. It is the best thing that happens all week."
+     }
+    },
+    {
+     "text": "Join them",
+     "effects": {
+      "health": 5,
+      "log": "When they wake up, their master is snoring in the middle of the formation. They never let you forget it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_winter_solstice",
+   "cat": "life",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     10,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "Winter solstice. The whole town eats red bean porridge to drive away bad spirits, and someone has made far too much.",
+   "choices": [
+    {
+     "text": "Eat a lot of porridge",
+     "effects": {
+      "health": 5,
+      "luck": 1,
+      "log": "Three bowls. No bad spirits come near you all winter. Neither do people, briefly."
+     }
+    },
+    {
+     "text": "Carry some to the old widow down the road",
+     "effects": {
+      "alignment": 3,
+      "charm": 1,
+      "log": "She tells you about her husband, a martial artist who died forty years ago. You stay until dark."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "lf_bridge_duel_rain",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 1,
+   "text": "A narrow bridge in the rain. A masked swordsman at the far end. Neither of you moves aside.",
+   "choices": [
+    {
+     "text": "Cross swords",
+     "roll": {
+      "stat": "sword",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "log": "Seven moves in the rain. On the seventh, the mask falls. It is a woman you once saved as a child. She bows, laughing, and lets you pass."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You end up in the river. When you climb out, the swordsman is gone, and so is your purse."
+     }
+    },
+    {
+     "text": "Step aside",
+     "effects": {
+      "alignment": 2,
+      "log": "The swordsman passes, nods, and says: 'Wise.' You never learn who it was."
+     }
+    }
+   ],
+   "variants": [
+    "Rain on a narrow bridge, and a masked swordsman at the far end. Neither of you steps aside."
+   ]
+  },
+  {
+   "id": "lf_sect_reunion",
+   "cat": "life",
+   "when": {
+    "age": [
+     40,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 1,
+   "text": "The disciples who entered {sect} in your year gather for a reunion. There are fewer of you than there used to be.",
+   "choices": [
+    {
+     "text": "Toast the ones who are gone",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "You say every name. It takes a long time. Nobody minds."
+     }
+    },
+    {
+     "text": "Tell the old stories until dawn",
+     "effects": {
+      "health": 5,
+      "charm": 2,
+      "log": "The story of the night someone hid a goat in the sect leader's bed is still the funniest thing that ever happened."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lf_wanderer_road",
+   "cat": "life",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "wanderer",
+     "none"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head",
+     "own_sect"
+    ]
+   },
+   "weight": 2,
+   "text": "Another year on the road, no sect, no master, no home. At a crossroads, you have to pick a direction.",
+   "choices": [
+    {
+     "text": "Go north, to the frontier",
+     "effects": {
+      "strength": 3,
+      "fame": 2,
+      "health": -5,
+      "log": "Snow, horsemen, border garrisons that pay well for a sword. You come back harder."
+     }
+    },
+    {
+     "text": "Go south, to the river cities",
+     "effects": {
+      "charm": 2,
+      "taels": 30,
+      "log": "Boats, markets, poets and pickpockets. You come back richer and slightly more cynical."
+     }
+    },
+    {
+     "text": "Go west, to the mountains",
+     "effects": {
+      "qi": 8,
+      "comprehension": 2,
+      "log": "Monasteries, hermits and very thin air. You come back quieter."
+     }
+    }
+   ],
+   "maxPerLife": 3
+  },
+  {
+   "id": "lf_temple_stay",
+   "cat": "life",
+   "when": {
+    "age": [
+     20,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "Wounded and tired, you shelter for a season in a remote Buddhist temple. The monks do not ask questions.",
+   "choices": [
+    {
+     "text": "Chant with them at dawn",
+     "effects": {
+      "alignment": 6,
+      "health": 15,
+      "qi": 5,
+      "log": "By the end of the season, the chanting and the breathing are the same thing. Something in you settles."
+     }
+    },
+    {
+     "text": "Chop their firewood",
+     "effects": {
+      "strength": 3,
+      "health": 10,
+      "log": "The head monk watches you chop for a week, then corrects your stance. He used to be someone, once."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_ghost_story_inn",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "The inn is cheap because it is 'haunted'. At midnight, something rattles the window and whispers your name.",
+   "choices": [
+    {
+     "text": "Draw your sword and open the window",
+     "effects": {
+      "fame": 1,
+      "log": "It is the innkeeper's son, trying to scare you into leaving so he can have the room for his sweetheart. You give him the room."
+     }
+    },
+    {
+     "text": "Go back to sleep",
+     "effects": {
+      "health": 5,
+      "log": "The ghost gives up by the second watch. You sleep better than you have in months."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_student_betrayal",
+   "cat": "life",
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "npcOpinion": [
+     -100,
+     0
+    ]
+   },
+   "weight": 3,
+   "text": "Your disciple {npc} has been selling your techniques to a rival sect. You found the copied pages in {his} room.",
+   "choices": [
+    {
+     "text": "Cripple {his} martial arts, as the old laws allow",
+     "effects": {
+      "npcFlag": "crippled",
+      "role": "stranger",
+      "fame": 5,
+      "alignment": -8,
+      "mem": {
+       "deed": "humiliated",
+       "w": -50,
+       "note": "destroyed my martial arts"
+      },
+      "log": "It is the law of the murim. It is also the worst day of your life as a master."
+     }
+    },
+    {
+     "text": "Expel {him} and let {him} go",
+     "effects": {
+      "role": "stranger",
+      "alignment": 4,
+      "mem": {
+       "deed": "insulted",
+       "w": -20,
+       "note": "threw me out"
+      },
+      "log": "{npc} leaves without a word. You burn the copied pages and sit up all night."
+     }
+    },
+    {
+     "text": "Ask {him} why",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "mem": {
+       "deed": "spared",
+       "w": 30,
+       "note": "asked why instead of punishing me"
+      },
+      "alignment": 6,
+      "log": "{His} family was starving. You pay the debt, and {npc} never betrays you again."
+     },
+     "fail": {
+      "role": "stranger",
+      "mem": {
+       "deed": "insulted",
+       "w": -25,
+       "note": "interrogated me"
+      },
+      "log": "{npc} will not answer. {He} leaves that night."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lf_healer_career",
+   "cat": "life",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "stat": {
+     "medicine": 60
+    }
+   },
+   "weight": 2,
+   "text": "Your skill with medicine is known across the county. A long line of patients forms at your door every morning.",
+   "choices": [
+    {
+     "text": "Treat everyone for free",
+     "effects": {
+      "fame": 10,
+      "alignment": 10,
+      "taels": -20,
+      "log": "You treat forty patients a day. They pay you in eggs, vegetables and one very confused goat."
+     }
+    },
+    {
+     "text": "Charge fair prices",
+     "effects": {
+      "taels": 120,
+      "fame": 5,
+      "log": "The money is good. You quietly treat the poor ones for free, after dark."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_poet_fame",
+   "cat": "life",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "stat": {
+     "poetry": 70
+    }
+   },
+   "weight": 2,
+   "text": "Your poems are being copied and sold in the capital. Scholars argue about what the one about the lonely heron really means.",
+   "choices": [
+    {
+     "text": "Publish a collection",
+     "effects": {
+      "fame": 12,
+      "taels": 100,
+      "charm": 2,
+      "log": "It sells out in a month. A famous general writes to say he carries it into battle."
+     }
+    },
+    {
+     "text": "Stay silent and let them argue",
+     "effects": {
+      "fame": 6,
+      "log": "The heron was just a heron. You will take that secret to your grave."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_strategist_hired",
+   "cat": "life",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "stat": {
+     "strategy": 75
+    }
+   },
+   "weight": 2,
+   "text": "A great family's head sends a sedan chair for you. They want a strategist for their war against a neighbouring clan.",
+   "choices": [
+    {
+     "text": "Serve as their strategist for a year",
+     "effects": {
+      "taels": 300,
+      "fame": 10,
+      "comprehension": 3,
+      "log": "You win the war in three battles, one of which you win without fighting at all. The family begs you to stay."
+     }
+    },
+    {
+     "text": "Decline: strategy is for peace",
+     "effects": {
+      "alignment": 5,
+      "log": "You send them a single Go stone in reply. They make peace with the neighbours. Nobody knows why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_lightness_messenger",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "stat": {
+     "lightness": 70
+    }
+   },
+   "weight": 2,
+   "text": "A plague city needs medicine from the capital, three hundred li away. The roads are closed. Someone would have to run across the rooftops of the whole province.",
+   "choices": [
+    {
+     "text": "Run",
+     "risky": true,
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "fame": 25,
+      "alignment": 12,
+      "log": "Two days and two nights, rooftop to rooftop. You arrive with the medicine and collapse. The city names a street after you."
+     },
+     "fail": {
+      "health": -45,
+      "alignment": 8,
+      "deathCause": "exhaustion on a three-hundred-li run",
+      "log": "You fall on the second night, but you get the medicine to a rider who finishes the run. The city lives."
+     }
+    },
+    {
+     "text": "Organise a relay of runners",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 8,
+      "log": "Twelve runners, perfectly timed. The medicine arrives in a day and a half."
+     },
+     "fail": {
+      "fame": 4,
+      "alignment": 5,
+      "log": "The relay breaks at the river. The medicine arrives a day late. It still saves many."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_fist_arena",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     45
+    ],
+    "stat": {
+     "strength": 90
+    }
+   },
+   "weight": 1,
+   "text": "A travelling fighting arena offers a hundred taels to anyone who can last three rounds against their champion, a man the size of a door.",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "taels": 100,
+      "fame": 5,
+      "log": "You lift the door-sized man over your head on the third round. The crowd goes wild. He buys you dinner."
+     },
+     "fail": {
+      "health": -25,
+      "log": "Being hit by a door hurts exactly as much as you imagined."
+     }
+    },
+    {
+     "text": "Bet on yourself and watch",
+     "effects": {
+      "log": "You are not sure how betting on yourself works if you do not fight. The arena owner explains it. You leave, confused."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_orphan_found",
+   "cat": "life",
+   "when": {
+    "age": [
+     25,
+     70
+    ]
+   },
+   "weight": 1,
+   "text": "In the ashes of a burned village, you find a child hiding in a rice jar. Everyone else is gone.",
+   "choices": [
+    {
+     "text": "Raise the child",
+     "effects": {
+      "flag": "has_child",
+      "alignment": 10,
+      "charm": 3,
+      "log": "The child does not speak for a year. Then, one morning, they call you by a name you never expected to hear.",
+      "spawn": {
+       "role": "child",
+       "ageAbs": 6,
+       "opinion": 50,
+       "tag": "adopted"
+      }
+     }
+    },
+    {
+     "text": "Bring the child to a temple",
+     "effects": {
+      "alignment": 5,
+      "log": "The temple takes the child in. You send money every winter for twenty years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_kind_act_returns",
+   "cat": "life",
+   "when": {
+    "age": [
+     40,
+     999
+    ],
+    "alignment": [
+     30,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A stranger stops you on the road and bows deeply. 'Years ago, you gave my starving father a bowl of rice. He lived to raise me. I never forgot.'",
+   "effects": {
+    "taels": 60,
+    "charm": 2,
+    "luck": 3,
+    "log": "He presses a purse into your hands and will not take it back. You do not even remember the rice."
+   },
+   "choices": []
+  },
+  {
+   "id": "lf_cruel_act_returns",
+   "cat": "danger",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "alignment": [
+     -100,
+     -30
+    ]
+   },
+   "weight": 2,
+   "text": "A young swordsman stops you on the road. 'Years ago, men like you came to my village, and you were one of them. I was the boy in the doorway.'",
+   "choices": [
+    {
+     "text": "Fight him",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": -5,
+      "log": "You win. He is not the last. There will always be someone in a doorway."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "the boy from the burned village",
+      "log": "He has trained all his life for this moment. You barely escape."
+     }
+    },
+    {
+     "text": "Put down your sword and apologise",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "alignment": 20,
+      "log": "He lowers his sword. He does not forgive you. He does not kill you either. It is more than you deserve."
+     },
+     "fail": {
+      "health": -40,
+      "alignment": 10,
+      "log": "He does not accept it. He leaves you bleeding in the road, alive, which may be worse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lf_grey_hair_realm",
+   "cat": "aging",
+   "when": {
+    "age": [
+     50,
+     999
+    ],
+    "realm": [
+     0,
+     2
+    ]
+   },
+   "weight": 2,
+   "text": "Your hair is grey, and you never got past the gate you dreamed of as a child. A young disciple asks you, kindly, if you have any regrets.",
+   "choices": [
+    {
+     "text": "Say no, and mean it",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "health": 5,
+      "log": "'I had a good life,' you say. 'The murim was only part of it.' The disciple does not understand yet. They will."
+     }
+    },
+    {
+     "text": "Say yes, and train one more year",
+     "effects": {
+      "qi": 15,
+      "health": -5,
+      "log": "One more year. Your knees complain. Your qi does not."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lf_last_letter",
+   "cat": "aging",
+   "when": {
+    "age": [
+     75,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "You sit down to write letters to everyone who mattered. The list is longer than you expected.",
+   "effects": {
+    "alignment": 3,
+    "charm": 2,
+    "log": "It takes a month. Some letters are to people long dead. You write those anyway, and burn them on the hill."
+   },
+   "choices": []
+  }
+ ],
+ "mwPass": 1
+}

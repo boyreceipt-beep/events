@@ -1,0 +1,1303 @@
+{
+ "events": [
+  {
+   "id": "ht_sword_aura_first",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFlags": [
+     "sword_aura"
+    ]
+   },
+   "weight": 6,
+   "text": "Mid-form, something changes. A pale light runs along your blade and the practice post falls in two before you touch it. Sword aura.",
+   "choices": [
+    {
+     "text": "Practise it until dawn",
+     "effects": {
+      "qi": 15,
+      "strength": 5,
+      "log": "By morning you can call it at will, and your arms feel like someone else's.",
+      "flag": "sword_aura"
+     }
+    },
+    {
+     "text": "Put the sword down and think",
+     "effects": {
+      "comprehension": 4,
+      "log": "Power is a guest. You want to understand the host first.",
+      "flag": "sword_aura"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_young_challengers",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Word of your realm has spread. Three young masters wait at the foot of your mountain, each hoping to make a name on you.",
+   "choices": [
+    {
+     "text": "Fight all three",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.6
+     },
+     "ok": {
+      "fame": 20,
+      "log": "You beat all three without drawing your full strength. One of them asks to become your disciple. You tell him to come back in ten years."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -5,
+      "log": "The third one is better than the rumours said. You win, barely, and your ribs remind you for a month."
+     }
+    },
+    {
+     "text": "Send them tea and a note",
+     "effects": {
+      "fame": 5,
+      "alignment": 3,
+      "log": "The note says 'Train ten more years.' Two go home. One frames it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_elder_statesman",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "Two orthodox sects are one insult away from war over a stolen well. Both sides ask you, and only you, to judge it.",
+   "choices": [
+    {
+     "text": "Judge it fairly",
+     "effects": {
+      "fame": 15,
+      "alignment": 5,
+      "rep": {
+       "orthodox": 10
+      },
+      "log": "You rule for neither and make both dig a second well. The murim calls it the Well Judgement."
+     }
+    },
+    {
+     "text": "Favour the side that pays",
+     "effects": {
+      "taels": 400,
+      "alignment": -10,
+      "fame": -5,
+      "log": "A fat purse, a thin peace. Everybody knows."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_old_enemy_returns",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A letter written in blood: an old enemy from your youth has spent years training for one fight with you.",
+   "choices": [
+    {
+     "text": "Meet them at the appointed cliff",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "duel": true
+     },
+     "ok": {
+      "fame": 15,
+      "log": "Years of hatred, and it lasts eleven exchanges. Afterwards you share a pot of tea. Neither of you remembers what started it."
+     },
+     "fail": {
+      "health": -30,
+      "log": "They have trained well. You live, and so do they, and the grudge goes on.",
+      "deathCause": "an old enemy on the appointed cliff"
+     },
+     "risky": true
+    },
+    {
+     "text": "Write back an apology",
+     "effects": {
+      "alignment": 8,
+      "log": "Years of hatred, answered with one honest page. They never come."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_transcendent_banquet",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     6
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The great sects hold a banquet for the masters of the Transcendent realm. There are nine seats. One has your name on it.",
+   "choices": [
+    {
+     "text": "Attend and listen",
+     "effects": {
+      "comprehension": 5,
+      "fame": 10,
+      "log": "Nine masters, nine ways of seeing the same art. You learn more over one dinner than in a year of training."
+     }
+    },
+    {
+     "text": "Attend and show off",
+     "effects": {
+      "fame": 15,
+      "rep": {
+       "orthodox": -3
+      },
+      "log": "You put out every candle in the hall with one breath. Impressive. Two of the masters now dislike you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_heart_demon",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "In seclusion, your own face appears across the room and lists every mistake you ever made. The heart demon has come.",
+   "choices": [
+    {
+     "text": "Face it calmly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "qi": 20,
+      "comprehension": 5,
+      "log": "You agree with every word, and it has nothing left to say. It fades. Your mind is clearer than it has ever been."
+     },
+     "fail": {
+      "health": -25,
+      "qi": -20,
+      "log": "You argue with it for three days. You lose. Your meridians burn for a season.",
+      "deathCause": "the heart demon in seclusion"
+     },
+     "risky": true
+    },
+    {
+     "text": "Break seclusion and walk it off",
+     "effects": {
+      "health": 5,
+      "log": "Not today. The demon will wait. So will the next realm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_sect_invites_patriarch",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFlags": [
+     "sect_head",
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "A great sect with no living master of your realm asks you to be its Guardian Elder: an honour, a room, and no duties except existing.",
+   "choices": [
+    {
+     "text": "Accept the honour",
+     "effects": {
+      "fame": 20,
+      "taels": 200,
+      "log": "Your name goes on their gate. Your fame spreads through their disciples."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "fame": 8,
+      "log": "You prefer to belong to nobody. The murim finds this very mysterious."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_beggar_master",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "An old beggar watches you train and snorts. 'Too much sword. Not enough walking.' He is gone before you can ask what he means.",
+   "choices": [
+    {
+     "text": "Walk for a year",
+     "effects": {
+      "comprehension": 4,
+      "health": 10,
+      "log": "You walk the length of the empire. When you return, your footwork has changed without you practising it."
+     }
+    },
+    {
+     "text": "Ignore him",
+     "effects": {
+      "log": "Beggars say many things. Most of them are hungry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_famine_granary",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A famine in the north. Your name could open the granaries of three rich sects, if you are willing to be rude to them.",
+   "choices": [
+    {
+     "text": "Be rude",
+     "effects": {
+      "alignment": 15,
+      "fame": 15,
+      "rep": {
+       "orthodox": -5
+      },
+      "log": "You are extraordinarily rude. The granaries open. Ten thousand people eat."
+     }
+    },
+    {
+     "text": "Pay for grain yourself",
+     "effects": {
+      "taels": -600,
+      "alignment": 10,
+      "fame": 8,
+      "log": "It costs a fortune. Nobody else has to lose face."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_student_surpasses",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A young master you once gave pointers to has broken through to Peak Master. They come to thank you, nervous.",
+   "choices": [
+    {
+     "text": "Spar with them, gently",
+     "effects": {
+      "fame": 5,
+      "alignment": 4,
+      "log": "They are good. You tell them so. They will remember this day longer than their breakthrough."
+     }
+    },
+    {
+     "text": "Tell them the truth about the next gate",
+     "effects": {
+      "comprehension": 1,
+      "log": "It is harder than they think. You tell them how you nearly failed. It helps more than praise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_assassin_contract",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You learn that a guild of assassins has taken a contract on you. The price is flattering.",
+   "choices": [
+    {
+     "text": "Visit the guild in person",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 20,
+      "taels": 300,
+      "log": "You walk into their hall and sit down. They cancel the contract and return the deposit, somehow."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You walk into their hall and nearly do not walk out. The contract stands.",
+      "deathCause": "the assassins' guild"
+     },
+     "risky": true
+    },
+    {
+     "text": "Double your guard and wait",
+     "effects": {
+      "taels": -200,
+      "log": "The first assassin arrives in spring. Your guards catch him. The guild quietly gives up."
+     }
+    },
+    {
+     "text": "Disappear for a season",
+     "effects": {
+      "fame": -5,
+      "log": "You leave the city by night and spend the winter as nobody in a mountain village. By spring the contract has gone stale, and the guild has richer names to chase."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_poet_asks",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A famous poet wants to write an epic about your life. He needs to interview you for a month.",
+   "choices": [
+    {
+     "text": "Tell him everything",
+     "effects": {
+      "fame": 25,
+      "log": "He leaves out the funny parts and adds dragons. It becomes the most-sung song in the empire."
+     }
+    },
+    {
+     "text": "Tell him about your first master instead",
+     "effects": {
+      "alignment": 5,
+      "fame": 8,
+      "log": "That epic is better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_ancient_battlefield",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You cross an ancient battlefield where two legends fought a thousand years ago. The ground is still scarred with their sword aura.",
+   "choices": [
+    {
+     "text": "Read the marks",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "qi": 20,
+      "comprehension": 5,
+      "log": "In the scars you see both of their styles, and why one of them lost. A thousand-year-old lesson."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The old aura is still sharp. You leave with a cut and a headache."
+     }
+    },
+    {
+     "text": "Bow and walk on",
+     "effects": {
+      "alignment": 3,
+      "log": "Some things are not yours to learn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_harmony_mountain",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You sit on a mountain and, for the first time, cannot tell where your breath ends and the wind begins.",
+   "choices": [
+    {
+     "text": "Stay until you can",
+     "effects": {
+      "qi": 25,
+      "comprehension": 3,
+      "log": "A whole season passes like an afternoon. Your energy has no edges now."
+     }
+    },
+    {
+     "text": "Come down before you forget your name",
+     "effects": {
+      "health": 10,
+      "log": "Some masters stay up there forever. You still have noodles to eat."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_grandchildren_of_friends",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "The grandchildren of your old friends come to your door and bow as if you were a legend. In a way, you are.",
+   "choices": [
+    {
+     "text": "Play with them",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "log": "You lose at every game, deliberately. Their grandparents' laughter comes out of their mouths."
+     }
+    },
+    {
+     "text": "Teach them one form",
+     "effects": {
+      "fame": 3,
+      "log": "Just one. They will remember it when they are old."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_emperor_summons",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The Emperor sends a golden edict: the court wishes to see a Harmony master with its own eyes.",
+   "choices": [
+    {
+     "text": "Go to the palace",
+     "effects": {
+      "fame": 30,
+      "taels": 800,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "You drink tea with the Son of Heaven. He asks if you can fly. You say no. He looks disappointed and gives you a sword anyway."
+     }
+    },
+    {
+     "text": "Send back a poem instead",
+     "effects": {
+      "fame": 15,
+      "log": "The poem says the mountains are better company. The court argues about it for a year."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_world_calamity",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A dam upstream of three cities is cracking, and the rains have not stopped. Engineers say it will hold two days.",
+   "choices": [
+    {
+     "text": "Hold the dam with your energy while they drain it",
+     "roll": {
+      "stat": "health",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 40,
+      "alignment": 15,
+      "log": "For a day and a night you stand in the flood and push. The water goes where it is told. Three cities never learn how close it was."
+     },
+     "fail": {
+      "health": -40,
+      "fame": 30,
+      "alignment": 15,
+      "log": "You hold it, and it nearly holds you. You are carried out on a door, and it takes a year to walk straight.",
+      "deathCause": "the flood at the cracking dam"
+     },
+     "risky": true
+    },
+    {
+     "text": "Evacuate the cities",
+     "effects": {
+      "fame": 15,
+      "alignment": 8,
+      "log": "Slower, safer, and everybody lives. The dam breaks into empty streets."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_youth_rumour",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Rumours spread that you have found the elixir of youth. Half the rich men of the empire want to buy it.",
+   "choices": [
+    {
+     "text": "Tell them the truth: it is training",
+     "effects": {
+      "alignment": 3,
+      "log": "They are very disappointed. Training is hard and cannot be bought."
+     }
+    },
+    {
+     "text": "Sell them tea and let them believe",
+     "effects": {
+      "taels": 600,
+      "alignment": -8,
+      "log": "It is very good tea. Nobody gets younger. You get richer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_cult_envoy",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The Demonic Cult sends an envoy with a black lotus: they would like a Harmony master as a friend, or at least not as an enemy.",
+   "choices": [
+    {
+     "text": "Accept a truce",
+     "effects": {
+      "rep": {
+       "demonic": 15,
+       "orthodox": -10
+      },
+      "log": "The Cult stays out of your region for ten years. The orthodox sects do not thank you for it."
+     }
+    },
+    {
+     "text": "Send the lotus back",
+     "effects": {
+      "rep": {
+       "orthodox": 8,
+       "demonic": -10
+      },
+      "fame": 5,
+      "log": "Politely, burned. The envoy understands."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_harmony_duel",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Another master of Harmony wants to know which of you is stronger. When Harmony masters duel, mountains change shape.",
+   "choices": [
+    {
+     "text": "Accept, at the top of Mount Hua",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "duel": true
+     },
+     "ok": {
+      "fame": 50,
+      "log": "Three days and three nights. On the fourth morning, your opponent laughs and bows. The peak is a little lower than it was."
+     },
+     "fail": {
+      "health": -30,
+      "fame": 20,
+      "log": "You lose by a hair. You shake hands on the broken summit and agree to do it again in ten years.",
+      "deathCause": "a duel of Harmony masters on Mount Hua"
+     },
+     "risky": true
+    },
+    {
+     "text": "Decline: 'We both know'",
+     "effects": {
+      "comprehension": 2,
+      "log": "Masters understand each other. You part as friends, and the rumour mills never forgive either of you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_dying_sect",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A sect you have never visited is dying: no master, no money, twenty disciples. They send their eldest to ask a Harmony master what to do.",
+   "choices": [
+    {
+     "text": "Visit and teach for a season",
+     "effects": {
+      "fame": 12,
+      "alignment": 10,
+      "log": "You stay one season and give them one good year. They carve your name on their gate."
+     }
+    },
+    {
+     "text": "Give them money",
+     "effects": {
+      "taels": -300,
+      "alignment": 5,
+      "fame": 5,
+      "log": "Money helps. It does not teach anyone to breathe."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_scripture_hint",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A dying monk presses a scrap of jade into your hand: 'Nine suns over nine mountains. You are the one who can read it.'",
+   "choices": [
+    {
+     "text": "Study the jade",
+     "effects": {
+      "comprehension": 3,
+      "flag": "scripture_hint",
+      "log": "A clue to the Primordial Scripture. (Seek the Primordial Scripture in the Jianghu to follow it.)"
+     }
+    },
+    {
+     "text": "Give it to the monk's temple",
+     "effects": {
+      "alignment": 10,
+      "log": "Some treasures belong to the dead. The temple bows to you for a generation."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_realm_lonely",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "At your realm, fewer and fewer people understand anything you say about the martial way. It is a lonely height.",
+   "choices": [
+    {
+     "text": "Write letters to the other masters",
+     "effects": {
+      "comprehension": 4,
+      "log": "Three answer. One of them sends a riddle that takes you a year to solve."
+     }
+    },
+    {
+     "text": "Talk to the children in the village instead",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "They do not understand either, but they laugh at the right places."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_dragon_pool",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Deep in the southern mountains lies a pool so cold it smokes. The locals say a dragon once slept here.",
+   "choices": [
+    {
+     "text": "Bathe in it",
+     "effects": {
+      "qi": 25,
+      "health": -10,
+      "log": "The cold goes past your skin, past your bones, into your meridians. It is the best and worst hour of your life."
+     }
+    },
+    {
+     "text": "Bottle some for later",
+     "effects": {
+      "item": "stone_milk",
+      "log": "It stays cold in the gourd forever."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_mystic_silence",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You realise you have not drawn your sword in three years, and nobody has dared to ask you to.",
+   "choices": [
+    {
+     "text": "Draw it once, for the joy of it",
+     "effects": {
+      "qi": 20,
+      "log": "The blade sings. A flock of birds leaves every tree for a mile. You laugh like a child."
+     }
+    },
+    {
+     "text": "Leave it in the scabbard",
+     "effects": {
+      "fame": 10,
+      "log": "A sword that is never drawn is the most frightening one of all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_heaven_tribulation",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Clouds gather over your mountain that have nothing to do with rain. Heaven has noticed you, and it is not pleased.",
+   "choices": [
+    {
+     "text": "Face the lightning",
+     "roll": {
+      "stat": "health",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 30,
+      "lifespan": 20,
+      "fame": 30,
+      "log": "Nine strikes. You stand through all of them. When the sky clears, your body is lighter, and your hair smells of smoke."
+     },
+     "fail": {
+      "health": -45,
+      "log": "The seventh strike puts you on your back. You live. Heaven will ask again.",
+      "deathCause": "heaven's lightning"
+     },
+     "risky": true
+    },
+    {
+     "text": "Go down into the valley and wait it out",
+     "effects": {
+      "health": 5,
+      "log": "Heaven can wait. So can you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_mystic_disciples",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Pilgrims camp outside your gate: a hundred young people, each hoping to be the one you take as a disciple.",
+   "choices": [
+    {
+     "text": "Take the one who swept the path every morning",
+     "effects": {
+      "alignment": 5,
+      "fame": 10,
+      "log": "Not the strongest. Not the cleverest. The one who swept. Everybody learns something from it."
+     }
+    },
+    {
+     "text": "Take none",
+     "effects": {
+      "fame": 5,
+      "log": "You send them home with rice and advice. The murim calls you the Closed Gate."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_old_rivals_graves",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You have outlived everyone who fought you when you were young. You visit their graves, one by one.",
+   "choices": [
+    {
+     "text": "Pour wine at each",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 3,
+      "log": "It takes a month. By the last grave you are not sure who won any of those fights, or why it mattered."
+     }
+    },
+    {
+     "text": "Visit only the one you respected most",
+     "effects": {
+      "comprehension": 2,
+      "log": "You tell them about the realms beyond. You think they would have liked Mystic."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_life_death_view",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You look at a leaf and see its whole life: bud, green, gold, ground. Then you look at your hands.",
+   "choices": [
+    {
+     "text": "Keep looking",
+     "effects": {
+      "comprehension": 5,
+      "alignment": 5,
+      "log": "Everything is a leaf. It is not sad. It is very beautiful. (Walk through the Last Door in the Jianghu when you are ready.)"
+     }
+    },
+    {
+     "text": "Go and eat noodles",
+     "effects": {
+      "health": 10,
+      "log": "Enlightenment can wait until after lunch. That, too, is enlightenment."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_last_student",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A child climbs your mountain in winter, alone, and refuses to leave without learning one thing from you.",
+   "choices": [
+    {
+     "text": "Teach them everything",
+     "effects": {
+      "fame": 20,
+      "alignment": 10,
+      "log": "Seven years. When they leave, they carry everything you know down the mountain. You feel lighter, and very proud."
+     }
+    },
+    {
+     "text": "Teach them one breath",
+     "effects": {
+      "alignment": 5,
+      "log": "One breath, taught perfectly. It is enough for a lifetime, and they know it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_greats_gossip",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     4,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "In every teahouse, people argue over the Ten Greatest Masters Under Heaven, and now and then someone says your name.",
+   "choices": [
+    {
+     "text": "Listen quietly",
+     "effects": {
+      "fame": 2,
+      "log": "Half of what they say about you is wrong. The other half is flattering. (See the Ten Greatest in the Jianghu.)"
+     }
+    },
+    {
+     "text": "Correct them",
+     "effects": {
+      "charm": 2,
+      "log": "Nobody believes you are you. You pay for their tea anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_greats_first",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "ten_greats"
+    ],
+    "notFlags": [
+     "first_under_heaven"
+    ]
+   },
+   "weight": 6,
+   "text": "The First Under Heaven sends you a single line of calligraphy: 'I am waiting.'",
+   "choices": [
+    {
+     "text": "Hang it on your wall",
+     "effects": {
+      "qi": 10,
+      "comprehension": 2,
+      "log": "Every morning you read it before training. It is better than any master."
+     }
+    },
+    {
+     "text": "Send one back: 'Not for long.'",
+     "effects": {
+      "fame": 15,
+      "log": "The whole murim hears about it within a month."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_greats_ambush",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "ten_greats"
+    ]
+   },
+   "weight": 6,
+   "text": "Someone outside the Ten Greatest wants to be inside it, and has decided an ambush is quicker than a challenge.",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 15,
+      "log": "They chose the wrong night and the wrong master. Nobody tries that again for a while."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You escape with a wound and a name. They will not be so lucky next time.",
+      "deathCause": "an ambush by a would-be master of the list"
+     },
+     "risky": true
+    },
+    {
+     "text": "Slip away into the dark",
+     "effects": {
+      "alignment": 2,
+      "log": "You are not here to prove anything to people who fight like that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_fortuitous_sabre_cliff",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "chance": 0.3
+   },
+   "weight": 2,
+   "text": "A landslide has opened a cliff face no one has seen for centuries. Carved into the rock, stroke after stroke, is a single enormous sabre cut, and around it, smaller cuts that explain it.",
+   "choices": [
+    {
+     "text": "Stay until you understand it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "technique": "sky_sabre",
+      "qi": 10,
+      "log": "Forty days on the cliff. On the forty-first, your own sabre answers the stone. The Sabre That Splits the Sky is yours."
+     },
+     "fail": {
+      "comprehension": 3,
+      "health": -10,
+      "log": "The cuts make your head ache and your hands bleed. You understand a little. Perhaps the cliff will still be here in ten years."
+     }
+    },
+    {
+     "text": "Copy it for the Martial Alliance",
+     "effects": {
+      "fame": 10,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "The Alliance posts guards on the cliff. Your name is carved beside the sabre cut."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ht_fortuitous_spear_pass",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "chance": 0.3
+   },
+   "weight": 2,
+   "text": "In a mountain pass, a rusted spear stands upright in the rock where a general once held the road alone for nine days. The villagers say it chooses who may pull it out.",
+   "choices": [
+    {
+     "text": "Try to pull it out",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "technique": "nine_dragon_spear",
+      "strength": 4,
+      "log": "The rust falls away like old skin. Wrapped around the shaft, a silk scroll: the Nine Dragons Spear."
+     },
+     "fail": {
+      "health": -15,
+      "log": "It does not move. Your shoulder does, painfully. The villagers are very polite about it."
+     }
+    },
+    {
+     "text": "Bow to the general and leave it",
+     "effects": {
+      "alignment": 5,
+      "luck": 3,
+      "log": "Some things should stay where they are. The wind in the pass sounds almost grateful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ht_fortuitous_sword_tomb",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "chance": 0.3
+   },
+   "weight": 2,
+   "text": "Floodwater has opened a sealed tomb in the hillside. Inside there is no coffin, only a sword laid across a stone table, and a single long cut across the ceiling, as if the sky above the tomb had been split and mended.",
+   "choices": [
+    {
+     "text": "Sit under the cut until it speaks",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 58
+     },
+     "ok": {
+      "technique": "heaven_split_sword",
+      "qi": 10,
+      "log": "For thirty days you watch the cut in the ceiling. On the thirty-first you understand it was not made by a sword swung at the stone, but by a sword swung at the sky. The Heaven-Splitting Sword is yours."
+     },
+     "fail": {
+      "comprehension": 3,
+      "health": -10,
+      "log": "The cut will not open for you. You leave with a headache and the feeling of having been politely refused."
+     }
+    },
+    {
+     "text": "Seal the tomb again",
+     "effects": {
+      "alignment": 5,
+      "luck": 3,
+      "log": "Whoever left the cut chose not to teach it to the living. You put the stones back the way they were."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,284 @@
+{
+ "events": [
+  {
+   "id": "lg_young_face",
+   "cat": "life",
+   "when": {
+    "realm": [
+     6,
+     11
+    ],
+    "flags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 6,
+   "text": "Your childhood friend's grandson comes to your door and bows to you as if you were his own age. Your friend, grey and stooped, laughs until he has to sit down.",
+   "choices": [
+    {
+     "text": "Laugh with him",
+     "effects": {
+      "health": 5,
+      "log": "You look twenty-five. He looks seventy-five. You are the same age. The murim is a strange place."
+     }
+    },
+    {
+     "text": "Tell the boy the truth",
+     "effects": {
+      "fame": 4,
+      "log": "The boy's eyes go wide. By evening the whole town knows a Harmony master lives among them."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lg_heaven_challenge",
+   "cat": "danger",
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 5,
+   "text": "A letter arrives written in sword qi, carved into a stone tablet: one of the other living Harmony masters wishes to know which of you stands higher under heaven.",
+   "choices": [
+    {
+     "text": "Meet him on the peak",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 40,
+      "flag": "under_heaven",
+      "log": "Three days and three nights. When it ends, the valley below has new cliffs. The world now counts you among those who stand highest under heaven."
+     },
+     "fail": {
+      "health": -55,
+      "fame": 15,
+      "deathCause": "a duel between Harmony masters",
+      "log": "You lose by a hair's breadth, and both of you know it. He bows first."
+     }
+    },
+    {
+     "text": "Send back a single flower",
+     "effects": {
+      "fame": 10,
+      "alignment": 3,
+      "log": "A plum blossom, unbroken, in a box of iron. He understands. He does not come."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lg_one_with_nature",
+   "cat": "insight",
+   "when": {
+    "realm": [
+     6,
+     7
+    ]
+   },
+   "weight": 5,
+   "text": "Sitting by a stream, you notice that the water flows around your qi the way it flows around a stone. For a moment you cannot tell where you end.",
+   "choices": [
+    {
+     "text": "Let go of the edge",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "qi": 40,
+      "comprehension": 3,
+      "log": "When you open your eyes it is spring. You sat through the whole winter, and you are not hungry. You understand something about the Mystic realm now."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The moment slips away. It will come again, if you are patient."
+     }
+    },
+    {
+     "text": "Hold on to yourself",
+     "effects": {
+      "log": "Not yet. You are not ready to dissolve. The stream goes on without you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lg_disciples_flock",
+   "cat": "sect",
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "Young martial artists camp outside your gate. Forty of them. More arrive every day, each begging to be taught.",
+   "choices": [
+    {
+     "text": "Test them and take the best three",
+     "effects": {
+      "fame": 8,
+      "spawn": {
+       "role": "disciple",
+       "ageAbs": 15,
+       "male": false,
+       "opinion": 50,
+       "tag": "own_disciple"
+      },
+      "log": "Two days of tests. One of them passes everything without breaking a sweat. You have a disciple."
+     }
+    },
+    {
+     "text": "Send them home with one lesson each",
+     "effects": {
+      "fame": 12,
+      "alignment": 5,
+      "log": "Forty lessons, one each. In ten years, half the young masters of the murim will say you taught them."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lg_mystic_gate",
+   "cat": "insight",
+   "when": {
+    "realm": [
+     7,
+     7
+    ]
+   },
+   "weight": 5,
+   "text": "The Mystic realm is not about power any more. An old monk asks you the question they ask every Mystic master: \"What would you do with no enemies left?\"",
+   "choices": [
+    {
+     "text": "\"Teach.\"",
+     "effects": {
+      "alignment": 5,
+      "fame": 10,
+      "log": "The monk smiles. \"Then you are closer to the next gate than you think.\""
+     }
+    },
+    {
+     "text": "\"Find new ones.\"",
+     "effects": {
+      "strength": 5,
+      "alignment": -5,
+      "log": "The monk sighs. \"Then the next gate will be a long way off.\" He is not wrong, and not right."
+     }
+    },
+    {
+     "text": "Say nothing, and pour him tea",
+     "effects": {
+      "comprehension": 4,
+      "qi": 20,
+      "log": "He drinks. You drink. It is the best answer, and you both know it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lg_life_death",
+   "cat": "life",
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 5,
+   "text": "A child in the village is dying of a fever no physician can name. Her mother kneels at your gate. At your realm, the line between life and death is something you can feel.",
+   "choices": [
+    {
+     "text": "Pour your own life into her",
+     "effects": {
+      "lifespan": -10,
+      "alignment": 12,
+      "fame": 20,
+      "log": "Ten years of your life for the rest of hers. Her fever breaks at dawn. Her mother never stops lighting incense for you."
+     }
+    },
+    {
+     "text": "It is her fate, not yours",
+     "effects": {
+      "alignment": -5,
+      "log": "Some doors are not yours to open, you tell yourself. The village does not understand, and neither, completely, do you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lg_last_war",
+   "cat": "world",
+   "when": {
+    "realm": [
+     7,
+     11
+    ],
+    "minFame": 400,
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "fugitive"
+    ],
+    "rep": {
+     "orthodox": [
+      -20,
+      100
+     ]
+    }
+   },
+   "weight": 3,
+   "text": "Envoys from both the Martial Alliance and the Heavenly Demon Cult arrive on the same day. Each asks you to end the war for them. Only you could.",
+   "choices": [
+    {
+     "text": "End the war for neither side: stand between them",
+     "effects": {
+      "fame": 60,
+      "alignment": 10,
+      "flag": "war_ender",
+      "rep": {
+       "orthodox": 20,
+       "demonic": 20
+      },
+      "log": "You walk out onto the battlefield alone. Both armies stop. The war ends that day, and every storyteller for a century tells it differently."
+     }
+    },
+    {
+     "text": "Side with the Alliance",
+     "effects": {
+      "fame": 40,
+      "rep": {
+       "orthodox": 40,
+       "demonic": -60
+      },
+      "log": "The Cult's army breaks within a week. The Orthodox build you a shrine; the Cult swears a blood oath against your name."
+     }
+    },
+    {
+     "text": "Side with the Cult",
+     "effects": {
+      "fame": 40,
+      "alignment": -20,
+      "rep": {
+       "orthodox": -60,
+       "demonic": 50
+      },
+      "log": "The Central Plains burn. The Cult names you its guest of honour. Some doors, once opened, do not close."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

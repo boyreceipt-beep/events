@@ -1,0 +1,1051 @@
+{
+ "events": [
+  {
+   "id": "gn_revive_sect_1",
+   "cat": "sect",
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "flags": [
+     "born_ruined_sect"
+    ],
+    "notFlags": [
+     "revive_1"
+    ]
+   },
+   "weight": 4,
+   "text": "You climb the mountain where your family's sect once stood. Weeds grow through the training ground. The signboard lies cracked in the mud. Somewhere under your ribs, something refuses to let it end like this.",
+   "choices": [
+    {
+     "text": "Swear to raise the sect again",
+     "effects": {
+      "flag": "revive_1",
+      "alignment": 5,
+      "fame": 3,
+      "log": "You set the broken signboard upright and bow to it three times. It is a small, stubborn beginning."
+     }
+    },
+    {
+     "text": "Bury the past and walk away",
+     "effects": {
+      "flag": [
+       "revive_1",
+       "revive_buried"
+      ],
+      "comprehension": 2,
+      "log": "You leave the mountain to the weeds. Some nights, you still dream of the bell that used to ring there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "gn_revive_sect_2",
+   "cat": "sect",
+   "when": {
+    "age": [
+     22,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "flags": [
+     "revive_1"
+    ],
+    "notFlags": [
+     "revive_2",
+     "revive_buried"
+    ],
+    "after": [
+     "gn_revive_sect_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 5,
+   "text": "The hall of your family's old sect is rebuilt, more or less. Now it needs the one thing money cannot buy: disciples. Nobody wants to join a sect whose name everyone has forgotten.",
+   "choices": [
+    {
+     "text": "Win a tournament in the sect's name",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "flag": "revive_2",
+      "fame": 20,
+      "log": "You win under the old banner. Next morning, eleven children are waiting at the bottom of the mountain."
+     },
+     "fail": {
+      "flag": "revive_2",
+      "fame": 5,
+      "health": -20,
+      "log": "You lose, but fighting under a forgotten banner makes people curious. Four disciples come. Four is a start."
+     }
+    },
+    {
+     "text": "Teach any child who comes, for free",
+     "effects": {
+      "flag": "revive_2",
+      "alignment": 10,
+      "taels": -50,
+      "log": "Orphans, farm kids, a runaway princess who lies about being a runaway princess. The sect is alive again."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_revive_sect_3",
+   "cat": "sect",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "revive_2"
+    ],
+    "notFlags": [
+     "revive_done",
+     "fugitive",
+     "revive_buried"
+    ],
+    "after": [
+     "gn_revive_sect_2"
+    ],
+    "minYearsAfter": 5,
+    "rep": {
+     "orthodox": [
+      -20,
+      100
+     ]
+    }
+   },
+   "weight": 6,
+   "text": "A letter arrives sealed with the marks of the Nine Great Sects and One Union: your family's sect is invited to take its old seat at the council. The murim remembers its name again.",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "effects": {
+      "flag": "revive_done",
+      "fame": 60,
+      "manual": 5,
+      "log": "You walk into the council hall under your family's old banner. The old masters stand. Your ancestors, you are sure, are laughing somewhere."
+     }
+    },
+    {
+     "text": "Decline: the sect will answer to no one",
+     "effects": {
+      "flag": "revive_done",
+      "fame": 30,
+      "alignment": 3,
+      "log": "Your refusal is the talk of the murim. Your family's sect becomes a legend precisely because it will not join anyone."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_sect_poverty",
+   "cat": "funny",
+   "when": {
+    "age": [
+     16,
+     60
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "job_sect_leader",
+     "own_sect",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "{sect} is broke. The elders are eating plain rice, the roof leaks, and the sect leader has quietly sold the ceremonial bell. Someone has to make money, fast.",
+   "choices": [
+    {
+     "text": "Sell sect-brand medicinal tea",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 120,
+      "fame": 4,
+      "log": "'Drink what the masters drink.' It is barley tea with ginger. It sells out in a week. The roof gets fixed."
+     },
+     "fail": {
+      "taels": 20,
+      "log": "Your tea is so bitter that a customer challenges you to a duel. You win the duel. You lose the customer."
+     }
+    },
+    {
+     "text": "Escort caravans for the merchants' guild",
+     "effects": {
+      "taels": 80,
+      "strength": 2,
+      "health": -10,
+      "log": "Three months of roads and bandits. The elders eat meat again. They pretend not to know where the money came from."
+     }
+    },
+    {
+     "text": "Hunt down the bandits who owe the sect money",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "taels": 150,
+      "fame": 6,
+      "log": "You collect every copper, with interest. Bandits across the province learn not to borrow from {sect}."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The bandits pay in bruises. You come back with nothing but a story."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_ren_du",
+   "cat": "misc",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "notFlags": [
+     "ren_du_open"
+    ]
+   },
+   "weight": 4,
+   "text": "Your internal energy presses against the last great barrier of the body: the Ren and Du meridians, the two rivers of qi that the old masters called the gate of life and death. Opening them would change everything. Failing could stop your heart.",
+   "choices": [
+    {
+     "text": "Attempt to open them",
+     "risky": true,
+     "roll": {
+      "stat": "comprehension",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "ren_du_open",
+      "qi": 30,
+      "lifespan": 10,
+      "comprehension": 4,
+      "fame": 10,
+      "log": "Nine days in the dark. On the tenth, the two rivers join and your qi flows in a circle with no end. You hear your own heartbeat slow to that of a sleeping tiger."
+     },
+     "fail": {
+      "health": -55,
+      "qi": -25,
+      "deathCause": "a failed attempt to open the Ren and Du meridians",
+      "log": "The barrier holds and the backlash throws you across the cave. You will need years before you dare again."
+     }
+    },
+    {
+     "text": "Wait until you are ready",
+     "effects": {
+      "qi": 8,
+      "log": "You let the energy settle. There is no shame in patience. Only in dying of impatience."
+     }
+    }
+   ]
+  },
+  {
+   "id": "gn_bone_transform",
+   "cat": "misc",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "flags": [
+     "ren_du_open"
+    ],
+    "notFlags": [
+     "bone_transformed"
+    ]
+   },
+   "weight": 5,
+   "text": "With the Ren and Du meridians open, your body begins to remake itself. For three days black filth seeps from your skin, and your bones ache as if broken and reset.",
+   "effects": {
+    "flag": "bone_transformed",
+    "strength": 10,
+    "comprehension": 5,
+    "health": 20,
+    "lifespan": 10,
+    "log": "On the fourth morning you step out of the bath feeling as light as a boy of fifteen. The old masters called this bone transformation. You call it the best day of your life."
+   },
+   "choices": []
+  },
+  {
+   "id": "gn_dragons_phoenixes",
+   "cat": "world",
+   "when": {
+    "age": [
+     15,
+     28
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "notFlags": [
+     "dragon_gathering"
+    ]
+   },
+   "weight": 3,
+   "text": "The Gathering of Dragons and Phoenixes: once a generation, every sect sends its most promising young disciples to test themselves against each other. The ones who shine here are the masters of tomorrow.",
+   "choices": [
+    {
+     "text": "Compete",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "flag": "dragon_gathering",
+      "fame": 25,
+      "taels": 100,
+      "log": "You reach the final four. The old masters in the stands lean forward when you step into the ring. For the first time, they say your name."
+     },
+     "fail": {
+      "flag": "dragon_gathering",
+      "fame": 6,
+      "health": -15,
+      "comprehension": 3,
+      "log": "You go out in the second round against someone who will become very famous. You watch the rest from the stands and learn more than you ever did in the ring."
+     }
+    },
+    {
+     "text": "Compete in the poetry and strategy rounds instead",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "dragon_gathering",
+      "fame": 15,
+      "comprehension": 3,
+      "log": "You win the strategy round without lifting a sword. The Jegal family sends a representative to find out who taught you."
+     },
+     "fail": {
+      "flag": "dragon_gathering",
+      "fame": 3,
+      "log": "A child of the Jegal family beats you at Go in forty moves. Smiling the whole time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_ten_greatest",
+   "cat": "world",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "minFame": 220,
+    "notFlags": [
+     "ten_greatest"
+    ]
+   },
+   "weight": 6,
+   "text": "The Beggars' Union publishes its new list of the Ten Greatest Masters Under Heaven. The whole murim reads it. Your name is on it.",
+   "effects": {
+    "flag": "ten_greatest",
+    "fame": 40,
+    "log": "Teahouses argue about your rank for a month. Challengers start arriving at your door. So do marriage proposals, gifts and one very insistent portrait painter."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "gn_ten_greatest_challenge",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 6,
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "flags": [
+     "ten_greatest"
+    ]
+   },
+   "weight": 3,
+   "text": "Another master who wants your place on the list of the Ten Greatest is waiting at the foot of your mountain. This one brought an audience.",
+   "choices": [
+    {
+     "text": "Defend your rank",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 12,
+      "log": "You keep your place. The audience goes home with a story. The challenger goes home with a lesson."
+     },
+     "fail": {
+      "fame": -10,
+      "health": -30,
+      "log": "You lose your place on the list. It stings. It also means fewer visitors."
+     }
+    },
+    {
+     "text": "Decline: you have nothing to prove",
+     "effects": {
+      "fame": -4,
+      "alignment": 2,
+      "log": "The challenger declares victory to an empty mountain. You are making tea."
+     }
+    }
+   ],
+   "maxPerLife": 3
+  },
+  {
+   "id": "gn_title_sword_saint",
+   "cat": "misc",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "stat": {
+     "sword": 95
+    },
+    "notFlags": [
+     "grand_title"
+    ]
+   },
+   "weight": 6,
+   "text": "After your duel on Broken Sky Peak, the murim stops calling you by your name. From now on, you are simply the Sword Saint.",
+   "effects": {
+    "flag": "grand_title",
+    "fame": 50,
+    "log": "Children with wooden swords argue over who gets to be you. Sword masters travel for months just to watch you practise."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "gn_title_fist_king",
+   "cat": "misc",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "stat": {
+     "strength": 110
+    },
+    "notFlags": [
+     "grand_title"
+    ]
+   },
+   "weight": 5,
+   "text": "They say you shattered a city gate with one blow. It was a small gate. It does not matter: the murim now calls you the Fist King.",
+   "effects": {
+    "flag": "grand_title",
+    "fame": 45,
+    "log": "Every brawler in the land wants to shake your hand. Carefully."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "gn_title_divine_physician",
+   "cat": "misc",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "stat": {
+     "medicine": 90
+    },
+    "notFlags": [
+     "grand_title"
+    ]
+   },
+   "weight": 5,
+   "text": "You have brought back patients that three physicians gave up on. The murim has begun to call you the Divine Physician, and to treat you as neutral ground in every war.",
+   "effects": {
+    "flag": "grand_title",
+    "fame": 40,
+    "alignment": 10,
+    "log": "Orthodox and Demonic warriors alike lower their weapons when you walk past. Nobody wants to be on the wrong side of the one who might save them."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "gn_title_strategist",
+   "cat": "misc",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "stat": {
+     "strategy": 95
+    },
+    "notFlags": [
+     "grand_title"
+    ]
+   },
+   "weight": 5,
+   "text": "You have never lost a game of Go, or a battle you planned. The murim calls you the Master Strategist, and generals send letters asking for advice.",
+   "effects": {
+    "flag": "grand_title",
+    "fame": 40,
+    "comprehension": 3,
+    "log": "You answer every letter with a single Go move. The generals spend weeks figuring out what you meant."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "gn_nine_sects_council",
+   "cat": "world",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "factions": [
+     "orthodox"
+    ]
+   },
+   "weight": 2,
+   "text": "The Nine Great Sects and One Union meet in council over a dispute between two sects that has already cost lives. As a master of {sect}, you are asked to judge.",
+   "choices": [
+    {
+     "text": "Judge by the law of the murim",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": 5,
+      "log": "Your judgement is fair enough that both sides grumble equally. The feud ends. The council remembers your name."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "One side walks out. The feud goes on. You are not asked to judge again."
+     }
+    },
+    {
+     "text": "Side with the stronger sect",
+     "effects": {
+      "fame": 5,
+      "alignment": -8,
+      "taels": 100,
+      "log": "The stronger sect is grateful, and generous. The weaker sect never forgets."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_alliance_leader",
+   "cat": "world",
+   "when": {
+    "age": [
+     40,
+     999
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "minFame": 300,
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "fugitive",
+     "imp_emperor"
+    ]
+   },
+   "weight": 5,
+   "text": "The Martial Alliance Leader has stepped down, and the great sects are deadlocked over a successor. Then someone says your name, and the hall goes quiet.",
+   "choices": [
+    {
+     "text": "Accept the leadership",
+     "effects": {
+      "flag": "alliance_leader",
+      "fame": 80,
+      "alignment": 5,
+      "log": "You are raised to the seat of the Martial Alliance Leader. The whole Orthodox world now bows when you enter. You still eat breakfast at the same noodle stall."
+     }
+    },
+    {
+     "text": "Recommend a younger master",
+     "effects": {
+      "fame": 30,
+      "alignment": 10,
+      "log": "You push a young master forward instead. The murim calls it the wisest choice in fifty years."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_demon_succession",
+   "cat": "sect",
+   "when": {
+    "age": [
+     25,
+     60
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "demon_successor",
+     "job_heavenly_demon"
+    ],
+    "flags": [
+     "wt_cult_open"
+    ],
+    "anyFlags": [
+     "job_cult_guardian",
+     "job_cult_elder",
+     "job_cult_vice"
+    ]
+   },
+   "weight": 4,
+   "text": "The old Heavenly Demon grows weak, and the contest for the succession begins. Seven candidates. Only one will sit on the throne of the Hundred Thousand Mountains.",
+   "choices": [
+    {
+     "text": "Enter the contest",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "flag": [
+       "demon_successor",
+       "wtx_cult_throne"
+      ],
+      "fame": 70,
+      "alignment": -10,
+      "log": "One by one the other candidates kneel or fall. You climb the steps of the throne as the new Heavenly Demon. The whole murim trembles."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "the Heavenly Demon succession contest",
+      "log": "You are defeated in the fourth round. The victor lets you live, as a lesson to the others.",
+      "flag": "wtx_cult_new"
+     }
+    },
+    {
+     "text": "Back a candidate and stay in the shadows",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 20,
+      "taels": 300,
+      "log": "Your candidate wins. The new Heavenly Demon remembers who helped. Your position in the Cult is secure for life.",
+      "flag": "wtx_cult_new"
+     },
+     "fail": {
+      "health": -35,
+      "fame": -10,
+      "log": "You backed the wrong one. You leave the Hundred Thousand Mountains in a hurry.",
+      "flag": "wtx_cult_new"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_hidden_master_parent",
+   "cat": "family",
+   "npc": {
+    "role": "family"
+   },
+   "when": {
+    "age": [
+     12,
+     25
+    ],
+    "chance": 0.15
+   },
+   "weight": 3,
+   "text": "Bandits come to the house while you are out. When you run home, they are all lying in the yard, groaning, and {npc} is calmly sweeping around them with a broom.",
+   "choices": [
+    {
+     "text": "Demand the truth",
+     "effects": {
+      "manual": 3,
+      "qi": 15,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "finally learned my secret"
+      },
+      "log": "{npc} sighs, sits you down and tells you about a name {he} gave up long ago. The murim once feared it. That night, {he} begins teaching you properly."
+     }
+    },
+    {
+     "text": "Pretend you did not see anything",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "kept my secret"
+      },
+      "log": "You say nothing. The next morning, there is a thin, worn manual on your pillow. Neither of you ever mentions it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_nine_yin_cure",
+   "cat": "misc",
+   "when": {
+    "age": [
+     10,
+     40
+    ],
+    "meridians": [
+     "nineYin"
+    ]
+   },
+   "weight": 5,
+   "text": "The Nine Yin Severed Meridians are killing you slowly: cold creeps through your veins every winter, and physicians say you will not see forty. But an old text speaks of an Ice Lotus that grows only at the summit of the northern glacier.",
+   "choices": [
+    {
+     "text": "Climb the glacier",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "meridians": "heavenly",
+      "lifespan": 30,
+      "fame": 10,
+      "log": "You find the lotus in a crack of blue ice. When you eat it, the cold in your veins turns to fire and then to light. Your severed meridians become the Heaven-Born Martial Body.",
+      "flag": [
+       "yinyang_cured"
+      ]
+     },
+     "fail": {
+      "health": -55,
+      "deathCause": "the northern glacier",
+      "log": "The glacier nearly takes you. You come down with frostbite and nothing else."
+     }
+    },
+    {
+     "text": "Seek a master of pure yang energy to help",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "lifespan": 20,
+      "qi": 10,
+      "log": "An old master of fire arts agrees to channel his energy into you for forty-nine days. The cold retreats. Not forever, but for a very long time.",
+      "flag": [
+       "yinyang_cured"
+      ]
+     },
+     "fail": {
+      "lifespan": 5,
+      "log": "The master helps a little, and refuses to do more. It buys you a few years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "gn_heavenly_body_recruit",
+   "cat": "sect",
+   "when": {
+    "age": [
+     8,
+     14
+    ],
+    "meridians": [
+     "heavenly"
+    ],
+    "flags": [
+     "has_parents"
+    ],
+    "factions": [
+     "none"
+    ]
+   },
+   "weight": 6,
+   "text": "A travelling elder feels your wrist in the market, freezes, and feels it again. 'Heaven-Born Martial Body,' she whispers. By the end of the week, three sects have sent envoys to your door.",
+   "choices": [
+    {
+     "text": "Choose the most famous sect",
+     "effects": {
+      "faction": "orthodox",
+      "sect": "Wudang Sect",
+      "manual": 3,
+      "fame": 10,
+      "log": "The Wudang Sect wins. You are carried up the mountain in a sedan chair, which is embarrassing, and given the best room in the inner court."
+     }
+    },
+    {
+     "text": "Choose the smallest sect, where you will matter",
+     "effects": {
+      "faction": "orthodox",
+      "sect": "White Crane Mountain",
+      "manual": 2,
+      "alignment": 5,
+      "log": "White Crane Mountain has twelve disciples and one leaky roof. The master weeps when you arrive. You will be the pillar of this sect."
+     }
+    },
+    {
+     "text": "Refuse them all and stay with your family",
+     "effects": {
+      "charm": 3,
+      "log": "Three envoys go home confused. You go back to the fields. Talent like yours will find its way anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_sealed_demon_manual",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 1,
+   "text": "Deep in a cave sealed with a hundred talismans lies a black manual, pulsing faintly. The talismans say one thing over and over: DO NOT READ.",
+   "choices": [
+    {
+     "text": "Read it",
+     "effects": {
+      "qi": 30,
+      "alignment": -20,
+      "flag": "demonic_practitioner",
+      "health": -15,
+      "log": "The characters crawl across the page and into your eyes. Power floods you, cold and hungry. Something in you has changed, and not for the better.",
+      "technique": "demon_supreme"
+     }
+    },
+    {
+     "text": "Burn it",
+     "effects": {
+      "alignment": 10,
+      "fame": 5,
+      "log": "It screams as it burns. You are almost sure you imagined that."
+     }
+    },
+    {
+     "text": "Report it to the Martial Alliance",
+     "effects": {
+      "fame": 8,
+      "alignment": 5,
+      "log": "The Alliance sends twenty masters to seal the cave. They thank you, and ask you very firmly not to mention it to anyone."
+     },
+     "req": {
+      "notFactions": [
+       "demonic"
+      ],
+      "rep": {
+       "orthodox": [
+        -20,
+        100
+       ]
+      },
+      "notFlags": [
+       "fugitive"
+      ]
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gn_temple_scriptures",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 1,
+   "text": "The great temple on Mount Song guards a Hall of Scriptures holding seventy-two unique arts. Outsiders may study one, if they pass the monks' test: sweep the courtyard for a year without complaint.",
+   "choices": [
+    {
+     "text": "Sweep for a year",
+     "effects": {
+      "manual": 3,
+      "comprehension": 3,
+      "alignment": 5,
+      "log": "You sweep. You do not complain. On the last day, the abbot hands you a broom handle with a scroll inside. It is the best thing you have ever read."
+     }
+    },
+    {
+     "text": "Try to sneak in at night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "manual": 2,
+      "alignment": -5,
+      "log": "You get in and out with a single page. It is enough. You feel guilty for years."
+     },
+     "fail": {
+      "health": -35,
+      "fame": -8,
+      "log": "The eighteen bronze-skinned monks guarding the hall are not asleep. They are very polite about beating you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "gn_child_bullied",
+   "cat": "funny",
+   "when": {
+    "age": [
+     40,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "weight": 2,
+   "text": "{npc} comes home from {his} sect with a black eye. A senior disciple's father, it turns out, is a Second-Rate master who thinks very highly of himself.",
+   "choices": [
+    {
+     "text": "Visit the father, politely",
+     "effects": {
+      "fame": 5,
+      "charm": 2,
+      "log": "You drink tea with him and let a little of your qi slip out. The cup in his hand cracks. He becomes very, very polite. Your child is never bullied again."
+     }
+    },
+    {
+     "text": "Teach your child to handle it",
+     "effects": {
+      "comprehension": 2,
+      "log": "A week of training in the yard. The next time the senior disciple tries it, he learns something important about gravity."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 12
+   }
+  },
+  {
+   "id": "gn_sword_fool",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "talent": [
+     "sword_fool"
+    ]
+   },
+   "weight": 3,
+   "text": "You have been standing in the rain for six hours, staring at a single falling leaf, because you are almost sure it moves like a sword technique.",
+   "choices": [
+    {
+     "text": "Keep staring",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "You figure it out as the sun sets. You catch a cold. It is worth it."
+     },
+     "fail": {
+      "health": -10,
+      "log": "It was just a leaf. You catch a cold anyway."
+     }
+    },
+    {
+     "text": "Go inside like a normal person",
+     "effects": {
+      "charm": 2,
+      "log": "You go inside. You think about the leaf all through dinner. Your friends have stopped asking."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

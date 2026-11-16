@@ -1,0 +1,882 @@
+{
+ "events": [
+  {
+   "id": "l8_noodle_shop",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A tiny noodle shop opens by your lodgings. The owner is desperate for customers.",
+   "choices": [
+    {
+     "text": "Eat there every day",
+     "effects": {
+      "health": 1,
+      "taels": -2,
+      "log": "The shop survives. So do you, on noodles."
+     }
+    },
+    {
+     "text": "Tell everyone about it",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "A queue by the end of the month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_paper_lantern",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You are asked to write a blessing on the new year lanterns.",
+   "choices": [
+    {
+     "text": "Write for health",
+     "effects": {
+      "alignment": 1,
+      "log": "Many lanterns ask for health."
+     }
+    },
+    {
+     "text": "Write for courage",
+     "effects": {
+      "fame": 1,
+      "log": "A bold lantern among quiet ones."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_tax_man",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 2,
+   "text": "The tax collector says you owe more than you thought.",
+   "choices": [
+    {
+     "text": "Pay",
+     "effects": {
+      "taels": -8,
+      "loss": true,
+      "alignment": 1,
+      "log": "Honest and poorer. (−8 taels)"
+     }
+    },
+    {
+     "text": "Check his numbers",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 1,
+      "log": "He made a mistake. He corrects it, embarrassed."
+     },
+     "fail": {
+      "taels": -8,
+      "loss": true,
+      "log": "His numbers are right. You pay."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_dojo_visit",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A rival martial school invites you to visit and observe.",
+   "choices": [
+    {
+     "text": "Observe politely",
+     "effects": {
+      "comprehension": 1,
+      "log": "Good techniques, bad tea."
+     }
+    },
+    {
+     "text": "Offer to spar",
+     "effects": {
+      "strength": 1,
+      "fame": 1,
+      "log": "A friendly spar. Both schools learn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_lost_purse",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You find a purse full of silver on the road.",
+   "choices": [
+    {
+     "text": "Find the owner",
+     "effects": {
+      "taels": 5,
+      "alignment": 2,
+      "log": "A merchant, weeping with relief. He gives you a reward. (+5 taels)"
+     }
+    },
+    {
+     "text": "Give it to the magistrate",
+     "effects": {
+      "alignment": 1,
+      "log": "Honest and proper."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_spring_market",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The spring market is full of seedlings, chicks and gossip.",
+   "choices": [
+    {
+     "text": "Buy seedlings",
+     "effects": {
+      "taels": -1,
+      "health": 1,
+      "log": "A garden by summer. (−1 taels)"
+     }
+    },
+    {
+     "text": "Just listen to the gossip",
+     "effects": {
+      "charm": 1,
+      "log": "You learn who is marrying whom."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_neighbour_quarrel",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Two neighbours shout at each other over a fence. They ask you to judge.",
+   "choices": [
+    {
+     "text": "Judge fairly",
+     "effects": {
+      "alignment": 1,
+      "comprehension": 1,
+      "log": "Both are unhappy. That means it was fair."
+     }
+    },
+    {
+     "text": "Suggest they share",
+     "effects": {
+      "charm": 1,
+      "log": "They grumble, then share."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_rich_suitor",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A rich merchant wants your help to impress a family he hopes to marry into.",
+   "choices": [
+    {
+     "text": "Help him honestly",
+     "effects": {
+      "charm": 1,
+      "taels": 5,
+      "log": "He behaves better. He is accepted."
+     }
+    },
+    {
+     "text": "Tell him to be himself",
+     "effects": {
+      "alignment": 1,
+      "log": "He is himself. He is rejected. He thanks you anyway."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "l8_winter_charity",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The monastery hands out winter blankets and needs help.",
+   "choices": [
+    {
+     "text": "Help carry them",
+     "effects": {
+      "alignment": 2,
+      "log": "A cold day, warm faces."
+     }
+    },
+    {
+     "text": "Donate blankets",
+     "effects": {
+      "taels": -5,
+      "alignment": 2,
+      "log": "Warm beds across the quarter. (−5 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_clay_pot",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You try making a clay pot at a potter's wheel.",
+   "choices": [
+    {
+     "text": "Keep trying",
+     "effects": {
+      "comprehension": 1,
+      "log": "A lumpy pot. Yours."
+     }
+    },
+    {
+     "text": "Give up and buy one",
+     "effects": {
+      "taels": -1,
+      "log": "A perfect pot. No pride. (−1 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_new_teahouse",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A new teahouse has musicians every evening.",
+   "choices": [
+    {
+     "text": "Become a regular",
+     "effects": {
+      "charm": 1,
+      "taels": -2,
+      "log": "Every evening a little brighter."
+     }
+    },
+    {
+     "text": "Play with the musicians",
+     "effects": {
+      "charm": 1,
+      "log": "You play badly. They let you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_stray_cats",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Stray cats gather at your door every evening.",
+   "choices": [
+    {
+     "text": "Feed them",
+     "effects": {
+      "luck": 1,
+      "log": "An army of cats. Not a mouse within a li of your door."
+     }
+    },
+    {
+     "text": "Find them homes",
+     "effects": {
+      "alignment": 1,
+      "log": "Every family in the street has a cat now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_lonely_old_man",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "An old man sits alone by the bridge every day.",
+   "choices": [
+    {
+     "text": "Sit with him",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "He tells you about his life. It was a big one."
+     }
+    },
+    {
+     "text": "Bring him lunch",
+     "effects": {
+      "alignment": 2,
+      "log": "He smiles for the first time in weeks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_mountain_picnic",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Friends plan a picnic on the mountain.",
+   "choices": [
+    {
+     "text": "Carry the food",
+     "effects": {
+      "strength": 1,
+      "health": 1,
+      "log": "The heaviest basket, the best view."
+     }
+    },
+    {
+     "text": "Organise games",
+     "effects": {
+      "charm": 1,
+      "log": "Everyone laughs until sunset."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_big_order",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A merchant needs someone to carry a message to the next county urgently.",
+   "choices": [
+    {
+     "text": "Run it",
+     "effects": {
+      "taels": 6,
+      "strength": 1,
+      "log": "You arrive in half a day. (+6 taels)"
+     }
+    },
+    {
+     "text": "Find him a courier",
+     "effects": {
+      "alignment": 1,
+      "log": "The courier is grateful for the work."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_bad_haircut_adult",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The barber sneezes mid-cut.",
+   "choices": [
+    {
+     "text": "Grow it out",
+     "effects": {
+      "charm": -1,
+      "log": "A month of hats."
+     }
+    },
+    {
+     "text": "Shave it all",
+     "effects": {
+      "luck": 1,
+      "log": "Everyone thinks you became a monk."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_temple_fair",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The temple fair has a hundred stalls and a thousand incense sticks.",
+   "choices": [
+    {
+     "text": "Burn incense for your family",
+     "effects": {
+      "luck": 1,
+      "log": "Smoke and prayers."
+     }
+    },
+    {
+     "text": "Eat your way through the stalls",
+     "effects": {
+      "health": 1,
+      "taels": -2,
+      "log": "A glorious, greasy day."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_carry_elder",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "An old woman needs to cross a flooded street.",
+   "choices": [
+    {
+     "text": "Carry her on your back",
+     "effects": {
+      "alignment": 2,
+      "log": "She sings the whole way."
+     }
+    },
+    {
+     "text": "Build stepping stones",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "The whole street uses them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_found_manual_fake",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A street vendor sells 'secret martial manuals'. They are all fake.",
+   "choices": [
+    {
+     "text": "Warn the buyers",
+     "effects": {
+      "alignment": 2,
+      "log": "The vendor flees."
+     }
+    },
+    {
+     "text": "Buy one for fun",
+     "effects": {
+      "taels": -1,
+      "charm": 1,
+      "log": "It says: \"Train hard.\" Not bad advice. (−1 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_snow_roof",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Heavy snow threatens to collapse roofs in the poor quarter.",
+   "choices": [
+    {
+     "text": "Shovel roofs all day",
+     "effects": {
+      "alignment": 3,
+      "strength": 1,
+      "log": "No roof falls."
+     }
+    },
+    {
+     "text": "Warn people to leave",
+     "effects": {
+      "alignment": 2,
+      "log": "Two roofs fall. Nobody is under them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_dream_warning",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You dream of a flood three nights in a row.",
+   "choices": [
+    {
+     "text": "Move your things to high ground",
+     "effects": {
+      "luck": 1,
+      "log": "Nothing happens. You feel silly and safe."
+     }
+    },
+    {
+     "text": "Ignore it",
+     "effects": {
+      "luck": 0,
+      "log": "Dreams are dreams."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_lend_horse",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A neighbour asks to borrow a cart to take his wife to the healer.",
+   "choices": [
+    {
+     "text": "Lend it immediately",
+     "effects": {
+      "alignment": 2,
+      "log": "She recovers."
+     }
+    },
+    {
+     "text": "Drive them yourself",
+     "effects": {
+      "alignment": 3,
+      "log": "Faster. She recovers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_blacksmith_apprentice",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The blacksmith needs someone to pump the bellows for a big commission.",
+   "choices": [
+    {
+     "text": "Help",
+     "effects": {
+      "strength": 1,
+      "log": "Strong arms, and a dagger in thanks."
+     }
+    },
+    {
+     "text": "Watch and learn",
+     "effects": {
+      "comprehension": 1,
+      "log": "Steel is patience and heat."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_rival_inn",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Two inns compete for travellers, shouting at the road.",
+   "choices": [
+    {
+     "text": "Stay at the quieter one",
+     "effects": {
+      "health": 2,
+      "log": "Better sleep."
+     }
+    },
+    {
+     "text": "Stay at the louder one",
+     "effects": {
+      "charm": 1,
+      "log": "Better stories."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_cold_bath",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A master says cold baths build character.",
+   "choices": [
+    {
+     "text": "Try it for a month",
+     "effects": {
+      "strength": 1,
+      "health": 1,
+      "log": "Very much character."
+     }
+    },
+    {
+     "text": "Try it once",
+     "effects": {
+      "charm": 0,
+      "log": "Once is enough character."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_child_thief",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You catch a child stealing bread.",
+   "choices": [
+    {
+     "text": "Pay for the bread",
+     "effects": {
+      "alignment": 2,
+      "taels": -1,
+      "log": "The child stares at you, then runs."
+     }
+    },
+    {
+     "text": "Take them to the orphanage",
+     "effects": {
+      "alignment": 2,
+      "log": "A roof and a bowl of rice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_good_harvest",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "It is a good year. Everyone has a little more.",
+   "choices": [
+    {
+     "text": "Save",
+     "effects": {
+      "taels": 5,
+      "log": "A little more for later. (+5 taels)"
+     }
+    },
+    {
+     "text": "Throw a feast",
+     "effects": {
+      "charm": 1,
+      "taels": -3,
+      "log": "A good year deserves a good feast."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_bad_harvest",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "It is a bad year. Everyone has a little less.",
+   "choices": [
+    {
+     "text": "Share what you have",
+     "effects": {
+      "alignment": 2,
+      "health": -1,
+      "log": "You eat less. Others eat."
+     }
+    },
+    {
+     "text": "Hunt for the village",
+     "effects": {
+      "strength": 1,
+      "alignment": 1,
+      "log": "Venison for many families."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_poem_on_wall",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Someone has written a poem about you on a tavern wall.",
+   "choices": [
+    {
+     "text": "Add a verse",
+     "effects": {
+      "charm": 1,
+      "log": "Now it is a conversation."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "fame": 1,
+      "log": "Fame is written by others."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l8_herbal_tea",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "An herbalist offers a tea that she says makes you wiser.",
+   "choices": [
+    {
+     "text": "Drink it",
+     "effects": {
+      "health": 1,
+      "log": "It tastes like a wet forest. You feel no wiser."
+     }
+    },
+    {
+     "text": "Ask what is in it",
+     "effects": {
+      "comprehension": 1,
+      "log": "A long list. You learn a lot."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,1767 @@
+{
+ "events": [
+  {
+   "id": "h2_lead_succession",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "Three elders ask the question nobody dares ask aloud: who will lead the sect after you? Each of them has a favourite disciple.",
+   "choices": [
+    {
+     "text": "Name the most talented",
+     "effects": {
+      "fame": 5,
+      "merit": 30,
+      "log": "A brilliant choice, and two elders will sulk for a decade. The sect grows stronger."
+     }
+    },
+    {
+     "text": "Name the most kind",
+     "effects": {
+      "alignment": 8,
+      "merit": 20,
+      "log": "The elders are puzzled. The disciples are not. They would follow that one anywhere."
+     }
+    },
+    {
+     "text": "Hold a contest in three years",
+     "effects": {
+      "merit": 40,
+      "log": "Every disciple in the sect trains twice as hard. Very clever, the elders admit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_lead_treasury",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "The sect treasurer brings you the books with shaking hands. Someone has been stealing for years.",
+   "choices": [
+    {
+     "text": "Find the thief quietly",
+     "effects": {
+      "taels": 300,
+      "merit": 20,
+      "log": "An elder's nephew. You send him to guard a distant border shrine, forever. The money returns."
+     }
+    },
+    {
+     "text": "Expose them before the whole sect",
+     "effects": {
+      "fame": 8,
+      "alignment": 5,
+      "merit": 10,
+      "log": "Justice, loudly done. The sect is shaken but clean."
+     }
+    }
+   ],
+   "cooldown": 20
+  },
+  {
+   "id": "h2_lead_rival_sect",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ],
+    "hasSect": true
+   },
+   "weight": 6,
+   "text": "The leader of a rival sect insults your sect's founder at a public banquet, and looks straight at you while he does it.",
+   "choices": [
+    {
+     "text": "Answer with a single demonstration",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "duel": true
+     },
+     "ok": {
+      "fame": 20,
+      "merit": 30,
+      "log": "You press one finger into the stone table. It leaves a hole to the floor. The banquet ends very politely."
+     },
+     "fail": {
+      "fame": -10,
+      "log": "Your demonstration is fine. His is better. Your sect talks about little else for a year."
+     }
+    },
+    {
+     "text": "Smile, and outlive him",
+     "effects": {
+      "alignment": 6,
+      "log": "You say nothing. Ten years later you attend his funeral and speak kindly of him. Everyone understands."
+     }
+    }
+   ],
+   "cooldown": 25
+  },
+  {
+   "id": "h2_lead_disciple_love",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "Two of your best disciples, from families that hate each other, want to marry. Both families demand you forbid it.",
+   "choices": [
+    {
+     "text": "Bless the marriage",
+     "effects": {
+      "alignment": 10,
+      "fame": 10,
+      "log": "The wedding is tense and beautiful. A generation later, the two families are allies."
+     }
+    },
+    {
+     "text": "Forbid it",
+     "effects": {
+      "merit": 10,
+      "alignment": -5,
+      "log": "They obey. One of them leaves the murim a year later. You wonder, sometimes."
+     }
+    }
+   ],
+   "mw": true,
+   "po": true
+  },
+  {
+   "id": "h2_lead_old_master_visit",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ],
+    "hasSect": true
+   },
+   "weight": 6,
+   "text": "The master who taught you, now ancient, visits your sect as a guest. The whole hall watches how you greet them.",
+   "choices": [
+    {
+     "text": "Bow as you did when you were a child",
+     "effects": {
+      "alignment": 5,
+      "fame": 5,
+      "log": "You kneel. The disciples learn more from that bow than from any lecture."
+     }
+    },
+    {
+     "text": "Give them the leader's seat for the day",
+     "effects": {
+      "alignment": 8,
+      "log": "They sit in your chair and laugh like a child. You have never seen them so happy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_lead_famine_sect",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "A bad year in the valley. Farmers come to the sect gates asking for rice. The treasurer says the sect's stores are for disciples.",
+   "choices": [
+    {
+     "text": "Open the granary",
+     "effects": {
+      "taels": -200,
+      "alignment": 12,
+      "fame": 10,
+      "log": "The sect eats plain rice all winter. The valley never forgets it."
+     }
+    },
+    {
+     "text": "Open half of it",
+     "effects": {
+      "taels": -100,
+      "alignment": 5,
+      "log": "Half the valley eats, and half the disciples grumble. It is enough."
+     }
+    },
+    {
+     "text": "Send the disciples to hunt and forage for the valley",
+     "effects": {
+      "alignment": 6,
+      "merit": 10,
+      "log": "A hundred disciples in the mountains all winter. The valley eats, and the disciples come back hard as roots."
+     }
+    }
+   ],
+   "cooldown": 25
+  },
+  {
+   "id": "h2_lead_manual_theft",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "realm": [
+     3,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "The sect's most secret manual is gone from the library. The only people with keys are the elders, and you.",
+   "choices": [
+    {
+     "text": "Find it by reading the elders' faces",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "merit": 40,
+      "fame": 5,
+      "log": "The guilty elder cannot hold your eyes past the second cup of tea. The manual comes back that night."
+     },
+     "fail": {
+      "merit": -20,
+      "log": "You never find it. Years later a copy turns up in a rival sect's library."
+     }
+    },
+    {
+     "text": "Rewrite it from memory",
+     "effects": {
+      "comprehension": 3,
+      "merit": 20,
+      "log": "It takes a winter. Your version is better. The thief now owns an outdated manual."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_lead_tournament_host",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "job_sect_leader"
+    ],
+    "hasSect": true
+   },
+   "weight": 6,
+   "text": "It is your sect's turn to host the great martial gathering. Nine sects, three hundred guests, and one very old kitchen.",
+   "choices": [
+    {
+     "text": "Spare no expense",
+     "effects": {
+      "taels": -500,
+      "fame": 25,
+      "log": "The finest gathering in forty years. The bill is also the finest in forty years."
+     }
+    },
+    {
+     "text": "Keep it simple and sincere",
+     "effects": {
+      "fame": 12,
+      "alignment": 4,
+      "log": "Plain food, good tea, honest fights. The old masters say it reminds them of their youth."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "h2_ally_council",
+   "cat": "world",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "The council of the Nine Sects is deadlocked for the third day over who pays for the new border fortress.",
+   "choices": [
+    {
+     "text": "Pay for it yourself",
+     "effects": {
+      "taels": -400,
+      "fame": 20,
+      "log": "The fortress is built in a year. The sects are embarrassed into paying you back. Mostly."
+     }
+    },
+    {
+     "text": "Lock the doors until they agree",
+     "effects": {
+      "fame": 12,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "Nobody eats until they sign. They sign by dinner."
+     }
+    }
+   ],
+   "cooldown": 15
+  },
+  {
+   "id": "h2_ally_cult_truce",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "alliance_leader"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The Heavenly Demon's envoy offers a ten-year truce, sealed with a hostage from each side.",
+   "choices": [
+    {
+     "text": "Accept, and send yourself",
+     "effects": {
+      "fame": 30,
+      "alignment": 5,
+      "rep": {
+       "demonic": 10
+      },
+      "log": "You spend a month as a guest in the Hundred Thousand Mountains. It is the strangest month of your life. The truce holds."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "rep": {
+       "orthodox": 10,
+       "demonic": -10
+      },
+      "log": "The orthodox sects cheer. The border burns another year."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_ally_young_hero",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "A young hero with no sect has cleared three bandit fortresses alone. The great sects want him punished for embarrassing them.",
+   "choices": [
+    {
+     "text": "Give him an Alliance commission",
+     "effects": {
+      "alignment": 6,
+      "fame": 8,
+      "log": "The sects are furious. The young hero will become the best officer the Alliance ever had."
+     }
+    },
+    {
+     "text": "Let the sects discipline him",
+     "effects": {
+      "rep": {
+       "orthodox": 5
+      },
+      "alignment": -4,
+      "log": "He accepts it. Something in his eyes goes out."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_ally_traitor",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "Letters prove that one of the Alliance's Guardians is selling your plans to the Cult. He is the best swordsman in your service.",
+   "choices": [
+    {
+     "text": "Arrest him yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2
+     },
+     "ok": {
+      "fame": 25,
+      "log": "He draws. You do not need to. By morning the Alliance knows its leader is not only a politician."
+     },
+     "fail": {
+      "health": -30,
+      "log": "He escapes, wounded and so are you. The Cult gains a master and you gain a scar.",
+      "deathCause": "a traitor Guardian's sword"
+     },
+     "risky": true
+    },
+    {
+     "text": "Feed him false plans",
+     "effects": {
+      "fame": 15,
+      "comprehension": 2,
+      "log": "For a year the Cult prepares for battles that never come. Then you let him go, useless."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_ally_retire",
+   "cat": "world",
+   "once": false,
+   "when": {
+    "realm": [
+     0,
+     11
+    ],
+    "flags": [
+     "alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "After many years, the sects whisper that it may be time for a new Alliance Leader. Nobody says it to your face.",
+   "choices": [
+    {
+     "text": "Step down with grace",
+     "effects": {
+      "fame": 30,
+      "alignment": 8,
+      "unflag": "alliance_leader",
+      "log": "You hand over the seal at a great ceremony. The murim respects few things more than someone who leaves on time."
+     }
+    },
+    {
+     "text": "Stay: the work is not done",
+     "effects": {
+      "fame": -5,
+      "log": "You stay. The whispers stay too."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "h2_greats_meeting",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "ten_greats"
+    ]
+   },
+   "weight": 6,
+   "text": "For the first time in a generation, the Ten Greatest Masters meet on one mountain, to drink and to measure one another.",
+   "choices": [
+    {
+     "text": "Drink, and watch",
+     "effects": {
+      "comprehension": 5,
+      "fame": 10,
+      "log": "Ten masters, ten cups. You learn more from how they hold them than from ten years of training."
+     }
+    },
+    {
+     "text": "Propose a friendly bout with the strongest",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.9,
+      "duel": true
+     },
+     "ok": {
+      "fame": 40,
+      "log": "A draw after a hundred exchanges. The other eight toast you both."
+     },
+     "fail": {
+      "health": -20,
+      "fame": 10,
+      "log": "They win, gently. It is still the best fight of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_greats_student",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "ten_greats"
+    ]
+   },
+   "weight": 6,
+   "text": "A child walks three hundred li to ask the famous master on the list for one lesson. The child is you, long ago, in another face.",
+   "choices": [
+    {
+     "text": "Teach them properly",
+     "effects": {
+      "alignment": 8,
+      "fame": 6,
+      "log": "A year, and a disciple who will one day be on the list too."
+     }
+    },
+    {
+     "text": "Give them a letter to a good sect",
+     "effects": {
+      "alignment": 5,
+      "log": "The letter opens every door. The child becomes someone."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "variants": [
+    "A child has walked three hundred li to beg the famous master on the list for a single lesson. Looking at the blistered feet and the stubborn chin, you know the face. It was yours, long ago."
+   ]
+  },
+  {
+   "id": "h2_greats_forgery",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "ten_greats"
+    ]
+   },
+   "weight": 6,
+   "text": "Someone is selling 'your' manual in every market town, full of nonsense and your name on the cover.",
+   "choices": [
+    {
+     "text": "Hunt the forger",
+     "effects": {
+      "fame": 5,
+      "alignment": 5,
+      "log": "You find a starving scholar with a good imagination. You hire him to write your real one."
+     }
+    },
+    {
+     "text": "Let it be",
+     "effects": {
+      "fame": 10,
+      "log": "Hundreds of young fighters practise your nonsense forms. Some of them become quite good, somehow."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_found_anniversary",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 6,
+   "text": "Your own sect celebrates its anniversary. Disciples you do not recognise bow to you as the master of the house.",
+   "choices": [
+    {
+     "text": "Give a speech",
+     "effects": {
+      "fame": 10,
+      "alignment": 3,
+      "log": "You say three sentences and sit down. They carve them over the gate."
+     }
+    },
+    {
+     "text": "Train with the youngest disciples",
+     "effects": {
+      "merit": 10,
+      "fame": 5,
+      "log": "The master of the house in the courtyard at dawn, correcting stances like a junior instructor. Nobody sleeps in again."
+     }
+    }
+   ],
+   "cooldown": 20
+  },
+  {
+   "id": "h2_found_split",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 6,
+   "text": "Your sect is splitting: the elders who want power, and the elders who want to teach.",
+   "choices": [
+    {
+     "text": "Side with the teachers",
+     "effects": {
+      "alignment": 8,
+      "fame": -5,
+      "log": "The ambitious elders leave and found their own sect. Yours is smaller, and far better."
+     }
+    },
+    {
+     "text": "Give each side a hall and a purpose",
+     "effects": {
+      "fame": 10,
+      "comprehension": 2,
+      "log": "The sect grows two wings instead of breaking in two."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_young_face_old_friends",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 6,
+   "text": "Your childhood friends are grandparents now. When you visit, their grandchildren assume you are a young guest.",
+   "choices": [
+    {
+     "text": "Play along",
+     "effects": {
+      "charm": 3,
+      "log": "You sit at the children's end of the table. It is the best seat."
+     }
+    },
+    {
+     "text": "Tell them the truth",
+     "effects": {
+      "alignment": 3,
+      "log": "Nobody believes you until you name every scar on grandfather's hands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_young_face_suitor",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 6,
+   "text": "A young admirer from the town, sure you are their age, leaves flowers at your door every morning.",
+   "choices": [
+    {
+     "text": "Gently tell them your age",
+     "effects": {
+      "charm": 2,
+      "log": "They laugh, then they stop laughing. Then they bring your flowers to their grandmother."
+     }
+    },
+    {
+     "text": "Pretend not to notice",
+     "effects": {
+      "log": "The flowers stop after a season. You miss them a little."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_young_face_mirror",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 6,
+   "text": "You catch your reflection in a still pond: a face of twenty, eyes far older.",
+   "choices": [
+    {
+     "text": "Sit with it",
+     "effects": {
+      "comprehension": 3,
+      "log": "Youth is not the body. It is the willingness to begin again. You feel young in the real way."
+     }
+    },
+    {
+     "text": "Laugh at it",
+     "effects": {
+      "health": 5,
+      "log": "The frogs laugh too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_young_face_outlive",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 6,
+   "text": "You have now outlived most of the people who ever knew you as a child.",
+   "choices": [
+    {
+     "text": "Write down their names",
+     "effects": {
+      "alignment": 5,
+      "log": "A long scroll. You read it once a year, on the Qingming festival."
+     }
+    },
+    {
+     "text": "Make new friends",
+     "effects": {
+      "charm": 3,
+      "log": "A fisherman, a noodle seller, a child with a kite. It is enough. It is more than enough."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_pilgrim_challenger",
+   "cat": "world",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A challenger arrives at your door, as one does every few years. This one is good.",
+   "choices": [
+    {
+     "text": "Accept",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "duel": true
+     },
+     "ok": {
+      "fame": 12,
+      "log": "A fine fight. You win, and send them away with a pointer that will take them ten years to understand."
+     },
+     "fail": {
+      "health": -20,
+      "fame": 3,
+      "log": "They win an exchange you did not expect to lose. You thank them for it."
+     }
+    },
+    {
+     "text": "Serve tea instead",
+     "effects": {
+      "alignment": 3,
+      "log": "They came for a fight and leave with a friend. That, too, is a victory."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "variants": [
+    "A challenger stands at your gate. Every few years one comes. This one has quiet feet and patient eyes, and is going to be good."
+   ]
+  },
+  {
+   "id": "h2_disciple_seekers",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Young people camp outside your home, hoping to be taken as disciples.",
+   "choices": [
+    {
+     "text": "Test them with a simple task",
+     "effects": {
+      "fame": 4,
+      "alignment": 2,
+      "log": "You ask them to wait. Most leave. The one who stays sweeps your yard without being asked."
+     }
+    },
+    {
+     "text": "Send them to good sects",
+     "effects": {
+      "fame": 6,
+      "log": "Letters of introduction for everyone. Half the next generation owes you a favour."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "variants": [
+    "There are tents outside your gate again: young people from three provinces, waiting in the rain in case you choose one of them as a disciple."
+   ]
+  },
+  {
+   "id": "h2_heaven_sign",
+   "cat": "insight",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "For a moment, while breathing, you feel the whole mountain breathe with you.",
+   "choices": [
+    {
+     "text": "Follow the feeling",
+     "effects": {
+      "qi": 15,
+      "log": "A season of the deepest training of your life."
+     }
+    },
+    {
+     "text": "Let it pass",
+     "effects": {
+      "comprehension": 1,
+      "log": "It will come back. It always does now."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "variants": [
+    "Breathing in the dawn, you feel the mountain breathe with you, slow and enormous, as if for a moment you had the same lungs.",
+    "For one breath the mountain breathes with you, and you understand how slow a mountain is, and how patient."
+   ]
+  },
+  {
+   "id": "h2_old_manual_debate",
+   "cat": "insight",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Scholars of the martial way ask you to settle a hundred-year-old argument about a single line in a famous manual.",
+   "choices": [
+    {
+     "text": "Give your honest reading",
+     "effects": {
+      "fame": 8,
+      "comprehension": 2,
+      "log": "Half of them are delighted, half furious. The line is argued about for another hundred years."
+     }
+    },
+    {
+     "text": "Say the line is a copying error",
+     "effects": {
+      "comprehension": 3,
+      "log": "Everybody is furious. You are almost certainly right."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "variants": [
+    "Two schools of scholars have argued for a century over one line of a famous manual. Now both have sent their eldest to you, with the scroll, to ask what it means."
+   ]
+  },
+  {
+   "id": "h2_war_call",
+   "cat": "danger",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "A demonic warband has taken a mountain town. The local sects are too weak. They send for you.",
+   "choices": [
+    {
+     "text": "Go alone",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.3
+     },
+     "ok": {
+      "fame": 30,
+      "alignment": 10,
+      "log": "One master, one night, one town freed. The warband's survivors tell the story in the Hundred Thousand Mountains."
+     },
+     "fail": {
+      "health": -35,
+      "fame": 10,
+      "log": "You free the town and nearly lose yourself. The townsfolk nurse you for a month.",
+      "deathCause": "a demonic warband in a mountain town"
+     },
+     "risky": true
+    },
+    {
+     "text": "Lead the local sects",
+     "effects": {
+      "fame": 15,
+      "alignment": 6,
+      "log": "Slower, and some die. But the local fighters learn they can win."
+     }
+    }
+   ],
+   "cooldown": 15,
+   "mw": true,
+   "variants": [
+    "A demonic warband has seized a mountain town and the sects nearby cannot shift it. Their runner arrives at your gate on a foundered horse with a single word: please.",
+    "Smoke over a mountain town to the west: a demonic warband holds it, and the small sects of the region have already lost two attacks. Their elders have put their pride away and sent for you.",
+    "A mountain town has fallen to a demonic warband, and the small sects around it have run out of brave fools. Their letter to you is short, badly written, and stained with rain."
+   ]
+  },
+  {
+   "id": "h2_masters_funeral",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A master you fought in your youth has died. Their sect asks you to speak at the funeral.",
+   "choices": [
+    {
+     "text": "Speak honestly",
+     "effects": {
+      "alignment": 5,
+      "fame": 5,
+      "log": "You tell them about the day they beat you. The hall laughs through its tears."
+     }
+    },
+    {
+     "text": "Just burn incense",
+     "effects": {
+      "alignment": 2,
+      "log": "Some goodbyes need no words."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "variants": [
+    "The master you fought in your youth is dead, after a long life. Their sect writes to ask whether you will say the words at the funeral. You were the last person to beat them, and the first to be beaten by them."
+   ]
+  },
+  {
+   "id": "h2_mountain_hermit_chess",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A hermit on a peak you have never climbed challenges you to a game of Go. He says he has been waiting sixty years for an opponent.",
+   "choices": [
+    {
+     "text": "Play",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 5,
+      "log": "You lose by half a stone after three days. It is the greatest game of your life."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "He crushes you by noon, then teaches you why. That, too, is worth sixty years."
+     }
+    },
+    {
+     "text": "Decline and share his tea",
+     "effects": {
+      "health": 5,
+      "log": "He is disappointed, then glad of the company."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_bottleneck_monk",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A wandering monk hears that one of your arts has stalled, and offers to sit with you for a night.",
+   "choices": [
+    {
+     "text": "Sit with him",
+     "effects": {
+      "comprehension": 4,
+      "log": "He says nothing all night. At dawn, you understand what you were doing wrong."
+     }
+    },
+    {
+     "text": "Thank him and train alone",
+     "effects": {
+      "strength": 2,
+      "log": "Some walls you want to break yourself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_sword_tomb",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "In a hidden valley, a tomb of swords: hundreds of blades planted in the earth by a master who never lost.",
+   "choices": [
+    {
+     "text": "Read the swords",
+     "effects": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "Each one tells how it failed its master. By the last one, you know every mistake a sword can make."
+     }
+    },
+    {
+     "text": "Leave your oldest sword there too",
+     "effects": {
+      "alignment": 4,
+      "fame": 5,
+      "log": "It belongs among them. You walk out lighter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_emperor_duel",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "imp_rebel",
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The crown prince, who fancies himself a swordsman, demands a duel with the famous master. If you win, you insult the throne. If you lose, you insult yourself.",
+   "choices": [
+    {
+     "text": "Lose beautifully",
+     "effects": {
+      "taels": 500,
+      "fame": 5,
+      "log": "It takes great skill to lose that well. The prince is thrilled. The court is not fooled."
+     }
+    },
+    {
+     "text": "Win, and then teach him",
+     "effects": {
+      "fame": 15,
+      "rep": {
+       "orthodox": 3
+      },
+      "log": "He is humiliated for a day and grateful for twenty years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_student_betrayal_old",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A disciple you taught decades ago now leads a gang of killers, and uses your techniques to do it.",
+   "choices": [
+    {
+     "text": "Take back what you taught",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.5
+     },
+     "ok": {
+      "fame": 20,
+      "alignment": 8,
+      "log": "You seal the meridians you once opened. He will never fight again. He weeps; so, privately, do you."
+     },
+     "fail": {
+      "health": -30,
+      "log": "He has improved on your teaching. You escape. The murim whispers that you made a monster.",
+      "deathCause": "the disciple you once taught"
+     },
+     "risky": true
+    },
+    {
+     "text": "Send the Alliance",
+     "effects": {
+      "alignment": 2,
+      "log": "The Alliance takes him. You do not go to the trial."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_realm_teach_masters",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Three Peak Masters, famous in their own provinces, arrive together and ask you to teach them for a season.",
+   "choices": [
+    {
+     "text": "Teach them",
+     "effects": {
+      "fame": 15,
+      "comprehension": 2,
+      "log": "Three proud masters learn humility and one new breath each. They spread your name in three provinces."
+     }
+    },
+    {
+     "text": "Make them teach each other",
+     "effects": {
+      "comprehension": 4,
+      "log": "You watch them argue for a season. They learn more than you could have taught."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "variants": [
+    "Three Peak Masters, each the pride of a province, stand at your gate together, a little embarrassed, and ask if you would teach them for one season."
+   ]
+  },
+  {
+   "id": "h2_dragon_vein_mountain",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Geomancers say the energy of the earth rises through one particular mountain once every sixty years. This is the year.",
+   "choices": [
+    {
+     "text": "Climb it at the right hour",
+     "effects": {
+      "qi": 30,
+      "log": "For one hour the mountain breathes into you. Energy you could not gather in ten years."
+     }
+    },
+    {
+     "text": "Let a younger master go instead",
+     "effects": {
+      "alignment": 8,
+      "fame": 5,
+      "log": "They come down changed. They never forget who sent them."
+     }
+    }
+   ],
+   "cooldown": 60
+  },
+  {
+   "id": "h2_heavenly_demon_heir",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "flags": [
+     "cult_new_head"
+    ]
+   },
+   "weight": 6,
+   "text": "{cult_head}, the new Heavenly Demon, has sworn to cross hands with every great master under heaven. Your name is on the list.",
+   "choices": [
+    {
+     "text": "Meet the Heavenly Demon on neutral ground",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.25,
+      "duel": true
+     },
+     "ok": {
+      "fame": 45,
+      "log": "Two hundred exchanges. At the end {cult_head} bows, which no Heavenly Demon has done before. Word goes round that the Cult will keep to its mountains while that bow is remembered."
+     },
+     "fail": {
+      "health": -40,
+      "log": "{cult_head} wins, and does not kill you. 'Come find me again.' It is the worst thing that could have been said.",
+      "deathCause": "the new Heavenly Demon's hand"
+     },
+     "risky": true
+    },
+    {
+     "text": "Refuse, and let the challenge come to you",
+     "effects": {
+      "comprehension": 2,
+      "log": "The challenge never comes to your gate. Perhaps word reached the Cult that you had stopped caring about lists."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_mystic_river",
+   "cat": "insight",
+   "once": false,
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "You sit by a river and, for a whole afternoon, cannot find the line between the water and yourself.",
+   "choices": [
+    {
+     "text": "Stay",
+     "effects": {
+      "qi": 20,
+      "log": "When you stand, your energy moves like the river: without effort and without end."
+     }
+    },
+    {
+     "text": "Go back to the world",
+     "effects": {
+      "fame": 3,
+      "log": "The world needs you more than the river does."
+     }
+    }
+   ],
+   "cooldown": 15,
+   "variants": [
+    "You sit by the river all afternoon and somewhere in the middle of it you lose the edge of yourself. The water runs, and you run with it, and neither of you is in a hurry.",
+    "An afternoon by the river, and somewhere in it the line between the water and you goes missing. You do not go looking for it."
+   ]
+  },
+  {
+   "id": "h2_mystic_petition",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     7,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "alliance_leader",
+     "job_alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "The Emperor, the Alliance and the Cult all send envoys in the same week, each asking the Mystic master to take their side.",
+   "choices": [
+    {
+     "text": "Take no side",
+     "effects": {
+      "fame": 20,
+      "log": "You send three identical letters. All three sides decide you must be on theirs."
+     }
+    },
+    {
+     "text": "Tell them to make peace, or face you",
+     "effects": {
+      "alignment": 15,
+      "fame": 30,
+      "log": "For twenty years, nobody starts a war. Nobody quite knows why."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_ld_last_enemy",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "The last master who ever defeated you, now ancient, asks for one more match before they die.",
+   "choices": [
+    {
+     "text": "Give them the match",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "duel": true
+     },
+     "ok": {
+      "alignment": 10,
+      "fame": 20,
+      "log": "You fight at your full strength, because they deserve it. They die a week later, smiling."
+     },
+     "fail": {
+      "health": -15,
+      "log": "Somehow, they win again. They laugh until they cough. It is the happiest you have ever seen them."
+     }
+    },
+    {
+     "text": "Sit with them instead",
+     "effects": {
+      "alignment": 6,
+      "log": "No fight, just tea and old stories. It is what they really wanted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_ld_world_quiet",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "The whole murim has grown quiet around you. Wars end when you frown. Sects consult you before they breathe.",
+   "choices": [
+    {
+     "text": "Withdraw further",
+     "effects": {
+      "comprehension": 3,
+      "log": "You live in a hut on a mountain. People make pilgrimages to stand outside it."
+     }
+    },
+    {
+     "text": "Walk among people again",
+     "effects": {
+      "health": 10,
+      "charm": 3,
+      "log": "You sell noodles in a market for a year. Nobody recognises you. It is wonderful."
+     }
+    }
+   ],
+   "cooldown": 25,
+   "mw": true,
+   "variants": [
+    "The murim has gone quiet around you: wars stop when you look at them, and sects ask your leave before they act.",
+    "Nothing happens in the murim now without someone first asking what you would think of it. It is very peaceful, and very quiet."
+   ]
+  },
+  {
+   "id": "h2_ld_heaven_invitation",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "In a dream, a door of light opens in the sky above your mountain. Someone on the other side says: 'Not yet. Soon.'",
+   "choices": [
+    {
+     "text": "Ask what is beyond",
+     "effects": {
+      "comprehension": 5,
+      "log": "'More realms than you have names for.' You wake up laughing."
+     }
+    },
+    {
+     "text": "Ask for more time",
+     "effects": {
+      "lifespan": 10,
+      "log": "'Time is the one thing you have plenty of.' The door closes gently."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_realm_rumour_true",
+   "cat": "world",
+   "once": false,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Travellers argue whether you really exist or are only a legend made of other people's stories.",
+   "choices": [
+    {
+     "text": "Settle it",
+     "effects": {
+      "fame": 10,
+      "log": "You walk into the teahouse and order noodles. Three people faint."
+     }
+    },
+    {
+     "text": "Let them argue",
+     "effects": {
+      "fame": 5,
+      "log": "A legend is more useful than a person, sometimes."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "variants": [
+    "At an inn on the road two merchants are arguing about you: one says you are a real master on the mountain, the other that you are a story grandmothers made up. Neither recognises the quiet traveller at the next table.",
+    "A storyteller in the square swears you are only a legend, stitched together from a dozen other masters' deeds. Half the crowd agrees. You buy a dumpling and listen to the end."
+   ]
+  },
+  {
+   "id": "h2_bandit_king_reformed",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A bandit king you spared long ago now runs an orphanage. He invites you to see it.",
+   "choices": [
+    {
+     "text": "Visit",
+     "effects": {
+      "alignment": 10,
+      "log": "Two hundred children, and a gruff old man who teaches them letters. You made the right choice."
+     }
+    },
+    {
+     "text": "Send silver instead",
+     "effects": {
+      "taels": -100,
+      "alignment": 6,
+      "log": "He sends back a drawing from the children. You keep it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_peak_of_fame",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "A painter asks to paint your portrait for the Hall of Heroes in the capital.",
+   "choices": [
+    {
+     "text": "Sit for it",
+     "effects": {
+      "fame": 15,
+      "log": "Three days of stillness. The painting makes you look wiser than you feel."
+     }
+    },
+    {
+     "text": "Suggest a promising young fighter instead",
+     "effects": {
+      "alignment": 4,
+      "fame": 5,
+      "log": "The painting of the young fighter hangs in the Hall of Heroes now. The murim is very confused."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "h2_secret_realm",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "An ancient seal on a mountain has broken, revealing a sealed valley where a sect vanished five hundred years ago.",
+   "choices": [
+    {
+     "text": "Enter first",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 25,
+      "item": "snow_lotus",
+      "fame": 10,
+      "log": "A garden of medicines nobody has touched in five centuries, and a library of ghosts. You take only what you need."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The valley's old formations still work. You get out the way you came in, bleeding.",
+      "deathCause": "a sealed valley's ancient formations"
+     },
+     "risky": true
+    },
+    {
+     "text": "Guard the entrance for everyone",
+     "effects": {
+      "fame": 15,
+      "alignment": 8,
+      "log": "You let every sect in turn. No blood is shed in the valley. It becomes a legend of its own."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_rain_of_disciples",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ],
+    "flags": [
+     "sect_head"
+    ]
+   },
+   "weight": 6,
+   "text": "Your disciples' disciples have disciples now. At the new year, four generations bow to you at once.",
+   "choices": [
+    {
+     "text": "Bow back",
+     "effects": {
+      "alignment": 5,
+      "fame": 8,
+      "log": "The oldest disciple cries. The youngest giggles. All of it is right."
+     }
+    },
+    {
+     "text": "Give each generation a single lesson",
+     "effects": {
+      "fame": 10,
+      "log": "Four lessons, four generations, one afternoon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_border_monster",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Villagers on the northern border speak of a great white tiger that has killed a dozen hunters.",
+   "choices": [
+    {
+     "text": "Hunt it",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeMult": 1.4
+     },
+     "ok": {
+      "fame": 15,
+      "log": "It is old and starving, not evil. You drive it deep into the mountains. The killings stop."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The tiger is cleverer than twelve hunters and one master. You come back with a story and a limp."
+     }
+    },
+    {
+     "text": "Teach the villagers to guard their herds",
+     "effects": {
+      "alignment": 5,
+      "log": "Better fences, bells, a watch rota. No more hunters die."
+     }
+    }
+   ]
+  },
+  {
+   "id": "h2_qi_storm",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "weight": 6,
+   "text": "Your energy has grown so deep that, in a moment of anger, it tears a tree in half and frightens a whole village.",
+   "choices": [
+    {
+     "text": "Enter seclusion until it is calm",
+     "effects": {
+      "qi": 10,
+      "comprehension": 3,
+      "log": "A year alone. When you return, your energy is as still as a well."
+     }
+    },
+    {
+     "text": "Apologise to the village",
+     "effects": {
+      "alignment": 5,
+      "log": "You replant the tree yourself. The children name it after you."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

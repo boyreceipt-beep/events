@@ -1,0 +1,793 @@
+{
+ "events": [
+  {
+   "id": "fm2_sp_fights_beside",
+   "cat": "family",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "Bandits on the road home. Before you can draw, {npc} is already standing at your shoulder, sleeves rolled up.",
+   "choices": [
+    {
+     "text": "Fight back to back",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "The bandits"
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "fought_together",
+       "w": 12,
+       "note": "fought back to back with me"
+      },
+      "log": "It is over in a minute. {npc} laughs the whole way home. You have never loved {him} more."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "fought_together",
+       "w": 8,
+       "note": "fought back to back with me"
+      },
+      "log": "You win, barely, both bleeding. {npc} bandages you and scolds you for being slow."
+     }
+    },
+    {
+     "text": "Tell {him} to stay back",
+     "effects": {
+      "mem": {
+       "deed": "protected",
+       "w": -4,
+       "note": "treated me like I could not fight"
+      },
+      "log": "{npc} stays back, and is quiet for the rest of the evening. Some people do not want to be protected."
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   },
+   "cooldown": 12
+  },
+  {
+   "id": "fm2_sp_anniversary",
+   "cat": "family",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "It is the anniversary of your wedding. {npc} pretends not to remember, which means {he} remembers perfectly.",
+   "choices": [
+    {
+     "text": "Take {him} to the place you first met",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "remembered our anniversary"
+      },
+      "charm": 2,
+      "log": "The teahouse is smaller than you remember. The tea is worse. It is a perfect evening."
+     }
+    },
+    {
+     "text": "Give a gift you made yourself",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 12,
+       "note": "made me a gift with their own hands"
+      },
+      "log": "It is a little crooked. {npc} keeps it beside the bed for the rest of {his} life."
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   },
+   "cooldown": 8,
+   "po": true
+  },
+  {
+   "id": "fm2_sp_ill",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     20,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "{npc} has a fever that will not break. The village physician only sighs.",
+   "choices": [
+    {
+     "text": "Treat {him} yourself",
+     "roll": {
+      "stat": "medicine",
+      "dc": 50
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "nursed me through the fever"
+      },
+      "log": "Three nights of needles and herbs. On the fourth morning {npc} asks for congee. You cry into the pot."
+     },
+     "fail": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "never left my side when I was ill"
+      },
+      "health": -5,
+      "log": "Your medicine is not enough, but you never leave {his} side, and the fever breaks on its own. Neither of you forgets those nights."
+     }
+    },
+    {
+     "text": "Pay for the best physician in the capital",
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "saved_life",
+       "w": 20,
+       "note": "brought the best physician for me"
+      },
+      "log": "Fifty taels and a carriage. The physician arrives in time."
+     },
+     "req": {
+      "minTaels": 50
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "fm2_sp_ambition",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     22,
+     70
+    ]
+   },
+   "weight": 4,
+   "text": "{npc} wants something of {his} own: to open a school, train fighters, be more than someone's husband or wife.",
+   "choices": [
+    {
+     "text": "Give {him} your savings to start",
+     "effects": {
+      "taels": -200,
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "believed in my dream"
+      },
+      "log": "The school opens in spring. Within a year, it has more students than you expected, and {npc} is happier than you have ever seen."
+     },
+     "req": {
+      "minTaels": 200
+     }
+    },
+    {
+     "text": "Ask {him} to wait a few years",
+     "effects": {
+      "mem": {
+       "deed": "neglected",
+       "w": -10,
+       "note": "asked me to wait for my own life"
+      },
+      "log": "{npc} agrees, and does not mention it again. You notice."
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "fm2_sp_quarrel",
+   "cat": "family",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "A quarrel over nothing becomes a quarrel over everything. {npc} sleeps in the other room.",
+   "choices": [
+    {
+     "text": "Apologise first",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "apologised first"
+      },
+      "alignment": 2,
+      "log": "It costs you nothing but pride. By morning you are laughing about it."
+     }
+    },
+    {
+     "text": "Wait for {him} to apologise",
+     "effects": {
+      "mem": {
+       "deed": "neglected",
+       "w": -5,
+       "note": "let me apologise first"
+      },
+      "log": "Three days of silence. Then {npc} apologises, and you wish you had gone first."
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   },
+   "cooldown": 10
+  },
+  {
+   "id": "fm2_sp_in_laws",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "{npc}'s whole family descends for the New Year: parents, aunts, cousins, and an uncle who wants to test your sword.",
+   "choices": [
+    {
+     "text": "Let the uncle test you",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "The uncle"
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "honoured",
+       "w": 8,
+       "note": "impressed my whole family"
+      },
+      "log": "The uncle bows after the third exchange, and spends the rest of the visit telling everyone you are the family's favourite."
+     },
+     "fail": {
+      "health": -8,
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "let my uncle win"
+      },
+      "log": "The uncle wins, then spends the evening telling everyone. {npc} cannot stop laughing."
+     }
+    },
+    {
+     "text": "Cook for everyone instead",
+     "effects": {
+      "taels": -30,
+      "mem": {
+       "deed": "honoured",
+       "w": 10,
+       "note": "fed my whole family"
+      },
+      "log": "Thirty people, one kitchen, and a feast nobody will forget. The uncle forgets the test."
+     },
+     "req": {
+      "minTaels": 30
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "fm2_sp_old_together",
+   "cat": "family",
+   "once": false,
+   "when": {
+    "age": [
+     50,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "{npc} falls asleep against your shoulder by the fire, as {he} has done for years.",
+   "choices": [
+    {
+     "text": "Stay still until morning",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "let me sleep on their shoulder all night"
+      },
+      "health": 3,
+      "log": "Your shoulder is numb by dawn. You would not trade it for a realm."
+     }
+    },
+    {
+     "text": "Carry {him} to bed",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "carried me to bed"
+      },
+      "log": "{npc} wakes halfway and pretends not to. You both know."
+     }
+    }
+   ],
+   "npc": {
+    "role": "spouse"
+   },
+   "cooldown": 15
+  },
+  {
+   "id": "fm2_ch_first_sword",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "{npc} has made a wooden sword and wants you to watch the forms {he} invented.",
+   "choices": [
+    {
+     "text": "Watch every form, seriously",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "watched my forms seriously"
+      },
+      "log": "Fourteen forms, all named after animals. You learn more about your child than about swords."
+     }
+    },
+    {
+     "text": "Correct the stance",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 6,
+       "note": "corrected my stance"
+      },
+      "log": "{npc} listens, then does it your way, then does it {his} own way again. Good."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 11
+   }
+  },
+  {
+   "id": "fm2_ch_bullied",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "{npc} comes home with a split lip and will not say who did it.",
+   "choices": [
+    {
+     "text": "Teach {him} to fight back",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 10,
+       "note": "taught me to stand up for myself"
+      },
+      "log": "Two weeks of training. The next time, nobody touches {npc}, and {npc} does not touch anyone either. Good."
+     }
+    },
+    {
+     "text": "Find the bully's parents",
+     "effects": {
+      "mem": {
+       "deed": "protected",
+       "w": 6,
+       "note": "stood up for me"
+      },
+      "log": "A long, cold conversation. The bullying stops. {npc} is embarrassed and grateful in equal parts."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 7,
+    "maxAge": 15
+   }
+  },
+  {
+   "id": "fm2_ch_rival_sect",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "{npc} wants to join a sect you never liked.",
+   "choices": [
+    {
+     "text": "Let {him} choose {his} own road",
+     "effects": {
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "let me choose my own road"
+      },
+      "log": "{npc} goes. Letters come every month. {He} becomes someone you are proud of."
+     }
+    },
+    {
+     "text": "Forbid it",
+     "effects": {
+      "mem": {
+       "deed": "neglected",
+       "w": -12,
+       "note": "forbade me my own road"
+      },
+      "log": "{npc} obeys. Something between you closes, quietly."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 13,
+    "maxAge": 20
+   }
+  },
+  {
+   "id": "fm2_ch_rebellion",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "{npc} has run off to the city with friends and your best horse.",
+   "choices": [
+    {
+     "text": "Fetch {him} home and say nothing",
+     "effects": {
+      "mem": {
+       "deed": "protected",
+       "w": 4,
+       "note": "came to fetch me"
+      },
+      "log": "The silence on the road home is worse than any shouting. It works."
+     }
+    },
+    {
+     "text": "Let {him} learn the hard way",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "let me learn the hard way"
+      },
+      "log": "{npc} comes home three days later, broke, ill and wiser. You make congee."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 14,
+    "maxAge": 18
+   }
+  },
+  {
+   "id": "fm2_ch_wedding",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "{npc} is getting married. {He} asks you to give the blessing at the wedding.",
+   "choices": [
+    {
+     "text": "Give the blessing and pay for the feast",
+     "effects": {
+      "mem": {
+       "deed": "honoured",
+       "w": 15,
+       "note": "blessed my wedding"
+      },
+      "taels": -60,
+      "log": "You get three sentences in before your voice breaks. Everyone pretends not to notice."
+     },
+     "req": {
+      "minTaels": 60
+     }
+    },
+    {
+     "text": "Give your best sword as a wedding gift",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 18,
+       "note": "gave me their own sword"
+      },
+      "log": "The sword leaves your house. Something of you goes with it, and that is the point."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 40
+   },
+   "po": true
+  },
+  {
+   "id": "fm2_ch_surpasses",
+   "cat": "family",
+   "once": true,
+   "when": {},
+   "weight": 4,
+   "text": "In a friendly spar, {npc} beats you. Fairly. {He} looks frightened, then proud.",
+   "choices": [
+    {
+     "text": "Laugh and bow",
+     "effects": {
+      "mem": {
+       "deed": "honoured",
+       "w": 15,
+       "note": "bowed to me after I won"
+      },
+      "alignment": 3,
+      "log": "A parent's best day is the day the child wins. {npc} will remember your laugh forever."
+     }
+    },
+    {
+     "text": "Ask for a rematch tomorrow",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "took me seriously as a fighter"
+      },
+      "log": "You win the rematch, barely. You both know it will not happen again."
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "minAge": 16,
+    "maxAge": 60
+   }
+  },
+  {
+   "id": "fm2_feud_inheritance",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     25,
+     80
+    ]
+   },
+   "weight": 4,
+   "text": "The family house, the fields, the old sword: {npc} wants all of it, and the village is taking sides.",
+   "choices": [
+    {
+     "text": "Give {him} everything",
+     "effects": {
+      "alignment": 10,
+      "mem": {
+       "deed": "gift",
+       "w": 20,
+       "note": "gave me the whole inheritance"
+      },
+      "log": "You walk away with nothing and a clean heart. Ten years later, {npc} comes to apologise."
+     }
+    },
+    {
+     "text": "Split it fairly before the magistrate",
+     "effects": {
+      "taels": 80,
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "took me before the magistrate"
+      },
+      "log": "The magistrate is fair and slow. {npc} does not speak to you for three years."
+     }
+    }
+   ],
+   "npc": {
+    "role": "sibling"
+   }
+  },
+  {
+   "id": "fm2_feud_cousins",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     25,
+     90
+    ]
+   },
+   "weight": 4,
+   "text": "Two branches of your family have not spoken in twenty years over a wedding seating plan. A funeral brings them into one room.",
+   "choices": [
+    {
+     "text": "Make them sit together",
+     "effects": {
+      "alignment": 8,
+      "charm": 2,
+      "log": "An hour of terrible silence, then an old joke, then tears. The feud ends over the funeral rice."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "health": 2,
+      "log": "The feud continues. It will outlive everyone in the room."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "fm2_court_lantern",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "married": false
+   },
+   "weight": 4,
+   "text": "At the Lantern Festival, a stranger's lantern string tangles with yours, and neither of you lets go first.",
+   "choices": [
+    {
+     "text": "Walk the river together",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "walked the river with me at the Lantern Festival"
+      },
+      "log": "{npc} talks about the stars, then about everything. (People: spend time together, and perhaps propose.)"
+     }
+    },
+    {
+     "text": "Untangle it and bow",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "bowed to me at the festival"
+      },
+      "log": "{npc} smiles and leaves. You look for {him} in the crowd the rest of the night."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "opposite": true,
+     "age": 0,
+     "opinion": 20
+    }
+   }
+  },
+  {
+   "id": "fm2_court_rescue",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     45
+    ],
+    "married": false
+   },
+   "weight": 4,
+   "text": "You pull a stranger out of a flooded river. {npc}, dripping, refuses to let you leave without knowing your name.",
+   "choices": [
+    {
+     "text": "Give your name",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 25,
+       "note": "pulled me out of the river"
+      },
+      "log": "Letters arrive at your door for a month. They are very good letters. (People: spend time together, and perhaps propose.)"
+     }
+    },
+    {
+     "text": "Leave without a word",
+     "effects": {
+      "fame": 3,
+      "mem": {
+       "deed": "saved_life",
+       "w": 20,
+       "note": "saved me and vanished"
+      },
+      "log": "You become a local legend: the stranger from the river. {npc} keeps looking for you."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "opposite": true,
+     "age": 0,
+     "opinion": 30
+    }
+   }
+  },
+  {
+   "id": "fm2_court_sparring",
+   "cat": "family",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "married": false,
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "{npc}, a fighter from another sect, beats you in a public bout, then asks you to dinner to make up for it.",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "had dinner with me after our bout"
+      },
+      "log": "Dinner becomes a long walk, which becomes a habit. (People: spend time together, and perhaps propose.)"
+     }
+    },
+    {
+     "text": "Ask for a rematch instead",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "lost to me twice and still came to dinner"
+      },
+      "log": "You lose the rematch too. Then you accept dinner."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "opposite": true,
+     "age": 0,
+     "realm": 0,
+     "opinion": 25
+    }
+   }
+  }
+ ],
+ "mwPass": 1
+}

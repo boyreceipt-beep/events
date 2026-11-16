@@ -1,0 +1,1012 @@
+{
+ "events": [
+  {
+   "id": "jb_waiter_spill",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_waiter"
+    ]
+   },
+   "weight": 3,
+   "text": "You spill a whole jug of wine over a famous swordsman. The tavern goes silent.",
+   "choices": [
+    {
+     "text": "Apologise and offer to clean his robe",
+     "effects": {
+      "taels": 5,
+      "charm": 1,
+      "log": "He laughs and tips you for the entertainment. (5 taels)"
+     }
+    },
+    {
+     "text": "Catch the jug before it lands",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 1,
+      "charm": 1,
+      "log": "Half the wine saved in mid-air. He applauds. So does the tavern."
+     },
+     "fail": {
+      "health": -2,
+      "log": "You slip in the wine. Now you are both wet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_waiter_rumours",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_waiter"
+    ]
+   },
+   "weight": 3,
+   "text": "Serving tables, you hear every rumour in the county. Tonight two men whisper about a hidden manual in the hills.",
+   "choices": [
+    {
+     "text": "Remember the details",
+     "effects": {
+      "comprehension": 1,
+      "flag": "manual_rumour",
+      "log": "You write it down after your shift. It might be worth something someday."
+     }
+    },
+    {
+     "text": "Sell the rumour to the next table",
+     "effects": {
+      "taels": 3,
+      "log": "Three taels for a rumour you did not earn. (3 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_head_waiter_staff",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_head_waiter"
+    ]
+   },
+   "weight": 3,
+   "text": "Two of your waiters are in love and fighting in the kitchen. Dinner service is in an hour.",
+   "choices": [
+    {
+     "text": "Make them work side by side",
+     "effects": {
+      "charm": 2,
+      "log": "By the end of service they are engaged. You take the credit."
+     }
+    },
+    {
+     "text": "Split them between floors",
+     "effects": {
+      "performance": 10,
+      "comprehension": 1,
+      "log": "Service is perfect. The kitchen is very quiet."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "jb_tavern_keeper_inspector",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_tavern_keeper"
+    ]
+   },
+   "weight": 3,
+   "text": "A tax inspector sits at your best table, orders everything, and pays with a smile that says 'audit'.",
+   "choices": [
+    {
+     "text": "Show him the honest books",
+     "effects": {
+      "alignment": 2,
+      "log": "He finds nothing, eats everything, and leaves."
+     }
+    },
+    {
+     "text": "Feed him until he forgets",
+     "effects": {
+      "taels": -10,
+      "luck": 1,
+      "log": "He forgets his own name by the third jug. (−10 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_inn_owner_haunted_room",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_inn_owner"
+    ]
+   },
+   "weight": 3,
+   "text": "Guests refuse to sleep in room seven. They say someone knocks all night from inside the wall.",
+   "choices": [
+    {
+     "text": "Sleep there yourself",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 2,
+      "log": "It is a trapped bird in the chimney. You free it. Room seven is your best room now."
+     },
+     "fail": {
+      "health": -2,
+      "log": "Nothing. Then, at midnight, knocking. You sleep in the stable."
+     }
+    },
+    {
+     "text": "Rent it cheaply to murim folk",
+     "effects": {
+      "taels": 10,
+      "log": "They love it. The knocking stops when a swordsman knocks back."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_inn_magnate_rival_chain",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_inn_magnate"
+    ]
+   },
+   "weight": 3,
+   "text": "A rival family opens inns next to every one of yours, a copper cheaper.",
+   "choices": [
+    {
+     "text": "Undercut them back",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 60,
+      "log": "A year of price war. They blink first. (60 taels)"
+     },
+     "fail": {
+      "taels": -40,
+      "loss": true,
+      "log": "You both lose money. The travellers win."
+     }
+    },
+    {
+     "text": "Buy them out",
+     "effects": {
+      "taels": -200,
+      "fame": 5,
+      "log": "Expensive, and very final."
+     },
+     "req": {
+      "minTaels": 200
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_farmer_buffalo",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_farmer"
+    ]
+   },
+   "weight": 3,
+   "text": "Your water buffalo refuses to plough. It lies in the mud and looks at you with ancient patience.",
+   "choices": [
+    {
+     "text": "Plough by hand",
+     "effects": {
+      "strength": 2,
+      "health": -3,
+      "log": "A week of back-breaking work. You are much stronger. The buffalo is rested."
+     }
+    },
+    {
+     "text": "Sing to it",
+     "effects": {
+      "charm": 1,
+      "log": "It gets up. Nobody knows why. You sing every morning after that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_farmer_harvest_moon",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_farmer"
+    ]
+   },
+   "weight": 3,
+   "text": "The best harvest in ten years. The granary is full, the pigs are fat, and the whole village is dancing.",
+   "choices": [
+    {
+     "text": "Sell the surplus",
+     "effects": {
+      "taels": 25,
+      "log": "A good price in town. (25 taels)"
+     }
+    },
+    {
+     "text": "Share with the poor families",
+     "effects": {
+      "alignment": 4,
+      "log": "Nobody in the village goes hungry this winter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_smallholder_boundary",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_smallholder"
+    ]
+   },
+   "weight": 3,
+   "text": "Your neighbour moved the boundary stone one step onto your field. You both know it.",
+   "choices": [
+    {
+     "text": "Move it back at night",
+     "effects": {
+      "charm": -1,
+      "strength": 1,
+      "log": "He moves it back. You move it back. This goes on for a year."
+     }
+    },
+    {
+     "text": "Talk it out over tea",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 1,
+      "log": "The stone goes back, and you get a friend for the long evenings."
+     },
+     "fail": {
+      "health": -5,
+      "log": "The talk makes it worse. You fight in the mud."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_village_head_dispute",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_village_head"
+    ]
+   },
+   "weight": 3,
+   "text": "Two families dispute a pig. The pig belongs to both of them, or neither, depending on who you ask.",
+   "choices": [
+    {
+     "text": "Judge fairly",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "One family gets the pig, the other its piglets. Everybody is satisfied, including the pig."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "Both families are furious. The pig is fine."
+     }
+    },
+    {
+     "text": "Buy the pig yourself",
+     "effects": {
+      "taels": -8,
+      "luck": 1,
+      "log": "Problem solved. You now own a disputed pig. (−8 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_landlord_tenant_plea",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_landlord"
+    ]
+   },
+   "weight": 3,
+   "text": "A tenant family begs you to forgive their rent: the husband broke his leg at harvest.",
+   "choices": [
+    {
+     "text": "Forgive it",
+     "effects": {
+      "alignment": 4,
+      "log": "They pay you back in kind for years: vegetables, labour, loyalty."
+     }
+    },
+    {
+     "text": "Insist on half",
+     "effects": {
+      "taels": 15,
+      "alignment": -2,
+      "log": "They pay. They also leave next spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_porter_strongman",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_porter"
+    ]
+   },
+   "weight": 3,
+   "text": "The strongest porter on the docks challenges you to carry more sacks than him.",
+   "choices": [
+    {
+     "text": "Accept",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 1,
+      "fame": 1,
+      "log": "Eleven sacks to his ten. The docks cheer. (+pride)"
+     },
+     "fail": {
+      "strength": 1,
+      "log": "He carries twelve. You carry nine and a lesson."
+     }
+    },
+    {
+     "text": "Refuse and keep working",
+     "effects": {
+      "taels": 2,
+      "log": "He calls you soft. You are paid the same."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_dock_foreman_strike",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dock_foreman"
+    ]
+   },
+   "weight": 3,
+   "text": "The porters want more pay. The boss wants you to break the strike.",
+   "choices": [
+    {
+     "text": "Stand with the porters",
+     "effects": {
+      "alignment": 4,
+      "fame": 1,
+      "log": "The boss grumbles and pays. The porters would die for you now."
+     }
+    },
+    {
+     "text": "Break it",
+     "effects": {
+      "alignment": -3,
+      "taels": 15,
+      "log": "You break it. Nobody eats with you at lunch any more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_dock_boss_flood_goods",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dock_boss"
+    ]
+   },
+   "weight": 3,
+   "text": "A flood warning. Your warehouses are full of other people's goods.",
+   "choices": [
+    {
+     "text": "Move everything to high ground",
+     "effects": {
+      "fame": 3,
+      "health": -5,
+      "log": "Two days without sleep. Nothing is lost. Your name is gold on the river."
+     }
+    },
+    {
+     "text": "Save only the valuable cargo",
+     "effects": {
+      "taels": 20,
+      "fame": -2,
+      "log": "You save the silk and lose the grain. The grain merchants remember."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_water_gang_river_war",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_water_gang"
+    ]
+   },
+   "weight": 3,
+   "text": "A rival gang has started stopping boats on your stretch of river.",
+   "choices": [
+    {
+     "text": "Take the river back",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 4,
+      "log": "One night, forty boats. The rival gang moves upstream."
+     },
+     "fail": {
+      "health": -20,
+      "log": "A long, ugly fight. You keep half the river."
+     }
+    },
+    {
+     "text": "Negotiate a split",
+     "effects": {
+      "alignment": 2,
+      "log": "The river is quiet. The profits are smaller. Everyone lives."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_merchant_bad_silk",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_merchant"
+    ]
+   },
+   "weight": 3,
+   "text": "Your supplier sends a shipment of silk that is half rot. Your customers arrive tomorrow.",
+   "choices": [
+    {
+     "text": "Tell the customers honestly",
+     "effects": {
+      "alignment": 3,
+      "log": "They buy elsewhere, and come back next season because you were honest."
+     }
+    },
+    {
+     "text": "Sell it anyway",
+     "effects": {
+      "taels": 30,
+      "alignment": -4,
+      "fame": -1,
+      "log": "A good profit, and a bad reputation that follows you for years. (30 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_merchant_bargain",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_merchant"
+    ]
+   },
+   "weight": 3,
+   "text": "An old woman sells a vase for almost nothing. You recognise it: an imperial kiln piece worth a fortune.",
+   "choices": [
+    {
+     "text": "Tell her its worth",
+     "effects": {
+      "taels": 30,
+      "alignment": 3,
+      "log": "She sells it for a fortune and gives you a tenth. (30 taels)"
+     }
+    },
+    {
+     "text": "Buy it at her price",
+     "effects": {
+      "taels": 80,
+      "alignment": -4,
+      "log": "You sell it for a fortune. You feel slightly sick every time you pass her stall. (80 taels)"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_caravan_master_sick_camel",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_caravan_master"
+    ]
+   },
+   "weight": 3,
+   "text": "Halfway across the pass, the lead camel falls sick. The caravan cannot move without it.",
+   "choices": [
+    {
+     "text": "Wait for it to recover",
+     "effects": {
+      "alignment": 1,
+      "log": "Three days lost, one camel saved."
+     }
+    },
+    {
+     "text": "Doctor it yourself",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 1,
+      "log": "Ginger, warm water and a lot of patience. The camel spits on you in gratitude."
+     },
+     "fail": {
+      "charm": 0,
+      "log": "The camel recovers on its own, despite you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_guild_master_price_fix",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_guild_master"
+    ]
+   },
+   "weight": 3,
+   "text": "The other guild masters propose fixing the price of rice for the winter. Everyone would get rich except the poor.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "They fix it without you. You sell cheaply and are loved."
+     }
+    },
+    {
+     "text": "Agree",
+     "effects": {
+      "taels": 60,
+      "alignment": -5,
+      "log": "A fat winter for the guild. A thin one for everyone else. (60 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_merchant_prince_emperor_loan",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_merchant_prince"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 3,
+   "text": "The imperial treasury asks for a loan. Refusing the Emperor is not usually a long-term plan.",
+   "choices": [
+    {
+     "text": "Lend generously",
+     "effects": {
+      "fame": 10,
+      "taels": -100,
+      "log": "The Emperor remembers your name, fondly."
+     }
+    },
+    {
+     "text": "Lend, with conditions",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 100,
+      "fame": 5,
+      "log": "Favourable terms and a trade monopoly. The court grumbles and signs."
+     },
+     "fail": {
+      "taels": -80,
+      "loss": true,
+      "log": "The court finds your conditions insolent. A tax audit follows."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_physician_midnight_patient",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_physician"
+    ]
+   },
+   "weight": 3,
+   "text": "A wounded man knocks at midnight, refuses to give his name, and pays in gold.",
+   "choices": [
+    {
+     "text": "Treat him, ask nothing",
+     "effects": {
+      "taels": 20,
+      "log": "He leaves before dawn. A gold coin on the pillow. (20 taels)"
+     }
+    },
+    {
+     "text": "Treat him, then tell the constable",
+     "effects": {
+      "fame": 1,
+      "flag": "wary",
+      "log": "He was a wanted bandit. The constable is grateful. The bandits are not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_physician_epidemic",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_physician"
+    ]
+   },
+   "weight": 3,
+   "text": "A spotted fever spreads through the market. Everyone who can afford to is leaving town.",
+   "choices": [
+    {
+     "text": "Stay and treat",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 5,
+      "log": "You find the pattern: the market well. You close it. The fever stops."
+     },
+     "fail": {
+      "health": -20,
+      "alignment": 4,
+      "log": "You treat until you fall sick yourself. The fever passes anyway."
+     }
+    },
+    {
+     "text": "Leave with the others",
+     "effects": {
+      "alignment": -3,
+      "log": "You come back when it is over. Some patients never look at you the same way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_hall_physician_apprentice",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_hall_physician"
+    ]
+   },
+   "weight": 3,
+   "text": "Your best apprentice wants to open a hall across town. She has learned everything you taught her.",
+   "choices": [
+    {
+     "text": "Give her your blessing and patients",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "Two halls instead of one. The town is healthier."
+     }
+    },
+    {
+     "text": "Ask her to stay one more year",
+     "effects": {
+      "taels": 15,
+      "log": "She stays, resentful. She leaves anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_imperial_physician_poisoned_concubine",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_imperial_physician"
+    ]
+   },
+   "weight": 3,
+   "text": "A favourite concubine collapses at a banquet. Every eye turns to you.",
+   "choices": [
+    {
+     "text": "Diagnose her",
+     "roll": {
+      "stat": "medicine",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 10,
+      "taels": 100,
+      "log": "Poison in the hairpin, not the food. You save her life and your own."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "You save her, barely. The court whispers that you were slow."
+     }
+    },
+    {
+     "text": "Call for the court physicians together",
+     "effects": {
+      "fame": 2,
+      "log": "Many hands, shared blame. She lives."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_divine_physician_demon_or_saint",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_divine_physician"
+    ]
+   },
+   "weight": 3,
+   "text": "A Demonic Cult elder and an Orthodox master arrive at your door the same night, both dying.",
+   "choices": [
+    {
+     "text": "Treat them both",
+     "effects": {
+      "fame": 10,
+      "alignment": 5,
+      "rep": {
+       "orthodox": -2,
+       "demonic": 3
+      },
+      "log": "They wake in adjacent beds and stare at each other all week. Neither attacks the other in your house."
+     }
+    },
+    {
+     "text": "Treat the Orthodox master first",
+     "effects": {
+      "rep": {
+       "orthodox": 4,
+       "demonic": -4
+      },
+      "log": "The elder survives anyway, and remembers the order."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_teacher_gifted_poor",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_teacher"
+    ]
+   },
+   "weight": 3,
+   "text": "The poorest boy in your class is also the cleverest. His father wants him out working in the fields.",
+   "choices": [
+    {
+     "text": "Pay his fees yourself",
+     "effects": {
+      "taels": -15,
+      "alignment": 4,
+      "log": "Twenty years later he is a magistrate who never takes a bribe."
+     }
+    },
+    {
+     "text": "Convince his father",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 3,
+      "log": "The father agrees, grumbling. The boy studies by lamplight."
+     },
+     "fail": {
+      "alignment": 2,
+      "log": "The father refuses. You lend the boy books in secret."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_teacher_bully_parent",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_teacher"
+    ]
+   },
+   "weight": 3,
+   "text": "A rich parent demands you pass his lazy son, or else.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 3,
+      "log": "The son fails. The parent complains. The magistrate, whose son you also teach, backs you."
+     }
+    },
+    {
+     "text": "Pass him",
+     "effects": {
+      "taels": 10,
+      "alignment": -3,
+      "log": "The son passes. The other children notice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_graduate_first_post",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_graduate"
+    ]
+   },
+   "weight": 3,
+   "text": "Your first posting: assistant to a magistrate who has not read a document in ten years.",
+   "choices": [
+    {
+     "text": "Do his job for him quietly",
+     "effects": {
+      "comprehension": 3,
+      "log": "The county runs well. He takes the credit. You learn everything."
+     }
+    },
+    {
+     "text": "Report his laziness",
+     "effects": {
+      "alignment": 1,
+      "log": "He is transferred. His replacement is worse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_magistrate_murim_brawl_case",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "court_magistrate"
+    ]
+   },
+   "weight": 3,
+   "text": "Two sects bring their feud to your court. Both have brought their best swordsmen as 'witnesses'.",
+   "choices": [
+    {
+     "text": "Judge by the law",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 3,
+      "log": "Both sects leave grumbling and bound by your ruling."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "One sect walks out. The feud goes on outside your courtroom."
+     }
+    },
+    {
+     "text": "Make them both pay a fine",
+     "effects": {
+      "taels": 30,
+      "log": "Everyone is equally annoyed, which is the essence of justice. (30 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_prefect_famine_grain",
+   "cat": "life",
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ],
+    "flags": [
+     "court_magistrate"
+    ]
+   },
+   "weight": 3,
+   "text": "Famine in a southern county. The imperial granary is under your seal, but opening it needs the capital's permission, which takes months.",
+   "choices": [
+    {
+     "text": "Open it now and write later",
+     "effects": {
+      "alignment": 6,
+      "fame": 6,
+      "log": "Thousands eat. The capital is furious, then quietly impressed."
+     }
+    },
+    {
+     "text": "Wait for permission",
+     "effects": {
+      "alignment": -3,
+      "log": "Permission comes. Many did not wait with you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_minister_eunuch_plot",
+   "cat": "life",
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ],
+    "anyFlags": [
+     "court_minister",
+     "court_chancellor"
+    ]
+   },
+   "weight": 3,
+   "text": "A powerful eunuch offers you a place in his faction. Refusing him has ended careers, and lives.",
+   "choices": [
+    {
+     "text": "Refuse politely",
+     "effects": {
+      "alignment": 3,
+      "flag": "wary",
+      "log": "He smiles. You triple your guards."
+     }
+    },
+    {
+     "text": "Join his faction",
+     "effects": {
+      "fame": 5,
+      "alignment": -5,
+      "log": "Promotion follows. So does the feeling of being owned."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

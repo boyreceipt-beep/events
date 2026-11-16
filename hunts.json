@@ -1,0 +1,2749 @@
+{
+ "events": [
+  {
+   "id": "hu_grey_wolves_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "At dusk the hills go quiet in the wrong way. Then the first howl answers another, and another, and grey shapes begin to slip between the trees on both sides of the path. A pack, hungry after a hard winter, and you are on their ground.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "choices": [
+    {
+     "text": "Put your back to a rock and meet them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The wolf pack"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_grey_wolves"
+      ],
+      "log": "You hold the rock until the leader runs at you once too often. It goes down, and the rest melt back into the trees. You walk home with a grey pelt over your shoulder."
+     },
+     "fail": {
+      "flag": "hux_met_grey_wolves",
+      "health": -12,
+      "log": "They come from three sides at once. You get back to the road in the end, with torn sleeves and a healthy respect for wolves. (-12 health)"
+     }
+    },
+    {
+     "text": "Wear the leader down until the pack accepts you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The pack leader"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_grey_wolves",
+       "hux_tame_wolf"
+      ],
+      "log": "You fight the leader to a standstill, and do not finish it. It looks at you a long time. When you leave, one young wolf follows you home and never goes back."
+     },
+     "fail": {
+      "flag": "hux_met_grey_wolves",
+      "health": -12,
+      "log": "The leader is not impressed. The pack drives you off the hill. (-12 health)"
+     },
+     "req": {
+      "pet": [
+       "none"
+      ]
+     }
+    },
+    {
+     "text": "Light a fire and wait them out",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "hux_met_grey_wolves",
+      "log": "You keep the fire high all night and the wolves keep their distance. At dawn they are gone.",
+      "luck": 1
+     },
+     "fail": {
+      "flag": "hux_met_grey_wolves",
+      "log": "The fire burns low before dawn. A rush, a scramble, a long run home. (-6 health)",
+      "health": -6
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 3
+  },
+  {
+   "id": "hu_grey_wolves_2",
+   "cat": "explore",
+   "weight": 9,
+   "once": false,
+   "text": "The steppe wind carries the smell of horses, and of something following the horses. A wolf pack of the north shadows a herder's camp, waiting for a foal to stray. The herders watch you, and your weapon, hopefully.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ],
+    "region": [
+     "north"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ride out and break the pack",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The steppe wolves"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_grey_wolves"
+      ],
+      "log": "You run them down across the grass until the pack scatters for good. The herders give you a pelt and a skin of mare's milk, and sing about you badly all night."
+     },
+     "fail": {
+      "flag": "hux_met_grey_wolves",
+      "health": -12,
+      "log": "The wolves know this grass better than you do. You come back on foot. (-12 health)"
+     }
+    },
+    {
+     "text": "Teach the herders to build a thorn fence",
+     "effects": {
+      "flag": "hux_met_grey_wolves",
+      "log": "A long day of thorn branches and rope. The wolves circle the fence that night and find no way in. The herders are less impressed than they would have been by a fight, but the foals live.",
+      "alignment": 2,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Leave the camp to its own luck",
+     "effects": {
+      "flag": "hux_met_grey_wolves",
+      "log": "You ride on. Behind you a howl goes up, far off.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_iron_boar_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The farmers have stopped going to their far field. Something has torn up the millet in rows, and the tracks are as wide as a spread hand. Then you see it: an old boar with tusks like iron hooks, standing in the furrows as if it owned them.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "choices": [
+    {
+     "text": "Meet its charge head on",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The iron-tusked boar"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_iron_boar"
+      ],
+      "log": "It charges, you turn aside at the last moment, and it charges again, and again, until it is too tired to charge. The village eats well for a week, and you are a hero to every farmer for ten li."
+     },
+     "fail": {
+      "flag": "hux_met_iron_boar",
+      "health": -12,
+      "log": "It is heavier than it looks, and it looks very heavy. You limp home. (-12 health)"
+     }
+    },
+    {
+     "text": "Dig a pit trap at the field's edge",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "hux_met_iron_boar",
+      "log": "A day of digging, a night of waiting, and a crash like a cart going into a ditch. The farmers drive it off into the deep hills, and it does not come back.",
+      "strength": 1
+     },
+     "fail": {
+      "flag": "hux_met_iron_boar",
+      "log": "The boar walks round the pit, looks at you, and eats the rest of the millet. (-6 health)",
+      "health": -6
+     }
+    },
+    {
+     "text": "Tell the farmers to plant somewhere else this year",
+     "effects": {
+      "flag": "hux_met_iron_boar",
+      "log": "They look at you as if you had told them to plant on the moon. You leave quickly.",
+      "charm": -1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_black_bear_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "You follow a stream up into the pines and come face to face with a black bear in the shallows, a fish in its jaws and a crescent of white on its chest. It drops the fish. That is not a good sign.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "choices": [
+    {
+     "text": "Stand your ground",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.95,
+      "foeName": "The black bear"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_black_bear"
+      ],
+      "log": "It rears up, taller than a door. You hold your ground and strike where the qi of a beast gathers, and the bear thinks better of it and crashes away up the slope. You take the fish. It seems fair."
+     },
+     "fail": {
+      "flag": "hux_met_black_bear",
+      "health": -14,
+      "log": "A bear does not fight like a person. It fights like a falling tree. (-14 health)"
+     }
+    },
+    {
+     "text": "Back away slowly, eyes down",
+     "effects": {
+      "flag": "hux_met_black_bear",
+      "log": "You back away one step at a time. The bear watches you go, then picks up its fish again. Everyone keeps their dinner.",
+      "luck": 1
+     }
+    },
+    {
+     "text": "Wrestle it down and win its respect",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "The black bear"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_black_bear",
+       "hux_tame_bear"
+      ],
+      "log": "It is the longest hour of your life. In the end the bear sits down in the stream like a tired old man and lets you scratch behind its ear. A cub has been watching from the bank, and it follows you home."
+     },
+     "fail": {
+      "flag": "hux_met_black_bear",
+      "health": -14,
+      "log": "Respect is not won today. (-14 health)"
+     },
+     "req": {
+      "pet": [
+       "none"
+      ]
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_marsh_python_1",
+   "cat": "explore",
+   "weight": 7,
+   "once": false,
+   "text": "In the reeds of a hot southern marsh something as thick as your thigh moves under the water, and the herons all go up at once. The ferrymen say a python has taken three goats this month, and lately it has been looking at the ferrymen.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ],
+    "region": [
+     "jiangnan",
+     "sichuan"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Wade in after it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The marsh python"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_marsh_python"
+      ],
+      "log": "It wraps you once, and you break the coil with your elbow and your qi, and it slides away into the deep water and does not come back to the crossing. The ferrymen carry you across free for life."
+     },
+     "fail": {
+      "flag": "hux_met_marsh_python",
+      "health": -12,
+      "log": "The water is its home, not yours. You crawl out onto the bank, squeezed and soaked. (-12 health)"
+     }
+    },
+    {
+     "text": "Lure it out onto dry ground with a goat",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "hux_met_marsh_python",
+      "log": "It comes out for the goat, slow and full of itself, and the ferrymen drive it into the far marsh with poles and fire. The goat is fine. The goat is furious.",
+      "charm": 1
+     },
+     "fail": {
+      "flag": "hux_met_marsh_python",
+      "log": "The python takes the goat and goes back under before anyone can move. (-2 health)",
+      "taels": -3,
+      "health": -2
+     }
+    },
+    {
+     "text": "Warn the ferrymen and move on",
+     "effects": {
+      "flag": "hux_met_marsh_python",
+      "log": "They thank you, and keep their poles closer. You hear later that they moved the crossing.",
+      "alignment": 1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_river_croc_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": false,
+   "text": "On a mudbank where the great river meets the sea, a log opens one yellow eye. The fishermen's children are not allowed on this bank any more. The log is longer than a boat.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     3
+    ],
+    "region": [
+     "jiangnan",
+     "coast"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Drive it from the children's bank",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The river crocodile"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_river_croc"
+      ],
+      "log": "It comes up out of the mud faster than anything that size should. You stay out of its jaws and hammer at its head until it decides this bank is not worth the trouble and slides away downriver."
+     },
+     "fail": {
+      "flag": "hux_met_river_croc",
+      "health": -12,
+      "log": "Its tail takes your legs out from under you. You get away, wet and humbled. (-12 health)"
+     }
+    },
+    {
+     "text": "Help the fishermen fence the bank with stakes",
+     "effects": {
+      "flag": "hux_met_river_croc",
+      "log": "Three days of driving stakes into the mud. The children go back to the bank behind the fence, shouting at the log on the other side.",
+      "alignment": 2,
+      "strength": 1
+     }
+    },
+    {
+     "text": "Leave the river to the river",
+     "effects": {
+      "flag": "hux_met_river_croc",
+      "log": "You walk on along the dyke. The yellow eye follows you.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_man_eater_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The village has a bell now that it rings at dusk, and everyone runs indoors. A tiger has learned that people are easier than deer. The headman shows you the pugmarks by the well: fresh, and huge.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ]
+   },
+   "choices": [
+    {
+     "text": "Wait for it by the well",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The man-eating tiger"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_man_eater"
+      ],
+      "log": "It comes at midnight, silent as smoke. The fight is short and terrible and in the end the tiger lies still by the well. The village rings its bell all night, for joy this time."
+     },
+     "fail": {
+      "flag": "hux_met_man_eater",
+      "health": -18,
+      "log": "It is faster than you, and it knows the dark. You live, and it gets away into the hills. (-18 health)"
+     }
+    },
+    {
+     "text": "Fight it to a standstill and claim its cub",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.15,
+      "foeName": "The man-eating tiger"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_man_eater",
+       "hux_tame_tiger"
+      ],
+      "log": "You beat the tiger without killing it, and it flees deep into the hills, never to come back. In its den you find a cub, alone and hissing. You take it home."
+     },
+     "fail": {
+      "flag": "hux_met_man_eater",
+      "health": -18,
+      "log": "The tiger is not in a mood to be beaten. (-18 health)"
+     },
+     "req": {
+      "pet": [
+       "none"
+      ]
+     }
+    },
+    {
+     "text": "Help the village build a stockade instead",
+     "effects": {
+      "flag": "hux_met_man_eater",
+      "log": "A month of hard labour. The tiger paces outside the new wall for three nights, then goes away hungry.",
+      "alignment": 2,
+      "strength": 1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_white_ape_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "In a gorge where the cliffs lean together you hear laughter, and look up. A white ape as big as two men squats on a ledge, eating your dried meat. It has your pack. It has, you notice, already read your letters.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ]
+   },
+   "choices": [
+    {
+     "text": "Climb up and take your things back",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The white ape"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_white_ape"
+      ],
+      "log": "It fights like a drunken master, all elbows and somersaults. You knock it off the ledge into a pool, and it comes up spluttering and throws your pack back at you, laughing. Something passed between you.",
+      "comprehension": 2
+     },
+     "fail": {
+      "flag": "hux_met_white_ape",
+      "health": -14,
+      "log": "It throws you into the pool instead. Your pack, and your pride, are lost downstream. (-14 health)"
+     }
+    },
+    {
+     "text": "Copy the way it moves along the cliff",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "hux_met_white_ape",
+      "log": "You follow it ledge to ledge for a whole day, copying how it moves. At sunset it gives you back your pack, and your feet are lighter than they were.",
+      "comprehension": 2
+     },
+     "fail": {
+      "flag": "hux_met_white_ape",
+      "log": "You copy one move too many and fall into a thorn bush. The ape laughs for an hour. (-6 health)",
+      "health": -6
+     }
+    },
+    {
+     "text": "Leave it the meat and go",
+     "effects": {
+      "flag": "hux_met_white_ape",
+      "log": "You leave it the meat. It waves your letters at you as you go.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_iron_bear_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The woodcutters say there is a bear in these mountains whose back turns an axe. You do not believe them until you see it scratching against an oak, and the oak is losing.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ]
+   },
+   "choices": [
+    {
+     "text": "Test your strength against it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "The iron-backed bear"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_iron_bear"
+      ],
+      "log": "Your first blows ring off its back like a gong. Then you find the soft place under the arm, and the bear roars and runs, and the woodcutters cheer from their trees."
+     },
+     "fail": {
+      "flag": "hux_met_iron_bear",
+      "health": -18,
+      "log": "It is like fighting a rockfall that is angry with you personally. (-18 health)"
+     }
+    },
+    {
+     "text": "Watch how it moves, and learn",
+     "effects": {
+      "flag": "hux_met_iron_bear",
+      "log": "You watch it from a ridge for a day: how it sets its weight, how nothing moves it. That night your own stance is deeper.",
+      "strength": 2
+     }
+    },
+    {
+     "text": "Leave the oak to its fate",
+     "effects": {
+      "flag": "hux_met_iron_bear",
+      "log": "The oak falls behind you with a crash. The bear seems pleased.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_crag_eagle_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "A shadow passes over the high road and the mules scream. An eagle with wings wider than a boat drops onto the last mule of a caravan and tries to lift it, and very nearly does.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ]
+   },
+   "choices": [
+    {
+     "text": "Leap up and strike it as it rises",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The crag eagle"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_crag_eagle"
+      ],
+      "log": "You meet it in the air, one blow, two. It lets go of the mule and wheels away over the cliffs, shedding a feather as long as your arm. The muleteers keep the feather for luck."
+     },
+     "fail": {
+      "flag": "hux_met_crag_eagle",
+      "health": -14,
+      "log": "Its talons find your shoulder before your blade finds it. (-14 health)"
+     }
+    },
+    {
+     "text": "Fight it down and raise its fledgling",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "The crag eagle"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_crag_eagle",
+       "hux_tame_hawk"
+      ],
+      "log": "You drive it off, and climb to its nest on the cliff. There is one fledgling there, all beak and fury. It rides home on your arm."
+     },
+     "fail": {
+      "flag": "hux_met_crag_eagle",
+      "health": -14,
+      "log": "The eagle does not let anyone near its nest. (-14 health)"
+     },
+     "req": {
+      "pet": [
+       "none"
+      ]
+     }
+    },
+    {
+     "text": "Drive it off with stones and shouting",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "hux_met_crag_eagle",
+      "log": "Stones, shouting and waving sticks. The eagle decides the mule is not worth it."
+     },
+     "fail": {
+      "flag": "hux_met_crag_eagle",
+      "log": "The eagle decides you are not worth it either, and takes the mule anyway. (-4 health)",
+      "health": -4,
+      "taels": -5
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_red_centipede_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": false,
+   "text": "A Tang poison-gatherer stops you on a mountain path and points, very still. A centipede with red rings, as long as a spear, is coiled round a cliff herb that only grows here. The poison-gatherer wants the herb. The centipede wants the poison-gatherer.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ],
+    "region": [
+     "sichuan"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Strike it off the cliff",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The red-ringed centipede"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_red_centipede"
+      ],
+      "log": "It strikes like a whip of red lacquer, and you strike faster. It drops into the gorge. The poison-gatherer bows, takes the herb, and gives you a small bottle you are told never to open."
+     },
+     "fail": {
+      "flag": "hux_met_red_centipede",
+      "health": -14,
+      "log": "Its bite numbs your arm to the shoulder. The poison-gatherer gives you an antidote, and a look. (-14 health)"
+     }
+    },
+    {
+     "text": "Let the poison-gatherer smoke it out",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "hux_met_red_centipede",
+      "log": "You help mix the smoke. The centipede leaves in disgust, and you learn three new herbs.",
+      "comprehension": 2
+     },
+     "fail": {
+      "flag": "hux_met_red_centipede",
+      "log": "The smoke blows back on you both. You cough down the mountain. (-6 health)",
+      "health": -6
+     }
+    },
+    {
+     "text": "Back away and let them sort it out",
+     "effects": {
+      "flag": "hux_met_red_centipede",
+      "log": "You back away. Behind you there is a great deal of hissing, and some Tang family words.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "hu_dune_scorpion_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": false,
+   "text": "The caravan master stops the camels at the edge of a white dune and will not go on. \"It lives under that one,\" he says. Then the dune moves, and a scorpion the size of a cart lifts its tail against the sun.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     5
+    ],
+    "region": [
+     "west"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Draw it away from the camels",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The dune scorpion"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_dune_scorpion"
+      ],
+      "log": "It is all armour and a tail like a falling spear. You dance round it until the tail strikes sand once too often, and you break its claw, and it buries itself and is gone."
+     },
+     "fail": {
+      "flag": "hux_met_dune_scorpion",
+      "health": -16,
+      "log": "The tail clips you. The world spins for a day and a night. (-16 health)"
+     }
+    },
+    {
+     "text": "Lead the caravan the long way round",
+     "effects": {
+      "flag": "hux_met_dune_scorpion",
+      "log": "Three extra days of desert. The caravan master pays you anyway, because the camels are alive.",
+      "taels": 20
+     }
+    },
+    {
+     "text": "Read the sand and slip the caravan past",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "hux_met_dune_scorpion",
+      "log": "You walk ahead and watch the sand. Where it trembles, you turn. The whole caravan gets past.",
+      "fame": 2
+     },
+     "fail": {
+      "flag": "hux_met_dune_scorpion",
+      "log": "The sand trembles everywhere at once. You all run. (-6 health)",
+      "health": -6
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_frost_wolf_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": false,
+   "text": "On the frontier, in a blizzard, the snow itself begins to howl. A white wolf the size of a horse walks out of the storm with frost growing on its fur, and the cold comes with it. The garrison calls it the Frost-Fang King. They say it has eaten a whole patrol and their horses.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ],
+    "region": [
+     "north"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Face the Frost-Fang King in the storm",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The Frost-Fang King"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_frost_wolf"
+      ],
+      "log": "Every blow you trade with it leaves ice on your sleeves. In the end its own qi is spent and it lies down in the snow, beaten. You let it go back into the storm. It leaves a core of frozen qi behind, like a tooth given up."
+     },
+     "fail": {
+      "flag": "hux_met_frost_wolf",
+      "health": -25,
+      "log": "The cold gets into your meridians. You stagger back to the garrison barely alive. (-25 health)",
+      "deathCause": "the Frost-Fang King"
+     },
+     "risky": true
+    },
+    {
+     "text": "Beat it, and ask it to walk beside you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.3,
+      "foeName": "The Frost-Fang King"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_frost_wolf",
+       "hux_tame_wolf"
+      ],
+      "log": "You win, and do not finish it, and hold out your hand. The great wolf is gone in the morning, but a wolf of its line, white-ruffed and silent, sleeps across your door from that night on."
+     },
+     "fail": {
+      "flag": "hux_met_frost_wolf",
+      "health": -25,
+      "log": "It does not want your hand. It nearly takes it. (-25 health)",
+      "deathCause": "the Frost-Fang King"
+     },
+     "risky": true,
+     "req": {
+      "pet": [
+       "none"
+      ]
+     }
+    },
+    {
+     "text": "Turn back to the garrison",
+     "effects": {
+      "flag": "hux_met_frost_wolf",
+      "log": "You fight your way back through the snow. Behind you, something howls, and the storm answers.",
+      "health": -5
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_thunder_roc_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The storm over the peaks is not a storm. Lightning gathers on the wings of a bird so large its shadow covers a valley: a thunderwing roc, nesting where heaven's fire falls. A falling feather sets a pine alight.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ]
+   },
+   "choices": [
+    {
+     "text": "Climb into the storm to meet it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The thunderwing roc"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_thunder_roc"
+      ],
+      "log": "Lightning off its wings, wind like walls. You ride the gusts up to the peak and fight it beak to blade until it shrieks and rises into the clouds, leaving a core that crackles in your hand."
+     },
+     "fail": {
+      "flag": "hux_met_thunder_roc",
+      "health": -25,
+      "log": "A wingbeat throws you off the peak. You catch a ledge, and the storm passes. (-25 health)",
+      "deathCause": "a thunderwing roc"
+     },
+     "risky": true
+    },
+    {
+     "text": "Take a fallen feather and leave",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "hux_met_thunder_roc",
+      "log": "You snatch a burning feather from the rocks and are gone before the roc turns. It still smells of storms.",
+      "luck": 2
+     },
+     "fail": {
+      "flag": "hux_met_thunder_roc",
+      "log": "The roc turns before you are gone. You run down the mountain with your hair on end. (-6 health)",
+      "health": -6
+     }
+    },
+    {
+     "text": "Watch it from far below",
+     "effects": {
+      "flag": "hux_met_thunder_roc",
+      "log": "You watch until dawn. The lightning on its wings teaches you something about how qi moves, quickly.",
+      "comprehension": 2
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_jade_serpent_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "A spring in the mist mountains runs green, and the herbs around it grow too large. In the water lies a serpent with scales like carved jade, old enough to have been here before the villages. It is watching you, and it is deciding.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask its strength of it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The jade-scale serpent"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_jade_serpent"
+      ],
+      "log": "It strikes like water poured from a height. You meet each strike, and the last one you turn, and it sinks back into the spring, beaten and calm. A jade-green core rises to the surface."
+     },
+     "fail": {
+      "flag": "hux_met_jade_serpent",
+      "health": -25,
+      "log": "Its coils are slow and its strikes are not. You crawl out of the mist. (-25 health)",
+      "deathCause": "a jade-scale serpent"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow to it, and drink from the spring with its leave",
+     "effects": {
+      "flag": "hux_met_jade_serpent",
+      "log": "It lowers its head, very slightly. The water tastes of moss and old qi, and you sleep for a day and wake clearer.",
+      "comprehension": 2,
+      "health": 10
+     }
+    },
+    {
+     "text": "Leave the spring to its keeper",
+     "effects": {
+      "flag": "hux_met_jade_serpent",
+      "log": "You go back down through the mist. The herbs stay large.",
+      "alignment": 1
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_stone_rhino_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": false,
+   "text": "On the old Silk Road a beast is standing across the way like a fallen gate: a rhinoceros with a hide like carved granite and one horn of black stone. The caravans have stopped coming. It has stopped them.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ],
+    "region": [
+     "west",
+     "central"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Move it from the road",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The stonehide rhinoceros"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_stone_rhino"
+      ],
+      "log": "Blades skid off its hide. You strike with qi alone, again and again, until at last it shakes its great head and walks off into the dunes. Where it stood lies its core, dull as a river stone and very heavy."
+     },
+     "fail": {
+      "flag": "hux_met_stone_rhino",
+      "health": -25,
+      "log": "Its charge is a landslide. You are a long time getting up. (-25 health)",
+      "deathCause": "a stonehide rhinoceros"
+     },
+     "risky": true
+    },
+    {
+     "text": "Find the caravans another road",
+     "effects": {
+      "flag": "hux_met_stone_rhino",
+      "log": "A week of scouting. The new road is longer and the caravans grumble, but they move again.",
+      "fame": 4
+     }
+    },
+    {
+     "text": "Wait for it to move on its own",
+     "effects": {
+      "flag": "hux_met_stone_rhino",
+      "log": "You wait three days. It does not move. You go round.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_ghost_leopard_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "For a month you have felt watched on the mountain roads. Tonight you see it: a leopard with no spots, pale as moonlight, whose eyes glow and whose body you can see the trees through. A ghost-eyed leopard, that hunts the qi of travellers.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ]
+   },
+   "choices": [
+    {
+     "text": "Turn and fight what you can barely see",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The ghost-eyed leopard"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_ghost_leopard"
+      ],
+      "log": "You fight with your eyes shut in the end, by the sound of its paws. Your last blow lands, and the leopard flickers and is solid, and runs. Where it was is a core like a pale pearl.",
+      "comprehension": 1
+     },
+     "fail": {
+      "flag": "hux_met_ghost_leopard",
+      "health": -25,
+      "log": "You never see the blow that drops you. (-25 health)",
+      "deathCause": "a ghost-eyed leopard"
+     },
+     "risky": true
+    },
+    {
+     "text": "Hide your qi and walk on",
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "hux_met_ghost_leopard",
+      "log": "You draw your qi in until you are nothing. The glow of its eyes passes you by."
+     },
+     "fail": {
+      "flag": "hux_met_ghost_leopard",
+      "log": "It finds you anyway. You get away, cold to the bone. (-6 health)",
+      "health": -6
+     }
+    },
+    {
+     "text": "Make camp and keep watch all night",
+     "effects": {
+      "flag": "hux_met_ghost_leopard",
+      "log": "You sit by the fire with your blade across your knees all night. At dawn the watching stops.",
+      "health": -3,
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_flame_lion_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The grass of a whole hillside has burned in a perfect circle, and in the middle of the ash a lion is sleeping. Its mane is fire. When it yawns, the air shimmers.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ]
+   },
+   "choices": [
+    {
+     "text": "Wake it, and test yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The flame-maned lion"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_flame_lion"
+      ],
+      "log": "It wakes in a roar of heat. You fight in a ring of burning grass until its mane gutters and it lies down in the ash, panting, beaten. You leave it to sleep. A core glows in the cinders where it lay."
+     },
+     "fail": {
+      "flag": "hux_met_flame_lion",
+      "health": -25,
+      "log": "Its roar alone throws you out of the ring. You smell of smoke for a month. (-25 health)",
+      "deathCause": "a flame-maned lion"
+     },
+     "risky": true
+    },
+    {
+     "text": "Clear a firebreak round it so the fire stops here",
+     "effects": {
+      "flag": "hux_met_flame_lion",
+      "log": "You dig all day while it sleeps. When it wakes and walks away, the fire goes no further than your trench.",
+      "alignment": 2,
+      "strength": 1
+     }
+    },
+    {
+     "text": "Go quietly round the hill",
+     "effects": {
+      "flag": "hux_met_flame_lion",
+      "log": "You go round. The ash is warm through your boots for a li.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_sea_drake_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": false,
+   "text": "Fishing boats have been coming back empty, or not at all. Off the headland a sea drake lifts its long neck out of the swell, crowned with coral, and blows a plume of spray as high as a pagoda.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     8
+    ],
+    "region": [
+     "coast"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Take a boat out to meet it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The sea drake"
+     },
+     "ok": {
+      "flag": [
+       "hux_won_sea_drake"
+      ],
+      "log": "The boat goes over in the first exchange and you fight it from the waves themselves, wave-step to wave-step. At last it sinks back into the deep, beaten, and a core of sea-green qi floats up beside you."
+     },
+     "fail": {
+      "flag": "hux_met_sea_drake",
+      "health": -25,
+      "log": "The sea is its, and it reminds you. You are washed ashore at dawn. (-25 health)",
+      "deathCause": "a sea drake"
+     },
+     "risky": true
+    },
+    {
+     "text": "Help the fishers find new grounds",
+     "effects": {
+      "flag": "hux_met_sea_drake",
+      "log": "A month of reading tides with the old fishers. The new grounds are thinner, but the boats come home.",
+      "alignment": 2,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Leave the sea to the drake",
+     "effects": {
+      "flag": "hux_met_sea_drake",
+      "log": "You watch the spray from the headland, and walk on.",
+      "luck": -1
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "hu_great_baekho_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "Where the western road crosses the mountains the snow lies untouched, and on it, without a single print, stands a white tiger with black stripes like brushstrokes. The White Tiger of the West, who judges. It has been waiting for you. It wants to know if you are as strong as people say, and whether you deserve it.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the White Tiger for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The White Tiger",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_baekho"
+      ],
+      "log": "It fights with a severity that leaves no room for a single wasted step, and at the last it stops, and lowers its great head to you: you are found worthy. It leaves a white whisker in the snow, and no print at all. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_baekho",
+      "health": -35,
+      "log": "The White Tiger is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_baekho",
+      "luck": 3,
+      "log": "You bow low. The White Tiger regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_baekho"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_baekho",
+      "log": "The White Tiger goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_cheongryong_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "Rain begins in a clear sky, and the river stands up. Out of it rises the Azure Dragon of the East, blue-green scales and antlers hung with cloud, the bringer of spring rain. It speaks without speaking: it has heard of your strength. It would see it.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Azure Dragon for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Azure Dragon",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_cheongryong"
+      ],
+      "log": "The bout is a storm over a whole province. When it ends, the dragon coils in the sky above you and laughs like thunder far off, and a single scale falls into your hand, warm as spring. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_cheongryong",
+      "health": -35,
+      "log": "The Azure Dragon is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_cheongryong",
+      "luck": 3,
+      "log": "You bow low. The Azure Dragon regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_cheongryong"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_cheongryong",
+      "log": "The Azure Dragon goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_juak_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "The southern sky turns red at noon. The Vermilion Bird descends on wings of flame, and the air tastes of summer and ash. It does not burn the grass where it lands. It looks at you with eyes like coals and waits.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Vermilion Bird for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Vermilion Bird",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_juak"
+      ],
+      "log": "Fire and qi, wing and blade. At the end its flames bank low and it bows, and a feather of living fire, which does not burn you, drifts down. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_juak",
+      "health": -35,
+      "log": "The Vermilion Bird is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_juak",
+      "luck": 3,
+      "log": "You bow low. The Vermilion Bird regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_juak"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_juak",
+      "log": "The Vermilion Bird goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_hyeonmu_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "In the north, in a still black lake, an island rises and is a tortoise, and the snake coiled round its shell lifts its head. The Black Tortoise, guardian of winter and of waters. It is slow, and it is old, and it is curious about you.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Black Tortoise for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Black Tortoise",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_hyeonmu"
+      ],
+      "log": "You strike a shell that has stood ten thousand winters, and dodge a snake that never sleeps, until at last the tortoise settles back into the lake, content. A plate of black shell lies on the shore. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_hyeonmu",
+      "health": -35,
+      "log": "The Black Tortoise is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_hyeonmu",
+      "luck": 3,
+      "log": "You bow low. The Black Tortoise regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_hyeonmu"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_hyeonmu",
+      "log": "The Black Tortoise goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_hwangryong_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "At the very centre of the world, where the four roads meet, the earth glows gold. The Yellow Dragon rises from it, the one who sits between the four guardians, and the whole Central Plains seems to hold its breath.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Yellow Dragon for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Yellow Dragon",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_hwangryong"
+      ],
+      "log": "It fights like the earth itself, without hurry and without end, and when it stops, it stops because it has decided you have earned it. A golden scale lies at your feet. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_hwangryong",
+      "health": -35,
+      "log": "The Yellow Dragon is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_hwangryong",
+      "luck": 3,
+      "log": "You bow low. The Yellow Dragon regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_hwangryong"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_hwangryong",
+      "log": "The Yellow Dragon goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_girin_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "In a meadow where nobody has ever been cruel, a qilin is grazing, careful never to tread on a living blade of grass. Scaled like a dragon, hoofed like a deer, it is said to appear only in the time of a great sage. It lifts its head. It has come to see if that is you.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Qilin for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Qilin",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_girin"
+      ],
+      "log": "It fights only to test, never to harm, and you match it step for step without crushing a single flower. At the end it touches its horn to your brow, and leaves a scale that smells of spring grass. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_girin",
+      "health": -35,
+      "log": "The Qilin is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_girin",
+      "luck": 3,
+      "log": "You bow low. The Qilin regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_girin"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_girin",
+      "log": "The Qilin goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_haechi_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "On the road outside a magistrate's town a great lion-like beast with a single horn steps out in front of you. The Haechi, who knows the guilty from the innocent and drives its horn into lies. It is looking at you very carefully.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Haechi for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Haechi",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_haechi"
+      ],
+      "log": "It weighs you blow by blow, and every blow is a question. At the end it steps aside and lets you pass, and you know you have been found just. A curl of its mane catches on your sleeve. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_haechi",
+      "health": -35,
+      "log": "The Haechi is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_haechi",
+      "luck": 3,
+      "log": "You bow low. The Haechi regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_haechi"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_haechi",
+      "log": "The Haechi goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_bonghwang_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "Every bird in the forest sings at once, and then is silent. On the highest branch of a paulownia tree sits the Phoenix, five-coloured, who comes only to a land at peace. It looks down at you, and the whole forest waits to see what you will do.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Phoenix for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Phoenix",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_bonghwang"
+      ],
+      "log": "It is like fighting a sunrise. When it is over, the Phoenix sings one long note, and a tail feather of five colours floats down into your hands. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_bonghwang",
+      "health": -35,
+      "log": "The Phoenix is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_bonghwang",
+      "luck": 3,
+      "log": "You bow low. The Phoenix regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_bonghwang"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_bonghwang",
+      "log": "The Phoenix goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_bulgasari_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "Your weapon begins to pull in your hand, towards the trees. From between them comes the Iron-Eater, a beast made of the iron it has eaten: needles, ploughs, swords, a temple bell. It looks at your weapon with real hunger, and at you with something like interest.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Iron-Eater for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Iron-Eater",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_bulgasari"
+      ],
+      "log": "You fight it without letting it take a bite of your blade, which is the hardest fight of your life. At the end it sits back on its haunches, satisfied, and coughs up a lump of iron that rings like a bell. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_bulgasari",
+      "health": -35,
+      "log": "The Iron-Eater is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_bulgasari",
+      "luck": 3,
+      "log": "You bow low. The Iron-Eater regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_bulgasari"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_bulgasari",
+      "log": "The Iron-Eater goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_great_gumiho_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "A traveller shares your fire, charming and quick, and laughs at the right moments. When the fire burns low you see nine tails behind the traveller's back. The Nine-Tailed Fox smiles at you. \"Strong ones are so rare,\" it says. \"Show me.\"",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Ask the Nine-Tailed Fox for the honour of a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Nine-Tailed Fox",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_won_gumiho"
+      ],
+      "log": "It fights with illusions and true blows tangled together, and you cut through to the true ones. At the end it laughs, delighted, and is gone, and in its place by the fire is a single silver hair. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_gumiho",
+      "health": -35,
+      "log": "The Nine-Tailed Fox is gentle with you, by its standards. You wake a day later where the bout ended, alive and humbled, and it is gone. (-35 health)",
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Bow to it, and step off the road",
+     "effects": {
+      "flag": "hux_spare_gumiho",
+      "luck": 3,
+      "log": "You bow low. The Nine-Tailed Fox regards you a long moment, then turns and is gone, and the world feels larger for having it in it."
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_gumiho"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_gumiho",
+      "log": "The Nine-Tailed Fox goes very still. Then it comes close and breathes on you, once, the way its kind greet their own. Something in your soul answers that you did not know was there."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "hu_rf_wanderer_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "At a ferry landing an old wanderer in a straw cape is waiting for the boat, a plain sword across the knees. You feel the weight of the gaze before you see it. \"You walk like someone who has been taught well,\" the wanderer says. \"Shall we see how well, while we wait?\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "choices": [
+    {
+     "text": "Accept the bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "The old wanderer"
+     },
+     "ok": {
+      "flag": "hux_road",
+      "artYears": 0.5,
+      "log": "Three exchanges on the wet planks, and the wanderer laughs and sheathes the sword. \"Well enough.\" On the boat you are shown one small thing about your stance that changes everything."
+     },
+     "fail": {
+      "comprehension": 2,
+      "health": -8,
+      "log": "The plain sword taps your wrist, your shoulder, your throat. \"Again, in ten years,\" says the wanderer. You think about those three taps for a long time. (-8 health)"
+     }
+    },
+    {
+     "text": "Ask to watch the wanderer practise instead",
+     "effects": {
+      "comprehension": 2,
+      "log": "The wanderer shrugs and runs through a single form, slowly, on the landing. You see three mistakes in your own."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "luck": 1,
+      "log": "The wanderer nods as if you had passed a test, and says nothing more until the boat comes."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 3
+  },
+  {
+   "id": "hu_rf_wanderer_2",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "A swordsman in a tattered robe blocks the mountain path and bows. \"I am walking the jianghu to find my match. Forty-one fighters so far. You will be the forty-second, whatever happens.\" The challenge is honest, and so is the steel.",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "choices": [
+    {
+     "text": "Be the forty-second",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "The wandering swordsman"
+     },
+     "ok": {
+      "flag": "hux_road",
+      "fame": 4,
+      "log": "You win on the last exchange. The swordsman bows to the ground and writes your name at the top of a long list. \"Forty-two, and the first to beat me. I will tell everyone.\""
+     },
+     "fail": {
+      "health": -12,
+      "comprehension": 1,
+      "log": "You lose cleanly. Your name goes on the list with the other forty-one, and the swordsman walks on, whistling. (-12 health)"
+     }
+    },
+    {
+     "text": "Point the way to a better fighter",
+     "effects": {
+      "charm": 1,
+      "log": "You name a famous master two provinces away. The swordsman thanks you warmly and sets off at once."
+     }
+    },
+    {
+     "text": "Turn back down the path",
+     "effects": {
+      "fame": -1,
+      "log": "You go back the way you came. The swordsman looks disappointed, and writes something down."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "hu_rf_bounty_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": false,
+   "text": "Three riders come up the road behind you at a trot, and spread out as they come. The leader has a folded notice in one gloved hand, and on it, badly drawn, is your face. \"There is a price on you,\" the leader says. \"Come quietly and nobody bleeds.\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "flags": [
+     "fugitive"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Fight the bounty hunters",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The bounty hunters"
+     },
+     "ok": {
+      "flag": "hux_road",
+      "fame": 3,
+      "log": "It is over quickly. You leave the three of them tied to a tree with their own notice pinned to the leader's collar."
+     },
+     "fail": {
+      "health": -16,
+      "taels": -30,
+      "log": "They are good at their work. You get away in the end, but your purse does not. (-16 health, -30 taels)"
+     }
+    },
+    {
+     "text": "Outrun them through the woods",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "luck": 1,
+      "log": "Horses do not like the deep woods. By nightfall you have lost them."
+     },
+     "fail": {
+      "health": -8,
+      "log": "They know the woods too. You get away, scratched and winded. (-8 health)"
+     }
+    },
+    {
+     "text": "Pay them more than the notice is worth",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "taels": -60,
+      "log": "Sixty taels changes hands. The leader tears up the notice with great ceremony and wishes you a good journey."
+     }
+    }
+   ],
+   "cooldown": 4,
+   "maxPerLife": 3
+  },
+  {
+   "id": "hu_rf_bounty_2",
+   "cat": "explore",
+   "weight": 7,
+   "once": false,
+   "text": "In a roadside inn a woman with a crossbow on her back sits down at your table uninvited. \"The families of the people you hurt pooled their silver,\" she says calmly. \"It is a lot of silver. Nothing personal.\" Her hand is already moving.",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "alignment": [
+     -100,
+     -30
+    ]
+   },
+   "choices": [
+    {
+     "text": "Fight her here in the inn",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "The bounty hunter"
+     },
+     "ok": {
+      "flag": "hux_road",
+      "alignment": -2,
+      "log": "Tables go over. When it is done she is on the floor and you are walking out of a very quiet inn."
+     },
+     "fail": {
+      "health": -18,
+      "log": "Her bolt takes you in the shoulder. You go out of a window and keep running. (-18 health)"
+     }
+    },
+    {
+     "text": "Ask what it would take to make amends",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "alignment": 4,
+      "taels": -40,
+      "log": "She is quiet a long time. Then she names the families, and a sum. You pay it, and she takes it to them herself."
+     }
+    },
+    {
+     "text": "Leave by the back door",
+     "effects": {
+      "luck": -1,
+      "log": "You slip out through the kitchen. She does not follow, this time."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_rf_demonic_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": false,
+   "text": "The road is empty, the birds silent. An elder in black and red robes sits on a milestone, smiling with too many teeth, and the air around the elder is thick with demonic qi. \"A righteous little fighter,\" the elder says. \"How lovely. I have not had one of those in a month.\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     4,
+     9
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Fight the demonic elder",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.15,
+      "foeName": "The demonic elder"
+     },
+     "ok": {
+      "flag": "hux_road",
+      "fame": 6,
+      "alignment": 2,
+      "log": "Dark qi against your own, until the elder's breaks. The elder flees like a shadow at noon, and the birds start singing again."
+     },
+     "fail": {
+      "health": -22,
+      "deathCause": "a demonic elder on an empty road",
+      "log": "The dark qi gets into your meridians. You crawl to a temple and the monks burn incense over you for three days. (-22 health)"
+     },
+     "risky": true
+    },
+    {
+     "text": "Run, and do not look back",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "luck": 1,
+      "log": "You run until the air is clean again. The elder's laughter follows you a long way."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Something cold brushes your back as you run. You do not stop for two days. (-10 health)"
+     }
+    },
+    {
+     "text": "Bow, and say you are no one worth the trouble",
+     "effects": {
+      "fame": -2,
+      "health": -5,
+      "log": "The elder looks at you a long moment, bored now, and flicks a finger at you in passing. It aches for a month, but you are alive. (-5 health)"
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_rf_masked_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "text": "Word has gone round the teahouses: a swordsman in a plain white mask has been challenging the famous, winning, and vanishing. Tonight the mask is waiting for you at a crossroads under the moon, and lifts a sword in salute.",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "minFame": 100
+   },
+   "choices": [
+    {
+     "text": "Cross swords with the mask",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "The Masked Swordsman"
+     },
+     "ok": {
+      "flag": [
+       "hux_road",
+       "hu_mask_won1"
+      ],
+      "fame": 5,
+      "log": "You win the last exchange by a hair. The mask bows, says \"Again, when you are better,\" and is gone into the dark."
+     },
+     "fail": {
+      "flag": "hu_mask_lost1",
+      "health": -10,
+      "log": "The mask wins, bows, and leaves you a single plum blossom on the road. (-10 health)"
+     }
+    },
+    {
+     "text": "Lower your weapon and ask who it is",
+     "effects": {
+      "flag": "hu_mask_lost1",
+      "comprehension": 1,
+      "log": "The mask tilts, amused, and says only: \"Someone who is looking for someone.\" Then it is gone."
+     }
+    }
+   ],
+   "arc": "The Masked Swordsman"
+  },
+  {
+   "id": "hu_rf_masked_2",
+   "cat": "explore",
+   "weight": 8,
+   "once": true,
+   "text": "Three years later, in the rain on a temple roof, the white mask is waiting again. \"You have grown,\" it says. \"Show me how much.\" The voice is younger than you thought, or older. You cannot tell.",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "hu_rf_masked_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "choices": [
+    {
+     "text": "Fight on the wet tiles",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.15,
+      "foeName": "The Masked Swordsman"
+     },
+     "ok": {
+      "flag": [
+       "hux_road",
+       "hu_mask_won2"
+      ],
+      "fame": 8,
+      "log": "Tile by tile you drive the mask to the edge of the roof. It laughs, really laughs, and drops into the rain."
+     },
+     "fail": {
+      "health": -14,
+      "flag": "hu_mask_lost2",
+      "log": "The mask is still better. A second plum blossom on the tiles. (-14 health)"
+     }
+    },
+    {
+     "text": "Refuse to fight in a holy place",
+     "effects": {
+      "flag": "hu_mask_lost2",
+      "alignment": 2,
+      "log": "The mask bows, as if that too was the right answer, and leaves."
+     }
+    }
+   ],
+   "arc": "The Masked Swordsman"
+  },
+  {
+   "id": "hu_rf_masked_3",
+   "cat": "explore",
+   "weight": 9,
+   "once": true,
+   "text": "The last time is on a bare hilltop at dawn, with nobody to watch. The masked swordsman sets down a box between you. \"If you win, the mask comes off and what is in the box is yours. I have looked for a worthy heir for thirty years.\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "hu_rf_masked_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "choices": [
+    {
+     "text": "Fight for the box",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.25,
+      "foeName": "The Masked Swordsman",
+      "boss": true
+     },
+     "ok": {
+      "flag": [
+       "hux_road",
+       "hu_mask_done"
+      ],
+      "fame": 20,
+      "artYears": 1.5,
+      "log": "You win. The mask comes off: an old champion everyone thought had died long ago, smiling with tears in the eyes. In the box is a handwritten manual of thirty years of swordwork. \"Now I can rest,\" the champion says, and walks away down the hill."
+     },
+     "fail": {
+      "health": -16,
+      "comprehension": 3,
+      "log": "You lose, and the champion picks up the box with a sigh. \"Not yet. But closer than anyone.\" (-16 health)"
+     }
+    },
+    {
+     "text": "Tell the old fighter to keep looking",
+     "effects": {
+      "alignment": 2,
+      "luck": 2,
+      "log": "The mask is still for a long time. Then it nods, and takes the box, and goes on looking."
+     }
+    }
+   ],
+   "arc": "The Masked Swordsman"
+  },
+  {
+   "id": "hu_rf_legend_1",
+   "cat": "explore",
+   "weight": 7,
+   "once": false,
+   "text": "On a mountain road you meet a traveller whose name you know from a card, a legend from another world: {hu_foe}. The legend looks you over with open delight. \"So this is the world I walk in now. Shall we see whose legend is the longer?\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "flags": [
+     "hu_legend_road"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Trade blows with the legend",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "{hu_foe}"
+     },
+     "ok": {
+      "flag": [
+       "hux_road",
+       "hux_legend"
+      ],
+      "log": "You take the last exchange. {hu_foe} laughs, bows, and promises to tell the story in every world there is."
+     },
+     "fail": {
+      "health": -10,
+      "comprehension": 2,
+      "log": "{hu_foe} wins, and then spends an hour showing you exactly how. You will not lose that way twice. (-10 health)"
+     }
+    },
+    {
+     "text": "Share a meal and trade stories instead",
+     "effects": {
+      "charm": 2,
+      "comprehension": 1,
+      "log": "You talk until the fire is ash. {hu_foe} has lived a life worth the telling."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_nf_tracker_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": false,
+   "text": "For a month you have felt it: a cold spot between the shoulder blades on every road. Tonight, at a burned-out waystation, the tracker finally steps out of the dark, a contract on your name folded in one sleeve. \"Three provinces,\" the tracker says. \"You leave a trail like a river. There is nowhere left to run.\"",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "hu_cornered_ok"
+    ],
+    "minFame": 120
+   },
+   "choices": [
+    {
+     "text": "Fight the tracker",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2,
+      "foeName": "The tracker",
+      "boss": true
+     },
+     "ok": {
+      "flag": "hux_road",
+      "fame": 10,
+      "log": "It is a long fight in a ruined place, and at the end the contract burns in the waystation's cold hearth. Word goes round the jianghu that your name is not worth the silver."
+     },
+     "fail": {
+      "health": -28,
+      "taels": -50,
+      "deathCause": "a tracker who would not be outrun",
+      "log": "The tracker is better at this than you are at anything. You wake on the road, robbed of 50 taels, the contract torn up beside you: \"Paid in full.\" (-28 health)"
+     },
+     "risky": true
+    },
+    {
+     "text": "Buy the contract back",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "taels": -200,
+      "log": "You count out 200 taels on a broken table. The tracker counts them again, tears up the contract, and is gone before the candle burns down."
+     }
+    },
+    {
+     "text": "Lay down your weapon and take the lesson",
+     "effects": {
+      "health": -16,
+      "woundOnly": true,
+      "fame": -12,
+      "log": "The tracker beats you without hurry, takes your name off the contract, and leaves you sitting in the ashes. The story travels faster than you do. (-16 health, -12 fame)"
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "hu_nf_ambush_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": false,
+   "text": "The mist on the mountain road thickens into walls. Black flags stand on every ridge around you: an array, laid days ago, waiting for exactly you. A demonic elder steps out of the grey, and behind the elder the road you came by is simply gone. \"I did not wait a whole season to let you walk away,\" the elder says.",
+   "trigger": "road_fight",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "hu_cornered_ok"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Fight the elder inside the array",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.3,
+      "foeName": "The demonic elder",
+      "boss": true
+     },
+     "ok": {
+      "flag": "hux_road",
+      "fame": 14,
+      "alignment": 3,
+      "log": "You break the elder, and the array breaks with the elder. The black flags fall one by one along the ridges, and the mountain road is a road again."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a demonic elder's ambush",
+      "log": "The array drinks your qi while the elder takes your guard apart. Before dawn the elder tires of you and is gone, and you crawl out of the mist alive, barely. (-30 health)"
+     },
+     "risky": true
+    },
+    {
+     "text": "Pour your energy into the array and hold out until dawn",
+     "effects": {
+      "qi": -40,
+      "health": -10,
+      "woundOnly": true,
+      "log": "You do not fight. You burn your own energy against the array all night, and at first light, when demonic qi is weakest, the flags give way. (-40% energy, -10 health)"
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 2
+  },
+  {
+   "id": "hu_nf_lair_bulgasari_1",
+   "cat": "explore",
+   "weight": 3,
+   "once": false,
+   "text": "The cave smells of rust. You followed the old iron road into the hills, and too late you see that the road ends here, in a hall of half-eaten ploughs and bells and swords. The Iron-Eater lifts its head from its hoard. You are standing in its lair, and the only way out is behind it.",
+   "trigger": "hunt",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "flags": [
+     "hu_cornered_ok",
+     "hu_great_ok"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Fight the Iron-Eater in its lair",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Iron-Eater",
+      "boss": true
+     },
+     "ok": {
+      "flag": "hux_won_bulgasari",
+      "log": "You fight it through its own hoard, bell against blade, until it sits back on its haunches and lets you by. At the mouth of the cave it coughs up a lump of iron that rings like a bell, and leaves it at your feet. The jianghu will speak of this for a hundred years."
+     },
+     "fail": {
+      "flag": "hux_met_bulgasari",
+      "health": -35,
+      "deathCause": "the Iron-Eater in its lair",
+      "log": "It is the hardest fight of your life, and you lose it. You wake outside the cave in the rain, alive because it lost interest once it had eaten the edge off your weapon. (-35 health)"
+     },
+     "risky": true
+    },
+    {
+     "text": "Offer it every coin of iron and bronze you carry",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "flag": "hux_spare_bulgasari",
+      "taels": -150,
+      "log": "You empty 150 taels of coin onto the hoard. The Iron-Eater crunches them like sweets, and in its contentment lets you walk out past it."
+     }
+    },
+    {
+     "text": "Stand still and let it smell you",
+     "effects": {
+      "flag": "hux_met_bulgasari",
+      "health": -15,
+      "woundOnly": true,
+      "luck": -2,
+      "log": "It sniffs you over, takes a bite out of your weapon for its trouble, and shoulders you out of its cave into the rain. (-15 health)"
+     }
+    },
+    {
+     "text": "Greet it as one who once wore its shape",
+     "req": {
+      "flags": [
+       "hu_lived_bulgasari"
+      ]
+     },
+     "effects": {
+      "flag": "hux_kin_bulgasari",
+      "log": "The Iron-Eater goes very still. Then it breathes on you, once, the way its kind greet their own, and moves aside from the way out."
+     }
+    }
+   ],
+   "cooldown": 1000,
+   "maxPerLife": 1,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

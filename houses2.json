@@ -1,0 +1,6548 @@
+{
+ "events": [
+  {
+   "id": "dc_hx_swfirst_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The first winter under the creed. Every disciple of {sect} has bandaged hands, and every one of them is proud of it. The cook complains that nobody can hold chopsticks. At dawn the yard rings like a smithy, and the crows have moved to another mountain.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The First Year of the Sword",
+   "choices": [
+    {
+     "text": "Train with them at dawn, bare-handed on the blade",
+     "effects": {
+      "strength": 4,
+      "health": -5,
+      "log": "Your palms bleed with theirs. Nobody complains after that, not even the cook. (-5 health)"
+     }
+    },
+    {
+     "text": "Order one day of rest each ten days",
+     "effects": {
+      "alignment": 3,
+      "charm": 3,
+      "log": "The disciples grumble, then sleep like the dead. On the eleventh day the yard rings louder."
+     }
+    },
+    {
+     "text": "Carve the creed over the sword rack",
+     "effects": {
+      "fame": 4,
+      "log": "Four words, cut deep. The disciples touch them on the way past, like a door charm."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swblade_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} is the best sword in {sect} and cannot write {his} own name. {He} never learned the breathing chapters, never sat a single lecture, and asks why anyone would. Today {he} cut a training post in half and then could not say which form {he} had used.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Only the Blade",
+   "choices": [
+    {
+     "text": "Sit {him} down with a brush and a primer",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_blade",
+      "npcFlag": "hx_blade",
+      "mem": {
+       "deed": "clan",
+       "w": -5,
+       "note": "made me hold a brush"
+      },
+      "log": "{npc} holds the brush like a dagger. The first character comes out as a stab wound. It is a start."
+     }
+    },
+    {
+     "text": "Let {him} be. The blade is the creed",
+     "effects": {
+      "fame": 3,
+      "flag": "hx_blade",
+      "npcFlag": "hx_blade",
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "let me be what I am"
+      },
+      "log": "{npc} bows and goes back to the yard. Something in you says you will regret this, quietly."
+     }
+    },
+    {
+     "text": "Duel {him}, and win without the blade",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "comprehension": 4,
+      "fame": 2,
+      "log": "Your empty hand finds {his} wrist before {his} sword finds you. {npc} stares at the hand for a long time."
+     },
+     "fail": {
+      "health": -8,
+      "log": "{npc} wins, cleanly, and looks puzzled by the lesson. You were the one who learned something. (-8 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swblade_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "A scholar from the capital visits and asks {npc} what the sword is for. {npc} draws, and the scholar's hat falls in two halves. The scholar laughs, which is worse than anger, and writes something down. Your elders want {npc} punished. {npc} wants to know what {he} did wrong.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword",
+     "hx_blade"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_swblade_1"
+    ],
+    "npcFlags": [
+     "hx_blade"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Only the Blade",
+   "choices": [
+    {
+     "text": "Explain it to {him} plainly, as a person",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "explained instead of punishing"
+      },
+      "log": "\"A sword answers a question nobody asked,\" you say. {npc} chews on that for a month."
+     }
+    },
+    {
+     "text": "Punish {him}, as the elders ask",
+     "effects": {
+      "fame": 2,
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -6,
+       "note": "punished me for the hat"
+      },
+      "log": "{npc} kneels in the yard without understanding. Pain teaches the rule, not the reason."
+     }
+    },
+    {
+     "text": "Pay for the hat and say nothing",
+     "effects": {
+      "taels": -5,
+      "luck": 2,
+      "log": "The scholar's essay calls {sect} a pack of wolves with good manners. It sells well. (-5 taels)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swblade_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "Years on. {npc} sits in the yard at dusk with a book on {his} knees, the sword across it. {He} has been reading the breathing chapters for a year. Yesterday {his} blade sang for the first time, a thin clear note, and the whole yard stopped.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword",
+     "hx_blade"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_swblade_2"
+    ],
+    "npcFlags": [
+     "hx_blade"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "Only the Blade",
+   "choices": [
+    {
+     "text": "\"Now you are a swordsman.\"",
+     "effects": {
+      "fame": 3,
+      "charm": 2,
+      "unflag": "hx_blade",
+      "npcUnflag": "hx_blade",
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "called me a swordsman at last"
+      },
+      "log": "{npc} does not answer. {He} turns a page, very slowly, so you will not see {his} face."
+     }
+    },
+    {
+     "text": "Ask {him} to teach the juniors the book",
+     "effects": {
+      "comprehension": 4,
+      "unflag": "hx_blade",
+      "npcUnflag": "hx_blade",
+      "log": "The best sword on the mountain teaching reading. The juniors are terrified into literacy."
+     }
+    },
+    {
+     "text": "Spar with {him} once more",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "qi": 15,
+      "unflag": "hx_blade",
+      "npcUnflag": "hx_blade",
+      "log": "It is the finest bout of your year. Neither of you wins. Both of you laugh."
+     },
+     "fail": {
+      "health": -6,
+      "unflag": "hx_blade",
+      "npcUnflag": "hx_blade",
+      "log": "{He} wins, and helps you up, and quotes the book at you. (-6 health)"
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_swduel_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A swordsman stands at the gate of {sect} with a scroll of challenge. Your creed, {npc} says, is a boast, and a boast must be paid for in steel. {He} asks for the master of the sect, not a disciple. Half the mountain has come out to watch from the walls.",
+   "npc": {
+    "role": "hx_duelist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hx_duelist",
+     "ageAbs": 34,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "A Duel of Honour",
+   "choices": [
+    {
+     "text": "Accept, before the whole mountain",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 6,
+      "log": "Three exchanges. {npc}'s sword is in the dust and {his} bow is deep and honest. The walls cheer."
+     },
+     "fail": {
+      "health": -12,
+      "fame": -2,
+      "log": "{npc} draws first blood and sheathes. \"The creed is real,\" {he} says. \"You are not yet.\" (-12 health)"
+     }
+    },
+    {
+     "text": "Send your senior disciple instead",
+     "effects": {
+      "fame": 2,
+      "luck": 2,
+      "log": "Your disciple wins narrowly. {npc} complains about the substitution and drinks with the disciple all night."
+     }
+    },
+    {
+     "text": "Refuse. A creed is not a boast",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 2,
+      "log": "{npc} spits and leaves. Your disciples are ashamed for a week, and then begin to understand."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swhonour_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} comes to you white with anger. A disciple of another sect insulted {his} teacher at a teahouse, and {he} wants a formal duel to answer it. The creed says the blade first. The other sect's elder is old and has a long memory.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Satisfaction",
+   "choices": [
+    {
+     "text": "Grant the duel, with you as witness",
+     "effects": {
+      "fame": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "stood witness for my honour"
+      },
+      "log": "{npc} wins with a cut to the sleeve and stops there. The other elder bows to you, surprised."
+     }
+    },
+    {
+     "text": "Send {him} to the teahouse with an apology",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "clan",
+       "w": -6,
+       "note": "made me apologise"
+      },
+      "log": "{npc} goes, rigid as a post. The insulter is so startled that the feud dies in an afternoon."
+     }
+    },
+    {
+     "text": "Answer the insult yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 4,
+      "log": "A letter to the elder, so polite it cuts. The insulting disciple is scrubbing floors by spring."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "Your letter is read aloud in the teahouse and laughed at. {npc} looks at you with pity, which is worse."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_swbroken_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "The founding sword of {sect}, hung in the hall since the first day, snaps in a demonstration before guests. The two halves ring on the stones. Somebody gasps. Every disciple of a sword creed is looking at you, waiting to learn what a broken blade means.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Broken Blade",
+   "choices": [
+    {
+     "text": "Laugh. \"It held long enough.\"",
+     "effects": {
+      "charm": 4,
+      "luck": 2,
+      "log": "The guests laugh with you. The disciples breathe again. The halves go above the hall door."
+     }
+    },
+    {
+     "text": "Finish the demonstration with the stub",
+     "effects": {
+      "fame": 5,
+      "strength": 2,
+      "log": "Half a sword is still a sword. The guests go home talking about nothing else."
+     }
+    },
+    {
+     "text": "Have it reforged, the halves into one",
+     "effects": {
+      "taels": -20,
+      "comprehension": 3,
+      "log": "The smith folds the break into the steel. The new blade carries a dark seam, and is stronger for it. (-20 taels)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swclash_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A delegation from a healing sect comes to protest. Three of its patients this year were your disciples' duelling partners, and the stitches are getting fancier. Their abbess asks, very gently, whether the Way of the Sword has ever considered a sheath.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Healers Disapprove",
+   "choices": [
+    {
+     "text": "Pay their healing bills (20 taels)",
+     "effects": {
+      "taels": -20,
+      "alignment": 3,
+      "log": "The abbess counts the silver and softens slightly. Your disciples are told to cut sleeves, not arms. (-20 taels)"
+     }
+    },
+    {
+     "text": "\"A sheath is for a sword that is done.\"",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "log": "The abbess sighs and leaves. Both sects quote the line for years, to opposite purposes."
+     }
+    },
+    {
+     "text": "Send three disciples to work in their wards",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "The disciples come back quieter. One of them never duels for sport again."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_swdoubt_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "Late at night you take down the first manual you wrote for {sect}. Cuts, stances, the breath before the draw. Nothing about why. Nothing about when not to. You wrote it young. The disciples memorise every word of it, and lately you are not sure that is good.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword",
+     "sect_founded_by_you"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Is the Sword Enough",
+   "choices": [
+    {
+     "text": "Add a last chapter: when not to draw",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 3,
+      "log": "It is the shortest chapter and the hardest. The disciples argue about it for a generation."
+     }
+    },
+    {
+     "text": "Leave it. A sword creed is honest",
+     "effects": {
+      "strength": 3,
+      "luck": 2,
+      "log": "A blade does not doubt. You put the manual back and sleep well, mostly."
+     }
+    },
+    {
+     "text": "Meditate on the blade until dawn",
+     "effects": {
+      "qi": 15,
+      "log": "The sword on your knees grows cold, then warm. By dawn you know one thing more about it, and say nothing."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_swpride_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A new disciple trains until the blood runs down {his} sword and into the sleeve. The others applaud. It is the creed, after all. {npc} looks at you to see if you will applaud too. {His} hands are shaking.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Bleeding Hands",
+   "choices": [
+    {
+     "text": "Applaud",
+     "effects": {
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "applauded my blood"
+      },
+      "log": "{npc} smiles and keeps going. That night the sect physician spends an hour on {his} hands."
+     }
+    },
+    {
+     "text": "Take the sword and bind {his} hands yourself",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "bound my hands"
+      },
+      "log": "\"Blood proves nothing,\" you say. \"Tomorrow proves everything.\" The applause stops."
+     }
+    },
+    {
+     "text": "Show {him} a cut that costs no blood",
+     "effects": {
+      "comprehension": 3,
+      "log": "Relaxed shoulders, loose wrist, a cut that sings. {npc} stares at {his} own torn palms as if betrayed."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_swgrave_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A wandering swordsman dies at the foot of your mountain, an old one, with no name on his papers and a fine blade. Your disciples carry him up. A sword creed has to decide what it owes to strangers who lived by the same steel.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_sword"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "A Swordsman's Grave",
+   "choices": [
+    {
+     "text": "Bury him in the sect cemetery, sword and all",
+     "effects": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "A grave with no name and a blade on the stone. Disciples leave rice there before duels."
+     }
+    },
+    {
+     "text": "Hang his sword in the hall",
+     "effects": {
+      "fame": 3,
+      "luck": 2,
+      "log": "A stranger's blade beside yours. Visitors always ask. You always tell the same short story."
+     }
+    },
+    {
+     "text": "Study his form from the wear on the hilt",
+     "effects": {
+      "comprehension": 5,
+      "log": "The grip is worn on one side only. A left-hand guard. You learn a defence nobody alive taught you."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_mefirst_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The first year under the creed. The gate of {sect} stands open from dawn to dusk, and the sick come up the mountain on carts, on backs, on their own bad legs. The training yard is full of drying herbs. A disciple asks if you meant it to be quite this many.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Lotus Opens",
+   "choices": [
+    {
+     "text": "\"Yes. Build another ward.\"",
+     "effects": {
+      "taels": -15,
+      "alignment": 5,
+      "log": "Another ward, then another. The mountain smells of ginger and boiled cloth. (-15 taels)"
+     }
+    },
+    {
+     "text": "Train the disciples to heal as they fight",
+     "effects": {
+      "comprehension": 4,
+      "log": "Every form now has a twin: the strike, and the hand that closes the wound after."
+     }
+    },
+    {
+     "text": "Keep the yard for training, the hall for healing",
+     "effects": {
+      "strength": 2,
+      "charm": 2,
+      "log": "A rope down the middle. Half the sect sweats, half the sect stitches. Both complain about the other."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_meenemy_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "They carry {npc} through the gate at midnight, half dead from a poisoned blade. You know the face. Years ago {he} swore before witnesses to see you buried. {His} breath is a thin whistle. Your disciples look at you, then at the creed over the door.",
+   "npc": {
+    "role": "hx_enemy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hx_enemy",
+     "ageAbs": 48,
+     "opinion": -40
+    }
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Sworn Enemy",
+   "choices": [
+    {
+     "text": "Heal {him}. The creed has no exceptions",
+     "effects": {
+      "alignment": 6,
+      "flag": "hx_enemy",
+      "npcFlag": "hx_enemy",
+      "log": "Three nights at the bedside. {npc} lives. When {he} wakes and sees your face, {he} closes {his} eyes again."
+     }
+    },
+    {
+     "text": "Have a disciple heal {him}; stay away",
+     "effects": {
+      "alignment": 3,
+      "flag": "hx_enemy",
+      "npcFlag": "hx_enemy",
+      "log": "The disciple saves {him}. You never enter the ward. Everyone notices."
+     }
+    },
+    {
+     "text": "Carry {him} to the town physician",
+     "effects": {
+      "luck": 2,
+      "alignment": -2,
+      "log": "Mercy, at arm's length. {npc} lives or dies down the mountain. You never ask which."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_meenemy_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "{npc} is well enough to walk. {He} stands at the gate with {his} sword returned to {him} and does not leave. \"I swore an oath to kill you,\" {he} says. \"I have also never owed anyone my life. I do not know which one to keep.\"",
+   "npc": {
+    "role": "hx_enemy"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy",
+     "hx_enemy"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_meenemy_1"
+    ],
+    "npcFlags": [
+     "hx_enemy"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Sworn Enemy",
+   "choices": [
+    {
+     "text": "\"Keep neither. Go and live.\"",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "unflag": "hx_enemy",
+      "npcUnflag": "hx_enemy",
+      "mem": {
+       "deed": "clan",
+       "w": 25,
+       "note": "gave me my life and my freedom"
+      },
+      "log": "{npc} walks down the mountain. Years later {he} sends a healer to {sect}, unannounced."
+     }
+    },
+    {
+     "text": "Offer {him} a place in the wards",
+     "effects": {
+      "fame": 3,
+      "unflag": "hx_enemy",
+      "npcUnflag": "hx_enemy",
+      "mem": {
+       "deed": "clan",
+       "w": 20,
+       "note": "offered me a place"
+      },
+      "log": "{npc} stays a season, carrying water and saying nothing. {He} leaves at the first frost, lighter."
+     }
+    },
+    {
+     "text": "\"Keep the oath, then. I am here.\"",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 5,
+      "unflag": "hx_enemy",
+      "npcUnflag": "hx_enemy",
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "beat me and spared me twice"
+      },
+      "log": "{He} draws and you disarm {him}. \"Now you owe me twice,\" you say. {npc} laughs, finally."
+     },
+     "fail": {
+      "health": -10,
+      "unflag": "hx_enemy",
+      "npcUnflag": "hx_enemy",
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "faced my oath"
+      },
+      "log": "{His} blade stops at your throat. Then {he} sheathes it and walks away. (-10 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_meplague_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Fever in the valley towns. The magistrate has shut the roads, and the healers who could leave have left. A creed of mercy is easy in a good year. This year the disciples of {sect} look at the road, then at you. Some of them have families down there.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Plague Year",
+   "choices": [
+    {
+     "text": "Lead them down yourself",
+     "effects": {
+      "alignment": 6,
+      "health": -10,
+      "fame": 5,
+      "log": "Forty days in the fever towns. You lose two disciples and save a valley. Nobody ever calls it a boast again. (-10 health)"
+     }
+    },
+    {
+     "text": "Send volunteers only",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "Every disciple volunteers. You choose the ones with no children. They come back thin and changed."
+     }
+    },
+    {
+     "text": "Close the gate and brew medicine for the road",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "Cartloads of medicine roll down the mountain. The sect stays well. The valley calls it mercy, quietly."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_mebandit_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A bandit is dumped at your gate by villagers, beaten nearly to death. They want {sect} to heal him so the magistrate can hang him properly. The bandit is barely twenty. He keeps asking for his mother in the dialect of a very poor province.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Bandit at the Gate",
+   "choices": [
+    {
+     "text": "Heal him, then hand him over",
+     "effects": {
+      "alignment": 2,
+      "fame": 2,
+      "log": "The law has its due and the creed has its due. You do not sleep well, but you sleep."
+     }
+    },
+    {
+     "text": "Heal him and plead for him at the yamen",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 5,
+      "charm": 2,
+      "log": "The magistrate commutes it to labour. The young bandit sends a sack of chestnuts every autumn."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "The magistrate does not like healers with opinions. The sentence stands."
+     }
+    },
+    {
+     "text": "Heal him and let him slip out at night",
+     "effects": {
+      "alignment": 3,
+      "fame": -3,
+      "log": "The villagers are furious. The bandit is never seen in that province again, which is a kind of justice."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_mecost_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "The treasurer of {sect} lays the ledger before you. Herbs, bandages, rice for the patients. Nothing comes in. The creed is beloved in every village and the storehouse echoes. The treasurer suggests, very carefully, a small fee for the rich.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Cost of Mercy",
+   "choices": [
+    {
+     "text": "Charge the rich, heal the poor free",
+     "effects": {
+      "taels": 25,
+      "alignment": 1,
+      "log": "Merchants pay without blinking for healers with a famous creed. The storehouse fills. (+25 taels)"
+     }
+    },
+    {
+     "text": "No fees. Sell your own treasures",
+     "effects": {
+      "taels": 10,
+      "alignment": 4,
+      "log": "Your old jade, your good robes. The storehouse fills a little, and you feel lighter. (+10 taels)"
+     }
+    },
+    {
+     "text": "Ask the villages to send rice instead",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "Carts of rice arrive at harvest, with dried fish and a goat nobody asked for."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_meclash_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "At a gathering of sects a sword master laughs at {sect} in front of everyone. \"A healing sect,\" the master says, \"is a hospital with a sign over the door.\" Your disciples go red. The whole hall turns to see whether the Lotus has thorns.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Soft Hands",
+   "choices": [
+    {
+     "text": "Offer to heal the old wound in the master's shoulder",
+     "effects": {
+      "charm": 4,
+      "fame": 3,
+      "log": "The master stiffens. Nobody was supposed to know about that shoulder. The laugh is not repeated."
+     }
+    },
+    {
+     "text": "Accept a friendly bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 6,
+      "log": "You win with a pressure point that leaves the master's arm asleep for an hour. You fix it afterwards."
+     },
+     "fail": {
+      "health": -8,
+      "fame": -1,
+      "log": "You lose, and then splint the master's sprained finger. The hall cannot decide who won. (-8 health)"
+     }
+    },
+    {
+     "text": "Smile and say nothing",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 2,
+      "log": "Next winter the master's disciples come up your mountain with frostbite. You heal them all."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_medoubt_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "News from the river towns: a man you healed last spring, a killer with a wound in the gut, has killed again. Three people this time. The families have written to {sect}. Their letter is very short. It asks if your creed has room for them too.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The One You Saved",
+   "choices": [
+    {
+     "text": "Go to the families and kneel",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "They do not forgive you. They let you help bury their dead. That is all mercy can ask of mercy."
+     }
+    },
+    {
+     "text": "Hunt the killer down",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 2,
+      "log": "You find him in a gambling den's back room. He goes to the magistrate breathing. The creed holds, just."
+     },
+     "fail": {
+      "health": -12,
+      "log": "He escapes over the river. The healer who saved him has a new scar now. (-12 health)"
+     }
+    },
+    {
+     "text": "Write a new rule: ask who they are first",
+     "effects": {
+      "comprehension": 4,
+      "alignment": -2,
+      "log": "A small door in a large gate. Some disciples call it wisdom. Some call it the end of the Lotus."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_mecult_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A Heavenly Demon Cult warrior collapses at the gate of {sect}, red sash soaked darker red. The orthodox sects would finish the job and be praised for it. A messenger of the Martial Alliance happens to be drinking tea in your guest hall.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "factions": [
+     "orthodox"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "arc": "A Wounded Cultist",
+   "choices": [
+    {
+     "text": "Heal the cultist openly",
+     "effects": {
+      "alignment": 5,
+      "fame": -3,
+      "log": "The Alliance messenger leaves without finishing the tea. The cultist leaves at night, alive."
+     }
+    },
+    {
+     "text": "Heal in secret, and send the cultist off",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 4,
+      "luck": 2,
+      "log": "Nobody sees. Months later a Cult raid passes your mountain by, for no reason anyone can name."
+     },
+     "fail": {
+      "fame": -4,
+      "log": "The messenger sees everything. {sect} is talked about in the Alliance halls for a year."
+     }
+    },
+    {
+     "text": "Hand the cultist to the Alliance",
+     "effects": {
+      "fame": 3,
+      "alignment": -3,
+      "log": "The messenger is pleased. Your disciples are very quiet at dinner."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_meherb_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "{sect} has one snow lotus left, kept for the hardest case. Two arrive in one day: a village child with a frozen heart meridian, and an old general whose army pays well. The physician disciples look at you. The lotus sits in its jar.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Last Snow Lotus",
+   "choices": [
+    {
+     "text": "The child",
+     "effects": {
+      "alignment": 5,
+      "fame": 2,
+      "log": "The child lives. The general's aides are furious. The general, oddly, is not, and sends a donation."
+     }
+    },
+    {
+     "text": "The general, and buy another lotus with the fee",
+     "effects": {
+      "taels": 20,
+      "alignment": -1,
+      "log": "The fee buys a lotus in the spring. The child was treated with lesser herbs and lives, barely. (+20 taels)"
+     }
+    },
+    {
+     "text": "Split the lotus between them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "alignment": 3,
+      "log": "Half a lotus, perfect dosing. Both live. The physician disciples will study the notes for years."
+     },
+     "fail": {
+      "luck": -2,
+      "log": "Half a lotus is not enough for either. Both live, weaker. You learn the hard arithmetic of mercy."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_meteach_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has learned the healing arts faster than any disciple of {sect}. {He} has also learned that the same points that heal can stop a heart. You found {his} notes this morning. They are very thorough, and the last page is underlined twice.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_mercy"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Hands That Hurt and Heal",
+   "choices": [
+    {
+     "text": "Talk to {him} about it, honestly",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "trusted me with the truth"
+      },
+      "log": "{npc} goes pale, then admits it frightened {him} too. You burn the last page together."
+     }
+    },
+    {
+     "text": "Teach {him} the forbidden points properly",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "taught me the dark half"
+      },
+      "log": "Knowledge cannot be unlearned, only steered. {npc} becomes the finest healer you ever trained, and the most careful."
+     }
+    },
+    {
+     "text": "Forbid the notes and watch {him}",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "did not trust me"
+      },
+      "log": "{npc} obeys. The watching is felt. Something between you cools a little."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_irfirst_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The first rulebook of {sect} under Iron Discipline is a hundred and eight rules long. Rule one: obey the rules. Rule one hundred and eight: report anyone who has not read rule one. The disciples bow to the book every morning. One of them has started bowing to you the same way.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Book of Rules",
+   "choices": [
+    {
+     "text": "Read every rule aloud at dawn yourself",
+     "effects": {
+      "fame": 4,
+      "strength": 2,
+      "log": "A master who keeps the rules. The disciples straighten. So do the elders, reluctantly."
+     }
+    },
+    {
+     "text": "Cut it to thirty-six rules",
+     "effects": {
+      "comprehension": 4,
+      "log": "Shorter rules are kept better. The disciples memorise them in a week, which frightens you a little."
+     }
+    },
+    {
+     "text": "Add rule one hundred and nine: mercy",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "\"The master may forgive any rule once.\" It is used three times in a century, each time well."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_irrule_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} broke rule forty: no leaving the mountain without leave. {He} went down at night to carry a sick child to the town physician, and came back before dawn. The child lives. The rule says thirty days in the cold hall. The whole sect is watching to see if the rules are iron, or only words.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Rule That Breaks",
+   "choices": [
+    {
+     "text": "Thirty days, as written",
+     "effects": {
+      "fame": 4,
+      "mem": {
+       "deed": "clan",
+       "w": -10,
+       "note": "kept the rule over me"
+      },
+      "log": "{npc} serves the thirty days without a word. The rules are iron. Something else is now, too."
+     }
+    },
+    {
+     "text": "Thirty days, and serve them beside {him}",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "served my sentence beside me"
+      },
+      "log": "The master of the sect in the cold hall. The disciples never forget it. Neither does {npc}."
+     }
+    },
+    {
+     "text": "Change rule forty, then and there",
+     "effects": {
+      "comprehension": 3,
+      "fame": -2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "changed the rule for me"
+      },
+      "log": "\"Except to save a life.\" The elders call it a crack in the iron. You call it a joint."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_irdesert_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} is gone. {His} bed is made with corners like a blade, {his} robes are folded, and {his} sect token is left on the pillow. Under Iron Discipline nobody leaves. The elders want trackers sent. The rulebook says deserters are brought back in chains.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Deserter",
+   "choices": [
+    {
+     "text": "Send trackers, as the book says",
+     "effects": {
+      "fame": 3,
+      "flag": "hx_desert",
+      "npcFlag": "hx_desert",
+      "log": "The trackers ride out at dawn. The disciples watch them go and say nothing at all."
+     }
+    },
+    {
+     "text": "Go after {him} alone",
+     "effects": {
+      "charm": 2,
+      "flag": "hx_desert",
+      "npcFlag": "hx_desert",
+      "log": "You take no chains. The elders see that and look at each other."
+     }
+    },
+    {
+     "text": "Let {him} go. Strike the name",
+     "effects": {
+      "alignment": 2,
+      "fame": -3,
+      "log": "Iron that lets go is still iron, you tell yourself. The rulebook disagrees."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_irdesert_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "You find {npc} in a market town three provinces away, selling noodles from a cart, laughing with the customers. {He} sees you and goes white. Then {he} keeps ladling soup, because there is a queue. {He} was never late once on the mountain.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron",
+     "hx_desert"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_irdesert_1"
+    ],
+    "npcFlags": [
+     "hx_desert"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Deserter",
+   "choices": [
+    {
+     "text": "Eat a bowl and ask why",
+     "effects": {
+      "charm": 4,
+      "flag": "hx_desert_talk",
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "ate my noodles and listened"
+      },
+      "log": "\"I was very good at the rules,\" {npc} says. \"I forgot what I was good for.\" The soup is excellent."
+     }
+    },
+    {
+     "text": "Order {him} home",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "hx_desert_home",
+      "log": "{npc} closes the cart and follows. {He} does not look back at the queue."
+     },
+     "fail": {
+      "flag": "hx_desert_talk",
+      "mem": {
+       "deed": "clan",
+       "w": -10,
+       "note": "came with orders"
+      },
+      "log": "{npc} keeps ladling. \"Then take me in chains,\" {he} says. You do not."
+     }
+    },
+    {
+     "text": "Leave a sect token on the counter and go",
+     "effects": {
+      "alignment": 3,
+      "flag": "hx_desert_talk",
+      "log": "You do not look back. Behind you the ladle stops for a long moment."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_irdesert_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "The elders of {sect} sit in judgement. The book is open at the deserter's rule. {npc} kneels before the hall, with flour on {his} sleeves still. Every disciple on the mountain has found a reason to stand near the door.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron",
+     "hx_desert"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "anyFlags": [
+     "hx_desert_talk",
+     "hx_desert_home"
+    ],
+    "after": [
+     "dc_hx_irdesert_2"
+    ],
+    "npcFlags": [
+     "hx_desert"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Deserter",
+   "choices": [
+    {
+     "text": "Apply the rule in full",
+     "effects": {
+      "fame": 4,
+      "unflag": [
+       "hx_desert",
+       "hx_desert_talk",
+       "hx_desert_home"
+      ],
+      "npcUnflag": "hx_desert",
+      "log": "Iron Discipline holds. The hall is very quiet. {npc} serves {his} sentence and leaves the day it ends."
+     }
+    },
+    {
+     "text": "Write a new rule: a door out, with honour",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "unflag": [
+       "hx_desert",
+       "hx_desert_talk",
+       "hx_desert_home"
+      ],
+      "npcUnflag": "hx_desert",
+      "mem": {
+       "deed": "clan",
+       "w": 20,
+       "note": "opened a door in the iron"
+      },
+      "log": "Anyone may leave, once, with a bow. Almost nobody uses it. Everyone breathes easier."
+     }
+    },
+    {
+     "text": "Make {him} the sect cook",
+     "effects": {
+      "charm": 4,
+      "luck": 2,
+      "unflag": [
+       "hx_desert",
+       "hx_desert_talk",
+       "hx_desert_home"
+      ],
+      "npcUnflag": "hx_desert",
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "gave me the kitchen"
+      },
+      "log": "The elders splutter. The disciples eat better than they have in years. Discipline improves."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_irbell_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "The dawn bell of {sect} rang late. Every disciple was late because of it, and every one of them is listed for punishment by the book. The bell-ringer is the oldest elder, who fell asleep. The book does not say what to do when the rule-keeper breaks the rule.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Bell Was Late",
+   "choices": [
+    {
+     "text": "Punish the elder by the book",
+     "effects": {
+      "fame": 4,
+      "alignment": 1,
+      "log": "The old elder serves the penalty with great dignity. Nobody is ever late again, ever."
+     }
+    },
+    {
+     "text": "Pardon the disciples, punish nobody",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "The disciples cheer. The elders frown. Iron bends once and nobody quite forgets it."
+     }
+    },
+    {
+     "text": "Ring the bell yourself for a year",
+     "effects": {
+      "strength": 3,
+      "alignment": 3,
+      "log": "Every dawn, the master at the bell rope. It is the most respected year {sect} has had."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_irclash_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The master of a Free Wind sect stops at your gate on a journey and watches your disciples drill. \"A barracks,\" the master says cheerfully, \"with nicer roofs.\" Your disciples go on drilling in perfect time. Their ears have gone very red.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "A Rabble and a Barracks",
+   "choices": [
+    {
+     "text": "Invite the master to drill with them",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "log": "The master lasts an hour and leaves impressed and sore. \"A good barracks,\" is the verdict."
+     },
+     "fail": {
+      "charm": 2,
+      "log": "The master outlasts your disciples and leaves laughing. Your drill is changed by spring."
+     }
+    },
+    {
+     "text": "\"And yours is a teahouse with swords.\"",
+     "effects": {
+      "charm": 3,
+      "fame": 2,
+      "log": "The master laughs so hard tea comes out of one nostril. You become friends of a kind."
+     }
+    },
+    {
+     "text": "Let a disciple choose a Free Wind year",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 2,
+      "log": "One disciple goes. Comes back a year later, looser and better. The rulebook gains a footnote."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_irdoubt_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "A junior disciple drops a tray when you walk into the kitchen of {sect}. Then two more drop to their knees. Nobody has done anything wrong. They are simply afraid. The book made them good. You are no longer sure it made them anything else.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Afraid of You",
+   "choices": [
+    {
+     "text": "Pick up the tray and eat with them",
+     "effects": {
+      "charm": 4,
+      "alignment": 2,
+      "log": "A very silent meal. Then a very small joke. By the end, a little laughter, carefully."
+     }
+    },
+    {
+     "text": "Fear is respect. Leave it",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "log": "The kitchen stays silent for as long as you are in it. You eat alone, as usual."
+     }
+    },
+    {
+     "text": "Spend the night rereading the book",
+     "effects": {
+      "comprehension": 4,
+      "log": "Every rule is sound. Together they make a cage. You strike out nine before dawn."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_iralliance_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The Martial Alliance asks to borrow the drillmasters of {sect}. Its own young warriors are brave, sloppy and always late. The fee is generous. The war that is coming, the envoy says, will not wait for anyone to find their boots.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "factions": [
+     "orthodox"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "arc": "The Alliance's Drillmaster",
+   "choices": [
+    {
+     "text": "Lend them, for the fee",
+     "effects": {
+      "taels": 30,
+      "fame": 3,
+      "log": "Your drillmasters return in a year, smug. The Alliance warriors now march in step. (+30 taels)"
+     }
+    },
+    {
+     "text": "Lend them, for nothing",
+     "effects": {
+      "alignment": 4,
+      "fame": 4,
+      "log": "The Alliance owes {sect} a favour. Favours, in the murim, are worth more than silver."
+     }
+    },
+    {
+     "text": "Refuse. Iron is for our own",
+     "effects": {
+      "strength": 2,
+      "luck": 2,
+      "log": "The envoy is displeased. In the war, your disciples are the only ones who arrive on time."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_irpunish_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} is the punishment elder of {sect}, and loves the post too much. Penalties have doubled since {he} took it. Every infraction is recorded in tiny neat characters. The disciples have started to flinch when {he} walks past. {He} is very proud of the numbers.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_iron"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Punishment Hall",
+   "choices": [
+    {
+     "text": "Remove {him} from the post",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -12,
+       "note": "took the punishment hall from me"
+      },
+      "log": "{npc} bows with a face like stone. The numbers fall by half. The rules are kept just as well."
+     }
+    },
+    {
+     "text": "Give {him} a second post: mercy",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "gave me both halves"
+      },
+      "log": "{npc} must now record every pardon as neatly as every penalty. The ledger slowly evens out."
+     }
+    },
+    {
+     "text": "Praise the numbers",
+     "effects": {
+      "fame": 3,
+      "alignment": -3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "praised my work"
+      },
+      "log": "{npc} glows. The disciples stop flinching and start hiding. Discipline, of a kind."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wifirst_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The first year under the Free Wind. You take the gate of {sect} off its hinges and use it as a dining table. The disciples who arrive that spring include a one-armed fisherman, a runaway scholar, a juggler, and a woman of seventy who says she has always wanted to learn the spear.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Gate With No Door",
+   "choices": [
+    {
+     "text": "Teach them all the same first form",
+     "effects": {
+      "charm": 3,
+      "comprehension": 3,
+      "log": "Seven different bodies, seven different versions. You learn more from it than any of them."
+     }
+    },
+    {
+     "text": "Let each one find a style",
+     "effects": {
+      "luck": 4,
+      "log": "The yard looks like a festival. Something new is growing in it. You do not know what yet."
+     }
+    },
+    {
+     "text": "Ask the juggler to teach the others balance",
+     "effects": {
+      "strength": 3,
+      "charm": 2,
+      "log": "The juggler is a terrifying teacher. By summer everyone can stand on a post. Even the woman of seventy."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wigenius_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} came to {sect} last month, learned the first manual in a week, the second in a day, and then set fire to the third to see how it would burn. {He} says the manuals are too slow. The others say {he} is mad. You think {he} might be right about the manuals.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Wild Genius",
+   "choices": [
+    {
+     "text": "Give {him} no manuals. Teach by sparring",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_genius",
+      "npcFlag": "hx_genius",
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "threw away the books for me"
+      },
+      "log": "Every day, an hour of sparring. {npc} learns from every blow and forgets nothing."
+     }
+    },
+    {
+     "text": "Make {him} copy the burned manual by hand",
+     "effects": {
+      "alignment": 2,
+      "flag": "hx_genius",
+      "npcFlag": "hx_genius",
+      "mem": {
+       "deed": "clan",
+       "w": -5,
+       "note": "made me copy the book"
+      },
+      "log": "{npc} copies it in a night. With corrections in the margins. Good ones."
+     }
+    },
+    {
+     "text": "Let {him} roam the mountain alone",
+     "effects": {
+      "luck": 3,
+      "flag": "hx_genius",
+      "npcFlag": "hx_genius",
+      "log": "{npc} vanishes for a month and comes back with a technique nobody has ever seen."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wigenius_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "{npc} challenges the head disciple of a great orthodox sect at a gathering. Not with permission. Not with manners. {He} wins in four moves, then explains in front of everyone why their style is wrong. The great sect's elders are on their feet. All eyes go to you.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind",
+     "hx_genius"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_wigenius_1"
+    ],
+    "npcFlags": [
+     "hx_genius"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Wild Genius",
+   "choices": [
+    {
+     "text": "Defend {him} publicly",
+     "effects": {
+      "fame": 4,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "stood by me in front of everyone"
+      },
+      "log": "\"The Free Wind blows where it likes.\" The great sect leaves offended. {npc} is unbearable for a month."
+     }
+    },
+    {
+     "text": "Make {him} bow and apologise",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "made me bow"
+      },
+      "log": "{npc} bows, too low, and everyone knows it is mockery. Still. The apology is technically made."
+     }
+    },
+    {
+     "text": "Ask the head disciple to spar again, as friends",
+     "effects": {
+      "luck": 3,
+      "comprehension": 3,
+      "log": "The two of them spar for an hour and come away grinning. A friendship that will matter later."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wigenius_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "{npc} stands at the open gate with a pack on {his} back. Under the Free Wind, anyone may go. {He} wants to wander and see the whole murim. {He} is the best disciple {sect} has ever had, and has never once said thank you.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind",
+     "hx_genius"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_wigenius_2"
+    ],
+    "npcFlags": [
+     "hx_genius"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Wild Genius",
+   "choices": [
+    {
+     "text": "Let {him} go, with your best sword",
+     "effects": {
+      "alignment": 3,
+      "fame": 3,
+      "unflag": "hx_genius",
+      "npcUnflag": "hx_genius",
+      "mem": {
+       "deed": "clan",
+       "w": 25,
+       "note": "gave me the road and a sword"
+      },
+      "log": "{npc} takes the sword. Then turns at the gate and bows, all the way down. Once."
+     }
+    },
+    {
+     "text": "Ask {him} to stay one more year",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 4,
+      "unflag": "hx_genius",
+      "npcUnflag": "hx_genius",
+      "log": "{npc} stays. That year {he} writes the fourth manual of {sect}, the fast one."
+     },
+     "fail": {
+      "luck": 2,
+      "unflag": "hx_genius",
+      "npcUnflag": "hx_genius",
+      "log": "\"The creed says I may go,\" {npc} says, and does. The creed was right."
+     }
+    },
+    {
+     "text": "Say nothing. Wind is wind",
+     "effects": {
+      "luck": 4,
+      "unflag": "hx_genius",
+      "npcUnflag": "hx_genius",
+      "log": "{npc} walks away whistling. Years later the name comes back to you in stories, always with yours beside it."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wiwander_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Half the disciples who came in spring have gone by autumn. That is the creed. Some send letters. Most do not. The dormitory of {sect} has more empty beds than full ones, and the elders ask, a little sharply, what exactly you are building.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "They Never Stay",
+   "choices": [
+    {
+     "text": "\"A road, not a house.\"",
+     "effects": {
+      "comprehension": 4,
+      "log": "The elders do not like the answer. They like it better each year, as the letters pile up."
+     }
+    },
+    {
+     "text": "Keep a lamp lit for the ones who come back",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "One lamp in the window, every night. Every year, two or three come back under it."
+     }
+    },
+    {
+     "text": "Ask the ones who stay why they stay",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "\"Because we could leave,\" says one. It is the whole creed in five words."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wireturn_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A former disciple of {sect} walks in at dusk, ten years older, with a scar, a foreign accent and a bag of seeds from somewhere south of every map. Under the Free Wind nobody asks where you went. Everyone wants to. The wanderer sits down at dinner as if never gone.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Wanderer Comes Back",
+   "choices": [
+    {
+     "text": "Ask for the whole story",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "It takes until dawn. Half of it is lies and all of it is wonderful. The seeds turn out to be tea."
+     }
+    },
+    {
+     "text": "Ask nothing, as the creed says",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "log": "The wanderer is grateful. A month later, unasked, tells you the one true thing that mattered."
+     }
+    },
+    {
+     "text": "Spar, to see what the road taught",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "qi": 15,
+      "log": "Foreign footwork, a strange elbow. You learn it in the bout. The road teaches everyone."
+     },
+     "fail": {
+      "health": -6,
+      "luck": 2,
+      "log": "The road taught a great deal. Your ribs agree. (-6 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wiclash_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "An Iron Discipline sect sends a letter to every hall in the province: {sect} is no sect at all, but a rabble, an inn for vagabonds with a sword rack. Your oddballs read the letter aloud at dinner in funny voices. Then they look at you, a little hurt underneath.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Rabble Sect",
+   "choices": [
+    {
+     "text": "Challenge them to a tournament",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 6,
+      "log": "Your rabble fights like nobody has ever fought. The iron sect wins two rounds of nine. Letters stop."
+     },
+     "fail": {
+      "fame": -2,
+      "charm": 2,
+      "log": "Your rabble loses, laughing. The crowd loves them anyway. The iron sect wins and is less popular."
+     }
+    },
+    {
+     "text": "Write back: \"Yes. Come and visit.\"",
+     "effects": {
+      "charm": 4,
+      "log": "Two of their disciples come. One stays. The iron sect never writes again."
+     }
+    },
+    {
+     "text": "Tell your disciples what you see in them",
+     "effects": {
+      "alignment": 3,
+      "charm": 3,
+      "log": "Nobody reads the letter in funny voices after that. They frame it instead."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_widoubt_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "Late autumn. The wind takes the last leaves off the mountain. You count the disciples of {sect} who have stayed more than five years. It does not take long. Other masters leave great lineages. You will leave a scattering of people who passed through.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Built on Wind",
+   "choices": [
+    {
+     "text": "Seeds scatter. That is how forests grow",
+     "effects": {
+      "comprehension": 4,
+      "luck": 2,
+      "log": "You think of them across the murim, teaching what they took from here. You sleep well."
+     }
+    },
+    {
+     "text": "Ask a few to commit, for the sect",
+     "effects": {
+      "fame": 3,
+      "alignment": -1,
+      "log": "Three agree. The creed bends a little. The sect will last longer, a little less free."
+     }
+    },
+    {
+     "text": "Sit in the wind and let it pass through you",
+     "effects": {
+      "qi": 15,
+      "log": "The wind does not stay either. It still shapes the mountain. You stand up lighter."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wicult_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A deserter of the Heavenly Demon Cult comes to {sect} and asks to join. The Free Wind takes anyone, the deserter says. That is the creed. Behind the deserter, somewhere on the road, the Cult will be coming. Behind the Cult, the Martial Alliance will be asking questions.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Cult Deserter",
+   "choices": [
+    {
+     "text": "Take the deserter in. The creed is the creed",
+     "effects": {
+      "alignment": 4,
+      "fame": -2,
+      "log": "The Cult sends one letter, then nothing. The Alliance sends many. The deserter becomes the best cook you ever had."
+     }
+    },
+    {
+     "text": "Give shelter for a season, then a road",
+     "effects": {
+      "alignment": 2,
+      "luck": 3,
+      "log": "A season of quiet, then south. Nobody comes asking. You never learn why."
+     }
+    },
+    {
+     "text": "Refuse. Some wind blows in storms",
+     "effects": {
+      "fame": 2,
+      "alignment": -2,
+      "log": "The deserter nods and walks on. Your disciples call it the day the creed had a wall."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wijoke_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has painted a moustache on the master's portrait in the hall of {sect}. On your portrait. In ink that will not come off. Under any other creed it would be expulsion. Under the Free Wind, everyone is waiting to see whether you are free enough.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Prankster",
+   "choices": [
+    {
+     "text": "Laugh, and keep the moustache",
+     "effects": {
+      "charm": 5,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "laughed at my joke"
+      },
+      "log": "Visitors are told the master once had a fine moustache. Several believe it."
+     }
+    },
+    {
+     "text": "Make {him} sit for a portrait, then paint it",
+     "effects": {
+      "luck": 3,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "got even, fairly"
+      },
+      "log": "You give {npc} two moustaches and a monocle-shaped bruise. The hall has two masterpieces."
+     }
+    },
+    {
+     "text": "Have {him} repaint the whole portrait",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "made me repaint it"
+      },
+      "log": "{npc} turns out to be a gifted painter. The new portrait is better. The moustache is gone, mostly."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_wiexam_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Other sects hold entrance exams. {sect} holds a pot of tea. This spring a very rich family sends their heir up the mountain with a cart of silver and a letter demanding a guaranteed place and a private teacher. The heir is seventeen and clearly does not want to be here.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_wind"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "No Entrance Exam",
+   "choices": [
+    {
+     "text": "Send the silver back, keep the heir if willing",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "The heir stays. Never goes home. The family writes angry letters for a decade, then visits, then stays too."
+     }
+    },
+    {
+     "text": "Keep the silver for the poor disciples",
+     "effects": {
+      "taels": 30,
+      "alignment": -1,
+      "log": "The heir sulks for a year. The poor disciples get winter coats. (+30 taels)"
+     }
+    },
+    {
+     "text": "Ask the heir what they actually want",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "\"To paint,\" says the heir. You send them to a painter in the town, with a letter. The family is furious."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shfirst_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The first year under the Hidden Blade. {sect} looks like a modest school from the road. Underneath, there is a second ledger, kept in a code only three people can read. The first client was a merchant with a very large problem. The second was a magistrate with a smaller one.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Quiet Ledger",
+   "choices": [
+    {
+     "text": "Take only clients you can respect",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 2,
+      "log": "The second ledger is thinner than it could be. You sleep better than most in your trade."
+     }
+    },
+    {
+     "text": "Take anyone who pays",
+     "effects": {
+      "taels": 30,
+      "alignment": -3,
+      "log": "The second ledger fills. So does the strongroom. Some nights you do not look in either. (+30 taels)"
+     }
+    },
+    {
+     "text": "Keep the second ledger yourself, no one else",
+     "effects": {
+      "luck": 3,
+      "log": "Three can read the code. Now only one writes in it. Secrets keep better in one head."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shally_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "An inspector of the Martial Alliance takes rooms in the town below {sect}. {npc} drinks tea in every inn, chats with every porter, and has already asked twice why a modest school owns such a fine new granary. {He} smiles a great deal. The smile does not reach {his} eyes.",
+   "npc": {
+    "role": "hx_inspector",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hx_inspector",
+     "ageAbs": 40,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Alliance Asks Questions",
+   "choices": [
+    {
+     "text": "Invite {npc} up for dinner",
+     "effects": {
+      "charm": 3,
+      "flag": "hx_ally",
+      "npcFlag": "hx_ally",
+      "log": "{npc} admires everything and asks nothing. That is the most worrying dinner of your year."
+     }
+    },
+    {
+     "text": "Stop all quiet work until {he} leaves",
+     "effects": {
+      "taels": -20,
+      "flag": "hx_ally",
+      "npcFlag": "hx_ally",
+      "log": "A lean season. The strongroom thins. The inspector finds nothing, and stays anyway. (-20 taels)"
+     }
+    },
+    {
+     "text": "Feed {him} a false trail",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "luck": 3,
+      "flag": "hx_ally",
+      "npcFlag": "hx_ally",
+      "log": "{npc} follows it three provinces east. You have a year, perhaps two."
+     },
+     "fail": {
+      "fame": -3,
+      "flag": "hx_ally",
+      "npcFlag": "hx_ally",
+      "log": "{npc} sees the trail for what it is and smiles wider. Now {he} knows there is something to hide."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shally_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "{npc} has found one of your clients: a salt merchant who talks too much when drunk. The inspector has the merchant's story written down and witnessed. {He} comes up the mountain alone and lays it on your table. \"I have not sent it,\" {he} says. \"Yet.\"",
+   "npc": {
+    "role": "hx_inspector"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow",
+     "hx_ally"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "after": [
+     "dc_hx_shally_1"
+    ],
+    "npcFlags": [
+     "hx_ally"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Alliance Asks Questions",
+   "choices": [
+    {
+     "text": "Ask what {he} wants",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_ally_deal",
+      "log": "\"Your next client,\" {npc} says. \"Work for the Alliance, quietly, and the paper burns.\""
+     }
+    },
+    {
+     "text": "Confess the clean half",
+     "effects": {
+      "alignment": 3,
+      "flag": "hx_ally_clean",
+      "log": "You tell the truth about the jobs you are proud of. {npc} listens, surprised, and does not interrupt."
+     }
+    },
+    {
+     "text": "Take the paper by force",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": -2,
+      "alignment": -4,
+      "flag": "hx_ally_deal",
+      "log": "The paper burns in your brazier. {npc} rubs {his} wrist. \"There are copies,\" {he} says. There are."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "hx_ally_deal",
+      "log": "{npc} is far better than an inspector should be. The paper stays in {his} sleeve. (-10 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shally_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "The Alliance's judgement arrives with {npc}, sealed in red. {sect} can be named a shadow sect before the whole murim, or a quiet partner with the Alliance's own hidden work. {npc} lets you read it before {he} hands it in.",
+   "npc": {
+    "role": "hx_inspector"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow",
+     "hx_ally"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "anyFlags": [
+     "hx_ally_deal",
+     "hx_ally_clean"
+    ],
+    "after": [
+     "dc_hx_shally_2"
+    ],
+    "npcFlags": [
+     "hx_ally"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Alliance Asks Questions",
+   "choices": [
+    {
+     "text": "Become the Alliance's hidden blade",
+     "effects": {
+      "fame": 3,
+      "taels": 30,
+      "alignment": -1,
+      "unflag": [
+       "hx_ally",
+       "hx_ally_deal",
+       "hx_ally_clean"
+      ],
+      "npcUnflag": "hx_ally",
+      "log": "Your clients now include the righteous. They pay less and expect more. (+30 taels)"
+     }
+    },
+    {
+     "text": "Close the second ledger for good",
+     "effects": {
+      "alignment": 5,
+      "unflag": [
+       "hx_ally",
+       "hx_ally_deal",
+       "hx_ally_clean"
+      ],
+      "npcUnflag": "hx_ally",
+      "log": "You burn it before {npc}'s eyes. {He} nods and tears up the red seal. A clean school, at last, if poorer."
+     }
+    },
+    {
+     "text": "Take the public naming. Own it",
+     "effects": {
+      "fame": 4,
+      "luck": 2,
+      "unflag": [
+       "hx_ally",
+       "hx_ally_deal",
+       "hx_ally_clean"
+      ],
+      "npcUnflag": "hx_ally",
+      "log": "Named before the murim. Clients double. The orthodox sects stop visiting. It was always going to come to this."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shjob_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A client of {sect} wants a rival merchant ruined: not killed, ruined. Burned warehouse, forged debts, a son turned against his father. The fee is three hundred taels. The client has left the target's family tree on your table, with the children underlined.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Client's Dirty Job",
+   "choices": [
+    {
+     "text": "Take it, but leave the family out",
+     "effects": {
+      "taels": 40,
+      "alignment": -3,
+      "log": "The warehouse burns, empty. The debts are forged. The children are left alone. The client is half pleased. (+40 taels)"
+     }
+    },
+    {
+     "text": "Refuse, and warn the target",
+     "effects": {
+      "alignment": 4,
+      "fame": -1,
+      "log": "The target never learns who warned him. The client takes the work elsewhere. The strongroom has a cold winter."
+     }
+    },
+    {
+     "text": "Take the fee and ruin the client instead",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 40,
+      "luck": 3,
+      "log": "The client's own warehouse burns. The target's flourishes. Nobody ever traces it to you. (+40 taels)"
+     },
+     "fail": {
+      "fame": -4,
+      "log": "The client finds out. The story spreads: the Hidden Blade turns on its clients. Business suffers."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shdisciple_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} asks to see you alone. {He} is one of the best of {sect}'s quiet workers, and {he} wants to stop. No more night jobs. {He} wants to teach the open school, the one the road sees. {He} knows too much to simply walk away, and both of you know it.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "A Disciple Wants Clean Hands",
+   "choices": [
+    {
+     "text": "Let {him} go to the open school",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "let me come out of the shadows"
+      },
+      "log": "{npc} teaches children the first form, badly at first, then beautifully. {He} never speaks of the nights."
+     }
+    },
+    {
+     "text": "One last job, then {he} is free",
+     "effects": {
+      "taels": 30,
+      "mem": {
+       "deed": "clan",
+       "w": -6,
+       "note": "asked for one more job"
+      },
+      "log": "{npc} does it. Comes back silent. Teaches in the open school after that, and never smiles at you again. (+30 taels)"
+     }
+    },
+    {
+     "text": "Refuse. {He} knows too much",
+     "effects": {
+      "fame": 2,
+      "alignment": -4,
+      "mem": {
+       "deed": "clan",
+       "w": -15,
+       "note": "refused to let me go"
+      },
+      "log": "{npc} bows and goes back to the night work. Something in {his} bow has changed."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shclash_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A healing sect's physician treats a man with a very particular wound: one clean cut, behind the knee, that lames without killing. It is a signature of {sect}. The physician comes to you with the case notes and a question that is not quite an accusation.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Healers Know Your Work",
+   "choices": [
+    {
+     "text": "Admit it, and explain the client",
+     "effects": {
+      "alignment": 2,
+      "charm": 2,
+      "log": "The physician listens to the whole of it. \"He beat his wife,\" you say. The physician closes the notes."
+     }
+    },
+    {
+     "text": "Deny everything, smiling",
+     "effects": {
+      "luck": 3,
+      "alignment": -2,
+      "log": "The physician smiles back. Nobody is fooled. Both sects are very polite to each other for years."
+     }
+    },
+    {
+     "text": "Change the signature",
+     "effects": {
+      "comprehension": 3,
+      "alignment": -1,
+      "log": "Your disciples learn a new cut. The physician never sees it again, which proves nothing."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shcult_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A messenger of the Heavenly Demon Cult brings {sect} a job and a box of gold. The target is an orthodox elder, a hard one, who has hanged three of your kind. The gold is very good gold. The Cult remembers who says yes, and who says no.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "factions": [
+     "demonic",
+     "unorthodox"
+    ]
+   },
+   "arc": "Work From the Cult",
+   "choices": [
+    {
+     "text": "Take it",
+     "effects": {
+      "taels": 50,
+      "alignment": -5,
+      "fame": 2,
+      "log": "The elder does not come home from a journey. The Cult is pleased. You do not count the gold for a week. (+50 taels)"
+     }
+    },
+    {
+     "text": "Take the gold, warn the elder",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 50,
+      "alignment": 2,
+      "log": "The elder vanishes into hiding. The Cult blames bad luck. You count the gold quickly. (+50 taels)"
+     },
+     "fail": {
+      "fame": -5,
+      "health": -10,
+      "log": "The Cult knows. Its answer comes at night, sharp. Your guards hold, barely. (-10 health)"
+     }
+    },
+    {
+     "text": "Refuse politely",
+     "effects": {
+      "alignment": 2,
+      "luck": -2,
+      "log": "The messenger takes back the box. The Cult does not forget. Neither, oddly, does the elder, who hears of it."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shdoubt_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "You sit up late with both ledgers of {sect} side by side. The open one shows a modest school with modest students. The second one shows how it was paid for. Some of those names you remember every night. Some you have already forgotten, which is worse.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Two Ledgers",
+   "choices": [
+    {
+     "text": "Burn a page of the worst ones",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 2,
+      "log": "The fire takes them. The memories stay. You did not expect otherwise."
+     }
+    },
+    {
+     "text": "Write the names you forgot in the margin",
+     "effects": {
+      "alignment": 4,
+      "luck": -2,
+      "log": "Every one of them. It takes all night. You will not forget them again."
+     }
+    },
+    {
+     "text": "Close both and meditate",
+     "effects": {
+      "qi": 15,
+      "alignment": -1,
+      "log": "A dark heart is still a heart. Your qi runs cold and smooth."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shrival_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Someone else is doing quiet work in your province, and doing it badly: loud, bloody, careless. The magistrates are waking up. A client of {sect} asks if the newcomers are yours. They are not. They are ruining the trade for everyone.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Another Shadow",
+   "choices": [
+    {
+     "text": "Find them and offer terms",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 25,
+      "fame": 2,
+      "log": "They take the terms. They become your junior partners, and quieter. (+25 taels)"
+     },
+     "fail": {
+      "health": -8,
+      "log": "They do not take terms. The negotiation becomes a night fight in a warehouse. (-8 health)"
+     }
+    },
+    {
+     "text": "Hand them to the magistrate, anonymously",
+     "effects": {
+      "alignment": 2,
+      "luck": 3,
+      "log": "The magistrate is grateful to an unknown friend. The province quietens. Your trade improves."
+     }
+    },
+    {
+     "text": "Let them burn themselves out",
+     "effects": {
+      "comprehension": 3,
+      "log": "They do, in a season. The magistrates go back to sleep. You never moved a finger."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_shgift_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A village headman comes to {sect} with a sack of rice he cannot spare. A tax collector has been taking twice the tax and keeping half. The headman has heard that the school on the hill solves problems quietly. He cannot pay. He brought the rice anyway.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_creed_shadow"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Unasked Favour",
+   "choices": [
+    {
+     "text": "Do it for the rice",
+     "effects": {
+      "alignment": 5,
+      "fame": 2,
+      "log": "The collector is found at dawn tied to the yamen gate, with his own ledger round his neck. The village feasts."
+     }
+    },
+    {
+     "text": "Do it, and send the rice back",
+     "effects": {
+      "alignment": 6,
+      "charm": 2,
+      "log": "The rice comes back with a note: paid in full. The headman cries. The collector is never seen in that county again."
+     }
+    },
+    {
+     "text": "Refuse. Charity is bad for business",
+     "effects": {
+      "taels": 5,
+      "alignment": -3,
+      "log": "The headman goes home. You keep the rice. It tastes of nothing. (+5 taels)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkten_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The news comes with a merchant who read it on a teahouse board: {sect} is counted among the ten great sects of the murim. By noon there are gifts at the gate from sects who ignored you for years. By evening, three of them have sent spies to measure the walls.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Among the Ten Great Sects",
+   "choices": [
+    {
+     "text": "Accept every gift, return every courtesy",
+     "effects": {
+      "fame": 5,
+      "charm": 3,
+      "log": "A month of letters and bows. {sect} learns how great sects talk: slowly and with knives inside."
+     }
+    },
+    {
+     "text": "Feast the disciples who made it happen",
+     "effects": {
+      "taels": -15,
+      "alignment": 3,
+      "log": "Roast pork and rice wine in the yard. The disciples sing your old songs badly. (-15 taels)"
+     }
+    },
+    {
+     "text": "Change nothing. Train at dawn as always",
+     "effects": {
+      "strength": 3,
+      "comprehension": 2,
+      "log": "The spies report that {sect} trains before the sun. The old sects take note."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkthree_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "{sect} stands among the three greatest sects under heaven. The other two are older than most dynasties. Their masters write you a joint letter, beautifully brushed, welcoming you to a burden. You read it twice before you notice that it is also a warning.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_3"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Three Greatest",
+   "choices": [
+    {
+     "text": "Reply with equal grace and equal warning",
+     "effects": {
+      "fame": 5,
+      "comprehension": 3,
+      "log": "Your reply is studied in all three sects for a generation, for its third line especially."
+     }
+    },
+    {
+     "text": "Visit both in person",
+     "effects": {
+      "charm": 5,
+      "log": "Old masters, old halls, very long dinners. You come home with two friends and three rivals."
+     }
+    },
+    {
+     "text": "Frame the letter. Ignore the warning",
+     "effects": {
+      "luck": 3,
+      "fame": 3,
+      "log": "It hangs in the hall. Visitors read it as praise. You read it, some nights, as a threat."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkone_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "{sect} is first under heaven. Shaolin sends a monk to ask, very politely, how it was done. Wudang sends a poem. Mount Hua sends nothing, which says everything. Your oldest disciple finds you on the roof at midnight, looking at a sky with nothing above you in it.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_1"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "First Under Heaven",
+   "choices": [
+    {
+     "text": "\"Now we can only fall. Let us fall well.\"",
+     "effects": {
+      "comprehension": 5,
+      "alignment": 2,
+      "log": "Your disciple laughs, then stops, then nods. You both sit there until dawn."
+     }
+    },
+    {
+     "text": "Write a letter to the one you once were",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "You write it to the young person who once stood at the foot of this mountain, looking up. You burn it. It reaches them, somehow."
+     }
+    },
+    {
+     "text": "Go down and train, as on any day",
+     "effects": {
+      "strength": 4,
+      "fame": 3,
+      "log": "First under heaven trains at dawn in the cold. The story spreads faster than the ranking did."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkshaolin_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A Shaolin monk climbs the mountain of {sect} on foot, refusing every cart. He asks to watch one morning's training, nothing more. He watches with his hands folded and his face like a still pond. At the end he bows and asks one question.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "A Monk From Shaolin",
+   "choices": [
+    {
+     "text": "Answer it fully, hiding nothing",
+     "effects": {
+      "alignment": 3,
+      "fame": 3,
+      "log": "The monk listens, bows again and goes home. Shaolin's letters to you become noticeably warmer."
+     }
+    },
+    {
+     "text": "Answer with a question of your own",
+     "effects": {
+      "comprehension": 4,
+      "log": "The monk smiles for the first time. You talk until dusk, about nothing martial at all."
+     }
+    },
+    {
+     "text": "Ask to spar, as a courtesy",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 5,
+      "qi": 10,
+      "log": "Iron palm against your art. A draw, by agreement. Shaolin records it in its own annals."
+     },
+     "fail": {
+      "health": -8,
+      "comprehension": 2,
+      "log": "The monk's palm stops a finger from your chest. He bows. So do you, lower. (-8 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkwudang_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Wudang invites {sect} to a debate on the way of martial arts. Wudang has won every debate it has held for three hundred years, chiefly by being Wudang. The invitation is very gracious. The hall will be full of every sect that matters.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Wudang Debate",
+   "choices": [
+    {
+     "text": "Go and debate in earnest",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "comprehension": 3,
+      "log": "A draw, declared by Wudang itself. In three hundred years nobody has managed that much."
+     },
+     "fail": {
+      "fame": -2,
+      "comprehension": 3,
+      "log": "Wudang wins, graciously. You learn more from losing to them than from most victories."
+     }
+    },
+    {
+     "text": "Send your cleverest disciple instead",
+     "effects": {
+      "luck": 3,
+      "fame": 2,
+      "log": "Your disciple loses brilliantly. Wudang offers the disciple a place. The disciple refuses, loudly."
+     }
+    },
+    {
+     "text": "Decline with a poem",
+     "effects": {
+      "charm": 4,
+      "log": "Your poem is passed round the Wudang hall and argued over for a month. In a way, you debated after all."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkhua_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "Mount Hua sends three young swordsmen to {sect} with a polite request for an exchange of pointers. Their manners are perfect. Their eyes are not. Mount Hua has been ranked below you this year, and Mount Hua has never been good at that.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Plum Blossom Envy",
+   "choices": [
+    {
+     "text": "Let your best three answer them",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "log": "Two bouts to one. The Mount Hua swordsmen bow stiffly and go home to train harder. Good."
+     },
+     "fail": {
+      "fame": -3,
+      "log": "Mount Hua wins two of three. Their plum-blossom sword is very fast. Your disciples train till midnight."
+     }
+    },
+    {
+     "text": "Answer them yourself, gently",
+     "effects": {
+      "fame": 3,
+      "comprehension": 3,
+      "log": "You give pointers, real ones. The three go home grudgingly grateful. Mount Hua's next letter is warmer."
+     }
+    },
+    {
+     "text": "Feed them, show them the mountain, and no bouts",
+     "effects": {
+      "charm": 4,
+      "alignment": 2,
+      "log": "They leave confused and well fed. Envy is hard to keep up after dumplings."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rknamgung_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The Namgung clan, the great sword family, proposes an alliance with {sect}: their swords, your disciples, one joint front in the next war. Their envoy also mentions, as if by accident, that the alliance would make the two of you the second force under heaven.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Namgung Proposal",
+   "choices": [
+    {
+     "text": "Accept the alliance",
+     "effects": {
+      "fame": 5,
+      "taels": 20,
+      "log": "The Namgung keep every term exactly. They also keep a very close eye on you. (+20 taels)"
+     }
+    },
+    {
+     "text": "Accept, but only for one war",
+     "effects": {
+      "comprehension": 3,
+      "fame": 3,
+      "log": "An alliance with a door. The Namgung admire it, in the way old families admire a good contract."
+     }
+    },
+    {
+     "text": "Refuse. Great sects stand alone",
+     "effects": {
+      "luck": 3,
+      "alignment": 2,
+      "log": "The envoy bows and goes. The Namgung take note. So does everyone else."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkenvy_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Rumours spread in the teahouses: {sect} bought its ranking, {sect} hides demonic arts, the master sold an ancestor's grave. Each rumour is stupider than the last and each one spreads faster. Somebody is paying good silver for them.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Whispers",
+   "choices": [
+    {
+     "text": "Find who pays",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "log": "A jealous sect elder, two provinces away. One letter from you and the rumours stop, overnight."
+     },
+     "fail": {
+      "luck": -2,
+      "log": "The trail goes cold in a gambling den's back room. The rumours go on, and slowly fade."
+     }
+    },
+    {
+     "text": "Answer with a public open day",
+     "effects": {
+      "charm": 4,
+      "fame": 3,
+      "log": "Anyone may come and see the training. Hundreds come. Nobody repeats the rumours after that."
+     }
+    },
+    {
+     "text": "Ignore them",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 2,
+      "log": "Rumours need an answer to live. Yours starve within a year."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkchal_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "A sect ranked just below {sect} sends a formal challenge: a contest of five bouts before the whole murim. Win, and the ranking stands. Lose, and they take your place. The letter is sealed in black, which in the old custom means no refusal without shame.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Challenge to the Ranking",
+   "choices": [
+    {
+     "text": "Accept, and train hard",
+     "effects": {
+      "strength": 3,
+      "flag": "hx_chal",
+      "log": "A year of training. The disciples sleep in shifts. The yard never goes quiet."
+     }
+    },
+    {
+     "text": "Accept, and study their style",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_chal",
+      "log": "Your spies bring back their forms. Your disciples learn the answers before they learn the questions."
+     }
+    },
+    {
+     "text": "Refuse. Accept the shame",
+     "effects": {
+      "alignment": 3,
+      "fame": -5,
+      "log": "The murim laughs for a season. Your disciples are furious. You let them be furious and keep training."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkchal_2",
+   "cat": "life",
+   "weight": 20,
+   "once": false,
+   "text": "The contest. Five bouts on a stage before every sect that matters. Two to your disciples, two to theirs. The fifth bout is master against master. The crowd goes silent. Your opponent bows, and draws.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_10",
+     "hx_chal"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "after": [
+     "dc_hx_rkchal_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Challenge to the Ranking",
+   "choices": [
+    {
+     "text": "Fight with everything you have",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 8,
+      "qi": 10,
+      "unflag": "hx_chal",
+      "log": "You win. The other master bows deeply. The ranking stands, and is stronger for being tested."
+     },
+     "fail": {
+      "fame": -6,
+      "health": -12,
+      "unflag": "hx_chal",
+      "log": "You lose, honourably. The ranking falls one place. Your disciples carry you home proudly. (-12 health)"
+     }
+    },
+    {
+     "text": "Fight to a draw, on purpose",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 4,
+      "charm": 3,
+      "unflag": "hx_chal",
+      "log": "A perfect draw. Both sects keep their place. Both masters know exactly what happened."
+     },
+     "fail": {
+      "fame": -3,
+      "unflag": "hx_chal",
+      "log": "The draw slips into a loss. The crowd will argue about it for years."
+     }
+    },
+    {
+     "text": "Yield the bout with a bow",
+     "effects": {
+      "alignment": 4,
+      "fame": -4,
+      "unflag": "hx_chal",
+      "log": "You yield. The ranking slips. The other master, ashamed, sends gifts for a decade."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_rklonely_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": false,
+   "text": "First under heaven means there is nobody left to look up to. Nobody to measure against, nobody to beat. The disciples of {sect} train as hard as ever, but their eyes have changed. They train now not to rise but not to fall. You see the same thing in your own.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_1"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Nothing Above",
+   "choices": [
+    {
+     "text": "Set a new goal: a hundred years of peace",
+     "effects": {
+      "alignment": 5,
+      "log": "A strange goal for a martial sect. The disciples take it up with surprising fire."
+     }
+    },
+    {
+     "text": "Seek a hermit master to humble you",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 5,
+      "qi": 15,
+      "log": "An old woodcutter in the far mountains beats you with a branch. You go home grinning."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "No hermit can be found. The mountains are empty. You come home quieter, and train harder."
+     }
+    },
+    {
+     "text": "Meditate on the empty sky",
+     "effects": {
+      "qi": 15,
+      "comprehension": 2,
+      "log": "Nothing above you. Nothing below you, either. Only the work, every morning."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkpetition_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Because {sect} is first under heaven, every quarrel in the murim now comes to your gate. Two clans over a well. A sect over a manual. A widow over a sword her husband lost at cards. The queue at the gate is longer than the queue for the kitchen.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_1"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Everyone Brings Their Disputes",
+   "choices": [
+    {
+     "text": "Judge them all, fairly, every morning",
+     "effects": {
+      "fame": 5,
+      "comprehension": 3,
+      "log": "Your judgements become the custom of the murim. Your mornings are never your own again."
+     }
+    },
+    {
+     "text": "Appoint judges from among your elders",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "The elders are flattered and overworked. The queue shrinks. The murim is satisfied, mostly."
+     }
+    },
+    {
+     "text": "Send them all away. A sect is not a court",
+     "effects": {
+      "alignment": 2,
+      "fame": -2,
+      "log": "The queue grumbles and goes. Some of the quarrels become wars. You are not sure you were right."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkbeggars_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The Beggars' Union sends an old beggar with a bowl and a message: someone among the great sects plans to pull {sect} down from the top three. The beggar will tell you who, for a price. The price is not silver. It is a favour, to be named later.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_3"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "The Beggars' News",
+   "choices": [
+    {
+     "text": "Agree. A favour owed is fair",
+     "effects": {
+      "luck": 3,
+      "fame": 2,
+      "log": "The beggar names the sect. You move before they do. Years later the favour is named, and it is a strange one."
+     }
+    },
+    {
+     "text": "Pay in silver anyway (30 taels)",
+     "effects": {
+      "taels": -30,
+      "comprehension": 2,
+      "log": "The beggar takes the silver and tells you, shaking his head. \"The Union prefers favours.\" (-30 taels)"
+     }
+    },
+    {
+     "text": "Refuse. Let them come",
+     "effects": {
+      "strength": 3,
+      "alignment": 2,
+      "log": "They come, at the next gathering, with words. You answer with words. Nothing breaks."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkfall_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "The disciples of {sect} have started to talk about the ranking more than the training. Who is rising, who is slipping, what Wudang said, what Shaolin did. A junior disciple asks you, very seriously, what will happen to them if the sect drops a place.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_3"
+    ],
+    "age": [
+     30,
+     9999
+    ]
+   },
+   "arc": "Fear of the Fall",
+   "choices": [
+    {
+     "text": "\"Nothing. We train either way.\"",
+     "effects": {
+      "comprehension": 4,
+      "log": "The junior looks relieved. You ban ranking talk at meals. It sneaks back in by the next month."
+     }
+    },
+    {
+     "text": "Take the board down from the hall",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "The board with the ranking, gone. The disciples miss it for a week and then forget it."
+     }
+    },
+    {
+     "text": "Use it. Fear drives effort",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "log": "Training intensifies. So does anxiety. The sect rises a little and smiles a little less."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_rkemei_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The abbess of Emei arrives with a dozen nuns to visit {sect}, because, she says, the three greatest sects ought to know each other. She inspects your halls very thoroughly. She has opinions about all of them, including the kitchen, which she visits twice.",
+   "when": {
+    "flags": [
+     "own_sect",
+     "sect_rank_3"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Emei Visit",
+   "choices": [
+    {
+     "text": "Show her everything, kitchen included",
+     "effects": {
+      "charm": 4,
+      "fame": 3,
+      "log": "She leaves satisfied and with three of your cook's recipes. Emei and {sect} become firm friends."
+     }
+    },
+    {
+     "text": "Ask for her opinions, and take them",
+     "effects": {
+      "comprehension": 4,
+      "log": "Seven suggestions. Five are excellent. {sect} runs better within a year."
+     }
+    },
+    {
+     "text": "Spar with her senior nun",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 5,
+      "log": "A beautiful bout. The abbess claps once, which in Emei is a standing ovation."
+     },
+     "fail": {
+      "health": -8,
+      "comprehension": 3,
+      "log": "The senior nun's sword is like water. You lose, gladly. (-8 health)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_henamed_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} kneels before the ancestral tablets in new robes, the clan's Heir by your word. The incense is lit. The whole family is watching from the yard. {He} has practised the vows for a month and has now forgotten every single one of them.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "The Heir Before the Tablets",
+   "choices": [
+    {
+     "text": "Whisper the words to {him}, one by one",
+     "effects": {
+      "charm": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "whispered my vows to me"
+      },
+      "log": "Nobody in the yard can hear. {npc} speaks every vow in a steady voice. Only you know whose it was."
+     }
+    },
+    {
+     "text": "Let {him} speak from the heart instead",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "let me speak my own vow"
+      },
+      "log": "{npc}'s vow is three sentences and mostly about soup. The elders cry anyway."
+     }
+    },
+    {
+     "text": "Wait in silence until {he} remembers",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "waited for me"
+      },
+      "log": "A long, long silence. Then {npc} remembers, all of it. The family exhales."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_herival_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "Since you named {npc} Heir, the clan's other young blood has gone quiet in a way you recognise. Doors close when {he} enters a room. A younger cousin has started training in the night yard, alone, very hard. The family tablets have never looked so tall.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "The Heir and the Others",
+   "choices": [
+    {
+     "text": "Speak to {npc} about it",
+     "effects": {
+      "charm": 3,
+      "flag": "hx_rival",
+      "npcFlag": "hx_rival",
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "warned me in time"
+      },
+      "log": "{npc} had noticed. {He} had hoped it would pass. It will not, you say."
+     }
+    },
+    {
+     "text": "Speak to the cousin in the night yard",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_rival",
+      "npcFlag": "hx_rival",
+      "log": "\"I only want to be seen,\" the cousin says, and keeps training. You saw."
+     }
+    },
+    {
+     "text": "Let them settle it among themselves",
+     "effects": {
+      "luck": 2,
+      "flag": "hx_rival",
+      "npcFlag": "hx_rival",
+      "log": "Families have done it for a thousand years. Most of them survived it."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_herival_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "The cousin challenges {npc} to a bout before the whole family at the spring rite. It is allowed by old custom. It has not been done in your clan before. {npc} looks at you. If {he} refuses, {he} looks weak. If {he} loses, {he} looks weaker.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "hx_rival"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir",
+     "hx_rival"
+    ],
+    "after": [
+     "dc_hx_herival_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Heir and the Others",
+   "choices": [
+    {
+     "text": "Let the bout go ahead",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "hx_rival_won",
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted me to fight"
+      },
+      "log": "{npc} wins, narrowly, and helps the cousin up. The family breathes."
+     },
+     "fail": {
+      "flag": "hx_rival_lost",
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "let me be shamed"
+      },
+      "log": "The cousin wins. {npc} bows, white-faced. The family whispers for a month."
+     }
+    },
+    {
+     "text": "Forbid it. The Heir is chosen, not won",
+     "effects": {
+      "alignment": 2,
+      "fame": 2,
+      "flag": "hx_rival_won",
+      "log": "Your word ends it. The cousin bows. The resentment goes underground."
+     }
+    },
+    {
+     "text": "Make it a bout between you and the cousin",
+     "effects": {
+      "strength": 3,
+      "flag": "hx_rival_won",
+      "log": "You fight the cousin yourself and lose on purpose, barely. Everyone is satisfied, somehow."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_herival_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "Years on, {npc} comes to you with a proposal: the cousin who challenged {him} should hold an office of the clan too. Not out of kindness, {npc} says. Because the cousin is good, and the clan needs good people more than it needs a quiet dinner table.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "hx_rival"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir",
+     "hx_rival"
+    ],
+    "anyFlags": [
+     "hx_rival_won",
+     "hx_rival_lost"
+    ],
+    "after": [
+     "dc_hx_herival_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Heir and the Others",
+   "choices": [
+    {
+     "text": "Agree. That is an heir talking",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "unflag": [
+       "hx_rival",
+       "hx_rival_won",
+       "hx_rival_lost"
+      ],
+      "npcUnflag": "hx_rival",
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "trusted my judgement"
+      },
+      "log": "The two of them work together for years and quarrel every single day. The clan thrives."
+     }
+    },
+    {
+     "text": "Ask {npc} whether {he} is sure",
+     "effects": {
+      "comprehension": 3,
+      "unflag": [
+       "hx_rival",
+       "hx_rival_won",
+       "hx_rival_lost"
+      ],
+      "npcUnflag": "hx_rival",
+      "log": "\"No,\" {npc} says. \"That is why I am asking you.\" You agree. It works out."
+     }
+    },
+    {
+     "text": "Refuse. One heir is enough trouble",
+     "effects": {
+      "fame": 2,
+      "unflag": [
+       "hx_rival",
+       "hx_rival_won",
+       "hx_rival_lost"
+      ],
+      "npcUnflag": "hx_rival",
+      "mem": {
+       "deed": "clan",
+       "w": -5,
+       "note": "did not trust my judgement"
+      },
+      "log": "{npc} bows and drops it. The cousin leaves the clan a year later for a sect. Probably for the best."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_hedoubt_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} finds you in the ancestral hall at night. \"I do not want it,\" {he} says. \"The clan, the tablets, the register. I want to wander. I want to see the sea.\" {He} is holding the Heir's seal as if it is very hot.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "The Heir's Doubts",
+   "choices": [
+    {
+     "text": "\"Then go and see it. Come back after.\"",
+     "effects": {
+      "luck": 3,
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "let me see the sea"
+      },
+      "log": "{npc} goes. Comes back after two years with a shell for the altar and a straighter back."
+     }
+    },
+    {
+     "text": "\"Nobody wants it. That is why it matters.\"",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "told me the truth"
+      },
+      "log": "{npc} is quiet for a long time. Then puts the seal back on {his} belt. It stays there."
+     }
+    },
+    {
+     "text": "Offer to name another heir",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -3,
+       "note": "offered to replace me"
+      },
+      "log": "\"No,\" {npc} says, surprising both of you. \"No. I only wanted to be asked.\""
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_helesson_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} asks you to teach {him} what an heir must know. Not the family art. {He} has that. The rest. How to say no to a matchmaker. How to forgive a cousin. How to read a ledger that is lying. {He} has brought a notebook.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "What the Heir Must Know",
+   "choices": [
+    {
+     "text": "Teach the ledgers",
+     "effects": {
+      "taels": 10,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "taught me the ledgers"
+      },
+      "log": "Within a month {npc} finds a mistake you made years ago. You are proud and slightly offended. (+10 taels)"
+     }
+    },
+    {
+     "text": "Teach forgiveness",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "taught me to forgive"
+      },
+      "log": "There is no notebook for it. You tell stories instead. {npc} writes them down anyway."
+     }
+    },
+    {
+     "text": "Teach the word no",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "taught me to refuse"
+      },
+      "log": "{npc} practises on the cook first. The cook is devastated. The lesson sticks."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_hefeast_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "At a banquet of great houses {npc} drinks too much and promises, loudly, that the clan will back a neighbour in a land quarrel. Everyone heard. The neighbour has already sent thanks. The other side has already sent a very cold letter.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "The Heir's Mistake",
+   "choices": [
+    {
+     "text": "Keep the promise. An heir's word is the clan's",
+     "effects": {
+      "fame": 3,
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "kept my word for me"
+      },
+      "log": "An expensive quarrel. {npc} learns more from it than from any lesson."
+     }
+    },
+    {
+     "text": "Make {him} go and unsay it in person",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -6,
+       "note": "made me unsay it"
+      },
+      "log": "{npc} goes, burning. Unsaying is harder than saying. {He} never drinks at a banquet again."
+     }
+    },
+    {
+     "text": "Smooth it over yourself with gifts (20 taels)",
+     "effects": {
+      "taels": -20,
+      "luck": 2,
+      "log": "Both sides get gifts. Nobody is satisfied. {npc} watches you do it and learns the price. (-20 taels)"
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_hepride_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The servants have started to call {npc} the young master of the house, and {he} has started to let them. Yesterday {he} sent back a dish three times. Today {he} made an old retainer wait in the rain. The family watches you to see if you have noticed.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "The Heir Grows Proud",
+   "choices": [
+    {
+     "text": "Make {him} serve at the gate for a month",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "sent me to the gate"
+      },
+      "log": "{npc} opens the gate for everyone, in the rain. {He} comes back changed, and thanks the old retainer."
+     }
+    },
+    {
+     "text": "Speak to {him} quietly, once",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 4,
+       "note": "told me privately"
+      },
+      "log": "One sentence. {npc} goes red. The dishes stop coming back."
+     }
+    },
+    {
+     "text": "Let it be. Pride is useful in heirs",
+     "effects": {
+      "fame": 2,
+      "alignment": -2,
+      "log": "{npc} becomes a very commanding heir. The servants call {him} young master and mean less by it every year."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_heletter_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} is away on the clan's business and sends a letter. It is very long. It is about a bridge {he} saw, a debt {he} paid for the clan without being asked, and a quarrel in an inn {he} settled without drawing. The last line asks if {he} did right.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir"
+    ]
+   },
+   "arc": "A Letter From the Road",
+   "choices": [
+    {
+     "text": "Write back: \"Yes. All of it.\"",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "wrote that I did right"
+      },
+      "log": "{npc} keeps the reply in {his} sleeve for years. You learn that only at the end."
+     }
+    },
+    {
+     "text": "Write back with three corrections",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 3,
+       "note": "corrected me, carefully"
+      },
+      "log": "Small ones. {npc} fixes all three. The next letter has none to correct."
+     }
+    },
+    {
+     "text": "Send no letter. {He} knows",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "never wrote back"
+      },
+      "log": "{npc} does not know. {He} wonders about it for a long time."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_hethrone_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The clan's Heir is now heir to the throne. {npc} walks through the palace with ministers bowing on every side and looks at you as if asking what happened to the ancestral hall with one shelf. Tonight {he} must sit at your right hand at the court banquet.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "imp_emperor"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir",
+     "crown_prince"
+    ]
+   },
+   "arc": "Heir to the Throne",
+   "choices": [
+    {
+     "text": "Tell {him} the throne is the clan grown large",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "told me what the throne is"
+      },
+      "log": "{npc} nods slowly. At the banquet {he} greets every minister as if they were cousins. It works."
+     }
+    },
+    {
+     "text": "Take {him} to the old hall first, alone",
+     "effects": {
+      "alignment": 3,
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "took me home first"
+      },
+      "log": "One shelf, one tablet, both of you kneeling. Then the banquet. {npc} is calmer than any minister."
+     }
+    },
+    {
+     "text": "Warn {him} about the ministers",
+     "effects": {
+      "luck": 3,
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "warned me of the court"
+      },
+      "log": "{npc} listens to every name. By the end of the banquet {he} has watched all of them."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_hecourt_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A faction of ministers has begun to visit {npc} privately. Gifts, poems, advice about the future. Nothing treasonous. Nothing yet. {npc} has told you about every single visit, which the ministers do not know. {He} asks what {he} should do with them.",
+   "npc": {
+    "role": "clan_office_heir"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "imp_emperor"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_heir",
+     "crown_prince"
+    ]
+   },
+   "arc": "The Courtiers Gather",
+   "choices": [
+    {
+     "text": "\"Keep listening. Tell me everything.\"",
+     "effects": {
+      "comprehension": 3,
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted me with the court"
+      },
+      "log": "{npc} becomes the best spy the throne has ever had, and the most reluctant."
+     }
+    },
+    {
+     "text": "\"Send them away, kindly.\"",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "told me to stay clean"
+      },
+      "log": "The ministers go away puzzled. The faction dissolves. {npc} sleeps better."
+     }
+    },
+    {
+     "text": "Dismiss the ministers from court",
+     "effects": {
+      "fame": 4,
+      "alignment": -2,
+      "log": "The court trembles. The faction is gone. {npc} looks at you, a little afraid, for the first time."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stledger_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The clan ledger that {npc} keeps does not add up. Not by much. Forty taels in a year, spread over a dozen small entries: rope, lamp oil, a horse's medicine. Every entry is in {npc}'s neat hand. {He} has kept the books for years and never been wrong before.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Steward's Ledger",
+   "choices": [
+    {
+     "text": "Ask {him} straight out",
+     "effects": {
+      "charm": 2,
+      "flag": "hx_ledger",
+      "npcFlag": "hx_ledger",
+      "log": "{npc} goes very still, then says {he} will explain it next month. {He} does not look at you."
+     }
+    },
+    {
+     "text": "Check the entries yourself, quietly",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_ledger",
+      "npcFlag": "hx_ledger",
+      "log": "The horse never existed. The rope went somewhere. You follow it."
+     }
+    },
+    {
+     "text": "Forget it. Forty taels is nothing",
+     "effects": {
+      "luck": 2,
+      "alignment": 1,
+      "log": "You close the ledger. Some things are cheaper to forgive than to know."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stledger_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "The forty taels went to a village two valleys over. {npc} has been feeding a widow and three children there for years. The widow's husband was a porter who died carrying the clan's goods in a landslide, and the clan never paid the family a single copper.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "hx_ledger"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward",
+     "hx_ledger"
+    ],
+    "after": [
+     "dc_hx_stledger_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Steward's Ledger",
+   "choices": [
+    {
+     "text": "Put the widow on the clan books, openly",
+     "effects": {
+      "alignment": 5,
+      "unflag": "hx_ledger",
+      "npcUnflag": "hx_ledger",
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "made it right openly"
+      },
+      "log": "\"Pension: widow of the landslide porter.\" {npc} writes the line in {his} own hand, and the hand shakes."
+     }
+    },
+    {
+     "text": "Scold {him} for the lie, then pay it",
+     "effects": {
+      "comprehension": 3,
+      "unflag": "hx_ledger",
+      "npcUnflag": "hx_ledger",
+      "mem": {
+       "deed": "clan",
+       "w": 3,
+       "note": "scolded and then paid"
+      },
+      "log": "{npc} accepts the scolding as {his} due. The widow receives a proper sum. Both were deserved."
+     }
+    },
+    {
+     "text": "Visit the widow yourself",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "unflag": "hx_ledger",
+      "npcUnflag": "hx_ledger",
+      "log": "The widow does not know who you are until you kneel at the porter's grave. Then the widow understands, and bows."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stfamine_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "No rain since spring. The clan's fields are dust, and the tenants' are worse. {npc} brings you the granary count: enough for the clan for two years, or for the clan and every tenant for one. Prices in the town have tripled. {He} says the granary could make the clan rich.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Famine Year",
+   "choices": [
+    {
+     "text": "Open the granary to the tenants",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "taels": -10,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "chose the tenants"
+      },
+      "log": "Thin porridge for everyone, the clan included. No tenant of yours starves that year. (-10 taels)"
+     }
+    },
+    {
+     "text": "Sell at the old price, not the new",
+     "effects": {
+      "taels": 20,
+      "alignment": 3,
+      "log": "Fair grain in a hungry year. The town remembers it for a century. (+20 taels)"
+     }
+    },
+    {
+     "text": "Sell at the new price, as {npc} says",
+     "effects": {
+      "taels": 50,
+      "alignment": -4,
+      "fame": -2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted my counting"
+      },
+      "log": "The clan grows rich. The tenants grow thin. The town grows quiet when your family passes. (+50 taels)"
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stmerchant_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has caught a silk merchant who supplies the clan using a short ruler for three years. The merchant is also the brother-in-law of a magistrate. {npc} has the ruler and the receipts in a box on your table and {his} jaw is set like stone.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Cheating Merchant",
+   "choices": [
+    {
+     "text": "Take it to the magistrate",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 30,
+      "fame": 3,
+      "log": "The magistrate is embarrassed into fairness. The merchant repays every inch. (+30 taels)"
+     },
+     "fail": {
+      "fame": -2,
+      "log": "The magistrate finds for the family's own. {npc} goes home and breaks the ruler over {his} knee."
+     }
+    },
+    {
+     "text": "Deal with the merchant privately",
+     "effects": {
+      "taels": 20,
+      "comprehension": 2,
+      "log": "The merchant pays, quietly, and gives you a better price for life. (+20 taels)"
+     }
+    },
+    {
+     "text": "Let {npc} handle it {his} way",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "trusted me with it"
+      },
+      "log": "{npc} handles it by telling every other household in the province. The merchant moves away."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stmiser_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} keeps the clan's books so carefully that the family has started to complain. The ancestral hall roof leaks because {he} will not pay the price for tiles. The New Year rice cakes were small. A cousin asks if the clan is poor. It is not.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "Too Careful",
+   "choices": [
+    {
+     "text": "Tell {him} to spend on the hall",
+     "effects": {
+      "taels": -15,
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -3,
+       "note": "overruled my thrift"
+      },
+      "log": "New tiles, new incense, a bigger New Year. {npc} sighs over every copper. (-15 taels)"
+     }
+    },
+    {
+     "text": "Back {him}. The clan will thank {him} later",
+     "effects": {
+      "taels": 15,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "backed my thrift"
+      },
+      "log": "The roof is patched, not replaced. Ten years later the thrift buys a whole valley. (+15 taels)"
+     }
+    },
+    {
+     "text": "Ask {him} why {he} fears so much",
+     "effects": {
+      "charm": 3,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "asked why I was afraid"
+      },
+      "log": "A famine {he} remembers as a child. You both sit with it a while. The tiles get bought, slowly."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_stland_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} wants to buy a valley. Good land, a stream, three villages. The price is high. The owner is an old clan in decline, selling the graves of their ancestors along with the fields. {npc} has already drawn up the papers and needs only your seal.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Valley for Sale",
+   "choices": [
+    {
+     "text": "Buy it, and leave their graves in their keeping",
+     "effects": {
+      "taels": -30,
+      "alignment": 3,
+      "fame": 3,
+      "log": "The old clan weeps at the signing. Their graves stay theirs. Your clan grows, cleanly. (-30 taels)"
+     }
+    },
+    {
+     "text": "Buy it all, graves included",
+     "effects": {
+      "taels": -30,
+      "fame": 4,
+      "alignment": -2,
+      "log": "The valley is yours. So, now, are someone else's ancestors. The clan lights incense for them too. (-30 taels)"
+     }
+    },
+    {
+     "text": "Refuse. Do not buy a falling house",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "refused my valley"
+      },
+      "log": "{npc} folds up the papers. Another clan buys it. You hear later that it floods."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_sttired_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} falls asleep over the ledgers in the middle of the afternoon. The abacus is still in {his} hand. {He} has kept the clan's fields, shops and books for years without a single day off, because nobody else could do it right. That is, mostly, true.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Steward Is Tired",
+   "choices": [
+    {
+     "text": "Order a month of rest",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "ordered me to rest"
+      },
+      "log": "{npc} protests, then sleeps for three days straight. The books suffer slightly. {npc} returns ten years younger."
+     }
+    },
+    {
+     "text": "Find {him} an assistant",
+     "effects": {
+      "taels": -10,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "gave me help"
+      },
+      "log": "{npc} terrorises the assistant for a year. Then trains them perfectly. (-10 taels)"
+     }
+    },
+    {
+     "text": "Cover {him} with a blanket and leave",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "let me sleep"
+      },
+      "log": "{npc} wakes at dusk under the blanket and knows at once whose it is."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_sttemple_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The mountain temple asks the clan for a donation to rebuild its bell tower. {npc} has worked out exactly how much a family of your size should give to be thought generous without being thought foolish. The number is precise to the copper. It is also a little mean.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "A Gift to the Temple",
+   "choices": [
+    {
+     "text": "Give {npc}'s number",
+     "effects": {
+      "taels": -10,
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "trusted my number"
+      },
+      "log": "The temple is satisfied. The clan is thought generous. Nobody is foolish. (-10 taels)"
+     }
+    },
+    {
+     "text": "Double it",
+     "effects": {
+      "taels": -20,
+      "alignment": 4,
+      "log": "The abbot rings the new bell first for your clan. {npc} winces at every chime. (-20 taels)"
+     }
+    },
+    {
+     "text": "Give labour instead of silver",
+     "effects": {
+      "strength": 3,
+      "charm": 2,
+      "log": "The whole clan carries timber up the mountain for a month. It costs nothing and means more."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_sttenant_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "A tenant has struck a rent collector. {npc} wants the tenant evicted and handed to the magistrate. The tenant says the collector took a daughter's dowry chest as rent. The collector says it was overdue. Both are standing in your courtyard, and both are bleeding a little.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Tenant Who Fought Back",
+   "choices": [
+    {
+     "text": "Back {npc}: rent is rent",
+     "effects": {
+      "taels": 10,
+      "alignment": -3,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "backed my office"
+      },
+      "log": "The tenant is evicted. The collector is satisfied. The other tenants learn a lesson, unhappily. (+10 taels)"
+     }
+    },
+    {
+     "text": "Return the dowry chest, dismiss the collector",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -6,
+       "note": "went over my head"
+      },
+      "log": "The tenant bows to the ground. {npc} tightens {his} lips, then hires a better collector."
+     }
+    },
+    {
+     "text": "Ask {npc} to judge it fairly",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "trusted me to judge"
+      },
+      "log": "{npc} hears both sides and returns the chest, but keeps the tenant on probation. A fair steward."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "po": true
+  },
+  {
+   "id": "dc_hx_stshop_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} proposes opening a clan medicine shop in the provincial capital. {He} has a building, a pharmacist, and a plan written on twelve pages. {He} has never asked you for anything before. You can tell, from the way {he} holds the pages, that this one matters.",
+   "npc": {
+    "role": "clan_office_steward"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_steward"
+    ]
+   },
+   "arc": "The Clan Shop",
+   "choices": [
+    {
+     "text": "Fund it in full",
+     "effects": {
+      "taels": -30,
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "believed in my plan"
+      },
+      "log": "The shop opens in spring. By autumn it pays for itself. {npc} keeps the first copper on a cord. (-30 taels)"
+     }
+    },
+    {
+     "text": "Fund half; let {him} find the rest",
+     "effects": {
+      "taels": -15,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "made me prove it"
+      },
+      "log": "{npc} finds the rest from three merchants and a monk. The shop opens with four owners. (-15 taels)"
+     }
+    },
+    {
+     "text": "Refuse. The clan is not a shop",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -10,
+       "note": "refused my plan"
+      },
+      "log": "{npc} bows and puts the pages away. You see them later, in {his} desk, still folded."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_incruel_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The clan's young come back from {npc}'s training yard with bruises in places that bruises should not be. Nobody complains. That is the worrying part. A small cousin asked you yesterday, very quietly, whether instructors are allowed to make you stand in the snow until you fall.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Cruel Teacher",
+   "choices": [
+    {
+     "text": "Watch a session, unseen",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_cruel",
+      "npcFlag": "hx_cruel",
+      "log": "You watch. You do not like what you see. You also see three children doing forms they could not do last year."
+     }
+    },
+    {
+     "text": "Confront {npc} at once",
+     "effects": {
+      "charm": 2,
+      "flag": "hx_cruel",
+      "npcFlag": "hx_cruel",
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "questioned my methods"
+      },
+      "log": "\"I was taught this way,\" {npc} says. \"And look at me.\" You do look."
+     }
+    },
+    {
+     "text": "Ask the young ones what they want",
+     "effects": {
+      "alignment": 3,
+      "flag": "hx_cruel",
+      "npcFlag": "hx_cruel",
+      "log": "They want to be strong. They want {npc} to stop shouting. They want both."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_incruel_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "One of {npc}'s pupils collapses in the snow and is carried in with a fever. The clan's young are frightened. {npc} sits by the sickbed all night, and in the morning {he} comes to you and says, before you can speak, \"I know. I know.\"",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "hx_cruel"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor",
+     "hx_cruel"
+    ],
+    "after": [
+     "dc_hx_incruel_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Cruel Teacher",
+   "choices": [
+    {
+     "text": "Take the office from {him}",
+     "effects": {
+      "alignment": 3,
+      "unflag": "hx_cruel",
+      "npcUnflag": [
+       "hx_cruel",
+       "clan_office_instructor"
+      ],
+      "mem": {
+       "deed": "clan",
+       "w": -10,
+       "note": "took my office"
+      },
+      "log": "{npc} lays down the instructor's staff without a word. The yard is gentler. Slower, too."
+     }
+    },
+    {
+     "text": "Keep {him}, with your rules",
+     "effects": {
+      "comprehension": 3,
+      "unflag": "hx_cruel",
+      "npcUnflag": "hx_cruel",
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "gave me a second chance"
+      },
+      "log": "No snow. No beatings. {npc} learns to teach without them, slowly, and better than before."
+     }
+    },
+    {
+     "text": "Teach beside {him} for a season",
+     "effects": {
+      "charm": 3,
+      "strength": 2,
+      "unflag": "hx_cruel",
+      "npcUnflag": "hx_cruel",
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "taught beside me"
+      },
+      "log": "{npc} watches how you correct a stance without a raised voice. {He} copies it, clumsily, then well."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_incousin_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} brings you news from the training yard: a distant cousin, from a branch of the family nobody visits, has a gift like nothing {he} has seen. Fast, calm, hungry. Also poor, rude, and already in trouble for fighting the main line's children.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Talented Cousin",
+   "choices": [
+    {
+     "text": "Bring the cousin into the main house",
+     "effects": {
+      "fame": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "listened to my eye"
+      },
+      "log": "The main line resents it. The cousin outtrains them all. Resentment slowly turns to respect."
+     }
+    },
+    {
+     "text": "Let {npc} train the cousin privately",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "trusted me with the gift"
+      },
+      "log": "Dawn sessions behind the woodshed. In five years the clan has a new sword nobody saw coming."
+     }
+    },
+    {
+     "text": "Make the cousin earn it in the common yard",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "No favours. The cousin fights through every bout. Comes out hard and, in time, kind."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_inyard_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "You come down at dawn to watch {npc} teach. Twenty of the clan's young in rows, breath steaming, the family form moving through them like wind through rice. {npc} walks the rows correcting a wrist here, an elbow there. {He} has not seen you yet.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Morning Yard",
+   "choices": [
+    {
+     "text": "Join the back row",
+     "effects": {
+      "strength": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "trained in my yard"
+      },
+      "log": "{npc} sees you and nearly drops the staff. Then corrects your elbow. It needed it."
+     }
+    },
+    {
+     "text": "Watch until the end, then praise {him}",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "praised my yard"
+      },
+      "log": "{npc} goes red to the ears. The young ones hear about it and train harder all week."
+     }
+    },
+    {
+     "text": "Leave quietly. It is in good hands",
+     "effects": {
+      "luck": 3,
+      "qi": 8,
+      "log": "You walk back up the hill with the yard's breathing behind you, steady as surf."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_inspar_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} asks you for a bout. Not a lesson. A real bout, before the young ones. {He} says they need to see the family art at its height. {He} also, you suspect, needs to know how far {he} still has to go.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Instructor Asks",
+   "choices": [
+    {
+     "text": "Fight at full strength",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 3,
+      "qi": 10,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "showed me the height"
+      },
+      "log": "You win, and {npc} has never looked happier to lose. The young ones talk of nothing else."
+     },
+     "fail": {
+      "health": -8,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "let me see I had grown"
+      },
+      "log": "{npc} wins. {He} kneels, horrified. You laugh and pull {him} up. (-8 health)"
+     }
+    },
+    {
+     "text": "Fight at half, and teach as you go",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "taught me in the bout"
+      },
+      "log": "Every exchange is a lesson. {npc} understands it halfway through and starts to grin."
+     }
+    },
+    {
+     "text": "Refuse. Show the form alone instead",
+     "effects": {
+      "charm": 2,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -3,
+       "note": "would not fight me"
+      },
+      "log": "The family form, alone, slowly. The young ones are moved. {npc} is disappointed."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_insecret_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} wants to teach the clan's art to the village boys and girls who watch from the wall. They are poor, eager, and better than half the family's own children. The elders say a clan art stays in the clan, or it is not a clan art.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Family Art Outside",
+   "choices": [
+    {
+     "text": "Allow it: the first forms only",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "let me teach the village"
+      },
+      "log": "The village children learn the first forms. Twenty years later half the provincial guard knows your clan's name."
+     }
+    },
+    {
+     "text": "Allow it all",
+     "effects": {
+      "alignment": 5,
+      "fame": -2,
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "opened the art"
+      },
+      "log": "The elders are scandalised. The art spreads, changes, and grows. Your clan's name goes with it."
+     }
+    },
+    {
+     "text": "Forbid it. Blood is blood",
+     "effects": {
+      "fame": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "closed the art"
+      },
+      "log": "{npc} obeys. The village children stop watching from the wall after a while."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_ininjury_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has broken a leg showing the young ones a leap from the yard wall. {He} insists on teaching from a chair. {He} is shouting corrections at twice the usual volume to make up for not walking. The young ones are terrified and doing very well.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "A Bad Fall",
+   "choices": [
+    {
+     "text": "Take over the yard until {he} heals",
+     "effects": {
+      "strength": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "covered my yard"
+      },
+      "log": "You teach for three months. {npc} criticises your teaching from the chair. Fairly, mostly."
+     }
+    },
+    {
+     "text": "Let {him} teach from the chair",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "let me keep my yard"
+      },
+      "log": "The young ones learn to listen very carefully. The chair becomes a family legend."
+     }
+    },
+    {
+     "text": "Send for the best bonesetter (15 taels)",
+     "effects": {
+      "taels": -15,
+      "health": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "sent for the bonesetter"
+      },
+      "log": "The bonesetter is expensive and brilliant. {npc} is walking in a month and leaping in two. (-15 taels)"
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_inslow_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} asks you about one of the clan's children: slow at every form, last in every race, always smiling. {He} wants to send the child to a scholar's school instead. The child has heard and has stopped smiling.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Slowest Child",
+   "choices": [
+    {
+     "text": "Keep the child in the yard",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -3,
+       "note": "overruled me"
+      },
+      "log": "Slow, but steady. Years later that child is the only one still training at sixty."
+     }
+    },
+    {
+     "text": "Let the child choose",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "The child chooses both: the yard at dawn, the books at noon. Neither teacher is pleased. The child is."
+     }
+    },
+    {
+     "text": "Ask {npc} to teach differently",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "made me think again"
+      },
+      "log": "{npc} tries slower forms, gentler counts. Two other children improve too."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_inmanual_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} proposes writing the family art down. A clan manual, for the generations. {He} has drafted the first chapter. It is clear, careful and full of small mistakes about the parts of the art only you know.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Clan Manual",
+   "choices": [
+    {
+     "text": "Correct it, line by line, together",
+     "effects": {
+      "comprehension": 5,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "wrote the manual with me"
+      },
+      "log": "A winter of evenings. The manual is finished in spring. It is the best thing either of you has written."
+     }
+    },
+    {
+     "text": "Write the hidden chapter yourself",
+     "effects": {
+      "qi": 10,
+      "comprehension": 3,
+      "log": "The chapter only the clan head will read. You seal it. {npc} does not ask what is in it."
+     }
+    },
+    {
+     "text": "Keep it oral. Manuals get stolen",
+     "effects": {
+      "luck": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "refused my manual"
+      },
+      "log": "{npc} burns the draft, reluctantly. The art passes mouth to ear, as it always has."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_inold_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has taught the clan's young for many years. The knees are going. The voice is not. This morning {he} could not show the leaping form and had to ask a pupil to show it. {He} has come to ask if it is time to step down.",
+   "npc": {
+    "role": "clan_office_instructor"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_instructor"
+    ]
+   },
+   "arc": "The Old Instructor",
+   "choices": [
+    {
+     "text": "\"Not yet. Teach from the voice.\"",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "kept me in my yard"
+      },
+      "log": "{npc} teaches for years more, never leaping, always right. The yard becomes quieter and better."
+     }
+    },
+    {
+     "text": "\"Choose your successor.\"",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "trusted my choice"
+      },
+      "log": "{npc} chooses the pupil who showed the leap. A good choice. {npc} still visits every morning."
+     }
+    },
+    {
+     "text": "Hold a feast in {his} honour",
+     "effects": {
+      "taels": -10,
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "honoured my years"
+      },
+      "log": "Every pupil {npc} ever taught comes home for it. The yard is full of grown people doing the first form. (-10 taels)"
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_enmatch_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} returns from a great house with an offer: a marriage between that clan's heir and one of yours. It would bind two houses for a century. {npc} has met the heir. {He} says the heir is decent, dull and very rich, and that one of your clan's young is dreading it already.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Marriage Alliance",
+   "choices": [
+    {
+     "text": "Accept, for the clan",
+     "effects": {
+      "fame": 5,
+      "taels": 20,
+      "alignment": -2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "trusted my embassy"
+      },
+      "log": "A grand wedding. The two houses are bound. One young person in your clan is very brave about it. (+20 taels)"
+     }
+    },
+    {
+     "text": "Let the young one decide",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "The young one says no, very politely. The great house is offended. Then, oddly, asks again a year later."
+     }
+    },
+    {
+     "text": "Counter-offer: friendship, not marriage",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "made my counter-offer work"
+      },
+      "log": "{npc} carries it back. The great house accepts a pact of friendship. Everyone is relieved."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "The great house takes it as an insult. {npc} comes home with a cold letter and a colder face."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "po": true
+  },
+  {
+   "id": "dc_hx_eninsult_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} comes home from an embassy to a great house with {his} face set hard. At the banquet {he} was seated below the servants of a lesser clan, and the host's son made a joke about your family name that the whole hall laughed at. {He} says {he} smiled and drank. {His} hands are still shaking.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Insult Abroad",
+   "choices": [
+    {
+     "text": "\"You did right. We answer later.\"",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hx_insult",
+      "npcFlag": "hx_insult",
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted my patience"
+      },
+      "log": "{npc} breathes out. The answer will come. Clans have long memories."
+     }
+    },
+    {
+     "text": "Send a sharp letter at once",
+     "effects": {
+      "fame": 2,
+      "flag": "hx_insult",
+      "npcFlag": "hx_insult",
+      "log": "The letter is sharp enough to shave with. The host replies with a sharper one."
+     }
+    },
+    {
+     "text": "Laugh it off. A joke is a joke",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "laughed at my shame"
+      },
+      "log": "{npc} bows and leaves. You hear later that {he} did not sleep that night."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_eninsult_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": false,
+   "text": "The great house's son comes to your gate at last, on business, needing your clan's goodwill for a trade road. {npc} is the one who receives the guest. {He} looks at you before {he} speaks. This is the answer you promised. How it is given is up to you.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan",
+     "hx_insult"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy",
+     "hx_insult"
+    ],
+    "after": [
+     "dc_hx_eninsult_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Insult Abroad",
+   "choices": [
+    {
+     "text": "Seat the son below the servants",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "unflag": "hx_insult",
+      "npcUnflag": "hx_insult",
+      "mem": {
+       "deed": "clan",
+       "w": 12,
+       "note": "repaid my shame"
+      },
+      "log": "The son eats soup below the stable boys. {npc} serves the bowl personally. Nobody laughs."
+     }
+    },
+    {
+     "text": "Seat the son in honour; let {npc} grant the road",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "unflag": "hx_insult",
+      "npcUnflag": "hx_insult",
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "let me answer with grace"
+      },
+      "log": "The son, ashamed, apologises before the soup. {npc} grants the road, smiling for real."
+     }
+    },
+    {
+     "text": "Refuse the road",
+     "effects": {
+      "fame": 2,
+      "unflag": "hx_insult",
+      "npcUnflag": "hx_insult",
+      "log": "The trade road goes round your land, the long way. The great house pays for every extra mile."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_engift_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} is to carry the clan's New Year gift to an old allied house. {He} has three options laid out on a table: a fine sword, a rare tea, and a scroll in your own hand. {He} says the gift says more than the letter. {He} wants to know what you want it to say.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Right Gift",
+   "choices": [
+    {
+     "text": "The sword: we are strong",
+     "effects": {
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 4,
+       "note": "chose with me"
+      },
+      "log": "The allied house hangs the sword in its hall. Their next letter is more careful."
+     }
+    },
+    {
+     "text": "The tea: we are friends",
+     "effects": {
+      "charm": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 4,
+       "note": "chose with me"
+      },
+      "log": "The old head of the allied house drinks it with you the next spring, slowly, in person."
+     }
+    },
+    {
+     "text": "The scroll: we remember you",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "trusted me with your hand"
+      },
+      "log": "{npc} carries it like an egg. The old head weeps reading it. The alliance holds for a century."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_enspy_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} believes one of the clan's servants is selling the family's letters to a rival house. {He} has no proof, only a feeling and a missing letter. The servant has served the family for twenty years and is beloved by the children.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Envoy's Suspicion",
+   "choices": [
+    {
+     "text": "Set a trap with a false letter",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "luck": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted my feeling"
+      },
+      "log": "The false letter turns up in the rival house. It was the new groom, not the old servant. {npc} is relieved."
+     },
+     "fail": {
+      "charm": -2,
+      "log": "Nothing happens. The servant notices the trap, and is hurt. {npc} apologises."
+     }
+    },
+    {
+     "text": "Trust the servant. Drop it",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": -5,
+       "note": "dismissed my warning"
+      },
+      "log": "{npc} drops it. A year later another letter goes missing. {He} says nothing, pointedly."
+     }
+    },
+    {
+     "text": "Change the clan seal and the courier",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "took me seriously"
+      },
+      "log": "New seal, new courier. The leaks stop. Nobody is accused. Nobody ever finds out who."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_enfeud_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "Your clan and the clan across the river have quarrelled for longer than anyone can remember why. {npc} has been talking to their envoy in secret, and the two of them have written a peace. It needs one thing: you must cross the bridge first.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "Ending a Feud",
+   "choices": [
+    {
+     "text": "Cross the bridge",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "crossed the bridge for my peace"
+      },
+      "log": "You cross. Their head crosses from the other side. You meet in the middle and nobody knows what to say. It is enough."
+     }
+    },
+    {
+     "text": "Insist they cross first",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "held out for the clan"
+      },
+      "log": "They cross, after a day of waiting. The peace is signed on your bank. {npc} is exhausted."
+     },
+     "fail": {
+      "fame": -2,
+      "mem": {
+       "deed": "clan",
+       "w": -8,
+       "note": "broke my peace"
+      },
+      "log": "Neither side crosses. The peace dies on the bridge. {npc} does not speak to you for a month."
+     }
+    },
+    {
+     "text": "Send {npc} to sign for the clan",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "let me sign for the clan"
+      },
+      "log": "{npc} signs. The other envoy signs. The two heads never meet. The peace holds anyway."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_enalliance_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The Martial Alliance summons the great families to pledge swords for the coming war against the Cult. {npc} is to carry your answer. {He} has heard the other houses' answers already: some pledge everything, some pledge words, some pledge nothing and pray.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ],
+    "notFactions": [
+     "demonic",
+     "unorthodox"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "arc": "The Alliance Calls the Houses",
+   "choices": [
+    {
+     "text": "Pledge the clan's swords",
+     "effects": {
+      "fame": 5,
+      "alignment": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 6,
+       "note": "gave me a proud answer"
+      },
+      "log": "{npc} carries the pledge into the Alliance hall. Your clan's name is read near the top."
+     }
+    },
+    {
+     "text": "Pledge silver, not blood (30 taels)",
+     "effects": {
+      "taels": -30,
+      "fame": 2,
+      "log": "The Alliance takes the silver with a small cold bow. Your young ones live. (-30 taels)"
+     }
+    },
+    {
+     "text": "Pledge to defend only your own valley",
+     "effects": {
+      "luck": 3,
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -3,
+       "note": "gave me a hard answer to carry"
+      },
+      "log": "{npc} carries it. The Alliance is cool. Your valley is the only one in the province that does not burn."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_encult_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "The Heavenly Demon Cult invites your clan to send an envoy to its mountain. {npc} reads the invitation twice. It promises protection, trade and respect. It does not say what happens to clans who decline. It does not need to.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ],
+    "factions": [
+     "demonic",
+     "unorthodox"
+    ]
+   },
+   "arc": "The Cult Courts the Clan",
+   "choices": [
+    {
+     "text": "Send {npc}",
+     "effects": {
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted me with the Cult"
+      },
+      "log": "{npc} comes back with a treaty and a look that takes a month to fade. The clan is protected."
+     }
+    },
+    {
+     "text": "Go yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the Cult's champion"
+     },
+     "ok": {
+      "fame": 5,
+      "log": "The Cult elders measure you all day. At dusk they bow. Your clan is a friend of the mountain, on its own terms."
+     },
+     "fail": {
+      "health": -10,
+      "fame": 2,
+      "log": "The Cult tests you, hard. You come home bruised, with a treaty less generous than hoped. (-10 health)"
+     }
+    },
+    {
+     "text": "Decline, with a very fine gift",
+     "effects": {
+      "taels": -20,
+      "luck": 2,
+      "log": "The Cult accepts the gift and the refusal. For now. (-20 taels)"
+     }
+    }
+   ],
+   "cooldown": 30,
+   "mw": true
+  },
+  {
+   "id": "dc_hx_enlate_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} was due home a month ago from a great house in the west. No letter. The roads are full of bandits this year. The family keeps a place set at dinner every night. The youngest children have started asking if {he} is dead.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Envoy Is Late",
+   "choices": [
+    {
+     "text": "Ride west yourself",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "came for me"
+      },
+      "log": "You find {npc} in a mountain village, snowed in and teaching the village children to write. You both laugh till it hurts."
+     },
+     "fail": {
+      "health": -6,
+      "mem": {
+       "deed": "clan",
+       "w": 15,
+       "note": "came for me"
+      },
+      "log": "Bandits, a frozen pass, a lame horse. You find {npc} at last, and you are both a sight. (-6 health)"
+     }
+    },
+    {
+     "text": "Send riders and wait",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "sent riders"
+      },
+      "log": "The riders find {npc} in a week, held up by a flood. {He} comes home thin and full of news."
+     }
+    },
+    {
+     "text": "Keep the place set and wait",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "log": "{npc} walks in at dinner a week later and sits down in the place as if never gone. The children scream."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_enwine_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} has become the best-loved guest in every great house in the province. Every banquet wants {him}. {He} sings, {he} toasts, {he} remembers every name. {He} also comes home grey-faced at dawn three days in five, and the clan's work waits.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "Too Good at Banquets",
+   "choices": [
+    {
+     "text": "Tell {him} to refuse half of them",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "clan",
+       "w": -4,
+       "note": "cut my banquets"
+      },
+      "log": "{npc} sulks, then sleeps. The work gets done. The houses miss {him}, which is useful."
+     }
+    },
+    {
+     "text": "Let {him} be. This is the work",
+     "effects": {
+      "fame": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "let me do the work my way"
+      },
+      "log": "The clan's name is toasted in every hall in the province. The ledgers wait. The name matters more."
+     }
+    },
+    {
+     "text": "Go with {him} once, to see",
+     "effects": {
+      "charm": 4,
+      "mem": {
+       "deed": "clan",
+       "w": 10,
+       "note": "came to a banquet with me"
+      },
+      "log": "You understand at once. {npc} is not drinking. {He} is listening. You come home with three secrets."
+     }
+    }
+   ],
+   "cooldown": 30
+  },
+  {
+   "id": "dc_hx_ensong_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": false,
+   "text": "{npc} writes from a far province: in a market there, a storyteller is telling a tale about your clan. It is mostly wrong. In it you slay a tiger with a teapot. The crowd loves it. {npc} asks whether to correct the storyteller or tip the storyteller.",
+   "npc": {
+    "role": "clan_office_envoy"
+   },
+   "when": {
+    "flags": [
+     "own_clan"
+    ],
+    "age": [
+     30,
+     9999
+    ],
+    "npcFlags": [
+     "clan_office_envoy"
+    ]
+   },
+   "arc": "The Name Abroad",
+   "choices": [
+    {
+     "text": "Tip the teller. Legends are useful",
+     "effects": {
+      "fame": 4,
+      "luck": 2,
+      "mem": {
+       "deed": "clan",
+       "w": 5,
+       "note": "enjoyed my letter"
+      },
+      "log": "The teapot tiger spreads across three provinces. You are asked about it at every banquet."
+     }
+    },
+    {
+     "text": "Correct the tale, gently",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 2,
+      "log": "The true story is less exciting. The storyteller tells both, and the crowd prefers the teapot."
+     }
+    },
+    {
+     "text": "Ask {npc} to tell the true story",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "clan",
+       "w": 8,
+       "note": "trusted my telling"
+      },
+      "log": "{npc} tells it in the market. {He} is a better storyteller than the storyteller, who sulks."
+     }
+    }
+   ],
+   "cooldown": 30
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,828 @@
+{
+ "events": [
+  {
+   "id": "dc_ec_grave_1",
+   "cat": "encounter",
+   "weight": 5,
+   "once": true,
+   "text": "Cutting through an overgrown hillside in {echo_region}, you trip over a gravestone. Moss has eaten half the characters, but you can read enough: {echo_name}. Lived {echo_age} years. Taken by {echo_cause}. You have never seen this place before. Your hands know exactly where the weeds will be thickest.",
+   "when": {
+    "flags": [
+     "echo"
+    ],
+    "age": [
+     10,
+     70
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Clear the weeds, light incense, and sit a while",
+     "effects": {
+      "flag": [
+       "echo_grave_tended",
+       "echo_found"
+      ],
+      "luck": 6,
+      "alignment": 4,
+      "log": "You clear the stone and light three sticks of incense for someone who was you. The wind drops while they burn. Walking away, you feel lighter than you have since childhood."
+     }
+    },
+    {
+     "text": "Dig. Whoever this was may have been buried with something",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "flag": [
+       "echo_found"
+      ],
+      "taels": 120,
+      "alignment": -6,
+      "log": "A rotted box, a purse of old silver and a jade token with your own sect mark on it, that you somehow cannot bring yourself to sell. You fill the grave back in, carefully."
+     },
+     "fail": {
+      "alignment": -10,
+      "health": -8,
+      "flag": "echo_found",
+      "log": "The gravekeeper catches you with the spade and beats you down the hill with a broom. You deserve every blow and you know it."
+     }
+    },
+    {
+     "text": "Read the epitaph aloud, and walk on",
+     "effects": {
+      "comprehension": 4,
+      "flag": "echo_found",
+      "log": "Your voice reading it sounds strange, like someone else reading your name. You walk on. You dream that night of {echo_cause}, very calmly, like a memory."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_ec_dream_1",
+   "cat": "insight",
+   "weight": 4,
+   "once": true,
+   "text": "The same dream, for the third night: you are {echo_age}, and it is the end, and the end is {echo_cause}. You wake every time at the same moment, with someone else's name in your mouth: {echo_name}.",
+   "when": {
+    "flags": [
+     "echo"
+    ],
+    "age": [
+     6,
+     28
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Write down everything you remember before it fades",
+     "effects": {
+      "comprehension": 5,
+      "flag": "echo_found",
+      "qi": 8,
+      "log": "Pages and pages. A sword form you have never been taught. A recipe for a medicine. A face you loved. By morning half of it is gone, but the sword form stays."
+     }
+    },
+    {
+     "text": "Go to a temple and ask the monks to quiet it",
+     "effects": {
+      "alignment": 3,
+      "health": 6,
+      "log": "\"Old souls dream loudly,\" says the abbot, and teaches you to breathe through it. The dream stays. It just stops frightening you."
+     }
+    },
+    {
+     "text": "Live so the dream ends differently this time",
+     "effects": {
+      "flag": [
+       "echo_found",
+       "echo_vow"
+      ],
+      "strength": 3,
+      "log": "You get up, wash your face and go to train. Whatever {echo_name} could not do, you have a whole life to do it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_weapon_1",
+   "cat": "encounter",
+   "weight": 6,
+   "once": true,
+   "text": "In the back room of an auction house, among rusted halberds and fake treasures, there is a blade on a red cloth with a name on its tag: {echo_weapon}. Before you know what you are doing you have picked it up. It settles into your grip like a dog lying down by a fire. The auctioneer clears his throat. \"Three hundred taels.\"",
+   "when": {
+    "flags": [
+     "echo_weapon"
+    ],
+    "age": [
+     14,
+     80
+    ],
+    "notFlags": [
+     "echo_heirloom"
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Pay. Whatever it costs",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "echoWeapon": true,
+      "flag": [
+       "echo_weapon_reclaimed",
+       "echo_found"
+      ],
+      "log": "You walk out with {echo_weapon} at your hip and a lighter purse. Something in you that has been crooked since birth is straight."
+     }
+    },
+    {
+     "text": "Challenge its current owner for it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "echoWeapon": true,
+      "flag": [
+       "echo_weapon_reclaimed",
+       "echo_found"
+      ],
+      "fame": 8,
+      "log": "The owner is a minor lord who has never drawn it. He draws it now, badly, and you take it from his hand like taking a toy from a child. It is yours. It always was."
+     },
+     "fail": {
+      "health": -16,
+      "fame": -4,
+      "log": "He has hired a very good bodyguard. You leave without the blade and with a lesson about pride."
+     }
+    },
+    {
+     "text": "Steal it in the night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "echoWeapon": true,
+      "flag": [
+       "echo_weapon_reclaimed",
+       "echo_found"
+      ],
+      "alignment": -6,
+      "log": "Over the roof, through the skylight, back over the roof. By dawn you are three towns away with {echo_weapon}. You tell yourself it is not stealing if it was yours."
+     },
+     "fail": {
+      "jail": 2,
+      "alignment": -6,
+      "log": "The skylight was a trap. The magistrate is not interested in past lives."
+     }
+    },
+    {
+     "text": "Put it down. That life is finished",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "flag": "echo_found",
+      "log": "You set it back on the red cloth. It is the hardest thing you have done in years. You are, maybe, a little wiser for it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_manual_1",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "In a provincial library, in a box of uncatalogued scrolls, a manual in a hand you recognise before you can read a word of it. It is your handwriting. Not like it: yours. The title page says it was written by {echo_title}, and the margins are full of corrections in the same hand, arguing with itself.",
+   "when": {
+    "flags": [
+     "echo_manual"
+    ],
+    "age": [
+     12,
+     80
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Read it, all night, and remember",
+     "effects": {
+      "echoManual": true,
+      "comprehension": 6,
+      "qi": 18,
+      "flag": "echo_found",
+      "log": "You read until the lamp gutters. Halfway through you stop needing to read; you know what the next line says. In the morning your art is a whole realm of understanding deeper."
+     }
+    },
+    {
+     "text": "Copy it and leave the original for others",
+     "effects": {
+      "echoManual": true,
+      "alignment": 6,
+      "flag": "echo_found",
+      "log": "You copy it twice, one for you and one for the library's front shelf, and put the original back exactly where it was. Somebody else might need to find it."
+     }
+    },
+    {
+     "text": "Burn it. Some arts should die with their makers",
+     "effects": {
+      "alignment": -2,
+      "comprehension": 3,
+      "flag": "echo_found",
+      "log": "You read it once, and burn it, and remember all of it anyway. Maybe {echo_name} would have wanted that. Maybe not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_killer_1",
+   "cat": "rival",
+   "weight": 6,
+   "once": true,
+   "text": "A young martial artist at an inn introduces themself with a family name you have heard before, in a nightmare. They are, they say proudly, of the line of the famous {echo_killer}. {echo_killer} killed {echo_name}. Killed you. This grandchild has the same eyes.",
+   "when": {
+    "flags": [
+     "echo_killer"
+    ],
+    "age": [
+     16,
+     70
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Challenge them. Finish what was started",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": -8,
+      "flag": "echo_found",
+      "log": "You win. You stand over them with the sword, and see a frightened young face that never killed anybody. You walk away. The old debt is paid in fear, which is enough."
+     },
+     "fail": {
+      "health": -24,
+      "flag": "echo_found",
+      "deathCause": "the sword of the line that killed you once already",
+      "log": "They are as good as their ancestor was. History nearly repeats itself. You crawl out of the inn yard and lie in a ditch, laughing at the joke heaven is telling."
+     },
+     "risky": true
+    },
+    {
+     "text": "Drink with them. They did nothing",
+     "effects": {
+      "alignment": 12,
+      "charm": 3,
+      "flag": [
+       "echo_found",
+       "echo_forgave"
+      ],
+      "log": "You drink with the grandchild of your killer until midnight. They are funny, and kind to the serving girl. You decide that is the end of it."
+     }
+    },
+    {
+     "text": "Ask, carefully, what the family says about {echo_name}",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "echo_found",
+      "comprehension": 4,
+      "log": "\"Our ancestor never forgot that fight,\" they say. \"The only time in that whole long life they were ever afraid. Incense was burned for that person every year.\" You have to leave the table."
+     },
+     "fail": {
+      "flag": "echo_found",
+      "log": "They have never heard the name. Of course they haven't. The world forgets its dead faster than the dead forget it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_spouse_1",
+   "cat": "romance",
+   "weight": 5,
+   "once": true,
+   "text": "A girl selling flowers in the market has a face you have seen a thousand times, on another pillow, in another life. You ask her family name. She is a great-grandchild of {echo_spouse}. She has {echo_spouse}'s laugh.",
+   "when": {
+    "flags": [
+     "echo_spouse"
+    ],
+    "age": [
+     16,
+     80
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Buy every flower she has, and say nothing",
+     "effects": {
+      "taels": -20,
+      "alignment": 4,
+      "flag": "echo_found",
+      "log": "Your arms full of peonies, you walk to the river and sit there until dark. Some loves outlast the people in them."
+     }
+    },
+    {
+     "text": "Ask about her great-grandparent",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "echo_found",
+      "luck": 5,
+      "log": "\"My great-grandparent waited forty years for someone who went to war,\" she says. \"Everyone said to remarry. The answer was always no: that someone could still be felt, somewhere.\" She looks at you oddly. You buy a flower and go."
+     },
+     "fail": {
+      "flag": "echo_found",
+      "log": "She is suspicious of strange martial artists asking about her family, and right to be."
+     }
+    },
+    {
+     "text": "Make sure her family never wants for anything",
+     "effects": {
+      "taels": -150,
+      "alignment": 10,
+      "flag": [
+       "echo_found",
+       "echo_kept_promise"
+      ],
+      "log": "An anonymous purse, every year. You never tell them who it is from. It is a promise you made, in a way, a long time ago."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_child_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "A very old village elder is telling stories to children under a tree. You stop to listen. The story is about the elder's own parent, {echo_name}, a {echo_realm} who once carried a small child on {echo_his} shoulders to see the lantern festival. The old one's name is {echo_child}. You were that parent.",
+   "when": {
+    "flags": [
+     "echo_child"
+    ],
+    "age": [
+     16,
+     80
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Sit with the children and listen to the end",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 3,
+      "flag": "echo_found",
+      "log": "It is a good story. You come out of it better than you remember being. When it ends, the old one looks at you a long time, and nods once, as if to a stranger."
+     }
+    },
+    {
+     "text": "Carry the old one to see this year's lanterns",
+     "effects": {
+      "alignment": 10,
+      "flag": [
+       "echo_found",
+       "echo_child_lanterns"
+      ],
+      "charm": 3,
+      "log": "They weigh almost nothing now. You carry them through the lantern festival on your back, and they laugh like a child, and call you by your old name once, and then pretend they did not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_bridge_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "The ferry is gone. Where it used to cross, there is a stone bridge, old and mossy and solid as a mountain, and a worn plaque: built by {echo_name}, so no child would drown here again. A cart goes over it as you watch.",
+   "when": {
+    "flags": [
+     "echo_bridge"
+    ],
+    "age": [
+     10,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Walk across it slowly",
+     "effects": {
+      "luck": 4,
+      "alignment": 4,
+      "flag": "echo_found",
+      "log": "Every stone is where you would have put it. Halfway across you laugh out loud and startle a heron."
+     }
+    },
+    {
+     "text": "Repair the cracked keystone",
+     "effects": {
+      "taels": -40,
+      "alignment": 8,
+      "flag": "echo_found",
+      "fame": 3,
+      "log": "You pay a mason and fix the keystone with your own hands. Another hundred years, at least. You will not see them either, probably."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_tree_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "In a temple courtyard there is an ancient plum tree, so famous that people come from three provinces to see it blossom. A monk tells you a wanderer called {echo_name} planted it, a lifetime ago, and that it has never once failed to bloom.",
+   "when": {
+    "flags": [
+     "echo_tree"
+    ],
+    "age": [
+     8,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Sit under it until the blossoms fall on you",
+     "effects": {
+      "qi": 12,
+      "health": 10,
+      "flag": "echo_found",
+      "log": "The petals come down like slow snow. You breathe in time with something very old. When you stand up, your meridians feel washed clean."
+     }
+    },
+    {
+     "text": "Plant a seedling from it somewhere new",
+     "effects": {
+      "alignment": 5,
+      "flag": [
+       "echo_found",
+       "legacy_tree"
+      ],
+      "log": "You take a cutting and plant it on a hill above a village that has no trees. Some things you do in every life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_school_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "A village school, full of children reciting characters, and over the door a fading board: founded by {echo_name}. The schoolmaster is very young and very tired, and the roof leaks.",
+   "when": {
+    "flags": [
+     "echo_school"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Pay to fix the roof and stay a week to teach",
+     "effects": {
+      "taels": -80,
+      "alignment": 10,
+      "charm": 3,
+      "flag": "echo_found",
+      "log": "You teach characters and a little sword form. On the last day a small boy asks if you will come back. You say yes. It feels like a promise someone else made for you."
+     }
+    },
+    {
+     "text": "Read the old name on the board, and leave a gift",
+     "effects": {
+      "taels": -20,
+      "alignment": 4,
+      "flag": "echo_found",
+      "log": "A purse on the step, no note. The schoolmaster will think it was a ghost. In a way."
+     }
+    },
+    {
+     "text": "Sit at the back and listen to a lesson",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 3,
+      "flag": "echo_found",
+      "log": "The children recite the characters you chose for them a lifetime ago, in the order you chose. You mouth along without meaning to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_sect_1",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "The {echo_sect} still stands, a lifetime after the one who founded it. In its main hall hangs a portrait of the founder, {echo_title}, and every disciple bows to it on the way past. You stand in front of it for a long time. The painter got your nose wrong.",
+   "when": {
+    "flags": [
+     "echo_sect"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Ask to join, as the newest disciple in your own sect",
+     "effects": {
+      "qi": 15,
+      "flag": "echo_found",
+      "comprehension": 4,
+      "log": "They test you and take you. You train under people who learned from people who learned from you. They are surprised how fast you learn their forms."
+     }
+    },
+    {
+     "text": "Tell the sect head who you are",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 15,
+      "flag": [
+       "echo_found",
+       "echo_recognised"
+      ],
+      "log": "The old sect head looks at your hands, then at the portrait, then at your hands, and kneels. Nobody else in the hall understands. They never will. He does."
+     },
+     "fail": {
+      "fame": -3,
+      "flag": "echo_found",
+      "log": "They laugh, kindly, and give you tea, and show you the door. Every year someone claims to be the founder reborn."
+     }
+    },
+    {
+     "text": "Bow to the portrait like every other visitor, and leave",
+     "effects": {
+      "alignment": 4,
+      "flag": "echo_found",
+      "log": "You bow to yourself. It is a very strange feeling. On the way out you correct a junior's stance without thinking, and they stare after you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_od_meet_1",
+   "cat": "encounter",
+   "weight": 8,
+   "once": true,
+   "text": "An old martial artist stops on the road to watch you practise with a stick in a field. {od_He} is {od_age}, {od_realm}, and walks with a cane {od_he} clearly does not need. When you finish your form, the cane falls out of {od_his} hand. \"Who taught you to hold it like that?\" {od_he} asks, in a voice that shakes. \"Who taught you that?\"",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "name": "{od_name}",
+     "od": true,
+     "male": "od",
+     "tag": "od_elder",
+     "opinion": 30
+    }
+   },
+   "when": {
+    "flags": [
+     "old_disciple"
+    ],
+    "age": [
+     6,
+     16
+    ]
+   },
+   "arc": "The Disciple Who Remembered",
+   "choices": [
+    {
+     "text": "Answer with something only {od_master} would have known",
+     "effects": {
+      "flag": "od_met",
+      "npcFlag": [
+       "od_elder",
+       "od_knows"
+      ],
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "came back"
+      },
+      "log": "You tell {npc} the joke you told {od_him} on {od_his} first day, {od_years} years ago. The old master sits down in the dust of the road and weeps like a child."
+     }
+    },
+    {
+     "text": "Say nothing. Bow the old way, the way you once taught it",
+     "effects": {
+      "flag": "od_met",
+      "npcFlag": [
+       "od_elder",
+       "od_suspects"
+      ],
+      "mem": {
+       "deed": "helped",
+       "w": 22,
+       "note": "bowed the old way"
+      },
+      "log": "{npc} returns the bow, very slowly, the same old way. Then {od_he} picks up the cane and walks on, and looks back four times before the bend."
+     }
+    },
+    {
+     "text": "\"Nobody. I made it up\"",
+     "effects": {
+      "flag": "od_met",
+      "npcFlag": "od_elder",
+      "log": "\"Nobody makes that up,\" says {npc}, and stays to watch you practise every day for a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_od_meet_2",
+   "cat": "master",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes to your family's door with a bow so deep it embarrasses everyone at the gate. {od_He} asks permission to take you as {od_his} disciple. \"I was taught by someone very great,\" {od_he} says, looking only at you. \"I would like to give it back.\"",
+   "npc": {
+    "role": "od_elder"
+   },
+   "when": {
+    "flags": [
+     "old_disciple"
+    ],
+    "after": [
+     "dc_od_meet_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "od_elder"
+    ],
+    "age": [
+     7,
+     20
+    ]
+   },
+   "arc": "The Disciple Who Remembered",
+   "choices": [
+    {
+     "text": "Kneel and accept. The student becomes the teacher",
+     "effects": {
+      "master": true,
+      "flag": "od_taught_me",
+      "qi": 20,
+      "manual": 3,
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "let me be their teacher in turn"
+      },
+      "log": "{npc} teaches you your own art. It has grown in {od_years} years; {od_he} added things you never thought of. It is the strangest, happiest apprenticeship in the murim."
+     },
+     "req": {
+      "hasMaster": false
+     }
+    },
+    {
+     "text": "Refuse kindly. Ask {od_him} to teach someone who needs it more",
+     "effects": {
+      "alignment": 8,
+      "mem": {
+       "deed": "respected",
+       "w": 20,
+       "note": "sent me to teach someone who needed it"
+      },
+      "log": "{npc} laughs. \"Exactly what my master would have said.\" {od_He} goes and takes an orphan from the next village instead, and visits you every festival."
+     }
+    },
+    {
+     "text": "Ask for one thing only: the story of {od_his} life",
+     "effects": {
+      "comprehension": 6,
+      "mem": {
+       "deed": "helped",
+       "w": 24,
+       "note": "asked for my life story"
+      },
+      "log": "It takes three nights. {npc} founded a school, lost a wife, won a war, buried a son, and never once, {od_he} says, stopped practising the first form you taught {od_him}."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_od_meet_3",
+   "cat": "aging",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is dying, very old, in a narrow bed in a mountain hut. {od_He} sent for you and nobody else. {od_His} hand finds yours. \"I kept your seat empty,\" {od_he} whispers. \"All those years. Every disciple asked why.\"",
+   "npc": {
+    "role": "od_elder"
+   },
+   "when": {
+    "flags": [
+     "old_disciple"
+    ],
+    "after": [
+     "dc_od_meet_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "od_elder"
+    ],
+    "age": [
+     10,
+     40
+    ]
+   },
+   "arc": "The Disciple Who Remembered",
+   "choices": [
+    {
+     "text": "\"I know. Thank you for keeping it\"",
+     "effects": {
+      "npcPass": "old age, at peace",
+      "alignment": 8,
+      "fame": 6,
+      "qi": 20,
+      "log": "{npc} smiles at that and dies, and you sit by the bed until morning. {od_His} disciples come at dawn. They bow to you without being told why."
+     }
+    },
+    {
+     "text": "Ask {od_him} to keep it empty a little longer, and give {od_him} your qi",
+     "effects": {
+      "qi": -30,
+      "health": -10,
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "gave me one more spring"
+      },
+      "log": "{npc} lives one more spring. You spend it together on the mountain, teaching each other. Then {od_he} goes, at peace.",
+      "npcFlag": "od_last_spring"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_od_grave_1",
+   "cat": "aging",
+   "weight": 7,
+   "once": true,
+   "text": "A grand tomb on a mountain, with a school beside it and a hundred disciples in the yard. The tomb is {od_name}'s. The stone says: {od_he} lived a long life, founded this school, and asked to be buried facing the mountain where {od_his} own master, {od_master}, once taught {od_him} to stand.",
+   "when": {
+    "flags": [
+     "old_disciple_grave"
+    ],
+    "age": [
+     12,
+     80
+    ]
+   },
+   "arc": "The Disciple Who Remembered",
+   "choices": [
+    {
+     "text": "Kneel at your disciple's tomb",
+     "effects": {
+      "flag": [
+       "od_met",
+       "echo_found"
+      ],
+      "alignment": 6,
+      "qi": 15,
+      "log": "You kneel a long time. A junior from the school brings you tea and asks why you are crying. You tell them you knew the founder. They think you are joking. You are very old, to them."
+     }
+    },
+    {
+     "text": "Train in their yard until they notice your form",
+     "effects": {
+      "flag": [
+       "od_met",
+       "echo_found"
+      ],
+      "comprehension": 5,
+      "fame": 4,
+      "log": "The head of the school watches you through one form and drops their cup. \"That is the founder's master's form,\" they whisper. \"Nobody has done it like that in {od_years} years.\""
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

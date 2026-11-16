@@ -1,0 +1,1217 @@
+{
+ "events": [
+  {
+   "id": "sect_first_day",
+   "cat": "sect",
+   "when": {
+    "age": [
+     6,
+     60
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_first_day"
+    ],
+    "flags": [
+     "new_disciple"
+    ],
+    "junior": true
+   },
+   "weight": 60,
+   "text": "Your first morning in {sect}. You are woken at the fourth watch, handed a broom, and told that sweeping the thousand steps IS the training.",
+   "choices": [
+    {
+     "text": "Sweep every step perfectly",
+     "effects": {
+      "flag": "sect_first_day",
+      "strength": 2,
+      "alignment": 2,
+      "log": "By noon an elder stops to watch you sweep. He says nothing. He comes back the next day."
+     }
+    },
+    {
+     "text": "Find a smarter way to sweep",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sect_first_day",
+      "comprehension": 3,
+      "fame": 1,
+      "log": "You sweep with the wind instead of against it. Half the time, twice as clean. The elders argue about whether to punish you or promote you."
+     },
+     "fail": {
+      "flag": "sect_first_day",
+      "log": "Your 'smarter way' involves a donkey. It does not end well for the donkey, or the steps."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_mission_escort",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "realm": [
+     1,
+     4
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "fugitive",
+     "imp_emperor"
+    ]
+   },
+   "weight": 3,
+   "text": "The sect assigns you to escort a merchant caravan through bandit country. Pay: 60 taels and merit points. Risk: bandits, obviously.",
+   "choices": [
+    {
+     "text": "Take the mission",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 60,
+      "fame": 4,
+      "qi": 5,
+      "log": "Two ambushes, zero losses. The merchant tries to marry you to one of his children. You politely flee.",
+      "merit": 10
+     },
+     "fail": {
+      "taels": 30,
+      "health": -25,
+      "log": "You get the caravan through, minus one cart and some of your blood.",
+      "merit": 4
+     }
+    },
+    {
+     "text": "Volunteer for the library instead",
+     "effects": {
+      "comprehension": 3,
+      "log": "Dusty scrolls, no bandits. The librarian likes you."
+     }
+    }
+   ],
+   "maxPerLife": 3
+  },
+  {
+   "id": "sect_mission_unorthodox",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "factions": [
+     "unorthodox"
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 3,
+   "text": "The stronghold wants you to 'collect a debt' from a salt merchant who stopped paying for protection.",
+   "choices": [
+    {
+     "text": "Collect it the hard way",
+     "effects": {
+      "taels": 80,
+      "alignment": -8,
+      "fame": 2,
+      "log": "He pays. His children watch from the doorway. You tell yourself it is business."
+     }
+    },
+    {
+     "text": "Collect it the soft way",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 60,
+      "log": "You talk him into paying and he thanks you for it. You are good at this. It worries you."
+     },
+     "fail": {
+      "taels": 0,
+      "fame": -2,
+      "log": "He laughs you out of the shop. The stronghold's boss is not amused."
+     }
+    },
+    {
+     "text": "Pay it yourself and tell them it is done",
+     "req": {
+      "minTaels": 80
+     },
+     "effects": {
+      "taels": -80,
+      "alignment": 8,
+      "log": "The merchant never learns why the bandits stopped coming."
+     }
+    }
+   ],
+   "maxPerLife": 3
+  },
+  {
+   "id": "sect_mission_demonic",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "job_heavenly_demon",
+     "imp_emperor"
+    ]
+   },
+   "weight": 3,
+   "text": "The Cult sends you to test an Orthodox sect's defences: sneak in, leave a black lotus on the sect leader's pillow, and get out.",
+   "choices": [
+    {
+     "text": "Do it",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": -5,
+      "qi": 8,
+      "log": "The black lotus is found at dawn. The whole Orthodox Alliance is in uproar. The Cult elders smile at you in the corridor."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "the Orthodox sect's guards",
+      "log": "You are spotted on the roof. You escape with an arrow in your shoulder and nothing to show for it."
+     }
+    },
+    {
+     "text": "Leave the lotus somewhere safer",
+     "effects": {
+      "fame": 2,
+      "log": "You leave it on the gatehouse instead. The Cult pretends to be impressed."
+     }
+    }
+   ],
+   "maxPerLife": 3,
+   "mw": true
+  },
+  {
+   "id": "sect_tournament",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     60
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "fugitive",
+     "imp_emperor"
+    ]
+   },
+   "weight": 2.5,
+   "text": "The annual sect tournament. The top three win a spirit elixir and the elders' attention.",
+   "choices": [
+    {
+     "text": "Fight to win",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 12,
+      "item": "spirit_fruit",
+      "log": "You take first place. Your name goes up on the sect's wall of honour."
+     },
+     "fail": {
+      "fame": 3,
+      "health": -20,
+      "log": "You go out in the quarter-finals, with a respectable black eye."
+     }
+    },
+    {
+     "text": "Hide your real strength",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hidden_strength",
+      "log": "You lose in the second round, on purpose, and watch everyone else's techniques very closely."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_punishment_cave",
+   "cat": "sect",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "demonic"
+    ],
+    "junior": true
+   },
+   "weight": 1,
+   "text": "You are caught breaking curfew (in your defence, the moon was very nice). The elders sentence you to a month in the punishment cave.",
+   "effects": {
+    "comprehension": 4,
+    "qi": 6,
+    "log": "Silence, darkness, and bad rice. You come out calmer, and slightly stronger. The moon was still worth it."
+   }
+  },
+  {
+   "id": "sect_secret_manual",
+   "cat": "sect",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     2,
+     5
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "minFame": 20,
+    "junior": true,
+    "notFlags": [
+     "sect_head",
+     "fugitive",
+     "imp_emperor"
+    ]
+   },
+   "weight": 1.5,
+   "text": "The sect leader summons you. 'Your merit is enough. You may choose one manual from the inner library.'",
+   "choices": [
+    {
+     "text": "A deep internal method",
+     "effects": {
+      "manual": 3,
+      "qi": 10,
+      "log": "The method is slow, and deep, like a river under ice."
+     }
+    },
+    {
+     "text": "A fast, flashy sword art",
+     "effects": {
+      "strength": 8,
+      "fame": 5,
+      "log": "It looks spectacular. Everyone wants to spar with you now."
+     }
+    },
+    {
+     "text": "A forgotten manual nobody picks",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "manual": 4,
+      "log": "Nobody picks it because nobody can read it. You can. Barely. It is extraordinary."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "It is a cookbook. A good cookbook."
+     }
+    }
+   ]
+  },
+  {
+   "id": "master_teaches",
+   "cat": "master",
+   "once": false,
+   "npc": {
+    "role": "master"
+   },
+   "when": {
+    "age": [
+     10,
+     999
+    ],
+    "hasMaster": true
+   },
+   "weight": 2,
+   "text": "{npc} watches you practise for an hour without a word. Then {he} takes your wrist and moves it one finger's width to the left.",
+   "choices": [
+    {
+     "text": "Practise that finger's width for a month",
+     "effects": {
+      "qi": 8,
+      "comprehension": 2,
+      "mem": {
+       "deed": "taught",
+       "w": 6,
+       "note": "listened"
+      },
+      "log": "One finger's width. Everything changes."
+     }
+    },
+    {
+     "text": "Ask why",
+     "effects": {
+      "comprehension": 3,
+      "log": "'Because the sword is not in your hand,' {npc} says, and walks away. You think about it for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "master_secret",
+   "cat": "master",
+   "npc": {
+    "role": "master"
+   },
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "hasMaster": true
+   },
+   "weight": 1,
+   "text": "Late one night you find {npc} weeping over an old sword. '{His} sect,' {he} says finally. 'Destroyed. I was the only one who ran.'",
+   "choices": [
+    {
+     "text": "Swear to avenge {his} sect",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 30,
+       "note": "swore to avenge my sect"
+      },
+      "flag": "master_oath",
+      "log": "{npc} looks at you a long time. Then {he} teaches you the sect's last technique."
+     }
+    },
+    {
+     "text": "Sit with {him} until dawn",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "sat with me on the worst night"
+      },
+      "log": "Neither of you says anything. It is the most important night of your apprenticeship."
+     }
+    }
+   ]
+  },
+  {
+   "id": "master_dies",
+   "cat": "master",
+   "npc": {
+    "role": "master"
+   },
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "hasMaster": true,
+    "chance": 0.25
+   },
+   "weight": 1,
+   "text": "{npc} does not come out of seclusion. When you open the door, {he} is sitting in meditation, peaceful, gone. A letter is folded in {his} lap.",
+   "choices": [
+    {
+     "text": "Read the letter",
+     "effects": {
+      "npcDie": "old age, in seclusion",
+      "manual": 3,
+      "qi": 10,
+      "log": "'You were the best thing I did with my life. The manual under the floor is yours. Do not waste it crying.' You cry anyway."
+     }
+    },
+    {
+     "text": "Keep vigil for three days before you read it",
+     "effects": {
+      "npcDie": "old age, in seclusion",
+      "manual": 3,
+      "alignment": 3,
+      "comprehension": 2,
+      "log": "Three days of incense and silence. When you finally read the letter, you already know what it says: the manual under the floor is yours. Do not waste it crying."
+     }
+    }
+   ]
+  },
+  {
+   "id": "family_father_old",
+   "cat": "family",
+   "npc": {
+    "role": "father"
+   },
+   "when": {
+    "age": [
+     25,
+     70
+    ]
+   },
+   "weight": 1,
+   "text": "Your father, {npc}, is getting old. He asks you to come home for the New Year, just once.",
+   "choices": [
+    {
+     "text": "Go home",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 20,
+       "note": "came home for the New Year"
+      },
+      "health": 10,
+      "log": "He cries when he sees you at the door. You eat too much. It is the best week in years."
+     }
+    },
+    {
+     "text": "You are in closed training",
+     "effects": {
+      "qi": 8,
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "did not come home"
+      },
+      "log": "You train through the New Year. The letter he sends back is short."
+     }
+    }
+   ]
+  },
+  {
+   "id": "family_mother_letter",
+   "cat": "family",
+   "npc": {
+    "role": "mother"
+   },
+   "when": {
+    "age": [
+     15,
+     60
+    ]
+   },
+   "weight": 1,
+   "text": "A letter from {npc}: 'Are you eating? Your cousin became a county clerk. Just saying. The pig says hello.'",
+   "effects": {
+    "health": 5,
+    "log": "You read it three times. The pig, you assume, is fine."
+   }
+  },
+  {
+   "id": "marriage_proposal_family",
+   "cat": "family",
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "realm": 0,
+     "age": 0,
+     "opposite": true
+    }
+   },
+   "when": {
+    "age": [
+     20,
+     35
+    ],
+    "married": false,
+    "flags": [
+     "born_great_family"
+    ]
+   },
+   "weight": 2,
+   "text": "The family elders have arranged a marriage alliance: {npc}, from an allied family. You have met once, at a funeral.",
+   "choices": [
+    {
+     "text": "Accept for the family",
+     "effects": {
+      "spouse": true,
+      "fame": 5,
+      "taels": 300,
+      "mem": {
+       "deed": "married",
+       "w": 10,
+       "note": "went through with the alliance"
+      },
+      "log": "The wedding is enormous. Your spouse turns out to have a sharp tongue and a sharper mind. It could be worse."
+     }
+    },
+    {
+     "text": "Refuse and anger the elders",
+     "effects": {
+      "fame": -3,
+      "flag": "defied_elders",
+      "mem": {
+       "deed": "rejected",
+       "w": -15,
+       "note": "refused the alliance"
+      },
+      "log": "The elders shout for a week. You have never felt more free."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "child_born",
+   "cat": "family",
+   "when": {
+    "age": [
+     20,
+     55
+    ],
+    "married": true,
+    "notFlags": [
+     "has_child"
+    ],
+    "chance": 0.35
+   },
+   "weight": 2,
+   "text": "Your first child is born in spring. Small, loud, and already trying to grab your sword.",
+   "effects": {
+    "flag": "has_child",
+    "health": 5,
+    "fame": 1,
+    "log": "You hold your child and, for the first time in your life, the path to the peak does not seem like the most important thing.",
+    "spawn": {
+     "role": "child",
+     "ageAbs": 0,
+     "opinion": 60,
+     "surname": "mine",
+     "tag": "own_child"
+    }
+   }
+  },
+  {
+   "id": "spouse_worry",
+   "cat": "family",
+   "npc": {
+    "role": "spouse"
+   },
+   "when": {
+    "age": [
+     22,
+     90
+    ],
+    "married": true
+   },
+   "weight": 1,
+   "text": "{npc} finds you training at midnight again. 'You are always chasing the next realm. Will you still be here when it matters?'",
+   "choices": [
+    {
+     "text": "Put the sword down and come to bed",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "put the sword down for me"
+      },
+      "health": 10,
+      "log": "The next realm can wait one night."
+     }
+    },
+    {
+     "text": "'Just one more hour'",
+     "effects": {
+      "qi": 6,
+      "mem": {
+       "deed": "rejected",
+       "w": -8,
+       "note": "chose the sword again"
+      },
+      "log": "It is three more hours. The bed is cold when you get there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rival_returns_stronger",
+   "cat": "rival",
+   "npc": {
+    "role": "rival"
+   },
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "stronger": false
+   },
+   "weight": 1.5,
+   "text": "You hear that {npc} has reached {npc_realm}, ahead of you. At a banquet, {he} raises a cup to you from across the room and smiles.",
+   "choices": [
+    {
+     "text": "Raise your cup back",
+     "effects": {
+      "alignment": 2,
+      "log": "A truce, maybe. Or a promise."
+     }
+    },
+    {
+     "text": "Leave the banquet and train",
+     "effects": {
+      "qi": 10,
+      "log": "You train until your hands bleed. That smile follows you into every session."
+     }
+    }
+   ]
+  },
+  {
+   "id": "friend_marries",
+   "cat": "friend",
+   "npc": {
+    "role": "friend"
+   },
+   "when": {
+    "age": [
+     20,
+     40
+    ]
+   },
+   "weight": 1,
+   "text": "{npc} is getting married, and wants you to stand beside {him} at the wedding.",
+   "choices": [
+    {
+     "text": "Stand beside {him}",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "stood beside me at my wedding"
+      },
+      "health": 5,
+      "log": "You give a speech. It is too long and slightly embarrassing. Everyone cries anyway."
+     }
+    },
+    {
+     "text": "Send a gift instead",
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "gift",
+       "w": 5,
+       "note": "sent a gift"
+      },
+      "log": "The gift is expensive. {npc} would have preferred you."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "war_orthodox_unorthodox",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     5
+    ]
+   },
+   "weight": 1,
+   "text": "War breaks out between the Orthodox Alliance and the Unorthodox Alliance over a disputed river port. Every martial artist in the province must choose a side, or be chosen.",
+   "choices": [
+    {
+     "text": "Fight on the front line",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 25,
+      "qi": 15,
+      "health": -30,
+      "flag": "war_hero",
+      "log": "After a season of fighting, you are known on both sides of the river. Some call you a hero. Some call you worse."
+     },
+     "fail": {
+      "health": -65,
+      "fame": 5,
+      "deathCause": "the river port war",
+      "log": "You are wounded in the first great battle and carried off the field."
+     }
+    },
+    {
+     "text": "Protect the villages behind the lines",
+     "effects": {
+      "alignment": 10,
+      "fame": 8,
+      "log": "No glory, no songs. Just a lot of villages still standing at the end."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "fame": -5,
+      "log": "The war ends in a year. Nobody remembers who won. Everybody remembers who hid."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "heavenly_demon_rumour",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     3,
+     5
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 1,
+   "text": "Rumours spread: the Heavenly Demon has come out of seclusion. Sects are closing their gates. Merchants are raising prices. Someone has painted a black lotus on the town gate.",
+   "choices": [
+    {
+     "text": "Investigate the black lotus",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 8,
+      "log": "It was a drunk painter's prank. You find him. The whole town laughs for a month, with relief."
+     },
+     "fail": {
+      "health": -20,
+      "log": "You follow the trail into the hills and meet something that was definitely not a drunk painter. You run."
+     }
+    },
+    {
+     "text": "Go into seclusion until it blows over",
+     "effects": {
+      "qi": 12,
+      "log": "The rumour fades by winter. You come out stronger, and slightly paranoid."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "old_age_first_grey",
+   "cat": "aging",
+   "when": {
+    "age": [
+     40,
+     70
+    ],
+    "realm": [
+     0,
+     3
+    ]
+   },
+   "weight": 1,
+   "text": "You find your first grey hair. Then your second. By evening you have given up counting.",
+   "effects": {
+    "comprehension": 2,
+    "log": "Time is the one opponent nobody beats. You might as well get wiser while it wins."
+   }
+  },
+  {
+   "id": "old_age_student_asks",
+   "cat": "aging",
+   "when": {
+    "age": [
+     55,
+     999
+    ],
+    "realm": [
+     2,
+     5
+    ],
+    "minFame": 15
+   },
+   "weight": 1.5,
+   "text": "A young martial artist travels three provinces to ask you one question: 'What is the secret of the martial path?'",
+   "choices": [
+    {
+     "text": "'There is no secret. Train.'",
+     "effects": {
+      "fame": 3,
+      "log": "They look disappointed. In twenty years they will understand."
+     }
+    },
+    {
+     "text": "Tell them about your mistakes instead",
+     "effects": {
+      "fame": 5,
+      "alignment": 3,
+      "log": "You talk until the tea is cold. It is the best lesson you have ever given."
+     }
+    },
+    {
+     "text": "'Bring me a chicken first'",
+     "effects": {
+      "fame": 2,
+      "log": "They bring the chicken. You are becoming your old master. Terrifying."
+     }
+    }
+   ]
+  },
+  {
+   "id": "old_age_last_journey",
+   "cat": "aging",
+   "when": {
+    "age": [
+     60,
+     999
+    ],
+    "notFlags": [
+     "last_journey",
+     "rejuvenated"
+    ]
+   },
+   "weight": 1,
+   "text": "You feel the years in your joints. Maybe it is time to see the places you always meant to see.",
+   "choices": [
+    {
+     "text": "Travel to the eastern sea",
+     "effects": {
+      "flag": "last_journey",
+      "health": 10,
+      "comprehension": 3,
+      "log": "You stand on the shore and watch the sun come up out of the water. You understand something about endless things."
+     }
+    },
+    {
+     "text": "Stay and train. There is still time",
+     "effects": {
+      "flag": "last_journey",
+      "qi": 10,
+      "log": "There is never enough time. You train anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "funny_cursed_dumpling",
+   "cat": "funny",
+   "when": {
+    "age": [
+     8,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "A street vendor swears her dumplings contain the essence of a thousand-year python. They contain pork. Probably.",
+   "choices": [
+    {
+     "text": "Eat ten",
+     "roll": {
+      "stat": "health",
+      "dc": 45
+     },
+     "ok": {
+      "health": 5,
+      "log": "Delicious. If there was a thousand-year python in there, it was a tasty one."
+     },
+     "fail": {
+      "health": -15,
+      "log": "Whatever was in dumpling number seven was not pork. You spend two days regretting everything."
+     }
+    },
+    {
+     "text": "Eat one, politely",
+     "effects": {
+      "log": "It is a perfectly normal dumpling. You are almost disappointed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "funny_rooftop_chase",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ]
+   },
+   "weight": 1,
+   "text": "You practise your lightness technique across the town rooftops at night and land, with great elegance, in a family's bathtub. They are in it.",
+   "choices": [
+    {
+     "text": "Apologise profusely",
+     "effects": {
+      "charm": -2,
+      "log": "Very profusely. You offer to pay for the tub. They refuse, which is somehow worse. You never use that street again."
+     }
+    },
+    {
+     "text": "Pretend you are a dream",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "luck": 3,
+      "log": "Incredibly, they believe you. The legend of the Bathtub Immortal spreads through town."
+     },
+     "fail": {
+      "fame": -3,
+      "health": -5,
+      "log": "They do not believe you. The grandmother has a very good throwing arm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "funny_wrong_manual",
+   "cat": "funny",
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "realm": [
+     0,
+     3
+    ]
+   },
+   "weight": 1,
+   "text": "You finally master a technique from a manual bought in the market, and proudly perform it for your friends. It is a dance. For weddings.",
+   "effects": {
+    "charm": 4,
+    "log": "Surprisingly, it is very popular at weddings. You are invited to eleven this year."
+   }
+  },
+  {
+   "id": "funny_wise_goat",
+   "cat": "funny",
+   "when": {
+    "age": [
+     10,
+     999
+    ]
+   },
+   "weight": 0.8,
+   "text": "A goat follows you everywhere for a week, staring at you meaningfully. The villagers say it is the reincarnation of a great master.",
+   "choices": [
+    {
+     "text": "Bow to the goat",
+     "effects": {
+      "luck": 3,
+      "comprehension": 1,
+      "log": "The goat bows back. Probably. It is hard to tell with goats."
+     }
+    },
+    {
+     "text": "Ask the goat for guidance",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 10,
+      "log": "The goat leads you to a spring you never knew existed. The water tastes of power."
+     },
+     "fail": {
+      "health": -5,
+      "log": "The goat headbutts you and eats your hat. Guidance received."
+     }
+    }
+   ]
+  },
+  {
+   "id": "funny_named_move",
+   "cat": "funny",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     2,
+     5
+    ]
+   },
+   "weight": 1,
+   "text": "You invent your first original technique. It needs a name worthy of the murim.",
+   "choices": [
+    {
+     "text": "'Heaven-Splitting Divine Dragon Fist'",
+     "effects": {
+      "fame": 4,
+      "log": "It is a very good punch with a very long name. People shout it when they fight you."
+     }
+    },
+    {
+     "text": "'Punch'",
+     "effects": {
+      "comprehension": 3,
+      "log": "The simplicity terrifies your opponents. What kind of master calls it 'Punch'?"
+     }
+    },
+    {
+     "text": "Name it after your childhood pig",
+     "effects": {
+      "charm": 3,
+      "log": "The 'Bao-Bao Strike' becomes surprisingly famous. The pig would be proud."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "insight_rain",
+   "cat": "misc",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "chance": 0.3
+   },
+   "weight": 1,
+   "text": "Watching rain drip from the eaves, you suddenly understand how energy should flow through the eighth meridian.",
+   "effects": {
+    "qi": 12,
+    "comprehension": 1,
+    "log": "You sit still until the rain stops, afraid to lose the feeling."
+   }
+  },
+  {
+   "id": "qi_deviation_cure",
+   "cat": "misc",
+   "when": {
+    "flags": [
+     "qi_deviation"
+    ]
+   },
+   "weight": 4,
+   "text": "Your meridians still twist from the qi deviation. Some days you cannot lift a bowl of rice.",
+   "choices": [
+    {
+     "text": "Slowly heal with orthodox methods",
+     "effects": {
+      "unflag": "qi_deviation",
+      "health": 10,
+      "qi": -10,
+      "log": "A year of slow breathing and bitter medicine. The twisting fades."
+     }
+    },
+    {
+     "text": "Accept the Demonic Cult's cure",
+     "effects": {
+      "unflag": "qi_deviation",
+      "alignment": -20,
+      "qi": 15,
+      "flag": "cult_debt",
+      "log": "The cure works instantly. The Cult's envoy smiles. 'We will ask a favour someday.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cult_calls_favour",
+   "cat": "misc",
+   "when": {
+    "flags": [
+     "cult_debt"
+    ],
+    "age": [
+     20,
+     999
+    ],
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 3,
+   "text": "The Cult envoy returns. 'The favour. There is a scroll in the county magistrate's archive. Bring it to us.'",
+   "choices": [
+    {
+     "text": "Steal the scroll",
+     "effects": {
+      "unflag": "cult_debt",
+      "alignment": -15,
+      "fame": -5,
+      "qi": 10,
+      "log": "You hand over the scroll. You never find out what was in it. You try not to wonder."
+     }
+    },
+    {
+     "text": "Refuse and face the consequences",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "unflag": "cult_debt",
+      "fame": 10,
+      "alignment": 10,
+      "log": "You fight off the envoy's men. The Cult does not come back. Yet."
+     },
+     "fail": {
+      "unflag": "cult_debt",
+      "health": -55,
+      "deathCause": "the Demonic Cult's envoy",
+      "log": "They leave you for dead in the snow. You are not quite dead."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

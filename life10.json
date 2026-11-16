@@ -1,0 +1,613 @@
+{
+ "events": [
+  {
+   "id": "l10_cook_off",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The village holds a cooking contest. The prize is a pig.",
+   "choices": [
+    {
+     "text": "Enter with your best dish",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 1,
+      "taels": 5,
+      "log": "You win the pig. The pig is not pleased."
+     },
+     "fail": {
+      "charm": 0,
+      "log": "Your dish is last. The pig is relieved."
+     }
+    },
+    {
+     "text": "Judge",
+     "effects": {
+      "health": -1,
+      "charm": 1,
+      "log": "Twelve dishes. You cannot eat for two days."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_boat_repair",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A fisherman's boat has a hole and the fish are running.",
+   "choices": [
+    {
+     "text": "Help patch it",
+     "effects": {
+      "health": 2,
+      "comprehension": 1,
+      "log": "He goes out and comes back with a full net. You share dinner."
+     }
+    },
+    {
+     "text": "Lend him silver for a new one",
+     "effects": {
+      "taels": -8,
+      "alignment": 2,
+      "log": "(−8 taels) He pays you back in fish for a year."
+     },
+     "req": {
+      "minTaels": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_old_map_shop",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A dusty shop sells old maps. One shows a mountain you have never heard of.",
+   "choices": [
+    {
+     "text": "Buy it",
+     "effects": {
+      "taels": -2,
+      "luck": 1,
+      "log": "A mystery for later. (−2 taels)"
+     }
+    },
+    {
+     "text": "Copy it by memory",
+     "effects": {
+      "comprehension": 1,
+      "log": "The shopkeeper pretends not to notice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_inn_fire_night",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A small fire starts in the inn kitchen at night.",
+   "choices": [
+    {
+     "text": "Put it out with a wet blanket",
+     "effects": {
+      "alignment": 1,
+      "log": "Done before anyone wakes."
+     }
+    },
+    {
+     "text": "Wake everyone first",
+     "effects": {
+      "alignment": 2,
+      "log": "Everyone out, fire out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_guard_duty_town",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ],
+    "notFlags": [
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "The town watch asks for volunteers during the festival crowds.",
+   "choices": [
+    {
+     "text": "Volunteer",
+     "effects": {
+      "alignment": 2,
+      "fame": 1,
+      "log": "Two lost children found, one pickpocket caught."
+     }
+    },
+    {
+     "text": "Enjoy the festival",
+     "effects": {
+      "health": 1,
+      "charm": 1,
+      "log": "Lanterns and sweets."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_marriage_feast",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A neighbour's wedding feast lasts three days.",
+   "choices": [
+    {
+     "text": "Stay for all three",
+     "effects": {
+      "charm": 1,
+      "health": -1,
+      "log": "Exhausting and joyful."
+     }
+    },
+    {
+     "text": "Bring a gift and leave early",
+     "effects": {
+      "taels": -3,
+      "charm": 1,
+      "log": "Polite and rested. (−3 taels)"
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "l10_mountain_hermit_letter",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A letter arrives from a hermit you met long ago. It contains a single sentence of advice.",
+   "choices": [
+    {
+     "text": "Take it to heart",
+     "effects": {
+      "qi": 3,
+      "log": "'Breathe from the feet.' It helps."
+     }
+    },
+    {
+     "text": "Write back",
+     "effects": {
+      "charm": 0,
+      "log": "He does not reply. Hermits."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_lost_sheep",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A shepherd has lost a sheep on the mountain.",
+   "choices": [
+    {
+     "text": "Find it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 2,
+      "log": "Stuck in a thorn bush. You carry it home."
+     },
+     "fail": {
+      "health": -1,
+      "log": "Night falls. The shepherd finds it himself."
+     }
+    },
+    {
+     "text": "Help search in the morning",
+     "effects": {
+      "alignment": 1,
+      "log": "Found at dawn, eating someone's cabbages."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_coin_trick",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A street magician makes coins disappear. Some of them are yours.",
+   "choices": [
+    {
+     "text": "Laugh and pay for the show",
+     "effects": {
+      "taels": -1,
+      "charm": 1,
+      "log": "Worth it. (−1 taels)"
+     }
+    },
+    {
+     "text": "Catch his sleeve",
+     "effects": {
+      "comprehension": 1,
+      "log": "Your coins return. The crowd applauds you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_dry_well_village",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A village's only well has run dry.",
+   "choices": [
+    {
+     "text": "Help dig a new one",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "Water at twenty feet. The village cheers."
+     }
+    },
+    {
+     "text": "Bring water from the river for a week",
+     "effects": {
+      "strength": 1,
+      "alignment": 2,
+      "log": "Heavy buckets, grateful people."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_pilgrim_road",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Pilgrims walk the road to a holy mountain, singing.",
+   "choices": [
+    {
+     "text": "Walk with them a day",
+     "effects": {
+      "qi": 2,
+      "alignment": 1,
+      "log": "Their songs stay with you."
+     }
+    },
+    {
+     "text": "Give them food",
+     "effects": {
+      "luck": 1,
+      "taels": -1,
+      "log": "They bless you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_scholar_duel",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Two scholars duel with words in the square. The crowd is enjoying it.",
+   "choices": [
+    {
+     "text": "Cheer for the underdog",
+     "effects": {
+      "charm": 1,
+      "log": "The underdog wins with a pun."
+     }
+    },
+    {
+     "text": "Take notes",
+     "effects": {
+      "comprehension": 1,
+      "log": "Clever arguments are weapons too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_sprained_ankle",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You sprain your ankle stepping off a curb. A murim fighter, defeated by a curb.",
+   "choices": [
+    {
+     "text": "Rest it",
+     "effects": {
+      "health": -2,
+      "log": "A week of shame and healing."
+     }
+    },
+    {
+     "text": "Train on one leg",
+     "effects": {
+      "comprehension": 1,
+      "health": -3,
+      "log": "Balance improves."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "l10_ancestral_tablet",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "You find an old ancestral tablet in a ruined house.",
+   "choices": [
+    {
+     "text": "Take it to the temple",
+     "effects": {
+      "alignment": 2,
+      "log": "The monks keep it safe."
+     }
+    },
+    {
+     "text": "Search for the family",
+     "effects": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "Their descendants are overjoyed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_sword_repair",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Your sword is chipped. The smith says it needs a week.",
+   "choices": [
+    {
+     "text": "Wait",
+     "effects": {
+      "taels": -3,
+      "strength": 1,
+      "log": "It returns better than new. (−3 taels)"
+     }
+    },
+    {
+     "text": "Fix it yourself",
+     "effects": {
+      "comprehension": 1,
+      "log": "Not perfect. Yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_orphan_gift",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "An orphan you once helped gives you a carved wooden bird.",
+   "choices": [
+    {
+     "text": "Keep it always",
+     "effects": {
+      "alignment": 1,
+      "luck": 1,
+      "log": "You carry it for the rest of your life."
+     }
+    },
+    {
+     "text": "Carve one back",
+     "effects": {
+      "charm": 1,
+      "log": "Yours is worse. They love it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_tea_ceremony",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A tea master invites you to a formal tea ceremony.",
+   "choices": [
+    {
+     "text": "Follow every step carefully",
+     "effects": {
+      "qi": 3,
+      "log": "Stillness in a cup."
+     }
+    },
+    {
+     "text": "Spill the tea",
+     "effects": {
+      "charm": 0,
+      "log": "The master pours another without a word."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_bandits_surrender",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "A band of starving bandits surrenders to you and begs for food.",
+   "choices": [
+    {
+     "text": "Feed them and find them work",
+     "effects": {
+      "alignment": 4,
+      "log": "Six honest men by autumn."
+     }
+    },
+    {
+     "text": "Hand them to the magistrate",
+     "effects": {
+      "alignment": 1,
+      "log": "The law is the law."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_flower_festival",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "The peony festival: the whole city smells of flowers.",
+   "choices": [
+    {
+     "text": "Wander the gardens",
+     "effects": {
+      "health": 2,
+      "charm": 1,
+      "log": "A perfect day."
+     }
+    },
+    {
+     "text": "Buy a peony for someone",
+     "effects": {
+      "taels": -1,
+      "charm": 1,
+      "log": "Someone smiles. (−1 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "l10_winter_training",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "text": "Snow covers the training yard.",
+   "choices": [
+    {
+     "text": "Train in the snow",
+     "effects": {
+      "strength": 1,
+      "health": -1,
+      "log": "Cold makes you sharp."
+     }
+    },
+    {
+     "text": "Sweep the yard first",
+     "effects": {
+      "comprehension": 1,
+      "log": "Clean ground, clean mind."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

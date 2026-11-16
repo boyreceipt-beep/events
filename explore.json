@@ -1,0 +1,1016 @@
+{
+ "events": [
+  {
+   "id": "ex_child_frog",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     6,
+     11
+    ]
+   },
+   "weight": 3,
+   "text": "You explore the woods behind the village and catch a frog the size of a cat. It stares at you with ancient wisdom.",
+   "choices": [
+    {
+     "text": "Let it go",
+     "effects": {
+      "luck": 2,
+      "log": "It croaks once, as if in thanks. You feel oddly lucky all week."
+     }
+    },
+    {
+     "text": "Bring it home as a pet",
+     "effects": {
+      "charm": -2,
+      "log": "Your mother screams. The frog escapes into the rice jar. It lives there now."
+     }
+    }
+   ],
+   "variants": [
+    "In the woods behind the village you catch a frog as big as a cat. It gazes at you as if it has seen dynasties fall."
+   ]
+  },
+  {
+   "id": "ex_child_old_shrine",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     6,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "Deep in the hills you find a crumbling shrine. On the altar, under a century of dust, is a small wooden statue of a smiling warrior.",
+   "choices": [
+    {
+     "text": "Clean the altar and bow",
+     "effects": {
+      "alignment": 3,
+      "luck": 4,
+      "log": "You clean it until it shines. For a moment, the statue's smile looks wider."
+     }
+    },
+    {
+     "text": "Take the statue",
+     "effects": {
+      "alignment": -3,
+      "item": "old_statue",
+      "log": "It is surprisingly heavy. You have bad dreams for a week."
+     }
+    }
+   ],
+   "variants": [
+    "Far into the hills stands a crumbling shrine. On its altar, under a hundred years of dust, a small wooden warrior is smiling."
+   ]
+  },
+  {
+   "id": "ex_child_hornets",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     6,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "You find a hornets' nest the size of a watermelon and decide it would make an excellent training target.",
+   "choices": [
+    {
+     "text": "Strike it with your stick sword",
+     "effects": {
+      "health": -15,
+      "strength": 1,
+      "log": "It does not go well. You run faster than you have ever run. Your legs are stronger for it."
+     }
+    },
+    {
+     "text": "Decide it is beneath you",
+     "effects": {
+      "comprehension": 1,
+      "log": "True masters choose their battles."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_injured_stranger",
+   "cat": "explore",
+   "once": false,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "realm": 1
+    }
+   },
+   "when": {
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "In a ravine you find a young martial artist bleeding from a sword wound, a sect badge torn from {his} robe. {He} grabs your sleeve. 'They are following me. Please.'",
+   "choices": [
+    {
+     "text": "Hide {him} and treat the wound",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 55,
+       "note": "hid me in a ravine and saved my life"
+      },
+      "role": "friend",
+      "alignment": 5,
+      "log": "Three days later {npc} can walk. {He} leaves at dawn, promising to repay you."
+     }
+    },
+    {
+     "text": "Take {his} sword and leave {him}",
+     "effects": {
+      "alignment": -10,
+      "taels": 30,
+      "mem": {
+       "deed": "stole",
+       "w": -50,
+       "note": "robbed me while I lay bleeding"
+      },
+      "role": "rival",
+      "log": "You sell the sword for thirty taels. You never expect to see {npc} again. You will."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "log": "Not your business. Behind you, far away, you hear shouting."
+     }
+    }
+   ],
+   "variants": [
+    "At the bottom of a ravine lies a young martial artist with a sword wound, the sect badge ripped from {his} robe. {He} catches your sleeve. 'They are coming after me. Please.'"
+   ]
+  },
+  {
+   "id": "ex_bandit_road",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "realm": [
+     0,
+     3
+    ]
+   },
+   "weight": 3,
+   "text": "Five bandits step out onto the mountain road. 'Toll,' says the biggest one. 'Everything you own.'",
+   "choices": [
+    {
+     "text": "Fight",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "taels": 40,
+      "log": "You leave them groaning in the ditch and take their toll box. It seems fair."
+     },
+     "fail": {
+      "health": -55,
+      "taels": -30,
+      "deathCause": "bandits on the mountain road",
+      "log": "They leave you bleeding in the ditch with empty pockets."
+     }
+    },
+    {
+     "text": "Pay",
+     "effects": {
+      "taels": -30,
+      "log": "You pay. They laugh. You memorise their faces."
+     }
+    },
+    {
+     "text": "Talk your way out",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "log": "Somehow you end up sharing their fire, and they give you directions."
+     },
+     "fail": {
+      "taels": -40,
+      "health": -10,
+      "log": "They were not in the mood for conversation."
+     }
+    }
+   ],
+   "variants": [
+    "Five men with clubs step onto the mountain road ahead of you. The largest holds out a hand. 'Toll. All of it.'",
+    "A rope rises out of the dust across the road and five bandits stand up behind it. 'Toll,' says the biggest. 'Everything you have.'"
+   ]
+  },
+  {
+   "id": "ex_inn_brawl",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "In a roadside inn, a young master in silk throws a bowl of soup at the old waiter for being slow. His bodyguards laugh. The whole inn goes quiet.",
+   "choices": [
+    {
+     "text": "Stand up for the waiter",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 5,
+      "log": "One of his bodyguards goes through the window. The young master pays for the soup, and the window."
+     },
+     "fail": {
+      "health": -30,
+      "alignment": 5,
+      "fame": 2,
+      "log": "You lose badly. But the waiter slips you a free meal every time you pass for the rest of your life."
+     }
+    },
+    {
+     "text": "Mind your own business",
+     "effects": {
+      "alignment": -2,
+      "log": "You finish your noodles. They taste of nothing."
+     }
+    },
+    {
+     "text": "Quietly pay for the waiter's soup",
+     "effects": {
+      "taels": -2,
+      "alignment": 3,
+      "luck": 2,
+      "log": "The waiter bows to you with his eyes. Small kindnesses are remembered in this world."
+     }
+    }
+   ],
+   "variants": [
+    "In a roadside inn, a young master in silk flings his soup at the old waiter for being slow. His bodyguards laugh. Every other table goes silent.",
+    "The old waiter is too slow with the soup, so the young master in silk throws it at him. The bodyguards laugh. The rest of the inn stares into its cups."
+   ]
+  },
+  {
+   "id": "ex_ancient_cave",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "chance": 0.2
+   },
+   "weight": 1.5,
+   "text": "Sheltering from a storm in a mountain cave, you notice sword marks on the inner wall. Hundreds of them. They are not random: someone carved an entire sword art into the stone.",
+   "choices": [
+    {
+     "text": "Study the marks until you understand",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "manual": 3,
+      "qi": 20,
+      "log": "Seven days without eating. On the eighth, the marks move before your eyes. You understand.",
+      "technique": "heaven_sword"
+     },
+     "fail": {
+      "comprehension": 5,
+      "health": -15,
+      "log": "You study until you faint. You understand a little. The rest haunts your dreams."
+     }
+    },
+    {
+     "text": "Copy them onto paper to sell",
+     "effects": {
+      "taels": 150,
+      "alignment": -3,
+      "log": "A collector pays well. You never learn what it was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_cliff_skeleton",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     0,
+     4
+    ],
+    "chance": 0.12
+   },
+   "weight": 1,
+   "text": "The cliff path crumbles under your feet and you fall, crashing through branches, into a hidden valley no map shows. At the bottom, beside a skeleton in rotted robes, a jade box.",
+   "choices": [
+    {
+     "text": "Open the box",
+     "effects": {
+      "manual": 4,
+      "qi": 30,
+      "health": -30,
+      "flag": "cliff_inheritance",
+      "log": "A manual, and a letter: 'To whoever falls here after me: you are not unlucky.' Every murim story is true once.",
+      "technique": "phantom_steps"
+     }
+    },
+    {
+     "text": "Bury the bones first, then open it",
+     "effects": {
+      "manual": 4,
+      "qi": 30,
+      "health": -30,
+      "alignment": 5,
+      "luck": 5,
+      "flag": "cliff_inheritance",
+      "log": "You bury the old master properly. Inside the box, the manual, and a pill that tastes of spring rain."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ex_ginseng",
+   "cat": "explore",
+   "once": false,
+   "maxPerLife": 5,
+   "when": {
+    "age": [
+     10,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "At the foot of an old pine, you smell something sharp and sweet. A ginseng root, older than your grandfather.",
+   "choices": [
+    {
+     "text": "Eat it now",
+     "effects": {
+      "qi": 18,
+      "lifespan": 2,
+      "log": "Warmth spreads through your meridians. Your hair smells of pine for a week."
+     }
+    },
+    {
+     "text": "Keep it for later",
+     "effects": {
+      "item": "ginseng",
+      "log": "You wrap it in cloth. Some day it may save your life."
+     }
+    },
+    {
+     "text": "Sell it in town",
+     "effects": {
+      "taels": 80,
+      "log": "The herbalist tries very hard not to look excited."
+     }
+    }
+   ],
+   "variants": [
+    "Under an old pine you catch a sharp, sweet smell. A ginseng root, older than your grandfather, is growing there."
+   ]
+  },
+  {
+   "id": "ex_tiger",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "realm": [
+     0,
+     2
+    ]
+   },
+   "weight": 1.5,
+   "text": "A tiger steps out of the bamboo. It looks at you the way you look at a bowl of rice.",
+   "choices": [
+    {
+     "text": "Fight it",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 10,
+      "strength": 3,
+      "taels": 60,
+      "log": "You kill a tiger with your bare hands. The village will tell this story for fifty years, a bit bigger each time."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "a tiger in the bamboo forest",
+      "log": "You survive, barely, by climbing a very tall tree. You spend the night in it."
+     }
+    },
+    {
+     "text": "Back away slowly, eyes on its eyes",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "log": "It decides you are not worth the trouble. Your legs shake for an hour."
+     },
+     "fail": {
+      "health": -35,
+      "log": "It swipes once as you turn. You carry the scars forever."
+     }
+    },
+    {
+     "text": "Throw it your lunch and run",
+     "effects": {
+      "log": "The tiger prefers dumplings to you. You are relieved, and slightly offended."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_treasure_map",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "A dying old man in a ditch presses a greasy map into your hand. 'The Crimson Lotus Sect's vault,' he whispers. 'Tell no one.' Then he dies. Or pretends to; hard to tell.",
+   "choices": [
+    {
+     "text": "Follow the map",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 500,
+      "item": "spirit_fruit",
+      "log": "The vault is real. Most of it was looted a century ago, but not all."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The 'vault' is a hole with a very angry bear in it."
+     }
+    },
+    {
+     "text": "Sell the map",
+     "effects": {
+      "taels": 40,
+      "log": "Three other people in the market are selling the same map."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_market_scam",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A merchant in the market is selling 'the pill that made the Heavenly Demon invincible'. Only 50 taels. Only today.",
+   "choices": [
+    {
+     "text": "Buy it",
+     "req": {
+      "minTaels": 50
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 75
+     },
+     "ok": {
+      "taels": -50,
+      "qi": 25,
+      "log": "Incredibly, it is real. Nobody believes you afterwards."
+     },
+     "fail": {
+      "taels": -50,
+      "health": -10,
+      "log": "It is a ball of flour and mud. Your stomach disagrees with it for three days."
+     }
+    },
+    {
+     "text": "Laugh and walk on",
+     "effects": {
+      "log": "Behind you, a nobleman's son buys twelve."
+     }
+    }
+   ],
+   "variants": [
+    "A market trader is selling 'the very pill that made the Heavenly Demon invincible'. 50 taels. Today only."
+   ],
+   "mw": true
+  },
+  {
+   "id": "ex_river_pirates",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "weight": 2,
+   "text": "Your river boat is boarded by pirates of the Crimson River Fleet. Their captain grins at the passengers. 'Anyone here want to be a hero?'",
+   "choices": [
+    {
+     "text": "Step forward",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 5,
+      "log": "You throw the captain into the river. The passengers insist on paying for your dinner for the rest of the trip."
+     },
+     "fail": {
+      "health": -60,
+      "taels": -50,
+      "deathCause": "river pirates",
+      "log": "They throw you into the river instead. You wash up two villages downstream."
+     }
+    },
+    {
+     "text": "Hand over your purse like everyone else",
+     "effects": {
+      "taels": -40,
+      "log": "The captain winks at you. 'Smart.'",
+      "loss": true
+     }
+    }
+   ],
+   "variants": [
+    "Pirates of the Crimson River Fleet swarm aboard your river boat. Their captain looks the passengers over and grins. 'Any heroes today?'"
+   ]
+  },
+  {
+   "id": "ex_sect_ruins",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "chance": 0.3
+   },
+   "weight": 1,
+   "text": "You find the ruins of a sect destroyed long ago: burned halls, a broken sign reading 'Heavenly... Sword...'. In the training yard, a stone pillar is covered in fingertip holes.",
+   "choices": [
+    {
+     "text": "Search the library ruins",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "manual": 3,
+      "log": "Under a collapsed shelf, one manual survived the fire."
+     },
+     "fail": {
+      "comprehension": 3,
+      "log": "Ashes. But the fingertip holes teach you something about focus."
+     }
+    },
+    {
+     "text": "Light incense for the dead",
+     "effects": {
+      "alignment": 5,
+      "luck": 5,
+      "log": "You burn incense in the main hall. The wind stops for a moment, as if someone is listening."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_arrogant_young_master",
+   "cat": "explore",
+   "once": false,
+   "npc": {
+    "spawn": {
+     "role": "rival",
+     "realm": 0
+    }
+   },
+   "when": {
+    "age": [
+     15,
+     40
+    ],
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "weight": 3,
+   "text": "In the teahouse, {npc}, a young master of a great family, decides your face annoys {him}. 'Kneel and apologise for existing, and I will let you finish your tea.'",
+   "choices": [
+    {
+     "text": "Slap {him}",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "humiliated",
+       "w": -45,
+       "note": "slapped me in front of the whole teahouse"
+      },
+      "log": "The slap echoes through the teahouse. {npc} holds {his} cheek in disbelief. {He} will never, ever forget this."
+     },
+     "fail": {
+      "health": -25,
+      "fame": -4,
+      "log": "{npc}'s bodyguards remind you that some people are born lucky."
+     }
+    },
+    {
+     "text": "Ignore {him} and finish your tea",
+     "effects": {
+      "mem": {
+       "deed": "insulted",
+       "w": -15,
+       "note": "ignored me like I was nothing"
+      },
+      "log": "Being ignored infuriates {npc} more than any insult."
+     }
+    },
+    {
+     "text": "Kneel",
+     "effects": {
+      "fame": -5,
+      "alignment": -2,
+      "log": "You kneel. {npc} laughs and leaves. Your tea has gone cold."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_mysterious_swordswoman",
+   "cat": "explore",
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "realm": 1,
+     "age": 0,
+     "opposite": true
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "male": true,
+    "married": false
+   },
+   "weight": 2,
+   "text": "On a bridge in the rain, a swordswoman in a white bamboo hat blocks your way. '{npc},' she says, as if it explains everything. 'Your stance is terrible. Let me fix it, and then get out of my way.'",
+   "choices": [
+    {
+     "text": "Let her",
+     "effects": {
+      "qi": 8,
+      "mem": {
+       "deed": "time",
+       "w": 20,
+       "note": "let me fix his stance on the bridge in the rain"
+      },
+      "log": "She fixes your stance, and your breathing, and somehow your whole afternoon."
+     }
+    },
+    {
+     "text": "Insist your stance is fine",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "mem": {
+       "deed": "time",
+       "w": 25,
+       "note": "proved his stance was fine, annoyingly"
+      },
+      "log": "You spar in the rain. You win. She laughs for the first time in years."
+     },
+     "fail": {
+      "health": -10,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "was stubborn on the bridge"
+      },
+      "log": "Your stance was not fine. She tells you so, from very close."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_mysterious_swordsman",
+   "cat": "explore",
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "realm": 1,
+     "age": 0,
+     "opposite": true
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "male": false,
+    "married": false
+   },
+   "weight": 2,
+   "text": "A swordsman with a lazy smile shares your table in a crowded inn without asking. '{npc},' he says. 'I am told you are dangerous. I have come to see if it is true.'",
+   "choices": [
+    {
+     "text": "Show him",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "mem": {
+       "deed": "time",
+       "w": 25,
+       "note": "beat me at my own game in the inn"
+      },
+      "fame": 3,
+      "log": "He loses gracefully, and stays for dinner, and the next dinner too."
+     },
+     "fail": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "gave me a good fight at the inn"
+      },
+      "log": "He wins, and apologises for it, which is worse."
+     }
+    },
+    {
+     "text": "Ignore him and eat",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "ignored me, which no one does"
+      },
+      "log": "Nobody ignores him. He is fascinated."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_black_market_pill",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "minTaels": 100
+   },
+   "weight": 1.5,
+   "text": "In an alley behind the pawnshop, an Unorthodox dealer shows you a red pill. 'Doubles your internal energy overnight. Side effects? Oh, minor ones.'",
+   "choices": [
+    {
+     "text": "Buy and swallow it",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "taels": -100,
+      "qi": 40,
+      "log": "It burns like swallowing a coal. The next morning your energy is roaring."
+     },
+     "fail": {
+      "taels": -100,
+      "health": -60,
+      "flag": "qi_deviation",
+      "deathCause": "a black market pill",
+      "log": "The side effects are not minor. You spend a month fighting your own meridians."
+     }
+    },
+    {
+     "text": "Report him to the guards",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "log": "The dealer vanishes. Somebody on the rooftop was watching you."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "log": "Smart. Probably."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ex_waterfall_training",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "realm": [
+     0,
+     5
+    ]
+   },
+   "weight": 2,
+   "text": "You find a waterfall perfect for training: freezing water, crushing weight, and nobody around to laugh at you.",
+   "choices": [
+    {
+     "text": "Train under it for a season",
+     "effects": {
+      "strength": 4,
+      "qi": 10,
+      "health": -10,
+      "log": "You catch a cold, and a breakthrough in understanding. Worth it."
+     }
+    },
+    {
+     "text": "Meditate beside it",
+     "effects": {
+      "comprehension": 3,
+      "log": "The roar becomes silence. The silence becomes clarity."
+     }
+    }
+   ],
+   "variants": [
+    "A waterfall made for training: ice-cold water, crushing weight, and not a soul around to laugh at you."
+   ]
+  },
+  {
+   "id": "ex_lost_disciple",
+   "cat": "explore",
+   "once": false,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "realm": 0,
+     "ageAbs": 12
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     2,
+     5
+    ]
+   },
+   "weight": 2,
+   "text": "A skinny orphan follows you for three villages, copying the way you walk. Finally {he} blocks your path and bows until {his} head hits the road. 'Master, please.'",
+   "choices": [
+    {
+     "text": "Take {him} as your disciple",
+     "effects": {
+      "role": "disciple",
+      "mem": {
+       "deed": "taught",
+       "w": 50,
+       "note": "took me in when no one else would"
+      },
+      "fame": 3,
+      "log": "You have a disciple. {He} eats more than you do."
+     }
+    },
+    {
+     "text": "Give {him} money and send {him} on",
+     "effects": {
+      "taels": -10,
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "gave me silver when I was starving"
+      },
+      "log": "{He} takes the silver and keeps following you anyway, at a distance."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex_poisoned_well",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     5
+    ],
+    "stat": {
+     "comprehension": 40
+    }
+   },
+   "weight": 1.5,
+   "text": "A whole village is falling sick. You notice the sickness follows the water: someone has poisoned the well, and the Tang Family's poison mark is scratched on the bucket.",
+   "choices": [
+    {
+     "text": "Find an antidote in the hills",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 10,
+      "log": "You find the herb. The village lives. They name the well after you."
+     },
+     "fail": {
+      "health": -25,
+      "alignment": 5,
+      "log": "You fall sick yourself looking for it. A passing Shaolin monk saves the village, and you."
+     }
+    },
+    {
+     "text": "It is not your problem",
+     "effects": {
+      "alignment": -5,
+      "log": "You walk on. For a long time you cannot drink from a well without thinking of it."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,1008 @@
+{
+ "events": [
+  {
+   "id": "dc_ela_ice_palace_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a palace of blue ice at the head of a frozen valley, its gate a single slab of glacier. This is the Northern Ice Palace, one of the elemental halls that keep the Ice arts. Palace Mistress Baek Sorin comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "liaodong"
+    ],
+    "anyFlags": [
+     "sroot_ice",
+     "sroot_water"
+    ],
+    "notFlags": [
+     "elh_ice_palace"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Palace Mistress Baek Sorin teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_frost_lotus",
+      "flag": "elh_ice_palace",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Stand in the frozen pool until she says stop",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You stop feeling your feet, then your knees, then the cold itself. When she says stop the water has frozen around you and the disciples have to chip you out. You are taught the Frost Lotus Palm.",
+      "technique": "el_frost_lotus",
+      "flag": "elh_ice_palace",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_ice_palace_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to the Northern Ice Palace. Palace Mistress Baek Sorin has been expecting you, and has a question: whether your root is truly Ice, all the way down, because the secret of the hall, the Thousand-Winter Glacier Sword, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "liaodong"
+    ],
+    "flags": [
+     "elh_ice_palace",
+     "sroot_ice"
+    ],
+    "notFlags": [
+     "eld_ice_palace"
+    ],
+    "after": [
+     "dc_ela_ice_palace_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "sword",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Thousand-Winter Glacier Sword, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_glacier_sword",
+      "flag": "eld_ice_palace",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_ice_palace_3",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 6,
+   "arc": "The Elemental Halls",
+   "text": "\"Your root is Water,\" the Palace Mistress says, \"and water that is cold enough for long enough is not water any more.\" She points at the black pool under the ice, where the Palace sends a disciple once in a generation. A root turned this way is a mutated root, and it does not turn back.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "liaodong"
+    ],
+    "flags": [
+     "elh_ice_palace",
+     "sroot_water"
+    ],
+    "notFlags": [
+     "sroot_ice",
+     "sroot_thunder",
+     "sroot_wind",
+     "elk_ice_palace"
+    ],
+    "after": [
+     "dc_ela_ice_palace_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "choices": [
+    {
+     "text": "Go down into the black pool",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "The cold goes past the skin and the bone and into the root itself. When they pull you out your qi has turned white and still, like a winter lake at night.",
+      "flag": "elax_mut_ice"
+     },
+     "fail": {
+      "log": "It goes wrong, the way the master warned it might. You live, and your root is what it was, and for a month you shake.",
+      "health": -20
+     }
+    },
+    {
+     "text": "Keep the root you were born with",
+     "effects": {
+      "log": "You keep what you were born with. The master shrugs: not everyone wants to be rare.",
+      "alignment": 1,
+      "flag": "elk_ice_palace"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_red_furnace_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a valley of forges under a red cliff, where the smoke never stops and the anvils ring all night. This is the Red Furnace Valley, one of the elemental halls that keep the Fire arts. Furnace Elder Do Hwagang comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "west"
+    ],
+    "anyFlags": [
+     "sroot_fire"
+    ],
+    "notFlags": [
+     "elh_red_furnace"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Furnace Elder Do Hwagang teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_furnace_fist",
+      "flag": "elh_red_furnace",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Work the bellows of the great furnace for a day and a night",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "By the morning your arms are iron and the furnace is singing. The Elder nods once, which they say he does about once a year. You are taught the Red Furnace Fist.",
+      "technique": "el_furnace_fist",
+      "flag": "elh_red_furnace",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_red_furnace_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to the Red Furnace Valley. Furnace Elder Do Hwagang has been expecting you, and has a question: whether your root is truly Fire, all the way down, because the secret of the hall, the Sun Wheel Sabre, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "west"
+    ],
+    "flags": [
+     "elh_red_furnace",
+     "sroot_fire"
+    ],
+    "notFlags": [
+     "eld_red_furnace"
+    ],
+    "after": [
+     "dc_ela_red_furnace_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Sun Wheel Sabre, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_sun_wheel",
+      "flag": "eld_red_furnace",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_storm_bell_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a bare peak above the sea where an iron bell hangs from two pines, and the storms come to ring it. This is Storm Bell Peak, one of the elemental halls that keep the Thunder arts. The hermit Gwak Noeun comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "coast"
+    ],
+    "anyFlags": [
+     "sroot_thunder",
+     "sroot_wood"
+    ],
+    "notFlags": [
+     "elh_storm_bell"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "The hermit Gwak Noeun teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_rolling_thunder",
+      "flag": "elh_storm_bell",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Climb to the bell before the storm does",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You reach the bell with the first raindrops and the hermit is already there, laughing, his hair standing up off his head. You are taught the Rolling Thunder Steps.",
+      "technique": "el_rolling_thunder",
+      "flag": "elh_storm_bell",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_storm_bell_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to Storm Bell Peak. The hermit Gwak Noeun has been expecting you, and has a question: whether your root is truly Thunder, all the way down, because the secret of the hall, the Nine Bolts Sword, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "coast"
+    ],
+    "flags": [
+     "elh_storm_bell",
+     "sroot_thunder"
+    ],
+    "notFlags": [
+     "eld_storm_bell"
+    ],
+    "after": [
+     "dc_ela_storm_bell_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "sword",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Nine Bolts Sword, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_nine_bolts",
+      "flag": "eld_storm_bell",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_storm_bell_3",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 6,
+   "arc": "The Elemental Halls",
+   "text": "\"A Wood root,\" the hermit says, sniffing the wind. \"Thunder is only wood that has lost its temper.\" He ties a rope to your waist and the other end to the iron bell, and looks at the black sky over the sea. A root turned this way is a mutated root, and it does not turn back.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "coast"
+    ],
+    "flags": [
+     "elh_storm_bell",
+     "sroot_wood"
+    ],
+    "notFlags": [
+     "sroot_ice",
+     "sroot_thunder",
+     "sroot_wind",
+     "elk_storm_bell"
+    ],
+    "after": [
+     "dc_ela_storm_bell_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "choices": [
+    {
+     "text": "Hold the bell while the storm comes",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "The bolt finds the bell and the bell finds you. When you wake on the rock the hermit is crouched beside you, delighted, and your root is crackling like dry kindling.",
+      "flag": "elax_mut_thunder"
+     },
+     "fail": {
+      "log": "It goes wrong, the way the master warned it might. You live, and your root is what it was, and for a month you shake.",
+      "health": -20
+     }
+    },
+    {
+     "text": "Keep the root you were born with",
+     "effects": {
+      "log": "You keep what you were born with. The master shrugs: not everyone wants to be rare.",
+      "alignment": 1,
+      "flag": "elk_storm_bell"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_wind_cliff_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a cliff of wind-carved stone above a gorge, where hermits sit in caves and do nothing but listen. This is the Wind-Listening Cliff, one of the elemental halls that keep the Wind arts. The old listener Yu Pung comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "sichuan"
+    ],
+    "anyFlags": [
+     "sroot_wind",
+     "sroot_wood"
+    ],
+    "notFlags": [
+     "elh_wind_cliff"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "The old listener Yu Pung teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_gale_fan",
+      "flag": "elh_wind_cliff",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Sit at the cliff edge until you can tell one wind from another",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "On the ninth day you hear the morning wind and the evening wind as two voices. The old listener opens one eye and gives you a fan. You are taught the Gale Fan.",
+      "technique": "el_gale_fan",
+      "flag": "elh_wind_cliff",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_wind_cliff_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to the Wind-Listening Cliff. The old listener Yu Pung has been expecting you, and has a question: whether your root is truly Wind, all the way down, because the secret of the hall, the Hollow Wind Sword, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "sichuan"
+    ],
+    "flags": [
+     "elh_wind_cliff",
+     "sroot_wind"
+    ],
+    "notFlags": [
+     "eld_wind_cliff"
+    ],
+    "after": [
+     "dc_ela_wind_cliff_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "lightness",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Hollow Wind Sword, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_hollow_wind",
+      "flag": "eld_wind_cliff",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_wind_cliff_3",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 6,
+   "arc": "The Elemental Halls",
+   "text": "\"Your root is Wood,\" the old listener says, \"and wood is what the wind lives in.\" He offers you the coldest cave on the cliff for a winter, with the wind going through it day and night. A root turned this way is a mutated root, and it does not turn back.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "sichuan"
+    ],
+    "flags": [
+     "elh_wind_cliff",
+     "sroot_wood"
+    ],
+    "notFlags": [
+     "sroot_ice",
+     "sroot_thunder",
+     "sroot_wind",
+     "elk_wind_cliff"
+    ],
+    "after": [
+     "dc_ela_wind_cliff_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "choices": [
+    {
+     "text": "Spend the winter in the wind cave",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "By the thaw the wind is not going through the cave any more. It is going through you, and your root has gone light and quick and empty.",
+      "flag": "elax_mut_wind"
+     },
+     "fail": {
+      "log": "It goes wrong, the way the master warned it might. You live, and your root is what it was, and for a month you shake.",
+      "health": -20
+     }
+    },
+    {
+     "text": "Keep the root you were born with",
+     "effects": {
+      "log": "You keep what you were born with. The master shrugs: not everyone wants to be rare.",
+      "alignment": 1,
+      "flag": "elk_wind_cliff"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_tide_hermitage_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a hermitage on a tidal island in the river mouth, reached on foot only at low water. This is the Tide Hermitage, one of the elemental halls that keep the Water arts. Abbess Han Suryeon comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "jiangnan"
+    ],
+    "anyFlags": [
+     "sroot_water",
+     "sroot_ice"
+    ],
+    "notFlags": [
+     "elh_tide_hermitage"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Abbess Han Suryeon teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_returning_tide",
+      "flag": "elh_tide_hermitage",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Walk out to it against the turning tide",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The water is at your chest when you reach the steps. The Abbess wrings out your sleeve herself and says you walk like a river. You are taught the Returning Tide Palm.",
+      "technique": "el_returning_tide",
+      "flag": "elh_tide_hermitage",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_tide_hermitage_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to the Tide Hermitage. Abbess Han Suryeon has been expecting you, and has a question: whether your root is truly Water, all the way down, because the secret of the hall, the Long River Spear, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "jiangnan"
+    ],
+    "flags": [
+     "elh_tide_hermitage",
+     "sroot_water"
+    ],
+    "notFlags": [
+     "eld_tide_hermitage"
+    ],
+    "after": [
+     "dc_ela_tide_hermitage_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Long River Spear, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_long_river",
+      "flag": "eld_tide_hermitage",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_stone_bell_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 5,
+   "arc": "The Elemental Halls",
+   "text": "Far from any road you come to a monastery cut into the mountain itself, where a bell of solid stone hangs in the main hall. This is the Stone Bell Monastery, one of the elemental halls that keep the Earth arts. Abbot Seok Daegun comes to the gate, looks at you for a long time, and says your root has been heard from a long way off.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "realm": [
+     1,
+     10
+    ],
+    "region": [
+     "shandong"
+    ],
+    "anyFlags": [
+     "sroot_earth"
+    ],
+    "notFlags": [
+     "elh_stone_bell"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Kneel at the gate and ask to be taught",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Abbot Seok Daegun teaches you the first art of the hall in person, from dawn to dark, until your root answers it without being asked.",
+      "technique": "el_stone_bell",
+      "flag": "elh_stone_bell",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You kneel until the snow, the rain or the sun has had enough of you. The gate stays shut. Perhaps another year.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Strike the stone bell until it rings",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Your hands bleed before it hums, and then it hums for an hour. The Abbot says nobody has made it ring on the first day in his time. You are taught the Stone Bell Fist.",
+      "technique": "el_stone_bell",
+      "flag": "elh_stone_bell",
+      "strength": 1
+     },
+     "fail": {
+      "log": "You last longer than most and not as long as you needed to. They carry you to a bed and send you away with a bowl of soup.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Bow and go on your way",
+     "effects": {
+      "log": "You bow to the gate. Some arts wait for you; some do not. You will not know which this was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ela_stone_bell_2",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 4,
+   "arc": "The Elemental Halls",
+   "text": "You come back to the Stone Bell Monastery. Abbot Seok Daegun has been expecting you, and has a question: whether your root is truly Earth, all the way down, because the secret of the hall, the Earth-Waking Staff, is taught to nothing else.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     3,
+     10
+    ],
+    "region": [
+     "shandong"
+    ],
+    "flags": [
+     "elh_stone_bell",
+     "sroot_earth"
+    ],
+    "notFlags": [
+     "eld_stone_bell"
+    ],
+    "after": [
+     "dc_ela_stone_bell_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "choices": [
+    {
+     "text": "Take the hall's test of the secret",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The test lasts three days and you remember none of it clearly. On the fourth morning you are shown the Earth-Waking Staff, one form at a time, and it fits your root like a hand in a glove.",
+      "technique": "el_quake_staff",
+      "flag": "eld_stone_bell",
+      "fame": 3
+     },
+     "fail": {
+      "log": "The test finds the place where your root and your art still pull apart. You are sent away to close it, kindly, and with a cough of blood.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Ask to stay a season and learn the hall's ways first",
+     "effects": {
+      "log": "A season of sweeping, listening and cold rice. You leave with nothing written down and a great deal understood.",
+      "comprehension": 2,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Thank them, and decline",
+     "effects": {
+      "log": "You decline. The master does not seem surprised, or sorry."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

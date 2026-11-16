@@ -1,0 +1,476 @@
+{
+ "events": [
+  {
+   "id": "gp_rogue_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your bell rings in the night by itself, once. When you light the lamp the Flying Corpse is not in its coffin. On the sill of the open window there is frost in the shape of two long hands, and outside the moonlight lies on the road like water. Far off, a dog begins to howl and stops.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "js_rogue_out"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Hunt it down before dawn",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Flying Corpse"
+     },
+     "ok": {
+      "log": "You find it among the graves on the hill, drifting a hand above the grass. It turns at your step. It is a long fight in the dark, and at the end of it there is only an old robe on the ground, and the smell of cold earth.",
+      "flag": "talx_rogue_slain",
+      "unflag": "js_rogue_out",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "It comes at you out of the mist and you are on your back in the wet grass before you see it. When you can stand again the hill is empty, and the wind is going east.",
+      "health": -25,
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Ring the bell and call it back",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You ring the old corpse-drivers' rhythm until the bell is hot in your hand. Near dawn it comes back through the window like smoke and lies down in its coffin. It does not close its eyes.",
+      "flag": "talx_rogue_back",
+      "unflag": "js_rogue_out",
+      "health": -5
+     },
+     "fail": {
+      "log": "You ring until your arm shakes. Somewhere out in the dark the bell is answered, once, from very far away, and then not again.",
+      "flag": "gp_rogue_free",
+      "unflag": "js_rogue_out",
+      "health": -8
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "log": "You blow out the lamp and lie down, and listen to the dogs along the river take up the howl one after another, village by village, going east.",
+      "flag": "gp_rogue_free",
+      "unflag": "js_rogue_out",
+      "alignment": -6,
+      "tally": {
+       "infamy": 4
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi_rogue"
+  },
+  {
+   "id": "gp_rogue_free_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A Taoist priest with ash on the hem of the robe finds you at an inn. \"A village on the eastern road,\" the priest says. \"Every door barred from the inside, and nobody behind them. The farmers say a dead thing that flies has been seen over the paddies at night. They also say whose bell it once answered.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "gp_rogue_free"
+    ],
+    "after": [
+     "gp_rogue_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 8,
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Go east and end it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.05,
+      "foeName": "The rogue Flying Corpse"
+     },
+     "ok": {
+      "log": "You find it at the edge of a dry well, hanging in the air like a robe on a line. It knows you. It is still a long fight. In the morning the priest burns what is left with incense, and the farmers come back to their fields.",
+      "unflag": "gp_rogue_free",
+      "fame": 5,
+      "alignment": 4
+     },
+     "fail": {
+      "log": "It is stronger than when it left you. You come back down the eastern road leaning on the priest, and somewhere behind you it is still out there.",
+      "health": -20,
+      "unflag": "gp_rogue_free"
+     }
+    },
+    {
+     "text": "Pay the temple for a great exorcism (150 taels)",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "log": "Twelve priests, three days of drums and a great yellow talisman on the village gate. The flying thing is not seen again. Nobody thanks you.",
+      "taels": -150,
+      "unflag": "gp_rogue_free",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Say it is none of yours",
+     "effects": {
+      "log": "The priest looks at you for a long moment and goes out without finishing the tea. The story of the barred doors travels further than the priest does.",
+      "unflag": "gp_rogue_free",
+      "alignment": -4,
+      "tally": {
+       "infamy": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "gp_yin_meets_yang_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A young exorcist comes into the town square at noon with a peachwood sword and no hat, and the snow melts in a ring around his feet. He looks once round the square and straight at you. \"So you are the one the dead keep turning toward,\" he says. \"I could feel it from the river. Your yin is so cold it hurts my teeth.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "meridians": [
+     "ghostYin"
+    ],
+    "flags": [
+     "jiangshi_master"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Yin and Yang",
+   "choices": [
+    {
+     "text": "Answer him with the Illusion Arts",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The Blazing Yang exorcist"
+     },
+     "ok": {
+      "log": "Every cut of his burns the air, and none of them finds you. When he stops, breathing steam, you are standing behind him. He laughs, which you did not expect, and bows.",
+      "fame": 4,
+      "tally": {
+       "infamy": 1
+      }
+     },
+     "fail": {
+      "log": "His palm is like a hand on a hot stove. Behind you a jiangshi cries out without a mouth to cry with and falls still, and you feel its thread go out of you.",
+      "health": -15,
+      "flag": "talx_js_lost"
+     }
+    },
+    {
+     "text": "Talk with him over tea",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You talk until the tea goes cold, which it does very fast near you. He destroys the dead and you command them. Neither of you can say which of you is the stranger thing. You part almost friends.",
+      "comprehension": 2,
+      "flag": "hd_calm"
+     },
+     "fail": {
+      "log": "He listens with his sword across his knees and does not drink. \"Keep them out of my province,\" he says at last, and leaves the money for both cups.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Leave town before dark",
+     "effects": {
+      "log": "You leave by the north gate before the lamps are lit. All the way to the next town you feel his heat at your back, like a fire in the next room.",
+      "tally": {
+       "infamy": 1
+      },
+      "luck": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "gp_yang_meets_yin_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Late at night a bell goes past the inn, and the hair on your arms stands up. Through the shutters you see a woman in white walking down the empty street with a lantern, and behind her, in a line, their arms held out, six of the hopping dead. Your meridians run so hot that the shutter steams where your hand is on it.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "meridians": [
+     "blazingYang"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Yin and Yang",
+   "choices": [
+    {
+     "text": "Go down and stop the procession",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The corpse-bell mistress and her hopping dead"
+     },
+     "ok": {
+      "log": "The dead do not like the heat in your hands. Two of them fall where they stand, and the woman with the lantern looks at you as if you were the strange one, and leads the rest away into the fog.",
+      "fame": 4,
+      "alignment": 4
+     },
+     "fail": {
+      "log": "Her bell rings once and four cold arms are around you at once. When you can breathe again the street is empty, and the lantern is a spark at the far end of it.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Follow at a distance",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You follow over the rooftops to an old graveyard where she lays them down one by one, facing home. She knew you were there the whole time. \"Not all of us are what the priests say,\" she calls up to the dark.",
+      "comprehension": 2,
+      "luck": 1
+     },
+     "fail": {
+      "log": "A roof tile slides under your foot. When you look down again the street is empty, and you cannot say which way they went.",
+      "health": -4
+     }
+    },
+    {
+     "text": "Close the shutter",
+     "effects": {
+      "log": "You close the shutter and sit on your hands. The bell goes away down the street, and the room cools very slowly.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "gp_ashen_first_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Your first night in the ghost city. Every lantern in the Ashen Ghost Sect is white, and the disciples walk without a sound on ash swept smooth as paper. An elder with a bell at the belt stops beside you. \"Here the dead serve,\" the elder says. \"Remember that you will be one of them some day, and be polite.\"",
+   "when": {
+    "age": [
+     12,
+     1000000
+    ],
+    "sect": [
+     "ashen_ghost"
+    ]
+   },
+   "arc": "The Ghost City",
+   "choices": [
+    {
+     "text": "Keep the night vigil with the elders",
+     "effects": {
+      "log": "You sit with them among the coffins until dawn. Toward morning you can feel the cold of the graves move in your own qi, like a second breath.",
+      "qi": 6,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Walk the procession behind the bell",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "log": "You learn to step where the dead step and leave no mark in the ash. By dawn the elder nods at your footprints, because there are none.",
+      "artYears": 1
+     },
+     "fail": {
+      "log": "You leave footprints all the way down the hall, and the elder sweeps every one of them away behind you without a word.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Ask why the lanterns are white",
+     "effects": {
+      "log": "\"So the dead can find their way,\" the elder says. \"Red is for the living. They have enough to look at.\" You do not sleep much.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "gp_ashen_festival_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "The Ghost Festival: the seventh month, when the gates of the underworld stand open. The Ashen Ghost Sect opens its own gates too, for once, and the whole city comes with paper boats and lamps for the river. The elders want someone to lead the lanterns down to the water.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "sect": [
+     "ashen_ghost"
+    ]
+   },
+   "arc": "The Ghost City",
+   "choices": [
+    {
+     "text": "Lead the lanterns",
+     "effects": {
+      "log": "You walk at the head of ten thousand lamps to the river, ringing the bell slowly. The people bow as you pass, not quite to you.",
+      "fame": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Gather the offerings for the sect",
+     "effects": {
+      "log": "Rice, silver paper and a good deal of real silver. The sect takes its share, and so do you.",
+      "taels": 60,
+      "alignment": -2
+     }
+    },
+    {
+     "text": "Sit with the hungry ghosts on the riverbank",
+     "effects": {
+      "log": "You put out a bowl of rice and sit beside it all night. In the morning the bowl is empty, and something heavy in your chest is lighter.",
+      "flag": "hd_calm",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 8
+  },
+  {
+   "id": "gp_gy_child_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The physician takes your wrist and lets go of it as if it were snow. \"Too much yin,\" the physician says to the household. \"Cold as well water. The dead will like this child. The living must warm it.\" In the corner of the room the old cat will not take its eyes off you.",
+   "when": {
+    "age": [
+     5,
+     14
+    ],
+    "meridians": [
+     "ghostYin"
+    ],
+    "notFlags": [
+     "yy_cured",
+     "pw_life"
+    ]
+   },
+   "arc": "Yin and Yang",
+   "choices": [
+    {
+     "text": "Sit in the sun every day",
+     "effects": {
+      "log": "All summer you sit on the warm stones of the yard like a lizard. You are still cold, but less. (A Ghost Yin is cured with yang: Jianghu, Draw In the Yang.)",
+      "health": 5
+     }
+    },
+    {
+     "text": "Drink the bitter warming soup",
+     "effects": {
+      "log": "Ginger, cinnamon and something the physician will not name. It tastes like a scolding and it warms your hands for a whole day.",
+      "health": 3,
+      "strength": 1
+     }
+    },
+    {
+     "text": "Ask why the dead would like you",
+     "effects": {
+      "log": "Nobody will answer. That night you dream of a long road with white lanterns, and people on it waving to you.",
+      "comprehension": 2,
+      "luck": -1
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "gp_by_child_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "For the third time this winter you burn with a fever that frightens the household, and for the third time it is gone by morning. \"Too much yang,\" the physician says. \"The meridians run hot, and so will the temper. Cold water and cold herbs, and patience. Keep this child away from the forge.\"",
+   "when": {
+    "age": [
+     5,
+     14
+    ],
+    "meridians": [
+     "blazingYang"
+    ],
+    "notFlags": [
+     "yy_cured",
+     "pw_life"
+    ]
+   },
+   "arc": "Yin and Yang",
+   "choices": [
+    {
+     "text": "Bathe in the cold stream every morning",
+     "effects": {
+      "log": "The stream steams around you. The village children think it is a trick. (A Blazing Yang is cured with yin: Jianghu, Cool the Blazing Yang.)",
+      "health": 4
+     }
+    },
+    {
+     "text": "Learn to count your breaths when you are angry",
+     "effects": {
+      "log": "You count to ten, and then to a hundred. It does not always work. It works more often than not.",
+      "flag": "hd_calm",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Go to the forge anyway",
+     "effects": {
+      "log": "The smith lets you work the bellows, and you are the only one who never needs to rest. Your arms grow strong, and your temper shorter.",
+      "strength": 2,
+      "flag": "hd_feed"
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,553 @@
+{
+ "events": [
+  {
+   "id": "dc_er_blood_cult_1",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "Blood Cult banners in three counties, and every orthodox sect waiting for another to move first. A captured cultist, half dead, offers you a map of their mountain stronghold in return for his life.",
+   "when": {
+    "era": [
+     "blood_cult"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Take the map, and let him go",
+     "effects": {
+      "flag": "er_blood_map",
+      "alignment": 4,
+      "log": "The map is crude and true. You let him limp away. For the first time in years, someone has a way in."
+     }
+    },
+    {
+     "text": "Take the map, and hand him to the sects",
+     "effects": {
+      "flag": "er_blood_map",
+      "rep": {
+       "orthodox": 6
+      },
+      "log": "The sects thank you and execute him. You keep the map close."
+     },
+     "req": {
+      "notFactions": [
+       "demonic"
+      ]
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_er_blood_cult_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The map was true. A narrow goat-path up the back of the Blood Cult's mountain, and at the top, unguarded on a night with no moon, the hall where their Blood Lord sleeps.",
+   "when": {
+    "era": [
+     "blood_cult"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_er_blood_cult_1"
+    ],
+    "flags": [
+     "er_blood_map"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Go up alone, tonight, and end it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 60,
+      "alignment": 12,
+      "flag": "took_life",
+      "log": "One fight in the dark, very quiet, very long. At dawn the Blood Lord's banner comes down, and in three counties people open their shutters."
+     },
+     "fail": {
+      "health": -35,
+      "fame": 6,
+      "deathCause": "the Blood Lord, alone, on a night with no moon",
+      "log": "He was waiting. You get out over the cliff edge with your life and nothing else. The era goes on."
+     },
+     "risky": true
+    },
+    {
+     "text": "Lead the sects up the path",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 45,
+      "rep": {
+       "orthodox": 12
+      },
+      "log": "Five sects, one path, one night. You command it like you were born to. By morning the cult is broken, and the sects are arguing about whose victory it was. You let them."
+     },
+     "fail": {
+      "fame": 10,
+      "health": -15,
+      "log": "The sects quarrel at the foot of the path until dawn. The chance is gone."
+     },
+     "req": {
+      "notFactions": [
+       "demonic"
+      ]
+     }
+    },
+    {
+     "text": "Burn the map and let the era run its course",
+     "effects": {
+      "fame": -5,
+      "alignment": -2,
+      "log": "You climb down before anyone sees you and burn the map in a ditch. The Blood Lord sleeps on. In three counties the shutters stay closed, and you know why."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_er_invasion_1",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The demon army has reached the pass of the Nine Bends, the last narrow place before the plains. The Alliance is three days away. Someone has to hold the pass until they come, and the volunteers are all looking at you.",
+   "when": {
+    "era": [
+     "demon_invasion"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Organise the volunteers and fortify the pass",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "er_pass_ready",
+      "fame": 10,
+      "log": "Rockfalls, false trails, fire-pits. In two days the pass is a trap with a door."
+     },
+     "fail": {
+      "flag": "er_pass_ready",
+      "health": -10,
+      "log": "It is not enough, and everyone knows it. It will have to be."
+     }
+    },
+    {
+     "text": "Go and see the enemy for yourself",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "er_pass_ready",
+      "comprehension": 4,
+      "log": "You count their banners from a cliff top and find the one thing they fear: fire on the wind."
+     },
+     "fail": {
+      "health": -16,
+      "log": "Their scouts are faster than yours. You get back with an arrow in your shoulder and little else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_er_invasion_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "Dawn at the Nine Bends. Down the valley comes the demon army, black against the snow. Behind you, the plains and every village on them. Ahead, a pass you have made as narrow as a door.",
+   "when": {
+    "era": [
+     "demon_invasion"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_er_invasion_1"
+    ],
+    "flags": [
+     "er_pass_ready"
+    ],
+    "minYearsAfter": 0,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Hold the door",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 70,
+      "alignment": 10,
+      "log": "Three days. When the Alliance arrives, the pass is held and the demon army is going home. They sing about the Nine Bends for a hundred years, and they sing your name."
+     },
+     "fail": {
+      "health": -40,
+      "fame": 20,
+      "deathCause": "the demon army at the Nine Bends",
+      "log": "You hold it two days. On the third you are carried out. The Alliance arrives to a pass held by the dead. The invasion goes on, slower."
+     },
+     "risky": true
+    },
+    {
+     "text": "Fall back, and lead the villages out of the army's path",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 14,
+      "fame": 18,
+      "log": "You give the pass away and save everyone behind it: forty villages on the road south by nightfall. The invasion goes on. Nobody you could reach died of it."
+     },
+     "fail": {
+      "alignment": 8,
+      "health": -12,
+      "log": "Half the villages will not leave their fields. You get the other half out. You will dream about the half for years."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_er_famine_1",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The famine has reached the third year. A provincial lord is sitting on a full granary, waiting for the price to climb higher, while his own villages eat bark.",
+   "when": {
+    "era": [
+     "famine"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Gather proof of the hoard for the magistrate",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "er_granary_known",
+      "log": "Ledgers, guards' gossip, the smell of grain on the wind. You have everything. The magistrate, it turns out, is the lord's cousin."
+     },
+     "fail": {
+      "flag": "er_granary_known",
+      "health": -8,
+      "log": "His guards catch you near the wall. You get away, and you know enough."
+     }
+    },
+    {
+     "text": "Walk the starving villages and count the dead",
+     "effects": {
+      "flag": "er_granary_known",
+      "alignment": 6,
+      "log": "You count until you cannot. Then you look up at the lord's granary, fat on the hill, and decide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_er_famine_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The lord's granary at night: stone walls, forty guards, enough grain inside to feed the province until spring.",
+   "when": {
+    "era": [
+     "famine"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "after": [
+     "dc_er_famine_1"
+    ],
+    "flags": [
+     "er_granary_known"
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Break the granary open and feed the province",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 50,
+      "alignment": 18,
+      "rep": {
+       "orthodox": -4
+      },
+      "log": "By dawn the doors are open and the carts are rolling to every village. The lord screams for soldiers. The soldiers' own families are eating. The famine breaks."
+     },
+     "fail": {
+      "health": -28,
+      "jail": 2,
+      "deathCause": "the guards of a hoarded granary",
+      "log": "Forty guards is a lot of guards. You wake in a cell, and the famine goes on."
+     },
+     "risky": true
+    },
+    {
+     "text": "Shame him: sit at his gate in the snow until he opens it",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 40,
+      "alignment": 20,
+      "log": "Day after day, and every day more villagers sit with you. On the ninth day the gate opens. Nobody is quite sure he decided it himself."
+     },
+     "fail": {
+      "health": -20,
+      "alignment": 8,
+      "log": "He waits you out. Your toes are never the same. But the province knows your name now, and remembers whose granary was full."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_er_decree_1",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "Under the Iron Decree, the Eastern Depot has arrested a hundred martial artists for practising inside city walls. Rumour says the decree was the Chief Eunuch's idea, and the Emperor has never even read it.",
+   "when": {
+    "era": [
+     "crackdown"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Find someone at court who will listen",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "er_court_ear",
+      "log": "An old censor, who practised the sword as a boy, agrees to meet you. \"Bring me proof,\" he says, \"and I will bring it to the Throne.\""
+     },
+     "fail": {
+      "log": "Every door at court is closed to people like you. For now."
+     }
+    },
+    {
+     "text": "Gather the stories of the arrested",
+     "effects": {
+      "flag": "er_court_ear",
+      "alignment": 4,
+      "log": "A hundred names, a hundred families. You write them all down. It is a weapon of a kind the Depot has never faced."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_er_decree_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The censor has arranged it: one audience, one chance, before the Emperor himself. The Chief Eunuch will be standing behind the throne.",
+   "when": {
+    "era": [
+     "crackdown"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "after": [
+     "dc_er_decree_1"
+    ],
+    "flags": [
+     "er_court_ear"
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Speak for the murim, plainly",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 45,
+      "rep": {
+       "orthodox": 10
+      },
+      "log": "You read the hundred names. The Emperor asks who signed the decree. The Chief Eunuch has a very bad afternoon. The Iron Decree is torn up in front of you."
+     },
+     "fail": {
+      "jail": 1,
+      "fame": 10,
+      "log": "The Eunuch speaks before you can. You spend a month in the Depot's cells, and the decree stands, for now."
+     }
+    },
+    {
+     "text": "Bring the proof of the Eunuch's bribes instead",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "endEra": true,
+      "fame": 40,
+      "taels": 100,
+      "log": "Ledgers do not argue. By evening the Chief Eunuch is in his own Depot's cells, and by the end of the week the decree is gone."
+     },
+     "fail": {
+      "jail": 1,
+      "log": "The proof disappears from your room the night before. The Depot is very good at its job."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_er_golden_1",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "The golden age has made the murim soft and generous. Every sect is building, every road is safe, and the young think it will last forever. An old master tells you it never does, unless someone tends it.",
+   "when": {
+    "era": [
+     "golden_age"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "arc": "Turning the Era",
+   "choices": [
+    {
+     "text": "Found a school in a poor county while the silver flows",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "taels": -200,
+      "fame": 18,
+      "alignment": 10,
+      "flag": "golden_school",
+      "log": "Built in the good years, it will still be teaching in the bad ones. That is the point of good years."
+     }
+    },
+    {
+     "text": "Spend the peace training, not feasting",
+     "effects": {
+      "qi": 25,
+      "comprehension": 4,
+      "log": "While the murim feasts, you train. The old master nods when he passes your yard."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

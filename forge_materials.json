@@ -1,0 +1,283 @@
+{
+ "events": [
+  {
+   "id": "fg_old_mine",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 6,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "An abandoned mine on the mountainside. The walls glitter darkly where the old miners gave up.",
+   "choices": [
+    {
+     "text": "Dig where they stopped (Black Iron)",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "item": {
+       "black_iron": 2
+      },
+      "log": "Two days of digging. Two lumps of black iron, heavy as sin. A smith will love these."
+     },
+     "fail": {
+      "health": -10,
+      "item": "black_iron",
+      "log": "The tunnel groans and you run. You get out with one lump of black iron and a lot of dust."
+     }
+    },
+    {
+     "text": "Leave it to the miners' ghosts",
+     "effects": {
+      "alignment": 1,
+      "log": "Some places should stay closed."
+     }
+    }
+   ],
+   "variants": [
+    "A mine on the mountainside, long abandoned. Where the old miners gave up, the rock still glints black."
+   ]
+  },
+  {
+   "id": "fg_battlefield_iron",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 6,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "An old battlefield where the rain has washed up broken weapons. Among the rust, some iron is still black and sound.",
+   "choices": [
+    {
+     "text": "Gather the good iron (Black Iron)",
+     "effects": {
+      "item": "black_iron",
+      "log": "You fill a sack with black iron from blades nobody will ever claim. (A smith can use this.)"
+     }
+    },
+    {
+     "text": "Bury the old blades",
+     "effects": {
+      "alignment": 3,
+      "log": "You bury them like the dead. It feels right."
+     }
+    }
+   ],
+   "variants": [
+    "Rain has washed broken weapons up out of an old battlefield. Most is rust, but some of the iron is still black and sound."
+   ]
+  },
+  {
+   "id": "fg_frozen_lake",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "A lake frozen so deep the ice is blue-green. Something pale glows under it.",
+   "choices": [
+    {
+     "text": "Break the ice and dive (Cold Jade)",
+     "roll": {
+      "stat": "health",
+      "dc": 50
+     },
+     "ok": {
+      "item": "cold_jade",
+      "log": "The cold nearly stops your heart. In your hand: a piece of cold jade that frosts the air around it."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The cold drives you back out, empty-handed and shaking. Perhaps next winter."
+     }
+    },
+    {
+     "text": "Watch the glow and move on",
+     "effects": {
+      "comprehension": 1,
+      "log": "Some treasures are for looking at."
+     }
+    }
+   ],
+   "variants": [
+    "A lake frozen so deep the ice has turned blue-green. Far below, something pale is glowing."
+   ]
+  },
+  {
+   "id": "fg_jade_cave",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "A cave so cold your breath freezes in the air. The walls are veined with green.",
+   "choices": [
+    {
+     "text": "Chip out a piece of the cold jade (Cold Jade)",
+     "effects": {
+      "item": "cold_jade",
+      "health": -5,
+      "log": "Your hands are numb for a day. The jade never warms. (A smith can use this.)"
+     }
+    },
+    {
+     "text": "Meditate in the cold",
+     "effects": {
+      "qi": 8,
+      "log": "The cold sharpens your mind like a whetstone."
+     }
+    }
+   ],
+   "variants": [
+    "A cave so cold your breath hangs frozen in the air. Green veins run through the walls."
+   ]
+  },
+  {
+   "id": "fg_fallen_star",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "Last night a star fell beyond the hills. This morning half the province is looking for where it landed.",
+   "choices": [
+    {
+     "text": "Find it first (Meteor Iron)",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "item": "meteor_iron",
+      "fame": 3,
+      "log": "You reach the crater before anyone else. At its heart, still warm, a lump of meteor iron."
+     },
+     "fail": {
+      "log": "A sect got there first. They are carrying something heavy away, very fast."
+     }
+    },
+    {
+     "text": "Let the sects fight over it",
+     "effects": {
+      "charm": 1,
+      "log": "Three sects fight over a hole in the ground. You buy noodles and watch."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fg_great_beast",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "Hunters speak of a great horned beast in the deep mountains, older than the villages, that no arrow has ever wounded.",
+   "choices": [
+    {
+     "text": "Track it into the deep mountains (Great Beast Horn, dangerous)",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2
+     },
+     "ok": {
+      "item": "beast_horn",
+      "fame": 8,
+      "log": "Three days of tracking, one terrible hour. You come down the mountain with a great beast's horn on your back."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a great beast in the deep mountains",
+      "log": "It is older and cleverer than you. You escape, bleeding, and the beast keeps its horn."
+     },
+     "risky": true
+    },
+    {
+     "text": "Leave it be",
+     "effects": {
+      "alignment": 2,
+      "log": "Some things should stay legends."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fg_shed_horn",
+   "cat": "explore",
+   "once": false,
+   "cooldown": 15,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "Deep in the forest, under a cliff, lies a horn as long as your arm: shed by something you are glad you did not meet.",
+   "choices": [
+    {
+     "text": "Take it (Great Beast Horn)",
+     "effects": {
+      "item": "beast_horn",
+      "log": "It is heavy and still faintly warm. The smith will want to know where you found it. (A smith can use this.)"
+     }
+    },
+    {
+     "text": "Leave it where it fell",
+     "effects": {
+      "luck": 2,
+      "log": "You leave it for whatever might come back for it."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

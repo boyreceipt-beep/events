@@ -1,0 +1,136 @@
+{
+ "events": [
+  {
+   "id": "dc_ec_heirloom_1",
+   "cat": "encounter",
+   "weight": 7,
+   "once": true,
+   "text": "In a pawnshop on a back street: a blade with a cracked scabbard, and on the scabbard, small and crowded, names. {echo_hands} of them, in different hands, and at the start of the list, very worn, the name {echo_name}. The pawnbroker says it {echo_heirloom}. He wants forty taels. It is worth everything.",
+   "when": {
+    "flags": [
+     "echo_heirloom"
+    ],
+    "age": [
+     14,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Buy it, and add your own name to the scabbard",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "echoWeapon": true,
+      "flag": [
+       "echo_found",
+       "echo_weapon_reclaimed"
+      ],
+      "log": "You carve your name at the end of the list with a borrowed knife. The blade is warm in your hand, as if it has been waiting."
+     }
+    },
+    {
+     "text": "Read every name, then leave it for its next owner",
+     "effects": {
+      "comprehension": 5,
+      "alignment": 4,
+      "flag": "echo_found",
+      "log": "You read the names twice, the way you would read a family tree. Then you set it down. Some things are meant to keep travelling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_craft_1",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "In {echo_craft_where} you find {echo_craft_thing}, very old and very good, with a maker's mark on it that stops your breath: the mark of {echo_name}. Your mark. Somebody has been taking very good care of it for {echo_years} years.",
+   "when": {
+    "flags": [
+     "echo_craft"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Ask the owner where it came from",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 6,
+      "flag": "echo_found",
+      "log": "\"My grandmother bought it from the maker,\" the owner says, \"and said it was the finest thing she ever owned.\" You have to sit down."
+     },
+     "fail": {
+      "flag": "echo_found",
+      "log": "Nobody remembers. That is all right. You remember, a little."
+     }
+    },
+    {
+     "text": "Study how it was made, and remember how you did it",
+     "effects": {
+      "comprehension": 8,
+      "artYears": 1,
+      "flag": "echo_found",
+      "log": "You study it for an hour. Your hands remember things your head does not. Your next work is better than anything you have made in this life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_ec_statue_1",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "In the square of a market town there is a statue, weathered and covered in children: a martial artist with a raised sword, and on the plinth, '{echo_name}, who ended {echo_era}.' An old woman is leaving rice cakes at its feet, as her mother did, as her grandmother did.",
+   "when": {
+    "flags": [
+     "echo_era_hero"
+    ],
+    "age": [
+     8,
+     90
+    ]
+   },
+   "arc": "Echoes of a Past Life",
+   "choices": [
+    {
+     "text": "Leave a rice cake too",
+     "effects": {
+      "alignment": 6,
+      "luck": 5,
+      "flag": "echo_found",
+      "log": "You put a rice cake beside hers and stand there a while. The statue has your nose. The sculptor got it right, this time."
+     }
+    },
+    {
+     "text": "Ask the old woman what the town remembers",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "echo_found",
+      "log": "She tells it the way it is told here: bigger, braver, kinder than it was. You let her. It is a better story than the truth."
+     },
+     "fail": {
+      "flag": "echo_found",
+      "log": "She is too busy with the rice cakes. A child climbs on your foot to reach the statue's sword. You lift them up."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

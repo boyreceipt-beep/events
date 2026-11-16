@@ -1,0 +1,807 @@
+{
+ "events": [
+  {
+   "id": "era_bc_1",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "A village near you is found empty. Every door open, every bowl of rice still warm, and the well water red. Tracks lead to the mountains.",
+   "choices": [
+    {
+     "text": "Follow the tracks",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Blood Cult acolytes"
+     },
+     "ok": {
+      "fame": 12,
+      "rep": {
+       "orthodox": 8
+      },
+      "log": "You find a Blood Cult altar and three acolytes. Two of them will not be reporting back. The sects want to hear everything you saw."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the knives of the Blood Cult, at an altar in the mountains",
+      "log": "The acolytes are not alone. You escape with your life and a very clear picture of what is coming."
+     }
+    },
+    {
+     "text": "Warn the nearest sect",
+     "effects": {
+      "fame": 5,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "The elders do not believe you, until the second village goes silent."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_bc_2",
+   "trigger": "era_blood_cult",
+   "cat": "sect",
+   "text": "The Orthodox sects, the families and even the Beggars' Sect call a council: an alliance against the Blood Cult. They need fighters for the vanguard.",
+   "choices": [
+    {
+     "text": "Join the vanguard",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The blood puppets"
+     },
+     "ok": {
+      "fame": 20,
+      "rep": {
+       "orthodox": 15
+      },
+      "log": "The vanguard burns three Blood Cult strongholds. Your name is read out at the council."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the Blood Cult's blood puppets",
+      "log": "The blood puppets do not feel pain. Half the vanguard does not come back. You do, barely."
+     }
+    },
+    {
+     "text": "Guard the villages behind the lines",
+     "effects": {
+      "fame": 6,
+      "alignment": 5,
+      "log": "No glory, no songs. Just a hundred villages that are still standing because you were there."
+     }
+    },
+    {
+     "text": "Sell information to the highest bidder",
+     "req": {
+      "alignment": [
+       -100,
+       0
+      ]
+     },
+     "effects": {
+      "taels": 150,
+      "alignment": -10,
+      "rep": {
+       "orthodox": -15,
+       "unorthodox": 5
+      },
+      "log": "War is good for business, if you have no shame. You have very little."
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic",
+     "unorthodox"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_bc_3",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "Someone you trained with comes back from the front with red eyes and a smile that is not theirs. The Blood Cult has made a puppet of them.",
+   "choices": [
+    {
+     "text": "Try to break the spell",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 8,
+      "log": "You find the needle in the back of the neck and pull it. They collapse, weeping, themselves again."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The spell holds. They flee into the night, and you know you will meet them on a battlefield."
+     }
+    },
+    {
+     "text": "End it quickly, as they would want",
+     "effects": {
+      "alignment": -3,
+      "health": -10,
+      "log": "It is a mercy. It does not feel like one."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_bc_end",
+   "trigger": "era_blood_cult",
+   "cat": "world",
+   "text": "The final battle at the Blood Altar. The Blood Ancestor wakes as the sects break through the gates.",
+   "choices": [
+    {
+     "text": "Face the Blood Ancestor",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "The Blood Ancestor"
+     },
+     "ok": {
+      "fame": 45,
+      "flag": "blood_slayer",
+      "rep": {
+       "orthodox": 25
+      },
+      "log": "You strike the final blow. The altar cracks. For a hundred years, children will play at being you."
+     },
+     "fail": {
+      "health": -60,
+      "fame": 15,
+      "deathCause": "the Blood Ancestor",
+      "log": "The Ancestor falls, but not by your hand, and not before it nearly takes you with it."
+     }
+    },
+    {
+     "text": "Hold the gate so the others can go in",
+     "effects": {
+      "fame": 18,
+      "rep": {
+       "orthodox": 10
+      },
+      "health": -20,
+      "log": "No one gets past you. Afterwards they find you still standing in the gateway, asleep on your feet."
+     }
+    }
+   ],
+   "variants": [
+    "The last battle at the Blood Altar begins. The sects break through the gates, and deep inside, the Blood Ancestor opens its eyes."
+   ]
+  },
+  {
+   "id": "era_di_1",
+   "trigger": "era_demon_invasion",
+   "cat": "world",
+   "text": "Refugees flood the roads from the west. Behind them, the black banners of the Heavenly Demon Cult.",
+   "choices": [
+    {
+     "text": "Escort refugees to safety",
+     "req": {
+      "alignment": [
+       0,
+       100
+      ]
+     },
+     "effects": {
+      "fame": 8,
+      "alignment": 6,
+      "rep": {
+       "orthodox": 6
+      },
+      "log": "Three hundred people, one narrow pass, eleven days. Every one of them makes it.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Join the Cult's advance",
+     "req": {
+      "factions": [
+       "demonic"
+      ]
+     },
+     "effects": {
+      "fame": 10,
+      "rep": {
+       "demonic": 12,
+       "orthodox": -10
+      },
+      "log": "The Central Plains open before you like a gate. The Cult marches, and you march with it.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "log": "You keep your head down. The war goes past your door this time. This time.",
+      "flag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_2",
+   "trigger": "era_demon_invasion",
+   "cat": "danger",
+   "text": "The front line reaches your province. A Cult warband is burning its way toward the town where you live.",
+   "choices": [
+    {
+     "text": "Defend the town",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The Cult warband"
+     },
+     "ok": {
+      "fame": 18,
+      "rep": {
+       "orthodox": 12,
+       "demonic": -8
+      },
+      "log": "The warband breaks on your town's walls. The townspeople carry you through the streets, which is embarrassing and wonderful.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "a Demonic Cult warband",
+      "log": "The town burns. You drag out as many people as you can.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Negotiate with the warband's captain",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 10,
+      "taels": -80,
+      "log": "A chest of silver and a promise. The warband turns north. Some call you a coward; the town calls you a saviour.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "taels": -80,
+      "health": -20,
+      "log": "They take the silver and burn the town anyway.",
+      "unflag": "era_di_aloof"
+     },
+     "req": {
+      "minTaels": 80
+     }
+    },
+    {
+     "text": "Lead the old and the young out by the back road",
+     "effects": {
+      "fame": -4,
+      "alignment": 3,
+      "health": -5,
+      "log": "You do not stand on the walls. You herd children and grandparents down the back road all night, carrying whoever falls behind. Behind you the town burns. Some call you a coward. The ones you carried do not.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   }
+  },
+  {
+   "id": "era_di_3",
+   "trigger": "era_demon_invasion",
+   "cat": "sect",
+   "text": "A traitor inside the Martial Alliance has been sending the Cult its battle plans. You have found the letters.",
+   "choices": [
+    {
+     "text": "Expose the traitor",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "rep": {
+       "orthodox": 15
+      },
+      "log": "The traitor is a respected elder. The Alliance is shaken, but the leaks stop, and the war turns.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "fame": -10,
+      "health": -25,
+      "log": "The elder is quicker. Assassins come for you that night.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Feed the traitor false plans",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 30,
+      "rep": {
+       "orthodox": 20,
+       "demonic": -20
+      },
+      "log": "The Cult marches into a trap built from your lies. The war turns in a single afternoon.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "fame": -5,
+      "log": "The traitor grows suspicious and goes silent. At least the leaks stop.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_end",
+   "trigger": "era_demon_invasion",
+   "cat": "world",
+   "text": "Mount Song. The last battle of the war. The Heavenly Demon's own guard holds the ridge.",
+   "choices": [
+    {
+     "text": "Lead the charge up the ridge",
+     "req": {
+      "factions": [
+       "orthodox",
+       "family",
+       "wanderer",
+       "none"
+      ],
+      "notFlags": [
+       "era_di_aloof"
+      ]
+     },
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "The Heavenly Demon's guard"
+     },
+     "ok": {
+      "fame": 45,
+      "flag": "war_hero",
+      "rep": {
+       "orthodox": 25,
+       "demonic": -25
+      },
+      "log": "The ridge falls. The black banners come down one after another. You are the reason, and everyone knows it."
+     },
+     "fail": {
+      "health": -60,
+      "fame": 15,
+      "deathCause": "the Heavenly Demon's guard on Mount Song",
+      "log": "You fall on the ridge, but the charge you led carries it."
+     }
+    },
+    {
+     "text": "Hold the ridge for the Cult",
+     "req": {
+      "factions": [
+       "demonic"
+      ]
+     },
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "The Orthodox charge"
+     },
+     "ok": {
+      "fame": 40,
+      "rep": {
+       "demonic": 30,
+       "orthodox": -30
+      },
+      "log": "The Orthodox charge breaks on you. The Cult withdraws with its head high, and your name is spoken in the Heavenly Demon's hall."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the Orthodox charge on Mount Song",
+      "log": "The ridge falls. You are carried off the field by your own warriors."
+     }
+    },
+    {
+     "text": "Watch the battle from the far hillside",
+     "req": {
+      "flags": [
+       "era_di_aloof"
+      ]
+     },
+     "effects": {
+      "log": "You watch from the far hillside, as you have watched the whole war. The black banners come down one by one, and you did nothing to bring them down. Nobody asks where you were. You think about it for a long time."
+     }
+    },
+    {
+     "text": "Tend the wounded behind the lines",
+     "effects": {
+      "fame": 10,
+      "alignment": 8,
+      "log": "You do not see the battle. You see the price of it, all night, in the medicine tents."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_fa_1",
+   "trigger": "era_famine",
+   "cat": "life",
+   "text": "Your neighbours' children are thin. The granary merchant is holding back rice to push the price higher.",
+   "choices": [
+    {
+     "text": "Buy rice for the street",
+     "effects": {
+      "taels": -60,
+      "alignment": 8,
+      "fame": 5,
+      "log": "Sixty taels of rice. For a month, no one on your street goes hungry."
+     },
+     "req": {
+      "minTaels": 60
+     }
+    },
+    {
+     "text": "Have a word with the merchant",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.6,
+      "foeName": "The merchant's guards"
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 4,
+      "log": "The merchant discovers a sudden generosity. His hired guards discover the ground."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a rice merchant's hired swords",
+      "log": "His guards are better than they look."
+     }
+    },
+    {
+     "text": "Look after your own",
+     "effects": {
+      "taels": 20,
+      "log": "A hard year makes hard people. You keep what you have."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   }
+  },
+  {
+   "id": "era_fa_2",
+   "trigger": "era_famine",
+   "cat": "danger",
+   "text": "Starving men have become bandits. A band of them blocks the road, and some of them are hardly older than boys.",
+   "choices": [
+    {
+     "text": "Fight through",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.0,
+      "foeName": "The starving bandits"
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": -3,
+      "log": "They scatter. Afterwards you cannot stop thinking about how light the swords were."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "starving bandits on the road",
+      "log": "Desperate men fight hard."
+     }
+    },
+    {
+     "text": "Share your food and talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 8,
+      "fame": 6,
+      "log": "They eat. They cry. Some of them follow you back to town and find work. One becomes a friend for life."
+     },
+     "fail": {
+      "taels": -30,
+      "log": "They take the food and your purse, apologising the whole time."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   }
+  },
+  {
+   "id": "era_fa_end",
+   "trigger": "era_famine",
+   "cat": "world",
+   "text": "The first rains in five years. The whole town stands in the street with their faces turned up.",
+   "choices": [
+    {
+     "text": "Stand in the rain with them",
+     "effects": {
+      "health": 15,
+      "alignment": 3,
+      "log": "Nobody says anything. Nobody needs to."
+     }
+    }
+   ],
+   "variants": [
+    "Rain, for the first time in five years. The whole town comes out into the street and turns their faces to the sky."
+   ]
+  },
+  {
+   "id": "era_ga_1",
+   "trigger": "era_golden_age",
+   "cat": "world",
+   "text": "The Martial Alliance announces a Grand Festival of the Murim: tournaments, poetry contests, and a banquet for ten thousand.",
+   "choices": [
+    {
+     "text": "Compete in the sword contest",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "A festival swordsman"
+     },
+     "ok": {
+      "fame": 20,
+      "taels": 100,
+      "log": "You win the sword contest in front of ten thousand people. The poets write about it before the dust settles."
+     },
+     "fail": {
+      "fame": 5,
+      "log": "You lose in the semi-final to someone who will be famous one day. So will you."
+     }
+    },
+    {
+     "text": "Enter the poetry contest",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "charm": 3,
+      "log": "A martial artist winning the poetry contest. The scholars are furious. The crowd loves it."
+     },
+     "fail": {
+      "fame": 2,
+      "log": "Your poem is about swords. The judges are not impressed."
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_ga_2",
+   "trigger": "era_golden_age",
+   "cat": "life",
+   "text": "Trade booms. A merchant house offers you a share in a new caravan route to the west.",
+   "choices": [
+    {
+     "text": "Invest 200 taels",
+     "req": {
+      "minTaels": 200
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 400,
+      "log": "The caravans come back heavy with jade and silk. Your share is very generous."
+     },
+     "fail": {
+      "taels": -200,
+      "log": "A sandstorm takes the caravan. Such is trade."
+     }
+    },
+    {
+     "text": "Guard the caravan instead",
+     "effects": {
+      "taels": 60,
+      "fame": 4,
+      "log": "Good pay, safe roads, and stories from the west. A good year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_ga_end",
+   "trigger": "era_golden_age",
+   "cat": "world",
+   "text": "Old men in teahouses are already calling these years 'the good days'. The world is getting restless again.",
+   "choices": [
+    {
+     "text": "Remember it well",
+     "effects": {
+      "comprehension": 2,
+      "log": "Good years are worth remembering. They are rarer than the other kind."
+     }
+    }
+   ],
+   "variants": [
+    "In the teahouses the old men have started calling these years 'the good days'. Something in the world is getting restless."
+   ]
+  },
+  {
+   "id": "era_cr_1",
+   "trigger": "era_crackdown",
+   "cat": "danger",
+   "text": "Eastern Depot agents raid the inn where you are staying, looking for anyone who carries a sword.",
+   "choices": [
+    {
+     "text": "Hide your sword and play a scholar",
+     "roll": {
+      "stat": "poetry",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You recite three poems and complain about the tax on ink. The agents leave bored."
+     },
+     "fail": {
+      "taels": -60,
+      "log": "They find the sword. A bribe keeps you out of the dungeon."
+     }
+    },
+    {
+     "text": "Fight your way out",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Depot agents"
+     },
+     "ok": {
+      "fame": 10,
+      "rep": {
+       "unorthodox": 8
+      },
+      "flag": "wanted_by_depot",
+      "log": "Six agents down, one window broken, and a wanted poster with a terrible drawing of your face by morning."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "Eastern Depot agents",
+      "log": "The Depot's agents are trained killers. You barely get out."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   }
+  },
+  {
+   "id": "era_cr_2",
+   "trigger": "era_crackdown",
+   "cat": "world",
+   "text": "A rebel network of martial artists asks you to help smuggle a banned sect's library out of the capital before the Depot burns it.",
+   "choices": [
+    {
+     "text": "Smuggle the library",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "manual": 3,
+      "rep": {
+       "orthodox": 10
+      },
+      "log": "Three hundred scrolls, out under the Depot's nose. The sect lets you read whatever you like, forever."
+     },
+     "fail": {
+      "health": -30,
+      "fame": -5,
+      "log": "Half the scrolls burn. You get out with the other half, and a burn on your arm."
+     }
+    },
+    {
+     "text": "Report the network for the reward",
+     "effects": {
+      "taels": 200,
+      "alignment": -15,
+      "rep": {
+       "orthodox": -20
+      },
+      "log": "The Depot pays well. The murim finds out who talked. It always does."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_cr_end",
+   "trigger": "era_crackdown",
+   "cat": "world",
+   "text": "The Iron Decree is torn down from the city gates. Swords come out of hiding all over the empire.",
+   "choices": [
+    {
+     "text": "Walk through the city gate with your sword on your back",
+     "effects": {
+      "fame": 5,
+      "log": "It feels like the first day of spring.",
+      "flag": "decree_torn"
+     }
+    }
+   ],
+   "variants": [
+    "The Iron Decree comes down from the city gates at last. All over the empire, swords come out from under floorboards."
+   ]
+  }
+ ],
+ "mwPass": 1
+}

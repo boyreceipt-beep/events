@@ -1,0 +1,1482 @@
+{
+ "events": [
+  {
+   "id": "jb_escort_bribe_road",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_escort"
+    ]
+   },
+   "weight": 3,
+   "text": "A local official stops your caravan and 'inspects' the cargo very slowly. He is waiting for a bribe.",
+   "choices": [
+    {
+     "text": "Pay the bribe from the agency purse",
+     "effects": {
+      "performance": 5,
+      "log": "The caravan moves. The agency master grumbles and approves."
+     }
+    },
+    {
+     "text": "Wait him out politely",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "performance": 10,
+      "log": "He gives up by sunset. The client is impressed."
+     },
+     "fail": {
+      "performance": -10,
+      "log": "Two days lost. The client is not impressed."
+     }
+    }
+   ],
+   "variants": [
+    "A local official halts your caravan and examines the cargo, crate by crate, very slowly. He is waiting to be paid."
+   ]
+  },
+  {
+   "id": "jb_senior_escort_green_guard",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_senior_escort"
+    ]
+   },
+   "weight": 3,
+   "text": "A new guard freezes when bandits appear and runs. He comes back that night, ashamed.",
+   "choices": [
+    {
+     "text": "Give him a second chance",
+     "effects": {
+      "alignment": 2,
+      "performance": 5,
+      "log": "On the next job he holds the line longest. He never runs again."
+     }
+    },
+    {
+     "text": "Report him",
+     "effects": {
+      "performance": 5,
+      "alignment": -1,
+      "log": "He is dismissed. The agency is safer. You feel older."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_chief_escort_mystery_cargo",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_chief_escort"
+    ]
+   },
+   "weight": 3,
+   "text": "A client pays triple to escort a sealed box and refuses to say what is in it.",
+   "choices": [
+    {
+     "text": "Take the job, ask nothing",
+     "effects": {
+      "taels": 60,
+      "health": -10,
+      "performance": 10,
+      "log": "Three ambushes on the road. Whatever it was, someone wanted it badly. (60 taels)"
+     }
+    },
+    {
+     "text": "Refuse unless he tells you",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "log": "He tells you. It is a baby, the heir of a destroyed family. You take it for free."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_escort_deputy_ledger",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_escort_deputy"
+    ]
+   },
+   "weight": 3,
+   "text": "The agency ledger does not add up. Someone has been skimming for years, and all the signs point to the master's nephew.",
+   "choices": [
+    {
+     "text": "Tell the master directly",
+     "effects": {
+      "performance": 15,
+      "alignment": 2,
+      "log": "The master is grieved, then grateful. The nephew is sent away."
+     }
+    },
+    {
+     "text": "Confront the nephew first",
+     "effects": {
+      "alignment": 4,
+      "log": "He weeps and repays everything. The master never learns."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_escort_master_agency_anniversary",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_escort_master"
+    ]
+   },
+   "weight": 3,
+   "text": "Your agency's founding day. Every guard, past and present, comes back for the feast.",
+   "choices": [
+    {
+     "text": "Toast the ones who died on the road",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "Every name, read aloud. Every cup emptied."
+     }
+    },
+    {
+     "text": "Promote the best young guard",
+     "effects": {
+      "performance": 10,
+      "charm": 1,
+      "log": "The hall cheers. The guard cries into his wine."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_escort_lord_league_meeting",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_escort_lord"
+    ]
+   },
+   "weight": 3,
+   "text": "The Nine Roads League meets. Two member agencies want to fight each other over a route.",
+   "choices": [
+    {
+     "text": "Arbitrate",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "performance": 10,
+      "log": "A fair split. The League holds."
+     },
+     "fail": {
+      "fame": -3,
+      "performance": -10,
+      "log": "One agency leaves the League."
+     }
+    },
+    {
+     "text": "Take the route yourself",
+     "effects": {
+      "taels": 60,
+      "fame": -2,
+      "log": "Nobody argues. Nobody is happy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_bounty_hunter_wrong_man",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bounty_hunter"
+    ]
+   },
+   "weight": 3,
+   "text": "The man you have tracked for a month turns out to be the wrong man, a farmer with the same scar.",
+   "choices": [
+    {
+     "text": "Apologise and pay him for his trouble",
+     "effects": {
+      "taels": -5,
+      "alignment": 3,
+      "log": "He is so surprised he gives you dinner."
+     }
+    },
+    {
+     "text": "Bring him in anyway",
+     "effects": {
+      "alignment": -4,
+      "fame": -1,
+      "log": "The magistrate lets him go. You are not paid. The farmer spits at you."
+     }
+    }
+   ],
+   "variants": [
+    "A month on his trail, and the man you finally corner is a farmer who happens to have the same scar."
+   ]
+  },
+  {
+   "id": "jb_bounty_hunter_poster_self",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bounty_hunter"
+    ]
+   },
+   "weight": 3,
+   "text": "One of the posters on the bounty board has the face of a swordsman you once crossed blades with, and a reward worth the trip.",
+   "choices": [
+    {
+     "text": "Take the bounty",
+     "effects": {
+      "taels": 80,
+      "health": -15,
+      "log": "A long hunt, an ugly fight, a heavy purse. (80 taels)"
+     }
+    },
+    {
+     "text": "Warn the swordsman",
+     "effects": {
+      "alignment": 3,
+      "log": "The swordsman disappears into the mountains. Some things are worth more than silver."
+     }
+    }
+   ],
+   "variants": [
+    "On the bounty board is a face you know: a swordsman you once crossed blades with, and a reward worth the journey."
+   ]
+  },
+  {
+   "id": "jb_bounty_veteran_apprentice",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_bounty_veteran"
+    ]
+   },
+   "weight": 3,
+   "text": "A boy wants to be your apprentice. He has read every bounty tale and believes all of them.",
+   "choices": [
+    {
+     "text": "Train him",
+     "effects": {
+      "alignment": 2,
+      "performance": 5,
+      "log": "He is terrible, then competent, then good. He saves your life once."
+     }
+    },
+    {
+     "text": "Send him home",
+     "effects": {
+      "alignment": 1,
+      "log": "'This is not a story,' you say. He goes home. He never forgets it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_bounty_legend_ten_years",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bounty_legend"
+    ]
+   },
+   "weight": 3,
+   "text": "The last name on your list has been running for ten years. You finally find him: old, blind and teaching children.",
+   "choices": [
+    {
+     "text": "Let him be",
+     "effects": {
+      "alignment": 5,
+      "log": "You tear up the poster. Some hunts end differently."
+     }
+    },
+    {
+     "text": "Bring him in",
+     "effects": {
+      "taels": 150,
+      "alignment": -3,
+      "log": "He comes quietly. The children watch you take him."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_dojo_instructor_hopeless_student",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dojo_instructor"
+    ]
+   },
+   "weight": 3,
+   "text": "One student has no talent at all, and never misses a lesson.",
+   "choices": [
+    {
+     "text": "Give him extra lessons",
+     "effects": {
+      "alignment": 3,
+      "performance": 10,
+      "log": "Five years later he is the best in the school. Talent is overrated."
+     }
+    },
+    {
+     "text": "Suggest he try something else",
+     "effects": {
+      "alignment": 1,
+      "log": "He becomes a very good carpenter. He still waves at you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_dojo_master_rival_school_fire",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dojo_master"
+    ]
+   },
+   "weight": 3,
+   "text": "The rival school across town burns down. Its students stand in the street with nowhere to train.",
+   "choices": [
+    {
+     "text": "Open your doors to them",
+     "effects": {
+      "fame": 4,
+      "alignment": 4,
+      "performance": 10,
+      "log": "Your school doubles. So does the goodwill."
+     }
+    },
+    {
+     "text": "Offer them lower fees",
+     "effects": {
+      "taels": 40,
+      "alignment": -1,
+      "log": "Business is business. Half of them join."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_grandmaster_successor",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_grandmaster"
+    ],
+    "age": [
+     55,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "You are old. The school needs a successor: your most talented student, or your most loyal one.",
+   "choices": [
+    {
+     "text": "Choose talent",
+     "effects": {
+      "fame": 6,
+      "log": "The school grows famous. Some old students leave."
+     }
+    },
+    {
+     "text": "Choose loyalty",
+     "effects": {
+      "alignment": 4,
+      "log": "The school stays a family. It never becomes great, and never breaks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_wandering_hero_village_feast",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_wandering_hero"
+    ]
+   },
+   "weight": 3,
+   "text": "A village you saved last year holds a feast in your honour. They have spent their whole savings on it.",
+   "choices": [
+    {
+     "text": "Eat and celebrate",
+     "effects": {
+      "charm": 2,
+      "log": "The best feast of your life, and the most expensive for them."
+     }
+    },
+    {
+     "text": "Quietly leave silver behind",
+     "effects": {
+      "taels": -30,
+      "alignment": 4,
+      "log": "You leave more than they spent. They find it after you are gone."
+     },
+     "req": {
+      "minTaels": 30
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_knight_errant_song",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_knight_errant"
+    ]
+   },
+   "weight": 3,
+   "text": "A travelling singer has written a song about you. It is wildly inaccurate and very catchy.",
+   "choices": [
+    {
+     "text": "Ask for royalties",
+     "effects": {
+      "charm": 1,
+      "log": "He laughs and pays you in dumplings."
+     }
+    },
+    {
+     "text": "Correct the lyrics",
+     "effects": {
+      "alignment": 1,
+      "log": "The new version is less exciting. Nobody sings it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_great_hero_imitators",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_great_hero"
+    ]
+   },
+   "weight": 3,
+   "text": "Young swordsmen across the empire are copying your clothes, your nickname and your worst habits.",
+   "choices": [
+    {
+     "text": "Give one of them a real lesson",
+     "effects": {
+      "fame": 2,
+      "log": "He goes home humbled and much better."
+     }
+    },
+    {
+     "text": "Ignore them",
+     "effects": {
+      "luck": 1,
+      "log": "By next year they are copying someone else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_outer_disciple_kitchen",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_outer_disciple"
+    ]
+   },
+   "weight": 3,
+   "text": "Outer disciples take turns in the sect kitchen. Today it is your turn, and the elder is very particular about tofu.",
+   "choices": [
+    {
+     "text": "Cook perfectly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "performance": 10,
+      "log": "The elder eats three bowls without a word. High praise."
+     },
+     "fail": {
+      "performance": -5,
+      "log": "The tofu falls apart. So does the elder's mood."
+     }
+    },
+    {
+     "text": "Sneak an extra portion to the juniors",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "The juniors will follow you anywhere now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_outer_disciple_water_buckets",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_outer_disciple"
+    ]
+   },
+   "weight": 3,
+   "text": "Carrying water up the mountain before dawn, you find a shortcut down a cliff path. It halves the climb and doubles the risk.",
+   "choices": [
+    {
+     "text": "Take the shortcut",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 2,
+      "performance": 5,
+      "log": "Every morning, half the time. Your legs become iron."
+     },
+     "fail": {
+      "health": -8,
+      "log": "You slip, spill everything and climb back the long way."
+     }
+    },
+    {
+     "text": "Keep to the long path",
+     "effects": {
+      "strength": 1,
+      "log": "Slower, and your endurance grows with every step."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_inner_rank_library_key",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_inner_rank"
+    ]
+   },
+   "weight": 3,
+   "text": "As an inner disciple, you are trusted with the library key for one night.",
+   "choices": [
+    {
+     "text": "Read what you are allowed to",
+     "effects": {
+      "comprehension": 2,
+      "performance": 5,
+      "log": "Honest reading. Your technique sharpens."
+     }
+    },
+    {
+     "text": "Read the forbidden shelf",
+     "effects": {
+      "comprehension": 3,
+      "alignment": -2,
+      "flag": "read_forbidden",
+      "log": "Fascinating, and dangerous if anyone finds out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_core_rank_rival_sect_duel",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_core_rank"
+    ]
+   },
+   "weight": 3,
+   "text": "The sect sends you to answer a rival sect's challenge. The elders watch from the stands.",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 6,
+      "performance": 15,
+      "log": "You win cleanly. The eldest elder nods once."
+     },
+     "fail": {
+      "fame": -2,
+      "performance": -5,
+      "log": "You lose narrowly. The elders say nothing, which is worse."
+     }
+    },
+    {
+     "text": "Propose a demonstration instead of a duel",
+     "effects": {
+      "charm": 2,
+      "performance": 5,
+      "log": "Both sects perform. Nobody loses face."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_sect_instructor_class_prank",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_sect_instructor"
+    ]
+   },
+   "weight": 3,
+   "text": "Your class has filled your meditation cushion with frogs.",
+   "choices": [
+    {
+     "text": "Meditate on the frogs anyway",
+     "effects": {
+      "qi": 3,
+      "fame": 1,
+      "log": "You sit perfectly still among forty frogs. The class never pranks you again."
+     }
+    },
+    {
+     "text": "Punish the whole class",
+     "effects": {
+      "performance": 5,
+      "log": "Laps around the mountain. They love you less, and respect you more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_elder_rank_funding",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_elder_rank"
+    ]
+   },
+   "weight": 3,
+   "text": "The council argues over the sect's budget: a new library wing or a new training hall.",
+   "choices": [
+    {
+     "text": "Vote for the library",
+     "effects": {
+      "comprehension": 1,
+      "performance": 5,
+      "log": "Scholars remember you. Fighters grumble."
+     }
+    },
+    {
+     "text": "Vote for the training hall",
+     "effects": {
+      "fame": 2,
+      "performance": 5,
+      "log": "Disciples cheer. Librarians sigh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_vice_leader_leader_ill",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_vice_leader"
+    ]
+   },
+   "weight": 3,
+   "text": "The sect leader is ill and the council looks to you to run things for a season.",
+   "choices": [
+    {
+     "text": "Run it carefully",
+     "effects": {
+      "performance": 15,
+      "alignment": 2,
+      "log": "Nothing breaks. The leader recovers to a sect in good order."
+     }
+    },
+    {
+     "text": "Make bold changes",
+     "effects": {
+      "fame": 3,
+      "performance": -5,
+      "log": "Some work, some do not. Everyone has an opinion."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_sect_leader_young_genius",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_sect_leader"
+    ]
+   },
+   "weight": 3,
+   "text": "A young genius from a poor family asks to join, but the elders prefer children of great families.",
+   "choices": [
+    {
+     "text": "Admit the genius",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "log": "Years later, the sect's greatest master."
+     }
+    },
+    {
+     "text": "Follow the elders",
+     "effects": {
+      "flag": "wary",
+      "log": "The genius joins a rival sect. You will meet again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_bandit_first_raid",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bandit"
+    ]
+   },
+   "weight": 3,
+   "text": "Your first raid with the stronghold. The target is a merchant caravan. The guards are three old men.",
+   "choices": [
+    {
+     "text": "Let the old men run",
+     "effects": {
+      "alignment": 3,
+      "log": "You wave them off before the fighting starts. Nobody notices. Or they do and say nothing."
+     }
+    },
+    {
+     "text": "Follow orders",
+     "effects": {
+      "taels": 20,
+      "alignment": -4,
+      "log": "An easy haul. You do not sleep well."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_bandit_lieutenant_chief_drunk",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bandit_lieutenant"
+    ]
+   },
+   "weight": 3,
+   "text": "The chief is drunk every night now, and the men are starting to look at you.",
+   "choices": [
+    {
+     "text": "Stay loyal",
+     "effects": {
+      "performance": 10,
+      "log": "The chief sobers up, eventually. He remembers who stayed."
+     }
+    },
+    {
+     "text": "Let the men know you are ready",
+     "effects": {
+      "flag": "bandit_ambition",
+      "log": "Whispers begin. Dangerous ones."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_bandit_chief_orthodox_siege",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bandit_chief"
+    ]
+   },
+   "weight": 3,
+   "text": "An Orthodox sect besieges your stronghold. They want the leader of the raid on their merchant.",
+   "choices": [
+    {
+     "text": "Hold the fort",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 5,
+      "log": "They break against your walls and go home."
+     },
+     "fail": {
+      "health": -20,
+      "log": "They breach the outer wall before withdrawing."
+     }
+    },
+    {
+     "text": "Hand over the raider",
+     "effects": {
+      "alignment": 2,
+      "performance": -10,
+      "log": "The siege ends. Your men look at you differently."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_greenwood_king_tribute",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_greenwood_king"
+    ]
+   },
+   "weight": 3,
+   "text": "Seventy-two strongholds send tribute to your mountain. One sends a letter instead: a challenge.",
+   "choices": [
+    {
+     "text": "Answer the challenge",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 8,
+      "log": "One duel, one lesson. Seventy-two tributes next year."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You win, barely. The challenger is carried home."
+     }
+    },
+    {
+     "text": "Send your best lieutenant",
+     "effects": {
+      "fame": 2,
+      "log": "The lieutenant wins. The challenger becomes his friend. Politics."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_assassin_target_child",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_assassin"
+    ]
+   },
+   "weight": 3,
+   "text": "Your target has a daughter who sits beside him every evening. There is never a moment alone.",
+   "choices": [
+    {
+     "text": "Wait for a moment alone",
+     "effects": {
+      "alignment": 3,
+      "performance": -10,
+      "log": "It never comes. The Pavilion recalls you. The man lives."
+     }
+    },
+    {
+     "text": "Poison his tea",
+     "effects": {
+      "alignment": -8,
+      "performance": 15,
+      "log": "It works. You cannot eat for a week."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_night_blade_rival_blade",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_night_blade"
+    ]
+   },
+   "weight": 3,
+   "text": "Another Night Blade has been sent after the same target. The Pavilion is testing you both.",
+   "choices": [
+    {
+     "text": "Beat them to it",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "performance": 15,
+      "log": "You finish first. The other blade bows to you in the dark."
+     },
+     "fail": {
+      "performance": -10,
+      "log": "They finish first and laugh at you from a rooftop."
+     }
+    },
+    {
+     "text": "Work together",
+     "effects": {
+      "charm": 1,
+      "performance": 5,
+      "log": "Two blades, one job, half the risk. The Pavilion notes it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_pavilion_lord_retire_blade",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_pavilion_lord"
+    ]
+   },
+   "weight": 3,
+   "text": "An old assassin asks to leave the Pavilion. No one has ever left alive.",
+   "choices": [
+    {
+     "text": "Let her go",
+     "effects": {
+      "alignment": 5,
+      "fame": -2,
+      "log": "The first. The Pavilion whispers. She sends you a letter every year."
+     }
+    },
+    {
+     "text": "Keep the rule",
+     "effects": {
+      "alignment": -6,
+      "log": "She does not leave. The Pavilion is very quiet for a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_founder_first_winter",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_founder"
+    ],
+    "hasSect": true
+   },
+   "weight": 3,
+   "text": "Your sect's first winter. The halls are cold, the rice is short and three disciples are thinking of leaving.",
+   "choices": [
+    {
+     "text": "Share your own rations",
+     "effects": {
+      "health": -5,
+      "alignment": 3,
+      "fame": 2,
+      "log": "You are thin by spring. Nobody leaves."
+     }
+    },
+    {
+     "text": "Take a mercenary job to pay for rice",
+     "effects": {
+      "taels": 60,
+      "log": "A season away. The sect survives, but misses you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_founder_first_disciple_tea",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_founder"
+    ]
+   },
+   "weight": 3,
+   "text": "Your first disciple brings you tea every morning, and every morning it is terrible.",
+   "choices": [
+    {
+     "text": "Drink it anyway",
+     "effects": {
+      "alignment": 2,
+      "log": "Ten years of terrible tea. You would not trade a cup."
+     }
+    },
+    {
+     "text": "Teach them to make tea",
+     "effects": {
+      "comprehension": 1,
+      "log": "The tea improves. The disciple learns that patience is also a martial art."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_patriarch_founder_shadow",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_patriarch"
+    ]
+   },
+   "weight": 3,
+   "text": "Everyone compares you to the founder. The old disciples say 'the founder would have done it differently'.",
+   "choices": [
+    {
+     "text": "Do it your own way",
+     "effects": {
+      "fame": 3,
+      "log": "Some old disciples leave. Many young ones come."
+     }
+    },
+    {
+     "text": "Study the founder's notes",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 1,
+      "log": "You find the founder doubted everything too. It helps."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_cult_guard_prisoner_song",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_cult_guard"
+    ]
+   },
+   "weight": 3,
+   "text": "A prisoner sings every night on your watch, a mountain song from your home region.",
+   "choices": [
+    {
+     "text": "Hum along",
+     "effects": {
+      "alignment": 2,
+      "log": "Nobody hears. For a moment you are both home."
+     }
+    },
+    {
+     "text": "Tell him to stop",
+     "effects": {
+      "alignment": -1,
+      "performance": 5,
+      "log": "He stops. The silence is worse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_cult_warrior_mask",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_cult_warrior"
+    ]
+   },
+   "weight": 3,
+   "text": "Your black mask chafes on a long raid. Under it you are just a person who is very tired.",
+   "choices": [
+    {
+     "text": "Keep it on",
+     "effects": {
+      "performance": 5,
+      "alignment": -1,
+      "log": "A good warrior is a mask. You are a good warrior."
+     }
+    },
+    {
+     "text": "Take it off for a moment by the river",
+     "effects": {
+      "alignment": 2,
+      "log": "A child sees your face. She is not afraid. You are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_cult_captain_recruit",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_cult_captain"
+    ]
+   },
+   "weight": 3,
+   "text": "A new recruit in your squad joined the Cult to escape a forced marriage, not to fight.",
+   "choices": [
+    {
+     "text": "Keep her away from the front",
+     "effects": {
+      "alignment": 3,
+      "log": "She becomes the squad's scribe. Everyone lives longer."
+     }
+    },
+    {
+     "text": "Train her hard",
+     "effects": {
+      "performance": 10,
+      "log": "She becomes the best of your squad and never forgives you."
+     }
+    }
+   ],
+   "mw": true,
+   "po": true
+  },
+  {
+   "id": "jb_cult_commander_hall_rivalry",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_cult_commander"
+    ]
+   },
+   "weight": 3,
+   "text": "Another Hall Master is spreading rumours that your hall is disloyal.",
+   "choices": [
+    {
+     "text": "Prove your loyalty publicly",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "performance": 15,
+      "log": "The council believes you. The other Hall Master is reassigned."
+     },
+     "fail": {
+      "performance": -10,
+      "log": "The rumours stick for a season."
+     }
+    },
+    {
+     "text": "Find his secrets instead",
+     "effects": {
+      "flag": "wary",
+      "comprehension": 1,
+      "log": "You find one. He stops talking about you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_cult_guardian_demon_mood",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_cult_guardian"
+    ]
+   },
+   "weight": 3,
+   "text": "The Heavenly Demon is in a dark mood. The whole mountain whispers. You stand behind the throne.",
+   "choices": [
+    {
+     "text": "Stand perfectly still",
+     "effects": {
+      "performance": 10,
+      "log": "You survive the day. Some do not."
+     }
+    },
+    {
+     "text": "Offer a word of counsel",
+     "effects": {
+      "fame": 5,
+      "alignment": 1,
+      "log": "A long, terrible silence. Then a nod. You have been noticed."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_cult_elder_orthodox_spy",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_cult_elder"
+    ]
+   },
+   "weight": 3,
+   "text": "You catch an Orthodox spy in the archives. She is very young and very scared.",
+   "choices": [
+    {
+     "text": "Hand her to the council",
+     "effects": {
+      "performance": 15,
+      "alignment": -4,
+      "log": "The council is pleased."
+     }
+    },
+    {
+     "text": "Let her escape with false plans",
+     "effects": {
+      "alignment": 3,
+      "fame": 3,
+      "log": "She escapes, carrying lies. The Orthodox waste a season on them."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_cult_vice_succession_tension",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_cult_vice"
+    ]
+   },
+   "weight": 3,
+   "text": "The Heavenly Demon's own child openly despises you. The succession will not be simple.",
+   "choices": [
+    {
+     "text": "Win the child over",
+     "effects": {
+      "charm": 2,
+      "alignment": 2,
+      "log": "Slowly, with respect. It may work."
+     }
+    },
+    {
+     "text": "Undermine the child",
+     "effects": {
+      "alignment": -6,
+      "fame": 3,
+      "log": "Dangerous, and effective."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_heavenly_demon_throne_loneliness",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 3,
+   "text": "On the throne of the Hundred Thousand Mountains, you realise no one has spoken to you as a person in years.",
+   "choices": [
+    {
+     "text": "Walk the mountain alone at night",
+     "effects": {
+      "health": 3,
+      "alignment": 2,
+      "log": "A guard sees you and pretends not to. You both need that."
+     }
+    },
+    {
+     "text": "Invite an old friend to dinner",
+     "effects": {
+      "charm": 2,
+      "log": "They come, terrified, then laughing. For one night you are not the Heavenly Demon."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_alliance_officer_road_dispute",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_alliance_officer"
+    ]
+   },
+   "weight": 3,
+   "text": "Two villages fight over a bridge. Both claim the Alliance is on their side.",
+   "choices": [
+    {
+     "text": "Mediate",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 2,
+      "performance": 10,
+      "log": "A shared toll, a shared festival. Peace."
+     },
+     "fail": {
+      "performance": -5,
+      "log": "Both villages complain to your captain about you."
+     }
+    },
+    {
+     "text": "Tear down the bridge",
+     "effects": {
+      "charm": -1,
+      "performance": -5,
+      "log": "Problem solved, badly. Everyone now has to wade."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_alliance_captain_corrupt_patrol",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_alliance_captain"
+    ]
+   },
+   "weight": 3,
+   "text": "One of your patrolmen has been taking bribes from smugglers.",
+   "choices": [
+    {
+     "text": "Dismiss him publicly",
+     "effects": {
+      "performance": 10,
+      "fame": 1,
+      "log": "The rest of the patrol straightens up overnight."
+     }
+    },
+    {
+     "text": "Give him one chance",
+     "effects": {
+      "alignment": 3,
+      "log": "He repays the bribes and becomes your most honest man."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_alliance_pavilion_intel_leak",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_alliance_pavilion"
+    ]
+   },
+   "weight": 3,
+   "text": "Your intelligence reports keep reaching the Cult before they reach the Alliance Leader.",
+   "choices": [
+    {
+     "text": "Find the leak",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 5,
+      "performance": 15,
+      "log": "A trusted clerk. You feed him false reports for a year first."
+     },
+     "fail": {
+      "performance": -15,
+      "log": "You cannot find it. The Leader is displeased."
+     }
+    },
+    {
+     "text": "Change every code",
+     "effects": {
+      "performance": 5,
+      "log": "Weeks of chaos, then silence. The leak dries up."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_alliance_guardian_long_night",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_alliance_guardian"
+    ]
+   },
+   "weight": 3,
+   "text": "Your shift ends at dawn. It has been a long night of nothing, which is exactly the job.",
+   "choices": [
+    {
+     "text": "Stay alert until the end",
+     "effects": {
+      "performance": 5,
+      "qi": 2,
+      "log": "Nothing happens. Nothing happens because you are there."
+     }
+    },
+    {
+     "text": "Share tea with the next guard",
+     "effects": {
+      "charm": 1,
+      "log": "You talk about home until the sun comes up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jb_alliance_vice_sect_bribe",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_alliance_vice"
+    ]
+   },
+   "weight": 3,
+   "text": "A great sect offers you a fortune to support their candidate for the next Alliance Leader.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "log": "They will remember. So will the sects who heard you refuse."
+     }
+    },
+    {
+     "text": "Take the fortune",
+     "effects": {
+      "taels": 200,
+      "alignment": -8,
+      "log": "Very rich, very compromised. (200 taels)"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "jb_alliance_leader_peace_or_war",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_alliance_leader"
+    ]
+   },
+   "weight": 3,
+   "text": "The Cult proposes a ten-year truce. Half the Alliance wants it, half wants war.",
+   "choices": [
+    {
+     "text": "Sign the truce",
+     "effects": {
+      "alignment": 6,
+      "fame": 10,
+      "log": "Ten years of peace. Children grow up who never saw a war."
+     }
+    },
+    {
+     "text": "Refuse and prepare for war",
+     "effects": {
+      "fame": 8,
+      "rep": {
+       "orthodox": 5,
+       "demonic": -5
+      },
+      "log": "The Alliance arms. The history books will decide who was right."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,2205 @@
+{
+ "events": [
+  {
+   "id": "b6ng_arc_spirit_kin_1",
+   "cat": "world",
+   "arc": "The Valley of Kin",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "pet": [
+     "any",
+     "crane",
+     "fox",
+     "tiger",
+     "wolf"
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "once": true,
+   "weight": 6,
+   "text": "{pet_name} wakes you before dawn and will not be calmed. Something is calling from the mountains, and {pet_name} wants you to come.",
+   "choices": [
+    {
+     "text": "Follow",
+     "effects": {
+      "strength": 2,
+      "flag": [
+       "arc_sk_followed"
+      ],
+      "log": "Three days into mountains you have never seen on a map."
+     }
+    },
+    {
+     "text": "Hold {pet_name} back",
+     "effects": {
+      "alignment": 2,
+      "log": "{pet_name} stays, for you, and for a year looks at the mountains every dusk."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_arc_spirit_kin_2",
+   "cat": "world",
+   "arc": "The Valley of Kin",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "after": [
+     "b6ng_arc_spirit_kin_1"
+    ],
+    "pet": [
+     "any",
+     "crane",
+     "fox",
+     "tiger",
+     "wolf"
+    ],
+    "flags": [
+     "arc_sk_followed",
+     "divine_realm"
+    ],
+    "upper": true,
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "once": true,
+   "weight": 3.0,
+   "text": "A valley of {pet_name}'s own kind, who look at you the way you would look at a dog's pet. Their eldest sets you a trial: a night alone on the peak, unarmed.",
+   "choices": [
+    {
+     "text": "Climb",
+     "effects": {
+      "strength": 4,
+      "qi": 15,
+      "luck": 3,
+      "flag": [
+       "arc_sk_trial"
+      ],
+      "log": "Cold, wind, and something that circles you all night and never quite strikes."
+     }
+    },
+    {
+     "text": "Refuse: you are not theirs to test",
+     "effects": {
+      "alignment": 4,
+      "fame": 5,
+      "log": "The eldest laughs, a sound like a landslide. {pet_name} chooses to go home with you. The valley does not object."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_s3_d_bridge_collapse",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A rope bridge snaps behind you as you cross a gorge.",
+   "choices": [
+    {
+     "text": "Leap for the far side",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "luck": 1,
+      "log": "You make it with a foot to spare."
+     },
+     "fail": {
+      "health": -12,
+      "log": "You grab the ropes and climb up, torn and shaking."
+     }
+    },
+    {
+     "text": "Hold on and climb",
+     "effects": {
+      "health": -6,
+      "strength": 1,
+      "log": "Slow, painful, alive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_s3_d_rockslide",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Rocks begin to fall on the mountain road.",
+   "choices": [
+    {
+     "text": "Run",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 1,
+      "log": "You outrun the rockslide."
+     },
+     "fail": {
+      "health": -10,
+      "log": "A rock clips your leg."
+     }
+    },
+    {
+     "text": "Press against the cliff",
+     "effects": {
+      "luck": 1,
+      "health": -2,
+      "log": "Rocks fly past your nose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_s3_d_tiger_road",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Tiger tracks on the road. Fresh.",
+   "choices": [
+    {
+     "text": "Turn back",
+     "effects": {
+      "luck": 1,
+      "log": "Wise. You find another road."
+     }
+    },
+    {
+     "text": "Walk on quietly",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 1,
+      "log": "You never see the tiger. It saw you."
+     },
+     "fail": {
+      "health": -4,
+      "log": "It watches from the bushes; you run."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_d3_bad_bridge",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A rickety bridge over a torrent. The only way.",
+   "choices": [
+    {
+     "text": "Cross carefully",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 0,
+      "log": "You cross."
+     },
+     "fail": {
+      "health": -8,
+      "log": "A plank breaks. You cling on."
+     }
+    },
+    {
+     "text": "Build a better one",
+     "effects": {
+      "alignment": 2,
+      "strength": 1,
+      "log": "Two days of work. Travellers thank you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_d3_mountain_storm",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A storm catches you on an exposed ridge.",
+   "choices": [
+    {
+     "text": "Push on",
+     "roll": {
+      "stat": "health",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 1,
+      "log": "You reach shelter, soaked and alive."
+     },
+     "fail": {
+      "health": -12,
+      "log": "Hypothermia. A shepherd finds you."
+     }
+    },
+    {
+     "text": "Shelter behind rocks",
+     "effects": {
+      "health": -3,
+      "log": "A miserable night. You survive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_d3_snake_bed",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A snake is curled in your bedroll when you wake.",
+   "choices": [
+    {
+     "text": "Move very slowly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 1,
+      "log": "It slides away."
+     },
+     "fail": {
+      "health": -8,
+      "log": "It bites. Not deadly. Very painful."
+     }
+    },
+    {
+     "text": "Stay still until it leaves",
+     "effects": {
+      "qi": 1,
+      "log": "An hour of terror. It leaves."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_d3_poison_dart",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A dart hisses past your ear from the trees.",
+   "choices": [
+    {
+     "text": "Chase the shooter",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 1,
+      "fame": 1,
+      "log": "You catch him. A hired man. He talks."
+     },
+     "fail": {
+      "luck": 0,
+      "log": "He vanishes into the forest."
+     }
+    },
+    {
+     "text": "Take cover and wait",
+     "effects": {
+      "luck": 1,
+      "log": "No second dart. You move on carefully."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_en_duel_witness",
+   "cat": "world",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 1,
+   "text": "At dawn on the riverbank, you stumble on two masters in the middle of a duel to the death. Neither notices you.",
+   "choices": [
+    {
+     "text": "Watch in silence",
+     "effects": {
+      "comprehension": 4,
+      "log": "You watch the whole duel. The loser falls. The winner turns and looks straight at you, then nods. 'Learn something,' he says."
+     }
+    },
+    {
+     "text": "Try to stop it",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 5,
+      "log": "You step between them and talk. Somehow, it works. They share a jug of wine instead. You have made two powerful friends."
+     },
+     "fail": {
+      "health": -25,
+      "log": "They both hit you, then go back to fighting. It was worth a try."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_en_masked_stranger_gift",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "chance": 0.5,
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 1,
+   "text": "A masked stranger passes you on the road and presses a small wooden box into your hand. 'From someone you once helped,' she says, and is gone.",
+   "effects": {
+    "item": "stone_milk",
+    "luck": 2,
+    "log": "Inside is a stoppered vial of stone milk. You search your memory for who it could be. There are too many possibilities, or none."
+   },
+   "choices": []
+  },
+  {
+   "id": "b6ng_en_music_duel",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 1,
+   "text": "In a pavilion by the lake, a woman plays the guqin so beautifully that a crowd has gathered. When she stops, she looks at you. 'Your turn.'",
+   "choices": [
+    {
+     "text": "Answer with a poem instead",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "fame": 3,
+      "log": "She plays, you recite. By sunset the crowd has doubled and nobody wants to leave."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "Your poem is enthusiastic. She smiles politely and plays something to cover it."
+     }
+    },
+    {
+     "text": "Confess you have no talent for music",
+     "effects": {
+      "charm": 2,
+      "log": "She laughs and teaches you three notes. You forget two of them. You keep the third forever."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_waterfall_cave",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Behind a waterfall, a cave with old handprints on the wall, hundreds of them, pressed into stone.",
+   "choices": [
+    {
+     "text": "Press your hand into one",
+     "effects": {
+      "qi": 5,
+      "luck": 1,
+      "log": "Your hand fits one exactly. A warmth goes up your arm."
+     }
+    },
+    {
+     "text": "Copy the pattern",
+     "effects": {
+      "comprehension": 2,
+      "log": "The handprints are a palm form. You learn it slowly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_hot_spring",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hot spring in the snow, steaming under the stars.",
+   "choices": [
+    {
+     "text": "Soak until your wounds ease",
+     "effects": {
+      "health": 10,
+      "log": "Old aches melt away."
+     }
+    },
+    {
+     "text": "Meditate in the steam",
+     "effects": {
+      "qi": 5,
+      "log": "Warm water, cold air, a very clear mind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_bamboo_forest",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A bamboo forest so dense that the light turns green. The wind makes it sing.",
+   "choices": [
+    {
+     "text": "Listen to the song",
+     "effects": {
+      "qi": 4,
+      "log": "The rhythm of the bamboo becomes the rhythm of your breath."
+     }
+    },
+    {
+     "text": "Cut a staff",
+     "effects": {
+      "strength": 1,
+      "log": "A perfect bamboo staff. Light, strong, yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_moon_lake",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A lake so still it reflects the moon perfectly. It feels like two moons, and you between them.",
+   "choices": [
+    {
+     "text": "Meditate until dawn",
+     "effects": {
+      "qi": 6,
+      "comprehension": 1,
+      "log": "The two moons become one light."
+     }
+    },
+    {
+     "text": "Skip stones across the moon",
+     "effects": {
+      "charm": 1,
+      "log": "Seven skips. The moon wobbles, then forgives you."
+     }
+    }
+   ],
+   "variants": [
+    "A lake so still the moon sits in it whole. Two moons, and you standing between them."
+   ]
+  },
+  {
+   "id": "b6ng_x2_frozen_waterfall",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A waterfall frozen solid in the winter, a pillar of blue ice.",
+   "choices": [
+    {
+     "text": "Climb it",
+     "effects": {
+      "strength": 2,
+      "health": -3,
+      "log": "Ice axes, bleeding hands, a view from the top."
+     }
+    },
+    {
+     "text": "Practise strikes on the ice",
+     "effects": {
+      "comprehension": 1,
+      "log": "The ice teaches precision."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_healing_moss",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Glowing moss on a cave wall. Local legend says it heals any wound.",
+   "choices": [
+    {
+     "text": "Take a little",
+     "effects": {
+      "health": 8,
+      "log": "It does help, a little."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "luck": 1,
+      "log": "Legends are better left intact."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x2_deer_herd",
+   "cat": "explore",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A herd of white deer crosses your path at dawn. The old people say they only appear to the pure of heart.",
+   "choices": [
+    {
+     "text": "Stand still and watch",
+     "effects": {
+      "luck": 2,
+      "alignment": 1,
+      "log": "They pass within arm's reach."
+     }
+    },
+    {
+     "text": "Follow them",
+     "effects": {
+      "health": 4,
+      "log": "They lead you to a spring of clear water, then vanish."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_cliff_carving",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A sword form is carved into a cliff face, weathered by a thousand rains.",
+   "choices": [
+    {
+     "text": "Copy it stroke by stroke",
+     "effects": {
+      "comprehension": 2,
+      "log": "Half of it is gone. The half that remains is a lesson."
+     }
+    },
+    {
+     "text": "Trace it with your fingers",
+     "effects": {
+      "qi": 3,
+      "log": "The stone is warm where the strokes are deepest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_lotus_pond",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hidden pond full of white lotus, humming with dragonflies.",
+   "choices": [
+    {
+     "text": "Meditate by the water",
+     "effects": {
+      "qi": 4,
+      "log": "Your qi flows like the pond: still on top, alive below."
+     }
+    },
+    {
+     "text": "Pick a lotus seed pod",
+     "effects": {
+      "health": 2,
+      "log": "Sweet, green seeds. A snack and a memory."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_wild_bees",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A wild beehive in a hollow tree, dripping with honey.",
+   "choices": [
+    {
+     "text": "Take some honey",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "health": 3,
+      "log": "A jar of wild honey, and only two stings."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The bees chase you to the river."
+     }
+    },
+    {
+     "text": "Leave the bees in peace",
+     "effects": {
+      "luck": 1,
+      "log": "They hum you a farewell."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_ruined_shrine",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A ruined shrine to a god nobody remembers.",
+   "choices": [
+    {
+     "text": "Clean it and leave an offering",
+     "effects": {
+      "luck": 2,
+      "alignment": 1,
+      "log": "Somewhere, a forgotten god is pleased."
+     }
+    },
+    {
+     "text": "Read the inscription",
+     "effects": {
+      "comprehension": 1,
+      "log": "A god of lost travellers. How fitting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_wolf_pack",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Wolves are following you through the forest at a distance.",
+   "choices": [
+    {
+     "text": "Face them",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2
+     },
+     "ok": {
+      "fame": 1,
+      "strength": 1,
+      "log": "The lead wolf backs down. The pack melts away."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You fight off two before they give up."
+     }
+    },
+    {
+     "text": "Climb a tree and wait",
+     "effects": {
+      "health": -2,
+      "log": "They leave at dawn. You are very stiff."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_twin_peaks",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Two peaks with a rope bridge between them, older than any map.",
+   "choices": [
+    {
+     "text": "Cross it",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "log": "On the far peak, an empty hermit's hut with one manual page."
+     },
+     "fail": {
+      "health": -5,
+      "log": "A plank snaps. You make it, shaking."
+     }
+    },
+    {
+     "text": "Admire it from below",
+     "effects": {
+      "luck": 1,
+      "log": "Some bridges are for other people."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_whispering_forest",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "The locals say this forest whispers your name at night.",
+   "choices": [
+    {
+     "text": "Camp there",
+     "effects": {
+      "comprehension": 1,
+      "log": "The wind in the pines. Only the wind. Probably."
+     }
+    },
+    {
+     "text": "Walk around it",
+     "effects": {
+      "luck": 1,
+      "log": "You hear nothing. You are relieved."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_fishing_hermit",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "An old man fishes without bait. He says he is waiting for the right fish.",
+   "choices": [
+    {
+     "text": "Fish beside him",
+     "effects": {
+      "qi": 3,
+      "log": "Neither of you catches anything. It is the best day."
+     }
+    },
+    {
+     "text": "Ask what the right fish is",
+     "effects": {
+      "comprehension": 1,
+      "log": "'The one that wants to be caught.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_singing_rocks",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Rocks on a hillside sing when the wind blows through their holes.",
+   "choices": [
+    {
+     "text": "Listen until sunset",
+     "effects": {
+      "qi": 3,
+      "log": "A melody older than music."
+     }
+    },
+    {
+     "text": "Play them like flutes",
+     "effects": {
+      "charm": 1,
+      "log": "You make a terrible song. The rocks forgive you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_snake_valley",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A valley full of snakes basking on the rocks.",
+   "choices": [
+    {
+     "text": "Cross quickly",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 1,
+      "log": "Not a single bite."
+     },
+     "fail": {
+      "health": -8,
+      "log": "One bite. Mild venom. A bad week."
+     }
+    },
+    {
+     "text": "Go around",
+     "effects": {
+      "health": 1,
+      "log": "A day longer. No bites."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_old_well_voice",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "An old well in the woods. A voice seems to echo up from it.",
+   "choices": [
+    {
+     "text": "Climb down",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "An injured traveller fell in two days ago. You save him."
+     },
+     "fail": {
+      "health": -2,
+      "log": "The rope slips and you drop into cold water. By the time you climb out, the traveller is already being hauled up by a passing carter."
+     }
+    },
+    {
+     "text": "Shout down",
+     "effects": {
+      "alignment": 3,
+      "log": "A voice shouts back. You fetch rope and save a traveller."
+     }
+    }
+   ],
+   "variants": [
+    "An old well, deep in the woods. Something like a voice drifts up out of it."
+   ]
+  },
+  {
+   "id": "b6ng_x3_sunrise_peak",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "You reach a peak just as the sun rises over a sea of clouds.",
+   "choices": [
+    {
+     "text": "Breathe it in",
+     "effects": {
+      "qi": 5,
+      "log": "The first light of the world, in your lungs."
+     }
+    },
+    {
+     "text": "Shout your name",
+     "effects": {
+      "charm": 1,
+      "log": "The mountains shout it back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_storm_shelter",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A sudden mountain storm drives you into a hermit's shed.",
+   "choices": [
+    {
+     "text": "Wait it out",
+     "effects": {
+      "health": 2,
+      "log": "A night of wind and thunder, and a good rest."
+     }
+    },
+    {
+     "text": "Read the hermit's notes",
+     "effects": {
+      "qi": 3,
+      "log": "Notes on breathing techniques."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_ancient_tree_hollow",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hollow in an ancient tree holds an old wooden box.",
+   "choices": [
+    {
+     "text": "Open it",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 2,
+      "log": "A small jade charm. It feels lucky."
+     },
+     "fail": {
+      "health": -2,
+      "log": "Ants. Many ants."
+     }
+    },
+    {
+     "text": "Leave it where it is",
+     "effects": {
+      "alignment": 1,
+      "log": "Somebody hid it for a reason."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_hot_rock",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A rock by the road is warm even in winter. Old people sit on it for their joints.",
+   "choices": [
+    {
+     "text": "Sit on it too",
+     "effects": {
+      "health": 3,
+      "log": "Your back thanks you."
+     }
+    },
+    {
+     "text": "Study why it is warm",
+     "effects": {
+      "luck": 1,
+      "log": "A hot spring below. You find it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x3_ghost_lights",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Ghost lights dance over the marsh at night.",
+   "choices": [
+    {
+     "text": "Follow them",
+     "effects": {
+      "comprehension": 1,
+      "health": -1,
+      "log": "Marsh gas. Beautiful marsh gas. You get wet."
+     }
+    },
+    {
+     "text": "Watch from the hill",
+     "effects": {
+      "luck": 1,
+      "log": "A show of pale fire."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x4_pagoda",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A nine-storey pagoda on a hill, its bells ringing in the wind.",
+   "choices": [
+    {
+     "text": "Climb to the top",
+     "effects": {
+      "qi": 3,
+      "log": "Nine storeys, nine breaths, one view."
+     }
+    },
+    {
+     "text": "Count the bells",
+     "effects": {
+      "comprehension": 1,
+      "log": "Eighty-one bells. You count twice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x4_mountain_stream",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A mountain stream so clear you can count the pebbles.",
+   "choices": [
+    {
+     "text": "Drink deeply",
+     "effects": {
+      "health": 3,
+      "log": "The coldest, sweetest water."
+     }
+    },
+    {
+     "text": "Practise stances in the current",
+     "effects": {
+      "strength": 1,
+      "log": "The water pushes; you learn to root."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x4_marsh_birds",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Thousands of cranes rise from the marsh at once.",
+   "choices": [
+    {
+     "text": "Watch their flight",
+     "effects": {
+      "comprehension": 2,
+      "log": "You understand something about lightness."
+     }
+    },
+    {
+     "text": "Sketch them",
+     "effects": {
+      "charm": 1,
+      "log": "Your sketch is terrible. The memory is not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x4_carved_steps",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Steps carved into a cliff lead to a cave with a closed stone door.",
+   "choices": [
+    {
+     "text": "Push the door",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 5,
+      "log": "Inside: an empty meditation cave, perfect for training."
+     },
+     "fail": {
+      "health": -2,
+      "log": "It does not move. Your shoulder aches."
+     }
+    },
+    {
+     "text": "Meditate outside the door",
+     "effects": {
+      "qi": 2,
+      "log": "The cliff wind is its own teacher."
+     }
+    }
+   ],
+   "variants": [
+    "Steps cut into the cliff face climb to a cave sealed by a stone door."
+   ]
+  },
+  {
+   "id": "b6ng_x4_bridge_troll",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "An old man sits on a bridge and asks a riddle of all who pass.",
+   "choices": [
+    {
+     "text": "Answer the riddle",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 1,
+      "health": 1,
+      "log": "He laughs and gives you a peach."
+     },
+     "fail": {
+      "charm": 0,
+      "log": "Wrong. He laughs anyway and lets you pass."
+     }
+    },
+    {
+     "text": "Ask him a riddle back",
+     "effects": {
+      "charm": 1,
+      "log": "He cannot answer. He is delighted."
+     }
+    }
+   ],
+   "variants": [
+    "An old man sits in the middle of a bridge and has a riddle for everyone who wants to cross."
+   ]
+  },
+  {
+   "id": "b6ng_x4_stone_circle",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A circle of standing stones on a high moor.",
+   "choices": [
+    {
+     "text": "Sit in the centre",
+     "effects": {
+      "qi": 4,
+      "log": "Your qi hums strangely."
+     }
+    },
+    {
+     "text": "Walk around it",
+     "effects": {
+      "luck": 1,
+      "log": "Nine stones. Always nine, however many times you count."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x4_wishing_bridge",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A bridge where lovers tie ribbons for luck.",
+   "choices": [
+    {
+     "text": "Tie a ribbon",
+     "effects": {
+      "luck": 1,
+      "log": "For someone, someday."
+     }
+    },
+    {
+     "text": "Count the ribbons",
+     "effects": {
+      "charm": 1,
+      "log": "Thousands of hopes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x5_owl_tower",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "An owl nests in a broken watchtower and watches you with golden eyes.",
+   "choices": [
+    {
+     "text": "Climb up to see the nest",
+     "effects": {
+      "luck": 1,
+      "log": "Three owlets, furious."
+     }
+    },
+    {
+     "text": "Leave it be",
+     "effects": {
+      "alignment": 1,
+      "log": "The owl hoots a farewell."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x5_black_pond",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A black pond with no bottom anyone has found.",
+   "choices": [
+    {
+     "text": "Throw in a stone and wait",
+     "effects": {
+      "comprehension": 1,
+      "log": "No sound."
+     }
+    },
+    {
+     "text": "Swim in it",
+     "effects": {
+      "health": -2,
+      "strength": 1,
+      "log": "Cold as death. Refreshing, in a way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x5_hawk_hunter",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hawk drops a rabbit at your feet and flies off.",
+   "choices": [
+    {
+     "text": "Cook it",
+     "effects": {
+      "health": 2,
+      "log": "A gift from the sky."
+     }
+    },
+    {
+     "text": "Leave it for the hawk",
+     "effects": {
+      "luck": 1,
+      "log": "It returns and takes it. Respect."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x5_ravine_bridge",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A single log over a deep ravine.",
+   "choices": [
+    {
+     "text": "Cross",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 1,
+      "log": "Easy."
+     },
+     "fail": {
+      "health": -2,
+      "log": "You wobble and crawl the last half."
+     }
+    },
+    {
+     "text": "Find another way",
+     "effects": {
+      "health": 1,
+      "log": "A day longer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x6_hidden_orchard",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hidden orchard of peach trees, heavy with fruit, in a valley with no path.",
+   "choices": [
+    {
+     "text": "Eat your fill",
+     "effects": {
+      "health": 4,
+      "log": "The sweetest peaches you have ever tasted."
+     }
+    },
+    {
+     "text": "Take seeds to plant",
+     "effects": {
+      "luck": 1,
+      "log": "Someday, somewhere, peaches."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x6_mushroom_ring",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A perfect ring of white mushrooms in a meadow.",
+   "choices": [
+    {
+     "text": "Step inside",
+     "effects": {
+      "luck": 1,
+      "log": "Nothing happens. Probably."
+     }
+    },
+    {
+     "text": "Step around",
+     "effects": {
+      "luck": 0,
+      "log": "The old stories say never step inside."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x6_river_stones_path",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Stepping stones cross a wide river, some barely above the water.",
+   "choices": [
+    {
+     "text": "Hop across",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 1,
+      "log": "Stone to stone like a crane."
+     },
+     "fail": {
+      "health": -2,
+      "log": "A splash. A long swim."
+     }
+    },
+    {
+     "text": "Wade",
+     "effects": {
+      "strength": 1,
+      "log": "Wet to the waist. Safe."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_bamboo_hermit",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A hermit lives in a bamboo hut in a bamboo forest and eats bamboo.",
+   "choices": [
+    {
+     "text": "Stay for dinner",
+     "effects": {
+      "health": 2,
+      "log": "Bamboo. Surprisingly good."
+     }
+    },
+    {
+     "text": "Ask about his training",
+     "effects": {
+      "comprehension": 1,
+      "log": "He laughs and shows you a bamboo form."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_marble_quarry",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "An abandoned marble quarry, white as snow.",
+   "choices": [
+    {
+     "text": "Train among the stones",
+     "effects": {
+      "strength": 1,
+      "log": "Every stone a target."
+     }
+    },
+    {
+     "text": "Carve something",
+     "effects": {
+      "comprehension": 1,
+      "log": "A small white bird."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_twin_waterfalls",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Two waterfalls fall side by side into one pool.",
+   "choices": [
+    {
+     "text": "Stand between them",
+     "effects": {
+      "qi": 3,
+      "log": "Thunder on both sides."
+     }
+    },
+    {
+     "text": "Swim in the pool",
+     "effects": {
+      "health": 2,
+      "log": "Freezing and wonderful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_pine_on_rock",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A pine grows out of bare rock on a cliff, twisted by wind.",
+   "choices": [
+    {
+     "text": "Sit beneath it",
+     "effects": {
+      "qi": 2,
+      "log": "Endurance, you think."
+     }
+    },
+    {
+     "text": "Sketch it",
+     "effects": {
+      "charm": 1,
+      "log": "A sketch you keep for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_cloud_sea",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "From a high ridge, the clouds below look like a white sea.",
+   "choices": [
+    {
+     "text": "Sit and watch",
+     "effects": {
+      "qi": 4,
+      "log": "Time stops."
+     }
+    },
+    {
+     "text": "Shout into it",
+     "effects": {
+      "charm": 0,
+      "log": "The clouds swallow your voice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_hot_spring_monkeys",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "Monkeys bathe in a hot spring in the snow.",
+   "choices": [
+    {
+     "text": "Join them",
+     "effects": {
+      "health": 3,
+      "log": "They make room. Mostly."
+     }
+    },
+    {
+     "text": "Watch them",
+     "effects": {
+      "charm": 1,
+      "log": "They look very wise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b6ng_x7_ice_cave",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "weight": 2,
+   "text": "A cave of blue ice, glowing from within.",
+   "choices": [
+    {
+     "text": "Walk in carefully",
+     "effects": {
+      "qi": 3,
+      "log": "Blue light on every side."
+     }
+    },
+    {
+     "text": "Chip off ice to cool your tea",
+     "effects": {
+      "health": 1,
+      "log": "The best cold tea of your life."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

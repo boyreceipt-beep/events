@@ -1,0 +1,271 @@
+{
+ "events": [
+  {
+   "id": "dc_lmk_burning_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 4,
+   "arc": "Landmarks of the Murim",
+   "text": "The sects' war has reached this province. The town under the sect's mountain is burning, and the road is full of people carrying what they could. An old baker, Kwon, is pushing a cart with his grandchildren on top of the flour sacks.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "lmk_here_burning"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Pay for shelter for the people on the road (40 taels)",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "log": "You buy out a temple's guest rooms and a granary's rice. Kwon's grandchildren sleep under a roof tonight, and the province remembers who paid for it.",
+      "taels": -40,
+      "alignment": 3,
+      "flag": "lmkx_aid"
+     }
+    },
+    {
+     "text": "Hold the bridge against the looters",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.7,
+      "foeName": "The looters"
+     },
+     "ok": {
+      "log": "They come at dusk with torches, and leave without them. The carts cross the bridge all night.",
+      "fame": 3,
+      "flag": "lmkx_aid"
+     },
+     "fail": {
+      "log": "There are more of them than you thought. You keep the bridge long enough for Kwon's cart, and no longer.",
+      "health": -12
+     }
+    },
+    {
+     "text": "Keep to your own road",
+     "effects": {
+      "log": "You keep to your own road. The smoke is behind you for two days.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lmk_burning_2",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 6,
+   "arc": "Landmarks of the Murim",
+   "text": "A disciple of the warring sect, no older than fifteen, is hiding in a burnt-out teahouse with a sword she does not know how to use. Her name is Ha-eun. Her sect sent her to hold a street that is no longer there.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lmk_here_burning"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Take her out of the town",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Over the roofs and out by the river gate. At the edge of the fields she bows, and runs home to her mother instead of her sect.",
+      "alignment": 3,
+      "flag": "lmkx_aid"
+     },
+     "fail": {
+      "log": "A patrol sees you on the roofs. You both get out, but only just, and she is not sure she should be grateful.",
+      "health": -8
+     }
+    },
+    {
+     "text": "Teach her one thing that might keep her alive",
+     "effects": {
+      "log": "One parry, over and over, until she can do it without thinking. It is the most useful thing anyone has given her this war.",
+      "comprehension": 1,
+      "flag": "lmkx_aid"
+     }
+    },
+    {
+     "text": "Leave her to her sect",
+     "effects": {
+      "log": "You leave her where her sect put her. It is not your war."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lmk_stricken_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 4,
+   "arc": "Landmarks of the Murim",
+   "text": "The hard years have this province by the throat. At the temple gate a healer, Sister Ok, is turning people away because there is nothing left to give them, and she has stopped apologising.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "lmk_here_stricken"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Pay for grain and medicine (50 taels)",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "log": "Fifty taels buys a cart of grain and a chest of herbs. Sister Ok opens the gate again.",
+      "taels": -50,
+      "alignment": 3,
+      "fame": 1,
+      "flag": "lmkx_aid"
+     }
+    },
+    {
+     "text": "Work beside her",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "log": "For a month you boil water, set bones and sit with the dying. Fewer die than would have.",
+      "comprehension": 1,
+      "flag": "lmkx_aid"
+     },
+     "fail": {
+      "log": "You work until the fever finds you too. Sister Ok nurses you instead, and does not say a word about it.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Move on",
+     "effects": {
+      "log": "You move on before the hard years can catch you too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lmk_ruined_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 5,
+   "arc": "Landmarks of the Murim",
+   "text": "The province's landmark is in ruins. An old mason, Cha Bongu, is sitting on what is left of it, drawing on a board how it used to stand. He says it will rise again in twenty years, if the province has twenty years of silver, which it does not.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lmk_here_ruined"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Pay for the whole rebuilding",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "log": "Cha Bongu stares at the silver for a long time, then stands up and starts shouting for masons.",
+      "flag": "lmkx_rebuild"
+     }
+    },
+    {
+     "text": "Work a season with the masons",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "A season of stone on your back. The first course of the new wall is yours, and Cha Bongu cuts your name small into a corner of it.",
+      "strength": 1,
+      "flag": "lmkx_aid"
+     },
+     "fail": {
+      "log": "You drop a stone on your own foot in the first week. The masons are kind about it.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Leave the stones to the province",
+     "effects": {
+      "log": "You leave the stones where they fell."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lmk_fallen_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 8,
+   "arc": "Landmarks of the Murim",
+   "text": "On the mountain of a fallen sect the gate still stands, with nothing behind it. An old man, Yeon, is sweeping the steps. He was its gatekeeper for forty years and sees no reason to stop.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "lmk_here_fallen"
+    ]
+   },
+   "choices": [
+    {
+     "text": "Burn incense for the sect's dead",
+     "effects": {
+      "log": "You burn incense at the empty hall. Yeon sweeps around you, and at the end he bows.",
+      "alignment": 2,
+      "flag": "lmkx_mourn"
+     }
+    },
+    {
+     "text": "Search the ruined library",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "Under a fallen beam, a box of notes the sect's masters wrote for themselves. They are worth more than most manuals.",
+      "comprehension": 2,
+      "artYears": 1
+     },
+     "fail": {
+      "log": "Ash, rot and mice. Whatever was here, the victors took it.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Take the old plaque from the gate",
+     "effects": {
+      "log": "The plaque sells well in the city. Yeon watches you carry it down the steps and says nothing at all.",
+      "taels": 40,
+      "alignment": -5
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}
