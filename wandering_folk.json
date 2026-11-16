@@ -1,0 +1,4106 @@
+{
+ "events": [
+  {
+   "id": "wf_mu_meet",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A mile past the last inn, someone has made camp in the middle of the road and is arguing with a cooking pot. This is {npc}, by {his} own introduction, and the pot is losing. A sword wrapped in sacking serves as {his} stool. \"You have a walker's feet,\" {he} says, without looking up. \"Have you also got any salt?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Share your salt, and stay for the soup",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_salt",
+       "w": 15,
+       "note": "shared salt and sat down to supper"
+      },
+      "luck": 1,
+      "log": "The soup is terrible even with salt. {npc} eats it like a banquet and tells you three things about the road ahead, all of them true. In the morning there is only a cold fire and a pinch of salt left folded in a leaf."
+     }
+    },
+    {
+     "text": "Ask what a sword like that is doing under someone",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_asked",
+       "w": 15,
+       "note": "asked about the sword and listened"
+      },
+      "comprehension": 1,
+      "log": "\"Resting,\" {npc} says. \"It worked very hard for forty years.\" {He} talks until the fire is low, and somewhere in the rambling are two ideas about footwork you carry away without quite noticing."
+     }
+    },
+    {
+     "text": "Step around the pot and keep walking",
+     "effects": {
+      "flag": [
+       "wf_cold",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_passed",
+       "w": -15,
+       "note": "stepped around the pot without a word"
+      },
+      "log": "You step around. \"Ah,\" says the voice behind you, quite cheerfully. \"One of those.\" You do not look back, and you feel it between your shoulders for the next mile."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} is sitting on a milestone as if you had arranged to meet. \"The salt-giver,\" {he} says, and sets three river stones in the road. \"Walk past me to the bridge without touching the ground I am looking at. I want to see if you were worth the soup.\" It is an odd thing to ask on a public road. A goat is already watching.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m1",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Try it, and watch {his} eyes rather than {his} hands",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "artYears": 1,
+      "log": "It takes until noon. Then you see that {npc} looks where a person is about to step, not where they are, and you reach the bridge. \"Good,\" {he} says. \"Now forget I showed you.\""
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "artYears": 0.5,
+      "log": "You never reach the bridge. {npc} calls out every step before you take it, then shows you how you gave it away. You learn more from the failing than you would like to admit."
+     }
+    },
+    {
+     "text": "Say you will do it if {he} explains why afterwards",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 1,
+      "npcFlag": "wf_argued",
+      "log": "\"Everyone asks why,\" {npc} says, delighted. {He} explains for an hour, and only some of it is about stones. The goat leaves first."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_duel",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A sword wrapped in sacking lies across the road, and {npc} is sitting behind it, drinking from a gourd. \"The one who stepped around my pot,\" {he} says pleasantly. \"I have thought about that more than it deserved. Unwrap yours, then. We will see what you were hurrying towards.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m1",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Draw, and settle it in the road",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 3,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -10,
+       "note": "beat them in the road"
+      },
+      "log": "{npc} ends up sitting in the dust, looking at {his} own empty hand with real interest. \"So you were hurrying somewhere after all,\" {he} says, and {he} is not smiling now."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -15,
+      "woundOnly": true,
+      "mem": {
+       "deed": "wf_lost",
+       "w": -5,
+       "note": "lost to them in the road"
+      },
+      "log": "It does not last long. {npc} wraps the sword up again while you get your breath back. \"Now you are someone who has stopped,\" {he} says, and steps around you with great care. (-15 health)"
+     }
+    },
+    {
+     "text": "Apologise for the pot",
+     "effects": {
+      "flag": "wf_m2",
+      "alignment": 2,
+      "mem": {
+       "deed": "wf_sorry",
+       "w": 3,
+       "note": "apologised, too late"
+      },
+      "log": "{npc} listens to the whole apology and nods. \"Very well said. It changes nothing.\" {He} picks up the sword and the gourd and walks off. You have seldom felt so thoroughly forgiven and so little let off."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_teach",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "You smell the soup before you see the fire. {npc} looks more worn than last time, and the sacking is gone from the sword. \"I have been carrying something for forty years with nobody to hand it to,\" {he} says, and stirs. \"You gave salt to a stranger on an empty road. That is about the only test I ever believed in. Sit down.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m2",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Take the whole of what {he} offers, however long it takes",
+     "effects": {
+      "flag": "wf_m3",
+      "artYears": 4,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "took the whole of the lesson"
+      },
+      "log": "It takes the season. {npc} teaches the way {he} cooks, loudly and with no measurements, and you come away with years of practice you did not have to live through. \"Do not thank me,\" {he} says. \"Bring salt.\""
+     }
+    },
+    {
+     "text": "Ask {him} instead how {he} knows when a thing is finished",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 5,
+      "artYears": 1,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "asked the only question that mattered"
+      },
+      "log": "{npc} is quiet for long enough that the soup catches. Then {he} answers, for three nights, and when you walk on you see your own forms differently. The soup is never spoken of."
+     }
+    },
+    {
+     "text": "Ask leave to write {him} down, so {he} walks on after this road ends",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "{npc} thinks it the funniest thing {he} has heard in years, and dictates for a month, getting {his} own age wrong. You learn something from the taking down, and in lives yet to come there will be someone on a road, arguing with a pot.",
+      "artYears": 1,
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_rival",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "They are talking about you in the teahouse, and the one doing the talking is {npc}. {He} has told the story of the pot in nine towns so far, and it has improved. {He} turns on the bench when you come in. \"I have decided to be your enemy,\" {he} says, as one might mention a change of lodgings. \"It gives an old walker something to walk towards.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m2",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Tell {him} you look forward to it",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 2,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "accepted a feud in a teahouse"
+      },
+      "log": "{npc} raises {his} cup to you. From that day there is someone on the roads who asks after you in every town, and writes down what they say."
+     }
+    },
+    {
+     "text": "Tell the room how the story really went",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 4,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "took the teahouse from them"
+      },
+      "log": "By the end the teahouse is laughing with you. {npc} laughs too, and pays for your tea, and you would rather {he} had not. A rival who pays is a rival with plans."
+     },
+     "fail": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": -2,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "lost the teahouse to them"
+      },
+      "log": "{npc} has told this story nine times, and you have told it once. It goes as you would expect. The whole room is {his} by the time you reach the door."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_shop_milk",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A woman with a salt cart has stopped to rest her ox, and under the salt, in straw, is a cracked jar she does not quite want seen. \"Stone Milk,\" she says. \"From a cave with a very bad landlord. Four hundred and fifty taels, and I was never here. That is the price of the jar. Having been nowhere is free.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Pay the {eye:450} taels",
+     "req": {
+      "minTaelsEye": 450
+     },
+     "effects": {
+      "eyeTaels": 450,
+      "item": {
+       "stone_milk": 1
+      },
+      "log": "She counts it twice and hands over the jar, still cold from wherever it has been. You decide not to ask about the landlord."
+     }
+    },
+    {
+     "text": "Point out the crack, and offer {eye:320} taels",
+     "req": {
+      "minTaelsEye": 320
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "eyeTaels": 320,
+      "item": {
+       "stone_milk": 1
+      },
+      "log": "She looks at the crack as if for the first time, sighs, and takes {eye:320} taels. \"My mother warned me about people who read jars.\""
+     },
+     "fail": {
+      "fame": -1,
+      "log": "She pulls the straw back over the jar. \"It was cracked when you were polite, too,\" she says, and clicks her tongue at the ox."
+     }
+    },
+    {
+     "text": "Wish her a safe road and walk on",
+     "effects": {
+      "luck": 1,
+      "log": "You walk on. A little later a landlord of the very bad kind goes by the other way, at speed, asking after a salt cart. You find you have not seen one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_shop_lotus",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A mule is steaming in the cold of the morning, and the box on its back is smoking the other way. Its owner opens the lid a finger: packed in dirty ice sits a Thousand-Year Snow Lotus, which is a thing most people only ever hear lied about. \"Two thousand four hundred taels,\" says the pedlar. \"It has until the ice goes, and so do I.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Pay the {eye:2400} taels",
+     "req": {
+      "minTaelsEye": 2400
+     },
+     "effects": {
+      "eyeTaels": 2400,
+      "item": {
+       "snow_lotus": 1
+      },
+      "log": "You pay on the spot, and the cold of the box goes up your arm to the shoulder. The pedlar looks ten years lighter, and the mule looks at you as if you had done it a favour."
+     }
+    },
+    {
+     "text": "Remark on how warm it is getting, and offer {eye:1800} taels",
+     "req": {
+      "minTaelsEye": 1800
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "eyeTaels": 1800,
+      "item": {
+       "snow_lotus": 1
+      },
+      "log": "A drop of meltwater runs out of the box at just the right moment. The pedlar watches it fall, and takes {eye:1800} taels."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "The sun goes behind a cloud at just the wrong moment. \"A fine cool day,\" says the pedlar, closes the lid, and leads the mule away."
+     }
+    },
+    {
+     "text": "Admire it, for free, and let it go",
+     "effects": {
+      "comprehension": 1,
+      "log": "You look for as long as you are allowed. It is the first thing you have seen that is truly older than the story about it. You think about that for some miles."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_shop_box",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "The quiet pedlar at the ford has one iron box and no sales talk at all. Inside, on grey cloth, lie a single Greater Return Pill and a fist of Meteor Iron still pitted from the fall. He holds up two fingers for the pill, then points at the iron and holds up all of them, then waits. He looks as if he could wait for quite some time.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Buy the pill: {eye:2000} taels",
+     "req": {
+      "minTaelsEye": 2000
+     },
+     "effects": {
+      "eyeTaels": 2000,
+      "item": {
+       "greater_return_pill": 1
+      },
+      "log": "He wraps the pill in the grey cloth, and gives you the cloth. It is the most anyone has said to you all week."
+     }
+    },
+    {
+     "text": "Buy the iron: {eye:3600} taels",
+     "req": {
+      "minTaelsEye": 3600
+     },
+     "effects": {
+      "eyeTaels": 3600,
+      "item": {
+       "meteor_iron": 1
+      },
+      "log": "It weighs more than it should and is warmer than it should be. He nods once, as if the iron had chosen, and goes back to looking at the river."
+     }
+    },
+    {
+     "text": "Hold up fewer fingers for the pill: {eye:1500} taels",
+     "req": {
+      "minTaelsEye": 1500
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "eyeTaels": 1500,
+      "item": {
+       "greater_return_pill": 1
+      },
+      "log": "A long silence. He looks at your hand, then your face. Then, very slowly, he folds down one finger and takes your {eye:1500} taels."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "A long silence. He looks at your hand, then your face. Then he closes the box, and the silence somehow gets longer."
+     }
+    },
+    {
+     "text": "Nod, and cross the ford",
+     "effects": {
+      "alignment": 1,
+      "log": "You nod. He nods. It is the best conversation you have had with a merchant, and it cost you nothing at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_meet",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "At the very edge of a drifting Isle someone sits with a line let down into the cloud sea. There is no hook on it. This is {npc}, whose name the Jade Court struck from its rolls some centuries back, for correcting a Minister's calligraphy in front of the Minister. \"Nothing has bitten since the last age of clouds,\" {he} says. \"Hold this, would you? My arm has gone to sleep, and it has been asleep for a decade.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "wf_m1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Hold the line, and ask what {he} hopes to catch",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_line",
+       "w": 15,
+       "note": "held the line and asked no favours"
+      },
+      "qi": 8,
+      "log": "You hold the line for an afternoon and a good part of a year. Nothing bites. Something in the way the cloud pulls at it slowly teaches your breathing a new patience, and {npc} snores with enormous contentment."
+     }
+    },
+    {
+     "text": "Offer {him} your wine and your company",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_wine",
+       "w": 15,
+       "note": "shared wine at the edge of the Isle"
+      },
+      "luck": 1,
+      "log": "{npc} drinks your wine and tells you which Isles are lying about their age. By the time your cup is empty you know more about the Jade Court than most who attend it."
+     }
+    },
+    {
+     "text": "Tell {him} the Ministry forbids loose lines here",
+     "effects": {
+      "flag": [
+       "wf_cold",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_ministry",
+       "w": -15,
+       "note": "quoted the Ministry at them"
+      },
+      "log": "\"Does it,\" says {npc}, and looks at you for the first time. The look goes on for some while. \"How nice for it.\" You leave with the feeling of having been written down in a small and very neat hand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "An Isle slides out of the fog with one pine on it, and {npc} sitting in the pine. \"The one who held the line,\" {he} says. \"Stand on the far rock, where the Isles pass closest, and let them go by without shifting your feet. There is a wind between them that strips a false stance off an immortal like bark. It is the only honest examiner left up here.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m1",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Stand on the rock until the third Isle has gone by",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "artYears": 2,
+      "log": "The third Isle passes so close you can read the moss on it. Your feet stay. {npc} grunts, which you are starting to understand is applause, and shows you what the wind was doing to you."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "artYears": 1,
+      "log": "The second Isle takes you off the rock, and you spend an undignified hour climbing back up out of the cloud sea. {npc} points out exactly which breath went wrong, with relish, and then does so again."
+     }
+    },
+    {
+     "text": "Ask {him} to stand there first, so you can watch",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "npcFlag": "wf_argued",
+      "log": "{npc} laughs so hard the pine shakes. Then {he} does it, three Isles in a row, asleep or pretending to be. You watch all of it, and you could not say what you learned, but it stays with you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_duel",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A notice has been pinned to a drifting pine, in a very neat hand: \"The party who quoted the Ministry to an angler will kindly attend here.\" {npc} is coiling {his} line beside it. \"Nothing in the rules of the Isles forbids a duel,\" {he} says, \"and I checked, since you are so fond of the rules. Shall we? The Jade Court need never hear of it. I will be telling them myself.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m1",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Accept, on the bare rock above the cloud sea",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 3,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -10,
+       "note": "beat them above the cloud sea"
+      },
+      "log": "The line snaps somewhere in the third exchange, and with it the last of {his} good humour. {npc} looks at the two ends for a while. \"That line was older than your Ministry,\" {he} says."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -18,
+      "woundOnly": true,
+      "mem": {
+       "deed": "wf_lost",
+       "w": -5,
+       "note": "lost to them above the cloud sea"
+      },
+      "log": "You end up somewhere under the Isle, in the cloud, with the line around one ankle. {npc} hauls you back up hand over hand, looks you over, and throws you back. \"Too small,\" {he} says. (-18 health)"
+     }
+    },
+    {
+     "text": "Decline, citing the proper form",
+     "effects": {
+      "flag": "wf_m2",
+      "charm": -1,
+      "mem": {
+       "deed": "wf_refused",
+       "w": -5,
+       "note": "declined a duel on a point of form"
+      },
+      "log": "\"Of course,\" says {npc}, and takes down the notice, and writes on the back of it. You are later told that the note has been read aloud at the Jade Court, and that the reading was well attended."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_teach",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "Something tugs at your sleeve on a quiet Isle, and it is a line with no hook on it. You follow it round a rock to {npc}, who has grown thinner, or the fog has. \"I fished for four thousand years to catch one thing worth keeping,\" {he} says. \"It was not a fish. There is a way of drawing the cloud sea through the body that the Jade Court has lost, and I would rather not take it over the edge with me.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m2",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Learn to draw the cloud sea through you",
+     "effects": {
+      "flag": "wf_m3",
+      "artYears": 8,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "took up the lost way of the cloud sea"
+      },
+      "log": "It takes eleven years, most of them spent holding still. You come away with your arts deepened by far more than the time you spent, and with a strong opinion about fishing."
+     }
+    },
+    {
+     "text": "Ask why the Jade Court lost it, and listen to all of it",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 6,
+      "artYears": 3,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "listened to the whole of the old story"
+      },
+      "log": "It turns out that nobody lost it. It was filed. {npc} tells you where, and why, and in what order the people who knew were promoted. What you come to understand changes how you see your own Dao, and every Minister you meet."
+     }
+    },
+    {
+     "text": "Ask leave to enter {him} in your own rolls, since the Jade Court struck {him} from theirs",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "{npc} takes a long time to say anything, and the line shakes a little in {his} hand. Then {he} corrects your calligraphy. In lives yet to come, there will be someone at the edge of an Isle with no hook on the line.",
+      "artYears": 2,
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_rival",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A clerk of the Jade Court finds you on the Isles and hands you a scroll with a bow of exactly the correct depth. {npc} has lodged a formal grudge against you, in triplicate, with the stamps of two Ministries. Under the seal {he} has added in that small neat hand: \"I have centuries free, and I have found out what I was fishing for. Do keep well.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m2",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Countersign the grudge and send it back",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 2,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "countersigned a grudge at the Jade Court"
+      },
+      "log": "The clerk is deeply moved. Nobody has countersigned in nine hundred years. It is entered in the rolls that very day, and {npc}'s name is back on them, under yours."
+     }
+    },
+    {
+     "text": "Go and find {him} on the Isles and answer in person",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 4,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "answered the grudge in person"
+      },
+      "log": "You put {npc} on {his} back on {his} own rock. {He} looks up at you, breathing hard, and is happier than you have ever seen {him}. \"Oh, good,\" {he} says. \"You will last.\""
+     },
+     "fail": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "health": -18,
+      "woundOnly": true,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "answered the grudge and lost"
+      },
+      "log": "{npc} takes you apart with one hand and keeps fishing with the other. \"Come back when you have read the scroll,\" {he} says. A second copy is delivered while you are still lying there. (-18 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_shop_barge",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A cloud-barge is moored to an Isle by a rope that does not look equal to it. Its pedlar is selling Fortune Jade, one piece, which \"fell off a Minister\". \"Six Mid-Grade stones,\" she says. \"Only six. I would ask for more, but the Minister might come looking, and then it would have to have been very cheap.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "realm": [
+     12,
+     16
+    ]
+   },
+   "arc": "A Pedlar Among the Isles",
+   "choices": [
+    {
+     "text": "Count out {eye:6} Mid-Grade stones",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_mid": 6
+      }
+     },
+     "effects": {
+      "eyeItems": {
+       "spirit_stone_mid": 6
+      },
+      "log": "She weighs a stone on her tongue, nods, and drops the jade in your palm. The rope groans. You both pretend not to hear it.",
+      "item": {
+       "fortune_jade": 1
+      }
+     }
+    },
+    {
+     "text": "Offer {eye:4} Mid-Grade stones and remind her about the Minister",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_mid": 4
+      }
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "eyeItems": {
+       "spirit_stone_mid": 4
+      },
+      "log": "She looks over her shoulder at the empty sky for rather a long time, then sweeps up the stones. \"Thin qi,\" she says, \"for thin times.\"",
+      "item": {
+       "fortune_jade": 1
+      }
+     },
+     "fail": {
+      "fame": -1,
+      "log": "She laughs, and the barge is already drifting. \"I will tell him you were asking,\" she calls, cheerfully, across the widening gap."
+     }
+    },
+    {
+     "text": "Trade forty years of your life for it instead",
+     "req": {
+      "minYearsLeft": 400
+     },
+     "effects": {
+      "lifespan": -40,
+      "item": {
+       "fortune_jade": 1
+      },
+      "log": "She takes them with a little ivory hook, from somewhere behind your ear. You will not miss them, she says. Everyone says that, you notice."
+     }
+    },
+    {
+     "text": "Warn her about the rope and drift on",
+     "effects": {
+      "luck": 1,
+      "log": "She thanks you and ties a second knot. Some way off you hear a long creak, then a splash in the cloud sea, then a good deal of language you did not think pedlars knew."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_shop_notes",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "On a very small Isle, a very nervous scribe of the Jade Court is sitting on a very large trunk. He has been copying the old masters' practice notes for the Ministry of Records for six hundred years, he says, and a few copies have become surplus. \"Four High-Grade stones. Nobody will miss them. Nobody has read them since they were filed. That is rather what I mean.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "A Pedlar Among the Isles",
+   "choices": [
+    {
+     "text": "Buy the notes for {eye:4} High-Grade stones",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_high": 4
+      }
+     },
+     "effects": {
+      "eyeItems": {
+       "spirit_stone_high": 4
+      },
+      "log": "It takes you a season to read them, in the shade of his trunk. Whoever those old masters were, they argued in the margins, and the margins are worth years of practice.",
+      "artYears": 4
+     }
+    },
+    {
+     "text": "Offer {eye:3} High-Grade stones, and ask whether the Ministry knows",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_high": 3
+      }
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "eyeItems": {
+       "spirit_stone_high": 3
+      },
+      "log": "He goes the colour of old paper and takes the stones. The notes are every bit as good, and he will not meet your eye as he hands them over.",
+      "artYears": 4
+     },
+     "fail": {
+      "fame": -1,
+      "log": "His nerve, surprisingly, holds. \"The Ministry knows everything,\" he says, shaking. \"It simply does not read.\" He sits back down on the trunk."
+     }
+    },
+    {
+     "text": "Tell him those notes should be read, and go",
+     "effects": {
+      "alignment": 2,
+      "log": "He looks at the trunk for some time after you say so. Years later you hear of a very odd lending library that opened on an Isle, with one very nervous keeper."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_shop_crane",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A pedlar is working the Isles on the back of a very bored crane, and on the crane's other side hangs a lacquer case. Inside is a Greater Return Pill, made, he says, to a recipe from before the Jade Court had a roof. \"Two Supreme stones. I know. But look at the colour of it. Anyone who sees that colour again will be seeing it in your hand.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "realm": [
+     16,
+     21
+    ]
+   },
+   "arc": "A Pedlar Among the Isles",
+   "choices": [
+    {
+     "text": "Hand him {eye:2} Supreme-Grade stones",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_supreme": 2
+      }
+     },
+     "effects": {
+      "eyeItems": {
+       "spirit_stone_supreme": 2
+      },
+      "log": "He holds the stones up to the light and his hands shake a little. The crane looks at you properly for the first time. There is respect in it, and also hunger.",
+      "comprehension": 4,
+      "item": {
+       "greater_return_pill": 1
+      }
+     }
+    },
+    {
+     "text": "Offer {eye:1} Supreme-Grade stone, and say something rude about the crane",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone_supreme": 1
+      }
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "eyeItems": {
+       "spirit_stone_supreme": 1
+      },
+      "log": "The crane bites you, but the pedlar laughs so much that he takes the one stone just to have a story to tell. It was worth a bitten sleeve.",
+      "item": {
+       "greater_return_pill": 1
+      }
+     },
+     "fail": {
+      "fame": -1,
+      "log": "The crane bites you, and the pedlar does not laugh at all. They rise together, in silence, and do not look back."
+     }
+    },
+    {
+     "text": "Pay two hundred years of your life instead",
+     "req": {
+      "minYearsLeft": 2000
+     },
+     "effects": {
+      "lifespan": -200,
+      "item": {
+       "greater_return_pill": 1
+      },
+      "log": "He writes the years down on the inside of the lid, among many others. The pill is warm. You feel a little older, and in a rather smug way."
+     }
+    },
+    {
+     "text": "Feed the crane something and leave",
+     "effects": {
+      "charm": 1,
+      "log": "The crane eats it, whatever it was, and bows to you with enormous reluctance. People on the Isles talk about that for a decade."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_meet",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "Where two domains meet there is a strip of land neither pantheon has bothered to claim, and it is raining there, a little after it should have. The rain is {npc}'s, a god with no pantheon and a domain of one thing: rain that comes too late. \"Every prayer I have ever answered was a day behind,\" {he} says, wringing out {his} sleeve. \"Would you stand there? You are blocking a little of it.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "wf_m1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Stand with {him}, and listen to a late prayer",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_rain",
+       "w": 15,
+       "note": "stood in the late rain and listened"
+      },
+      "comprehension": 1,
+      "log": "{He} shows you the prayer: a village, a dry field, a harvest already lost. The rain is a day late and comes anyway. You stay until it stops, and something in the way you hold your own domain has shifted a very little."
+     }
+    },
+    {
+     "text": "Bow to {him}, as one god to another",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_bow",
+       "w": 15,
+       "note": "bowed as to an equal"
+      },
+      "fame": 1,
+      "log": "Nobody has bowed to {npc} since the pantheons were counted. {He} stands quite still, then returns it badly, out of practice, and for some while afterwards the rain in that strip falls on time."
+     }
+    },
+    {
+     "text": "Tell {him} a domain that small should be folded into a larger one",
+     "effects": {
+      "flag": [
+       "wf_cold",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_fold",
+       "w": -15,
+       "note": "said the domain should be folded away"
+      },
+      "log": "The rain stops, which it has never done on request. {npc} looks at you from under {his} wet hair. \"Yes,\" {he} says, \"the pantheons tell me that as well.\" It starts again as you leave, somewhat harder."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "You are crossing the empty strip between domains when a thin rain begins, late for something. \"You stood in it once,\" says {npc}, from nowhere in particular. \"So hold this.\" A prayer drops into your hands, from a world you have never looked at: someone is asking for something you could give them with a thought. \"Now don't. Hold it until you know what it is really asking.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m1",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Hold the prayer unanswered until you understand it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "artYears": 3,
+      "log": "It takes nine years, and it hurts more than the tribulation did. Then you understand what was being asked, and it was nothing like the words. You answer it. {npc} looks almost on time."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "artYears": 1,
+      "log": "In the third year you answer it, because you cannot bear not to. It goes badly, in a small way, for someone who will never know why. \"Yes,\" {npc} says, not unkindly. \"Everyone does that. That is what the pantheons are.\""
+     }
+    },
+    {
+     "text": "Ask {him} to tell you about the prayer {he} is proudest of being late for",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "npcFlag": "wf_argued",
+      "log": "{npc} tells you. It takes the better part of a year, and neither of you is dry at the end of it. You do not hold the prayer, but you take something away from the holding of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_duel",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "Your domain's border has been moved in the night by exactly one step, and it is raining on the far side of the new line. {npc} is waiting there, with no pantheon behind {him} and no fear on {his} face. \"You said a domain this small should be folded into a larger one,\" {he} says. \"I have looked into the procedure. Fold me, then. Domain against domain, here on the seam, and every pantheon may watch.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m1",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Meet {him} on the seam, domain against domain",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 3,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -10,
+       "note": "beat them on the seam of two domains"
+      },
+      "log": "You push the line back, and a good way further. {npc} stands in the dry for the first time in living memory, and does not seem to know what to do with {his} hands. \"Late,\" {he} says. \"But I will get there.\""
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -20,
+      "woundOnly": true,
+      "mem": {
+       "deed": "wf_lost",
+       "w": -5,
+       "note": "lost to them on the seam of two domains"
+      },
+      "log": "It is hard to fight rain that arrives a moment after you have moved. You lose the step, then six more, and go home soaked, in front of everyone. (-20 health)"
+     }
+    },
+    {
+     "text": "Give back the step and say nothing",
+     "effects": {
+      "flag": "wf_m2",
+      "fame": -2,
+      "mem": {
+       "deed": "wf_yielded",
+       "w": -5,
+       "note": "yielded a step of their domain"
+      },
+      "log": "You give up the step. No pantheon says anything about it, and they say so at length. {npc} marks the place with a wet stone, and you know perfectly well that the stone is not the end of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_teach",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "For once the rain comes before you do, and you find {npc} sitting in the seam between domains, with the water running through {him} rather than off. Even gods wear out, and {he} has had a long time of being late. \"I know one thing the pantheons do not,\" {he} says. \"How a domain listens when nobody is praying to it. You stood in my rain. Come in out of it, and I will show you.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Let {him} show you how a domain listens",
+     "effects": {
+      "flag": "wf_m3",
+      "artYears": 12,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "learned how a domain listens"
+      },
+      "log": "You stay for a century, which is not long. When you return to your domain it has been talking the whole time, and now you can hear it. Every art you hold has deepened with it. It starts raining there, a little late, on one small field."
+     }
+    },
+    {
+     "text": "Ask what {he} would have done differently",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 8,
+      "artYears": 4,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "asked what they would have done differently"
+      },
+      "log": "\"Nothing,\" says {npc}, after a very long time. \"The rain still mattered. The next day, the field still needed it.\" You take that back across the seam, and it changes the way you read every prayer that reaches your domain."
+     }
+    },
+    {
+     "text": "Ask leave to carry {his} name beyond this life, in the book you keep",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "\"You will get there late,\" {npc} says, which from {him} is a blessing. {He} gives you the name and what it knows. In lives yet to come, in some dry field, it will rain a day after anyone had the right to hope.",
+      "artYears": 3,
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_rival",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A herald of a pantheon you have never spoken to bows at your domain's gate, and asks, with great delicacy, whether you are aware of the petition. {npc} has walked to every pantheon in turn, in the rain, and laid before each the same complaint in the same mild voice: your name, and what you said. None of them cares. All of them have kept a copy, and {he} has only just begun.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Send word to {him}: come and say it at your gate",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 2,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "dared them to come to the gate"
+      },
+      "log": "Word comes back a day late, as you might have guessed. \"I will. Not yet.\" From then on there is a thin rain at your borders that no priest can explain, and it has been keeping count."
+     }
+    },
+    {
+     "text": "Answer the petition before the pantheons yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 5,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "answered the petition before the pantheons"
+      },
+      "log": "You speak before three pantheons, and they end up bored of {npc} by evening. {He} bows to you across the hall, dripping on the floor. It is the most dangerous bow you have seen in this realm."
+     },
+     "fail": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": -3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "failed before the pantheons"
+      },
+      "log": "You speak well, and that is the trouble. Three pantheons remark on how much trouble a god of your standing has taken over one small god of rain, and they remark on it for decades."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_shop_dew",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A god who has lost almost everything sits at the border of a domain that used to be theirs, selling what is left of it by the flask. It is Heaven's Dew, gathered from the last of the mornings there. \"A little over a thousand, in faith,\" the old god says. \"Faith is a seller's market, and I am out of it. I have learned to count every prayer.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "realm": [
+     22,
+     25
+    ]
+   },
+   "arc": "A Pedlar Between Domains",
+   "choices": [
+    {
+     "text": "Pay {eye:1150} faith",
+     "req": {
+      "minFaithEye": 1150
+     },
+     "effects": {
+      "eyeFaith": 1150,
+      "log": "The flask is lighter than it looks, and the old god holds on to it a moment longer than the sale requires. Then it is yours, and one more morning has gone out of that domain.",
+      "luck": 2,
+      "item": {
+       "heaven_dew": 1
+      }
+     }
+    },
+    {
+     "text": "Offer {eye:720} faith, gently",
+     "req": {
+      "minFaithEye": 720
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "eyeFaith": 720,
+      "log": "The old god looks at the offering and then away towards the domain. \"Gently. Yes. Nobody has been gentle about it so far.\" The flask is yours.",
+      "item": {
+       "heaven_dew": 1
+      }
+     },
+     "fail": {
+      "fame": -1,
+      "log": "The old god closes both hands around the flask. \"I have been robbed by whole pantheons,\" they say. \"You will have to do better than gently.\""
+     }
+    },
+    {
+     "text": "Trade a thousand years for it",
+     "req": {
+      "minYearsLeft": 10000
+     },
+     "effects": {
+      "lifespan": -1000,
+      "item": {
+       "heaven_dew": 1
+      },
+      "log": "The old god takes the years with a small, hungry sigh, and for a moment something green stands in that dead domain. It is gone again before you have finished looking.",
+      "luck": 2
+     }
+    },
+    {
+     "text": "Sit with the old god through one morning, and go",
+     "effects": {
+      "alignment": 2,
+      "log": "You watch the light come over a domain with nobody in it. Neither of you says anything. When you stand, the old god thanks you, and it is plain they have not had to do that for an age."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_shop_scroll",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "Pantheons keep envoys, envoys keep secretaries, and this one has walked out with a satchel. On a neutral stair between two domains she offers you what a dozen elder gods have said in private about their arts, taken down word for word from behind a screen. \"Five thousand in faith, and a little more. I take no sides. I have, as of this morning, no pantheon to take them for.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "A Pedlar Between Domains",
+   "choices": [
+    {
+     "text": "Buy the satchel for {eye:5200} faith",
+     "req": {
+      "minFaithEye": 5200
+     },
+     "effects": {
+      "eyeFaith": 5200,
+      "log": "You read it on the stair. Elder gods, it turns out, also get things wrong, and they explain why in great detail when they think nobody can hear. It is worth more than the faith.",
+      "artYears": 8
+     }
+    },
+    {
+     "text": "Offer {eye:3450} faith, and promise not to say who sold it",
+     "req": {
+      "minFaithEye": 3450
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 65
+     },
+     "ok": {
+      "eyeFaith": 3450,
+      "log": "She looks up the stair and down it. Then she takes the offering. \"Nobody ever does say,\" she tells you. \"They just look at me differently.\"",
+      "artYears": 8
+     },
+     "fail": {
+      "fame": -1,
+      "log": "She laughs, not unkindly. \"That promise is worth more from someone who has not made it to six other gods this week.\" She goes on down the stair."
+     }
+    },
+    {
+     "text": "Warn her that the pantheon is sending someone",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "She hears you out, thanks you, and is gone off the side of the stair. A moment later three very polite gods come up it, and they ask you whether you have seen a satchel."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_shop_ward",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "At a crossing of domains where three pantheons agree on nothing, someone has set out a mat. On it lies a single leaf of the World-Tree, worked into a ward, and behind it sits a pedlar who may once have been a small god of crossings. \"Eight thousand and more, in faith. That ward has stopped things you have only heard about, and you will also find it is good for thinking on.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "realm": [
+     24,
+     28
+    ]
+   },
+   "arc": "A Pedlar Between Domains",
+   "choices": [
+    {
+     "text": "Set {eye:8600} faith on the mat",
+     "req": {
+      "minFaithEye": 8600
+     },
+     "effects": {
+      "eyeFaith": 8600,
+      "log": "The leaf settles into your palm as if it had been looking for one. Holding it, you notice some things about the shape of the domains around you that you had not noticed in all your years here.",
+      "comprehension": 6,
+      "item": {
+       "tal_world": 1
+      }
+     }
+    },
+    {
+     "text": "Offer {eye:5200} faith and ask what it has stopped, exactly",
+     "req": {
+      "minFaithEye": 5200
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "eyeFaith": 5200,
+      "log": "The pedlar begins to tell you. Some way into the second story you both agree that the offering is plenty, and that you would rather not hear the third.",
+      "item": {
+       "tal_world": 1
+      }
+     },
+     "fail": {
+      "fame": -1,
+      "log": "\"Ah,\" the pedlar says, and rolls up the mat with the ward inside. \"If you have to ask what it has stopped, you have not yet met it. Do come back.\""
+     }
+    },
+    {
+     "text": "Pay five thousand years instead",
+     "req": {
+      "minYearsLeft": 50000
+     },
+     "effects": {
+      "lifespan": -5000,
+      "item": {
+       "tal_world": 1
+      },
+      "log": "The pedlar takes them across the mat, and they go very quietly. You feel nothing, which you suspect is the part you ought to worry about."
+     }
+    },
+    {
+     "text": "Ask the way, and take it",
+     "effects": {
+      "fame": 1,
+      "log": "The pedlar points, and it is the wrong way, and it turns out better. Word goes round the domains that you asked a small god for directions and took them, and more of the small gods bow to you after that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_meet",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "On the road between two villages of {pw_world} you overtake someone with a staff and an empty bowl, who is stopping at every farm gate to ask whether anyone wants to learn something for soup. This is {npc}. Nobody ever seems to. \"Lean year for wisdom,\" {he} says, and shakes the bowl at you, not hopefully. \"Beans are also acceptable.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "wf_m1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Fill the bowl, and ask what soup buys",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_bowl",
+       "w": 15,
+       "note": "filled the bowl and asked what it bought"
+      },
+      "luck": 1,
+      "log": "\"For one bowl? How to fall down,\" {npc} says. {He} knocks your feet from under you on the road, then shows you how to do it again without the bruise. It is the most useful bowl of beans anyone in {pw_world} has ever eaten."
+     }
+    },
+    {
+     "text": "Walk with {him} to the next village and carry the bowl",
+     "effects": {
+      "flag": [
+       "wf_kind",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_walk",
+       "w": 15,
+       "note": "walked to the next village beside them"
+      },
+      "comprehension": 1,
+      "log": "{He} talks the whole way, about water, and roofs, and where people really put their weight when they lift. You arrive with your arms tired and your head full, and {npc} gets soup at that gate, as it happens."
+     }
+    },
+    {
+     "text": "Tell {him} to try a trade like anyone else",
+     "effects": {
+      "flag": [
+       "wf_cold",
+       "wf_m1"
+      ],
+      "mem": {
+       "deed": "wf_trade",
+       "w": -15,
+       "note": "told them to find a trade"
+      },
+      "log": "{npc} considers this with every sign of courtesy. \"I will think on it,\" {he} says, and writes something on {his} staff with a burnt stick. You did not know that it was covered in writing until then."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} is waiting at the foot of the terraces with two full buckets on a yoke. \"The bean-giver,\" {he} says. \"Carry these to the top field. The old folk here have a saying that a body is only a bucket, and they mean it as a compliment. Spill nothing, and I will show you why, and whoever made this hill will have to take the blame for the rest.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m1",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Take the yoke and start climbing",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "artYears": 1,
+      "log": "You reach the top field at dusk without losing a drop. Your breathing has stopped being something you do and become something that happens. {npc} drinks a little from one bucket and says, \"Yes. That.\""
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "artYears": 0.5,
+      "log": "You arrive with one and a half buckets and a wet leg. {npc} walks you back down and shows you, step by step, the exact place on the hill where your breath let go of you."
+     }
+    },
+    {
+     "text": "Ask whose field it is, and why it needs water at all",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 1,
+      "npcFlag": "wf_argued",
+      "log": "\"No one has ever asked that,\" {npc} says, and sits on the yoke. The two of you spend the day on the hill working out how the water in this whole valley runs. It is not what {he} had in mind, and {he} seems extremely pleased."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_duel",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "It is market day, and in the middle of the square {npc} has drawn a circle in the dust with {his} staff. \"This one told me to get a trade,\" {he} announces, to nobody and to everyone. \"I have got one. I teach people to fall down. Come into the ring, if your trade allows it, and let us show these good people how it is done.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m1",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "wf_m2",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Step into the circle",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 3,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -10,
+       "note": "beat them on market day"
+      },
+      "log": "It is {npc} who goes down, in the end, and rather well. The square cheers you. {He} gets up, dusts {his} knees and looks at you with new attention, and somehow that is not the same as respect."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -12,
+      "woundOnly": true,
+      "mem": {
+       "deed": "wf_lost",
+       "w": -5,
+       "note": "fell down on market day"
+      },
+      "log": "You demonstrate falling down, four times, before the whole village. A child near the front applauds each one. {npc} takes a small bow and passes the bowl around. (-12 health)"
+     }
+    },
+    {
+     "text": "Say you have turnips to sell and keep walking",
+     "effects": {
+      "flag": "wf_m2",
+      "fame": -2,
+      "mem": {
+       "deed": "wf_refused",
+       "w": -5,
+       "note": "walked around the ring on market day"
+      },
+      "log": "The whole square watches you walk around the circle with your turnips. It is the same walk as last time, says {npc}, loudly, and by evening they have a name for it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_teach",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A bowl has been left on the wall of your yard, empty, and you know whose it is. {npc} is sitting in the shade behind it, moving more slowly now, with the staff across {his} knees and not much room left on it. \"Everything I know is written on this,\" {he} says. \"It is mostly wrong, and I have marked which parts. You filled the bowl when nobody did. Bring your beans, and I will read it to you.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m2",
+     "wf_kind"
+    ],
+    "notFlags": [
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Sit down and learn what is on the staff",
+     "effects": {
+      "flag": "wf_m3",
+      "artYears": 4,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "learned what was on the staff"
+      },
+      "log": "It takes all winter and a great many beans. By spring your hands know what the staff knew, and {npc} is using it mainly to lean on. \"There,\" {he} says. \"Now you can go about being wrong in a better class of way.\""
+     }
+    },
+    {
+     "text": "Ask {him} which of the wrong parts {he} liked best",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 5,
+      "artYears": 1,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "asked which wrong part they liked best"
+      },
+      "log": "{npc} laughs until {he} has to hold the wall. Then {he} tells you, one part after another, why each was wrong and why {he} tried it anyway. You see more clearly after that, and you trip over things less often."
+     }
+    },
+    {
+     "text": "Ask leave to copy the staff, so somebody else can be wrong by it later",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "{npc} hands you the burnt stick and corrects your spelling for a week. You know the staff by the end of it, more or less. In lives yet to come, someone with an empty bowl will stop at a farm gate and ask.",
+      "artYears": 1,
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_rival",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "There is a song going round the villages of {pw_world} about someone who walked around a circle with their turnips. It has eleven verses. The children know it. At the well you find out who wrote it: {npc}, sitting on the wall with the staff, teaching the twelfth to a very attentive goatherd. {He} looks up. \"Oh, good, you can tell me if it scans. I mean to be at this for the rest of my life, you see.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m2",
+     "wf_cold"
+    ],
+    "notFlags": [
+     "wf_m3",
+     "wf_far"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Tell {him} the rhymes are poor, and that you will be watching",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 2,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "declared a feud at the well"
+      },
+      "log": "\"Better,\" says {npc}, writing it on the staff. \"That is a much better line than the one I had.\" From then on every village you pass has heard of you already, and you are not given the good stool."
+     }
+    },
+    {
+     "text": "Take the staff from {him}, here and now",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "took the staff at the well"
+      },
+      "log": "You take it, and you hold it up, and then you have to give it back, because everyone is looking. There is a thirteenth verse by nightfall, and it is the best one. {npc} nods to you when you pass. {He} means it."
+     },
+     "fail": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "health": -12,
+      "woundOnly": true,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "failed to take the staff at the well"
+      },
+      "log": "You end up in the well, which is the point at which the goatherd stops pretending not to enjoy this. {npc} lowers the bucket to you, very politely. There are now thirteen verses. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_shop_tinker",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "A tinker comes down the valley road with pans clanking, and he stops when he sees you, as if you owed him money. Under the pans is a small crock of Tiger Bone Elixir. \"No tiger was hurt in the making of it,\" he says. \"Or the tiger was very small. Four hundred and twenty taels, and that is before I tell you what is in it. Afterwards it goes up.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Pay the {eye:420} taels and do not ask",
+     "req": {
+      "minTaelsEye": 420
+     },
+     "effects": {
+      "eyeTaels": 420,
+      "item": {
+       "tiger_bone_elixir": 1
+      },
+      "log": "You pay quickly. He looks disappointed, having worked up a very good story. The crock smells like a wet dog thinking about a fight."
+     }
+    },
+    {
+     "text": "Offer {eye:300} taels, and ask what is in it after all",
+     "req": {
+      "minTaelsEye": 300
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "eyeTaels": 300,
+      "item": {
+       "tiger_bone_elixir": 1
+      },
+      "log": "He starts to tell you, and you hold up a hand. \"All right,\" he says, and he takes the {eye:300} taels. \"You are the first who ever paid me to stop.\""
+     },
+     "fail": {
+      "fame": -1,
+      "log": "He tells you what is in it. It takes a while, and you lose the wish to buy. He seems to feel that it was a good day's work anyway."
+     }
+    },
+    {
+     "text": "Have a pan mended for nothing instead",
+     "effects": {
+      "charm": 1,
+      "log": "You have no pan on you, so he mends one of his own, and tells everyone in the next village how patient you were. You did not know that you were being patient. It seems to have worked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_shop_root",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "An old herb-woman of {pw_world} is walking the ridge with a long-handled spade and the look of someone who knows where things are buried. In her apron is a ginseng root with a shape nearly like a person, and she holds it as one might hold a sleeping cat. \"A hundred years, or near it. Nine hundred taels. I dug it up under a very bad moon, so you would not want it anyway.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Pay the {eye:900} taels",
+     "req": {
+      "minTaelsEye": 900
+     },
+     "effects": {
+      "eyeTaels": 900,
+      "item": {
+       "ginseng": 1
+      },
+      "log": "You pay. She wraps it in a wet cloth, tells it to behave, and puts it in your hands. \"Do not let it near any other roots,\" she says. \"It gets ideas.\""
+     }
+    },
+    {
+     "text": "Say the moon was nothing special, and offer {eye:650} taels",
+     "req": {
+      "minTaelsEye": 650
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "eyeTaels": 650,
+      "item": {
+       "ginseng": 1
+      },
+      "log": "She looks up at the day sky as if checking. Then she shrugs. \"It was a little special,\" she says, and she takes the {eye:650} taels. \"But you said it nicely.\""
+     },
+     "fail": {
+      "fame": -1,
+      "log": "She pats the root, and it may be a trick of the light, but it seems to turn its face away from you. So does she."
+     }
+    },
+    {
+     "text": "Ask where the good digging is, and leave her to it",
+     "effects": {
+      "luck": 1,
+      "log": "She tells you, quite exactly, three places you must never dig. You come away with a clear idea of the ridge, and of how much she has decided you need to know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_shop_caravan",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 12,
+   "trigger": "wf_merchant",
+   "text": "Three carts have stopped at a ford in {pw_world}, on their way from a far side of the world you have only heard about, and their owner is selling off what has not sold anywhere else. At the bottom of a sack of dull things she finds it: a Thousand-Year Fleece Flower Root, older than the road. \"Two thousand six hundred taels. They laughed at me in six towns. I think it knows.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Pedlar on the Road",
+   "choices": [
+    {
+     "text": "Pay the {eye:2600} taels",
+     "req": {
+      "minTaelsEye": 2600
+     },
+     "effects": {
+      "eyeTaels": 2600,
+      "item": {
+       "longevity_peach": 1
+      },
+      "log": "She counts the taels with her eyes shut and her mouth moving. The root goes into your bag, and for the rest of the day you find you are in no hurry about anything."
+     }
+    },
+    {
+     "text": "Point out the six towns, and offer {eye:1900} taels",
+     "req": {
+      "minTaelsEye": 1900
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "eyeTaels": 1900,
+      "item": {
+       "longevity_peach": 1
+      },
+      "log": "\"Seven, now,\" she says, and sighs, and takes the {eye:1900} taels. She seems relieved to be rid of it. As the carts roll out, she looks back at your bag once, and only once."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "\"Six towns laughed,\" she says, tying up the sack. \"None of them got to buy it.\" She whips up the horses and leaves you standing in the water."
+     }
+    },
+    {
+     "text": "Help push the third cart across the ford",
+     "effects": {
+      "alignment": 2,
+      "log": "It takes the afternoon and most of your good temper. She gives you nothing but a nod, and tells the next six towns that the people here are honest, which they do not believe."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_test_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "Word of what you have become got here ahead of you, and {npc} has heard it. {He} is at the same milestone with the same pot, and does not set out any stones. \"I cannot test your hands, salt-giver,\" {he} says. \"Nobody on this road can. So here is an easier one. When did you last cook your own supper, and did you notice whether it was any good?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m1",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Sit down and cook, badly, under {his} eye",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "artYears": 0.5,
+      "log": "It takes a shameful length of time. {npc} watches you ruin an onion with the attention you have not had from anyone in decades. Somewhere around the second pot you notice you have been holding your breath like that for years."
+     }
+    },
+    {
+     "text": "Ask what {he} sees, looking at you now",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "npcFlag": "wf_argued",
+      "log": "\"Someone who has stopped being hungry,\" {npc} says at once, and then talks for an hour about what that costs. {He} cannot touch you, and nearly everything {he} says lands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_duel_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} is standing in the road with the sacking off the sword, and {his} hand is not quite steady. \"I can count,\" {he} says. \"I know what you are now, and how this ends. But I said I would stop you, the day you stepped around my pot, and a promise kept only against the weak is not worth the salt.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m1",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Give {him} the duel {he} walked all this way for",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 1,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -5,
+       "note": "gave them the duel they came for"
+      },
+      "log": "You keep it to eleven exchanges, which is ten more than you needed. {npc} knows it. {He} sits down in the road, breathing hard. \"That,\" {he} says, \"was the rudest thing you have done yet.\""
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -10,
+      "woundOnly": true,
+      "fame": 3,
+      "mem": {
+       "deed": "wf_lost",
+       "w": 5,
+       "note": "was cut by someone who could not have done it"
+      },
+      "log": "You grow careless for one breath, and there is a cut on your sleeve and then on your arm. {npc} stares at it longer than you do. The teahouses will have this by the end of the month. (-10 health)"
+     }
+    },
+    {
+     "text": "Stand still, and let {him} try three strikes",
+     "effects": {
+      "flag": "wf_m2",
+      "alignment": 2,
+      "mem": {
+       "deed": "wf_stood",
+       "w": -10,
+       "note": "stood still and let them strike"
+      },
+      "log": "Three strikes, the best of a long life, and they stop at your skin. You meant it as a courtesy. Going by the look on {his} face, it is the cruellest answer you could have given."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_teach_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "You find {npc} shelling beans on a wall, slower now. \"I have nothing for you,\" {he} says, before you can speak. \"Not a stance, not a breath, you were past all that long ago. But you gave salt to a stranger once, and I wonder if you could still say how. Sit. The last thing I know is how to hand a thing to someone smaller than you, and nobody up where you live ever learned it.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m2",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Learn how to hand it down",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 5,
+      "artYears": 2,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "came down to learn how to hand a thing on"
+      },
+      "log": "It is the hardest season you have spent in years. You learn to go slowly, to be wrong out loud, and to wait. Your own arts come clearer for it, which {npc} says is what always happens, and is the whole trick."
+     }
+    },
+    {
+     "text": "Shell beans, and let {him} talk",
+     "effects": {
+      "flag": "wf_m3",
+      "luck": 3,
+      "comprehension": 3,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "sat on a wall and shelled beans"
+      },
+      "log": "You do it badly. {npc} tells you about forty years of roads. Nobody has spoken to you so plainly in a very long time, and you hadn't known that you missed it until now."
+     }
+    },
+    {
+     "text": "Ask leave to write {him} down, however small {he} thinks it is",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "\"You? Write me?\" {npc} laughs until the beans go everywhere. Then {he} dictates for a month, mostly about soup. In lives yet to come, someone small will be on a road, and will teach better than anyone with your strength ever could.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_rival_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} has been walking ahead of you for years, you find out. In every town you come to {he} has been there first, sitting in the teahouse and telling them, without any heat, what you were like before anyone was afraid of you. \"I do not need to beat you,\" {he} says, when you finally catch {him}. \"I cannot. I only need to still be here.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_m2",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Tell {him} to go on telling it, then",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 1,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "told them to go on telling it"
+      },
+      "log": "\"I shall,\" says {npc}. It turns out that a very great person can be quite thoroughly annoyed by someone who cannot hurt them, and that {he} has made a study of how, and that {he} is training again."
+     }
+    },
+    {
+     "text": "Show {him}, once, exactly how far apart you are",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 3,
+      "alignment": -3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -40,
+       "note": "showed them how far apart you are"
+      },
+      "log": "You do not even stand. {npc} picks {him}self up off the far wall of the teahouse, nods, and pays for {his} tea. \"That goes in,\" {he} says. Then you hear that {he} has gone into the mountains to train, at {his} age, for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_r1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "There is a pot on a milestone with your name chalked on it. Under it, a note in a hand you know: the bridge, at dusk. {npc} is on the bridge with the sword bare, and whatever {he} has been doing since the teahouse, it has taken twenty years off the way {he} stands. \"I found I had been lazy,\" {he} says. \"Thank you for that.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_rv"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_r1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Cross the bridge and meet {him}",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r1",
+      "fame": 3,
+      "log": "You drive {him} back across the whole length of the bridge. {npc} looks pleased about it, which is worrying. \"Not enough yet,\" {he} says, to {him}self, and goes over the rail into the dark."
+     },
+     "fail": {
+      "flag": "wf_r1",
+      "health": -15,
+      "woundOnly": true,
+      "fame": -1,
+      "log": "{npc} leaves you sitting against the rail, and sets the pot down beside you, very neatly. \"Next time, bring salt,\" {he} says. (-15 health)"
+     }
+    },
+    {
+     "text": "Take the long way round, by the ford",
+     "effects": {
+      "flag": "wf_r1",
+      "fame": -2,
+      "luck": 1,
+      "log": "It costs you a wet day and some reputation. Somebody saw, as somebody always does. There is a fresh verse in the story by the end of the month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_r2",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "At a wine stall in a town you have never visited, the owner hands you a cup of tea you did not order. \"From the one in the corner.\" {npc} raises {his} own. {He} has grown, and you feel it from across the room like a change in the weather. {He} has also taken a pupil, a sharp-eyed child who is drawing your stance in spilled wine, not badly. \"We are studying,\" {he} says.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_r1"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_r2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Go outside with {him} and give the child something to draw",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r2",
+      "fame": 4,
+      "comprehension": 1,
+      "log": "It is a good fight, the best you have had in years, and you come out on top of it by a thin margin. The child draws furiously throughout. {npc} bows to you with a split lip, and asks if you got all that."
+     },
+     "fail": {
+      "flag": "wf_r2",
+      "health": -18,
+      "woundOnly": true,
+      "comprehension": 2,
+      "log": "You lose, in front of a child with a notebook, and you learn exactly where your guard has been lazy for ten years. You would like to be angrier about how useful that is. (-18 health)"
+     }
+    },
+    {
+     "text": "Send back a cup, and a correction to the drawing",
+     "effects": {
+      "flag": "wf_r2",
+      "charm": 2,
+      "log": "You fix the angle of the back foot with one finger, in the wine. {npc} looks at it for a long moment, then laughs aloud. It is the closest the two of you will ever come to a friendly evening."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_mu_r3",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "It ends where it started. A mile past the last inn, there is a camp in the middle of the road, and a pot, and {npc} sitting behind it with {his} sword across {his} knees. {He} looks very old, and very ready. \"I have told this story in every town there is,\" {he} says. \"It wants a last chapter. Will you step around me, or will you stop?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "wf_r2"
+    ],
+    "notFlags": [
+     "pw_life",
+     "wf_r3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The One Who Argued with a Pot",
+   "choices": [
+    {
+     "text": "Stop, and finish it with a blade",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r3",
+      "fame": 8,
+      "comprehension": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 40,
+       "note": "finished it in the road, and sat down after"
+      },
+      "log": "It takes until the fire is out. Then the sword is in the dust, and {npc} is laughing with no breath left to do it. \"There,\" {he} says. \"That is how it ends.\" You sit down. The soup is still terrible. You eat it anyway, and the feud is over."
+     },
+     "fail": {
+      "flag": "wf_r3",
+      "health": -22,
+      "woundOnly": true,
+      "fame": -3,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 20,
+       "note": "lost it in the road, and stayed for soup"
+      },
+      "log": "{npc} beats you on the same road you stepped around {him} on, and puts up {his} sword. \"That was all I wanted,\" {he} says, surprised. {He} ladles you some soup with a shaking hand, and {he} never tells the story again. (-22 health)"
+     }
+    },
+    {
+     "text": "Stop, sit down, and hand {him} the salt",
+     "effects": {
+      "flag": "wf_r3",
+      "alignment": 4,
+      "fame": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 50,
+       "note": "sat down at last, and passed the salt"
+      },
+      "log": "{npc} looks at the salt for a very long time. Then {he} takes a pinch and drops it in the pot. \"Took you long enough,\" {he} says. That is the last chapter, and it goes round the teahouses for a while, and they are all rather disappointed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_test_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The pine Isle comes out of the fog, and {npc} comes down out of the pine with more care than before. You have climbed well past {him} on the rolls of the Jade Court, and {he} has read them. \"The wind between the Isles would not trouble you now,\" {he} says. \"So hold the line again. No hook, no breath tricks. I want to see if you can still be bored.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m1",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Hold the line, and let nothing happen",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 4,
+      "artYears": 1,
+      "log": "For a whole year nothing bites. At first your power hums and fidgets, like a dog in a small room. Then it stops. {npc} glances across and grunts, and you find a stillness under your Dao that you had climbed straight past."
+     }
+    },
+    {
+     "text": "Ask {him} what the rolls got wrong about you",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "npcFlag": "wf_argued",
+      "log": "\"The dates are right,\" {npc} says. \"It is the adjectives.\" {He} goes through your whole record with a wet thumb, and by the end you have rather less to be proud of, and a clearer idea of what to do next."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_duel_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The notice on the pine is in the same small neat hand, and it is pinned there anyway. {npc} waits on the bare rock above the cloud sea, a long way beneath you by every measure the Jade Court keeps. \"The form requires a challenge,\" {he} says. \"It does not require that I win. I did look. Shall we observe it?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m1",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Observe the form, and meet {him} on the rock",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 1,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -5,
+       "note": "observed the form, and won as expected"
+      },
+      "log": "It lasts as long as it needs to for the record. {npc} picks {him}self off the rock and makes a note. \"Won,\" {he} says, \"as expected, by a party who found it necessary to come.\" {He} seems to feel that this is the part that matters."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -12,
+      "woundOnly": true,
+      "fame": 3,
+      "mem": {
+       "deed": "wf_lost",
+       "w": 5,
+       "note": "was caught out by a form they had not read"
+      },
+      "log": "You had not read the small print about footing, and the rock moves. You go down into the cloud sea, in front of two passing Isles and a Minister. {npc} makes a note. (-12 health)"
+     }
+    },
+    {
+     "text": "Send a clerk to accept on your behalf",
+     "effects": {
+      "flag": "wf_m2",
+      "charm": -1,
+      "mem": {
+       "deed": "wf_refused",
+       "w": -10,
+       "note": "sent a clerk to the duel"
+      },
+      "log": "Your clerk arrives and is beaten, courteously, with full honours. {npc} sends the poor clerk back with a receipt. It is read aloud at the Jade Court, where someone asks whether the clerk is available for promotion."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_teach_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The line tugs at your sleeve again, on some Isle far below your usual haunts. {npc} is smaller against the fog than you remember. \"You could draw the whole cloud sea through you now and not notice,\" {he} says. \"So I cannot teach you that. What I have left is what the Jade Court filed and never read: how an immortal gets old without getting stupid. It is short. Sit.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m2",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Sit, and hear how it is done",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 6,
+      "artYears": 4,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "came down to hear how it is done"
+      },
+      "log": "It takes nine years, and most of it is questions you ought to have stopped being too important to ask. You rise with your arts deepened, and with a wish to go back and apologise to several clerks."
+     }
+    },
+    {
+     "text": "Bring the wine this time, and just fish",
+     "effects": {
+      "flag": "wf_m3",
+      "luck": 3,
+      "comprehension": 4,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "brought the wine and just fished"
+      },
+      "log": "You sit a season with a line and no hook, the highest name on the rolls and a struck-off angler. Neither of you catches anything. It turns out you can still be happy, which no one on the rolls had thought to mention."
+     }
+    },
+    {
+     "text": "Ask leave to enter {him} in your own rolls, far above where the Court left {him}",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "\"Above? Put me where I was,\" {npc} says, and watches your hand as you write it. In lives yet to come, someone a long way beneath you will be sitting at the edge of an Isle, and will still be right about the adjectives.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_rival_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The grudge reaches you by the most junior clerk in the Jade Court, since it is not considered urgent. {npc} is many rungs beneath you, and the scroll says so, in that neat hand, right at the top. \"I am aware of the difference,\" it goes on. \"I have centuries, and you have stopped looking down. I intend to be underfoot.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_m2",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Have it filed, with a note that you noticed",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 1,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "had the grudge filed, with a note"
+      },
+      "log": "Within a year you notice that your seat at every gathering is slightly in a draught, and your name is misspelled in one small register after another. Then word comes that {npc} has begun to climb, and quickly."
+     }
+    },
+    {
+     "text": "Go down and remind {him} how far it is",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 3,
+      "alignment": -3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -40,
+       "note": "went down to remind them how far it is"
+      },
+      "log": "You part the fog around {his} Isle with a look, and {npc} goes to one knee, and writes it down from there. \"Thank you,\" {he} says. \"I was unsure of the distance.\" The next you hear, {he} has given up fishing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_r1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "A clerk finds you on the Isles with a summons in a small neat hand: a duel, on a stated rock, at a stated hour, with the stamps in order. {npc} is on the rock when you get there, and the fog leans away from {him} in a way it never used to. \"I took up the Court's own methods,\" {he} says. \"They are excellent. Nobody had read them.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_rv"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_r1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Meet {him} on the stated rock",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r1",
+      "fame": 3,
+      "log": "You put {him} off the edge in the end, and hear {him} going down through the cloud, unhurried, taking notes. It worries you more than a counterattack would have. A receipt arrives the next day."
+     },
+     "fail": {
+      "flag": "wf_r1",
+      "health": -18,
+      "woundOnly": true,
+      "fame": -1,
+      "log": "{npc} folds you up neatly and files you against a pine. \"Your left side is out of date,\" {he} says, stamping something. By evening it is known on most of the Isles. (-18 health)"
+     }
+    },
+    {
+     "text": "Lodge an objection to the form of the summons",
+     "effects": {
+      "flag": "wf_r1",
+      "fame": -2,
+      "luck": 1,
+      "log": "It holds up for a whole decade, and it is widely admired by clerks. Nobody else is impressed. {npc} sends you a card to say that {he} is using the time to train."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_r2",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "The Jade Court is holding one of its long receptions, and {npc}'s name is on the rolls again: you see it as you come in, three rungs higher than you were told. {He} is by the wine, in borrowed robes, with two Ministers laughing at something {he} has said. You have the feeling that you are the something. {He} lifts a cup. \"After the speeches,\" {he} says. \"The terrace has a good drop.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_r1"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_r2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Meet {him} on the terrace, after the speeches",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r2",
+      "fame": 4,
+      "comprehension": 1,
+      "log": "It is short, silent and very good, and you end it with {him} hanging from the balustrade by one hand. \"Marvellous,\" {he} says, and lets go. The Ministers never notice. You find that you enjoyed yourself, and that it is troubling."
+     },
+     "fail": {
+      "flag": "wf_r2",
+      "health": -20,
+      "woundOnly": true,
+      "comprehension": 2,
+      "log": "You get a very good view of the drop, on your way down it. You go back in by another door, with cloud in your hair. {npc} passes you a cup without looking round. You did learn something, on the way down. (-20 health)"
+     }
+    },
+    {
+     "text": "Take {his} hand and stay for the speeches",
+     "effects": {
+      "flag": "wf_r2",
+      "charm": 2,
+      "log": "You stand beside {him} through nine speeches, each of you waiting for the other to flinch. It is the most dangerous evening anyone at the Jade Court has had in years, and nobody there has any idea."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_up_r3",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "The summons has no stamps on it this time. It only says: where you held the line, or would not. You find the same drifting Isle at the same edge, and {npc} sitting with {his} feet over the cloud sea and a new line in {his} hands. \"I have read everything they have,\" {he} says, \"and caught up as far as I am going to. One more, and then I should like to get back to my fishing.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "wf_r2"
+    ],
+    "notFlags": [
+     "divine_realm",
+     "wf_r3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Angler of the Isles",
+   "choices": [
+    {
+     "text": "Stand up on the rock with {him}, one last time",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r3",
+      "fame": 8,
+      "comprehension": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 40,
+       "note": "stood on the rock one last time, and won"
+      },
+      "log": "At the end of it the Isle has drifted out of sight of anything, and {npc} is lying on the rock, looking at the sky with enormous satisfaction. \"Enter it,\" {he} says. You enter it. Then {he} hands you the spare line, and you stay a while."
+     },
+     "fail": {
+      "flag": "wf_r3",
+      "health": -24,
+      "woundOnly": true,
+      "fame": -3,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 20,
+       "note": "stood on the rock one last time, and lost"
+      },
+      "log": "You lose, and it is clear, and there is no appeal. {npc} hauls you back up on the line, hand over hand, and this time does not throw you back. \"Big enough,\" {he} says. The grudge is marked as closed, in triplicate. (-24 health)"
+     }
+    },
+    {
+     "text": "Sit down beside {him} and take the spare line",
+     "effects": {
+      "flag": "wf_r3",
+      "alignment": 4,
+      "fame": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 50,
+       "note": "sat down at the edge at last, and took the line"
+      },
+      "log": "{npc} looks at you, and then passes it over. Nothing bites for a hundred years. When a clerk comes up at last with the closing papers, the two of you send the clerk off for wine."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_test_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "You have come to weigh a good deal among the pantheons, and the rain in the seam between domains has not changed at all. {npc} looks up at you from under it, a small god to a great one, and does not bow. \"I cannot make you hold a prayer any more. You could hold ten thousand. So hold one small one with your own hands, the way we used to, and tell me what the field looks like.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m1",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Go down to the field, in person",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 4,
+      "artYears": 2,
+      "log": "You stand in the mud of a world you have never looked at, with a prayer the size of a seed. It takes you years to see the field at all. {npc} stands by in the rain, a day late, and you understand what your domain has been doing without you."
+     }
+    },
+    {
+     "text": "Ask what {he} thinks you have forgotten",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "npcFlag": "wf_argued",
+      "log": "\"That it is raining,\" {npc} says. You point out that you can feel every drop in nine domains. \"Yes,\" {he} says, and waits. It is some decades before you see what {he} meant, and you do not much enjoy it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_duel_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "One step of your border has been moved in the night, by a god who could not hold it for an hour against the least of your powers, and who knows it. {npc} is standing on it in the rain. \"You said a domain this small should be folded away,\" {he} says. \"You could do it now by thinking of it. I would like you to have to come and look at me while you do.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m1",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Come and look at {him}, and take the step back",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 1,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -5,
+       "note": "came in person and took the step back"
+      },
+      "log": "It is not a contest, and neither of you pretends. You push the line back with your own foot. {npc} stays until you have, and then says, \"Thank you for coming,\" and it stings more than anything that has been done to you in an age."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -12,
+      "woundOnly": true,
+      "fame": 3,
+      "mem": {
+       "deed": "wf_lost",
+       "w": 5,
+       "note": "was soaked by a very small god"
+      },
+      "log": "You do not take it seriously, so the rain gets in. Nobody has hurt you in a long while, and you do not know how to stand under it. All the pantheons hear that a god of late rain soaked you to the bone. (-12 health)"
+     }
+    },
+    {
+     "text": "Leave the step where it is, and send no answer",
+     "effects": {
+      "flag": "wf_m2",
+      "alignment": 1,
+      "mem": {
+       "deed": "wf_yielded",
+       "w": -10,
+       "note": "would not even come and look"
+      },
+      "log": "It is one step. You have more steps than you could count. You find that you know exactly where that one is, though, every day, and that when it rains you think of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_teach_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} is thin enough now that the rain falls through {him} without slowing down, and the seam between domains is hardly wide enough to hold {him}. \"You could carry my whole domain in one hand,\" {he} says. \"So I will not insult you with how it is done. But the great ones stop being able to hear the small prayers. I can show you how to bend down. Nobody in the pantheons has ever asked.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Ask, and bend down",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 8,
+      "artYears": 6,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "asked how to bend down"
+      },
+      "log": "It takes a century to learn to be that quiet. When you go home, your domain has more in it than you ever knew about: thousands of small voices you had been standing on. Every art you have is the better for it, and rather ashamed."
+     }
+    },
+    {
+     "text": "Stand in the rain with {him}, for as long as there is",
+     "effects": {
+      "flag": "wf_m3",
+      "luck": 4,
+      "comprehension": 5,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "stood in the rain as long as there was"
+      },
+      "log": "A very great god stands in a very small rain for a hundred years, and the pantheons do not know what to make of it. {npc} is rather embarrassed. {He} seems also to have got a little more solid, and to be arriving slightly earlier."
+     }
+    },
+    {
+     "text": "Ask leave to carry {his} name, since no pantheon ever troubled to",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "\"From you, that is a lot of weight for a small name,\" {npc} says. Then {he} gives it to you, a day after you had stopped expecting it. In lives yet to come, someone with no power at all will teach you to hear what you are standing on.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_rival_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "A very small petition has reached the very highest of your offices. It has gone through every pantheon on foot and it is rather wet. {npc} does not claim to be able to harm you. {He} only asks, in that mild voice, that it be recorded that you could fold {him} away at any moment, and that you have not done it yet, and that {he} will be making use of the time.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_m2",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Let it be recorded",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 1,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "let the petition be recorded"
+      },
+      "log": "It is recorded. From then on there is a thin rain at your borders that your priests cannot explain, and every few years it is a little harder than before. Something very small has begun to grow."
+     }
+    },
+    {
+     "text": "Show every pantheon what you could do to {him}",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 3,
+      "alignment": -3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -40,
+       "note": "showed the pantheons what could be done"
+      },
+      "log": "The whole of {his} domain stops, for the space of one breath: every late drop hanging in the air. Then you let it go. The pantheons are impressed. {npc} wrings out {his} sleeve. \"A day late, you will be sorry,\" {he} says, and sets about it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_r1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "Your priests come to you in some distress: in a dry province of a world under your domain, it has rained, and the prayers there have gone to somebody else. {npc} is standing in the seam at your border with more colour than you have ever seen on {him}. \"It turns out that being late is a kind of power,\" {he} says, \"if you are prepared to be late on purpose. Come and argue.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_rv"
+    ],
+    "notFlags": [
+     "wf_r1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Go and take the province back from {him}",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r1",
+      "fame": 3,
+      "log": "You drive the rain back across the border, drop by drop, and the province is yours again. {npc} goes, wet and cheerful. \"That is one,\" {he} says. You have the distinct impression that {he} is counting something other than losses."
+     },
+     "fail": {
+      "flag": "wf_r1",
+      "health": -18,
+      "woundOnly": true,
+      "fame": -1,
+      "log": "Every blow you strike arrives where {he} just was, and everything of {his} arrives a moment after you have moved to safety, which turns out to be not safe at all. {He} keeps the province. (-18 health)"
+     }
+    },
+    {
+     "text": "Let the one province go, and watch",
+     "effects": {
+      "flag": "wf_r1",
+      "fame": -2,
+      "luck": 1,
+      "log": "One province out of so many is nothing. You tell the pantheons so, several times, without being asked. You watch how the rain works there, though, and you learn a few things."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_r2",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "There are small gods at your border now, a dozen of them, gods of last chances and lost keys and the wrong road home. None could trouble a stray thought of yours. {npc} has been teaching them. They have made a little pantheon of their own, with a great deal of paperwork and no one in charge, and {he} stands in front of it, grown wide with what they have given {him}. \"They wish to watch,\" {he} says.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_r1"
+    ],
+    "notFlags": [
+     "wf_r2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Give the small gods something to watch",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r2",
+      "fame": 4,
+      "comprehension": 1,
+      "log": "You win before them all, narrowly. And then they applaud, all of them, for both of you, and the god of lost keys hands you something you lost nine thousand years ago. You are not at all sure who has won."
+     },
+     "fail": {
+      "flag": "wf_r2",
+      "health": -22,
+      "woundOnly": true,
+      "comprehension": 2,
+      "log": "You lose, in front of the god of the wrong road home, who is terribly sorry about it and offers to see you to your domain. You are shown a way that you did not know was there. (-22 health)"
+     }
+    },
+    {
+     "text": "Bow to the small gods, every one, by name",
+     "effects": {
+      "flag": "wf_r2",
+      "charm": 2,
+      "log": "It takes some time, since you have to ask their names. {npc} watches it with an expression you cannot read. It is the first thing you have done that {he} had not planned for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_gd_r3",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "It rains on your domain, all of it, one morning, a little after anyone expected. Nobody knows who to pray to about it. In the seam where you first met, {npc} is waiting, and {he} is not small any more, nor yet great, and the pantheons have all sent someone to watch. \"Everything I ever answered was a day behind,\" {he} says. \"Today I believe I am on time. Shall we finish?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "wf_r2"
+    ],
+    "notFlags": [
+     "wf_r3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The God of Late Rain",
+   "choices": [
+    {
+     "text": "Finish it, domain against domain",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r3",
+      "fame": 8,
+      "comprehension": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 40,
+       "note": "finished it on the seam, and won"
+      },
+      "log": "At the end the rain stops all across the domains, for the first time in an age. {npc} sits down in the seam, drying out. \"Ah,\" {he} says, not at all unhappily. \"Late again.\" Nobody has ever been so content to lose. You leave {him} the step."
+     },
+     "fail": {
+      "flag": "wf_r3",
+      "health": -26,
+      "woundOnly": true,
+      "fame": -3,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 20,
+       "note": "lost it on the seam, in front of every pantheon"
+      },
+      "log": "You lose, in front of everyone, on time. {npc} helps you up and is quite shy about it. {He} withdraws every complaint in one afternoon, on foot. \"I only wanted it noticed,\" {he} says. Noticed it is. (-26 health)"
+     }
+    },
+    {
+     "text": "Walk into the rain and say what you should have said",
+     "effects": {
+      "flag": "wf_r3",
+      "alignment": 4,
+      "fame": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 50,
+       "note": "said at last what should have been said"
+      },
+      "log": "You tell {him}, before all the pantheons, that a domain that small was never yours to fold. It comes a very long time too late. {npc} looks at you, and then the rain stops, and then, gently, on time, it starts again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_test_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "{npc} is at the terraces again with the yoke, and it has been a long time since anyone in {pw_world} could have asked you to carry anything. Children follow you about now, and old people lower their voices. {He} holds out the buckets anyway. \"You could carry the hill,\" {he} says. \"Carry these. Slowly. There is an old woman at the top who does not know who you are, and I would like you to find out what that is like.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m1",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Carry them up, and do as the old woman tells you",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 3,
+      "artYears": 0.5,
+      "log": "The old woman tells you that you are slow, and that you pour badly, and to do the far row again. You do the far row again. It is the best day you have had in years, and on the way down you notice how long it has been since anyone told you anything."
+     }
+    },
+    {
+     "text": "Ask {him} what they say about you, in the villages",
+     "effects": {
+      "flag": "wf_m2",
+      "comprehension": 2,
+      "npcFlag": "wf_argued",
+      "log": "{npc} tells you, without softening any of it, from memory, reading some of it off the staff. Some of it is very flattering. You come away feeling that you have been given a map of somewhere you ought to stay out of."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_duel_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The circle in the dust of the market square is the same size as before, and now the whole village stands well back from it, because of you. {npc} steps inside anyway, leaning on {his} staff. \"Everyone here knows what you could do,\" {he} says, loud enough for all of them. \"I teach people to fall down. Come and let me fall down, then, in front of them, and we will see who is the taller after.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m1",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Step in, and do it as gently as you know how",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_m2",
+      "fame": 1,
+      "mem": {
+       "deed": "wf_beat",
+       "w": -5,
+       "note": "knocked them down gently on market day"
+      },
+      "log": "{npc} goes down beautifully, rolls, and is up again, and goes down again, and the children begin to clap in time. By the fifth fall it has somehow become {his} show. You leave the circle feeling very large and rather foolish."
+     },
+     "fail": {
+      "flag": "wf_m2",
+      "health": -8,
+      "woundOnly": true,
+      "fame": 3,
+      "mem": {
+       "deed": "wf_lost",
+       "w": 5,
+       "note": "went over on a staff, on market day"
+      },
+      "log": "You are so careful of {him} that you forget about the staff. You go over it, flat, in the dust. There is complete silence. Then a very small child laughs, and everyone is your friend at once, and {npc} looks furious. (-8 health)"
+     }
+    },
+    {
+     "text": "Walk round the circle again, knowing what they will say",
+     "effects": {
+      "flag": "wf_m2",
+      "alignment": 1,
+      "mem": {
+       "deed": "wf_refused",
+       "w": -10,
+       "note": "walked around the ring again"
+      },
+      "log": "Nobody dares say anything, not with you the way you are now. They wait until you are well down the road. You hear it start up behind you, faintly: the same tune as last time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_teach_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "The bowl is on your wall again, and {npc} is behind it with not much staff left. \"You went past anything on this stick long since,\" {he} says. \"Do not be polite. But there is a thing they never tell the strong in {pw_world}, and it is written right at the bottom, where the end gets worn away. It is how to be a neighbour. I would have you read it before it goes.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m2",
+     "wf_kind",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Read it, and go and be one",
+     "effects": {
+      "flag": "wf_m3",
+      "comprehension": 5,
+      "artYears": 2,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "read the bottom of the staff and went to be a neighbour"
+      },
+      "log": "It takes a winter of mending other people's fences, badly. They stop lowering their voices around you by about the thaw. You find your own arts are steadier than they have been in years, which nobody can explain, except for {npc}."
+     }
+    },
+    {
+     "text": "Bring beans, and ask for the wrong parts again",
+     "effects": {
+      "flag": "wf_m3",
+      "luck": 3,
+      "comprehension": 3,
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "brought beans for the wrong parts"
+      },
+      "log": "You could do everything on that staff without getting up. You sit on the wall, and {npc} reads it to you anyway, the whole length, getting it wrong in the proper places. It is a very good winter."
+     }
+    },
+    {
+     "text": "Ask leave to copy the staff, however small a thing it looks now",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wfx_card"
+      ],
+      "role": "friend",
+      "npcFlag": "taught_you",
+      "mem": {
+       "deed": "wf_taught",
+       "w": 25,
+       "note": "wrote it all down, with leave"
+      },
+      "log": "{npc} looks at you for a while. \"Copy the bottom part twice,\" {he} says. \"You people always lose that part.\" In lives yet to come, somebody with an empty bowl will walk up to someone very strong, and will not be afraid.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_rival_far",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_master",
+   "text": "There are thirteen verses now, and the children sing them more quietly than they used to, since you got so strong. {npc} sings them loudly. {He} is at the well with the staff, and {he} looks you in the eye, as hardly anyone in {pw_world} does any more. \"I cannot beat you,\" {he} says. \"I do not need to. I just need you to know that someone is not afraid. Now, what rhymes with that?\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_m2",
+     "wf_cold",
+     "wf_far"
+    ],
+    "notFlags": [
+     "wf_m3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Tell {him} you will be listening for the next verse",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 1,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -30,
+       "note": "said you would be listening"
+      },
+      "log": "\"Good,\" says {npc}, and writes that on the staff. A while later you hear {he} has given up teaching for soup and gone into the hills to train, because a song needs someone able to sing it to your face."
+     }
+    },
+    {
+     "text": "Make the well run dry, once, and let {him} see",
+     "effects": {
+      "flag": [
+       "wf_m3",
+       "wf_rv"
+      ],
+      "fame": 3,
+      "alignment": -3,
+      "role": "rival",
+      "npcFlag": "rival",
+      "mem": {
+       "deed": "wf_rival",
+       "w": -40,
+       "note": "made the well run dry to make a point"
+      },
+      "log": "The water comes back in a moment. The whole village saw. Nobody is singing now. {npc} looks into the well, then at you, and writes something on the staff. It is the first time you have seen {him} not smile."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_r1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "There is a circle in the dust at the crossroads, drawn fresh, with your name in it. {npc} is sitting at the edge with a new staff, a heavier one, and the way {he} gets up has changed. \"I went to the hills,\" {he} says. \"It turns out I had only ever taught the falling down. There is also a part about getting up. Come in, and I will show you what I have found.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_rv"
+    ],
+    "notFlags": [
+     "wf_r1"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Step into the circle at the crossroads",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r1",
+      "fame": 3,
+      "log": "You put {him} on the ground, and {he} gets up. You put {him} there again, and {he} gets up faster. In the end you win, more or less, and {npc} walks off down the road whistling the tune. It is not a good sign."
+     },
+     "fail": {
+      "flag": "wf_r1",
+      "health": -14,
+      "woundOnly": true,
+      "fame": -1,
+      "log": "You spend some time looking at the sky over {pw_world}. {npc} leans on the staff, in your light. \"That is the falling down,\" {he} says. \"We will do the other part next time.\" (-14 health)"
+     }
+    },
+    {
+     "text": "Scuff out the circle and go home by the fields",
+     "effects": {
+      "flag": "wf_r1",
+      "fame": -2,
+      "luck": 1,
+      "log": "Nobody was there to see. By the next market there is a new verse about it regardless, and it knows which field."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_r2",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "At the harvest feast there is an empty place set across from yours, and a bowl in it. {npc} sits down in it as the soup comes round. {He} has grown strong, and it is plain to you, and the whole table can feel it. Half the young people of the valley are behind {him} with staves of their own. \"They wanted to learn to fall,\" {he} says. \"I said I knew somebody who could show them.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_r1"
+    ],
+    "notFlags": [
+     "wf_r2"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Take it outside, and let them see how it is done",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r2",
+      "fame": 4,
+      "comprehension": 1,
+      "log": "You win, by the end, in the stubble of the top field, with the whole feast watching. The young people cheer you both. {npc} gets up, as promised, and takes a long swallow of soup. \"Nearly,\" {he} says."
+     },
+     "fail": {
+      "flag": "wf_r2",
+      "health": -16,
+      "woundOnly": true,
+      "comprehension": 2,
+      "log": "You go down in the stubble. The whole valley sees it. Later, sitting up, you can work out exactly how {he} did it, and you have to admit that it was very well taught. (-16 health)"
+     }
+    },
+    {
+     "text": "Fill the bowl yourself, and pass it over",
+     "effects": {
+      "flag": "wf_r2",
+      "charm": 2,
+      "log": "You ladle it out and set it down. The table goes silent. {npc} looks into the bowl for a while, then eats it, all of it, with great attention. Neither of you says a word, and nobody at that feast ever forgets it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "wf_pw_r3",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "wf_rival_beat",
+   "text": "The first frost has come to {pw_world}, and {npc} has been walking towards you for days, and everyone along the road has told you so. You meet at the well, or what the songs now call the well. {He} leans the staff against the wall, and it is covered from end to end, with no room left for one word more. \"It wants a last verse,\" {he} says. \"I have left a space for it on the ground. Come on, then.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "wf_r2"
+    ],
+    "notFlags": [
+     "wf_r3"
+    ]
+   },
+   "npc": {
+    "role": "stranger"
+   },
+   "arc": "The Soup Teacher",
+   "choices": [
+    {
+     "text": "Meet {him} on the frost, for the last verse",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "wf_r3",
+      "fame": 8,
+      "comprehension": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 40,
+       "note": "won the last verse, and helped them up"
+      },
+      "log": "{npc} falls, and it is the finest fall of {his} life, and this time {he} does not get up until you hold out a hand. {He} looks at it and takes it. The last verse is yours. It is short, and the children like it the best."
+     },
+     "fail": {
+      "flag": "wf_r3",
+      "health": -18,
+      "woundOnly": true,
+      "fame": -3,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 20,
+       "note": "lost the last verse on the frost"
+      },
+      "log": "You fall, and you do it properly, the way you were never taught. {npc} stands over you, breathing hard, and then laughs and holds out the bowl. \"Better,\" {he} says. \"Much better.\" That is the last verse. (-18 health)"
+     }
+    },
+    {
+     "text": "Fill the bowl, and say that you should have, all that time ago",
+     "effects": {
+      "flag": "wf_r3",
+      "alignment": 4,
+      "fame": 2,
+      "role": "friend",
+      "npcUnflag": "rival",
+      "mem": {
+       "deed": "wf_rv_end",
+       "w": 50,
+       "note": "filled the bowl at last"
+      },
+      "log": "{npc} holds the bowl for quite a long time. \"That does not scan,\" {he} says. Then {he} eats. The song stops at thirteen verses, and for generations the children argue about why."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

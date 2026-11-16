@@ -1,0 +1,1406 @@
+{
+ "events": [
+  {
+   "id": "ov_village_ask_flood",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_village"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The river took the lower fields in the night and the village is filling sandbags by torchlight. {npc} is out there with them, at {his} age, refusing to go home.",
+   "choices": [
+    {
+     "text": "Carry sandbags until dawn",
+     "effects": {
+      "health": -5,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "carried sandbags all night beside me"
+      },
+      "log": "The bank holds by a hand's width. The village drinks to you at noon. {npc} tells everyone you were always strong, which is untrue and very kind."
+     }
+    },
+    {
+     "text": "Carry {npc} home first",
+     "effects": {
+      "mem": {
+       "deed": "cared",
+       "w": 12,
+       "note": "carried me home out of the flood"
+      },
+      "log": "{He} hits you with a sandbag on the way. Then {he} sleeps for a day and a night."
+     }
+    }
+   ],
+   "variants": [
+    "The river swallowed the low fields overnight and the whole village is filling sandbags by torchlight. {npc} is out there with them, at {his} age, and will not go home."
+   ]
+  },
+  {
+   "id": "ov_village_rp_seed",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_village"
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_ov_village_rp_seed"
+    ]
+   },
+   "text": "{npc} gives you a cloth bag of the family's own rice seed, the strain your great-grandfather bred. 'You {debt}. Wherever you settle, plant this.'",
+   "choices": [
+    {
+     "text": "Plant it wherever you go",
+     "effects": {
+      "settle": "debt",
+      "luck": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "planted the family rice"
+      },
+      "log": "Years later, in a province far away, a field of your family's rice turns gold in a sect's back garden.",
+      "flag": "done_ov_village_rp_seed"
+     }
+    },
+    {
+     "text": "Keep it for your own children",
+     "effects": {
+      "settle": "debt",
+      "alignment": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "kept the seed for the next ones"
+      },
+      "log": "The bag goes into a chest. It will outlast you, which is what seed is for.",
+      "flag": "done_ov_village_rp_seed"
+     }
+    }
+   ],
+   "variants": [
+    "{npc} gives you a cloth bag of rice seed, the family's own strain, bred by your great-grandfather. 'You {debt}. Wherever you settle, plant this.'"
+   ]
+  },
+  {
+   "id": "ov_village_ask_tiger",
+   "trigger": "ask_help",
+   "once": true,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_village"
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_ov_village_ask_tiger"
+    ]
+   },
+   "text": "A tiger has taken two goats from the village and the hunters are afraid. {npc} asks, quietly, whether all that training was for nothing.",
+   "choices": [
+    {
+     "text": "Go up the hill",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foe": 1,
+      "foeName": "The tiger"
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "saved_life",
+       "w": 20,
+       "note": "went up the hill for the village"
+      },
+      "log": "The tiger does not come down again. The village tells it at weddings for fifty years.",
+      "flag": "done_ov_village_ask_tiger"
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "the tiger above your home village",
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "went up the hill and came back hurt"
+      },
+      "log": "You come back down the hill torn and bleeding, and the tiger goes back up it limping. It leaves the village alone after that. Nobody at the weddings mentions who won.",
+      "flag": "done_ov_village_ask_tiger"
+     },
+     "effects": {
+      "flag": "done_ov_village_ask_tiger"
+     }
+    },
+    {
+     "text": "Teach the hunters to set a pit",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "taught the hunters"
+      },
+      "log": "The pit works on the third night. The village eats tiger, and the hunters take all the credit, which they need more than you do.",
+      "flag": "done_ov_village_ask_tiger"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_merchant_ask_ledger",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_merchant"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has found an error in the family ledger: a partner has been skimming for six years. Confronting him will end the partnership and half the business.",
+   "choices": [
+    {
+     "text": "Confront him with {npc}",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 150,
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "stood beside me against the partner"
+      },
+      "log": "The partner pays back what he can and leaves the province. The house is smaller and honest."
+     },
+     "fail": {
+      "taels": -50,
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "stood beside me, and we lost"
+      },
+      "log": "The partner talks his way out and keeps what he took. The house pays the costs, and the ledger stays crooked."
+     }
+    },
+    {
+     "text": "Quietly take his share of the next deal",
+     "effects": {
+      "taels": 80,
+      "alignment": -4,
+      "mem": {
+       "deed": "pleased",
+       "w": 6,
+       "note": "got our silver back quietly"
+      },
+      "log": "The books balance in two years. The partner never learns why his profits fell, and you learn how merchants really work."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_merchant_rp_route",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_merchant"
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_ov_merchant_rp_route"
+    ]
+   },
+   "text": "{npc} gives you the family's most valuable thing, which is not silver: the names of three officials on the western road who can be trusted. 'You {debt}.'",
+   "choices": [
+    {
+     "text": "Use the names",
+     "effects": {
+      "settle": "debt",
+      "taels": 120,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "used the names well"
+      },
+      "log": "Three gates open without bribes. A merchant's real fortune is people, {npc} always said. You understand it now.",
+      "flag": "done_ov_merchant_rp_route"
+     }
+    },
+    {
+     "text": "Burn the list once memorised",
+     "effects": {
+      "settle": "debt",
+      "comprehension": 3,
+      "mem": {
+       "deed": "friend",
+       "w": 14,
+       "note": "kept the names safe"
+      },
+      "log": "{npc} nods approvingly. A list can be stolen. A memory can only be bought.",
+      "flag": "done_ov_merchant_rp_route"
+     }
+    }
+   ],
+   "variants": [
+    "{npc} hands you the family's true treasure, and it is not silver: three names, officials on the western road who can be trusted. 'You {debt}.'"
+   ]
+  },
+  {
+   "id": "ov_merchant_ask_ship",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_merchant"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "A family junk with the whole year's silk on board is a week late, and pirates have been seen at the river mouth. {npc} has not slept.",
+   "choices": [
+    {
+     "text": "Ride to the river mouth",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The pirates"
+     },
+     "ok": {
+      "taels": 200,
+      "fame": 5,
+      "mem": {
+       "deed": "saved_life",
+       "w": 18,
+       "note": "brought our ship home"
+      },
+      "log": "The junk comes in under your sail with the pirates' flag in its hold. The family's year is saved."
+     },
+     "fail": {
+      "health": -20,
+      "deathCause": "river pirates at the estuary",
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "went after the ship"
+      },
+      "log": "You reach the river mouth a day too late. The junk limps in on its own the next week, a tenth of the silk gone and the crew bruised."
+     }
+    },
+    {
+     "text": "Hire an escort agency",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "taels": -60,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "paid for the escort"
+      },
+      "log": "The agency brings it in two days later, minus a tenth for their trouble. {npc} sleeps for fourteen hours."
+     }
+    },
+    {
+     "text": "Sit up with {npc} and wait for news",
+     "effects": {
+      "fame": -2,
+      "mem": {
+       "deed": "helped",
+       "w": 4,
+       "note": "sat up with me waiting for the ship"
+      },
+      "log": "You sit up with {npc} through three long nights. The junk limps in on the fourth day, a third of the silk gone to the pirates. It is a poor year for the house, but {npc} did not wait alone."
+     }
+    }
+   ],
+   "variants": [
+    "The family's junk, carrying the whole year's silk, is a week overdue, and pirates have been sighted at the river mouth. {npc} has not slept."
+   ]
+  },
+  {
+   "id": "ov_great_ask_council",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_great_family"
+    ],
+    "minFame": 15,
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The family council meets to strip {npc}'s branch of its seat over an old insult nobody can quite remember. {npc} asks you to speak, because you are the one the elders still fear.",
+   "choices": [
+    {
+     "text": "Speak, and remind them who you are",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "spoke for our branch at the council"
+      },
+      "log": "The council votes to forget the insult. {npc} buys every elder a jar of wine, which is how great families say thank you."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "spoke for us and lost"
+      },
+      "log": "The elders listen, and vote anyway. {npc}'s branch loses its seat, and {he} thanks you for trying in a voice that gives nothing away."
+     }
+    },
+    {
+     "text": "Challenge the accusing elder to a bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The accusing elder"
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "beat the elder in the yard"
+      },
+      "log": "Old families settle old insults the old way. The yard is full of cousins who will talk about it for a decade."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "helped",
+       "w": 6,
+       "note": "fought the elder for us"
+      },
+      "log": "The accusing elder is better with a blade than age should allow. You are laid out in the yard in front of every cousin, and the vote goes the elder's way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_great_rp_hall",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_great_family"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} unlocks the family's inner library for you: three shelves of manuals only the heirs may read. 'You {debt}. The rules can bend once.'",
+   "choices": [
+    {
+     "text": "Read through the night",
+     "effects": {
+      "settle": "debt",
+      "comprehension": 5,
+      "artYears": 1,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "read the inner library"
+      },
+      "log": "A year of insight in a night. You leave before dawn, before the rules unbend."
+     }
+    },
+    {
+     "text": "Take one manual, openly",
+     "effects": {
+      "settle": "debt",
+      "manual": 2,
+      "fame": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "took the manual openly"
+      },
+      "log": "You sign the register. The elders see the name and say nothing, which is its own kind of honour."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_great_ask_marriage",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_great_family"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The family has arranged a marriage for a young cousin to a man three times her age, for an alliance. The cousin has come to {npc} in tears, and {npc} comes to you.",
+   "choices": [
+    {
+     "text": "Break the engagement",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 6,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "broke the engagement"
+      },
+      "log": "The alliance goes to another family. The cousin marries a schoolteacher two years later and names her first child after you."
+     },
+     "fail": {
+      "fame": -4,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "tried to break the engagement"
+      },
+      "log": "The elders will not be moved. The cousin is married on the date set, and thanks you in a letter {npc} reads aloud, then folds away."
+     }
+    },
+    {
+     "text": "Find the family a better alliance",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "found us a better alliance"
+      },
+      "log": "Politics, it turns out, can be kind if it is clever enough. The elders take the credit, as elders do."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 6,
+       "note": "looked for another alliance"
+      },
+      "log": "Every alternative is worse for someone more powerful. The elders thank you for your suggestions and keep their own plan."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "ov_beggar_ask_gang",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_beggar"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The alley you grew up in has a new boss, a gang that takes half of every bowl. {npc}, who still begs at the bridge, has started skipping meals.",
+   "choices": [
+    {
+     "text": "Visit the gang's boss",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "The gang's boss"
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 4,
+      "mem": {
+       "deed": "saved_life",
+       "w": 18,
+       "note": "cleared the gang from our alley"
+      },
+      "log": "The gang moves to another district. The alley eats. The Beggars' Sect sends a polite letter asking who you are."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "fought the gang for us"
+      },
+      "log": "The boss is tougher than the rumours. You leave the alley with a split lip, and the gang takes a little more from every bowl."
+     }
+    },
+    {
+     "text": "Move {npc} out of the alley",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "cared",
+       "w": 14,
+       "note": "moved me out of the alley"
+      },
+      "log": "A small room with a window. {npc} still goes to beg at the bridge some mornings, out of habit, and gives the coins away."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ov_beggar_rp_song",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_beggar"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has nothing to give, and so gives you the begging song {he} sang under the bridge for most of {his} life, all the verses, even the ones nobody else knows. 'You {debt}.'",
+   "choices": [
+    {
+     "text": "Learn every verse",
+     "effects": {
+      "settle": "debt",
+      "charm": 3,
+      "comprehension": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 14,
+       "note": "learned the whole song"
+      },
+      "log": "The last verse, it turns out, is a breathing method set to music by a beggar who was once something more."
+     }
+    },
+    {
+     "text": "Sing it with {him} at the bridge",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "sang with me at the bridge"
+      },
+      "log": "Passers-by stop. One leaves a silver tael. {npc} is prouder of that coin than of anything you have ever told {him}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_ruined_ask_gate",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_ruined_sect"
+    ],
+    "npcAge": [
+     50,
+     999
+    ]
+   },
+   "text": "{npc} has started climbing to the ruined sect gate every morning to sweep the steps, as if disciples might come. {His} knees are bad. {He} will not stop.",
+   "choices": [
+    {
+     "text": "Sweep beside {him}",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 2,
+      "mem": {
+       "deed": "cared",
+       "w": 16,
+       "note": "swept the old steps with me"
+      },
+      "log": "Every morning for a season. On the last day a child from the valley watches you, and asks if the sect takes students."
+     }
+    },
+    {
+     "text": "Hire a boy to sweep instead",
+     "req": {
+      "minTaels": 20
+     },
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "hired the boy to sweep"
+      },
+      "log": "{npc} sends the boy away and sweeps beside him instead. The steps are very clean."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_ruined_rp_seal",
+   "trigger": "repay",
+   "once": true,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_ruined_sect"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} gives you the sect's seal, hidden for twenty years in a rice jar. 'You {debt}. The sect is ash, but the seal is not.'",
+   "choices": [
+    {
+     "text": "Swear to raise the sect again",
+     "effects": {
+      "settle": "debt",
+      "fame": 4,
+      "flag": "vowed_ruined_sect",
+      "mem": {
+       "deed": "friend",
+       "w": 18,
+       "note": "swore to raise the sect"
+      },
+      "log": "You swear it on the seal. {npc} says nothing, and does not need to."
+     }
+    },
+    {
+     "text": "Keep the seal and make no promise",
+     "effects": {
+      "settle": "debt",
+      "comprehension": 3,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "kept the seal honestly"
+      },
+      "log": "{npc} respects that more than a vow. Promises, {he} says, are how sects die."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_ruined_ask_enemy",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_ruined_sect"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "An old man comes to the house: one of the sect's killers, twenty years ago, now dying and asking to beg {npc}'s forgiveness. {npc} cannot decide, and asks you to.",
+   "choices": [
+    {
+     "text": "Let him in",
+     "effects": {
+      "alignment": 8,
+      "mem": {
+       "deed": "moved",
+       "w": 14,
+       "note": "let the old killer in"
+      },
+      "log": "He weeps for an hour and leaves a name: who paid for the sect's ending. {npc} sits up all night with it."
+     }
+    },
+    {
+     "text": "Send him away",
+     "effects": {
+      "alignment": -2,
+      "mem": {
+       "deed": "pleased",
+       "w": 6,
+       "note": "sent the killer away"
+      },
+      "log": "He goes. He dies in the spring. {npc} burns a stick of incense for him, which surprises you both."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_ask_main",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "uncle"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The main house has summoned {npc} to answer for your branch's 'ambition', which means your fame. {npc} is afraid to go alone.",
+   "choices": [
+    {
+     "text": "Go with {him}, and bow very correctly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the main house with me"
+      },
+      "log": "The main house wanted to see you bow. You bow beautifully. They are disappointed in a way they cannot name."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "came with me and bowed"
+      },
+      "log": "You bow too deep, or too shallow; the main house cannot decide which, and sends {npc} home with a reprimand for both of you."
+     }
+    },
+    {
+     "text": "Go alone, and do not bow",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The main house"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "faced the main house for us"
+      },
+      "log": "The main house learns that a branch can be a sword. Your branch is invited to the next banquet, at a better table."
+     },
+     "fail": {
+      "health": -15,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "faced the main house and paid for it"
+      },
+      "log": "The main house's guards remind you what a branch is worth in their courtyard. You leave with your head high and your ribs sore."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_rp_name",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "uncle"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has had your name written into the main family register, which took years of letters and a bribe {he} will never admit to. 'You {debt}. And you were always one of us.'",
+   "choices": [
+    {
+     "text": "Thank {him}, and mean it",
+     "effects": {
+      "settle": "debt",
+      "fame": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "was proud of the register"
+      },
+      "log": "Your name in the great book, in a careful clerk's hand. {npc} visits it twice a year."
+     }
+    },
+    {
+     "text": "Say the branch was always enough",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "said the branch was enough"
+      },
+      "log": "{npc} laughs, and agrees, and is still a little proud of the register."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_rp_name_aunt",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "aunt"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has had your name written into the main family register, which took years of letters and a bribe {he} will never admit to. 'You {debt}. And you were always one of us.'",
+   "choices": [
+    {
+     "text": "Thank {him}, and mean it",
+     "effects": {
+      "settle": "debt",
+      "fame": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "was proud of the register"
+      },
+      "log": "Your name in the great book, in a careful clerk's hand. {npc} visits it twice a year."
+     }
+    },
+    {
+     "text": "Say the branch was always enough",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "said the branch was enough"
+      },
+      "log": "{npc} laughs, and agrees, and is still a little proud of the register."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_rp_name_grandfather",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "grandfather"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has had your name written into the main family register, which took years of letters and a bribe {he} will never admit to. 'You {debt}. And you were always one of us.'",
+   "choices": [
+    {
+     "text": "Thank {him}, and mean it",
+     "effects": {
+      "settle": "debt",
+      "fame": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "was proud of the register"
+      },
+      "log": "Your name in the great book, in a careful clerk's hand. {npc} visits it twice a year."
+     }
+    },
+    {
+     "text": "Say the branch was always enough",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "said the branch was enough"
+      },
+      "log": "{npc} laughs, and agrees, and is still a little proud of the register."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_rp_name_grandmother",
+   "trigger": "repay",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "grandmother"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has had your name written into the main family register, which took years of letters and a bribe {he} will never admit to. 'You {debt}. And you were always one of us.'",
+   "choices": [
+    {
+     "text": "Thank {him}, and mean it",
+     "effects": {
+      "settle": "debt",
+      "fame": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "was proud of the register"
+      },
+      "log": "Your name in the great book, in a careful clerk's hand. {npc} visits it twice a year."
+     }
+    },
+    {
+     "text": "Say the branch was always enough",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "said the branch was enough"
+      },
+      "log": "{npc} laughs, and agrees, and is still a little proud of the register."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_ask_main_aunt",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "aunt"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The main house has summoned {npc} to answer for your branch's 'ambition', which means your fame. {npc} is afraid to go alone.",
+   "choices": [
+    {
+     "text": "Go with {him}, and bow very correctly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the main house with me"
+      },
+      "log": "The main house wanted to see you bow. You bow beautifully. They are disappointed in a way they cannot name."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "came with me and bowed"
+      },
+      "log": "You bow too deep, or too shallow; the main house cannot decide which, and sends {npc} home with a reprimand for both of you."
+     }
+    },
+    {
+     "text": "Go alone, and do not bow",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The main house"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "faced the main house for us"
+      },
+      "log": "The main house learns that a branch can be a sword. Your branch is invited to the next banquet, at a better table."
+     },
+     "fail": {
+      "health": -15,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "faced the main house and paid for it"
+      },
+      "log": "The main house's guards remind you what a branch is worth in their courtyard. You leave with your head high and your ribs sore."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_ask_main_grandfather",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "grandfather"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The main house has summoned {npc} to answer for your branch's 'ambition', which means your fame. {npc} is afraid to go alone.",
+   "choices": [
+    {
+     "text": "Go with {him}, and bow very correctly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the main house with me"
+      },
+      "log": "The main house wanted to see you bow. You bow beautifully. They are disappointed in a way they cannot name."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "came with me and bowed"
+      },
+      "log": "You bow too deep, or too shallow; the main house cannot decide which, and sends {npc} home with a reprimand for both of you."
+     }
+    },
+    {
+     "text": "Go alone, and do not bow",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The main house"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "faced the main house for us"
+      },
+      "log": "The main house learns that a branch can be a sword. Your branch is invited to the next banquet, at a better table."
+     },
+     "fail": {
+      "health": -15,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "faced the main house and paid for it"
+      },
+      "log": "The main house's guards remind you what a branch is worth in their courtyard. You leave with your head high and your ribs sore."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ov_branch_ask_main_grandmother",
+   "trigger": "ask_help",
+   "once": false,
+   "weight": 2.5,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "flags": [
+     "born_branch_family"
+    ],
+    "npcFlags": [
+     "grandmother"
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The main house has summoned {npc} to answer for your branch's 'ambition', which means your fame. {npc} is afraid to go alone.",
+   "choices": [
+    {
+     "text": "Go with {him}, and bow very correctly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the main house with me"
+      },
+      "log": "The main house wanted to see you bow. You bow beautifully. They are disappointed in a way they cannot name."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "came with me and bowed"
+      },
+      "log": "You bow too deep, or too shallow; the main house cannot decide which, and sends {npc} home with a reprimand for both of you."
+     }
+    },
+    {
+     "text": "Go alone, and do not bow",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The main house"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "faced the main house for us"
+      },
+      "log": "The main house learns that a branch can be a sword. Your branch is invited to the next banquet, at a better table."
+     },
+     "fail": {
+      "health": -15,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "faced the main house and paid for it"
+      },
+      "log": "The main house's guards remind you what a branch is worth in their courtyard. You leave with your head high and your ribs sore."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

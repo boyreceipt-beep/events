@@ -1,0 +1,5496 @@
+{
+ "events": [
+  {
+   "id": "w7cr_al_taster_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The county magistrate ordered a gout pill from you, and by old custom the official food-taster, {npc}, ate the first half. This morning {npc} walked up your street without the limp {he} has had for twenty years. The magistrate's toe is as swollen as ever, and the letter from the magistrate's office uses the word \"fraud\" four times.",
+   "npc": {
+    "role": "w7cr_al_taster",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_al_taster",
+     "ageAbs": 34,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Pill That Cured the Wrong Person",
+   "choices": [
+    {
+     "text": "Brew the magistrate a second pill, free",
+     "effects": {
+      "taels": -20,
+      "fame": 2,
+      "flag": "w7cr_alt_go",
+      "log": "Herbs for the second pill cost you 20 taels. This time the magistrate eats the whole pill behind a locked door, and the toe goes down.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Explain, politely, how pills choose",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 4,
+      "flag": "w7cr_alt_go",
+      "log": "You explain that a pill is not a letter: it goes where it is needed. The magistrate, oddly, likes this and frames it.",
+      "npcFlag": "w7cr_al_taster_who"
+     },
+     "fail": {
+      "fame": -2,
+      "flag": "w7cr_alt_go",
+      "log": "You explain that a pill goes where it is needed. The magistrate explains where you may go.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Ask {npc} to describe exactly how it felt",
+     "effects": {
+      "comprehension": 3,
+      "flag": "w7cr_alt_go",
+      "log": "{npc} talks for an hour, delighted. You fill six pages. Something in the formula was doing a second job you never meant.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_taster_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} turns up at your workshop with a bundle of clothes and a jar of pickled radish. \"Twenty years I tasted other people's food for poison,\" {he} says. \"Then one day I tasted a miracle. Teach me how it is done. I can taste anything. I have tasted everything.\"",
+   "npc": {
+    "role": "w7cr_al_taster"
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known",
+     "w7cr_alt_go"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_taster_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_al_taster_who"
+    ]
+   },
+   "arc": "The Pill That Cured the Wrong Person",
+   "choices": [
+    {
+     "text": "Take {npc} on as a student",
+     "effects": {
+      "alignment": 3,
+      "luck": 1,
+      "flag": "w7cr_alt_student",
+      "log": "Your new student can tell a stale ginseng root from across the room. It is a little frightening.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Work out the accident together first",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "fame": 2,
+      "flag": "w7cr_alt_student",
+      "log": "Together you find the second job your pill was doing. You name it Taster's Stride and sell it to every limping porter in the county.",
+      "npcFlag": "w7cr_al_taster_who"
+     },
+     "fail": {
+      "health": -6,
+      "flag": "w7cr_alt_student",
+      "log": "{npc} tastes your next three attempts and is ill for a week. You feel terrible. {He} feels worse, but takes notes.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Send {npc} home with a reference letter",
+     "effects": {
+      "charm": 1,
+      "log": "You write a warm letter to the apothecary in the next town. {npc} keeps the radish jar on your step anyway.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_taster_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years on, a small box arrives from {npc}, who now keeps a herb shop of {his} own with a painted sign of a walking leg. Inside is one pill and a note: \"For the ache in your lower back that you think nobody notices. I tasted it in your tea once. Took me nine years.\"",
+   "npc": {
+    "role": "w7cr_al_taster"
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known",
+     "w7cr_alt_student"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_taster_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7cr_al_taster_who"
+    ]
+   },
+   "arc": "The Pill That Cured the Wrong Person",
+   "choices": [
+    {
+     "text": "Take the pill",
+     "effects": {
+      "health": 12,
+      "lifespan": 1,
+      "log": "The ache you had stopped noticing goes away, and you notice. You write back a whole page.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Keep it, and send {npc} a pill of your own in return",
+     "effects": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "The two of you trade pills by post for the rest of your lives, like old poets trading verses.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    },
+    {
+     "text": "Take it apart to see how {he} did it",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "log": "You crack it open and read the formula in the powder. It is better than anything you taught. You are very proud and slightly annoyed.",
+      "npcFlag": "w7cr_al_taster_who"
+     },
+     "fail": {
+      "luck": 1,
+      "log": "You cannot work out what is in it. You eat it anyway, sulking. The back feels wonderful.",
+      "npcFlag": "w7cr_al_taster_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_grumble_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Your old bronze furnace, the one the neighbours call Grumble because it groans when it heats, splits down one side in the middle of a nine-day brew. Green smoke fills the workshop. The pills inside are still turning, and so is your stomach.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Furnace Called Grumble",
+   "choices": [
+    {
+     "text": "Hold the crack and finish the brew",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "w7cr_gr_saved",
+      "log": "You clamp the crack with wet cloth and bare hands and finish the brew. Nine pills, all good, and a smell in your hair for a month."
+     },
+     "fail": {
+      "health": -12,
+      "flag": "w7cr_gr_cracked",
+      "log": "The smoke wins. You wake up in the yard with a neighbour fanning you and nine black pebbles where the pills were."
+     }
+    },
+    {
+     "text": "Throw open the doors and let it go",
+     "effects": {
+      "health": -3,
+      "flag": "w7cr_gr_cracked",
+      "log": "The brew is lost. Grumble sighs out the last of the smoke like an old dog lying down."
+     }
+    },
+    {
+     "text": "Pour well water on it",
+     "effects": {
+      "luck": -1,
+      "flag": "w7cr_gr_cracked",
+      "log": "There is a noise like a temple gong falling downstairs. Grumble is now in two pieces."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_grumble_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "You buy a new furnace from the capital: polished, silent, perfectly round. It brews well and you hate it. Grumble's pieces sit in the corner. A tinker in the market says he can braze them back together, \"probably\", for 30 taels.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_al_grumble_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Furnace Called Grumble",
+   "choices": [
+    {
+     "text": "Pay the tinker 30 taels",
+     "effects": {
+      "taels": -30,
+      "flag": "w7cr_gr_back",
+      "log": "The tinker works for three days, swearing. Grumble comes back with a copper scar and groans louder than ever."
+     }
+    },
+    {
+     "text": "Make Grumble a planter by the door",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "Mint grows in Grumble now. Customers rub a leaf for luck on the way in, and you do too."
+     }
+    },
+    {
+     "text": "Learn the new furnace properly",
+     "effects": {
+      "comprehension": 2,
+      "fame": 1,
+      "log": "You stop sulking and learn it. It is a fine furnace. You still do not name it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_grumble_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A collector of antiques visits, peers at Grumble's scar and goes pale. The furnace was cast in the old dynasty by a famous alchemist whose seal you never noticed under the soot. \"I will give you a fortune for it,\" the collector says. Grumble groans.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_gr_back"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_al_grumble_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Furnace Called Grumble",
+   "choices": [
+    {
+     "text": "Sell Grumble",
+     "effects": {
+      "taels": 400,
+      "alignment": -1,
+      "log": "The collector carries Grumble off in a silk-lined cart. Your workshop is very quiet. (400 taels)"
+     }
+    },
+    {
+     "text": "Refuse and keep brewing in it",
+     "effects": {
+      "fame": 4,
+      "comprehension": 2,
+      "log": "You keep brewing in it. Word gets out that you brew in an old master's furnace, and your pills sell for more."
+     }
+    },
+    {
+     "text": "Scrape the soot and read the old seal",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 5,
+      "log": "Under the soot are notes cast into the bronze. It takes a winter to read them, and they are worth more than the furnace."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "The notes under the soot are in a script nobody alive reads. You keep the soot on, out of respect."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "w7cr_al_rival_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A new pill shop opens directly across the street from yours. Its owner, {npc}, hangs a sign twice the size of yours and sells the same Qi-Gathering Pill for one copper less. On the first morning {he} waves at you. It is not a friendly wave.",
+   "npc": {
+    "role": "w7cr_al_rival",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_al_rival",
+     "ageAbs": 45,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Shop Across the Street",
+   "choices": [
+    {
+     "text": "Cut your price by two coppers",
+     "effects": {
+      "taels": -15,
+      "fame": 1,
+      "flag": "w7cr_ar_war",
+      "log": "You lose 15 taels in a month and gain a queue. Across the street, {npc} cuts by three.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Wave back, warmly",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_ar_war",
+      "log": "You wave every morning, warmly and without fail, until it clearly drives {npc} out of {his} mind.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Make a better pill, not a cheaper one",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "taels": 40,
+      "flag": "w7cr_ar_war",
+      "log": "You make your pill better instead of cheaper. Customers taste the difference and pay it.",
+      "npcFlag": "w7cr_al_rival_who"
+     },
+     "fail": {
+      "taels": -5,
+      "flag": "w7cr_ar_war",
+      "log": "Your improved pill comes out the colour of mud. Across the street, {npc} laughs out loud.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_rival_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The rivalry has become a street war of smoke. You both brew at dawn, and your smokes meet in the middle of the road and make a smell the neighbours have filed a complaint about. The magistrate orders you and {npc} to settle it between yourselves, or close.",
+   "npc": {
+    "role": "w7cr_al_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_ar_war"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_rival_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_al_rival_who"
+    ]
+   },
+   "arc": "The Shop Across the Street",
+   "choices": [
+    {
+     "text": "Agree to brew on alternate days",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "flag": "w7cr_ar_truce",
+      "log": "Odd days yours, even days theirs. The street smells of one thing at a time. The neighbours bring you both cakes.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Build a chimney array to send your smoke up",
+     "roll": {
+      "stat": "arrays",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 2,
+      "fame": 2,
+      "flag": "w7cr_ar_truce",
+      "log": "You chalk a little wind array on your roof that sends your smoke straight up. {npc} asks, grudgingly, how it works.",
+      "npcFlag": "w7cr_al_rival_who"
+     },
+     "fail": {
+      "fame": -2,
+      "log": "Your wind array sends the smoke sideways into the magistrate's window. You both pay the fine.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Close for a month and let {npc} take the blame",
+     "effects": {
+      "taels": -20,
+      "alignment": -2,
+      "log": "You close and the smell goes on. The neighbours work out whose it is. {npc} does not forgive this.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_rival_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The river floods in the night. By morning half the street is sick with marsh fever, and the only two furnaces above the waterline are yours and {npc}'s. {npc} crosses the street for the first time in years, holding out a bag of rare herbs.",
+   "npc": {
+    "role": "w7cr_al_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_ar_truce"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_rival_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_al_rival_who"
+    ]
+   },
+   "arc": "The Shop Across the Street",
+   "choices": [
+    {
+     "text": "Brew together through the night",
+     "effects": {
+      "alignment": 6,
+      "fame": 6,
+      "health": -5,
+      "flag": "w7cr_ar_friends",
+      "log": "Two furnaces, one recipe, no sleep. The fever breaks on the third day, and so does the feud.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Divide the work and race the fever",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 4,
+      "flag": "w7cr_ar_friends",
+      "log": "You split the work: your speed, their herbs. Every patient on the street is on their feet by the fourth day.",
+      "npcFlag": "w7cr_al_rival_who"
+     },
+     "fail": {
+      "health": -8,
+      "alignment": 3,
+      "flag": "w7cr_ar_friends",
+      "log": "You collapse over the furnace at midnight and {npc} finishes alone. Afterwards {he} sits by your bed and says nothing smug at all.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Brew alone, for your own customers",
+     "effects": {
+      "taels": 60,
+      "alignment": -4,
+      "log": "Your customers live and pay. Across the street the furnace burns all night, for everyone.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_rival_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Old now, the two of you sit in the middle of the street every evening on stools, as if guarding the line where the smoke used to meet. {npc} says {he} has left {his} shop to you in a will, \"so you finally have a decent sign\".",
+   "npc": {
+    "role": "w7cr_al_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_ar_friends"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_rival_3"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7cr_al_rival_who"
+    ]
+   },
+   "arc": "The Shop Across the Street",
+   "choices": [
+    {
+     "text": "Leave yours to {npc} in return",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "You swap wills like gifts. The neighbours say whoever goes second will own the whole street, and laugh.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Merge the shops while you both live",
+     "effects": {
+      "fame": 5,
+      "taels": 50,
+      "log": "You knock out nothing but a sign. The new one reads TWO FURNACES, and everybody in the county knows it.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    },
+    {
+     "text": "Pour two cups of tea and argue about ginseng",
+     "effects": {
+      "health": 4,
+      "comprehension": 1,
+      "log": "You argue about ginseng until the lamps are lit. It is the best evening of the month.",
+      "npcFlag": "w7cr_al_rival_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_forger_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Pills with your seal are selling two provinces away, and the strange thing is that they work. You trace them to {npc}, a young alchemist in a rented room who has copied your seal perfectly and your formula almost as well. \"Nobody buys from a nobody,\" {he} says, not quite meeting your eye.",
+   "npc": {
+    "role": "w7cr_al_forger",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_al_forger",
+     "ageAbs": 28,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Honest Forger",
+   "choices": [
+    {
+     "text": "Take {npc} to the magistrate",
+     "effects": {
+      "fame": 2,
+      "alignment": -1,
+      "log": "The magistrate fines {npc} and burns the seal. Your name is clean. The room is empty when you pass it again.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    },
+    {
+     "text": "Make {npc} sell under {his} own name, with your blessing",
+     "effects": {
+      "alignment": 5,
+      "flag": "w7cr_af_own",
+      "log": "You write {him} a letter of praise to hang in the window. It is the only seal {he} needs.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    },
+    {
+     "text": "Challenge {npc} to brew beside you",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_af_own",
+      "log": "You brew side by side for a day. {npc} sees where the copy fell short, and you see one place where it did not.",
+      "npcFlag": "w7cr_al_forger_who"
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_af_own",
+      "log": "You brew side by side to show the difference, and on the day, there is none. You leave very quietly.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_forger_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}'s shop has done well under {his} own name. Now a fresh forger is selling pills with {npc}'s seal on them, and they are chalk. {npc} comes to you, furious and a little ashamed. \"Is this how it felt? What did you do?\"",
+   "npc": {
+    "role": "w7cr_al_forger"
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known",
+     "w7cr_af_own"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_forger_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_al_forger_who"
+    ]
+   },
+   "arc": "The Honest Forger",
+   "choices": [
+    {
+     "text": "Tell {npc} the truth: you let {him} go",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "flag": "w7cr_af_lesson",
+      "log": "{npc} goes very quiet, then laughs. \"So I should find them a room.\" You do not say yes. You do not say no.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    },
+    {
+     "text": "Go with {npc} and shame the forger in public",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "w7cr_af_lesson",
+      "log": "You and {npc} go to the market together and crush a chalk pill and a real one side by side. The crowd learns the difference in one morning.",
+      "npcFlag": "w7cr_al_forger_who"
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_af_lesson",
+      "log": "The crowd cannot tell chalk from medicine and buys both. You and {npc} share a long, gloomy noodle supper.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    },
+    {
+     "text": "Say nothing useful and pour tea",
+     "effects": {
+      "luck": 1,
+      "log": "You pour tea. {npc} works it out halfway through the second cup and glares at you.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_forger_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A gift arrives from {npc}: a pill in a lacquer box, and a seal carved with both your names. \"The best things I make now,\" the note says, \"I would like to sign with you. If you will let me.\"",
+   "npc": {
+    "role": "w7cr_al_forger"
+   },
+   "when": {
+    "age": [
+     25,
+     400
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known",
+     "w7cr_af_lesson"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_forger_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7cr_al_forger_who"
+    ]
+   },
+   "arc": "The Honest Forger",
+   "choices": [
+    {
+     "text": "Accept the shared seal",
+     "effects": {
+      "fame": 6,
+      "taels": 80,
+      "log": "The double seal becomes the most trusted mark in two provinces. Every forger in the land tries it. None of them can brew.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    },
+    {
+     "text": "Decline gently: the name should be {his} alone",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "{npc} reads your letter twice and then hangs it beside your first one.",
+      "npcFlag": "w7cr_al_forger_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_sparks_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Your new apprentice, {npc}, is clever, quick and has blown up the small furnace twice this month. Today {he} comes out of the smoke with no eyebrows, a black face and a pill nobody has ever seen before, glowing faintly pink.",
+   "npc": {
+    "role": "w7cr_al_sparks",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_al_sparks",
+     "ageAbs": 17,
+     "opinion": 30
+    }
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Eyebrows, Again",
+   "choices": [
+    {
+     "text": "Confiscate the pill and lock up the saltpetre",
+     "effects": {
+      "luck": 1,
+      "flag": "w7cr_as_kept",
+      "log": "The saltpetre goes into a box with three locks. {npc} looks at the box the way a cat looks at a bird.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    },
+    {
+     "text": "Test the pink pill carefully",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_as_kept",
+      "log": "You test the pill on a mouse. The mouse grows a magnificent coat overnight and becomes vain.",
+      "npcFlag": "w7cr_al_sparks_who"
+     },
+     "fail": {
+      "health": -5,
+      "flag": "w7cr_as_kept",
+      "log": "You test the pill on yourself, carefully. Nothing happens, except your sneeze is pink for a week.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    },
+    {
+     "text": "Send {npc} home for a month to think",
+     "effects": {
+      "alignment": -1,
+      "log": "{npc} goes home. The workshop is quiet, safe and boring. You miss the noise more than you expected.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_sparks_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The pink pill grows hair. Not qi, not strength: hair, thick and glossy, on any head that eats it. A bald general hears of it and sends a carriage. {npc}, eyebrows regrown and twice as bushy as before, cannot stop grinning.",
+   "npc": {
+    "role": "w7cr_al_sparks"
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "w7cr_as_kept"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_sparks_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_al_sparks_who"
+    ]
+   },
+   "arc": "Eyebrows, Again",
+   "choices": [
+    {
+     "text": "Sell it under {npc}'s name",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "flag": "w7cr_as_name",
+      "log": "Sparks' Crown Pill, the label says. The general weeps at the mirror. {npc} weeps at the label.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    },
+    {
+     "text": "Sell it under your own name",
+     "effects": {
+      "fame": 6,
+      "taels": 120,
+      "alignment": -4,
+      "log": "The general pays well and the whole army hears your name. {npc} hears it too, every time.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    },
+    {
+     "text": "Work out why it happened first",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_as_name",
+      "log": "You and {npc} work out why it happened. The secret is the explosion. You make room for a blast wall.",
+      "npcFlag": "w7cr_al_sparks_who"
+     },
+     "fail": {
+      "health": -10,
+      "log": "You try to reproduce it safely. Safely does not work. You now have no eyebrows either.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_sparks_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has a shop of {his} own now, famous for odd pills and a blast wall made of old furnace lids. Today {he} sends you an invitation: an apprentice of {his} has blown up the small furnace, and {he} would like to know how you kept from shouting.",
+   "npc": {
+    "role": "w7cr_al_sparks"
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_3",
+     "w7cr_as_name"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_sparks_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7cr_al_sparks_who"
+    ]
+   },
+   "arc": "Eyebrows, Again",
+   "choices": [
+    {
+     "text": "Go and keep {him} company",
+     "effects": {
+      "charm": 2,
+      "health": 3,
+      "log": "You sit with {npc} in the smoke and laugh until you both cough. The apprentice listens at the door, terrified and then relieved.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    },
+    {
+     "text": "Write back one line of advice",
+     "effects": {
+      "comprehension": 1,
+      "luck": 1,
+      "log": "\"I shouted,\" you write. \"Just not at them.\" {npc} pins it over the furnace.",
+      "npcFlag": "w7cr_al_sparks_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_cat_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A vice minister of rites arrives in a palanquin with a cushion, and on the cushion lies the oldest cat you have ever seen. \"Lord Pumpkin is twenty-two,\" the minister says. \"Physicians laugh at me. I want a longevity pill. I do not care what it costs.\"",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_4",
+     "craft_alchemy_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Vice Minister's Cat",
+   "choices": [
+    {
+     "text": "Brew a pill for a very small patient",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 200,
+      "fame": 3,
+      "flag": "w7cr_ac_brewed",
+      "log": "You scale a longevity pill down to the size of a lentil. Lord Pumpkin eats it in fish paste and climbs the curtains for the first time in a decade."
+     },
+     "fail": {
+      "taels": 50,
+      "flag": "w7cr_ac_brewed",
+      "log": "The pill is too strong for so small a body and Lord Pumpkin sleeps for three days. On the fourth, the cat wakes up hungry and furious, and very much alive."
+     }
+    },
+    {
+     "text": "Prescribe sunshine and warm fish instead",
+     "effects": {
+      "alignment": 2,
+      "charm": 2,
+      "flag": "w7cr_ac_brewed",
+      "log": "The minister is outraged, then tries it. Lord Pumpkin approves of the fish."
+     }
+    },
+    {
+     "text": "Refuse: pills are for people",
+     "effects": {
+      "fame": -2,
+      "log": "The minister leaves in a fury. Lord Pumpkin, on the way out, looks at you with total contempt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_cat_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Lord Pumpkin has become famous. The palace ladies feed the cat sugared plums and call it the Immortal. Now three other ministers want pills for their dogs, a duck, and a carp of great sentimental value.",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_4",
+     "craft_alchemy_known",
+     "w7cr_ac_brewed"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_al_cat_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Vice Minister's Cat",
+   "choices": [
+    {
+     "text": "Take all the commissions",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 300,
+      "fame": 5,
+      "log": "You brew for a dog, a duck and a carp. The carp grows to the size of a child and is now a minor celebrity too."
+     },
+     "fail": {
+      "fame": -3,
+      "log": "The duck pill does something to the duck's voice. Nobody at court will say exactly what, but they all go quiet when it quacks."
+     }
+    },
+    {
+     "text": "Take only the carp, out of curiosity",
+     "effects": {
+      "comprehension": 2,
+      "taels": 80,
+      "log": "Fish qi is strange, slow and cold. You learn more from the carp than from a year of people."
+     }
+    },
+    {
+     "text": "Close for a season and pretend to be ill",
+     "effects": {
+      "luck": 1,
+      "health": 3,
+      "log": "You spend a season fishing. A carp in the lake looks at you as if it has heard of you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_al_cat_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The vice minister dies, old and content. Lord Pumpkin, now thirty-one and showing no sign of stopping, is carried to your door in a basket by the minister's heir, with a note: \"Father said you would know what to do.\"",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_4",
+     "craft_alchemy_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_al_cat_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Vice Minister's Cat",
+   "choices": [
+    {
+     "text": "Keep Lord Pumpkin",
+     "effects": {
+      "luck": 3,
+      "charm": 2,
+      "flag": "w7cr_ac_cat",
+      "log": "Lord Pumpkin takes the best cushion, the warmest corner and, within a week, your bed. The workshop has a master now."
+     }
+    },
+    {
+     "text": "Find the cat a temple to live in",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "The monks of the Plum Temple are honoured. Lord Pumpkin sits in front of the altar and receives worshippers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_margin_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "In a second-hand book of poems bought for three coppers, someone long dead has written a pill recipe in the margins, in tiny furious script. It is brilliant, and one ingredient is smudged past reading: something that begins with a brush stroke like a falling leaf.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Recipe in the Margin",
+   "choices": [
+    {
+     "text": "Study the brush strokes all night",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_am_hunt",
+      "log": "By the light of three lamps you narrow it to five possible herbs. You write them on the wall."
+     },
+     "fail": {
+      "luck": 1,
+      "flag": "w7cr_am_hunt",
+      "log": "You stare at the smudge until it looks like a duck. It is not a duck. You write DUCK? on the wall anyway."
+     }
+    },
+    {
+     "text": "Find the bookseller and ask whose book it was",
+     "effects": {
+      "charm": 1,
+      "flag": "w7cr_am_hunt",
+      "log": "The bookseller remembers the cart it came in on, from a house in the hills. It is a place to start."
+     }
+    },
+    {
+     "text": "Read the poems instead",
+     "effects": {
+      "comprehension": 1,
+      "health": 2,
+      "log": "The poems are bad and the recipe is good. You keep the book on your shelf for both reasons."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_margin_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The trail leads to a hill house where a very old woman hears you out and laughs until she has to sit down. \"My teacher,\" she says, \"wrote recipes in everything. Poetry, the backs of letters, once on a fish. The smudge? That was me. I was six. I spilled the tea.\"",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_am_hunt"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_margin_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Recipe in the Margin",
+   "choices": [
+    {
+     "text": "Ask if she remembers the ingredient",
+     "effects": {
+      "luck": 2,
+      "flag": "w7cr_am_word",
+      "log": "She remembers the tea perfectly and the herb not at all. But she gives you a box of the old teacher's letters."
+     }
+    },
+    {
+     "text": "Brew all five guesses in her kitchen",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_am_word",
+      "log": "You brew the pill five ways in her kitchen. The fourth way makes her old cat sit up and purr. You have it."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "w7cr_am_word",
+      "log": "You brew it five ways in her kitchen and all five are wrong. She makes you tea, carefully, and does not spill it."
+     }
+    },
+    {
+     "text": "Stay for supper and hear the stories",
+     "effects": {
+      "charm": 2,
+      "alignment": 2,
+      "log": "She talks until midnight about a teacher who brewed on mountaintops and wrote on fish. You walk home lighter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_margin_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "You finish the margin pill at last. It is not a strong pill. It is a gentle one, for the sleeplessness of people who think too much at night, and it tastes faintly of spilled tea.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_alchemy_2",
+     "w7cr_am_word"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_margin_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Recipe in the Margin",
+   "choices": [
+    {
+     "text": "Sell it cheaply to scholars",
+     "effects": {
+      "fame": 4,
+      "alignment": 2,
+      "log": "The examination candidates of three cities sleep for the first time in years. Their scores improve. You get letters."
+     }
+    },
+    {
+     "text": "Take it yourself, once",
+     "effects": {
+      "health": 8,
+      "comprehension": 2,
+      "log": "You sleep from dusk until noon. When you wake up, three problems you had given up on have solved themselves."
+     }
+    },
+    {
+     "text": "Send the first batch to the old woman in the hills",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "log": "She writes back in a very steady hand: \"Tastes right. Spilled my tea again, for luck.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_memory_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Saints of the cauldron get strange requests. This one comes from {npc}, a young cloth dyer with indigo hands, who has walked nine days. {His} old father no longer remembers {his} name. \"They say you can brew anything. Brew me a pill that gives it back.\"",
+   "npc": {
+    "role": "w7cr_al_memory",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_al_memory",
+     "ageAbs": 24,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "age": [
+     40,
+     2000
+    ],
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "A Pill for Remembering",
+   "choices": [
+    {
+     "text": "Ask everything about the old man first",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_amm_go",
+      "log": "You ask a hundred questions and learn the old man's mind is not broken, only tired, and fading the way an old lamp fades.",
+      "npcFlag": "w7cr_al_memory_who"
+     },
+     "fail": {
+      "flag": "w7cr_amm_go",
+      "log": "You do not know what is wrong. You tell {npc} so, which is not what Saints are supposed to say.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    },
+    {
+     "text": "Say honestly that no such pill exists",
+     "effects": {
+      "alignment": 3,
+      "flag": "w7cr_amm_go",
+      "log": "{npc} cries on your doorstep, and then asks whether you would come and see anyway. You find you are already putting on your shoes.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    },
+    {
+     "text": "Brew a costly pill to ease the fading",
+     "effects": {
+      "taels": -60,
+      "fame": 2,
+      "flag": "w7cr_amm_go",
+      "log": "The rare herbs cost 60 taels. The pill will not bring anything back, but it will slow the fading a little.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_memory_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "At the dye house the old man sits in the sun, smiling at nothing. The old dyer does not know {npc}. But when the vats are stirred and the smell of indigo rises, the old hands start moving, folding a cloth that is not there.",
+   "npc": {
+    "role": "w7cr_al_memory"
+   },
+   "when": {
+    "age": [
+     40,
+     2000
+    ],
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known",
+     "w7cr_amm_go"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_memory_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_al_memory_who"
+    ]
+   },
+   "arc": "A Pill for Remembering",
+   "choices": [
+    {
+     "text": "Brew a pill of indigo, sunlight and old tea",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 2,
+      "flag": "w7cr_amm_done",
+      "log": "It is barely medicine. It is the smell of a whole life, in a pill. The old dyer eats it and says the name of the dye house, clearly.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    },
+    {
+     "text": "Brew the strongest clarity pill you can",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 4,
+      "flag": "w7cr_amm_done",
+      "log": "You brew the finest clarity pill of your life. For one afternoon the old dyer is entirely present, and spends it teaching {npc} a dye recipe.",
+      "npcFlag": "w7cr_al_memory_who"
+     },
+     "fail": {
+      "health": -8,
+      "flag": "w7cr_amm_done",
+      "log": "You push too hard and the pill burns out in the furnace. The old man pats your arm kindly, as if you were the one fading.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    },
+    {
+     "text": "Teach {npc} to work the vats beside the old dyer",
+     "effects": {
+      "charm": 3,
+      "flag": "w7cr_amm_done",
+      "log": "Father and child stir the vats together every morning. The old dyer never says the name. The old hands say everything else.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_al_memory_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A bolt of cloth arrives from {npc}, dyed a blue so deep it looks like the sky an hour after sunset. Woven into the edge, in white thread: the old man's name, and yours.",
+   "npc": {
+    "role": "w7cr_al_memory"
+   },
+   "when": {
+    "age": [
+     40,
+     2000
+    ],
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known",
+     "w7cr_amm_done"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_al_memory_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_al_memory_who"
+    ]
+   },
+   "arc": "A Pill for Remembering",
+   "choices": [
+    {
+     "text": "Wear it",
+     "effects": {
+      "charm": 3,
+      "luck": 1,
+      "log": "You have it made into a robe. Strangers stop you in the street to ask where the blue came from. You tell them the whole story.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    },
+    {
+     "text": "Hang it in the workshop",
+     "effects": {
+      "comprehension": 2,
+      "health": 2,
+      "log": "It hangs over the furnace, a reminder that not every cure comes out of a cauldron.",
+      "npcFlag": "w7cr_al_memory_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_singer_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, a famous blade for hire, comes back to complain about the sword you made {him}. It is perfect, sharp and light, and every time {he} draws it, it sings: a clear high note like a struck bowl. \"I am an ambusher,\" {he} says. \"It has ruined four ambushes.\"",
+   "npc": {
+    "role": "w7cr_rf_singer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_singer",
+     "ageAbs": 32,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Sword That Sings",
+   "choices": [
+    {
+     "text": "Try to quiet the blade",
+     "roll": {
+      "stat": "refining",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "w7cr_rs_quiet",
+      "log": "You file the tang and rebalance the guard. The sword hums now, very softly, like someone thinking.",
+      "npcFlag": "w7cr_rf_singer_who"
+     },
+     "fail": {
+      "fame": -2,
+      "flag": "w7cr_rs_quiet",
+      "log": "You try to quiet it and it starts singing two notes instead of one. {npc} looks at you for a long time.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    },
+    {
+     "text": "Suggest {npc} stop ambushing people",
+     "effects": {
+      "alignment": 3,
+      "charm": 1,
+      "flag": "w7cr_rs_quiet",
+      "log": "{npc} opens {his} mouth to argue, closes it again, and leaves thinking.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    },
+    {
+     "text": "Buy the sword back",
+     "effects": {
+      "taels": -80,
+      "flag": "w7cr_rs_kept",
+      "log": "You pay 80 taels. The sword hangs on your wall and sings whenever the door opens.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_singer_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Word of the singing sword spreads. {npc} now fights in the open, and crowds come to hear the blade. A blind musician from the capital asks if it might be borrowed for a single performance before the court.",
+   "npc": {
+    "role": "w7cr_rf_singer"
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known",
+     "w7cr_rs_quiet"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_rf_singer_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_rf_singer_who"
+    ]
+   },
+   "arc": "The Sword That Sings",
+   "choices": [
+    {
+     "text": "Ask {npc} to lend it",
+     "effects": {
+      "fame": 5,
+      "charm": 2,
+      "flag": "w7cr_rs_court",
+      "log": "The musician plays the sword with a bow before the whole court. Nobody has heard anything like it. Your name is on every list.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    },
+    {
+     "text": "Forge the musician one of their own",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "comprehension": 2,
+      "flag": "w7cr_rs_court",
+      "log": "You forge the musician a blade with no edge at all, tuned to a lower note. It is the finest instrument you have ever made.",
+      "npcFlag": "w7cr_rf_singer_who"
+     },
+     "fail": {
+      "taels": -10,
+      "log": "The new blade sings flat. The musician is kind about it. The court is not.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    },
+    {
+     "text": "Decline: a sword is not a flute",
+     "effects": {
+      "strength": 1,
+      "luck": 1,
+      "log": "You say no. {npc} looks relieved, then strangely disappointed.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_singer_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}, grey now and long retired, brings the singing sword back for the last time. \"I would like it to sing at my funeral,\" {he} says cheerfully. \"Not yet. But I want you to tune it properly first. It has gone a little flat.\"",
+   "npc": {
+    "role": "w7cr_rf_singer"
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known",
+     "w7cr_rs_court"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_rf_singer_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7cr_rf_singer_who"
+    ]
+   },
+   "arc": "The Sword That Sings",
+   "choices": [
+    {
+     "text": "Tune it, and refuse payment",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "You tune it all afternoon. {npc} sits by the forge and hums along, a little flat too.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    },
+    {
+     "text": "Tune it to the note it always wanted",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 4,
+      "comprehension": 3,
+      "log": "You find the note it was always meant to sing and bring it there. {npc} listens with eyes closed and says nothing for an hour.",
+      "npcFlag": "w7cr_rf_singer_who"
+     },
+     "fail": {
+      "luck": 1,
+      "log": "It refuses to change its note. You decide the sword knows what it is doing.",
+      "npcFlag": "w7cr_rf_singer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_chef_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, the head cook of the Golden Carp restaurant, wants a cleaver. Not a sword, not armour: a cleaver, the best in the province, and {he} will pay in silver and a year of free dinners. \"My old one,\" {he} says sadly, \"has lost its spirit.\"",
+   "npc": {
+    "role": "w7cr_rf_chef",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_chef",
+     "ageAbs": 50,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_refining_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "A Cleaver Too Sharp",
+   "choices": [
+    {
+     "text": "Forge the best cleaver you can",
+     "roll": {
+      "stat": "refining",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 60,
+      "fame": 2,
+      "flag": "w7cr_rc_made",
+      "log": "You forge a cleaver folded thirty times. {npc} holds it like a newborn and cries a little into the soup.",
+      "npcFlag": "w7cr_rf_chef_who"
+     },
+     "fail": {
+      "taels": 20,
+      "flag": "w7cr_rc_made",
+      "log": "The cleaver comes out fine but plain. {npc} is polite. The free dinners are smaller than promised.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    },
+    {
+     "text": "Take only the dinners as payment",
+     "effects": {
+      "health": 5,
+      "charm": 1,
+      "flag": "w7cr_rc_made",
+      "log": "You forge it for food. The food is extraordinary. You gain a little weight and many friends.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    },
+    {
+     "text": "Tell {npc} the old cleaver only needs sharpening",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "You sharpen it in ten minutes. {npc} is delighted and disappointed in equal measure.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_chef_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The cleaver is too sharp. {npc} reports that it went through a duck, the board and the table, and is now stuck in the floor. Customers come to look at it. The restaurant has never been busier, but nobody can cook.",
+   "npc": {
+    "role": "w7cr_rf_chef"
+   },
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_refining_2",
+     "w7cr_rc_made"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_chef_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_rf_chef_who"
+    ]
+   },
+   "arc": "A Cleaver Too Sharp",
+   "choices": [
+    {
+     "text": "Go and pull it out yourself",
+     "effects": {
+      "strength": 2,
+      "fame": 2,
+      "flag": "w7cr_rc_fixed",
+      "log": "You pull it out of the floor to applause. The hole is kept as a curiosity, with a little fence around it.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    },
+    {
+     "text": "Take a breath off the edge",
+     "roll": {
+      "stat": "refining",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_rc_fixed",
+      "log": "You dull the edge by a hair's breadth. It now goes through the duck and stops politely at the board.",
+      "npcFlag": "w7cr_rf_chef_who"
+     },
+     "fail": {
+      "taels": -10,
+      "flag": "w7cr_rc_fixed",
+      "log": "You dull it too much. Now it will not cut a radish. {npc} uses it as a paperweight and buys a cheap one.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    },
+    {
+     "text": "Suggest {npc} charge customers to see it",
+     "effects": {
+      "taels": 30,
+      "charm": 1,
+      "log": "The Cleaver in the Floor becomes a sight of the city. {npc} cooks with an old knife and makes a fortune.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_chef_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The governor holds a cooking contest, and {npc} enters with your cleaver. The rival cook has a famous knife from the capital. In the final round, the judges call for a radish carved into a phoenix.",
+   "npc": {
+    "role": "w7cr_rf_chef"
+   },
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_refining_2",
+     "w7cr_rc_fixed"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_chef_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_rf_chef_who"
+    ]
+   },
+   "arc": "A Cleaver Too Sharp",
+   "choices": [
+    {
+     "text": "Stand in the crowd and cheer",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "You cheer loudest of anyone. The radish phoenix is so fine a judge tries to feed it. {npc} wins.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    },
+    {
+     "text": "Hone the cleaver the night before",
+     "roll": {
+      "stat": "refining",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "log": "The night before, you hone the cleaver one last time. In the final, the radish feathers come off so thin the light goes through. {npc} wins, and says your name to the governor.",
+      "npcFlag": "w7cr_rf_chef_who"
+     },
+     "fail": {
+      "fame": 1,
+      "log": "You hone it the night before and take off a little too much. {npc} comes second, and says it was the radish's fault.",
+      "npcFlag": "w7cr_rf_chef_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_ghost_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A great commission, a general's long sword, slips from your tongs at the worst moment and falls into the heart of the furnace. By the time you fish it out there is nothing left but a puddle. The furnace roars as if it is pleased with itself.",
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Furnace That Ate a Sword",
+   "choices": [
+    {
+     "text": "Start again at once",
+     "roll": {
+      "stat": "refining",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_rg_eaten",
+      "log": "You start again that same night and finish by dawn. The general never knows. Your arms do not forgive you for a week."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "w7cr_rg_eaten",
+      "log": "You try to start again at once, too tired, and burn your forearm on the lip of the furnace. The general waits a month."
+     }
+    },
+    {
+     "text": "Tell the general the truth and ask for time",
+     "effects": {
+      "alignment": 3,
+      "fame": -1,
+      "flag": "w7cr_rg_eaten",
+      "log": "The general laughs for a long time. \"At least it was honest steel,\" he says, and gives you a season."
+     }
+    },
+    {
+     "text": "Repay the advance and refuse the job",
+     "effects": {
+      "taels": -50,
+      "log": "You give back 50 taels of silver. The furnace goes on roaring. You stop trusting it a little."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_ghost_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Ever since, every blade from that furnace carries a faint pattern in the steel: the ghost of the general's lost sword, like a wave under water. The blades are stronger for it. Buyers have started asking for the ghost by name.",
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "w7cr_rg_eaten"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_rf_ghost_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Furnace That Ate a Sword",
+   "choices": [
+    {
+     "text": "Sell the ghost blades at a higher price",
+     "effects": {
+      "taels": 120,
+      "fame": 3,
+      "flag": "w7cr_rg_famous",
+      "log": "Ghost-steel blades sell before they cool. You raise the price twice and they still sell."
+     }
+    },
+    {
+     "text": "Study what the furnace did",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_rg_famous",
+      "log": "You work out what the furnace did: the old steel seeded the new. You can do it on purpose now, with any sword."
+     },
+     "fail": {
+      "luck": 1,
+      "flag": "w7cr_rg_famous",
+      "log": "You cannot work out what the furnace is doing. You leave it a cup of wine on festival days, just in case."
+     }
+    },
+    {
+     "text": "Rebuild the furnace and get rid of the ghost",
+     "effects": {
+      "strength": 2,
+      "log": "You rebuild the furnace brick by brick. The blades come out plain and honest. A few customers sigh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_rf_ghost_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The general, now retired, comes to see you at last, and asks to see a ghost blade. He turns it in the light and goes very still. \"That is my sword,\" he says. \"That is the wave I chose for its hilt. Where has it been all this time?\"",
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "w7cr_rg_famous"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_rf_ghost_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Furnace That Ate a Sword",
+   "choices": [
+    {
+     "text": "Give him the finest ghost blade, free",
+     "effects": {
+      "alignment": 4,
+      "fame": 4,
+      "log": "He wears it for the rest of his life and tells everyone it is the sword he ordered, which is more or less true."
+     }
+    },
+    {
+     "text": "Sell it to him at full price",
+     "effects": {
+      "taels": 150,
+      "log": "He pays without blinking. \"I owed you for the first one anyway,\" he says."
+     }
+    },
+    {
+     "text": "Tell him the whole story over tea",
+     "effects": {
+      "charm": 3,
+      "luck": 1,
+      "log": "He laughs until he weeps. Then he insists on paying for the tea, the sword and your next furnace."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_hammer_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A new smith, {npc}, has set up on the far bank of the river, and {his} hammer falls on the beat between yours. Clang, clang. Clang, clang. The whole town keeps time to it. You find yourself hammering faster, and so does {he}.",
+   "npc": {
+    "role": "w7cr_rf_hammer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_hammer",
+     "ageAbs": 42,
+     "opinion": -5
+    }
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_refining_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Hammer Across the River",
+   "choices": [
+    {
+     "text": "Hammer faster still",
+     "effects": {
+      "strength": 2,
+      "health": -3,
+      "flag": "w7cr_rh_race",
+      "log": "By dusk you are both hammering like a rainstorm. The town cannot sleep. Neither can you.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Shift your rhythm to match {his}",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_rh_race",
+      "log": "Your hammers fall together. On the far bank {npc} stops dead for three heartbeats, then joins in.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Ignore it and make one perfect blade",
+     "roll": {
+      "stat": "refining",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "w7cr_rh_race",
+      "log": "You stop racing and make one perfect blade. Across the river, {npc} goes quiet, and the next morning a matching blade appears on the bridge.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     },
+     "fail": {
+      "taels": -10,
+      "flag": "w7cr_rh_race",
+      "log": "Distracted by the other hammer, you crack a good billet. Across the river someone laughs very loudly.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_hammer_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The bridge between your two forges washes out in the spring flood. The town needs a new railing, the iron kind, and the headman refuses to choose between you. \"Do it together,\" the headman says, \"or nobody crosses.\" {npc} glares at you from the other side.",
+   "npc": {
+    "role": "w7cr_rf_hammer"
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_refining_2",
+     "w7cr_rh_race"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_hammer_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_rf_hammer_who"
+    ]
+   },
+   "arc": "The Hammer Across the River",
+   "choices": [
+    {
+     "text": "Each forge half and meet in the middle",
+     "effects": {
+      "fame": 3,
+      "flag": "w7cr_rh_bridge",
+      "log": "Your half is plain and strong; theirs is all curls. Where they meet in the middle, it looks oddly right.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Plan it together, properly",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "fame": 4,
+      "flag": "w7cr_rh_bridge",
+      "log": "You plan it together on a plank across the gap. {npc} fusses over the curls, you over the joins. The railing is the finest in the county.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_rh_bridge",
+      "log": "You argue over the plans until the headman takes them away and does them alone. Badly. You both fix it at night.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Let {npc} take the job",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "You step aside. {npc} builds it alone and, at the end, sends you a pot of plum wine with no note.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_hammer_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years later the two hammers still fall together across the river, morning and evening, and the town still keeps time to them. One morning {npc}'s hammer is silent. A child runs across the railing to say {he} has hurt {his} hand.",
+   "npc": {
+    "role": "w7cr_rf_hammer"
+   },
+   "when": {
+    "age": [
+     22,
+     400
+    ],
+    "flags": [
+     "craft_refining_2",
+     "w7cr_rh_bridge"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_hammer_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7cr_rf_hammer_who"
+    ]
+   },
+   "arc": "The Hammer Across the River",
+   "choices": [
+    {
+     "text": "Cross the river and work {his} forge",
+     "effects": {
+      "alignment": 5,
+      "strength": 2,
+      "log": "For a month you hammer both sides of the river. {npc} sits by the fire with the bandaged hand and corrects your rhythm.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Hammer both beats from your side",
+     "effects": {
+      "charm": 3,
+      "comprehension": 1,
+      "log": "You hammer twice as often so the town does not notice. The town notices. They bring you both soup.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    },
+    {
+     "text": "Send your best salve over the bridge",
+     "effects": {
+      "health": -2,
+      "luck": 1,
+      "log": "The salve works. The next morning the far hammer falls again, a little slower, and you slow down to match.",
+      "npcFlag": "w7cr_rf_hammer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_mark_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A young swordsman, {npc}, throws a broken sword on your anvil. It snapped in a duel, {he} says, and nearly got {him} killed, and it has your maker's mark on the tang. It is not your steel. It is not even good steel.",
+   "npc": {
+    "role": "w7cr_rf_mark",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_mark",
+     "ageAbs": 19,
+     "opinion": -20
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Your Mark on Bad Steel",
+   "choices": [
+    {
+     "text": "Make {npc} a true sword, free",
+     "effects": {
+      "taels": -30,
+      "alignment": 4,
+      "flag": "w7cr_rm_hunt",
+      "log": "The good steel costs you 30 taels. {npc} swings it once and stops shouting.",
+      "npcFlag": "w7cr_rf_mark_who"
+     }
+    },
+    {
+     "text": "Read the broken steel for its maker",
+     "roll": {
+      "stat": "refining",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_rm_hunt",
+      "log": "You read the broken steel like a letter: the ore, the quench, the hurry. It was made in the hill country, in a cold forge.",
+      "npcFlag": "w7cr_rf_mark_who"
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_rm_hunt",
+      "log": "The steel tells you little. {npc} leaves unconvinced and tells everyone in the inn about your mark.",
+      "npcFlag": "w7cr_rf_mark_who"
+     }
+    },
+    {
+     "text": "Show {npc} the difference with one of yours",
+     "effects": {
+      "charm": 2,
+      "log": "You put your blade and the fake side by side. {npc} goes red, apologises, and buys a real one.",
+      "npcFlag": "w7cr_rf_mark_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_mark_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The trail ends at a hill village where three families share one cold forge. They copied your mark because travellers will not buy a sword from nobody. They are proud, poor and frightened of you.",
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known",
+     "w7cr_rm_hunt"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_mark_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Your Mark on Bad Steel",
+   "choices": [
+    {
+     "text": "Teach them a proper quench for a week",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 1,
+      "flag": "w7cr_rm_taught",
+      "log": "A week of teaching. On the last day their blade is honest. Not great, honest. They cry, and so does the blacksmith's youngest."
+     }
+    },
+    {
+     "text": "Report them to the county",
+     "effects": {
+      "fame": 2,
+      "alignment": -3,
+      "log": "The county fines the village and seizes the forge. Your mark is clean. The road past the village is very quiet."
+     }
+    },
+    {
+     "text": "Give them a mark of their own to use",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_rm_taught",
+      "log": "You carve them a mark: a pine on a hill. They look at it for a long time. Then they set it on the next blade."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_mark_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}, now a known duellist, comes back with a sword stamped with a little pine on a hill. \"It held,\" {he} says. \"Against a sword of the capital. Whoever made it is good. Do you know them?\"",
+   "npc": {
+    "role": "w7cr_rf_mark"
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "craft_refining_known",
+     "w7cr_rm_taught"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_mark_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7cr_rf_mark_who"
+    ]
+   },
+   "arc": "Your Mark on Bad Steel",
+   "choices": [
+    {
+     "text": "Tell {npc} the whole story",
+     "effects": {
+      "charm": 2,
+      "alignment": 2,
+      "log": "{npc} listens, then rides to the hill village and orders three more. Their name spreads along the road.",
+      "npcFlag": "w7cr_rf_mark_who"
+     }
+    },
+    {
+     "text": "Smile and say they learned from the best",
+     "effects": {
+      "fame": 3,
+      "luck": 1,
+      "log": "{npc} looks at you, looks at the sword, and laughs. \"Of course they did.\"",
+      "npcFlag": "w7cr_rf_mark_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_tea_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "You come back early to find your apprentice, {npc}, quenching a red-hot dagger in your best pot of oolong. The steam smells wonderful. The dagger has come out the colour of a pigeon's throat.",
+   "npc": {
+    "role": "w7cr_rf_tea",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_tea",
+     "ageAbs": 16,
+     "opinion": 30
+    }
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Tea-Quenched Steel",
+   "choices": [
+    {
+     "text": "Shout about the tea",
+     "effects": {
+      "charm": -1,
+      "flag": "w7cr_rt_tea",
+      "log": "You shout about the tea for some time. {npc} nods and nods. The dagger sits on the anvil, glowing faintly green.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    },
+    {
+     "text": "Test the dagger before shouting",
+     "roll": {
+      "stat": "refining",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_rt_tea",
+      "log": "You test it. The dagger is harder than water-quenched steel and does not rust. You stare at the teapot. The teapot stares back.",
+      "npcFlag": "w7cr_rf_tea_who"
+     },
+     "fail": {
+      "flag": "w7cr_rt_tea",
+      "log": "You test it and it snaps. {npc} looks crushed. You make a note anyway: perhaps it was the wrong tea.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    },
+    {
+     "text": "Pour yourself what is left of the tea",
+     "effects": {
+      "health": 2,
+      "luck": 1,
+      "log": "It tastes faintly of iron. Not bad. {npc} watches you drink it with the look of someone who has got away with something.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_tea_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has been quenching blades in everything: green tea, chrysanthemum, vinegar, the cook's soup. Most of it is nonsense. But the blades quenched in a dark mountain tea are the best you have ever seen.",
+   "npc": {
+    "role": "w7cr_rf_tea"
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "w7cr_rt_tea"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_tea_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_rf_tea_who"
+    ]
+   },
+   "arc": "Tea-Quenched Steel",
+   "choices": [
+    {
+     "text": "Let {npc} keep experimenting",
+     "effects": {
+      "comprehension": 2,
+      "fame": 2,
+      "flag": "w7cr_rt_found",
+      "log": "The workshop smells like a teahouse and occasionally like soup. The mountain-tea blades start selling at triple price.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    },
+    {
+     "text": "Turn it into a proper method",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 4,
+      "fame": 3,
+      "flag": "w7cr_rt_found",
+      "log": "You find out why: the tea leaves a skin on the steel. You and {npc} write it down together and both sign it.",
+      "npcFlag": "w7cr_rf_tea_who"
+     },
+     "fail": {
+      "taels": -15,
+      "flag": "w7cr_rt_found",
+      "log": "You try to make it a proper method and spoil a dozen blades. {npc} does it by smell and gets it right every time.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    },
+    {
+     "text": "Ban all drinks from the forge",
+     "effects": {
+      "strength": 1,
+      "luck": -1,
+      "log": "You ban drinks. {npc} smuggles in a flask of mountain tea anyway, and you pretend not to see it.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_tea_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Tea merchants from the south hear of the tea-quenched steel and send an offer: a sword for their guild master, quenched in their rarest tea, with a picture of their tea garden on the blade.",
+   "npc": {
+    "role": "w7cr_rf_tea"
+   },
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_3",
+     "w7cr_rt_found"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_tea_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_rf_tea_who"
+    ]
+   },
+   "arc": "Tea-Quenched Steel",
+   "choices": [
+    {
+     "text": "Let {npc} take the commission alone",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "{npc} takes it, shaking. The blade is perfect, and the tea guild sends {him} a whole chest of leaves.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    },
+    {
+     "text": "Forge it together",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 200,
+      "fame": 5,
+      "log": "You forge it together, and {npc} quenches it in tea worth more than the steel. The guild master hangs it over the door of the guild.",
+      "npcFlag": "w7cr_rf_tea_who"
+     },
+     "fail": {
+      "taels": 40,
+      "log": "The picture on the blade comes out looking like a cabbage field. The guild pays anyway. They like cabbages.",
+      "npcFlag": "w7cr_rf_tea_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_needle_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Generals have ordered swords from you, and sects have ordered armour. Today an old embroiderer orders one needle. It must be fine enough to sew silk to air, she says, and strong enough to last another fifty years. She pays in a handkerchief embroidered with a crane.",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Smallest Commission",
+   "choices": [
+    {
+     "text": "Forge the finest needle of your life",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_rn_made",
+      "log": "It takes eleven days and a magnifying crystal. The needle is so fine it vanishes when you look at it edge-on."
+     },
+     "fail": {
+      "health": -4,
+      "flag": "w7cr_rn_made",
+      "log": "You lose nine needles in the floorboards and one in your thumb. The tenth is good enough. She is very pleased."
+     }
+    },
+    {
+     "text": "Forge her a good ordinary needle",
+     "effects": {
+      "charm": 1,
+      "log": "She tests it, nods, and gives you the handkerchief. A good needle. Not the one she wanted."
+     }
+    },
+    {
+     "text": "Ask what it is for",
+     "effects": {
+      "luck": 1,
+      "flag": "w7cr_rn_made",
+      "log": "A banner for the temple, she says, that will hang for a hundred years. You go and fetch your best tongs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_needle_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A surgeon arrives at night with blood on the cuffs of his sleeves. A boy has a torn vein in the arm and no needle in the town is fine enough. The surgeon says the embroiderer sent him: \"She said you made the only one that would do.\"",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known",
+     "w7cr_rn_made"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_needle_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Smallest Commission",
+   "choices": [
+    {
+     "text": "Fetch the embroiderer and her needle",
+     "effects": {
+      "alignment": 4,
+      "flag": "w7cr_rn_saved",
+      "log": "The old woman threads it in the dark without looking. The surgeon sews. By dawn the boy is asleep, and alive."
+     }
+    },
+    {
+     "text": "Forge a second one, now",
+     "roll": {
+      "stat": "refining",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 4,
+      "flag": "w7cr_rn_saved",
+      "log": "You forge a second needle by lamplight in one hour, faster than you have ever worked. The surgeon uses it before it is even cold."
+     },
+     "fail": {
+      "health": -6,
+      "alignment": 2,
+      "flag": "w7cr_rn_saved",
+      "log": "Your hurried needle bends. The surgeon makes do with the embroiderer's. It works, but you shake for an hour."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_needle_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The temple banner is finished: a thousand cranes on white silk, sewn with your needle. It is hung in the main hall, and the abbot, the embroiderer and the boy who lived, grown tall now, invite you to the first viewing.",
+   "when": {
+    "age": [
+     30,
+     500
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known",
+     "w7cr_rn_saved"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_needle_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Smallest Commission",
+   "choices": [
+    {
+     "text": "Go and stand at the back",
+     "effects": {
+      "health": 4,
+      "luck": 2,
+      "log": "You stand at the back. The embroiderer catches your eye across the hall and lifts the needle, very slightly, like a cup."
+     }
+    },
+    {
+     "text": "Ask to put one stitch of your own in it",
+     "effects": {
+      "comprehension": 2,
+      "charm": 2,
+      "log": "She guides your hand. Your stitch is a little crooked. She leaves it in, on purpose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_first_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, a young guard, lays a sword on your counter to be sharpened. It is lumpy and badly balanced, and stamped with a crooked mark you have not used in decades. It is the first sword you ever sold. You remember the customer haggling you down to three taels.",
+   "npc": {
+    "role": "w7cr_rf_first",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_rf_first",
+     "ageAbs": 24,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "age": [
+     45,
+     2000
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Your First Sword Comes Home",
+   "choices": [
+    {
+     "text": "Tell {npc} who made it",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_rfi_told",
+      "log": "{npc} stares at you, then at the sword. \"It has been in our family four generations,\" {he} says. \"It never broke.\"",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    },
+    {
+     "text": "Sharpen it and say nothing",
+     "effects": {
+      "luck": 1,
+      "flag": "w7cr_rfi_told",
+      "log": "You sharpen it with great tenderness. {npc} thinks you are a very slow smith.",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    },
+    {
+     "text": "Study it closely",
+     "roll": {
+      "stat": "refining",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_rfi_told",
+      "log": "Under the lumps there is something honest. You can see your younger hands in it, and every mistake they had not made yet.",
+      "npcFlag": "w7cr_rf_first_who"
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_rfi_told",
+      "log": "You look at it and wince at every flaw. {npc} asks if something is wrong with it. Everything is. Nothing is.",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_first_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes back with a question {he} has clearly practised. \"Would you remake it? Properly, the way you would now? We would pay. Grandmother says it would be an honour to carry a sword by a Grandmaster.\"",
+   "npc": {
+    "role": "w7cr_rf_first"
+   },
+   "when": {
+    "age": [
+     45,
+     2000
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known",
+     "w7cr_rfi_told"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_first_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_rf_first_who"
+    ]
+   },
+   "arc": "Your First Sword Comes Home",
+   "choices": [
+    {
+     "text": "Remake it, keeping the old steel",
+     "roll": {
+      "stat": "refining",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 5,
+      "comprehension": 2,
+      "log": "You fold the old steel into the new. The finished blade is the finest thing you have made, and in the light the crooked old mark still shows.",
+      "npcFlag": "w7cr_rf_first_who"
+     },
+     "fail": {
+      "fame": 1,
+      "log": "You cannot make yourself fold it into something else. You remake the hilt only. {npc} does not seem to mind.",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    },
+    {
+     "text": "Refuse: it has done its work as it is",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "log": "\"It never broke,\" you say. \"Do not let anyone improve it.\" {npc} nods slowly and carries it home like a relic.",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    },
+    {
+     "text": "Forge {npc} a new sword and keep the old one",
+     "effects": {
+      "taels": -40,
+      "charm": 3,
+      "log": "The new sword costs you 40 taels of the best steel. The old one hangs over your forge, where you can see it every morning.",
+      "npcFlag": "w7cr_rf_first_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_rf_first_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Word gets round that the Grandmaster will look at a family's old blades. Every week someone comes in with a sword you made when you were young and bad at it. Some are notched, some rusted. None of them broke.",
+   "when": {
+    "age": [
+     45,
+     2000
+    ],
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_rf_first_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "Your First Sword Comes Home",
+   "choices": [
+    {
+     "text": "Look at every one",
+     "effects": {
+      "comprehension": 3,
+      "health": 2,
+      "log": "You see forty old swords that year and remember forty young mornings. It is better than any manual."
+     }
+    },
+    {
+     "text": "Hang a sign: no repairs of my early work",
+     "effects": {
+      "fame": -1,
+      "luck": 1,
+      "log": "The sign makes people laugh. They bring the swords anyway, just to show you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_ar_memory_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Years ago, as a young array maker, you laid a fog array in the Crane Pass to keep bandits off the salt road. Now the salt merchants say it has grown. The fog moves on its own, lets honest carts through and turns thieves round in circles. When you walk into it, it parts for you like a curtain.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Array That Remembers Its Maker",
+   "choices": [
+    {
+     "text": "Read the array stone by stone",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_xm_read",
+      "log": "You read the stones. Your own young mistakes are still in it, and the array has built around them, the way a tree grows round a nail."
+     },
+     "fail": {
+      "luck": 1,
+      "flag": "w7cr_xm_read",
+      "log": "You read the stones and understand less than half. The fog hums around you, patient, as if waiting for you to catch up."
+     }
+    },
+    {
+     "text": "Thank it aloud",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "flag": "w7cr_xm_read",
+      "log": "You feel silly. The fog curls round your ankles once, like a cat, and settles."
+     }
+    },
+    {
+     "text": "Leave it alone",
+     "effects": {
+      "alignment": 1,
+      "log": "You walk through and out the other side. Behind you, the fog closes, quite gently."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_ar_memory_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A sect of the province announces it will break the Crane Pass array: an unknown power should not guard a road. Their array breakers are camped at the edge of the fog. The salt merchants beg you to do something.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xm_read"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_ar_memory_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Array That Remembers Its Maker",
+   "choices": [
+    {
+     "text": "Strengthen the array against them",
+     "roll": {
+      "stat": "arrays",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "flag": "w7cr_xm_saved",
+      "log": "You walk into the fog and ask it, in your old hand, to show them the way out. It shows the breakers the way out, gently, every day for a month. They go home."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "w7cr_xm_saved",
+      "log": "You try to reinforce it and get it wrong; the fog turns on you for a whole night. By morning it knows you again, and so do the breakers, who are laughing."
+     }
+    },
+    {
+     "text": "Talk to the breakers",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 3,
+      "flag": "w7cr_xm_saved",
+      "log": "You explain whose array it is and what it does. The breakers' leader walks in, comes out an hour later, and pulls up the camp."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "They do not believe you made it. They try to break it. The fog takes them around in circles for three days and leaves them in a turnip field."
+     }
+    },
+    {
+     "text": "Let it defend itself",
+     "effects": {
+      "luck": 2,
+      "log": "You do nothing. The array does everything. The breakers come out of the fog in a week, thin and very polite."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_ar_memory_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "You come back to the pass when you are older. In the heart of the fog, where the first stone lies, a vixen has raised her cubs, and travellers have left little offerings: rice, a coin, a paper flower. Someone has carved a line on a rock: THE FOG KNOWS ITS WAY.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xm_saved"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_ar_memory_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Array That Remembers Its Maker",
+   "choices": [
+    {
+     "text": "Add a last stone, a kindly one",
+     "effects": {
+      "alignment": 4,
+      "lifespan": 1,
+      "log": "You set a stone that keeps the fog warm in winter. The foxes approve. You feel the array settle like a sigh."
+     }
+    },
+    {
+     "text": "Leave a paper flower like the others",
+     "effects": {
+      "luck": 3,
+      "health": 2,
+      "log": "You leave your flower with the others and walk out. The fog walks you to the road, all the way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_wedding_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Two merchant families hire you to lay a festive light array for a wedding: lanterns that float above the courtyard and spell out a blessing at midnight. The bride's family wants it in red. The groom's family wants it in gold. Both pay, both shout, both are standing at your elbow.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_arrays_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Wedding Lights",
+   "choices": [
+    {
+     "text": "Weave red and gold together",
+     "roll": {
+      "stat": "arrays",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "taels": 40,
+      "flag": "w7cr_xw_lit",
+      "log": "You lay two arrays woven into one: red lanterns that turn gold as they rise. Both families claim it was their idea."
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_xw_lit",
+      "log": "The two colours fight. At midnight the blessing comes out orange and slightly upside down. The children love it."
+     }
+    },
+    {
+     "text": "Do exactly what the bride says",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_xw_lit",
+      "log": "You side with the bride. The groom's family glares. The bride hugs you, which settles the matter."
+     }
+    },
+    {
+     "text": "Refuse the job before anyone throws something",
+     "effects": {
+      "luck": 1,
+      "log": "You leave just as an aunt picks up a teapot. Later you hear the lanterns were made by a cousin, and caught fire."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7cr_ar_wedding_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "At midnight a gust off the river catches the lanterns before the blessing forms. Instead of HAPPINESS AND LONG LIFE, the sky over the courtyard reads, quite clearly, HAPPY LONG LEGS. The guests go silent.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_arrays_2",
+     "w7cr_xw_lit"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_wedding_1"
+    ]
+   },
+   "arc": "The Wedding Lights",
+   "choices": [
+    {
+     "text": "Fix the array before anyone breathes",
+     "roll": {
+      "stat": "arrays",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "flag": "w7cr_xw_fixed",
+      "log": "You redraw three lines in the dirt in a heartbeat. The lanterns shuffle and spell it right. Everyone cheers, and nobody will ever forget the first version."
+     },
+     "fail": {
+      "fame": -2,
+      "flag": "w7cr_xw_fixed",
+      "log": "You redraw the lines and it now reads HAPPY LONG LIFE LEGS. The groom laughs so hard he has to sit down, which breaks the tension."
+     }
+    },
+    {
+     "text": "Bow as if you meant it",
+     "effects": {
+      "charm": 3,
+      "flag": "w7cr_xw_fixed",
+      "log": "\"A blessing for the dancing,\" you say. The bride, who has very long legs, bursts out laughing. The dancing goes on till dawn."
+     }
+    },
+    {
+     "text": "Blow out every lantern at once",
+     "effects": {
+      "luck": -1,
+      "log": "The courtyard goes dark. Someone screams. When the lamps are lit again, the blessing is forgotten and so, sadly, is your fee."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_wedding_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Ten years later, the couple asks you back for their children's naming feast, and they ask for the same blessing. \"The first one,\" the bride says, smiling. \"The legs one. It brought us luck.\"",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_arrays_2",
+     "w7cr_xw_fixed"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_wedding_2"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Wedding Lights",
+   "choices": [
+    {
+     "text": "Lay it again, legs and all",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "HAPPY LONG LEGS floats over the courtyard again. The children have no idea why everybody is crying with laughter."
+     }
+    },
+    {
+     "text": "Lay a new blessing with one small joke in it",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "comprehension": 2,
+      "log": "You lay a new blessing, perfect, and then let one lantern drift into the shape of a leg. The bride sees it and laughs."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "You try to be clever and the lanterns drift off over the river. They spell the blessing above the fish market instead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_ar_hidden_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A county tax collector hires you. His survey shows a valley where there should be one village, and every time he walks into it he comes out the other side without seeing a single house. \"Someone,\" he says, \"has not paid taxes for two hundred years.\"",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4",
+     "craft_arrays_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Village the Map Forgot",
+   "choices": [
+    {
+     "text": "Look for the array",
+     "roll": {
+      "stat": "arrays",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_xh_in",
+      "log": "You find it: a confusion array older than the dynasty, so well laid that walking in it feels like walking out. You step through. There are rooftops."
+     },
+     "fail": {
+      "health": -5,
+      "luck": 1,
+      "log": "You walk into the valley and out again four times, and the fifth time you walk into a tree. The collector is very sympathetic."
+     }
+    },
+    {
+     "text": "Take the job and walk in alone first",
+     "effects": {
+      "luck": 2,
+      "flag": "w7cr_xh_in",
+      "log": "You walk in without the collector. On the third try a child in the field waves at you, and the valley is full of houses."
+     }
+    },
+    {
+     "text": "Turn the job down",
+     "effects": {
+      "alignment": 1,
+      "log": "You say you are busy. The collector goes home and files the valley as a lake."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_w7cr_ar_hidden_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The village is real: sixty families, terraced rice, a school, a shrine to the array maker who hid them during a war two centuries ago. The headwoman serves you tea. \"We would like to stay forgotten,\" she says. \"Is that possible?\"",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4",
+     "craft_arrays_known",
+     "w7cr_xh_in"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_ar_hidden_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Village the Map Forgot",
+   "choices": [
+    {
+     "text": "Tell the collector there is nothing there",
+     "effects": {
+      "alignment": 4,
+      "flag": "w7cr_xh_hid",
+      "log": "You file a report describing a pretty lake. The collector reads it twice, looks at you, and signs it."
+     }
+    },
+    {
+     "text": "Repair the old array for them",
+     "roll": {
+      "stat": "arrays",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 2,
+      "comprehension": 3,
+      "flag": "w7cr_xh_hid",
+      "log": "You repair the old array where it was wearing thin. It will hold for another two hundred years. The headwoman bows to the ground."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "w7cr_xh_hid",
+      "log": "Your repair slips and for one afternoon the whole village can be seen from the road. You fix it by nightfall, shaking."
+     }
+    },
+    {
+     "text": "Bring them into the county, kindly",
+     "effects": {
+      "taels": 100,
+      "fame": 3,
+      "log": "You take the array down slowly over a year. The village pays some tax and gets a road and a physician. The children see the city for the first time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_ar_hidden_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A letter comes with no road on its seal, in a child's careful hand. \"The school asks if the array maker would come and teach us the stones. Our old teacher says nobody alive knows them now, except you.\"",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4",
+     "craft_arrays_known",
+     "w7cr_xh_hid"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_ar_hidden_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Village the Map Forgot",
+   "choices": [
+    {
+     "text": "Go and teach for a season",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 3,
+      "log": "You teach twelve children the stones of the old array. One of them is better than you were at that age, which is wonderful."
+     }
+    },
+    {
+     "text": "Write them a book of the stones",
+     "effects": {
+      "fame": 2,
+      "comprehension": 2,
+      "log": "You write the whole array down in a book with pictures. They send back a basket of rice and a drawing of you as a lake."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_puzzle_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A carved box arrives with no note, sealed by a tiny array. Inside, if you can open it, is a letter from {npc}, an array master in the far west who has heard of you and doubts you are any good. The array on the box is very good.",
+   "npc": {
+    "role": "w7cr_ar_puzzle",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_ar_puzzle",
+     "ageAbs": 50,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Letters in Puzzle Boxes",
+   "choices": [
+    {
+     "text": "Solve the box",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_xp_open",
+      "log": "It takes you four evenings. The letter inside says only: \"Fine. Your turn.\" You start carving at once.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     },
+     "fail": {
+      "flag": "w7cr_xp_open",
+      "log": "You give up and open it with a chisel. The letter inside says: \"I knew it.\" You are furious for a week.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Send it back unopened, sealed in your own array",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_xp_open",
+      "log": "You wrap the box in an array of your own and send it back. Two months later a reply comes: \"Ha.\"",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Use the box to keep your tea in",
+     "effects": {
+      "luck": 1,
+      "log": "It keeps tea very fresh. Nobody else can open it, so it is also the safest tea in the province.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_puzzle_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Over the years the boxes cross the empire in both directions, each harder than the last. You have never met {npc}. You know {his} jokes, {his} favourite tea and the way {he} cheats on the third layer. A box arrives that you cannot open at all.",
+   "npc": {
+    "role": "w7cr_ar_puzzle"
+   },
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xp_open"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_puzzle_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_ar_puzzle_who"
+    ]
+   },
+   "arc": "Letters in Puzzle Boxes",
+   "choices": [
+    {
+     "text": "Work on it all winter",
+     "roll": {
+      "stat": "arrays",
+      "dc": 65
+     },
+     "ok": {
+      "comprehension": 5,
+      "flag": "w7cr_xp_deep",
+      "log": "A whole winter. When it opens, the letter inside says: \"I have been ill. I wanted to make one you would remember.\" You do.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     },
+     "fail": {
+      "luck": 1,
+      "flag": "w7cr_xp_deep",
+      "log": "You never open it. You write instead: \"I give up. What is inside?\" The answer comes: \"Nothing. I wanted to see you give up once.\"",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Travel west to ask {npc} in person",
+     "effects": {
+      "health": -4,
+      "charm": 3,
+      "flag": "w7cr_xp_met",
+      "log": "You walk two months west. {npc} opens the door, sees the box under your arm, and laughs until {he} cries.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Send back a box with nothing in it but a joke",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_xp_deep",
+      "log": "Your box has seven layers and a slip of paper inside reading YOUR TURN. You picture {npc} opening it and grin all month.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_puzzle_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "At last you meet {npc}, at the great array gathering in the capital. You are both old. You both hold puzzle boxes. Neither of you says hello. You simply swap boxes, sit down side by side and start working.",
+   "npc": {
+    "role": "w7cr_ar_puzzle"
+   },
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xp_deep"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_puzzle_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7cr_ar_puzzle_who"
+    ]
+   },
+   "arc": "Letters in Puzzle Boxes",
+   "choices": [
+    {
+     "text": "Solve it in front of {him}",
+     "effects": {
+      "comprehension": 3,
+      "fame": 3,
+      "log": "You solve it in an hour. {npc} takes three. The whole gathering stops to watch two old people laughing over boxes.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Put the boxes down and talk instead",
+     "effects": {
+      "charm": 3,
+      "health": 3,
+      "log": "You talk until the lamps go out. Neither box is ever opened. You both keep the other's, sealed, until the end.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_puzzle_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is standing at your door, the box you sent still in {his} arms and the long road west still on {his} boots. \"You came to me,\" {he} says, \"so I came to you. Now. Show me how you did the third layer.\"",
+   "npc": {
+    "role": "w7cr_ar_puzzle"
+   },
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xp_met"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_puzzle_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_ar_puzzle_who"
+    ]
+   },
+   "arc": "Letters in Puzzle Boxes",
+   "choices": [
+    {
+     "text": "Show {him}",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "You show {npc} the third layer and {he} shows you a fourth one you never knew existed. You stay up all night like apprentices.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    },
+    {
+     "text": "Make {him} work it out",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "log": "{npc} works it out in an evening, crows about it for a week and goes home very happy.",
+      "npcFlag": "w7cr_ar_puzzle_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_goose_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Your apprentice, {npc}, was asked to lay a small array to keep the foxes out of the magistrate's poultry yard. To save time {he} drew it in chalk. This morning the magistrate's prize goose is walking in a perfect circle in the middle of the yard and will not stop.",
+   "npc": {
+    "role": "w7cr_ar_goose",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_ar_goose",
+     "ageAbs": 18,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Goose in the Circle",
+   "choices": [
+    {
+     "text": "Fix the array yourself",
+     "roll": {
+      "stat": "arrays",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_xg_goose",
+      "log": "You read the chalk: a binding loop where the boundary should be. You break it with one smudge of your thumb. The goose falls over, dizzy, and bites you.",
+      "npcFlag": "w7cr_ar_goose_who"
+     },
+     "fail": {
+      "charm": -1,
+      "flag": "w7cr_xg_goose",
+      "log": "You smudge the wrong line and now two geese are walking in a circle. {npc} looks at the ground.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    },
+    {
+     "text": "Make {npc} fix it alone",
+     "effects": {
+      "luck": 1,
+      "flag": "w7cr_xg_goose",
+      "log": "It takes {npc} all day. By evening the goose is free and {npc} has learned more than in a month of lectures.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    },
+    {
+     "text": "Leave the goose; it seems calm",
+     "effects": {
+      "charm": 1,
+      "log": "The goose walks in circles for three days and then wanders off, very fit. The magistrate is not amused.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_goose_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has taken the lesson too far. Every array is now carved in stone, triple-checked and three times slower than it needs to be. A village waiting for a flood array has been waiting a month.",
+   "npc": {
+    "role": "w7cr_ar_goose"
+   },
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "w7cr_xg_goose"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_goose_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_ar_goose_who"
+    ]
+   },
+   "arc": "The Goose in the Circle",
+   "choices": [
+    {
+     "text": "Tell {npc} the goose story, kindly",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_xg_balance",
+      "log": "{npc} laughs at the goose story, for the first time. The flood array is done in two days, and done well.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    },
+    {
+     "text": "Lay the flood array together",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "fame": 2,
+      "flag": "w7cr_xg_balance",
+      "log": "You work beside {npc} at your pace, then at {his}. Somewhere in between is the right speed, and the village gets the array before the rain.",
+      "npcFlag": "w7cr_ar_goose_who"
+     },
+     "fail": {
+      "health": -5,
+      "log": "You hurry to make the point and nearly get swept into the river laying the last stone. {npc} pulls you out. Point made, the wrong way.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    },
+    {
+     "text": "Let {npc} find {his} own pace",
+     "effects": {
+      "luck": 1,
+      "log": "You say nothing. The village waits. The rain waits too, luckily, by one day.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_goose_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has apprentices of {his} own now. You visit {his} workshop and find, in a place of honour on the wall, a little painting of a goose walking in a circle, with a line underneath: CHECK THE CHALK.",
+   "npc": {
+    "role": "w7cr_ar_goose"
+   },
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "w7cr_xg_balance"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_goose_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7cr_ar_goose_who"
+    ]
+   },
+   "arc": "The Goose in the Circle",
+   "choices": [
+    {
+     "text": "Laugh until you cry",
+     "effects": {
+      "health": 3,
+      "charm": 2,
+      "log": "You laugh so hard the apprentices think you are ill. {npc} explains, and then they laugh too.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    },
+    {
+     "text": "Add a line of your own beneath it",
+     "effects": {
+      "comprehension": 2,
+      "luck": 1,
+      "log": "Under CHECK THE CHALK you write: BUT DO NOT CARVE THE CHICKEN COOP IN STONE. {npc} leaves it there for good.",
+      "npcFlag": "w7cr_ar_goose_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_painted_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A village headman thanks you in the street for the guardian array you laid round his village last spring. You never laid one. Somebody sold him a ring of painted stones in your name, for a great deal of silver, and the bandit season is a month away.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "Painted Lines",
+   "choices": [
+    {
+     "text": "Go and lay a real one, free",
+     "effects": {
+      "alignment": 5,
+      "health": -3,
+      "flag": "w7cr_xpa_real",
+      "log": "You work for ten days with the villagers carrying stones. The real array is plainer than the painted one, and it works."
+     }
+    },
+    {
+     "text": "Turn the fake into a real array",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_xpa_real",
+      "log": "You turn the fake stones into the real thing, using the paint as the outline. The villagers keep the pretty colours and gain an array."
+     },
+     "fail": {
+      "health": -5,
+      "flag": "w7cr_xpa_real",
+      "log": "The painted stones fight your lines, and you have to dig every one up. It takes three weeks, but it holds."
+     }
+    },
+    {
+     "text": "Warn him and go after the swindler",
+     "effects": {
+      "fame": 2,
+      "flag": "w7cr_xpa_hunt",
+      "log": "You warn the headman, then follow a trail of painted stones from village to village toward the river."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_painted_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The swindler is a cheerful painter of shrines who has sold fake arrays to eleven villages. When you catch up, the painter is in the middle of selling a twelfth, and is very, very good at it.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xpa_hunt"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_painted_1"
+    ]
+   },
+   "arc": "Painted Lines",
+   "choices": [
+    {
+     "text": "Expose the painter to the crowd",
+     "effects": {
+      "fame": 4,
+      "flag": "w7cr_xpa_done",
+      "log": "You set one of the stones on fire with a single line of qi. The paint burns off. The crowd chases the painter into the river."
+     }
+    },
+    {
+     "text": "Offer the painter honest work",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 4,
+      "flag": "w7cr_xpa_done",
+      "log": "You offer the painter a deal: return the silver, and come and paint the outlines of real arrays for you. The painter thinks about it, and says yes."
+     },
+     "fail": {
+      "taels": -10,
+      "flag": "w7cr_xpa_done",
+      "log": "Somehow by the end of the talk you have bought a painted stone. You are not sure how. The painter is gone by morning."
+     }
+    },
+    {
+     "text": "Report it to the county and go home",
+     "effects": {
+      "alignment": 1,
+      "flag": "w7cr_xpa_done",
+      "log": "The county is slow but sure. The painter is caught before the next village, still smiling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_painted_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Bandit season comes. Around the headman's village and the eleven others, the real arrays hold. Afterwards the villages send a gift together: a painted stone, the prettiest of the fakes, with your name written on it properly.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xpa_real"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_painted_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Painted Lines",
+   "choices": [
+    {
+     "text": "Keep it on your doorstep",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "log": "It sits by your door and does nothing at all, beautifully. Visitors always ask about it."
+     }
+    },
+    {
+     "text": "Turn it into a real one, as a joke",
+     "effects": {
+      "comprehension": 2,
+      "fame": 1,
+      "log": "You lay one tiny real array inside the painted stone. It keeps the ants out of your kitchen. You are absurdly proud of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_painted_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The painter of shrines finds you some years later, now an honest outliner of real arrays, with paint on both hands and a hat full of thank-you letters. \"Twelve villages,\" the painter says. \"Real arrays in every one. Can I buy you supper?\"",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known",
+     "w7cr_xpa_done"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_painted_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "Painted Lines",
+   "choices": [
+    {
+     "text": "Let the painter buy supper",
+     "effects": {
+      "charm": 2,
+      "health": 2,
+      "log": "It is a very good supper, paid for in honest silver. You both look at the bill twice to make sure."
+     }
+    },
+    {
+     "text": "Pay for supper yourself, and offer more work",
+     "effects": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "You order the best duck in the place and hand over the plans for your next three arrays."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_rain_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A drought county pays you to lay a great rain-gathering array on its hills. It works far too well. Rain falls on your county every afternoon, and the county over the hills has had none for two months. Its magistrate has written you a letter that is mostly underlining.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Array That Ate the Rain",
+   "choices": [
+    {
+     "text": "Find the flaw in the array",
+     "roll": {
+      "stat": "arrays",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_xr_fair",
+      "log": "You find the flaw: the array pulls instead of gathers. You turn three stones by a hair and the rain starts falling on both sides of the hills."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "w7cr_xr_fair",
+      "log": "Your first fix makes it rain on you personally, everywhere you go, for a week. The second fix works."
+     }
+    },
+    {
+     "text": "Go and apologise in person",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_xr_fair",
+      "log": "You walk over the hills in the rain and arrive in the dust. The magistrate looks at your wet robes and, despite everything, laughs."
+     }
+    },
+    {
+     "text": "Tell them both to share the reservoir",
+     "effects": {
+      "alignment": -1,
+      "luck": 1,
+      "log": "The two counties argue about the reservoir for a year. The rain keeps falling on one side."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_rain_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Both counties now get rain. But the hill between them, where the array sits, gets all the extra: a cloud has been parked over it for a year, and the hill is now a small lake with angry frogs. Both magistrates want to know who owns the lake.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4",
+     "w7cr_xr_fair"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_rain_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Array That Ate the Rain",
+   "choices": [
+    {
+     "text": "Give the lake to both counties",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "flag": "w7cr_xr_lake",
+      "log": "You draw the border down the middle of the lake. Each county stocks fish on its side. The fish ignore the border."
+     }
+    },
+    {
+     "text": "Draw up a fair plan",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 150,
+      "fame": 3,
+      "flag": "w7cr_xr_lake",
+      "log": "You suggest a shared fishery and a fee for the boats. Both magistrates think they are getting the better deal."
+     },
+     "fail": {
+      "fame": -2,
+      "flag": "w7cr_xr_lake",
+      "log": "Your plan has both counties paying you rent for the lake. Both magistrates see through it at once."
+     }
+    },
+    {
+     "text": "Move the cloud on",
+     "effects": {
+      "luck": -1,
+      "qi": 6,
+      "log": "You shift the array so the cloud drifts away. The lake dries. Both counties are now angry about losing it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_rain_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Rain Hill Lake has become famous. There are boats, an inn, a temple and a poem about the array maker who stole the rain and gave it back. Both magistrates invite you to its festival.",
+   "when": {
+    "age": [
+     30,
+     2000
+    ],
+    "flags": [
+     "craft_arrays_4",
+     "w7cr_xr_lake"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_rain_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Array That Ate the Rain",
+   "choices": [
+    {
+     "text": "Go and row out to the middle",
+     "effects": {
+      "health": 4,
+      "luck": 2,
+      "log": "You row out over the stones you laid. It starts to rain, just on the lake, and everyone at the festival cheers."
+     }
+    },
+    {
+     "text": "Send a lantern instead",
+     "effects": {
+      "charm": 2,
+      "log": "Your lantern floats out on the lake with the others. In the poem, now, there is a new line about it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_garden_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A Saint of arrays can lay anything. For years you have laid walls, prisons and seals for other people. Now you want to lay something only for itself: a garden where all four seasons sit side by side, spring in one corner and snow in the other.",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_arrays_5",
+     "craft_arrays_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Garden of Four Seasons",
+   "choices": [
+    {
+     "text": "Lay the first season",
+     "roll": {
+      "stat": "arrays",
+      "dc": 65
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_xs_begun",
+      "log": "The first corner wakes. Plum blossom opens on one side of a stone; across it, frost forms on a maple leaf. You sit down in the grass, astonished."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "w7cr_xs_begun",
+      "log": "The seasons fight. For a week your whole courtyard is autumn in the morning and a blizzard at noon. You keep going."
+     }
+    },
+    {
+     "text": "Make a small model first",
+     "effects": {
+      "luck": 2,
+      "flag": "w7cr_xs_begun",
+      "log": "You lay it in a tea tray. A tiny snowstorm falls on one cup while another steams in summer. You start the real thing next morning."
+     }
+    },
+    {
+     "text": "Decide it is vanity, and leave it",
+     "effects": {
+      "alignment": 2,
+      "log": "You put the plans in a drawer. On some nights you take them out and look."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_garden_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The garden is finished. Children from the town climb your wall to see it: they sled in the north corner, swim in the south pond and come home with snow in one boot and sand in the other. Their parents complain at the gate.",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_arrays_5",
+     "craft_arrays_known",
+     "w7cr_xs_begun"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_garden_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Garden of Four Seasons",
+   "choices": [
+    {
+     "text": "Open the gate to every child in town",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "flag": "w7cr_xs_open",
+      "log": "You put up a sign: CHILDREN WELCOME, BRING A SPARE BOOT. The garden is never quiet again."
+     }
+    },
+    {
+     "text": "Add a stone to keep them dry",
+     "roll": {
+      "stat": "arrays",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_xs_open",
+      "log": "You add a fifth stone at the gate that dries their boots on the way out. The parents stop complaining. The children love it even more."
+     },
+     "fail": {
+      "luck": -1,
+      "flag": "w7cr_xs_open",
+      "log": "Your boot-drying stone sets one boot on fire. The child is fine and becomes a local hero."
+     }
+    },
+    {
+     "text": "Keep the garden private",
+     "effects": {
+      "comprehension": 2,
+      "log": "You raise the wall. The garden is beautiful and still and yours. It is also very quiet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_ar_garden_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "One of the children who sledded in your garden comes back grown, with a bag of chalk and a stone of their own, carefully carved. \"I want to add a season,\" they say. \"There must be more than four.\"",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_arrays_5",
+     "craft_arrays_known",
+     "w7cr_xs_open"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_ar_garden_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Garden of Four Seasons",
+   "choices": [
+    {
+     "text": "Help them find a fifth season",
+     "effects": {
+      "comprehension": 4,
+      "luck": 2,
+      "log": "It takes a year. The fifth corner is the hour after rain, all the time. Nobody has ever been able to name it. It is the best corner in the garden."
+     }
+    },
+    {
+     "text": "Teach them the four first",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "You start at the beginning, with spring. They are impatient. So were you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_ox_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "At the market a bad-tempered ox kicks you square in the chest. Your Iron Bone does not move. The ox's hoof does, and the ox stands there on three legs looking at you with deep, slow surprise.",
+   "when": {
+    "age": [
+     18,
+     500
+    ],
+    "flags": [
+     "craft_body_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Ox Who Respected You",
+   "choices": [
+    {
+     "text": "Rub the ox's sore hoof",
+     "effects": {
+      "alignment": 2,
+      "flag": "w7cr_bo_ox",
+      "log": "You rub its hoof. The ox breathes on you, long and warm. The owner says it has never let anyone near it."
+     }
+    },
+    {
+     "text": "Buy the ox, out of guilt",
+     "effects": {
+      "taels": -25,
+      "flag": "w7cr_bo_ox",
+      "log": "You pay 25 taels for an ox you did not need. It follows you home without a rope."
+     }
+    },
+    {
+     "text": "Walk on, rubbing your chest",
+     "effects": {
+      "health": -2,
+      "log": "Iron Bone or not, an ox is an ox. You walk on with dignity and a bruise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_ox_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The ox now follows you everywhere. To the market, to the training yard, into the teahouse once. When a pickpocket comes near you, the ox steps on his foot. People have started calling you by the ox's name.",
+   "when": {
+    "age": [
+     18,
+     500
+    ],
+    "flags": [
+     "craft_body_2",
+     "w7cr_bo_ox"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_ox_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Ox Who Respected You",
+   "choices": [
+    {
+     "text": "Train beside the ox",
+     "effects": {
+      "strength": 3,
+      "artYears": 1,
+      "flag": "w7cr_bo_friend",
+      "log": "You pull the ox's plough with your own shoulders while it walks beside you, supervising. Your legs have never been stronger."
+     }
+    },
+    {
+     "text": "Push the ox, friendly, in the square",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 2,
+      "fame": 2,
+      "flag": "w7cr_bo_friend",
+      "log": "You challenge the ox to a pushing contest in the square. It is a draw. The crowd talks of nothing else for a season."
+     },
+     "fail": {
+      "health": -5,
+      "flag": "w7cr_bo_friend",
+      "log": "You push the ox. The ox pushes back. You sit in the mud. The ox looks quietly pleased with itself."
+     }
+    },
+    {
+     "text": "Find the ox a good farm",
+     "effects": {
+      "luck": 1,
+      "log": "You find it a farm with clover. It looks back at you once from the gate, with an expression you cannot read."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_ox_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The ox is old now and grey round the muzzle. On a cold morning it lies down in your yard and will not eat. The village vet shakes his head. It rests its heavy head on your knee.",
+   "when": {
+    "age": [
+     18,
+     500
+    ],
+    "flags": [
+     "craft_body_2",
+     "w7cr_bo_friend"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_ox_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Ox Who Respected You",
+   "choices": [
+    {
+     "text": "Sit with it all day",
+     "effects": {
+      "alignment": 3,
+      "health": -2,
+      "log": "You sit with the ox until evening. When it goes, it goes easy, with your hand on its neck. You plant a tree in the yard."
+     }
+    },
+    {
+     "text": "Carry it to the clover field it loved",
+     "effects": {
+      "strength": 2,
+      "charm": 2,
+      "log": "You carry the whole ox across the village on your back, slowly. Nobody laughs. Some people walk beside you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_spring_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Every spring, on the first warm day, {npc} of the Stone Valley school arrives at your gate, takes off {his} coat and punches you as hard as {he} can in the stomach. Then {he} bows and leaves. This is the fourth spring.",
+   "npc": {
+    "role": "w7cr_bd_spring",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_bd_spring",
+     "ageAbs": 30,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "age": [
+     20,
+     500
+    ],
+    "flags": [
+     "craft_body_2"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Rival of Every Spring",
+   "choices": [
+    {
+     "text": "Take the punch, and give one back",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 2,
+      "flag": "w7cr_bs_rivals",
+      "log": "You take the punch without moving and give one back. {npc} sits down in the road, delighted. \"Next spring,\" {he} wheezes.",
+      "npcFlag": "w7cr_bd_spring_who"
+     },
+     "fail": {
+      "health": -8,
+      "flag": "w7cr_bs_rivals",
+      "log": "The punch is stronger than last year. You fold like a letter. {npc} bows, very satisfied, and leaves.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    },
+    {
+     "text": "Step aside this time",
+     "effects": {
+      "luck": 1,
+      "flag": "w7cr_bs_rivals",
+      "log": "{npc} punches the gatepost, which breaks. {He} looks at you, betrayed. You buy {him} lunch.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    },
+    {
+     "text": "Ask what this is actually about",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_bs_rivals",
+      "log": "\"I need something to train for,\" {npc} says, simply. \"You are something.\"",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_spring_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years of springs. You both have Golden Bodies now, and the punch sounds like a temple bell from three streets away. Neighbours come to watch with their breakfasts. This spring, {npc} arrives limping. {He} says nothing about it.",
+   "npc": {
+    "role": "w7cr_bd_spring"
+   },
+   "when": {
+    "age": [
+     20,
+     500
+    ],
+    "flags": [
+     "craft_body_2",
+     "w7cr_bs_rivals",
+     "craft_body_4"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_spring_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7cr_bd_spring_who"
+    ]
+   },
+   "arc": "The Rival of Every Spring",
+   "choices": [
+    {
+     "text": "Take the punch, and fall down for {him}",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "flag": "w7cr_bs_old",
+      "log": "You fall down, very convincingly. {npc} looks at you, knows exactly what you did, and is silent for a long moment. Then {he} helps you up.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    },
+    {
+     "text": "Punch first, gently, and send {him} to a physician",
+     "effects": {
+      "health": 2,
+      "flag": "w7cr_bs_old",
+      "log": "\"Not this year,\" you say, and tap {his} shoulder. {npc} glares, then goes to the physician, grumbling all the way.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    },
+    {
+     "text": "Look at the leg first",
+     "roll": {
+      "stat": "medicine",
+      "dc": 50
+     },
+     "ok": {
+      "health": 3,
+      "flag": "w7cr_bs_old",
+      "log": "You set the knee yourself, there in the road. Then you trade punches. The neighbours applaud both.",
+      "npcFlag": "w7cr_bd_spring_who"
+     },
+     "fail": {
+      "health": -4,
+      "flag": "w7cr_bs_old",
+      "log": "You try to set the knee and get kicked for it. That counts as this year's fight, you both agree.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_spring_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "This spring, a young stranger comes to your gate on the first warm day and bows. \"My teacher, {npc}, sends me,\" the young one says, taking off a coat. \"My teacher says I am to punch you in the stomach every spring, as hard as I can. My teacher says it is a great honour.\"",
+   "npc": {
+    "role": "w7cr_bd_spring"
+   },
+   "when": {
+    "age": [
+     20,
+     500
+    ],
+    "flags": [
+     "craft_body_2",
+     "w7cr_bs_old"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_spring_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7cr_bd_spring_who"
+    ]
+   },
+   "arc": "The Rival of Every Spring",
+   "choices": [
+    {
+     "text": "Take the punch",
+     "effects": {
+      "strength": 1,
+      "charm": 3,
+      "log": "It is a good punch, for a beginner. You stand very still. Down the road, leaning on a stick, {npc} is watching and grinning.",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    },
+    {
+     "text": "Show the young one how to punch properly first",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 2,
+      "log": "You teach the punch before you take it. The second one nearly moves you. {npc} sends you a jar of wine with a note: \"Traitor.\"",
+      "npcFlag": "w7cr_bd_spring_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_scholar_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, a thin scholar who has failed the imperial exams twice, asks you to temper {his} body. \"The exam hall is three days in a cell,\" {he} says. \"I know the answers. I faint on the second day.\"",
+   "npc": {
+    "role": "w7cr_bd_scholar",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7cr_bd_scholar",
+     "ageAbs": 22,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_body_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Scholar Who Carried Water",
+   "choices": [
+    {
+     "text": "Set {him} to carrying water up the hill",
+     "effects": {
+      "alignment": 2,
+      "flag": "w7cr_bsc_train",
+      "log": "Two buckets, a hundred steps, every dawn. On the first day {npc} falls over twice. On the tenth, once.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    },
+    {
+     "text": "Design a routine just for {him}",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7cr_bsc_train",
+      "log": "You design a Copper Skin routine for someone who has never lifted anything heavier than a brush. It is gentle and endless and it works.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     },
+     "fail": {
+      "health": -3,
+      "flag": "w7cr_bsc_train",
+      "log": "Your first routine is far too hard. {npc} sleeps for two days. You rewrite it, much gentler.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    },
+    {
+     "text": "Tell {npc} to eat more and sleep more",
+     "effects": {
+      "luck": 1,
+      "log": "{npc} eats more and sleeps more, and fails the exam well rested.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "w7cr_bd_scholar_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A year of water buckets. {npc} can now carry two full buckets up the hill while reciting the Classics, and has started arguing with you about the philosophy of tempering in the middle of it.",
+   "npc": {
+    "role": "w7cr_bd_scholar"
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_body_3",
+     "w7cr_bsc_train"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_scholar_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7cr_bd_scholar_who"
+    ]
+   },
+   "arc": "The Scholar Who Carried Water",
+   "choices": [
+    {
+     "text": "Argue back",
+     "effects": {
+      "comprehension": 3,
+      "flag": "w7cr_bsc_ready",
+      "log": "You argue all the way up the hill. {npc} wins on the classics, you win on the buckets. Both of you improve.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    },
+    {
+     "text": "Add a third bucket",
+     "roll": {
+      "stat": "body",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 2,
+      "flag": "w7cr_bsc_ready",
+      "log": "You add a third bucket to see if {npc} will stop talking. {He} does not. {He} carries it.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     },
+     "fail": {
+      "health": -4,
+      "flag": "w7cr_bsc_ready",
+      "log": "You add a third bucket and {npc} sits down on the path in protest, reciting an essay on cruelty. You carry the third bucket.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    },
+    {
+     "text": "Make {him} train in silence",
+     "effects": {
+      "strength": 1,
+      "luck": 1,
+      "log": "Silence lasts one morning. Then {npc} starts humming the Classics.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_scholar_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A letter comes from the capital. {npc} has passed the exams, third in the empire, and was the only candidate to walk out of the exam hall on {his} own feet. {He} has been posted as a county magistrate, and the first order {he} signed was to put a water barrel on every hill.",
+   "npc": {
+    "role": "w7cr_bd_scholar"
+   },
+   "when": {
+    "age": [
+     25,
+     500
+    ],
+    "flags": [
+     "craft_body_3",
+     "w7cr_bsc_ready"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_scholar_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7cr_bd_scholar_who"
+    ]
+   },
+   "arc": "The Scholar Who Carried Water",
+   "choices": [
+    {
+     "text": "Write back with a new routine",
+     "effects": {
+      "charm": 2,
+      "comprehension": 1,
+      "log": "\"For magistrates,\" you write. \"Two buckets. Every morning. Still.\" {npc} keeps the letter on {his} desk.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    },
+    {
+     "text": "Visit, and carry water with {him} once more",
+     "effects": {
+      "health": 4,
+      "luck": 1,
+      "log": "You walk up the magistrate's hill with two buckets each. The county clerks watch in disbelief. {npc} recites all the way.",
+      "npcFlag": "w7cr_bd_scholar_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_bd_cauldron_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Silver Marrow tempering needs a herbal bath hot enough to cook rice, for seven days. You borrow the biggest bronze cauldron in town, the one the temple uses for festival soup, and climb in. On the third day the temple cook comes to collect it.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_body_3"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Cauldron Bath",
+   "choices": [
+    {
+     "text": "Stay in and finish the day",
+     "roll": {
+      "stat": "body",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 3,
+      "flag": "w7cr_bc_bath",
+      "log": "You stay in. The cook stares at you, at the herbs, at the fire, and goes to fetch the abbot. You finish the day stewing quietly."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "w7cr_bc_bath",
+      "log": "You turn to explain, the fire flares, and you are boiled to the colour of a crab. You get out. The cook says nothing for a long time."
+     }
+    },
+    {
+     "text": "Explain from inside the cauldron",
+     "effects": {
+      "charm": 2,
+      "flag": "w7cr_bc_bath",
+      "log": "You explain, politely, from up to your neck in herbs. The cook decides the soup can wait four days."
+     }
+    },
+    {
+     "text": "Climb out and give it back",
+     "effects": {
+      "health": -2,
+      "log": "You climb out, steaming, and give it back. You temper in the river instead. It is very cold. The fish are curious."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_bd_cauldron_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The festival is coming and the temple soup is famous. The cook has noticed that the people who tasted the water from your cauldron bath, by accident, have not had a cold all winter. A queue has formed at your gate with bowls.",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_body_3",
+     "w7cr_bc_bath"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_bd_cauldron_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Cauldron Bath",
+   "choices": [
+    {
+     "text": "Explain that it is bath water",
+     "effects": {
+      "alignment": 3,
+      "flag": "w7cr_bc_soup",
+      "log": "You explain. The queue thinks about it, then decides it does not mind. You give the recipe to the cook instead."
+     }
+    },
+    {
+     "text": "Brew a soup from the bath herbs, without the bath",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "flag": "w7cr_bc_soup",
+      "log": "You make a proper broth from the tempering herbs, no bath involved, and give it to the temple. Festival Soup is now medicine."
+     },
+     "fail": {
+      "health": -3,
+      "flag": "w7cr_bc_soup",
+      "log": "Your broth is far too strong. The abbot runs around the temple three times and cannot sleep for a week. He says it was a good week."
+     }
+    },
+    {
+     "text": "Charge for the bath water",
+     "effects": {
+      "taels": 30,
+      "alignment": -3,
+      "log": "People pay for bowls of your bath water. You make silver and feel strange about it. So do they."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7cr_bd_cauldron_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "At the festival, the temple serves its soup in the same great cauldron, and the cook has written a new sign: SILVER MARROW SOUP. NO MARTIAL ARTISTS WERE COOKED IN THIS POT (THIS YEAR).",
+   "when": {
+    "age": [
+     22,
+     500
+    ],
+    "flags": [
+     "craft_body_3",
+     "w7cr_bc_soup"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7cr_bd_cauldron_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Cauldron Bath",
+   "choices": [
+    {
+     "text": "Eat three bowls",
+     "effects": {
+      "health": 6,
+      "luck": 1,
+      "log": "It is excellent. You eat three bowls under the sign while children point at you."
+     }
+    },
+    {
+     "text": "Help stir it",
+     "effects": {
+      "strength": 1,
+      "charm": 2,
+      "log": "You stir the soup with a paddle the size of an oar. The cook says you are the only person who has ever stirred it properly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_boulder_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A rockslide comes down on the pass road as a caravan of forty carts is going through. A boulder the size of a house stops on a ledge just above them, rocking. Your Golden Body is the only one on the road that might hold it.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_body_4",
+     "craft_body_known"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Boulder on the Pass Road",
+   "choices": [
+    {
+     "text": "Hold the boulder up",
+     "roll": {
+      "stat": "body",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 5,
+      "flag": "w7cr_bb_held",
+      "log": "You set your back under the boulder and hold it while forty carts roll past. Then you let it down very slowly. Your shoulders are sore for a month."
+     },
+     "fail": {
+      "health": -15,
+      "fame": 4,
+      "flag": "w7cr_bb_held",
+      "log": "You hold it long enough. Barely. The last cart is through when your knees go, and the boulder rolls off you into the gorge."
+     }
+    },
+    {
+     "text": "Run along the line and hurry the carts",
+     "effects": {
+      "fame": 3,
+      "alignment": 3,
+      "log": "You shout, push and pull until the carts are clear. The boulder comes down on an empty road."
+     }
+    },
+    {
+     "text": "Wedge it with timbers from the carts",
+     "effects": {
+      "luck": 2,
+      "comprehension": 1,
+      "log": "You jam it with axles. It holds. Forty carts go through very carefully, and some of them are now missing a wheel."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_boulder_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The story spreads. In the next town the boulder was the size of a temple. In the town after that you held it with one hand while eating a bun. A painter has made a picture in which you are nine feet tall and the boulder is on fire.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_body_4",
+     "craft_body_known",
+     "w7cr_bb_held"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_boulder_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Boulder on the Pass Road",
+   "choices": [
+    {
+     "text": "Correct the story everywhere you go",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "flag": "w7cr_bb_story",
+      "log": "You correct it everywhere. Nobody believes the true size. In the end they say you are modest as well as strong."
+     }
+    },
+    {
+     "text": "Buy the painting",
+     "effects": {
+      "taels": -20,
+      "charm": 2,
+      "flag": "w7cr_bb_story",
+      "log": "You pay 20 taels for the painting and hang it in your hall. Guests ask about the fire. You say it was only a little fire."
+     }
+    },
+    {
+     "text": "Tell the story yourself at the teahouse",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "flag": "w7cr_bb_story",
+      "log": "You tell it so well that the real size sounds bigger than the legend. The bun stays in. You like the bun."
+     },
+     "fail": {
+      "fame": -1,
+      "flag": "w7cr_bb_story",
+      "log": "You tell it so modestly that a drunk in the teahouse says he could have done it. He tries on a cart. He cannot."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_boulder_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The caravan merchants have carved a shrine into the boulder where it came to rest in the gorge. There is a little figure of you on top, holding it up. Travellers touch the figure's shoulders for strength on the road.",
+   "when": {
+    "age": [
+     25,
+     2000
+    ],
+    "flags": [
+     "craft_body_4",
+     "craft_body_known",
+     "w7cr_bb_story"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_boulder_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Boulder on the Pass Road",
+   "choices": [
+    {
+     "text": "Visit, and touch the shoulders too",
+     "effects": {
+      "luck": 3,
+      "health": 3,
+      "log": "You stand in the queue with the travellers and touch your own stone shoulders. It does make you feel stronger, oddly."
+     }
+    },
+    {
+     "text": "Leave a bun at the shrine",
+     "effects": {
+      "charm": 3,
+      "fame": 1,
+      "log": "You leave a bun. Within a year, everyone leaves a bun. The gorge has the fattest birds in the province."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_vajra_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Your Vajra Body has become a nuisance. The barber has broken six razors on your chin, the tailor cannot get a needle through a seam you are wearing, and the physician cannot take your pulse because his fingers bounce off. The barber is approaching with a seventh razor and a look of grim resolve.",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_body_5"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Barber's Seventh Razor",
+   "choices": [
+    {
+     "text": "Learn to soften your skin on purpose",
+     "roll": {
+      "stat": "body",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "w7cr_bv_soft",
+      "log": "You learn to let the body soften, a hair's breadth, on purpose. The seventh razor works. The barber nearly weeps with relief."
+     },
+     "fail": {
+      "luck": -1,
+      "flag": "w7cr_bv_soft",
+      "log": "You try to soften and the razor bends into a loop. The barber hangs it on the wall as a warning to others."
+     }
+    },
+    {
+     "text": "Grow a beard and let him rest",
+     "effects": {
+      "charm": 1,
+      "flag": "w7cr_bv_soft",
+      "log": "You grow a magnificent beard. The barber trims it now and then, nervously, from a distance."
+     }
+    },
+    {
+     "text": "Pay for the six razors",
+     "effects": {
+      "taels": -12,
+      "alignment": 2,
+      "flag": "w7cr_bv_soft",
+      "log": "You pay him 12 taels for six razors. He uses the silver to buy a whetstone the size of a brick."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_vajra_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A small child at the market asks you why nothing hurts you. Before you can answer, the child adds, \"Is it lonely?\" You find you do not have a quick reply.",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_body_5",
+     "w7cr_bv_soft"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_vajra_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Barber's Seventh Razor",
+   "choices": [
+    {
+     "text": "Tell the truth: sometimes",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "flag": "w7cr_bv_asked",
+      "log": "The child thinks about it and pats your arm, hard, to check. \"I will hit you every day so you know you are there,\" the child says. You laugh all the way home."
+     }
+    },
+    {
+     "text": "Let the child try to pinch you",
+     "effects": {
+      "charm": 3,
+      "flag": "w7cr_bv_asked",
+      "log": "The child pinches with enormous effort and you make a great show of pain. The child is extremely pleased."
+     }
+    },
+    {
+     "text": "Think about it properly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "w7cr_bv_asked",
+      "log": "You sit on the step and actually think about it. Nothing outside can hurt you. You realise it has made you careless of what you feel inside."
+     },
+     "fail": {
+      "luck": 1,
+      "flag": "w7cr_bv_asked",
+      "log": "You think about it all evening and fail to find an answer. You buy the child a sugar figure instead, which is a kind of answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7cr_bd_vajra_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "In the cold season you find you have started letting things in on purpose: the wind on your face, a cat's claws, the warmth of a cup. The barber, old now, shaves you with the seventh razor and says your skin feels like a person's again.",
+   "when": {
+    "age": [
+     40,
+     5000
+    ],
+    "flags": [
+     "craft_body_5",
+     "w7cr_bv_asked"
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7cr_bd_vajra_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Barber's Seventh Razor",
+   "choices": [
+    {
+     "text": "Thank the barber",
+     "effects": {
+      "health": 4,
+      "charm": 2,
+      "log": "He waves the razor at you. \"Six broken,\" he says. \"One that worked. That is a good ratio, in my trade.\""
+     }
+    },
+    {
+     "text": "Go and walk in the rain",
+     "effects": {
+      "health": 3,
+      "luck": 2,
+      "lifespan": 1,
+      "log": "You walk in the rain for an hour and feel every drop. It is the best thing you have felt in years."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

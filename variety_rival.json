@@ -1,0 +1,849 @@
+{
+ "events": [
+  {
+   "id": "rv_kite",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     8,
+     11
+    ]
+   },
+   "text": "{npc} cuts your kite string with a sharpened one of {his} own and your kite sails off over the river. The whole street saw.",
+   "choices": [
+    {
+     "text": "Swim after it",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "fame": 1,
+      "mem": {
+       "deed": "humiliated",
+       "w": -6,
+       "note": "fetched the kite out of the river and waved it at me"
+      },
+      "log": "You come back soaked with the kite over your head. The street cheers. {npc} goes home early."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The river takes the kite and nearly takes you. {npc} pulls you out by the collar, then tells everyone."
+     }
+    },
+    {
+     "text": "Cut {his} string the next day",
+     "effects": {
+      "mem": {
+       "deed": "rivalry",
+       "w": -5,
+       "note": "cut my kite string back"
+      },
+      "log": "Two kites in the river. Two mothers on the doorstep. A war is declared that will last forty years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rv_teacher_pet",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     8,
+     11
+    ]
+   },
+   "text": "The village teacher praises {npc}'s calligraphy and holds yours up as the example of what not to do. {npc} smiles at you across the room.",
+   "choices": [
+    {
+     "text": "Practise every night until yours is better",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "rivalry",
+       "w": -3,
+       "note": "practised till their hand was better than mine"
+      },
+      "log": "By spring the teacher holds up both. {npc} stops smiling across the room."
+     }
+    },
+    {
+     "text": "Spill ink on {his} sheet",
+     "effects": {
+      "alignment": -2,
+      "mem": {
+       "deed": "humiliated",
+       "w": -8,
+       "note": "spilled ink on my best page"
+      },
+      "log": "Satisfying for a day. The teacher makes you copy the whole classic twice."
+     }
+    }
+   ],
+   "variants": [
+    "The village teacher holds up {npc}'s calligraphy as a model and yours as a warning. Across the room, {npc} smiles at you."
+   ]
+  },
+  {
+   "id": "rv_dog",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     8,
+     11
+    ]
+   },
+   "text": "A stray dog follows you home and {npc} swears it is {his}. The dog, sitting between you, refuses to have an opinion.",
+   "choices": [
+    {
+     "text": "Let the dog choose",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "mem": {
+       "deed": "humiliated",
+       "w": -5,
+       "note": "won the dog from me"
+      },
+      "log": "The dog walks to you and lies on your feet. {npc} does not speak to you, or the dog, for a month."
+     },
+     "fail": {
+      "mem": {
+       "deed": "pleased",
+       "w": 4,
+       "note": "watched the dog choose me"
+      },
+      "log": "The dog goes to {npc}. {He} is unbearable about it for a year."
+     }
+    },
+    {
+     "text": "Give {him} the dog",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "puzzled",
+       "w": 6,
+       "note": "gave me the dog without a fight"
+      },
+      "log": "{npc} is suspicious for a week, then names the dog after you, which may or may not be a compliment."
+     }
+    }
+   ],
+   "variants": [
+    "A stray dog trots home behind you, and {npc} insists it is {his}. The dog sits down between you and declines to take sides."
+   ]
+  },
+  {
+   "id": "rv_well",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     8,
+     11
+    ]
+   },
+   "text": "{npc} dares you to climb down the old well where the village says a drowned scholar lives. {He} will hold the rope.",
+   "choices": [
+    {
+     "text": "Climb down",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 35
+     },
+     "ok": {
+      "fame": 1,
+      "item": "spirit_herb",
+      "mem": {
+       "deed": "humiliated",
+       "w": -6,
+       "note": "came up from the well with a prize"
+      },
+      "log": "No scholar. A clump of glowing herb on a ledge. You climb up with it in your teeth."
+     },
+     "fail": {
+      "health": -10,
+      "deathCause": "the old well",
+      "log": "{npc} lets the rope slip, just a little, just for a laugh. You climb out with a twisted ankle and a long memory."
+     }
+    },
+    {
+     "text": "You hold the rope. {He} climbs",
+     "effects": {
+      "mem": {
+       "deed": "trusted",
+       "w": 5,
+       "note": "held the rope steady"
+      },
+      "log": "{npc} climbs down, shrieks, climbs up. You never let the rope slip. {He} never mentions it, which is how you know."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} bets you will not go down the old well where the drowned scholar is said to live. {He} offers to hold the rope."
+   ]
+  },
+  {
+   "id": "rv_entrance",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     12,
+     16
+    ]
+   },
+   "text": "A sect's recruiter comes through town and will take one child. {npc} and you are the last two standing in the yard.",
+   "choices": [
+    {
+     "text": "Fight for it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "took the recruiter's place from me"
+      },
+      "log": "The recruiter points at you. {npc} watches you climb onto the cart and does not wave."
+     },
+     "fail": {
+      "mem": {
+       "deed": "pleased",
+       "w": 3,
+       "note": "lost the recruiter's bout to me"
+      },
+      "log": "The recruiter points at {npc}. {He} waves from the cart, which is worse."
+     }
+    },
+    {
+     "text": "Step back for {him}",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "owed",
+       "w": 12,
+       "note": "stepped back so I could go"
+      },
+      "log": "{npc} goes with the recruiter and writes you one letter in five years, which says only: I have not forgotten."
+     }
+    }
+   ],
+   "variants": [
+    "A recruiter from a sect passes through and says there is room for one child. By sunset only you and {npc} are still standing in the dusty yard.",
+    "The sect's recruiter has tested every child in town and wants exactly one. It comes down, as everyone knew it would, to you and {npc}."
+   ]
+  },
+  {
+   "id": "rv_secret",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     13,
+     16
+    ]
+   },
+   "text": "{npc} tells half the town a secret you told only {him}, years ago, when you were friends for one summer.",
+   "choices": [
+    {
+     "text": "Tell everyone one of {his}",
+     "effects": {
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "told the town my secret back"
+      },
+      "alignment": -2,
+      "log": "The town enjoys a week of both of you. Neither of you enjoys it at all."
+     }
+    },
+    {
+     "text": "Say nothing and let it pass",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "ashamed",
+       "w": 4,
+       "note": "never paid me back for the secret"
+      },
+      "log": "It passes. {npc} is ashamed, quietly, for longer than you are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rv_manual_page",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     12,
+     16
+    ]
+   },
+   "text": "You and {npc} find the same torn manual page in the market's waste bin and grab it at the same moment.",
+   "choices": [
+    {
+     "text": "Tear it in half",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "rivalry",
+       "w": -3,
+       "note": "tore the page in half with me"
+      },
+      "log": "Each of you learns half a technique. Neither of you ever quite forgets which half."
+     }
+    },
+    {
+     "text": "Study it together, once",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "trusted",
+       "w": 8,
+       "note": "studied the page with me"
+      },
+      "log": "One afternoon on the riverbank, heads together. You both pretend afterwards that it never happened."
+     }
+    }
+   ],
+   "variants": [
+    "In the rubbish behind the market you spot a torn page of a martial manual. So does {npc}. Your hands close on it at the same instant."
+   ]
+  },
+  {
+   "id": "rv_tavern_brawl",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     16,
+     22
+    ]
+   },
+   "text": "In a tavern, {npc} and three of {his} new sect brothers are about to beat a drunk who spilled wine on them. The drunk is old and very drunk.",
+   "choices": [
+    {
+     "text": "Step between them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The sect brothers"
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 4,
+      "mem": {
+       "deed": "humiliated",
+       "w": -8,
+       "note": "stopped me in front of my brothers"
+      },
+      "log": "The old man walks out on two feet. {npc} remembers who stood in the way."
+     },
+     "fail": {
+      "health": -12,
+      "alignment": 3,
+      "mem": {
+       "deed": "pleased",
+       "w": 2,
+       "note": "took a beating for a drunk"
+      },
+      "log": "You take the beating meant for the drunk, and the old man walks out on two feet. {npc} remembers who stood in the way."
+     }
+    },
+    {
+     "text": "Buy the old man a cup and seat the drunk",
+     "effects": {
+      "taels": -5,
+      "charm": 2,
+      "mem": {
+       "deed": "puzzled",
+       "w": 3,
+       "note": "made the fight go away with a cup of wine"
+      },
+      "log": "The moment passes. {npc}'s brothers laugh. {npc} does not."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} and three of {his} new sect brothers have an old drunk backed against the tavern wall over a spilled cup of wine. The old man can barely stand."
+   ]
+  },
+  {
+   "id": "rv_matchmaker",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     17,
+     22
+    ],
+    "married": false
+   },
+   "text": "A matchmaker proposes, to both your families, the same person for both of you. The town treats it as a horse race.",
+   "choices": [
+    {
+     "text": "Withdraw, gracefully",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "puzzled",
+       "w": 5,
+       "note": "withdrew from the match"
+      },
+      "log": "{npc} wins a race with no other runner and looks oddly cheated by it."
+     }
+    },
+    {
+     "text": "Compete for it",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 2,
+      "mem": {
+       "deed": "humiliated",
+       "w": -12,
+       "note": "won the match my family wanted"
+      },
+      "log": "The town settles its bets in your favour. Nobody asked the person being matched, who marries a third party within the year."
+     },
+     "fail": {
+      "mem": {
+       "deed": "pleased",
+       "w": 4,
+       "note": "lost the match to me"
+      },
+      "log": "The town settles its bets, and you lose them. Nobody asked the person being matched, who marries a third party within the year."
+     }
+    }
+   ],
+   "variants": [
+    "A matchmaker has proposed the same person to both your family and the family of your old rival. The whole town is laying bets."
+   ]
+  },
+  {
+   "id": "rv_first_post",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     16,
+     22
+    ],
+    "npcRealm": [
+     0,
+     1
+    ]
+   },
+   "text": "You both apply for the same post: a guard's place at the county magistrate's. There is one place and two of you, and the captain wants a bout.",
+   "choices": [
+    {
+     "text": "Fight the bout clean",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "taels": 30,
+      "mem": {
+       "deed": "humiliated",
+       "w": -8,
+       "note": "took the guard post from me"
+      },
+      "log": "You get the uniform. {npc} gets a story to tell about the one who did."
+     },
+     "fail": {
+      "mem": {
+       "deed": "pleased",
+       "w": 3,
+       "note": "lost the guard post to me"
+      },
+      "log": "{npc} gets the uniform. You get a story to tell about the one who did."
+     }
+    },
+    {
+     "text": "Let {him} have it and take the night watch elsewhere",
+     "effects": {
+      "taels": 15,
+      "alignment": 2,
+      "mem": {
+       "deed": "owed",
+       "w": 8,
+       "note": "let me have the post"
+      },
+      "log": "{npc} takes the post and is good at it. Years later {he} looks the other way for you once, without being asked."
+     }
+    }
+   ],
+   "variants": [
+    "There is one guard's post open at the county magistrate's, and both of you want it. The captain settles it the simple way: a bout."
+   ]
+  },
+  {
+   "id": "rv_letter_war",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     50
+    ]
+   },
+   "text": "A letter arrives from {npc}, who is now somewhere far: a long account of {his} victories, with one line at the end asking how you are, as if by accident.",
+   "choices": [
+    {
+     "text": "Write back with your own victories",
+     "effects": {
+      "mem": {
+       "deed": "rivalry",
+       "w": -2,
+       "note": "wrote back bragging"
+      },
+      "comprehension": 1,
+      "log": "The letters go on for years, each one longer. Neither of you ever writes the line at the end first."
+     }
+    },
+    {
+     "text": "Write back only the answer to the last line",
+     "effects": {
+      "mem": {
+       "deed": "moved",
+       "w": 10,
+       "note": "answered only the last line"
+      },
+      "log": "{npc} does not write again for a year. Then a short letter, with no victories in it at all."
+     }
+    }
+   ],
+   "variants": [
+    "A courier brings a thick letter from {npc}, who is far away now: page after page of duels won and honours taken, and squeezed into the margin at the very end, \"And you? Are you well?\"",
+    "{npc} writes from the other end of the empire. The letter is mostly about how well {he} is doing. The last line, in smaller characters, asks after your health."
+   ]
+  },
+  {
+   "id": "rv_sect_war",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     55
+    ],
+    "npcOpinion": [
+     -100,
+     20
+    ]
+   },
+   "text": "Two sects are at war over a border town, and {npc} commands one side's patrol. You meet in the empty market at dawn, alone.",
+   "choices": [
+    {
+     "text": "Settle the town between the two of you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "humiliated",
+       "w": -12,
+       "note": "won the town from me alone in the market"
+      },
+      "log": "Two sects, one duel, no war. The elders on both sides are furious that it worked."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "pleased",
+       "w": 4,
+       "note": "lost the market duel"
+      },
+      "log": "You lose the duel, but {npc} keeps the bargain and calls off the patrol. Two sects, one duel, no war, and the wrong winner."
+     }
+    },
+    {
+     "text": "Talk about the war ending instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 6,
+      "fame": 4,
+      "mem": {
+       "deed": "trusted",
+       "w": 12,
+       "note": "talked about peace in the empty market"
+      },
+      "log": "The war ends a season early. Nobody on either side knows who to thank, which suits you both."
+     },
+     "fail": {
+      "mem": {
+       "deed": "rivalry",
+       "w": -4,
+       "note": "talked when we should have fought"
+      },
+      "log": "Your words do not carry. The war runs its season, and you and {npc} part with nothing settled."
+     }
+    }
+   ],
+   "variants": [
+    "Two sects are fighting over a border town, and {npc} leads one side's patrol. At dawn you meet in the deserted market square, the two of you and nobody else.",
+    "The war between the sects has emptied the border town. At first light you walk into the silent market and find {npc}, captain of the other patrol, waiting alone."
+   ]
+  },
+  {
+   "id": "rv_shared_enemy",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     24,
+     60
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "text": "A demonic cultivator has been taking disciples from every sect in the province. {npc} comes to your door at night with a map and a very small smile.",
+   "choices": [
+    {
+     "text": "Hunt together",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The demonic cultivator"
+     },
+     "ok": {
+      "fame": 10,
+      "mem": {
+       "deed": "fought_together",
+       "w": 16,
+       "note": "hunted the demon with me"
+      },
+      "log": "Back to back in the dark, and the demon falls. Afterwards neither of you can remember who was the rival and who was the friend."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "a demonic cultivator's lair",
+      "mem": {
+       "deed": "fought_together",
+       "w": 10,
+       "note": "bled beside me in the lair"
+      },
+      "log": "The lair is deeper than the map said. {npc} drags you out of it, and afterwards neither of you can remember who was the rival and who was the friend."
+     }
+    },
+    {
+     "text": "Hunt alone. You do not need {him}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The demonic cultivator"
+     },
+     "ok": {
+      "fame": 12,
+      "mem": {
+       "deed": "humiliated",
+       "w": -8,
+       "note": "hunted the demon alone"
+      },
+      "log": "You get the credit. {npc} gets there five minutes late, with the map."
+     },
+     "fail": {
+      "health": -20,
+      "mem": {
+       "deed": "pleased",
+       "w": 3,
+       "note": "needed rescuing in the end"
+      },
+      "log": "The lair is worse than you thought. {npc} gets there five minutes late, with the map, and carries you out."
+     }
+    }
+   ],
+   "variants": [
+    "Disciples are vanishing from sects all over the province, and every trail ends at the same demonic cultivator. Tonight {npc} knocks on your door with a hand-drawn map and the smallest of smiles.",
+    "A demonic cultivator has been stealing disciples from every hall in the province. {npc} turns up at your gate after dark, unrolls a map on your table, and waits for you to say it first."
+   ]
+  },
+  {
+   "id": "rv_child_of",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     35,
+     70
+    ]
+   },
+   "text": "{npc}'s child turns up at your gate asking to be your disciple, because, the child says, {npc} talks about nobody else.",
+   "choices": [
+    {
+     "text": "Take the child as a disciple",
+     "effects": {
+      "fame": 4,
+      "alignment": 4,
+      "mem": {
+       "deed": "moved",
+       "w": 14,
+       "note": "took my child as a disciple"
+      },
+      "log": "{npc} is furious, then proud, then furious again. The child is gifted and very like both of you."
+     }
+    },
+    {
+     "text": "Send the child home with a letter",
+     "effects": {
+      "mem": {
+       "deed": "rivalry",
+       "w": 2,
+       "note": "sent my child back with a letter"
+      },
+      "log": "The letter says: teach your own child. {npc} keeps it on the wall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rv_last_tea",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     55,
+     110
+    ]
+   },
+   "text": "{npc} sends an invitation written in a hand that shakes: tea, at the old pine on the hill, one afternoon, nothing else.",
+   "choices": [
+    {
+     "text": "Go",
+     "effects": {
+      "lifespan": 1,
+      "comprehension": 2,
+      "mem": {
+       "deed": "moved",
+       "w": 15,
+       "note": "came to the old pine for tea"
+      },
+      "log": "You sit under the pine you raced up a lifetime ago. You argue about who won. Neither of you remembers. It is a good afternoon."
+     }
+    },
+    {
+     "text": "Send a better tea, and stay home",
+     "effects": {
+      "mem": {
+       "deed": "puzzled",
+       "w": 2,
+       "note": "sent tea instead of coming"
+      },
+      "log": "{npc} drinks it alone under the pine and tells the children it is from the only person {he} ever lost to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rv_funeral_words",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     55,
+     110
+    ],
+    "npcOpinion": [
+     -100,
+     100
+    ]
+   },
+   "text": "A rumour says {npc} is dying. {His} disciples ask whether you will speak at the funeral, when it comes, since {he} asked for you by name.",
+   "choices": [
+    {
+     "text": "Agree, and visit while {he} can still hear",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "moved",
+       "w": 18,
+       "note": "came while I could still hear it"
+      },
+      "log": "{He} recovers, out of spite, {he} says, so that you will have to wait. You both laugh for the first time in decades."
+     }
+    },
+    {
+     "text": "Agree, and write the words now",
+     "effects": {
+      "comprehension": 3,
+      "log": "You write all night. The words are kinder than anything you ever said to {his} face, and you put them in a drawer."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,6657 @@
+{
+ "events": [
+  {
+   "id": "w7fm_fw_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your child, {npc}, is nearly two and has said 'ba' at everything for a month. Tonight, at dinner, {he} points a sticky finger at the money chest and says a whole, clear word.",
+   "npc": {
+    "role": "child",
+    "minAge": 1,
+    "maxAge": 3
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The First Word",
+   "choices": [
+    {
+     "text": "Clap and make a great fuss",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_fw",
+      "log": "The word is 'taels'. You clap so hard the cat leaves. {npc} says it forty more times before bed."
+     }
+    },
+    {
+     "text": "Correct the pronunciation",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_fw",
+      "log": "'Taels,' you say slowly. 'Tells,' says {npc}. You write it in the family book anyway, with the date."
+     }
+    },
+    {
+     "text": "Move the money chest higher",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "w7fm_fw",
+      "log": "{npc} watches exactly where the chest goes. This worries you more than it should."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fw_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has moved on from words to questions. Why is the sky up. Why does Uncle Bao snore like a bellows. Today: why can you jump onto the roof when {he} cannot?",
+   "npc": {
+    "role": "child",
+    "minAge": 4,
+    "maxAge": 14
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_fw_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_fw"
+    ]
+   },
+   "arc": "The First Word",
+   "choices": [
+    {
+     "text": "Explain qi, slowly and badly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 2,
+      "log": "You explain the meridians using dumplings as acupoints. {npc} understands perfectly, then eats the meridians."
+     },
+     "fail": {
+      "luck": -1,
+      "log": "Halfway through you confuse yourself. {npc} pats your hand kindly and goes to ask the cook."
+     }
+    },
+    {
+     "text": "Carry {him} up to the roof",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "roof",
+       "w": 8,
+       "note": "carried me up onto the roof to count the stars"
+      },
+      "log": "{npc} falls asleep on the ridge tiles counting stars. You count the rest."
+     }
+    },
+    {
+     "text": "Say it is because you eat your greens",
+     "effects": {
+      "health": 1,
+      "luck": 1,
+      "log": "{npc} eats every green thing in the house for a month, then tries the roof and lands in the rain barrel."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fw_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Clearing out a chest, {npc} finds the family book with that first word in it, the date, and your small drawing of a coin. {He} reads it aloud to the entire household at New Year.",
+   "npc": {
+    "role": "child",
+    "minAge": 10,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_fw_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_fw"
+    ]
+   },
+   "arc": "The First Word",
+   "choices": [
+    {
+     "text": "Laugh along with everyone",
+     "effects": {
+      "charm": 2,
+      "log": "That night {npc} adds a line under yours in a neat young hand: 'First loan repaid. Two coppers.'"
+     }
+    },
+    {
+     "text": "Insist the word was really 'tiger'",
+     "effects": {
+      "fame": 1,
+      "luck": 1,
+      "log": "Nobody believes you. The tiger version gets better every New Year, and {npc} tells it best."
+     }
+    },
+    {
+     "text": "Ask what {he} will write about you one day",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "{npc} thinks for a long time and writes: 'Patient, mostly.' You are prouder of it than of any title."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_wsword_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has carved a sword out of a broom handle, painted it with soot and named it Heaven Splitter. {He} wants lessons. Today. Now. Before lunch.",
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 9
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Wooden Sword",
+   "choices": [
+    {
+     "text": "Teach {him} a real stance",
+     "effects": {
+      "strength": 1,
+      "npcFlag": "w7fm_ws",
+      "flag": "w7fm_ws_taught",
+      "log": "You fix {his} feet, {his} grip and {his} wobbling elbow. Heaven Splitter has never looked so serious."
+     }
+    },
+    {
+     "text": "Duel Heaven Splitter and lose dramatically",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "w7fm_ws",
+      "log": "You are slain four times before lunch, very loudly. The neighbours come out to watch the fourth."
+     }
+    },
+    {
+     "text": "Say lessons start when {he} is older",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_ws",
+      "log": "{npc} practises alone behind the woodpile every evening. You pretend not to see."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_wsword_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Three years on, Heaven Splitter has been replaced by a real practice blade, and {npc} has started sparring the neighbour's children. Today the neighbour is at your gate with a child and a bump the size of a plum.",
+   "npc": {
+    "role": "child",
+    "minAge": 8,
+    "maxAge": 25
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_wsword_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_ws"
+    ]
+   },
+   "arc": "The Wooden Sword",
+   "choices": [
+    {
+     "text": "Apologise and send a basket of pears",
+     "effects": {
+      "taels": -10,
+      "alignment": 2,
+      "log": "The pears cost 10 taels. The neighbour forgives you, and the bump goes down by the time they are eaten."
+     }
+    },
+    {
+     "text": "Teach {npc} the difference between a spar and a fight",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "{npc} listens, then apologises to the neighbour on {his} own. That was the lesson."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "{npc} hears only that {he} won. It takes another bump to make the point."
+     }
+    },
+    {
+     "text": "Ask the neighbour what the other child did first",
+     "effects": {
+      "luck": 1,
+      "charm": -1,
+      "log": "It turns out the other child started it with a rake. The neighbour leaves, less certain and still annoyed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_wsword_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} asks you for a proper spar, no holding back. In the courtyard, sleeves tied up, {he} looks like someone you have not met yet.",
+   "npc": {
+    "role": "child",
+    "minAge": 13,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_wsword_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7fm_ws"
+    ]
+   },
+   "arc": "The Wooden Sword",
+   "choices": [
+    {
+     "text": "Fight properly",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 2,
+      "strength": 1,
+      "log": "You win, narrowly. {npc} bows, grinning, and says next year. You believe it."
+     },
+     "fail": {
+      "charm": 2,
+      "health": -2,
+      "log": "{npc} disarms you with a move you taught {him} and two you did not. You have never been so pleased to lose."
+     }
+    },
+    {
+     "text": "Let {him} win, and make it look good",
+     "effects": {
+      "charm": 1,
+      "alignment": -1,
+      "log": "{npc} sees through it at once. 'Again,' {he} says, 'and properly this time.'"
+     }
+    },
+    {
+     "text": "Hand over the old broom handle instead",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "heaven_splitter",
+       "w": 9,
+       "note": "kept my first wooden sword all those years"
+      },
+      "log": "You kept Heaven Splitter all this time. {npc} laughs until {he} cries, then hangs it over {his} bed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gate_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The Azure Cloud Sect is taking new disciples, and {npc} wants to try. The entrance test is the thousand stone stairs at dawn. You walk {him} to the bottom.",
+   "npc": {
+    "role": "child",
+    "minAge": 10,
+    "maxAge": 14
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Sect Gate",
+   "choices": [
+    {
+     "text": "Climb beside {him}, step for step",
+     "effects": {
+      "health": -2,
+      "charm": 2,
+      "npcFlag": "w7fm_gt",
+      "flag": "w7fm_gt_climbed",
+      "log": "You climb all thousand together. At the top the elders admit {npc} and ask, politely, who you are."
+     }
+    },
+    {
+     "text": "Wait at the bottom with a lunch box",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "w7fm_gt",
+      "log": "{npc} climbs alone. At noon a disciple comes down for the lunch box, which means {he} made it."
+     }
+    },
+    {
+     "text": "Bribe the gatekeeper first",
+     "effects": {
+      "taels": -30,
+      "alignment": -3,
+      "npcFlag": "w7fm_gt",
+      "flag": "w7fm_gt_bribe",
+      "log": "The gatekeeper takes 30 taels. {npc} climbs every stair anyway and never needed it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gate_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A letter from the Azure Cloud Sect in {npc}'s hand. The food is terrible, the senior disciples snore, {he} has learned three forms and one swear word. Can you send socks?",
+   "npc": {
+    "role": "child",
+    "minAge": 12,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_gate_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_gt"
+    ]
+   },
+   "arc": "The Sect Gate",
+   "choices": [
+    {
+     "text": "Send socks and a jar of pickles",
+     "effects": {
+      "taels": -5,
+      "charm": 2,
+      "log": "The socks cost 5 taels. The pickles make {npc} the most popular disciple in the dormitory for a week."
+     }
+    },
+    {
+     "text": "Write back a long letter of advice",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "{npc} replies: 'Thank you for the advice. Also the socks?' You send the socks."
+     }
+    },
+    {
+     "text": "Visit in person, unannounced",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "log": "The sect master shares tea with you and praises {npc}. {npc} is mortified and delighted in equal parts."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "{npc} hides in the latrine until you leave. You wave at the latrine on your way out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gate_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes home in the sect's blue robe with an inner disciple's jade token on {his} belt. At the gate {he} bows to you the formal way, then gives up and hugs you.",
+   "npc": {
+    "role": "child",
+    "minAge": 16,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_gate_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_gt"
+    ]
+   },
+   "arc": "The Sect Gate",
+   "choices": [
+    {
+     "text": "Throw a banquet for the street",
+     "effects": {
+      "taels": -40,
+      "fame": 3,
+      "log": "The banquet costs 40 taels. The whole street eats, and the old gatekeeper story is told nineteen times."
+     }
+    },
+    {
+     "text": "Cook {his} favourite yourself",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "homecoming",
+       "w": 8,
+       "note": "cooked my favourite the day I came home an inner disciple"
+      },
+      "log": "You burn the first batch and the second is perfect. {npc} eats both."
+     }
+    },
+    {
+     "text": "Ask {him} to show you a sect form",
+     "effects": {
+      "comprehension": 2,
+      "qi": 4,
+      "log": "{npc} shows you a form you have never seen. You practise it for a month and pretend you knew it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_poet_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has refused to touch a sword for a month. {He} wants to be a poet, and has written a poem about the courtyard well that is, you have to admit, quite good.",
+   "npc": {
+    "role": "child",
+    "minAge": 9,
+    "maxAge": 14
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Poet in the Family",
+   "choices": [
+    {
+     "text": "Buy {him} a brush and good paper",
+     "effects": {
+      "taels": -10,
+      "charm": 2,
+      "npcFlag": "w7fm_po",
+      "flag": "w7fm_po_brush",
+      "log": "The brush set costs 10 taels. {npc} writes until the candle goes out, every night."
+     }
+    },
+    {
+     "text": "Insist on sword practice first",
+     "effects": {
+      "strength": 1,
+      "npcFlag": "w7fm_po",
+      "log": "{npc} practises, sulking, and composes verse in {his} head between strokes. You can tell by the lips moving."
+     }
+    },
+    {
+     "text": "Ask {him} to read the well poem aloud",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "npcFlag": "w7fm_po",
+      "log": "The poem is about a frog who thinks the well is the sky. You are not sure if it is about you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_poet_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The prefecture holds a poetry contest, and {npc} has entered under a false name so nobody will be kind to {him} on your account. The results are posted at noon.",
+   "npc": {
+    "role": "child",
+    "minAge": 13,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_poet_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_po"
+    ]
+   },
+   "arc": "The Poet in the Family",
+   "choices": [
+    {
+     "text": "Go and read the board",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "log": "Second place, under the name Frog in the Well. You read it three times before you find your voice."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "Not placed. That night {npc} reads you the poem anyway, and it is better than the winner."
+     }
+    },
+    {
+     "text": "Stay home and wait",
+     "effects": {
+      "alignment": 2,
+      "log": "{npc} comes home, says nothing, and pins a small red ribbon to your door. Honourable mention."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_poet_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A traveller at the inn is reciting a poem going round the teahouses: a frog in a well who raises a little frog and lets it climb out. The author is {npc}.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_poet_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_po"
+    ]
+   },
+   "arc": "The Poet in the Family",
+   "choices": [
+    {
+     "text": "Buy the traveller a drink to hear it again",
+     "effects": {
+      "taels": -5,
+      "charm": 2,
+      "log": "For 5 taels you hear it three more times. On the third, you have to go outside."
+     }
+    },
+    {
+     "text": "Write to {npc} with a poem of your own",
+     "roll": {
+      "stat": "poetry",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "poem_back",
+       "w": 9,
+       "note": "answered my poem with a poem of their own"
+      },
+      "log": "Your poem is clumsy and true. {npc} keeps it in {his} sleeve for years."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "Your poem is terrible. {npc} writes back: 'Please never do this again. I love it.'"
+     }
+    },
+    {
+     "text": "Tell no one, and keep it close",
+     "effects": {
+      "alignment": 2,
+      "lifespan": 1,
+      "log": "You copy it onto the inside of your sword case, where only you will see it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_chest_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your old travel chest has been opened. Inside, the forbidden manual you took from a defeated cultist years ago has finger smudges on page nine, and {npc} has been very tired in the mornings.",
+   "npc": {
+    "role": "child",
+    "minAge": 11,
+    "maxAge": 16
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Locked Chest",
+   "choices": [
+    {
+     "text": "Confront {him} gently",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 3,
+      "npcFlag": "w7fm_ch",
+      "flag": "w7fm_ch_told",
+      "log": "{npc} confesses everything, crying, and shows you the cold spot it left in {his} palm. You catch it early."
+     },
+     "fail": {
+      "charm": -1,
+      "npcFlag": "w7fm_ch",
+      "log": "{npc} denies it, red to the ears. The manual is back in the chest the next morning, page nine folded."
+     }
+    },
+    {
+     "text": "Burn the manual and say nothing",
+     "effects": {
+      "alignment": 4,
+      "npcFlag": "w7fm_ch",
+      "log": "It burns with a green flame. {npc} watches from the doorway and never asks."
+     }
+    },
+    {
+     "text": "Read page nine yourself",
+     "effects": {
+      "comprehension": 2,
+      "alignment": -2,
+      "npcFlag": "w7fm_ch",
+      "log": "It is a clever, cruel technique. You understand why {npc} could not leave it alone, which frightens you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_chest_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} wakes in the night with cold qi running wrong in {his} arm, the mark of page nine. {He} comes to your door, not to the physician.",
+   "npc": {
+    "role": "child",
+    "minAge": 12,
+    "maxAge": 25
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_chest_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_ch"
+    ]
+   },
+   "arc": "The Locked Chest",
+   "choices": [
+    {
+     "text": "Guide the qi out yourself",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "qi": -6,
+      "alignment": 3,
+      "mem": {
+       "deed": "cold_night",
+       "w": 10,
+       "note": "sat up all night drawing the cold out of my arm"
+      },
+      "log": "It takes until dawn. The cold leaves {npc} and settles briefly in you, then fades."
+     },
+     "fail": {
+      "health": -5,
+      "log": "You only drive it deeper into your own arm. {npc} is well by morning. You ache for a season."
+     }
+    },
+    {
+     "text": "Carry {him} to the physician",
+     "effects": {
+      "taels": -20,
+      "health": 1,
+      "log": "The physician charges 20 taels and a lecture for both of you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_chest_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Years later {npc}, grown, sits you down. {He} has written a counter to page nine, a gentle breathing that warms what that manual froze, and wants you to be the first to see it.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_chest_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_ch"
+    ]
+   },
+   "arc": "The Locked Chest",
+   "choices": [
+    {
+     "text": "Learn it",
+     "effects": {
+      "qi": 8,
+      "health": 3,
+      "log": "It is simple and warm, like soup. You realise {npc} wrote it for the night {he} came to your door."
+     }
+    },
+    {
+     "text": "Help {him} teach it to the town physicians",
+     "effects": {
+      "fame": 3,
+      "alignment": 3,
+      "log": "Within a year the counter is in three prefectures, with {npc} listed as its author."
+     }
+    },
+    {
+     "text": "Tell {him} you are proud, and mean it",
+     "effects": {
+      "charm": 3,
+      "log": "{npc} pretends to have dust in {his} eye. So do you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_match_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is of marrying age, and you have hired the best matchmaker in the county. Unfortunately {npc} has already chosen someone: the cook at the Black River Sect's noodle stall. A rival sect. A noodle cook.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Matchmaker Parent",
+   "choices": [
+    {
+     "text": "Meet the cook first",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_mt",
+      "flag": "w7fm_mt_met",
+      "log": "The cook is nervous, kind and serves you the best noodles of your life. You pay the matchmaker to go away."
+     }
+    },
+    {
+     "text": "Forbid it",
+     "effects": {
+      "alignment": -2,
+      "npcFlag": "w7fm_mt",
+      "flag": "w7fm_mt_forbid",
+      "log": "{npc} does not speak at dinner for a month. The noodle stall closes its shutters when you walk past."
+     }
+    },
+    {
+     "text": "Let the matchmaker present all twelve candidates first",
+     "effects": {
+      "luck": 1,
+      "npcFlag": "w7fm_mt",
+      "log": "{npc} meets all twelve with perfect manners, then goes out for noodles."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_match_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The cook's family comes to the house with gifts: a jar of chilli oil, a live goose and an uncle from the Black River Sect who looks at your sword rack the way you look at theirs.",
+   "npc": {
+    "role": "child",
+    "minAge": 19,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_match_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_mt"
+    ]
+   },
+   "arc": "The Matchmaker Parent",
+   "choices": [
+    {
+     "text": "Arm-wrestle the uncle",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "fame": 1,
+      "log": "By the third round the uncle is singing Black River songs and you know all the words."
+     },
+     "fail": {
+      "health": -3,
+      "log": "You lose the arm-wrestling and the next morning. {npc} is delighted."
+     }
+    },
+    {
+     "text": "Accept the gifts with full ceremony",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "The goose lives in your courtyard for nine years and bites only you."
+     }
+    },
+    {
+     "text": "Bring up the old sect feud",
+     "effects": {
+      "charm": -2,
+      "comprehension": 1,
+      "log": "It is a long, awkward evening. Everyone agrees at the end that the feud started over a misplaced umbrella."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_match_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The wedding. The noodles are served in one unbroken strand for long life. {npc} looks up from the bowing and finds your face in the crowd.",
+   "npc": {
+    "role": "child",
+    "minAge": 19,
+    "maxAge": 45
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_match_2"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_mt"
+    ]
+   },
+   "arc": "The Matchmaker Parent",
+   "choices": [
+    {
+     "text": "Give the speech you practised for a month",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "charm": 2,
+      "log": "Both sects weep. The goose honks at the right moment. It is remembered for years."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "You forget all of it and say only that you are happy. That is the part everyone quotes."
+     }
+    },
+    {
+     "text": "Give a family heirloom as the gift",
+     "effects": {
+      "luck": 2,
+      "alignment": 2,
+      "mem": {
+       "deed": "wedding_gift",
+       "w": 10,
+       "note": "gave us the family heirloom at the wedding"
+      },
+      "log": "{npc} holds it all through the banquet and does not let the cook touch it."
+     }
+    },
+    {
+     "text": "Eat three bowls and say nothing",
+     "effects": {
+      "health": 2,
+      "log": "The cook notices. From then on your bowl is always fullest, even at your grandchild's first birthday."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_noodle_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has given up on martial glory. {He} wants to open a noodle shop on Lantern Street and needs 60 taels for the lease. {He} has a business plan. It is written on a napkin.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 32
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Noodle Shop",
+   "choices": [
+    {
+     "text": "Give the 60 taels",
+     "effects": {
+      "taels": -60,
+      "charm": 2,
+      "npcFlag": "w7fm_nd",
+      "flag": "w7fm_nd_paid",
+      "log": "The lease costs 60 taels. {npc} signs it with a hand that shakes only a little."
+     }
+    },
+    {
+     "text": "Make {him} earn half of it first",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_nd",
+      "flag": "w7fm_nd_earned",
+      "log": "{npc} hauls rice sacks for a season and comes back stronger, poorer and very sure."
+     }
+    },
+    {
+     "text": "Read the napkin carefully",
+     "roll": {
+      "stat": "strategy",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_nd",
+      "log": "The napkin is better than half the sect ledgers you have seen. You make two notes and step back."
+     },
+     "fail": {
+      "luck": -1,
+      "npcFlag": "w7fm_nd",
+      "log": "You spill tea on the napkin. {npc} rewrites it from memory, which tells you something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_noodle_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The shop's first winter. Three tables, one stove, and {npc} asleep standing up at the counter. A sect brawl outside has knocked the signboard into the canal.",
+   "npc": {
+    "role": "child",
+    "minAge": 19,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_noodle_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_nd"
+    ]
+   },
+   "arc": "The Noodle Shop",
+   "choices": [
+    {
+     "text": "Fish out the sign and fix it",
+     "effects": {
+      "strength": 1,
+      "charm": 2,
+      "log": "You repaint it yourself. The second character is crooked. {npc} refuses to let anyone straighten it."
+     }
+    },
+    {
+     "text": "Have a word with the brawlers",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "alignment": 2,
+      "log": "After your word, the brawlers eat at the shop every night and tip well."
+     },
+     "fail": {
+      "health": -4,
+      "log": "The word does not go well. {npc} feeds you noodles for the bruises."
+     }
+    },
+    {
+     "text": "Work a shift at the stove",
+     "effects": {
+      "health": -1,
+      "comprehension": 1,
+      "log": "You learn that pulling noodles is harder than any sword form. {npc} is very smug."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_noodle_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Lantern Street's noodle shop has a queue round the corner and a second branch. On the wall, framed: a napkin with a tea stain, and the crooked old signboard.",
+   "npc": {
+    "role": "child",
+    "minAge": 25,
+    "maxAge": 60
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_noodle_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_nd"
+    ]
+   },
+   "arc": "The Noodle Shop",
+   "choices": [
+    {
+     "text": "Eat at the counter like a regular",
+     "effects": {
+      "health": 2,
+      "charm": 2,
+      "log": "{npc} serves you the same bowl as everyone else and then, when nobody is looking, an egg."
+     }
+    },
+    {
+     "text": "Accept the share {he} offers you",
+     "effects": {
+      "taels": 80,
+      "log": "{npc} insists. Your share comes to 80 taels a year, paid on the day of the first lease."
+     }
+    },
+    {
+     "text": "Tell the queue the napkin story",
+     "effects": {
+      "fame": 2,
+      "luck": 1,
+      "log": "By evening the napkin story is on the menu, and {npc} has added a dish named after you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_rival_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has been offered a place at the Iron Gate Sect, the sect you spent your youth fighting. {He} wants your blessing, and has brought you their recruitment pamphlet, which is very well illustrated.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 24
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "Across the Courtyard Wall",
+   "choices": [
+    {
+     "text": "Give your blessing",
+     "effects": {
+      "alignment": 3,
+      "npcFlag": "w7fm_rv",
+      "flag": "w7fm_rv_blessed",
+      "log": "{npc} hugs you. The pamphlet stays on your table for weeks; you read it more often than you admit."
+     }
+    },
+    {
+     "text": "Say no, and say why",
+     "effects": {
+      "charm": -1,
+      "comprehension": 1,
+      "npcFlag": "w7fm_rv",
+      "log": "You tell the whole old story. {npc} listens to every word and goes anyway."
+     }
+    },
+    {
+     "text": "Ask what they promised {him}",
+     "effects": {
+      "luck": 1,
+      "npcFlag": "w7fm_rv",
+      "log": "They promised a master who teaches. You never had one of those. You stop arguing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_rival_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The Iron Gate Sect sends a formal invitation to their anniversary banquet, as {npc}'s family. Your old enemy, Elder Kang, is hosting. Your name is on the list in very small characters.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 35
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_rival_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_rv"
+    ]
+   },
+   "arc": "Across the Courtyard Wall",
+   "choices": [
+    {
+     "text": "Go, and be gracious",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "alignment": 3,
+      "log": "Elder Kang and you toast thirty years of feud. {npc} stands between you, glowing with relief."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "You are gracious for one hour. The second hour involves a chopstick and an old grudge, but nothing breaks."
+     }
+    },
+    {
+     "text": "Send a fine gift and stay home",
+     "effects": {
+      "taels": -25,
+      "luck": 1,
+      "log": "The gift costs 25 taels. Elder Kang sends back a calligraphy scroll that just says: Coward. You hang it."
+     }
+    },
+    {
+     "text": "Go, and sit next to {npc} all night",
+     "effects": {
+      "charm": 2,
+      "log": "You speak to nobody else. {npc} introduces you to everyone anyway, very proudly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_rival_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Elder Kang is dying, and asks for you. In the sickroom, {npc} stands by the bed in the robes of an Iron Gate elder. 'Your child is the best thing my sect ever stole from you,' Kang says.",
+   "npc": {
+    "role": "child",
+    "minAge": 26,
+    "maxAge": 60
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_rival_2"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "w7fm_rv"
+    ]
+   },
+   "arc": "Across the Courtyard Wall",
+   "choices": [
+    {
+     "text": "Take the old hand",
+     "effects": {
+      "alignment": 5,
+      "log": "You sit with Kang through the night. {npc} brings tea for both of you and says nothing at all."
+     }
+    },
+    {
+     "text": "Say 'I lent {him}, I did not lose {him}'",
+     "effects": {
+      "charm": 3,
+      "log": "Kang laughs until coughing ends it. 'Then lend me {him} a little longer,' Kang says."
+     }
+    },
+    {
+     "text": "Ask the old question: who started it?",
+     "effects": {
+      "comprehension": 2,
+      "luck": 1,
+      "log": "'An umbrella,' Kang whispers. 'Someone took my umbrella.' Thirty years. You both laugh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gchild_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} arrives with a bundle in {his} arms and an expression you remember from your own face in a mirror once. 'Meet your grandchild,' {he} says. 'Please do not teach it anything dangerous.'",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 45
+   },
+   "when": {
+    "age": [
+     40,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Grandchild",
+   "choices": [
+    {
+     "text": "Promise, with fingers crossed",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "npcFlag": "w7fm_gc",
+      "log": "{npc} sees the fingers. 'Nothing dangerous,' {he} repeats. You agree to nothing dangerous before age five."
+     }
+    },
+    {
+     "text": "Hold the baby and say nothing for a long time",
+     "effects": {
+      "alignment": 3,
+      "lifespan": 1,
+      "npcFlag": "w7fm_gc",
+      "log": "The baby grabs your beard, or your hair, whatever is nearest. You do not mind."
+     }
+    },
+    {
+     "text": "Give the baby a silver lock charm",
+     "effects": {
+      "taels": -15,
+      "luck": 2,
+      "npcFlag": "w7fm_gc",
+      "log": "The lock charm costs 15 taels and is for long life. {npc} has to sit down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gchild_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Your grandchild, {npc}, is four and has been left with you for a week. In the first hour, {he} has climbed the sword rack, eaten an ink stick and named the courtyard rooster Great Elder.",
+   "npc": {
+    "role": "w7fm_gc",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_gc",
+     "ageAbs": 4,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "age": [
+     40,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_gchild_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Grandchild",
+   "choices": [
+    {
+     "text": "Teach {him} calligraphy, the safe art",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} paints the character for rooster forty times, all over the rooster.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    },
+    {
+     "text": "Teach {him} one tiny, harmless stance",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 2,
+      "mem": {
+       "deed": "first_stance",
+       "w": 8,
+       "note": "taught me my first stance when I was four"
+      },
+      "log": "{npc} holds Horse Stance for a whole minute and demands a title.",
+      "npcFlag": "w7fm_gchild_who"
+     },
+     "fail": {
+      "health": -2,
+      "log": "{npc} uses the harmless stance to kick you in the shin. It was not harmless.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    },
+    {
+     "text": "Let {him} run the house for a day",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "log": "Dinner is sweet buns. Bedtime is abolished. Great Elder the rooster is promoted twice.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_gchild_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}, your grandchild, is grown now, and comes back from a sect tournament with a medal and a question. 'Everyone says you were great once. What were you like?'",
+   "npc": {
+    "role": "w7fm_gc"
+   },
+   "when": {
+    "age": [
+     40,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_gchild_2"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "w7fm_gchild_who"
+    ]
+   },
+   "arc": "The Grandchild",
+   "choices": [
+    {
+     "text": "Tell the true stories",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 2,
+      "log": "{npc} listens to the failures as closely as the victories. That is the right way to listen.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    },
+    {
+     "text": "Tell the exaggerated stories",
+     "effects": {
+      "fame": 2,
+      "charm": 1,
+      "log": "In your version, you fought nine tigers. {npc} knows. {npc} retells it with ten.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    },
+    {
+     "text": "Show the rooster painting instead",
+     "effects": {
+      "charm": 3,
+      "log": "You kept it. The rooster is long gone, but the forty characters are still there. {npc} goes very quiet.",
+      "npcFlag": "w7fm_gchild_who"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_w7fm_tourney_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The county tournament. {npc} has entered without telling you, and you find {his} name on the bracket three rounds below your own.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 24
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Bracket",
+   "choices": [
+    {
+     "text": "Withdraw so you never meet",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_tn",
+      "flag": "w7fm_tn_out",
+      "log": "You withdraw with a sudden sprained ankle. {npc} is not fooled and is furious."
+     }
+    },
+    {
+     "text": "Stay in and hope {he} loses early",
+     "effects": {
+      "luck": 1,
+      "npcFlag": "w7fm_tn",
+      "log": "{npc} does not lose early. {npc} does not lose at all. The bracket narrows."
+     }
+    },
+    {
+     "text": "Shout {his} name from the stands every round",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_tn",
+      "flag": "w7fm_tn_out",
+      "log": "You withdraw to cheer. You are the loudest person in the county, and {npc} pretends not to know you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_w7fm_tourney_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The final. You and {npc}, on the stone platform, with the whole county watching and the drums going.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison",
+     "w7fm_tn_out"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_tourney_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_tn"
+    ]
+   },
+   "arc": "The Bracket",
+   "choices": [
+    {
+     "text": "Fight with everything",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "log": "You win, barely. {npc} bows and says, loud enough for the stands: next year. The crowd loves it."
+     },
+     "fail": {
+      "fame": 2,
+      "charm": 2,
+      "log": "{npc} wins. You lie on the stones laughing, and the drums go on for a long time."
+     }
+    },
+    {
+     "text": "Bow out, and raise {his} hand",
+     "effects": {
+      "charm": 3,
+      "alignment": 2,
+      "log": "The crowd roars. {npc} is angry for a day, then grateful for the rest of {his} life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_tourney_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} won the tournament with you shouting from the stands. Now {he} is asked to give a speech, and spots you in the third row, still hoarse.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_tn_out"
+    ],
+    "after": [
+     "dc_w7fm_tourney_1"
+    ],
+    "npcFlags": [
+     "w7fm_tn"
+    ]
+   },
+   "arc": "The Bracket",
+   "choices": [
+    {
+     "text": "Wave both arms",
+     "effects": {
+      "charm": 2,
+      "log": "{npc} points at you in front of the whole county and says: 'That one. Blame that one.'"
+     }
+    },
+    {
+     "text": "Slip away before the speech",
+     "effects": {
+      "luck": 1,
+      "alignment": 1,
+      "log": "You hear the speech from the noodle stall. Your name is in it twice."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "w7fm_village_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The village tutor is at your gate. {npc} has organised the village children into a sect, the Sect of Seven Puddles, with ranks, a password and {npc} as Sect Leader.",
+   "npc": {
+    "role": "child",
+    "minAge": 7,
+    "maxAge": 12
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Sect of Seven Puddles",
+   "choices": [
+    {
+     "text": "Ask for the password",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_vl",
+      "log": "The password is 'mud'. You are admitted as Outer Elder, unpaid."
+     }
+    },
+    {
+     "text": "Apologise to the tutor",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_vl",
+      "log": "The tutor accepts your apology and asks, quietly, whether there is a rank for tutors."
+     }
+    },
+    {
+     "text": "Inspect the sect grounds",
+     "roll": {
+      "stat": "strategy",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_vl",
+      "log": "The ranks, duties and snack rota are better organised than most real sects."
+     },
+     "fail": {
+      "health": -1,
+      "npcFlag": "w7fm_vl",
+      "log": "You fall into Puddle Four. {npc} fines you a sweet bun."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_village_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "War! The Sect of Seven Puddles is at war with the Mill Street Gang over a rope swing. {npc} asks you, as Outer Elder, for strategic advice.",
+   "npc": {
+    "role": "child",
+    "minAge": 8,
+    "maxAge": 20
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_village_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_vl"
+    ]
+   },
+   "arc": "The Sect of Seven Puddles",
+   "choices": [
+    {
+     "text": "Advise a peace treaty",
+     "effects": {
+      "alignment": 3,
+      "log": "The treaty shares the swing by days of the week. It holds longer than most real treaties."
+     }
+    },
+    {
+     "text": "Advise a cunning flank",
+     "effects": {
+      "comprehension": 1,
+      "luck": 1,
+      "log": "The flank works. The Mill Street Gang surrenders and is absorbed as the Eighth Puddle."
+     }
+    },
+    {
+     "text": "Retire as Outer Elder",
+     "effects": {
+      "charm": -1,
+      "log": "{npc} accepts your resignation with great dignity and gives you a pebble as a pension."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_village_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Years later, a magistrate's notice: a new village watch, run by {npc}, has kept the river district quiet all year. Half its members still answer to the old ranks.",
+   "npc": {
+    "role": "child",
+    "minAge": 16,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_village_2"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "w7fm_vl"
+    ]
+   },
+   "arc": "The Sect of Seven Puddles",
+   "choices": [
+    {
+     "text": "Visit with sweet buns",
+     "effects": {
+      "charm": 2,
+      "fame": 1,
+      "log": "The watch stands to attention. Somebody whispers 'Outer Elder'. You are still on the roll."
+     }
+    },
+    {
+     "text": "Offer to train the watch",
+     "effects": {
+      "strength": 1,
+      "alignment": 2,
+      "log": "You drill them every tenth day. {npc} sits in on every drill and corrects your posture."
+     }
+    },
+    {
+     "text": "Keep the pebble on your desk",
+     "effects": {
+      "luck": 2,
+      "log": "You still have the pension pebble. It is the best-paying post you ever held."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fox_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has a secret in the woodshed: a fox cub with a hurt leg, a bowl of your best broth and a nest made from your second-best robe.",
+   "npc": {
+    "role": "child",
+    "minAge": 4,
+    "maxAge": 10
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Fox in the Woodshed",
+   "choices": [
+    {
+     "text": "Help splint the leg",
+     "roll": {
+      "stat": "medicine",
+      "dc": 40
+     },
+     "ok": {
+      "charm": 2,
+      "npcFlag": "w7fm_fx",
+      "flag": "w7fm_fx_kept",
+      "log": "The splint holds. The fox bites you once, to make the rules clear, and then sleeps."
+     },
+     "fail": {
+      "health": -1,
+      "npcFlag": "w7fm_fx",
+      "flag": "w7fm_fx_kept",
+      "log": "The fox bites you, twice. {npc} splints the leg while you hold it, and does it better."
+     }
+    },
+    {
+     "text": "Explain that wild things belong outside",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_fx",
+      "log": "{npc} nods and cries and keeps feeding it. You let it heal before you say anything more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fox_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The fox is grown, red as a lantern, and will not leave. It sleeps on {npc}'s bed and steals exactly one egg a day from the neighbour, never two.",
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 20
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_fx_kept"
+    ],
+    "after": [
+     "w7fm_fox_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_fx"
+    ]
+   },
+   "arc": "The Fox in the Woodshed",
+   "choices": [
+    {
+     "text": "Pay the neighbour for the eggs",
+     "effects": {
+      "taels": -10,
+      "alignment": 2,
+      "log": "You pay 10 taels for a year of eggs. The neighbour now sets one out on purpose."
+     }
+    },
+    {
+     "text": "Walk the fox to the hills with {npc}",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "fox_hills",
+       "w": 9,
+       "note": "walked the fox back to the hills with me"
+      },
+      "log": "It goes at last, looking back twice. {npc} holds your hand the whole way home."
+     }
+    },
+    {
+     "text": "Let it stay",
+     "effects": {
+      "luck": 3,
+      "log": "The fox stays. The house has no rats, no thieves and one fewer egg a day forever."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fox_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "On a snowy night a red fox with a crooked back leg sits at your gate with a pheasant in its mouth, sets it down and looks at {npc}'s window.",
+   "npc": {
+    "role": "child",
+    "minAge": 9,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_fox_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7fm_fx"
+    ]
+   },
+   "arc": "The Fox in the Woodshed",
+   "choices": [
+    {
+     "text": "Call {npc} to the door",
+     "effects": {
+      "charm": 3,
+      "log": "{npc} runs out barefoot. The fox lets itself be touched once, then goes."
+     }
+    },
+    {
+     "text": "Cook the pheasant for the family",
+     "effects": {
+      "health": 3,
+      "log": "Everyone agrees it is the best pheasant ever eaten. {npc} keeps one feather."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_letters_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}'s letters from the Golden Peak Sect are magnificent. {He} has defeated three senior disciples, studied with the Peak's eldest master and been praised by a visiting immortal. All in one month.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 25
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "Letters from the Kitchen",
+   "choices": [
+    {
+     "text": "Visit Golden Peak to see",
+     "effects": {
+      "npcFlag": "w7fm_lt",
+      "flag": "w7fm_lt_visit",
+      "luck": 1,
+      "log": "You pack a cake and take the mountain road."
+     }
+    },
+    {
+     "text": "Write back how proud you are",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_lt",
+      "log": "The next letter is even more magnificent. A dragon is involved."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_letters_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "At Golden Peak nobody has heard of {npc} defeating anyone. They take you to the kitchens, where {npc}, covered in flour, is running the entire place and terrifying the cooks.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_lt_visit"
+    ],
+    "after": [
+     "w7fm_letters_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_lt"
+    ]
+   },
+   "arc": "Letters from the Kitchen",
+   "choices": [
+    {
+     "text": "Say nothing about the letters",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "kitchen",
+       "w": 9,
+       "note": "found me in the kitchens and never said a word about the letters"
+      },
+      "log": "You eat in the kitchen with {npc}. It is the best meal on the mountain, and you say so."
+     }
+    },
+    {
+     "text": "Ask about the dragon",
+     "effects": {
+      "charm": 1,
+      "comprehension": 1,
+      "log": "{npc} turns very red. 'There was a large lizard,' {he} says. 'Near the dragon.'"
+     }
+    },
+    {
+     "text": "Tell the steward who really runs the kitchen",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "log": "The steward already knows and is relieved somebody says it. {npc} is promoted by spring."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "The steward takes offence. {npc} has to bake an apology cake on your behalf."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_letters_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A new letter from Golden Peak. It is short. {npc} is head of the kitchens. The food is good now. {He} is sorry about the dragon. {He} wants to know how you make your dumplings.",
+   "npc": {
+    "role": "child",
+    "minAge": 17,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_letters_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_lt"
+    ]
+   },
+   "arc": "Letters from the Kitchen",
+   "choices": [
+    {
+     "text": "Send the recipe, every secret in it",
+     "effects": {
+      "charm": 2,
+      "log": "Within a season, the sect calls them by your family name."
+     }
+    },
+    {
+     "text": "Keep one secret, and visit to teach it",
+     "effects": {
+      "luck": 1,
+      "health": 1,
+      "log": "You go up the mountain every spring after that to fold dumplings with {npc} and argue about salt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_debt_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "A merchant named Fat Lu arrives with a ledger and a smile. {npc} borrowed 120 taels to import southern silk; the boat sank, with the silk. {npc} hides behind the screen, looking eleven again.",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 35
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Merchant's Ledger",
+   "choices": [
+    {
+     "text": "Pay the 120 taels on the spot",
+     "effects": {
+      "taels": -120,
+      "npcFlag": "w7fm_db",
+      "flag": "w7fm_db_paid",
+      "log": "You pay 120 taels. Fat Lu leaves. {npc} comes out from behind the screen and cannot look at you."
+     }
+    },
+    {
+     "text": "Make {npc} work it off with Fat Lu",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_db",
+      "flag": "w7fm_db_work",
+      "log": "Fat Lu agrees to two years of clerking. {npc} packs a bag with great dignity."
+     }
+    },
+    {
+     "text": "Check the ledger line by line",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "taels": -40,
+      "npcFlag": "w7fm_db",
+      "flag": "w7fm_db_work",
+      "log": "The ledger has three errors in Fat Lu's favour. You pay the 40 taels that are real and nothing more."
+     },
+     "fail": {
+      "charm": -1,
+      "npcFlag": "w7fm_db",
+      "flag": "w7fm_db_work",
+      "log": "The ledger is perfect. Fat Lu is patient. {npc} clerks for two years to pay it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_debt_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Two years with Fat Lu have changed {npc}. {He} can read a ledger upside down, knows every boat on the river and has a plan for silk again, insured this time.",
+   "npc": {
+    "role": "child",
+    "minAge": 22,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_db_work"
+    ],
+    "after": [
+     "w7fm_debt_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_db"
+    ]
+   },
+   "arc": "The Merchant's Ledger",
+   "choices": [
+    {
+     "text": "Invest in the new plan",
+     "effects": {
+      "taels": -50,
+      "luck": 2,
+      "flag": "w7fm_db_inv",
+      "log": "You put in 50 taels. {npc} writes you a receipt in triplicate, very seriously."
+     }
+    },
+    {
+     "text": "Tell {him} you trust {him}, and nothing more",
+     "effects": {
+      "charm": 2,
+      "alignment": 1,
+      "log": "{npc} finds a partner on {his} own. It is Fat Lu."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_debt_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A small chest arrives by porter, from {npc}. Inside: 120 taels, every copper, and a note. 'The first debt. I always knew. Thank you for not saying.'",
+   "npc": {
+    "role": "child",
+    "minAge": 22,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_db_paid"
+    ],
+    "after": [
+     "w7fm_debt_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_db"
+    ]
+   },
+   "arc": "The Merchant's Ledger",
+   "choices": [
+    {
+     "text": "Keep it",
+     "effects": {
+      "taels": 120,
+      "log": "You put it in the household chest. It is the first money you ever earned by doing nothing wise."
+     }
+    },
+    {
+     "text": "Send it back as a wedding fund",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "{npc} sends it back again. It travels between you for years, a little heavier each time with notes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_stories_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} will not sleep without a story about your adventures. Tonight {he} wants the one with the bandit king, which in reality was a bandit and a fairly small king.",
+   "npc": {
+    "role": "child",
+    "minAge": 3,
+    "maxAge": 7
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "Bedtime Legends",
+   "choices": [
+    {
+     "text": "Tell it as it happened",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_st",
+      "flag": "w7fm_st_true",
+      "log": "{npc} falls asleep at the part where you hid in a pig trough. It was a long part."
+     }
+    },
+    {
+     "text": "Make the king enormous",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_st",
+      "flag": "w7fm_st_tall",
+      "log": "The bandit king is now nine feet tall and has a pet tiger. {npc} is still awake at midnight."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_stories_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has told the bandit king story at school. A classmate whose grandmother was actually there has corrected {him} in front of everyone, and {npc} comes home in tears.",
+   "npc": {
+    "role": "child",
+    "minAge": 6,
+    "maxAge": 15
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_st_tall"
+    ],
+    "after": [
+     "w7fm_stories_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_st"
+    ]
+   },
+   "arc": "Bedtime Legends",
+   "choices": [
+    {
+     "text": "Go and apologise to the classmate",
+     "effects": {
+      "alignment": 3,
+      "charm": 1,
+      "log": "The grandmother laughs, pours tea and tells the story with you in it hiding in a pig trough. {npc} loves this version more."
+     }
+    },
+    {
+     "text": "Tell {him} stories grow, like people",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} thinks about this for a long time and then asks whether you are also nine feet tall really."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_stories_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is grown and tells the old stories to the young ones now. You listen from the doorway. The bandit king has a pet tiger again, and you are a little taller than you were.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_stories_2"
+    ],
+    "minYearsAfter": 10,
+    "npcFlags": [
+     "w7fm_st"
+    ]
+   },
+   "arc": "Bedtime Legends",
+   "choices": [
+    {
+     "text": "Correct one detail",
+     "effects": {
+      "luck": 1,
+      "charm": 1,
+      "log": "'The trough,' you say. 'Mention the trough.' Everyone laughs, and the trough goes back in."
+     }
+    },
+    {
+     "text": "Let the story be {his} now",
+     "effects": {
+      "alignment": 2,
+      "lifespan": 1,
+      "log": "You go to bed early, and fall asleep to your own legend being told well."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fever_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is burning with fever and the town physician is three villages away. It is raining hard and the river road is flooding.",
+   "npc": {
+    "role": "child",
+    "minAge": 1,
+    "maxAge": 6
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Night Ride",
+   "choices": [
+    {
+     "text": "Ride for the physician",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "health": -2,
+      "npcFlag": "w7fm_fv",
+      "mem": {
+       "deed": "night_ride",
+       "w": 10,
+       "note": "rode through the flood for the physician when I was small"
+      },
+      "log": "You are back before midnight with a wet, furious physician. The fever breaks at dawn."
+     },
+     "fail": {
+      "health": -5,
+      "npcFlag": "w7fm_fv",
+      "log": "The road beats you, and you come home soaked and alone. The fever breaks anyway, with cold cloths and your hand on the small forehead."
+     }
+    },
+    {
+     "text": "Sit with cold cloths all night",
+     "effects": {
+      "health": -1,
+      "alignment": 2,
+      "npcFlag": "w7fm_fv",
+      "log": "You change the cloth every hour until the fever breaks. You are asleep sitting up when {npc} wakes and asks for porridge."
+     }
+    },
+    {
+     "text": "Push warm qi into {him}",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "qi": -8,
+      "npcFlag": "w7fm_fv",
+      "log": "A thread of warmth, very careful. The fever lifts by morning."
+     },
+     "fail": {
+      "qi": -4,
+      "health": -2,
+      "npcFlag": "w7fm_fv",
+      "log": "Your qi is too strong for such a small body. You stop, and wait out the night with cloths instead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fever_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Years later it is you lying with a fever, and {npc} at the bedside with cold cloths, changing them on the hour with exactly your expression.",
+   "npc": {
+    "role": "child",
+    "minAge": 16,
+    "maxAge": 60
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_fever_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "w7fm_fv"
+    ]
+   },
+   "arc": "The Night Ride",
+   "choices": [
+    {
+     "text": "Tell {him} you remember",
+     "effects": {
+      "charm": 3,
+      "health": 3,
+      "log": "'You were very bad at it,' {npc} says. 'I remember too.' The fever goes down."
+     }
+    },
+    {
+     "text": "Pretend to sleep and watch",
+     "effects": {
+      "alignment": 2,
+      "health": 2,
+      "log": "{npc} hums the song you used to hum. You did not know {he} had learned it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_runaway_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "A travelling acrobat troupe left town at dawn, and so did {npc}. The note on the pillow says {he} has found {his} calling and will write.",
+   "npc": {
+    "role": "child",
+    "minAge": 13,
+    "maxAge": 17
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Acrobats",
+   "choices": [
+    {
+     "text": "Ride after them",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 1,
+      "npcFlag": "w7fm_ra",
+      "flag": "w7fm_ra_found",
+      "log": "You catch the troupe at the ford. {npc} is on top of a human pyramid, very happy."
+     },
+     "fail": {
+      "health": -2,
+      "npcFlag": "w7fm_ra",
+      "log": "You lose them at the crossroads. A letter comes ten days later, with a drawing of a pyramid."
+     }
+    },
+    {
+     "text": "Wait for the letter",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_ra",
+      "log": "The letter comes in ten days, with a drawing. You are at the very bottom of the pyramid, apparently, in spirit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_runaway_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The troupe is back in town for the spring fair, and {npc} is the star: a backflip from a bamboo pole onto a spinning plate. The town is mad for it.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_runaway_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_ra"
+    ]
+   },
+   "arc": "The Acrobats",
+   "choices": [
+    {
+     "text": "Sit in the front row",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "front_row",
+       "w": 8,
+       "note": "sat in the front row at the spring fair"
+      },
+      "log": "{npc} lands the plate, finds you, and does a second backflip that was not in the act."
+     }
+    },
+    {
+     "text": "Ask the troupe master to keep {him} safe",
+     "effects": {
+      "taels": -15,
+      "alignment": 2,
+      "log": "You give 15 taels for a proper net. The troupe master is grateful and a little ashamed."
+     }
+    },
+    {
+     "text": "Ask {him} to come home",
+     "effects": {
+      "charm": -1,
+      "luck": 1,
+      "log": "{npc} says no, kindly. 'I am home,' {he} says, pointing at the wagons. It stings, and it is true."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_runaway_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has bought the troupe. The wagons are painted with a new name, and under it, smaller, the name of your family's town, so people know where the best acrobats come from.",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_runaway_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_ra"
+    ]
+   },
+   "arc": "The Acrobats",
+   "choices": [
+    {
+     "text": "Join for one tour",
+     "effects": {
+      "health": 1,
+      "charm": 2,
+      "fame": 2,
+      "log": "You are given the job of hitting the gong. You are very good at hitting the gong."
+     }
+    },
+    {
+     "text": "Host the troupe for the winter",
+     "effects": {
+      "taels": -30,
+      "luck": 2,
+      "log": "Hosting costs 30 taels. The courtyard is full of jugglers all winter and nobody ever feels cold."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_ownroad_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has joined a band of self-appointed righteous outlaws called the Seven Unwashed Heroes. There are four of them. They have sworn an oath not to bathe until injustice ends.",
+   "npc": {
+    "role": "child",
+    "minAge": 14,
+    "maxAge": 19
+   },
+   "when": {
+    "age": [
+     32,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Seven Unwashed Heroes",
+   "choices": [
+    {
+     "text": "Ask which injustice, exactly",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_ow",
+      "log": "'The tax on salt,' says {npc}. It is, you have to admit, quite an unjust tax."
+     }
+    },
+    {
+     "text": "Forbid it",
+     "effects": {
+      "charm": -2,
+      "npcFlag": "w7fm_ow",
+      "log": "{npc} leaves by the window that night. You can smell where {he} has been for days."
+     }
+    },
+    {
+     "text": "Send them soap anonymously",
+     "effects": {
+      "taels": -5,
+      "luck": 2,
+      "npcFlag": "w7fm_ow",
+      "log": "The soap costs 5 taels. The Heroes use it to wash the salt magistrate's door in protest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_ownroad_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The Unwashed Heroes have actually done it: the salt magistrate has been caught selling the official salt on the side, and {npc} is a local folk hero with very bad hair.",
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     32,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_ownroad_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_ow"
+    ]
+   },
+   "arc": "The Seven Unwashed Heroes",
+   "choices": [
+    {
+     "text": "Throw them a bath party",
+     "effects": {
+      "taels": -20,
+      "charm": 3,
+      "log": "For 20 taels you rent the bathhouse. It takes three waters per Hero. The town cheers each one."
+     }
+    },
+    {
+     "text": "Warn {him} the magistrate has friends",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "{npc} listens for once. The Heroes move on before the magistrate's friends arrive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_ownroad_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A new salt clerk has been appointed in the county. Honest, strict and faintly ridiculous about it: it is {npc}, in an official hat, bathed.",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 45
+   },
+   "when": {
+    "age": [
+     32,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_ownroad_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_ow"
+    ]
+   },
+   "arc": "The Seven Unwashed Heroes",
+   "choices": [
+    {
+     "text": "Pay the salt tax in person",
+     "effects": {
+      "taels": -5,
+      "charm": 2,
+      "log": "{npc} weighs your 5 taels twice, gives you a receipt and winks."
+     }
+    },
+    {
+     "text": "Ask where the other Heroes went",
+     "effects": {
+      "luck": 1,
+      "log": "One is a monk, one runs a bathhouse, one is still unwashed somewhere in the hills, on principle."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_recipe_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The dumpling recipe has come down four generations, in nobody's handwriting, only in hands. {npc} is finally old enough to learn the fold.",
+   "npc": {
+    "role": "child",
+    "minAge": 9,
+    "maxAge": 15
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "Grandmother's Dumplings",
+   "choices": [
+    {
+     "text": "Teach the fold, slowly",
+     "effects": {
+      "comprehension": 1,
+      "charm": 2,
+      "npcFlag": "w7fm_rc",
+      "log": "{npc}'s first dumplings look like small, damaged boats. They taste right. That is what matters."
+     }
+    },
+    {
+     "text": "Write the recipe down at last",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_rc",
+      "flag": "w7fm_rc_book",
+      "log": "It takes three pages and a drawing. {npc} corrects your drawing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_recipe_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "New Year, and {npc} insists on making the whole batch alone. You are allowed to sit in the kitchen. You are not allowed to help, advise or look disappointed.",
+   "npc": {
+    "role": "child",
+    "minAge": 13,
+    "maxAge": 25
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_recipe_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_rc"
+    ]
+   },
+   "arc": "Grandmother's Dumplings",
+   "choices": [
+    {
+     "text": "Sit on your hands",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "It takes four hours and the kitchen looks like a flour storm. The dumplings are perfect."
+     }
+    },
+    {
+     "text": "Sneak in one pinch of salt",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 2,
+      "log": "Nobody notices. They are perfect, and you will take the pinch to your grave."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "{npc} catches your hand mid-pinch. 'Out,' {he} says. You go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_recipe_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} brings you a plate of dumplings folded a new way, with a fifth pleat. 'Four generations,' {he} says, 'and nobody improved it. I did.'",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_recipe_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_rc"
+    ]
+   },
+   "arc": "Grandmother's Dumplings",
+   "choices": [
+    {
+     "text": "Taste, and admit it",
+     "effects": {
+      "charm": 3,
+      "health": 2,
+      "log": "It is better. You say so. {npc} makes you say it again in front of the family."
+     }
+    },
+    {
+     "text": "Defend the four pleats to the end",
+     "effects": {
+      "luck": 1,
+      "comprehension": 1,
+      "log": "The family splits into Four Pleats and Five Pleats. The argument is the best part of every New Year after."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_portrait_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "A travelling portrait painter offers to paint the family for 40 taels. The sitting takes a whole afternoon. {npc} has never sat still for a whole afternoon in {his} life.",
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 12
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Family Portrait",
+   "choices": [
+    {
+     "text": "Pay the 40 taels",
+     "effects": {
+      "taels": -40,
+      "npcFlag": "w7fm_pt",
+      "flag": "w7fm_pt_paid",
+      "log": "You pay 40 taels. The painter sets up the easel and cracks the knuckles with grim confidence."
+     }
+    },
+    {
+     "text": "Paint it yourself",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 2,
+      "npcFlag": "w7fm_pt",
+      "log": "It is crooked and warm and, somehow, everyone is recognisable. It goes over the door."
+     },
+     "fail": {
+      "luck": 1,
+      "npcFlag": "w7fm_pt",
+      "log": "It looks like a family of potatoes. {npc} insists it hangs in the main hall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_portrait_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Hour three of the sitting. {npc} has an itch, a thirst, a need for the latrine and a sudden great interest in the painter's brushes. The painter is sweating.",
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 12
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child",
+     "w7fm_pt_paid"
+    ],
+    "after": [
+     "dc_w7fm_portrait_1"
+    ],
+    "npcFlags": [
+     "w7fm_pt"
+    ]
+   },
+   "arc": "The Family Portrait",
+   "choices": [
+    {
+     "text": "Tell a story to keep {him} still",
+     "effects": {
+      "charm": 2,
+      "log": "The painter catches {npc} mid-laugh. It is the best face in the picture."
+     }
+    },
+    {
+     "text": "Hold {his} hand firmly",
+     "effects": {
+      "alignment": 1,
+      "luck": 1,
+      "log": "In the finished portrait you are holding hands. Everybody says it was the painter's idea."
+     }
+    },
+    {
+     "text": "Let {him} run off and be painted in later",
+     "effects": {
+      "comprehension": 1,
+      "log": "{npc} is painted in later, from memory, slightly too tall and holding a frog."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_portrait_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}, grown, stands in front of the old family portrait with a child of {his} own on one hip, pointing out who everyone is.",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 60
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "dc_w7fm_portrait_2"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "w7fm_pt"
+    ]
+   },
+   "arc": "The Family Portrait",
+   "choices": [
+    {
+     "text": "Commission a new one",
+     "effects": {
+      "taels": -40,
+      "charm": 3,
+      "log": "The new portrait costs 40 taels. There are more faces now. Someone still holds a frog."
+     }
+    },
+    {
+     "text": "Tell the story of the sitting",
+     "effects": {
+      "alignment": 2,
+      "lifespan": 1,
+      "log": "Everyone has heard it. Everyone wants it again. You tell it longer each year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_teacher_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} watches your morning forms and says, very carefully, that your left heel has been half an inch off for about thirty years.",
+   "npc": {
+    "role": "child",
+    "minAge": 25,
+    "maxAge": 70
+   },
+   "when": {
+    "age": [
+     55,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Student Surpasses",
+   "choices": [
+    {
+     "text": "Check it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 2,
+      "npcFlag": "w7fm_tc",
+      "log": "Half an inch. Thirty years. With it fixed, a knot in your hip you had stopped noticing unties."
+     },
+     "fail": {
+      "charm": -1,
+      "npcFlag": "w7fm_tc",
+      "log": "You cannot see it, so it is not there. {npc} sighs exactly the way you used to sigh."
+     }
+    },
+    {
+     "text": "Ask {him} to teach you properly",
+     "effects": {
+      "comprehension": 2,
+      "charm": 1,
+      "npcFlag": "w7fm_tc",
+      "log": "{npc} is a strict teacher. You recognise every strictness. They were yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_teacher_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Your child, {npc}, has your morning slot in the courtyard now, and you take the corner. Today {he} leaves you a space in the middle and waits.",
+   "npc": {
+    "role": "child",
+    "minAge": 28,
+    "maxAge": 80
+   },
+   "when": {
+    "age": [
+     55,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_teacher_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_tc"
+    ]
+   },
+   "arc": "The Student Surpasses",
+   "choices": [
+    {
+     "text": "Practise side by side",
+     "effects": {
+      "health": 2,
+      "qi": 5,
+      "log": "Two sets of forms, the same and not the same. The neighbours stop to watch."
+     }
+    },
+    {
+     "text": "Teach {him} the one form you kept back",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "last_form",
+       "w": 10,
+       "note": "taught me the last form, the one held back"
+      },
+      "log": "You kept one back for this. {npc} learns it in a morning and bows very low."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_teacher_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "You find {npc} teaching a crowd of the young ones in the courtyard. '{He} learned it from me,' you hear yourself tell a neighbour. {npc} hears and calls out: 'Heel!'",
+   "npc": {
+    "role": "child",
+    "minAge": 30,
+    "maxAge": 90
+   },
+   "when": {
+    "age": [
+     55,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_teacher_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_tc"
+    ]
+   },
+   "arc": "The Student Surpasses",
+   "choices": [
+    {
+     "text": "Fix your heel, laughing",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "Half an inch, forever. The young ones all copy you."
+     }
+    },
+    {
+     "text": "Join the class at the back",
+     "effects": {
+      "health": 2,
+      "alignment": 1,
+      "log": "You stand at the back with the youngest. It is a very good class."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_heir_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "You are not young. The family sword, the one that came down from a great-grandparent nobody remembers, should go to someone. {npc}, your eldest, is the obvious choice. {He} has never liked swords.",
+   "npc": {
+    "role": "child",
+    "minAge": 30,
+    "maxAge": 70
+   },
+   "when": {
+    "age": [
+     60,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Question of the Sword",
+   "choices": [
+    {
+     "text": "Give it to {npc} anyway",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_hr",
+      "flag": "w7fm_hr_eldest",
+      "log": "{npc} takes it gravely, hangs it on the wall and dusts it every week, out of love, not use."
+     }
+    },
+    {
+     "text": "Hold a contest among the young ones",
+     "effects": {
+      "fame": 1,
+      "npcFlag": "w7fm_hr",
+      "flag": "w7fm_hr_contest",
+      "log": "The contest is held at New Year. The winner is a grandchild who cheated a little. You approve."
+     }
+    },
+    {
+     "text": "Ask {npc} what to do",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_hr",
+      "log": "'Break it into a ploughshare,' {npc} says. You both know {he} is half joking."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_heir_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} brings the family sword back to you, unwrapped. In the hilt, under the old cord, {he} has found a slip of paper, brown as tea.",
+   "npc": {
+    "role": "child",
+    "minAge": 32,
+    "maxAge": 80
+   },
+   "when": {
+    "age": [
+     60,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_heir_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_hr"
+    ]
+   },
+   "arc": "The Question of the Sword",
+   "choices": [
+    {
+     "text": "Read it together",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 3,
+      "comprehension": 2,
+      "log": "The great-grandparent wrote: 'Whoever finds this, I was afraid every single time. Use it anyway, or don't.'"
+     },
+     "fail": {
+      "luck": 1,
+      "log": "The ink is too faded. You and {npc} spend a whole night guessing, and the guesses are better than any letter."
+     }
+    },
+    {
+     "text": "Put it back unread",
+     "effects": {
+      "alignment": 3,
+      "log": "{npc} rewraps the cord around the paper. Some things should go on being found."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_wedaway_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is marrying into a family twenty days' travel away, beyond the western passes. The wedding is in spring. After it, {he} will live there.",
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Far Wedding",
+   "choices": [
+    {
+     "text": "Make the journey for the wedding",
+     "effects": {
+      "health": -2,
+      "charm": 2,
+      "npcFlag": "w7fm_wa",
+      "flag": "w7fm_wa_went",
+      "log": "Twenty days on the road. At the wedding, {npc} sees you and drops {his} fan."
+     }
+    },
+    {
+     "text": "Send a great dowry instead",
+     "effects": {
+      "taels": -80,
+      "fame": 2,
+      "npcFlag": "w7fm_wa",
+      "log": "The dowry costs 80 taels and has its own cart. The western family is impressed and a little scared of you."
+     }
+    },
+    {
+     "text": "Write a long letter of everything you never said",
+     "effects": {
+      "alignment": 3,
+      "npcFlag": "w7fm_wa",
+      "log": "{npc} reads it on the wedding morning, and arrives at the ceremony with red eyes and a smile."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_wedaway_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A letter over the passes, smelling of a spice you do not know. {npc} is well. The western family eats rice wrong. There is a child coming. Would you please send the dumpling recipe.",
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 40
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_wedaway_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "w7fm_wa"
+    ]
+   },
+   "arc": "The Far Wedding",
+   "choices": [
+    {
+     "text": "Send the recipe and a jar of chilli",
+     "effects": {
+      "taels": -5,
+      "charm": 2,
+      "log": "The jar costs 5 taels to send. The western family now eats dumplings at New Year and thinks they invented it."
+     }
+    },
+    {
+     "text": "Go for the birth",
+     "effects": {
+      "health": -2,
+      "lifespan": 1,
+      "log": "You arrive two days late and the baby is already asleep on {npc}. You hold them both."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_wedaway_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes home over the passes for the first time in years, with a whole western family behind {him}: a spouse, two children and an in-law who wants to see the famous dumpling kitchen.",
+   "npc": {
+    "role": "child",
+    "minAge": 25,
+    "maxAge": 60
+   },
+   "when": {
+    "age": [
+     38,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_wedaway_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "w7fm_wa"
+    ]
+   },
+   "arc": "The Far Wedding",
+   "choices": [
+    {
+     "text": "Cook for all of them",
+     "effects": {
+      "health": -1,
+      "charm": 3,
+      "log": "You cook for two days. The western in-law asks for the recipe. You give it, minus one pinch."
+     }
+    },
+    {
+     "text": "Take the children to the old training yard",
+     "effects": {
+      "luck": 2,
+      "alignment": 1,
+      "log": "The grandchildren run the yard like a conquered country. {npc} watches from the gate, home."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_escort_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} has signed on with the Swift Banner Escort Agency for {his} first job: three carts of tea to the provincial capital, past the Wolf Teeth hills.",
+   "npc": {
+    "role": "child",
+    "minAge": 16,
+    "maxAge": 22
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The First Escort",
+   "choices": [
+    {
+     "text": "Give {him} your old road map",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "w7fm_es",
+      "log": "The map has your notes in the margins. Half of them are about inns."
+     }
+    },
+    {
+     "text": "Follow the caravan in secret",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 1,
+      "npcFlag": "w7fm_es",
+      "flag": "w7fm_es_follow",
+      "log": "You shadow the carts for nine days. Nothing happens except that {npc} handles a broken axle very well."
+     },
+     "fail": {
+      "charm": -1,
+      "npcFlag": "w7fm_es",
+      "flag": "w7fm_es_caught",
+      "log": "The escort master spots you on day two. {npc} is told about it at every campfire."
+     }
+    },
+    {
+     "text": "Say goodbye at the gate and go back inside",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_es",
+      "log": "You go back inside and sit by the door, for no reason, until dark."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_escort_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is back from the capital, sunburned, with a cut on {his} cheek and a story. Hill bandits came at the second cart, and {he} talked them out of it with a sack of rice and a joke.",
+   "npc": {
+    "role": "child",
+    "minAge": 17,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_escort_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_es"
+    ]
+   },
+   "arc": "The First Escort",
+   "choices": [
+    {
+     "text": "Ask for the joke",
+     "effects": {
+      "charm": 2,
+      "log": "It is a terrible joke. It is about an escort master and a goat. You laugh anyway, and so did the bandits."
+     }
+    },
+    {
+     "text": "Teach {him} what to do if the joke fails",
+     "effects": {
+      "strength": 1,
+      "comprehension": 1,
+      "log": "You drill {npc} every morning for a month. {npc} hopes never to need it."
+     }
+    },
+    {
+     "text": "Praise the rice sack, not the joke",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "'A fed bandit is a tired bandit,' you say. {npc} writes it down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_escort_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The Swift Banner agency has a new chief escort, and on {npc}'s first day in the post the agency's old banner is replaced by a new one: a sack of rice crossed with a sword.",
+   "npc": {
+    "role": "child",
+    "minAge": 22,
+    "maxAge": 50
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_escort_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "w7fm_es"
+    ]
+   },
+   "arc": "The First Escort",
+   "choices": [
+    {
+     "text": "Send the agency a sack of rice",
+     "effects": {
+      "charm": 2,
+      "fame": 1,
+      "log": "It hangs over the agency door. Bandits on the Wolf Teeth road tell their children about it."
+     }
+    },
+    {
+     "text": "Ask for one more journey together",
+     "effects": {
+      "health": -1,
+      "lifespan": 1,
+      "log": "You ride the tea road once more, as a passenger. {npc} treats you like cargo and you love it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_scholar_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} wants to sit the imperial examination, which means three years of classics, a borrowed tutor and you being quiet in your own house at night.",
+   "npc": {
+    "role": "child",
+    "minAge": 14,
+    "maxAge": 20
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Hire a proper tutor",
+     "effects": {
+      "taels": -50,
+      "comprehension": 1,
+      "npcFlag": "w7fm_sc",
+      "log": "The tutor costs 50 taels a year and terrifies everyone, including the dog."
+     }
+    },
+    {
+     "text": "Study the classics alongside {him}",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "w7fm_sc",
+      "log": "You fall behind in a month. {npc} starts explaining them to you at dinner, which is the best way to learn."
+     }
+    },
+    {
+     "text": "Promise silence and mostly keep it",
+     "effects": {
+      "alignment": 1,
+      "luck": 1,
+      "npcFlag": "w7fm_sc",
+      "log": "You practise your forms in socks for three years. Your footwork has never been quieter."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "w7fm_scholar_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Examination day. {npc} goes into the walled hall with a basket, a brush and nine days of food. You wait outside with all the other families, pretending to be calm.",
+   "npc": {
+    "role": "child",
+    "minAge": 17,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_scholar_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_sc"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Wait the full nine days by the wall",
+     "effects": {
+      "health": -2,
+      "charm": 2,
+      "log": "You meet every other waiting family and learn more about the empire than in ten years of travel."
+     }
+    },
+    {
+     "text": "Go home and clean the whole house",
+     "effects": {
+      "alignment": 1,
+      "luck": 1,
+      "log": "The house has never been so clean. You clean it twice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_scholar_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The results are posted on the prefecture wall. A crowd. Shouting. Your eyes go down the list and up again.",
+   "npc": {
+    "role": "child",
+    "minAge": 17,
+    "maxAge": 30
+   },
+   "when": {
+    "age": [
+     35,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "flags": [
+     "has_child"
+    ],
+    "after": [
+     "w7fm_scholar_2"
+    ],
+    "npcFlags": [
+     "w7fm_sc"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Look for the name",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "charm": 2,
+      "log": "There it is, fourteenth. {npc} finds you in the crowd and neither of you can say anything at all."
+     },
+     "fail": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "Not this year. {npc} takes your arm on the way home and says, 'Three years. I will be better.' You believe it."
+     }
+    },
+    {
+     "text": "Let {npc} look first",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "You watch {npc}'s face instead of the list, and learn the result from it. It is a face you will keep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_mil_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your spouse's parent, {npc}, has come to stay for a week. On the first evening {npc} tastes your soup, puts down the spoon and says it is 'interesting'.",
+   "npc": {
+    "role": "w7fm_ml",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_ml",
+     "ageAbs": 62,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true
+   },
+   "arc": "The Visit That Never Ended",
+   "choices": [
+    {
+     "text": "Ask what it needs",
+     "effects": {
+      "comprehension": 1,
+      "flag": "w7fm_ml_asked",
+      "log": "'Less of you,' says {npc}, adding ginger. It is better. You hate that it is better.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    },
+    {
+     "text": "Smile and say nothing",
+     "effects": {
+      "alignment": 2,
+      "log": "{npc} eats two bowls of the interesting soup and asks for the recipe, to correct it.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    },
+    {
+     "text": "Challenge {him} to cook tomorrow",
+     "effects": {
+      "charm": 1,
+      "flag": "w7fm_ml_duel",
+      "log": "The challenge is accepted with a terrifying smile.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_mil_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The week has become a season. {npc} has rearranged the kitchen, reorganised your sword rack by length and taken over the courtyard with pickling jars.",
+   "npc": {
+    "role": "w7fm_ml"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "dc_w7fm_mil_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "w7fm_mil_who"
+    ]
+   },
+   "arc": "The Visit That Never Ended",
+   "choices": [
+    {
+     "text": "Ask your spouse to have a word",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 2,
+      "log": "Your spouse has a word. {npc} moves the jars a little to the left. It is a victory.",
+      "npcFlag": "w7fm_mil_who"
+     },
+     "fail": {
+      "charm": -1,
+      "log": "Your spouse has a word with you instead, about patience.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    },
+    {
+     "text": "Learn to pickle",
+     "effects": {
+      "comprehension": 2,
+      "health": 1,
+      "log": "Your pickles are, {npc} admits after a month, 'edible'. That is high praise.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    },
+    {
+     "text": "Build {him} a separate kitchen",
+     "effects": {
+      "taels": -60,
+      "charm": 2,
+      "log": "The second kitchen costs 60 taels. Both kitchens now produce soup, in competition.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_mil_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has a bad winter cough. You find yourself making the soup with ginger, the way {he} taught you, and carrying it to {his} room.",
+   "npc": {
+    "role": "w7fm_ml"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "dc_w7fm_mil_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "w7fm_mil_who"
+    ]
+   },
+   "arc": "The Visit That Never Ended",
+   "choices": [
+    {
+     "text": "Sit with {him} while {he} eats",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "soup",
+       "w": 9,
+       "note": "brought me soup made my way when I was ill"
+      },
+      "log": "{npc} tastes it and says it is 'acceptable'. Then {he} finishes the bowl and asks for more.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    },
+    {
+     "text": "Add one thing of your own",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "{npc} notices at once. 'What is that?' {he} demands. 'Mine,' you say. {He} has a second bowl.",
+      "npcFlag": "w7fm_mil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fil_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, your spouse's parent and a retired master of the Thunder Palm, has decided it is finally time to test whether you are good enough. You have been married for some years.",
+   "npc": {
+    "role": "w7fm_fl",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_fl",
+     "ageAbs": 65,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "age": [
+     20,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true
+   },
+   "arc": "The Test of the In-Law",
+   "choices": [
+    {
+     "text": "Accept the spar",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 2,
+      "mem": {
+       "deed": "spar",
+       "w": 8,
+       "note": "stood up to my Thunder Palm"
+      },
+      "log": "You hold your ground for thirty exchanges. {npc} grunts, which is a whole speech of approval.",
+      "npcFlag": "w7fm_fil_who"
+     },
+     "fail": {
+      "health": -3,
+      "charm": 1,
+      "log": "{npc} flattens you in four moves, then helps you up and pours you tea. You passed something.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "alignment": 2,
+      "log": "'Wise,' says {npc}, disappointed. {He} asks again every New Year.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    },
+    {
+     "text": "Ask to be taught instead",
+     "effects": {
+      "comprehension": 2,
+      "flag": "w7fm_fl_taught",
+      "log": "{npc} looks surprised, then pleased. Lessons start at dawn tomorrow and do not stop.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fil_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Lesson ninety. {npc} has taught you three palms, one breathing method and every way in which your spouse was a difficult child.",
+   "npc": {
+    "role": "w7fm_fl"
+   },
+   "when": {
+    "age": [
+     20,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_fil_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "w7fm_fl_taught"
+    ],
+    "npcFlags": [
+     "w7fm_fil_who"
+    ]
+   },
+   "arc": "The Test of the In-Law",
+   "choices": [
+    {
+     "text": "Ask for more stories",
+     "effects": {
+      "charm": 3,
+      "log": "Your spouse refuses to come to lessons anymore. You are learning a great deal.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    },
+    {
+     "text": "Ask for the fourth palm",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 2,
+      "qi": 6,
+      "log": "The fourth palm is the Rolling Thunder. You knock over a water butt. {npc} is delighted.",
+      "npcFlag": "w7fm_fil_who"
+     },
+     "fail": {
+      "health": -2,
+      "log": "You knock yourself over. {npc} laughs for a full minute and tells your spouse.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_fil_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is too old for the Thunder Palm now, and asks you to show the forms to the grandchildren in {his} place, while {he} watches from a chair.",
+   "npc": {
+    "role": "w7fm_fl"
+   },
+   "when": {
+    "age": [
+     20,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_fil_2"
+    ],
+    "minYearsAfter": 6,
+    "flags": [
+     "w7fm_fl_taught"
+    ],
+    "npcFlags": [
+     "w7fm_fil_who"
+    ]
+   },
+   "arc": "The Test of the In-Law",
+   "choices": [
+    {
+     "text": "Teach them exactly as {he} taught you",
+     "effects": {
+      "alignment": 3,
+      "log": "{npc} corrects you from the chair, loudly and lovingly, the whole time.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    },
+    {
+     "text": "Let {him} teach from the chair",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "You demonstrate and {npc} explains. Between you, you make one whole master.",
+      "npcFlag": "w7fm_fil_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_ilsecret_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "In the bottom of your spouse's dowry chest, under the quilts, is a wooden box sealed with the crest of the Falling Star Sect, wiped out for treason sixty years ago.",
+   "when": {
+    "age": [
+     22,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true
+   },
+   "arc": "The Box in the Dowry",
+   "choices": [
+    {
+     "text": "Ask your spouse about it",
+     "effects": {
+      "charm": 1,
+      "flag": "w7fm_is_asked",
+      "log": "Your spouse goes pale and says, finally: ask the old ones. They are coming at New Year."
+     }
+    },
+    {
+     "text": "Leave it sealed",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "You put the quilts back. Some boxes are for their own families to open."
+     }
+    },
+    {
+     "text": "Open it yourself",
+     "effects": {
+      "comprehension": 2,
+      "alignment": -2,
+      "flag": "w7fm_is_asked",
+      "log": "Inside: a manual, a banner and a list of names. One of them is your spouse's family name."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_ilsecret_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "At New Year, {npc}, the eldest of your spouse's family, sits with you by the stove. 'You found the box,' {npc} says. 'Then you should know we were not traitors. We were the ones who refused.'",
+   "npc": {
+    "role": "w7fm_is",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_is",
+     "ageAbs": 75,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "age": [
+     22,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_ilsecret_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "w7fm_is_asked"
+    ]
+   },
+   "arc": "The Box in the Dowry",
+   "choices": [
+    {
+     "text": "Listen to the whole story",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 2,
+      "flag": "w7fm_is_story",
+      "log": "It takes all night. The Falling Star Sect refused an unjust order, and paid for it. The story was never written down."
+     }
+    },
+    {
+     "text": "Promise to keep the secret",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "secret",
+       "w": 9,
+       "note": "kept the Falling Star secret"
+      },
+      "log": "{npc} nods once and pours you a cup of the good tea, the one kept for family."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_ilsecret_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The eldest of your spouse's family has died, peacefully, and in the will is one line for you: the box is yours to decide. Your spouse waits to see what you will do.",
+   "when": {
+    "age": [
+     22,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_ilsecret_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "w7fm_is_story"
+    ]
+   },
+   "arc": "The Box in the Dowry",
+   "choices": [
+    {
+     "text": "Write the true history and publish it",
+     "roll": {
+      "stat": "poetry",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 4,
+      "log": "The history is copied across three provinces. The Falling Star name is cleared, sixty years late."
+     },
+     "fail": {
+      "fame": 1,
+      "alignment": 2,
+      "log": "Few believe it. But your spouse reads it every year on the same day, and that is enough."
+     }
+    },
+    {
+     "text": "Return the box to the family shrine",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "log": "It sits beside the ancestral tablets now, open, with a candle in front of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_banquet_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your spouse's family is holding a seventieth birthday banquet for {npc}, the family elder. Every cousin is coming, including Cousin Wei, who has hated you since the wedding for reasons nobody remembers.",
+   "npc": {
+    "role": "w7fm_bq",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_bq",
+     "ageAbs": 70,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true
+   },
+   "arc": "The Seventieth Birthday",
+   "choices": [
+    {
+     "text": "Bring the finest gift in the hall",
+     "effects": {
+      "taels": -50,
+      "fame": 2,
+      "flag": "w7fm_bq_gift",
+      "log": "The longevity peach carving costs 50 taels. {npc} keeps it on the table all night. Cousin Wei sulks.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    },
+    {
+     "text": "Write {npc} a birthday poem",
+     "roll": {
+      "stat": "poetry",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "mem": {
+       "deed": "poem",
+       "w": 8,
+       "note": "wrote me a birthday poem at seventy"
+      },
+      "log": "{npc} has it read aloud twice. Cousin Wei cannot hide being moved.",
+      "npcFlag": "w7fm_banquet_who"
+     },
+     "fail": {
+      "charm": -1,
+      "log": "The poem rhymes seventy with plenty four times. Cousin Wei applauds very slowly.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    },
+    {
+     "text": "Help in the kitchen instead",
+     "effects": {
+      "health": -1,
+      "alignment": 2,
+      "log": "You spend the banquet steaming fish. The cooks adore you. Cousin Wei finds no one to quarrel with.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_banquet_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Late in {npc}'s banquet, Cousin Wei corners you by the wine jars, slightly drunk. 'You know why I hate you?' Wei says. 'At your wedding you took the last sesame bun.'",
+   "npc": {
+    "role": "w7fm_bq"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_banquet_1"
+    ],
+    "npcFlags": [
+     "w7fm_banquet_who"
+    ]
+   },
+   "arc": "The Seventieth Birthday",
+   "choices": [
+    {
+     "text": "Apologise for the bun, formally",
+     "effects": {
+      "charm": 3,
+      "luck": 1,
+      "log": "You bow. Wei bows back. The next morning Wei sends you a basket of sesame buns, and the feud is over.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    },
+    {
+     "text": "Admit you would do it again",
+     "effects": {
+      "charm": 1,
+      "comprehension": 1,
+      "log": "Wei laughs so hard the wine jars wobble. You are now Wei's favourite enemy, which is better than friend.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_banquet_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} turns eighty, and the banquet is at your house this time, by request. Cousin Wei brings sesame buns and counts them out loud as you take one.",
+   "npc": {
+    "role": "w7fm_bq"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_banquet_2"
+    ],
+    "minYearsAfter": 10,
+    "npcFlags": [
+     "w7fm_banquet_who"
+    ]
+   },
+   "arc": "The Seventieth Birthday",
+   "choices": [
+    {
+     "text": "Take two",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "{npc} laughs until tea comes out of {his} nose. It is the best birthday in the family's history.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    },
+    {
+     "text": "Give a toast for the whole family",
+     "effects": {
+      "fame": 1,
+      "alignment": 2,
+      "log": "You give it. {npc} holds your hand through the end of it and does not let go for a while.",
+      "npcFlag": "w7fm_banquet_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_borrow_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, your spouse's younger sibling, is at the gate with a plan, a smile and a need for 30 taels. It is the fourth plan this year. One involved ducks.",
+   "npc": {
+    "role": "w7fm_br",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_br",
+     "ageAbs": 28,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "age": [
+     22,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true
+   },
+   "arc": "The Brother-in-Law Who Borrows",
+   "choices": [
+    {
+     "text": "Lend the 30 taels",
+     "effects": {
+      "taels": -30,
+      "charm": 1,
+      "flag": "w7fm_br_lent",
+      "log": "You lend 30 taels. {npc} swears on all the ducks it will be paid back.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    },
+    {
+     "text": "Refuse kindly",
+     "effects": {
+      "alignment": 1,
+      "log": "{npc} takes it well, eats dinner, stays the night and leaves with your best umbrella.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    },
+    {
+     "text": "Hear the whole plan first",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "w7fm_br_lent",
+      "log": "The plan is a ferry, and it is actually good. You fix two holes in it and lend nothing yet.",
+      "npcFlag": "w7fm_borrow_who"
+     },
+     "fail": {
+      "luck": -1,
+      "log": "You get lost somewhere around the ducks. {npc} leaves with a loan of nothing and your umbrella.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_borrow_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Against all history, {npc}'s ferry is running, and {npc} arrives with a bag of coins and an umbrella. Your umbrella. From the first visit.",
+   "npc": {
+    "role": "w7fm_br"
+   },
+   "when": {
+    "age": [
+     22,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_borrow_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "w7fm_br_lent"
+    ],
+    "npcFlags": [
+     "w7fm_borrow_who"
+    ]
+   },
+   "arc": "The Brother-in-Law Who Borrows",
+   "choices": [
+    {
+     "text": "Take the money",
+     "effects": {
+      "taels": 40,
+      "log": "There is 40 taels in the bag, with interest. You count it twice in disbelief.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    },
+    {
+     "text": "Tell {him} to keep it in the ferry",
+     "effects": {
+      "charm": 2,
+      "luck": 2,
+      "log": "Your share of the ferry pays out every autumn. {npc} names the second boat after you.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_borrow_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has a new plan. It is ducks again. This time {he} has drawings, a lease and a partner, and does not ask you for a single tael. {He} only wants your opinion.",
+   "npc": {
+    "role": "w7fm_br"
+   },
+   "when": {
+    "age": [
+     22,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "married": true,
+    "after": [
+     "w7fm_borrow_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_borrow_who"
+    ]
+   },
+   "arc": "The Brother-in-Law Who Borrows",
+   "choices": [
+    {
+     "text": "Give your honest opinion",
+     "effects": {
+      "comprehension": 1,
+      "charm": 2,
+      "log": "You give it. {npc} listens, nods and does it anyway. The duck farm thrives.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    },
+    {
+     "text": "Say it is a fine plan",
+     "effects": {
+      "luck": 2,
+      "log": "{npc} beams. The ducks come in spring and are, everyone agrees, very fine ducks.",
+      "npcFlag": "w7fm_borrow_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sletters_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, your sibling, is leaving to serve in a far garrison on the northern wall. At the gate {he} makes you promise to write once a season, no matter what.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     20,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "Forty Years of Letters",
+   "choices": [
+    {
+     "text": "Promise",
+     "effects": {
+      "alignment": 2,
+      "npcFlag": "w7fm_sl",
+      "log": "You promise. {npc} makes you shake on it, like when you were small."
+     }
+    },
+    {
+     "text": "Give {him} your lucky charm",
+     "effects": {
+      "luck": -1,
+      "charm": 2,
+      "npcFlag": "w7fm_sl",
+      "log": "You give away your lucky charm. {npc} hangs it on {his} spear and promises to bring it back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sletters_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Ten years of letters. {npc}'s are about cold, horses and a cook called One-Eyed Mo. Yours are about rain, sect gossip and your back. Today's letter is shorter than usual.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     20,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_sletters_1"
+    ],
+    "minYearsAfter": 10,
+    "npcFlags": [
+     "blood",
+     "w7fm_sl"
+    ]
+   },
+   "arc": "Forty Years of Letters",
+   "choices": [
+    {
+     "text": "Write back at once, and long",
+     "effects": {
+      "charm": 2,
+      "log": "{npc} replies: the short letter was a bad week. Your long one fixed it."
+     }
+    },
+    {
+     "text": "Send a parcel of warm things",
+     "effects": {
+      "taels": -10,
+      "health": 1,
+      "log": "The parcel costs 10 taels. The garrison fights over the socks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sletters_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes home at last, grey, with the lucky charm on a cord around {his} neck and a box under {his} arm: forty years of your letters, every one kept.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     20,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_sletters_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "blood",
+     "w7fm_sl"
+    ]
+   },
+   "arc": "Forty Years of Letters",
+   "choices": [
+    {
+     "text": "Bring out your box of {his}",
+     "effects": {
+      "charm": 3,
+      "lifespan": 1,
+      "log": "You kept every one of {his} too. You sit up reading them aloud, laughing at your young selves."
+     }
+    },
+    {
+     "text": "Ask about One-Eyed Mo",
+     "effects": {
+      "luck": 2,
+      "log": "One-Eyed Mo is outside, actually, with the horses. {npc} brought the cook home too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sduel_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your sibling, {npc}, has risen high in a rival faction, and the two factions are at each other's throats over a mountain pass. You are both ordered to the bridge at the pass at dawn.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "Two Banners",
+   "choices": [
+    {
+     "text": "Go to the bridge",
+     "effects": {
+      "npcFlag": "w7fm_sd",
+      "flag": "w7fm_sd_went",
+      "alignment": 1,
+      "log": "You go. Across the bridge, in the rain, {npc} is already waiting."
+     }
+    },
+    {
+     "text": "Send a letter to {npc} first",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_sd",
+      "flag": "w7fm_sd_letter",
+      "log": "{npc}'s answer is three words: 'Same as always.' You both know what that means."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sduel_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The bridge, at dawn. Both sides watching. {npc} draws, and so do you, and you both think of the time you fought over a kite and broke a neighbour's window.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_sduel_1"
+    ],
+    "npcFlags": [
+     "blood",
+     "w7fm_sd"
+    ]
+   },
+   "arc": "Two Banners",
+   "choices": [
+    {
+     "text": "Fight, but only as children fought",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "charm": 2,
+      "log": "You fight to a perfect draw, every blow pulled. Both factions are impressed enough to talk instead."
+     },
+     "fail": {
+      "health": -3,
+      "charm": 2,
+      "log": "{npc} wins, and helps you up, and the whole pass sees it. Somehow the war ends there anyway."
+     }
+    },
+    {
+     "text": "Throw down your sword in the middle of the bridge",
+     "effects": {
+      "alignment": 5,
+      "fame": 2,
+      "log": "{npc} looks at it for a long time, then throws {his} down beside it. The pass is quiet."
+     }
+    },
+    {
+     "text": "Shout 'Same as always!' and attack",
+     "effects": {
+      "luck": 2,
+      "charm": 1,
+      "log": "You both drop your swords and wrestle on the bridge until you are both in the river. The war dissolves into laughter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sduel_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Years later, {npc} and you stand on the bridge again, both retired, both terribly old for a duel. A merchant caravan rolls past between you, paying toll to neither faction.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_sduel_2"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "blood",
+     "w7fm_sd"
+    ]
+   },
+   "arc": "Two Banners",
+   "choices": [
+    {
+     "text": "Buy a kite from the caravan",
+     "effects": {
+      "taels": -5,
+      "charm": 3,
+      "log": "For 5 taels you buy a kite. It breaks nobody's window this time. It goes very high."
+     }
+    },
+    {
+     "text": "Toss a coin in the river for the war",
+     "effects": {
+      "luck": 2,
+      "alignment": 2,
+      "log": "{npc} tosses one too. The river takes both and keeps the secret."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_shouse_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The house you grew up in has passed to you and {npc}, your sibling, together. It leaks, it leans, and neither of you can afford it alone. {npc} wants to sell.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     35,
+     100
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "The Old House",
+   "choices": [
+    {
+     "text": "Agree to sell",
+     "effects": {
+      "taels": 60,
+      "npcFlag": "w7fm_sh",
+      "flag": "w7fm_sh_sell",
+      "log": "Your half of the sale is 60 taels. Before the buyer comes, you go one last time."
+     }
+    },
+    {
+     "text": "Argue to keep it",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 2,
+      "npcFlag": "w7fm_sh",
+      "log": "{npc} gives in, and you fix the roof together over a summer, quarrelling the whole time."
+     },
+     "fail": {
+      "charm": -1,
+      "npcFlag": "w7fm_sh",
+      "log": "The argument goes back thirty years, to who got the bigger room. You agree to go and look at it once more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_shouse_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Under the floor of the old bedroom, the one you both shared, the boards come up and there is a sealed chest you have never seen, with both your childhood names carved on the lid.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     35,
+     100
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_shouse_1"
+    ],
+    "npcFlags": [
+     "blood",
+     "w7fm_sh"
+    ]
+   },
+   "arc": "The Old House",
+   "choices": [
+    {
+     "text": "Open it together",
+     "effects": {
+      "luck": 3,
+      "flag": "w7fm_sh_open",
+      "log": "Inside: two baby shoes, a small sword each, a purse of old silver, and a letter addressed to you both."
+     }
+    },
+    {
+     "text": "Let {npc} open it",
+     "effects": {
+      "charm": 2,
+      "flag": "w7fm_sh_open",
+      "log": "{npc} opens it with shaking hands. Two baby shoes. Two small swords. A letter. {He} reads it out loud."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_shouse_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The letter, from the ones who raised you, says only that they never had a favourite, whatever either of you thought, and that the silver is for whichever of you needs it more. {npc} is crying.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     35,
+     100
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_shouse_2"
+    ],
+    "flags": [
+     "w7fm_sh_open"
+    ],
+    "npcFlags": [
+     "blood",
+     "w7fm_sh"
+    ]
+   },
+   "arc": "The Old House",
+   "choices": [
+    {
+     "text": "Give {him} all the silver",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "silver",
+       "w": 10,
+       "note": "gave me all the silver from the old chest"
+      },
+      "log": "{npc} refuses, then accepts, then uses it to fix the old roof."
+     }
+    },
+    {
+     "text": "Split it exactly in half",
+     "effects": {
+      "taels": 30,
+      "charm": 1,
+      "log": "Thirty taels each. You count it out the way you counted sweets as children, one for you, one for me."
+     }
+    },
+    {
+     "text": "Spend it on a feast in the old house",
+     "effects": {
+      "charm": 3,
+      "luck": 1,
+      "log": "You eat on the floor of the old kitchen and argue about the bigger room until midnight."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sold_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "You and {npc}, your sibling, are both old now. {npc} turns up at your gate with two fishing rods and says, as if fifty years had not passed, 'Coming?'",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     60,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "Two Old Fishers",
+   "choices": [
+    {
+     "text": "Go",
+     "effects": {
+      "health": 2,
+      "npcFlag": "w7fm_so",
+      "log": "You fish all afternoon and catch nothing. It is the best afternoon of the year."
+     }
+    },
+    {
+     "text": "Say you are too busy, then go anyway",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_so",
+      "log": "{npc} waits at the gate, knowing. You go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sold_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Every seventh day, the same bend in the river. Today {npc} says, without looking up, that {he} has been thinking about which of you will go first.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     60,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_sold_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "blood",
+     "w7fm_so"
+    ]
+   },
+   "arc": "Two Old Fishers",
+   "choices": [
+    {
+     "text": "Say you will, out of spite",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "'You always had to win,' {npc} says. You both laugh, and the fish leave."
+     }
+    },
+    {
+     "text": "Make a promise about the one left behind",
+     "effects": {
+      "alignment": 3,
+      "lifespan": 1,
+      "log": "You promise to keep fishing at this bend, whoever is left. {npc} nods and baits your hook for you."
+     }
+    },
+    {
+     "text": "Change the subject to fish",
+     "effects": {
+      "comprehension": 1,
+      "log": "You argue about bait for an hour. It is a kind of answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_sold_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} catches the biggest carp either of you has ever seen, and holds it up, shouting like a child, and nearly falls in.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     60,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_sold_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "blood",
+     "w7fm_so"
+    ]
+   },
+   "arc": "Two Old Fishers",
+   "choices": [
+    {
+     "text": "Grab {him} by the collar",
+     "roll": {
+      "stat": "strength",
+      "dc": 35
+     },
+     "ok": {
+      "charm": 2,
+      "mem": {
+       "deed": "carp",
+       "w": 9,
+       "note": "held on to my collar when I caught the great carp"
+      },
+      "log": "You hold on. The carp is landed, measured, eaten and talked about for the rest of your lives."
+     },
+     "fail": {
+      "health": -2,
+      "log": "You both go in. The carp escapes. You climb out soaked, laughing so hard you have to sit down."
+     }
+    },
+    {
+     "text": "Shout encouragement",
+     "effects": {
+      "luck": 2,
+      "log": "{npc} lands it alone, and then tells everyone you helped, which you did not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_swed_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your sibling, {npc}, is getting married, and has asked you to give the speech. {He} has also asked you, specifically, not to mention the incident with the goat.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "The Wedding Speech",
+   "choices": [
+    {
+     "text": "Agree to everything",
+     "effects": {
+      "alignment": 1,
+      "npcFlag": "w7fm_sw",
+      "log": "You agree. You begin writing a speech that does not mention the goat."
+     }
+    },
+    {
+     "text": "Make no promises about the goat",
+     "effects": {
+      "charm": 1,
+      "npcFlag": "w7fm_sw",
+      "flag": "w7fm_sw_goat",
+      "log": "{npc} narrows {his} eyes. 'Not the goat,' {he} says. You smile."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_swed_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The wedding banquet. You stand up with your cup. {npc} looks at you with the pure terror of the goat incident in {his} eyes.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_swed_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "blood",
+     "w7fm_sw"
+    ]
+   },
+   "arc": "The Wedding Speech",
+   "choices": [
+    {
+     "text": "Tell the goat story",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "charm": 2,
+      "log": "The hall weeps with laughter. The new in-laws love {npc} far more for it. {npc} forgives you by dessert."
+     },
+     "fail": {
+      "charm": -2,
+      "log": "Nobody laughs. One elder asks what happened to the goat. You have to explain. It is worse."
+     }
+    },
+    {
+     "text": "Give a short, true speech instead",
+     "effects": {
+      "alignment": 2,
+      "charm": 2,
+      "log": "You say what {npc} means to you, in three lines. {npc} is not ready for it and has to sit down."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "w7fm_swed_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}'s child has its first birthday, and {npc} asks you to tell a story at the party. Any story. {He} says, very tiredly, even the goat.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_swed_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "blood",
+     "w7fm_sw"
+    ]
+   },
+   "arc": "The Wedding Speech",
+   "choices": [
+    {
+     "text": "Tell the goat story at last",
+     "effects": {
+      "charm": 3,
+      "log": "It is a triumph. Even the baby laughs, or has wind. {npc} laughs the hardest."
+     }
+    },
+    {
+     "text": "Tell a new story about {npc}",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "You tell how {npc} carried you home with a sprained ankle once. {He} had forgotten. You never did."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_scup_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "At a family dinner, {npc}, your sibling, brings up the jade cup again: the one broken when you were both small. Each of you has blamed the other for forty years.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "The Broken Jade Cup",
+   "choices": [
+    {
+     "text": "Insist it was {npc}",
+     "effects": {
+      "charm": -1,
+      "npcFlag": "w7fm_jc",
+      "log": "The argument lasts until midnight. The rest of the family goes to bed. It is tradition."
+     }
+    },
+    {
+     "text": "Confess, falsely, to end it",
+     "effects": {
+      "alignment": 1,
+      "npcFlag": "w7fm_jc",
+      "flag": "w7fm_jc_false",
+      "log": "{npc} stares. {He} knows you are lying. {He} is furious you would take it from {him}."
+     }
+    },
+    {
+     "text": "Propose a proper inquiry",
+     "effects": {
+      "comprehension": 1,
+      "npcFlag": "w7fm_jc",
+      "flag": "w7fm_jc_inq",
+      "log": "You both agree to find the one witness still living: old Auntie Fen, who was in the kitchen that day."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_scup_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "Old Auntie Fen, ninety and sharp as a pin, listens to both of you, sips tea and says: 'Neither. It was the cat. I saw it. I let you blame each other because it kept you both quiet.'",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_scup_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "blood",
+     "w7fm_jc"
+    ]
+   },
+   "arc": "The Broken Jade Cup",
+   "choices": [
+    {
+     "text": "Laugh until you cry",
+     "effects": {
+      "charm": 3,
+      "luck": 1,
+      "log": "{npc} laughs too, helplessly. Forty years. The cat."
+     }
+    },
+    {
+     "text": "Demand forty years of apologies from the cat",
+     "effects": {
+      "comprehension": 1,
+      "charm": 2,
+      "log": "You and {npc} light incense for the cat at the family shrine, with great ceremony, and an apology for it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_scup_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "For {npc}'s birthday, you send a new jade cup, wrapped in red cloth, with a note: 'For when the cat comes back.'",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_scup_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "blood",
+     "w7fm_jc"
+    ]
+   },
+   "arc": "The Broken Jade Cup",
+   "choices": [
+    {
+     "text": "Wait for the reply",
+     "effects": {
+      "luck": 2,
+      "log": "The reply is a parcel: a jade cup, already broken, with a note: 'It came back.' You laugh for a week."
+     }
+    },
+    {
+     "text": "Visit and drink from it together",
+     "effects": {
+      "charm": 2,
+      "lifespan": 1,
+      "log": "You drink from it together, very carefully, holding it with both hands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sdebt_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, your sibling, opened a lantern shop with high hopes and low sense, and it is failing. {He} has not asked you for help. {He} would rather eat the lanterns.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "The Sibling's Shop",
+   "choices": [
+    {
+     "text": "Buy a hundred lanterns",
+     "effects": {
+      "taels": -40,
+      "npcFlag": "w7fm_sb",
+      "flag": "w7fm_sb_bought",
+      "log": "You spend 40 taels on lanterns. Your courtyard is very bright. {npc} is suspicious."
+     }
+    },
+    {
+     "text": "Offer to work in the shop",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_sb",
+      "log": "You work the counter on market days. You are a terrible salesperson, but people come to watch."
+     }
+    },
+    {
+     "text": "Look at the shop with a merchant eye",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_sb",
+      "log": "The lanterns are good. The street is wrong. You find {npc} a corner by the temple."
+     },
+     "fail": {
+      "luck": -1,
+      "npcFlag": "w7fm_sb",
+      "log": "You have no idea what is wrong. Neither does {npc}. You have tea in the dark shop together."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sdebt_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The Lantern Festival. {npc}'s lanterns are everywhere, hanging from every bridge, and {npc} is too busy to talk to you, which is the best news you have ever had.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_sdebt_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "blood",
+     "w7fm_sb"
+    ]
+   },
+   "arc": "The Sibling's Shop",
+   "choices": [
+    {
+     "text": "Buy one more lantern",
+     "effects": {
+      "taels": -2,
+      "charm": 2,
+      "log": "{npc} charges you full price, 2 taels, which is how you know {he} is fine."
+     }
+    },
+    {
+     "text": "Light a lantern for the old days",
+     "effects": {
+      "alignment": 2,
+      "luck": 2,
+      "log": "You float it on the river. A small one, the first style {npc} ever made."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sdebt_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} sends a hundred lanterns to your courtyard. A note: 'Returned, with thanks. I always knew who bought them.' The note is tied to the handle of the first lantern.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     25,
+     80
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_sdebt_2"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "w7fm_sb_bought"
+    ],
+    "npcFlags": [
+     "blood",
+     "w7fm_sb"
+    ]
+   },
+   "arc": "The Sibling's Shop",
+   "choices": [
+    {
+     "text": "Hang every one",
+     "effects": {
+      "charm": 2,
+      "fame": 1,
+      "log": "Your courtyard glows all winter. Neighbours come to look. You tell them where to buy their own."
+     }
+    },
+    {
+     "text": "Give them to the temple",
+     "effects": {
+      "alignment": 3,
+      "log": "The temple glows. {npc} pretends to be annoyed, and then goes to see it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_jade_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The jade pendant you inherited, the family treasure, said to be from a Tang emperor, is appraised for a loan. The appraiser holds it to the light and says it is green glass.",
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Fake Pendant",
+   "choices": [
+    {
+     "text": "Laugh it off",
+     "effects": {
+      "charm": 1,
+      "flag": "w7fm_jd",
+      "log": "You laugh all the way home. It is still the family treasure. It is just a glass one."
+     }
+    },
+    {
+     "text": "Demand a second appraisal",
+     "effects": {
+      "taels": -10,
+      "flag": "w7fm_jd",
+      "log": "The second appraiser takes 10 taels to say: green glass, but very old glass."
+     }
+    },
+    {
+     "text": "Look at it more closely yourself",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": [
+       "w7fm_jd",
+       "w7fm_jd_seen"
+      ],
+      "luck": 2,
+      "log": "Inside the glass, tiny, there are characters. Someone made this on purpose."
+     },
+     "fail": {
+      "flag": "w7fm_jd",
+      "luck": -1,
+      "log": "You see nothing but your own disappointed face, very green."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_w7fm_jade_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "By lamplight the green glass pendant shows something you never noticed: a tiny map, etched inside, of a valley and a single tree.",
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_jade_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "w7fm_jd"
+    ]
+   },
+   "arc": "The Fake Pendant",
+   "choices": [
+    {
+     "text": "Find the valley",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 100,
+      "flag": "w7fm_jd_found",
+      "log": "Under the tree, in a pot: real jade, a little silver and a note. A great-grandparent hid the real treasure behind the fake."
+     },
+     "fail": {
+      "health": -2,
+      "flag": "w7fm_jd_found",
+      "log": "You dig under the wrong tree for three days. Then the right one. The pot is empty, except for a note."
+     }
+    },
+    {
+     "text": "Leave the map a mystery",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "You put it back on its cord. Some treasures are for the next one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_w7fm_jade_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The note from the pot reads: 'If you came looking, you are clever. If you found nothing, I spent it on a good life. Either way, the glass is the real treasure, because it brought you here.'",
+   "when": {
+    "age": [
+     25,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "dc_w7fm_jade_2"
+    ],
+    "flags": [
+     "w7fm_jd_found"
+    ]
+   },
+   "arc": "The Fake Pendant",
+   "choices": [
+    {
+     "text": "Frame the note beside the pendant",
+     "effects": {
+      "charm": 2,
+      "luck": 2,
+      "log": "The two hang together in the hall. Visitors ask about them. You tell it every time."
+     }
+    },
+    {
+     "text": "Write a note of your own for the pot",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 2,
+      "log": "You bury a note of your own under the tree, for whoever comes next. It is funnier than the first."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_thief_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Clearing the family shrine, you find the genealogy scroll and read it properly for the first time. The founder of your line, revered for generations, was a professional thief known as the Silk Rat.",
+   "when": {
+    "age": [
+     20,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Ancestor Who Stole",
+   "choices": [
+    {
+     "text": "Keep reading",
+     "effects": {
+      "comprehension": 2,
+      "flag": "w7fm_th",
+      "log": "The Silk Rat stole only from corrupt officials, and gave half away. The other half built the family home."
+     }
+    },
+    {
+     "text": "Roll it up and say nothing",
+     "effects": {
+      "luck": 1,
+      "flag": "w7fm_th",
+      "log": "You put it back. At dinner, you look at the old family silver differently."
+     }
+    },
+    {
+     "text": "Tell the whole family at dinner",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "w7fm_th",
+       "w7fm_th_told"
+      ],
+      "log": "Uproar, then laughter. A cousin immediately asks if there is a hidden stash."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_thief_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "A magistrate's clerk comes to the village with an old warrant for the Silk Rat, found in a flooded archive, stamped and never closed. The clerk is very new and very serious.",
+   "when": {
+    "age": [
+     20,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_thief_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "w7fm_th"
+    ]
+   },
+   "arc": "The Ancestor Who Stole",
+   "choices": [
+    {
+     "text": "Explain the Silk Rat died two hundred years ago",
+     "effects": {
+      "charm": 2,
+      "log": "The clerk takes notes, closes the warrant and asks for the Silk Rat's story for the archive."
+     }
+    },
+    {
+     "text": "Offer to pay the fine, out of honour",
+     "effects": {
+      "taels": -15,
+      "alignment": 3,
+      "fame": 1,
+      "log": "The two-hundred-year-old fine is 15 taels, with no interest. The clerk is moved."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_thief_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The new temple fund needs a donor's name on the stone. The village asks you, because of the long family history of giving. They mean the Silk Rat's half.",
+   "when": {
+    "age": [
+     20,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_thief_2"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "w7fm_th"
+    ]
+   },
+   "arc": "The Ancestor Who Stole",
+   "choices": [
+    {
+     "text": "Carve the Silk Rat's name",
+     "effects": {
+      "fame": 2,
+      "charm": 2,
+      "log": "The stone reads: Given by the Silk Rat, by way of descendants. Children rub the carved rat for luck."
+     }
+    },
+    {
+     "text": "Carve your own, and give generously",
+     "effects": {
+      "taels": -30,
+      "alignment": 3,
+      "log": "You give 30 taels. Your name goes on the stone, with a tiny rat beside it that the carver added unasked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_halfsib_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "A traveller named {npc} comes to your door, the same age as you, with the exact same nose, the same frown and a letter in an old hand you know from the family records.",
+   "npc": {
+    "role": "w7fm_hs",
+    "spawn": {
+     "role": "stranger",
+     "tag": "w7fm_hs",
+     "ageAbs": 40,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Stranger with Your Nose",
+   "choices": [
+    {
+     "text": "Read the letter",
+     "effects": {
+      "comprehension": 1,
+      "flag": "w7fm_hs_read",
+      "log": "It is a long-hidden story of the parent who raised you, and another family, far away. {npc} is a half-sibling.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    },
+    {
+     "text": "Close the door",
+     "effects": {
+      "alignment": -2,
+      "log": "{npc} sits on the step all afternoon, then goes. The nose stays with you all night.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    },
+    {
+     "text": "Invite {him} in for tea first",
+     "effects": {
+      "charm": 2,
+      "flag": "w7fm_hs_read",
+      "log": "You talk until dark before you read the letter. By then you do not really need to.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_halfsib_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}, your half-sibling, has stayed in town. You keep meeting by accident: the same noodle stall, the same bend in the river, the same way of shouting at chickens.",
+   "npc": {
+    "role": "w7fm_hs"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_halfsib_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "w7fm_hs_read"
+    ],
+    "npcFlags": [
+     "w7fm_halfsib_who"
+    ]
+   },
+   "arc": "The Stranger with Your Nose",
+   "choices": [
+    {
+     "text": "Ask {him} to the family New Year",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "luck": 1,
+      "log": "There is a long silence when {npc} walks in, then an aunt says: well, look at that nose. And everyone laughs.",
+      "npcFlag": "w7fm_halfsib_who"
+     },
+     "fail": {
+      "charm": -1,
+      "log": "The family is cool and polite. {npc} leaves early. But {he} comes back next year.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    },
+    {
+     "text": "Start a weekly meal, just the two of you",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "meals",
+       "w": 8,
+       "note": "shared a weekly meal with me, a stranger with the same nose"
+      },
+      "log": "Every seventh day. You learn about a whole other childhood, and the same frown on it.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_halfsib_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is ill, and has no one in this town but you. Your two families, the known one and the hidden one, meet for the first time at {his} bedside.",
+   "npc": {
+    "role": "w7fm_hs"
+   },
+   "when": {
+    "age": [
+     25,
+     90
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_halfsib_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "w7fm_halfsib_who"
+    ]
+   },
+   "arc": "The Stranger with Your Nose",
+   "choices": [
+    {
+     "text": "Introduce everyone, properly",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "There are many noses in the room. {npc} laughs at the sight, coughing, and gets better that spring.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    },
+    {
+     "text": "Sit with {him} through the night",
+     "effects": {
+      "health": -1,
+      "lifespan": 1,
+      "log": "You talk about the parent you shared, who you each knew differently. By dawn you know them better.",
+      "npcFlag": "w7fm_halfsib_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_shrine_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "The family shrine has fallen into disrepair. The roof leaks, mice nest behind the tablets, and the incense burner has been used for years as a flower pot.",
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "arc": "The Ancestral Tablets",
+   "choices": [
+    {
+     "text": "Repair it properly",
+     "effects": {
+      "taels": -40,
+      "alignment": 3,
+      "flag": "w7fm_sr",
+      "log": "The repairs cost 40 taels. The shrine is beautiful again, and the mice move next door."
+     }
+    },
+    {
+     "text": "Repair it yourself, badly",
+     "effects": {
+      "strength": 1,
+      "luck": 1,
+      "flag": "w7fm_sr",
+      "log": "The roof holds. Mostly. The tablets lean a little to the left now, like they are listening."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_shrine_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "That night you dream of a crowd of ancestors, all very old and all talking at once. One says the roof is still leaking. One complains about the flowers in the burner. One just wants to know if you are eating.",
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_shrine_1"
+    ],
+    "flags": [
+     "w7fm_sr"
+    ]
+   },
+   "arc": "The Ancestral Tablets",
+   "choices": [
+    {
+     "text": "Answer them all, politely",
+     "effects": {
+      "comprehension": 2,
+      "luck": 2,
+      "log": "You wake tired and smiling. Later, you find the leak exactly where the dream said."
+     }
+    },
+    {
+     "text": "Ask them a question of your own",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "qi": 6,
+      "log": "One old ancestor, a cultivator, answers with a breathing method nobody in the family has used in a century."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "They all answer at once and you understand nothing except: eat more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_shrine_3",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "The young ones of the family ask why you burn incense every New Year and talk to the tablets as if they could hear.",
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_shrine_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "w7fm_sr"
+    ]
+   },
+   "arc": "The Ancestral Tablets",
+   "choices": [
+    {
+     "text": "Tell them about the dream",
+     "effects": {
+      "charm": 2,
+      "log": "The young ones laugh, then quietly ask if the ancestors ever mentioned them."
+     }
+    },
+    {
+     "text": "Teach them the old names, one by one",
+     "effects": {
+      "alignment": 2,
+      "lifespan": 1,
+      "log": "It takes an afternoon. By the end, the tablets feel crowded again, in a good way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sibsecret_1",
+   "cat": "family",
+   "weight": 4,
+   "once": true,
+   "text": "Your sibling, {npc}, comes to you with a secret kept since you were children: the year you were very ill, {he} sold {his} prized horse to pay the physician, and told everyone it ran away.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "npcFlags": [
+     "blood"
+    ]
+   },
+   "arc": "What the Elder Knew",
+   "choices": [
+    {
+     "text": "Thank {him}",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "w7fm_ss",
+      "mem": {
+       "deed": "thanks",
+       "w": 8,
+       "note": "thanked me for the horse at last"
+      },
+      "log": "{npc} waves it off and then has to go and look at the garden for a while."
+     }
+    },
+    {
+     "text": "Ask why {he} never said",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "w7fm_ss",
+      "log": "'You would have felt you owed me,' says {npc}. 'You did. You do. Pay me in dumplings.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "w7fm_sibsecret_2",
+   "cat": "family",
+   "weight": 8,
+   "once": true,
+   "text": "You have tracked down a horse from the same line, bred by the same farm, sixty years on. It is a beautiful grey, and it costs 70 taels.",
+   "npc": {
+    "role": "sibling"
+   },
+   "when": {
+    "age": [
+     30,
+     1000000
+    ],
+    "notFlags": [
+     "in_prison"
+    ],
+    "after": [
+     "w7fm_sibsecret_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "blood",
+     "w7fm_ss"
+    ]
+   },
+   "arc": "What the Elder Knew",
+   "choices": [
+    {
+     "text": "Buy it for {npc}",
+     "effects": {
+      "taels": -70,
+      "alignment": 3,
+      "charm": 2,
+      "log": "You pay 70 taels. {npc} sees the horse and has to sit down on the mounting block."
+     }
+    },
+    {
+     "text": "Bring {npc} to the farm to see it",
+     "effects": {
+      "charm": 2,
+      "luck": 1,
+      "log": "{npc} strokes its nose for an hour and says: no, it should run. But {he} visits every month."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

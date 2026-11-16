@@ -1,0 +1,705 @@
+{
+ "events": [
+  {
+   "id": "dc_sg_mind_sealed_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "comprehension": 60
+    }
+   },
+   "text": "In the back room of a ruined pavilion, an old keeper shows you a scripture bound in iron thread. Its seal is a knot of characters that slide when you look at them. \"Three abbots went mad on that page,\" he says. \"You look like you could read it.\"",
+   "choices": [
+    {
+     "text": "Read the seal (Mind 100)",
+     "req": {
+      "stat": {
+       "comprehension": 100
+      }
+     },
+     "effects": {
+      "item": "manual_legend",
+      "comprehension": 2,
+      "flag": "sg_mind_sealed",
+      "log": "The characters stop sliding. They were never a lock, only a question, and you know the answer. The scripture opens like a door."
+     }
+    },
+    {
+     "text": "Study the outer pages (Mind 80)",
+     "req": {
+      "stat": {
+       "comprehension": 80
+      }
+     },
+     "effects": {
+      "comprehension": 3,
+      "artYears": 2,
+      "log": "You cannot open the seal, but the commentary in the margins is worth a year of any master."
+     }
+    },
+    {
+     "text": "Leave it to the keeper",
+     "effects": {
+      "alignment": 1,
+      "log": "\"Wise,\" says the keeper, and puts it back in the dark."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_mind_sealed_2",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "flags": [
+     "sg_mind_sealed"
+    ],
+    "after": [
+     "dc_sg_mind_sealed_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "text": "The keeper finds you a season later. \"The last page,\" he says. \"The one I did not show you. It names the abbots who went mad, and it names the one who sealed it. He is still alive.\"",
+   "choices": [
+    {
+     "text": "Copy the scripture for the pavilion",
+     "effects": {
+      "fame": 4,
+      "alignment": 3,
+      "log": "You copy it slowly, leaving out the seal. The keeper weeps a little, and the pavilion has a library again."
+     }
+    },
+    {
+     "text": "Burn the last page",
+     "effects": {
+      "comprehension": 1,
+      "alignment": -1,
+      "log": "Whoever sealed it can keep his name. The ash smells of old ink and something sweeter."
+     }
+    },
+    {
+     "text": "Seek the one who sealed it (Mind 100)",
+     "req": {
+      "stat": {
+       "comprehension": 100
+      }
+     },
+     "effects": {
+      "comprehension": 3,
+      "fame": 2,
+      "log": "You find him on a mountain, a hundred and nine years old, and he only wants to know if anyone could read it. You tell him you could. He laughs until he cries."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_mind_mirage_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "comprehension": 60
+    }
+   },
+   "text": "The road through the valley has turned back on itself three times. The same pine, the same broken shrine, the same crow. Somebody built a formation here, and you are walking in it.",
+   "choices": [
+    {
+     "text": "See through it (Mind 100)",
+     "req": {
+      "stat": {
+       "comprehension": 100
+      }
+     },
+     "effects": {
+      "item": "spirit_stone",
+      "luck": 1,
+      "log": "You stop looking at the pine and look at the gaps between things. The valley falls apart like wet paper, and behind it is the array master's cache."
+     }
+    },
+    {
+     "text": "Count the stones and walk the pattern (Mind 80)",
+     "req": {
+      "stat": {
+       "comprehension": 80
+      }
+     },
+     "effects": {
+      "comprehension": 1,
+      "log": "Left at the third stone, right at the fifth. You walk out at dusk, tired, and proud of it."
+     }
+    },
+    {
+     "text": "Force your way through",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 1,
+      "log": "You break the shrine that anchors it. The valley is only a valley again."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "log": "You walk for two days before a shepherd leads you out by the hand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_mind_illusion_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "comprehension": 60
+    }
+   },
+   "text": "A smiling woman in a grey robe sits at your table in the inn and pours two cups. \"Drink,\" she says, \"and tell me which of us is real.\" The innkeeper does not seem to see her at all.",
+   "choices": [
+    {
+     "text": "\"Neither of these cups is real.\" (Mind 100)",
+     "req": {
+      "stat": {
+       "comprehension": 100
+      }
+     },
+     "effects": {
+      "comprehension": 2,
+      "fame": 2,
+      "log": "She laughs, and the inn becomes a hillside and the cups become two leaves. \"Good,\" she says. \"My students never see it.\""
+     }
+    },
+    {
+     "text": "Watch her hands, not her face (Mind 60)",
+     "req": {
+      "stat": {
+       "comprehension": 60
+      }
+     },
+     "effects": {
+      "comprehension": 1,
+      "log": "Her left hand never moves. You do not drink, and when you look up she has gone, and so has your purse, almost."
+     }
+    },
+    {
+     "text": "Drink",
+     "effects": {
+      "health": -5,
+      "woundOnly": true,
+      "log": "You wake in the stable at noon, with a headache and no memory of a woman in grey."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_body_cart_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "strength": 60
+    }
+   },
+   "text": "A loaded salt cart has slid off the bridge and pinned a boy against the rail. Four men are pulling at it and getting nowhere. The boy has stopped crying, which is worse.",
+   "choices": [
+    {
+     "text": "Lift it alone (Body 100)",
+     "req": {
+      "stat": {
+       "strength": 100
+      }
+     },
+     "effects": {
+      "fame": 5,
+      "alignment": 4,
+      "flag": "sg_body_cart",
+      "log": "You get your shoulder under the axle and stand up. The cart goes with you. The boy walks away on his own legs."
+     }
+    },
+    {
+     "text": "Lift with the men (Body 80)",
+     "req": {
+      "stat": {
+       "strength": 80
+      }
+     },
+     "effects": {
+      "fame": 2,
+      "alignment": 3,
+      "log": "Five of you, then, on three. It moves just enough."
+     }
+    },
+    {
+     "text": "Run for a lever and rope",
+     "effects": {
+      "alignment": 2,
+      "log": "By the time you come back with the rope, someone has found a horse. The boy will limp, but he will live."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_body_cart_2",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "flags": [
+     "sg_body_cart"
+    ],
+    "after": [
+     "dc_sg_body_cart_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "text": "The salt merchant whose cart you lifted sends a man with a bolt of good cloth and an offer: his caravans need a guard, and the boy will not stop talking about you.",
+   "choices": [
+    {
+     "text": "Guard one caravan for him",
+     "effects": {
+      "taels": 60,
+      "strength": 1,
+      "log": "A month on the salt road. Nobody tries anything; word has gone ahead of you."
+     }
+    },
+    {
+     "text": "Take only the cloth",
+     "effects": {
+      "charm": 1,
+      "log": "The boy brings it himself, and asks you to show him how to stand like that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_body_blade_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "strength": 80
+    }
+   },
+   "text": "A smith in the hill town has made a blade he says will cut anything. He has been looking for a body to prove it on. \"Not a cut,\" he says. \"A tap. If your arm holds, the blade is a liar and I owe you a drink.\"",
+   "choices": [
+    {
+     "text": "Hold out your arm (Body 100)",
+     "req": {
+      "stat": {
+       "strength": 100
+      }
+     },
+     "effects": {
+      "fame": 4,
+      "strength": 1,
+      "log": "The edge rings on your forearm like a bell and leaves a white line. The smith stares at his blade, then at you, and buys tea for the whole street."
+     }
+    },
+    {
+     "text": "Buy the blade (Body 80)",
+     "req": {
+      "stat": {
+       "strength": 80
+      }
+     },
+     "effects": {
+      "taels": -40,
+      "strength": 1,
+      "log": "It is too heavy for most. In your hand it feels like it was made for you."
+     }
+    },
+    {
+     "text": "Offer a training post instead",
+     "effects": {
+      "log": "The blade goes through the post and the post behind it. You are glad you said no."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_charm_follow",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "charm": 100
+    }
+   },
+   "text": "Someone has been walking behind you since the last town, carrying a bundle and pretending not to. When you stop, they stop. Finally they come up and bow. \"I have nothing,\" they say, \"and I would rather have nothing near you than something anywhere else.\"",
+   "choices": [
+    {
+     "text": "Let them walk with you (Charm 100)",
+     "req": {
+      "stat": {
+       "charm": 100
+      }
+     },
+     "effects": {
+      "spawn": {
+       "role": "friend",
+       "opinion": 60,
+       "ageAbs": 20
+      },
+      "charm": 1,
+      "log": "They grin, shoulder the bundle, and fall in beside you. By evening they have found you a better inn than you would have."
+     }
+    },
+    {
+     "text": "Send them home with silver",
+     "effects": {
+      "taels": -10,
+      "alignment": 2,
+      "log": "They take the silver and go, looking back twice."
+     }
+    },
+    {
+     "text": "Tell them the road is no place for followers",
+     "effects": {
+      "log": "\"Then I will follow at a distance,\" they say. You do not see them again."
+     }
+    }
+   ],
+   "maxPerLife": 3,
+   "cooldown": 8
+  },
+  {
+   "id": "dc_sg_charm_crowd_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "charm": 60
+    }
+   },
+   "text": "In the market square two families are about to come to blows over a well. Someone in the crowd shouts your name, and everyone turns to see what you will say.",
+   "choices": [
+    {
+     "text": "Speak to both families (Charm 100)",
+     "req": {
+      "stat": {
+       "charm": 100
+      }
+     },
+     "effects": {
+      "fame": 5,
+      "alignment": 3,
+      "log": "By the end they are sharing the well and arguing about who will host the wedding."
+     }
+    },
+    {
+     "text": "Calm the elders first (Charm 80)",
+     "req": {
+      "stat": {
+       "charm": 80
+      }
+     },
+     "effects": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "The old men listen to you. The young men listen to the old men. It is enough for today."
+     }
+    },
+    {
+     "text": "Step back and let the magistrate deal with it",
+     "effects": {
+      "log": "The magistrate deals with it, slowly and expensively, for everyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_charm_defector_1",
+   "cat": "life",
+   "weight": 2,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "charm": 80
+    }
+   },
+   "text": "A young martial artist who serves a rival of yours finds you on the road. \"My master shouts,\" he says. \"You talk to people as if they mattered. Take me.\"",
+   "choices": [
+    {
+     "text": "Take him on (Charm 100)",
+     "req": {
+      "stat": {
+       "charm": 100
+      }
+     },
+     "effects": {
+      "spawn": {
+       "role": "friend",
+       "opinion": 55,
+       "ageAbs": 19,
+       "male": true
+      },
+      "fame": 2,
+      "log": "He bows three times and throws away his old master's sash. Word of it will travel."
+     }
+    },
+    {
+     "text": "Send him back with a kind word (Charm 80)",
+     "req": {
+      "stat": {
+       "charm": 80
+      }
+     },
+     "effects": {
+      "alignment": 3,
+      "charm": 1,
+      "log": "He goes back. You hear later that his master shouts a little less."
+     }
+    },
+    {
+     "text": "Refuse him",
+     "effects": {
+      "log": "He walks away with his shoulders up around his ears."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_luck_cave_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "luck": 80
+    }
+   },
+   "text": "A wild goat bolts across the path, you step aside, the ground gives, and you slide twenty feet into the dark. When your eyes adjust, you are sitting in someone's tomb, and the someone was rich.",
+   "choices": [
+    {
+     "text": "Search the tomb (Luck 100)",
+     "req": {
+      "stat": {
+       "luck": 100
+      }
+     },
+     "effects": {
+      "item": "spirit_stone",
+      "taels": 120,
+      "luck": 1,
+      "log": "Spirit stones, an old purse, and a jade token. The goat watches from the hole above, chewing."
+     }
+    },
+    {
+     "text": "Take a little (Luck 80)",
+     "req": {
+      "stat": {
+       "luck": 80
+      }
+     },
+     "effects": {
+      "taels": 40,
+      "log": "One purse. Enough. Some things should not be taken twice."
+     }
+    },
+    {
+     "text": "Bow to the dead and climb out",
+     "effects": {
+      "alignment": 2,
+      "item": "ginseng",
+      "log": "You leave it all where it lies. Climbing out, you find a ginseng root in the cliff, as if in thanks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_luck_dice_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "luck": 60
+    }
+   },
+   "text": "The ring-toss stall at the Canal Street fair has a jade carp on its top shelf that nobody has ever won. The keeper smiles at you. \"One ring, free, for a lucky face. Land it on the carp and the carp is yours.\"",
+   "choices": [
+    {
+     "text": "Throw, and trust heaven (Luck 100)",
+     "req": {
+      "stat": {
+       "luck": 100
+      }
+     },
+     "effects": {
+      "taels": 150,
+      "fame": 2,
+      "log": "The ring drops over the carp without touching the sides. The keeper's smile stays on his face long after the rest of him has stopped smiling. A jeweller buys the carp from you before you reach the end of the street."
+     }
+    },
+    {
+     "text": "Throw (Luck 80)",
+     "req": {
+      "stat": {
+       "luck": 80
+      }
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "taels": 60,
+      "log": "The ring rattles round the carp and settles. You sell it to the next stall for a fair price and leave before the keeper can think of a rule."
+     },
+     "fail": {
+      "log": "The ring bounces off the shelf. It cost you nothing, and the keeper laughs with you."
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "log": "\"Nobody walks past my carp,\" the keeper says. You do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sg_luck_master_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000000
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "stat": {
+     "luck": 100
+    }
+   },
+   "text": "Under a dead tree on the old road, a dying man in a patched robe looks up at you as if you are the one he has been waiting for. \"Seventy years,\" he says, \"and the first person to pass is you. Lucky. Come closer.\"",
+   "choices": [
+    {
+     "text": "Kneel beside him (Luck 100)",
+     "req": {
+      "stat": {
+       "luck": 100
+      }
+     },
+     "effects": {
+      "qi": 25,
+      "artYears": 3,
+      "log": "He puts his palm on your forehead. Seventy years of something warm go into you, and then he is only an old man asleep under a tree. You bury him there."
+     }
+    },
+    {
+     "text": "Give him water and stay",
+     "effects": {
+      "alignment": 3,
+      "log": "He drinks, tells you a joke about a monk and a donkey, and dies laughing. You bury him under the tree."
+     }
+    },
+    {
+     "text": "Fetch a physician",
+     "effects": {
+      "alignment": 1,
+      "log": "By the time you come back with the physician, the tree is alone."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

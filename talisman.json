@@ -1,0 +1,482 @@
+{
+ "events": [
+  {
+   "id": "tal_js_torn_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A wind comes down off the hills in the night and tears the talisman from one of your jiangshi. By the time you wake, its coffin is empty and a line of small, even footprints leads away toward the village. Somewhere a dog will not stop barking.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Follow the footprints with a fresh talisman",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "log": "You catch it at the edge of the village, arms out, facing a shuttered door. The new talisman goes on with a slap, and it stands as still as a gatepost until your bell calls it home.",
+      "tally": {
+       "infamy": 1
+      }
+     },
+     "fail": {
+      "log": "The footprints end at the river. Whatever it was, it is in the hills now, and it does not answer your bell. The village tells the story for years.",
+      "flag": "talx_js_lost",
+      "tally": {
+       "infamy": 4
+      }
+     }
+    },
+    {
+     "text": "Ring the bell from the doorway and wait",
+     "effects": {
+      "log": "You ring until your arm aches. Near dawn something hops back out of the mist and climbs into its coffin, as if nothing had happened. The dog has stopped barking. You do not ask why.",
+      "health": -3,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "log": "You lie back down and listen to the bell around its ankle go fainter and fainter. In the morning the village has hung peachwood over every door.",
+      "flag": "talx_js_lost",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi",
+   "cooldown": 6
+  },
+  {
+   "id": "tal_js_priest_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A Taoist priest in a faded yellow robe stands at your gate with a peachwood sword in one hand and a bronze mirror in the other. \"You keep the dead from their rest,\" the priest says, quite calmly. \"Give them to me, or I will take them.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Fight the priest",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Taoist priest"
+     },
+     "ok": {
+      "log": "The peachwood sword is sharper than wood should be, but you are sharper. The priest limps away down the road and does not look back. The story that follows the priest is about you.",
+      "fame": 3,
+      "tally": {
+       "infamy": 4
+      },
+      "alignment": -2
+     },
+     "fail": {
+      "log": "The mirror catches the light and your jiangshi go stiff. The priest walks among them pasting new talismans of their own, and leads one away down the road, ringing a smaller bell.",
+      "flag": "talx_js_lost",
+      "health": -15
+     }
+    },
+    {
+     "text": "Give them all up",
+     "effects": {
+      "log": "The priest bows to you, which you did not expect, and leads them away in a line toward the old graveyard. Your house is very quiet afterwards, and warmer.",
+      "flag": [
+       "talx_js_all_lost",
+       "hd_calm"
+      ],
+      "alignment": 5
+     }
+    },
+    {
+     "text": "Offer 200 taels for the priest's silence",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "log": "The priest looks at the silver for a long time, then takes it \"for the temple roof\" and leaves. You are not sure who has bought whom.",
+      "taels": -200,
+      "tally": {
+       "infamy": 1
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi",
+   "cooldown": 8
+  },
+  {
+   "id": "tal_js_mother_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An old woman stops you on the road and will not let go of your sleeve. She is looking past you, at the stiff figure in an old travelling robe behind you. \"That is my son,\" she says. \"He went south to sell salt twenty years ago. Give him back to me so I can bury him.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Give him back to her",
+     "effects": {
+      "log": "You take the talisman from his forehead, and he lies down at her feet like a man very tired from a long road. She thanks you. You help her dig.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Pull your sleeve free and walk on",
+     "effects": {
+      "log": "She calls after you for a long time. Behind you the bell rings in step, and her son does not turn his head.",
+      "flag": "hd_feed",
+      "alignment": -5,
+      "tally": {
+       "infamy": 2
+      }
+     }
+    },
+    {
+     "text": "Promise to bring him back one day",
+     "effects": {
+      "log": "She lets go of your sleeve. You do not know if you meant it. Neither, from her face, does she.",
+      "alignment": -1,
+      "comprehension": 1
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "tal_js_red_moon_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The moon comes up red over the hills, and all night your jiangshi strain against their talismans like dogs on short ropes. The paper on their foreheads trembles. Something out there is calling them, and it is not your bell.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Renew every talisman with your own qi",
+     "effects": {
+      "log": "You go from coffin to coffin until dawn, pressing your palm to each forehead. By the time the moon sets you are grey-faced and cold, but they are yours again.",
+      "qi": -15,
+      "health": -5,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Seal the coffins with rice and a bell",
+     "effects": {
+      "log": "Raw rice along every lid, a bell on every lock. The rattling goes on until morning, but nothing gets out.",
+      "luck": 1,
+      "health": -2
+     }
+    },
+    {
+     "text": "Let them hop under the red moon",
+     "effects": {
+      "log": "You open the doors and walk behind them through three sleeping villages, bell in hand. By morning half the province is telling the story, and they are telling it about you.",
+      "fame": 4,
+      "tally": {
+       "infamy": 5
+      },
+      "flag": "hd_feed"
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "tal_paper_maker_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "High in the hills you find a paper-maker's yard: vats of soaking bark, sheets drying on bamboo frames, and an old woman who looks at your ink-stained fingers and laughs. \"Talismans,\" she says. \"Then you need my paper, not the rubbish they sell in town.\"",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "craft_talisman_1"
+    ]
+   },
+   "arc": "The Talisman Master",
+   "choices": [
+    {
+     "text": "Buy her whole stock for 60 taels",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "log": "She wraps it in oilcloth and tells you to keep it dry. It is the best paper you have ever written on.",
+      "taels": -60,
+      "item": {
+       "talisman_paper": 6
+      }
+     }
+    },
+    {
+     "text": "Help her mend the vats",
+     "effects": {
+      "log": "A season of bark and cold water. When you leave she gives you a bundle of paper and a lump of cinnabar \"for the work, not the company.\"",
+      "item": {
+       "talisman_paper": 3,
+       "cinnabar": 1
+      },
+      "strength": 1
+     }
+    },
+    {
+     "text": "Ask how the paper is made",
+     "effects": {
+      "log": "She shows you every step and does not leave one out. Your own paper is better after that.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "tal_grotto_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Following a trickle of water up a ravine, you find a grotto sealed with a stone door and an old paper talisman, so faded you can barely read it. The script is better than anything you have ever written.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_talisman_2"
+    ]
+   },
+   "arc": "The Talisman Master",
+   "choices": [
+    {
+     "text": "Break the seal and go in",
+     "roll": {
+      "stat": "luck",
+      "dc": 35
+     },
+     "ok": {
+      "log": "Inside is a hermit's bed, a dry inkstone and a stack of green paper thin as a breath. Whoever lived here left long ago, and left this for whoever could read the door.",
+      "item": {
+       "cave_paper": 2
+      }
+     },
+     "fail": {
+      "log": "The seal bursts in your face with a crack like a firework. You wake at the bottom of the ravine with singed eyebrows. The door is still shut.",
+      "health": -12
+     }
+    },
+    {
+     "text": "Copy the seal's script and leave it whole",
+     "effects": {
+      "log": "You sit before the door until dusk, copying every stroke. Some of them you understand only years later.",
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Leave it alone",
+     "effects": {
+      "log": "Some doors are shut for a reason. You bow to it and go back down the ravine.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "tal_corpse_road_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A family from a far province finds you through a talisman shop. Their father died on the road three hundred li from home, and the old custom says he must be walked back, by night, with a bell. \"They say you know the old way,\" the eldest says.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_talisman_2"
+    ]
+   },
+   "arc": "The Talisman Master",
+   "choices": [
+    {
+     "text": "Walk him home by the night roads",
+     "effects": {
+      "log": "Forty nights of bells and lanterns, sleeping in corpse inns by day. At the end of the road his family is waiting at the gate, and his widow touches his sleeve and says his name.",
+      "fame": 3,
+      "alignment": 4,
+      "health": -4,
+      "flag": "talx_rep",
+      "taels": 80
+     }
+    },
+    {
+     "text": "Write them a guiding talisman instead",
+     "effects": {
+      "log": "You write a talisman for the coffin and the road. They thank you, and go. You hope it is enough.",
+      "taels": 30,
+      "flag": "talx_rep"
+     }
+    },
+    {
+     "text": "Turn them away",
+     "effects": {
+      "log": "They look at each other and go out without another word. Somebody else will walk him home, or nobody will.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "tal_haunted_village_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The headman of a village in the marshes walks two days to find you. Every night something knocks at their doors and calls the villagers by name in the voices of their dead. Nobody has opened a door yet. Nobody knows how long that will last.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_talisman_3"
+    ]
+   },
+   "arc": "The Talisman Master",
+   "choices": [
+    {
+     "text": "Write wards for every door",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You write until your wrist is numb and paste a ward on every doorpost. That night the knocking comes once, stops, and does not come again. The village sends you a cartload of rice and a name.",
+      "fame": 4,
+      "flag": "talx_rep",
+      "taels": 60
+     },
+     "fail": {
+      "log": "The wards hold most of the doors. At one house the knocking goes on all night, and in the morning the family moves away. The headman pays you anyway, without looking at you.",
+      "taels": 20,
+      "luck": -1
+     }
+    },
+    {
+     "text": "Sit up one night and listen",
+     "effects": {
+      "log": "The voice at the door is an old fisherman's, asking for his net. You give it to him, burned, with a prayer. The knocking stops.",
+      "alignment": 3,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Tell the headman to ask a temple",
+     "effects": {
+      "log": "He goes, and does not come back to you. You hear later that the temple was too far, and the village is empty now.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "tal_magistrate_gate_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The county magistrate sends a sedan chair for you. A plague of bad luck has fallen on the city: fires, drowned children, a bridge come down. \"The people say the city gate was built facing the wrong way,\" the magistrate says. \"I cannot move a gate. Can you move its luck?\"",
+   "when": {
+    "age": [
+     20,
+     1000000
+    ],
+    "flags": [
+     "craft_talisman_known",
+     "craft_talisman_3"
+    ]
+   },
+   "arc": "The Talisman Master",
+   "choices": [
+    {
+     "text": "Write a great talisman for the gate",
+     "effects": {
+      "log": "Three days of fasting, a brush as long as your arm, a sheet of paper the size of a door. The city watches from the walls. The fires stop that winter, and nobody can prove why.",
+      "fame": 6,
+      "taels": 300,
+      "flag": "talx_rep"
+     }
+    },
+    {
+     "text": "Tell the magistrate the truth: the bridge was badly built",
+     "effects": {
+      "log": "The magistrate is silent for a long time, then pays you for your honesty and sends for a new builder.",
+      "taels": 80,
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Decline the commission",
+     "effects": {
+      "log": "The sedan chair goes back empty. Next month another talisman master hangs a great sheet on the gate, and takes the fame.",
+      "luck": 1
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,926 @@
+{
+ "events": [
+  {
+   "id": "a2u_js_drift",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A gale off the sea of cloud lifts one of your Hollow Immortals clean off its sunken isle. It drifts away above the cloud, arms out, the talisman fluttering on its brow like a moth.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "jiangshi_master"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Fly after it with a fresh talisman",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "log": "You catch it above a faction's garden party and slap the new talisman on before anyone looks up.",
+      "tally": {
+       "infamy": 1
+      }
+     },
+     "fail": {
+      "log": "It drifts into a bank of mist and does not come out. A week later an isle reports a ghost.",
+      "flag": "talx_js_lost",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Ring the bell from the shore",
+     "effects": {
+      "log": "You ring until the wind drops. Near dawn it comes drifting back like a kite with its string cut, and settles in its place.",
+      "health": -4,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Let the wind have it",
+     "effects": {
+      "log": "You let it go. The isles below will tell the story of the drifting dead man for a century.",
+      "flag": "talx_js_lost",
+      "tally": {
+       "infamy": 2
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2u_js_warden",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A warden of the Jade Court has found your sunken isle, and stands among your Hollow Immortals with a seal of the Court in hand. \"These were immortals,\" the warden says. \"They are owed a burial.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "jiangshi_master"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Drive the warden off",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Jade Court warden"
+     },
+     "ok": {
+      "log": "The warden goes, with a bruise and a report. The isles learn your name in a new way.",
+      "fame": 3,
+      "tally": {
+       "infamy": 4
+      },
+      "alignment": -2
+     },
+     "fail": {
+      "log": "The warden's seal falls on the nearest Hollow Immortal and it lies down for good. The warden takes it home to be buried.",
+      "flag": "talx_js_lost",
+      "health": -12
+     }
+    },
+    {
+     "text": "Give the warden one to bury",
+     "effects": {
+      "log": "The warden bows, which you did not expect, and carries one of them home on their own skiff.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Tell the warden whose they were",
+     "effects": {
+      "log": "You tell the warden every name you know. The warden writes them down, and leaves the rest of them to you, for now.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2u_js_rogue",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your bell rings once in the night, by itself. On the sunken isle one coffin is empty, and far out over the sea of cloud something pale is flying against the wind.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "js_rogue_out"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Hunt it across the clouds",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Flying Corpse"
+     },
+     "ok": {
+      "log": "You catch it above an empty isle. It is a long fight in the thin air, and at the end there is only an old robe falling through the cloud.",
+      "flag": "talx_rogue_slain",
+      "unflag": "js_rogue_out",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "It turns on you in the dark and throws you into the cloud. When you climb back up, the sky is empty.",
+      "health": -25,
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Ring it back",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "log": "You ring the old rhythm until the bell is hot. At dawn it comes back down out of the sky and lies in its coffin with its eyes open.",
+      "flag": "talx_rogue_back",
+      "unflag": "js_rogue_out",
+      "health": -5
+     },
+     "fail": {
+      "log": "It hears the bell and keeps flying. By morning it is a story on three isles.",
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "log": "You put the bell away. Over the next season, isle after isle reports something pale passing in the night.",
+      "flag": "gp_rogue_free",
+      "unflag": "js_rogue_out",
+      "alignment": -6,
+      "tally": {
+       "infamy": 4
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi_rogue"
+  },
+  {
+   "id": "a2g_js_prayer",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A dead domain's last world has started praying again, to the husk of its old god that stands at your bell. The husk has turned its face toward the sound.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "jiangshi_master",
+     "divine_realm"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Let the husk hear one prayer",
+     "effects": {
+      "log": "You let it listen. Nothing comes back into its eyes, but the world below has rain that season, and you cannot say why.",
+      "alignment": 3,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Stop the prayers reaching it",
+     "effects": {
+      "log": "You fold the prayers away. The husk turns back to your bell, and the world below goes on asking.",
+      "tally": {
+       "infamy": 1
+      }
+     }
+    },
+    {
+     "text": "Lay the husk to rest for that world's sake",
+     "effects": {
+      "log": "You take the talisman from its brow. The world below dreams of its god one last time, and wakes comforted.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2g_js_claimant",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A young god has come to your dead domains to reclaim the husk of their mother. They stand at the edge with their hands empty, which is braver than standing armed.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "jiangshi_master",
+     "divine_realm"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Give the husk back",
+     "effects": {
+      "log": "The young god carries the husk away between the stars. Later a small offering arrives at your altar with no name on it.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 5
+     }
+    },
+    {
+     "text": "Refuse, and make them leave",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The grieving god"
+     },
+     "ok": {
+      "log": "They leave. The pantheons hear how, and think a little less of you.",
+      "tally": {
+       "infamy": 4
+      },
+      "alignment": -4,
+      "flag": "hd_feed"
+     },
+     "fail": {
+      "log": "Grief is stronger than you thought. They take the husk anyway.",
+      "flag": "talx_js_lost",
+      "health": -12
+     }
+    },
+    {
+     "text": "Let them sit with it for an age first",
+     "effects": {
+      "log": "They sit with the husk for an age, then go, and leave it at your bell. It is not clear to either of you why.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2g_js_rogue",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "The Bell rings once by itself. One husk has walked out of your dead domains, and the domains it passes are going dark, one by one, like lamps.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "js_rogue_out",
+     "divine_realm"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Hunt it between the stars",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Flying Husk"
+     },
+     "ok": {
+      "log": "You find it at the edge of a living domain. When it is over, there is only a little dust that used to be a god.",
+      "flag": "talx_rogue_slain",
+      "unflag": "js_rogue_out",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "It is still more of a god than you thought. You wake at your own border, and the husk is gone.",
+      "health": -25,
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Call it home",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 75
+     },
+     "ok": {
+      "log": "You ring the Bell for an age. The husk comes back, and the dark domains light again behind it.",
+      "flag": "talx_rogue_back",
+      "unflag": "js_rogue_out",
+      "health": -5
+     },
+     "fail": {
+      "log": "It does not turn. The pantheons start asking whose it was.",
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Let it walk",
+     "effects": {
+      "log": "You let it go. For an age the pantheons speak of a dead god walking, and look at you when they say it.",
+      "flag": "gp_rogue_free",
+      "unflag": "js_rogue_out",
+      "alignment": -6,
+      "tally": {
+       "infamy": 4
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi_rogue"
+  },
+  {
+   "id": "a2p_js_fair",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "The spring fair has come to the town below your graveyard, with drums. All night your Walkers turn their heads toward the drums and sway.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master",
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Hold them with the bell until dawn",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "log": "You ring the bell in time against the drums until the fair goes to bed. Not one of them stirs.",
+      "comprehension": 1,
+      "health": -3
+     },
+     "fail": {
+      "log": "One of them hops down the hill toward the drums. The fair ends early, with screaming and then laughter, and one Walker fewer.",
+      "flag": "talx_js_lost",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Walk them down to the fair",
+     "effects": {
+      "log": "You walk behind them through the stalls with your bell. The children think it is a show. The parents know better.",
+      "fame": 3,
+      "tally": {
+       "infamy": 4
+      },
+      "flag": "hd_feed"
+     }
+    },
+    {
+     "text": "Bury the oldest one before it wanders",
+     "effects": {
+      "log": "You lay the oldest to rest under the hawthorn. The others stand quieter afterwards.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 3
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2p_js_priest",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A hedge priest of this world has come to your graveyard with salt and a bundle of rowan. \"These are our dead,\" the priest says. \"This world buries its own.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master",
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Run the priest off",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The hedge priest"
+     },
+     "ok": {
+      "log": "The priest goes down the hill with the rowan broken. The villages talk about you now.",
+      "fame": 2,
+      "tally": {
+       "infamy": 4
+      },
+      "alignment": -2
+     },
+     "fail": {
+      "log": "The salt goes down, and one Walker lies down with it. The priest takes it home to its family.",
+      "flag": "talx_js_lost",
+      "health": -10
+     }
+    },
+    {
+     "text": "Give the priest one to bury",
+     "effects": {
+      "log": "The priest bows and leads one away by the hand, slowly, like a grandparent.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Pay for the priest's silence",
+     "effects": {
+      "log": "The priest takes the coins for the chapel roof, and does not come back.",
+      "taels": -80,
+      "alignment": -1
+     },
+     "req": {
+      "minTaels": 80
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2p_js_rogue",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your bell rings in the night, once, by itself. The strongest of your Walkers is gone, and its footprints lead down to the river road, where the carters sleep.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "js_rogue_out",
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Run it down before the carters wake",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Flying Walker"
+     },
+     "ok": {
+      "log": "You catch it at the ford. When it is over there is an old coat in the water and nothing else.",
+      "flag": "talx_rogue_slain",
+      "unflag": "js_rogue_out",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "It knocks you into the ford and is gone downriver before you are on your feet.",
+      "health": -25,
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Ring it home",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "It comes back up the hill at dawn, muddy to the knees, and lies down where it belongs.",
+      "flag": "talx_rogue_back",
+      "unflag": "js_rogue_out",
+      "health": -5
+     },
+     "fail": {
+      "log": "The bell is not enough. By market day the whole valley has heard.",
+      "unflag": "js_rogue_out",
+      "flag": "gp_rogue_free",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    },
+    {
+     "text": "Let it go down the river road",
+     "effects": {
+      "log": "You put the bell away. All summer the river villages bar their doors at dusk.",
+      "flag": "gp_rogue_free",
+      "unflag": "js_rogue_out",
+      "alignment": -6,
+      "tally": {
+       "infamy": 4
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi_rogue"
+  },
+  {
+   "id": "a2u_js_thunder",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A tribulation storm passes over your sunken isle, meant for someone else. Every Hollow Immortal lifts its face to the lightning, as if it remembered.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "jiangshi_master"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Stand among them until it passes",
+     "effects": {
+      "log": "You stand in the rain with your dead. Nothing comes back into their eyes, but they are quieter after.",
+      "comprehension": 1,
+      "health": -3
+     }
+    },
+    {
+     "text": "Let the lightning take one that asks for it",
+     "effects": {
+      "log": "One of them walks out into the storm. When it clears, there is only a scorched talisman on the stone.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Ring the bell over the thunder",
+     "effects": {
+      "log": "You ring until the storm moves on. They are yours, and stiller than before.",
+      "tally": {
+       "infamy": 1
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2u_js_collector",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A collector of curiosities from the Lantern Guild offers you a purse of stones for one Hollow Immortal, to stand in the hall of a minister's house.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "jiangshi_master"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Sell one",
+     "effects": {
+      "log": "It goes away in a crate of cloud-silk. You hear later it frightens the minister's guests very well.",
+      "flag": "talx_js_lost",
+      "item": {
+       "spirit_stone": 6
+      },
+      "alignment": -3
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "log": "The collector bows and goes. The isles hear that your dead are not for sale.",
+      "fame": 1
+     }
+    },
+    {
+     "text": "Show the collector what they really are",
+     "effects": {
+      "log": "The collector leaves faster than the crate would have, and tells nobody.",
+      "tally": {
+       "infamy": 2
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2g_js_forgotten",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "One husk has begun to glow faintly at dusk. Somewhere a single mortal still remembers the god it was.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "jiangshi_master",
+     "divine_realm"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Find the mortal and let them see it",
+     "effects": {
+      "log": "The mortal weeps, and the husk lies down at last, as if it had been waiting for exactly that.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Let the glow fade on its own",
+     "effects": {
+      "log": "In a season the mortal dies, and the glow goes out. The husk is yours again.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Feed on the memory",
+     "effects": {
+      "log": "You take the last memory of that god for yourself. The husk goes dark at once.",
+      "flag": "hd_feed",
+      "alignment": -4,
+      "tally": {
+       "infamy": 2
+      }
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2g_js_tithe",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A pantheon sends a tithe-collector to count your husks. \"Dead gods are still gods,\" the collector says. \"Their worlds are owed to someone.\"",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "jiangshi_master",
+     "divine_realm"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Pay the tithe from your own domains",
+     "effects": {
+      "log": "One of your domains goes a little quieter for an age. The collector goes away satisfied.",
+      "tally": {
+       "god_faith": -3
+      },
+      "luck": -1,
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Send the collector away",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The tithe-collector"
+     },
+     "ok": {
+      "log": "The collector goes, and the pantheon writes your name down.",
+      "tally": {
+       "infamy": 3
+      },
+      "fame": 2
+     },
+     "fail": {
+      "log": "The collector takes a husk instead of faith.",
+      "flag": "talx_js_lost",
+      "health": -10
+     }
+    },
+    {
+     "text": "Give the collector a husk",
+     "effects": {
+      "log": "The collector takes one away to its pantheon's vaults.",
+      "flag": "talx_js_lost",
+      "alignment": 1
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2p_js_harvest",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "At harvest the farmers of the valley ask, politely and very nervously, whether your Walkers could carry sheaves at night.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master",
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Lend them for the harvest",
+     "effects": {
+      "log": "The Walkers carry sheaves all night. The harvest is in before the rain, and nobody talks about how.",
+      "taels": 60,
+      "tally": {
+       "infamy": 1
+      }
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "log": "The farmers thank you, relieved, and get the harvest in by themselves.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Lay one to rest under the harvest moon",
+     "effects": {
+      "log": "You bury the oldest in the corner of the barley field. The farmers leave it a sheaf.",
+      "flag": [
+       "talx_js_rest",
+       "hd_calm"
+      ],
+      "alignment": 3
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  },
+  {
+   "id": "a2p_js_children",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Village children have started daring each other to touch your Walkers' talismans. Last night one of them nearly did.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "jiangshi_master",
+     "pw_life"
+    ]
+   },
+   "arc": "The Jiangshi Path",
+   "choices": [
+    {
+     "text": "Put a fence and a bell around the graveyard",
+     "effects": {
+      "log": "The fence goes up, and the dares move on to the old mill.",
+      "taels": -30,
+      "luck": 1
+     },
+     "req": {
+      "minTaels": 30
+     }
+    },
+    {
+     "text": "Scare them off yourself, once and well",
+     "effects": {
+      "log": "The children run. The village mothers are grateful and do not say so.",
+      "tally": {
+       "infamy": 1
+      }
+     }
+    },
+    {
+     "text": "Let one of the children ring your bell",
+     "effects": {
+      "log": "The Walkers turn their heads together at the child's ring. The child goes home pale and proud, and the dares stop.",
+      "fame": 1,
+      "comprehension": 1
+     }
+    }
+   ],
+   "trigger": "jiangshi"
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

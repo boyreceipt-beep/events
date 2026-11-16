@@ -1,0 +1,942 @@
+{
+ "events": [
+  {
+   "id": "sst_false_grade_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A stone seller at the crossroads has a tray of clear, glowing stones he swears are Mid-Grade, and a price that is half what the Exchange asks. \"From a sect that fell,\" he whispers. \"They need silver more than stones.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_trader"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Hold one to the light and feel its qi",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Under your thumb the glow is paint and the qi is a Low stone's, polished up. You say so, loudly. The crowd that gathers is not on the seller's side, and he leaves town by noon.",
+      "fame": 3,
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You cannot tell. You decide not to buy, which is the right answer for the wrong reason.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Buy three for 150 taels",
+     "req": {
+      "minTaels": 150
+     },
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "log": "Two of them are fakes. The third, against every expectation, is real, and of better grade than you paid for. (150 taels)",
+      "taels": -150,
+      "flag": "sstx_mine_grade"
+     },
+     "fail": {
+      "log": "At the Exchange the appraiser scrapes one with a fingernail and the glow comes off on it. (150 taels, for three painted pebbles)",
+      "taels": -150,
+      "luck": -1
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "log": "Half the Exchange's price is never half the Exchange's price. You walk on.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 8
+  },
+  {
+   "id": "sst_appraiser_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, an old appraiser at the Stone Exchange, watches you weigh stones in your palm, and clicks {his} tongue. \"You weigh with your hand,\" {he} says. \"Weigh with your meridians. Here, give me your wrist.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_trader"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Give {him} your wrist",
+     "effects": {
+      "log": "For an afternoon {he} puts stone after stone in your palm and makes you name its grade with your eyes shut. By evening you can feel a Mid stone's qi from across a table.",
+      "comprehension": 3,
+      "artYears": 0.4,
+      "mem": {
+       "deed": "sst_appraiser",
+       "w": 20,
+       "note": "taught you to weigh stones by qi"
+      }
+     }
+    },
+    {
+     "text": "Thank {him} and keep your wrist",
+     "effects": {
+      "log": "{He} shrugs. \"Then keep being cheated,\" {he} says, quite kindly, and goes back to {his} scales.",
+      "charm": 1
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "sst_appraiser",
+     "ageAbs": 74,
+     "male": false,
+     "opinion": 25
+    }
+   }
+  },
+  {
+   "id": "sst_array_thieves_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "In the morning there are fresh holes along the boundary of your defence array, each one exactly where a stone was buried. Somebody knew where to dig. A muddy footprint leads toward the river.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_defended"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Follow the footprints",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You catch them at the ferry with sacks over their shoulders: two diggers who once worked your boundary. You take the stones back and let the diggers keep their lives.",
+      "fame": 2,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "The ferry is already halfway across. You stand on the bank and watch your stones go to the other province.",
+      "flag": "sstx_def_crack"
+     }
+    },
+    {
+     "text": "Re-lay the boundary from what is left",
+     "effects": {
+      "log": "You shift the remaining stones to close the gaps. The array holds, thinner than before.",
+      "flag": "sstx_def_crack",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Set a puppet or a watchman on the boundary",
+     "req": {
+      "minTaels": 30
+     },
+     "effects": {
+      "log": "You pay a watchman 30 taels a season to walk the boundary at night. Nobody digs there again.",
+      "taels": -30,
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 8
+  },
+  {
+   "id": "sst_storm_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A summer storm sits over your house all night, and toward dawn the lightning starts to fall on the boundary of your defence array, again and again, as if the sky has taken offence at it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_defended"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Stand in the array and hold it together",
+     "roll": {
+      "stat": "arrays",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You feel every stroke run through the stones and into the ground, and you guide each one down. At dawn the array is humming like a struck bell, stronger than before.",
+      "comprehension": 3,
+      "artYears": 0.5
+     },
+     "fail": {
+      "log": "The ninth stroke is too much. Three stones burst like roasted chestnuts, and the array goes thin and tired.",
+      "flag": "sstx_def_crack",
+      "health": -8
+     }
+    },
+    {
+     "text": "Take shelter and let it take the strikes",
+     "effects": {
+      "log": "You sit in the cellar and listen. In the morning the array is scorched but standing, and so is the house.",
+      "flag": "sstx_def_crack",
+      "health": 2
+     }
+    }
+   ],
+   "cooldown": 12
+  },
+  {
+   "id": "sst_tribute_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Envoys of a small sect in the hills come to your gate with a lacquered box of spirit stones. \"Our gate is weak and our neighbours are not,\" the eldest says. \"We ask only that it is known we are under your eye.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "realm": [
+     4,
+     10
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Accept the stones and the duty",
+     "effects": {
+      "log": "You accept. That autumn a neighbouring sect thinks better of a raid when it hears whose eye is on the hills. The stones are of your own grade, and fine ones.",
+      "flag": "sstx_mine_grade",
+      "fame": 3
+     }
+    },
+    {
+     "text": "Accept the stones and forget the duty",
+     "effects": {
+      "log": "You take the box and think no more about it. Two winters later the sect is burned out, and the survivors say your name in a way you do not like.",
+      "flag": [
+       "sstx_mine_grade",
+       "sstx_greed"
+      ],
+      "alignment": -6,
+      "tally": {
+       "infamy": 2
+      }
+     }
+    },
+    {
+     "text": "Refuse the stones and watch over them anyway",
+     "effects": {
+      "log": "You send the box back unopened, with a letter. The sect paints your name on a board above its gate.",
+      "alignment": 4,
+      "fame": 2
+     }
+    }
+   ],
+   "cooldown": 15
+  },
+  {
+   "id": "sst_charged_child_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A neighbour's child has climbed your wall and is sitting in the middle of the ring of stones you charged for your next gate, delighted, glowing faintly, with no idea what is happening to the qi in the ring.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_charged"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Lift the child out at once",
+     "effects": {
+      "log": "You lift the child out and the ring collapses with a sigh, its charge spent on a small, very surprised, very healthy child. You will lay it again.",
+      "flag": "sstx_charge_lost",
+      "alignment": 3,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Draw the qi back into the stones first",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "log": "Slowly, thread by thread, you pull the qi out of the child and back into the stones, and lift the child out of an array still charged. Your hands shake for an hour afterwards.",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The qi will not come back. You lift the child out of a dead ring, and the child's mother, who has seen everything from the wall, never quite trusts you again.",
+      "flag": "sstx_charge_lost",
+      "charm": -1
+     }
+    }
+   ],
+   "cooldown": 20
+  },
+  {
+   "id": "sst_temple_vein_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Repairing the foundations of a mountain temple, the monks have broken into a seam of spirit stones that glows through the floor of the meditation hall. The abbot asks your advice: they do not know what it is worth.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Tell them the truth and what it is worth",
+     "effects": {
+      "log": "You tell them. The abbot thinks for a long time and decides to leave it in the ground. \"We have enough,\" he says. You come away with a great deal to think about.",
+      "alignment": 4,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Offer to take the stones off their hands",
+     "effects": {
+      "log": "You tell them it is a nuisance seam, worth little, and kindly carry the worst of it away. It is not worth little. You know it all the way home.",
+      "flag": [
+       "sstx_mine_grade",
+       "sstx_greed"
+      ],
+      "alignment": -5
+     }
+    },
+    {
+     "text": "Help them seal the floor again",
+     "effects": {
+      "log": "You lay a quiet array over the seam so the glow will not draw thieves, and the monks feed you for a week.",
+      "health": 5,
+      "artYears": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "id": "sst_mine_envoys_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Three envoys of a great sect arrive at your Spirit Stone Mine with a scroll of demands: a tenth of every year's stones, \"for the protection of the road\". The road has never needed protecting before they arrived.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "biz_mine"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Refuse them to their faces",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The sect envoys"
+     },
+     "ok": {
+      "log": "They draw. You do not let them finish drawing. They go back to their sect with the scroll in pieces and a story that makes the next envoys very polite.",
+      "fame": 5
+     },
+     "fail": {
+      "log": "They are stronger than envoys have any right to be. You wake on the gully floor, and the scroll is pinned to the mine door with a knife.",
+      "health": -18
+     }
+    },
+    {
+     "text": "Pay them 300 taels and keep the stones",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "log": "Silver they understand. They take it and go, and come back next year, smiling. (300 taels)",
+      "taels": -300,
+      "luck": -1
+     }
+    },
+    {
+     "text": "Offer them a fair contract to guard the road",
+     "effects": {
+      "log": "You turn the extortion into a contract with terms, and the terms into a road that really is guarded. The sect is puzzled, and keeps it.",
+      "charm": 2,
+      "taels": -100,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Let your guardians meet them at the gate",
+     "req": {
+      "flags": [
+       "p32_mine_guard"
+      ]
+     },
+     "effects": {
+      "log": "You send word to the gate and stay where you are.",
+      "flag": "p32x_mine_guard"
+     }
+    }
+   ],
+   "cooldown": 10
+  },
+  {
+   "id": "sst_mine_envoys_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Three stewards of a great house of the Isles drift up to your cloud vein on a lacquered skiff with a scroll of demands: a tenth of every year's stones, \"for the safety of the winds\". The winds were safe before they came.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "divine_realm"
+    ],
+    "flags": [
+     "biz_mine"
+    ],
+    "upper": true
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Refuse them to their faces",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The house stewards"
+     },
+     "ok": {
+      "log": "They reach for their swords. You do not let them finish. They sail home with the scroll in pieces and a story that makes the next stewards very polite.",
+      "fame": 5
+     },
+     "fail": {
+      "log": "They are stronger than stewards have any right to be. You wake on the rim of the isle, and the scroll is pinned to your door with a jade pin.",
+      "health": -18
+     }
+    },
+    {
+     "text": "Pay them five spirit stones and keep the rest",
+     "req": {
+      "itemsAtLeastEye": {
+       "spirit_stone": 5
+      }
+     },
+     "effects": {
+      "log": "Stones they understand. They take them and go, and drift back next year, smiling.",
+      "eyeItems": {
+       "spirit_stone": 5
+      },
+      "luck": -1
+     }
+    },
+    {
+     "text": "Offer them a fair contract to watch the winds",
+     "effects": {
+      "log": "You turn the extortion into a contract, and the contract into skiffs that really do watch the winds. The house is puzzled, and keeps it.",
+      "charm": 2,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Let your guardians meet them at the gate",
+     "req": {
+      "flags": [
+       "p32_mine_guard"
+      ]
+     },
+     "effects": {
+      "log": "You send word to the gate and stay where you are.",
+      "flag": "p32x_mine_guard"
+     }
+    }
+   ],
+   "cooldown": 10
+  },
+  {
+   "id": "sst_mine_envoys_gd_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Three heralds of a greater god come to your godstone seam with a writ of tithe: a tenth of all you cut, \"for the peace of the border\". The border was at peace until the writ was written.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "biz_mine",
+     "divine_realm"
+    ],
+    "upper": true
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Refuse them to their faces",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The heralds"
+     },
+     "ok": {
+      "log": "They raise their staves. You do not let them finish. They carry the writ home in two pieces, and the next heralds are very polite.",
+      "fame": 5
+     },
+     "fail": {
+      "log": "They are stronger than heralds have any right to be. You wake far from your seam, and the writ is nailed to your shrine.",
+      "health": -18
+     }
+    },
+    {
+     "text": "Pay them thirty faith and keep the seam",
+     "req": {
+      "minFaithEye": 30
+     },
+     "effects": {
+      "log": "Faith they understand. They take it and go, and come back next year, smiling.",
+      "tally": {
+       "god_faith": -30
+      },
+      "luck": -1
+     }
+    },
+    {
+     "text": "Offer them a fair compact to keep the border",
+     "effects": {
+      "log": "You turn the tithe into a compact, and the compact into a border that is really kept. The greater god is puzzled, and honours it.",
+      "charm": 2,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Let your guardians meet them at the gate",
+     "req": {
+      "flags": [
+       "p32_mine_guard"
+      ]
+     },
+     "effects": {
+      "log": "You send word to the gate and stay where you are.",
+      "flag": "p32x_mine_guard"
+     }
+    }
+   ],
+   "cooldown": 10
+  },
+  {
+   "id": "sst_stone_eater_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Something has been getting into your stone store. The Low stones are untouched; the better ones are gone, and there are small neat tooth marks on the empty boxes. On the third night you see it: a stone-eating ferret with eyes like lamps.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "sst_trader"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Drive it off with a stick",
+     "effects": {
+      "log": "It is gone over the wall in one jump. The store is safe, and quieter. You almost miss it.",
+      "strength": 1,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Leave a Low stone out for it every night",
+     "effects": {
+      "log": "It takes the Low stone and leaves the others alone, and after a month it sleeps on your windowsill. The house has never had fewer rats.",
+      "luck": 3,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Trap it and sell it to a collector",
+     "effects": {
+      "log": "A collector in the provincial town pays 200 taels for it in a gilded cage. It looks at you through the bars as you leave.",
+      "taels": 200,
+      "alignment": -3
+     }
+    }
+   ]
+  },
+  {
+   "id": "sst_panic_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A rumour runs through the Stone Exchange that a new vein has been found in the west, and the Low-Grade price falls through the floor before noon. Merchants are dumping whole sacks for silver.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "anyFlags": [
+     "sst_trader",
+     "craft_arrays_1",
+     "biz_mine"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Buy a sack while it is cheap (60 taels)",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "log": "You buy a sack of twelve stones for less than half the usual price. By the next season the rumour is forgotten and the price is back. (60 taels)",
+      "taels": -60,
+      "item": {
+       "spirit_stone": 12
+      }
+     }
+    },
+    {
+     "text": "Find out where the rumour came from",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Three conversations and a bribed clerk later you know which merchant house started it, and why. The knowledge is worth more than the stones.",
+      "fame": 2,
+      "luck": 2
+     },
+     "fail": {
+      "log": "Everyone heard it from someone else. You give up and go home with nothing but the rumour.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "log": "You watch the crowd shouting at the counters and walk on. A market that runs this fast runs both ways.",
+      "health": 1
+     }
+    }
+   ],
+   "cooldown": 12
+  },
+  {
+   "id": "sst_heirloom_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An old woman at the Exchange counter is trying to sell a single High-Grade stone, her grandfather's, wrapped in red cloth. The appraiser is offering her a fraction of its worth because she does not know better. Her grandson is sick, she tells anyone who will listen.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "realm": [
+     4,
+     1000000
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Pay her its real worth: 600 taels",
+     "req": {
+      "minTaels": 600
+     },
+     "effects": {
+      "log": "You pay her what it is worth, in front of the appraiser, who looks at the ceiling. She presses the red bundle into your hands with both of hers. (600 taels)",
+      "taels": -600,
+      "item": {
+       "spirit_stone_high": 1
+      },
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Give her the money for the physician and let her keep the stone",
+     "req": {
+      "minTaels": 100
+     },
+     "effects": {
+      "log": "You give her 100 taels for the physician and tell her to keep her grandfather's stone. She does not understand, and then she does. (100 taels)",
+      "taels": -100,
+      "alignment": 6,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Tell the appraiser to offer her a fair price",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The appraiser, under your eye, rediscovers a fair price. The old woman leaves with enough for the physician and some over.",
+      "alignment": 3,
+      "fame": 1
+     },
+     "fail": {
+      "log": "The appraiser tells you to mind your own business, and the old woman, frightened, takes the fraction and goes.",
+      "alignment": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "sst_array_lesson_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An old array master, a guest of the provincial governor, comes to look at the defence array around your home and walks its boundary twice without a word. \"You lay stones like a mason,\" she says at last. \"Come. I will show you how the earth wants them laid.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "craft_arrays_3",
+     "sst_defended"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Walk the boundary with her",
+     "effects": {
+      "log": "A day of walking and kneeling and listening to the ground. When you set the last stone where she points, the whole array settles, the way a dog settles by a fire.",
+      "artYears": 0.8,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Thank her, but keep your own way",
+     "effects": {
+      "log": "\"Good,\" she says, surprising you. \"A way of your own is better than a borrowed one, even a bad one.\" She leaves you a page of notes anyway.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "sst_river_stones_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The spring flood scours the riverbed below the town, and when the water drops the children come running: the gravel is full of stones that glow faintly in the shallows. By the time you get there half the town is wading.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "anyFlags": [
+     "sst_trader",
+     "craft_arrays_1"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Dive for the deep ones",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The water is cold enough to stop your heart. You come up blue-lipped with your hands full, and the deep pool gives up stones the waders never saw.",
+      "item": {
+       "spirit_stone": 8
+      },
+      "health": -4
+     },
+     "fail": {
+      "log": "The current takes you thirty paces downstream and leaves you on a gravel bar with nothing but river water in your lungs.",
+      "health": -10
+     }
+    },
+    {
+     "text": "Help the children pick the shallows",
+     "effects": {
+      "log": "You show the children which pebbles are stones and which are pebbles, and they pay you in the best of what they find.",
+      "item": {
+       "spirit_stone": 3
+      },
+      "charm": 2
+     }
+    },
+    {
+     "text": "Leave it to the town",
+     "effects": {
+      "log": "The town will eat better this year for it. You leave them to it.",
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "sst_demon_stone_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A dying wanderer presses a High-Grade spirit stone into your hand and is gone before you can ask. The stone is warm, and in its depths something red turns over slowly, like a fish in dark water. It wants to be held.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "realm": [
+     4,
+     1000000
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Draw its qi into you",
+     "effects": {
+      "log": "You close your fist and the stone empties into you like a breath held too long. The qi is strong and sweet, and under the sweetness there is a voice that was not there before.",
+      "qi": 25,
+      "flag": "sstx_greed",
+      "alignment": -2
+     }
+    },
+    {
+     "text": "Purify it in an array first",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "log": "Seven days in a ring of Low stones, and the red thing in the stone dissolves like ink in water. What is left is a clean High-Grade stone, and yours.",
+      "item": {
+       "spirit_stone_high": 1
+      },
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The red thing in the stone eats the ring of Low stones around it and cracks the stone from inside. You bury the pieces deep.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Bury it with the wanderer",
+     "effects": {
+      "log": "You bury the stone with the one who carried it, and mark the grave with a plain rock. Some things should not be passed on.",
+      "alignment": 3,
+      "flag": "hd_calm"
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

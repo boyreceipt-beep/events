@@ -1,0 +1,731 @@
+{
+ "events": [
+  {
+   "id": "dc_trial_crippled_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "The village physician presses two fingers to your wrist, frowns, and presses harder. \"Blocked,\" he tells the grown-ups in the room, as if you were not there. \"Every meridian. The child will never cultivate. Better to learn a trade.\"",
+   "when": {
+    "trial": [
+     "crippled"
+    ],
+    "age": [
+     5,
+     12
+    ]
+   },
+   "arc": "The Broken Vessel",
+   "choices": [
+    {
+     "text": "Learn the trade. Cultivate in secret anyway",
+     "effects": {
+      "strength": 4,
+      "comprehension": 3,
+      "qi": 6,
+      "log": "Carpentry by day. By night, on the roof, breath after breath into meridians that refuse every one. A thousand nights. Then, one night, something gives a little."
+     }
+    },
+    {
+     "text": "Ask the physician: \"Never, or nobody has tried?\"",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 6,
+      "luck": 4,
+      "log": "He blinks. \"Nobody has tried,\" he admits. \"There is an old method, very painful...\" He writes it down for you. The nearest grown-up takes it from him before he can change his mind."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "\"Never,\" he says, and leaves. You decide he is wrong, which is the first step of every trial."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_crippled_2",
+   "cat": "danger",
+   "weight": 6,
+   "once": true,
+   "text": "A young master of a great sect, passing through, sees you training on the riverbank with your ruined meridians and laughs out loud. \"Broken meridians playing at cultivation! Shall I show you what a real meridian can do?\"",
+   "when": {
+    "trial": [
+     "crippled"
+    ],
+    "age": [
+     14,
+     40
+    ]
+   },
+   "arc": "The Broken Vessel",
+   "choices": [
+    {
+     "text": "Fight him with everything broken meridians have taught you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "fame": 14,
+      "strength": 5,
+      "log": "He expected nothing. He gets someone who has spent ten years learning to make every scrap of qi count. He leaves the bank on his back, and the story goes ahead of you for years."
+     },
+     "fail": {
+      "health": -14,
+      "strength": 3,
+      "log": "He wins, and he is right about the meridian. But you see exactly how he wins, and in the night you work out how to beat it."
+     }
+    },
+    {
+     "text": "Bow and ask him to show you, then study every move",
+     "effects": {
+      "comprehension": 6,
+      "qi": 10,
+      "log": "He shows off for an hour. You watch the way a starving man watches food. When he leaves, you know three things about real meridians he does not know he taught you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_hunted_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "Whoever raised you tells it only once, in a whisper: a knife was found in your cradle, still wet. The man who held it lay in the yard with a broken neck. There was a bounty poster in the dead man's sleeve, very old and very worn, with your birth date on it.",
+   "when": {
+    "trial": [
+     "hunted"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "arc": "Hunted from Birth",
+   "choices": [
+    {
+     "text": "(Years later) Learn to sleep lightly",
+     "effects": {
+      "luck": 4,
+      "strength": 2,
+      "log": "By the time you are ten you wake at the sound of a moth. By twelve you never sit with your back to a door. Your friends think it is a game."
+     }
+    },
+    {
+     "text": "(Years later) Find out who wrote the poster",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "hunted_knows",
+      "log": "A long trail of letters, ending at a great family that lost a war the night you were born. A soothsayer told them the child born that night would end them. They believed it."
+     },
+     "fail": {
+      "log": "Every trail ends in a dead messenger. Whoever wants you dead pays very well for silence."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_hunted_2",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "text": "Three of them this time, at a roadside inn: the serving girl, the old man by the fire and the guest who has been reading the same page for an hour. You see it the moment you walk in. So do they.",
+   "when": {
+    "trial": [
+     "hunted"
+    ],
+    "age": [
+     16,
+     59
+    ],
+    "after": [
+     "dc_trial_hunted_1"
+    ]
+   },
+   "arc": "Hunted from Birth",
+   "choices": [
+    {
+     "text": "Strike first",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 10,
+      "flag": "took_life",
+      "log": "Three breaths, three bodies. The rest of the inn goes on eating, very carefully not looking. You leave money for the table you broke."
+     },
+     "fail": {
+      "health": -26,
+      "deathCause": "the assassins who had hunted you since birth",
+      "log": "You get two. The third gets you, deep, before you get the third. You drag yourself into the night and live, barely."
+     },
+     "risky": true
+    },
+    {
+     "text": "Walk out the back before they move",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "luck": 4,
+      "log": "Through the kitchen, over the wall, gone. They will find you again. But not tonight."
+     },
+     "fail": {
+      "health": -16,
+      "log": "The back door was the fourth one. You get out, bleeding, and do not stop running until dawn."
+     }
+    },
+    {
+     "text": "Sit down with them. Ask who is paying",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "hunted_knows",
+      "alignment": 4,
+      "log": "You order four bowls of noodles. It throws them. By the second bowl you know the name of the family, and that the bounty was set before any of you were born."
+     },
+     "fail": {
+      "health": -20,
+      "log": "They are professionals. They do not eat with marks. You get out, cut."
+     }
+    }
+   ],
+   "cooldown": 7,
+   "maxPerLife": 4
+  },
+  {
+   "id": "dc_trial_nosect_1",
+   "cat": "sect",
+   "weight": 8,
+   "once": true,
+   "text": "Barely grown, at the gate of the nearest sect with your bundle. The gatekeeper looks at your face, checks a list nailed inside the door, and closes the gate without a word. The next sect does the same. And the next. Your name is on every list in the murim.",
+   "when": {
+    "trial": [
+     "nosect"
+    ],
+    "age": [
+     11,
+     16
+    ]
+   },
+   "arc": "No Gate Opens",
+   "choices": [
+    {
+     "text": "Train alone in the mountains. Gates are for other people",
+     "effects": {
+      "strength": 5,
+      "luck": 3,
+      "log": "You find a cave with a spring, a flat rock and a view. It is not a sect. It will have to do. It does."
+     }
+    },
+    {
+     "text": "Watch sect disciples train over the wall, and copy them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 6,
+      "qi": 10,
+      "log": "A year of watching through a gap in the wall. You learn their forms better than half their disciples do."
+     },
+     "fail": {
+      "health": -8,
+      "log": "They catch you on the wall and throw you off it. You try another wall."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_trial_nosect_2",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "A sect elder you have never met finds you training alone on a peak. She watches for an hour. \"I know why every gate is closed to you,\" she says. \"I do not care. Come with me. I will put your name on our roll myself.\"",
+   "when": {
+    "trial": [
+     "nosect"
+    ],
+    "age": [
+     18,
+     50
+    ]
+   },
+   "arc": "No Gate Opens",
+   "choices": [
+    {
+     "text": "Refuse. You have come this far alone",
+     "effects": {
+      "alignment": 3,
+      "qi": 15,
+      "comprehension": 3,
+      "log": "\"Then you are either very foolish or very great,\" she says, \"and I would like to live long enough to find out which.\" She leaves you a manual anyway."
+     }
+    },
+    {
+     "text": "Ask her what she knows about the closed gates",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 5,
+      "log": "\"A prophecy,\" she says. \"That one born on your day would end the old sects. They are afraid of you.\" You think about that for a long time."
+     },
+     "fail": {
+      "log": "She will not say. \"Some day you will be strong enough that it does not matter,\" she says, which is, you realise, the trial itself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_beggar_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "Somebody drops a coin in your bowl, a real silver tael, more than you have ever held. Before you can close your fist on it a bigger beggar has it. Coin never stays with you. It is as if the money itself is afraid of you.",
+   "when": {
+    "trial": [
+     "beggar"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "arc": "The Beggar's Road",
+   "choices": [
+    {
+     "text": "Learn to fight for what is yours",
+     "effects": {
+      "strength": 5,
+      "alignment": -2,
+      "log": "You get the next coin back with a stone and a lot of shouting. Then you get your first real meal in a month. You start to understand money."
+     }
+    },
+    {
+     "text": "Learn to count what others drop",
+     "effects": {
+      "comprehension": 5,
+      "luck": 3,
+      "log": "You learn the markets: which stall overcharges, which merchant cheats at the scale, who pays a beggar to run messages. Knowledge stays in a pocket when silver will not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_beggar_2",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "A dying merchant you once carried to a physician, years ago, leaves you his shop in his will. His relatives are already at the door with a magistrate, and the magistrate is already shaking his head.",
+   "when": {
+    "trial": [
+     "beggar"
+    ],
+    "age": [
+     18,
+     50
+    ],
+    "minTaels": 0
+   },
+   "arc": "The Beggar's Road",
+   "choices": [
+    {
+     "text": "Fight it in the magistrate's court",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 600,
+      "fame": 5,
+      "log": "You have the will, two witnesses and a very loud voice. The magistrate rules for you. The relatives take it badly. You open the shop on Monday."
+     },
+     "fail": {
+      "taels": 80,
+      "log": "The relatives bribe better than you argue. You are left with a box of receipts and a small purse. A start."
+     }
+    },
+    {
+     "text": "Give the shop to the relatives, but keep the ledgers",
+     "effects": {
+      "comprehension": 6,
+      "taels": 120,
+      "log": "The ledgers are worth more than the shop: every supplier, every price, every debt in the county. Within a year you are the one they borrow from."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_short_flame_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "A blind fortune-teller takes your hand at the festival and drops it at once. \"So short,\" she says. \"So bright. Child, you will burn out before your friends are grown.\" A grown-up pulls you away. You keep looking back.",
+   "when": {
+    "trial": [
+     "short_flame"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "arc": "The Short Flame",
+   "choices": [
+    {
+     "text": "Decide then: if it is short, it will be full",
+     "effects": {
+      "qi": 10,
+      "strength": 4,
+      "log": "From that day you train as if every day were your last, because a few of them nearly are. Your friends call you mad. You do not have time to argue."
+     }
+    },
+    {
+     "text": "Go back alone and ask how to make it longer",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "lifespan": 4,
+      "comprehension": 3,
+      "log": "\"Climb,\" she says. \"Every realm buys years. Climb faster than the flame burns.\" It is the most useful thing anyone ever tells you."
+     },
+     "fail": {
+      "log": "\"You can't,\" she says. \"But you can burn brighter.\" You will think about the difference for the rest of your short life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_short_flame_2",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "Your hair has started to grey, years too early. Your body knows the count even when you do not. One more gate, and the years come back. Fail it, and they do not.",
+   "when": {
+    "trial": [
+     "short_flame"
+    ],
+    "age": [
+     25,
+     55
+    ]
+   },
+   "arc": "The Short Flame",
+   "choices": [
+    {
+     "text": "Shut yourself in the cave until it is done",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 45,
+      "health": 10,
+      "log": "Forty days. You come out with your hair still grey and your energy roaring, a hair from the gate. It is enough to buy hope."
+     },
+     "fail": {
+      "qi": 20,
+      "health": -10,
+      "log": "Forty days and the gate holds. You come out thinner and closer. Not yet. Not yet."
+     }
+    },
+    {
+     "text": "Spend a season with the people you love, then climb",
+     "effects": {
+      "health": 12,
+      "charm": 4,
+      "qi": 15,
+      "log": "You spend the spring with friends who will outlive you, laughing more than you have in years. Then you climb, rested, and climb well."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_pacifist_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "You made the vow at eight, over a bird you killed with a stone for no reason: never again. The monks at the temple say a martial artist who will not kill is a cook who will not use fire. You intend to prove them wrong.",
+   "when": {
+    "trial": [
+     "pacifist"
+    ],
+    "age": [
+     8,
+     16
+    ]
+   },
+   "arc": "The Vow of the Open Hand",
+   "choices": [
+    {
+     "text": "Study joint locks, pressure points and every way to stop a fight",
+     "effects": {
+      "comprehension": 5,
+      "strength": 3,
+      "log": "A whole art of ending things without ending anyone. The monks watch you practise and stop making jokes."
+     }
+    },
+    {
+     "text": "Study the bow-and-walk-away, which is harder",
+     "effects": {
+      "alignment": 8,
+      "charm": 3,
+      "log": "You learn when to bow, when to apologise for something you did not do, and when to simply leave. It saves more lives than any lock."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_pacifist_2",
+   "cat": "danger",
+   "weight": 6,
+   "once": true,
+   "text": "A bandit with a knife at a child's throat, a crowd frozen around him, and only you close enough to act. The vow has never cost this much before.",
+   "when": {
+    "trial": [
+     "pacifist"
+    ],
+    "age": [
+     16,
+     60
+    ]
+   },
+   "arc": "The Vow of the Open Hand",
+   "choices": [
+    {
+     "text": "Take the knife and break his wrist. Nothing more",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": 10,
+      "log": "Faster than he can think. The knife clatters, the child runs, the bandit howls with a broken wrist and his life. The crowd cannot understand why you will not finish him."
+     },
+     "fail": {
+      "health": -22,
+      "alignment": 8,
+      "log": "He cuts you badly before you take the knife. But you take it, and the child, and he lives. So do you, just."
+     }
+    },
+    {
+     "text": "Talk him down",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "alignment": 12,
+      "fame": 8,
+      "log": "It takes an hour. In the end he lets the child go and sits down in the road and cries. You sit with him. Nobody dies. Nobody ever believes it."
+     },
+     "fail": {
+      "health": -10,
+      "alignment": 4,
+      "log": "He bolts with the child. You catch them both at the river. Nobody dies, which is the only score that matters to you."
+     }
+    },
+    {
+     "text": "Break the vow. Kill him",
+     "effects": {
+      "flag": "took_life",
+      "fame": 10,
+      "alignment": -4,
+      "log": "It is over before you decide. The child is safe. Something you held since you were a child is gone, and you cannot tell if you were right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_demon_child_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "The other children have found out what your grandfather was. They chant it in the lane: demon's brat, demon's brat. One of them throws a stone. Something black and hot rises in your chest, very easily, the way water finds a crack.",
+   "when": {
+    "trial": [
+     "demon_child"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "arc": "The Demon's Child",
+   "choices": [
+    {
+     "text": "Let the black thing go. Swallow it",
+     "effects": {
+      "alignment": 8,
+      "comprehension": 3,
+      "log": "You breathe until it sinks back down. The stone-thrower has no idea how close it was. You do. You start learning how to do that every day."
+     }
+    },
+    {
+     "text": "Let it out, a little",
+     "effects": {
+      "alignment": -6,
+      "strength": 4,
+      "qi": 8,
+      "log": "The stone-thrower ends up in the ditch, crying. You feel wonderful for exactly one breath, and then frightened of yourself for a week."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_demon_child_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "A demonic cult recruiter finds you, as they always do. \"Why fight your own blood?\" he asks. \"The orthodox will never take you. We already have a seat for you. Your grandfather's seat.\"",
+   "when": {
+    "trial": [
+     "demon_child"
+    ],
+    "age": [
+     16,
+     45
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Demon's Child",
+   "choices": [
+    {
+     "text": "Throw him out of the house",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "alignment": 10,
+      "fame": 6,
+      "log": "He leaves through the door, which is closed at the time. The village hears about it. A few of them start nodding to you in the lane."
+     },
+     "fail": {
+      "alignment": 6,
+      "health": -14,
+      "log": "He is much stronger than he looks. But he leaves, and you are still yourself, which was the real fight."
+     }
+    },
+    {
+     "text": "Ask him about your grandfather. Then send him away",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 5,
+      "log": "He tells you more than he means to: a great master, a terrible war, a choice. Your grandfather chose wrong. You will not. You send him away with nothing."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_trial_lone_wolf_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "An old master watches you practise in the square and offers, kindly, to teach you. The moment he says it, the words seem to slide off you like rain off oiled paper. You understand, somehow, that no one will ever teach you anything. You will have to steal all of it.",
+   "when": {
+    "trial": [
+     "lone_wolf"
+    ],
+    "age": [
+     8,
+     16
+    ]
+   },
+   "arc": "The Lone Wolf",
+   "choices": [
+    {
+     "text": "Watch him teach others instead, and steal everything",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 6,
+      "qi": 10,
+      "log": "You sit at the edge of his yard for two years and he pretends not to see you. You learn more from watching than his students learn from listening."
+     },
+     "fail": {
+      "comprehension": 3,
+      "log": "Watching is not the same as learning. But it is not nothing. You go home and make your own mistakes."
+     }
+    },
+    {
+     "text": "Thank him, and go to the mountains",
+     "effects": {
+      "strength": 5,
+      "luck": 3,
+      "log": "The mountain has no lessons and no answers. It does have a waterfall, a long winter, and all the time in the world."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_lone_wolf_2",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "You break through, alone, in a cave, with no one to guard you, no master's palm on your back, nothing but stubbornness. It nearly kills you. It does not. Coming out, blinking in the sun, you are someone nobody made.",
+   "when": {
+    "trial": [
+     "lone_wolf"
+    ],
+    "age": [
+     20,
+     70
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "arc": "The Lone Wolf",
+   "choices": [
+    {
+     "text": "Carve the date in the cave wall",
+     "effects": {
+      "qi": 20,
+      "luck": 4,
+      "log": "You carve the date and nothing else. Someone will find it in a hundred years and wonder."
+     }
+    },
+    {
+     "text": "Walk to the nearest sect and spar their best, just to see",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 16,
+      "log": "Their best disciple, then their elder. Neither can tell what school you are from. \"Mine,\" you say, which is a whole sentence."
+     },
+     "fail": {
+      "health": -12,
+      "fame": 4,
+      "log": "Their elder beats you, and then asks, very seriously, who taught you. \"Nobody,\" you say. He does not believe you, which is a kind of compliment."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

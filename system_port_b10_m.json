@@ -1,0 +1,1835 @@
+{
+ "events": [
+  {
+   "id": "b10gb_up_omen_1",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_omen",
+   "text": "Since the night {npc} was born, cranes will not leave your roof and the cloud sea lies flat as glass around your isle. Immortals you have never met fly past slowly to look. A seer of the Star Sea Pavilion leaves a card at the gate with one line on it: \"Every faction will want this one.\"",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Let every isle hear of it",
+     "effects": {
+      "log": "By spring the story is told on every terrace of the isles. Strangers come to look at {npc} asleep, and some of them do not smile.",
+      "flag": "b10gbx_proclaim",
+      "fame": 10
+     }
+    },
+    {
+     "text": "Keep {npc} out of sight and say nothing",
+     "effects": {
+      "log": "The gate stays shut. The cranes are driven off, slowly, and in time the isles decide it was a trick of the light.",
+      "flag": "b10gbx_hide",
+      "luck": 2
+     }
+    },
+    {
+     "text": "Give {npc} into the keeping of the Jade Court's star-readers",
+     "effects": {
+      "log": "An old star-reader takes {npc} up the Ninth Stair in a grey blanket. Behind the Court's wards, for a while, nobody who means harm can find {him}.",
+      "flag": "b10gbx_ward",
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_up_omen_2",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_omen",
+   "text": "{npc} laughs for the first time and every spirit stone in the house lights up at once. The Celestial Ministries send a clerk to write it down. The clerk writes for a long time, looks at {npc}, and writes some more.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Ask the clerk to file it loudly",
+     "effects": {
+      "log": "The clerk files it loudly. Within the year three factions have sent gifts, and one has sent a spy.",
+      "flag": "b10gbx_proclaim",
+      "fame": 8
+     }
+    },
+    {
+     "text": "Ask the clerk to lose the page",
+     "effects": {
+      "log": "The clerk looks at you, looks at {npc}, and loses the page. Some favours are worth more than stones.",
+      "flag": "b10gbx_hide",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Ask the clerk where a child is safest",
+     "effects": {
+      "log": "\"Behind the Jade Court's wards,\" the clerk says, \"with the star-readers.\" You take {npc} there yourself.",
+      "flag": "b10gbx_ward",
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_up_threat_1",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_threat",
+   "text": "Three figures in grey cloud silk land on your terrace at midnight without a sound, and walk straight for the room where {npc} sleeps. They do not bother to hide their faces. Whoever sent them has heard about the night {npc} was born, and does not mean to share the omen.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     7,
+     15
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Stand between them and {npc}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "A grey-silk assassin"
+     },
+     "ok": {
+      "log": "It is fast and ugly and over before the lamps are lit. The three are gone over the edge of the isle, and {npc} has slept through all of it.",
+      "flag": "b10gbx_safe",
+      "fame": 8
+     },
+     "fail": {
+      "log": "They are better than you hoped. When they are gone, {npc} is alive, and so are you, barely.",
+      "flag": "b10gbx_hurt",
+      "health": -25
+     }
+    },
+    {
+     "text": "Snatch {npc} up and fly for the Jade Court",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You reach the Court's wards with {npc} in your arms and grey silk a breath behind you. The wards hold.",
+      "flag": "b10gbx_safe",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They catch you over the cloud sea. You fight your way clear, but not before one of them reaches {npc}.",
+      "flag": "b10gbx_hurt",
+      "health": -15
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_up_threat_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_threat",
+   "text": "A gift arrives for {npc} from an isle you have never heard of: a jade rattle carved with cranes. {npc} reaches for it. The jade is a shade too warm, and the cranes' eyes are drilled through, as if something inside needs to breathe.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     7,
+     15
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Break it open before {npc} touches it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Inside is a coiled thread of black qi that would have eaten {npc} from within. You burn it, and trace the gift back to a rival house of the isles.",
+      "flag": "b10gbx_safe",
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "You break it, and the black qi gets out first. It touches {npc} before you can burn it.",
+      "flag": "b10gbx_hurt",
+      "health": -10
+     }
+    },
+    {
+     "text": "Send it back to the isle it came from, unopened",
+     "effects": {
+      "log": "You send it back with a note in your own hand. Nothing more comes from that isle, which tells you everything.",
+      "flag": "b10gbx_safe",
+      "alignment": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_up_envoy_1",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_envoy",
+   "text": "The envoy kneels to speak to {npc}, not to you. \"Twelve years we have watched,\" the envoy says. \"Our masters would teach {him} what nobody else on the isles can. {He} would want for nothing.\" {npc} looks at you, and you can see {he} wants to go.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     12,
+     1000000
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Let {npc} go with the envoy",
+     "effects": {
+      "log": "You let {npc} go. The house is very quiet that night, and the letters, when they come, are full of things you never taught {him}.",
+      "flag": "b10gbx_let",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Keep {npc} at home",
+     "effects": {
+      "log": "\"Then {he} is yours to teach,\" the envoy says, and bows to {npc} as to an equal before leaving.",
+      "flag": "b10gbx_keep",
+      "charm": 1
+     }
+    },
+    {
+     "text": "Ask what the faction will pay for the promise",
+     "effects": {
+      "log": "The envoy names a sum in spirit stones without blinking. You take it, and {npc} goes when {he} is ready.",
+      "flag": "b10gbx_bargain",
+      "alignment": -2
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_up_envoy_2",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_envoy",
+   "text": "Two envoys arrive on the same day, from factions that have not spoken in a thousand years. They sit at opposite ends of your table and both pretend {npc} is not listening from behind the screen. Each one has brought a gift, and each gift is worth more than your house.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "npcAge": [
+     12,
+     1000000
+    ]
+   },
+   "arc": "Omen over the Cloud Sea",
+   "choices": [
+    {
+     "text": "Let {npc} choose between them",
+     "effects": {
+      "log": "{npc} chooses, and walks out with one envoy. The other leaves the gift anyway, which is worse.",
+      "flag": "b10gbx_let",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Send both envoys home",
+     "effects": {
+      "log": "You send them both home. {npc} sulks for a month, and then asks you to teach {him} everything instead.",
+      "flag": "b10gbx_keep",
+      "alignment": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_omen_1",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_omen",
+   "text": "Since the star fell into {b10_domain} the night {npc} was born, the shrines ring their bells at noon without a hand on the rope. Worshippers who have never prayed to you come from three domains to see {npc} asleep. A herald of the Heavenly Court asks, very politely, what the gods intend to do.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Let every pantheon hear of it",
+     "effects": {
+      "log": "By the next gathering every god in the heavens knows the name {npc}. Some of them send blessings. Some of them send nothing, and watch.",
+      "flag": "b10gbx_proclaim",
+      "fame": 10
+     }
+    },
+    {
+     "text": "Silence the bells and say nothing",
+     "effects": {
+      "log": "You still the bells with your own hand. The pilgrims go home, and in time the heavens decide the star was an omen for someone else.",
+      "flag": "b10gbx_hide",
+      "luck": 2
+     }
+    },
+    {
+     "text": "Give {npc} into the keeping of Saengmo's hall",
+     "effects": {
+      "log": "Saengmo, Mother of Seeds, takes {npc} into the hall of sleeping seeds, where no god may enter uninvited.",
+      "flag": "b10gbx_ward",
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_omen_2",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_omen",
+   "text": "When {npc} cries, rain falls on the dry places of {b10_domain}. When {npc} sleeps, the prayers of your worshippers arrive softer, as if they too are trying not to wake {him}. Unmyeong the Weaver sends a single thread of gold, without a word.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Hang the thread over the door for all to see",
+     "effects": {
+      "log": "Every god who passes your hall sees the Weaver's thread. Nobody passes without bowing, and nobody passes without thinking.",
+      "flag": "b10gbx_proclaim",
+      "fame": 8
+     }
+    },
+    {
+     "text": "Burn the thread and hide the rain",
+     "effects": {
+      "log": "The thread burns with no smoke. The rain you keep for the nights nobody is looking.",
+      "flag": "b10gbx_hide",
+      "luck": 2
+     }
+    },
+    {
+     "text": "Send {npc} to sleep among Saengmo's seeds a while",
+     "effects": {
+      "log": "You carry {npc} to Saengmo's hall yourself, and walk home slowly.",
+      "flag": "b10gbx_ward",
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_threat_1",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_threat",
+   "text": "A god cast out of the pantheons a thousand years ago walks into your hall without knocking, with a face like a burned page. \"A star fell for that child,\" the fallen god says, looking at {npc}. \"It should have fallen for me.\"",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     7,
+     15
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Throw the fallen god out of your hall",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "A fallen god"
+     },
+     "ok": {
+      "log": "It shakes the domain to its roots, but the fallen god goes out of your hall and does not come back. {npc} watches from the stairs with enormous eyes.",
+      "flag": "b10gbx_safe",
+      "fame": 8
+     },
+     "fail": {
+      "log": "You drive the fallen god out in the end, but not before a burned hand reaches {npc}.",
+      "flag": "b10gbx_hurt",
+      "health": -25
+     }
+    },
+    {
+     "text": "Bargain with the fallen god for {npc}'s safety",
+     "effects": {
+      "log": "You give up a domain's worth of old prayers. The fallen god takes them like a starving thing, and goes.",
+      "flag": "b10gbx_safe",
+      "fame": -5,
+      "luck": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_threat_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_threat",
+   "text": "Your worshippers bring {npc} a little wooden god to play with, carved in {npc}'s own likeness. That night it walks. It walks to the cradle, and it is holding a splinter of the Void like a knife.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     7,
+     15
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Catch it before it reaches the cradle",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You catch it by the neck a hand from the cradle, and it is only wood again. Somebody carved a curse into the grain.",
+      "flag": "b10gbx_safe",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You catch it, but the splinter reaches {npc} first.",
+      "flag": "b10gbx_hurt",
+      "health": -10
+     }
+    },
+    {
+     "text": "Call on your pantheon at once",
+     "effects": {
+      "log": "Every god of {b10_pantheon} feels the call. The little wooden god burns where it stands, and three of them come to sit with {npc} until morning.",
+      "flag": "b10gbx_safe",
+      "fame": 3
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_envoy_1",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_envoy",
+   "text": "The envoy of a pantheon kneels in your hall and speaks to {npc}, not to you. \"A star fell for you,\" the envoy says. \"The pantheon would give you a domain of your own before you are grown.\" {npc} looks at you, and you can see {he} wants it.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     12,
+     1000000
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Let {npc} go to the pantheon",
+     "effects": {
+      "log": "You let {npc} go. The prayers you hear that year are quieter, and one of them, every month, is in {npc}'s voice.",
+      "flag": "b10gbx_let",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Keep {npc} in your own domain",
+     "effects": {
+      "log": "\"Then {he} will rise in your shadow,\" the envoy says, not unkindly, and bows to {npc} before going.",
+      "flag": "b10gbx_keep",
+      "charm": 1
+     }
+    },
+    {
+     "text": "Ask what the pantheon will offer for the promise",
+     "effects": {
+      "log": "The envoy offers faith enough to fill a temple. You take it, and {npc} goes when {he} is ready.",
+      "flag": "b10gbx_bargain",
+      "alignment": -2
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_gd_envoy_2",
+   "cat": "family",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gb_envoy",
+   "text": "Envoys of two pantheons that are at war in every other matter arrive at your gate at the same hour, and wait in the same courtyard without looking at each other. Both have come for {npc}.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     12,
+     1000000
+    ]
+   },
+   "arc": "A Star Falls into a Domain",
+   "choices": [
+    {
+     "text": "Let {npc} choose a pantheon",
+     "effects": {
+      "log": "{npc} chooses, and goes. The other envoy bows to you on the way out, and that bow is a promise of trouble.",
+      "flag": "b10gbx_let",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Tell them both that {npc} chooses later",
+     "effects": {
+      "log": "They go, both of them, sour. {npc} stays, and for a year follows you everywhere, asking what a pantheon is for.",
+      "flag": "b10gbx_keep",
+      "alignment": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "child",
+    "family": true
+   }
+  },
+  {
+   "id": "b10gb_pk_omen_1",
+   "cat": "childhood",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_omen",
+   "text": "The story of the night you were born will not die down. Pilgrims of {pw_kingdom} stop at the gate to look at you; a fortune-teller walks three days to see your palm and leaves without asking for a copper. The grown-ups who keep you argue late into the night about what to do with a child the sky has marked.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     1,
+     3
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Let the whole kingdom hear of it",
+     "effects": {
+      "log": "By spring the story is in every inn of {pw_kingdom}. Strangers come to look at you sleeping, and some of them do not smile.",
+      "flag": "kn_proclaimed",
+      "fame": 15
+     }
+    },
+    {
+     "text": "Keep the child out of sight and say nothing",
+     "effects": {
+      "log": "The doors stay shut, the story is laughed off as an old tale, and in time even the neighbours forget what they saw. Almost all of them.",
+      "flag": "kn_hidden",
+      "luck": 3
+     }
+    },
+    {
+     "text": "Give the child into a hill shrine's keeping for a few years",
+     "effects": {
+      "log": "An old shrine-keeper takes you up the hill in a grey blanket. Behind the shrine walls, for a while, nobody who means harm can find you.",
+      "flag": "kn_warded",
+      "comprehension": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_omen_2",
+   "cat": "childhood",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_omen",
+   "text": "Since the night you were born the river by the house has run a little warmer, and the old people of {pw_kingdom} say the world itself is pleased about something. A wandering storyteller looks at you for a long time and says only, \"Remember who made you.\" The grown-ups do not sleep well after that.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     1,
+     3
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Tell every market",
+     "effects": {
+      "log": "The storytellers take it from there. You are a legend before you can walk, and legends have enemies.",
+      "flag": "kn_proclaimed",
+      "fame": 15
+     }
+    },
+    {
+     "text": "Tell nobody at all",
+     "effects": {
+      "log": "The doors stay shut. The river cools, in time, and so does the story.",
+      "flag": "kn_hidden",
+      "luck": 3
+     }
+    },
+    {
+     "text": "Send the child to the hill shrine",
+     "effects": {
+      "log": "The shrine on the hill takes you in. Its bells are the first sound you remember.",
+      "flag": "kn_warded",
+      "comprehension": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_envoy_1",
+   "cat": "life",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_envoy",
+   "text": "The eldest of the riders kneels to look you in the eye. \"We have heard about the night you were born,\" the rider says. \"So has everyone else in {pw_kingdom}. Come with us, and you will be safe behind our walls, and taught by the best this world has.\"",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     14,
+     16
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Go with the riders",
+     "effects": {
+      "log": "You leave within the week, with a bundle and a new pair of shoes. No trial: the sky was the trial.",
+      "flag": "b10gbx_school",
+      "fame": 3
+     }
+    },
+    {
+     "text": "Say no. You will choose your own road",
+     "effects": {
+      "log": "The rider looks at you a long time, then bows to a child of fourteen as to an equal. \"The gate will be open,\" the rider says, and rides away slowly, looking back twice.",
+      "luck": 3,
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_envoy_2",
+   "cat": "life",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_envoy",
+   "text": "The riders set a carved token on the table, the badge of their school. \"Others are coming,\" their leader says quietly, glancing at the road. \"Not all of them will ask.\"",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     14,
+     16
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Take the token and go",
+     "effects": {
+      "log": "You leave within the week, with a bundle and a new pair of shoes. No trial: the sky was the trial.",
+      "flag": "b10gbx_school",
+      "fame": 3
+     }
+    },
+    {
+     "text": "Push the token back across the table",
+     "effects": {
+      "log": "The leader sighs and pockets it. \"Then train hard,\" the leader says at the door. \"Faster than you think you need to.\"",
+      "strength": 2,
+      "luck": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_asn_1",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_asn",
+   "text": "You wake in the dark because the crickets have stopped. A shadow is crouching on the beam above your bed, very still, a short blade in its hand. Whoever sent it has heard about the night you were born, and about the pillar of light.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     7,
+     16
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Fight back with everything you know",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The assassin"
+     },
+     "ok": {
+      "log": "You do not remember deciding to move. When it is over the stranger is running across the rooftops, clutching an arm, and you are standing in the dark with your heart hammering. You are still alive.",
+      "flag": "krx_asn_win",
+      "fame": 10,
+      "strength": 2
+     },
+     "fail": {
+      "log": "The stranger is faster than anyone you have ever fought. You wake days later with bandages round your ribs and a lamp burning by the bed, alive because someone came running.",
+      "health": -35,
+      "deathCause": "an assassin sent for a child the sky had marked"
+     },
+     "risky": true
+    },
+    {
+     "text": "Roll off the bed and run for the window",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You run as you have never run, through gaps no grown-up could fit, and the footsteps behind you give up at the river.",
+      "health": -5
+     },
+     "fail": {
+      "log": "A hand catches your collar, and the blade catches your arm. You tear free and keep running, and the shouting of the whole street finds you first.",
+      "health": -28
+     }
+    },
+    {
+     "text": "Shout for the whole house at the top of your lungs",
+     "effects": {
+      "log": "Lamps, feet, a dog, an uncle with a poker. The stranger is gone before the first door opens, and you do not sleep alone for a month.",
+      "health": -8,
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_asn_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_asn",
+   "text": "On market day in {pw_kingdom} a pedlar with kind eyes offers you a honey cake. The hand that holds it out is too steady, and the other hand is under the cloth of the stall. You have seen that stillness before, in cats watching birds.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     7,
+     16
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Fight back with everything you know",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The assassin"
+     },
+     "ok": {
+      "log": "You do not remember deciding to move. When it is over the stranger is running across the rooftops, clutching an arm, and you are standing in the dark with your heart hammering. You are still alive.",
+      "flag": "krx_asn_win",
+      "fame": 10,
+      "strength": 2
+     },
+     "fail": {
+      "log": "The stranger is faster than anyone you have ever fought. You wake days later with bandages round your ribs and a lamp burning by the bed, alive because someone came running.",
+      "health": -35,
+      "deathCause": "an assassin sent for a child the sky had marked"
+     },
+     "risky": true
+    },
+    {
+     "text": "Duck under the stalls and run",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You run as you have never run, through gaps no grown-up could fit, and the footsteps behind you give up at the river.",
+      "health": -5
+     },
+     "fail": {
+      "log": "A hand catches your collar, and the blade catches your arm. You tear free and keep running, and the shouting of the whole street finds you first.",
+      "health": -28
+     }
+    },
+    {
+     "text": "Shout for the whole house at the top of your lungs",
+     "effects": {
+      "log": "Lamps, feet, a dog, an uncle with a poker. The stranger is gone before the first door opens, and you do not sleep alone for a month.",
+      "health": -8,
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gb_pk_asn_3",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": true,
+   "trigger": "b10gb_pk_asn",
+   "text": "You are alone at the ferry landing, skimming stones, when a ferryman you have never seen poles a boat to the bank and calls your name. Nobody here should know your name. He steps ashore with the pole held like a spear.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "b10gb_pk"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "age": [
+     7,
+     16
+    ]
+   },
+   "arc": "Sign Over Your World",
+   "choices": [
+    {
+     "text": "Fight back with everything you know",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The assassin"
+     },
+     "ok": {
+      "log": "You do not remember deciding to move. When it is over the stranger is running across the rooftops, clutching an arm, and you are standing in the dark with your heart hammering. You are still alive.",
+      "flag": "krx_asn_win",
+      "fame": 10,
+      "strength": 2
+     },
+     "fail": {
+      "log": "The stranger is faster than anyone you have ever fought. You wake days later with bandages round your ribs and a lamp burning by the bed, alive because someone came running.",
+      "health": -35,
+      "deathCause": "an assassin sent for a child the sky had marked"
+     },
+     "risky": true
+    },
+    {
+     "text": "Run for the reeds",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You run as you have never run, through gaps no grown-up could fit, and the footsteps behind you give up at the river.",
+      "health": -5
+     },
+     "fail": {
+      "log": "A hand catches your collar, and the blade catches your arm. You tear free and keep running, and the shouting of the whole street finds you first.",
+      "health": -28
+     }
+    },
+    {
+     "text": "Shout for the whole house at the top of your lungs",
+     "effects": {
+      "log": "Lamps, feet, a dog, an uncle with a poker. The stranger is gone before the first door opens, and you do not sleep alone for a month.",
+      "health": -8,
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_up_omen_1",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "A star over the Isle of the Jade Court has burned red all season, and tonight it is lower again. The seers of the Star Sea Pavilion have closed their shutters. An old crane-keeper on your terrace says, to nobody, \"The red ones always find somebody sitting still.\"",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "b10fd_omen",
+     "b10fd_k_up_star"
+    ]
+   },
+   "arc": "A Star Written to Fall",
+   "choices": [
+    {
+     "text": "Fly to the far outer isles until it passes",
+     "effects": {
+      "log": "You spend the season on the outer isles, watching the red star follow you across the sky.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Seal yourself in a grotto under your own isle",
+     "effects": {
+      "log": "You seal the grotto behind you with three talismans and sit in the dark, breathing slowly. Overhead, something is very patient.",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    },
+    {
+     "text": "Pay a seer of the Star Sea Pavilion to read it",
+     "effects": {
+      "log": "The seer takes your stones, reads for an hour, and gives most of them back. \"Nothing I say will move it,\" the seer says.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_up_omen_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "Each night the cloud sea rises a finger's width up the cliffs of your isle. The cranes have left. The pines on the low terraces stand in mist to the knee. Your neighbours say the tide always goes down again. Your neighbours say a lot of things.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "b10fd_omen",
+     "b10fd_k_up_tide"
+    ]
+   },
+   "arc": "A Star Written to Fall",
+   "choices": [
+    {
+     "text": "Leave this isle for the high Peach Isles",
+     "effects": {
+      "log": "You move what you can to the high Peach Isles. From there the old isle looks very small, and very low.",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    },
+    {
+     "text": "Seal yourself in the deepest grotto of the isle",
+     "effects": {
+      "log": "You seal yourself in, deep under the rock. Above you the mist is still rising.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Ask the star-readers of the Jade Court what it means",
+     "effects": {
+      "log": "The star-readers look at the tide charts a long time and say, \"Not this isle. Not this year.\" They are wrong more often than they admit.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_up_omen_3",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "The Bell of the Ninth Stair has rung at midnight eleven times this year, and each time a clerk of the Celestial Ministries has struck a name off a list. Tonight a clerk you do not know nods to you in the street, a little too politely, the way one nods to a name.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "b10fd_omen",
+     "b10fd_k_up_bell"
+    ]
+   },
+   "arc": "A Star Written to Fall",
+   "choices": [
+    {
+     "text": "Leave the isles of the Ministries for the Drifting Isles",
+     "effects": {
+      "log": "You leave for the Drifting Isles, where no bell carries. You hear it anyway, in your sleep.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Close your gate and see nobody until the twelfth midnight",
+     "effects": {
+      "log": "You close your gate. The twelfth midnight comes nearer, very quietly, like a clerk in soft shoes.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Go to a seer of the Star Sea Pavilion and ask which stair",
+     "effects": {
+      "log": "The seer listens to the bell in a bowl of water and tells you which midnight, and which stair, and never to stand on it.",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_gd_omen_1",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "Your name has risen in the Register of the Heavenly Court by a line a month, and now it sits one line from the page where hours are written. The clerks of the Court have begun to stand when you pass. That is not a kindness.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "b10fd_omen",
+     "b10fd_k_gd_hour"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A God's Appointed Hour",
+   "choices": [
+    {
+     "text": "Leave the heavens for a mortal world until the page turns",
+     "effects": {
+      "log": "You walk out of the heavens into a mortal world. The Register, it turns out, can read anywhere.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Seal yourself in the deepest hall of your temple",
+     "effects": {
+      "log": "You seal the hall behind you. Above you, in the Court, a page turns.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Go to Unmyeong the Weaver and ask her to read the thread",
+     "effects": {
+      "log": "Unmyeong reads your thread with her eyes closed, and finds the knot, and loosens it a little. \"Do not thank me,\" she says. \"Thank me later.\"",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_gd_omen_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "The sun of {b10_domain} has gone dark at noon every day this season, for a moment a little longer than the day before. Your worshippers pray in the dark now, and their prayers arrive cold. Today the dark lasted as long as a long breath.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "b10fd_omen",
+     "b10fd_k_gd_eclipse"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A God's Appointed Hour",
+   "choices": [
+    {
+     "text": "Walk out of your domain until the sun returns",
+     "effects": {
+      "log": "You walk out of your own domain. The dark follows you a little way, then waits at the border like a dog.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Seal yourself in the deepest hall of your temple",
+     "effects": {
+      "log": "You go down into the deepest hall of your temple and light one lamp. The dark comes down the stairs after you, and stops at the lamp.",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    },
+    {
+     "text": "Ask Cheonho, Who Hangs the Stars, what is hiding the sun",
+     "effects": {
+      "log": "Cheonho looks at your sun a long time and says nothing useful, in great detail.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10fd_gd_omen_3",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10fd_omen",
+   "text": "A wind from the Void is walking the halls of the pantheons. Gods it touches forget a prayer, then another. Yesterday it was in the hall next to yours. This morning a worshipper's prayer reached you with your name missing from it.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "b10fd_omen",
+     "b10fd_k_gd_void"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A God's Appointed Hour",
+   "choices": [
+    {
+     "text": "Leave the heavens for a mortal world, and live a year as a stranger",
+     "effects": {
+      "log": "You walk out of the heavens with nothing, and draw water at a well in a mortal village like anyone. Nobody prays to you. That is the point.",
+      "flag": "b10fd_warded",
+      "luck": 1
+     }
+    },
+    {
+     "text": "Seal your hall with every ward you know",
+     "effects": {
+      "log": "You seal your hall with every ward you know. Under the door, a cold draught begins.",
+      "health": -2
+     }
+    },
+    {
+     "text": "Ask Mongsa the Sleeper how the wind is turned",
+     "effects": {
+      "log": "Mongsa the Sleeper turns over and says, \"It cannot be turned. It can only be left.\"",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_up_echo_1",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_up",
+   "text": "On a drifting isle nobody lives on you find a stone bench worn smooth by one person sitting in one place for a very long time. Cut into its back, in a hand you know better than your own, is a name: {echo_title}. The view from the bench is of the world below.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "echo"
+    ]
+   },
+   "arc": "Echoes on the Isles",
+   "choices": [
+    {
+     "text": "Sit where they sat",
+     "effects": {
+      "log": "You sit, and look down at the world below, and understand at last what {echo_title} was waiting for. It was you.",
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Cut your own name under theirs",
+     "effects": {
+      "log": "You cut your name under the old one. One day someone will find two names, and wonder.",
+      "fame": 2,
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_up_echo_2",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_up",
+   "text": "In the weapon hall of the Jade Void Sect, among ten thousand blades of the fallen, one hangs a little apart: {echo_weapon}. The keeper says it came up through the clouds on its own, the year its owner died below, and has never let anyone draw it.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "echo_weapon"
+    ]
+   },
+   "arc": "Echoes on the Isles",
+   "choices": [
+    {
+     "text": "Ask to hold it",
+     "effects": {
+      "log": "The keeper laughs, and hands it over, and stops laughing. It comes out of the sheath for you like a sigh.",
+      "strength": 2,
+      "fame": 3
+     }
+    },
+    {
+     "text": "Leave it where it hangs",
+     "effects": {
+      "log": "You leave it. On the way out you hear it hum once, very low, like a dog that knows the step on the stair.",
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_up_echo_3",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_up",
+   "text": "An immortal in a peach orchard on the high isles looks up as you pass and drops a basket. \"You walk like {echo_name},\" the immortal says. \"I knew {echo_him} below, a long time ago. All the way up the mountain {echo_he} talked about {echo_spouse}, and in the end {echo_he} never came up.\"",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "echo_spouse"
+    ]
+   },
+   "arc": "Echoes on the Isles",
+   "choices": [
+    {
+     "text": "Ask to hear everything",
+     "effects": {
+      "log": "You sit in the orchard until dark, hearing about a life that was yours. Some of it you are not proud of. Most of it you are.",
+      "charm": 2,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Say you never knew anyone by that name",
+     "effects": {
+      "log": "The immortal nods slowly, and picks up the peaches, and does not believe you.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_up_echo_4",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_up",
+   "text": "In the rolls of the Jade Court, in the long list of those who stood at the gate of the clouds and were turned back, a clerk finds a line for you: {echo_title}, of {echo_realm}. \"Turned back,\" the clerk reads, \"for being needed below.\" Somebody has added, in a different ink, \"Sent for later.\"",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "flags": [
+     "echo_great"
+    ]
+   },
+   "arc": "Echoes on the Isles",
+   "choices": [
+    {
+     "text": "Ask who wrote the second line",
+     "effects": {
+      "log": "The clerk does not know. The ink is the colour of the Court's first ministers, who have not written in ten thousand years.",
+      "comprehension": 2,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Ask the clerk to strike both lines",
+     "effects": {
+      "log": "\"Not possible,\" says the clerk. \"But I can add a third.\" You let them write that you came.",
+      "fame": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_gd_echo_1",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_gd",
+   "text": "A prayer arrives that is not addressed to you, and comes to you anyway: an old fisher in a mortal world, asking {echo_title} for rain, as the old ones of the village taught. Nobody has called that name in this world for a long time. It was the name you went by, once, when you were somebody else.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "echo"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Prayers from an Old Life",
+   "choices": [
+    {
+     "text": "Answer it with rain",
+     "effects": {
+      "log": "It rains on one village in a mortal world, out of a clear sky. The old fisher dances in it, badly, and you laugh for the first time in a century.",
+      "alignment": 3,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Let the prayer go unanswered",
+     "effects": {
+      "log": "The prayer fades. You keep the name, though, somewhere you can find it.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_gd_echo_2",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_gd",
+   "text": "A family in a mortal world keeps a shrine to {echo_child}, its first ancestor, and every new year they burn incense and ask {echo_child} to ask {echo_child}'s parent for luck. This year, the prayer comes all the way up. It is the first time anyone has prayed to you as a parent.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "echo_child"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Prayers from an Old Life",
+   "choices": [
+    {
+     "text": "Bless the house",
+     "effects": {
+      "log": "The house prospers for a generation. Nobody there ever knows why, and they thank {echo_child} for it, which is right.",
+      "alignment": 3,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Go down and look at them",
+     "effects": {
+      "log": "You stand in their courtyard unseen through one new year. They have your old nose, all of them.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_gd_echo_3",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_gd",
+   "text": "In the Register of the Heavenly Court, under a life of yours long finished, one line is still open: the name {echo_killer}, and beside it, in the Court's red ink, \"Not yet judged.\" The clerk asks whether you wish to speak to it.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "echo_killer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Prayers from an Old Life",
+   "choices": [
+    {
+     "text": "Ask for mercy for {echo_killer}",
+     "effects": {
+      "log": "The clerk writes \"Forgiven by the one harmed\" in the margin. It is the first time the Court has seen that written by a god.",
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Ask for it to be judged",
+     "effects": {
+      "log": "The clerk closes the Register. \"It will be,\" the clerk says, \"in its hour.\" You find you are content with that.",
+      "fame": 2,
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_pk_echo_1",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_pk",
+   "text": "In a village of {pw_kingdom} there is a little shrine with a face carved over the door, worn almost smooth. The children say it is {echo_title}, who lived here a long time ago and did something good. Nobody can remember what. You can.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "echo"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Echoes of Your World",
+   "choices": [
+    {
+     "text": "Clean the shrine and leave flowers",
+     "effects": {
+      "log": "You clean it and leave wildflowers, and the next morning someone has left a bowl of rice beside yours.",
+      "alignment": 2,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Tell the children what really happened",
+     "effects": {
+      "log": "You tell them. They do not believe a word, and ask for it again the next night.",
+      "charm": 2,
+      "fame": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_pk_echo_2",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_pk",
+   "text": "The singers of {pw_kingdom} have a song about {echo_name} and {echo_spouse}, two people who lived on the river a long time ago and were very stubborn about each other. You hear it at an inn and have to put your cup down, because you know how it really ended.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "echo_spouse"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Echoes of Your World",
+   "choices": [
+    {
+     "text": "Ask the singer to sing it again",
+     "effects": {
+      "log": "The second time through, you sing the last verse with them, the true one. The inn goes very quiet.",
+      "charm": 3
+     }
+    },
+    {
+     "text": "Pay for the singer's supper and slip out",
+     "effects": {
+      "log": "You pay and go out into the cold. The song follows you down the street for a while.",
+      "alignment": 1,
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_pk_echo_3",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_pk",
+   "text": "A family in {pw_kingdom} says it descends from {echo_child}, and keeps a box of things {echo_child} left: a comb, a letter, a wooden horse. You know the horse. You carved it, a life ago, by a different fire.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "echo_child"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Echoes of Your World",
+   "choices": [
+    {
+     "text": "Tell them who you are",
+     "effects": {
+      "log": "They do not believe you, of course. But the eldest of the house looks at your hands a long time, and asks you to stay for supper.",
+      "charm": 2,
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Ask to hold the horse, and say nothing",
+     "effects": {
+      "log": "You hold it a moment and give it back. The grain is still warm where your thumb used to rest.",
+      "comprehension": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10ec_pk_echo_4",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10ec_pk",
+   "text": "A smith of {pw_kingdom} has a blade on the wall that is not for sale: {echo_weapon}. It came out of the river one spring, the smith says, clean as the day it was made, and nobody in the family has ever dared to sharpen it.",
+   "when": {
+    "flags": [
+     "pw_life",
+     "echo_weapon"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Echoes of Your World",
+   "choices": [
+    {
+     "text": "Ask to hold it",
+     "effects": {
+      "log": "The smith hands it over and steps back. It sits in your hand as if it has been waiting for exactly this hand.",
+      "strength": 2,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Tell the smith to keep it on the wall",
+     "effects": {
+      "log": "\"It likes it here,\" you say. The smith looks at you very oddly, and agrees.",
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gp_up_ashen_1",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gp_ashen",
+   "text": "Elder Mok Yeon-hwa of the Isle of Ashen Bells finds you at the edge of your terrace, grey robes and all, smelling of incense and cold stone. \"The dead of the clouds are lonely,\" the elder says. \"Immortals fall, too, and nobody rings for them. Will you come and ring?\"",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Isle of Ashen Bells",
+   "choices": [
+    {
+     "text": "Go and ring the bells for the fallen immortals",
+     "effects": {
+      "log": "You ring all night. In the morning the mist over the isle is full of faces, and every one of them nods to you before it goes.",
+      "alignment": 2,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Say the clouds are for the living",
+     "effects": {
+      "log": "The elder shrugs. \"So is the world below,\" Mok says. \"The dead do not mind. They wait.\"",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gp_up_ashen_2",
+   "cat": "danger",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gp_ashen",
+   "text": "A fallen immortal walks out of the mist of the Isle of Ashen Bells, a jiangshi of the clouds, still in court silk ten thousand years out of fashion. It stops in front of you, sniffs the death qi on your robe, and bows as to an elder of its own house.",
+   "when": {
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Isle of Ashen Bells",
+   "choices": [
+    {
+     "text": "Bow back, and lead it to the bells",
+     "effects": {
+      "log": "You lead it home through the mist. Elder Mok watches from the gate and says nothing, which from Mok is praise.",
+      "alignment": 2,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Bind it to your bell",
+     "effects": {
+      "log": "It comes under your bell without a sound. It is very old, and very strong, and it does not like you.",
+      "strength": 2,
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gp_gd_ashen_1",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gp_ashen",
+   "text": "The graves of every domain pray, it turns out, and their prayers are addressed to whoever once kept the Ashen Ghost bells. Tonight there are more of them than usual: a famine below, a war somewhere. The cold of them sits behind your eyes.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Graves That Pray",
+   "choices": [
+    {
+     "text": "Answer every one, all night",
+     "effects": {
+      "log": "You answer them all. By dawn your hall is full of a quiet that is not empty, and your worshippers above bring offerings without knowing why.",
+      "alignment": 3,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Let them pray, and listen only",
+     "effects": {
+      "log": "You listen until dawn. You know the names of a thousand people who died this year. Somebody should.",
+      "comprehension": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "b10gp_gd_ashen_2",
+   "cat": "insight",
+   "weight": 5,
+   "cooldown": 0,
+   "once": false,
+   "trigger": "b10gp_ashen",
+   "text": "Baekun the Pale Ferryman stops his boat at the foot of your hall and calls up the stairs. \"You have been taking my passengers' prayers,\" the god of Death says, without anger. \"I do not mind. But you should know whose they were.\"",
+   "when": {
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Graves That Pray",
+   "choices": [
+    {
+     "text": "Ask Baekun to teach you the names",
+     "effects": {
+      "log": "Baekun teaches you the names, one boatload at a time. It takes a century. It is the best century you have spent in the heavens.",
+      "comprehension": 3,
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Tell Baekun the prayers came to you, not to him",
+     "effects": {
+      "log": "Baekun laughs, a sound like oars. \"Everything comes to me in the end,\" he says, and poles away.",
+      "fame": 2,
+      "luck": -1
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

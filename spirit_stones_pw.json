@@ -1,0 +1,76 @@
+{
+ "events": [
+  {
+   "id": "sst_mine_envoys_pw_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Three riders of the strongest lord in this world come to your mine with a list of demands: a tenth of every year's stones, \"for the protection of the road\". The road never needed protecting before they rode up it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "biz_mine",
+     "pw_life"
+    ]
+   },
+   "arc": "The Stone Trade",
+   "trigger": "spirit_stones",
+   "choices": [
+    {
+     "text": "Refuse them to their faces",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The lord's riders"
+     },
+     "ok": {
+      "log": "They draw. You do not let them finish drawing. They ride home with the list in pieces and a story that makes the next riders very polite.",
+      "fame": 5
+     },
+     "fail": {
+      "log": "They are stronger than riders have any right to be. You wake in the ditch, and the list is pinned to the mine door with a knife.",
+      "health": -18
+     }
+    },
+    {
+     "text": "Pay them 300 taels and keep the stones",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "log": "Silver they understand. They take it and go, and come back next year, smiling. (300 taels)",
+      "taels": -300,
+      "luck": -1
+     }
+    },
+    {
+     "text": "Offer them a fair contract to guard the road",
+     "effects": {
+      "log": "You turn the demand into a contract, and the contract into a road that really is guarded. The lord is puzzled, and keeps it.",
+      "charm": 2,
+      "taels": -100,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Let your guardians meet them at the gate",
+     "req": {
+      "flags": [
+       "p32_mine_guard"
+      ]
+     },
+     "effects": {
+      "log": "You send word to the gate and stay where you are.",
+      "flag": "p32x_mine_guard"
+     }
+    }
+   ],
+   "cooldown": 10
+  }
+ ],
+ "mwPass": 1
+}

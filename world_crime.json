@@ -1,0 +1,394 @@
+{
+ "events": [
+  {
+   "id": "cr_nw_gambling_den",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     80
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A gambling den owner wants a quiet, frightening person to stand by the door. Pay is good; the customers are not.",
+   "choices": [
+    {
+     "text": "Take the job for a season",
+     "effects": {
+      "taels": 40,
+      "alignment": -3,
+      "log": "Nobody cheats while you are watching. (40 taels)"
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 1,
+      "log": "He shrugs. There are always other frightening people."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_pickpocket_crew",
+   "cat": "danger",
+   "when": {
+    "age": [
+     14,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A crew of pickpockets needs someone to cause a distraction in the market while they work.",
+   "choices": [
+    {
+     "text": "Juggle loudly",
+     "effects": {
+      "taels": 15,
+      "alignment": -3,
+      "charm": 1,
+      "log": "The best-attended juggling show in the county. The crew gives you a cut. (15 taels)"
+     }
+    },
+    {
+     "text": "Warn the market",
+     "effects": {
+      "alignment": 3,
+      "flag": "wary",
+      "log": "The crew scatters and learns your face."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_forger",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A forger offers you a travel pass with a magistrate's seal on it, perfect in every way except that it is not real.",
+   "choices": [
+    {
+     "text": "Buy it",
+     "effects": {
+      "taels": -20,
+      "alignment": -2,
+      "flag": "forged_pass",
+      "log": "It works at every checkpoint. You feel slightly sick each time. (−20 taels)"
+     },
+     "req": {
+      "minTaels": 20
+     }
+    },
+    {
+     "text": "Report him",
+     "effects": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "The forger is arrested. His customers are not pleased with you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_caught",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "ever_night_work"
+    ],
+    "age": [
+     14,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 3,
+   "text": "A constable recognises you from a night that was supposed to be forgotten. His hand is already on your shoulder.",
+   "choices": [
+    {
+     "text": "Run",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "wary",
+      "log": "Rooftop, alley, canal. He loses you in the fish market."
+     },
+     "fail": {
+      "jail": 2,
+      "log": "He is faster than he looks. The magistrate sends you to prison."
+     }
+    },
+    {
+     "text": "Go quietly",
+     "effects": {
+      "jail": 1,
+      "alignment": 1,
+      "log": "The magistrate notes your manners and gives you one year instead of two."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_fence",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A fence in the back of a pawnshop buys anything, asks nothing, and remembers everything.",
+   "choices": [
+    {
+     "text": "Sell him your old things",
+     "effects": {
+      "taels": 10,
+      "log": "He pays badly and remembers your face. (10 taels)"
+     }
+    },
+    {
+     "text": "Ask what he remembers about others",
+     "effects": {
+      "taels": -5,
+      "flag": "wary",
+      "comprehension": 1,
+      "log": "For five taels he tells you who has been buying poisons lately."
+     },
+     "req": {
+      "minTaels": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_heist",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A crew is planning to rob a corrupt salt official's vault. They need someone who can climb.",
+   "choices": [
+    {
+     "text": "Climb for them",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 120,
+      "alignment": -3,
+      "flag": "ever_night_work",
+      "log": "Over the wall, through the window, down with the silver. The official cannot report what he stole first. (120 taels)"
+     },
+     "fail": {
+      "jail": 3,
+      "health": -10,
+      "log": "The dogs wake. You are caught on the wall."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 2,
+      "log": "They go without you. Two of them hang. You never regret refusing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_robin",
+   "cat": "misc",
+   "when": {
+    "alignment": [
+     20,
+     100
+    ],
+    "age": [
+     16,
+     80
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "You could rob the rich salt merchants and leave the silver on poor doorsteps. The idea will not leave you alone.",
+   "choices": [
+    {
+     "text": "Try it for one night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 6,
+      "fame": 3,
+      "flag": "ever_night_work",
+      "log": "Forty doorsteps, forty surprised families at dawn. The merchant does not even notice."
+     },
+     "fail": {
+      "jail": 2,
+      "log": "You are caught at the first house."
+     }
+    },
+    {
+     "text": "Donate your own silver instead",
+     "effects": {
+      "taels": -20,
+      "alignment": 4,
+      "log": "Less romantic, more legal."
+     },
+     "req": {
+      "minTaels": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_blackmail",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "You overhear a magistrate taking a bribe. He sees you see it.",
+   "choices": [
+    {
+     "text": "Ask for silence money",
+     "effects": {
+      "taels": 50,
+      "alignment": -6,
+      "flag": "magistrate_enemy",
+      "log": "He pays, and hates you forever. (50 taels)"
+     }
+    },
+    {
+     "text": "Walk away and forget it",
+     "effects": {
+      "flag": "wary",
+      "log": "You forget it. He does not forget you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_counterfeit",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A counterfeiter offers you a bag of fake silver at one-tenth its face value.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 1,
+      "log": "He laughs and offers the bag to the next person."
+     }
+    },
+    {
+     "text": "Buy it and report him",
+     "effects": {
+      "taels": 5,
+      "fame": 1,
+      "alignment": 2,
+      "log": "The constables pay you back and thank you. (+5 taels)"
+     },
+     "req": {
+      "minTaels": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_nw_gang_offer",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "ever_night_work"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "The Black Wind's recruiter watches you work a night job. 'You are good. Come with us and the jobs get bigger.'",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 1,
+      "log": "'Suit yourself. Offer stands.'"
+     }
+    },
+    {
+     "text": "Ask about the pay",
+     "effects": {
+      "flag": "gang_offer",
+      "log": "He names a number. It is a very large number. You say you will think."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

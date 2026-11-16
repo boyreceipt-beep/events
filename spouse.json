@@ -1,0 +1,183 @@
+{
+ "events": [
+  {
+   "id": "sp_evening_tea",
+   "trigger": "befriend",
+   "cat": "family",
+   "npc": {
+    "spouse": true
+   },
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "text": "{npc} has waited up for you with tea, as {he} does most nights. Tonight {he} wants to talk about something other than the murim.",
+   "choices": [
+    {
+     "text": "Put everything aside and listen",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "listened to me all evening"
+      },
+      "health": 5,
+      "log": "You talk until the candle burns out: about the garden, about the neighbours, about nothing at all. It is the best evening of the year."
+     }
+    },
+    {
+     "text": "\"Tomorrow. I have to train.\"",
+     "effects": {
+      "qi": 10,
+      "mem": {
+       "deed": "neglected",
+       "w": -6,
+       "note": "always has to train"
+      },
+      "log": "{npc} nods and pours the tea out into the garden. You train. It is not the same."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sp_worry",
+   "trigger": "befriend",
+   "cat": "family",
+   "npc": {
+    "spouse": true
+   },
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{npc} cleans the blood off your sleeve without a word. Then, very quietly: \"One day you won't come home. What happens to us then?\"",
+   "choices": [
+    {
+     "text": "Promise to be careful",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "promised to come home"
+      },
+      "log": "\"You always say that.\" But {he} holds your hand a little longer than usual."
+     }
+    },
+    {
+     "text": "Teach {him} to defend {him}self",
+     "effects": {
+      "npcRealm": 1,
+      "mem": {
+       "deed": "taught",
+       "w": 14,
+       "note": "taught me to fight"
+      },
+      "log": "Every evening for a season, in the courtyard. By spring {npc} can throw you. Nobody mentions that part."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sp_anniversary",
+   "trigger": "befriend",
+   "cat": "family",
+   "npc": {
+    "spouse": true
+   },
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "minTaels": 30
+   },
+   "text": "It is the anniversary of your wedding. You almost forgot. {npc} did not.",
+   "choices": [
+    {
+     "text": "Take {him} back to where you married",
+     "effects": {
+      "taels": -30,
+      "charm": 2,
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "remembered our day"
+      },
+      "log": "The same place, older now, and so are you. {He} laughs the same way {he} did that day."
+     }
+    },
+    {
+     "text": "Pretend you remembered all along",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "mem": {
+       "deed": "gift",
+       "w": 6,
+       "note": "remembered, sort of"
+      },
+      "log": "You produce a hastily bought gift with great confidence. It works, mostly."
+     },
+     "fail": {
+      "mem": {
+       "deed": "neglected",
+       "w": -10,
+       "note": "forgot our anniversary"
+      },
+      "log": "{npc} sees straight through you. The house is very quiet for a week."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "sp_household_quarrel",
+   "trigger": "ask_help",
+   "cat": "family",
+   "npc": {
+    "spouse": true
+   },
+   "when": {
+    "age": [
+     20,
+     999
+    ]
+   },
+   "text": "The household accounts do not add up, and {npc} has found out why: your silver keeps going to swords and pills.",
+   "choices": [
+    {
+     "text": "Hand {him} the purse strings",
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "trusted me with the house"
+      },
+      "log": "Within a year the house has savings. You are not sure how. You are not allowed to ask.",
+      "loss": true
+     }
+    },
+    {
+     "text": "\"The sword keeps this house safe.\"",
+     "effects": {
+      "mem": {
+       "deed": "insulted",
+       "w": -8,
+       "note": "chose the sword over the house"
+      },
+      "log": "True, perhaps. {npc} is not convinced, and says so for a month."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,2302 @@
+{
+ "events": [
+  {
+   "id": "dc_vl_betray_1",
+   "cat": "npc",
+   "trigger": "vl_betray",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "A stranger in a grey hat finds you in a back room of the teahouse. The people behind the stranger want {npc}, your sworn sibling, and they know you know where {he} sleeps. The purse on the table between you is heavy.",
+   "choices": [
+    {
+     "text": "Sell {npc} to them",
+     "effects": {
+      "taels": 220,
+      "alignment": -18,
+      "tally": {
+       "infamy": 22
+      },
+      "fame": -5,
+      "npcFlag": "vl_betrayed",
+      "role": "rival",
+      "mem": {
+       "deed": "betrayed",
+       "w": -70,
+       "note": "sold me to my enemies"
+      },
+      "log": "You draw the map on a napkin. Three nights later {npc} is taken on the road, and the whole jianghu knows who drew the map. (220 taels)"
+     }
+    },
+    {
+     "text": "Take the purse and warn {npc} anyway",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 220,
+      "alignment": -4,
+      "tally": {
+       "infamy": 6
+      },
+      "log": "You take their silver and send {npc} a warning in the same night. Nobody can prove which side you were on. (220 taels)"
+     },
+     "fail": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_betrayed",
+      "mem": {
+       "deed": "betrayed",
+       "w": -30,
+       "note": "took silver for my life"
+      },
+      "log": "The grey hat finds out about the warning, and {npc} finds out about the purse. Both of them hate you now."
+     }
+    },
+    {
+     "text": "Push the purse back across the table",
+     "effects": {
+      "alignment": 3,
+      "log": "The grey hat shrugs and leaves. An oath is an oath."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_betray_2",
+   "cat": "npc",
+   "trigger": "vl_betray",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "{npc} trusts you with everything: the secret of {his} family's art, the hiding place of {his} manual, the name of the one {he} fears most. That last one would pay very well to know the first two.",
+   "choices": [
+    {
+     "text": "Sell {npc}'s secrets",
+     "effects": {
+      "taels": 160,
+      "artYears": 1,
+      "alignment": -16,
+      "tally": {
+       "infamy": 18
+      },
+      "npcFlag": "vl_betrayed",
+      "role": "rival",
+      "mem": {
+       "deed": "betrayed",
+       "w": -60,
+       "note": "sold the secrets of my house"
+      },
+      "log": "You sell the secrets and keep a copy for yourself. When {npc} learns who it was, {he} says nothing at all, which is worse. (160 taels)"
+     }
+    },
+    {
+     "text": "Steal the manual and vanish",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "manual": 1,
+      "alignment": -14,
+      "tally": {
+       "infamy": 15
+      },
+      "npcFlag": "vl_betrayed",
+      "role": "rival",
+      "flag": "vlx_flee",
+      "mem": {
+       "deed": "betrayed",
+       "w": -60,
+       "note": "stole the manual of my house"
+      },
+      "log": "You are three provinces away by the time {npc} opens the empty box."
+     },
+     "fail": {
+      "health": -12,
+      "alignment": -10,
+      "tally": {
+       "infamy": 12
+      },
+      "npcFlag": "vl_betrayed",
+      "mem": {
+       "deed": "betrayed",
+       "w": -50,
+       "note": "tried to rob my house"
+      },
+      "log": "{npc} catches you with the box in your hands. The fight is short and ugly, and the oath is over."
+     }
+    },
+    {
+     "text": "Keep the secrets",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "loyal",
+       "w": 10,
+       "note": "kept my secrets when it would have paid not to"
+      },
+      "log": "Some things are not for sale. You are a little surprised to find that you mean it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_takeover_1",
+   "cat": "sect",
+   "trigger": "vl_takeover",
+   "once": false,
+   "cooldown": 4,
+   "when": {
+    "notFactions": [
+     "demonic"
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "The sect's elders are old, tired and divided. One by one, over cups of tea and quiet favours, you could turn them. After that, only the leader would stand between you and the seat.",
+   "choices": [
+    {
+     "text": "Turn the elders one by one",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "alignment": -10,
+      "tally": {
+       "infamy": 16
+      },
+      "flag": "vlx_takeover",
+      "fame": 10,
+      "log": "At the spring assembly the elders rise one after another and ask the leader to step down \"for the good of the sect\". Every one of them is looking at you."
+     },
+     "fail": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_expel",
+      "log": "One elder was only pretending. The leader reads your letters aloud in the great hall, and you are expelled before noon."
+     }
+    },
+    {
+     "text": "Challenge the leader before the whole sect",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "the sect leader",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 12
+      },
+      "flag": "vlx_takeover",
+      "fame": 20,
+      "log": "The leader goes down on one knee in the courtyard. Nobody helps them up. The sect is yours."
+     },
+     "fail": {
+      "health": -25,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "vlx_expel",
+      "deathCause": "a duel for the leadership of a sect, fought and lost",
+      "log": "You lose before the whole sect, and a loser who reached for the seat is not allowed to stay."
+     }
+    },
+    {
+     "text": "Wait. Not yet",
+     "effects": {
+      "log": "You pour the tea and say nothing. There will be other springs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_cultcoup_1",
+   "cat": "sect",
+   "trigger": "vl_takeover",
+   "once": false,
+   "cooldown": 4,
+   "when": {
+    "factions": [
+     "demonic"
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "In the Cult the throne belongs to whoever can take it, and everyone knows it. The vice leaders watch each other. If you moved first, with the right people behind you, the Hundred Thousand Mountains could have a new master by the new moon.",
+   "choices": [
+    {
+     "text": "Buy the vice leaders with promises",
+     "roll": {
+      "stat": "strategy",
+      "dc": 62
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 18
+      },
+      "flag": "vlx_takeover",
+      "fame": 15,
+      "log": "On the night of the new moon the guards open the doors for you, and the throne room is very quiet."
+     },
+     "fail": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_expel",
+      "log": "Someone sold the plan before you could. You leave the Cult over the cliff path, with half of it behind you."
+     }
+    },
+    {
+     "text": "Challenge the throne openly",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.2,
+      "foeName": "the master of the Cult",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "vlx_takeover",
+      "fame": 30,
+      "log": "The old master falls back against the throne and does not rise. The Cult bows to its new Heavenly Demon."
+     },
+     "fail": {
+      "health": -30,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "vlx_expel",
+      "deathCause": "a challenge for the throne of the Demonic Cult",
+      "log": "You are thrown down the steps of the throne room, and the Cult is no longer your home."
+     }
+    },
+    {
+     "text": "Bide your time",
+     "effects": {
+      "log": "You bow with everyone else. The throne can wait for you a little longer."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_frame_1",
+   "cat": "rival",
+   "trigger": "vl_frame",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "{npc} has a room in the guest house by the sect gate, and the sect's treasury lost a jade seal last month. Nobody has found it yet. Nobody would think to look under {npc}'s floorboards, unless someone told them to.",
+   "choices": [
+    {
+     "text": "Plant the seal and whisper to the guards",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_framed",
+      "mem": {
+       "deed": "framed",
+       "w": -40,
+       "note": "had me named a thief"
+      },
+      "log": "The guards find the seal exactly where you said they would. {npc} is disgraced and driven off, shouting your name. Nobody listens."
+     },
+     "fail": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 14
+      },
+      "fame": -10,
+      "jail": 1,
+      "log": "A servant saw you lift the floorboard. The magistrate is not amused."
+     }
+    },
+    {
+     "text": "Forge letters to the demonic sects in {his} hand",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": -14,
+      "tally": {
+       "infamy": 12
+      },
+      "npcFlag": "vl_framed",
+      "rep": {
+       "orthodox": -2
+      },
+      "mem": {
+       "deed": "framed",
+       "w": -45,
+       "note": "forged my hand on traitor letters"
+      },
+      "log": "The letters are perfect. {npc} spends a season in a cell explaining them, and comes out with no friends left."
+     },
+     "fail": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 12
+      },
+      "fame": -8,
+      "log": "The forgery is good, but the ink is too fresh. Nobody can prove it was you. Everybody thinks it was."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "alignment": 2,
+      "log": "You walk past the guest house. Beating {npc} honestly will taste better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_frame_2",
+   "cat": "rival",
+   "trigger": "vl_frame",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "A merchant was robbed on the north road, and the constables want someone to hang the blame on. {npc} was on that road the same week. You were too, but they do not know that.",
+   "choices": [
+    {
+     "text": "Swear it was {npc}",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_framed",
+      "mem": {
+       "deed": "framed",
+       "w": -40,
+       "note": "swore false witness against me"
+      },
+      "log": "{npc} is dragged off in chains. You are thanked for your honesty, which is the strangest part."
+     },
+     "fail": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 10
+      },
+      "jail": 2,
+      "log": "Your story has a hole in it, and the magistrate finds it. Now you are the one on the north road."
+     }
+    },
+    {
+     "text": "Say nothing",
+     "effects": {
+      "log": "You keep quiet. The constables arrest a stranger instead, and that does not feel much better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_extort_1",
+   "cat": "danger",
+   "trigger": "vl_extort",
+   "once": false,
+   "cooldown": 1,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_merchant",
+     "realm": -2,
+     "age": 10
+    }
+   },
+   "text": "{npc} owns three shops on the market street and pays nobody for protection. That is a gap in the world, and you could fill it.",
+   "choices": [
+    {
+     "text": "Crack the table and name a price",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "the merchant's guards"
+     },
+     "ok": {
+      "taels": 120,
+      "alignment": -8,
+      "tally": {
+       "infamy": 7
+      },
+      "mem": {
+       "deed": "extorted",
+       "w": -30,
+       "note": "took my silver with threats"
+      },
+      "log": "{npc} pays, and will keep paying every month. The other shopkeepers start bowing when you pass. (120 taels)"
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "infamy": 4
+      },
+      "log": "{npc} has better guards than you thought. You leave by the window."
+     }
+    },
+    {
+     "text": "Leave a letter and a dead rat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 80,
+      "alignment": -6,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "The silver is waiting in the shrine every new moon, wrapped in red paper. (80 taels)"
+     },
+     "fail": {
+      "alignment": -4,
+      "tally": {
+       "infamy": 6
+      },
+      "fame": -5,
+      "log": "{npc} takes the letter to the constables, and your handwriting is on a wanted poster now."
+     }
+    },
+    {
+     "text": "Buy something and go",
+     "effects": {
+      "taels": -5,
+      "log": "You buy a fan you do not need. The merchant never knows how close it was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_extort_2",
+   "cat": "danger",
+   "trigger": "vl_extort",
+   "once": false,
+   "cooldown": 1,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_merchant",
+     "realm": -2,
+     "age": 15
+    }
+   },
+   "text": "The river ferry at the county crossing is the only one for twenty li, and its owner, {npc}, has grown fat on it. Every traveller must cross. Every ferry could pay you a share.",
+   "choices": [
+    {
+     "text": "Take a share of every crossing",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the ferrymen"
+     },
+     "ok": {
+      "taels": 150,
+      "alignment": -8,
+      "tally": {
+       "infamy": 8
+      },
+      "mem": {
+       "deed": "extorted",
+       "w": -30,
+       "note": "took a share of my ferry"
+      },
+      "log": "The ferrymen learn to bow to you, and the silver comes downriver every month. (150 taels)"
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "infamy": 4
+      },
+      "log": "The ferrymen throw you in the river. It is very cold, and the whole county laughs."
+     }
+    },
+    {
+     "text": "Leave the ferry alone",
+     "effects": {
+      "log": "You pay your fare like everyone else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_slander_1",
+   "cat": "rival",
+   "trigger": "vl_slander",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "The storytellers of the capital will tell any tale for silver, and the teahouses repeat whatever the storytellers say. A few coins, a few nights, and {npc}'s name could mean something very different.",
+   "choices": [
+    {
+     "text": "Pay for a scandal",
+     "roll": {
+      "stat": "poetry",
+      "dc": 45
+     },
+     "ok": {
+      "taels": -40,
+      "alignment": -8,
+      "tally": {
+       "infamy": 6
+      },
+      "fame": 5,
+      "npcFlag": "vl_slandered",
+      "mem": {
+       "deed": "slandered",
+       "w": -35,
+       "note": "poisoned my name in every teahouse"
+      },
+      "log": "By the end of the season the children sing a rude song about {npc}, and {his} sect has stopped inviting {him} to anything."
+     },
+     "fail": {
+      "taels": -40,
+      "alignment": -4,
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -8,
+      "log": "One storyteller sells the story of who paid for the others. Now the song is about you."
+     }
+    },
+    {
+     "text": "Spread whispers yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 52
+     },
+     "ok": {
+      "alignment": -8,
+      "tally": {
+       "infamy": 5
+      },
+      "npcFlag": "vl_slandered",
+      "mem": {
+       "deed": "slandered",
+       "w": -30,
+       "note": "spread lies about me"
+      },
+      "log": "A word here, a sigh there. Soon nobody can remember why they ever trusted {npc}."
+     },
+     "fail": {
+      "alignment": -4,
+      "tally": {
+       "infamy": 6
+      },
+      "fame": -6,
+      "log": "You whisper to the wrong person, who whispers to {npc}."
+     }
+    },
+    {
+     "text": "Let the teahouses talk about the weather",
+     "effects": {
+      "log": "You keep your silver and your peace."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_slander_2",
+   "cat": "rival",
+   "trigger": "vl_slander",
+   "once": false,
+   "cooldown": 3,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "{npc} is to speak before the Alliance assembly next month. If the assembly heard first that {he} takes demonic silver, nobody would hear a word {he} said.",
+   "choices": [
+    {
+     "text": "Send anonymous letters to the assembly",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "alignment": -10,
+      "tally": {
+       "infamy": 7
+      },
+      "npcFlag": "vl_slandered",
+      "mem": {
+       "deed": "slandered",
+       "w": -35,
+       "note": "turned the assembly against me with lies"
+      },
+      "log": "{npc} stands up to speak, and half the hall stands up to leave."
+     },
+     "fail": {
+      "alignment": -5,
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -6,
+      "log": "The letters are traced to the courier you paid. The assembly talks about you instead."
+     }
+    },
+    {
+     "text": "Let {npc} speak",
+     "effects": {
+      "alignment": 2,
+      "log": "You sit in the back row and listen. {He} is not even very good."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_bounty_1",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 1,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "text": "Your face is on a poster at the crossroads, with a price under it. Tonight, at the inn, the quiet traveller in the corner, {npc}, has the same poster folded in {his} sleeve.",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "power"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The hunter is good, but not good enough. You leave {him} tied to the bench and the poster pinned to {his} chest."
+     },
+     "fail": {
+      "health": -25,
+      "taels": -60,
+      "deathCause": "a bounty hunter's blade, for the price on your head",
+      "log": "The hunter takes your purse as a down payment and you barely get out through the kitchen."
+     }
+    },
+    {
+     "text": "Slip out through the kitchen",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "By the time {npc} looks up, your cup is still warm and you are gone."
+     },
+     "fail": {
+      "health": -15,
+      "log": "{npc} catches you in the yard. You get away, but not cleanly."
+     }
+    },
+    {
+     "text": "Pay {him} to forget your face",
+     "req": {
+      "minTaels": 80
+     },
+     "effects": {
+      "taels": -80,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} counts the silver twice and decides you look like nobody. (-80 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_bounty_2",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 1,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "text": "Three masked hunters wait on the rooftops above the road, and the moon is bright enough to see their nets. Their leader, {npc}, calls your name as if reading it from a list.",
+   "choices": [
+    {
+     "text": "Break through them",
+     "roll": {
+      "stat": "power",
+      "foeMult": 1.2
+     },
+     "risky": true,
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "Tiles fall, nets tear, and the three of them are left on the road wondering who hired whom."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "three bounty hunters on the rooftops",
+      "log": "The nets find you. You cut your way out, but you will feel this one for a long time."
+     }
+    },
+    {
+     "text": "Turn back and take the river",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You go into the river and come out a province away."
+     },
+     "fail": {
+      "health": -15,
+      "taels": -40,
+      "log": "The river is colder and faster than you hoped. You lose your purse and nearly more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_bounty_3",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 2,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "text": "A child brings you a letter at the market: {npc}, a bounty hunter, invites you to settle the price on your head at the old temple, alone, at dawn. It is very polite.",
+   "choices": [
+    {
+     "text": "Go, and settle it",
+     "roll": {
+      "stat": "power"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 8,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "At dawn, among the broken statues, the matter is settled. {npc} will not be collecting anyone's price again."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "a bounty hunter at the old temple at dawn",
+      "log": "The hunter wins the morning. You wake in a ditch with your life and nothing else."
+     }
+    },
+    {
+     "text": "Leave town before dawn",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You were never going to answer a polite letter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_vl_orthodox_1",
+   "cat": "danger",
+   "trigger": "vl_orthodox_first",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_elder",
+     "realm": 1,
+     "age": 25
+    }
+   },
+   "text": "The orthodox sects have stopped laughing at your name. An elder of the Alliance, {npc}, has sworn before the assembly to bring you to justice, and {he} is the kind who keeps oaths.",
+   "choices": [
+    {
+     "text": "Let {him} come",
+     "effects": {
+      "fame": 5,
+      "log": "You hear the news in a teahouse and finish your tea. Somewhere, {npc} is already on the road."
+     }
+    },
+    {
+     "text": "Send {him} an insult",
+     "effects": {
+      "tally": {
+       "infamy": 3
+      },
+      "fame": 8,
+      "rep": {
+       "orthodox": -4
+      },
+      "mem": {
+       "deed": "insulted",
+       "w": -15,
+       "note": "mocked my oath"
+      },
+      "log": "You send the elder a pair of old sandals and a note: \"for the long walk\". The whole jianghu laughs, except {npc}."
+     }
+    },
+    {
+     "text": "Lie low for a while",
+     "effects": {
+      "tally": {
+       "infamy": -5
+      },
+      "flag": "vlx_flee",
+      "log": "You change your name and move to another province. The elder will have to find you first."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_orthodox_2",
+   "cat": "danger",
+   "trigger": "vl_orthodox",
+   "once": false,
+   "cooldown": 2,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "{npc} has found you. The orthodox elder stands at the end of the bridge in plain grey robes, sword still sheathed, and says only: \"Come with me to the Alliance, or draw.\"",
+   "choices": [
+    {
+     "text": "Draw",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "tally": {
+       "infamy": 10
+      },
+      "rep": {
+       "orthodox": -10
+      },
+      "npcDie": "fell on a bridge, hunting one they could not catch",
+      "log": "The elder falls on the bridge, and the orthodox sects have a martyr. They will not forgive you this."
+     },
+     "fail": {
+      "health": -30,
+      "jail": 3,
+      "deathCause": "the sword of an orthodox elder",
+      "log": "The elder disarms you in three moves and delivers you to the magistrate."
+     }
+    },
+    {
+     "text": "Go into the river",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "The water is black and fast. When you climb out, {npc} is a province behind you, and still coming."
+     },
+     "fail": {
+      "health": -15,
+      "jail": 2,
+      "log": "The elder is waiting on the bank downstream."
+     }
+    },
+    {
+     "text": "Go with {him} and face judgement",
+     "effects": {
+      "jail": 4,
+      "tally": {
+       "infamy": -25
+      },
+      "alignment": 5,
+      "flag": "vlx_elder_gone",
+      "log": "You hand over your weapon. {npc} nods once, as if you have surprised {him}."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_elder_1",
+   "cat": "danger",
+   "trigger": "vl_orthodox",
+   "once": false,
+   "cooldown": 2,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "{npc} is in the same city again. Posters, informers, a disciple of {his} at every gate. Tonight the elder sends a message: \"I am old. I would rather this ended with words.\"",
+   "choices": [
+    {
+     "text": "Meet {him} and talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 58
+     },
+     "ok": {
+      "tally": {
+       "infamy": -15
+      },
+      "alignment": 6,
+      "flag": "vlx_elder_gone",
+      "mem": {
+       "deed": "spared",
+       "w": 20,
+       "note": "talked with me as an equal"
+      },
+      "log": "You talk until dawn. In the morning {npc} goes home, and the hunt goes with {him}."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 5
+      },
+      "log": "The talk turns cold. The elder leaves with {his} hand on {his} sword, and the hunt goes on."
+     }
+    },
+    {
+     "text": "Ambush {him} on the way",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "tally": {
+       "infamy": 12
+      },
+      "alignment": -10,
+      "rep": {
+       "orthodox": -12
+      },
+      "npcDie": "ambushed on the way to a parley",
+      "log": "The elder came to talk, and you came to win. The orthodox sects will tell this story for a hundred years."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "an ambush that went wrong, against an orthodox elder",
+      "log": "The old elder was ready for exactly this. You barely escape."
+     }
+    },
+    {
+     "text": "Leave the city tonight",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You are gone before the message is cold."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_manhunt_1",
+   "cat": "danger",
+   "trigger": "vl_manhunt",
+   "once": false,
+   "cooldown": 0,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "The whole murim hunts you now. Orthodox and unorthodox, the Alliance and the Beggars' Gang: every gate has your face on it and every inn has an informer. The innkeeper's hand shakes when it pours your tea.",
+   "choices": [
+    {
+     "text": "Keep moving",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "A new province every season. You sleep with your back to the wall."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "vlx_flee",
+      "log": "They nearly have you in the mountain pass. You escape with an arrow through your sleeve and very little else."
+     }
+    },
+    {
+     "text": "Strike first at the hunters",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "the hunting party"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "You fall on their camp at night. By morning the hunting party is a rumour that frightens the next one."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "the hunting parties of the whole murim",
+      "log": "There were more of them than your scouts said."
+     }
+    },
+    {
+     "text": "Go to ground in a quiet village",
+     "effects": {
+      "tally": {
+       "infamy": -8
+      },
+      "health": 5,
+      "log": "You plant rice for a season under another name. Nobody looks twice at a farmer."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_manhunt_2",
+   "cat": "danger",
+   "trigger": "vl_manhunt",
+   "once": false,
+   "cooldown": 0,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "Your old hideouts are burned, your fences arrested, and the Alliance has called a great assembly with only one matter on it: you. The banners of a dozen sects are gathering on the roads.",
+   "choices": [
+    {
+     "text": "Fortify a mountain fastness",
+     "effects": {
+      "strength": 3,
+      "log": "You find a ruined fortress above the clouds and start mending the walls. If they come, they will come uphill."
+     }
+    },
+    {
+     "text": "Flee to the far west",
+     "roll": {
+      "stat": "lightness",
+      "dc": 58
+     },
+     "ok": {
+      "region": "west",
+      "tally": {
+       "infamy": -10
+      },
+      "log": "Past the Jade Gate the murim posters are faded and nobody reads them anyway."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The border garrison has your face too. You turn back with arrows behind you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_vl_siege_1",
+   "cat": "danger",
+   "trigger": "vl_siege",
+   "once": false,
+   "cooldown": 0,
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "They have come. Below your mountain the banners of the whole murim fill the valley: orthodox, unorthodox, even a few of the demonic who want you gone for their own reasons. Torches climb the paths all night. At dawn they will storm the walls.",
+   "choices": [
+    {
+     "text": "Hold the walls to the last",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.3,
+      "foeName": "the champions of the murim",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 40,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "Three days and three nights. On the fourth morning the banners go down the mountain, and you are still standing on the wall. You survived the siege of the whole murim."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the siege of the whole murim, holding the walls to the last",
+      "log": "The gate breaks on the third night. You are carried out of the ruin by the last of your people, alive and finished."
+     }
+    },
+    {
+     "text": "Escape by the hidden path",
+     "roll": {
+      "stat": "lightness",
+      "dc": 62
+     },
+     "risky": true,
+     "ok": {
+      "tally": {
+       "infamy": -35
+      },
+      "flag": [
+       "vlx_flee",
+       "vlx_siege_end"
+      ],
+      "log": "You leave a lamp burning in the tower and go down the cliff in the dark. When they break in, there is nobody to fight. The legend says you died. You let it."
+     },
+     "fail": {
+      "health": -35,
+      "jail": 6,
+      "flag": "vlx_siege_end",
+      "deathCause": "a fall from the hidden path during the great siege",
+      "log": "The hidden path was not hidden enough. You are taken at the bottom of the cliff."
+     }
+    },
+    {
+     "text": "Walk out alone and face them all",
+     "req": {
+      "realm": [
+       5,
+       99
+      ]
+     },
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.6,
+      "foeName": "the greatest masters of the murim",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 100,
+      "flag": "vlx_legend",
+      "mark": "legend_of_terror",
+      "log": "You open the gate and walk down into the valley alone. One by one the champions come to you, and one by one they go no further. By noon the armies are leaving. It will be a long time before the murim dares this valley again: you are a legend of terror now."
+     },
+     "fail": {
+      "die": "the last stand against the whole murim, walking out alone to face them",
+      "log": "You walk out alone. The murim will sing about it, and that is all."
+     }
+    },
+    {
+     "text": "Surrender",
+     "effects": {
+      "jail": 10,
+      "tally": {
+       "infamy": -50
+      },
+      "flag": "vlx_siege_end",
+      "alignment": 5,
+      "log": "You open the gate and lay down your weapon. The assembly sentences you to ten years. Many of them wanted more."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sc_house_1",
+   "cat": "family",
+   "trigger": "succ_contest",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_contest",
+     "succ_seat_house"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The house is yours on paper, but {npc} has been running it for years and does not mean to stop now. The servants watch you both. The ancestral tablets wait.",
+   "choices": [
+    {
+     "text": "Duel {npc} for the seat",
+     "roll": {
+      "stat": "power",
+      "boss": false,
+      "duel": true
+     },
+     "ok": {
+      "flag": "scx_won",
+      "fame": 4,
+      "mem": {
+       "deed": "beaten",
+       "w": -10,
+       "note": "beat me for the seat"
+      },
+      "log": "{npc} lowers {his} weapon in front of everyone."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "health": -15,
+      "log": "You are beaten in front of everyone who matters."
+     }
+    },
+    {
+     "text": "Prove you can run the house better",
+     "roll": {
+      "stat": "strategy",
+      "dc": 48
+     },
+     "ok": {
+      "flag": "scx_won",
+      "taels": 30,
+      "log": "A good harvest, honest ledgers, the roof finally mended: the household chooses you."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "The ledgers do not add up under you. The household chooses {npc}."
+     }
+    },
+    {
+     "text": "Win the elders over",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "scx_won",
+      "log": "When the elders are asked, every one of them says your name."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "When the elders are asked, they look at the floor, and then at {npc}."
+     }
+    },
+    {
+     "text": "Scheme against {npc}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "flag": [
+       "scx_won",
+       "scx_infamy"
+      ],
+      "alignment": -8,
+      "mem": {
+       "deed": "schemed",
+       "w": -30,
+       "note": "stole the seat from me with lies"
+      },
+      "log": "A rumour, a forged debt, a witness who suddenly remembers it differently: {npc} withdraws before the vote."
+     },
+     "fail": {
+      "flag": [
+       "scx_lost",
+       "scx_infamy"
+      ],
+      "alignment": -6,
+      "fame": -5,
+      "log": "The scheme comes out, and nobody votes for a schemer."
+     }
+    },
+    {
+     "text": "Yield the seat to {npc}",
+     "effects": {
+      "flag": "scx_yield",
+      "alignment": 4,
+      "log": "You bow to {npc}. Some of the family are relieved; some never forgive you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sc_clan_1",
+   "cat": "family",
+   "trigger": "succ_contest",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_contest",
+     "succ_seat_clan"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The clan elders have called the whole clan to the ancestral hall. You hold the clan seal, but {npc} has the young cousins behind {him}, and they want a trial before the tablets.",
+   "choices": [
+    {
+     "text": "Duel {npc} for the seat",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "ok": {
+      "flag": "scx_won",
+      "fame": 10,
+      "mem": {
+       "deed": "beaten",
+       "w": -10,
+       "note": "beat me for the seat"
+      },
+      "log": "{npc} lowers {his} weapon in front of everyone."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "health": -15,
+      "log": "You are beaten in front of everyone who matters."
+     }
+    },
+    {
+     "text": "Win the elders over",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "scx_won",
+      "log": "When the elders are asked, every one of them says your name."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "When the elders are asked, they look at the floor, and then at {npc}."
+     }
+    },
+    {
+     "text": "Scheme against {npc}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "flag": [
+       "scx_won",
+       "scx_infamy"
+      ],
+      "alignment": -8,
+      "mem": {
+       "deed": "schemed",
+       "w": -30,
+       "note": "stole the seat from me with lies"
+      },
+      "log": "A rumour, a forged debt, a witness who suddenly remembers it differently: {npc} withdraws before the vote."
+     },
+     "fail": {
+      "flag": [
+       "scx_lost",
+       "scx_infamy"
+      ],
+      "alignment": -6,
+      "fame": -5,
+      "log": "The scheme comes out, and nobody votes for a schemer."
+     }
+    },
+    {
+     "text": "Yield the seat to {npc}",
+     "effects": {
+      "flag": "scx_yield",
+      "alignment": 4,
+      "log": "You bow to {npc}. Some of the family are relieved; some never forgive you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sc_sect_1",
+   "cat": "family",
+   "trigger": "succ_contest",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_contest",
+     "succ_seat_sect"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "Before the whole sect, {npc} steps out of the ranks and asks the question everyone has been whispering: why you, and not {him}? By the old rule, the seat goes to whoever wins it.",
+   "choices": [
+    {
+     "text": "Duel {npc} for the seat",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "ok": {
+      "flag": "scx_won",
+      "fame": 10,
+      "mem": {
+       "deed": "beaten",
+       "w": -10,
+       "note": "beat me for the seat"
+      },
+      "log": "{npc} lowers {his} weapon in front of everyone."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "health": -15,
+      "log": "You are beaten in front of everyone who matters."
+     }
+    },
+    {
+     "text": "Win the elders over",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "scx_won",
+      "log": "When the elders are asked, every one of them says your name."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "When the elders are asked, they look at the floor, and then at {npc}."
+     }
+    },
+    {
+     "text": "Scheme against {npc}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "flag": [
+       "scx_won",
+       "scx_infamy"
+      ],
+      "alignment": -8,
+      "mem": {
+       "deed": "schemed",
+       "w": -30,
+       "note": "stole the seat from me with lies"
+      },
+      "log": "A rumour, a forged debt, a witness who suddenly remembers it differently: {npc} withdraws before the vote."
+     },
+     "fail": {
+      "flag": [
+       "scx_lost",
+       "scx_infamy"
+      ],
+      "alignment": -6,
+      "fame": -5,
+      "log": "The scheme comes out, and nobody votes for a schemer."
+     }
+    },
+    {
+     "text": "Yield the seat to {npc}",
+     "effects": {
+      "flag": "scx_yield",
+      "alignment": 4,
+      "log": "You bow to {npc}. Some of the family are relieved; some never forgive you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sc_demon_1",
+   "cat": "family",
+   "trigger": "succ_contest",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_contest",
+     "succ_seat_demon"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "In the Cult a throne is not inherited, it is taken. {npc} has gathered half the Cult's elders, and the other half are waiting to see which of you is still standing.",
+   "choices": [
+    {
+     "text": "Duel {npc} for the seat",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "ok": {
+      "flag": "scx_won",
+      "fame": 10,
+      "mem": {
+       "deed": "beaten",
+       "w": -10,
+       "note": "beat me for the seat"
+      },
+      "log": "{npc} lowers {his} weapon in front of everyone."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "health": -15,
+      "log": "You are beaten in front of everyone who matters."
+     }
+    },
+    {
+     "text": "Win the elders over",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "scx_won",
+      "log": "When the elders are asked, every one of them says your name."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "When the elders are asked, they look at the floor, and then at {npc}."
+     }
+    },
+    {
+     "text": "Scheme against {npc}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "flag": [
+       "scx_won",
+       "scx_infamy"
+      ],
+      "alignment": -8,
+      "mem": {
+       "deed": "schemed",
+       "w": -30,
+       "note": "stole the seat from me with lies"
+      },
+      "log": "A rumour, a forged debt, a witness who suddenly remembers it differently: {npc} withdraws before the vote."
+     },
+     "fail": {
+      "flag": [
+       "scx_lost",
+       "scx_infamy"
+      ],
+      "alignment": -6,
+      "fame": -5,
+      "log": "The scheme comes out, and nobody votes for a schemer."
+     }
+    },
+    {
+     "text": "Yield the seat to {npc}",
+     "effects": {
+      "flag": "scx_yield",
+      "alignment": 4,
+      "log": "You bow to {npc}. Some of the family are relieved; some never forgive you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sc_throne_1",
+   "cat": "family",
+   "trigger": "succ_contest",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_contest",
+     "succ_seat_throne"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The court bowed to you at the coronation, but {npc} has an army in the north and a faction of ministers in the capital. The court whispers of two suns in one sky.",
+   "choices": [
+    {
+     "text": "Duel {npc} for the seat",
+     "roll": {
+      "stat": "power",
+      "boss": true,
+      "duel": true
+     },
+     "ok": {
+      "flag": "scx_won",
+      "fame": 10,
+      "mem": {
+       "deed": "beaten",
+       "w": -10,
+       "note": "beat me for the seat"
+      },
+      "log": "{npc} lowers {his} weapon in front of everyone."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "health": -15,
+      "log": "You are beaten in front of everyone who matters."
+     }
+    },
+    {
+     "text": "Win the court with favours",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "scx_won",
+      "taels": -100,
+      "log": "Titles, fiefs and promises, carefully spent. The ministers remember whose seal is on their posts."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "The ministers take your favours and give their loyalty to {npc} anyway."
+     }
+    },
+    {
+     "text": "Win the elders over",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "scx_won",
+      "log": "When the elders are asked, every one of them says your name."
+     },
+     "fail": {
+      "flag": "scx_lost",
+      "log": "When the elders are asked, they look at the floor, and then at {npc}."
+     }
+    },
+    {
+     "text": "Scheme against {npc}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 52
+     },
+     "ok": {
+      "flag": [
+       "scx_won",
+       "scx_infamy"
+      ],
+      "alignment": -8,
+      "mem": {
+       "deed": "schemed",
+       "w": -30,
+       "note": "stole the seat from me with lies"
+      },
+      "log": "A rumour, a forged debt, a witness who suddenly remembers it differently: {npc} withdraws before the vote."
+     },
+     "fail": {
+      "flag": [
+       "scx_lost",
+       "scx_infamy"
+      ],
+      "alignment": -6,
+      "fame": -5,
+      "log": "The scheme comes out, and nobody votes for a schemer."
+     }
+    },
+    {
+     "text": "Yield the seat to {npc}",
+     "effects": {
+      "flag": "scx_yield",
+      "alignment": 4,
+      "log": "You bow to {npc}. Some of the family are relieved; some never forgive you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sc_own_1",
+   "cat": "family",
+   "trigger": "succ_own",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "flags": [
+     "succ_seat_house",
+     "has_child"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "Your children are grown, and at the new year feast nobody talks about anything else: who will be head of the house after you. {npc} sits a little closer to the head of the table every year.",
+   "choices": [
+    {
+     "text": "Name {npc} your heir",
+     "effects": {
+      "flag": "scx_name_bound",
+      "log": "You lay your hand on {npc}'s shoulder before the tablets."
+     }
+    },
+    {
+     "text": "Hold a trial among them",
+     "effects": {
+      "flag": "scx_trial",
+      "log": "You set them a trial of arts, of judgement and of patience, and you watch."
+     }
+    },
+    {
+     "text": "Let them settle it among themselves",
+     "effects": {
+      "flag": "scx_scheme",
+      "alignment": -3,
+      "log": "You say nothing and let them fight it out. It is the murim way, and it is not kind."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "You are not done yet, and you tell them so."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sc_ownsect_1",
+   "cat": "family",
+   "trigger": "succ_own",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "anyFlags": [
+     "succ_seat_sect",
+     "succ_seat_demon",
+     "succ_seat_clan"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The elders have asked, carefully, who will lead after you. Your grown children all hear the question. {npc} answers it before you can, with a look.",
+   "choices": [
+    {
+     "text": "Name {npc} your heir",
+     "effects": {
+      "flag": "scx_name_bound",
+      "log": "You lay your hand on {npc}'s shoulder before the tablets."
+     }
+    },
+    {
+     "text": "Hold a trial among them",
+     "effects": {
+      "flag": "scx_trial",
+      "log": "You set them a trial of arts, of judgement and of patience, and you watch."
+     }
+    },
+    {
+     "text": "Let them settle it among themselves",
+     "effects": {
+      "flag": "scx_scheme",
+      "alignment": -3,
+      "log": "You say nothing and let them fight it out. It is the murim way, and it is not kind."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "You are not done yet, and you tell them so."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sc_ownthrone_1",
+   "cat": "family",
+   "trigger": "succ_own",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "flags": [
+     "succ_seat_throne",
+     "has_child"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The ministers have petitioned you to name a crown prince or princess. Each of your grown children has a faction at court, and {npc}'s is the loudest.",
+   "choices": [
+    {
+     "text": "Name {npc} your heir",
+     "effects": {
+      "flag": "scx_name_bound",
+      "log": "You lay your hand on {npc}'s shoulder before the tablets."
+     }
+    },
+    {
+     "text": "Hold a trial among them",
+     "effects": {
+      "flag": "scx_trial",
+      "log": "You set them a trial of arts, of judgement and of patience, and you watch."
+     }
+    },
+    {
+     "text": "Let them settle it among themselves",
+     "effects": {
+      "flag": "scx_scheme",
+      "alignment": -3,
+      "log": "You say nothing and let them fight it out. It is the murim way, and it is not kind."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "You are not done yet, and you tell them so."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sc_estate_1",
+   "cat": "family",
+   "trigger": "succ_estate",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 6,
+   "when": {
+    "flags": [
+     "succ_case_dead"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "The mourning is barely over, and the house is already quarrelling. The fields, the strongbox, the family's sword on the wall: {npc} says your late parent meant all of it for {him}.",
+   "choices": [
+    {
+     "text": "Claim the whole house",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "scx_estate_won",
+      "log": "You and {npc} settle it in the courtyard, the old way. You win."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "health": -10,
+      "log": "{npc} wins in the courtyard, and the house is {npc}'s."
+     }
+    },
+    {
+     "text": "Forge a will in your favour",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "flag": [
+       "scx_estate_won",
+       "scx_infamy"
+      ],
+      "alignment": -10,
+      "log": "The will is found in the strongbox exactly where you left it."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "alignment": -6,
+      "fame": -6,
+      "log": "The magistrate holds your will up to the light and laughs."
+     }
+    },
+    {
+     "text": "Divide it fairly",
+     "effects": {
+      "flag": "scx_estate_share",
+      "alignment": 2,
+      "log": "You sit down with {npc} and the ledgers."
+     }
+    },
+    {
+     "text": "Let {npc} have it",
+     "effects": {
+      "flag": "scx_estate_yield",
+      "alignment": 4,
+      "log": "You give {npc} the keys. A house is only a house."
+     }
+    }
+   ],
+   "variants": [
+    "The incense for your parent has not burned down, and already {npc} is standing in the storeroom with the ledgers. The fields, the strongbox, the old sword over the door: {he} says it was all promised to {him}.",
+    "Three days after the funeral the cousins come to dinner and nobody eats. {npc} clears {his} throat and says what everyone came to hear: the house, the land and the family sword were meant for {him}."
+   ]
+  },
+  {
+   "id": "dc_sc_elderold_1",
+   "cat": "family",
+   "trigger": "succ_estate",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 4,
+   "when": {
+    "flags": [
+     "succ_case_old"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "Your parent's hair has gone white, and the whole family knows what that means. {npc} has started sitting at the head of the table when your parent is resting, and the servants have started bringing {him} the ledgers.",
+   "choices": [
+    {
+     "text": "Claim the whole house",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "scx_estate_won",
+      "log": "You and {npc} settle it in the courtyard, the old way. You win."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "health": -10,
+      "log": "{npc} wins in the courtyard, and the house is {npc}'s."
+     }
+    },
+    {
+     "text": "Forge a will in your favour",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "flag": [
+       "scx_estate_won",
+       "scx_infamy"
+      ],
+      "alignment": -10,
+      "log": "The will is found in the strongbox exactly where you left it."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "alignment": -6,
+      "fame": -6,
+      "log": "The magistrate holds your will up to the light and laughs."
+     }
+    },
+    {
+     "text": "Divide it fairly",
+     "effects": {
+      "flag": "scx_estate_share",
+      "alignment": 2,
+      "log": "You sit down with {npc} and the ledgers."
+     }
+    },
+    {
+     "text": "Let {npc} have it",
+     "effects": {
+      "flag": "scx_estate_yield",
+      "alignment": 4,
+      "log": "You give {npc} the keys. A house is only a house."
+     }
+    }
+   ],
+   "variants": [
+    "Your parent's hair is white now, and the household has noticed. When your parent rests, {npc} takes the head of the table, and the ledgers have started finding their way to {him}."
+   ]
+  },
+  {
+   "id": "dc_sc_estategrand_1",
+   "cat": "family",
+   "trigger": "succ_estate",
+   "once": false,
+   "cooldown": 0,
+   "maxPerLife": 4,
+   "when": {
+    "flags": [
+     "succ_case_grand"
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "npc": {
+    "family": true
+   },
+   "text": "Your grandparent's house is to be divided, and {npc} wants the whole of it, leaving your side of the family with nothing. Everyone looks at you to speak for your branch.",
+   "choices": [
+    {
+     "text": "Claim the whole house",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "flag": "scx_estate_won",
+      "log": "You and {npc} settle it in the courtyard, the old way. You win."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "health": -10,
+      "log": "{npc} wins in the courtyard, and the house is {npc}'s."
+     }
+    },
+    {
+     "text": "Forge a will in your favour",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "flag": [
+       "scx_estate_won",
+       "scx_infamy"
+      ],
+      "alignment": -10,
+      "log": "The will is found in the strongbox exactly where you left it."
+     },
+     "fail": {
+      "flag": "scx_estate_lost",
+      "alignment": -6,
+      "fame": -6,
+      "log": "The magistrate holds your will up to the light and laughs."
+     }
+    },
+    {
+     "text": "Divide it fairly",
+     "effects": {
+      "flag": "scx_estate_share",
+      "alignment": 2,
+      "log": "You sit down with {npc} and the ledgers."
+     }
+    },
+    {
+     "text": "Let {npc} have it",
+     "effects": {
+      "flag": "scx_estate_yield",
+      "alignment": 4,
+      "log": "You give {npc} the keys. A house is only a house."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

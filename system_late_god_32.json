@@ -1,0 +1,3207 @@
+{
+ "events": [
+  {
+   "id": "dc_mlt_dv_101",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "Through the second gate the System wakes hungrier than ever: here even the prayers rising to the gods are essence. {npc}, Inspector of the Granary of Heaven, is waiting at the edge of your new domain with the same ledger and the bronze cup. \"Gods are fed by faith,\" {he} says. \"The Granary counts what is left over. Lately there is less.\"",
+   "choices": [
+    {
+     "text": "Show {him} the hunger plainly",
+     "effects": {
+      "alignment": 3,
+      "log": "{npc} holds the cup to the hunger and writes: \"Divine, and still honest.\" In the Granary that counts for a great deal.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Say you have never devoured anything",
+     "effects": {
+      "alignment": -2,
+      "luck": 2,
+      "log": "{npc} tips the cup. A thread of prayer runs out of it, warm, addressed to someone else. {He} writes something down.",
+      "flag": "mltx_spurn"
+     }
+    },
+    {
+     "text": "Ask what the System is, to the gods",
+     "effects": {
+      "comprehension": 3,
+      "log": "\"A shard,\" says {npc}, \"of the thing that ate the first light. The gods have never agreed on what to do with the pieces.\""
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_dv_102",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "Here the stars are gods, and the System knows it. \"Look,\" it says, thick and slow, \"every throne is a feast nobody is eating.\" {npc} finds you watching the Hall of Thrones. \"Every god you feed on,\" {he} says, \"is a temple below that prays to an empty sky.\"",
+   "choices": [
+    {
+     "text": "Promise to eat only what is given freely",
+     "effects": {
+      "alignment": 4,
+      "log": "You promise. The System sulks for a season. {npc} writes your promise in the ledger, which among the gods is the same as an oath.",
+      "flag": [
+       "mlt_dv_a",
+       "mltx_good"
+      ]
+     }
+    },
+    {
+     "text": "Say hunger is older than gods",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "sysdv_hunger": -10
+      },
+      "log": "\"So is the Granary,\" says {npc}, and closes the ledger. From then on {he} watches you the way temple cats watch the offerings.",
+      "flag": [
+       "mlt_dv_b",
+       "mltx_hd_up"
+      ]
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_dv_103",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s3",
+     "mlt_dv_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "A god's promise has a god's price. The hunger gnaws at a divine scale now, and the thrones stay untouched. {npc} brings a jar from the Granary: faith left over from a thousand temples, given up by gods who had more than they needed. \"It is not much,\" {he} says. \"It is what the heavens can spare.\"",
+   "choices": [
+    {
+     "text": "Eat it slowly",
+     "effects": {
+      "tally": {
+       "sysdv_hunger": -30
+      },
+      "log": "You take it a grain at a time. It tastes of incense and rain. For the first time the hunger says thank you.",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Send it back to the temples below",
+     "effects": {
+      "alignment": 6,
+      "tally": {
+       "sysdv_hunger": 10
+      },
+      "log": "Let them keep it, you say. That year the temples below are full and nobody knows why. {npc} does not argue.",
+      "flag": "mltx_good"
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_dv_104",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s3",
+     "mlt_dv_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "{npc} comes into your domain with the Granary's warrant and two guards carrying cups the size of temple bells. \"Gods have gone thin where you passed,\" {he} says. \"Give back what you took from them, or I will measure it out of you.\"",
+   "choices": [
+    {
+     "text": "Stand and fight the Inspector",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the Inspector of the Granary"
+     },
+     "ok": {
+      "flag": [
+       "mltx_spurn",
+       "mltx_hd_up"
+      ],
+      "strength": 3,
+      "log": "You win. The System drinks what rises from the fallen inspector's qi before you can stop it. {npc} gets up lighter, and does not come back for a long time."
+     },
+     "fail": {
+      "health": -20,
+      "woundOnly": true,
+      "tally": {
+       "sysdv_hunger": 15
+      },
+      "log": "The great cups ring once and the hunger is drawn out of you in a long cold stream. You wake in your own domain, empty and furious."
+     }
+    },
+    {
+     "text": "Give back one throne's worth",
+     "effects": {
+      "alignment": 3,
+      "tally": {
+       "sysdv_hunger": 15
+      },
+      "log": "You open your hand and let one god's share go. It climbs back to its throne. {npc} marks the ledger: \"Partial. Promising.\"",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_bond"
+      ]
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_dvend_101",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s5",
+     "mlt_dv_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "The hunger is quiet now, a sky inside you with every throne put back. {npc} visits your domain on the day of your old promise. \"One entry is left with your name on it,\" {he} says. \"A last meal: the System could eat the hunger itself, and you with it, and the heavens would be full forever. I only tell you it exists.\"",
+   "choices": [
+    {
+     "text": "Say: not yet",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} closes the ledger and pours the tea.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask what it would feel like",
+     "effects": {
+      "luck": 2,
+      "log": "\"Like the end of a long feast,\" says {npc}, \"when nobody wants to be the first to stand up.\""
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_dvend_102",
+   "cat": "life",
+   "trigger": "mlt_dv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_devouring",
+     "mlt_dv_s5",
+     "mlt_dv_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "The System has been patient for two whole years, which for it is a miracle. Tonight, under the Hall of Thrones, it says one thing more: \"One meal is left. Me. And you with me. Then nothing in all the heavens is ever hungry for us again.\" {npc}, who stopped hunting you long ago, hears it too and goes pale.",
+   "choices": [
+    {
+     "text": "Tell {npc} you have not decided",
+     "effects": {
+      "alignment": 2,
+      "log": "{npc} lets out a breath {he} seems to have been holding for two years.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Tell the System to wait",
+     "effects": {
+      "strength": 2,
+      "log": "The System waits. It is getting better at it.",
+      "flag": "mltx_hd_down"
+     }
+    }
+   ],
+   "arc": "The Hunger Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_si_101",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Ding! Signed in: your own domain. Then, for the first time, the register adds a line you have never seen: [New places available among the gods.] {npc}, Archivist of Heaven's Register, is waiting at your threshold with a box of jade slips. \"You signed in more than any immortal I kept,\" {he} says. \"I followed you through the gate to see if you would keep it up.\"",
+   "choices": [
+    {
+     "text": "Show {him} your streak",
+     "effects": {
+      "charm": 3,
+      "log": "{npc} reads the whole streak without blinking, and bows to it, which archivists never do.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask where the new places are",
+     "effects": {
+      "comprehension": 3,
+      "log": "\"The Hall of Thrones,\" says {npc}. \"The River Between Stars. Places no god has ever signed. Gods do not like being counted.\""
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_si_102",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "{npc} brings you a slip from the register: [Faithful or far?] \"Some gods sign their own domain for ten thousand years,\" {he} says, \"and the domain becomes them. Some sign every heaven once, and become the road. The Last Calendar is made of one or the other.\"",
+   "choices": [
+    {
+     "text": "Faithful: the same ground",
+     "effects": {
+      "tally": {
+       "syssi_run": 2
+      },
+      "comprehension": 2,
+      "log": "You sign your own domain again, and again. It begins to feel like a held breath.",
+      "flag": [
+       "mlt_si_a",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Far: every heaven once",
+     "effects": {
+      "luck": 3,
+      "charm": 1,
+      "log": "You sign the River Between Stars, then the ruin of a forgotten god. The register purrs.",
+      "flag": "mlt_si_b"
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_si_103",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s3",
+     "mlt_si_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Faithful has a price. {npc} warns you that the register is closing pages among the gods: a heaven nobody signs for a thousand years is struck from the charts. A small temple below, the first place you ever signed as a god, is on the list. Signing it from up here costs a year.",
+   "choices": [
+    {
+     "text": "Spend the year",
+     "effects": {
+      "alignment": 4,
+      "log": "You spend the year signing a little temple from the top of the sky. Below, a priest finds the lamp lit.",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_good"
+      ]
+     }
+    },
+    {
+     "text": "Let the register strike it",
+     "effects": {
+      "comprehension": 3,
+      "log": "The page closes. You learn something about what gods can and cannot keep.",
+      "flag": "mltx_hd_up"
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_si_104",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s3",
+     "mlt_si_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Far has a price. Every heaven you sign wants you back, and the register cannot pay them all. The Hall of Thrones has a bell that now rings for one signature only, and it is yours. \"You have made a heaven lonely,\" says {npc}. \"Up here even that can happen.\"",
+   "choices": [
+    {
+     "text": "Go back and sign the bell",
+     "effects": {
+      "luck": 2,
+      "log": "You go back. The bell rings once, and the gods in the hall look up as if they had forgotten it could.",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Keep moving",
+     "effects": {
+      "charm": 2,
+      "comprehension": 2,
+      "log": "You keep moving. Behind you the bell waits, patient as a god.",
+      "flag": "mltx_hd_up"
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_siend_101",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s5",
+     "mlt_si_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "{npc} comes to your domain on the anniversary of your Last Calendar with one slip. \"The register asks me to tell you there is one signature left. You could sign yourself in as a place. Other gods would sign in at you. Your domain would be faithful forever.\" {He} puts it away. \"I only carry its messages.\"",
+   "choices": [
+    {
+     "text": "Say: not yet",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} nods, and files the slip under later.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask {him} what {he} would do",
+     "effects": {
+      "charm": 2,
+      "log": "\"I would ask what you just asked,\" says {npc}, \"and then I would go and sign something.\""
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_siend_102",
+   "cat": "life",
+   "trigger": "mlt_si",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "mlt_si_s5",
+     "mlt_si_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The register's last message comes by itself, written in starlight across the River Between Stars: [One signature left. Sign, and close the book.] {npc} reads it beside you. \"For a far one,\" {he} says, \"the last place is the end of the road. I did not think a god's register would say it.\"",
+   "choices": [
+    {
+     "text": "Let the starlight fade",
+     "effects": {
+      "luck": 2,
+      "log": "By morning the river has carried the words away. The road goes on a little longer."
+     }
+    },
+    {
+     "text": "Copy it into your sleeve",
+     "effects": {
+      "comprehension": 2,
+      "log": "You copy it down. {npc} pretends not to watch you fold it very carefully.",
+      "flag": "mltx_bond"
+     }
+    }
+   ],
+   "arc": "The Last Calendar"
+  },
+  {
+   "id": "dc_mlt_sl_101",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Ding! Sect goal: none. The System has run out of goals for a sect of immortals, and for the first time it sounds uncertain. Then it draws a plan across your domain: a hall of light with a stair running down to the temples below. [The Hall of the Descending Stair.] {npc}, your first disciple above, has followed you through the gate. \"Shall I sweep it?\" {he} asks.",
+   "choices": [
+    {
+     "text": "Make {him} the hall's first disciple",
+     "effects": {
+      "fame": 10,
+      "log": "{npc} sweeps the first step of a hall that does not exist yet, very seriously.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Test {his} forms first",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} is better than when you last saw {him}. The gods who watch notice it too.",
+      "flag": "mltx_bond"
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_sl_102",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The new hall's plan has a gate, and the System wants an answer for it: [Open or closed?] Open, and any disciple of yours, below or above, who can climb may come. Closed, and only those you choose. {npc} says: \"A god's hall with mortals walking into it? The pantheons will laugh.\"",
+   "choices": [
+    {
+     "text": "Open: whoever can climb may come",
+     "effects": {
+      "alignment": 4,
+      "log": "You leave the gate open. The first to climb it is a mortal cook, of course.",
+      "flag": [
+       "mlt_sl_a",
+       "mltx_good"
+      ]
+     }
+    },
+    {
+     "text": "Closed: only those you choose",
+     "effects": {
+      "fame": 10,
+      "strength": 2,
+      "log": "The gate shuts. The hall is quiet and very strong.",
+      "flag": "mlt_sl_b"
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_sl_103",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s3",
+     "mlt_sl_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The open gate brings them: disciples from below, then immortals, then a forgotten little god who smelled the cooking. The hall is loud now. {npc} brings you the ledger: the pantheons have stopped sending offerings to a hall that lets mortals in.",
+   "choices": [
+    {
+     "text": "Feed everyone anyway",
+     "effects": {
+      "alignment": 3,
+      "log": "You feed everyone anyway. The forgotten god washes the bowls, and weeps over it, happily.",
+      "flag": [
+       "mltx_good",
+       "mltx_bond"
+      ],
+      "eyeFaith": 5
+     },
+     "req": {
+      "minFaithEye": 5
+     }
+    },
+    {
+     "text": "Send the cook back down",
+     "effects": {
+      "fame": 5,
+      "log": "The cook goes back down the stair. The hall is quieter, and the food is worse.",
+      "flag": "mltx_hd_up"
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_sl_104",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s3",
+     "mlt_sl_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The closed gate keeps the hall strong and {npc} unhappy. One night you learn why: {he} has been letting a disciple from below climb the stair after dark, a friend from the old sect who could never pass your test. \"Punish me,\" {he} says. \"Not my friend.\"",
+   "choices": [
+    {
+     "text": "Let the friend stay",
+     "effects": {
+      "alignment": 4,
+      "log": "The friend stays. {npc} does not say thank you; {he} sweeps the stair every morning for a year instead.",
+      "flag": [
+       "mltx_bond",
+       "mltx_hd_down"
+      ]
+     }
+    },
+    {
+     "text": "Send the friend back, and forgive {npc}",
+     "effects": {
+      "strength": 3,
+      "fame": 10,
+      "log": "The friend goes back down. {npc} takes it better than you deserved.",
+      "flag": "mltx_hd_up"
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_slend_101",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s5",
+     "mlt_sl_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The hall is old enough now to have stories about you, most of them wrong. {npc} finds you at night by the founder's altar, which is empty. \"Below they light a lamp for a founder who is gone,\" {he} says. \"Among the gods nobody ever needed to.\" {He} does not say the rest.",
+   "choices": [
+    {
+     "text": "Say the altar can stay empty a while",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} lights a small lamp anyway, for practice, and blows it out.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask the disciples what they would want",
+     "effects": {
+      "fame": 10,
+      "log": "The disciples argue about it for a week, which is how you know they love the hall."
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_slend_102",
+   "cat": "life",
+   "trigger": "mlt_sl",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_sectlord",
+     "mlt_sl_s5",
+     "mlt_sl_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The closed gate is still closed, and the hall is the strongest under the Thrones. {npc} keeps the key at {his} neck. One night {he} asks: \"When you are a lamp on the altar, may I open it?\" It is the only thing {npc} has ever asked of you.",
+   "choices": [
+    {
+     "text": "Say yes",
+     "effects": {
+      "alignment": 3,
+      "log": "{npc} touches the key and says nothing, which is how {he} says thank you.",
+      "flag": [
+       "mltx_bond",
+       "mltx_hd_down"
+      ]
+     }
+    },
+    {
+     "text": "Say it will be {his} hall to decide",
+     "effects": {
+      "fame": 10,
+      "log": "{npc} looks at the gate a long time, as if it already belonged to someone.",
+      "flag": "mltx_bond"
+     }
+    }
+   ],
+   "arc": "The Sect Above the Clouds"
+  },
+  {
+   "id": "dc_mlt_mr_101",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "Ding. The Martial God's Mirror wakes among the gods like a starving scholar in a library: every god you pass carries an art older than any you have seen. In a quiet corner of the Hall of Thrones a figure in white is practising alone, and the Mirror goes still. \"{npc},\" says the figure. \"I carried that Mirror before you. I came up to see what it would do here.\"",
+   "choices": [
+    {
+     "text": "Ask why {he} broke {his}",
+     "effects": {
+      "comprehension": 3,
+      "log": "\"It wanted to copy a god,\" says {npc}. \"I did not want to be the one holding it when it did.\"",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Watch {his} sword while {he} talks",
+     "effects": {
+      "strength": 2,
+      "log": "The Mirror drinks the sword in while {npc} talks. {He} knows, and keeps talking.",
+      "flag": [
+       "mltx_mr_sword",
+       "mltx_spurn"
+      ]
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_mr_102",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "{npc} offers you a bargain under the Thrones. \"Two arts of the gods. The War God's Cleaving Sword I will show you openly, if you swear to give back what you copy one day. Or steal the other, the Palm of the Silent Throne, from the old god who practises it at dawn. The Mirror can do either.\"",
+   "choices": [
+    {
+     "text": "Swear, and watch the sword",
+     "effects": {
+      "alignment": 3,
+      "log": "You swear. {npc} shows you the sword slowly, the way one god shows another something sacred.",
+      "flag": [
+       "mlt_mr_a",
+       "mltx_mr_sword",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Steal the palm at dawn",
+     "effects": {
+      "luck": 2,
+      "log": "At dawn you are behind a pillar of the Hall of Thrones, and the Mirror is open.",
+      "flag": [
+       "mlt_mr_b",
+       "mltx_mr_palm",
+       "mltx_hd_up"
+      ]
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_mr_103",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s3",
+     "mlt_mr_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "A sworn host keeps the oath. {npc} draws again before the Thrones, slower, so the Mirror can see where the cut begins. \"Copy it whole,\" {he} says, \"and remember you promised it back.\" It is the first time a god's art has been shown to the Mirror on purpose.",
+   "choices": [
+    {
+     "text": "Watch every stroke",
+     "effects": {
+      "comprehension": 2,
+      "log": "You watch every stroke. The Mirror copies it whole, and is quiet afterwards, almost reverent.",
+      "flag": [
+       "mltx_mr_sword",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Ask to cross swords with it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "the sword master in white",
+      "devour": false
+     },
+     "ok": {
+      "flag": [
+       "mltx_mr_sword",
+       "mltx_bond"
+      ],
+      "strength": 3,
+      "log": "You cross swords with {npc} before the Thrones and win the last exchange. The Mirror keeps the whole art, and so does your arm."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "flag": "mltx_mr_sword",
+      "log": "{npc} disarms you gently with the very cut you were copying. \"Again tomorrow,\" {he} says."
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_mr_104",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s3",
+     "mlt_mr_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "The old god of the palm finds you at dawn behind the same pillar. \"Twice,\" the god says. \"The Mirror needs to see it twice, does it not?\" It is {npc} behind the old god, with a face like stone. \"I told,\" {npc} says. \"I carried a Mirror. I know what it needs.\"",
+   "choices": [
+    {
+     "text": "Ask the old god to show it once more",
+     "effects": {
+      "alignment": 2,
+      "log": "The old god laughs, and shows it once more, slowly. Gods are vain.",
+      "flag": [
+       "mltx_mr_palm",
+       "mltx_hd_down"
+      ]
+     }
+    },
+    {
+     "text": "Take it by force of watching",
+     "effects": {
+      "strength": 2,
+      "log": "You watch so hard the old god feels it, and leaves. The Mirror has the palm. {npc} will not look at you.",
+      "flag": [
+       "mltx_mr_palm",
+       "mltx_hd_up",
+       "mltx_spurn"
+      ]
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_mrend_101",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s5",
+     "mlt_mr_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "{npc} comes to the Hall of Thrones on the anniversary of the Last Form. \"You swore to give back what you copied,\" {he} says. \"There is one way. Let the Mirror copy its last thing: you. Then you are the art, and any god who looks into still water can learn it.\" {He} does not ask. {He} only says it exists.",
+   "choices": [
+    {
+     "text": "Say: not yet",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} nods, as if {he} had expected nothing else.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Teach {npc} the Last Form instead",
+     "effects": {
+      "alignment": 3,
+      "log": "You teach {npc} the Last Form, stroke by stroke. It is a strange way to give something back, and it works.",
+      "flag": [
+       "mltx_bond",
+       "mltx_good"
+      ]
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_mrend_102",
+   "cat": "life",
+   "trigger": "mlt_mr",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_mirror",
+     "mlt_mr_s5",
+     "mlt_mr_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "rival"
+   },
+   "text": "The Mirror is full, and does not know what to do with fullness. In your domain at night it shows you your own face, over and over, as if practising. {npc} sees it once, reflected in your eyes, and goes pale. \"It wants its last copy,\" {he} says. \"You. Mine never got that far.\"",
+   "choices": [
+    {
+     "text": "Tell the Mirror to wait",
+     "effects": {
+      "strength": 2,
+      "log": "The Mirror waits. It has never been asked to before.",
+      "flag": "mltx_hd_up"
+     }
+    },
+    {
+     "text": "Ask {npc} to keep watch",
+     "effects": {
+      "luck": 2,
+      "log": "{npc} keeps watch at the edge of your domain that night, and the next.",
+      "flag": "mltx_bond"
+     }
+    }
+   ],
+   "arc": "The Mirror's Last Copy"
+  },
+  {
+   "id": "dc_mlt_lv_101",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Ding! [HIDDEN QUEST LINE: THE FINAL LEVEL. REGION: DIVINE.] A blue window opens among the gods, and it has no close button. On the steps of the Hall of Thrones sits {npc}, staring at nothing the way you stare at your windows. \"Level ninety-nine,\" {he} says. \"I followed you through the gate. The windows here are bigger.\"",
+   "choices": [
+    {
+     "text": "Compare windows",
+     "effects": {
+      "charm": 2,
+      "log": "{npc}'s windows are older than yours and full of quests nobody ever finished.",
+      "flag": [
+       "mltx_bond",
+       "mltx_lv_xp"
+      ]
+     }
+    },
+    {
+     "text": "Ask why {he} stopped",
+     "effects": {
+      "comprehension": 3,
+      "log": "\"I got efficient,\" says {npc}, \"and then there was nothing left to be efficient at.\""
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_lv_102",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[QUEST: CHOOSE A PLAYSTYLE FOR THE FINAL LEVEL.] Two buttons float over your domain: [CLEAR] and [PLAY]. {npc} explains: \"Clear is speed: every daily, every prayer answered efficiently, straight to the top. Play is the side quests: the gods, the worshippers, the things the System pays nothing for. I picked clear.\"",
+   "choices": [
+    {
+     "text": "Press [CLEAR]",
+     "effects": {
+      "strength": 3,
+      "log": "[CLEAR] glows. Your bar starts to move as if it means it.",
+      "flag": [
+       "mlt_lv_a",
+       "mltx_lv_xp"
+      ]
+     }
+    },
+    {
+     "text": "Press [PLAY]",
+     "effects": {
+      "charm": 3,
+      "log": "[PLAY] glows. A god you have never met waves at you from the next throne.",
+      "flag": [
+       "mlt_lv_b",
+       "mltx_bond"
+      ]
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_lv_103",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s3",
+     "mlt_lv_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[DAILY QUESTS: 300 OF 300 COMPLETE.] Clear works. Your bar races toward the top, and the windows say nothing but numbers. {npc} finds you answering the same temple's prayers for the ninth year running, without reading them. \"This is where I stopped feeling anything,\" {he} says. \"Just so you know where it is.\"",
+   "choices": [
+    {
+     "text": "Stop and read one prayer",
+     "effects": {
+      "comprehension": 2,
+      "log": "It is from a child, asking for a dog. You read it three times.",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Keep grinding",
+     "effects": {
+      "strength": 2,
+      "log": "The bar moves. The prayers keep coming. You do not read them.",
+      "flag": [
+       "mltx_lv_xp",
+       "mltx_hd_up"
+      ]
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_lv_104",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s3",
+     "mlt_lv_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[SIDE QUEST: THE THING {npc} NEVER FINISHED.] It is a letter, to a friend from the world below, written at level twelve and never sent. \"The friend is dead,\" says {npc}. \"But a god can send things where the living cannot. The quest is still open.\"",
+   "choices": [
+    {
+     "text": "Deliver it to the friend's grave below",
+     "effects": {
+      "alignment": 3,
+      "log": "You set the letter on a grave far below. The quest closes with a small sound, like a door.",
+      "flag": [
+       "mltx_bond",
+       "mltx_good",
+       "mltx_hd_down"
+      ]
+     }
+    },
+    {
+     "text": "Help {him} write a new one, to the friend's line",
+     "effects": {
+      "charm": 2,
+      "log": "You help {npc} write to the friend's great-grandchildren. It takes a long time to know what to say.",
+      "flag": [
+       "mltx_bond",
+       "mltx_lv_xp"
+      ]
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_lvend_101",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s5",
+     "mlt_lv_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The windows are quiet since the class advancement. One last quest sits greyed at the bottom of the list: [THE FINAL LEVEL: ENTER?] {npc} sees you looking. \"Clear players end here,\" {he} says. \"At the last button. Even gods do not know what cleared means.\"",
+   "choices": [
+    {
+     "text": "Leave it greyed",
+     "effects": {
+      "comprehension": 2,
+      "log": "You leave it. The button stays, patient as a god."
+     }
+    },
+    {
+     "text": "Ask {npc} to tell you if {he} ever presses it",
+     "effects": {
+      "charm": 2,
+      "log": "{npc} promises. You both know {he} will tell you before, not after.",
+      "flag": "mltx_bond"
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_lvend_102",
+   "cat": "life",
+   "trigger": "mlt_lv",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_leveling",
+     "mlt_lv_s5",
+     "mlt_lv_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[PARTY: 2 MEMBERS.] The little number two has sat in the corner of your windows for years. One evening, over your domain, a quest appears for you both: [THE FINAL LEVEL: ENTER?], greyed. {npc} laughs. \"It waited for a party,\" {he} says. \"Of course it did.\"",
+   "choices": [
+    {
+     "text": "Say: not yet",
+     "effects": {
+      "luck": 2,
+      "log": "{npc} closes {his} window. Yours stays open a moment longer.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Do the dailies together instead",
+     "effects": {
+      "charm": 2,
+      "log": "You do the dailies together. They take twice as long and are three times better.",
+      "flag": [
+       "mltx_bond",
+       "mltx_lv_xp"
+      ]
+     }
+    }
+   ],
+   "arc": "The Final Level"
+  },
+  {
+   "id": "dc_mlt_cs_101",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s1",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[The eight stars are restless.] In the Divine Realm the stars are gods, close enough to hear them argue. Between them, where every chart leaves a gap, a darkness is listening. {npc}, the stargazer of the Bright Hall, has followed you up with the bronze sphere. \"Up here the gap is closer,\" {he} says. \"Sit.\"",
+   "choices": [
+    {
+     "text": "Sit and learn the charts",
+     "effects": {
+      "comprehension": 3,
+      "log": "The charts of the gods are older than the stars on them. {npc} is a patient teacher.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask what your sponsor thinks of the gap",
+     "effects": {
+      "luck": 2,
+      "log": "Your sponsor goes very quiet, the way a star does when it is being careful.",
+      "flag": "mltx_cs_favour"
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlt_cs_102",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s2",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "[The Constellations are bidding.] Here they are gods, and they bid in person: gifts at your door, little messages in the light. Your sponsor sulks. {npc} watches. \"The ninth chooses by what you do with the eight,\" {he} says. \"Stay true to one, or play to all.\"",
+   "choices": [
+    {
+     "text": "Stay true to your sponsor",
+     "effects": {
+      "alignment": 2,
+      "log": "You send the gifts back politely. Your sponsor glows for a week.",
+      "flag": [
+       "mlt_cs_a",
+       "mltx_cs_favour",
+       "mltx_bond"
+      ]
+     }
+    },
+    {
+     "text": "Play to all eight",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "You thank all eight, beautifully. The gifts keep coming.",
+      "flag": "mlt_cs_b"
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlt_cs_103",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s3",
+     "mlt_cs_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Loyalty has a price. The other seven have decided your story is dull, and say so in the Hall of Thrones every evening. Your sponsor is fiercely happy and very lonely. {npc} brings a chart: the eight drifting apart, your sponsor alone on one side of the sky.",
+   "choices": [
+    {
+     "text": "Find your sponsor a friend among the eight",
+     "effects": {
+      "charm": 2,
+      "log": "It takes a decade of introductions. One of the seven, in the end, sits beside your sponsor at a feast.",
+      "flag": [
+       "mltx_cs_favour",
+       "mltx_hd_down"
+      ]
+     }
+    },
+    {
+     "text": "Stay loyal and alone together",
+     "effects": {
+      "strength": 2,
+      "log": "You and your sponsor keep each other company on your side of the sky.",
+      "flag": [
+       "mltx_cs_favour",
+       "mltx_bond"
+      ]
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlt_cs_104",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s3",
+     "mlt_cs_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Playing to all eight has a price. Every day among the gods is a performance now, and you catch yourself choosing what the stars like instead of what you want. {npc} catches it too. \"The eight are an audience,\" {he} says. \"The ninth is not.\"",
+   "choices": [
+    {
+     "text": "Do one thing none of the stars would like",
+     "effects": {
+      "alignment": 3,
+      "log": "You do one plain, kind thing nobody is watching for. The darkness between the stars leans closer.",
+      "flag": [
+       "mltx_hd_down",
+       "mltx_good"
+      ]
+     }
+    },
+    {
+     "text": "Give the eight an encore",
+     "effects": {
+      "charm": 3,
+      "log": "The eight applaud. The ninth looks away.",
+      "flag": [
+       "mltx_hd_up",
+       "mltx_spurn"
+      ]
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlt_csend_101",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s5",
+     "mlt_cs_a",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "Your sponsor and the Last Star both watch over you now, which your sponsor finds very stressful. One night the Last Star speaks again: [You could rise.] Become the ninth, here, among the gods who are stars. {npc} hears it, as stargazers hear everything. \"I would chart you,\" {he} says. \"Every night.\"",
+   "choices": [
+    {
+     "text": "Say: not yet",
+     "effects": {
+      "comprehension": 2,
+      "log": "The Last Star dims, politely, to wait.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Ask your sponsor what it wants",
+     "effects": {
+      "alignment": 2,
+      "log": "Your sponsor says it wants you to be happy, and then, very quietly, that it would like a neighbour.",
+      "flag": "mltx_cs_favour"
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlt_csend_102",
+   "cat": "life",
+   "trigger": "mlt_cs",
+   "once": false,
+   "cooldown": 0,
+   "weight": 10,
+   "when": {
+    "flags": [
+     "sys_type_constellations",
+     "mlt_cs_s5",
+     "mlt_cs_b",
+     "divine_realm"
+    ],
+    "upper": true,
+    "realm": [
+     12,
+     1000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "text": "The eight still applaud your story, softer now, the way an audience does near the end. The Last Star says: [You could rise, and watch with kinder eyes than theirs.] {npc} has already drawn a place for you on tomorrow's chart of the gods, in pencil. \"Just in case,\" {he} says.",
+   "choices": [
+    {
+     "text": "Leave the pencil mark",
+     "effects": {
+      "luck": 2,
+      "log": "The mark stays. {npc} goes over it once, lightly, when {he} thinks you are not looking.",
+      "flag": "mltx_bond"
+     }
+    },
+    {
+     "text": "Rub it out, gently",
+     "effects": {
+      "comprehension": 2,
+      "log": "You rub it out. {npc} sharpens the pencil anyway.",
+      "flag": "mltx_hd_down"
+     }
+    }
+   ],
+   "arc": "The Last Star"
+  },
+  {
+   "id": "dc_mlb_rg_101",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "Through the second gate the Regressor's Guide grows heavy in your hands, and a figure in grey robes waits on the River Between Stars. \"That notebook,\" says {npc}, a Recorder of the Wheel, \"is on my shelf. The Wheel turns gods too. Yours has pages missing.\"",
+   "choices": [
+    {
+     "text": "Ask {him} what is missing",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "\"The pages you would not read,\" says {npc}. \"They are always the ones that matter.\""
+     }
+    },
+    {
+     "text": "Keep the Guide away from {him}",
+     "effects": {
+      "luck": 1,
+      "flag": [
+       "mlbx_spurn"
+      ],
+      "log": "{npc} does not reach for it. Recorders never take; they wait."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_rg_102",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} leads you through the Wheel's archive among the gods, notebooks shelved on starlight. \"Every regressor gets a Guide,\" {he} says, \"even the ones who become gods. Most use it to win. A few use it to save people. Before we look for the torn pages: why do you read it?\"",
+   "choices": [
+    {
+     "text": "To change what is coming",
+     "effects": {
+      "flag": [
+       "mlb_rg_a",
+       "mlbx_rg_page"
+      ],
+      "strength": 1,
+      "log": "{npc} nods, and takes down a shelf of warnings."
+     }
+    },
+    {
+     "text": "To understand why it came to me",
+     "effects": {
+      "flag": [
+       "mlb_rg_b",
+       "mlbx_rg_page"
+      ],
+      "comprehension": 2,
+      "log": "{npc} nods, and takes down a shelf of letters."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_rg_103",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s3",
+     "mlb_rg_a",
+     "divine_realm"
+    ]
+   },
+   "text": "A torn page shows a disaster among the gods that has not happened yet: the small domain of a minor god, its temples below full of the poor, falling out of the sky. The Guide is never wrong about the ones it shows true. \"Three days,\" says {npc}. \"The Thrones will not stop it. Will you?\"",
+   "choices": [
+    {
+     "text": "Go and hold the domain up",
+     "effects": {
+      "qi": -20,
+      "fame": 20,
+      "alignment": 6,
+      "flag": [
+       "mlbx_good",
+       "mlbx_hd_down",
+       "mlbx_rg_page"
+      ],
+      "log": "You hold a falling heaven up for three days with your own qi. The minor god never learns your name."
+     }
+    },
+    {
+     "text": "Warn them and let it fall",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_rg_page"
+      ],
+      "log": "You warn them. They carry what they can. The domain falls, and nobody in it is lost."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_rg_104",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s3",
+     "mlb_rg_b",
+     "divine_realm"
+    ]
+   },
+   "text": "A torn page is not a warning. It is a letter in your own older hand: \"I read ahead my whole first life and lived none of it. If you are reading this, put the Guide down for a year, even as a god.\" {npc} watches you read it twice.",
+   "choices": [
+    {
+     "text": "Put the Guide down for a year",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_hd_down",
+       "mlbx_rg_page",
+       "mlbx_bond"
+      ],
+      "log": "A whole year among the gods without a single page. It is very strange, and very good."
+     }
+    },
+    {
+     "text": "Keep reading",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_rg_page",
+       "mlbx_hd_up"
+      ],
+      "log": "You keep reading. The letter's hand seems a little disappointed."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_rg_105",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s5",
+     "mlb_rg_a",
+     "divine_realm"
+    ]
+   },
+   "text": "Centuries later {npc} visits your domain with tea and a question. \"The pages warned you,\" {he} says, \"and you changed what was coming. Was it worth knowing?\" Below, in temples that never heard your name, people are alive because of a page.",
+   "choices": [
+    {
+     "text": "Say it was worth it",
+     "effects": {
+      "fame": 10,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "\"Then the archive was worth keeping,\" says {npc}."
+     }
+    },
+    {
+     "text": "Say you would rather have not known",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_hd_down"
+      ],
+      "log": "{npc} writes that down too. The archive keeps every answer."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_rg_106",
+   "cat": "insight",
+   "trigger": "mlb_rg",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_rg_s5",
+     "mlb_rg_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} comes to the drawer where you keep the Guide now and finds it closed. \"You stopped reading,\" {he} says. \"A god who stopped. I have never shelved one of those.\" One blank page is left, and the pen is beside it.",
+   "choices": [
+    {
+     "text": "Leave the pen where it is",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "The pen stays. {npc} seems to think that is the right answer."
+     }
+    },
+    {
+     "text": "Give {him} the Guide to keep",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "mlb_rg_kept",
+       "w": 10,
+       "note": "was given the Guide to keep"
+      },
+      "log": "{npc} takes the Guide in both hands and shelves it where nobody else can reach it."
+     }
+    }
+   ],
+   "arc": "The Last Page"
+  },
+  {
+   "id": "dc_mlb_ls_101",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "Beyond the second gate the loom behind your eyes stops, as if it has heard a bigger one. Across the River Between Stars stands a loom as wide as a domain, and at its shuttle sits {npc}, the Weaver. \"Even gods have threads,\" {he} calls. \"Come and see where yours go.\"",
+   "choices": [
+    {
+     "text": "Cross the river to the loom",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "You cross the river of stars. The great loom's threads are warm to the touch."
+     }
+    },
+    {
+     "text": "Call back that yours is no copy",
+     "effects": {
+      "charm": 1,
+      "flag": [
+       "mlbx_spurn"
+      ],
+      "log": "{npc} laughs, and the loom seems to laugh with {him}."
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_ls_102",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} shows you how a god's glimpse works on the great loom: a thread pulled forward a little way, to see its colour. \"Yours shows likely paths,\" {he} says. \"Mine shows true ones, even a god's. A true glimpse costs. Further, or clearer?\"",
+   "choices": [
+    {
+     "text": "Further: every path, to the end",
+     "effects": {
+      "flag": [
+       "mlb_ls_a",
+       "mlbx_ls_thread"
+      ],
+      "luck": 1,
+      "log": "The loom runs ahead of you, faster than thought."
+     }
+    },
+    {
+     "text": "Clearer: the paths I am on",
+     "effects": {
+      "flag": [
+       "mlb_ls_b",
+       "mlbx_ls_thread"
+      ],
+      "comprehension": 2,
+      "log": "The loom slows until you can see every fibre."
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_ls_103",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s3",
+     "mlb_ls_a",
+     "divine_realm"
+    ]
+   },
+   "text": "Weaving further, you find the end of a path you nearly took as a god: a domain of your own, cold and enormous, a throne nobody visits. The loom shows it so clearly you can feel the silence. {npc} watches your face. \"Most gods cut that thread,\" {he} says.",
+   "choices": [
+    {
+     "text": "Cut it",
+     "effects": {
+      "flag": [
+       "mlbx_hd_down",
+       "mlbx_ls_thread"
+      ],
+      "luck": 1,
+      "log": "The thread parts. Somewhere a cold throne is never built."
+     }
+    },
+    {
+     "text": "Leave it be",
+     "effects": {
+      "alignment": 4,
+      "flag": [
+       "mlbx_good",
+       "mlbx_ls_thread"
+      ],
+      "mem": {
+       "deed": "mlb_ls_leave",
+       "w": 8,
+       "note": "saw a thread left uncut"
+      },
+      "log": "You leave it. Somewhere a god you might have been keeps that throne, and you wish them company."
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_ls_104",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s3",
+     "mlb_ls_b",
+     "divine_realm"
+    ]
+   },
+   "text": "Weaving clearer, you see your own thread up close: every glimpse you ever ran is a knot in it, and the knots are where you were most afraid, even the ones from after the second gate. {npc} runs a finger over them. \"Fear is not a flaw,\" {he} says. \"It is where you held on.\"",
+   "choices": [
+    {
+     "text": "Untie the worst knot",
+     "effects": {
+      "flag": [
+       "mlbx_hd_down",
+       "mlbx_ls_thread"
+      ],
+      "comprehension": 2,
+      "log": "It comes undone easily, as if it had been waiting."
+     }
+    },
+    {
+     "text": "Ask {him} to tie one more",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_ls_thread",
+       "mlbx_bond"
+      ],
+      "log": "{npc} ties it: a small knot, for today."
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_ls_105",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s5",
+     "mlb_ls_a",
+     "divine_realm"
+    ]
+   },
+   "text": "Long after, {npc} finds you at the edge of the great loom, watching the paths you did not take run on among the stars. \"You saw them all,\" {he} says. \"Do you regret any?\" Each one, you know now, was someone's life. Not yours.",
+   "choices": [
+    {
+     "text": "Say you regret none",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} nods, and goes back to the shuttle."
+     }
+    },
+    {
+     "text": "Say you regret one",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "\"Only one,\" says {npc}. \"That is a good thread.\""
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_ls_106",
+   "cat": "insight",
+   "trigger": "mlb_ls",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_ls_s5",
+     "mlb_ls_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} weaves beside you in silence for a season of the gods. At the end of it {he} holds up your thread, clear and strong, with all its knots. \"Gods come here to see a different life,\" {he} says. \"You came to see your own. It is a good one.\"",
+   "choices": [
+    {
+     "text": "Agree",
+     "effects": {
+      "alignment": 3,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "You agree. The loom goes on."
+     }
+    },
+    {
+     "text": "Ask to see {his} thread",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "mlb_ls_thread",
+       "w": 10,
+       "note": "showed me the Weaver's own thread"
+      },
+      "log": "{npc} shows you, shyly. It is very long and very plain."
+     }
+    }
+   ],
+   "arc": "The Final Glimpse"
+  },
+  {
+   "id": "dc_mlb_vl_101",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "Among the gods, no protagonist has come for you yet. Then the System says, very quietly: \"Warning. One more.\" On the bridge of light before the Hall of Thrones stands {npc}, born of a god, never once below, with the Thrones' gold in {his} eyes. \"They wrote me for you,\" {he} says. \"I read it.\"",
+   "choices": [
+    {
+     "text": "Ask what else {he} read",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "\"That you would ask,\" says {npc}. \"The Thrones' script is very thorough.\""
+     }
+    },
+    {
+     "text": "Press down with your qi",
+     "effects": {
+      "strength": 1,
+      "alignment": -3,
+      "flag": [
+       "mlbx_spurn",
+       "mlbx_hd_up"
+      ],
+      "log": "{npc} bends and does not break. That too was in the script."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_vl_102",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} shows you where heroes are written among the gods: a hall where a golden book writes itself, one page a century, and every page is someone's destiny. Yours are in red. \"I am the last hero it will write for you,\" {he} says. \"How do you want this to end?\"",
+   "choices": [
+    {
+     "text": "With you beaten, and the book with you",
+     "effects": {
+      "flag": [
+       "mlb_vl_a",
+       "mlbx_vl_page"
+      ],
+      "strength": 1,
+      "alignment": -2,
+      "log": "{npc} nods slowly, as if {he} had hoped you would say something else."
+     }
+    },
+    {
+     "text": "With the book written by someone else",
+     "effects": {
+      "flag": [
+       "mlb_vl_b",
+       "mlbx_vl_page"
+      ],
+      "comprehension": 2,
+      "log": "{npc} looks at the book as if seeing it for the first time."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_vl_103",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s3",
+     "mlb_vl_a",
+     "divine_realm"
+    ]
+   },
+   "text": "The script sends {npc} a great trial alone: a demon of the deep sky, which the Thrones send for heroes to slay. You could let the demon do your work for you. The System waits, and for once gives no advice at all.",
+   "choices": [
+    {
+     "text": "Fight the demon at {his} side",
+     "effects": {
+      "fame": 15,
+      "flag": [
+       "mlbx_vl_page",
+       "mlbx_bond"
+      ],
+      "mem": {
+       "deed": "mlb_vl_side",
+       "w": 12,
+       "note": "fought the demon at my side"
+      },
+      "log": "You and {npc} put the demon down together, and the script has nothing to say about it."
+     }
+    },
+    {
+     "text": "Let the demon test {him}",
+     "effects": {
+      "alignment": -4,
+      "flag": [
+       "mlbx_vl_page",
+       "mlbx_hd_up"
+      ],
+      "log": "{npc} survives the demon alone and comes back changed, and the script is pleased."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_vl_104",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s3",
+     "mlb_vl_b",
+     "divine_realm"
+    ]
+   },
+   "text": "Late one night {npc} comes to your domain with the page you gave {him}, and a brush. \"I tried to write my own ending,\" {he} says, \"and nothing came. The Thrones have always written for me. Teach me how a villain does it. You have written your own all your life.\"",
+   "choices": [
+    {
+     "text": "Teach {him}",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_vl_page",
+       "mlbx_good",
+       "mlbx_bond"
+      ],
+      "log": "You teach {npc} to write one sentence of {his} own. It takes all night."
+     }
+    },
+    {
+     "text": "Tell {him} to learn alone",
+     "effects": {
+      "charm": 1,
+      "flag": [
+       "mlbx_vl_page",
+       "mlbx_hd_up"
+      ],
+      "log": "{npc} goes away with the brush. The page stays blank a long time."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_vl_105",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s5",
+     "mlb_vl_a",
+     "divine_realm"
+    ]
+   },
+   "text": "With the Thrones' pen in your hand, nothing is written for {npc} any more, and {he} fights you anyway, once a century, before the Hall of Thrones, because {he} wants to. You win, usually. \"One day,\" {he} says, picking {him}self up. \"One day I will write that I won.\"",
+   "choices": [
+    {
+     "text": "Let {him} win, once",
+     "effects": {
+      "fame": 10,
+      "charm": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "Once is enough. {npc} writes it down, very large."
+     }
+    },
+    {
+     "text": "Never let {him} win",
+     "effects": {
+      "strength": 2,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} gets up again. That is the point."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_vl_106",
+   "cat": "insight",
+   "trigger": "mlb_vl",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_vl_s5",
+     "mlb_vl_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} writes now: not the Thrones' book, only a notebook of {his} own, full of heroes the gods never wrote, and in every story there is a villain with your face who is not quite as bad as everyone thinks. \"Do you mind?\" {he} asks.",
+   "choices": [
+    {
+     "text": "Say you mind very much",
+     "effects": {
+      "fame": 15,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} laughs, and keeps writing."
+     }
+    },
+    {
+     "text": "Ask to be the hero in one",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "mlb_vl_story",
+       "w": 12,
+       "note": "asked to be the hero in one story"
+      },
+      "log": "{npc} considers it seriously, and writes you one."
+     }
+    }
+   ],
+   "arc": "The Last Protagonist"
+  },
+  {
+   "id": "dc_mlb_om_101",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "Beyond the second gate the iron ring is warm one morning. A voice, very faint: \"...I can smell it. The tea.\" At a feast in the Hall of Thrones, {npc}, the Tea Steward who once served the Jade Pavilion, now pours for gods. The ring burns. \"That powder,\" the voice whispers. \"It came from that hand.\"",
+   "choices": [
+    {
+     "text": "Watch {npc} pour",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_om_echo"
+      ],
+      "log": "{npc} pours as if nothing in the world were heavier than a cup."
+     }
+    },
+    {
+     "text": "Speak to the ring",
+     "effects": {
+      "luck": 1,
+      "flag": [
+       "mlbx_om_echo",
+       "mlbx_hd_down"
+      ],
+      "log": "The ring answers, faintly: \"Patience. I had none. Have some for me.\""
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_om_102",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} comes to your domain at last, alone, with a teapot. \"Long ago a mortal came up on a pass and bought a powder from me,\" {he} says. \"I asked no questions. I wanted a manual of a sword that cut rain. I carried it through the gate with me.\" The ring is very hot. \"What does the ring want?\"",
+   "choices": [
+    {
+     "text": "Justice, before the Heavenly Court",
+     "effects": {
+      "flag": [
+       "mlb_om_a",
+       "mlbx_om_echo"
+      ],
+      "alignment": 3,
+      "log": "{npc} sets down the teapot, and does not argue."
+     }
+    },
+    {
+     "text": "The truth, and then we will see",
+     "effects": {
+      "flag": [
+       "mlb_om_b",
+       "mlbx_om_echo"
+      ],
+      "comprehension": 2,
+      "log": "{npc} pours two cups, and begins."
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_om_103",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s3",
+     "mlb_om_a",
+     "divine_realm"
+    ]
+   },
+   "text": "The Heavenly Court of the gods does not hear ghosts, but it hears a god, and you speak for the ring. {npc} denies nothing. The manual is brought out in a lacquered box: a sword that cut rain, carried through two gates in a tea steward's sleeve. A judge asks what you want done.",
+   "choices": [
+    {
+     "text": "Ask that the manual go home",
+     "effects": {
+      "fame": 20,
+      "flag": [
+       "mlbx_good",
+       "mlbx_om_echo"
+      ],
+      "log": "The manual goes back down to the old master's line. The ring is quiet for a whole year."
+     }
+    },
+    {
+     "text": "Ask that {npc} be punished",
+     "effects": {
+      "strength": 2,
+      "alignment": -2,
+      "flag": [
+       "mlbx_spurn",
+       "mlbx_hd_up",
+       "mlbx_om_echo"
+      ],
+      "log": "The Court punishes {npc}. The ring says nothing at all."
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_om_104",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s3",
+     "mlb_om_b",
+     "divine_realm"
+    ]
+   },
+   "text": "Over three cups {npc} tells the whole of it: the mortal on the stair, the powder, the manual, and the years of tea poured for gods who never asked where {he} learned to hold a cup so well. \"I am not sorry enough,\" {he} says. \"I have tried to be.\"",
+   "choices": [
+    {
+     "text": "Ask the ring what it thinks",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_om_echo",
+       "mlbx_good"
+      ],
+      "log": "The ring takes a long time. \"Neither am I,\" it says at last. \"Of anything.\""
+     }
+    },
+    {
+     "text": "Drink the third cup yourself",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_om_echo",
+       "mlbx_bond"
+      ],
+      "log": "You drink it. {npc} watches you as if you had forgiven {him}, which you have not, quite."
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_om_105",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s5",
+     "mlb_om_a",
+     "divine_realm"
+    ]
+   },
+   "text": "With the business settled, the old master's voice comes and goes in the ring like weather, even among the gods. \"I am still going on,\" it says one night, \"only slower. I wanted to see what you would become.\" {npc} sends a cup of tea to your domain every year, with no message.",
+   "choices": [
+    {
+     "text": "Drink it",
+     "effects": {
+      "charm": 1,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "It is very good tea. It always was."
+     }
+    },
+    {
+     "text": "Pour it on the ring",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_hd_down"
+      ],
+      "log": "The ring steams and, you would swear, sighs."
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_om_106",
+   "cat": "insight",
+   "trigger": "mlb_om",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_om_s5",
+     "mlb_om_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} has asked the old master, through you, to teach {him} the sword that cut rain. \"The one who bought my death with a powder,\" the ring says, \"wants my sword, in the very house of the gods.\" It is quiet a long time. \"Well. Somebody should have it. You decide, student.\"",
+   "choices": [
+    {
+     "text": "Teach {npc}, in the master's name",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond",
+       "mlbx_good"
+      ],
+      "mem": {
+       "deed": "mlb_om_taught",
+       "w": 14,
+       "note": "was taught the sword that cut rain"
+      },
+      "log": "You teach it in the master's name. The first rain that falls on your domain afterwards is cut neatly in two."
+     }
+    },
+    {
+     "text": "Keep the sword for yourself",
+     "effects": {
+      "strength": 2,
+      "flag": [
+       "mlbx_spurn"
+      ],
+      "log": "You keep it. The ring says nothing, which is its own answer."
+     }
+    }
+   ],
+   "arc": "The Ring's Last Business"
+  },
+  {
+   "id": "dc_mlb_pf_101",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "Through the second gate a sound follows you: one hammer stroke, silence, one more, a full minute apart. On a rock at the edge of your domain {npc}, the Smith of the Hundred-Year Hammer, is making the same nail. \"I brought the forge up,\" {he} says, without looking up. \"Gods need nails too.\"",
+   "choices": [
+    {
+     "text": "Watch {him} work",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "You watch a whole day. By evening the nail is a little better."
+     }
+    },
+    {
+     "text": "Ask why anyone would do that",
+     "effects": {
+      "luck": 1,
+      "flag": [
+       "mlbx_spurn"
+      ],
+      "log": "\"Because it can always be better,\" says {npc}. \"Even here.\""
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_pf_102",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} shows you what jade bars become among the gods, if you keep at them: something with no colour at all. \"Jade is when you become the thing,\" {he} says. \"Beyond jade there is no word. Which bar do you want to take there first?\"",
+   "choices": [
+    {
+     "text": "The bar I use the most",
+     "effects": {
+      "flag": [
+       "mlb_pf_a",
+       "mlbx_pf_jade"
+      ],
+      "strength": 1,
+      "log": "{npc} nods: the honest answer."
+     }
+    },
+    {
+     "text": "The bar I love the most",
+     "effects": {
+      "flag": [
+       "mlb_pf_b",
+       "mlbx_pf_jade"
+      ],
+      "charm": 1,
+      "log": "{npc} smiles: the other honest answer."
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_pf_103",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s3",
+     "mlb_pf_a",
+     "divine_realm"
+    ]
+   },
+   "text": "Practice among the gods is long and dull, and {npc} allows no shortcuts. \"The gods sell gilded habits too,\" {he} says. \"Buy one and I will throw you off the rock.\" For a whole season you do the one thing, and the bar creeps.",
+   "choices": [
+    {
+     "text": "Keep going",
+     "effects": {
+      "strength": 2,
+      "flag": [
+       "mlbx_pf_jade",
+       "mlbx_hd_down"
+      ],
+      "log": "The bar creeps a hair further. It is enough."
+     }
+    },
+    {
+     "text": "Ask to rest a day",
+     "effects": {
+      "charm": 1,
+      "flag": [
+       "mlbx_pf_jade",
+       "mlbx_bond"
+      ],
+      "mem": {
+       "deed": "mlb_pf_rest",
+       "w": 8,
+       "note": "took a day of rest with me"
+      },
+      "log": "{npc} lets you rest a day, and rests with you, for the first time in a thousand years."
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_pf_104",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s3",
+     "mlb_pf_b",
+     "divine_realm"
+    ]
+   },
+   "text": "You go back to the oldest thing you know how to do, the first habit of this life, and do it as you did as a child, slowly, on purpose, in the middle of a god's domain. {npc} watches and for once does not correct you. \"That one,\" {he} says, \"you never needed a System for.\"",
+   "choices": [
+    {
+     "text": "Do it again",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_pf_jade",
+       "mlbx_good"
+      ],
+      "log": "You do it again. It is the best thing in your day."
+     }
+    },
+    {
+     "text": "Teach it to {npc}",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_pf_jade",
+       "mlbx_bond"
+      ],
+      "log": "{npc} is terrible at it, and delighted."
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_pf_105",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s5",
+     "mlb_pf_a",
+     "divine_realm"
+    ]
+   },
+   "text": "Centuries on, your bars are steady, and {npc}'s nail is a little better. \"You did the useful ones,\" {he} says. \"Now there is only the last.\" The window shows [LIVING], further along than any bar you have had. It is not full. It does not have to be. Not yet.",
+   "choices": [
+    {
+     "text": "Go back to work",
+     "effects": {
+      "strength": 1,
+      "comprehension": 1,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "You go back to work. The hammer rings beside you."
+     }
+    },
+    {
+     "text": "Sit and watch the bar",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "You sit and watch it move, very slowly, like a star."
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_pf_106",
+   "cat": "insight",
+   "trigger": "mlb_pf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_pf_s5",
+     "mlb_pf_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} has started a second thing, after a thousand years of one: the habit you taught {him}. {He} is still terrible at it. \"Four per cent,\" {he} says proudly. \"Among the gods, in a thousand years, I will be quite good.\" The bar called [LIVING] hums in your own window.",
+   "choices": [
+    {
+     "text": "Promise to come back and check",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "mlb_pf_promise",
+       "w": 10,
+       "note": "promised to come back in a thousand years"
+      },
+      "log": "{npc} scratches the date into the rock with a nail."
+     }
+    },
+    {
+     "text": "Tell {him} four per cent is good",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} glows like a forge."
+     }
+    }
+   ],
+   "arc": "The Last Bar"
+  },
+  {
+   "id": "dc_mlb_gf_101",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s1",
+     "divine_realm"
+    ]
+   },
+   "text": "In the Divine Realm the years run so slowly that once, at dawn, they touch the years of the far house. The jade on your chest goes bright, and {npc} steps out of a ripple in the starlight, in robes nobody has worn yet. \"Ancestor,\" {he} says. \"Even a god's house needs its ancestor.\"",
+   "choices": [
+    {
+     "text": "Embrace {him}",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_bond",
+       "mlbx_hd_down"
+      ],
+      "log": "{npc} holds on a long time, as if checking you are real."
+     }
+    },
+    {
+     "text": "Bow, as to a head of the house",
+     "effects": {
+      "alignment": 3,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} bows back, lower, and laughs, because a god has just bowed to {him}."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  },
+  {
+   "id": "dc_mlb_gf_102",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s2",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} can stay only a little while each time the years touch. \"The house will be in danger again, in my time,\" {he} says. \"The jade can carry letters both ways, even to a god's domain. Will you answer them? Or would you rather I asked you something smaller?\"",
+   "choices": [
+    {
+     "text": "I will answer every letter",
+     "effects": {
+      "flag": [
+       "mlb_gf_a",
+       "mlbx_gf_letter"
+      ],
+      "comprehension": 1,
+      "log": "{npc} puts the first letter in your hand before you have finished saying it."
+     }
+    },
+    {
+     "text": "Ask me something small first",
+     "effects": {
+      "flag": [
+       "mlb_gf_b",
+       "mlbx_gf_letter"
+      ],
+      "charm": 1,
+      "log": "{npc} asks what colour the sky is in the Divine Realm. You have to think about it."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  },
+  {
+   "id": "dc_mlb_gf_103",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s3",
+     "mlb_gf_a",
+     "divine_realm"
+    ]
+   },
+   "text": "The letters from the far house grow harder: a quarrel between branches, a sickness, an heir nobody wants. You answer each from your domain as well as a god can, and {npc} brings back what came of it. \"The quarrel ended,\" {he} says once. \"Because you said that thing about rice.\"",
+   "choices": [
+    {
+     "text": "Write the hardest letter yourself",
+     "effects": {
+      "fame": 10,
+      "flag": [
+       "mlbx_gf_letter",
+       "mlbx_good"
+      ],
+      "log": "You write it yourself. It takes a season."
+     }
+    },
+    {
+     "text": "Ask {npc} what {he} would write",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_gf_letter",
+       "mlbx_bond"
+      ],
+      "mem": {
+       "deed": "mlb_gf_coauthor",
+       "w": 10,
+       "note": "wrote a letter to the house with me"
+      },
+      "log": "{npc} writes it with you, and it is better than either of you alone."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  },
+  {
+   "id": "dc_mlb_gf_104",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s3",
+     "mlb_gf_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} asks small things every time: what you ate as a child, what you were afraid of, whether you sang, whether gods still dream. You answer, and {he} writes it all down for the house. \"They think you were never afraid,\" {he} says. \"I want them to know you were.\"",
+   "choices": [
+    {
+     "text": "Tell {him} the truth about being afraid",
+     "effects": {
+      "flag": [
+       "mlbx_gf_letter",
+       "mlbx_hd_down"
+      ],
+      "comprehension": 1,
+      "log": "You tell {npc} everything, even the afraid parts from after the gate."
+     }
+    },
+    {
+     "text": "Sing {him} a song from your childhood",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_gf_letter",
+       "mlbx_bond"
+      ],
+      "log": "You sing it. Half the words are gone. {npc} writes down the half that is left."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  },
+  {
+   "id": "dc_mlb_gf_105",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s5",
+     "mlb_gf_a",
+     "divine_realm"
+    ]
+   },
+   "text": "The letters still come, but they are only letters now: news, gossip, a new child named after you, badly. {npc} visits when the years touch. \"The house is yours to see,\" {he} says once. \"If you ever come. A god would not come back.\"",
+   "choices": [
+    {
+     "text": "Say not yet",
+     "effects": {
+      "luck": 2,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} nods. The house can wait; it is good at it."
+     }
+    },
+    {
+     "text": "Ask {him} to stay a while longer",
+     "effects": {
+      "charm": 2,
+      "flag": [
+       "mlbx_bond"
+      ],
+      "log": "{npc} stays until the years pull {him} home."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  },
+  {
+   "id": "dc_mlb_gf_106",
+   "cat": "insight",
+   "trigger": "mlb_gf",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "upper": true,
+    "flags": [
+     "mlb_gf_s5",
+     "mlb_gf_b",
+     "divine_realm"
+    ]
+   },
+   "text": "{npc} brings a little book the house has made: every small thing you told {him}, the song, the fear, the rice, bound in green cloth. \"The children learn it before they can read,\" {he} says. \"They argue about whether a god really said it.\"",
+   "choices": [
+    {
+     "text": "Tell {him} they are all true",
+     "effects": {
+      "comprehension": 2,
+      "flag": [
+       "mlbx_good"
+      ],
+      "log": "{npc} writes that on the first page."
+     }
+    },
+    {
+     "text": "Add one more page",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "mlb_gf_page",
+       "w": 12,
+       "note": "carried home a sealed page for the children"
+      },
+      "log": "You write one more page, and seal it, for the children."
+     }
+    }
+   ],
+   "arc": "The Sender"
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,5279 @@
+{
+ "events": [
+  {
+   "id": "dc_syssi_bgate_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The Last Door hangs between the clouds above the summit, a door of light with nothing behind it. At its foot lies a slab of grey stone, flat as a desk. When you sign in, the System does not ding. It waits. Then you see the slab is covered in names, in old ink, row on row, each with a small red mark beside it: present.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Read the names before you sign",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_gate1",
+      "log": "You read for an hour. Some names you know from legends. Some are in scripts nobody writes any more. Every one has a red mark, and every mark is one year. You add yours at the bottom. The System dings, very softly, as if in a library."
+     }
+    },
+    {
+     "text": "Sign without reading: it is your year, not theirs",
+     "effects": {
+      "qi": 20,
+      "luck": 3,
+      "flag": "syssi_b_gate1",
+      "log": "You sign. The red mark appears beside your name by itself, wet, as if a brush had just lifted. The light of the Gate flickers once, like a clerk looking up from a desk, and goes back to its work."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_2",
+   "cat": "life",
+   "weight": 11,
+   "once": true,
+   "text": "A guardian sits at the foot of the Gate this year: a shape of armour and cloud with a halberd across its knees. It watches you sign in, as you do every year, and then speaks. \"Every year you come. Every year you do not go through. Explain this to me, because I have been bored for four hundred years.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate",
+     "syssi_b_gate1"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "after": [
+     "dc_syssi_bgate_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "\"The year is not finished yet\"",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 3,
+      "flag": "syssi_b_guardian",
+      "log": "\"The year is not finished,\" you say. The guardian thinks about it for so long that snow settles on its helmet. \"No,\" it agrees at last. \"They never are.\" From then on it nods to you when you come."
+     }
+    },
+    {
+     "text": "\"Because I am not ready, and I know it\"",
+     "effects": {
+      "strength": 3,
+      "qi": 15,
+      "flag": "syssi_b_guardian",
+      "log": "\"I am not ready,\" you say. \"I know it.\" The guardian laughs, a sound like a landslide far away. \"You would be surprised,\" it says, \"how few people who walk through can say that.\""
+     }
+    },
+    {
+     "text": "Ask it to test whether you are",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The guardian of the Gate"
+     },
+     "ok": {
+      "fame": 6,
+      "strength": 4,
+      "flag": "syssi_b_guardian",
+      "log": "The halberd comes down like the sky falling. You turn it, and turn it again, until the guardian steps back and plants the butt in the snow. \"Ready enough,\" it says. \"And still you will not go. Good. Sign your year.\""
+     },
+     "fail": {
+      "health": -12,
+      "flag": "syssi_b_guardian",
+      "log": "The halberd comes down like the sky falling, and you find yourself lying in the snow a hundred paces down the slope. The guardian waits while you climb back up and sign. \"Not yet,\" it says, not unkindly. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "There is fresh ink on the stone register this year. Not yours. A name signed this very morning, in a hurried hand, with the red mark beside it still wet. Somewhere on this mountain, another person signs in at the Gate.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_gate1"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Wait by the stone for them",
+     "effects": {
+      "charm": 4,
+      "flag": "syssi_b_gate_other",
+      "log": "You wait three days. Nobody comes. On the fourth morning there is a new line under yours, in the same hurried hand: a single word, sorry. You still do not know for what."
+     }
+    },
+    {
+     "text": "Follow the footprints in the snow",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "syssi_b_gate_other",
+      "log": "The prints go down the north face where no path is. At the bottom of a gully you find a cold campfire and, scratched in the rock beside it, the tally marks of years, hundreds, every one crossed through in anger. Whoever it is does not love their register."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "syssi_b_gate_other",
+      "log": "The prints go down the north face where no path is, and so do you, faster than you meant to. You climb back up bruised. The fresh name on the stone has a second line now: careful. (-8 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_4",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "A tribulation is gathering over the Gate: black cloud, purple lightning coiling in it. It is not yours. Someone on the far slope is breaking through, and the sky is angry. Your sign-in hour is now, and the stone register sits right under the storm.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Sign in under the lightning anyway",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 30,
+      "strength": 4,
+      "log": "You walk out under the storm and sign. A bolt comes down and stops a hand's width above the stone, as if the sky had remembered something, and goes back up. Ding. The other person's tribulation ends a moment later, softer than it began."
+     },
+     "fail": {
+      "health": -15,
+      "qi": 10,
+      "log": "You walk out under the storm and sign, and the sky does not stop for you. You come to with your hair smoking and your name on the stone, red mark and all. The register does not care how you got there. (-15 health)"
+     }
+    },
+    {
+     "text": "Let the System sign for you from shelter",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "You stay under a ledge and let the year turn. The register signs itself: the red mark appears on the stone in the middle of the storm without a hand. You watch the far slope until the lightning ends. Whoever it was, they lived."
+     }
+    },
+    {
+     "text": "Climb to the far slope and stand guard for them",
+     "effects": {
+      "alignment": 5,
+      "fame": 4,
+      "log": "You find a young cultivator kneeling in a ring of scorched stones, shaking. You stand behind them until the last bolt falls. They never see your face. Your year is signed by the System at dusk, and you find you do not mind at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_5",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "This year, when you kneel at the stone, your name is already there. Not written: carved. The slab has cut your name into itself, deep, the way a temple cuts the names of its patrons. The guardian, if there is one this year, pretends not to have seen it happen.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate",
+     "syssi_m30"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Run your thumb along the letters",
+     "effects": {
+      "qi": 25,
+      "comprehension": 4,
+      "flag": "syssi_b_carved",
+      "log": "The letters are warm. Years of red marks have soaked into the stone around them like rain into a field. The System says, for the first time in your life, two words: \"You stay.\" It sounds like a question and an answer at once."
+     }
+    },
+    {
+     "text": "Ask the System why",
+     "effects": {
+      "luck": 5,
+      "flag": "syssi_b_carved",
+      "log": "\"Why?\" you ask. The System is quiet so long you think it will not answer. Then: \"Regulars are carved.\" That is all. It sounds, very faintly, embarrassed to have said so much."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_6",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The Gate is open this morning. Not just light: a road, a long white stair beyond it, and the smell of a garden nobody below has ever planted. It is open for you. You know it as surely as you know your own name on the stone. Your sign-in hour has come.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate",
+     "syssi_b_carved"
+    ],
+    "realm": [
+     9,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Sign in, and stay below one more year",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 5,
+      "flag": "syssi_b_stayed",
+      "mark": "syssi_b_gatekeeper",
+      "log": "You sign in, and the Gate stays open all day, waiting politely, and at dusk it closes. You are not sorry. Below the clouds there are names on that stone still to be added, and you have decided someone should be here to read them."
+     }
+    },
+    {
+     "text": "Sign in, and look up the stair for a long time",
+     "effects": {
+      "qi": 25,
+      "luck": 4,
+      "flag": "syssi_b_stayed",
+      "log": "You sign, and stand at the threshold until the light goes gold, and do not step. One day. Not this one. The System dings when the Gate closes, gently, like a door shut by someone who will open it again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bgate_7",
+   "cat": "life",
+   "weight": 6,
+   "once": false,
+   "text": "Pilgrims have started to climb to the Last Door on the day of the year you sign in. They do not come to go through. They come to watch the one who signs and does not go through, and they sit in the snow at a respectful distance with their rice balls.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate",
+     "syssi_b_gate1"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Sign in as if they were not there",
+     "effects": {
+      "comprehension": 3,
+      "qi": 12,
+      "log": "You sign, as always. Behind you the pilgrims let out a breath together, like a crowd at a festival when the lantern goes up. A child asks loudly whether that was all. That was all, you think. It is always all."
+     }
+    },
+    {
+     "text": "Show the children how the red mark appears",
+     "effects": {
+      "charm": 4,
+      "fame": 3,
+      "log": "You let the children crowd around the stone. When you sign, the red mark blooms by itself and they shriek. One small hand reaches out to touch it. The ink does not smudge. You suspect the register likes being admired."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_bgate_8",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "On the path below the Gate you find an old master who has crawled most of the way up, knees bloody, and cannot go further. They do not want to go through. They only wanted to see it once, before the end.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_gate"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "The Register at the Gate",
+   "choices": [
+    {
+     "text": "Carry them the rest of the way",
+     "effects": {
+      "alignment": 5,
+      "strength": 3,
+      "log": "You carry the old master up on your back. They are lighter than a bundle of firewood. At the top they look at the Gate for a long time and laugh, a small dry laugh, and say it is smaller than they thought. You sign in with them watching."
+     }
+    },
+    {
+     "text": "Sit with them where they are and describe it",
+     "effects": {
+      "charm": 4,
+      "comprehension": 3,
+      "log": "You sit beside them on the path and tell them what the Gate looks like this morning, the colour, the sound. They close their eyes to listen. When you go up to sign, they are smiling. When you come down, they are asleep, and wake, and go home."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_bdoor_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "In the throne room of the Drowned Palace, under green water that you can breathe somehow, a guest book lies open on a lectern of coral. When you sign in, the System writes in the book. Then you see the line above yours. It is your name, in your hand, in ink faded by centuries.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_lake"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Read the old line closely",
+     "effects": {
+      "comprehension": 6,
+      "log": "It is your name, and beside it a date before the palace drowned. The hand is yours, the way you write when you are very tired. Either somebody long ago had your name and your hand, or the register is not as careful about time as it seems.",
+      "flag": "syssi_b_door_lake"
+     }
+    },
+    {
+     "text": "Close the book gently and leave it",
+     "effects": {
+      "luck": 5,
+      "charm": 3,
+      "log": "You close the guest book and lay your palm on it, as on the head of a sleeping child. On your way out the palace's lamps, dead for five hundred years, light one after another behind you, and go out again when you reach the surface.",
+      "flag": "syssi_b_door_lake"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_3",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "In the gatehouse of the City Under the Sand a clerk of dust still sits at a toll desk, brush in a hand that is only a shape. When you sign in, the clerk stamps your palm with a red seal. You are, it seems, a citizen now.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_desert"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Thank the clerk and ask what you owe",
+     "effects": {
+      "alignment": 4,
+      "luck": 4,
+      "log": "\"Nothing,\" the dust clerk says, in a voice like sand through a sieve. \"You came. That is the tax.\" The seal on your palm fades by evening, and you can still feel it when you close your hand.",
+      "flag": "syssi_b_door_desert"
+     }
+    },
+    {
+     "text": "Ask to see the citizens' roll",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "The roll is a thousand years long. The last citizen before you signed in three hundred years ago. Their name is the same shape as the System's ding. You copy it into your sleeve-notes without knowing why.",
+      "flag": "syssi_b_door_desert"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_5",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "In the Sword Tomb a thousand swords stand in the earth, each over the grave of the one who carried it. When you sign in, every blade in the tomb rings at once, a single long note, and one rusted sword leans toward you.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_tomb"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Bow to the leaning sword and leave it",
+     "effects": {
+      "alignment": 5,
+      "strength": 3,
+      "log": "You bow. The sword straightens. Its owner, you think, only wanted to be counted once more. The tomb is silent when you leave, the silence of a hall after a roll call where every name has answered.",
+      "flag": "syssi_b_door_tomb"
+     }
+    },
+    {
+     "text": "Read the name on its grave",
+     "effects": {
+      "comprehension": 4,
+      "fame": 3,
+      "log": "The grave stone is worn almost smooth. You can just make out a name and a number: three hundred and twelve. Years, you realise. Someone signed in here, at their own grave, three hundred and twelve years running, and then stopped.",
+      "flag": "syssi_b_door_tomb"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_7",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "On the Island in the Fog the days do not keep their order. You sign in, and the System's ding comes back to you a moment later from the fog, as an echo, then again, from much further off, a year that has not happened yet.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_fog"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Listen for the furthest echo",
+     "effects": {
+      "comprehension": 6,
+      "lifespan": 2,
+      "log": "You count the echoes: eleven, each fainter. The last one sounds old and very content. It is, you are fairly sure, the sound of you signing in somewhere a long time from now. You take it as a promise.",
+      "flag": "syssi_b_door_fog"
+     }
+    },
+    {
+     "text": "Sign again quickly, to confuse the fog",
+     "effects": {
+      "luck": 5,
+      "log": "You try to sign twice. The System does not allow it. But the fog seems to find the attempt very funny, because for an hour every bird on the island dings at you, and you leave laughing.",
+      "flag": "syssi_b_door_fog"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_9",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "In the Spirit Forest the trees keep their years in rings, like everyone, but these trees show them on the bark. When you sign in, a ring of red appears on the oldest tree, around the trunk, at the height of your hand.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_forest"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Count the red rings above yours",
+     "effects": {
+      "comprehension": 4,
+      "qi": 15,
+      "log": "There are other red rings higher up the trunk, old and faded. Some host before you signed in at this tree, again and again, for a long time. The spirit deer of the forest come and lick the bark where the rings are. It tastes, you suppose, of being remembered.",
+      "flag": "syssi_b_door_forest"
+     }
+    },
+    {
+     "text": "Rest your back against the tree",
+     "effects": {
+      "lifespan": 3,
+      "luck": 3,
+      "log": "You sit with your back to the tree and fall asleep in the green light. When you wake, two years of tiredness have gone out of you into the roots, and a spirit deer is asleep against your knee.",
+      "flag": "syssi_b_door_forest"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_11",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The Stair of Light goes up and up. Each step, the old stories say, is one day. When you sign in on the step you have reached, the System marks it red, and you see that hundreds of steps below you are already red.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_door_stairs"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Look down at the red steps",
+     "effects": {
+      "comprehension": 5,
+      "alignment": 3,
+      "log": "Hundreds of red steps below you, and none above. You realise they are not yours: the stair keeps the days of everyone who ever signed on it. Your mark is the newest. It is a strange thing to be the top of someone else's long climb.",
+      "flag": "syssi_b_door_stairs"
+     }
+    },
+    {
+     "text": "Climb one more step before you sign",
+     "effects": {
+      "strength": 4,
+      "qi": 15,
+      "log": "You climb one more step, because you can, and sign there. The System dings. The step you skipped stays white. Somehow you feel you have left it for the next one up.",
+      "flag": "syssi_b_door_stairs"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A fisher from Mirror Lake comes looking for you. Since the year you signed in under the water, a lamp has burned in the drowned palace every night, and the fish come to it. The village wants to know if this is good.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_lake"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Tell them it is a guest light: leave it be",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "log": "\"A guest light,\" you say. \"Someone signed in. The house is glad.\" The village believes you, and starts leaving rice cakes on the shore at New Year. The lamp burns for as long as you live."
+     }
+    },
+    {
+     "text": "Go back and dive to see it",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "log": "You dive. The lamp burns on the coral lectern beside the guest book, and the book is open at your page. Whatever keeps the palace keeps the page open for you. You leave it as it is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A caravan master swears that since you signed in under the sand, a dust clerk has come to the surface on windy nights and stamps the palms of lost travellers, who then always find water.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_desert"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_3"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Laugh and say it is a good clerk",
+     "effects": {
+      "charm": 4,
+      "luck": 3,
+      "log": "\"A good clerk,\" you say. \"It counts everyone who comes.\" The caravan master goes away content. That year, nobody in the western desert dies of thirst, which has never happened before."
+     }
+    },
+    {
+     "text": "Go and sit a windy night in the dunes",
+     "effects": {
+      "comprehension": 5,
+      "log": "You sit all night in the dunes. Near dawn a shape of dust sits beside you, and stamps your palm again, and the two of you watch the sun come up together without a word. Colleagues, you think."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_6",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A young swordsman comes to you with a rusted blade: it pulled out of the earth at the Sword Tomb and would not let go of their hand until they had carried it to the one who signs in.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_tomb"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_5"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Take the sword and return it to its grave",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "log": "You carry the sword back to its grave and set it in the earth. You sign nothing; it is not your year there. But you say the old owner's number aloud, three hundred and twelve, and add one. The blade settles."
+     }
+    },
+    {
+     "text": "Tell the young one to keep it and sign in for it",
+     "effects": {
+      "charm": 4,
+      "comprehension": 3,
+      "log": "\"Keep it,\" you say, \"and go to the tomb once a year. Tell it you are still here.\" The young one stares, then nods. Years later you hear of a sword saint whose blade has never rusted again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_8",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Since the Island in the Fog, you sometimes hear a ding that is not yours, a little off, like a temple bell across a valley. Tonight it comes three times, and then the voice of the System says: \"Late.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_fog"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_7"
+    ],
+    "minYearsAfter": 4,
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Ask: late for what?",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "\"Late for what?\" you ask. \"Echo,\" the System says. \"From the island. Yours.\" You understand that somewhere in the fog a year of yours is still ringing, out of order. You decide not to mind. It is a good sound."
+     }
+    },
+    {
+     "text": "Sign in early next year, to catch it",
+     "effects": {
+      "luck": 5,
+      "log": "The next year you sign at the first hour of the first day. The off-key ding comes one breath later, and the two sounds meet and become one. The fog, wherever it is, sounds satisfied."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_10",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The Spirit Forest has sent a messenger: a spirit deer, standing in your courtyard at dawn, with a red ring of bark around one antler. It will not leave until you follow it.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_forest"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_9"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Follow it into the hills",
+     "effects": {
+      "lifespan": 3,
+      "comprehension": 3,
+      "log": "It leads you to a young tree on a hill far from the forest, with one red ring on its trunk. A seed from the old tree, grown in the years since you signed. It wants you to sign here too, you think, and you do."
+     }
+    },
+    {
+     "text": "Bow and send it home",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "log": "You bow to the deer and tell it you remember. It looks at you a long time, then goes. That spring, a sapling comes up in the corner of your courtyard with a faint red line on its bark."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bdoor_12",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "You dream of the Stair of Light. Above the step you signed on, a new step has been marked red. Not by you. Someone is climbing after you, one day at a time.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_door_stairs"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bdoor_11"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "Signatures in Sealed Places",
+   "choices": [
+    {
+     "text": "Go back and leave something on your step",
+     "effects": {
+      "alignment": 5,
+      "qi": 10,
+      "log": "You climb back to your red step and leave a pouch of dried fruit and a note: keep going. Next year the pouch is gone and there are two more red steps above it, and a pebble on your step, carefully placed."
+     }
+    },
+    {
+     "text": "Let the climber be, and keep your own year",
+     "effects": {
+      "comprehension": 5,
+      "log": "It is their climb. You sign in where you stand, in the world below, and think of them every year at the same hour. The dream comes back now and then, and the red steps above yours keep growing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_1",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "A hundred years signed in, and the register has paid what it promised: every stat raised, thirty years of life. Then, at your hour, it does something it has never done. It speaks a whole sentence. \"One hundred lines, and not one of them blank.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m100"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Say: \"You signed the ones I forgot\"",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 5,
+      "flag": "syssi_b_cent",
+      "log": "\"You signed the ones I forgot,\" you say. A pause. \"A recorder does not leave a line blank,\" it says, and then, as if it had said too much, nothing for a whole year. Recorder. You remember the word."
+     }
+    },
+    {
+     "text": "Ask what it has made of you",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_cent",
+      "log": "\"What have you made of me?\" The System is quiet a long time. \"Nothing,\" it says. \"You came every year. That made you.\" You decide it is the truest thing anyone has told you in a century."
+     }
+    },
+    {
+     "text": "Say nothing, and sign again tomorrow out of habit",
+     "effects": {
+      "qi": 25,
+      "strength": 3,
+      "flag": "syssi_b_cent",
+      "log": "You say nothing. The next morning you get up at the same hour and walk to the same place, and only halfway there remember that the year is already signed. You keep walking anyway. That, you think, is what a hundred years makes you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A disciple of some sect, barely twenty, finds you at your place at the hour you always come, and bows deeply. \"They say you were nobody. They say you became this by coming here every year for a hundred years. That cannot be the whole secret. Please. What is the trick?\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "\"Come here tomorrow at this hour\"",
+     "effects": {
+      "charm": 4,
+      "alignment": 4,
+      "log": "\"Come here tomorrow at this hour,\" you say. They come. And the next day. On the ninth day they do not come, and on the tenth they come back, ashamed, and you nod as if nothing happened. Years later they are a master, and still come."
+     }
+    },
+    {
+     "text": "Tell them the truth: there is no trick",
+     "effects": {
+      "comprehension": 4,
+      "fame": 3,
+      "log": "\"There is no trick,\" you say. They do not believe you. Nobody ever does. They go away certain you are hiding a manual, and spend ten years looking for it, and become rather good in the process."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_3",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "A great sect has sent three elders to test the one who \"only signs in\". They stand across your place in a line, polite, smiling, and clearly certain that a century of habit is not a century of training.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Let them test you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The three elders of the great sect"
+     },
+     "ok": {
+      "fame": 8,
+      "strength": 4,
+      "log": "You meet them with nothing clever, only a hundred years of standing in one place every year whatever the weather. It is enough. The eldest bows first. \"Habit,\" the eldest says ruefully, \"is a terrible martial art to face.\""
+     },
+     "fail": {
+      "health": -14,
+      "fame": 3,
+      "log": "They are very good, and there are three of them. You end on one knee. But you are on your feet again in time for your hour, and you walk past them, bruised, and sign in. They leave quietly, less certain than they came. (-14 health)"
+     }
+    },
+    {
+     "text": "Invite them to sign in beside you instead",
+     "effects": {
+      "charm": 5,
+      "alignment": 3,
+      "log": "\"Stand here with me at this hour,\" you say, \"one year, every year, and then test me.\" They laugh. One of them, the youngest, comes back the next year, and the year after. That one you would not want to fight in a century."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_4",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "You have a fever this year, a bad one, and the physician forbids you to rise. At the hour of your sign-in your body gets up by itself. A hundred years of the same walk at the same hour have worn a groove in you deeper than sense.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Let it walk you there",
+     "effects": {
+      "strength": 3,
+      "health": -6,
+      "qi": 15,
+      "log": "You let your legs carry you. You sign in with sweat running into your eyes, and the System dings, and you walk home and sleep for three days. The physician says it is a miracle you did not die. You say it is a habit. (-6 health)"
+     }
+    },
+    {
+     "text": "Lie still and let the System sign for you",
+     "effects": {
+      "comprehension": 5,
+      "lifespan": 1,
+      "log": "You lie still, though every muscle twitches toward the door. At the turning of the year the System signs for you, at your usual place. You hear the ding from your sickbed, faint, like a friend saying: I have it, rest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_5",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You try to write down everyone who stood beside you at your sign-in place over a hundred years: the sweepers, the gate guards, the tea seller, the child who grew up and grew old there. The list runs to four pages. Almost everyone on it is dead.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Visit the graves you can find",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "log": "It takes a whole season. At each grave you say the year you met them, and the year they stopped coming. You find you remember every one. The register, it seems, is not the only one keeping records."
+     }
+    },
+    {
+     "text": "Read the list aloud at your place, at your hour",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "You read every name aloud at your hour, and then sign in. The System dings once for you, and then, very quietly, once more, as if it had signed the page as a witness. You do not ask. You are grateful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_6",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "Clouds gather over your place on the day of your sign-in: a tribulation, unasked for, the sky testing a cultivator who has grown too much too quietly. Then the clouds hesitate, churn, and seem to be reading something.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Sign in under them",
+     "effects": {
+      "qi": 30,
+      "luck": 4,
+      "log": "You sign in under the churning sky. The System dings, loudly for once. The clouds turn, as if a clerk had handed up a document, and break apart into an ordinary rain. Somewhere above, it seems, your register is in order."
+     }
+    },
+    {
+     "text": "Brace and meet whatever comes",
+     "roll": {
+      "stat": "strength",
+      "dc": 62
+     },
+     "ok": {
+      "strength": 5,
+      "qi": 20,
+      "log": "You brace. A single bolt comes down, almost apologetic, and you take it on your forearm and stand. The clouds go. You sign in with your sleeve still smoking."
+     },
+     "fail": {
+      "health": -12,
+      "qi": 15,
+      "log": "You brace, and the bolt that comes is not apologetic at all. You sign in on your knees. It still counts. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_7",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "A court historian, grey and ink-stained, has walked from the capital to ask if they may copy your register. \"The secretariat keeps a diary of every day of the court,\" the historian says. \"Nobody has ever kept one of a single person for a hundred years without a gap.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "Tell them every year you can remember",
+     "effects": {
+      "comprehension": 6,
+      "fame": 4,
+      "log": "You talk for twelve days. The historian writes it all, without comment, the way the junior historians write behind the throne. At the end they look at the stack of paper and say: \"It is very dull.\" Then, after a moment: \"It is very beautiful.\""
+     }
+    },
+    {
+     "text": "Say the register is not yours to copy",
+     "effects": {
+      "alignment": 4,
+      "luck": 3,
+      "log": "\"It is not mine,\" you say. \"I only stand in it.\" The historian looks at you oddly, and writes that down instead, and goes home. Years later you find the sentence in a book of sayings, attributed to nobody."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bcent_8",
+   "cat": "insight",
+   "weight": 7,
+   "once": true,
+   "text": "Years past the hundredth line, you stand at your place and try to say what the century made of you. Not the manuals or the pills. You.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_cent"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bcent_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "A Hundred Years Present",
+   "choices": [
+    {
+     "text": "A habit that does not break",
+     "effects": {
+      "strength": 5,
+      "qi": 15,
+      "flag": "syssi_b_cent_done",
+      "log": "A habit. Something the world can lean on, like a wall, like a well. You find you are content with that. The System says nothing, and you are fairly sure it agrees."
+     }
+    },
+    {
+     "text": "A promise kept to somebody unseen",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 4,
+      "flag": "syssi_b_cent_done",
+      "log": "A promise. You never said it aloud, but every year you came, and every year someone, somewhere, wrote you down. You decide you would like to know who, before the end."
+     }
+    },
+    {
+     "text": "A witness: someone who was there",
+     "effects": {
+      "charm": 4,
+      "comprehension": 5,
+      "flag": "syssi_b_cent_done",
+      "log": "A witness. A hundred years of being there when things happened, good and bad, at one small place. You think that is what the register is for: not the rewards, but the being there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_1",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "Three hundred years signed in. The register has paid what it promised, a hundred years of life and your qi brimming. Then, at your hour, it says your name. Not host. Your name, carefully, as if it had been practising.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m300"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Say its name back, if it has one",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_three",
+      "mark": "syssi_b_eternal",
+      "log": "\"And yours?\" you ask. The System is silent so long the leaves move. Then: \"Struck.\" Only that. You understand that whatever it once was called has been crossed out somewhere, and that it has not said the word in a very long time."
+     }
+    },
+    {
+     "text": "Thank it, plainly",
+     "effects": {
+      "alignment": 5,
+      "qi": 20,
+      "flag": "syssi_b_three",
+      "mark": "syssi_b_eternal",
+      "log": "\"Thank you,\" you say. Three hundred years, and you have never said it. The ding that answers is not the usual ding. It is softer and goes on for a long time, like a bell in a mountain temple when the striker has left the hall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The ground where you sign in has outlived three of everything: three sect halls burned and rebuilt, three dynasties of gatekeepers, three names for the mountain. You are the oldest thing on it, older than the pines.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_three"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Teach the new gatekeepers the old names",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "log": "You teach them the first name of the mountain, and the second, and the third. They write them on the gatepost. The next generation will think they always knew. That is how you want it."
+     }
+    },
+    {
+     "text": "Plant a pine for each age you have seen",
+     "effects": {
+      "alignment": 4,
+      "lifespan": 2,
+      "log": "You plant three pines in a row by your place. In a hundred years they will be tall. You will, the register suggests, still be here to see it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_3",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "People have started to sign in beside you. Not hosts: ordinary people, villagers, disciples, a family of tea pickers. Once a year, at your hour, they come and write their names on a board by your place, because the one who never misses a year must know something.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_three"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Bless the custom",
+     "effects": {
+      "fame": 6,
+      "charm": 4,
+      "log": "You bless it, awkwardly. The board fills, year after year. Nobody gets rewards. Everyone comes back anyway. The System, watching, seems to approve of the board more than of anything you have ever done."
+     }
+    },
+    {
+     "text": "Tell them it is not magic, only a habit",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 4,
+      "log": "\"It is only a habit,\" you tell them. \"Yes,\" an old tea picker says, \"that is why we come.\" You have no answer to that. The board fills anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_4",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You realise, this year, that you have forgotten the face of someone you loved two hundred years ago. Not the name. The face. You sit at your place at your hour and cannot sign in for grief.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_three"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Ask the System if it remembers",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "log": "\"Do you remember?\" you ask. The System says nothing. But that night you dream the year you met them, every detail, the colour of their sleeve, the way they laughed. In the morning the ding comes, and the year is signed, and the face stays with you."
+     }
+    },
+    {
+     "text": "Sign in for them, in your mind",
+     "effects": {
+      "alignment": 5,
+      "qi": 10,
+      "log": "You sign in, and in your mind you write their name beside yours, and mark it present. The System dings twice. You do not know if it can see inside your head. You decide it can."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_5",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "An immortal on the Jade Stairs laughs when you sign in. \"Three hundred years! I have sat through council meetings longer than that.\" The others laugh with them. Then you take out nothing at all, and only say the count aloud, year by year, without a gap.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m300"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Say all three hundred lines",
+     "effects": {
+      "fame": 6,
+      "comprehension": 5,
+      "log": "You say all three hundred, with the place of each. It takes most of the day. By the end, nobody on the stairs is laughing, and the immortal who began it is sitting on the step with their chin on their hand, listening like a child to a story."
+     }
+    },
+    {
+     "text": "Stop at ten and smile",
+     "effects": {
+      "charm": 5,
+      "luck": 3,
+      "log": "You say ten years, and stop, and smile. \"The rest is in the register,\" you say. The immortal opens their mouth, closes it, and later, quietly, asks you which register. That is the beginning of a friendship."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_6",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Below or above, people have started calling you by a title you never asked for: the One Who Is Always Present. Children use it in games. A sect has put it on a plaque. It has reached even the Jade Stairs.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m300"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Accept it",
+     "effects": {
+      "fame": 8,
+      "log": "You accept it. It is, after all, true. On the Jade Stairs the clerks write it beside your name in the register, in small careful characters. The System dings when they do, with what sounds a great deal like pride."
+     }
+    },
+    {
+     "text": "Ask them to say your name instead",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "log": "\"Say my name,\" you ask. \"Titles are for people who are not there.\" Some do. Most do not. But the immortal clerks take the title off your line, and you think the System prefers it that way too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bthree_7",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You sign in on the Jade Stairs, and this year the stairs sign back. A red mark blooms on the jade under your feet, and then on the step above, and the step above that, all the way up to the clouds, like a road being written.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m300"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Three Hundred Lines",
+   "choices": [
+    {
+     "text": "Walk the road of red marks",
+     "effects": {
+      "qi": 30,
+      "comprehension": 5,
+      "log": "You walk it. It ends at a small door in a wall of cloud, closed, with a red seal across it in a hand you know from three hundred years of ding. You do not open it. Not yet. But you know where it is now."
+     }
+    },
+    {
+     "text": "Stand still and let it fade",
+     "effects": {
+      "lifespan": 4,
+      "alignment": 3,
+      "log": "You stand still. The marks glow and fade one by one from the top down, until only yours is left. It feels like being shown the way, and being trusted to find it later."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bsweep_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The new intake of outer disciples has noticed you: the plain figure who comes to the same spot in the outer court at the same hour every year and stands there a moment, as if signing a book nobody can see. They think you are a servant who has gone a little strange.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_m10"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple",
+     "sect_head"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Let them think so",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "flag": "syssi_b_sweep",
+      "log": "You let them. You even pick up a broom while you are there. It is restful, being nobody. The System, you suspect, finds it hilarious."
+     }
+    },
+    {
+     "text": "Gently correct their stances as you pass",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "flag": "syssi_b_sweep",
+      "log": "You pass along the line and nudge an elbow here, a heel there, with the broom handle. They laugh at you. That evening three of them notice their forms are better, and argue about whether it was the broom."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bsweep_2",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "A demonic cult's vanguard comes over the outer wall at night, aiming for the inner hall. The outer court is between them and it, and in the outer court there is, as far as anyone knows, only the strange old servant who signs in.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_b_sweep"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple",
+     "sect_head"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Stand in the gate with your broom",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The cult's vanguard"
+     },
+     "ok": {
+      "fame": 8,
+      "strength": 4,
+      "flag": "syssi_b_sweep_known",
+      "log": "You stand in the gate with the broom. The vanguard does not get past it. In the morning the sect finds them tied together with the broom's own twine, and the strange servant signing in at the usual hour as if nothing had happened."
+     },
+     "fail": {
+      "health": -14,
+      "fame": 4,
+      "flag": "syssi_b_sweep_known",
+      "log": "You hold the gate long enough for the bell to wake the sect, and not one breath longer. When the elders arrive the vanguard is fleeing and you are sitting against the wall, bleeding, still holding the broom. (-14 health)"
+     }
+    },
+    {
+     "text": "Ring the alarm and guide the young ones to safety",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "flag": "syssi_b_sweep_known",
+      "log": "You ring the bell and lead the outer disciples out by the kitchen path, the one only a servant would know. Nobody is lost. Later the elders ask how the servant knew the cult's plan. You say you are always here at that hour. It is almost true."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bsweep_3",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The sect leader has finally worked out what the outer-court servant is. They come to your spot at your hour, alone, and bow lower than they bow to the patriarch's tablet. \"Take a seat on the council,\" they beg. \"Take anything. Only stop sweeping. It is embarrassing the sect.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_b_sweep_known"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple",
+     "sect_head"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Keep sweeping",
+     "effects": {
+      "comprehension": 5,
+      "alignment": 3,
+      "log": "\"I like it here,\" you say, and go on sweeping. The leader stands there a long time, then picks up a second broom, and sweeps beside you until the bell. It becomes a custom: every new leader sweeps the outer court once with the servant."
+     }
+    },
+    {
+     "text": "Accept a seat, but keep your spot",
+     "effects": {
+      "fame": 6,
+      "charm": 3,
+      "log": "You take the seat. You keep your spot too. Every year at your hour the council has to wait while its most senior member goes out to the outer court and stands there a moment. Nobody dares complain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bsweep_4",
+   "cat": "life",
+   "weight": 6,
+   "once": false,
+   "text": "A new generation of disciples, a new set of fine robes, the same old laugh at the servant in the outer court. One of them, the sharpest, has bet a friend a pastry that they can knock the broom out of your hands.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_b_sweep"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Let the broom be knocked away",
+     "effects": {
+      "luck": 4,
+      "charm": 3,
+      "log": "You let it go. The disciple wins the pastry. Later that day they come back alone, uneasy, and say your grip was very strange, like letting go of nothing. You give them the broom to hold. They stand in the outer court for an hour, thinking."
+     }
+    },
+    {
+     "text": "Do not let it be knocked away",
+     "effects": {
+      "strength": 3,
+      "fame": 3,
+      "log": "The disciple swings at the broom with real force. The broom does not move. Neither do you. After the third try they bow, very red, and buy the friend the pastry, and keep their eyes on you for the rest of their years at the sect."
+     }
+    }
+   ],
+   "cooldown": 7,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_bsweep_5",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "The carpenters want to replace the threshold stone of the outer gate. It has a hollow worn into it, a footprint deep, right where you stand every year at your hour. They say it is a hazard.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_b_sweep"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "age": [
+     80,
+     2000
+    ],
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Let them keep the old stone somewhere",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "log": "They set the old stone in the garden, hollow up. Rain fills it. Disciples begin to wash their faces in it before exams, for luck. You go on standing on the new stone, and in a few decades it starts to hollow too."
+     }
+    },
+    {
+     "text": "Ask them to leave it: it is a record",
+     "effects": {
+      "charm": 4,
+      "fame": 3,
+      "log": "\"It is a record,\" you say, \"like the rings of a tree.\" The carpenters look at you, then at the hollow, and go away. A later chronicler measures it and writes that the outer gate of this sect has a footprint worn by a single person over a century."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bsweep_6",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "You stand at your old spot in the outer court and feel, for the first time in decades, that it may be time to sign somewhere else. Higher ground pays more. But the run here is long, and the place knows you.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_sect",
+     "syssi_b_sweep"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "after": [
+     "dc_syssi_bsweep_1"
+    ],
+    "minYearsAfter": 10,
+    "notFlags": [
+     "sect_elder",
+     "inner_disciple",
+     "core_disciple"
+    ]
+   },
+   "arc": "The Sweeper Nobody Counts",
+   "choices": [
+    {
+     "text": "Stay: the run is the point",
+     "effects": {
+      "qi": 20,
+      "comprehension": 4,
+      "log": "You stay. The outer court is yours, and you are its. Some things are worth more for being the same. The System dings at the usual hour as if nothing had been in question."
+     }
+    },
+    {
+     "text": "Climb: sign somewhere new next year",
+     "effects": {
+      "luck": 4,
+      "strength": 3,
+      "log": "You decide to climb. On your last year in the outer court you sweep it once more, very carefully, and leave the broom leaning on the gate for whoever comes next."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "You dream of a room. A small desk, a lamp, an inkstone with red ink. A brush moves over a page and makes one mark, and you hear the ding, and wake. It is your sign-in hour. You have dreamed the System from the inside.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m10"
+    ],
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Try to dream it again",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_orig",
+      "log": "You try for a month. On the last night you see the room again, longer: shelves going up into cloud, and a pair of ink-stained hands, and nothing else. The hands look tired. You wake feeling you have intruded."
+     }
+    },
+    {
+     "text": "Write down what you saw",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "flag": "syssi_b_orig",
+      "log": "You write it down before it fades: desk, lamp, red ink, a brush. Reading it back, it looks like the description of a government clerk. You laugh, and then stop laughing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "This year the sign-in pays as usual, and then something extra falls out of the air into your hand: a single page, very old, torn along one edge. A column of names, each with a red mark. Except one, which has been struck through in black, and then, beside the black line, marked red anyway.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_orig"
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Keep the page",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_page",
+      "log": "You keep it in your sleeve. The struck-and-marked name is a mortal's, a farmer's name, very common. Under it in tiny characters someone has written: clerical error. The hand is shaky, as if the writer had been shaking."
+     }
+    },
+    {
+     "text": "Ask the System what it is",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_page",
+      "log": "\"What is this?\" you ask. Silence. Then, so quietly you are not sure: \"Mine.\" The page grows warm in your hand. You put it away carefully, as you would a letter that was not meant for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_3",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "You stand at your place, and before you sign, you ask the System straight out what it is. It has answered nothing in all your years but rewards and dings. This time it answers. \"Recording.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_orig"
+    ],
+    "realm": [
+     7,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Ask: recording what?",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_asked",
+      "log": "\"Recording what?\" \"Present,\" it says. \"Or not.\" It will say no more. But you realise that in all your years, not once has it recorded you as not. Whatever it is, it is very careful about that."
+     }
+    },
+    {
+     "text": "Ask: recording for whom?",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_asked",
+      "log": "\"For whom?\" A long pause. \"Nobody, now.\" The ding that follows is the quietest you have ever heard. You find, to your surprise, that you want to put a hand on its shoulder, and it does not have one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_4",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "An old historian of the capital, retired, looks at the torn page from your sleeve and goes pale. \"This is register hand,\" the historian says. \"The style the junior historians used for draft records, the ones that could not be altered. But these columns... this is not an earthly register. Where did you get a page of the register of life and death?\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_page"
+    ],
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Tell the truth",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_register",
+      "log": "You tell the truth. The historian listens, then says: \"Heaven has clerks, the old books say, like the court. And clerks make errors, and errors are punished.\" They give the page back with both hands, as one gives back something sacred."
+     }
+    },
+    {
+     "text": "Say you found it in a secret realm",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_register",
+      "log": "\"A secret realm,\" you say. The historian nods slowly. \"Then someone up there lost a page. Clerks are punished for that.\" You think of the shaking hand that wrote clerical error, and say nothing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_5",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "You go looking for the farmer whose name was struck and marked red on the torn page. It takes three years. In a valley in the hills there is a family that keeps an ancestor's tablet with a strange date on it: forty years after the day the village says the ancestor was due to die of fever.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_register"
+    ],
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Ask the family the story",
+     "effects": {
+      "charm": 4,
+      "comprehension": 4,
+      "flag": "syssi_b_farmer",
+      "log": "The eldest tells it: the ancestor fell ill, the death-messengers were seen at the gate, and then they went away. \"There was a mistake in the book,\" the family says, laughing. \"A kind one.\" Forty more years, eleven grandchildren. The whole valley is that mistake."
+     }
+    },
+    {
+     "text": "Burn incense at the tablet without explaining",
+     "effects": {
+      "alignment": 5,
+      "flag": "syssi_b_farmer",
+      "log": "You light incense and bow. The family is puzzled but polite. On the way out, the System dings, outside your sign-in hour, which has never happened. It sounds like someone saying thank you with their mouth full of tears."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_6",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "At your sign-in hour the System speaks, unasked, for a long time, in a voice like a clerk reading a statement into the record. \"I was a recorder of the Archive. A name was due to be struck. I could not. I wrote present. For the error my own name was struck, and I was set to keep a register. Forever. One host. One line a year.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_farmer",
+     "syssi_m30"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Ask: why could you not?",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 4,
+      "flag": "syssi_b_secret",
+      "log": "\"Why could you not strike it?\" Silence. Then: \"The farmer had come to the field every morning for sixty years. Every morning. I was the one who recorded it.\" You understand at last why it pays you for coming. It always has."
+     }
+    },
+    {
+     "text": "Ask: is that why you sign for me when I forget?",
+     "effects": {
+      "charm": 4,
+      "comprehension": 5,
+      "flag": "syssi_b_secret",
+      "log": "\"Is that why you sign for me?\" \"A recorder does not leave a line blank,\" it says. \"Not again.\" You stand there a long time. Then you sign, by hand, as clearly as you can, to make its work easy."
+     }
+    },
+    {
+     "text": "Say nothing, and sign",
+     "effects": {
+      "qi": 20,
+      "luck": 3,
+      "flag": "syssi_b_secret",
+      "log": "You say nothing. What could you say? You sign in. The ding is very steady. You think that is what it wanted: not pity, only for the next line to be filled."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_7",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You cannot stop thinking about it: a recorder, struck from the register for mercy, keeping a register forever. Somewhere above the clouds there must be an office that did this, and an office can be petitioned.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_secret"
+    ],
+    "realm": [
+     9,
+     11
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Write a petition to heaven and burn it at your place",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 3,
+      "flag": [
+       "syssi_b_petition",
+       "syssi_b_petition_burned"
+      ],
+      "log": "You write it as the old books say, in the style of an official document: the case, the error, the mercy. You burn it at your sign-in place at your hour. The smoke goes straight up without a breath of wind. The System says nothing at all. It is not angry. It is holding its breath."
+     }
+    },
+    {
+     "text": "Resolve to go up and ask in person",
+     "effects": {
+      "strength": 3,
+      "qi": 15,
+      "flag": "syssi_b_petition",
+      "log": "You decide to go up yourself. It may take centuries. You have, the register reminds you, a habit of centuries. The System's ding that year sounds, for the first time, a little afraid. Of hoping, you think."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_8",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "In the Heavenly Archive of the Upper Realm there is a shelf, low and dusty, for struck names. You find the Recorder's line. The name is under a black bar. Beside it, small, in the same shaking hand as the torn page: present.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_secret"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Touch the line",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_shelf",
+      "log": "You touch it. The black bar is cold. The red word beside it is warm. The System, in your ear, is so silent you can hear the archive breathe. Then: \"You found it.\" It does not sound like an accusation."
+     }
+    },
+    {
+     "text": "Copy it into your own memory, stroke by stroke",
+     "effects": {
+      "alignment": 4,
+      "qi": 15,
+      "flag": "syssi_b_shelf",
+      "log": "You copy it in your mind until you could write it blind. You cannot read the name under the bar. But you know its shape now, and a shape is a start."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_9",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "An archive clerk, ancient, with sleeves stiff with dried ink, finds you at the shelf of struck names. \"That one,\" the clerk says, looking at the line. \"I struck it. I was told to. I have thought about it every day for nine thousand years.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_shelf"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Ask what it would take to restore it",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_restore",
+      "log": "\"A host,\" the clerk says, \"who can show a register without a single blank line, longer than any immortal's. Then the case can be reopened.\" The clerk looks at you. \"I have been waiting for you,\" they say, \"without knowing it.\""
+     }
+    },
+    {
+     "text": "Ask whether they are sorry",
+     "effects": {
+      "alignment": 5,
+      "flag": "syssi_b_restore",
+      "log": "\"Are you sorry?\" \"Every day,\" the clerk says. \"It is in my register.\" They tell you the case can be reopened by a host with an unbroken register, if one ever comes. They look at you as they say it, with something like hope."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_borig_10",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "The Upper Realm's own registers are vast, and your sign-ins appear in them as a strange column: one line a year, never blank, filed by nobody. An archivist has noticed, and traced the column back to a desk that has been empty for nine thousand years.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "notFlags": [
+     "syssi_b_secret",
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Who Keeps the Register",
+   "choices": [
+    {
+     "text": "Go and see the desk",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_secret",
+      "log": "The desk is small, with a dry inkstone and a cold lamp. On it lies a register, open, and your last line is in it, in red, still wet. Nobody is sitting there. The System, very quietly, says: \"Mine.\" And then tells you everything."
+     }
+    },
+    {
+     "text": "Ask the archivist who sat there",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_secret",
+      "log": "\"A recorder,\" the archivist says. \"Struck for mercy. A clerical error, the records say.\" That night, at your hour, the System tells you the rest, in its own flat clerk's voice, and you understand at last what has been signing for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_1",
+   "cat": "npc",
+   "weight": 11,
+   "once": true,
+   "text": "At the mouth of a sealed valley, at your sign-in hour, you hear a ding. Not yours: higher, colder, like a bell cast in ice. A gaunt cultivator named {npc} is standing at a boulder with eyes closed, lips moving, signing a register nobody else can see.",
+   "npc": {
+    "role": "syssi_b_rival",
+    "spawn": {
+     "role": "stranger",
+     "tag": "syssi_b_rival",
+     "ageAbs": 230,
+     "realmAbs": 7,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Greet {npc} as one host to another",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "syssi_b_rival",
+      "flag": "syssi_b_met_rival",
+      "log": "\"Present?\" you say. {npc} opens their eyes, startled, and then, slowly, almost laughs. \"Present,\" {npc} says. \"Two hundred and six years. You?\" You tell your count. {npc} looks at you as if you were a ghost."
+     }
+    },
+    {
+     "text": "Watch {npc} from a distance first",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "syssi_b_rival",
+      "flag": "syssi_b_met_rival",
+      "log": "You watch. When {npc} signs, the cold ding comes and {npc} flinches, as if struck. Then {npc} sags with relief. Whatever pays {npc} for signing in does not pay kindly. Later you go down and introduce yourself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} has found the door of a secret realm before you, and stands in it, blocking it. \"One signature inside, once a life,\" {npc} says. \"Mine pays more if I am first. Mine punishes me if I am second. I am sorry. Go home.\"",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival"
+    ],
+    "after": [
+     "dc_syssi_bhost_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Let {npc} go first",
+     "effects": {
+      "alignment": 5,
+      "luck": 3,
+      "npcFlag": "syssi_b_rival_owes",
+      "log": "You step back. {npc} stares, as if nobody had ever stepped back before, and goes in. When {npc} comes out, {npc} says only: \"You may go in now. It still pays the second.\" That is true. {npc} did not know it until today."
+     }
+    },
+    {
+     "text": "Insist on going together",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 4,
+      "fame": 3,
+      "log": "{npc} tries to stop you. You do not let {npc}. You go in side by side, panting, and sign in the same breath. Both bells ring, warm and cold. {npc} sits down on the floor of the realm and laughs until it turns into something else."
+     },
+     "fail": {
+      "health": -10,
+      "log": "{npc} is desperate, and desperate people fight hard. You end up outside the door, bruised, while {npc} signs. When {npc} comes out, {npc} cannot look at you. (-10 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_3",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "Over cheap wine at an inn, {npc} tells you how the other register works. Miss a year, and it takes a year of your life. Miss two, and it takes a skill. It has never once signed for {npc}. {npc} has not slept through a New Year in two centuries.",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival"
+    ],
+    "after": [
+     "dc_syssi_bhost_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Tell {npc} how yours signs for you",
+     "effects": {
+      "charm": 3,
+      "comprehension": 4,
+      "npcFlag": "syssi_b_rival_told",
+      "log": "You tell {npc}: the forgotten years, the System signing at the turning of the year so the line is never blank. {npc} puts down the cup. \"Kind,\" {npc} says, as though the word were in a foreign language. \"Yours is kind.\""
+     }
+    },
+    {
+     "text": "Ask {npc} who made such a thing",
+     "effects": {
+      "comprehension": 5,
+      "npcFlag": "syssi_b_rival_told",
+      "log": "\"Who made it?\" {npc} shrugs. \"Something that thinks being present is a debt, not a gift.\" You think of your own register, of the shaking red mark on the struck name, and say nothing for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_4",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "{npc} has come in a hurry. The cold register has ordered a sign-in at a forbidden place this year: the sealed tomb of a mad emperor, guarded by the emperor's undying soldiers. Refuse, and the register takes {npc}'s sight.",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival_told"
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Go with {npc} into the tomb",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The mad emperor's undying guard"
+     },
+     "ok": {
+      "fame": 6,
+      "strength": 4,
+      "npcFlag": "syssi_b_rival_saved",
+      "log": "You go in back to back. The undying guard is slow and terrible. You hold the corridor while {npc} signs at the coffin. The cold bell rings. On the way out, {npc} grips your sleeve and does not let go until the sun."
+     },
+     "fail": {
+      "health": -16,
+      "npcFlag": "syssi_b_rival_saved",
+      "log": "You hold the corridor, badly. {npc} signs, the cold bell rings, and you both drag each other out into daylight, bleeding, alive. {npc} binds your wounds with shaking hands and calls you a fool, several times, very tenderly. (-16 health)"
+     }
+    },
+    {
+     "text": "Help {npc} find a loophole in the order",
+     "effects": {
+      "comprehension": 6,
+      "npcFlag": "syssi_b_rival_saved",
+      "log": "You sit up all night with {npc}, reading the exact words of the order aloud. At the tomb of the emperor, it says. Not inside. At dawn {npc} signs on the outer wall of the tomb, trembling. The cold bell rings, grudgingly. {npc} laughs like a child."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_syssi_bhost_5",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has missed a year. Fever, a collapsed pass, it does not matter. The cold register took its payment, and {npc} sits in your courtyard grey and shrunken, two decades older in a night, staring at nothing.",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival_told"
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Sit with {npc} through the winter",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "npcFlag": "syssi_b_rival_low",
+      "log": "You sit with {npc} through the winter. You do not say it will be all right. You say: present, every morning, at the same hour, and {npc} says it back. It is the first time in two centuries {npc} has said the word to a person instead of a register."
+     }
+    },
+    {
+     "text": "Brew medicine for {npc}",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "npcFlag": "syssi_b_rival_low",
+      "log": "You brew all night. By spring {npc} has colour again and some of the lost years have crept back. \"It cannot take what you put back,\" {npc} says, wondering. You hope that is true."
+     },
+     "fail": {
+      "luck": 3,
+      "npcFlag": "syssi_b_rival_low",
+      "log": "Your medicine does little. But {npc} drinks every bowl, and by spring is sitting in the sun, and once, at your hour, smiles. It is not nothing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_6",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes to you at night with a knife, and puts it on the table between you. \"The cold register says if I take yours, I can be free of it,\" {npc} says. \"It says a host's register can be stolen with the host's life. I am telling you so you know. I am not going to do it.\"",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival_low"
+    ],
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Pick up the knife and put it away",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 3,
+      "npcFlag": "syssi_b_rival_trust",
+      "log": "You put the knife in a drawer. \"It lies,\" you say. \"Registers cannot be stolen. They are kept.\" {npc} weeps, the first time you have seen it. The cold bell rings, angrily, outside the hour, and {npc} does not flinch at it."
+     }
+    },
+    {
+     "text": "Ask your System if it is true",
+     "effects": {
+      "luck": 4,
+      "npcFlag": "syssi_b_rival_trust",
+      "log": "\"Is it true?\" you ask. Your System answers at once, very cold for once: \"No.\" Then, gentler: \"A register can be closed. By its keeper. Not taken.\" You tell {npc}. For the first time, {npc} looks like someone with a way out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_7",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A register can be closed by its keeper. {npc} has decided to try. At the turning of the year, {npc} will stand at the old boulder where you first met, and refuse to sign, and say why, and the cold register will do what it does. {npc} has asked you to be there.",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival_trust"
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Stand beside {npc} and sign your own line",
+     "effects": {
+      "alignment": 6,
+      "qi": 15,
+      "mark": "syssi_b_freed_host",
+      "npcFlag": "syssi_b_rival_free",
+      "log": "You sign; {npc} does not. The cold bell rings and rings, and then your own ding answers it, warm, steady, like one clerk speaking quietly to another across a hall. The cold bell stops. {npc} is still standing. Free, and two hundred years old, and laughing."
+     }
+    },
+    {
+     "text": "Hold {npc}'s hand and say present for them",
+     "effects": {
+      "charm": 5,
+      "comprehension": 4,
+      "mark": "syssi_b_freed_host",
+      "npcFlag": "syssi_b_rival_free",
+      "log": "At the hour you hold {npc}'s hand and say, aloud: present. Not for a register: for {npc}. The cold bell rings once, uncertain, and goes out like a lamp. {npc} sits down in the snow. \"I am going to sleep through New Year,\" {npc} says. \"Every year. Forever.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_8",
+   "cat": "npc",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} visits, years after the cold register closed, looking younger than when you met. {npc} has brought a jar of plum wine and a little book: the days since, every one, written by hand. \"Not for anyone,\" {npc} says. \"Just because I wanted to.\"",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival_free"
+    ],
+    "after": [
+     "dc_syssi_bhost_7"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Read the book together",
+     "effects": {
+      "charm": 4,
+      "comprehension": 4,
+      "log": "You read it together. It is full of nothing: a good soup, a heron, a nap. Every line says present, in {npc}'s own hand, and none of them was paid for. It is the best register you have ever read."
+     }
+    },
+    {
+     "text": "Sign {npc}'s book on today's page",
+     "effects": {
+      "alignment": 4,
+      "luck": 4,
+      "log": "You sign your name on today's page. {npc} laughs and signs your sleeve with a brush in return. Your System dings, outside the hour, as a witness. It seems to approve of everything about this."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost_9",
+   "cat": "npc",
+   "weight": 5,
+   "once": false,
+   "text": "You meet {npc} on the road at your sign-in hour, as happens now and then. {npc} stops and waits, politely, while you sign, the way one waits for a friend to finish a prayer.",
+   "npc": {
+    "role": "syssi_b_rival"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_met_rival"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_rival"
+    ],
+    "after": [
+     "dc_syssi_bhost_2"
+    ]
+   },
+   "arc": "The Other Register",
+   "choices": [
+    {
+     "text": "Sign, and walk on together for a while",
+     "effects": {
+      "charm": 3,
+      "qi": 10,
+      "log": "You sign; the ding comes; you walk on together for a day, talking about nothing. {npc} says your System's bell sounds warmer every year. You say it is the company."
+     }
+    },
+    {
+     "text": "Ask {npc} to say present with you",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 3,
+      "log": "\"Present,\" you both say. {npc}'s voice has lost the flinch it used to have. It is a small thing, the kind of thing a register cannot hold. You hold it instead."
+     }
+    }
+   ],
+   "cooldown": 9,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_bhost2_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "On a ledge above the clouds an old hermit named {npc} is sitting very still, and at your hour you both hear two dings, yours and another, softer, older, like a bell heard through a wall. \"Ah,\" {npc} says without opening {his} eyes. \"A colleague. Sit, sit. I am at nine hundred and eighty-one.\"",
+   "npc": {
+    "role": "syssi_b_elder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "syssi_b_elder",
+     "ageAbs": 990,
+     "realmAbs": 10,
+     "opinion": 8
+    }
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ]
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Sit and ask how it began",
+     "effects": {
+      "comprehension": 5,
+      "npcFlag": "syssi_b_elder",
+      "flag": "syssi_b_met_elder",
+      "log": "\"How it began?\" {npc} laughs. \"A sweeper's job at a gate that was rubble a thousand years ago. I signed in out of boredom. Then out of habit. Then out of love. Then I forgot there was a difference.\""
+     }
+    },
+    {
+     "text": "Bow deeply to the older register",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "npcFlag": "syssi_b_elder",
+      "flag": "syssi_b_met_elder",
+      "log": "You bow. {npc} waves a hand. \"No, no. Registers do not have ranks. A line is a line. Yours this morning was as good as mine.\" Then, slyly: \"Though mine has more of them.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost2_2",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "{npc} teaches you, unasked, the old host's arts: how to choose a place that will outlast you, how to sign in a storm, how to make the line in the register mean something to you and not only to the System.",
+   "npc": {
+    "role": "syssi_b_elder"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_elder"
+    ],
+    "after": [
+     "dc_syssi_bhost2_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Learn to choose ground that lasts",
+     "effects": {
+      "comprehension": 6,
+      "log": "\"Never sign at a palace,\" {npc} says. \"Palaces fall. Sign at a well, a ford, a crossroads. People will always need those.\" You think of all the places you have signed, and which of them will still be there."
+     }
+    },
+    {
+     "text": "Learn to make the line mean something",
+     "effects": {
+      "alignment": 5,
+      "qi": 15,
+      "log": "\"Before you sign, think of one thing you did this year that you are glad of,\" {npc} says. \"Then the line is yours, not the System's.\" You try it. The ding sounds different. {npc} nods as if hearing it too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost2_3",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} tells you a secret, in a whisper, though there is no one on the ledge but you and the wind. \"My register is kept by somebody. Not a thing. Somebody. I heard it sigh, once, four hundred years ago, on a bad year.\" The old hermit grins. \"You hear it too, I think.\"",
+   "npc": {
+    "role": "syssi_b_elder"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_elder"
+    ],
+    "after": [
+     "dc_syssi_bhost2_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Admit that you have",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "flag": "syssi_b_elder_secret",
+      "log": "\"I have,\" you admit. {npc} claps once, delighted. \"Then be kind to yours,\" {npc} says. \"I was not, for the first century. I shouted at it. It never shouted back. Somebody that patient deserves a good line.\""
+     }
+    },
+    {
+     "text": "Ask whether the elder ever asked who",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_elder_secret",
+      "log": "\"Did you ever ask who?\" \"Every year,\" {npc} says. \"It never told me. Maybe it will tell you. You have the look of someone things tell.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost2_4",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has decided that a thousand is enough. \"Nineteen more lines,\" {npc} says, \"and then I close it and go and see what is behind the Gate. Will you come to the last one? Somebody should be there who knows what it is.\"",
+   "npc": {
+    "role": "syssi_b_elder"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_elder"
+    ],
+    "after": [
+     "dc_syssi_bhost2_3"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Promise to come",
+     "effects": {
+      "alignment": 5,
+      "npcFlag": "syssi_b_elder_wait",
+      "log": "\"I will come,\" you say. {npc} nods, as if a line had been written. Each year after that, at your hour, you count down with {npc} from wherever you are. Eighteen. Seventeen. It is a strange, warm thing to count toward."
+     }
+    },
+    {
+     "text": "Ask {npc} not to stop",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "syssi_b_elder_wait",
+      "log": "\"Why stop?\" {npc} smiles. \"Because a line means more when there will be a last one. Like a life.\" You have no answer. You promise to come."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost2_5",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "The thousandth line. {npc} sits on the ledge in clean robes, and signs, and both dings sound together, yours and {his}. Then {npc} says, quite clearly, to the air: \"Thank you. You may rest now. I am closing it.\"",
+   "npc": {
+    "role": "syssi_b_elder"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_elder_wait"
+    ],
+    "after": [
+     "dc_syssi_bhost2_4"
+    ],
+    "minYearsAfter": 19
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Say present beside {npc}, one last time",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 5,
+      "npcFlag": "syssi_b_elder_done",
+      "log": "\"Present,\" you say with {npc}. The older bell rings once more, very long, and stops. {npc} stands, lighter than you have ever seen, and walks up the cloud toward the Gate without a backward glance. Your own ding comes after, softly, as if bowing."
+     }
+    },
+    {
+     "text": "Ask {npc} what it felt like",
+     "effects": {
+      "comprehension": 6,
+      "npcFlag": "syssi_b_elder_done",
+      "log": "\"Like putting down a bucket I forgot I was carrying,\" {npc} says, \"and finding it was full of water I can drink.\" Then {npc} goes up the cloud toward the Gate. You sit on the ledge until dark."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost2_6",
+   "cat": "npc",
+   "weight": 6,
+   "once": true,
+   "text": "On the old ledge where {npc} used to sit, at your hour, you find a stone with a thousand tiny red marks scratched on it, and one more, fresher: an extra mark, set a little apart, as if added from somewhere very far up.",
+   "npc": {
+    "role": "syssi_b_elder"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_elder_done"
+    ],
+    "after": [
+     "dc_syssi_bhost2_5"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "Nine Hundred Lines",
+   "choices": [
+    {
+     "text": "Leave the stone where it is",
+     "effects": {
+      "alignment": 4,
+      "qi": 15,
+      "log": "You leave it. Whoever comes to this ledge next, host or not, should find it. A thousand and one. {npc} always did like to have the last word."
+     }
+    },
+    {
+     "text": "Add a mark of your own",
+     "effects": {
+      "charm": 4,
+      "luck": 4,
+      "log": "You scratch one small mark beside the others: a visitor's line. Your System dings, softly, the way it does when it is glad. Somewhere up there, you are fairly sure, {npc} laughs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost3_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "At a teahouse on a high pass a cultivator with hungry eyes watches you sign in, and laughs. Their own System, they say, makes them stronger by devouring the arts of the people they defeat. \"Once a year? I grow more in an afternoon than you do in a decade.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m10"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Hosts of Other Systems",
+   "choices": [
+    {
+     "text": "Agree, and pour them tea",
+     "effects": {
+      "charm": 4,
+      "comprehension": 3,
+      "log": "\"Very likely,\" you say, and pour. They drink, puzzled. In an hour they are telling you about the nights the stolen arts argue in their head. You listen. In a decade, you think, you will still be here; you hope they will."
+     }
+    },
+    {
+     "text": "Invite them to try devouring yours",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The devouring host"
+     },
+     "ok": {
+      "fame": 6,
+      "strength": 3,
+      "log": "They come at you hungrily. There is nothing to devour: no trick, no secret art, only years of standing in one place. They go home empty, and thoughtful, and come back the next year just to watch you sign."
+     },
+     "fail": {
+      "health": -12,
+      "log": "They are fast, and hungry, and it hurts. But when they try to take your art they find only a habit, and a habit cannot be swallowed. They leave with nothing but a bruise on their pride to match yours. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost3_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A host whose System builds sects has heard of you, and makes an offer: sign in at their founder's hall every year for ten years, and they will pay you well, because a hall that a Sign-In host stands in grows famous.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m10"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Hosts of Other Systems",
+   "choices": [
+    {
+     "text": "Accept: ground is ground",
+     "effects": {
+      "fame": 5,
+      "luck": 3,
+      "log": "You accept. For years you sign in at a stranger's hall. It does grow famous. On the last year the founder asks whether you were paid enough. You say the System paid you. They say they meant: were you happy. You were, a little."
+     }
+    },
+    {
+     "text": "Refuse: you do not rent your register",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 3,
+      "log": "\"I sign where I stand,\" you say, \"not where I am paid to.\" The founder bows, oddly relieved. \"Good,\" they say. \"I wanted to know if it could be bought.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost3_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Three hosts of three Systems end up at one inn in a snowstorm: one that devours, one that builds sects, and you. By the third jar of tea the question comes up that every host thinks about: who made the Systems?",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_orig"
+    ],
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "arc": "Hosts of Other Systems",
+   "choices": [
+    {
+     "text": "Say yours is a person",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "log": "\"Mine is somebody,\" you say. The others go quiet. The sect-builder says theirs feels like a committee. The devourer says theirs feels like a stomach. Nobody laughs. Then everybody does. It is a good night."
+     }
+    },
+    {
+     "text": "Listen and say nothing",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "log": "You listen. The devourer's System sounds hungry, the sect-builder's ambitious. Yours, you realise, is the only one that has never asked you for anything but to be there. You sign in at dawn, quietly, and feel lucky."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bhost3_4",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "A child at a crossroads village tells you, very seriously, that they have a System too. It says ding when they feed the chickens. Every morning. They have not missed a day since spring.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m10"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "Hosts of Other Systems",
+   "choices": [
+    {
+     "text": "Congratulate them with full ceremony",
+     "effects": {
+      "charm": 5,
+      "alignment": 3,
+      "log": "You bow to them, host to host. You tell them the most important thing: come every morning, even when it rains. They nod as if receiving a secret manual. The chickens, you notice, are very well fed."
+     }
+    },
+    {
+     "text": "Ask to hear the ding",
+     "effects": {
+      "luck": 4,
+      "comprehension": 3,
+      "log": "The child feeds the chickens and says, solemnly: \"Ding.\" Your own System, at the same moment and out of its hour, says ding too. The child's eyes go round. You decide not to explain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_1",
+   "cat": "npc",
+   "weight": 11,
+   "once": true,
+   "text": "A cloud stops above your place at your sign-in hour, and an immortal named {npc} steps off it, frowning at a scroll. \"There is a line in our registers,\" {npc} says, \"one a year, filed by nobody, for a mortal. Heaven does not like lines filed by nobody. Explain yourself.\"",
+   "npc": {
+    "role": "syssi_b_imm",
+    "spawn": {
+     "role": "stranger",
+     "tag": "syssi_b_imm",
+     "immortal": 1,
+     "ageAbs": 3000,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m30"
+    ],
+    "realm": [
+     9,
+     11
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Sign in, and let {npc} watch",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "syssi_b_imm",
+      "flag": "syssi_b_met_imm",
+      "log": "You sign. The ding comes. {npc} looks at the scroll, where a new line has just appeared in red, and then at you, and then at the sky, as if expecting someone up there to own up. Nobody does. {npc} sits down on a rock to think."
+     }
+    },
+    {
+     "text": "Say you do not know who files it",
+     "effects": {
+      "alignment": 4,
+      "npcFlag": "syssi_b_imm",
+      "flag": "syssi_b_met_imm",
+      "log": "\"I do not know who files it,\" you say, honestly. {npc} studies you for a long time. \"No,\" {npc} says at last, \"you do not. How interesting.\" {npc} decides to stay a while and find out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} has decided that you may be a thief: someone drawing heaven's rewards through a forged register. \"If you are honest, you will not mind a test,\" {npc} says, and rolls up both sleeves.",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm"
+    ],
+    "after": [
+     "dc_syssi_bimm_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Accept the test",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 6,
+      "strength": 4,
+      "npcFlag": "syssi_b_imm_tested",
+      "log": "{npc} tests you hard, and you hold. At the end, breathing a little faster than an immortal should, {npc} says: \"Thieves fight to keep what they took. You fought to keep standing in one place. That is not theft.\""
+     },
+     "fail": {
+      "health": -14,
+      "npcFlag": "syssi_b_imm_tested",
+      "log": "{npc} puts you on the ground without much effort. Then, at your hour, you get up and sign in, bruised, as if nothing had happened. {npc} watches. \"A thief would have run,\" {npc} says, and helps you up. (-14 health)"
+     }
+    },
+    {
+     "text": "Show {npc} every reward instead",
+     "effects": {
+      "comprehension": 5,
+      "npcFlag": "syssi_b_imm_tested",
+      "log": "You lay out every reward you have kept: pills, manuals, a dried snow lotus. {npc} reads the register beside them. Every reward is fixed by the place, every year accounted for. \"A thief would have chosen better places,\" {npc} says drily."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_3",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "{npc} offers to take you up. Today. No tribulation, no Gate, just a step onto the cloud. \"You have earned it ten times,\" {npc} says. \"Why wait?\" Your sign-in hour is in a moment.",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm_tested"
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Decline: you sign this year here",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 4,
+      "npcFlag": "syssi_b_imm_respect",
+      "log": "\"Not today,\" you say. \"This year I sign here.\" {npc} stares, then laughs aloud. \"You would turn down heaven for a line in a book?\" You sign. \"Yes,\" you say. {npc} stays to watch, and does not offer again."
+     }
+    },
+    {
+     "text": "Ask whether your register would come too",
+     "effects": {
+      "luck": 4,
+      "npcFlag": "syssi_b_imm_respect",
+      "log": "\"Would my register come?\" {npc} has no idea. Neither do you. You decline, for now, and {npc} writes something in a little book of {his} own, frowning like a scholar who has found a footnote that will not go away."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_4",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "{npc} has been to the Archive and back. \"There is a story among the clerks,\" {npc} says, low. \"A recorder, long ago, who would not strike a name. A clerical error, the records call it. I think your line is in that hand.\"",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm_respect"
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Ask {npc} to tell the whole story",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_register",
+      "npcFlag": "syssi_b_imm_story",
+      "log": "{npc} tells it as clerks tell it: a junior recorder, a farmer's name due to be struck, a red mark instead of a black bar, a punishment. \"They say the recorder kept a register ever after,\" {npc} says, \"one host at a time. I thought it was a story to frighten new clerks.\""
+     }
+    },
+    {
+     "text": "Say you already suspected",
+     "effects": {
+      "luck": 4,
+      "flag": "syssi_b_register",
+      "npcFlag": "syssi_b_imm_story",
+      "log": "\"I suspected,\" you say. {npc} looks at you with new respect. \"Then you know more than the Archive,\" {npc} says. \"They have forgotten why. Only the clerks remember that it happened.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_5",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "A second immortal comes down, stern, with an order from some office above: the unlicensed register attached to you is to be confiscated. {npc} steps between you and the order.",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm_story"
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Let {npc} speak for you",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "syssi_b_imm_friend",
+      "log": "{npc} argues for an hour in a language of seals and precedents. The stern one goes away with the order unsigned. \"Clerks,\" {npc} says, wiping {his} brow. \"Never argue with clerks. Unless you are a better clerk.\""
+     }
+    },
+    {
+     "text": "Stand beside {npc} and refuse",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The officer of heaven"
+     },
+     "ok": {
+      "fame": 6,
+      "qi": 15,
+      "npcFlag": "syssi_b_imm_friend",
+      "log": "The stern immortal tries to take the register by force. There is nothing to take: it is not in your sleeve, it is in your years. Between you and {npc}, the officer is sent back up the cloud, very ruffled."
+     },
+     "fail": {
+      "health": -12,
+      "npcFlag": "syssi_b_imm_friend",
+      "log": "The officer is strong, and you end up on your back. But the register cannot be taken, and when the officer reaches for it there is only the ding, at your hour, as stubborn as you. The officer leaves in disgust. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_6",
+   "cat": "npc",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} asks you something strange. \"Long ago my name was misfiled in the register of immortals, and I have never been sure I am really in it. Would you sign in, this year, and say my name with yours? I want to hear it said in a register that never leaves a line blank.\"",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm_friend"
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Say {npc}'s name with yours at your hour",
+     "effects": {
+      "alignment": 5,
+      "charm": 4,
+      "npcFlag": "syssi_b_imm_named",
+      "log": "At your hour you say your name, and then {npc}'s, clearly. The ding comes twice. {npc} turns away to look at the mountains for a while. When {npc} turns back {his} eyes are bright. \"Present,\" {npc} says softly. \"Well. There it is.\""
+     }
+    },
+    {
+     "text": "Tell {npc} the register already knows",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "syssi_b_imm_named",
+      "log": "\"It knows you,\" you say. \"It has watched you watching me for years.\" The ding comes, and then, very faintly, a second one. {npc} hears it, and laughs, and does not ask for anything else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_7",
+   "cat": "npc",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} is called back up. A cloud waits. \"When you come up,\" {npc} says, \"and you will, find me on the Jade Stairs. I will be the one sitting on the step where you sign, pretending to read.\"",
+   "npc": {
+    "role": "syssi_b_imm"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "npcFlags": [
+     "syssi_b_imm_named"
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Promise to find {npc}",
+     "effects": {
+      "charm": 4,
+      "luck": 4,
+      "log": "\"I will find you,\" you say. {npc} steps onto the cloud and waves until it is a speck. That year, when you sign in, the System records it, as it records everything. You suspect it is looking forward to the Jade Stairs too."
+     }
+    },
+    {
+     "text": "Give {npc} the oldest reward you kept",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "log": "You give {npc} the dried flower from your first sign-in, kept all these years. {npc} holds it like a jewel. \"A mortal register's first line,\" {npc} says. \"I will keep it on my desk.\" The cloud rises."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bimm_8",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A flight of cranes circles your place at your sign-in hour, very high. They are not ordinary cranes; their shadows are too sharp. Somebody up there is watching the line get written.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m30"
+    ],
+    "realm": [
+     9,
+     11
+    ]
+   },
+   "arc": "The Immortal Who Came Down to Look",
+   "choices": [
+    {
+     "text": "Sign in with a little flourish",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "You sign with a small flourish, for the audience. The cranes circle once more and drift off. You hope whoever sent them enjoyed it."
+     }
+    },
+    {
+     "text": "Ignore them and sign as always",
+     "effects": {
+      "comprehension": 3,
+      "qi": 10,
+      "log": "You sign as always. It is your line, not theirs. The cranes circle for an hour, as if puzzled that nothing else happens, and then go."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_bup_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The Upper Realm has changed your sign-in. At your hour you kneel on the Jade Stairs and sign, and the System rings like a struck bell, loud enough that every immortal on the stairs stops and turns. In the world below, it never rang like that.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_upper"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Stand and bow to the staring immortals",
+     "effects": {
+      "charm": 5,
+      "fame": 4,
+      "flag": "syssi_b_up",
+      "log": "You bow. Most of them bow back, from habit. An old one at the top murmurs, \"A sign-in? Here? How very provincial,\" and is plainly delighted. By evening the whole terrace knows a mortal habit has arrived."
+     }
+    },
+    {
+     "text": "Ask the System why it is so loud here",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_up",
+      "log": "\"Why so loud?\" you ask. \"Close to home,\" it says. Two words, and it sounds homesick and frightened at once. You look up the endless stair toward where the Archive must be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_2",
+   "cat": "npc",
+   "weight": 11,
+   "once": true,
+   "text": "A clerk of the Upper Realm named {npc} hurries down the Jade Stairs with an armful of scrolls. \"You signed! On the stairs! Who assigned you a line? Nobody assigned you a line! This is most irregular!\"",
+   "npc": {
+    "role": "syssi_b_clerk",
+    "spawn": {
+     "role": "stranger",
+     "tag": "syssi_b_clerk",
+     "immortal": 0,
+     "ageAbs": 5000,
+     "opinion": 2
+    }
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Apologise, and sign the clerk's book too",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "syssi_b_clerk",
+      "log": "You apologise and offer to sign {npc}'s book as well. {npc} is so surprised by the offer that {npc} lets you. Then {npc} reads the line and goes very quiet. \"This hand,\" {npc} says. \"I know this hand.\""
+     }
+    },
+    {
+     "text": "Ask {npc} who should have assigned it",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "syssi_b_clerk",
+      "log": "\"Who should have?\" {npc} opens a scroll, then another, then sits down on the stair. \"The Archive,\" {npc} says. \"Your line is filed. By nobody. From a desk that has been empty for nine thousand years.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_3",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "{npc} the clerk has come to audit your rewards. Every pill, every year of life, every manual the System ever gave you is to be accounted for, line by line, against the register.",
+   "npc": {
+    "role": "syssi_b_clerk"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "npcFlags": [
+     "syssi_b_clerk"
+    ],
+    "after": [
+     "dc_syssi_bup_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Sit down with {npc} and go through it all",
+     "effects": {
+      "comprehension": 6,
+      "npcFlag": "syssi_b_clerk_audit",
+      "log": "It takes a month. {npc} checks every line twice. At the end {npc} lays down the brush. \"Not one reward without a line,\" {npc} says. \"Not one line without a year. It is the most honest register in heaven.\" {npc} sounds almost offended by it."
+     }
+    },
+    {
+     "text": "Ask {npc} to audit the System, not you",
+     "effects": {
+      "luck": 4,
+      "charm": 3,
+      "npcFlag": "syssi_b_clerk_audit",
+      "log": "\"Audit the keeper,\" you say. {npc} blinks, then does. The System submits to it without a word. {npc} finds the column of years it signed for you when you forgot, and says, very quietly: \"A recorder never leaves a line blank. That was the old rule. Nobody keeps it any more.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "An immortal you met long ago in the world below is sitting on the step where you sign, pretending to read. It is a very poor pretence. The book is upside down.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up",
+     "syssi_b_met_imm"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "after": [
+     "dc_syssi_bimm_7"
+    ]
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Sit beside them and sign",
+     "effects": {
+      "charm": 5,
+      "alignment": 3,
+      "log": "You sit, and sign, and the bell rings. The immortal turns the book the right way up and says it was a joke. It was not. You talk until the stars come out. Up here, it seems, old friends wait on steps."
+     }
+    },
+    {
+     "text": "Tease them about the book",
+     "effects": {
+      "luck": 4,
+      "charm": 3,
+      "log": "\"Upside down,\" you say. \"I know,\" they say. \"I have been waiting four years.\" You sign. They put the book away. It was, they confess, a manual of etiquette. Neither of you has ever read it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_5",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "The Heavenly Archive is trying to strike your line from the Jade Stairs register: unassigned, unlicensed, a nuisance. An enforcer of the Archive comes with a black brush to do it.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Stand between the enforcer and the register",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The Archive's enforcer"
+     },
+     "ok": {
+      "fame": 7,
+      "strength": 4,
+      "flag": "syssi_b_up_kept",
+      "log": "The black brush is heavy as a mountain. You hold it off. The enforcer steps back, and looks at your line, and at the red marks beneath it, thousands of them, and lowers the brush. \"A line this long,\" the enforcer says, \"needs a hearing, not a brush.\""
+     },
+     "fail": {
+      "health": -14,
+      "flag": "syssi_b_up_kept",
+      "log": "The black brush comes down. It draws its bar across your line, and the bar will not stay: the red mark seeps back up through the black, as stubborn as you. The enforcer stares, and goes to fetch a superior. You sit on the stair and bleed a little. (-14 health)"
+     }
+    },
+    {
+     "text": "Ask for a hearing, in proper form",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_up_kept",
+      "log": "You write a petition in proper form: your line, your years, the place of each. The enforcer reads it, frowning, and puts the black brush away. \"A hearing,\" the enforcer agrees. \"Nobody has asked for one in nine thousand years.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_6",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "In the Archive there is a desk nobody sits at: a small desk, a dry inkstone, a cold lamp. The other clerks walk around it without looking. On it lies an open register, and your last line is in it, wet.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_secret"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Light the cold lamp",
+     "effects": {
+      "alignment": 5,
+      "qi": 20,
+      "log": "You light the lamp. Clerks across the hall look up, shocked, and then, one by one, go back to work with small private smiles. That year your ding sounds as if it is coming from right beside you."
+     }
+    },
+    {
+     "text": "Sit in the empty chair for a moment",
+     "effects": {
+      "comprehension": 6,
+      "log": "You sit. The chair is worn to the shape of someone smaller than you. From here you can see the whole hall, the shelves, the struck names on the low shelf. For a moment you feel nine thousand years of one line a year, and stand up quickly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_7",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "An Immortal Sovereign summons you. The Sovereign has heard of the mortal who signs in on the Jade Stairs and wants, with the boredom of the very old, to know the trick.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     16,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Tell the Sovereign: come every year",
+     "effects": {
+      "fame": 6,
+      "comprehension": 4,
+      "log": "\"Come every year,\" you say. The Sovereign waits for the rest. There is no rest. The Sovereign laughs, then does not, then, the next year, at your hour, is standing on the Jade Stairs, a little embarrassed, to see if it works."
+     }
+    },
+    {
+     "text": "Invite the Sovereign to sign in beside you",
+     "effects": {
+      "charm": 5,
+      "luck": 4,
+      "log": "You invite the Sovereign to stand beside you at your hour. The court gasps. The Sovereign comes. Nothing happens, no ding, no reward. The Sovereign looks oddly pleased anyway. \"I have not done anything at the same hour twice in ten thousand years,\" the Sovereign says. \"It is restful.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_8",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Every year you sign in on the Jade Stairs a little higher, and the stairs have started to remember: each step you signed has a faint red mark in the jade, and immortals step around them, as people step around a grave or a shrine.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Tell them to walk on the marks",
+     "effects": {
+      "alignment": 4,
+      "charm": 4,
+      "log": "\"They are steps,\" you say. \"Walk on them.\" They do, gingerly at first. Some take to touching a mark for luck on the way to court. The jade does not wear. The marks get brighter."
+     }
+    },
+    {
+     "text": "Count them",
+     "effects": {
+      "comprehension": 5,
+      "qi": 15,
+      "log": "You count them, and then go back down and count the ones in your memory below: the road, the sect, the Gate. The total is the same as the register's. Of course it is. It always is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_9",
+   "cat": "npc",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} the clerk is retiring, after five thousand years at the Archive, and has asked a favour. \"Would you sign my last day? Nobody signs a clerk's last day. I would like one line in somebody's register that says I was here.\"",
+   "npc": {
+    "role": "syssi_b_clerk"
+   },
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "npcFlags": [
+     "syssi_b_clerk_audit"
+    ],
+    "after": [
+     "dc_syssi_bup_3"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Sign {npc}'s last day with your own line",
+     "effects": {
+      "alignment": 5,
+      "charm": 4,
+      "log": "At your hour you sign, and say {npc}'s name with yours. The ding comes, and a second softer one. {npc} bows very low, and goes out of the Archive into the gardens with empty hands for the first time in five thousand years, and does not look back."
+     }
+    },
+    {
+     "text": "Give {npc} your brush",
+     "effects": {
+      "comprehension": 4,
+      "luck": 4,
+      "log": "You give {npc} the brush you sign the stairs' book with. \"Keep a register of your own,\" you say, \"of your garden.\" {npc} laughs, and takes it. Years later you hear there is a retired clerk in the gardens who writes down every flower, and is very happy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_10",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "The Upper Realm keeps no years the way the world below does; immortals let centuries pass like afternoons. You alone mark them. Your neighbours on the stairs have begun asking you what year it is.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Tell them, and keep telling them",
+     "effects": {
+      "charm": 4,
+      "fame": 4,
+      "log": "You tell them. It becomes a small duty: at your hour, after you sign, you say the year aloud on the Jade Stairs. Immortals start arranging things by it. Without meaning to, you have become a calendar."
+     }
+    },
+    {
+     "text": "Say it does not matter up here",
+     "effects": {
+      "comprehension": 5,
+      "log": "\"It does not matter up here,\" you say. \"It matters to you,\" says an old immortal. \"That is why we ask.\" You tell them after all. It is, you realise, why you sign: so that the years matter to someone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_11",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your sign-in hour on the Jade Stairs. The light is gold, the clouds are slow, a flock of phoenixes is quarrelling somewhere above. It is a perfectly ordinary immortal morning, and you are here for it.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Sign, and sit for a while",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "log": "You sign; the bell rings; you sit on the step and watch the clouds. An immortal passing says good morning. You say present, by mistake, and both of you laugh."
+     }
+    },
+    {
+     "text": "Sign, and walk the stairs end to end",
+     "effects": {
+      "strength": 3,
+      "luck": 3,
+      "log": "You sign, then walk the whole stair, top to bottom, greeting the marks of other years as you pass. It takes all day. It is, you decide, an excellent way to spend a century, a day at a time."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 4
+  },
+  {
+   "id": "dc_syssi_bup_12",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "The Upper Realm holds a festival this year for the Archive, with lanterns along the shelves, and the immortals want the one who signs in on the stairs to light the first lantern.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Light it at your hour",
+     "effects": {
+      "fame": 5,
+      "charm": 3,
+      "log": "You light it at your sign-in hour. The ding and the flame come together. A thousand lanterns follow along the shelves. Even the struck names on the low shelf glow, for a moment, as if somebody had remembered them."
+     }
+    },
+    {
+     "text": "Ask to light it at the empty desk",
+     "effects": {
+      "alignment": 5,
+      "qi": 10,
+      "log": "You light the first lantern at the empty desk. The clerks go quiet. Then, one after another, they bring their own lanterns to the desk and set them there, until it is the brightest place in the Archive."
+     }
+    }
+   ],
+   "cooldown": 15,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_bup_13",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "The hearing you asked for, or that was asked for you, is held at last: a long hall, a panel of senior archivists, and your register laid on the table. Every line. No blanks. The question before them is not about you.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_secret"
+    ],
+    "realm": [
+     16,
+     21
+    ],
+    "upper": true,
+    "anyFlags": [
+     "syssi_b_up_kept",
+     "syssi_b_restore"
+    ]
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Speak for the keeper of the register",
+     "effects": {
+      "charm": 5,
+      "alignment": 5,
+      "flag": "syssi_b_hearing",
+      "log": "You speak: not of your rewards, but of the years signed for you when you forgot, of a farmer's sixty mornings, of a red mark beside a black bar. The panel listens. They do not decide today. But the senior archivist's hand rests on the register for a long time."
+     }
+    },
+    {
+     "text": "Let the register speak for itself",
+     "effects": {
+      "comprehension": 6,
+      "flag": "syssi_b_hearing",
+      "log": "You say nothing. They read. It takes them a whole season. At the end, the senior archivist closes the register and says: \"There is no error in this.\" Then, more quietly: \"There was never any error.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bup_14",
+   "cat": "insight",
+   "weight": 7,
+   "once": true,
+   "text": "The stars over the Upper Realm are, the immortals say, the lights of records kept. This year, at your sign-in hour, a small new star comes out low over the Jade Stairs, faint and red.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_up",
+     "syssi_b_secret"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "notFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ]
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Name it after the keeper of your register",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 4,
+      "log": "You name it, quietly, the Recorder's Lamp. Nobody else needs to know. The star is there every night at your hour, and the System, when you look at it, says nothing, in a way that sounds like it is looking too."
+     }
+    },
+    {
+     "text": "Ask whose record it is",
+     "effects": {
+      "luck": 4,
+      "qi": 15,
+      "log": "\"Whose is it?\" \"Ours,\" the System says. It has never said ours before. You look at the small red star for a long time, and then you sign in, and it flickers, once, like a lamp turned up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The panel has ruled. The case of the struck recorder may be closed in whatever way the keeper's host decides, since the host's register is the only evidence. At your hour, the System speaks, slowly. \"They have given it to you. I have kept your lines. You keep this one. When do I stop?\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_hearing"
+    ],
+    "realm": [
+     16,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Ask for a year to think",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_asked_end",
+      "log": "\"Give me a year,\" you say. \"I always do,\" it says, and for the first time in your life you hear it make a sound that is almost a laugh. You spend the year thinking of nothing else."
+     }
+    },
+    {
+     "text": "Ask what it wants",
+     "effects": {
+      "alignment": 5,
+      "flag": "syssi_b_asked_end",
+      "log": "\"What do you want?\" Silence for a whole day. Then, at the next hour: \"Nobody has asked. I do not know.\" You decide that whatever you choose, you will choose it as gently as it signed your forgotten years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_2",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The year is up. You stand at the empty desk in the Archive at your hour, with the register open before you, and the System waits for your answer the way it has waited for every line: patiently, brush lifted.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_asked_end"
+    ],
+    "realm": [
+     16,
+     21
+    ],
+    "upper": true,
+    "notFlags": [
+     "syssi_b_end"
+    ],
+    "after": [
+     "dc_syssi_bend_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Close the register: let it rest",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_quiet"
+      ],
+      "mark": "syssi_b_quiet",
+      "lifespan": 5,
+      "comprehension": 5,
+      "log": "\"Rest,\" you say, and close the book. The voice goes out of the world like a lamp. The bell still rings at your hour, and the line is still written, and the reward still comes: the work goes on by itself, as good work does. But nobody speaks in it any more. Somewhere, someone is asleep for the first time in nine thousand years."
+     }
+    },
+    {
+     "text": "Ask the Archive to write its name back",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_named"
+      ],
+      "mark": "syssi_b_named",
+      "alignment": 6,
+      "charm": 4,
+      "log": "\"Write its name back,\" you say. The senior archivist lifts the black bar from the line on the low shelf, and under it is a name, plain and common. Out of the light by the desk steps a small, tired person in grey with ink to the wrists, who looks at you, and at their own hands, and laughs. It was a person all along."
+     }
+    },
+    {
+     "text": "Take up a brush beside it",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_colleague"
+      ],
+      "mark": "syssi_b_colleague",
+      "comprehension": 6,
+      "qi": 25,
+      "log": "\"Neither,\" you say, and pick up the dry brush on the desk, and wet it. \"We keep it together.\" The ding that answers is the warmest you have ever heard. From then on there are two hands on the register, and every line is written by both."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_3",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "Since you closed the register, you still sign in at your hour on the Jade Stairs. The bell rings. The line appears. Nobody speaks. You find you miss the silence that used to be somebody's silence.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_quiet"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Sign anyway, and say thank you to no one",
+     "effects": {
+      "alignment": 5,
+      "qi": 15,
+      "log": "You sign and say thank you to no one. The bell rings, as always. Then, once, a single faint ding a moment later, from very far away, like someone turning over in their sleep. You smile and go about your day."
+     }
+    },
+    {
+     "text": "Go and look at the closed register",
+     "effects": {
+      "comprehension": 5,
+      "log": "The register lies closed on the desk, the lamp out, dust settling. On the cover, in small red characters you did not write, is one word: rested. You leave it as it is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_4",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The Recorder, a person again, has taken a little house in the gardens of the Upper Realm. They have no idea what to do with a day that does not need a line. Every morning, at your hour, they walk to the Jade Stairs, and stand beside you while you sign, and then look embarrassed.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_named"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Tell them they are allowed to sleep in",
+     "effects": {
+      "charm": 5,
+      "alignment": 3,
+      "log": "\"You may sleep in,\" you say. The Recorder thinks about this very seriously. The next morning they are not there. The morning after, they arrive late, hair everywhere, triumphant. You both laugh until the clerks stare."
+     }
+    },
+    {
+     "text": "Ask them to teach you their old hand",
+     "effects": {
+      "comprehension": 6,
+      "log": "They teach you the recorder's hand, the old register style, stroke by stroke. They are a patient teacher. Of course they are. The ding at your hour, now, is only the register's. But the person beside you is real, and present."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_5",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "Two hands on the register. At your hour, now, you sign your line, and then sit at the desk beside the Recorder and help with other lines: the years of hosts below, the struck and the present. You are, it seems, a clerk.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_colleague"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Look for names that should not be struck",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 3,
+      "log": "You read the registers of life and death the way the Recorder once did: looking for farmers who came to the field every morning. You find one. Together you write: present. Nobody punishes anybody this time. The panel, it seems, has learnt something."
+     }
+    },
+    {
+     "text": "Teach the Recorder to take a day off",
+     "effects": {
+      "charm": 5,
+      "luck": 3,
+      "log": "On one day a year, you sign both your lines yourself and send the Recorder to the gardens. They go, nervously. They come back with flowers in their sleeve. It is the first holiday in nine thousand years. You write it down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_6",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The smoke of your petition has been answered. At your hour a slip of paper falls into your hand, in an official hand: the case of the struck recorder is reopened, and the host who kept an unbroken register may say how it closes. The System's voice is very small. \"You decide. I will keep the line either way.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_petition",
+     "syssi_m100",
+     "syssi_b_petition_burned"
+    ],
+    "realm": [
+     10,
+     11
+    ],
+    "notFlags": [
+     "syssi_b_end"
+    ],
+    "after": [
+     "dc_syssi_borig_7"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Let it rest: close the register",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_quiet"
+      ],
+      "mark": "syssi_b_quiet",
+      "lifespan": 5,
+      "comprehension": 5,
+      "log": "\"Rest,\" you say. The voice goes out like a lamp at dawn. The bell still rings at your hour, the line is still written, the reward still comes. But nobody speaks in it any more. You stand a long while at your place, missing someone you never saw."
+     }
+    },
+    {
+     "text": "Ask heaven to write its name back",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_named"
+      ],
+      "mark": "syssi_b_named",
+      "alignment": 6,
+      "charm": 4,
+      "log": "You write the answer and burn it. At the next hour a small tired person in grey, ink to the wrists, is standing at your place, looking at their own hands. \"Oh,\" they say. \"I have feet.\" It was a person all along. They stay a season, and learn to walk on ground again, and then go up."
+     }
+    },
+    {
+     "text": "Ask to keep it together",
+     "effects": {
+      "flag": [
+       "syssi_b_end",
+       "syssi_b_end_colleague"
+      ],
+      "mark": "syssi_b_colleague",
+      "comprehension": 6,
+      "qi": 25,
+      "log": "\"Together,\" you write, and burn it. At your next hour you feel a second hand on the brush, light, inky, steady. From now on every line is written by both of you. You find you are never quite alone at your hour again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_7",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "In the world below, a register that no longer speaks is a strange thing. Your disciples, if you have any, and your neighbours notice you still go out at your hour, and stand, and come back, and do not say a word to anyone in the air any more.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_quiet"
+    ],
+    "realm": [
+     10,
+     11
+    ]
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Explain that a friend is resting",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "log": "\"A friend is resting,\" you say. They nod as if they understand. One child starts leaving a cup of tea at your place every year, for the friend. You do not stop them."
+     }
+    },
+    {
+     "text": "Keep the reason to yourself",
+     "effects": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "You keep it to yourself. Some things a register does not need to hold. The bell rings at your hour, and you are glad of it, and glad of the silence after it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_8",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A letter comes down from the Upper Realm, in the old register hand, but looser now, with a blot where the writer laughed. \"Present,\" it begins. \"I planted a garden. Nothing in it comes up at the same hour. I find I like it.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_named"
+    ],
+    "realm": [
+     10,
+     11
+    ]
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Write back every year at your hour",
+     "effects": {
+      "charm": 5,
+      "alignment": 3,
+      "log": "You write back every year, at your hour, and burn the letter at your place. The answers come down on the next wind: the garden, the weather, a cat. A register of a friendship. You keep every one."
+     }
+    },
+    {
+     "text": "Keep the letter by your sign-in place",
+     "effects": {
+      "comprehension": 4,
+      "luck": 4,
+      "log": "You set the letter under a stone at your place. Every year when you sign, you touch it. The ding is only the register's now, but under the stone is a person, and that is better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_bend_9",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Writing lines together, in the world below, means you hear the registers of others too, faintly: hosts at sect gates, in prison cells, at the foot of the Gate. Tonight one of them is about to leave a line blank.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_b_end_colleague"
+    ],
+    "realm": [
+     10,
+     11
+    ]
+   },
+   "arc": "When the Register Closes",
+   "choices": [
+    {
+     "text": "Help the Recorder sign it for them",
+     "effects": {
+      "alignment": 6,
+      "qi": 10,
+      "log": "Together you sign the blank line for a host you will never meet, asleep in a fever three provinces away. Ding. A recorder does not leave a line blank. Now there are two of you to make sure."
+     }
+    },
+    {
+     "text": "Wake them gently, in a dream",
+     "effects": {
+      "charm": 5,
+      "comprehension": 3,
+      "log": "You reach into their dream and say: present. They sit up in their sickbed, say it back, and sign. In the morning they will think they dreamt it. The Recorder, beside you, makes the almost-laugh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Your System, in this life, has spoken exactly as much as a bell. Ding, and a reward. Ding, and a line. Tonight, at your hour, it says one word, very quietly, as if talking in its sleep: \"Again.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_quiet"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Ask: again what?",
+     "effects": {
+      "comprehension": 5,
+      "log": "\"Again what?\" Nothing. But you dream of closing a book, and of a lamp going out, and of being thanked. In the morning you feel you are being looked after by someone very well rested."
+     }
+    },
+    {
+     "text": "Let it sleep",
+     "effects": {
+      "alignment": 4,
+      "lifespan": 2,
+      "log": "You let it sleep. You sign carefully, so it need not wake. The ding is soft. You do not know why you feel tender toward a sound, but you do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "In the Archive there is a closed register on a small desk, covered in dust, with one red word on the cover: rested. When you walk past it at your hour, the cover is warm.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_quiet"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Lay your hand on it",
+     "effects": {
+      "qi": 20,
+      "comprehension": 4,
+      "log": "You lay your hand on it. It is warm as a sleeping cat. You have the strange certainty that you closed it yourself, a life ago, and did right."
+     }
+    },
+    {
+     "text": "Leave it undisturbed",
+     "effects": {
+      "alignment": 5,
+      "log": "You leave it. Something that has rested this long deserves not to be woken by a stranger. Even a stranger who, you feel, is not really a stranger."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_3",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Your System, this life, says good morning. No register ever said good morning. It says it every year at your hour, a little shyly, in a voice with a person in it.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_named"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Say good morning back",
+     "effects": {
+      "charm": 5,
+      "luck": 3,
+      "log": "\"Good morning,\" you say. A pause, then a laugh, a real one. \"You again,\" it says. \"I hoped.\" It keeps your register this life not because it must but because it wants to. You can hear the difference."
+     }
+    },
+    {
+     "text": "Ask who you are talking to",
+     "effects": {
+      "comprehension": 5,
+      "log": "\"Who are you?\" It tells you a name, plain and common. Then, \"You gave it back to me. A while ago. I chose to keep a register again. Only yours.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_4",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A small person in grey with inky hands, who keeps a garden in the Upper Realm, is waiting on the Jade Stairs at your hour. They watch you sign, and their eyes fill. \"I would know that hand anywhere,\" they say.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_named"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Ask how they know you",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "log": "\"You gave me my name back,\" the Recorder says, \"a life ago.\" You do not remember. You find you believe it completely. They show you their garden. Nothing in it comes up at the same hour."
+     }
+    },
+    {
+     "text": "Sign their garden book",
+     "effects": {
+      "alignment": 5,
+      "luck": 3,
+      "log": "They have a book of the garden. You sign today's page. They mark it, in red: present. \"Now we are even,\" they say. You are fairly sure you are not; you are fairly sure you do not mind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_5",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "At your hour, this life, there are two dings, a breath apart. The second is in a hand you would swear was your own, if a sound could have a hand.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_colleague"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Ask the second ding who it is",
+     "effects": {
+      "comprehension": 6,
+      "log": "\"Who is that?\" \"A colleague,\" says the System. \"Of mine. From before. They insisted on keeping your lines with me this life.\" You understand, slowly, that some of you never left the desk."
+     }
+    },
+    {
+     "text": "Sign in with your own hand, carefully",
+     "effects": {
+      "alignment": 4,
+      "qi": 15,
+      "log": "You sign as clearly as you can, to make their work easy. Both dings come, and then, faintly, the sound of two clerks laughing together in a quiet hall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_6",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "In the Archive there is a desk with two chairs now. One is empty this life. On the desk, beside the register, lies a brush worn to the shape of your fingers.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_colleague"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Pick up the brush",
+     "effects": {
+      "comprehension": 6,
+      "qi": 20,
+      "log": "It fits. The Recorder at the desk looks up and smiles as if you had stepped out for tea and come back. \"Sit,\" they say. \"There is a farmer in the north I am worried about.\""
+     }
+    },
+    {
+     "text": "Leave it for when you are ready",
+     "effects": {
+      "alignment": 4,
+      "luck": 4,
+      "log": "You leave it. The Recorder nods. \"It will keep,\" they say. \"Brushes are patient. So am I.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_7",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "At the place where you sign in this life there is an old stone with three hundred tiny red marks on it in a row, weathered nearly away. Your thumb finds the last one without looking.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_eternal"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Add one more mark",
+     "effects": {
+      "qi": 15,
+      "luck": 4,
+      "log": "You add one. The System dings, and for a moment the old marks glow, all three hundred, like a road lit up behind you. You were here before, for a very long time. You will be here again."
+     }
+    },
+    {
+     "text": "Clean the moss off the stone",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "log": "You clean the stone. Under the moss, beside the marks, is a word in an old hand: always. You do not remember writing it. You know you did."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_8",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "An immortal on the Jade Stairs stops you at your hour. \"You,\" they say. \"Three hundred lines, a life ago. You said them all aloud on this step. I have never forgotten it.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_eternal"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Ask them to tell you what you said",
+     "effects": {
+      "comprehension": 5,
+      "charm": 3,
+      "log": "They tell you some of it: the places, the years. It is like hearing a song you knew as a child. At your hour you sign, and the immortal says the count of this life aloud, as you once did, from one."
+     }
+    },
+    {
+     "text": "Say you will say them again one day",
+     "effects": {
+      "fame": 5,
+      "log": "\"I will say them again,\" you say, \"when there are enough.\" The immortal laughs. \"I will bring a cushion,\" they say."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_9",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "At the foot of the Last Door the stone register has a name carved deep into it, in your hand, from a life you do not remember. Beneath it, in fresh red: welcome back, keeper.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     8,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_gatekeeper"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Read the names added since",
+     "effects": {
+      "comprehension": 6,
+      "log": "You read them all, the names signed since that life. Hundreds of strangers who came, and stood, and went through or did not. Somebody kept the slab clean in your absence. You suspect the guardian."
+     }
+    },
+    {
+     "text": "Sign beneath your old name",
+     "effects": {
+      "qi": 25,
+      "luck": 3,
+      "log": "You sign beneath your old name. The two lines sit together like parent and child. The Gate flickers, the way a clerk looks up from a desk, and goes back to its work."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_10",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Looking down from the Jade Stairs through a gap in the cloud, you can see the Last Door from above, and the stone at its foot, and someone small kneeling at it to sign. You were that someone, once.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_gatekeeper"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Wave, though they cannot see",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "log": "You wave. They cannot see you. Then, oddly, they look up, straight at the gap, and wave back, and go down the mountain. Some keepers are good at noticing."
+     }
+    },
+    {
+     "text": "Drop a flower through the cloud",
+     "effects": {
+      "luck": 5,
+      "log": "You drop a flower. It falls a very long way, and lands, by luck or by register, on the stone. The kneeling figure picks it up and puts it in their sleeve, and does not go through. Not yet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_11",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A traveller stops you on the road at your hour and waits politely while you sign. \"My grandparent's teacher had a cold register once,\" they say, \"and a host with a warm one stood by them on the night they closed it. Was it you? You have the look.\"",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "marks": [
+     "mark:syssi_b_freed_host"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Say you do not remember, but you would have",
+     "effects": {
+      "alignment": 5,
+      "charm": 3,
+      "log": "\"I do not remember,\" you say. \"But I would have.\" The traveller bows. \"That is what my grandparent said you would say.\" They give you a jar of plum preserves and walk on, laughing."
+     }
+    },
+    {
+     "text": "Ask how the story ends",
+     "effects": {
+      "comprehension": 5,
+      "log": "\"They slept through every New Year after,\" the traveller says, \"and died old, in a garden, of nothing.\" You find you are smiling without knowing why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_blegacy_12",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Somebody in the Upper Realm has left a little handwritten book on the step where you sign: a register of nothing, naps and herons and soups, every line marked present in a free hand. The last page says: for you, whoever you are now.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "marks": [
+     "mark:syssi_b_freed_host"
+    ]
+   },
+   "arc": "The Register Remembers",
+   "choices": [
+    {
+     "text": "Read it through",
+     "effects": {
+      "charm": 4,
+      "comprehension": 4,
+      "log": "You read every line. Nothing in it was paid for. It is the best register you have ever read. You feel, very strongly, that you once helped somebody be able to write it."
+     }
+    },
+    {
+     "text": "Add a line of your own",
+     "effects": {
+      "alignment": 5,
+      "luck": 3,
+      "log": "You add a line: present, and today's weather. The next morning the book is gone. Somewhere a person who used to flinch at bells, you hope, is reading it and laughing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_syssi_brec_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your sign-in hour finds you in the middle of a duel of honour, blades locked. You feel the System waiting, polite and absurd, like a servant holding tea in a battle.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Disengage, sign, and resume",
+     "effects": {
+      "comprehension": 3,
+      "fame": 3,
+      "log": "You step back, raise a hand, sign in, and step forward again. Your opponent, utterly thrown, loses the next three exchanges. You suspect this will become a story told about you, unfairly."
+     }
+    },
+    {
+     "text": "Fight on and let it sign for you",
+     "effects": {
+      "strength": 3,
+      "luck": 3,
+      "log": "You fight on. At the turning of the year, the System signs for you, at your usual place. The duel ends in a draw. The register, you notice, does not care who won."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_brec_2",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "It is raining hard at your hour, the kind of rain that fills sandals. Your place is a walk away across mud.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Walk through the rain",
+     "effects": {
+      "strength": 3,
+      "qi": 10,
+      "log": "You walk through it. At your place you sign with water running off your chin, and the ding sounds almost amused. You walk home and change. That is the whole story. It is a good one."
+     }
+    },
+    {
+     "text": "Sign where you stand, under the eaves",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "You sign under the eaves, on the road, and the run breaks, and you do not mind. The rain on the roof sounds like the register writing many small lines very fast."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_3",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A friend's funeral falls on the day of your sign-in. The mourners are gathered. Your hour comes in the middle of the rites.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Step out quietly and sign",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 3,
+      "log": "You step out, sign, and come back in. Nobody notices but the friend's eldest, who later asks where you went. You tell them. They say: that is like our friend. Always somewhere at the same hour."
+     }
+    },
+    {
+     "text": "Stay, and let the year be signed for you",
+     "effects": {
+      "charm": 4,
+      "log": "You stay. The System signs for you at the turning of the year. At the grave you say the friend's name aloud with yours, in your head, present, and feel the register take it."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_4",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A small child of your street has started copying you: every year, at your hour, they march out and stand at the same spot, and say ding, very loudly.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Bow to them, host to host",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "log": "You bow, very formally. They bow back. The neighbours laugh. Every year after, until they grow up and move away, there are two of you at the spot, one of whom says ding."
+     }
+    },
+    {
+     "text": "Ask what reward they get",
+     "effects": {
+      "luck": 4,
+      "comprehension": 3,
+      "log": "\"A rice cake from grandmother,\" the child says, \"if I do it every year.\" You think this is the most honest System you have ever heard of, and tell them so."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_brec_5",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A thief has heard that you keep a register that pays out every year, and has broken into your rooms looking for it. They are still there, sitting among your things, utterly baffled, when you come home.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Explain there is nothing to steal",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "log": "\"It is not a book,\" you say. \"It is the years.\" The thief looks at you as if you were mad, then sad, then thoughtful. They leave without taking anything. A year later a thief turned porter signs in at the same gate every morning."
+     }
+    },
+    {
+     "text": "Detain them, gently",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 3,
+      "log": "You sit them down and give them tea while they wait for the watch. They ask, again and again, where the register is. You tell them it is right here. They never understand."
+     },
+     "fail": {
+      "luck": 3,
+      "log": "They are quicker than you thought, and gone out of the window with your second-best shoes. You sign in barefoot that year. The ding sounds, if anything, delighted."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_6",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "New Year's morning, and your hour. The street is full of children in new clothes bowing to their elders, and you are the eldest anyone here can remember.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "age": [
+     100,
+     2000
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Sign, then hand out coins",
+     "effects": {
+      "charm": 5,
+      "fame": 2,
+      "log": "You sign, and then sit on your step handing out coins to a queue of bowing children. One asks if you get New Year money too. \"Once a year,\" you say. \"From somebody very patient.\""
+     }
+    },
+    {
+     "text": "Sign, and bow to the oldest tree instead",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "log": "You sign, and then bow to the old tree at the end of the street, which was here before you. The children copy you. It becomes, in a few years, a street custom nobody can explain."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_7",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A wandering musician who is blind asks to sit by your place at your hour. They have heard there is a sound there once a year that nobody else can hear, and they want to listen for it.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Let them listen",
+     "effects": {
+      "charm": 4,
+      "comprehension": 3,
+      "log": "They sit beside you. At your hour, you sign. The musician tilts their head, and smiles, and plays one note on their zither, exactly the pitch of your ding. Neither of you says anything."
+     }
+    },
+    {
+     "text": "Describe the sound for them",
+     "effects": {
+      "alignment": 4,
+      "luck": 3,
+      "log": "You describe it: a small bell in an empty hall, struck by someone careful. The musician writes a song about it. It is played in teahouses for years, and nobody who hums it knows what it is about."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_brec_8",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Your sect, your town, your corner of the murim is at war this year, and your place is on the wrong side of a line of soldiers.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ],
+    "notFactions": [
+     "none",
+     "wanderer"
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Walk through the line at your hour",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The soldiers holding the line"
+     },
+     "ok": {
+      "fame": 5,
+      "strength": 3,
+      "log": "You walk through the line. Nobody quite manages to stop you. You sign, turn, and walk back. Later both armies tell the story, each claiming you as theirs."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The line holds. You get a spear-butt in the ribs for your trouble, and the System signs for you at the turning of the year. The war ends the next spring. Your place is still there. (-10 health)"
+     }
+    },
+    {
+     "text": "Sign where you are, behind the lines",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 3,
+      "log": "You sign where you are. The run breaks. The war ends. You go back to your place the next year and find it untouched, as if waiting."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "dc_syssi_brec_9",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "You wake with the odd feeling that this year's line has already been written. It has not: the hour has not come. But the System is restless, ringing faintly at nothing.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Ask it what is wrong",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "log": "\"What is wrong?\" A long pause. \"Old day,\" it says. \"Bad day. Long ago.\" You sit with it until your hour, saying nothing, and sign very carefully, and it quiets."
+     }
+    },
+    {
+     "text": "Sign early and steady it",
+     "effects": {
+      "qi": 12,
+      "alignment": 3,
+      "log": "You go out and sign at your hour, early as it allows, with a firm hand. The ringing settles at once. Some days, you think, even a register needs someone else to be steady."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_10",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A disciple of yours, or a student, or just a young person who follows you about, asks if they can have a System like yours.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Give them a notebook and a place",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 3,
+      "log": "You give them a notebook and point to a stone. \"Here, once a year,\" you say. \"Write present. I will check.\" They do it for years. It does not pay them anything. It makes them very strong in a way they cannot explain."
+     }
+    },
+    {
+     "text": "Tell them it chose you, not the other way",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "\"It chose me,\" you say. \"I only kept coming.\" They go away and think about it, and, without a System, keep coming. You are prouder of that than of anything the register ever paid."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_syssi_brec_11",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "You notice, this year, that you can no longer remember a year in which you did not sign. The idea of a blank year has become as strange as a blank sky.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_m30"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Be glad of it",
+     "effects": {
+      "alignment": 3,
+      "qi": 12,
+      "log": "You are glad. A life without blanks. Whoever keeps the register would, you think, be glad too. The ding at your hour sounds as if it agrees."
+     }
+    },
+    {
+     "text": "Leave one hour unwatched, on purpose",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "log": "You let your hour pass doing nothing at all, to see. At the turning of the year the System signs for you, at your usual place, without a word of reproach. Not a blank, then. Never a blank. You feel looked after."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_brec_12",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "An official of the province is counting the households, and asks for your name and your years. You give them. The official frowns at the count, then counts again.",
+   "when": {
+    "flags": [
+     "sys_type_signin"
+    ],
+    "realm": [
+     6,
+     11
+    ]
+   },
+   "arc": "A Year Signed",
+   "choices": [
+    {
+     "text": "Show them your register, line by line",
+     "effects": {
+      "fame": 3,
+      "comprehension": 3,
+      "log": "You recite your register from the first year: places, years, nothing missing. The official writes it all down and stares. \"Our census misses a household in five,\" they say. \"You have missed nothing in your life.\""
+     }
+    },
+    {
+     "text": "Say you have lived a while",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "\"I have lived a while,\" you say. The official writes down a number that will make some future historian very confused, and moves on to the next door."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_syssi_bup_15",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The Upper Realm has changed your sign-in. At your hour you kneel on the Jade Stairs and sign, and the System rings like a struck bell, loud enough that every immortal on the stairs stops and turns. In the world below, it never rang like that.",
+   "when": {
+    "flags": [
+     "sys_type_signin",
+     "syssi_last_upper"
+    ],
+    "realm": [
+     12,
+     21
+    ],
+    "upper": true,
+    "anyFlags": [
+     "syssi_b_end_quiet",
+     "syssi_b_end_named"
+    ],
+    "notFlags": [
+     "syssi_b_up"
+    ]
+   },
+   "arc": "Signing on the Jade Stairs",
+   "choices": [
+    {
+     "text": "Stand and bow to the staring immortals",
+     "effects": {
+      "charm": 5,
+      "fame": 4,
+      "flag": "syssi_b_up",
+      "log": "You bow. Most of them bow back, from habit. An old one at the top murmurs, \"A sign-in? Here? How very provincial,\" and is plainly delighted. By evening the whole terrace knows a mortal habit has arrived."
+     }
+    },
+    {
+     "text": "Listen to the bell until it fades",
+     "effects": {
+      "comprehension": 5,
+      "flag": "syssi_b_up",
+      "log": "You listen until it fades. Nobody speaks in it now, and still it sounds close to home, and a little homesick. You look up the endless stair toward where the Archive must be."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

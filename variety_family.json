@@ -1,0 +1,808 @@
+{
+ "events": [
+  {
+   "id": "fv_ah_roof",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "The rains came early and {npc}'s roof gave way over the bed. {He} is sleeping in the kitchen and pretending it is fine.",
+   "choices": [
+    {
+     "text": "Fix the roof yourself",
+     "effects": {
+      "health": -3,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "climbed up and fixed my roof"
+      },
+      "log": "Two days on the beams in the rain. {npc} brings you soup on a ladder and complains about the drips you missed."
+     }
+    },
+    {
+     "text": "Pay a carpenter",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "paid for my roof"
+      },
+      "log": "The carpenter does it in a day. {npc} says it was too expensive and sleeps beautifully."
+     }
+    },
+    {
+     "text": "Tell {him} to move in with you",
+     "effects": {
+      "mem": {
+       "deed": "cared",
+       "w": 10,
+       "note": "asked me to move in"
+      },
+      "log": "{He} refuses, of course. Then {he} stays for a month and rearranges your kitchen."
+     }
+    }
+   ],
+   "variants": [
+    "The early rains brought {npc}'s roof down over the bed. {He} has been sleeping in the kitchen and insisting it is fine."
+   ]
+  },
+  {
+   "id": "fv_ah_feud",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "A neighbour has been moving the boundary stone between {npc}'s field and the one next door, a hand's width a year, for ten years.",
+   "choices": [
+    {
+     "text": "Move it back, publicly",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "The neighbour"
+     },
+     "ok": {
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "moved the stone back"
+      },
+      "log": "The stone goes back. The neighbour watches you carry it and decides on a new hobby."
+     },
+     "fail": {
+      "health": -5,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "tried to move the stone"
+      },
+      "log": "The stone wins, and your back loses. The neighbour waits until you are gone and nudges it forward again."
+     }
+    },
+    {
+     "text": "Take it to the village head",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "went to the village head for me"
+      },
+      "log": "The village head walks the boundary with a rope and a long memory. The neighbour pays for the lost rice in winter."
+     },
+     "fail": {
+      "mem": {
+       "deed": "helped",
+       "w": 5,
+       "note": "tried the village head"
+      },
+      "log": "The village head walks the boundary with a rope and a long memory, and decides the stone has always been there. Nothing changes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fv_ah_wedding",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "npcAge": [
+     16,
+     999
+    ]
+   },
+   "text": "{npc} writes: a cousin's wedding is in a month and the family is short of everything: rice wine, a pig, and a respectable relative to sit at the head of the table.",
+   "choices": [
+    {
+     "text": "Bring the pig and sit at the table",
+     "req": {
+      "minTaels": 30,
+      "married": false
+     },
+     "effects": {
+      "taels": -30,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the wedding with a pig"
+      },
+      "log": "You are the respectable relative. You are asked about your marriage prospects eleven times."
+     }
+    },
+    {
+     "text": "Bring the pig and your spouse, and sit at the table",
+     "req": {
+      "minTaels": 30,
+      "married": true
+     },
+     "effects": {
+      "taels": -30,
+      "fame": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "came to the wedding with a pig"
+      },
+      "log": "You are the respectable relative. You are asked about your spouse's family, your spouse's health and your spouse's plans eleven times."
+     }
+    },
+    {
+     "text": "Write that you cannot come",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 5,
+       "note": "sent wine to the wedding"
+      },
+      "log": "The wine is drunk. Your absence is discussed more than the bride."
+     }
+    }
+   ],
+   "variants": [
+    "A letter from {npc}: a cousin is getting married next month, and the family is short of rice wine, a pig, and a relative respectable enough for the head of the table."
+   ],
+   "po": true
+  },
+  {
+   "id": "fv_ah_letter",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_letter_unread"
+    ]
+   },
+   "text": "{npc} cannot read, and a letter has come from a government office. {He} has been carrying it around for a week, afraid of what it says.",
+   "choices": [
+    {
+     "text": "Read it to {him}",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "read me the letter"
+      },
+      "log": "A small tax refund, of all things. {npc} buys a duck with it and invites the whole lane.",
+      "flag": "done_letter_unread"
+     }
+    },
+    {
+     "text": "Teach {him} to read it",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "taught",
+       "w": 16,
+       "note": "taught me to read"
+      },
+      "log": "It takes a winter of evenings. The first thing {npc} reads alone is your name, which {he} writes on the kitchen wall.",
+      "flag": "done_letter_unread"
+     }
+    }
+   ],
+   "variants": [
+    "{npc} cannot read, and an official letter has come. {He} has carried it in {his} sleeve for a week, afraid to learn what it says."
+   ]
+  },
+  {
+   "id": "fv_ah_temple_vow",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     55,
+     999
+    ]
+   },
+   "text": "Years ago, {npc} made a vow at a mountain temple to return with an offering if you lived through a childhood fever. {He} is too old now to make the climb.",
+   "choices": [
+    {
+     "text": "Carry {him} up on your back",
+     "effects": {
+      "health": -4,
+      "alignment": 4,
+      "mem": {
+       "deed": "cared",
+       "w": 22,
+       "note": "carried me up the mountain"
+      },
+      "log": "Nine hundred steps. {npc} complains about your posture the whole way and weeps at the top."
+     }
+    },
+    {
+     "text": "Go up yourself with the offering",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "kept my vow for me"
+      },
+      "log": "The monk says vows kept by children count double. {npc} sleeps soundly for the first time in years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fv_ah_apprentice",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "A young relative wants to learn martial arts and the family cannot afford a school. {npc} asks, very carefully, whether you would teach.",
+   "choices": [
+    {
+     "text": "Teach the child",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "taught our youngest"
+      },
+      "log": "An hour every dawn for a year. The child is terrible, and stubborn, and in ten years better than you were at that age."
+     }
+    },
+    {
+     "text": "Pay for a proper school",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "taels": -60,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "paid for the school"
+      },
+      "log": "The school takes the child. The family tells everyone you paid, which you did not want and secretly enjoy."
+     }
+    }
+   ],
+   "variants": [
+    "A young relative is desperate to learn martial arts, and the family cannot pay for a school. {npc} asks, very carefully, if you might teach."
+   ]
+  },
+  {
+   "id": "fv_ah_gambler",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "npcAge": [
+     40,
+     999
+    ],
+    "npcNotRoles": [
+     "child"
+    ]
+   },
+   "text": "{npc}'s youngest has been gambling, and lost a silver hairpin that belonged to a grandmother. The gambling house will sell it on tomorrow.",
+   "choices": [
+    {
+     "text": "Buy the hairpin back",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "bought the hairpin back"
+      },
+      "log": "The hairpin comes home. The youngest is made to polish it every week for a year."
+     }
+    },
+    {
+     "text": "Talk the owner into giving it back",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "talked the hairpin back out of the house"
+      },
+      "log": "You find the owner's soft spot, which turns out to be an ailing mother. The hairpin comes home, and a bottle of liniment goes the other way."
+     },
+     "fail": {
+      "taels": -10,
+      "mem": {
+       "deed": "helped",
+       "w": 6,
+       "note": "tried to talk the hairpin back"
+      },
+      "log": "The owner finds your soft spot instead, which is your purse. You pay ten taels for the privilege of being refused."
+     }
+    }
+   ],
+   "variants": [
+    "{npc}'s youngest has gambled away a silver hairpin that was a grandmother's. The gambling house sells it on tomorrow."
+   ]
+  },
+  {
+   "id": "fv_ah_ghost",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} swears the old storehouse is haunted: the rice goes missing at night and something scratches at the door.",
+   "choices": [
+    {
+     "text": "Sit up all night in the storehouse",
+     "roll": {
+      "stat": "luck",
+      "dc": 35
+     },
+     "ok": {
+      "luck": 2,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "sat up with the ghost"
+      },
+      "log": "The ghost is a fox with a litter in the rafters. You come home at dawn with straw in your hair and a story."
+     },
+     "fail": {
+      "health": -3,
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "sat up all night for nothing"
+      },
+      "log": "You see nothing, hear everything, and come home at dawn stiff and cold. The rice goes missing again the next night."
+     }
+    },
+    {
+     "text": "Tell {him} ghosts are not real",
+     "effects": {
+      "mem": {
+       "deed": "dismissed",
+       "w": -4,
+       "note": "laughed at my ghost"
+      },
+      "log": "The rice keeps going missing. {npc} hangs a charm on the door and does not mention it to you again."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} is certain the old storehouse is haunted. Rice disappears at night, and something scratches at the door."
+   ]
+  },
+  {
+   "id": "fv_rp_letter",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_fv_rp_letter"
+    ]
+   },
+   "text": "A bundle arrives from {npc}: dried persimmons, a pair of thick socks, and a letter that says, in its whole length, 'Eat properly. You {debt}.'",
+   "choices": [
+    {
+     "text": "Write back a long letter",
+     "effects": {
+      "settle": "debt",
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "wrote back a long letter"
+      },
+      "log": "{npc} reads your letter to the whole lane, twice, skipping the parts about danger.",
+      "flag": "done_fv_rp_letter"
+     }
+    },
+    {
+     "text": "Visit instead of writing",
+     "effects": {
+      "settle": "debt",
+      "health": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 16,
+       "note": "came instead of writing"
+      },
+      "log": "You arrive unannounced. {npc} scolds you for not writing first and cooks for three days.",
+      "flag": "done_fv_rp_letter"
+     }
+    }
+   ],
+   "variants": [
+    "A parcel from {npc}: a string of dried persimmons, two pairs of woollen socks, and a letter of exactly one line. 'Eat properly. You {debt}.'",
+    "Inside the bundle from {npc}: socks, dried fruit, and a note that does not waste a single brushstroke. 'Eat properly. You {debt}.'"
+   ]
+  },
+  {
+   "id": "fv_rp_sword",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     18,
+     999
+    ],
+    "notFlags": [
+     "done_fv_rp_sword",
+     "born_orphan",
+     "born_beggar"
+    ],
+    "npcNotRoles": [
+     "child"
+    ]
+   },
+   "text": "{npc} gives you a sword wrapped in oilcloth: your grandfather's, kept under the floor through two famines. 'You {debt}. It should be used.'",
+   "choices": [
+    {
+     "text": "Take it, and use it",
+     "effects": {
+      "settle": "debt",
+      "item": "manual_basic",
+      "strength": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 14,
+       "note": "carried grandfather's sword"
+      },
+      "log": "The blade is old and plain and balanced like nothing you have held. Inside the hilt, a slip of paper: a breathing method in a careful hand.",
+      "flag": "done_fv_rp_sword"
+     }
+    },
+    {
+     "text": "Leave it on the family altar",
+     "effects": {
+      "settle": "debt",
+      "alignment": 3,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "honoured the sword"
+      },
+      "log": "{npc} cries a little, which {he} denies, and polishes the sword every new year.",
+      "flag": "done_fv_rp_sword"
+     }
+    }
+   ],
+   "variants": [
+    "{npc} unwraps a long oilcloth bundle: your grandfather's sword, hidden under the floorboards through two famines. 'You {debt}. It should be used.'"
+   ]
+  },
+  {
+   "id": "fv_rp_secret_recipe",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "npcAge": [
+     18,
+     999
+    ],
+    "notFlags": [
+     "done_fv_rp_secret_recipe",
+     "born_orphan",
+     "born_beggar"
+    ],
+    "npcNotRoles": [
+     "child"
+    ]
+   },
+   "text": "{npc} finally writes down the family's medicine recipe for you, the one passed mouth to mouth for five generations. 'Because you {debt}.'",
+   "choices": [
+    {
+     "text": "Learn it properly",
+     "effects": {
+      "settle": "debt",
+      "health": 6,
+      "comprehension": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "learned the family recipe"
+      },
+      "log": "It cures exactly one thing: a winter cough. It cures it perfectly.",
+      "flag": "done_fv_rp_secret_recipe"
+     }
+    },
+    {
+     "text": "Sell it to a medicine hall",
+     "effects": {
+      "settle": "debt",
+      "taels": 120,
+      "alignment": -4,
+      "mem": {
+       "deed": "betrayed",
+       "w": -20,
+       "note": "sold the family recipe"
+      },
+      "log": "The hall pays well. {npc} finds out, as families do. Dinner is very quiet that year.",
+      "flag": "done_fv_rp_secret_recipe"
+     }
+    }
+   ],
+   "variants": [
+    "At last {npc} writes it down for you: the family's medicine recipe, never before put on paper in five generations. 'Because you {debt}.'"
+   ]
+  },
+  {
+   "id": "fv_rp_match",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "married": false,
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has, without asking you, found someone suitable. 'You {debt}. Now let me do something for you.' The someone is waiting in the next room.",
+   "choices": [
+    {
+     "text": "Go and meet them",
+     "effects": {
+      "settle": "debt",
+      "charm": 3,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "met the match I found"
+      },
+      "log": "An afternoon of tea and very careful conversation. Whatever comes of it, {npc} is delighted for a month."
+     }
+    },
+    {
+     "text": "Climb out the window",
+     "effects": {
+      "settle": "debt",
+      "luck": 2,
+      "mem": {
+       "deed": "dismissed",
+       "w": -3,
+       "note": "climbed out of the window"
+      },
+      "log": "The match, it turns out, also climbed out of a window. You meet in the lane outside and laugh until you cannot stand."
+     }
+    }
+   ],
+   "variants": [
+    "Without a word of warning, {npc} has arranged a meeting. 'You {debt}. So let me do something for you.' Someone suitable is drinking tea in the next room."
+   ]
+  },
+  {
+   "id": "fv_rp_saved_coin",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "npcAge": [
+     30,
+     999
+    ],
+    "notFlags": [
+     "done_fv_rp_saved_coin"
+    ]
+   },
+   "text": "{npc} gives you a string of old coins: one put aside every year since you were born, for the day you would need them. You {debt}, {he} says, but that is not why.",
+   "choices": [
+    {
+     "text": "Keep them always",
+     "effects": {
+      "settle": "debt",
+      "luck": 3,
+      "mem": {
+       "deed": "friend",
+       "w": 14,
+       "note": "kept the coins"
+      },
+      "log": "You never spend them. They are worth almost nothing and you would not sell them for a sect.",
+      "flag": "done_fv_rp_saved_coin"
+     }
+    },
+    {
+     "text": "Spend them on {him}",
+     "req": {
+      "minTaels": 20
+     },
+     "effects": {
+      "settle": "debt",
+      "taels": -20,
+      "mem": {
+       "deed": "friend",
+       "w": 18,
+       "note": "spent the coins on me"
+      },
+      "log": "A good dinner, a new coat, an afternoon at the theatre. {npc} scolds you for the waste and wears the coat to bed.",
+      "flag": "done_fv_rp_saved_coin"
+     }
+    }
+   ],
+   "variants": [
+    "{npc} hands you a string of old coins, one saved every year since you were born, for the day you would need them. You {debt}, {he} says, but that is not the reason."
+   ]
+  },
+  {
+   "id": "fv_rp_charm",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} sews a protective charm into the lining of your robe while you sleep. You find it a week later, in the middle of a fight, when a blade that should have found you does not.",
+   "choices": [
+    {
+     "text": "Keep it in the robe",
+     "effects": {
+      "settle": "debt",
+      "luck": 4,
+      "health": 5,
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "kept the charm"
+      },
+      "log": "You never take that robe off in a fight again. Superstition, you say. You do not say it to {npc}."
+     }
+    },
+    {
+     "text": "Thank {him} properly",
+     "effects": {
+      "settle": "debt",
+      "mem": {
+       "deed": "friend",
+       "w": 14,
+       "note": "came home to say thank you"
+      },
+      "log": "{npc} says the charm did nothing and you were simply lucky. {He} sews another into your other robe."
+     }
+    }
+   ],
+   "variants": [
+    "While you sleep, {npc} stitches a folded charm into the hem of your robe. You do not know it is there until a week later, when a strike that should have landed slides past you as if pushed.",
+    "You find the charm only after the fight: a scrap of red paper sewn into your robe by {npc}, right over the place a blade turned aside that afternoon."
+   ]
+  }
+ ],
+ "mwPass": 1
+}

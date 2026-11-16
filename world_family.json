@@ -1,0 +1,1653 @@
+{
+ "events": [
+  {
+   "id": "fm_mother_grey",
+   "cat": "family",
+   "when": {
+    "age": [
+     16,
+     60
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "{npc} has gone grey at the temples. You notice it all at once, over dinner, and cannot stop noticing.",
+   "choices": [
+    {
+     "text": "Tell {him} {he} looks well",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "told me I looked well"
+      },
+      "log": "{He} laughs and says you are a terrible liar. {He} is pleased anyway."
+     }
+    },
+    {
+     "text": "Take over the heavy chores",
+     "effects": {
+      "strength": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "took the heavy work"
+      },
+      "log": "You carry the water and chop the wood from now on. {He} pretends not to notice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_father_lesson",
+   "cat": "family",
+   "when": {
+    "age": [
+     10,
+     40
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "{npc} takes you out to the fields at dawn and, for once, has something to say.",
+   "choices": [
+    {
+     "text": "Listen",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "listened to me"
+      },
+      "log": "'Be the kind of person people are glad to see coming,' {he} says. That is all. It is enough."
+     }
+    },
+    {
+     "text": "Ask about {his} youth",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "asked about my youth"
+      },
+      "log": "{He} tells you about a girl, a river and a fight {he} lost. You see {him} differently."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_mother_cooking",
+   "cat": "family",
+   "when": {
+    "age": [
+     14,
+     60
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "{npc} insists on teaching you {his} three best recipes 'before I forget them'.",
+   "choices": [
+    {
+     "text": "Learn all three",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "learned my recipes"
+      },
+      "log": "You burn the first, ruin the second and nail the third. {He} cries a little."
+     }
+    },
+    {
+     "text": "Write them down for {him}",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "wrote my recipes down"
+      },
+      "log": "You write them on good paper. {He} keeps the paper in {his} altar box."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_father_debt",
+   "cat": "family",
+   "when": {
+    "age": [
+     18,
+     70
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "You learn {npc} has been quietly paying off a debt for years, to a man who cheated {him}.",
+   "choices": [
+    {
+     "text": "Pay the rest of it",
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "saved_life",
+       "w": 25,
+       "note": "paid off my debt"
+      },
+      "log": "The man is surprised to see you. The debt is closed. {npc} never mentions it, and never forgets."
+     },
+     "req": {
+      "minTaels": 50
+     }
+    },
+    {
+     "text": "Confront the cheat",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "dealt with my debt"
+      },
+      "log": "The cheat forgives the rest, faced with your stare."
+     },
+     "fail": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "tried to help"
+      },
+      "log": "The cheat laughs. {npc} asks you to leave it be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_parent_sick",
+   "cat": "family",
+   "when": {
+    "age": [
+     14,
+     80
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "{npc} is sick this winter, coughing through the nights, and still insists on getting up to cook.",
+   "choices": [
+    {
+     "text": "Nurse {him} through the winter",
+     "effects": {
+      "health": -3,
+      "mem": {
+       "deed": "saved_life",
+       "w": 20,
+       "note": "nursed me through the winter"
+      },
+      "log": "Broth, blankets and bad jokes. {He} recovers by spring."
+     }
+    },
+    {
+     "text": "Bring a physician",
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "brought a physician"
+      },
+      "log": "The physician is expensive and effective. {npc} scolds you for the cost."
+     },
+     "req": {
+      "minTaels": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_parent_pride",
+   "cat": "family",
+   "when": {
+    "minFame": 20,
+    "age": [
+     16,
+     80
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "{npc} tells every neighbour about your latest deeds, adding a few details that never happened.",
+   "choices": [
+    {
+     "text": "Let {him} brag",
+     "effects": {
+      "fame": 1,
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "let me brag"
+      },
+      "log": "Your legend grows in the village. So does {his} happiness."
+     }
+    },
+    {
+     "text": "Correct the details",
+     "effects": {
+      "alignment": 1,
+      "log": "'Let an old parent have this,' says a neighbour. You let it go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_mother_matchmake",
+   "cat": "funny",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     35
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "{npc} has invited a 'friend's child' to dinner. It is very obviously a marriage interview.",
+   "choices": [
+    {
+     "text": "Be polite through dinner",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "came to dinner"
+      },
+      "log": "The guest is lovely and equally trapped. You laugh about it together afterwards."
+     }
+    },
+    {
+     "text": "Flee through the back door",
+     "effects": {
+      "luck": 1,
+      "mem": {
+       "deed": "time",
+       "w": -3,
+       "note": "ran from my matchmaking"
+      },
+      "log": "{npc} is furious, then laughing. The guest fled too."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "fm_father_old_sword",
+   "cat": "family",
+   "when": {
+    "age": [
+     14,
+     60
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "{npc} brings out an old sword from under the bed. 'I was going to be a swordsman, once. Then you were born.'",
+   "choices": [
+    {
+     "text": "Ask {him} to show you a form",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "asked to see my sword"
+      },
+      "log": "{His} knees creak and {his} form is old-fashioned and beautiful."
+     }
+    },
+    {
+     "text": "Promise to carry it well",
+     "effects": {
+      "fame": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "took my sword"
+      },
+      "log": "'It is only iron,' {he} says, and gives it to you anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_parent_letter_far",
+   "cat": "family",
+   "when": {
+    "age": [
+     16,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "A letter from {npc} reaches you far from home, the brushwork shakier than you remember.",
+   "choices": [
+    {
+     "text": "Write back at length",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "wrote me three pages"
+      },
+      "log": "You write three pages. {He} reads them aloud to the whole village."
+     }
+    },
+    {
+     "text": "Go home for a visit",
+     "effects": {
+      "health": 3,
+      "mem": {
+       "deed": "time",
+       "w": 18,
+       "note": "came home to visit"
+      },
+      "log": "Weeks of travel for a week at home. {He} does not stop smiling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_parent_argument",
+   "cat": "family",
+   "when": {
+    "age": [
+     15,
+     45
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "{npc} disapproves of your life in the murim, loudly, in front of the neighbours.",
+   "choices": [
+    {
+     "text": "Argue back",
+     "effects": {
+      "mem": {
+       "deed": "argued",
+       "w": -8,
+       "note": "argued in front of the neighbours"
+      },
+      "log": "Doors slam. You are both right. You are both miserable for a week."
+     }
+    },
+    {
+     "text": "Hear {him} out",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "heard me out"
+      },
+      "log": "Under the shouting is fear. You promise to be careful. {He} goes quiet."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "fm_parent_dies_sad",
+   "cat": "family",
+   "when": {
+    "age": [
+     40,
+     110
+    ],
+    "npcAge": [
+     65,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "mother"
+   },
+   "text": "{npc} is very old now and very tired. {He} asks you to sit by the bed and talk about nothing.",
+   "choices": [
+    {
+     "text": "Talk about nothing until dawn",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": 20,
+       "note": "sat with me at the end"
+      },
+      "log": "{He} falls asleep smiling, holding your hand."
+     }
+    },
+    {
+     "text": "Tell {him} everything you never said",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 25,
+       "note": "told me everything"
+      },
+      "log": "It all comes out. {He} listens, and forgives all of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_father_proud_quiet",
+   "cat": "family",
+   "when": {
+    "age": [
+     25,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "father"
+   },
+   "text": "{npc} never says {he} is proud of you. Today you find {his} notes: every one of your deeds, written down year by year.",
+   "choices": [
+    {
+     "text": "Pretend you never saw them",
+     "effects": {
+      "alignment": 1,
+      "health": 3,
+      "log": "You put the book back exactly where it was. You feel ten feet tall."
+     }
+    },
+    {
+     "text": "Thank {him}",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "found my notes"
+      },
+      "log": "{He} goes red and says it was the neighbours who kept the notes. It was not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_grandma_tales",
+   "cat": "family",
+   "when": {
+    "age": [
+     5,
+     30
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "grandmother"
+   },
+   "text": "{npc} tells you about the famine of {his} childhood, when the whole village ate tree bark for a winter.",
+   "choices": [
+    {
+     "text": "Listen to it all",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "You never waste rice again."
+     }
+    },
+    {
+     "text": "Bring {him} something sweet",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 8,
+       "note": "brought me something sweet"
+      },
+      "log": "{He} eats it slowly, like a treasure."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_grandpa_game",
+   "cat": "family",
+   "when": {
+    "age": [
+     5,
+     30
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "grandfather"
+   },
+   "text": "{npc} teaches you xiangqi and cheats shamelessly.",
+   "choices": [
+    {
+     "text": "Catch {him} cheating",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "caught me cheating"
+      },
+      "log": "{He} laughs so hard {he} coughs. 'Finally, a clever one.'"
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "{He} wins forty games in a row. You suspect nothing."
+     }
+    },
+    {
+     "text": "Let {him} win",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "let me win"
+      },
+      "log": "{He} knows. {He} appreciates it anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_grandma_herbs",
+   "cat": "family",
+   "when": {
+    "age": [
+     6,
+     40
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "grandmother"
+   },
+   "text": "{npc} knows every herb in the hills and is determined that someone will remember them after {he} is gone.",
+   "choices": [
+    {
+     "text": "Learn them all",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "learned my herbs"
+      },
+      "log": "A summer of walking the hills with {him}. You know sixty herbs by autumn."
+     }
+    },
+    {
+     "text": "Carry {his} basket",
+     "effects": {
+      "strength": 1,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "carried my basket"
+      },
+      "log": "{He} talks, you carry. It is a good summer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sib_rivalry",
+   "cat": "family",
+   "when": {
+    "age": [
+     8,
+     30
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} has been told for the tenth time this month to 'be more like you'. {He} is not happy about it.",
+   "choices": [
+    {
+     "text": "Tell the parents to stop",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "stood up for me"
+      },
+      "log": "{npc} stares at you, then laughs. It is the start of something better."
+     }
+    },
+    {
+     "text": "Enjoy it",
+     "effects": {
+      "charm": -1,
+      "mem": {
+       "deed": "insult",
+       "w": -6,
+       "note": "enjoyed being the favourite"
+      },
+      "log": "{npc} hides your shoes for a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sib_secret",
+   "cat": "family",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} confesses a secret: {he} is in love with someone the family will never approve of.",
+   "choices": [
+    {
+     "text": "Help {him} meet them in secret",
+     "effects": {
+      "alignment": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "kept my secret and helped"
+      },
+      "log": "You stand guard at a lot of bridges at night."
+     }
+    },
+    {
+     "text": "Tell {him} to be careful",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "listened to my secret"
+      },
+      "log": "{He} is careful for about a week."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "fm_sib_borrow",
+   "cat": "family",
+   "when": {
+    "age": [
+     16,
+     60
+    ],
+    "npcAge": [
+     16,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} asks to borrow money 'for a business idea'. {His} last business idea was ducks.",
+   "choices": [
+    {
+     "text": "Lend it",
+     "effects": {
+      "taels": 20,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "trusted my business idea"
+      },
+      "log": "The ducks, it turns out, were a good idea. {He} repays you double. (+20 taels)"
+     },
+     "req": {
+      "minTaels": 20
+     }
+    },
+    {
+     "text": "Refuse kindly",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -5,
+       "note": "did not believe in my ducks"
+      },
+      "log": "{He} sulks, then finds the money elsewhere. The ducks do well without you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sib_wedding",
+   "cat": "family",
+   "when": {
+    "age": [
+     16,
+     60
+    ],
+    "npcAge": [
+     18,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} is getting married, and asks you to lead the procession.",
+   "choices": [
+    {
+     "text": "Lead it proudly",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "led my wedding procession"
+      },
+      "log": "Drums, red silk and your best clothes. {npc} cries through the whole ceremony."
+     }
+    },
+    {
+     "text": "Give a gift instead",
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "gift",
+       "w": 6,
+       "note": "sent a gift"
+      },
+      "log": "An expensive gift. {npc} would have preferred you."
+     },
+     "req": {
+      "minTaels": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sib_fight",
+   "cat": "family",
+   "when": {
+    "age": [
+     8,
+     50
+    ],
+    "npcAge": [
+     6,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "You and {npc} fight like children over something neither of you remembers by the evening.",
+   "choices": [
+    {
+     "text": "Apologise first",
+     "effects": {
+      "alignment": 1,
+      "mem": {
+       "deed": "apology",
+       "w": 10,
+       "note": "apologised first"
+      },
+      "log": "{He} apologises second. You both go fishing."
+     }
+    },
+    {
+     "text": "Wait for {him} to apologise",
+     "effects": {
+      "mem": {
+       "deed": "argued",
+       "w": -4,
+       "note": "waited me out"
+      },
+      "log": "A week of silence. In the end, hunger makes you both apologise at the same dinner."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sib_murim",
+   "cat": "family",
+   "when": {
+    "realm": [
+     2,
+     11
+    ],
+    "age": [
+     14,
+     40
+    ],
+    "npcAge": [
+     12,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} wants to join the murim too, and asks you to teach {him}.",
+   "choices": [
+    {
+     "text": "Teach {him}",
+     "effects": {
+      "comprehension": 1,
+      "npcRealm": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "taught me the murim"
+      },
+      "log": "A year of lessons. {He} is better than you expected and worse than {he} thinks."
+     }
+    },
+    {
+     "text": "Talk {him} out of it",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "talked me out of the murim"
+      },
+      "log": "'One of us should live long,' you say. {He} is angry, then grateful."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "fm_sib_old",
+   "cat": "funny",
+   "when": {
+    "age": [
+     55,
+     110
+    ],
+    "notFlags": [
+     "rejuvenated"
+    ],
+    "npcAge": [
+     50,
+     999
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "blood"
+   },
+   "text": "{npc} and you are old now. You sit on the porch and argue about who broke the rice jar a lifetime ago.",
+   "choices": [
+    {
+     "text": "Admit it was you",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "finally admitted the rice jar"
+      },
+      "log": "{He} gasps. 'I KNEW it!' A lifetime of suspicion, resolved."
+     }
+    },
+    {
+     "text": "Blame the dog",
+     "effects": {
+      "charm": 1,
+      "log": "Neither of you owned a dog. The argument continues until dinner."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_quiet_morning",
+   "cat": "romance",
+   "when": {
+    "age": [
+     18,
+     110
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "A quiet morning. {npc} brings you tea and sits beside you without a word, watching the rain.",
+   "choices": [
+    {
+     "text": "Hold {his} hand",
+     "effects": {
+      "health": 3,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "held my hand in the rain"
+      },
+      "log": "Nothing else happens. It is one of the best mornings of your life."
+     }
+    },
+    {
+     "text": "Tell {him} about your dreams",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "told me their dreams"
+      },
+      "log": "{He} listens, then tells you {his}. You didn't know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_jealous",
+   "cat": "romance",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "{npc} has heard a rumour that you have been seen walking with someone else.",
+   "choices": [
+    {
+     "text": "Explain calmly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "explained the rumour"
+      },
+      "log": "It was a merchant asking directions. {He} laughs at {him}self."
+     },
+     "fail": {
+      "mem": {
+       "deed": "argued",
+       "w": -8,
+       "note": "did not explain the rumour well"
+      },
+      "log": "Your explanation sounds guilty even to you. A cold week."
+     }
+    },
+    {
+     "text": "Bring {him} along next time",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "brought me along"
+      },
+      "log": "You walk everywhere together for a month. The gossips give up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_illness",
+   "cat": "family",
+   "when": {
+    "age": [
+     20,
+     110
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "{npc} falls ill, and for the first time in years you are afraid of something you cannot fight.",
+   "choices": [
+    {
+     "text": "Stay by the bed",
+     "effects": {
+      "health": -5,
+      "mem": {
+       "deed": "saved_life",
+       "w": 25,
+       "note": "stayed by my bed"
+      },
+      "log": "Days and nights. {He} recovers slowly, and never forgets who stayed."
+     }
+    },
+    {
+     "text": "Ride for the best physician",
+     "effects": {
+      "taels": -40,
+      "mem": {
+       "deed": "saved_life",
+       "w": 22,
+       "note": "brought the best physician"
+      },
+      "log": "Three days' ride. The physician comes. {He} recovers."
+     },
+     "req": {
+      "minTaels": 40
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_garden",
+   "cat": "family",
+   "when": {
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "{npc} wants to plant a garden: vegetables, a plum tree, and a bench 'for when we are old'.",
+   "choices": [
+    {
+     "text": "Dig the beds",
+     "effects": {
+      "strength": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "dug my garden"
+      },
+      "log": "A spring of digging. The plum tree blooms the next year."
+     }
+    },
+    {
+     "text": "Build the bench",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "built the bench"
+      },
+      "log": "It wobbles. {He} loves it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_argument_money",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "{npc} found out how much you spent on a new sword. {He} is holding the receipt like a verdict.",
+   "choices": [
+    {
+     "text": "Apologise and return it",
+     "effects": {
+      "mem": {
+       "deed": "apology",
+       "w": 8,
+       "note": "returned the sword"
+      },
+      "log": "The old sword is fine. The marriage is better."
+     }
+    },
+    {
+     "text": "Defend the sword",
+     "effects": {
+      "strength": 1,
+      "mem": {
+       "deed": "argued",
+       "w": -6,
+       "note": "defended the sword"
+      },
+      "log": "A long week. The sword is very good, at least."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_old_together",
+   "cat": "romance",
+   "when": {
+    "age": [
+     55,
+     110
+    ],
+    "notFlags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "You and {npc} are grey now. Children run past the gate. {He} says: 'We were that fast once.'",
+   "choices": [
+    {
+     "text": "Race {him} to the gate",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "raced me to the gate"
+      },
+      "log": "Neither of you runs. You walk very fast and call it a tie."
+     }
+    },
+    {
+     "text": "Say you are still that fast",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "made me laugh"
+      },
+      "log": "{He} laughs until {he} has to sit down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_sp_secret_skill",
+   "cat": "funny",
+   "when": {
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "spouse"
+   },
+   "text": "You discover that {npc} can throw a knife across a courtyard into a coin. {He} never mentioned it.",
+   "choices": [
+    {
+     "text": "Ask where {he} learned it",
+     "effects": {
+      "comprehension": 1,
+      "log": "'Before I met you,' {he} says, and smiles, and changes the subject. Forever."
+     }
+    },
+    {
+     "text": "Ask {him} to teach you",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "learned my knife trick"
+      },
+      "log": "You learn more about {him} in a month of knife-throwing than in years of marriage."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_first_word",
+   "cat": "family",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 1,
+    "maxAge": 2
+   },
+   "text": "{npc} says {his} first word. It is not your name.",
+   "choices": [
+    {
+     "text": "Pretend it was",
+     "effects": {
+      "charm": 1,
+      "log": "It was \"rice\". You tell everyone it was your name."
+     }
+    },
+    {
+     "text": "Teach {him} your name",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "taught me my first words"
+      },
+      "log": "By the end of the month {he} says it constantly, at dawn, loudly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_toddler_sword",
+   "cat": "funny",
+   "when": {
+    "age": [
+     18,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 2,
+    "maxAge": 5
+   },
+   "text": "{npc}, barely walking, has taken your sword off the wall and is dragging it across the courtyard.",
+   "choices": [
+    {
+     "text": "Carve {him} a wooden one",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 10,
+       "note": "carved me a wooden sword"
+      },
+      "log": "{He} will not let go of it for three years."
+     }
+    },
+    {
+     "text": "Hang yours higher",
+     "effects": {
+      "luck": 1,
+      "log": "{He} builds a staircase out of the furniture. You are in trouble."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_school",
+   "cat": "family",
+   "when": {
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 6,
+    "maxAge": 12
+   },
+   "text": "{npc} comes home from school crying: the other children call {him} the child of a 'murim thug'.",
+   "choices": [
+    {
+     "text": "Walk {him} to school tomorrow",
+     "effects": {
+      "fame": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "walked me to school"
+      },
+      "log": "You walk {him} to the door. Nobody says anything, ever again."
+     }
+    },
+    {
+     "text": "Teach {him} how to answer",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "taught me what to say"
+      },
+      "log": "'My parent protects all of you,' {he} says the next day. It works."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "fm_kid_lost_fair",
+   "cat": "family",
+   "when": {
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 4,
+    "maxAge": 10
+   },
+   "text": "At the temple fair, {npc} vanishes into the crowd. Your heart stops.",
+   "choices": [
+    {
+     "text": "Find {him}",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "health": 2,
+      "log": "You find {him} watching the puppet show, entirely calm."
+     },
+     "fail": {
+      "health": -3,
+      "log": "An hour of terror. {He} was at the sweet stall the whole time."
+     }
+    },
+    {
+     "text": "Climb the gate and look",
+     "effects": {
+      "luck": 1,
+      "log": "From the top of the gate you spot {him} at once, eating a candied hawthorn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_teen_rebel",
+   "cat": "family",
+   "when": {
+    "age": [
+     28,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 14,
+    "maxAge": 18
+   },
+   "text": "{npc} announces {he} will never join the murim, never marry, and will become a travelling poet.",
+   "choices": [
+    {
+     "text": "Support {him}",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "supported my poetry"
+      },
+      "log": "{He} is so surprised {he} forgets to rebel for a month."
+     }
+    },
+    {
+     "text": "Forbid it",
+     "effects": {
+      "mem": {
+       "deed": "argued",
+       "w": -10,
+       "note": "forbade my poetry"
+      },
+      "log": "Slammed doors for a year. {He} becomes a poet anyway, a good one."
+     }
+    }
+   ],
+   "mw": true,
+   "po": true
+  },
+  {
+   "id": "fm_kid_first_fight",
+   "cat": "family",
+   "when": {
+    "age": [
+     24,
+     90
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 8,
+    "maxAge": 15
+   },
+   "text": "{npc} comes home with a split lip and a very proud face. 'You should see the other one.'",
+   "choices": [
+    {
+     "text": "Ask what happened",
+     "effects": {
+      "alignment": 1,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "was proud of me"
+      },
+      "log": "A bully, a smaller child and your child in between. You are very proud."
+     }
+    },
+    {
+     "text": "Teach {him} to fight properly",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "taught me to fight"
+      },
+      "log": "A month of dawn lessons. The bully never tries again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_leaves_home",
+   "cat": "family",
+   "when": {
+    "age": [
+     34,
+     110
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 17,
+    "maxAge": 22
+   },
+   "text": "{npc} is grown, packing a bag at the gate. {He} is going out into the world, as you once did.",
+   "choices": [
+    {
+     "text": "Give {him} your best advice",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "gave me advice at the gate"
+      },
+      "log": "'Eat well. Trust slowly. Come home.' {He} laughs, then hugs you too long."
+     }
+    },
+    {
+     "text": "Give {him} silver for the road",
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "gave me silver for the road"
+      },
+      "log": "Fifty taels in a cloth bundle. {He} will need it."
+     },
+     "req": {
+      "minTaels": 50
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_marries",
+   "cat": "family",
+   "when": {
+    "age": [
+     38,
+     110
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 18,
+    "maxAge": 40
+   },
+   "text": "{npc} brings someone home for dinner. They are both very nervous.",
+   "choices": [
+    {
+     "text": "Be warm and welcoming",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "welcomed my love"
+      },
+      "log": "By the end of dinner they are both laughing. A wedding follows in spring."
+     }
+    },
+    {
+     "text": "Test the newcomer with questions",
+     "effects": {
+      "comprehension": 1,
+      "log": "An hour of questions. The newcomer answers them all. You approve, secretly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_surpass_letter",
+   "cat": "family",
+   "when": {
+    "age": [
+     40,
+     110
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 70
+   },
+   "text": "A letter from {npc}, grown now and far away. 'I did something you would be proud of. I thought of you the whole time.'",
+   "choices": [
+    {
+     "text": "Write back how proud you are",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "wrote how proud they were"
+      },
+      "log": "{He} keeps your letter all {his} life."
+     }
+    },
+    {
+     "text": "Go and visit",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 18,
+       "note": "came to visit"
+      },
+      "log": "A long journey to see {him} for a week. {He} shows you everything."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fm_kid_cares_for_you",
+   "cat": "family",
+   "when": {
+    "age": [
+     60,
+     120
+    ]
+   },
+   "weight": 2,
+   "npc": {
+    "role": "child",
+    "minAge": 30,
+    "maxAge": 90
+   },
+   "text": "{npc} insists on carrying your things now, and walking on the side of the road where the carts pass.",
+   "choices": [
+    {
+     "text": "Let {him}",
+     "effects": {
+      "health": 2,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "let me take care of them"
+      },
+      "log": "The circle turns. You remember carrying {him}."
+     }
+    },
+    {
+     "text": "Protest that you are fine",
+     "effects": {
+      "charm": 1,
+      "log": "{He} carries them anyway. You are secretly glad."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}
