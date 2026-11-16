@@ -1,0 +1,173 @@
+{
+ "events": [
+  {
+   "id": "rp_orthodox_hunters",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     90
+    ],
+    "rep": {
+     "orthodox": [
+      -100,
+      -40
+     ]
+    },
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 5,
+   "maxPerLife": 2,
+   "once": false,
+   "cooldown": 8,
+   "text": "Three masters in Orthodox robes block the road. \"The Alliance has a list,\" says the eldest. \"Your name is near the top.\"",
+   "choices": [
+    {
+     "text": "Fight them",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 12,
+      "rep": {
+       "orthodox": -10,
+       "unorthodox": 5
+      },
+      "log": "Three masters go home on stretchers. The list gets a little longer."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "Orthodox hunters",
+      "log": "They are good. You get away, and they will be back."
+     }
+    },
+    {
+     "text": "Talk your way through",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "rep": {
+       "orthodox": 10
+      },
+      "log": "By the end of the evening they are not sure you are as bad as the list says. Neither are you."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The talking fails. So does a good part of your ribcage."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rp_cult_invite",
+   "cat": "world",
+   "when": {
+    "age": [
+     18,
+     80
+    ],
+    "rep": {
+     "demonic": [
+      40,
+      100
+     ]
+    },
+    "factions": [
+     "none",
+     "wanderer",
+     "unorthodox",
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "sect_head",
+     "own_sect",
+     "imp_emperor"
+    ]
+   },
+   "weight": 4,
+   "text": "A woman in black and red sits down at your table uninvited. \"The Heavenly Demon has heard of you. He likes what he hears. There is a seat for you in the Hundred Thousand Mountains.\"",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "faction": "demonic",
+      "sect": "Heavenly Demon Cult",
+      "rep": {
+       "demonic": 10,
+       "orthodox": -30
+      },
+      "alignment": -10,
+      "log": "You leave with her before the tea is cold. The murim will hear about this by morning."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "rep": {
+       "demonic": -5
+      },
+      "log": "\"A pity,\" she says, and pays for your tea. You notice she never touched hers."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rp_orthodox_honour",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     90
+    ],
+    "rep": {
+     "orthodox": [
+      60,
+      100
+     ]
+    },
+    "notFlags": [
+     "fugitive",
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 4,
+   "text": "The Martial Alliance invites you to its annual council, not as a guest but with a seat at the table.",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "effects": {
+      "fame": 20,
+      "rep": {
+       "orthodox": 5,
+       "demonic": -10
+      },
+      "flag": "alliance_seat",
+      "log": "Nine sect leaders stand when you enter. You try very hard to look like this is normal."
+     }
+    },
+    {
+     "text": "Send a gift and your regrets",
+     "effects": {
+      "fame": 8,
+      "log": "A wanderer's heart does not sit well at councils. They respect you more for it."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,1926 @@
+{
+ "events": [
+  {
+   "id": "dc_usp_offer_1",
+   "cat": "life",
+   "trigger": "usp_offer",
+   "once": true,
+   "weight": 10,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Elder {npc} lights one candle in the storeroom and sets a plain wooden token on a crate between you. \"Our rivals have taken in orphans for years,\" {he} says. \"One more will not be noticed. You would go in under another name, climb as high as they let you, and remember everything. One day I would ask you to open a door.\"",
+   "choices": [
+    {
+     "text": "Take the token",
+     "effects": {
+      "flag": "uspx_accept",
+      "log": "{npc} nods as if {he} expected nothing else. \"From tonight,\" {he} says, \"you are somebody else.\""
+     }
+    },
+    {
+     "text": "Ask what happens if you are caught",
+     "effects": {
+      "comprehension": 1,
+      "log": "\"They will kill you,\" {npc} says simply, \"and I will say I never met you.\" At least {he} is honest."
+     }
+    },
+    {
+     "text": "Push the token back",
+     "effects": {
+      "flag": "uspx_refuse",
+      "log": "{npc} picks it up without a word and pinches out the candle. The dark is very complete."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_offer_2",
+   "cat": "life",
+   "trigger": "usp_offer",
+   "once": true,
+   "weight": 20,
+   "when": {
+    "flags": [
+     "usp_past"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Elder {npc} does not light a candle at all. You talk in the dark. \"I have read the old records of the sects,\" {he} says. \"There is a line in one about a soul like yours, who lived a whole life under a borrowed name. They said it came to them easily. Too easily.\"",
+   "choices": [
+    {
+     "text": "Say it would come easily again",
+     "effects": {
+      "flag": "uspx_accept",
+      "log": "You can feel {npc} smile in the dark. A token is pressed into your hand. It is warm."
+     }
+    },
+    {
+     "text": "Say once was enough",
+     "effects": {
+      "flag": "uspx_refuse",
+      "log": "\"Perhaps,\" {npc} says. \"Perhaps not.\" The storeroom door opens on cold night air."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_gate_1",
+   "cat": "life",
+   "trigger": "usp_enter",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You arrive at the rival sect's gate in the rain, thin from the road, with a story about a burned village that you have told yourself so often you almost remember it. Master {npc} comes out under an umbrella and looks at you for a long time. Then {he} holds the umbrella over you instead of {him}self.",
+   "choices": [
+    {
+     "text": "Thank {him} in your false name",
+     "effects": {
+      "mem": {
+       "deed": "usp_scene",
+       "w": 8,
+       "note": "took in a soaked orphan at the gate"
+      },
+      "log": "The name sounds strange in your mouth. {npc} repeats it, and it sounds a little less strange."
+     }
+    },
+    {
+     "text": "Say nothing and bow",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "usp_scene",
+       "w": 4,
+       "note": "was given a silent bow at the gate"
+      },
+      "log": "{npc} likes silence. That is the first true thing about you {he} learns."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_gate_2",
+   "cat": "life",
+   "trigger": "usp_enter",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Master {npc} tests every newcomer the same way: a bowl of rice and a question while they eat. Yours is \"Who taught you to hold chopsticks like a swordsman?\" Your hand does not stop moving. Your heart does.",
+   "choices": [
+    {
+     "text": "Answer with the story you practised",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -4
+      },
+      "log": "You tell it well. {npc} grunts, and passes you the pickled radish. You are in."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 8
+      },
+      "log": "{npc} hears the story out, and says nothing, and writes something in a small book."
+     }
+    },
+    {
+     "text": "Laugh and say a woodcutter taught you",
+     "effects": {
+      "luck": 1,
+      "tally": {
+       "usp_sus": 3
+      },
+      "log": "{npc} looks at your hands, and lets it go. For now."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_gate_3",
+   "cat": "life",
+   "trigger": "usp_rank",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_r_1"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "notFlags": [
+     "usp_r_2"
+    ],
+    "hasSect": true
+   },
+   "text": "Master {npc} hands you the robe of an inner disciple in front of the whole hall. It is the first thing anyone has ever given to the name you are living under. You wear it to bed that night, which nobody does.",
+   "choices": [
+    {
+     "text": "Thank {him} properly",
+     "effects": {
+      "flag": "uspx_warm",
+      "log": "{npc} waves the thanks away, but stands a little taller."
+     }
+    },
+    {
+     "text": "Write it to your handler",
+     "effects": {
+      "tally": {
+       "usp_intel": 4
+      },
+      "log": "You write it in a code of plum blossoms and rain. The letter feels like a theft."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_gate_4",
+   "cat": "life",
+   "trigger": "usp_rank",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_r_2"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "notFlags": [
+     "usp_r_3"
+    ],
+    "hasSect": true
+   },
+   "text": "A core disciple now: you are shown the inner library, the room where the sect keeps its own true arts. Master {npc} unlocks it for you personally and says, \"I have never been wrong about a disciple.\"",
+   "choices": [
+    {
+     "text": "Read only what a disciple should",
+     "effects": {
+      "comprehension": 2,
+      "flag": "uspx_heart",
+      "log": "You read only what you are given. It is enough to make you better than you were."
+     }
+    },
+    {
+     "text": "Memorise the shelf marks",
+     "effects": {
+      "tally": {
+       "usp_intel": 8
+      },
+      "log": "You memorise the shelf marks while {npc} watches the door. You hate how easy it is."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_gate_5",
+   "cat": "life",
+   "trigger": "usp_rank",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_r_3"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Master {npc} names you right hand of the hall. You sit beside {him} now at every council, hear every plan, carry every key. \"You are the child I never had,\" {he} says, quite simply, at the feast. The whole hall drinks to you.",
+   "choices": [
+    {
+     "text": "Drink to {him}",
+     "effects": {
+      "flag": [
+       "uspx_warm",
+       "uspx_heart"
+      ],
+      "log": "You drink. It goes down like stones."
+     }
+    },
+    {
+     "text": "Excuse yourself from the feast",
+     "effects": {
+      "tally": {
+       "usp_sus": -5
+      },
+      "log": "You walk the walls until dawn. Nobody thinks it strange. Everyone thinks you are moved."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_1",
+   "cat": "life",
+   "trigger": "usp_inside",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_with_friend"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "{npc} shares {his} bowl of noodles with you on your first night, because you did not know the kitchen closes early, and does not ask where you come from. \"Everyone here has a story they don't tell,\" {he} says. \"I'll wait for yours.\"",
+   "choices": [
+    {
+     "text": "Promise to tell it one day",
+     "effects": {
+      "flag": [
+       "uspx_warm",
+       "uspx_heart"
+      ],
+      "log": "{npc} grins. You realise you meant it, and that you can never keep it."
+     }
+    },
+    {
+     "text": "Change the subject",
+     "effects": {
+      "luck": 1,
+      "log": "{npc} lets you. That is the kindest thing anyone has done for you in years."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_2",
+   "cat": "life",
+   "trigger": "usp_inside",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_with_friend"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "{npc} is in trouble with the elders for breaking a lamp, and you were there. You could say it was you. You could say nothing. A spy is never supposed to be noticed at all.",
+   "choices": [
+    {
+     "text": "Take the blame",
+     "effects": {
+      "flag": [
+       "uspx_warm",
+       "uspx_heart"
+      ],
+      "tally": {
+       "usp_sus": 4
+      },
+      "log": "You scrub floors for a week. {npc} scrubs beside you every night, uninvited."
+     }
+    },
+    {
+     "text": "Stay silent",
+     "effects": {
+      "flag": "uspx_cold",
+      "tally": {
+       "usp_sus": -3
+      },
+      "log": "{npc} takes the punishment without looking at you. Afterwards {he} is a little less easy with you."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_3",
+   "cat": "life",
+   "trigger": "usp_inside",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_with_friend"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "At the lantern festival {npc} drags you onto the roof of the dormitory to watch the lanterns go up over the sect. \"When we're old,\" {he} says, \"let's run this place. You and me.\" It is the happiest you have been in years, under a name that is not yours.",
+   "choices": [
+    {
+     "text": "Say yes",
+     "effects": {
+      "flag": "uspx_heart",
+      "log": "\"Good,\" says {npc}, and lies back on the tiles, satisfied, as if it is settled."
+     }
+    },
+    {
+     "text": "Say nobody knows what comes",
+     "effects": {
+      "comprehension": 1,
+      "tally": {
+       "usp_sus": 2
+      },
+      "log": "{npc} looks at you sideways. \"You always say things like that,\" {he} says."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_4",
+   "cat": "life",
+   "trigger": "usp_inside",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_with_master"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Master {npc} corrects your stance in the courtyard and finds, in the way you shift your weight, the habit of another sect's art. {He} says nothing. {He} corrects it, carefully, as if it were only a fault.",
+   "choices": [
+    {
+     "text": "Thank {him} for the correction",
+     "effects": {
+      "tally": {
+       "usp_sus": 5
+      },
+      "strength": 1,
+      "log": "{npc} nods. \"Old habits,\" {he} says. \"We all have them.\" You do not sleep that night."
+     }
+    },
+    {
+     "text": "Show {him} it was only a fault",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -5
+      },
+      "log": "You move again, cleanly, in their way. {npc} seems satisfied."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 10
+      },
+      "log": "You move again and the old habit shows twice. {npc} watches you a long while."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_5",
+   "cat": "life",
+   "trigger": "usp_inside",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_with_master"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Master {npc} tells you, on a long walk, about the sect you were sent from: the old quarrel, the raid forty years ago that burned this sect's library, the names of the dead. {He} tells it without anger. That is the hardest part.",
+   "choices": [
+    {
+     "text": "Ask about the dead",
+     "effects": {
+      "flag": "uspx_heart",
+      "alignment": 3,
+      "log": "{npc} names them, one by one. You will remember every name, and not for your handler."
+     }
+    },
+    {
+     "text": "Remember it all for your handler",
+     "effects": {
+      "tally": {
+       "usp_intel": 6
+      },
+      "log": "You remember every word for the letter. The walk back is very long."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_friend_6",
+   "cat": "life",
+   "trigger": "usp_bond",
+   "once": false,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You and {npc} spend the summer repairing the roof of the old training hall, tile by tile, in the sun. You talk about nothing. It is the best summer you can remember, and every day of it is a lie.",
+   "choices": [
+    {
+     "text": "Tell {him} a true thing about yourself",
+     "effects": {
+      "flag": "uspx_heart",
+      "log": "You tell {npc} one true thing: the name of a dog you had as a child. {He} never forgets it."
+     }
+    },
+    {
+     "text": "Keep to the story",
+     "effects": {
+      "tally": {
+       "usp_sus": -3
+      },
+      "log": "You keep to the story. It holds. You feel it hold, like a rope across a gap."
+     }
+    }
+   ],
+   "arc": "Under a False Name",
+   "cooldown": 0
+  },
+  {
+   "id": "dc_usp_friend_7",
+   "cat": "life",
+   "trigger": "usp_bond",
+   "once": false,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "{npc} nurses you through a fever that lasts nine days. On the worst night you talk in your sleep, and when you wake {npc} is sitting by the bed with a strange look. \"You said a name,\" {he} says. \"Not yours.\"",
+   "choices": [
+    {
+     "text": "Laugh it off",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -3
+      },
+      "log": "\"Fever dreams,\" you say. {npc} laughs too, after a moment, and the look goes."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 10
+      },
+      "log": "\"Fever dreams,\" you say. {npc} nods, and does not laugh, and does not tell anyone. Yet."
+     }
+    },
+    {
+     "text": "Ask {him} what name",
+     "effects": {
+      "flag": "uspx_heart",
+      "tally": {
+       "usp_sus": 5
+      },
+      "log": "{npc} tells you. It is your real one. \"I won't ask,\" {he} says. \"Get well.\""
+     }
+    }
+   ],
+   "arc": "Under a False Name",
+   "cooldown": 0
+  },
+  {
+   "id": "dc_usp_love_1",
+   "cat": "life",
+   "trigger": "usp_love",
+   "once": true,
+   "weight": 10,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "{npc} catches your sleeve on the stair to the library and says, all at once, that {he} has loved you since the winter. {He} says it to the name you came here under. {He} does not know any other.",
+   "choices": [
+    {
+     "text": "Say it back",
+     "effects": {
+      "flag": "uspx_heart",
+      "mem": {
+       "deed": "usp_scene",
+       "w": 12,
+       "note": "said it back on the library stair"
+      },
+      "log": "You say it back. It is the truest thing you have said in this sect, under the falsest name."
+     }
+    },
+    {
+     "text": "Say you cannot, not yet",
+     "effects": {
+      "tally": {
+       "usp_sus": -2
+      },
+      "log": "{npc} lets go of your sleeve. \"Not yet,\" {he} repeats, as if it were a promise. Perhaps it is."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_love_2",
+   "cat": "life",
+   "trigger": "usp_love",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_lovers"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You meet {npc} in secret in the orchard, after the lamps are out, which is forbidden and ordinary and the whole sect pretends not to know. Tonight {he} asks you to tell {him} where you really come from.",
+   "choices": [
+    {
+     "text": "Tell {him} the burned-village story",
+     "effects": {
+      "tally": {
+       "usp_sus": -4
+      },
+      "log": "{npc} listens, and cries a little for a village that never burned. You hold {him} and hate yourself."
+     }
+    },
+    {
+     "text": "Tell {him} you cannot, and ask {him} to trust you",
+     "effects": {
+      "flag": "uspx_heart",
+      "tally": {
+       "usp_sus": 3
+      },
+      "log": "{npc} is quiet for a long time. \"I do,\" {he} says at last. \"That is what frightens me.\""
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_love_3",
+   "cat": "life",
+   "trigger": "usp_love",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_lovers"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "{npc} brings you a new robe, sewn by hand, with your false name embroidered inside the collar in tiny careful stitches. \"So it is yours,\" {he} says, \"and nobody else's.\"",
+   "choices": [
+    {
+     "text": "Wear it every day",
+     "effects": {
+      "flag": "uspx_heart",
+      "log": "You wear it every day. The name in the collar scratches your neck like a conscience."
+     }
+    },
+    {
+     "text": "Keep it folded, unworn",
+     "effects": {
+      "comprehension": 1,
+      "log": "{npc} notices. {He} does not ask. You wish {he} would."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_1",
+   "cat": "life",
+   "trigger": "usp_test",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Every disciple is called to the hall without warning. The elders walk the rows and ask each one the name of the village they came from, and the name of its well. Nobody has ever asked about the well.",
+   "choices": [
+    {
+     "text": "Name a well",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -8
+      },
+      "log": "You name a well, and a crooked willow beside it. An elder nods and moves on."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 15
+      },
+      "log": "You name a well. The elder checks a list and looks up at you, slowly."
+     }
+    },
+    {
+     "text": "Say you were too young to remember",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -4
+      },
+      "log": "An elder pats your shoulder. Orphans forget things. You are safe."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 12
+      },
+      "log": "\"Too young,\" the elder repeats, and writes your false name down twice."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_2",
+   "cat": "life",
+   "trigger": "usp_test",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "A letter is left on your bed, sealed with your own sect's seal, though nobody from your sect has written. It is a trap, or it is a test, or it is real. Someone may be watching your door.",
+   "choices": [
+    {
+     "text": "Hand it to the elders unopened",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -12
+      },
+      "log": "The elders open it. It is blank. They thank you for your loyalty. It was a test, and you passed it."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 8
+      },
+      "log": "The elders open it. It is blank. One of them asks why you did not open it yourself. Nobody likes the answer."
+     }
+    },
+    {
+     "text": "Burn it without reading",
+     "effects": {
+      "tally": {
+       "usp_sus": 6
+      },
+      "log": "You burn it. In the morning someone asks what you burned. Smoke, you say."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_3",
+   "cat": "life",
+   "trigger": "usp_test",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "The sect is losing secrets, the elders say, and they set a trap: a false plan for a raid, told to only a few. Yours is one of the few. Your handler must not hear of it.",
+   "choices": [
+    {
+     "text": "Send nothing this month",
+     "effects": {
+      "alignment": -2,
+      "tally": {
+       "usp_sus": -10
+      },
+      "log": "You send your handler nothing. The trap closes on someone else, a poor clumsy cook who sold gossip for a coin."
+     }
+    },
+    {
+     "text": "Send it, disguised",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "tally": {
+       "usp_intel": 6
+      },
+      "log": "You send it, folded into a letter about the weather. The trap catches nothing, and nobody looks at you."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 20
+      },
+      "log": "You send it. Three days later the elders know who heard which version. You are not the only one they suspect, yet."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_4",
+   "cat": "life",
+   "trigger": "usp_test",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "A visiting master from your true sect comes as a guest, and at the welcome feast looks straight at you across the hall. You were children in the same courtyard. One word from either of you would end it.",
+   "choices": [
+    {
+     "text": "Meet the gaze as a stranger",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "usp_sus": -3
+      },
+      "log": "The master looks away first. The feast goes on. Your hands shake under the table."
+     },
+     "fail": {
+      "tally": {
+       "usp_sus": 14
+      },
+      "log": "The master looks too long. Someone beside you notices where the master is looking."
+     }
+    },
+    {
+     "text": "Leave the hall, pleading sickness",
+     "effects": {
+      "tally": {
+       "usp_sus": 6
+      },
+      "log": "You leave. Leaving is noticed. Staying might have been worse."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_5",
+   "cat": "life",
+   "trigger": "usp_gather",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Night in the archive. You copy a list of the sect's allies by the light of a lamp shaded with your sleeve, one name at a time, your ear on the corridor. A cat walks past the door. You stop breathing until it is gone.",
+   "choices": [
+    {
+     "text": "Copy all of it",
+     "effects": {
+      "tally": {
+       "usp_intel": 4,
+       "usp_sus": 4
+      },
+      "log": "You copy all of it. Somewhere a bell rings the hour, and you are back in bed before it stops."
+     }
+    },
+    {
+     "text": "Copy half and leave",
+     "effects": {
+      "tally": {
+       "usp_sus": -3
+      },
+      "log": "Half is enough. Half is safer. You tell yourself that all the way back."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_test_6",
+   "cat": "life",
+   "trigger": "usp_gather",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "The sect's treasurer talks too much over wine, and you pour. By the end of the night you know the size of the treasury, the weak point in the eastern wall and the name of the elder who is secretly ill.",
+   "choices": [
+    {
+     "text": "Write it down at once",
+     "effects": {
+      "tally": {
+       "usp_intel": 6
+      },
+      "log": "You write it all down before the night fades. It is the best night's work you have ever done. You feel sick."
+     }
+    },
+    {
+     "text": "Leave out the sick elder",
+     "effects": {
+      "alignment": 3,
+      "log": "You leave out the sick elder. A spy who keeps one secret back is still a spy. It helps a little."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_1",
+   "cat": "life",
+   "trigger": "usp_handler",
+   "once": false,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "A letter from Elder {npc}, in the code of plum blossoms and rain: your sect wants more, sooner. The plum blossom count is very high. Elder {npc} has never been a patient person.",
+   "choices": [
+    {
+     "text": "Send everything you have",
+     "effects": {
+      "tally": {
+       "usp_intel": 4
+      },
+      "log": "You send it all. {npc} writes back two words: good work. They feel like nothing."
+     }
+    },
+    {
+     "text": "Send less than you have",
+     "effects": {
+      "flag": "uspx_heart",
+      "tally": {
+       "usp_sus": -2
+      },
+      "log": "You send less. {npc} will notice. You find that you want {him} to."
+     }
+    }
+   ],
+   "arc": "Under a False Name",
+   "cooldown": 0
+  },
+  {
+   "id": "dc_usp_order_2",
+   "cat": "life",
+   "trigger": "usp_handler",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Elder {npc} meets you in disguise at a market three towns away, buying turnips. \"You look well,\" {he} says, studying you. \"Too well. Remember which sect you belong to.\"",
+   "choices": [
+    {
+     "text": "Swear you remember",
+     "effects": {
+      "tally": {
+       "usp_intel": 2
+      },
+      "log": "{npc} nods. Neither of you believes it entirely."
+     }
+    },
+    {
+     "text": "Ask {him} if it can ever end",
+     "effects": {
+      "comprehension": 1,
+      "log": "\"It ends when you open the door,\" {npc} says. \"Then you come home.\" Home. You try the word out."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_3",
+   "cat": "life",
+   "trigger": "usp_handler",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Elder {npc}'s letter is short: someone in your own sect has been talking. Another spy's name is in it, a stranger inside the same walls as you. You are to watch them, and if needed, stop them.",
+   "choices": [
+    {
+     "text": "Warn the stranger instead",
+     "effects": {
+      "alignment": 4,
+      "tally": {
+       "usp_sus": 4
+      },
+      "log": "You warn them. They leave that night. You will never know if you saved a life or ruined a plan."
+     }
+    },
+    {
+     "text": "Watch them, as ordered",
+     "effects": {
+      "tally": {
+       "usp_sus": -6
+      },
+      "log": "You watch. Within a month they are caught, and you were never near them. It is a relief, and it is not."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_4",
+   "cat": "life",
+   "trigger": "usp_order",
+   "once": true,
+   "weight": 10,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "The last letter from Elder {npc} has no code in it at all. The night is set. On the new moon your sect will come to the eastern wall, and you will open the small gate by the well. \"After that,\" {he} writes, \"you can be yourself again.\"",
+   "choices": [
+    {
+     "text": "Read it twice and burn it",
+     "effects": {
+      "comprehension": 1,
+      "log": "You burn it. The new moon is three weeks away. You do not know yet what you will do."
+     }
+    },
+    {
+     "text": "Keep it",
+     "effects": {
+      "luck": 1,
+      "log": "You keep it in your sleeve, where it burns all day."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_5",
+   "cat": "life",
+   "trigger": "usp_order",
+   "once": true,
+   "weight": 12,
+   "when": {
+    "flags": [
+     "usp_lovers"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Elder {npc} comes in person, at night, over the wall you were meant to open. \"I came to see your face,\" {he} says. \"I wanted to know which way you will go before the new moon, so I can plan for both.\"",
+   "choices": [
+    {
+     "text": "Tell {him} you will open the gate",
+     "effects": {
+      "tally": {
+       "usp_intel": 2
+      },
+      "log": "{npc} studies you a long time. \"Good,\" {he} says. You cannot tell if {he} believes it."
+     }
+    },
+    {
+     "text": "Say nothing",
+     "effects": {
+      "comprehension": 1,
+      "log": "{npc} nods slowly, as if silence were an answer. Maybe it is."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_6",
+   "cat": "life",
+   "trigger": "usp_double",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You tell your handler half of what you know and the master the other half. Both of them thank you. Both of them pay. You lie awake working out which half of you is true, and get the answer wrong every night.",
+   "choices": [
+    {
+     "text": "Keep careful books of every lie",
+     "effects": {
+      "comprehension": 1,
+      "log": "You keep two sets of books in your head. They are more honest than you are."
+     }
+    },
+    {
+     "text": "Stop counting",
+     "effects": {
+      "luck": -1,
+      "log": "You stop counting. It is easier. It is also how double agents are caught."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_order_7",
+   "cat": "life",
+   "trigger": "usp_double",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Two letters arrive on the same day, one from each side, each asking you to find out what the other is planning. You answer both. You are, for one afternoon, the most important person in the murim, and nobody may ever know it.",
+   "choices": [
+    {
+     "text": "Laugh",
+     "effects": {
+      "charm": 1,
+      "log": "You laugh alone in your room until you are not sure it is laughing."
+     }
+    },
+    {
+     "text": "Answer both truthfully",
+     "effects": {
+      "alignment": 4,
+      "log": "You tell each the truth about the other. For a month, the two sects are almost at peace. Nobody understands why."
+     }
+    }
+   ],
+   "arc": "Under a False Name",
+   "mw": true
+  },
+  {
+   "id": "dc_usp_trial_1",
+   "cat": "life",
+   "trigger": "usp_unmasked",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "They come for you at dawn: four elders and the master who took you in. Your false name is read out in the hall, and then your real one, and the whole sect turns to look. The trial will be at the next new moon.",
+   "choices": [
+    {
+     "text": "Stand straight",
+     "effects": {
+      "strength": 1,
+      "log": "You stand straight. If this is the end of the story, you will finish it standing."
+     }
+    },
+    {
+     "text": "Look for a way out",
+     "effects": {
+      "luck": 1,
+      "log": "You count the doors and the guards. It is what you were trained to do. It is not hopeless."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_trial_2",
+   "cat": "life",
+   "trigger": "usp_unmasked",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_lovers"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "In the cell they keep you in, someone has left a small bundle through the bars at night: a robe, sewn by hand, your false name in the collar. Nobody else would have done it. Nobody else would have dared.",
+   "choices": [
+    {
+     "text": "Hold it until morning",
+     "effects": {
+      "alignment": 2,
+      "log": "You hold it until the light comes. Whatever happens, someone inside knew you."
+     }
+    },
+    {
+     "text": "Put it on",
+     "effects": {
+      "charm": 1,
+      "log": "You put it on. It still fits."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_1",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_delivered"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "notFlags": [
+     "usp_lovers"
+    ],
+    "hasSect": true
+   },
+   "text": "Your sect feasts you as a hero. Somewhere a hall you lived in for years is ash, and a robe with your false name in the collar is ash with it. You are given a new robe, with your own name, and it fits worse.",
+   "choices": [
+    {
+     "text": "Drink with them",
+     "effects": {
+      "fame": 3,
+      "log": "You drink with them all night. They tell your story back to you. It is a better story than the one you lived."
+     }
+    },
+    {
+     "text": "Go out and sit by the river",
+     "effects": {
+      "comprehension": 1,
+      "log": "You sit by the river until morning. Nobody comes to look for you. That is how it should be."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_2",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 12,
+   "when": {
+    "flags": [
+     "usp_e_delivered",
+     "usp_lovers"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Your sect calls it a victory. The one who loved you under another name is somewhere beyond your reach now, dead in the raid or alive and knowing everything; either way, never again in the orchard after the lamps are out.",
+   "choices": [
+    {
+     "text": "Keep a lamp lit in the window",
+     "effects": {
+      "alignment": 2,
+      "log": "You keep a lamp lit every night. You do not know who for. Yes you do."
+     }
+    },
+    {
+     "text": "Never speak of it",
+     "effects": {
+      "strength": 1,
+      "log": "You never speak of it. The silence is the price, and you pay it every day."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_3",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_switched"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You take the oath of the sect you were sent to betray, under your own name, before the whole hall. Master and friends stand around you. Somewhere far away your old sect is writing your name in its book of traitors.",
+   "choices": [
+    {
+     "text": "Say your real name loudly",
+     "effects": {
+      "fame": 2,
+      "log": "The hall says it back to you. It is the first time it has sounded like yours in years."
+     }
+    },
+    {
+     "text": "Burn the plum-blossom code",
+     "effects": {
+      "alignment": 2,
+      "log": "You burn the code. You burn the token. There is no going back, and you find you do not want to."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_4",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_switched"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "Years later a letter reaches you from your old sect, unsigned: they have not forgotten what you did. Neither have you. You fold it up and put it with the others, in the box under the bed, and go out to teach the morning drill.",
+   "choices": [
+    {
+     "text": "Teach the drill",
+     "effects": {
+      "strength": 1,
+      "log": "The disciples of your new sect line up. Some of them were born after you came here. They know you only as theirs."
+     }
+    },
+    {
+     "text": "Answer the letter",
+     "effects": {
+      "comprehension": 1,
+      "log": "You answer it. You say you are sorry, and you are not, and both are true."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_5",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_double"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "The river crossing, the faked death, the two purses: it went as you planned it. Now you are a stranger in a market town where nobody has heard of either sect. You can be anyone. It takes a long time to decide who.",
+   "choices": [
+    {
+     "text": "Choose an ordinary name",
+     "effects": {
+      "luck": 1,
+      "log": "You choose an ordinary name and keep it. It is the first name you have ever chosen for yourself."
+     }
+    },
+    {
+     "text": "Use your real name again",
+     "effects": {
+      "alignment": 2,
+      "log": "You use your real name. It feels like an old coat taken out of a chest."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_6",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_escaped"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "You got over the wall. You will spend years looking over your shoulder, sleeping by doors and never telling a stranger where you came from. You are good at it. That is the worst of it.",
+   "choices": [
+    {
+     "text": "Find somewhere quiet",
+     "effects": {
+      "comprehension": 1,
+      "log": "You find a village by a river where nobody asks. You stay longer than you meant to."
+     }
+    },
+    {
+     "text": "Go home to your old sect",
+     "effects": {
+      "fame": 2,
+      "log": "Your old sect takes you back. They do not quite look at you either."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_7",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_spared"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "They let you live. Cast out under your own name, you walk out of the gate you once dreamed of opening for your sect. Somebody pleaded for you, or someone pitied you; either way, you owe your life to the people you were sent to betray.",
+   "choices": [
+    {
+     "text": "Bow to the gate",
+     "effects": {
+      "alignment": 3,
+      "log": "You bow to the gate. Somebody on the wall bows back."
+     }
+    },
+    {
+     "text": "Walk without looking back",
+     "effects": {
+      "strength": 1,
+      "log": "You do not look back. You will see that gate in dreams for the rest of your life."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_8",
+   "cat": "life",
+   "trigger": "usp_end",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [
+     "usp_e_recalled"
+    ],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "The handler pulls you out one night without a word, and you leave the sect you lived in without a goodbye to anyone. In your old sect nobody mentions what you were sent to do. You never opened the door. You never shut it either.",
+   "choices": [
+    {
+     "text": "Write to your friend inside",
+     "effects": {
+      "alignment": 2,
+      "log": "You write a letter under your false name. You never send it."
+     }
+    },
+    {
+     "text": "Put it behind you",
+     "effects": {
+      "luck": 1,
+      "log": "You put it behind you, more or less."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_9",
+   "cat": "life",
+   "trigger": "usp_after",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "notFlags": [
+     "usp_e_recalled"
+    ],
+    "hasSect": true
+   },
+   "text": "Years later, at an inn on a far road, you hear a storyteller tell the tale of a spy who lived a whole life under a false name. The details are wrong. The ending is wrong. The crowd loves it.",
+   "choices": [
+    {
+     "text": "Correct the storyteller",
+     "effects": {
+      "comprehension": 1,
+      "log": "You start to, and stop. You are not sure which ending is the true one any more."
+     }
+    },
+    {
+     "text": "Buy the storyteller a drink",
+     "effects": {
+      "charm": 1,
+      "log": "The storyteller drinks to the spy. So do you."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_10",
+   "cat": "life",
+   "trigger": "usp_after",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "hasSect": true
+   },
+   "text": "A young disciple of your sect asks you, eyes shining, how one becomes a spy. You look at the child for a long time.",
+   "choices": [
+    {
+     "text": "Tell the truth",
+     "effects": {
+      "alignment": 2,
+      "log": "You tell the truth: one becomes a spy by lying to people who love you. The child goes away very quiet."
+     }
+    },
+    {
+     "text": "Tell a good story instead",
+     "effects": {
+      "charm": 1,
+      "log": "You tell a good story. The child will find out the rest on their own, as everyone does."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_11",
+   "cat": "life",
+   "trigger": "usp_memory",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "marks": [
+     "mark:usp_delivered"
+    ]
+   },
+   "text": "You meet a stranger at a ferry, and without thinking you give a name that is not yours. You do not know where it came from. It came very easily. It felt, for a moment, like coming home.",
+   "choices": [
+    {
+     "text": "Give your real name instead",
+     "effects": {
+      "alignment": 2,
+      "log": "You correct yourself. The stranger shrugs. Your heart is pounding."
+     }
+    },
+    {
+     "text": "Keep the false one for the crossing",
+     "effects": {
+      "luck": 1,
+      "log": "You keep it for the crossing. On the far bank you give it back to the river."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_12",
+   "cat": "life",
+   "trigger": "usp_memory",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "marks": [
+     "mark:usp_switched"
+    ]
+   },
+   "text": "In an old sect you have never visited, you know the way to the library without asking, and the loose board in the corridor, and the place on the wall where a creed was once painted over. An elder watches you with a strange look.",
+   "choices": [
+    {
+     "text": "Ask the elder about a spy, long ago",
+     "effects": {
+      "comprehension": 1,
+      "log": "The elder tells you a story about a disciple who chose to stay. You listen as if it were news."
+     }
+    },
+    {
+     "text": "Leave quickly",
+     "effects": {
+      "luck": 1,
+      "log": "You leave before you remember any more."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  },
+  {
+   "id": "dc_usp_end_13",
+   "cat": "life",
+   "trigger": "usp_memory",
+   "once": true,
+   "weight": 6,
+   "when": {
+    "flags": [],
+    "age": [
+     18,
+     1000000
+    ],
+    "realm": [
+     0,
+     1000
+    ],
+    "marks": [
+     "mark:usp_executed"
+    ]
+   },
+   "text": "Nobody in this life has ever threatened you, and yet you sleep with your back to the wall and your face to the door, and wake at every footstep in the corridor. Something in you remembers a cell and a new moon.",
+   "choices": [
+    {
+     "text": "Learn to sleep facing the window",
+     "effects": {
+      "comprehension": 1,
+      "log": "It takes a year. Some nights it still takes all night."
+     }
+    },
+    {
+     "text": "Keep watching the door",
+     "effects": {
+      "luck": 1,
+      "log": "You keep watching. The soul has its reasons."
+     }
+    }
+   ],
+   "arc": "Under a False Name"
+  }
+ ],
+ "mwPass": 1
+}

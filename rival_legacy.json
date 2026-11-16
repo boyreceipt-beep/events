@@ -1,0 +1,156 @@
+{
+ "events": [
+  {
+   "id": "rl_heir_challenge",
+   "cat": "world",
+   "once": true,
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "npcFlags": [
+     "rival_blood"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 6,
+   "text": "{npc} stands in your path on the market road. 'Our families have hated each other for longer than either of us has been alive. Shall we end it, or go on?'",
+   "choices": [
+    {
+     "text": "Fight to end it",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 12,
+      "mem": {
+       "deed": "beat",
+       "w": -10,
+       "note": "beat me on the market road"
+      },
+      "log": "You win. {npc} spits blood and laughs. 'Not ended. Paused.'"
+     },
+     "fail": {
+      "health": -20,
+      "mem": {
+       "deed": "bested",
+       "w": 8,
+       "note": "lost to me on the market road"
+      },
+      "log": "{npc} wins and walks away without a word. The feud has a new chapter."
+     }
+    },
+    {
+     "text": "Offer to end it with tea",
+     "effects": {
+      "mem": {
+       "deed": "peace",
+       "w": 25,
+       "note": "offered to end our families' feud"
+      },
+      "alignment": 8,
+      "log": "{npc} stares at you for a long time, then sits down. Three generations of hatred, and nobody remembers how it started."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rl_old_grudge",
+   "cat": "life",
+   "once": true,
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "npcFlags": [
+     "rival_heir"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} sends you a letter: a list of every wrong your family has done to {his} family, going back three generations. Some of it is even true.",
+   "choices": [
+    {
+     "text": "Write back an honest apology for the true parts",
+     "effects": {
+      "mem": {
+       "deed": "peace",
+       "w": 12,
+       "note": "apologised for the true parts"
+      },
+      "alignment": 5,
+      "log": "{npc} does not answer for a year. Then a single line arrives: 'Noted.' It is a start."
+     }
+    },
+    {
+     "text": "Write back your own list",
+     "effects": {
+      "mem": {
+       "deed": "rivalry",
+       "w": -5,
+       "note": "wrote back a longer list"
+      },
+      "charm": 2,
+      "log": "The letters go back and forth for years. It is, in its way, the longest friendship of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rl_feud_ends",
+   "cat": "life",
+   "once": true,
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "npcFlags": [
+     "rival_blood"
+    ],
+    "npcOpinion": [
+     30,
+     100
+    ],
+    "age": [
+     30,
+     999
+    ]
+   },
+   "weight": 6,
+   "text": "{npc} comes to your home with a jar of wine and no weapons. 'My grandfather would kill me. I do not care any more.'",
+   "choices": [
+    {
+     "text": "Sit with {him}",
+     "effects": {
+      "mem": {
+       "deed": "peace",
+       "w": 30,
+       "note": "ended the feud over wine"
+      },
+      "alignment": 10,
+      "fame": 10,
+      "log": "You sit up over tea until dawn and tell each other your families' versions of every story. They never match. The feud ends that night."
+     }
+    },
+    {
+     "text": "Send {him} away gently",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "said not yet"
+      },
+      "log": "'Not yet,' you say. {npc} nods. 'But soon.'"
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

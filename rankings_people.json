@@ -1,0 +1,369 @@
+{
+ "events": [
+  {
+   "id": "dc_rk_inn_1",
+   "cat": "encounter",
+   "weight": 4,
+   "once": true,
+   "text": "A crowded roadside inn, and only one seat free: across from a plain-looking traveller eating noodles. The innkeeper, white as rice, whispers the name as she pours your tea. It is {npc}, {npc_title}. {He} looks up, and waits to see what you will do with that.",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ranked": "masters",
+     "opinion": 6
+    }
+   },
+   "when": {
+    "age": [
+     18,
+     80
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "chance": 0.4
+   },
+   "arc": "Names on the List",
+   "choices": [
+    {
+     "text": "Pour {him} wine and ask about the martial path",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 5,
+      "qi": 10,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "poured my wine and listened like a student"
+      },
+      "log": "{He} talks until the lamps are lit. Half of it is about noodles. The other half you will think about for ten years."
+     },
+     "fail": {
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "respected",
+       "w": 4,
+       "note": "asked too much, too fast"
+      },
+      "log": "{He} answers in single words and leaves early. Still: you ate noodles with {npc}."
+     }
+    },
+    {
+     "text": "\"Teach me one thing, master.\" Bow to the floor",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 18,
+      "comprehension": 4,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "taught",
+       "w": 16,
+       "note": "bowed in a crowded inn and meant it"
+      },
+      "log": "{He} shows you how to hold a chopstick so that it is a sword. You never hold a sword the same way again."
+     },
+     "fail": {
+      "npcFlag": "rk_met",
+      "charm": -2,
+      "log": "The whole inn watches you bow. {He} finishes {his} noodles, pays for yours, and leaves. It is either a kindness or a lesson."
+     }
+    },
+    {
+     "text": "Eat your noodles. Masters like to be left alone",
+     "effects": {
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "respected",
+       "w": 10,
+       "note": "let me eat in peace"
+      },
+      "log": "You eat in companionable silence. As {he} goes, {he} taps your table twice. The innkeeper says that means {he} will remember you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_rk_inn_2",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "A letter in a hand like a sword cut: {npc}, {npc_title}, is holding a banquet for the masters of three provinces, and there is a seat with your name on it. At the bottom: \"Bring your appetite. The noodles are better here.\"",
+   "npc": {
+    "role": "ranked_person"
+   },
+   "when": {
+    "after": [
+     "dc_rk_inn_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "rk_met"
+    ]
+   },
+   "arc": "Names on the List",
+   "choices": [
+    {
+     "text": "Go, and hold your own among the great",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 16,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "held their own at my table"
+      },
+      "log": "You talk with masters whose names you grew up on. By the end, three of them know yours."
+     },
+     "fail": {
+      "fame": 6,
+      "log": "You are the youngest and least important person there, and everybody knows it. You learn a great deal by keeping quiet."
+     }
+    },
+    {
+     "text": "Go, and challenge the loudest master there to a friendly bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The loudest master"
+     },
+     "ok": {
+      "fame": 24,
+      "mem": {
+       "deed": "respected",
+       "w": 16,
+       "note": "livened up my banquet"
+      },
+      "log": "You win. {npc} laughs so hard {he} spills {his} wine. That bout is talked about for years."
+     },
+     "fail": {
+      "health": -12,
+      "fame": 8,
+      "log": "You lose, well. {npc} toasts you anyway: \"To someone who will win next time.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_rk_spar_1",
+   "cat": "insight",
+   "weight": 4,
+   "once": true,
+   "text": "A messenger in white at your gate: {npc}, {npc_title}, has heard of you, and invites you to a sparring match on the peak of a mountain at dawn. No crowd. No stakes. Only two people who want to know.",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ranked": "greats",
+     "opinion": 4
+    }
+   },
+   "when": {
+    "age": [
+     20,
+     90
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "chance": 0.4
+   },
+   "arc": "Names on the List",
+   "choices": [
+    {
+     "text": "Climb the mountain and fight with everything",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 30,
+      "qi": 20,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "beat",
+       "w": 12,
+       "note": "beat me on the peak at dawn"
+      },
+      "log": "At sunrise you land the last blow, by a hair. {npc} sits down in the snow and laughs. \"Well. Now I have to train again.\""
+     },
+     "fail": {
+      "health": -18,
+      "qi": 15,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "respected",
+       "w": 18,
+       "note": "fought me honestly on the peak"
+      },
+      "log": "You lose, the way water loses to a mountain. {npc} helps you up and shows you the three moves that did it."
+     }
+    },
+    {
+     "text": "Go, but ask to watch {him} practise instead",
+     "effects": {
+      "comprehension": 6,
+      "qi": 12,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "respected",
+       "w": 12,
+       "note": "wanted to learn, not win"
+      },
+      "log": "An hour of {npc} moving through forms in the dawn light. It is the most beautiful thing you have ever seen, and you understand about a third of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_rk_disciple_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, {npc_title}, comes to your sect in person, which has never happened before, and asks to see your disciples train. Afterwards {he} asks, very politely, if {he} may take your most gifted one away to study under {him} for three years.",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ranked": "masters",
+     "opinion": 8
+    }
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     35,
+     120
+    ]
+   },
+   "arc": "Names on the List",
+   "choices": [
+    {
+     "text": "Agree. A student should have the best teacher",
+     "effects": {
+      "fame": 14,
+      "flag": "rk_took_disciple",
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "gave me their best disciple to teach"
+      },
+      "log": "Your disciple goes down the mountain with {npc}, terrified and shining. Three years later {he} sends your disciple back a realm higher, with a letter that says only: \"Good teacher.\""
+     }
+    },
+    {
+     "text": "Ask {him} to teach here, for a season, all of them",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "mem": {
+       "deed": "respected",
+       "w": 18,
+       "note": "out-bargained me for a season of teaching"
+      },
+      "log": "{npc} stays a whole spring. Every disciple in your hall trains under one of the greatest masters alive. You train too, at the back, and nobody mentions it."
+     },
+     "fail": {
+      "mem": {
+       "deed": "rejected",
+       "w": -4,
+       "note": "asked too much"
+      },
+      "log": "\"One student is a gift,\" {npc} says. \"A whole hall is a job.\" {He} leaves, a little cooler."
+     }
+    },
+    {
+     "text": "Refuse. Your disciples are yours to teach",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 6,
+       "note": "kept their students"
+      },
+      "alignment": 2,
+      "log": "{npc} bows, approving. \"Good. A master who gives students away too easily does not deserve them.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_rk_feud_1",
+   "cat": "rival",
+   "weight": 6,
+   "once": true,
+   "text": "{npc}, {npc_title}, has not forgotten the dawn you beat {him} on the mountain. The jianghu says {he} has been training for nothing else since. Now {he} is at your gate, and this time there is a crowd.",
+   "npc": {
+    "role": "ranked_person"
+   },
+   "when": {
+    "after": [
+     "dc_rk_spar_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "rk_met"
+    ],
+    "npcMem": [
+     "beat"
+    ]
+   },
+   "arc": "Names on the List",
+   "choices": [
+    {
+     "text": "Fight {him} again, in front of everyone",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 30,
+      "mem": {
+       "deed": "beat",
+       "w": 10,
+       "note": "beat me twice"
+      },
+      "log": "Twice. {npc} kneels in the dust and then, unexpectedly, laughs. \"Again in five years,\" {he} says. You suspect you have a friend for life."
+     },
+     "fail": {
+      "health": -26,
+      "fame": -10,
+      "mem": {
+       "deed": "respected",
+       "w": 10,
+       "note": "gave me back my pride"
+      },
+      "deathCause": "a ranked master who came back for a rematch",
+      "log": "{npc} wins. {He} does not gloat. {He} bows the exact bow you gave {him} that dawn, and leaves the score even."
+     },
+     "risky": true
+    },
+    {
+     "text": "Refuse the crowd. Offer a rematch on the same peak, at dawn, alone",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 20,
+       "note": "kept it between us"
+      },
+      "alignment": 4,
+      "log": "{npc} stares, then grins. \"Yes. That is right.\" The rematch on the peak is the best fight of your life, and nobody ever learns who won."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,598 @@
+{
+ "events": [
+  {
+   "id": "dc_sect_war_gate",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_we_attack"
+    ]
+   },
+   "text": "Dawn before the gate of {sw_foe}. Your fighters stand in their ranks behind you, breath smoking in the cold, waiting for your word. On the wall above, the enemy's banners hang still. Somewhere behind them is {sw_leader}.",
+   "choices": [
+    {
+     "text": "Lead the assault on their gate",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Slip round the mountain and cut their supply line",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Ride out alone and challenge {sw_leader} to single combat",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "Before both sides your last exchange lands, and your opponent steps back and lowers the sword."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The duel goes against you. You are carried back to your own lines, alive, and very quiet.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Send an envoy under a white flag to talk peace",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_river",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_we_attack"
+    ]
+   },
+   "text": "The war has come to a river, and {sw_foe} holds the far bank and the only bridge, and the spring water runs fast and grey between the two camps. Your scouts say their boats bring rice down from the hills every third night.",
+   "choices": [
+    {
+     "text": "Storm the bridge at first light",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Wait for the rice boats and take them in the dark",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Call {sw_leader} out onto the bridge, one against one",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "On the middle of the bridge, with both banks watching, your opponent is the one who yields."
+     },
+     "fail": {
+      "health": -20,
+      "log": "You lose the duel on the bridge and the river nearly takes you. Your own disciples pull you out.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Offer them the bridge in exchange for peace",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_pass",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_we_attack"
+    ]
+   },
+   "text": "A narrow pass, snow on both shoulders of the mountain, and the camp of {sw_foe} at its far end. Whoever holds the pass holds the war. The elders argue over the map until the lamp burns low, and then everyone looks at you.",
+   "choices": [
+    {
+     "text": "Push through the pass and hit their camp head on",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Take the goat path above the pass and fall on their wagons",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Climb to their camp and challenge {sw_leader} in front of everyone",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "In the snow of the pass you win the duel, and your opponent bows to you before both camps."
+     },
+     "fail": {
+      "health": -20,
+      "log": "Their leader is stronger than the stories said. You come down from the pass hurt and beaten.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Write to {sw_leader} and propose terms",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_night",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_we_attack"
+    ]
+   },
+   "text": "Another year of war. Around the campfires your fighters sharpen blades and do not sing. A messenger brings word that {sw_foe} has rebuilt its outer wall, and that {sw_leader} has sworn to see your banner burned.",
+   "choices": [
+    {
+     "text": "Break the new wall before the mortar dries",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Burn their supply depot by night, and only the depot",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Send a challenge to {sw_leader}: let the two of you settle this",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "The duel is short. When it is over your opponent kneels, and the war is as good as finished."
+     },
+     "fail": {
+      "health": -20,
+      "log": "You lose the duel. The night is long, and your fighters do not look you in the eye.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Ask the Martial Alliance to broker a peace",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sect_war_siege",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_they_attack"
+    ]
+   },
+   "text": "The banners of {sw_foe} surround your mountain. From your own gate you can see their cooking fires on every slope, and the young disciples on the wall are trying very hard not to look afraid. Their leader has sent word: open the gate, or it will be opened.",
+   "choices": [
+    {
+     "text": "Throw open the gate and charge their siege lines",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Send your fastest fighters down the hidden stair to raid their supplies",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Walk out alone and challenge {sw_leader} beneath your own walls",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "Beneath your own walls you win, and their leader orders the siege lines struck before sunset."
+     },
+     "fail": {
+      "health": -20,
+      "log": "You lose the duel in front of your own disciples, and they have to carry you back through the gate.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Send an envoy down the mountain to ask their price",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_raid",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_they_attack"
+    ]
+   },
+   "text": "Smoke over the valley: fighters of {sw_foe} have burned the storehouse of a village under your protection. The villagers stand at your gate with what they could carry, and every disciple is looking at you.",
+   "choices": [
+    {
+     "text": "March out and hit their main camp",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Follow the raiders into the hills and take back what they took",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Track down {sw_leader} and challenge them face to face",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "You find their leader on the valley road and win. The raids stop the same week."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The duel on the valley road goes badly. You limp home, and the raids go on.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Pay the villagers and offer {sw_foe} a truce",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_envoy",
+   "cat": "sect",
+   "trigger": "sect_war_battle",
+   "once": false,
+   "maxPerLife": 60,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_at_war",
+     "sw_they_attack"
+    ]
+   },
+   "text": "An envoy of {sw_foe} stands in your hall, bowing exactly as little as courtesy allows. The terms are simple: half your land and your treasury, or the war goes on until your gate is ash. The elders wait for your answer.",
+   "choices": [
+    {
+     "text": "Send the envoy away and strike their nearest hall at once",
+     "effects": {
+      "flag": "sw_c_assault",
+      "log": "You give the word, and your side moves on the enemy."
+     }
+    },
+    {
+     "text": "Let the envoy go, then follow the envoy's road to their supply camp",
+     "effects": {
+      "flag": "sw_c_ambush",
+      "log": "Your quickest fighters slip away before dawn, with orders to strike and vanish."
+     }
+    },
+    {
+     "text": "Send the envoy back with a challenge for {sw_leader}",
+     "effects": {
+      "flag": "sw_c_duel"
+     },
+     "roll": {
+      "stat": "power",
+      "foe": 4,
+      "foeName": "{sw_leader}",
+      "boss": true,
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "log": "Their leader answered the challenge, and lost. Their envoy does not come back."
+     },
+     "fail": {
+      "health": -20,
+      "log": "Their leader answered the challenge, and won. Their next envoy bows even less.",
+      "deathCause": "a duel with the leader of an enemy sect, in a sect war"
+     }
+    },
+    {
+     "text": "Bargain with the envoy for gentler terms",
+     "effects": {
+      "flag": "sw_c_peace",
+      "log": "An envoy sets out under a white flag, carrying your seal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_victory",
+   "cat": "sect",
+   "trigger": "sect_war_end",
+   "once": false,
+   "maxPerLife": 30,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_end_victory"
+    ],
+    "age": [
+     16,
+     99999
+    ]
+   },
+   "text": "The war is won. Your fighters come home under banners that are torn but still yours, and the whole sect lines the road to the gate. Tonight there will be wine; tomorrow there will be the names of those who did not come back to carve.",
+   "choices": [
+    {
+     "text": "Carve the names, then pour the wine",
+     "effects": {
+      "unflag": "sw_end_victory",
+      "log": "You carve every name yourself. Then you sit with the living until the lanterns burn out."
+     }
+    },
+    {
+     "text": "Send the wine to the families first",
+     "effects": {
+      "unflag": "sw_end_victory",
+      "alignment": 3,
+      "fame": 3,
+      "log": "The first jars go down the mountain to the families of the fallen. The sect drinks later, and quieter, and remembers it longer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_razed",
+   "cat": "sect",
+   "trigger": "sect_war_end",
+   "once": false,
+   "maxPerLife": 30,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_end_razed"
+    ]
+   },
+   "text": "Where the gate of your enemy stood there is only an empty arch and a fallen plaque. Their disciples have scattered into the mountains, and their halls stand open to the wind. The murim will speak of this war for a long time.",
+   "choices": [
+    {
+     "text": "Leave the arch standing, as a lesson",
+     "effects": {
+      "unflag": "sw_end_razed",
+      "log": "You leave the empty arch standing. Let travellers ask what happened here, and let them be told."
+     }
+    },
+    {
+     "text": "Have the plaque brought to your own hall",
+     "effects": {
+      "unflag": "sw_end_razed",
+      "fame": 5,
+      "alignment": -3,
+      "log": "Their plaque hangs in your hall now, upside down. Visitors look at it a long time and speak more softly after."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sect_war_defeat",
+   "cat": "sect",
+   "trigger": "sect_war_end",
+   "once": false,
+   "maxPerLife": 30,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_end_defeat"
+    ]
+   },
+   "text": "The war is lost. Your side counts its empty sleeping mats and its emptier treasury, and the young disciples ask the old ones whether the gate will hold next time. Everyone waits to see what you will do now.",
+   "choices": [
+    {
+     "text": "Gather everyone and begin again",
+     "effects": {
+      "unflag": "sw_end_defeat",
+      "log": "You gather everyone who is left in the courtyard and tell them the truth: it was lost, and it will be rebuilt."
+     }
+    },
+    {
+     "text": "Seek out the enemy and ask for terms of respect",
+     "effects": {
+      "unflag": "sw_end_defeat",
+      "charm": 2,
+      "fame": -3,
+      "log": "You go to them yourself, bow, and ask only that the dead be returned with honour. They agree, a little ashamed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_fallen",
+   "cat": "sect",
+   "trigger": "sect_war_end",
+   "once": false,
+   "maxPerLife": 30,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_end_fallen"
+    ]
+   },
+   "text": "Smoke rises where the sect stood. The gate you raised is gone, the plaque with your name is in enemy hands, and the road down the mountain is full of disciples with nowhere to go. You are alive. That is all you have left, and it will have to be enough.",
+   "choices": [
+    {
+     "text": "Walk down the mountain and do not look back",
+     "effects": {
+      "unflag": "sw_end_fallen",
+      "log": "You walk down the mountain with a bundle and a sword. Somewhere behind you, the last of the smoke thins and blows away."
+     }
+    },
+    {
+     "text": "Swear in front of the ruins that it will stand again",
+     "effects": {
+      "unflag": "sw_end_fallen",
+      "flag": "sw_oath_rebuild",
+      "comprehension": 2,
+      "log": "You kneel in the ash and swear it aloud. The disciples on the road hear you, and a few of them turn back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sect_war_peace",
+   "cat": "sect",
+   "trigger": "sect_war_end",
+   "once": false,
+   "maxPerLife": 30,
+   "cooldown": 0,
+   "when": {
+    "flags": [
+     "sw_end_peace"
+    ]
+   },
+   "text": "Envoys meet at a teahouse halfway between the two gates. Seals are pressed into wax, cups are raised without enthusiasm, and the war is over. The road between the two sides fills with merchants again, cautiously.",
+   "choices": [
+    {
+     "text": "Drink the cup and go home",
+     "effects": {
+      "unflag": "sw_end_peace",
+      "log": "You drink the cup. It tastes of nothing much, which is what peace usually tastes of."
+     }
+    },
+    {
+     "text": "Refuse the cup and keep the treaty only on paper",
+     "effects": {
+      "unflag": "sw_end_peace",
+      "alignment": -2,
+      "fame": 2,
+      "log": "You sign, but you do not drink. Everyone at the table understands exactly what that means."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

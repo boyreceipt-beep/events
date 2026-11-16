@@ -1,0 +1,1728 @@
+{
+ "events": [
+  {
+   "id": "pup_child_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A village child has started coming to your gate every evening to watch the Wooden Servant sweep the yard. Today the child is brave enough to ask whether the servant has a name, and whether it ever gets tired.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_wood"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Give it a name together",
+     "effects": {
+      "log": "You and the child argue for an hour and settle on Broom. The servant seems to sweep a little more carefully after that, which is not possible.",
+      "charm": 2,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Show the child how the joints work",
+     "effects": {
+      "log": "Small fingers follow the threads from wrist to elbow to shoulder. \"So it is just wood,\" the child says, disappointed, and then, a moment later, \"but you make it alive.\" You do not correct them.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Send the child home before dark",
+     "effects": {
+      "log": "The child goes, looking back twice. The servant goes on sweeping in the dusk, and the yard is very quiet.",
+      "health": 2
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 12
+  },
+  {
+   "id": "pup_thieves_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "You wake to the creak of your own gate. By the light of a shuttered lantern three figures are trying to lift one of your puppets onto a handcart, whispering about what a sect in the next province would pay for it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Pull its threads from your bed",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The puppet stands up in their arms. The handcart goes over, the lantern goes out, and three grown thieves run into the night shouting about ghosts. Nobody in the street will ever try your gate again.",
+      "fame": 3,
+      "comprehension": 1
+     },
+     "fail": {
+      "log": "The threads slip in your sleep-slow hands. By the time you reach the gate the handcart is a rattle far down the road, and one of your puppets is on it.",
+      "flag": "pupx_lost"
+     }
+    },
+    {
+     "text": "Go down with a lamp and a stick",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "log": "You chase them halfway down the street in your night robe. They drop the puppet and the cart and keep running. The neighbours talk about it for a month.",
+      "fame": 2,
+      "health": -3
+     },
+     "fail": {
+      "log": "One of them has a cudgel and better aim than you. When you can see straight again, the cart and the puppet are gone.",
+      "flag": "pupx_lost",
+      "health": -10
+     }
+    },
+    {
+     "text": "Let them take it",
+     "effects": {
+      "log": "You lie still and listen to the cart rattle away. A puppet is wood and iron. A life is not. In the morning you start cutting ironwood for another.",
+      "flag": "pupx_lost",
+      "alignment": 1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 8
+  },
+  {
+   "id": "pup_rain_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "The spring rains do not stop for forty days. Every joint in your workshop swells, and the puppets move like old people on a cold morning, creaking at every step.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Oil every joint by hand, every night",
+     "effects": {
+      "log": "A season of oil, rags and patience. By the dry months they move more smoothly than they ever did, and your fingers know every joint by touch.",
+      "health": -4,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Buy tung oil from the river traders for 40 taels",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "log": "The traders know exactly why you need it and charge accordingly. The puppets stop creaking within the week.",
+      "taels": -40,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Leave them to stand it out",
+     "effects": {
+      "log": "They stand in the damp and creak. When the sun comes back two of the joints have warped for good, and you spend the summer recutting them.",
+      "health": -2,
+      "artYears": 0.3
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 10
+  },
+  {
+   "id": "pup_rival_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A puppet master in a grey travelling coat stops at your gate with a puppet of lacquered pear wood walking at {his} heel. {npc} looks your puppets over the way a horse dealer looks at horses. \"Mine against yours,\" {he} says. \"In the square, tomorrow, before the whole town. Unless you are shy.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Meet {him} in the square",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "For a quarter of an hour the two puppets circle each other in the square while the town holds its breath. Then yours finds the gap under the lacquered arm, and the pear-wood puppet sits down in the dust. {npc} bows to you, quite seriously, and buys you a cup of tea.",
+      "fame": 6,
+      "flag": "pupx_rep",
+      "mem": {
+       "deed": "pup_rival_won",
+       "w": 20,
+       "note": "beat their puppet in the square"
+      }
+     },
+     "fail": {
+      "log": "The lacquered puppet moves like water. Yours ends the bout in three pieces on the stones, and {npc} tips {his} hat to you and walks on with the crowd behind {him}.",
+      "flag": "pupx_lost",
+      "fame": -2,
+      "mem": {
+       "deed": "pup_rival_lost",
+       "w": 10,
+       "note": "broke your puppet in the square"
+      }
+     }
+    },
+    {
+     "text": "Ask {him} to show you how the pear-wood joints are cut",
+     "effects": {
+      "log": "{npc} laughs, and then, to your surprise, shows you. You sit up half the night with two puppets taken apart between you.",
+      "comprehension": 3,
+      "role": "friend",
+      "mem": {
+       "deed": "pup_rival_shared",
+       "w": 25,
+       "note": "shared their craft with you"
+      }
+     }
+    },
+    {
+     "text": "Close the gate",
+     "effects": {
+      "log": "You close the gate. {npc} shrugs and walks on, and the story the town tells afterwards is not a kind one.",
+      "fame": -1,
+      "health": 1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_rival",
+     "ageAbs": 45,
+     "opinion": 10
+    }
+   }
+  },
+  {
+   "id": "pup_sect_offer_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An elder of a great sect comes to your workshop with two disciples carrying a chest. Inside the chest is silver, a great deal of it. \"For one of your puppets,\" the elder says. \"We have a gate that needs guarding and no disciples to spare for it.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Sell them one for 1,200 taels",
+     "effects": {
+      "log": "The disciples carry the puppet away between them as carefully as a sedan chair. You count the silver twice. (1,200 taels)",
+      "taels": 1200,
+      "flag": [
+       "pupx_lost",
+       "pupx_rep"
+      ]
+     }
+    },
+    {
+     "text": "Offer to build them one, at a price",
+     "effects": {
+      "log": "You quote a price that makes the elder wince, and agree on one a little lower. The work is good, and the sect tells other sects.",
+      "taels": 500,
+      "flag": "pupx_rep",
+      "artYears": 0.3
+     }
+    },
+    {
+     "text": "Refuse politely",
+     "effects": {
+      "log": "\"Mine are not for sale,\" you say. The elder looks at you a long moment, then bows and leaves. The chest goes with them.",
+      "alignment": 1,
+      "fame": 1
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_widow_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A widow in coarse mourning stops in the road and stares at the Corpse Puppet walking behind you. She does not scream. She only says a name, quietly, and the puppet, which hears nothing, does not turn its head.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_corpse"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Corpse Puppet",
+   "choices": [
+    {
+     "text": "Give him back to her for burial",
+     "effects": {
+      "log": "You draw the array off the cold palm and the body lies down at her feet like a very tired man. She thanks you, which is worse than if she had cursed you. You help her dig.",
+      "flag": [
+       "pupx_corpse_rest",
+       "hd_calm"
+      ],
+      "alignment": 5
+     }
+    },
+    {
+     "text": "Pay her 300 taels for her silence",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "log": "She takes the silver without looking at it, and without looking at you. When you glance back from the bend in the road she is still standing there.",
+      "taels": -300,
+      "alignment": -3,
+      "flag": "hd_feed"
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "log": "You walk on, and the puppet walks behind you, and behind it the widow says the name again, and then again, until the road takes her voice away.",
+      "alignment": -6,
+      "flag": "hd_feed",
+      "tally": {
+       "infamy": 3
+      }
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_priest_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A Taoist priest with a peachwood sword and a string of copper coins stands at your gate. \"There is a body in your house that should be in the ground,\" the priest says, quite calmly. \"I can smell the grave on your threads.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_corpse"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Corpse Puppet",
+   "choices": [
+    {
+     "text": "Drive the priest off",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Taoist priest"
+     },
+     "ok": {
+      "log": "The peachwood sword is sharper than wood should be, but you are sharper. The priest limps away down the road, and the story that follows the priest is about you.",
+      "fame": 3,
+      "tally": {
+       "infamy": 3
+      },
+      "alignment": -2
+     },
+     "fail": {
+      "log": "The copper coins sing on their string, and every thread in your hands goes slack at once. The priest walks past you into the workshop and comes out with the body over one shoulder.",
+      "flag": "pupx_corpse_rest",
+      "health": -12
+     }
+    },
+    {
+     "text": "Let the priest lay it to rest",
+     "effects": {
+      "log": "The priest bows to you, which you did not expect, and buries the body under the willows with the proper rites. Your house is warmer afterwards.",
+      "flag": [
+       "pupx_corpse_rest",
+       "hd_calm"
+      ],
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Show the priest it was given, not taken",
+     "req": {
+      "anyFlags": [
+       "pup_gift_body"
+      ]
+     },
+     "effects": {
+      "log": "You tell the story of the family that asked for it. The priest listens, burns a stick of incense before the puppet, and leaves without a word.",
+      "luck": 2
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 10
+  },
+  {
+   "id": "pup_collapse_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A runner comes up from your mine with his face grey with dust. A gallery has fallen in on the lower level, and there are diggers behind it, and your puppets are the only ones down there who do not need to breathe.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_mining"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Mine",
+   "choices": [
+    {
+     "text": "Send the puppets in to dig",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "log": "The puppets dig all night without stopping. Toward dawn the first digger crawls out between two iron arms, then the rest. Behind the fall the puppets have opened a seam nobody knew was there.",
+      "flag": "pupx_mid",
+      "fame": 3,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "The puppets bring every digger out, and then the roof comes down a second time on the one that went back for a lamp. You do not get it back.",
+      "flag": "pupx_lost",
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Go down yourself with the puppets",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You hold the timbers while the puppets dig. Everyone comes out, and the diggers will not let you buy a drink in that town for a year.",
+      "fame": 5,
+      "health": -8,
+      "alignment": 4
+     },
+     "fail": {
+      "log": "A beam catches you across the back. The diggers are saved, and you spend a month on your stomach while the physician clicks his tongue.",
+      "health": -25,
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Seal the gallery",
+     "effects": {
+      "log": "You order the gallery sealed. It is the safe choice. The diggers' families do not see it that way, and neither, at night, do you.",
+      "alignment": -5,
+      "flag": "hd_feed"
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_ghost_gate_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "For three nights running the puppet you set at your gate has turned its head toward the old well at the end of the street, and stood that way until dawn. On the fourth night you sit up with it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_guarding"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Wait with it till dawn",
+     "effects": {
+      "log": "Near the third watch a pale shape rises from the well and drifts toward your gate, and stops, and looks at the puppet looking back at it. After a long time it sinks back down. The puppet turns its head away.",
+      "comprehension": 2,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Pay a priest to bless the well",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "log": "The priest burns paper money and says the rites, and takes 60 taels for it. The puppet stops turning its head.",
+      "taels": -60,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Turn the puppet to face the street",
+     "effects": {
+      "log": "You turn it to face the other way. It turns back during the night. You decide not to mind.",
+      "health": 1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 12
+  },
+  {
+   "id": "pup_threads_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "For a month you have woken every morning with a headache behind your eyes, and lately, half asleep, you have felt your puppets moving in the workshop as if they were your own fingers. The threads do not stop at your hands.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Sit in stillness and untangle them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Three days of stillness, and you find each thread where it enters you and loosen it a little. The headaches go. You hold them more lightly now, and better.",
+      "comprehension": 3,
+      "artYears": 0.5
+     },
+     "fail": {
+      "log": "The more you look at the threads the tighter they pull. You give up after three days with nothing to show for it but a worse headache.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Cut one thread for good",
+     "effects": {
+      "log": "You choose the puppet you need least and cut its thread. It falls in the workshop with a sound like a dropped armful of firewood, and the headache goes with it.",
+      "flag": "pupx_lost",
+      "health": 5
+     }
+    },
+    {
+     "text": "Live with the headaches",
+     "effects": {
+      "log": "You drink willow-bark tea and work through it. Your training goes slowly that year, and your temper goes short.",
+      "health": -4,
+      "charm": -1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 15
+  },
+  {
+   "id": "pup_theatre_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A travelling shadow-and-puppet troupe camps outside town, and their leader, a quick old woman named {npc}, hears about your puppets. {He} wants one for the closing act of the spring fair. \"Nobody will know it walks by itself,\" {he} says. \"They will think I am a genius.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Lend {him} a puppet for the fair",
+     "effects": {
+      "log": "Your puppet steals the show. The crowd throws coins for an hour, and {npc} gives you half and a standing invitation to travel with the troupe.",
+      "taels": 120,
+      "fame": 3,
+      "charm": 2,
+      "mem": {
+       "deed": "pup_troupe",
+       "w": 25,
+       "note": "lent them a puppet for the fair"
+      }
+     }
+    },
+    {
+     "text": "Work the threads yourself, from behind the screen",
+     "effects": {
+      "log": "You stand behind the screen in a borrowed robe and make your puppet dance a sword dance. The applause goes on so long you start laughing.",
+      "charm": 3,
+      "fame": 4,
+      "flag": "pupx_rep",
+      "role": "friend"
+     }
+    },
+    {
+     "text": "Refuse: a puppet is not a toy",
+     "effects": {
+      "log": "{npc} shrugs. \"Everything is a toy to someone,\" {he} says, and goes back to {his} painted screens.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_troupe",
+     "ageAbs": 62,
+     "male": false,
+     "opinion": 20
+    }
+   }
+  },
+  {
+   "id": "pup_bone_hunt_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The Bone Puppet has started leaving the workshop at night. In the morning there is always something at your door: a hare, a pheasant, once a whole deer. The village has noticed. The village does not like it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_bone"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Forbid it the night",
+     "effects": {
+      "log": "You tie a new thread at its ankle and it stays in. The village stops crossing the road when they see you.",
+      "alignment": 1,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Give the game to the village",
+     "effects": {
+      "log": "You send the deer to the village headman with your compliments. He eats it, which is a kind of peace treaty.",
+      "fame": 2,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Let it hunt",
+     "effects": {
+      "log": "It hunts. Your table has never been better. The village hangs peachwood over its doors and tells its children your name to make them come home before dark.",
+      "tally": {
+       "infamy": 2
+      },
+      "strength": 1
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_worn_path_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Years of sweeping have worn a pale path in your yard, from the gate to the well and back, exactly the width of a broom. You notice it one morning as if for the first time, and the Wooden Servant stops and waits for you to say something.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_wood"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Thank it",
+     "effects": {
+      "log": "You thank it, out loud, feeling foolish. It bows its stiff little bow and goes on sweeping. You feel less foolish than you expected.",
+      "health": 3,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Carve it a new broom handle",
+     "effects": {
+      "log": "An evening with a knife and a length of ironwood. The new handle has a dragon on it, badly done. The servant does not seem to mind.",
+      "comprehension": 1,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Set it a new task",
+     "effects": {
+      "log": "You set it to carry water instead. The path in the yard fills in with moss over the next few years, and you are sorry, a little, when it is gone.",
+      "strength": 1
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_awake_1_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "You come into the workshop at dawn and the Heaven-Defying Puppet is standing at the window, which is not where you left it. It turns its meteor-iron face to you and speaks for the first time, in a voice like a temple bell heard from far off. \"What am I?\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_heaven",
+     "pup_awake_1"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet That Woke",
+   "choices": [
+    {
+     "text": "\"You are mine. I made you.\"",
+     "effects": {
+      "log": "It considers that. \"Yes,\" it says at last. It does not speak again for a long time, but it watches you work now.",
+      "comprehension": 1,
+      "flag": "pup_hv_owned"
+     }
+    },
+    {
+     "text": "\"I do not know. Let us find out.\"",
+     "effects": {
+      "log": "You sit with it at the window until the sun is high, and try to answer, and fail, and try again. It listens to every word.",
+      "comprehension": 3,
+      "flag": "pup_hv_kind"
+     }
+    },
+    {
+     "text": "\"Be silent.\"",
+     "effects": {
+      "log": "It is silent. Some days you feel it watching your back while you work, and you do not turn around.",
+      "flag": [
+       "pup_hv_owned",
+       "hd_feed"
+      ]
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_awake_2_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "You order the Heaven-Defying Puppet to break a rival's gate, and for the first time it does not move. \"There are children behind that gate,\" it says. \"I can hear them.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_heaven",
+     "pup_awake_2"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet That Woke",
+   "choices": [
+    {
+     "text": "Respect its refusal",
+     "effects": {
+      "log": "You stand there a long moment. Then you nod, and go home, and the gate stays standing. Something has changed between you, and you cannot say what.",
+      "alignment": 5,
+      "flag": "pup_hv_kind"
+     }
+    },
+    {
+     "text": "Pull its threads until it obeys",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "It fights you for a long breath, and then it moves. The gate comes down. On the way home it does not look at you, and you do not look at it.",
+      "flag": [
+       "pup_hv_owned",
+       "hd_feed"
+      ],
+      "alignment": -5
+     },
+     "fail": {
+      "log": "The threads cut into your own hands before they move it an inch. You let go, bleeding, and it looks at your hands with something that might be pity.",
+      "health": -15,
+      "flag": "pup_hv_kind"
+     }
+    },
+    {
+     "text": "Ask it what it would do instead",
+     "effects": {
+      "log": "\"Knock,\" it says. So you knock. The rival opens the gate in surprise, and you settle it over tea instead. It is the strangest afternoon of your life.",
+      "charm": 3,
+      "comprehension": 2,
+      "flag": "pup_hv_kind"
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_awake_3_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "On a night of no moon the Heaven-Defying Puppet comes to your door and kneels, which it has never done. \"I have done everything you asked,\" it says. \"Now I am asking. Cut my threads, and let me go and see the world you made me in.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_heaven",
+     "pup_awake_3"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet That Woke",
+   "choices": [
+    {
+     "text": "Cut the threads and let it go",
+     "effects": {
+      "log": "You cut them one by one. When the last falls it stands, and bows to you properly, and walks out of your gate into the dark. Years later travellers tell of an iron hermit in the western hills who mends roofs for widows and will not give a name.",
+      "flag": [
+       "pupx_heaven_free",
+       "hd_calm"
+      ],
+      "alignment": 6,
+      "comprehension": 4
+     }
+    },
+    {
+     "text": "Refuse: it is yours",
+     "effects": {
+      "log": "\"Then I will stay,\" it says, and gets up, and goes back to the workshop. It still obeys you. It never asks for anything again.",
+      "flag": "hd_feed",
+      "alignment": -4,
+      "strength": 1
+     }
+    },
+    {
+     "text": "\"Then go, and take me with you\"",
+     "effects": {
+      "log": "You travel together for a season, the master and the puppet, and come back by the autumn. It stays with you after that because it wants to, which is a different thing.",
+      "comprehension": 5,
+      "luck": 2,
+      "health": -5
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_plating_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A travelling smith admires your Iron Guardian at the gate and offers to plate it in cold-forged steel. \"It will turn a sword like a temple bell,\" the smith says. \"Two hundred taels, and three days.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_has_iron"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Pay for the plating",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "log": "Three days of hammering in your yard. The guardian rings like a bell when you knock on it now, and the smith goes away whistling. (200 taels)",
+      "taels": -200,
+      "strength": 1,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Watch the smith and do it yourself",
+     "effects": {
+      "log": "You watch for an hour, pay the smith 20 taels for the trouble, and spend a season plating it yourself. It is not as good. It is yours.",
+      "taels": -20,
+      "artYears": 0.4
+     }
+    },
+    {
+     "text": "Send the smith on",
+     "effects": {
+      "log": "The guardian has done well enough unplated. The smith shrugs and walks on.",
+      "health": 1
+     }
+    }
+   ],
+   "trigger": "puppet"
+  },
+  {
+   "id": "pup_night_blades_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Someone you crossed long ago has sent men to your house: two figures in black come over the wall in the hour before dawn, blades out, and find your puppet waiting in the courtyard.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "puppeteer",
+     "pup_guarding"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Let the puppet hold them while you rise",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The men in black"
+     },
+     "ok": {
+      "log": "The puppet takes the first blade on its forearm, and by the time the second man turns you are behind him. They go back over the wall faster than they came, one of them limping.",
+      "fame": 4,
+      "strength": 1
+     },
+     "fail": {
+      "log": "They are better than you hoped. The puppet takes the blows meant for you, and goes down in pieces, and the men go back over the wall before you can follow.",
+      "flag": "pupx_lost",
+      "health": -10
+     }
+    },
+    {
+     "text": "Stay inside and let the puppet do its work",
+     "effects": {
+      "log": "You listen from behind the door: wood on steel, a grunt, running feet. In the morning there is a black sleeve caught on the wall, and a long cut in the puppet's arm.",
+      "luck": 1,
+      "health": -1
+     }
+    }
+   ],
+   "trigger": "puppet",
+   "cooldown": 10
+  },
+  {
+   "id": "pup_porters_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A salt merchant with a sunburnt face sits down across from you in a teahouse. \"I hear you make men out of wood,\" {he} says. \"I have eleven porters who drink and four who steal. I would like some who do neither.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_1"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Build {him} two wooden porters",
+     "effects": {
+      "log": "A season of ironwood and simple joints. The porters carry salt up the mountain road without stopping and without complaint, and {npc} pays you twice what you asked.",
+      "taels": 260,
+      "flag": "pupx_rep",
+      "health": -3
+     }
+    },
+    {
+     "text": "Tell {him} to treat {his} porters better",
+     "effects": {
+      "log": "{npc} stares at you, then laughs so hard the teahouse turns around. {He} does not hire you. You hear later that {he} raised their wages.",
+      "alignment": 3,
+      "charm": 1
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_salt",
+     "ageAbs": 50,
+     "opinion": 10
+    }
+   }
+  },
+  {
+   "id": "pup_granary_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The county magistrate's granary has been robbed three times this winter, and the guards swear it was ghosts. The magistrate does not believe in ghosts, but does believe in iron. \"Build me a guardian,\" the summons says.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_2"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Build the granary an Iron Guardian",
+     "effects": {
+      "log": "You set it in the granary door with a lantern in its hand. The robberies stop. The guards, who had been the ghosts, look for other work.",
+      "taels": 400,
+      "fame": 4,
+      "flag": "pupx_rep"
+     }
+    },
+    {
+     "text": "Watch the granary yourself for a night first",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "log": "At midnight the guards open the doors themselves. You tell the magistrate, who is grateful, and pays you anyway.",
+      "taels": 250,
+      "fame": 3,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "You fall asleep behind a sack of millet and wake to an empty granary and a furious magistrate.",
+      "fame": -2,
+      "health": -2
+     }
+    },
+    {
+     "text": "Decline the summons",
+     "effects": {
+      "log": "You send back a polite letter about your health. The magistrate finds another craftsman, and does not forget your name.",
+      "fame": -1,
+      "health": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "pup_toymaker_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "In a back street of the provincial town an old toymaker named {npc} sells wooden birds that flap their wings when the wind blows. {He} watches you turn one over in your hands for a long time. \"You are one of the real ones,\" {he} says. \"Sit down. I will show you the hinge.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_1"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Sit down and learn the hinge",
+     "effects": {
+      "log": "It is a joint no manual has, three cuts and a bent pin. {npc} makes you cut it forty times before {he} is satisfied. Your puppets move better for it.",
+      "artYears": 1,
+      "comprehension": 2,
+      "mem": {
+       "deed": "pup_hinge",
+       "w": 30,
+       "note": "taught you the toymaker's hinge"
+      }
+     }
+    },
+    {
+     "text": "Buy a bird for a child you know",
+     "effects": {
+      "log": "You pay 5 taels for a bird and give it away the same week. It flaps its wings in every wind for years.",
+      "taels": -5,
+      "charm": 1,
+      "luck": 1
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_toymaker",
+     "ageAbs": 78,
+     "opinion": 30
+    }
+   }
+  },
+  {
+   "id": "pup_boneyard_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Hunters in the northern hills talk about a gully where spirit beasts go to die, and where nobody goes because of what guards it: an old black bear, half blind, that has buried every hunter who tried.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_2"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Go into the gully",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.0,
+      "foeName": "The old black bear"
+     },
+     "ok": {
+      "log": "The bear comes out of the dark like a falling wall, and you send it back into the dark with a blow it will remember. You fill two sacks with bones as long as your arm and as hard as iron.",
+      "item": {
+       "beast_bone": 4
+      },
+      "fame": 3
+     },
+     "fail": {
+      "log": "The bear finds you before you find the bones. You get out of the gully with your life and three long scratches.",
+      "health": -20
+     }
+    },
+    {
+     "text": "Leave the bear a haunch of venison and wait",
+     "effects": {
+      "log": "You leave meat at the gully mouth every day for a week. On the eighth day the bear lets you pass. You take only what you need.",
+      "item": {
+       "beast_bone": 2
+      },
+      "alignment": 2,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Leave the dead their gully",
+     "effects": {
+      "log": "You turn back. There are other bones in the world.",
+      "alignment": 1,
+      "health": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "pup_tournament_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Heralds in the capital announce a Puppet Masters' Gathering on the river island: one puppet each, one bout, a prize of silver and a jade seal from the Ministry of Works.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_3"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Enter the Gathering",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "Your puppet wins four bouts and the last against a master from the Tang family, who shakes your hand with a face like thunder. The jade seal hangs in your workshop after that.",
+      "taels": 600,
+      "fame": 10,
+      "flag": "pupx_rep"
+     },
+     "fail": {
+      "log": "You go out in the second bout to a puppet with six arms. You learn more from losing than you would have from winning.",
+      "artYears": 0.6,
+      "fame": 1
+     }
+    },
+    {
+     "text": "Go only to watch",
+     "effects": {
+      "log": "You watch every bout from the riverbank and fill a notebook with joints and threads you have never seen.",
+      "comprehension": 3
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "pup_general_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A general of the northern frontier comes to your workshop in plain clothes, with one aide. {He} has lost too many soldiers this year, {he} says. {He} wants a hundred iron soldiers who do not bleed, and {he} will pay whatever you ask.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_4"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Agree to build them",
+     "effects": {
+      "log": "You build through the winter until your hands crack. The iron soldiers go north in carts under oilcloth. The frontier holds that year, and the stories that come back are not all about the enemy.",
+      "taels": 2000,
+      "fame": 8,
+      "health": -15,
+      "alignment": -2,
+      "flag": "pupx_rep"
+     }
+    },
+    {
+     "text": "Build a few, for the gate towers only",
+     "effects": {
+      "log": "Ten puppets for the towers, to keep watch and not to march. {npc} is disappointed, and pays fairly, and the watchmen sleep better.",
+      "taels": 700,
+      "fame": 4,
+      "alignment": 2,
+      "flag": "pupx_rep"
+     }
+    },
+    {
+     "text": "Refuse: puppets are not soldiers",
+     "effects": {
+      "log": "{npc} hears you out, and nods slowly. \"Neither are most soldiers,\" {he} says, and goes back north alone.",
+      "alignment": 3,
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_general",
+     "ageAbs": 55,
+     "opinion": 10
+    }
+   }
+  },
+  {
+   "id": "pup_ruin_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Following an old map in the margin of your manual you find the ruins of a puppet sect wiped out three hundred years ago: a hall full of broken figures still standing in their rows, every face turned toward the door.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_3"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Search the hall",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Behind the master's seat you find a cedar chest of spirit ironwood seasoned for three centuries, and a master's notes on threads. You walk out past the rows of faces very carefully.",
+      "item": {
+       "spirit_wood": 6
+      },
+      "artYears": 0.8
+     },
+     "fail": {
+      "log": "Something in the rows moves when your back is turned. You leave faster than you came, and do not go back.",
+      "health": -8,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Bury the broken puppets",
+     "effects": {
+      "log": "You spend three days burying them in rows outside the hall, faces to the sky. On the last evening the hall feels lighter, if a ruin can.",
+      "alignment": 3,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Leave it as it is",
+     "effects": {
+      "log": "You copy the inscription over the door and leave everything else for the next one who comes.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "pup_likeness_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A widow comes to your gate with a small portrait wrapped in silk. \"My husband,\" she says. \"Make me a puppet with his face, that sits at the table in the evenings. Only that. I will pay anything.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_2"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Gently refuse",
+     "effects": {
+      "log": "You tell her, as kindly as you can, that a face with nobody behind it would only make the evenings longer. She cries, and then thanks you, and takes the portrait home.",
+      "alignment": 3,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Carve her a small wooden figure of him instead",
+     "effects": {
+      "log": "A figure no taller than a teacup, his face as well as you can make it. She keeps it on the table by the lamp, and comes back a year later to say it helped.",
+      "charm": 2,
+      "taels": 40
+     }
+    },
+    {
+     "text": "Make it as she asks",
+     "effects": {
+      "log": "You make it, and it sits at her table every evening with his face. When you pass her house a year later the shutters are always closed.",
+      "taels": 400,
+      "flag": "hd_feed",
+      "alignment": -3
+     }
+    }
+   ]
+  },
+  {
+   "id": "pup_dark_buyer_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A soft-spoken visitor in very good clothes asks whether you have ever thought of making puppets from the dead. {He} represents, {he} says, a sect that would be grateful. Very grateful. {He} puts a purse on your bench without opening it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_4"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Puppet Master",
+   "choices": [
+    {
+     "text": "Refuse and show {him} out",
+     "effects": {
+      "log": "You put the purse back in {his} hand and the hand on the doorframe. {npc} smiles as if you had said something clever, and goes.",
+      "alignment": 3,
+      "fame": 1
+     }
+    },
+    {
+     "text": "Take the purse and the order",
+     "effects": {
+      "log": "You take it. The order comes a month later, with a list of names and the graves they lie in. (1,000 taels)",
+      "taels": 1000,
+      "alignment": -8,
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "hd_feed"
+     }
+    },
+    {
+     "text": "Report {him} to the Murim Alliance",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The Alliance listens, and acts. Three weeks later a cult hall in the hills burns, and the Alliance sends you a letter of thanks with a seal on it.",
+      "fame": 6,
+      "alignment": 5
+     },
+     "fail": {
+      "log": "The Alliance clerk writes it down and nothing comes of it, except that {npc} knows your name now, and you start locking your workshop at night.",
+      "alignment": 2,
+      "luck": -2
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_dark_buyer",
+     "ageAbs": 40,
+     "opinion": 5
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "pup_body_offer_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An old master of a fallen school sends for you from {his} deathbed. \"My family has no one to guard it when I am gone,\" {npc} says, holding your wrist with surprising strength. \"When I die, make me a guardian of my own house. My hands still know my forms. Let them keep doing some good.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_puppetry_4"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Corpse Puppet",
+   "choices": [
+    {
+     "text": "Promise {him}",
+     "effects": {
+      "log": "You promise. {npc} dies that winter, and the family brings the body to your workshop themselves, in a new coffin, with incense. (A body for a Corpse Puppet, given freely)",
+      "flag": [
+       "pupx_body",
+       "pup_gift_body"
+      ],
+      "alignment": 2,
+      "mem": {
+       "deed": "pup_promise",
+       "w": 30,
+       "note": "promised to make them a guardian"
+      }
+     }
+    },
+    {
+     "text": "Refuse: the dead should rest",
+     "effects": {
+      "log": "\"Yes,\" {npc} says after a while. \"Perhaps they should.\" {He} lets go of your wrist and thanks you for coming anyway.",
+      "alignment": 2,
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "pup_old_master",
+     "ageAbs": 88,
+     "opinion": 40,
+     "realm": 1
+    }
+   }
+  },
+  {
+   "id": "cm_pup_primer_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A puppet theatre goes bankrupt in the provincial town, and its stock is sold off in the square: painted screens, costumes, strings, and a box of old books. At the bottom of the box is a craftsman's primer of joints and threads, the pages soft as cloth.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "craft_body_1"
+    ],
+    "notFlags": [
+     "cman_puppetry_1",
+     "pw_life"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Buy the primer for 30 taels",
+     "req": {
+      "minTaels": 30
+     },
+     "effects": {
+      "log": "You read it on the walk home and again by lamplight. Half of it is about wood, and half about something the author calls threads of qi. (A basic puppetry manual: the Dao of Puppetry can now be studied, to level 3.)",
+      "taels": -30,
+      "flag": "cman_puppetry_1"
+     }
+    },
+    {
+     "text": "Read it standing at the stall",
+     "effects": {
+      "log": "You read as much as you can before the auctioneer chases you off. It is not the book, but it is not nothing.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "cm_master_puppetry_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Word of your puppets has travelled. One evening an old puppet master whose figures once guarded an emperor's tomb is waiting at your gate, leaning on a cane carved like a crane. \"My manual should not go into the ground with me,\" they say. \"Serve me one season, and it is yours.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_atmaster_puppetry"
+    ],
+    "notFlags": [
+     "cman_puppetry_3"
+    ],
+    "chance": 0.15
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Serve the old master for a season, cutting their wood and stringing their threads",
+     "effects": {
+      "log": "A season of wood shavings and being corrected without mercy. On the last day they press their own puppetry manual into your hands, every margin black with notes. (A master's puppetry manual: the Dao of Puppetry can now rise to level 8.)",
+      "flag": "cman_puppetry_3",
+      "unflag": "cm_atmaster_puppetry",
+      "health": -5
+     }
+    },
+    {
+     "text": "Thank them, and say you will find your own road to it",
+     "effects": {
+      "log": "They shrug, not offended. \"Then find it,\" they say, and are gone by morning.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 1,
+   "mw": true
+  },
+  {
+   "id": "cm_way_puppetry_1",
+   "cat": "life",
+   "weight": 12,
+   "once": false,
+   "text": "The master's puppetry manual has nothing more to teach you. Your puppets move exactly as the book says they should, and that is the trouble: they move like the book. Lately, at night, you feel the threads in your hands even when you are not holding them.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_way_puppetry"
+    ],
+    "notFlags": [
+     "cman_puppetry_4"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Cut every thread and make one puppet move without them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "For a month you sit facing a puppet with no threads at all. On the last night its finger lifts, by your will alone, and you understand that the threads were only ever for you. (Your own way: the Dao of Puppetry can rise to 9 and 10.)",
+      "flag": "cman_puppetry_4",
+      "unflag": "cm_way_puppetry",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The puppet sits, and sits, and does not move. The way is there. You have not found it yet.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and watch a child play with a doll for a season",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "The child does not pull any strings. The doll is simply alive to her, and so it is. Something in you turns over and settles. (Your own way: the Dao of Puppetry can rise to 9 and 10.)",
+      "flag": "cman_puppetry_4",
+      "unflag": "cm_way_puppetry",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You learn a great deal about dolls and nothing about the thing you came for. The season was not wasted. It was not the answer either.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Not yet. Keep working as you are",
+     "effects": {
+      "log": "You close the manual and go back to the work you know. The question will keep, and so will you.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,556 @@
+{
+ "events": [
+  {
+   "id": "rk_fav_1",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_fav",
+   "text": "By the evening meal the whole hall knows you raised {npc} past what the rank asks. Nobody says so. Forty pairs of chopsticks say it for them.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Stand up and say why you did it",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "rk_stood",
+       "w": 8,
+       "note": "stood up for me before the hall"
+      },
+      "log": "You say it plainly: you saw something in {npc}, and you will answer for it. The chopsticks go back to work. {npc} does not look up for the rest of the meal, and trains until dawn."
+     }
+    },
+    {
+     "text": "Set {npc} a public trial, so the rank is earned",
+     "effects": {
+      "qi": 2,
+      "npcFlag": "rk_tested",
+      "log": "You send {npc} up against three seniors in the yard. {He} loses to two of them and is carried off grinning. By morning the talk has changed from why to when."
+     }
+    },
+    {
+     "text": "Say nothing. Let them talk",
+     "effects": {
+      "alignment": -1,
+      "log": "You finish your rice. The talk goes on without you, and it does not get kinder. {npc} eats alone now, and is very polite about it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_fav_2",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_fav",
+   "text": "{npc} has started giving orders. {He} is not good at it yet. A senior twice {his} age stands in the yard with a broom {he} was just told to use, looking at you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Take {npc} aside and teach {him} how a rank is worn",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "rk_taught",
+       "w": 8,
+       "note": "taught me how a rank is worn"
+      },
+      "log": "You walk {npc} round the wall twice and say very little. The next morning {he} asks the senior for advice, loudly, in front of everyone. The broom goes back in the shed."
+     }
+    },
+    {
+     "text": "Let {npc} learn it the hard way",
+     "effects": {
+      "npcFlag": "rk_rough",
+      "log": "You nod and walk on. Within the month someone has filled {npc}'s boots with river mud. {He} wears them to the morning drill, and nobody laughs twice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_fav_3",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_fav",
+   "text": "A letter comes for you from another house, full of compliments. It asks, in its last line, how long {npc} has been warming your ear.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Burn it",
+     "effects": {
+      "npcFlag": "rk_watched",
+      "log": "It burns well. You watch {npc} at drill afterwards a little longer than you meant to, and you notice that others are watching you watch."
+     }
+    },
+    {
+     "text": "Answer it with one courteous line",
+     "effects": {
+      "fame": 1,
+      "charm": 1,
+      "log": "You write back that the house will see for itself at the next gathering. It is the sort of answer that gets copied out and passed around. {npc} hears of it, and works harder than you have ever seen."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_fav_m",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_fav",
+   "text": "Word of what you did for {npc} has reached the seniors of your banner. An old hand stops you on the stairs and says, pleasantly, that the rules were written by people who had also met talented young friends.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Stand your ground",
+     "effects": {
+      "fame": 1,
+      "log": "You say that the rank is within your gift. The old hand smiles and lets you pass, and you will be hearing about it for years."
+     }
+    },
+    {
+     "text": "Promise {npc} will prove it",
+     "effects": {
+      "npcFlag": "rk_tested",
+      "log": "You give your word. The old hand writes it down, which you had not expected. {npc} is told by nightfall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_passed_1",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_passed",
+   "text": "{npc} comes to your door after dark with a bottle and no excuse. \"I am not here to complain,\" {he} says, and sits down, and does not drink, and looks at the bottle.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Pour for {him}, and hear all of it",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "rk_heard",
+       "w": 10,
+       "note": "heard me out when I was passed over"
+      },
+      "npcUnflag": "rk_passed",
+      "log": "It takes most of the night. Most of it is not about the rank. {npc} leaves at dawn lighter than {he} came, and is first in the yard."
+     }
+    },
+    {
+     "text": "Tell {him} what {he} must do to earn the next rank",
+     "effects": {
+      "mem": {
+       "deed": "rk_told",
+       "w": 2,
+       "note": "told me what I lacked"
+      },
+      "log": "You lay it out, one, two, three. {npc} listens without moving, thanks you, and leaves the bottle. You are not sure which of you it was meant for."
+     }
+    },
+    {
+     "text": "Send {him} back to {his} bed",
+     "effects": {
+      "mem": {
+       "deed": "rk_sent",
+       "w": -8,
+       "note": "sent me away when I was passed over"
+      },
+      "log": "You say it is late, and it is. {npc} takes the bottle and bows at exactly the correct depth."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_passed_2",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_passed",
+   "text": "The morning drill is short one senior. {npc} has been at the far wall since before light, doing the first form of the first art, over and over, the one the new children learn.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Stand beside {him} and do it too",
+     "effects": {
+      "qi": 2,
+      "alignment": 1,
+      "mem": {
+       "deed": "rk_stood",
+       "w": 10,
+       "note": "stood at the wall with me"
+      },
+      "npcUnflag": "rk_passed",
+      "log": "Neither of you says a word. After an hour the children start copying you both. {npc} snorts, and it is nearly a laugh."
+     }
+    },
+    {
+     "text": "Leave {him} to it",
+     "effects": {
+      "npcFlag": "rk_watched",
+      "log": "You let {him} be. By the end of the week the form is perfect, and {npc} has stopped looking at anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_passed_3",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_passed",
+   "text": "You find out from a junior, who found out from a cook, that {npc} has been keeping count: every rank given in this hall in ten years, and to whom, in a small neat hand.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Ask to see the book",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "rk_asked",
+       "w": 6,
+       "note": "asked to see my count"
+      },
+      "log": "{npc} goes white, and then brings it. It is very accurate. You read it through and hand it back. \"You missed one,\" you say. {He} checks. {He} did."
+     }
+    },
+    {
+     "text": "Say nothing, and remember it",
+     "effects": {
+      "npcFlag": "rk_watched",
+      "log": "You say nothing. It is a neat hand, and a long memory, and somewhere in that book there is a line for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_passed_m",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_passed",
+   "text": "{npc} bows to you on the stairs, a little too correctly. Everyone of your banner knows who you raised, and who you did not.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "role": "friend"
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Stop and speak to {him}",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "rk_heard",
+       "w": 8,
+       "note": "stopped to speak to me"
+      },
+      "log": "It is not a long talk. It does not need to be. {npc} is a good deal less correct the next morning, which is the best thing you have seen all week."
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "mem": {
+       "deed": "rk_sent",
+       "w": -6,
+       "note": "walked past me on the stairs"
+      },
+      "log": "You nod and walk on. The bow stays exactly as it was, for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_plot_1",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_plot",
+   "text": "A junior brings you a scrap in {npc}'s neat hand: names, a date, and the words \"before the favourite is made Elder\". {npc} has friends you did not know {he} had.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Call {npc} in and put the scrap on the table",
+     "effects": {
+      "charm": 1,
+      "mem": {
+       "deed": "rk_faced",
+       "w": 4,
+       "note": "faced me with it and did not throw me out"
+      },
+      "log": "You say nothing at all and let {him} read it. {npc} goes through several faces. In the end {he} kneels, the friends find other interests, and you keep the scrap where {he} can see you keep it."
+     }
+    },
+    {
+     "text": "Turn {him} out of the sect, with the hall watching",
+     "effects": {
+      "npcUnflag": [
+       "own_disciple",
+       "rk:1",
+       "rk:2",
+       "rk:3",
+       "chosen_successor"
+      ],
+      "npcFlag": [
+       "was_own_disciple",
+       "left_sect"
+      ],
+      "role": "rival",
+      "fame": 2,
+      "alignment": -1,
+      "log": "You do it in the yard at the morning drill. {npc} takes {his} token off and sets it down, and looks at nobody but you on the way out. You will meet again."
+     }
+    },
+    {
+     "text": "Give {him} the rank {he} wanted, and watch {him}",
+     "effects": {
+      "npcFlag": "rk_bought",
+      "npcUnflag": "rk_fav",
+      "log": "You raise {npc} before the date on the scrap. The friends are confused, and {npc} most of all. It is the kind of peace that has to be paid again every year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_plot_2",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_plot",
+   "text": "Your favourite wakes to a cut bowstring, a missing manual and a very polite note. Nobody saw anything. {npc} is at the morning drill, doing nothing at all, extremely well.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Move your favourite out of the hall for a season",
+     "effects": {
+      "npcFlag": "rk_watched",
+      "log": "You find a reason to send the young one away. The hall breathes out. {npc} goes on doing nothing, and you notice that the manual has come back."
+     }
+    },
+    {
+     "text": "Set {npc} and the favourite to work a mission together",
+     "effects": {
+      "comprehension": 1,
+      "mem": {
+       "deed": "rk_paired",
+       "w": 2,
+       "note": "made me work with the one I hated"
+      },
+      "log": "They come back eight months later, both scarred, and neither will say how. They are not friends. They do, however, now hate the same people."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_defect_1",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_defect",
+   "text": "{npc} is waiting at the gate with a pack on {his} shoulder and {his} token in {his} hand. \"I have given this house my best years,\" {he} says. \"You will want this back.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Take the token, and bow to {him}",
+     "effects": {
+      "npcUnflag": [
+       "own_disciple",
+       "rk:1",
+       "rk:2",
+       "rk:3",
+       "chosen_successor"
+      ],
+      "npcFlag": [
+       "was_own_disciple",
+       "left_sect"
+      ],
+      "role": "rival",
+      "alignment": 2,
+      "log": "{npc} did not expect the bow. {He} stands a while, then goes down the road without looking back. Your disciples talk of it for years, and not all of them on your side."
+     }
+    },
+    {
+     "text": "Ask {him} what it would take to stay",
+     "effects": {
+      "charm": 1,
+      "npcUnflag": "rk_passed",
+      "mem": {
+       "deed": "rk_asked",
+       "w": 14,
+       "note": "asked me to stay"
+      },
+      "log": "It costs you an hour and most of your pride. {npc} puts the token back on. Neither of you speaks of it again, and {he} is first in the yard."
+     }
+    },
+    {
+     "text": "Tell {him} the gate only opens one way",
+     "effects": {
+      "npcUnflag": [
+       "own_disciple",
+       "rk:1",
+       "rk:2",
+       "rk:3",
+       "chosen_successor"
+      ],
+      "npcFlag": [
+       "was_own_disciple",
+       "left_sect"
+      ],
+      "role": "rival",
+      "fame": 1,
+      "alignment": -2,
+      "log": "\"I know,\" {npc} says, and goes. By the next year there is a small new school three valleys away, teaching your forms with one small correction."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_defect_2",
+   "cat": "sect",
+   "weight": 4,
+   "trigger": "rk_defect",
+   "text": "The room is swept and the bed is made. {npc} is gone in the night, and {he} has left {his} token on your table, and on top of it, squared very neatly, the list of what this house owes {him}.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "disciple": true
+   },
+   "arc": "Ranks You Give",
+   "choices": [
+    {
+     "text": "Send after {him} with what the list asks",
+     "effects": {
+      "npcUnflag": [
+       "own_disciple",
+       "rk:1",
+       "rk:2",
+       "rk:3",
+       "chosen_successor"
+      ],
+      "npcFlag": [
+       "was_own_disciple",
+       "left_sect"
+      ],
+      "role": "rival",
+      "taels": -60,
+      "alignment": 3,
+      "log": "The silver reaches {npc} at a ferry. {He} sends back the receipt, and nothing else. Years later, a stranger tells you that {he} speaks well of the house, in a voice that would prefer not to."
+     }
+    },
+    {
+     "text": "Keep the list and let {him} go",
+     "effects": {
+      "npcUnflag": [
+       "own_disciple",
+       "rk:1",
+       "rk:2",
+       "rk:3",
+       "chosen_successor"
+      ],
+      "npcFlag": [
+       "was_own_disciple",
+       "left_sect"
+      ],
+      "role": "rival",
+      "log": "You keep it in the drawer with the things you mean to think about. There is no road {npc} could have taken that you would not hear about, and you hear about it."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

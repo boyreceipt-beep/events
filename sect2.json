@@ -1,0 +1,1986 @@
+{
+ "events": [
+  {
+   "id": "sc_inner_exam",
+   "cat": "sect",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "inner_disciple"
+    ]
+   },
+   "weight": 6,
+   "text": "The inner-disciple examination is announced. Pass, and you get a better manual, a better room and a master who actually remembers your name.",
+   "choices": [
+    {
+     "text": "Take the exam",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "inner_disciple",
+      "manual": 3,
+      "fame": 6,
+      "log": "You pass. Your new room has a window. Your new manual has fewer mistakes in it. Life is good.",
+      "promote": true
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "You fail by one question. The examiner writes 'next year' on your paper, which is the kindest thing an examiner has ever done."
+     }
+    },
+    {
+     "text": "Wait a year and prepare",
+     "effects": {
+      "comprehension": 3,
+      "log": "You study all year. Next time, you will be ready."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_core_disciple",
+   "cat": "sect",
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "flags": [
+     "inner_disciple"
+    ],
+    "notFlags": [
+     "core_disciple",
+     "sect_head"
+    ],
+    "junior": true,
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 8,
+   "text": "The sect leader summons you. 'Your progress has been noticed. We would like to name you a core disciple of {sect}.'",
+   "choices": [
+    {
+     "text": "Accept the honour",
+     "effects": {
+      "flag": "core_disciple",
+      "manual": 4,
+      "fame": 15,
+      "taels": 100,
+      "log": "Your name is written on the wall of the main hall. Juniors bow when you pass. It takes a month to stop looking behind you to see who they are bowing to.",
+      "promote": true
+     }
+    },
+    {
+     "text": "Ask to stay a simple disciple",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 3,
+      "log": "The leader studies you for a long time. 'Humility, or cunning?' the leader asks. You do not answer. The leader smiles."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_become_elder",
+   "cat": "sect",
+   "when": {
+    "age": [
+     35,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "core_disciple"
+    ],
+    "notFlags": [
+     "sect_elder",
+     "sect_head"
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 8,
+   "text": "An elder's seat on the council of {sect} is empty. Every eye in the sect turns to you.",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "effects": {
+      "flag": "sect_elder",
+      "fame": 25,
+      "taels": 200,
+      "log": "You sit on the council. You discover that being an elder is mostly meetings. Long ones.",
+      "promote": true
+     }
+    },
+    {
+     "text": "Recommend someone else and keep training",
+     "effects": {
+      "alignment": 8,
+      "qi": 15,
+      "log": "Someone else gets the meetings. You get the mountain to yourself."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_library_night",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     13,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "junior": true,
+    "hasSect": true
+   },
+   "weight": 2,
+   "text": "You find the sect library empty at midnight, and one cabinet has been left unlocked.",
+   "choices": [
+    {
+     "text": "Read what is inside",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 8,
+      "log": "An elder's personal notes on the manual you are learning. Half of your mistakes, explained in a page."
+     },
+     "fail": {
+      "fame": -3,
+      "health": -10,
+      "log": "The library guardian was not asleep. Your punishment involves a very long staircase."
+     }
+    },
+    {
+     "text": "Lock it and tell the librarian",
+     "effects": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "The librarian gives you a look you cannot read. Next week, a useful scroll appears on your desk."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_pill_allocation",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     15,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "junior": true,
+    "hasSect": true
+   },
+   "weight": 2,
+   "text": "Monthly pill allocation. There is one Marrow Pill left, and two disciples in line: you, and a nervous junior who is about to fail a breakthrough without it.",
+   "choices": [
+    {
+     "text": "Take the pill",
+     "effects": {
+      "item": "marrow_pill",
+      "log": "The junior says nothing. You hear, later, that the breakthrough failed."
+     }
+    },
+    {
+     "text": "Let the junior have it",
+     "effects": {
+      "alignment": 6,
+      "fame": 3,
+      "log": "The junior breaks through and tells the whole sect who gave up the pill. People start calling you 'senior brother' and 'senior sister' like they mean it."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_senior_bully",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "rival",
+     "realm": 1,
+     "age": 3,
+     "opinion": -20,
+     "tag": "senior_bully"
+    }
+   },
+   "when": {
+    "age": [
+     13,
+     25
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "junior": true
+   },
+   "weight": 3,
+   "text": "{npc}, a senior disciple, has decided that you will do {his} chores, wash {his} robes and call {him} 'great senior'.",
+   "choices": [
+    {
+     "text": "Refuse and accept a spar",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 5,
+      "mem": {
+       "deed": "humiliated",
+       "w": -20,
+       "note": "humiliated me in the training yard"
+      },
+      "log": "You win in front of the whole yard. You do your own chores. So, from now on, does {npc}."
+     },
+     "fail": {
+      "health": -20,
+      "mem": {
+       "deed": "beat",
+       "w": 5,
+       "note": "stood up to me"
+      },
+      "log": "{npc} wins, barely, and seems rattled that it was so close. The chores stop anyway."
+     }
+    },
+    {
+     "text": "Do the chores and wait",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "servant",
+       "w": 5,
+       "note": "did my chores without complaint"
+      },
+      "log": "You wash the robes and watch {him} train. You learn all of {his} weaknesses. Every single one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_senior_sister",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "friend",
+     "realm": 1,
+     "age": 4,
+     "opinion": 25,
+     "tag": "senior_mentor"
+    }
+   },
+   "when": {
+    "age": [
+     13,
+     22
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 3,
+   "text": "A senior disciple, {npc}, finds you practising alone after dark. 'My own master never bothered with me either,' {he} says, and takes off {his} outer robe. 'Again. Slower.'",
+   "choices": [
+    {
+     "text": "Train with {him} every night",
+     "effects": {
+      "qi": 10,
+      "comprehension": 2,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "let me teach them at night"
+      },
+      "log": "For a year {npc} corrects you every night. You become good. More than that, you become friends."
+     }
+    },
+    {
+     "text": "Thank {him} but train alone",
+     "effects": {
+      "comprehension": 1,
+      "log": "{npc} shrugs. 'Suit yourself.' You regret it for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_accused_theft",
+   "cat": "sect",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A jade token has gone missing from the treasury, and the only footprints outside are the same size as yours.",
+   "choices": [
+    {
+     "text": "Investigate and find the real thief",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "log": "The real thief is the treasurer's nephew, who has very small feet and very large debts. The treasurer apologises to you in public. It is glorious."
+     },
+     "fail": {
+      "fame": -5,
+      "health": -15,
+      "log": "You cannot prove it. You serve thirty days in the punishment cave. The token turns up a month later in the nephew's room."
+     }
+    },
+    {
+     "text": "Ask your master to vouch for you",
+     "req": {
+      "hasMaster": true
+     },
+     "effects": {
+      "fame": -1,
+      "log": "Your master stands up in the hall and says one sentence: 'My disciple does not steal.' The matter ends there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_sect_festival",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     13,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 2,
+   "text": "The founding festival of {sect}. Lanterns on every roof, disciples performing forms for the villagers, too much food.",
+   "choices": [
+    {
+     "text": "Perform a sword form for the crowd",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 5,
+      "charm": 2,
+      "log": "The children in the crowd go silent, then roar. Somewhere in the back, a small child picks up a stick and starts copying you."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "You drop your sword in front of three hundred people. The applause is very polite."
+     }
+    },
+    {
+     "text": "Help in the kitchens",
+     "effects": {
+      "alignment": 3,
+      "health": 5,
+      "log": "You chop mountains of vegetables and eat the best dumplings of your life."
+     }
+    }
+   ],
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "sc_mission_village",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 6,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "orthodox"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 3,
+   "text": "Two villages are about to go to war over a well. The sect sends you to settle it.",
+   "choices": [
+    {
+     "text": "Settle it with wisdom",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 5,
+      "log": "You get them to dig a second well together. Your name gets carved on it, spelled wrong. You love it."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "Both villages end up angry at you instead of each other. Technically, the war is averted."
+     }
+    },
+    {
+     "text": "Settle it with a show of force",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "log": "You split a boulder with your palm in the square. Everybody stops arguing. Nobody is happy, but everybody is polite."
+     }
+    }
+   ],
+   "maxPerLife": 3
+  },
+  {
+   "id": "sc_mission_hunt_demon",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "factions": [
+     "orthodox"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "A Demonic Cult practitioner has been draining the qi of travellers on the southern road. The sect sends you to hunt them.",
+   "choices": [
+    {
+     "text": "Hunt them down",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 8,
+      "qi": 10,
+      "log": "You find them in an old shrine. It is a hard fight. You bring back a black lotus badge as proof."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "a Demonic Cult practitioner on the southern road",
+      "log": "They were stronger than the sect said. You escape with your life and a lesson about sect intelligence."
+     }
+    },
+    {
+     "text": "Set a trap with the local militia",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 6,
+      "log": "Nets, torches, twenty farmers with pitchforks and one very surprised practitioner."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -2,
+      "log": "The practitioner sees through the trap and escapes. Two farmers are hurt. You carry that home."
+     }
+    }
+   ],
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "sc_family_council",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "factions": [
+     "family"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 3,
+   "text": "The family council is divided: the elders want to marry the young head's sister to a rival family for an alliance. She does not want to.",
+   "choices": [
+    {
+     "text": "Speak for the alliance",
+     "effects": {
+      "fame": 3,
+      "taels": 50,
+      "alignment": -4,
+      "log": "The alliance is made. The family grows stronger. The sister does not look at you at the wedding."
+     }
+    },
+    {
+     "text": "Speak for the sister",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 6,
+      "log": "You convince them to seal the alliance with trade instead. The sister sends you a letter of thanks, and a very good tea."
+     },
+     "fail": {
+      "fame": -3,
+      "log": "The elders are annoyed. The wedding goes ahead anyway. You tried."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "sc_family_heir",
+   "cat": "sect",
+   "when": {
+    "age": [
+     20,
+     45
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "factions": [
+     "family"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 3,
+   "text": "The family head is old, and the succession contest has begun. Your name is on the list, and so is your cousin's, who has been preparing for this since birth.",
+   "choices": [
+    {
+     "text": "Compete to win",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "family_heir",
+      "fame": 30,
+      "taels": 300,
+      "log": "You win. The cousin congratulates you with a face like carved stone. You are the heir to {sect}."
+     },
+     "fail": {
+      "fame": 5,
+      "log": "Your cousin wins. You bow first, in front of everyone. It earns you more respect than winning would have."
+     }
+    },
+    {
+     "text": "Withdraw and support your cousin",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "log": "Your cousin becomes heir. From that day on, they owe you, and everyone knows it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_unorthodox_turf",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 7,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "unorthodox"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 3,
+   "text": "A rival stronghold has moved into your river port. The boss wants them gone by the full moon.",
+   "choices": [
+    {
+     "text": "Lead the raid",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 10,
+      "taels": 100,
+      "alignment": -5,
+      "log": "By the full moon the port is yours again. The boss gives you a gold-hilted knife and a look of new respect."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the river port war",
+      "log": "The raid goes badly. You are pulled from the river by your own people."
+     }
+    },
+    {
+     "text": "Negotiate a split",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "taels": 60,
+      "log": "Half the port, no blood. The boss grumbles, then quietly admits it was the smarter move."
+     },
+     "fail": {
+      "fame": -4,
+      "log": "They laugh at the offer. The boss laughs at you. Nobody laughs for long."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_unorthodox_smuggle",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "unorthodox"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "The stronghold is smuggling salt past the government checkpoint, and you are in charge of the boats tonight.",
+   "choices": [
+    {
+     "text": "Bribe the guards",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": 60,
+      "log": "Forty taels out, a hundred in. The guards wave and wish you a pleasant evening."
+     }
+    },
+    {
+     "text": "Slip past in the fog",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 100,
+      "fame": 3,
+      "log": "Three boats, no lights, total silence. The fog loves you tonight."
+     },
+     "fail": {
+      "taels": -30,
+      "health": -20,
+      "log": "A lantern swings toward you. You dump the salt in the river and swim for it."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_unorthodox_heart",
+   "cat": "sect",
+   "when": {
+    "age": [
+     22,
+     60
+    ],
+    "factions": [
+     "unorthodox"
+    ],
+    "alignment": [
+     -10,
+     100
+    ],
+    "junior": true
+   },
+   "weight": 2,
+   "text": "The boss orders you to burn a village that refused to pay. You look at the children in the doorways.",
+   "choices": [
+    {
+     "text": "Burn it",
+     "effects": {
+      "alignment": -25,
+      "taels": 50,
+      "fame": 5,
+      "log": "You do it. At night, for years, you smell smoke that is not there."
+     }
+    },
+    {
+     "text": "Warn them first and burn empty houses",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 10,
+      "log": "Nobody dies. The boss never finds out. The villagers rebuild, and one of them leaves rice cakes at the crossroads for you, every year."
+     },
+     "fail": {
+      "alignment": 10,
+      "fame": -10,
+      "health": -25,
+      "log": "The boss finds out. You survive the punishment. Barely."
+     }
+    },
+    {
+     "text": "Leave the stronghold tonight",
+     "effects": {
+      "faction": "wanderer",
+      "sect": "",
+      "alignment": 15,
+      "fame": -5,
+      "log": "You ride out alone. You are a wanderer now, with enemies behind you and a clean conscience ahead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_demonic_loyalty",
+   "cat": "sect",
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head",
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 4,
+   "text": "The Cult tests the loyalty of every new member. Yours: stand guard all night over a prisoner who begs you, calmly, to let him go.",
+   "choices": [
+    {
+     "text": "Stand guard",
+     "effects": {
+      "fame": 5,
+      "alignment": -5,
+      "log": "You do not move all night. At dawn the elder nods. You have passed. You do not sleep well for a week."
+     }
+    },
+    {
+     "text": "Let him go",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "alignment": 15,
+      "flag": "freed_cult_prisoner",
+      "log": "He vanishes into the dark. Nobody ever finds out. Years later, a stranger saves your life and says only: 'The prisoner remembers.'"
+     },
+     "fail": {
+      "alignment": 10,
+      "health": -40,
+      "log": "It was the test. The prisoner was an elder. The punishment is long, and you survive it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_demonic_audience",
+   "cat": "sect",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 4,
+   "text": "You are summoned before the Heavenly Demon. The hall is so quiet you can hear the torches breathe.",
+   "choices": [
+    {
+     "text": "Kneel and pledge yourself",
+     "effects": {
+      "fame": 15,
+      "manual": 4,
+      "alignment": -10,
+      "log": "He places a hand on your head. Knowledge pours into you like cold water. 'Do not disappoint me,' he says."
+     }
+    },
+    {
+     "text": "Bow, but do not kneel",
+     "risky": true,
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 25,
+      "manual": 4,
+      "log": "The hall freezes. Then he laughs. 'Finally, someone with a spine.' You leave with his favour and a hundred new enemies."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "the Heavenly Demon's displeasure",
+      "log": "He does not laugh. You are carried out."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_demonic_purge",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head",
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 2,
+   "text": "A purge sweeps the Cult. Someone has been passing secrets to the Orthodox Alliance, and suspicion falls on everyone.",
+   "choices": [
+    {
+     "text": "Keep your head down",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "log": "The purge passes over you like a storm cloud. Three of your neighbours are gone by the end of the month."
+     },
+     "fail": {
+      "health": -30,
+      "fame": -5,
+      "log": "You are questioned for three days. They let you go. You will never feel safe here again."
+     }
+    },
+    {
+     "text": "Find the real traitor",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": -5,
+      "log": "You find them first. The Cult rewards you. You try not to think about what happens to the traitor."
+     },
+     "fail": {
+      "health": -35,
+      "log": "You accuse the wrong person. The real traitor thanks you with a smile you will never forget."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_leave_demonic",
+   "cat": "sect",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "factions": [
+     "demonic"
+    ],
+    "alignment": [
+     0,
+     100
+    ],
+    "notFlags": [
+     "sect_head",
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 3,
+   "text": "You have stayed too long. Your hands have done things your heart did not agree with. There is a gap in the patrol at the third watch.",
+   "choices": [
+    {
+     "text": "Escape tonight",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "faction": "wanderer",
+      "sect": "",
+      "alignment": 15,
+      "flag": "cult_deserter",
+      "log": "You walk out under the stars. By dawn you are three mountains away. The Cult will remember. So will you."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the Cult's pursuers",
+      "log": "They catch you at the river. You fight free, badly hurt, and keep running."
+     }
+    },
+    {
+     "text": "Stay, and do what good you can from inside",
+     "effects": {
+      "alignment": 8,
+      "log": "You quietly warn villages before raids and lose prisoners' paperwork. It is not much. It is something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_teach_juniors",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "The sect asks you to teach the newest class of disciples for a season. They are twelve years old and terrible.",
+   "choices": [
+    {
+     "text": "Teach them properly",
+     "effects": {
+      "comprehension": 3,
+      "fame": 3,
+      "alignment": 3,
+      "log": "Teaching the basics makes you see them fresh. One of the children has real talent. You start watching them closely."
+     }
+    },
+    {
+     "text": "Make them run laps and meditate",
+     "effects": {
+      "qi": 8,
+      "log": "They run, you meditate. Everybody gets stronger, in a way."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_teach_prodigy",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "disciple",
+     "ageAbs": 10,
+     "opinion": 40,
+     "tag": "first_disciple"
+    }
+   },
+   "when": {
+    "age": [
+     28,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "has_disciple"
+    ]
+   },
+   "weight": 4,
+   "text": "A child named {npc} has been waiting outside your door since dawn. '{His} parents died last winter,' the gatekeeper says. 'The child says {he} will only learn from you.'",
+   "choices": [
+    {
+     "text": "Take {him} as your disciple",
+     "effects": {
+      "flag": "has_disciple",
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "took me in as a disciple"
+      },
+      "fame": 5,
+      "alignment": 5,
+      "log": "{npc} bows nine times. From that day on, there is someone who calls you 'master'."
+     }
+    },
+    {
+     "text": "Send {him} to the outer hall",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "turned me away"
+      },
+      "log": "{npc} goes to the outer hall. {He} does not look back. You wonder about {him} for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_disciple_breakthrough",
+   "cat": "master",
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "chance": 0.5
+   },
+   "weight": 3,
+   "text": "Your disciple {npc} is stuck at the gate of the next realm and asks you to guard {his} breakthrough.",
+   "choices": [
+    {
+     "text": "Guard {him} and guide {his} qi",
+     "effects": {
+      "npcRealm": 1,
+      "qi": -10,
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "guarded my breakthrough"
+      },
+      "fame": 5,
+      "log": "You guide {his} energy through the gate. {npc} breaks through with tears in {his} eyes. You feel prouder than of your own."
+     }
+    },
+    {
+     "text": "Tell {him} to do it alone",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "npcRealm": 1,
+      "mem": {
+       "deed": "spar",
+       "w": 5,
+       "note": "trusted me to do it alone"
+      },
+      "log": "{npc} breaks through alone and walks out of the cave a different person."
+     },
+     "fail": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "left me alone when I needed them"
+      },
+      "log": "{npc} fails, and does not speak to you for a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_seclusion_cave",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "The sect's seclusion cave is free for a season. It is cold, dark and perfectly silent.",
+   "choices": [
+    {
+     "text": "Enter seclusion",
+     "effects": {
+      "qi": 18,
+      "health": -5,
+      "charm": -1,
+      "log": "Three months alone with your breath. You come out paler and stronger, and talk too loudly for a week."
+     }
+    },
+    {
+     "text": "Give your slot to a friend",
+     "effects": {
+      "alignment": 3,
+      "charm": 2,
+      "log": "Your friend comes out stronger and grateful. You come out of nothing, but you have a friend for life."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_sect_leader_dying",
+   "cat": "sect",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "The leader of {sect} is dying. At the bedside, with shaking hands, the leader offers you a sealed scroll. 'Do not open it until the sect needs it.'",
+   "choices": [
+    {
+     "text": "Accept the scroll",
+     "effects": {
+      "flag": "leader_scroll",
+      "fame": 5,
+      "log": "You keep it under your pillow. The sect has no idea it exists. Yet."
+     }
+    },
+    {
+     "text": "Ask that it go to the heir",
+     "effects": {
+      "alignment": 5,
+      "log": "A tired smile. 'That is why I wanted you to have it.' The scroll goes to the heir anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_leader_scroll_opens",
+   "cat": "sect",
+   "when": {
+    "age": [
+     28,
+     999
+    ],
+    "flags": [
+     "leader_scroll"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "after": [
+     "sc_sect_leader_dying"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The sect is split in two, one faction ready to join the Demonic Cult for protection. You remember the scroll under your pillow.",
+   "choices": [
+    {
+     "text": "Open it before the whole sect",
+     "effects": {
+      "unflag": "leader_scroll",
+      "fame": 25,
+      "alignment": 10,
+      "manual": 5,
+      "log": "It names you guardian of the sect until a new leader is chosen, and holds the leader's final technique. The traitor faction kneels. You did not expect the manual. Neither did anyone else."
+     }
+    },
+    {
+     "text": "Open it in private first",
+     "effects": {
+      "unflag": "leader_scroll",
+      "manual": 5,
+      "log": "The final technique of the leader. You keep it quiet. The sect splits anyway. You wonder if you chose wrong."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_expelled",
+   "cat": "sect",
+   "when": {
+    "age": [
+     16,
+     60
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "alignment": [
+     -100,
+     -30
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 5,
+   "text": "Word of your deeds has reached the council. They summon you to the main hall, and they are not smiling.",
+   "choices": [
+    {
+     "text": "Defend yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": -5,
+      "alignment": 5,
+      "log": "You talk your way through it, barely. You are on probation. Everyone watches you now."
+     },
+     "fail": {
+      "faction": "wanderer",
+      "sect": "",
+      "fame": -15,
+      "log": "Expelled. Your name is struck from the rolls in front of everyone. You walk down the thousand steps alone."
+     }
+    },
+    {
+     "text": "Leave before they can expel you",
+     "effects": {
+      "faction": "wanderer",
+      "sect": "",
+      "fame": -5,
+      "log": "You leave your jade token on the altar and walk out. No one stops you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_sect_betrayed",
+   "cat": "sect",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "chance": 0.3
+   },
+   "weight": 2,
+   "text": "At midnight, the sect gates open from the inside. A traitor has let the Demonic Cult in.",
+   "choices": [
+    {
+     "text": "Hold the main hall",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "fame": 25,
+      "alignment": 10,
+      "health": -30,
+      "log": "You hold the hall until dawn. When the sun rises, the Cult retreats and the sect sings your name."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "the night the sect gates opened",
+      "log": "You fall at the doors of the hall, and are found alive under three enemies."
+     }
+    },
+    {
+     "text": "Get the juniors out through the back",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 12,
+      "log": "Forty children, one secret path, no losses. Years later, every one of them will say your name first."
+     },
+     "fail": {
+      "health": -30,
+      "alignment": 8,
+      "log": "You save most of them. Most."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_funny_sect_cat",
+   "cat": "funny",
+   "when": {
+    "age": [
+     13,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 1,
+   "text": "The sect's cat has chosen you. It sleeps on your manuals, eats your dinner and sits on your face during meditation.",
+   "choices": [
+    {
+     "text": "Accept your fate",
+     "effects": {
+      "charm": 2,
+      "luck": 2,
+      "log": "Disciples start calling you 'the Cat Elder'. Your meditation actually improves. You suspect the cat is a hidden master."
+     }
+    },
+    {
+     "text": "Give it to the kitchens",
+     "effects": {
+      "luck": -2,
+      "log": "The cat returns by nightfall and sits on your face with renewed determination."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_funny_manual_typo",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 1,
+   "text": "After a year of practising 'Palm of Ten Thousand Mountains', you learn it was a copying mistake. It was meant to be 'Palm of Ten Thousand Mountain Goats'.",
+   "choices": [
+    {
+     "text": "Keep practising your version",
+     "effects": {
+      "strength": 2,
+      "fame": 1,
+      "log": "Your mistaken version turns out to be better. The library quietly updates the manual."
+     }
+    },
+    {
+     "text": "Relearn it properly",
+     "effects": {
+      "comprehension": 2,
+      "log": "The goat version is mostly about balance. It is, annoyingly, very useful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_funny_elder_nap",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 1,
+   "text": "You find the strictest elder in the sect asleep under a tree, snoring, with a half-eaten persimmon in one hand.",
+   "choices": [
+    {
+     "text": "Put a blanket over him",
+     "effects": {
+      "alignment": 2,
+      "log": "He never mentions it. But for the next year, he is strangely kind to you in the training yard."
+     }
+    },
+    {
+     "text": "Tell everyone",
+     "effects": {
+      "fame": 2,
+      "charm": -1,
+      "log": "The sect laughs for a week. The elder assigns you to latrine duty for a month. He knows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_tournament_final",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "rival",
+     "realm": 0,
+     "age": 0,
+     "opinion": -5,
+     "tag": "tournament_rival"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     35
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "You reach the final of the inter-sect tournament. Your opponent, {npc}, bows politely and then looks at you like a hungry wolf.",
+   "choices": [
+    {
+     "text": "Fight with everything you have",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 20,
+      "taels": 150,
+      "mem": {
+       "deed": "humiliated",
+       "w": -15,
+       "note": "beat me in the tournament final"
+      },
+      "log": "You win the final. The crowd chants your name. {npc} bows again, stiffly, and walks off to train."
+     },
+     "fail": {
+      "fame": 8,
+      "health": -20,
+      "mem": {
+       "deed": "spar",
+       "w": 10,
+       "note": "gave me the best fight of my life"
+      },
+      "log": "You lose, but it is the fight people talk about for years. {npc} offers you a hand up."
+     }
+    },
+    {
+     "text": "Fight to learn, not to win",
+     "effects": {
+      "comprehension": 4,
+      "fame": 5,
+      "mem": {
+       "deed": "spar",
+       "w": 12,
+       "note": "fought me with an open heart"
+      },
+      "log": "You lose on points and learn more in one fight than in a year. {npc} buys you dinner afterwards."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_sect_outing",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 9,
+   "when": {
+    "age": [
+     15,
+     40
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "junior": true
+   },
+   "weight": 1,
+   "text": "A group of disciples sneaks out to the town below for a night of noodles and lanterns. They invite you.",
+   "choices": [
+    {
+     "text": "Go",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "charm": 3,
+      "health": 5,
+      "log": "The best noodles of your life and a friendship with three people who will matter later."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "Caught climbing back over the wall. The punishment is worth it, you decide, chewing the last noodle."
+     }
+    },
+    {
+     "text": "Stay and train",
+     "effects": {
+      "qi": 6,
+      "log": "You train in the empty yard under the moon. You can hear them laughing all the way from town."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "sc_rival_sect_insult",
+   "cat": "sect",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "In a teahouse, disciples from a rival sect mock {sect} loudly enough for everyone to hear.",
+   "choices": [
+    {
+     "text": "Defend your sect's honour",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 6,
+      "log": "They leave the teahouse with less honour than they came in with. The owner sends a free pot of tea to your table."
+     },
+     "fail": {
+      "fame": -3,
+      "health": -20,
+      "log": "They leave laughing. You leave limping. You will remember their faces."
+     }
+    },
+    {
+     "text": "Pay for their tea and leave",
+     "effects": {
+      "alignment": 3,
+      "taels": -5,
+      "log": "They stop laughing, confused. One of them bows slightly as you leave."
+     }
+    }
+   ],
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "sc_sect_mission_bandit_king",
+   "cat": "sect",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "bandit_king_done",
+     "sect_head"
+    ]
+   },
+   "weight": 2,
+   "text": "The Bandit King of Black Ox Mountain has taken a magistrate's daughter hostage. The sect sends you, and only you.",
+   "choices": [
+    {
+     "text": "Storm the mountain",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.85
+     },
+     "ok": {
+      "flag": "bandit_king_done",
+      "fame": 20,
+      "taels": 200,
+      "alignment": 8,
+      "log": "You fight your way to the top and bring her down the mountain on your back. The magistrate weeps. The Bandit King does not."
+     },
+     "fail": {
+      "health": -65,
+      "deathCause": "the Bandit King of Black Ox Mountain",
+      "log": "The Bandit King is no rumour. You barely escape down the mountain."
+     }
+    },
+    {
+     "text": "Go in disguised as a bandit",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "bandit_king_done",
+      "fame": 15,
+      "taels": 150,
+      "log": "Three days as a bandit. You are, frankly, very good at it. On the fourth night you walk out with the hostage and the king's treasure map."
+     },
+     "fail": {
+      "health": -35,
+      "log": "Your disguise lasts one dinner. You escape through the latrine. It is not heroic."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_sect_debt",
+   "cat": "sect",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "chance": 0.5,
+    "junior": true
+   },
+   "weight": 1,
+   "text": "The sect treasury is empty after a bad year, and the elders ask disciples to contribute what they can.",
+   "choices": [
+    {
+     "text": "Give generously",
+     "req": {
+      "minTaels": 100
+     },
+     "effects": {
+      "taels": -100,
+      "fame": 6,
+      "alignment": 4,
+      "log": "Your name goes on the benefactors' tablet. Juniors whisper it. You pretend not to hear."
+     }
+    },
+    {
+     "text": "Hunt beasts for their pelts",
+     "effects": {
+      "taels": 20,
+      "strength": 2,
+      "fame": 2,
+      "health": -10,
+      "log": "A winter of hunting. The sect survives. So do you, with scars on your forearms."
+     }
+    },
+    {
+     "text": "Give nothing",
+     "effects": {
+      "fame": -2,
+      "log": "Some disciples notice. Most do not. You notice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_sect_merge",
+   "cat": "sect",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "flags": [
+     "sect_elder"
+    ],
+    "notFlags": [
+     "sect_head"
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 3,
+   "text": "As an elder, you must vote: merge {sect} with a stronger neighbour for safety, or stay independent and risk everything.",
+   "choices": [
+    {
+     "text": "Vote to merge",
+     "effects": {
+      "taels": 150,
+      "fame": -5,
+      "log": "The sect survives, under a new name. The old disciples never quite forgive you."
+     }
+    },
+    {
+     "text": "Vote to stay independent",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 15,
+      "log": "The sect stays itself, and against all odds, it thrives. You are remembered as the elder who believed."
+     },
+     "fail": {
+      "fame": -10,
+      "taels": -100,
+      "log": "Three lean years. The sect survives, barely, and some blame you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sc_family_marriage",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "love",
+     "opposite": true,
+     "age": 0,
+     "opinion": 10,
+     "tag": "arranged_match"
+    }
+   },
+   "when": {
+    "age": [
+     18,
+     30
+    ],
+    "factions": [
+     "family"
+    ],
+    "married": false
+   },
+   "weight": 3,
+   "text": "The family has arranged a match for you with {npc} of an allied family. You meet for the first time at a formal tea. {He} looks as trapped as you feel.",
+   "choices": [
+    {
+     "text": "Accept the match",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "married",
+       "w": 25,
+       "note": "married me for the family, and was kind anyway"
+      },
+      "fame": 5,
+      "taels": 100,
+      "log": "You marry in autumn. It is not love. Not at first. By the second winter you are not sure any more."
+     }
+    },
+    {
+     "text": "Speak honestly to {him} alone",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "was honest with me when no one else was"
+      },
+      "alignment": 3,
+      "log": "You both admit you do not want this. Together, you convince both families to call it off. You end up close friends."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sc_orthodox_alliance_meeting",
+   "cat": "sect",
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "factions": [
+     "orthodox"
+    ]
+   },
+   "weight": 3,
+   "text": "The Orthodox Alliance holds its great assembly, and {sect} sends you as its representative. The great sects look down their noses at everyone.",
+   "choices": [
+    {
+     "text": "Speak boldly for the smaller sects",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "alignment": 8,
+      "log": "Your speech makes the old masters shift in their seats. Small sects start sending you letters and gifts."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "The great sects smile politely and ignore you completely."
+     }
+    },
+    {
+     "text": "Listen and make friends quietly",
+     "effects": {
+      "fame": 8,
+      "charm": 3,
+      "log": "You leave with three new allies and a very good idea of who really runs the Alliance."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

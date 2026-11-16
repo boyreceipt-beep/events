@@ -1,0 +1,692 @@
+{
+ "events": [
+  {
+   "id": "ra_pine_race",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     8,
+     11
+    ]
+   },
+   "text": "{npc} dares you to a race to the top of the old pine on the hill. Half the village children come to watch.",
+   "choices": [
+    {
+     "text": "Race",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 1,
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "beat me up the old pine in front of everyone"
+      },
+      "log": "You touch the top branch first. {npc} climbs down without a word and does not speak to you for a month."
+     },
+     "fail": {
+      "health": -5,
+      "log": "{npc} wins by a hand. {He} sits on the top branch and laughs until {he} nearly falls off."
+     }
+    },
+    {
+     "text": "Refuse. Racing is for children",
+     "effects": {
+      "mem": {
+       "deed": "insulted",
+       "w": -4,
+       "note": "said racing was for children"
+      },
+      "log": "\"Coward,\" says {npc}. The other children agree. You are, after all, a child."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} challenges you to race up the old pine on the hill. Half the children in the village turn out to watch."
+   ]
+  },
+  {
+   "id": "ra_sect_exam",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     12,
+     16
+    ]
+   },
+   "text": "At the martial exam in town, you see {npc} slip a bribe to the examiner's servant. The results go up tomorrow.",
+   "choices": [
+    {
+     "text": "Expose {him}",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "humiliated",
+       "w": -18,
+       "note": "exposed my bribe at the exam"
+      },
+      "log": "The examiner throws {npc} out. {He} looks back at you from the gate, and you know this is not over."
+     }
+    },
+    {
+     "text": "Keep quiet and beat {him} honestly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "log": "Your name goes up above {npc}'s, bribe and all. That hurts {him} more than any accusation."
+     },
+     "fail": {
+      "log": "{npc}'s name goes up above yours. You say nothing. You remember."
+     }
+    },
+    {
+     "text": "Tell {him} privately that you saw",
+     "effects": {
+      "mem": {
+       "deed": "spared",
+       "w": 8,
+       "note": "kept my secret at the exam"
+      },
+      "log": "{npc} goes pale, then red. \"Why didn't you tell them?\" You shrug. {He} does not know what to do with that."
+     }
+    }
+   ],
+   "variants": [
+    "The night before the martial exam results, you see {npc} in the alley behind the hall, pressing a purse into the hand of the examiner's servant.",
+    "At the town's martial exam, a servant of the examiner pockets something from {npc} with a practised hand. The lists go up in the morning."
+   ]
+  },
+  {
+   "id": "ra_festival_duel",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     16,
+     22
+    ]
+   },
+   "text": "At the Lantern Festival, {npc} ({npc_realm}) steps into the square and challenges you, loud enough for the whole town to hear.",
+   "choices": [
+    {
+     "text": "Accept the duel",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "beat",
+       "w": -12,
+       "note": "beat me at the Lantern Festival"
+      },
+      "log": "The crowd roars. {npc} picks {him}self up off the stones and swears you will pay for this."
+     },
+     "fail": {
+      "health": -15,
+      "fame": -2,
+      "log": "{npc} wins, and bows far too deeply. The whole town sees you lose."
+     }
+    },
+    {
+     "text": "Decline with a smile",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "insulted",
+       "w": -6,
+       "note": "would not even fight me"
+      },
+      "log": "\"Another year, perhaps.\" The crowd laughs, and not at you. {npc} storms off."
+     }
+    }
+   ],
+   "variants": [
+    "In the middle of the Lantern Festival, {npc} ({npc_realm}) strides into the square and calls you out, loud enough to stop the music.",
+    "The lanterns are lit, the square is full, and {npc} ({npc_realm}) picks that moment to challenge you in front of the whole town."
+   ]
+  },
+  {
+   "id": "ra_surpassed",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     18,
+     45
+    ],
+    "stronger": false
+   },
+   "text": "{npc} has reached {npc_realm}, ahead of you. {He} comes to visit, just to be seen walking past your door.",
+   "choices": [
+    {
+     "text": "Congratulate {him}",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "congratulated me when I passed them"
+      },
+      "log": "{npc} blinks. {He} expected anger. \"...Thank you,\" {he} says, and means it."
+     }
+    },
+    {
+     "text": "Swear to surpass {him}",
+     "effects": {
+      "qi": 25,
+      "comprehension": 2,
+      "log": "That night you train until your hands bleed. Hunger is a kind of fuel."
+     }
+    },
+    {
+     "text": "Spread a rumour about how {he} got there",
+     "effects": {
+      "alignment": -6,
+      "fame": 2,
+      "mem": {
+       "deed": "insulted",
+       "w": -20,
+       "note": "spread lies about how I reached my realm"
+      },
+      "log": "The rumour spreads well. {npc} finds out where it started."
+     }
+    }
+   ],
+   "variants": [
+    "Word comes that {npc} has reached {npc_realm}, ahead of you. That afternoon {he} happens to stroll past your door, slowly, twice.",
+    "{npc} has broken through to {npc_realm} before you. {He} drops by with a gift of tea, mostly to stand in your doorway and be seen."
+   ]
+  },
+  {
+   "id": "ra_you_surpass",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     18,
+     50
+    ],
+    "stronger": true,
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "text": "{npc} comes to you, pride in pieces. \"How? How did you get so far ahead?\"",
+   "choices": [
+    {
+     "text": "Share what you learned",
+     "effects": {
+      "alignment": 5,
+      "npcRealm": 1,
+      "mem": {
+       "deed": "taught",
+       "w": 25,
+       "note": "taught me when they could have gloated"
+      },
+      "log": "You spend a season training together. {npc} breaks through soon after. Something between you changes."
+     }
+    },
+    {
+     "text": "\"Talent. You would not understand.\"",
+     "effects": {
+      "fame": 2,
+      "mem": {
+       "deed": "humiliated",
+       "w": -18,
+       "note": "laughed at me when I asked for help"
+      },
+      "log": "{npc} leaves without a word. Somewhere, a grudge takes root."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ra_rival_ambushed",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     22,
+     55
+    ],
+    "npcOpinion": [
+     -30,
+     100
+    ]
+   },
+   "text": "A messenger finds you: {npc} has been ambushed on the mountain road by enemies of {his} sect. {He} will not last the night alone.",
+   "choices": [
+    {
+     "text": "Ride to save {him}",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.75,
+      "foeName": "The ambushers"
+     },
+     "ok": {
+      "fame": 10,
+      "mem": {
+       "deed": "saved_life",
+       "w": 45,
+       "note": "saved my life on the mountain road"
+      },
+      "log": "You arrive at the worst moment and turn it. {npc}, bleeding, stares at you. \"You came. Why did you come?\""
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "an ambush meant for your rival",
+      "mem": {
+       "deed": "saved_life",
+       "w": 35,
+       "note": "nearly died trying to save me"
+      },
+      "log": "You both barely escape. {npc} carries you the last mile."
+     }
+    },
+    {
+     "text": "It is not your fight",
+     "effects": {
+      "log": "{npc} survives, somehow. {He} hears that you knew, and did not come."
+     }
+    }
+   ],
+   "variants": [
+    "A breathless runner brings word: {npc} was caught on the mountain road by enemies of {his} sect and is holding them off alone. {He} will not see morning without help.",
+    "The message is three words scrawled on a scrap: {npc}, ambushed, mountain road. Whoever sent it did not stay to say more. {He} will not last the night alone."
+   ]
+  },
+  {
+   "id": "ra_nemesis_plot",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     24,
+     60
+    ],
+    "npcOpinion": [
+     -100,
+     -35
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "text": "A letter surfaces in the magistrate's office, accusing you of dealing with the Demonic Cult. The handwriting is disguised. You know whose it is: {npc}.",
+   "choices": [
+    {
+     "text": "Prove the letter false",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "turned my letter back on me"
+      },
+      "log": "You find the scribe {npc} paid. The scandal falls on {him} instead."
+     },
+     "fail": {
+      "fame": -12,
+      "taels": -60,
+      "log": "The accusation sticks for a season. Friends stop visiting. {npc} is seen smiling."
+     }
+    },
+    {
+     "text": "Confront {him} directly",
+     "risky": true,
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "beat",
+       "w": -15,
+       "note": "beat me in my own courtyard"
+      },
+      "log": "You walk into {npc}'s courtyard and leave {him} on the ground. The letters stop."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "your nemesis, {npc}",
+      "log": "{npc} was ready for you. You crawl home."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ra_sworn",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     25,
+     65
+    ],
+    "npcOpinion": [
+     35,
+     100
+    ]
+   },
+   "text": "{npc} arrives with a jar of old wine and two cups. \"All these years I measured myself against you. I think I would rather stand beside you.\"",
+   "choices": [
+    {
+     "text": "Swear brotherhood under the peach trees",
+     "effects": {
+      "fame": 6,
+      "npcFlag": "sworn_rival",
+      "role": "friend",
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "swore brotherhood with me"
+      },
+      "log": "Two rivals, one oath. The murim hears of it and does not quite believe it."
+     }
+    },
+    {
+     "text": "\"A rival is more useful than a friend\"",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} laughs. \"Then keep running. I'll be right behind you.\""
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ra_same_love",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     18,
+     32
+    ],
+    "married": false,
+    "male": true
+   },
+   "text": "You and {npc} have both fallen for the same person, the magistrate's daughter who reads poetry in the plum garden.",
+   "choices": [
+    {
+     "text": "Win her with poetry",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "mem": {
+       "deed": "rejected",
+       "w": -12,
+       "note": "won the heart I wanted"
+      },
+      "log": "She chooses your poem. {npc} tears {his} own into pieces and throws them in the pond."
+     },
+     "fail": {
+      "log": "She chooses {npc}'s poem. {He} is a gracious winner, which is somehow worse."
+     }
+    },
+    {
+     "text": "Step aside for {him}",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "stepped aside for me"
+      },
+      "log": "\"Why?\" asks {npc}. You don't answer. {He} never forgets it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ra_same_love_f",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     18,
+     32
+    ],
+    "married": false,
+    "male": false
+   },
+   "text": "You and {npc} have both fallen for the same person, the magistrate's son who reads poetry in the plum garden.",
+   "choices": [
+    {
+     "text": "Win him with poetry",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "mem": {
+       "deed": "rejected",
+       "w": -12,
+       "note": "won the heart I wanted"
+      },
+      "log": "He chooses your poem. {npc} tears {his} own into pieces and throws them in the pond."
+     },
+     "fail": {
+      "log": "He chooses {npc}'s poem. {He} is a gracious winner, which is somehow worse."
+     }
+    },
+    {
+     "text": "Step aside for {him}",
+     "effects": {
+      "alignment": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "stepped aside for me"
+      },
+      "log": "\"Why?\" asks {npc}. You don't answer. {He} never forgets it."
+     }
+    }
+   ],
+   "variants": [
+    "It turns out you and {npc} have lost your hearts to the same person: the magistrate's son, who reads poetry in the plum garden."
+   ]
+  },
+  {
+   "id": "ra_final_duel",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     40,
+     75
+    ],
+    "npcOpinion": [
+     -100,
+     34
+    ]
+   },
+   "text": "A letter in a hand you have known since childhood: \"The peak of Mount Hua. The first full moon of autumn. One of us should finally know.\" {npc}, {npc_realm}, is waiting.",
+   "choices": [
+    {
+     "text": "Go to the peak",
+     "risky": true,
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 30,
+      "flag": "rival_defeated",
+      "mem": {
+       "deed": "beat",
+       "w": 30,
+       "note": "beat me on the peak of Mount Hua, and let me live"
+      },
+      "log": "Two hundred exchanges under the moon. When {npc} falls, you lower your sword. {He} laughs, and for the first time in many years, {he} sounds happy. \"So that's what it takes.\""
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "your rival {npc}, on the peak of Mount Hua",
+      "fame": 10,
+      "log": "{npc} wins. {He} stands over you a long moment, then sheathes {his} sword. \"Not like this,\" {he} says, and carries you down the mountain."
+     }
+    },
+    {
+     "text": "Burn the letter",
+     "effects": {
+      "fame": -8,
+      "mem": {
+       "deed": "insulted",
+       "w": -10,
+       "note": "never came to Mount Hua"
+      },
+      "log": "{npc} waits on the peak for three nights. Then {he} comes down, and never speaks your name again."
+     }
+    }
+   ],
+   "weight": 3,
+   "mw": true
+  },
+  {
+   "id": "ra_old_rivals",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     60,
+     110
+    ],
+    "npcOpinion": [
+     -20,
+     100
+    ]
+   },
+   "text": "{npc} is old now, like you. {He} sits beside you on a bench overlooking the village where you both grew up.",
+   "choices": [
+    {
+     "text": "Remember the old days together",
+     "effects": {
+      "health": 10,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "laughed with me about the old days"
+      },
+      "log": "\"I was sure I would beat you at everything,\" {npc} says. \"Everything I became, I became chasing you.\""
+     }
+    },
+    {
+     "text": "Ask {him} who really won",
+     "effects": {
+      "log": "{npc} thinks for a long time. \"Neither of us. Both of us. Pass the wine.\""
+     }
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "ra_rival_disciple",
+   "trigger": "rival_arc",
+   "cat": "rival",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "age": [
+     35,
+     70
+    ],
+    "stronger": true
+   },
+   "text": "{npc}'s best disciple challenges you in public, at {his} master's secret urging.",
+   "choices": [
+    {
+     "text": "Defeat the disciple gently",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.0,
+      "foeName": "The rival's disciple"
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "spared",
+       "w": 8,
+       "note": "went easy on my disciple"
+      },
+      "log": "You disarm the youth without a scratch and give back the sword. {npc} watches from the crowd, arms folded."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -6,
+      "log": "The disciple is better than you thought. {npc} is insufferable for a year."
+     }
+    },
+    {
+     "text": "Refuse. \"Tell {npc} to come in person.\"",
+     "effects": {
+      "fame": 3,
+      "mem": {
+       "deed": "insulted",
+       "w": -8,
+       "note": "told my disciple to send me instead"
+      },
+      "log": "The whole town hears it. So does {npc}."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

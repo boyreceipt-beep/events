@@ -1,0 +1,1098 @@
+{
+ "events": [
+  {
+   "id": "ss_hua_poverty",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "mount_hua"
+    ],
+    "age": [
+     12,
+     60
+    ],
+    "notFlags": [
+     "job_sect_leader",
+     "sect_head"
+    ]
+   },
+   "weight": 5,
+   "text": "Mount Hua's roof leaks again, the rice jar is half empty, and the Sect Leader is pretending not to notice. The disciples are hungry and proud about it.",
+   "choices": [
+    {
+     "text": "Take escort work to feed the sect",
+     "effects": {
+      "merit": 25,
+      "taels": 10,
+      "health": -5,
+      "log": "Three months of caravans. The rice jar is full. The Sect Leader pretends not to notice that too, and squeezes your shoulder."
+     }
+    },
+    {
+     "text": "Give the sect your savings",
+     "req": {
+      "minTaels": 100
+     },
+     "effects": {
+      "taels": -100,
+      "merit": 45,
+      "fame": 3,
+      "log": "You leave a purse on the kitchen table without a word. That night there is meat in the soup for the first time in a year."
+     }
+    },
+    {
+     "text": "Train harder. Poverty builds character",
+     "effects": {
+      "strength": 2,
+      "log": "The plum trees bloom whether the sect is rich or not. So will you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_hua_plum",
+   "cat": "insight",
+   "when": {
+    "sect": [
+     "mount_hua"
+    ],
+    "age": [
+     14,
+     90
+    ],
+    "realm": [
+     0,
+     5
+    ]
+   },
+   "weight": 4,
+   "text": "Snow on the peak, and the plum trees blooming through it. Watching a petal fall, you suddenly understand why the Plum Blossom Sword moves the way it does.",
+   "choices": [
+    {
+     "text": "Sit under the tree until it is clear",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 30,
+      "comprehension": 3,
+      "merit": 20,
+      "log": "When you rise, your sword blooms like the tree. The elders who see it go very quiet."
+     },
+     "fail": {
+      "health": -8,
+      "log": "You sit in the snow until you can no longer feel your legs. Almost. Next winter, perhaps."
+     }
+    },
+    {
+     "text": "Draw your sword now, before it fades",
+     "effects": {
+      "qi": 15,
+      "log": "Seven petals of sword qi, one after another. Not perfect. But yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ss_hua_namgung",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "mount_hua"
+    ],
+    "age": [
+     16,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "A Namgung heir sneers at Mount Hua in the teahouse: 'a poor sect with a pretty sword'. Every Mount Hua disciple in the room turns to look at you.",
+   "choices": [
+    {
+     "text": "Settle it with swords",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 10,
+      "merit": 30,
+      "rep": {
+       "orthodox": 4
+      },
+      "log": "The Namgung heir leaves with a torn sleeve and a lesson. Mount Hua drinks for free that night."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -3,
+      "log": "The Namgung sword is as good as its reputation. You will be back."
+     }
+    },
+    {
+     "text": "Laugh it off",
+     "effects": {
+      "alignment": 2,
+      "log": "'Pretty, and poor. Both true.' The room laughs with you, and the heir looks foolish instead."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_shaolin_rule",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "shaolin"
+    ],
+    "flags": [
+     "took_life"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 10,
+   "text": "The Abbot summons you. Word has reached the temple: you took a life. Shaolin's first rule is not a suggestion.",
+   "choices": [
+    {
+     "text": "Repent: ten years of meditation and sutras",
+     "effects": {
+      "alignment": 15,
+      "comprehension": 3,
+      "fame": -5,
+      "unflag": "took_life",
+      "qi": 20,
+      "log": "Ten years facing a wall. You come out quieter, clearer, and stronger in ways the Abbot said you would be."
+     }
+    },
+    {
+     "text": "Argue it was necessary",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "unflag": "took_life",
+      "log": "The Abbot listens a long time. 'Then carry it,' he says. 'Every day.' You are not expelled."
+     },
+     "fail": {
+      "faction": "wanderer",
+      "sect": "",
+      "flag": "expelled_shaolin",
+      "fame": -10,
+      "log": "The temple gate closes behind you. The monks do not watch you go, which is worse."
+     }
+    },
+    {
+     "text": "Leave before they expel you",
+     "effects": {
+      "faction": "wanderer",
+      "sect": "",
+      "flag": "expelled_shaolin",
+      "unflag": "took_life",
+      "log": "You leave your robe folded on the steps. Some doors you close yourself."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_shaolin_bronze",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "shaolin"
+    ],
+    "realm": [
+     3,
+     11
+    ]
+   },
+   "weight": 5,
+   "text": "The Hall of Bronze Men: eighteen monks in bronze-lacquered skin guard the gate. Pass through, and Shaolin's secret arts open to you.",
+   "choices": [
+    {
+     "text": "Walk through the eighteen",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 25,
+      "merit": 120,
+      "technique": "vajra_palm",
+      "log": "You come out the other side bruised from crown to heel. The Abbot himself is waiting with a scroll."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the Hall of Bronze Men",
+      "log": "The eighteenth Bronze Man sends you back through the door you came in. Next year."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "The Bronze Men will be there next year. They are always there."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_wudang_taiji",
+   "cat": "insight",
+   "when": {
+    "sect": [
+     "wudang"
+    ],
+    "age": [
+     14,
+     90
+    ]
+   },
+   "weight": 5,
+   "text": "An old Wudang master pushes you with one finger and you fall over. 'You meet force with force,' he says. 'Water does not.'",
+   "choices": [
+    {
+     "text": "Learn to yield",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 25,
+      "merit": 25,
+      "comprehension": 2,
+      "log": "A season of pushing hands. At the end, he pushes you and you flow. He smiles for the first time."
+     },
+     "fail": {
+      "log": "You fall over for a whole season. It is humbling. Next season, maybe."
+     }
+    },
+    {
+     "text": "Push back harder",
+     "effects": {
+      "strength": 2,
+      "log": "He sighs, steps aside, and you fall over again. Some lessons take longer."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_wudang_shaolin",
+   "cat": "world",
+   "when": {
+    "sect": [
+     "wudang",
+     "shaolin"
+    ],
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 3,
+   "text": "Shaolin and Wudang hold their once-in-a-decade debate: whose way is closer to the truth. You are chosen to speak for your sect.",
+   "choices": [
+    {
+     "text": "Speak with wisdom",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 15,
+      "merit": 40,
+      "log": "Even the other side nods. The debate ends in tea, which is the best way debates end."
+     },
+     "fail": {
+      "fame": -4,
+      "log": "You lose the thread halfway. The other sect is gracious about it, which somehow makes it worse."
+     }
+    },
+    {
+     "text": "Suggest a friendly spar instead",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 12,
+      "merit": 25,
+      "log": "Words are wind; fists are honest. Both sects enjoy it far more than the debate."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The other side's champion is very honest with their fists."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_tang_poison",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "tang"
+    ],
+    "age": [
+     12,
+     20
+    ]
+   },
+   "weight": 5,
+   "text": "Every Tang child is fed a little poison each year, so no poison can kill them later. This year it is your turn for a stronger dose.",
+   "choices": [
+    {
+     "text": "Drink it",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "poison_proof",
+      "merit": 20,
+      "log": "A night of fever and strange dreams. In the morning, you are a true Tang: poison is just a spice now."
+     },
+     "fail": {
+      "health": -35,
+      "log": "It nearly kills you. The elders nod approvingly. 'Next year,' they say."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "merit": -10,
+      "log": "The elders say nothing. Tang elders say nothing very loudly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ss_tang_secret",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "tang"
+    ],
+    "age": [
+     18,
+     70
+    ]
+   },
+   "weight": 4,
+   "text": "A cousin is selling the recipe of the Tang soul-taking needle to the Hushed Lantern Pavilion. You have the proof.",
+   "choices": [
+    {
+     "text": "Take it to the family head",
+     "effects": {
+      "merit": 60,
+      "fame": 5,
+      "log": "The cousin disappears from the family records, and from Sichuan. The family head gives you a key to a cabinet you did not know existed."
+     }
+    },
+    {
+     "text": "Stop the sale yourself, tonight",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "merit": 90,
+      "fame": 10,
+      "log": "You meet the buyers at the river. The recipe never leaves Sichuan, and neither do the buyers."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "Hushed Lantern assassins at the river",
+      "log": "The buyers were assassins. Of course they were."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_beggar_network",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "beggars"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 5,
+   "text": "A beggar with a knotted cloth hands you a message: the Beggars' Sect knows where a wanted Blood Cult elder is hiding. Someone has to act on it.",
+   "choices": [
+    {
+     "text": "Lead the raid",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 15,
+      "merit": 60,
+      "rep": {
+       "orthodox": 8
+      },
+      "log": "The elder is taken alive. The whole sect hears who did it."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a Blood Cult elder's hideout",
+      "log": "The elder escapes, and you barely do."
+     }
+    },
+    {
+     "text": "Sell the information to the Alliance",
+     "effects": {
+      "taels": 80,
+      "merit": 20,
+      "log": "The Alliance pays well. The Beggars' Sect gets its cut. Everyone eats."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_cult_loyalty",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "cult"
+    ],
+    "age": [
+     14,
+     70
+    ],
+    "notFlags": [
+     "job_heavenly_demon",
+     "sect_head"
+    ]
+   },
+   "weight": 6,
+   "text": "A captured Orthodox scout kneels before you. The Cult elder watching you says: 'Prove your heart belongs to the Heavenly Demon.'",
+   "choices": [
+    {
+     "text": "Do what is asked",
+     "effects": {
+      "alignment": -15,
+      "merit": 50,
+      "flag": "took_life",
+      "rep": {
+       "demonic": 10,
+       "orthodox": -10
+      },
+      "log": "The elder nods. 'Good.' You do not sleep that night, and the next night it is easier. That is the worst part."
+     }
+    },
+    {
+     "text": "Let the scout escape 'by accident'",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 8,
+      "log": "A knot too loose, a door not quite shut. Nobody can prove anything."
+     },
+     "fail": {
+      "health": -40,
+      "merit": -30,
+      "log": "The elder can prove it. The punishment is educational."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_cult_purge",
+   "cat": "world",
+   "when": {
+    "sect": [
+     "cult",
+     "blood_cult"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "notFlags": [
+     "sect_head",
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 4,
+   "text": "A purge sweeps the halls: anyone suspected of doubting is dragged away. Your name is on a list. Someone put it there.",
+   "choices": [
+    {
+     "text": "Find who wrote your name",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "merit": 60,
+      "rep": {
+       "demonic": 10
+      },
+      "log": "The accuser's own name ends up at the top of the list. The purge moves on without you."
+     },
+     "fail": {
+      "health": -35,
+      "merit": -20,
+      "log": "You survive the questioning. Your trust in anyone here does not."
+     }
+    },
+    {
+     "text": "Flee the Cult",
+     "effects": {
+      "faction": "wanderer",
+      "sect": "",
+      "flag": "cult_deserter",
+      "log": "You go over the wall at midnight. The Cult never forgets a deserter."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_namgung_pride",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "namgung"
+    ],
+    "age": [
+     14,
+     60
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 5,
+   "text": "The Namgung patriarch reviews the family's young swords. 'The Namgung name is heaven's sword,' he says. 'Show me you deserve it.'",
+   "choices": [
+    {
+     "text": "Show him the Azure Sky Sword",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "merit": 50,
+      "fame": 8,
+      "log": "The patriarch watches in silence, then taps the ground with his staff once. That is how the Namgung say 'excellent'."
+     },
+     "fail": {
+      "merit": -10,
+      "log": "He turns away before you finish. The family will be watching you closely this year."
+     }
+    },
+    {
+     "text": "Ask to see his",
+     "effects": {
+      "comprehension": 3,
+      "log": "Nobody has asked in thirty years. He is so surprised he actually shows you. You learn more in one breath than in a year."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_emei_vow",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "emei"
+    ],
+    "age": [
+     14,
+     60
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 4,
+   "text": "Emei's abbess asks every disciple the same question once: 'Will your sword serve the weak, or your own name?'",
+   "choices": [
+    {
+     "text": "The weak",
+     "effects": {
+      "alignment": 8,
+      "merit": 40,
+      "log": "She nods, and from that day you are sent where the need is greatest."
+     }
+    },
+    {
+     "text": "Both, honestly",
+     "effects": {
+      "merit": 20,
+      "fame": 4,
+      "log": "'Honest,' she says. 'Rare. We will work on the rest.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_kunlun_steps",
+   "cat": "insight",
+   "when": {
+    "sect": [
+     "kunlun"
+    ],
+    "age": [
+     14,
+     70
+    ]
+   },
+   "weight": 4,
+   "text": "On the highest ridge of Kunlun, wind strong enough to throw a horse. The masters cross it without their feet touching the snow.",
+   "choices": [
+    {
+     "text": "Try to cross",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "merit": 40,
+      "luck": 3,
+      "log": "Three steps on nothing, then the other side. The masters say nothing, which at Kunlun is high praise."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The wind wins. You catch yourself on a ledge and climb back, very humbly."
+     }
+    },
+    {
+     "text": "Watch them first",
+     "effects": {
+      "comprehension": 2,
+      "log": "You watch for a month. You begin to see where they put their weight: nowhere."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_unorthodox_turf",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "black_wind",
+     "greenwood",
+     "water_gang"
+    ],
+    "age": [
+     16,
+     70
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 5,
+   "text": "A rival stronghold has taken a toll road that belongs to yours. Your chief looks at you. 'Get it back.'",
+   "choices": [
+    {
+     "text": "Take it back by force",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "merit": 50,
+      "fame": 6,
+      "rep": {
+       "unorthodox": 10
+      },
+      "log": "By dawn the road is yours again, and the rival stronghold is short three lieutenants."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a turf war over a toll road",
+      "log": "They were waiting for you. You crawl home."
+     }
+    },
+    {
+     "text": "Buy them off",
+     "req": {
+      "minTaels": 80
+     },
+     "effects": {
+      "taels": -80,
+      "merit": 25,
+      "log": "Silver talks. The road is yours again, and nobody bleeds. The chief grumbles, but pays you back."
+     }
+    },
+    {
+     "text": "Tell the chief the road is not worth your blood",
+     "effects": {
+      "merit": -20,
+      "rep": {
+       "unorthodox": -3
+      },
+      "log": "The chief looks at you for a long time, then gives the job to someone else. The road stays lost, and your name slides down the hall's list."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ss_night_contract",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "silent_night",
+     "poison_valley"
+    ],
+    "age": [
+     16,
+     70
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 5,
+   "text": "Your first real contract arrives in a sealed envelope. The target is a corrupt magistrate who has ruined a hundred families.",
+   "choices": [
+    {
+     "text": "Carry it out",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "merit": 60,
+      "taels": 120,
+      "alignment": -5,
+      "flag": "took_life",
+      "log": "In and out before the night watch changes. The hundred families never know who to thank."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The magistrate's guards are awake. You escape through the kitchen, empty-handed."
+     }
+    },
+    {
+     "text": "Refuse the contract",
+     "effects": {
+      "merit": -30,
+      "alignment": 3,
+      "log": "The sect does not like refusals. They will remember. So will you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ss_jegal_formation",
+   "cat": "insight",
+   "when": {
+    "sect": [
+     "jegal"
+    ],
+    "age": [
+     12,
+     30
+    ]
+   },
+   "text": "The Jegal elders set every young member the same test: walk out of the Stone Maze of Eight Gates before the incense stick burns down.",
+   "choices": [
+    {
+     "text": "Read the stones",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "merit": 40,
+      "comprehension": 3,
+      "log": "You walk out with half the stick left. The elder in charge of the maze moves one stone, thoughtfully, so it will be harder next year."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The incense burns out while you are still admiring a very clever dead end."
+     }
+    },
+    {
+     "text": "Climb over the walls",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "merit": 20,
+      "fame": 2,
+      "log": "You are out in a minute. The elders argue for an hour about whether that counts. It counts."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The walls are part of the formation. You fall back into the maze from the top, into a very undignified heap."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_jegal_war_game",
+   "cat": "world",
+   "when": {
+    "sect": [
+     "jegal"
+    ],
+    "age": [
+     20,
+     70
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "text": "A general sends a sealed letter to the Jegal family: his army is trapped in a valley, and he will listen to exactly one advisor. The family sends you.",
+   "choices": [
+    {
+     "text": "Plan the breakout",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "merit": 70,
+      "fame": 15,
+      "taels": 100,
+      "log": "Fires on the ridges, drums in the wrong valley, and the army walks out at night without losing a man. The general writes the Jegal name on his banner."
+     },
+     "fail": {
+      "merit": 10,
+      "fame": -3,
+      "log": "Half the army gets out. The general is grateful and grim. The family is quiet with you for a while."
+     }
+    },
+    {
+     "text": "Tell him to surrender with honour",
+     "effects": {
+      "alignment": 6,
+      "merit": 15,
+      "log": "Nobody dies. The general never forgives you, and his men never forget you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_paeng_feast",
+   "cat": "funny",
+   "when": {
+    "sect": [
+     "paeng"
+    ],
+    "age": [
+     14,
+     30
+    ]
+   },
+   "text": "The Paeng family's victory feast: three days of roast meat, sabre dances and shouting. Tradition says the youngest member must out-eat an elder.",
+   "choices": [
+    {
+     "text": "Eat",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "merit": 30,
+      "fame": 3,
+      "health": -5,
+      "log": "The elder puts down the chopsticks on the second night. The whole family carries you around the courtyard on a shield."
+     },
+     "fail": {
+      "merit": 10,
+      "health": -10,
+      "log": "You fall asleep on the roof on the fourth day, too full to climb down. Nobody will tell you how you got there. Everyone is very proud of you anyway."
+     }
+    },
+    {
+     "text": "Challenge the elder to a sabre dance instead",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "merit": 35,
+      "fame": 4,
+      "log": "Your sabre sings. The elder laughs so hard he forgets to drink. The Paeng love a good loud answer."
+     },
+     "fail": {
+      "merit": 5,
+      "log": "The elder's sabre sings louder. You still get a bowl of stew for trying."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_paeng_north",
+   "cat": "danger",
+   "when": {
+    "sect": [
+     "paeng"
+    ],
+    "age": [
+     18,
+     70
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "text": "Northern raiders cross the river at night. The Paeng family rides out, as it always has, loud and first.",
+   "choices": [
+    {
+     "text": "Ride in the front line",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "merit": 60,
+      "fame": 10,
+      "health": -20,
+      "log": "By dawn the raiders are back across the river. The family head gives you his own sabre to hold at the victory feast."
+     },
+     "fail": {
+      "health": -55,
+      "deathCause": "northern raiders at the river",
+      "log": "The raiders are stronger this year. You come home on a stretcher, still shouting."
+     }
+    },
+    {
+     "text": "Guard the villages behind the river",
+     "effects": {
+      "merit": 20,
+      "alignment": 5,
+      "log": "No songs about you this time. The villages are still standing, which is the point."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_crane_roof",
+   "cat": "funny",
+   "when": {
+    "sect": [
+     "white_crane"
+    ],
+    "age": [
+     12,
+     70
+    ]
+   },
+   "text": "White Crane Mountain has twelve disciples, one master and a roof that leaks onto the master's bed every time it rains.",
+   "choices": [
+    {
+     "text": "Fix the roof yourself",
+     "effects": {
+      "merit": 25,
+      "strength": 2,
+      "log": "Three days on the roof in the wind. The master sleeps dry for the first time in years and pretends it was always like this."
+     }
+    },
+    {
+     "text": "Hunt pelts to pay for tiles",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "merit": 35,
+      "taels": 20,
+      "log": "New tiles, and meat for the whole sect. Small sects remember small miracles."
+     },
+     "fail": {
+      "health": -15,
+      "merit": 5,
+      "log": "The mountain wins this time. You come back with one pelt and a limp."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ss_crane_pillar",
+   "cat": "sect",
+   "when": {
+    "sect": [
+     "white_crane"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ]
+   },
+   "text": "A great sect offers to absorb White Crane Mountain: a new roof, full rice jars, and the end of its name. The master asks what you think.",
+   "choices": [
+    {
+     "text": "\"We stay White Crane.\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "merit": 60,
+      "fame": 12,
+      "log": "You turn the envoys away with a bow and a promise. The next year, twenty new disciples climb the mountain because they heard the story."
+     },
+     "fail": {
+      "merit": 20,
+      "log": "The sect stays itself, and stays poor. Nobody regrets it out loud."
+     }
+    },
+    {
+     "text": "\"Take the offer. The disciples need to eat.\"",
+     "effects": {
+      "merit": 10,
+      "taels": 50,
+      "alignment": 2,
+      "log": "The rice jars fill. The old name is carved on a stone by the gate, so it is not forgotten."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

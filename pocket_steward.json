@@ -1,0 +1,101 @@
+{
+ "events": [
+  {
+   "id": "dc_pw_fg_3",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 999,
+   "cooldown": 0,
+   "trigger": "pw_false_god",
+   "text": "You left {pw_world} in the keeping of {pw_fg_name}, and {pw_fg_name} kept it, and then kept the prayers too. Now the temples pray to {pw_fg_name} by name, and the priests say the old maker went away and is not coming back. They have taken {pw_temples} of your temples.",
+   "when": {
+    "flags": [
+     "pw_fg_rising",
+     "pw_fg_steward"
+    ]
+   },
+   "arc": "The False God",
+   "choices": [
+    {
+     "text": "Let the world go. It will be theirs for good",
+     "effects": {
+      "flag": "pwc_letgo",
+      "log": "You let {pw_fg_name} keep what you gave. It was a long gate, and someone had to answer them. The world is not yours any more."
+     }
+    },
+    {
+     "text": "Go down and face it. Win, and the world is yours again; lose, and you can face it again later",
+     "effects": {
+      "flag": "pwc_confront",
+      "log": "You turn your whole attention on your world again. Far below, {pw_fg_name} feels it, and remembers who gave them the keys."
+     }
+    },
+    {
+     "text": "Not yet. It will wait for your answer",
+     "effects": {
+      "log": "You watch. {pw_fg_name} grows used to the prayers. You will have to answer it, one year or another."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_pw_fg_4",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 999,
+   "cooldown": 0,
+   "trigger": "pw_false_god",
+   "text": "You come down into {pw_world}, and {pw_fg_name} meets you on the steps of your oldest temple, in robes you never gave. \"I kept it,\" {pw_fg_name} says. \"Every year you were gone, I kept it.\" Behind them their priests wait to see what you will do. If you lose, the world stays theirs for now, and you can come down and face it again.",
+   "when": {
+    "flags": [
+     "pw_fg_reckoning",
+     "pw_fg_steward"
+    ]
+   },
+   "arc": "The False God",
+   "choices": [
+    {
+     "text": "Let them keep it. Let the world go, for good",
+     "effects": {
+      "flag": "pwc_letgo",
+      "log": "You thank {pw_fg_name} for the years, and mean it, and go. The world is theirs now."
+     }
+    },
+    {
+     "text": "Remind the priests whose keeping it was",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "pwc_won",
+      "log": "You tell the priests how the keeping was given, and when, and for how long. They look at {pw_fg_name}, and {pw_fg_name} cannot look at them. The temples are yours again."
+     },
+     "fail": {
+      "flag": "pwc_lost",
+      "log": "The priests remember who answered them, not who made them. {pw_fg_name} holds the world for now. You can come down again."
+     }
+    },
+    {
+     "text": "Ask {pw_fg_name} to give it back",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "pwc_won",
+      "log": "{pw_fg_name} is quiet a long time. Then they take off the robes and kneel, and the world remembers its maker."
+     },
+     "fail": {
+      "flag": "pwc_lost",
+      "log": "\"Not yet,\" {pw_fg_name} says, and does not move. The world stays theirs for now. You can come down again."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

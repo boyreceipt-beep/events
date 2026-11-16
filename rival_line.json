@@ -1,0 +1,286 @@
+{
+ "events": [
+  {
+   "id": "dc_rl_final_1",
+   "cat": "rival",
+   "weight": 5,
+   "once": false,
+   "text": "Your disciple has just beaten {npc}'s disciple in the final of the Gathering. Across the arena, in the opposite stand, {npc} is on {his} feet. Your eyes meet over the heads of ten thousand people.",
+   "when": {
+    "flags": [
+     "rival_students_won"
+    ]
+   },
+   "trigger": "disciple_rival_final",
+   "choices": [
+    {
+     "text": "Bow to {him}, across the arena",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 18,
+       "note": "bowed to me across the arena when their student won"
+      },
+      "alignment": 5,
+      "log": "{npc} hesitates for a long moment, then bows back. The crowd does not understand why the two old masters are bowing. The two students do."
+     }
+    },
+    {
+     "text": "Raise your cup. Let {him} feel it",
+     "effects": {
+      "fame": 8,
+      "mem": {
+       "deed": "humiliated",
+       "w": -12,
+       "note": "gloated across the arena"
+      },
+      "log": "{npc} sits down very slowly. Your feud has found a second generation, and you are not sure you are proud of that."
+     }
+    },
+    {
+     "text": "Go to {his} student and tell them how well they fought",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 22,
+       "note": "comforted my student after the final"
+      },
+      "charm": 3,
+      "log": "{npc}'s student stares at you with wet eyes. {npc} watches from the stand. Something in the feud loosens that day."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 9
+  },
+  {
+   "id": "dc_rl_final_2",
+   "cat": "rival",
+   "weight": 5,
+   "once": false,
+   "text": "{npc}'s disciple has beaten yours in the final. {npc} comes down from the stand and, before ten thousand people, offers you a hand up from your seat. It is the first time {he} has ever offered you anything.",
+   "when": {
+    "notFlags": [
+     "rival_students_won"
+    ]
+   },
+   "trigger": "disciple_rival_final",
+   "choices": [
+    {
+     "text": "Take the hand",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 24,
+       "note": "took my hand after the final"
+      },
+      "alignment": 6,
+      "log": "You take it. {His} grip is the same as when you were children. Your students, watching, stop being enemies in that moment, mostly."
+     }
+    },
+    {
+     "text": "Stand up on your own",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "would not take my hand"
+      },
+      "strength": 2,
+      "log": "You stand without help. {npc} nods as if {he} expected nothing else. The feud goes on, one generation down."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 9
+  },
+  {
+   "id": "dc_rl_students_1",
+   "cat": "rival",
+   "weight": 5,
+   "once": true,
+   "text": "News from the jianghu: your disciple and {npc}'s disciple, the two who fought in the Gathering final, have been seen travelling together. Some say they are sworn siblings now. Some say it is more than that. Both sects are scandalised.",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "flags": [
+     "rival_students_met"
+    ],
+    "age": [
+     30,
+     120
+    ],
+    "chance": 0.5
+   },
+   "arc": "Two Schools, One Feud",
+   "choices": [
+    {
+     "text": "Laugh, and send them a gift",
+     "effects": {
+      "mem": {
+       "deed": "forgave",
+       "w": 20,
+       "note": "laughed at our students' friendship and sent a gift"
+      },
+      "alignment": 6,
+      "log": "You send a jar of good wine addressed to both of them. A month later {npc} sends one back, addressed to you. No letter. None needed."
+     }
+    },
+    {
+     "text": "Write to {npc}: \"Our students are wiser than we were\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "forgave",
+       "w": 30,
+       "note": "wrote that our students were wiser than us"
+      },
+      "flag": "rival_softened",
+      "log": "{npc} writes back, after a month: \"Yes.\" It is the longest letter {he} has ever sent you, and the best."
+     },
+     "fail": {
+      "mem": {
+       "deed": "respected",
+       "w": 6,
+       "note": "wrote to me"
+      },
+      "log": "{npc} does not answer. But {he} does not forbid the friendship either."
+     }
+    },
+    {
+     "text": "Forbid it. Some feuds are older than friendship",
+     "effects": {
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "forbade our students' friendship"
+      },
+      "alignment": -3,
+      "log": "Your disciple obeys, and is very unhappy, and you find you are too."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_rl_merge_1",
+   "cat": "rival",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} arrives at your gate with two old sect banners rolled under one arm, yours and {his}, grey now like you. \"We have spent our lives proving which school was right,\" {he} says. \"Our students have spent theirs proving we were both fools. One hall. Two founders. What do you say?\"",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     45,
+     140
+    ],
+    "notFlags": [
+     "schools_merged",
+     "schools_allied"
+    ],
+    "npcOpinion": [
+     30,
+     100
+    ]
+   },
+   "arc": "Two Schools, One Feud",
+   "choices": [
+    {
+     "text": "Merge the two schools",
+     "effects": {
+      "flag": "schools_merged",
+      "fame": 30,
+      "alignment": 8,
+      "mem": {
+       "deed": "forgave",
+       "w": 40,
+       "note": "joined our schools at the end"
+      },
+      "log": "A new name over a wider gate, both your names on the founders' plaque. The students cheer. You and {npc} stay up all night and tell the true story of every fight."
+     }
+    },
+    {
+     "text": "An alliance, not a merger: two halls, one banner in war",
+     "effects": {
+      "flag": "schools_allied",
+      "fame": 16,
+      "mem": {
+       "deed": "helped",
+       "w": 24,
+       "note": "made us allies"
+      },
+      "log": "Two sects, sworn to stand together. It is not a family. It is not nothing."
+     }
+    },
+    {
+     "text": "\"Some fools die fools.\" Refuse",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -20,
+       "note": "refused my hand at the very end"
+      },
+      "log": "{npc} leaves without a word. You stand at the gate a long time. You were never sure you were right, and now you never will be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_rl_merge_2",
+   "cat": "rival",
+   "weight": 7,
+   "once": true,
+   "text": "The first disciples of the merged school have graduated. None of them knew the feud. At the ceremony, a girl asks you and {npc}, very seriously, which of you was the better fighter, back then.",
+   "npc": {
+    "role": "childhood_rival"
+   },
+   "when": {
+    "after": [
+     "dc_rl_merge_1"
+    ],
+    "minYearsAfter": 4,
+    "flags": [
+     "schools_merged"
+    ]
+   },
+   "arc": "Two Schools, One Feud",
+   "choices": [
+    {
+     "text": "\"Them.\" Point at {npc}",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "said I was better, in front of everyone"
+      },
+      "alignment": 4,
+      "log": "{npc} points at you at exactly the same moment. The students laugh for a full minute. It is the right answer, both ways."
+     }
+    },
+    {
+     "text": "\"Spar with us and find out\"",
+     "effects": {
+      "fame": 8,
+      "health": -6,
+      "mem": {
+       "deed": "respected",
+       "w": 12,
+       "note": "sparred one last time in front of the students"
+      },
+      "log": "Two old masters, one last bout, in front of a hundred students. Neither wins. Neither tries very hard. It is wonderful."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

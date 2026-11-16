@@ -1,0 +1,3814 @@
+{
+ "events": [
+  {
+   "id": "se_mu_sneer",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer",
+   "text": "Rain has filled the Plum Ford inn, and the steward of the Iron Banner Escort needs a table. He looks over the room, feels nothing at all from your direction, and lifts your bowl off the table himself. \"The kitchen step is dry,\" he says kindly. The table goes to a merchant's nephew, who has a new sword and has not yet found out how heavy it is.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Carry your bowl to the kitchen step",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The step is dry. The cook, who has been moved off a few tables in her day, puts another ladle in your bowl without asking. Through the door you listen to the nephew explain the sword to the whole room, and you learn quite a lot about what people say when they think nobody counts.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Wonder aloud whether the Escort has settled last spring's bill here",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "The innkeeper looks up. The steward looks at the innkeeper. Somewhere in the arithmetic that follows, a table is found for you near the fire, and nobody can say quite how it happened.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "The steward does not even turn round. \"Kitchen step,\" he says, in the same kind voice, and the nephew laughs on cue.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Set the bowl down, and let the seal go",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The rain seems to get quieter. The steward puts your bowl back on the table with both hands and goes on holding it, because he cannot think how to stop. The nephew is very still. You eat alone in a room of forty people, and the soup, it turns out, was never very good.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_rob",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob",
+   "text": "A fallen poplar blocks the road at Heron Bend, and three men step out from behind it. Their leader has a helmet that belongs to somebody with a bigger head. He studies you, feels nothing worth fearing, and brightens. \"Toll,\" he says. \"All of it. And we are very dangerous, so.\" The one on the left is holding his spear the wrong way up.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Hand over your purse, and look frightened",
+     "effects": {
+      "flag": [
+       "sealx_stay",
+       "sealx_purse"
+      ],
+      "log": "You count out what you carry into a hand with a farmer's calluses. The youngest presses a rice cake on you when the others are not looking. You walk on, and it surprises you how light the whole thing sits.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Mention the constable's patrol, half a mile behind you",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You mention it the way a person mentions the weather, and you glance back once at nothing. The helmet goes first. By the time you have climbed the poplar, the road is yours and they have left a very good spear behind.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "The leader has been a tenant on this road all his life and knows the patrol's days better than the constable. \"Nice try,\" he says, and takes your purse, with some respect.",
+      "flag": "sealx_purse"
+     }
+    },
+    {
+     "text": "Stop looking frightened",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You do not raise a hand. The helmet slides off and rolls into the ditch, and all three of them sit down in the road as if their knees had been called away. They are tenant farmers, you see now, with a bad harvest behind them, and you have just frightened them badly for the crime of being hungry. Nobody is proud of this one.",
+      "alignment": -3
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_insult",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult",
+   "text": "{npc} has found an audience at the Double Ninth market, and has found you in the middle of it. \"Look at this one,\" {he} calls, and the stalls turn round. \"Same cheap energy every year I see it. I have met wet straw with more future. Tell them what you are for, go on. They would like to know.\" People are already laughing, and they are not unkind people.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Laugh with them, and buy your turnips",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You laugh, and it costs less than you expected, and then rather more that evening. {npc} loses interest in the way a cat does. You have the turnips. You also have a precise new idea of how far your temper reaches, and it does not reach as far as you feared.",
+      "fame": -2,
+      "mem": {
+       "deed": "se_took_it",
+       "w": -5,
+       "note": "took it, and bought turnips"
+      }
+     }
+    },
+    {
+     "text": "Agree with every word, at length, until it stops being funny",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You agree about the straw. You add details. You offer to fetch some for comparison. By the fourth minute the crowd is laughing at something else entirely, and {npc} has the look of someone who has walked through a door that was not there.",
+      "charm": 1,
+      "mem": {
+       "deed": "se_outfaced",
+       "w": -8,
+       "note": "made a fool of me by agreeing"
+      }
+     },
+     "fail": {
+      "log": "You agree, but you are no good at it. The crowd enjoys you enormously, for the wrong reason, and a child starts doing your voice.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Look at {npc}, and let the seal go",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "{npc} stops in the middle of a word and sits down on a basket of eggs without having chosen to. The market is silent enough to hear them go. Satisfying, for about as long as that takes. Next month two young fools pick fights with you on purpose, in the hope of being sat on as well.",
+      "mem": {
+       "deed": "se_shown_up",
+       "w": -20,
+       "note": "broke a seal in the middle of my sentence"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_mu_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test",
+   "text": "Granny Ok kept the watch on the Salt Road for fifty years and now keeps a melon-seed stall, and she has been looking at the way you sit. Without any warning she flicks a seed at your wrist, hard, the way one flicks a seed at a sleeping dog to see what it dreams. Your hand has already started to move. There is about a blink to decide what it does next.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Let it land, and yelp",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It stings far more than a melon seed should. You yelp and suck your wrist, and Granny Ok goes on looking at you for some time. \"Hm,\" she says, and sells you a bag of seeds at the proper price, which from her is a kind of warning. (-2 health)",
+      "health": -2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Flinch a moment too late, and spill your tea on yourself",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It is one of the finest pieces of bad timing you have ever produced. The tea goes everywhere. Granny Ok sighs, takes a coin out of her sleeve and pays it to the chestnut seller, who had said you were nobody.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You spill it a little too well. Granny Ok watches the tea run off the table and smiles with all four of her teeth. \"I will not tell,\" she says. \"I would just like you to know I could.\" It is a long walk home.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Catch it between two fingers, and hold it up",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You catch it, and you let the rest go with it. The stall's awning lifts in no wind. Granny Ok claps her hands like a girl. \"Fifty years!\" she shouts down the street. \"I said so! Pay up, the lot of you!\" Your name is in nine towns by the end of the week, and you have been out-waited by a woman selling seeds.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_love",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_love",
+   "text": "Old Lord Bai's nephew, in good silk, stops at the stall where you and {npc} are choosing thread. There was once some talk of a match, it seems. The nephew looks you over, feels nothing, and speaks to {npc} as if you were a post. \"So this is what you settled for. You could have had a real house behind you. Are you at least kept warm?\" {npc}'s jaw has set, and {he} is not looking at you, which is {his} way of protecting you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Take {npc}'s arm, and walk on",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You take {his} arm and you walk on. {npc} says nothing for three streets, and then says, \"You could have said something.\" You could have. It is the worst part of the whole seal, and you carry it home with the thread.",
+      "mem": {
+       "deed": "se_walked_on",
+       "w": -3,
+       "note": "took my arm, and let it be said"
+      },
+      "fame": -1
+     }
+    },
+    {
+     "text": "Give warm thanks, and ask after the Bai creditors by name",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You know those names. Everyone in the district does, once they are mentioned, and the nephew suddenly has somewhere else to be. {npc} laughs the whole way home and will not say why.",
+      "mem": {
+       "deed": "se_spoke_up",
+       "w": 10,
+       "note": "spoke up for me without raising a finger"
+      }
+     },
+     "fail": {
+      "log": "There is only a smile, the kind one gives a post that has learned a trick. {npc} pays for the thread, and that is that.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the seal go, and let the nephew feel who keeps {npc} warm",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The good silk goes down in the road, and the hat rolls off, and the bowing goes on. The whole street sees it. {npc} looks at you, and it is not gratitude, not at first. \"How long?\" {he} says, very quietly, and you tell {him}, and {he} does not speak again until the next morning. When {he} does, it is to ask what else you would like to tell {him}.",
+      "mem": {
+       "deed": "se_hid_from_me",
+       "w": 6,
+       "note": "broke the seal for me, and had hidden it from me all that time"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "spouse": true
+   }
+  },
+  {
+   "id": "se_mu_sneer_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer_long",
+   "text": "The new gatekeeper at Cloudrest Pass is very young, and tells you to use the servants' path. You know it well. His grandfather told you the same thing, and you have since worn a groove in those stones. There is a feast above for the Pass's new head, and people you once saw learning to walk are going in by the front. The old cook, as ever, will have kept you something by the stove.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Go round by the servants' path, one more time",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The stones know your feet. The cook has kept you a bowl, and she does not ask, and has not asked for years. Listening to the feast through the wall, you find the old anger is not where you left it. Something quieter has grown there, and it is a good deal stronger.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Walk up to the front gate, and stop hiding",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You walk through the front. The flagstones do not crack: it is much quieter than that. Every cup in the hall stops, and the new head rises without being asked. They give you the high seat and you sit in it, and all evening they tell each other they always suspected. Below, at the stove, the cook is not meeting anyone's eye. She will call you by a title from now on. You had not thought of that.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_rob_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob_long",
+   "text": "Mao the Lantern and thirty riders have stopped the salt caravan you are walking with, and they are thorough. They take the mules and the bolts of cloth. They take a child's tin whistle, for the laugh. Mao stops at you, measures you in a glance, and takes your purse as an afterthought. A carter's widow stands beside you, watching the whistle go. These riders took her husband on this same road, three winters back.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Give up the purse, and follow them after dark",
+     "effects": {
+      "flag": [
+       "sealx_stay",
+       "sealx_purse"
+      ],
+      "log": "They have your purse by noon. By morning the camp has lost its mules, its cloth and one tin whistle, and thirty riders are blaming one another with their fists. Nobody ever finds out how. You have got very good at being nobody.",
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Step out in front of the riders, and end it here",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It is over faster than the whistle took to steal. Horses bolt, and thirty riders are face down in the road and very sorry. The caravan does not cheer. They look at you as they look at weather. Then the widow walks up, whistle in her hand. \"Three winters ago,\" she says. \"You were on this road then. You could have done that. Where were you?\" You have had all these years to think of an answer.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_insult_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult_long",
+   "text": "It is the great autumn gathering at Twin Pines, every name in the region under one roof, and {npc} has the room and a full cup. \"To the ones who made something of themselves,\" {he} says, and it is a good toast. Then {he} finds you, at the far end, where you have sat for so long that people put their coats on you. \"And to this one. Still waiting. For what, nobody has ever had the heart to ask.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Raise your cup along with the rest",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You raise it. You mean it, a little, and that is what surprises you. {npc} has already turned away, and you go on sitting under the coats with a thing inside you that all these years have made very calm. It has stopped needing them to know.",
+      "mem": {
+       "deed": "se_drank_it",
+       "w": -3,
+       "note": "drank my toast, and never answered it"
+      }
+     }
+    },
+    {
+     "text": "Put down your cup, and answer the question",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You put down your cup, and it is the only sound. Then the rest arrives. People at the far tables feel it first, and it comes up the hall like a tide coming in. {npc}'s cup is still in the air and {his} arm is shaking. All these years you have imagined what you would say at this moment. You find you have nothing to say at all. It is over quicker than it took to earn, and the coats have slid to the floor.",
+      "mem": {
+       "deed": "se_answered",
+       "w": -30,
+       "note": "answered my toast, in front of everyone, without a word"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_mu_test_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test_long",
+   "text": "Six juniors have carried Grandmother Seo up your lane in a chair. She kept the great ledger of the Salt Road for sixty years and she will not see another winter. \"You,\" she says, and waves them back a few steps. \"I have had you in the book as a question mark since before these children were born. I do not like leaving a page open. Tell me I am right, or tell me I am an old fool.\" The juniors are pretending not to listen.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Tell her, gently, that she is an old fool",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "She looks at you for a long while, and then laughs until the juniors worry. \"Good,\" she says. \"Good. Keep it.\" She has them carry her back down the lane. They say she closed the ledger that winter with one line left blank, and would not let anyone rule it off.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Take her hand, and write one word in her palm with a finger",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "She closes her hand on it as if it might get out. She does not say anything else, and for a woman who has told everyone everything for sixty years, it is a kind of gift. The juniors never learn what it was.",
+      "luck": 2
+     },
+     "fail": {
+      "log": "She frowns at her palm. \"Speak up,\" she says. \"My hands have gone as deaf as my ears.\" You say it was only a blessing, and she sends you a look that could curdle milk, and goes home none the wiser.",
+      "charm": -1
+     }
+    },
+    {
+     "text": "Let the seal go, where she can feel it",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You let her have it, all of it, here in the lane. The six juniors drop to their knees and very nearly drop her. She laughs and laughs. \"Write it down!\" she shouts at nobody. \"Write it down!\" She is dead by the first snow, and the whole region has read that page by then. You do not regret it. Nobody has called you by your old name since.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_sneer",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer",
+   "text": "Court day, and the Isle of Nine Pavilions is short of moorings. An immortal of the back rows, ascended perhaps a century ago and still enjoying it, glances at you, sees someone comfortably beneath his notice, and has your cloud-skiff moved behind the cranes' roost. \"Newcomers walk,\" he explains, and he is very pleased to have someone to explain things to. The cranes look pleased as well.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Walk the long way round, past the cranes",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You arrive late, and the cranes have left a mark on your robe. But nobody watches a person at the back of the Isle, and for a whole court day you hear what the first row says when it thinks only furniture is listening. The Veil has seldom earned more.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask him which of the old mooring rules he means, by number",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "There are four hundred and six mooring rules. You happen to have read them, on a long century's evening. He goes pale at rule thirty, and your skiff is back at the rail by the time you have reached forty.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "He knows the rules better than you do. He gives you the number, the sub-clause and a small pitying smile, and the cranes keep your skiff until sunset.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the Cloud-Veil fall, there on the rail",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "He looks up. His face works through it, rung by rung. Then he moors your skiff himself, by hand, in the first berth, tying a knot he has not tied since he was a mortal. The whole Isle saw. The first row now knows you can hear them, and at the next court day they have all learned to speak in much smaller sentences.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_rob",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob",
+   "text": "Between the Pine Isles the cloud thins, and a long skiff comes alongside with its sail patched in three colours. Cloud-pirates, of a sort: a family, more or less, with a grandmother at the tiller and a nephew brandishing a jade-tipped pole. They take one look through your Veil and see a soft young immortal a long way from the Jade Court. \"Your stones,\" the nephew says. \"Please,\" the grandmother adds, without looking up.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Hand over the stones you have on you",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You hand over what you carry. The grandmother counts it and clicks her tongue at how little it is, then gives you a dumpling. All the way back to your isle you think of what you could have done, and notice, somewhere over the second pine, that you have stopped.",
+      "alignment": 2,
+      "item": {
+       "spirit_stone": -3
+      }
+     }
+    },
+    {
+     "text": "Point out that their anchor line has been dragging for a mile",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It has. They all rush to look, and by the time the argument over whose fault it is has really begun, you are three isles away with your stones and a dumpling you do not remember accepting.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "The grandmother does not look round. \"It drags on purpose,\" she says. \"Gets the ones who look.\" The nephew takes your stones with a little bow.",
+      "item": {
+       "spirit_stone": -3
+      }
+     }
+    },
+    {
+     "text": "Let the Veil fall, and let their skiff feel it",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The skiff drops a hundred feet in a breath, sail and all, and comes back up very slowly with everyone on it lying flat. The grandmother has not let go of the tiller. \"Well,\" she says. \"You might have said.\" There are eleven more of them on the other islands, all related, and you will not get a warm dumpling anywhere between the Pine Isles again.",
+      "luck": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_insult",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult",
+   "text": "{npc} is strolling the Long Terrace with a party of friends, and {his} voice carries the way voices do up here, with nothing to stop them. \"You can always tell the ones who climbed up from below,\" {he} says, and points {his} fan at you. \"It takes a thousand years to wash off. Look, this one is still carrying its own bag.\" The party laughs. Your bag is, in fact, quite heavy.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Shift the bag to your other shoulder, and bow",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You bow. The party moves on, delighted. It costs you the afternoon's peace, and it gives you something too: the bag, and what you are, and that nobody on this terrace has ever had to carry anything. You had not looked at it from that side before.",
+      "fame": -2,
+      "mem": {
+       "deed": "se_took_it",
+       "w": -5,
+       "note": "bowed, bag and all"
+      }
+     }
+    },
+    {
+     "text": "Offer to carry {his} fan too, as it looks so heavy",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It is said so humbly that it takes the party a moment. Then someone behind {npc} snorts, and {he} will be hearing about the heavy fan for the next four hundred years, which up here is about a season.",
+      "charm": 1,
+      "mem": {
+       "deed": "se_outfaced",
+       "w": -8,
+       "note": "asked if my fan was heavy"
+      }
+     },
+     "fail": {
+      "log": "You mean it as a cut, and {npc} takes it as tribute. {He} hands you the fan. You carry it the length of the terrace, and the party thanks you.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Put down the bag, and let the Veil fall",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The terrace seems to tilt a little towards you. {npc}'s fan stops in the air. {His} friends step back from {him}, all at once, like clouds off a peak. Nobody laughs on the Long Terrace for quite some time. Word goes round, and by the next Court the immortals of the back rows have started leaving their bags for you to notice, in case you are collecting.",
+      "mem": {
+       "deed": "se_shown_up",
+       "w": -20,
+       "note": "let the Veil fall, and my friends stepped away from me"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_up_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test",
+   "text": "The Cloud-Veil hides you from those below you. It has never done anything about those above. An immortal of the Court's first row stops beside you on the Isle of Quiet Water, in front of a dozen juniors, and looks at you with mild, complete understanding. \"You there,\" she says, and holds out an empty wine jar. \"Fill this for me.\" She knows exactly what you are. She would simply like to see what you do about it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Take the jar, and fill it",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You fill it, and you carry it back with both hands, and the juniors do not give you a second look. She drinks. \"I wondered if you did it for the fun of it,\" she says, too low for them to hear. \"It seems you do it for a reason. Carry on.\" You have been graded, and you have no idea on what.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Fill it from the wrong spring: the one that tastes of old socks",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "She takes a mouthful, and holds it, and swallows, and her face does not change at all. \"Very good,\" she says. \"A long time since anyone dared.\" She leaves you the jar as a keepsake. The juniors think you have been dismissed.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "She hands the jar straight back without tasting it. \"I can smell that from here,\" she says. \"Again.\" You fill it again, properly, and the juniors snigger.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Hand the jar to a junior, and let the Veil fall",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "Twelve juniors go down on the wet stones. She does not so much as blink, having known all along. \"So you do have a temper,\" she says, and takes her jar back and walks on, not the least bit impressed, and it is the rest of the Isle that talks. You have impressed everyone in the realm but the one person you did it for.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_love",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_love",
+   "text": "On the Bridge of Slow Cranes a lady of one of the old immortal houses stops to admire {npc}, and goes on doing it, in front of you. \"I always thought you had such promise,\" the lady says. \"And then you tied yourself to that.\" A painted fan indicates you without troubling to point. Your Veil is doing its work too well. {npc} has gone very straight, as {he} does, and is watching the cranes with close attention.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Bow to the lady, and lead {npc} on across the bridge",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You bow, and you lead {him} on. At the far side {npc} says, \"A thousand years, and I still want to throw that one off the bridge.\" You say that you know. You both watch the cranes for a while. It is not nothing, but it is less than {he} deserved.",
+      "mem": {
+       "deed": "se_walked_on",
+       "w": -3,
+       "note": "bowed, and took me across"
+      },
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask, with deep respect, whose fan that used to be",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It has an old house's crest on it, not the lady's own, and you happened to read the case. An appointment is suddenly remembered. {npc} says nothing until the far side, and then has to stop and lean on the rail, laughing.",
+      "mem": {
+       "deed": "se_spoke_up",
+       "w": 10,
+       "note": "asked about the fan"
+      }
+     },
+     "fail": {
+      "log": "The lady has an answer ready, and a better one for your next question. By the far side of the bridge you feel as if you have been folded and put away.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the Veil fall, and show the lady who {npc} married",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The cranes go up all together. The painted fan closes by itself, and the lady kneels on the bridge, in the old manner, and very correctly. {npc} looks at you for a long moment and does not look pleased at all. \"All this time, and you let me defend you,\" {he} says, and walks the rest of the way alone. You will be some years making this right.",
+      "mem": {
+       "deed": "se_hid_from_me",
+       "w": 6,
+       "note": "let the Veil fall for me, and had let me defend them all that time"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "spouse": true
+   }
+  },
+  {
+   "id": "se_up_sneer_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer_long",
+   "text": "They have given the back row a new warden, three years up from the world below and already bored of it. He has found you in the place you have sat for longer than he has been alive. \"Your standing has lapsed,\" he says, reading it from a jade slip. \"There is a bench at the rear, by the drain.\" The immortals you came up with now sit in the first row. A few of them have started to look at you oddly, as those above always have.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Carry your cushion to the bench by the drain",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The drain sings, faintly, all through the Court. Nobody else has ever sat there long enough to hear it. You stay through the whole session, feeling the great ones not look at you, and something in you that has been clenched since you first drew the Veil finally comes undone.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Stand up, and take off what you have been wearing all this time",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It takes the Hall a moment, because it comes up from the back. Row by row, the junior immortals stop speaking and turn round. The warden's jade slip cracks across. The first row does not turn: they have always known, and now they will have to say so. You walk up the whole length of the Court, and a place is made. The ones who knew are not your friends after this. They have just been shown up as well.",
+      "fame": -5
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_rob_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob_long",
+   "text": "The Orchard Isle is on fire, or as near as it gets up here, and raiders in grey have moored along its whole shore. They are taking the peach-keepers' stones and their young trees, and they stop for you, on your way through, the way one stops for a toll. \"Empty your sleeves,\" their captain says, seeing through your Veil to nothing much. Behind him an old keeper is trying to save one sapling from the skiffs, with his bare hands.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Empty your sleeves, and come back after dark",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They take your stones and laugh at them. By morning the raiders' moorings have come undone, all of them, knot by knot, and the skiffs have gone drifting off in every direction across the sky. Nobody on the Orchard Isle will ever know what happened. There is a sapling on your doorstep the next spring, with no note.",
+      "alignment": 4,
+      "item": {
+       "spirit_stone_mid": -2
+      }
+     }
+    },
+    {
+     "text": "Let the Veil fall, there on the shore",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It is not a fight, and you take no pleasure in it. The grey raiders lie down on the Isle as if all the sky had settled on them. Afterwards the peach-keepers will not come near you. The old keeper walks out, sapling in his arms, and bows very low. \"We have paid our dues to the Court for nine hundred years,\" he says. \"You have been passing over this isle since before that fire. Did you know?\" You did. That is the trouble.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_insult_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult_long",
+   "text": "It is the Feast of the Turning Pines, held once in a thousand years, and {npc} has been asked to speak. {He} is very good at it. \"To those who rose,\" {he} says, and the isles ring with it. Then, because it is a feast and it is expected, {he} finds someone to make the joke about. \"And to our friend down by the drain, who has been arriving for all these years, and will surely get here any century now.\" The laughter runs from isle to isle.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Raise your cup across all that sky",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You raise it, and you find you are smiling, and that it is real. All these years under the Veil, and the joke has finally stopped landing on anything. {npc} has gone on to the next. It is a very fine feast. You stay until the end.",
+      "mem": {
+       "deed": "se_drank_it",
+       "w": -3,
+       "note": "raised a cup to my joke, and meant it"
+      }
+     }
+    },
+    {
+     "text": "Stand, in front of all the isles, and let it go",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You only stand up. All these years come out of you, and go out across the Feast like weather. The pines lean. Far down below, it is said, people in the world look up at the clouds and do not know why. {npc}'s mouth is still open on the joke. You had thought it would be louder than this, and you had thought you would feel more. You sit down again, and nobody else dares to for some time.",
+      "mem": {
+       "deed": "se_answered",
+       "w": -30,
+       "note": "stood up at the Feast, and let it go"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_up_test_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test_long",
+   "text": "Someone is sitting on your doorstep with their shoes off. It is an immortal so far up the ladder that the clouds move out of the way, and the Veil has never for one moment hidden you from this one. \"I watched you draw that thing,\" the old one says, \"when the isles had other names. I never asked. I am asking now. How long do you mean to keep it up, and what is it for?\" It is a real question. It may be the first you have been asked in years.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Say you have not finished finding out",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The old one looks at you for what may be a season. \"Good answer,\" they say at last, and put their shoes back on. \"It would be a poor reason if you knew it.\" You go on sitting on the step after they have gone, and the clouds come back.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Offer tea, and ask what they have been hiding for all this time",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "There is a very long silence. Then the old one laughs for the first time in anyone's memory, and drinks the tea, and tells you. You will not repeat it, ever. You understand a good deal more about the first row after that.",
+      "luck": 2
+     },
+     "fail": {
+      "log": "The old one drinks the tea, thanks you, and leaves without a word. It was not an insult. You think about it for a hundred years.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Stand up, and let it fall in front of them",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It comes down in one soft fold. The old one watches it go without much interest. \"Well, there it is,\" they say. \"I wondered if that was the answer.\" They put their shoes on and go down the steps. By evening every isle has heard, and everyone wants to know you, and you keep coming back to that first question.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_sneer",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer",
+   "text": "Places at the Feast of the Pantheon are given out by the size of one's domain. The herald, a rather grand spirit, consults a long scroll, looks at your Mask, and leads you past the storm gods and the river gods, past the gods of minor hills, to a stool beside the God of Damp Cellars. \"You will be comfortable here,\" he says. \"It is near the door.\" The God of Damp Cellars moves up, and gives you half a mushroom.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Sit down, and share the mushroom",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is a good mushroom. The God of Damp Cellars turns out to know every leak in every temple of the domains, and which high gods are behind on their roofs, and has never been asked. You stay for all nine courses. No one from the high table glances your way, and you learn what they cannot see from there.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask the herald who, exactly, keeps his scroll dry",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "A pause. The herald looks at the God of Damp Cellars. The God of Damp Cellars looks back, and for the first time in an age, the whole end of the table gets served before the storm gods.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "The herald has served for nine thousand years and is not to be got round by a stool. He bows to exactly the depth your Mask deserves, which is not much, and goes.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Stand up from the stool, and take off the Mask",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The light in the hall leans your way, and every flame on the high table bends. The herald's scroll rolls itself shut. A place is laid for you at the head, in a hurry, and you sit in it, among gods who are all now working out what you have heard. Halfway through the soup you look down the length of the hall. The God of Damp Cellars is not looking at you, and has moved the mushroom away.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_rob",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob",
+   "text": "A collector comes round at the turn of the season, a tall lesser god with a ledger and two storm-spirits to carry it. He has decided that your little shrine lies inside the Thunder Pantheon's boundaries, whatever the boundaries say. \"It is only a tithe,\" he says, reading your Mask with a practised eye, \"and you are only you. Stones, please.\" The spirits flex what they have in place of knuckles. Your shrine is a stone and a jar. An old fisherman leaves a fish there on Thursdays.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Pay him, and keep the shrine",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You pay. He makes a note. The storm-spirits look a little let down. On Thursday the old fisherman comes as usual and leaves his fish, and asks for his knee to stop hurting, and you see to it, and you find this is what you wanted the Mask for.",
+      "alignment": 2,
+      "item": {
+       "spirit_stone_mid": -2
+      }
+     }
+    },
+    {
+     "text": "Ask to see the boundary, on the ledger, in his own hand",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "He shows you. You read it with care, slowly, like a small god with nothing but time. It takes a while for him to notice he has drawn it through his own patron's orchard. He leaves in a hurry, and he does not come back on Thursdays.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "His hand is excellent and the boundary is exactly where he says. You pay, and pay a small fee for the reading.",
+      "item": {
+       "spirit_stone_mid": -2
+      }
+     }
+    },
+    {
+     "text": "Take off the Mask, and ask him again",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The jar on your shrine rings like a bell. The two storm-spirits are suddenly a small breeze, going elsewhere. The collector closes his ledger, kneels, and asks what he may call you. Word is in the Thunder Pantheon before he is. On Thursday the old fisherman comes, sees what has become of the little shrine, and stops at the edge of the shingle. He stands for a while with his fish, then takes it home.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_insult",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult",
+   "text": "{npc} is holding forth in the Court of Lesser Offices, and your Mask has caught {his} eye. \"And what is this one the god of?\" {he} asks the room. \"Somebody's lost button? I have sneezed out stronger gods than that, and they at least had the decency to be rain.\" It is a good line, and it will go round every domain by the next festival. The god beside you, who is the patron of a single bad road, shuffles away from you very slightly.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Say that it is buttons, and that they matter",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You say it with dignity, and the room falls about. {npc} moves on, content. Going home you find, of all things, a lost button on the path, and stop. Someone will want that. You put it where they will find it, and that night your domain is the quietest it has been.",
+      "fame": -2,
+      "mem": {
+       "deed": "se_took_it",
+       "w": -5,
+       "note": "told me it was buttons"
+      }
+     }
+    },
+    {
+     "text": "Ask {him} to sneeze, so everyone can see",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "There is a very long silence with {npc} in the middle of it. Someone giggles, and then the god of the bad road, and from then on {he} cannot so much as clear {his} throat in the Court of Lesser Offices without people leaning forward hopefully.",
+      "charm": 1,
+      "mem": {
+       "deed": "se_outfaced",
+       "w": -8,
+       "note": "asked me to sneeze for the room"
+      }
+     },
+     "fail": {
+      "log": "{npc} obliges. It is quite a sneeze. The windows go, your Mask slips a hair and comes back, and you spend the rest of the morning sweeping up with everyone else.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Take off the Mask, and look at {him}",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "Every lesser office in the Court stops at once, including several that had been running for ten thousand years without a break. {npc} remains standing, which is to {his} credit, and shakes. The patron of the bad road has fainted. The clerks will have to redo the whole calendar now, on your account, and they will not soon forgive you. No one has ever been so politely hated by so many ledgers.",
+      "mem": {
+       "deed": "se_shown_up",
+       "w": -20,
+       "note": "took off a mask in front of the whole Court"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_gd_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test",
+   "text": "An old god of the Elder Lineages sits down beside your shrine with a candle. There are two more candles on the wall behind you, and a thousand in the temple below. \"A little trial for a little god,\" she says. She has been looking at how the air sits around you. \"Put this one out. This one only. A god of your size ought to find that quite hard.\" It is quite hard, for a god of your size. It would be nothing at all for you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Try it, and put out half the temple by accident",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "A hundred candles go at once, and a hundred priests look up. \"Dear me,\" she says. She relights them all with one finger. \"Well. That is how a small god does it.\" She is smiling faintly, and so, you realise after she has gone, was the last candle, which was never lit at all.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Blow on it, like a mortal",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It goes out. She looks at the candle, then at you, then starts to laugh, and it goes on for some time, and a small rain falls in three domains. \"Nobody,\" she says, \"has tried that in all my years.\" She leaves the candle with you.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "It flickers, and comes back. You blow again. A priest in the temple below looks up at the odd sound. \"Keep at it,\" she says, getting up. \"I can wait.\"",
+      "charm": -1
+     }
+    },
+    {
+     "text": "Take off the Mask, and put out that one candle",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "One thread of smoke, from one candle, and a thousand flames in the temple below stand perfectly still. She looks at you and nods, like someone hearing an old song played correctly. \"I had a sister who could do that,\" she says. \"Nobody liked her either.\" By nightfall the Elder Lineages have all sent gifts, and every one of those gifts is a question.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_love",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_love",
+   "text": "At the Festival of First Waters the goddess of some great river stops to speak to {npc}, in front of you. \"We were all so sorry,\" the river says. \"A god of your gifts, in a house like that one. Tell me, does it have a roof?\" The attendants look at your Mask and then politely at the sky. {npc} has become very gracious, which you have learned to be afraid of, and is not looking at you, so that you will not have to do anything about it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Give thanks, and take {npc} home to the leaking roof",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You give thanks. At home the roof does indeed leak, and {npc} moves the jar under it without speaking. After a time {he} says, \"I would rather a leak than that river,\" and then, not to you, \"I would have liked you to say something.\" You sit up with that for a long time.",
+      "mem": {
+       "deed": "se_walked_on",
+       "w": -3,
+       "note": "gave thanks, and took me home"
+      },
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask, kindly, how the lower reaches are doing this year",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "Everyone in the domains knows about the silt, though nobody has ever said it to that face. The river goes a slightly muddier colour, and is gone with the next current. {npc} holds on to your sleeve the whole way home and hums.",
+      "mem": {
+       "deed": "se_spoke_up",
+       "w": 10,
+       "note": "asked after the lower reaches"
+      }
+     },
+     "fail": {
+      "log": "The lower reaches are doing wonderfully, you are told in detail, and you are both invited to come and see them, and you can think of no way out of it.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Take off the Mask, and show the river who holds the roof up",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The great river stops, a thousand miles of it, for as long as a breath, and in every village along its banks they will still be talking about it in a hundred years. Then it bows. {npc} watches all of it without expression. \"Those villages,\" {he} says, on the way home. \"They did not insult me.\" And then: \"You let me mend that roof by hand.\" You have nothing to say to either of those.",
+      "mem": {
+       "deed": "se_hid_from_me",
+       "w": 6,
+       "note": "took off the Mask for me, and had let me mend the roof"
+      },
+      "alignment": -1
+     }
+    }
+   ],
+   "npc": {
+    "spouse": true
+   }
+  },
+  {
+   "id": "se_gd_sneer_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer_long",
+   "text": "The Pantheon is tidying its rolls. A brisk young god of Records stops at your shrine with a list. \"A domain of one stone and one jar, one worshipper, no increase in all these years,\" she says. \"We are striking it off. You will be reassigned, or you can fade; most prefer to fade, at your level.\" She does not unkindly put a little mark next to your name. The old fisherman's grandson has started leaving the fish now, on Thursdays.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Ask only that the grandson be told where else to pray",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "She looks up, surprised, and writes that down. Your shrine is struck off on a cold morning with no one to see it. On Thursday you go down to the shingle in no shape at all, and you see to the boy's nets anyway, because nobody told you to stop. The Rolls have no column for what you are now, and you feel lighter than you have in an age.",
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Take off the Mask, and let her read the roll again",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The stone and the jar are just a stone and a jar. It is everything else that changes. Her list bursts into flower, then ash. Across the domains, every god of every size turns to look at one wet stretch of shingle, and all these years of the Pantheon's tidying is on the wrong side of the page. They raise you a temple on that beach within the season. The boy cannot get near it now, and the fish go uneaten on a marble step.",
+      "fame": -5
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_rob_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob_long",
+   "text": "The Hollow Host has come through the eastern domains, a whole pantheon of gods with nothing left of their own, taking the prayers out of people as they pass. They stop at your stone. \"Hand it over,\" the first of them says, reading your Mask, without malice. \"We will need all of it. It is only a little.\" Up the coast the villages have stopped praying: they stand on their doorsteps with their mouths open, having forgotten what it was they wanted.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Give them your little, and follow them in secret",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You give it up, and you go after them. Nobody sees what happens in the eastern domains after that, though it is said the Host begins to lose its way, and to walk in circles, and that people get up one by one and remember their children's names. There is no temple to it. You were never there, and it was the best work of your long life.",
+      "alignment": 4,
+      "item": {
+       "spirit_stone_mid": -2
+      }
+     }
+    },
+    {
+     "text": "Take off the Mask, on the shore, in front of all of them",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It is the end of the Hollow Host, and it is very quick. The sky over the eastern domains goes the colour of a struck bell, and every prayer they stole comes down at once, like rain, on everyone. Up the coast people fall to their knees. Later, an old woman comes along the shingle, not to thank you. \"They were at our doors for forty years,\" she says. \"We prayed. We prayed to you, as it happens. It was all we had.\" She goes back up the beach.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_insult_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult_long",
+   "text": "It is the Great Reckoning of the Domains, when every god is named aloud with what they have done. {npc} is herald this age, and {he} enjoys the work. When {he} gets to you, {he} pauses, and the whole Divine Realm leans in. \"One stone,\" {he} reads. \"One jar. All these years. It has neither risen nor fallen, and I do not think it has noticed.\" {He} lets the laughter build, and it goes on building, up through the pantheons, like a very slow thunder.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Bow, and thank the herald for remembering the jar",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You bow, and you do mean it. Nobody else has ever said its name up here. The laughter goes past you and on to the next, and you stand in the great hall with your one jar, and for a moment everything you have hidden is simply yours, and needs nobody to read it out.",
+      "mem": {
+       "deed": "se_drank_it",
+       "w": -3,
+       "note": "thanked me for remembering the jar"
+      }
+     }
+    },
+    {
+     "text": "Take off the Mask, while the laughter is still going",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The laughter stops from the top down, as the greatest feel it first. {npc} looks down at what is written, and it is no longer what is written. The stone. The jar. All these years. The hall bows, pantheon by pantheon, and it takes most of a day. When it is finished you can feel every one of them already planning for you. You have not been so alone since you put the Mask on.",
+      "mem": {
+       "deed": "se_answered",
+       "w": -30,
+       "note": "took off a mask at the Reckoning, and made my reading a lie"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_gd_test_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test_long",
+   "text": "A very old god has come to die on your beach. They have no name left, and no domain, and they can barely hold a shape. \"Small one,\" they say, \"I have known what you are since the day you tied that thing on. I have a whole domain's worth of old grief left, and I need it held by something that will not break. There is nobody I can ask who would not make a throne of it. Tell me what you are.\" The tide is coming in around them, and neither of you has very long.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Say you are the god of one stone and one jar, and take their hand",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They look at you, and something like a smile goes across what is left. \"Yes,\" they say. \"That will do. That is what I hoped you would say.\" You sit with them while the tide comes in, and whatever they carried goes into the stone, or the jar, or you. It is quite heavy, and it does not break anything.",
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Take off the Mask, so they can see it before the end",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You take it off, for them and nobody else, and of course the whole Realm feels it. The old one looks up at you with great tiredness. \"Ah,\" they say. \"Well, it was worth asking.\" They go out with the tide. The pantheons arrive by morning with their banners, asking what the old god told you and where the grief has gone, and you find you truly do not know.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_sneer",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer",
+   "text": "Harvest supper at the Old House of Vael, and for once the whole valley is asked. The House's steward walks the benches with a white stick, seating people by what he can feel coming off them. He reaches you and sniffs. \"With the goose-girls,\" he says, and taps the end of the lowest bench, out in the yard. Inside, a young cousin of the House is being given your place, and telling a story about a boar that gets bigger each time.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Go and sit with the goose-girls",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The goose-girls have saved all the crackling, it turns out, as they do every year. They also know which cousin owes what, whose roof is whose, and what the steward does on market nights. You go home full, and rather better informed than the House would like.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask the steward if the white stick is the same one as his father's",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It is, and he is so pleased to be asked that he tells you all about it, and he has walked you indoors and sat you down by the fire before either of you notices. The boar has got as big as a barn by now.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "He looks at you as if the bench had spoken. The stick taps twice, and you are with the geese.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the seal go, in the yard, in front of the geese",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The geese stop. The steward's white stick snaps in his hand, all by itself. Through the doorway the cousin's boar dies mid-sentence, and the old head of the House comes out to the yard in person, and asks if you would do them the honour. It is a very good dinner. The goose-girls, watching you go in, get up and curtsey, one after the other, and don't save you anything next year.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_rob",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob",
+   "text": "The bridge at Long Sedge has a new toll, and the toll is four large cousins with staves. They have been sitting there since the river went down, and they have got fond of it. The largest looks you up and down and feels nothing that worries him. \"That is everything in your pack,\" he says, reasonably, \"and your boots, as they look about my size.\" The smallest cousin has brought his lunch, and offers you a bit while you think it over.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Hand over the pack, and then the boots",
+     "effects": {
+      "flag": [
+       "sealx_stay",
+       "sealx_purse"
+      ],
+      "log": "It is your whole purse and a long way home in your socks. The smallest cousin runs after you with a heel of bread, and looks embarrassed. By the third mile your feet have stopped complaining, and you find you have been smiling at nothing for a while.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Say the boots belonged to somebody who died of the itch",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "He stops with one hand on your laces. He takes the hand away and looks at it. They talk it over among themselves, then wave you across, with the pack, and the whole bridge is in the river washing when you look back.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "He thinks that over. \"I have got the itch already,\" he says, and takes the boots. He takes your purse too.",
+      "flag": "sealx_purse"
+     }
+    },
+    {
+     "text": "Take your boots off yourself, and let the seal go",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The bridge groans, though you have not touched it. All four cousins are suddenly in the river, of their own free will, holding their staves over their heads. They are very sorry. They have mothers, it comes out, and it comes out at length. The whole of Long Sedge knows by nightfall, and the next time you pass there is a sign on the bridge with your name on it, spelled wrong, charging people to look at it.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_insult",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult",
+   "text": "It is verse night at the Three Cups, where anyone may stand on the barrel and sing a new verse about anyone at all. {npc} has got up on it with a good voice and a bad look, and looks straight at you. \"There once was a nobody,\" {he} sings, and it goes on from there. It rhymes very well, and it brings in your cooking as well as you. All of {pw_world} is going to know this one by the spring, and people have begun to join in on the chorus.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Clap along, and buy the singer a drink",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You clap on the beat. You send over a drink. It is, you are obliged to admit, a very good song, and you still catch yourself humming it weeks later, and each time it bites a little less. The last time, you notice you have corrected the second verse.",
+      "fame": -2,
+      "mem": {
+       "deed": "se_took_it",
+       "w": -5,
+       "note": "clapped along, and sent a drink"
+      }
+     }
+    },
+    {
+     "text": "Get up on the barrel, and sing the next verse against yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It is even ruder than {his}, and funnier, and it scans. The Three Cups howls. By the end the whole room is singing yours and {npc} is standing there with {his} mouth open and no chorus left.",
+      "charm": 1,
+      "mem": {
+       "deed": "se_outfaced",
+       "w": -8,
+       "note": "took my song, and sang it better"
+      }
+     },
+     "fail": {
+      "log": "You have many gifts. A singing voice is not one of them. They sing the first verse again to get the taste out, and now there is a new one about your voice.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Let the seal go, and let the chorus die",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "Nobody finishes the line. The barrel cracks down the side, {npc} comes down rather faster than {he} went up, and every cup on every table shivers with a small clear note. For a moment the Three Cups is the quietest room in {pw_world}. Then you have to walk out through it. They do not sing in there for a month, and the landlord has asked very politely if you could drink somewhere else.",
+      "mem": {
+       "deed": "se_shown_up",
+       "w": -20,
+       "note": "broke a seal in the middle of my song"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_pw_test",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test",
+   "text": "Old Wenna keeps the well at Crossways and knows everybody, which is to say she knows who has been drawing too much. Today she has set a full bucket on the wall, a little too near the edge, and she is watching you, not it. As you pass she bumps the wall with her hip. Something that has been sitting still inside you for years wakes up and looks at the bucket. It would be no trouble at all to catch it, and everyone in Crossways would see.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Let it fall, and get soaked",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It goes all over you, and it is very cold. Old Wenna looks at you, dripping, for quite a while. \"Clumsy,\" she says at last, in a tone that does not mean clumsy, and gives you a rag. You draw her next bucket for her. Neither of you mentions it again.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Catch it, badly, slopping half of it, and swear at it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You make a real mess of it, and you swear in a way that gets the attention of two dogs. Old Wenna cackles and calls you a great lump, and goes off to look at somebody else's hands.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "It is too good. Nobody who is that bad catches a bucket. Wenna takes it from you, and gives you a look, and from then on your water is always drawn first and you are never quite easy at that well.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Let the bucket hang in the air, and look at her",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It stops halfway down, without a drop spilled, and hangs there. Crossways falls silent, all the way to the smithy. Old Wenna looks at it for a good while, and takes it down out of the air, and carries it home. \"That is a lot of well to be drawing,\" she says over her shoulder. She tells nobody, as it happens. She has no need to. Half the county was standing there.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_love",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_love",
+   "text": "On market day a cousin of the Old Houses, with a good horse and nothing to do, reins in by the stall where you and {npc} are selling. The cousin has an eye for {npc}. \"Still here?\" comes the voice from up on the horse, past you. \"It is a shame. There is room at my table for somebody with a bit of life. This one barely casts a shadow.\" {npc} goes on counting out onions, very evenly. The whole row of stalls has gone quiet, in the way a row of stalls does.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Go on selling onions, and take {npc}'s hand after",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You sell the onions. The cousin rides off at last, disappointed. That evening you take {npc}'s hand, and {he} lets you hold it. \"Just once,\" {he} says, not angrily, \"I would like to see somebody make that lot sorry.\" You have the means in your chest, and you go on looking at the fire.",
+      "mem": {
+       "deed": "se_walked_on",
+       "w": -3,
+       "note": "went on selling onions"
+      },
+      "fame": -1
+     }
+    },
+    {
+     "text": "Sell the cousin an onion, at a price, with a speech",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You praise the horse. You praise the table. It takes you some time to reach the price. By the end the whole row is crying with laughter, nine times the worth of an onion has been paid, and the cousin has no idea how to leave. {npc} frames the coin.",
+      "mem": {
+       "deed": "se_spoke_up",
+       "w": 10,
+       "note": "sold an onion for nine times its price"
+      }
+     },
+     "fail": {
+      "log": "A coin drops in the mud, for you to pick up, and the horse walks on while you are still talking. Nobody laughs at that, which is worse.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the seal go, and ask for that to be said again",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "The good horse lies down in the road, with great care, and the cousin goes with it. Every shadow on the market row leans a little your way. There is an apology, addressed mainly to the onions. The row thinks it is the best thing it has seen in years. {npc} goes on counting, and finishes the count before {he} looks up. \"How long were you going to let me carry those sacks?\" {he} says, and you have no answer to that, as the row can plainly hear.",
+      "mem": {
+       "deed": "se_hid_from_me",
+       "w": 6,
+       "note": "broke the seal for me, and had let me carry the sacks"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "spouse": true
+   }
+  },
+  {
+   "id": "se_pw_sneer_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_sneer_long",
+   "text": "They are choosing the new Reeve of the Long Valley, and it goes by standing: who has done what, and who can make people listen. You have lived here so long that you have dug half the ditches. The Old Houses' boy who runs the count looks through you, then at his list. \"Those who carry no weight should stand with the carts,\" he says, and it is not said cruelly. It is only that he has not noticed you, as nobody has, for all these years.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Go and stand with the carts",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is pleasant by the carts. The carters talk about the ditches, and who dug them, and they have the names wrong, and you do not correct them. You vote for the one who was kindest to the mules. The water runs where you sent it, all the way down the valley, and nobody will ever know, and you find that you like that.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Walk out in front of the carts, and let them feel it",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "It goes out across the Long Valley like a change in the weather. The dogs lie down, and the boy's list slips through his fingers. Then the whole valley, which has known you all its life, turns and looks, and you see them all going back over every favour, every joke, every time they told you that you had dug that one crooked. They make you Reeve, of course. Nobody ever tells you that you have dug anything crooked again.",
+      "charm": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_rob_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_rob_long",
+   "text": "The Reddle Band has come over the pass: sixty riders, this time, and not cousins. They clear out the whole of Sedgeford in a morning, seed corn and all, and they stop you on the bridge for what you have in your sleeves. Their captain gives you one flat look, feels nothing, and takes it. Behind him the miller is on his knees, begging for the seed corn. He is asking for one sack. It is a hard winter coming, even here in {pw_world}.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Let them take it, and go after the seed corn that night",
+     "effects": {
+      "flag": [
+       "sealx_stay",
+       "sealx_purse"
+      ],
+      "log": "They take your purse, and laugh. In the morning the Reddle Band wakes to find sixty saddles cut through and no corn at all. There are forty sacks on the miller's step, and he will swear to his dying day that it was the old people of the hill. You help him carry it in, and you get a very small thank-you for your trouble.",
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Stand in the middle of the bridge, and let it all go",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "Sixty horses refuse to go on. Their riders get down and lay their swords in a row on the road without a word from anyone, and walk back over the pass. The miller gets up off his knees, and looks at you. He looks for a long time. \"You have been coming here for your flour,\" he says slowly, \"for all these years. You were here for the fever winter, and you were here when they burned the east barn.\" He does not ask. He goes and gets his corn.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_insult_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_insult_long",
+   "text": "It is the song-gathering at Greenmeet, once in a generation, with all of {pw_world} on the hillside, and every kingdom has sent its best. {npc} has been given the closing verse. It is a fine one, about those who did great things, and then, as it should, it drops into comedy. \"And there is one,\" {he} sings, and {he} is looking straight at you. \"Who has done nothing all these years, and has done it with such care.\" Ten thousand people take up the refrain.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Sing it with them",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You have rather a good view from up here, and you sing it with them, all ten thousand of you. It is a true verse, more or less. When it ends the hillside goes on humming for a while, the way a hillside does. {npc} never finds out that you were the only one there who understood all of it.",
+      "mem": {
+       "deed": "se_drank_it",
+       "w": -3,
+       "note": "sang my refrain with everyone else"
+      }
+     }
+    },
+    {
+     "text": "Stand up, there on the hill, and let the refrain end",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You just stand. The sound stops, ten thousand throats at once, as if the hill had taken a breath. All of it comes out of you, all those years, and the grass bends away from where you are, and there is nothing to say and you do not say it. {npc} has {his} last note still in {his} mouth. They will sing about this for three hundred years, and they will get all of it wrong, and you are going to have to listen to it.",
+      "mem": {
+       "deed": "se_answered",
+       "w": -30,
+       "note": "stood up at Greenmeet, and stopped my song"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "se_pw_test_long",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_test_long",
+   "text": "The wise-woman of Hollow Fell has walked nine days to your door, on two sticks, and she sits down on your step uninvited. \"I have been watching you since my mother was watching you,\" she says. \"There is an old sickness coming down the valley with the thaw, and I know what can stop it, and I cannot do it. I think that you can, or I think I am a fool. It would have to be done where they could all see. I would like to know which of us I have walked nine days for.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Say she is a fool, and then ask her exactly how it is done",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "She looks at you, and she takes her time. \"A fool, then,\" she says. \"Very well. A fool will tell you.\" She tells you, all of it, and walks home. The sickness comes as far as the mill at the thaw, and it stops there, one night, for no reason anyone can give, and they thank the wise-woman, who says nothing. You do not sleep for a week.",
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Stand up, let the seal go, and walk down with her",
+     "effects": {
+      "flag": "sealx_reveal",
+      "log": "You give her your arm down the valley, and you do it in front of them, in the middle of the road, with the whole of {pw_world} coming out of doors to watch. The sickness never gets past the first farm. They bring you their children to touch, from then on, and their dying, and their quarrels about pigs. \"You could have come before,\" the wise-woman says, not unkindly, at her own gate. \"But you have come. I will take that.\"",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_joined",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_joined",
+   "text": "The promotion list is up on the board outside the Hall of Merit, and your name is not on it, again. A junior you taught to hold a sword has passed you, and is being gracious about it. \"It is nothing to do with your work,\" the hall steward says, not looking up. \"The elders simply feel you have reached what you are going to reach.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Congratulate the junior, and go back to your post",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You mean it, near enough. Nobody watches a person who has reached what they are going to reach, and that afternoon you read the sect's whole winter accounts while dusting them.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask the steward to read out the list's criteria, slowly, for your records",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "Halfway through, the steward realises that two people on the list do not meet them. A small correction goes up on the board. Your name is still not there, but you have made a friend who is afraid of you.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "The steward reads them out, very slowly, for the benefit of the whole corridor. You meet none of them, as far as anyone can see.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Walk into the Hall of Merit, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The ink on the board runs. The elders come out of their rooms one by one, and they do not come to argue. The list is rewritten by evening. The junior you taught stops being gracious, and that friendship does not come back.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_founded",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_founded",
+   "text": "You built this hall. You cut the first beam. Now the sect has grown, and your own second-generation disciples have started a quiet custom of settling things before they reach you, because the old founder, bless them, has not been what they were. Today a delegation of three has come, very respectfully, to suggest that you might like to rest more.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Thank them, and go and look at the first beam",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is still sound. You let them run the morning, and they run it rather well. It is an odd pride to be surplus to something you made, and you find you can live on it.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Agree to rest, and ask them to bring you the ledgers to rest with",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "Three days later you send back the ledgers with four small notes in the margin. Nobody suggests anything for some time, and the delegation has started to look at you sideways.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They bring you the ledgers. They bring you a blanket as well, and a junior to read aloud to you.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Stand up, and let them feel who cut that beam",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The three of them are on the floor before you have finished standing. All down the mountain, every disciple you ever raised looks up from what they are doing. Nothing more is suggested. It is a long time before anyone brings you bad news again, and you begin to miss it.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_restored",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_restored",
+   "text": "They told you there was nothing left of the old sect, and you raised it anyway, plaque and gate and all. Now an envoy from a great house has come to look at it, and he takes in the weak founder and the new paint with some amusement. \"A charming restoration,\" he says. \"You must let us send someone to run it properly. The name deserves a real master.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Bow, and show him round the ruins you kept",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You show him the old foundations and the burned stair. He yawns, and goes home to report that there is nothing here. There is a great deal here. It will all still be here when his house has forgotten this visit.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Answer him under the old plaque, without the seal",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The plaque hums in its brackets. The envoy goes very white, and then he kneels, not to you exactly, but to whatever it is that has come back. Every sect that once stood by while the old one burned hears by the new moon. Some of them start sending gifts, and the others start sending spies.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_inherited",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_inherited",
+   "text": "You did not build the sect: it came to you, with its debts and its old men. And the old men have never believed in you. The Second Elder has taken to correcting you in the hall, gently, in the voice one uses for an heir who was a mistake. \"Your predecessor would have seen at once what was wrong with that,\" he says, and the whole row of elders nods.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Ask him what was wrong with it, and listen",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "He tells you, at length, and some of it is even true. He has now shown you exactly how he thinks, and exactly who nods when. You can use all of that, and it has only cost you an afternoon's face.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Quote your predecessor's own letter against him, by date",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You found that letter in a box years ago. The hall goes quiet. The Second Elder sits down, and he corrects you much less after that, and much more carefully.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You have the date wrong. He corrects that as well.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Rise from the seat you were given, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The row of elders stops nodding. It seems that you were not a mistake. The Second Elder looks at you for a long time, and says \"Your predecessor knew?\" and you say you have no idea. It is the first time you have seen him frightened, and it does not make you like the seat any more than you did.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_clan",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_clan",
+   "text": "The house you were born to has a seating plan for the ancestral rites, and it is a very exact document. This year you have been moved down again, below a cousin's husband. \"It is only that you have not really come to anything,\" the eldest aunt of the house explains, with real affection, as she moves your cushion. \"Nobody blames you. Not every branch can bear fruit.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Kneel where she puts you",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "From back here you can see which cousins are watching which, and that the eldest aunt has been slipping rice to the old gatekeeper for years. The tablets do not seem to mind where you kneel. You stay until the incense is gone.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Stand up in the middle of the rites, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The incense goes straight up and stops. Every tablet in the hall trembles on its shelf. The eldest aunt picks up your cushion and carries it up the whole length of the hall herself, and you can see she is already deciding that she always knew. The family will need you for everything now.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_head",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_head",
+   "text": "The Elders' Council of your clan has asked for a word, which means they have been talking for a month. \"A head must be seen to be strong,\" the eldest says. \"The Lu family has noticed. The branch lines have noticed. We do not ask you to do anything. We only wonder who the house would turn to, if there were a difficulty.\" They have all brought their best tea, and nobody has touched it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Pour the tea, and ask them who they have in mind",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They tell you. They are so relieved to be asked. You now know the names, the order, and who has promised what, and you thank them all, and you hold the seat exactly as you held it before. It is the most useful tea you have ever spilled.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Remark that the Lu family is three years behind on the river rights",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It turns out that the weak head has been paying attention. The Council spends the next hour on the river rights and goes away thinking about something else. Nobody said anything about strength.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They already know. They are politely patient with you, and they go on wondering.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Set down the pot, and show them who the house would turn to",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The tea in every cup stands up, and sits down again. The eldest tries to rise and bow and cannot do both. Within the week the branch lines have remembered their duty, and the Lu family has sent a very large goose. You will never again hear an honest word from any of them.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_dynasty",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_dynasty",
+   "text": "The genealogy is being recopied, as it is every thirty years, and the scribe has come to ask how you would like to be written. He is tactful. Every head of your line has a line of their own: the Iron-Handed, the One Who Held the Pass. \"For yourself,\" he says, brush in the air, \"the family has suggested The Careful.\" Generations of ancestors look down at you from the wall, all of whom are also listening.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Tell him The Careful will do very well",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "He writes it down, relieved. Your descendants will think you a quiet stretch between two better chapters. You look up at the Iron-Handed for a while, and you wonder what the Iron-Handed was hiding.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Take the brush, and let the seal go while you write",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "You write it yourself, in a hand that goes through the paper and into the table beneath. The scribe backs out on his knees. The whole line hears, down to the cousins on the farms, and every one of them now stands a little straighter on your account, and expects you to do something about it.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_throne",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_throne",
+   "text": "Your ministers have stopped looking frightened at audience, and a ruler notices that sooner than most things. A foreign envoy has asked, through several polite layers, whether your health is good. Tonight the Lord of the Northern March sends a gift: a very fine walking stick. The whole court is waiting to see what you will do with it, and most of them have already written to someone.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Thank him, and carry it at the next audience",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You lean on it a little. By the end of the month you have a complete list of who wrote to whom, because they have stopped being careful around you. It is by some way the best intelligence your throne has ever had.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Send it back with a note: it would suit a man with further to fall",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "The note is copied and passed around, and it is very widely admired. The Lord of the Northern March discovers a pressing need to inspect his southern granaries in person, with gifts. Nobody can say you did a thing.",
+      "charm": 1
+     },
+     "fail": {
+      "log": "It reads as bluster. The whole court winces on your behalf, and they go on writing their letters.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Break the stick across your knee at audience, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The stick was never the point. The roof-beams creak, the guards go down in their rows, and every minister in the hall discovers the floor. There will be no more letters for a generation. There will also be no more honest ministers, and it will be some time before you notice that.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_cult",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_cult",
+   "text": "In the Hundred Thousand Mountains, weakness has a smell, and a Black Robe captain has caught it on you. He takes your place at the fire without asking. Then he takes your cloak, as the fire is cold tonight and he has decided you do not need it. Twenty masked faces have turned your way. In the Cult, this is how a question gets asked.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Let him have the cloak, and bow to him",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "Twenty faces turn away, and you have stopped existing. It is very cold. In the Cult nobody watches a person who has been eaten already, and over the next winter you walk through doors that would have killed anyone who mattered.",
+      "fame": -2,
+      "alignment": -1
+     }
+    },
+    {
+     "text": "Ask for your cloak back, without the seal",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "He gives it back. He gives it back with both hands, and shaking, and then he takes off his own and lays it down for you to walk on, and that is the last anyone sees of him at that fire. The twenty masks kneel. In the Cult, a thing like this is only ever read one way: you are now somebody's next target, and somebody's next hope.",
+      "alignment": -2
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "se_mu_h_blood",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_blood",
+   "text": "The Blood Altar reads strength the old way. The elder at the rites takes each wrist in turn and listens to it, and when she reaches yours she stops, and sniffs, and she moves you to the back with the ones who carry the bowls. \"It runs thin,\" she says, in front of the whole cavern. The bowls, you discover, are very heavy, and everyone at the back has been there a long time.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Pick up a bowl",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The other bowl-carriers do not look at you. After a month one of them tells you a joke, and it is the first time you have heard anyone laugh under this mountain. You carry the bowls, and you listen, and you keep your wrist to yourself.",
+      "alignment": 1,
+      "fame": -1
+     }
+    },
+    {
+     "text": "Hold out your wrist again, without the seal",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "She takes it. She lets go almost at once, and she looks at her own fingers. Every flame in the cavern leans in and turns red. They give you a place at the front, by the great basin, where you can be properly watched, and the bowl-carriers do not tell you any more jokes.",
+      "alignment": -3
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_mu_h_alliance",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_alliance",
+   "text": "The Martial Alliance has a Conference of Precedence every spring, and this year the delegates have noticed you. The Leader of the Southern Chapter asks, in full session, whether a post of such weight should really sit with someone of such evident modesty. It is put very courteously. Four great sects have already agreed on who should replace you, and they have the good manners to look at the ceiling.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Reply with great courtesy that the Conference must do as it thinks best",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It does not, in the end: nobody can agree on the replacement once it comes to it, and you have not given them anything to unite against. You keep your post, and a very good map of who hates whom.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Move to refer the question to a committee, chaired by the Southern Chapter",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It is a beautiful motion. The Southern Chapter cannot refuse the honour, and it will be occupied until the next spring and possibly beyond. You are thanked for your modesty.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They accept, and put you on the committee, and you spend the spring taking notes for your own replacement.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Rise to answer, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The whole Conference feels it, and the great hall's banners all lift together. The Leader of the Southern Chapter sits down so hard the bench cracks. The motion is withdrawn. All four great sects now wonder what else the Alliance has been keeping from them, and by summer the first of them has begun to ask.",
+      "charm": -1
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "se_mu_h_disciples",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_disciples",
+   "text": "{npc} has been very kind to you lately. {He} carries your things up the steps, and {he} has started to explain to the younger ones that the master's methods are old-fashioned, but must be respected. This morning you hear {him} through the wall. \"Do not trouble the master with it,\" {he} says. \"I can show you. The master has grown a little slow.\" {He} is not mocking you. {He} is sad about it, and that is much harder.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Let {him} go on carrying your things",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You let {him}. {He} teaches the younger ones rather well, and much of it is yours, and {he} has no idea. You watch the whole of it from the top of the steps. It is a strange thing to be mourned by someone while you are still eating your dinner.",
+      "mem": {
+       "deed": "se_grew_weak",
+       "w": 2,
+       "note": "let me look after them in their old slowness"
+      }
+     }
+    },
+    {
+     "text": "Ask {him} to spar, and lose in a way that teaches {him} something",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "You lose very carefully. It takes {him} a week to notice what {he} learned from it, and {he} comes back up the steps looking thoughtful, and you hear no more about being slow.",
+      "mem": {
+       "deed": "se_lost_well",
+       "w": 6,
+       "note": "lost to me, and I learned something"
+      }
+     },
+     "fail": {
+      "log": "You lose. That is all that happens. {He} helps you up, and is even kinder afterwards.",
+      "mem": {
+       "deed": "se_grew_weak",
+       "w": -2,
+       "note": "lost to me, and I was so sorry"
+      }
+     }
+    },
+    {
+     "text": "Call {him} in, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "{npc} kneels without deciding to. For a long moment {he} says nothing. Then, very quietly: \"I carried your things up the steps.\" You say you know. {He} will be a stronger fighter from this day, and it will be a long time before {he} tells you anything true again.",
+      "mem": {
+       "deed": "se_master_shown",
+       "w": -4,
+       "note": "let me pity them, all that time"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "disciple": true
+   }
+  },
+  {
+   "id": "se_mu_h_family",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_family",
+   "text": "{npc} has noticed something, or has noticed nothing, and it is hard to tell which. {He} watches you lift the big water jar one-handed, then looks away, and at supper {he} asks whether you ever think about taking up a trade, as the family does worry about you. {He} has brought you a list of positions. They are all quite suitable for someone of your abilities.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "concealed"
+    ],
+    "npcAge": [
+     16,
+     99999
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Read the list with care, and thank {him}",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "There is a clerk's post at the salt office that sounds rather pleasant. You keep the list. {npc} is pleased you took it so well, and for the rest of the meal you are allowed to be somebody's worrying relative, which is a thing you have not had much of.",
+      "mem": {
+       "deed": "se_kept_home",
+       "w": 3,
+       "note": "took my list, and thanked me"
+      }
+     }
+    },
+    {
+     "text": "Put down the jar, and tell {him} the truth",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "You let the seal go at your own table. The bowls ring. {npc} goes very still and then, of all things, starts to laugh and cry at once. \"All those years I worried,\" {he} says. \"All those years!\" The whole family knows by morning. Nobody will ever bring you another list, and you find you are going to miss them.",
+      "mem": {
+       "deed": "se_told_family",
+       "w": 12,
+       "note": "told me the truth at last, at our own table"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "family": true
+   }
+  },
+  {
+   "id": "se_up_h_joined",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_joined",
+   "text": "Your immortal house promotes by the Sitting of the Hundred Lamps: each disciple sits among the lamps, and those that lean towards you are counted. Your Veil has done its work. Two lamps lean, out of a hundred, and one of those is near a draught. The younger immortals take care not to look. A kind Elder gives you a job in the archive, where the air is still.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Go down to the archive",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It holds nine thousand years of what the sect wished it had not written down. Nobody ever comes here. You read for a very long time, by a lamp that leans only because you have asked it to.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Sit down among the lamps again, with the Veil off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "One hundred flames bow flat and stay there. The Elders stop what they are doing, and there is nobody in the hall who can look straight at you. They have to give you a new title, and a new title has to be invented. The kind Elder does not offer you any more jobs in the archive, and you had not finished reading.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_court",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_court",
+   "text": "At the Heavenly Court, an officer of your own ministry has taken to sending you his filing. \"It is only that you have the time,\" he says, and two more officers begin sending you theirs. The Veil tells them you are safely beneath them. The Star Marshal is not fooled, and he looks at the great heap on your desk, then at you, and raises one eyebrow by the width of a thread.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "File it, all of it, and read it as you go",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You now know everything that has crossed three desks in the ministry. That includes who is stealing from the cloud-granaries, and it was not the one you thought. The Star Marshal's eyebrow goes down again, with what might be approval.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "File it all correctly, in an order only you can follow",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "After a season, none of them can find anything without asking you. They have become very polite. No one can say what changed.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They can follow it. They compliment you on your neatness, and send more.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Let the Veil fall across the ministry floor",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "Every jade slip on every desk rings once. The officer who sent you his filing comes in person, on his knees, to take it back. The ministry will be very correct with you from now on. The Star Marshal says only: \"That was expensive. Was it worth it?\" It takes you a century to decide.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_demon",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_demon",
+   "text": "In the Demon Realm, nobody asks twice. A Demon Captain of your own host has noticed that your aura is a poor thin thing, and he has walked into your hall, sat in your chair and started eating your dinner. He looks at you the way a person looks at dinner. The whole hall has stopped to watch. There is a certain etiquette about this, and it is usually over quickly.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Bring him the rest of the dinner yourself",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "He laughs until the torches gutter, and takes your chair. By the end of the year he has made four enemies you never had to make yourself, and you are still alive, carrying plates, and listening. Demons talk freely in front of the plates.",
+      "fame": -2,
+      "alignment": -1
+     }
+    },
+    {
+     "text": "Ask him how the dinner was, with the Veil off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "He stops chewing. He puts the bowl down with terrible care. The torches all go out and come back the wrong colour. Your chair is returned, and so is a good deal else you had not known was yours. Every Duke in the host now sends you presents, and each of them has a knife in it somewhere.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_founded",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_founded",
+   "text": "Your immortal house has a small isle, and it has lately had a visit from the Jade Void's inspectors, who are measuring it. \"A very pretty foundation,\" their leader says, seeing a founder of no great rank. \"It would do so well as a branch house of ours. We would, of course, keep you on, in some capacity. You could look after the cranes.\" Your disciples are standing behind you. They are doing their best not to look worried.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Thank them, and ask for time to consider",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "Time is the one thing up here that everybody has. You consider for sixty years, with great courtesy, and answer every one of their letters. Their leader is promoted elsewhere, and the next one has never heard of you. The cranes are doing well.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Show the inspectors what founded this isle",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The isle rises by a hand's breadth, all of it, pines and all, and settles. The measuring cords fall slack. The Jade Void's inspectors bow very deeply and leave without their instruments. Your disciples look at you as if you had changed your face, and the oldest of them asks, quite humbly, why you never trusted them with it.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_head",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_head",
+   "text": "Your clan above the clouds has elders who came up with you, and elders born up here who never knew the ground. They have asked to see you on the Terrace of Tablets. \"The Lian clan is asking whether we still have a head,\" the eldest says, \"or merely a person who sits there. The heirs have begun to ask. We would like something to tell them.\" A long pause follows, as they do up here. It lasts until evening.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Tell them to say that you are thinking about it",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They are appalled, and then, slowly, reassured. Nothing moves quickly above the clouds, and a head who is in no hurry may be someone with a reason. The Lian clan is still wondering a hundred years on, and that suits the clan very well.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Ask them to bring you the Lian clan's last three marriages",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "It takes the elders a while to see it. When they do, they stop asking about you, and start asking about the Lian clan. Nobody remembers quite how the conversation turned.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "They bring them, and they are perfectly ordinary marriages. The eldest looks at you with something like pity.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Rise on the Terrace, and let the Veil fall",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The tablets all turn to face you, every one, with a sound like a long breath. The elders born up here have never felt anything of the kind. The Lian clan sends its compliments by the next tide of cloud. You have your answer, and your heirs have theirs, and now every one of them will spend the next thousand years trying to measure up.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_row",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_row",
+   "text": "The Jade Court reseats itself once a century, and there is a small official whose whole work is to tell people where they now sit. He consults a list, then consults you, with a faint frown at what he can see of your rank. \"I am so sorry,\" he says, and he is. \"There has been a mistake, and your place has been given away. It may be some time. Perhaps you would care to wait?\" He indicates a bench, on which two immortals are already sitting. They have cobwebs.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Sit down with the cobwebbed immortals",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "One of them turns out to have been waiting for two thousand years, and she is the best company you have had since you came up. She has some thoughts on the first row. So, it turns out, does the other one, once he wakes.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask him to look at his list again, with the Veil off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The list writes itself out afresh in his hands, and he reads it with his lips moving. He walks you all the way up the Court, backwards, and the whole back row watches you go. The cobwebbed immortal on the bench lifts one finger in farewell. You never did find out how that story ended.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_up_h_disciples",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_disciples",
+   "text": "{npc} has been told you were once somebody, and has come to the regretful view that it was a long time ago. {He} has started bringing you easy problems, and praising your answers. Today {he} has asked for leave to study on another isle, with a real teacher, \"only for a few centuries, if you can spare me\". {He} has brought you a parting gift, and it is a very nice cushion.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Give {him} leave, and thank {him} for the cushion",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You give {him} leave, and a letter for the other teacher, who owes you more than {he} will ever know. It is a good cushion. {He} will come back in a few centuries, and you will still be here. You have got rather good at that.",
+      "mem": {
+       "deed": "se_grew_weak",
+       "w": 2,
+       "note": "gave me leave, and took the cushion"
+      }
+     }
+    },
+    {
+     "text": "Set a real problem on the table, with the Veil off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "{npc} looks at the problem. {He} looks at you. {He} sits down very slowly on the cushion. \"How long?\" {he} asks. You tell {him}. {He} studies with you for the next four centuries and is the better for it, and {he} never again brings you a gift without checking it first.",
+      "mem": {
+       "deed": "se_master_shown",
+       "w": -4,
+       "note": "let me bring them easy problems"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "immortal"
+   }
+  },
+  {
+   "id": "se_up_h_family",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_family",
+   "text": "{npc} worries about you. {He} has been up here long enough to see how the isles treat those who do not rise, and {he} has taken to finding you small posts. Now {he} has come with a jade slip: a friend of {his} needs someone to look after a very small pavilion on a very quiet isle. \"No one would trouble you there,\" {he} says, with love. \"You would be safe.\" {He} has already arranged the skiff.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ],
+    "flags": [
+     "concealed"
+    ],
+    "npcAge": [
+     16,
+     99999
+    ]
+   },
+   "arc": "The Cloud-Veil",
+   "choices": [
+    {
+     "text": "Go and see the pavilion, and thank {him}",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is a very small pavilion, on a very quiet isle, and there is a good view from it. You find you do not mind. {npc} visits every decade to see that you are managing. You always are, and you keep the skiff tied up in the way {he} likes.",
+      "mem": {
+       "deed": "se_kept_home",
+       "w": 3,
+       "note": "took the post I found, and thanked me"
+      }
+     }
+    },
+    {
+     "text": "Tell {him}, and show {him}",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "You take {his} hands and let the Veil fall, there among your own. {npc} stands very still in all that weight. \"I arranged the skiff,\" {he} says at last, faintly, and then starts laughing and cannot stop. The whole family has heard by the next drift. It will be years before {he} forgives you, and {he} will enjoy every one of them.",
+      "mem": {
+       "deed": "se_told_family",
+       "w": 12,
+       "note": "told me the truth at last, after I had arranged the skiff"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "family": true
+   }
+  },
+  {
+   "id": "se_gd_h_joined",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_joined",
+   "text": "Your pantheon holds its Counting at the turn of the age, and each god lays on the altar what they have gathered. The great ones bring storms and harvests. You bring what your Mask would bring: a damp handful of small prayers. The Pantheon's steward moves it to one side with a fingertip, and thanks you for coming, and asks if you have considered a smaller pantheon.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Take your handful home, and answer every one of them",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "A lost goat. A sore tooth. A boy who wants the girl at the mill to look up. You see to them all, one by one, for a whole season. The great ones have not answered a sore tooth in ten thousand years, and it turns out those are the prayers that mean it.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Lay it on the altar again, with the Mask off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The altar cracks from end to end under a damp handful of prayers. The steward goes down on his face, and the storm gods stop their talking one by one. They give you a place on the high step, and they begin asking you what you want, very politely. Nobody prays to you about a tooth after that.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_domain",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_domain",
+   "text": "Your domain's lesser spirits have begun to go elsewhere. It is nothing personal. A river-sprite gave notice this morning, and she has been frank about it. \"The neighbours are saying this domain has no real god in it,\" she says. \"Only somebody minding it. I have a family to think of.\" Behind her is a line of hill-spirits with their bags packed, and a very small wind who has come to ask for a reference.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Write them all a good reference",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You write every one of them a good reference, the wind too. The domain is very quiet afterwards. It is yours and you can hear yourself in it, and in the spring some of them come back, and they do not say why, and you do not ask.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Ask the sprite to look after the place, just until you find someone",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "She stays a week, and then another, and she has never been given so much to do. By summer she is running the river, and her family has moved in, and the neighbours are hearing about it from her.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "She gives you a very kind look, and a very firm no. The wind stays, though. It has nowhere else to go.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Take off the Mask, on your own ground",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "Every stream in the domain stands up in its bed. The hill-spirits put down their bags, and then they put down their heads. No spirit will ever leave you again. No spirit will ever tell you anything frankly again either, and the river-sprite curtseys now, and you liked her better before.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_court",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_court",
+   "text": "The Heavenly Court has found you a place in its smallest office, the Bureau of Minor Apologies, and your superior there is a god of no great size who enjoys having one person smaller than himself. Each morning he reads your work aloud and sighs. This morning a warrant has come down that he has signed without reading, and it is wrong. A small god in the eastern hills is going to be sealed under a bell for it.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Say nothing, and quietly lose the warrant",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It takes you a month, and a good deal of misfiling. The small god in the eastern hills will never know how near it came. Your superior sighs over your filing, and reads it aloud, and you find you do not mind that at all.",
+      "alignment": 3,
+      "fame": -1
+     }
+    },
+    {
+     "text": "Bring him an apology to sign, addressed to the eastern hills",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "He signs it, then stops, and reads it for the first time in his long service. The warrant is withdrawn on his own authority. He has never been so proud of himself, and you bring him his tea.",
+      "alignment": 2
+     },
+     "fail": {
+      "log": "He signs it unread, like all the others. Now you have to lose the warrant and the apology.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Carry the warrant up to the Court yourself, with the Mask off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The Bureau of Minor Apologies has never had so many visitors. The warrant burns where it lies, and the Court's own judges come down the stairs to ask what else they might have got wrong. Your superior will not meet your eye, and he reads nothing aloud any more. It is very quiet in there.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_founded",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_founded",
+   "text": "The sect you founded has followed you up into the Divine Realm, in a manner of speaking: a few old immortals, a few young gods, one isle moored at the edge of a domain. A messenger from the Elder Lineages has come to explain how things are done here. \"A house of your size has a patron,\" she says, glancing at your Mask. \"We would be happy to be yours. You will find the terms are all quite customary.\" The terms are nine scrolls long.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Read all nine scrolls, with care, and ask questions",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "The questions take forty years. The messenger is replaced twice. Somewhere in the seventh scroll you find a clause that the Elder Lineages have forgotten about, and you make a small note of it, and you say nothing. Your people have never been so well protected or so bored.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Hand back the scrolls, without the Mask",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The nine scrolls roll themselves shut. The messenger steps back and bows at the proper depth for the first time, and it takes her a moment to work out what that is. No patron will trouble your domain for an age. All your people stare at you when you walk by, and the old immortals who came up with you have a question or two.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_head",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_head",
+   "text": "The elders of your house have come before the tablets with their faces arranged. \"There are gods who count the houses, and they have begun to count ours as vacant,\" the eldest says. \"A house whose head wears a face like that one cannot hold what it holds. We would like you to think about the children.\" The children in question are several thousand years old, and they are listening behind the screen.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Call the children in, and ask what they would do",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is a very long evening. Some of them are fools and one of them is not, and you had not known which. The gods who count the houses go on counting. You still have the seat, and now you know who should have it after you.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Stand before the tablets, and take off the Mask",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The screen falls over, with several thousand years of children behind it. The tablets of your house blaze up, the oldest first, like a line of beacons along a coast. The gods who count the houses count again, and they send a very handsome apology. The elders have rearranged their faces. They do it very quickly, and you notice how practised they are.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_row",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_row",
+   "text": "The Rolls of the Divine Realm are read out once an age, and yours has been left until the end, with the gods of very small things. The reader reaches you, and pauses. \"Is this one still with us?\" she asks the hall. Someone says they think so. Someone else says they have seen you near a pond. You raise your hand, from the back, and the reader looks in your general direction and makes a small mark.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Go back to the pond",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "It is a good pond. There is a heron. The Rolls will not be read again for an age, and nobody up there will think about you until then. You do not know of any other god who can say that, and you do not know of any who sleep so well.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Stand up at the back, and take off the Mask",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The reader's scroll goes straight up in the air and stays there. All the gods of very small things turn round to stare, then all the rest. She reads your name again, with your true rung beside it, in a voice that shakes. At the pond the heron does not come back that year, and you had got used to it.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_gd_h_disciples",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_disciples",
+   "text": "{npc} has served at your shrine for an age and {he} has come to a decision. A great god has offered {him} a place, and {he} is too loyal to take it without telling you. {He} kneels and tells you, and then {he} says the worst thing of all. \"I will stay, if you need me to. I know how little you have.\" {He} means every word. There is a small, patched offering bowl in {his} hands, and {he} has been mending it for you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Bless {him}, and send {him} to the great god",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You bless {him} with exactly as much light as your Mask allows, and it is not much. {He} weeps, and goes. You have also, in that small blessing, put something that will save {his} life one day, and you will never mention it. You mend the bowl yourself after that.",
+      "mem": {
+       "deed": "se_grew_weak",
+       "w": 2,
+       "note": "blessed me and let me go, with so little"
+      }
+     }
+    },
+    {
+     "text": "Take the bowl from {him}, with the Mask off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The patches on the bowl turn to gold where you touch it. {npc} looks up and goes white, and then {he} puts {his} forehead on the stone. \"I offered to stay,\" {he} whispers, \"out of pity.\" You say you know. You say it was the finest thing anyone has done for you in an age. {He} stays, and it is never quite so simple between you again.",
+      "mem": {
+       "deed": "se_master_shown",
+       "w": -4,
+       "note": "let me pity them, for an age"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "role": "immortal"
+   }
+  },
+  {
+   "id": "se_gd_h_family",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_family",
+   "text": "{npc} has been making excuses for you to the rest of the family for longer than most kingdoms last. {He} tells them you are resting, that you are between domains. Now {he} has come to your little shrine with a basket, and {he} is pretending to admire the jar. \"It is a very good jar,\" {he} says. \"You must come to the gathering. Nobody will ask you anything. I have told them not to.\" {He} has a smudge of soot on {his} cheek, from mending someone else's hearth to pay for what is in the basket.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "concealed"
+    ],
+    "npcAge": [
+     16,
+     99999
+    ]
+   },
+   "arc": "The Mask of a Lesser God",
+   "choices": [
+    {
+     "text": "Go to the gathering, and let {him} make your excuses",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You go. Nobody asks you anything, very loudly. {npc} sits next to you the whole evening, and passes you things. On the way home {he} takes your arm. It may be that {he} has always known, and it may be that {he} has not, and you find that you do not want to ask.",
+      "mem": {
+       "deed": "se_kept_home",
+       "w": 3,
+       "note": "came to the gathering, and let me make the excuses"
+      }
+     }
+    },
+    {
+     "text": "Wipe the soot off {his} cheek, and take off the Mask",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The jar on the shrine rings, and every hearth in the old house lights itself. {npc} stands with the basket, not moving. \"I sold my good fire-tongs,\" {he} says at last, in a very small voice, \"for that basket.\" Then {he} hits you, quite hard, and then {he} holds on to you. The family has a great many questions by morning.",
+      "mem": {
+       "deed": "se_told_family",
+       "w": 12,
+       "note": "told me the truth at last, after I had sold my good fire-tongs"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "family": true
+   }
+  },
+  {
+   "id": "se_pw_h_joined",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_joined",
+   "text": "The hall you joined keeps a list on the door of who may eat at the upper table, and it goes by what the Hall-Warden feels when you walk in. These days he feels very little from you. \"We will find you something useful,\" he says. He has found you the geese. Three newcomers have gone past you to the upper table since the thaw, and one of them is asking you to hold her coat.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Hold the coat, and go and see to the geese",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They are terrible geese. They are also the only creatures in the hall who take no notice of the Hall-Warden, and you start to find that restful. You also hear a good deal, holding coats.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Walk in by the upper door, without the seal",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The Hall-Warden drops his ladle in the soup. The whole hall stands, not from respect, not at first, but because their knees have heard something. Your name goes to the top of the door by nightfall. The newcomer takes back her coat herself, with both hands, and from then on nobody asks you to hold anything, ever.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_founded",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_founded",
+   "text": "You founded this hall in {pw_world} with your own two hands and a borrowed mule. Lately the village has started sending its children to the hall over the river instead, because that one has a real master. The carter says so to your face, quite kindly, as he delivers your reduced order of turnips. \"You keep a very tidy yard,\" he adds. \"Everyone says so.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Sweep the yard, and teach the three who stayed",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "Three is a good number. You can see all of what each of them does wrong. In ten years the village will be talking about those three, and it will never occur to anyone to ask who taught them. The yard is indeed very tidy.",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Hold an open day, and let the children try to knock over the mule",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "They cannot, and it is a very funny afternoon, and by the end of it you have eleven new pupils who think it is all about the mule. It is, in a way.",
+      "charm": 1
+     },
+     "fail": {
+      "log": "They knock over the mule. It is a bad afternoon for the mule, and for your reputation.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Go down to the river, and let the seal go on the bank",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The river stops talking. On the far bank the real master comes out of his hall and stands there for a long moment, then bows, deeply, across the water. Every child in the village is at your gate by morning, along with their parents, and they all want something. You will not have time to sweep the yard again.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_clan",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_clan",
+   "text": "You were born to one of the Old Houses, or a small corner of one, and at the Reckoning of Names each branch has its members read out, in order of what they are worth. You come after the dogs. It is a joke, your cousin says, and everyone laughs, and it was his joke last year as well. Your great-aunt has saved you a seat near the door, where you will not be in anyone's way.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Take the seat by the door, and scratch the dogs",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They are very good dogs. You get to know them, and your great-aunt, who it turns out knows where every coin in the House has gone for the last sixty years. She thinks you are harmless, so she tells you.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Read your own name out, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The hall falls silent, and all the dogs lie down. You say your name, once, and it carries to the far end. Your cousin's joke does not get told again, by anyone. They move you up the table at once, and they do it with such speed that your great-aunt has to be helped out of the way, and she does not forget it.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_head",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_head",
+   "text": "The elders of your house have walked up from the valley together, which they only do for funerals and for this. \"We are not saying anything,\" the eldest begins. \"But the other Houses are saying it. They ask who it is that holds the name, and whether a person who barely stirs the dust can hold a wall when the raiders come.\" They all look at the wall. It is a very old wall, and it wants mending.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Hand them each a trowel",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "They are outraged, then embarrassed, and then they are mending the wall. You work beside them until dark. Nobody says anything further, and there is a great deal to be said for an elder who is too tired to talk. The other Houses go on saying it, and it does no harm.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Put your hand on the wall, and let the seal go",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The old wall settles with a long groan, every stone of it going home, and it will not want mending again in your lifetime. The elders stand there with their mouths open. The other Houses hear it by market day, and they stop saying anything at all. Your own people have started to take off their hats to you, and the eldest no longer tells you when you are wrong.",
+      "charm": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_dynasty",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_dynasty",
+   "text": "The name of your line has gone back a long way in {pw_world}, and the singers keep it. Now the old singer of your house has come to ask, with great delicacy, what he should put in for you. He has a verse for every head who ever lived. \"It need not be long,\" he says. \"A line. Something about your good health. We could perhaps mention the weather, in your time, which was fair.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Tell him the weather will do nicely",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "He is very relieved. So you go into the song as a line about fair weather, between two long verses about wars. Children will skip that part. In a hundred years it will be the only verse with nobody dead in it, and you are not unhappy about that.",
+      "fame": -1
+     }
+    },
+    {
+     "text": "Sing him the verse yourself, without the seal",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "You have no voice to speak of. It does not matter. The whole house hums along, the rafters and the pots, and the old singer's harp sounds by itself. He writes it all down with his hand shaking. All your line stands taller for it, and from now on every heir will be measured against it, and you have made sure they will all come up short.",
+      "alignment": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_throne",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_throne",
+   "text": "The small kings of {pw_world} send one another gifts at midwinter, and the gifts are a kind of language. This year the King of the Far Marches has sent you a very old and gentle pony, the sort one gives to a child or a grandparent. Your whole hall has seen it. Your chief counsellor clears her throat, then points out, without looking at you, that the King has been buying a lot of iron.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Thank him warmly, and ride the pony to the next assembly",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You look absurd, and you ride it slowly, and you get a good long look at his iron on the way. Your counsellor has stopped clearing her throat, as she has started to see what you are up to. The pony is, in fact, a very nice pony.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Send him a very small and exact pair of iron horseshoes, with a price",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sealx_stay",
+      "log": "They are made from his own iron, bought through three of his own merchants, and the price is what he paid for it. The Far Marches take a long look at that, and there is no war this year.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "He has them mounted on the wall, and sends a thank-you note. His smiths go on working.",
+      "fame": -2
+     }
+    },
+    {
+     "text": "Ride to the assembly, and let the seal go in front of the kings",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The pony does not mind at all. Everything else does. Banners go flat, horses kneel, and the small kings of {pw_world} look at one another and then at the ground. There is no iron bought for a generation. Your counsellor no longer clears her throat, and you have begun to wonder what she is not saying.",
+      "alignment": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "se_pw_h_disciples",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_disciples",
+   "text": "{npc} has started doing the hard parts of the lessons for you, without being asked. {He} stands in front of you when the village lads come to jeer, and {he} has told them you hurt your back. This evening you catch {him} rubbing liniment into a bad shoulder, got in a scuffle that {he} has not mentioned, on your account. \"It is nothing,\" {he} says. \"You have given me everything. It is my turn now.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Say thank you, and fetch more liniment",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You rub it in yourself. It is a very bad shoulder, and you know exactly how to fix it, and you do so while pretending to know nothing about it. The lads stop jeering around then, for some reason. {npc} thinks {he} did that, and {he} walks taller, and you let {him}.",
+      "mem": {
+       "deed": "se_grew_weak",
+       "w": 2,
+       "note": "let me stand in front of them"
+      }
+     }
+    },
+    {
+     "text": "Go down to the lads yourself, with the seal off",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "It takes no time at all. The lads are gone over the hill, and they are still running at the river. {npc} stands in the yard, one hand on {his} shoulder. \"You let me,\" {he} says. \"All that time.\" You say yes. {He} goes in and shuts the door, and in the morning there is breakfast, as always, and {he} does not meet your eye.",
+      "mem": {
+       "deed": "se_master_shown",
+       "w": -4,
+       "note": "let me take the blows for them"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "disciple": true
+   }
+  },
+  {
+   "id": "se_pw_h_family",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "trigger": "se_h_family",
+   "text": "At the family's table in {pw_world} you are the one they worry about. {npc} has brought somebody along to dinner who needs a hand with some sheep, and {he} has told them that you are very reliable. It is a kind thought. {He} gives you a look over the bread, a long one, and you wonder about it. Last week you picked up the end of the cart with one hand and forgot that anyone could see you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "concealed"
+    ],
+    "npcAge": [
+     16,
+     99999
+    ]
+   },
+   "arc": "The Sealed Realm",
+   "choices": [
+    {
+     "text": "Agree to help with the sheep",
+     "effects": {
+      "flag": "sealx_stay",
+      "log": "You do. They are very good sheep. {npc} walks you to the gate after, and {he} looks at the cart, and then at you, and {he} says \"Mind your back,\" in a voice that could mean anything. You do not ask. You mind your back.",
+      "mem": {
+       "deed": "se_kept_home",
+       "w": 3,
+       "note": "helped with the sheep, and minded their back"
+      }
+     }
+    },
+    {
+     "text": "Lift the whole table, with the bread on it, and tell {him}",
+     "effects": {
+      "flag": [
+       "sealx_reveal",
+       "sealx_house"
+      ],
+      "log": "The bread does not even slide. You set it down again and let everything go at once, and all the cups in the house ring. {npc} goes on chewing for a while. \"I knew about the cart,\" {he} says. Then {he} starts shouting, and it is about all the years {he} has been lifting things for you. It goes on until morning, and it is one of the best nights of your life.",
+      "mem": {
+       "deed": "se_told_family",
+       "w": 12,
+       "note": "told me the truth at last, over the bread"
+      }
+     }
+    }
+   ],
+   "npc": {
+    "family": true
+   }
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}
