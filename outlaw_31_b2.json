@@ -1,0 +1,6041 @@
+{
+ "events": [
+  {
+   "id": "b2u_vl_betray_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} swore an oath with you on the white stairs, and a faction lord has offered a small isle for {his} secrets and {his} whereabouts.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Sell {him}",
+     "effects": {
+      "alignment": -15,
+      "tally": {
+       "infamy": 15
+      },
+      "item": {
+       "spirit_stone": 10
+      },
+      "npcFlag": "vl_betrayed",
+      "log": "The faction lord gets {npc}. You get the isle, and a name the clouds will remember."
+     }
+    },
+    {
+     "text": "Sell a false trail",
+     "roll": {
+      "stat": "strategy",
+      "dc": 70
+     },
+     "ok": {
+      "tally": {
+       "infamy": 4
+      },
+      "item": {
+       "spirit_stone": 3
+      },
+      "log": "The faction chases nothing. {npc} never learns how close it came."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "health": -6,
+      "log": "The lord sees through it."
+     }
+    },
+    {
+     "text": "Warn {him} instead",
+     "effects": {
+      "alignment": 6,
+      "log": "You warn {npc}. The faction lord is not pleased."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "family": true
+   },
+   "trigger": "vl_betray"
+  },
+  {
+   "id": "b2u_vl_frame_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a pavilion near a Celestial Ministry, and a seal of the Ministry went missing last season. Nobody would think to look in {npc}'s pavilion.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Plant the seal and tell the wardens",
+     "roll": {
+      "stat": "strategy",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_framed",
+      "log": "The wardens find it where you said. {npc} is taken to the Cloudless Cells, shouting your name."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "jail": 2,
+      "log": "The wardens find you planting it."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "alignment": 2,
+      "log": "You leave it. Some rivals should be beaten fairly."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_frame"
+  },
+  {
+   "id": "b2u_vl_extort_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} runs three counters on a Lantern Guild bridge and pays nobody for protection. That is a gap in the clouds, and you could fill it.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Crack the jade counter and name a price",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "item": {
+       "spirit_stone": 4
+      },
+      "alignment": -8,
+      "tally": {
+       "infamy": 7
+      },
+      "log": "{npc} pays, every season. The other counters bow when you pass."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "{npc} has friends in the Guild."
+     }
+    },
+    {
+     "text": "Leave {him} be",
+     "effects": {
+      "alignment": 1,
+      "log": "You leave {npc} to the honest trade."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_merchant",
+     "realm": -2,
+     "age": 10
+    }
+   },
+   "trigger": "vl_extort"
+  },
+  {
+   "id": "b2u_vl_slander_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "You could hire tellers in every wine house on the isles to tell a story about {npc}. It need not be true. Stories rarely are.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Pay the tellers",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 6
+      },
+      "item": {
+       "spirit_stone": -2
+      },
+      "npcFlag": "vl_slandered",
+      "log": "By the next new moon nobody on the isles will sit with {npc}."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 3
+      },
+      "fame": -3,
+      "log": "A teller sells you out to {npc}."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "alignment": 1,
+      "log": "You let it go."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_slander"
+  },
+  {
+   "id": "b2u_vl_bounty_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A jade warrant with your shape on it hangs at every tollhouse, and tonight on the moorings the quiet immortal by the lantern, {npc}, has the same warrant folded in {his} sleeve.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The hunter is good, not good enough. You leave {npc} tied to the mooring post."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "The hunter takes your stones and your blood, and leaves you for the wardens."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Slip into the mist",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone into the cloud."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The hunter follows you three isles."
+     }
+    },
+    {
+     "text": "Buy the warrant from {him}",
+     "effects": {
+      "item": {
+       "spirit_stone": -3
+      },
+      "tally": {
+       "infamy": -3
+      },
+      "log": "The hunter takes your stones and tears the warrant up. There are other warrants."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 3
+      }
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2u_vl_minister_first_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "The Celestial Ministries have stopped laughing at your name. A minister's champion, {npc}, has sworn before the Jade Court to bring you to the Cloudless Cells.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Let {him} come",
+     "effects": {
+      "fame": 5,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "You hear it in a teahouse and finish your tea. Somewhere, {npc} is already flying."
+     }
+    },
+    {
+     "text": "Lie low and let it cool",
+     "effects": {
+      "tally": {
+       "infamy": -5
+      },
+      "log": "You stay off the cloud roads for a season."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_elder",
+     "realm": 1,
+     "age": 25
+    }
+   },
+   "trigger": "vl_orthodox_first"
+  },
+  {
+   "id": "b2u_vl_minister_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the Ministries' champion, stands at the end of a cloud bridge in plain grey, sword sheathed. \"Come with me to the Court,\" {he} says.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Draw",
+     "roll": {
+      "stat": "strength",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 15,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_elder_gone",
+      "log": "{npc} falls back across the bridge, beaten and alive. The Ministries will not forgive the shame."
+     },
+     "fail": {
+      "health": -20,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "You lose, and wake in the Cloudless Cells."
+     }
+    },
+    {
+     "text": "Go with {him}",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 2,
+      "log": "You go to the Court. It is a long hearing."
+     }
+    },
+    {
+     "text": "Leap from the bridge",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You fall through the cloud and are gone."
+     },
+     "fail": {
+      "jail": 2,
+      "log": "{npc} catches your sleeve."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2u_vl_manhunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The whole Upper Realm is looking for you now: wardens on every bridge, cranes with your shape, factions that hate each other hunting you together.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Run for the far isles",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You reach the Isles of Mist before the nets close."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "log": "They nearly have you."
+     }
+    },
+    {
+     "text": "Turn and fight the first band",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "You break them. The next band comes slower."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "log": "They break you."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2u_vl_siege_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "They have come. The banners of every faction and the wardens of the Jade Court surround the isle you hold, and the sea of cloud below is full of their skiffs.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Hold the isle to the last",
+     "roll": {
+      "stat": "strength",
+      "dc": 90
+     },
+     "ok": {
+      "fame": 30,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "Three days. On the fourth the skiffs turn back, and you are still on the wall."
+     },
+     "fail": {
+      "health": -25,
+      "woundOnly": true,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "The wall falls. You crawl out through the cloud alive."
+     }
+    },
+    {
+     "text": "Walk out alone and let them look at you",
+     "roll": {
+      "stat": "charm",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 20,
+      "flag": "vlx_legend",
+      "log": "They part to let you pass. The isles will never come for you again."
+     },
+     "fail": {
+      "jail": 5,
+      "flag": "vlx_siege_end",
+      "log": "They do not part."
+     }
+    },
+    {
+     "text": "Slip away in the night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "tally": {
+       "infamy": -35
+      },
+      "flag": [
+       "vlx_flee",
+       "vlx_siege_end"
+      ],
+      "log": "You leave them a burning isle and an empty wall."
+     },
+     "fail": {
+      "jail": 4,
+      "flag": "vlx_siege_end",
+      "log": "They are waiting below."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_siege"
+  },
+  {
+   "id": "b2g_vl_betray_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} swore an oath with you before the first star of your godhood, and a pantheon offers you a domain for {his} hiding place.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Sell {him}",
+     "effects": {
+      "alignment": -15,
+      "tally": {
+       "infamy": 15,
+       "god_faith": 10
+      },
+      "npcFlag": "vl_betrayed",
+      "log": "The pantheon takes {npc}. You take the domain, and the Book takes note."
+     }
+    },
+    {
+     "text": "Sell a false hiding place",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "tally": {
+       "infamy": 4,
+       "god_faith": 3
+      },
+      "log": "The pantheon finds an empty world."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "health": -6,
+      "log": "The pantheon sees through you."
+     }
+    },
+    {
+     "text": "Warn {him}",
+     "effects": {
+      "alignment": 6,
+      "log": "You warn {npc}."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "family": true
+   },
+   "trigger": "vl_betray"
+  },
+  {
+   "id": "b2g_vl_frame_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "A line of the Book of Fates was torn out last age, and {npc} was near the Hall that night. Nobody has asked {him} yet.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Put the torn line in {his} hand",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_framed",
+      "log": "The Court finds it there. {npc} is sealed, calling your name under the Bell."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "jail": 2,
+      "log": "The clerk sees your hand."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "alignment": 2,
+      "log": "You leave it."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_frame"
+  },
+  {
+   "id": "b2g_vl_extort_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, a lesser god of a small domain, pays no tithe to anyone. You could change that.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Name a tithe",
+     "roll": {
+      "stat": "strength",
+      "dc": 75
+     },
+     "ok": {
+      "tally": {
+       "god_faith": 5,
+       "infamy": 7
+      },
+      "alignment": -8,
+      "log": "{npc} sends faith every age now."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "{npc} has a pantheon after all."
+     }
+    },
+    {
+     "text": "Leave {him} be",
+     "effects": {
+      "alignment": 1,
+      "log": "You leave the small god alone."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_merchant",
+     "realm": -2,
+     "age": 10
+    }
+   },
+   "trigger": "vl_extort"
+  },
+  {
+   "id": "b2g_vl_slander_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "At the Feast of Domains a whisper in the right ear could make three pantheons doubt {npc}.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Whisper it",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 6
+      },
+      "npcFlag": "vl_slandered",
+      "log": "By the next age {npc}'s own worlds doubt {him}."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 3
+      },
+      "fame": -3,
+      "log": "The ear you chose belongs to {npc}'s friend."
+     }
+    },
+    {
+     "text": "Say nothing",
+     "effects": {
+      "alignment": 1,
+      "log": "You say nothing."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_slander"
+  },
+  {
+   "id": "b2g_vl_bounty_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A warrant-bearer of the Death Domain, {npc}, has your blot from the Book written on {his} palm, and has found your temple.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "You beat {npc} and send {him} back with the warrant torn."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "The bearer takes your faith and leaves you for the Court."
+     }
+    },
+    {
+     "text": "Hide in a mortal's dream",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The bearer follows you in."
+     }
+    },
+    {
+     "text": "Pay {him} to lose the warrant",
+     "effects": {
+      "tally": {
+       "god_faith": -3,
+       "infamy": -3
+      },
+      "log": "{npc} takes the faith. There are other bearers."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_judge_first_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "A judge of the Heavenly Court, {npc}, has sworn before the Eternal Arbiter to see you sealed under the Bell.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Let {him} come",
+     "effects": {
+      "fame": 5,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "You hear it in your temple and smile. Somewhere, {npc} is already reading your page."
+     }
+    },
+    {
+     "text": "Go quiet an age",
+     "effects": {
+      "tally": {
+       "infamy": -5
+      },
+      "log": "You keep to the smallest worlds."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_elder",
+     "realm": 1,
+     "age": 25
+    }
+   },
+   "trigger": "vl_orthodox_first"
+  },
+  {
+   "id": "b2g_vl_judge_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the Court's judge, waits at the border of your domain with the Bell of Silence behind {him}. \"Come,\" {he} says.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Stand against {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 90
+     },
+     "ok": {
+      "fame": 15,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_elder_gone",
+      "log": "The judge withdraws, beaten. The Court will not forget."
+     },
+     "fail": {
+      "health": -20,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "You are sealed."
+     }
+    },
+    {
+     "text": "Go to the Court",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 2,
+      "log": "A long hearing, and a short sealing."
+     }
+    },
+    {
+     "text": "Flee across the domains",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone."
+     },
+     "fail": {
+      "jail": 2,
+      "log": "The Bell rings for you."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2g_vl_manhunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The pantheons are hunting you together: gods who have been at war for an age, side by side, reading the Book for your name.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Run for the edge of the sky",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You reach the Market Beyond the Twelve."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "log": "They nearly have you."
+     }
+    },
+    {
+     "text": "Turn on the first host",
+     "roll": {
+      "stat": "strength",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "You break them. The next host comes slower."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "log": "They break you."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2g_vl_siege_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Every pantheon's host stands at the borders of your domain, and the Heavenly Court has brought the Bell.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Hold your domain",
+     "roll": {
+      "stat": "strength",
+      "dc": 95
+     },
+     "ok": {
+      "fame": 30,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "An age of siege. They go home. You are still a god."
+     },
+     "fail": {
+      "health": -25,
+      "woundOnly": true,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "Your domain falls. You crawl out of it alive."
+     }
+    },
+    {
+     "text": "Walk out and let them look at you",
+     "roll": {
+      "stat": "charm",
+      "dc": 90
+     },
+     "ok": {
+      "fame": 20,
+      "flag": "vlx_legend",
+      "log": "They part. No pantheon will come for you again."
+     },
+     "fail": {
+      "jail": 5,
+      "flag": "vlx_siege_end",
+      "log": "They seal you."
+     }
+    },
+    {
+     "text": "Leave the domain to them in the night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 85
+     },
+     "ok": {
+      "tally": {
+       "infamy": -35
+      },
+      "flag": [
+       "vlx_flee",
+       "vlx_siege_end"
+      ],
+      "log": "You leave them an empty sky."
+     },
+     "fail": {
+      "jail": 4,
+      "flag": "vlx_siege_end",
+      "log": "They are waiting."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_siege"
+  },
+  {
+   "id": "b2p_vl_betray_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} swore brotherhood with you over a shared cup, and a lord of this world offers a fortune for {his} hiding place.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "npcAge": [
+     14,
+     1000000
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Sell {him}",
+     "effects": {
+      "alignment": -15,
+      "tally": {
+       "infamy": 15
+      },
+      "taels": 400,
+      "npcFlag": "vl_betrayed",
+      "log": "The lord gets {npc}. You get the fortune."
+     }
+    },
+    {
+     "text": "Sell a false trail",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "infamy": 4
+      },
+      "taels": 120,
+      "log": "The lord chases nothing."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "health": -6,
+      "log": "The lord sees through it."
+     }
+    },
+    {
+     "text": "Warn {him}",
+     "effects": {
+      "alignment": 6,
+      "log": "You warn {npc}."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "family": true
+   },
+   "trigger": "vl_betray"
+  },
+  {
+   "id": "b2p_vl_frame_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} lodges by the town hall, and the town's seal went missing last month. Nobody would think to look in {his} room.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Plant the seal and tell the watch",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 10
+      },
+      "npcFlag": "vl_framed",
+      "log": "{npc} is driven out of town, shouting your name."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "jail": 2,
+      "log": "The watch finds you planting it."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "alignment": 2,
+      "log": "You leave it."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_frame"
+  },
+  {
+   "id": "b2p_vl_extort_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} owns three shops on the market street and pays nobody for protection.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Name a price",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "taels": 120,
+      "alignment": -8,
+      "tally": {
+       "infamy": 7
+      },
+      "log": "{npc} pays every month."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "{npc} has guards."
+     }
+    },
+    {
+     "text": "Leave {him} be",
+     "effects": {
+      "alignment": 1,
+      "log": "You leave {npc} alone."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_merchant",
+     "realm": -2,
+     "age": 10
+    }
+   },
+   "trigger": "vl_extort"
+  },
+  {
+   "id": "b2p_vl_slander_1",
+   "cat": "rival",
+   "weight": 4,
+   "once": false,
+   "text": "A few coins to the storytellers in the market and nobody in town would trust {npc} again.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Pay them",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 6
+      },
+      "npcFlag": "vl_slandered",
+      "taels": -40,
+      "log": "Nobody sits with {npc} now."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 3
+      },
+      "fame": -3,
+      "taels": -40,
+      "log": "A storyteller takes your coins and sells you out."
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "alignment": 1,
+      "log": "You let it go."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "rival"
+   },
+   "trigger": "vl_slander"
+  },
+  {
+   "id": "b2p_vl_bounty_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Your face is on the kingdom's warrant at the crossroads, and tonight at the inn the quiet traveller in the corner, {npc}, has the same warrant.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "You leave {npc} tied to the bench with the warrant pinned on."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "log": "The hunter takes your purse and leaves you bleeding in the road."
+     }
+    },
+    {
+     "text": "Slip out the back",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The hunter is waiting outside."
+     }
+    },
+    {
+     "text": "Pay {him} off",
+     "effects": {
+      "taels": -120,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "The hunter takes it. There are other hunters."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_champion_first_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "A king of this world has named a champion, {npc}, and sent {him} out with your name and a warrant sealed in red.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Let {him} come",
+     "effects": {
+      "fame": 5,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "You hear it in the market and finish your bowl. Somewhere, {npc} is already on the road."
+     }
+    },
+    {
+     "text": "Lie low",
+     "effects": {
+      "tally": {
+       "infamy": -5
+      },
+      "log": "You keep to the far villages."
+     }
+    }
+   ],
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_elder",
+     "realm": 1,
+     "age": 25
+    }
+   },
+   "trigger": "vl_orthodox_first"
+  },
+  {
+   "id": "b2p_vl_champion_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the king's champion, waits at the end of the bridge with the warrant. \"Come with me to the king,\" {he} says.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Draw",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_elder_gone",
+      "log": "{npc} goes down on the bridge, alive. The king will not forgive it."
+     },
+     "fail": {
+      "health": -20,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "You wake in the king's cells."
+     }
+    },
+    {
+     "text": "Go with {him}",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 2,
+      "log": "A long trial, a short sentence."
+     }
+    },
+    {
+     "text": "Jump into the river",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You come up downstream, free."
+     },
+     "fail": {
+      "jail": 2,
+      "log": "{npc} catches you on the bank."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2p_vl_manhunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Every kingdom of this world is looking for you now: riders on every road, your face at every gate.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Run for the far hills",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You reach the hills before the nets close."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "log": "They nearly have you."
+     }
+    },
+    {
+     "text": "Turn and fight the first riders",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "You break them."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "log": "They break you."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2p_vl_siege_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The armies of the kingdoms of this world surround the hill you hold.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Hold the hill",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 30,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "On the fourth day the armies go home."
+     },
+     "fail": {
+      "health": -25,
+      "woundOnly": true,
+      "tally": {
+       "infamy": -20
+      },
+      "flag": "vlx_siege_end",
+      "log": "The hill falls. You crawl out alive."
+     }
+    },
+    {
+     "text": "Walk out and let them see you",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "flag": "vlx_legend",
+      "log": "They part. Nobody in this world will come for you again."
+     },
+     "fail": {
+      "jail": 5,
+      "flag": "vlx_siege_end",
+      "log": "They take you."
+     }
+    },
+    {
+     "text": "Slip away by night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "infamy": -35
+      },
+      "flag": [
+       "vlx_flee",
+       "vlx_siege_end"
+      ],
+      "log": "You leave them an empty hill."
+     },
+     "fail": {
+      "jail": 4,
+      "flag": "vlx_siege_end",
+      "log": "They are waiting."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_siege"
+  },
+  {
+   "id": "b2u_vl_takeover_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "One by one, over a century, you have turned the ministers and elders of your faction. Tonight its lord sits in the high pavilion alone, and every door between you is held by someone who owes you.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You walk in, and the lord looks up, and understands. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "Someone you trusted did not stay turned. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Ask the head to step down quietly",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head steps down \"for their health\". Nobody believes it."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head refuses, and calls the guard."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let it go. The people you turned will not wait forever."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "An age of whispers at the feasts and in the Book: the gods of your pantheon have been turned, one by one. The Throne-Bearer sits alone in the hall of light.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You enter. The Throne-Bearer sees who stands behind you, and understands. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "Someone you trusted did not stay turned. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Ask the head to step down quietly",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head steps down \"for their health\". Nobody believes it."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head refuses, and calls the guard."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let it go. The people you turned will not wait forever."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A season of quiet talks behind the school hall: the teachers are yours now, one by one. The Keeper sits alone tonight.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You go in. The Keeper sees who stands behind you, and understands. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "Someone you trusted did not stay turned. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Ask the head to step down quietly",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head steps down \"for their health\". Nobody believes it."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head refuses, and calls the guard."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let it go. The people you turned will not wait forever."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_steal_root_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "On the Register of the Rising Cranes there is a child born above the clouds, {npc}, whose spirit root is said to be the purest in ten thousand years. Tonight {npc} meditates alone on an isle at the edge of the mist.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Tear the root out",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It comes out of {npc} like a thread of light, and goes into you. It does not feel like yours. It will."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} wakes and fights. You get away with nothing but the shame."
+     }
+    },
+    {
+     "text": "Watch {him} train, and leave",
+     "effects": {
+      "alignment": 4,
+      "log": "You leave {npc} the root heaven gave {him}. You are not sure why."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Among the Novice Spirits there is a young god, {npc}, born with a root of the Dao itself. Tonight {npc} sleeps in a small temple at the edge of a domain.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Tear the root out",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It comes out of {npc} like a thread of light, and goes into you. It does not feel like yours. It will."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} wakes and fights. You get away with nothing but the shame."
+     }
+    },
+    {
+     "text": "Watch {him} train, and leave",
+     "effects": {
+      "alignment": 4,
+      "log": "You leave {npc} the root heaven gave {him}. You are not sure why."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Among the Rising Stars of this world there is a youngster, {npc}, with a root the old ones talk about in whispers. Tonight {npc} trains alone in the hills.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Tear the root out",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It comes out of {npc} like a thread of light, and goes into you. It does not feel like yours. It will."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} wakes and fights. You get away with nothing but the shame."
+     }
+    },
+    {
+     "text": "Watch {him} train, and leave",
+     "effects": {
+      "alignment": 4,
+      "log": "You leave {npc} the root heaven gave {him}. You are not sure why."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_league_hunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Peacekeepers of the Isle Peacekeepers' League come down the cloud road toward your isle: a Warden of a Ford, two Watchers, and the bounty on your name written on a jade slip.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight their captain",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the Warden of a Ford",
+      "boss": true
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 3
+      },
+      "flag": "b2x_lb_end",
+      "log": "Their captain goes down. The league counts the cost of your bounty, and takes it down for now."
+     },
+     "fail": {
+      "health": -24,
+      "jail": 3,
+      "log": "You lose to their captain and are taken.",
+      "deathCause": "the captain of a league that hunted you"
+     },
+     "risky": true
+    },
+    {
+     "text": "Make terms with the league",
+     "roll": {
+      "stat": "charm",
+      "dc": 75
+     },
+     "ok": {
+      "tally": {
+       "infamy": -10
+      },
+      "item": {
+       "spirit_stone": -3
+      },
+      "flag": "b2x_lb_end",
+      "log": "Terms are struck: a price paid, a promise made. The bounty comes down."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "log": "They will not bargain."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 3
+      }
+     }
+    },
+    {
+     "text": "Slip away before they arrive",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone when they knock."
+     },
+     "fail": {
+      "health": -8,
+      "woundOnly": true,
+      "log": "They are faster than they look."
+     }
+    },
+    {
+     "text": "Go with them and answer for it",
+     "effects": {
+      "tally": {
+       "infamy": -15
+      },
+      "jail": 2,
+      "flag": "b2x_lb_end",
+      "log": "You go with them. The hearing of the league is long and fair, and ends in a cell."
+     }
+    }
+   ],
+   "cooldown": 2,
+   "trigger": "b2_league_hunt"
+  },
+  {
+   "id": "b2g_vl_league_hunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Envoys of the Concord of Domains come to your temple with the bounty the Concord has set on you, sealed by gods of every pantheon.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight their captain",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the Concord Warden",
+      "boss": true
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 3
+      },
+      "flag": "b2x_lb_end",
+      "log": "Their captain goes down. The league counts the cost of your bounty, and takes it down for now."
+     },
+     "fail": {
+      "health": -24,
+      "jail": 3,
+      "log": "You lose to their captain and are taken.",
+      "deathCause": "the captain of a league that hunted you"
+     },
+     "risky": true
+    },
+    {
+     "text": "Make terms with the league",
+     "roll": {
+      "stat": "charm",
+      "dc": 75
+     },
+     "ok": {
+      "tally": {
+       "infamy": -10,
+       "god_faith": -3
+      },
+      "flag": "b2x_lb_end",
+      "log": "Terms are struck: a price paid, a promise made. The bounty comes down."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "log": "They will not bargain."
+     }
+    },
+    {
+     "text": "Slip away before they arrive",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone when they knock."
+     },
+     "fail": {
+      "health": -8,
+      "woundOnly": true,
+      "log": "They are faster than they look."
+     }
+    },
+    {
+     "text": "Go with them and answer for it",
+     "effects": {
+      "tally": {
+       "infamy": -15
+      },
+      "jail": 2,
+      "flag": "b2x_lb_end",
+      "log": "You go with them. The hearing of the league is long and fair, and ends in a cell."
+     }
+    }
+   ],
+   "cooldown": 2,
+   "trigger": "b2_league_hunt"
+  },
+  {
+   "id": "b2p_vl_league_hunt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Riders of the League of Kingdoms' Wardens come up the road to your door with the league's bounty and a warrant to take you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight their captain",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the Warden-Captain",
+      "boss": true
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 3
+      },
+      "flag": "b2x_lb_end",
+      "log": "Their captain goes down. The league counts the cost of your bounty, and takes it down for now."
+     },
+     "fail": {
+      "health": -24,
+      "jail": 3,
+      "log": "You lose to their captain and are taken.",
+      "deathCause": "the captain of a league that hunted you"
+     },
+     "risky": true
+    },
+    {
+     "text": "Make terms with the league",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "infamy": -10
+      },
+      "taels": -120,
+      "flag": "b2x_lb_end",
+      "log": "Terms are struck: a price paid, a promise made. The bounty comes down."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "log": "They will not bargain."
+     }
+    },
+    {
+     "text": "Slip away before they arrive",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone when they knock."
+     },
+     "fail": {
+      "health": -8,
+      "woundOnly": true,
+      "log": "They are faster than they look."
+     }
+    },
+    {
+     "text": "Go with them and answer for it",
+     "effects": {
+      "tally": {
+       "infamy": -15
+      },
+      "jail": 2,
+      "flag": "b2x_lb_end",
+      "log": "You go with them. The hearing of the league is long and fair, and ends in a cell."
+     }
+    }
+   ],
+   "cooldown": 2,
+   "trigger": "b2_league_hunt"
+  },
+  {
+   "id": "b2u_vl_takeover2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The lord of your faction is dying slowly, and has not named an heir. In the lantern-store sits the succession scroll, unsealed, waiting for a name. Every minister who could object has already signed a paper that says otherwise, and you hold the papers.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You write your name under the lord's, and read the scroll aloud. Nobody coughs. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "One of the signatures was forged by a rival, and the rival speaks first. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Offer the lord a quiet retirement on a warm isle",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The lord accepts the warm isle, and the scroll is signed in a steady hand."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The lord laughs, then calls the wardens."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You roll the scroll and put it back in the lantern-store. The ministers you turned will want an answer soon."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_takeover3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "At the Autumn Convocation the lord must pour the first cup for the assembled isles. You have arranged the cup-bearers, the wine-stewards and the lamp-lighters. When the lord lifts the jar, a hundred people will be watching your side of the hall.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You step into the light as the jar is lifted, and the hall rises to meet you. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The jar is lifted, the cup is raised, and the hall rises for the lord, not for you. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Pass the lord a note in the lull, offering terms",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The lord reads it, sets down the jar, and pours the first cup for you."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The lord reads the note aloud to the hall."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "The jar is poured by the lord, unmolested. The cup-bearers you arranged look away, one by one."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_takeover4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The lord is away at the Jade Court, and the gates of the home isle are held by wardens who now answer to you. The evening ferry will bring the lord back at dusk, expecting a quiet harbour. You have until the lanterns are lit.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "The ferry docks to a changed harbour. The lord takes it in, and nods once. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "A warden at the last gate decides to remain loyal, and sounds the bell. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Meet the lord at the pier and speak alone",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The lord listens to the end, steps back onto the ferry, and goes elsewhere."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The lord refuses to listen and summons the harbour guard."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let the ferry dock and the harbour breathe. The wardens who changed sides will not forget that you flinched."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_takeover5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Ledger Keeper has audited the lord's long debts to the Jade Court, and the figures are grim. A quiet purchase of the lord's notes, over thirty years, has left them in your hands. Tonight the lord sits at the long table with a stack of unsigned papers, unaware of the shape of the room.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You lay the notes on the table, one at a time. The lord reads them all, and reaches for the brush. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The lord has paid one of the debts in secret. The notes are worth less than you thought. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Offer to forgive the debts if the lord steps aside",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The lord weighs it, and signs. The notes burn in the lamp."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The lord accuses you of usury before the assembled house."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You tuck the notes in your sleeve. A debt held is a hand held back, and you keep it for later."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_takeover6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A favourite disciple of the lord, who owes you everything, will open the seal-room at midnight. Inside waits the faction's great seal, and the lord sleeping in the next chamber. The disciple has stopped speaking to you this week, which you take for nerves.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "The disciple opens the door. The seal is yours before the lord stirs, and the morning is already decided. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The disciple opens the door, and the lord is sitting up, fully dressed. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Wake the lord and offer a dignified handing-over",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The lord, strangely calm, takes it, and sets the seal in your hands."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The lord calls out, and the corridor fills with guards."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You send the disciple back to bed with a word. The seal-room stays locked, for now."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "At the Festival of Names the head of your pantheon must stand in the central shrine for a day and a night, and every priest of the pantheon is on shift. By long arrangement, those priests are yours. The head will find the hall full of familiar faces, and none of them familiar.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You step forward at the turning of the hour. The priests chant your name, and the head lowers the staff. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "A priest forgets the arrangement, and calls the head by the old title. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Offer the head an honourable seclusion in a quiet domain",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head sighs, and accepts. The staff passes in silence."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head summons the Court's herald."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let the festival run to the end. The priests you turned look at their hands, and wait."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The chapter of succession in the Book of Fates is a single page, and the quill-bearer who writes it has come to you in secret. For an age you have paid his temple tithes. Tonight the page lies open on the lectern, the ink wet, and the head god is dining elsewhere.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "The quill-bearer writes your name. The ink dries, the page turns, and the Book accepts it. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The quill-bearer's hand shakes, and the ink falls on the wrong line. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Ask the head god to write the name aloud himself",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head, tired, speaks your name. The quill-bearer writes it down, shaking."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head recognises the trick and strikes the page from the Book."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You close the Book gently. The quill-bearer remains your creature, and expects a reward."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Faith has been draining from the head of your pantheon for a century. Temples that once sent offerings to the central altar now quietly send them to you. The head does not know yet. A tally of the flow, laid out in your sanctum, makes the shape of the coming day very plain.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You show the tally to the pantheon's council, and no one speaks against you. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "A priest reads the tally upside down, and cries out that it proves the opposite. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Send the head a copy, and an offer of regency",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head reads, grey-faced, and accepts the regency."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head burns the tally and calls the Court."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You file the tally. Faith moves like water, and this will come to you whether you call it or not."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A debt of worship binds the head of your pantheon to a dozen minor shrines, each of which now holds a promissory prayer in your name. You have been buying them, one by one, for ages. The head asks you to dine, and does not mention the prayers.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You set the prayers out beside the fish. The head eats slowly, and says nothing, and then, yes. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The head has been buying them back, and sets down a fatter stack. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Offer to retire the debts in exchange for the regency",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The head considers the prayers, and the fish, and signs."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The head rises, wipes his hands, and calls his heralds."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You eat your fish. The debts keep, as faith does not, and can be called another year."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2g_vl_takeover6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A herald of the Throne-Bearer brings you the keys of the throne-hall on a velvet cushion, a day early, with the eyes of a man who has made a decision and is regretting it already. The Throne-Bearer is at prayer behind the sanctum door.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 75
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You take the keys and open the doors. The Throne-Bearer rises from prayer and looks at the keys, not at you. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The herald drops the cushion at the last step, and the keys ring out through the whole hall. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Knock on the sanctum door and ask to talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Throne-Bearer opens at once, and gives you a seat on the cushion."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Throne-Bearer bolts the door and sounds the great bell."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You send the herald and the keys back with thanks. He looks relieved and ashamed in equal parts."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "On Founding Day the Keeper of the school must light the great lamp in the long hall, with every teacher and pupil standing. You have the teachers, the senior pupils and the lamp-tender. The Keeper has no idea; the hall is full and the oil is warm.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You step up beside the lamp-tender, and the whole hall steps in with you. The Keeper smiles tiredly and hands over the taper. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The lamp-tender loses his nerve and calls the Keeper by the old title, loudly. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Take the Keeper aside before the hall and offer a quiet retirement",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Keeper accepts, relieved. The lamp is lit by you."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Keeper laughs and calls for the town watch."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You let the lamp be lit as always. The teachers you turned shuffle their feet, and wait for another year."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Keeper is ill in bed with a winter chest, and the pupils' council votes tonight on who should act in the Keeper's place. The room smells of camphor. Most of the council have been fed and flattered by you for a season. It would take only a good speech.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You speak. The council votes, and the vote is yours. The Keeper hears of it through the wall. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "A council member recalls a promise, and the vote splits against you. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Visit the sickbed and ask for the Keeper's blessing",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Keeper, weak, gives it with a sigh. The council ratifies by morning."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Keeper sits up and orders you out of the house."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You wait. The cough passes in a week, and the council forgets the vote ever mattered."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Keeper is away at the market town for three days, and the school gate, the seal and the account-book are all in your hands. The teachers you turned are in the hall, whispering over rice. The pupils have been told nothing. You have until the Keeper's cart is seen on the road.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "The cart arrives to find the gate shut and the teachers lined in the yard. The Keeper takes in the scene and removes his hat. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "A pupil runs down the road and warns the cart. The Keeper comes at a gallop. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Meet the cart at the crossroads and talk first",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Keeper hears you out, leans back on the cart-bench, and gives you the reins."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Keeper whips up the horse and goes for the magistrate."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You open the gate and put the seal back. The teachers drift away in twos, muttering."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The school's purse is nearly empty, and the Keeper has been quietly borrowing from a rich widow in town. Tonight the widow's notes are in your coat; you bought them one by one over the winter. The Keeper is counting coin in the back office, in a bad mood.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You lay the notes down on the counting-board. The Keeper stares at them, and then, very slowly, takes up the pen. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The widow arrives the same evening to redeem them, and the Keeper embraces her. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Offer to burn the notes if the Keeper steps aside",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Keeper agrees. The notes burn, and the seal is in your hand."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Keeper tears up the notes and calls for the constables."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You keep the notes folded in your coat. A debt held is a lever, and you do not need to pull it yet."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2p_vl_takeover6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The eldest teacher of the school, tired and grey, offers privately to hand you the stamp of office, on one condition: that you do it before the next harvest, and that you do not tell the Keeper who told you. He is trembling slightly. His tea has gone cold in his hand.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the seat",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -12,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "b2x_seize",
+      "log": "You take the stamp. The old teacher weeps once, silently, and leaves the room without another word. The seat is yours."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 8
+      },
+      "fame": -10,
+      "flag": "b2x_cast_out",
+      "log": "The old teacher faints at the last moment, and the noise brings the whole school. You are thrown out of the order."
+     }
+    },
+    {
+     "text": "Tell the eldest teacher you will ask the Keeper yourself",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": -6,
+      "tally": {
+       "infamy": 8
+      },
+      "flag": "b2x_seize",
+      "log": "The Keeper, informed, quietly agrees. The old teacher is forgiven, and you are given the stamp."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "flag": "b2x_cast_out",
+      "log": "The Keeper takes the stamp back and dismisses you both."
+     }
+    },
+    {
+     "text": "Let the moment pass",
+     "effects": {
+      "alignment": 2,
+      "log": "You decline the stamp and walk the old teacher home. He says nothing, but he does not forget."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_takeover"
+  },
+  {
+   "id": "b2u_vl_steal_root2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the rarest root on the Register of the Rising Cranes, is at the Lantern Fair tonight, eating sweet rice in a crowd. Nobody has noticed that you are standing behind {him}, and that the crowd is thick and loud.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root in the press of the crowd",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It lifts from {npc} like a thread of cold light and sinks into you. Nobody sees. It does not feel like yours yet."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} turns at the last breath and shouts. You vanish into the crowd with nothing but a burnt palm."
+     }
+    },
+    {
+     "text": "Let {him} finish the sweet rice, and leave",
+     "effects": {
+      "alignment": 4,
+      "log": "You walk away through the crowd. The root stays where heaven put it."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_steal_root3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a small garden on a drifting isle, tending peonies and humming old songs. Rumour calls {him} the greatest root in ten thousand years. In the dusk, the peonies close, and {he} sits down by the pond, quiet and unguarded.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Draw the root while {he} gazes at the water",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root comes out like a silver root of its own. {npc} sits quite still for a moment, then slumps, and does not know what has been lost."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} senses you and the peonies burn blue. You flee with scorched sleeves and a stinging shame."
+     }
+    },
+    {
+     "text": "Water the peonies for {him} and go",
+     "effects": {
+      "alignment": 4,
+      "log": "You tip the can over the dry bed and leave without a word. {npc} stares at the water, and at the empty path."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_steal_root4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has been put in the trial hall of the Ministries for the root-test, and sits in the white circle with eyes closed. The assessors are drinking tea in the next room. The circle's seal is thin tonight, and the hall is nearly silent.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Slip through the thin seal and take the root",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root rises through the seal like smoke and fits into you at once. The assessors never know."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The seal flares and the assessors burst in. You are out through the window with a cracked rib."
+     }
+    },
+    {
+     "text": "Close the door gently and let the trial finish",
+     "effects": {
+      "alignment": 4,
+      "log": "The assessors return to find the circle quiet and the root intact. They will rank {npc} first, and never know who held back."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_steal_root5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} sleeps in the bunk-house of the cloud-ferry crew, tired from a double shift and snoring like a kettle. Heaven's mark is on {him} like a lamp under cloth. The crew are drunk on rice wine. The bunk-house door is on a latch.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Lift the root from the sleeper",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root slides out of {npc} without a murmur and into you. The latch clicks shut behind you."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} wakes mid-pull and grabs your wrist. The crew wake too. You run."
+     }
+    },
+    {
+     "text": "Tuck a blanket over {him} and go",
+     "effects": {
+      "alignment": 4,
+      "log": "You cover {npc} with a rough blanket. {He} turns over and goes on snoring, root and all."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_steal_root6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A festival of ancestors is on, and {npc} walks the shrine-road in plain white, carrying a paper lantern and murmuring to the dead. The root shines in {him} like a hidden coal. No one else would see it. You do.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root on the shrine-road",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The lantern gutters as the root lifts out of {npc}, and you step into the shadow. Nobody hears a thing."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The dead do not like you. A cold wind throws you off, and {npc} turns and sees your face."
+     }
+    },
+    {
+     "text": "Walk behind {him}, lantern in hand, to the shrine-gate",
+     "effects": {
+      "alignment": 4,
+      "log": "You see {him} safe to the gate and turn away. The ancestors seem pleased."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, a young god with the rarest root of the Dao, is attending a first rite at the Hall of Novices, kneeling among forty others. The incense is thick enough to hide a quiet theft, and every novice is looking at the altar.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root while the incense is thick",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It leaves {npc} like a note from a flute and sinks into you. The incense closes behind it. Nobody is any the wiser."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} gasps. The other novices turn, and the incense parts like a curtain."
+     }
+    },
+    {
+     "text": "Join the rite, and let the incense do its work",
+     "effects": {
+      "alignment": 4,
+      "log": "You kneel for the length of the rite and leave without a thing taken. {npc} bows to the altar, unaware."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} runs an errand for a minor god of weather, delivering a jar of fog to an unimportant village. {He} is sixteen ages old, and the root in {him} hums like a bee. The village is empty. There is no one to see.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root on the empty village road",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The jar of fog tips, and in the grey the root comes loose and flows into you. {npc} sits down, puzzled, and does not rise for an hour."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The fog turns to rain, and {npc} spots you through it. The village is no longer empty."
+     }
+    },
+    {
+     "text": "Carry the jar the last mile for {him}",
+     "effects": {
+      "alignment": 4,
+      "log": "You carry it and leave without a word. The weather-god will thank {npc} and never learn of you."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} sleeps in a small temple at the edge of a domain, under a quilt of prayers stitched by its mortal worshippers. The root shines through the quilt like a lamp under cloth. The temple door has no lock, and the worshippers have gone home.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Lift the root from under the quilt",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It slides out like a long silver thread and into you. The quilt lies undisturbed."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "A prayer on the quilt wakes and cries out. {npc} rises, and the worshippers' lamp is lit across the valley."
+     }
+    },
+    {
+     "text": "Leave an offering by the pillow and go",
+     "effects": {
+      "alignment": 4,
+      "log": "You set down a single plum. In the morning {npc} finds it, and prays for the stranger."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "At the divine exchange a market-god weighs {npc}'s prospects in front of a crowd, and every merchant is bidding for the right to patron the youth. The root is almost audible. A quiet hand in the crowd could lift it while the gavel falls.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root as the gavel falls",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The gavel drops. Nobody sees the root go, and {npc} stands among the bidders, slightly puzzled."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The gavel does not fall in time. {npc} cries out, and the merchants turn on you."
+     }
+    },
+    {
+     "text": "Bid honestly for the right to be {his} patron",
+     "effects": {
+      "alignment": 4,
+      "log": "You win the bid, and keep {npc} fed and housed. The root stays where it is, and so does your respect."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2g_vl_steal_root6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is meditating on a cloud outside the Heavenly Court, waiting for an audience that will not come before evening. The Court's gate-guards are bored. The root in {him} is the brightest thing in the sky, and no one but you is looking.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root while the guards yawn",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "It slides out of {npc} like a long breath and into you. The cloud ripples faintly, then lies still."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The cloud ripples too much. A guard glances over and frowns."
+     }
+    },
+    {
+     "text": "Sit beside {him} and share the wait",
+     "effects": {
+      "alignment": 4,
+      "log": "You wait together in silence. When the gate opens at dusk, {npc} bows to you, and you bow back."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the one with the old ones' whispered root, is at the harvest fair tonight, with a toffee-apple in one hand and a fiddle under the arm. The crowd is thick, the lamps are low, and nobody is watching.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root in the crush by the cider stall",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root slides out of {npc} like a ripple on water and into you. {He} blinks and goes on eating the apple."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} turns and sees you, and a cider-seller shouts. You are chased out of the fairground."
+     }
+    },
+    {
+     "text": "Toss {him} a second apple and walk away",
+     "effects": {
+      "alignment": 4,
+      "log": "You toss it over. {npc} grins, unaware of anything."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} practises alone on the back hill every dawn, for no reason except the joy of it. The root in {him} glows plainly in the grey light. There is a hollow in the hillside where a person might lie unseen.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Wait in the hollow and take the root at the second form",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root comes loose as {npc} spins, and into you. {He} stumbles, laughs, and starts again. You crawl away."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} sees you in the hollow and calls out. You scramble away with nothing but dirt."
+     }
+    },
+    {
+     "text": "Leave a flask of water on the stump and go",
+     "effects": {
+      "alignment": 4,
+      "log": "You leave the flask. {npc} finds it, drinks, and practises a little longer."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A ferry takes {npc} across the river each morning to a village school. The ferryman is half asleep and the river is wide. The root in {him} is like a lantern in a fog. A hand could lift it and none would be the wiser.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root on the ferry, mid-river",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The ferryman hums. {npc} dozes against the rail. The root lifts, and the river takes the ripple."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "{npc} wakes mid-pull and shouts for the ferryman. The boat rocks."
+     }
+    },
+    {
+     "text": "Help {him} off the ferry with a hand",
+     "effects": {
+      "alignment": 4,
+      "log": "You steady {him} on the landing. {npc} thanks you, and does not know what you passed up."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is sick with a fever in the school infirmary, and the root in {him} burns like a fire under cloth. The nurse has gone to fetch more cold water. You are alone with the patient, and the room is very quiet.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root while the fever dulls {him}",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The root drifts from {npc} and into you. {He} sleeps more easily afterwards, knowing nothing."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "The fever breaks suddenly, and {npc} sits up, looking at you. The nurse is in the doorway."
+     }
+    },
+    {
+     "text": "Sit by the bed and press a cool cloth to {his} brow",
+     "effects": {
+      "alignment": 4,
+      "log": "You sit until the nurse returns. {npc} recovers in a week, and thanks you for the cloth."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2p_vl_steal_root6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is lost on the mountain road in a thunderstorm, sheltering under a rock, root and all. It is the kind of night when no one would hear a shout, and the road has been washed out below. You alone know where {he} is.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the root in the storm",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": -20,
+      "tally": {
+       "infamy": 15
+      },
+      "flag": "krx_took",
+      "log": "The thunder covers the sound. The root rises from {npc} in a thread of white and comes to you. {He} does not stir."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "tally": {
+       "infamy": 8
+      },
+      "log": "Lightning shows your face to {npc}. {He} cries out, and the storm swallows it."
+     }
+    },
+    {
+     "text": "Lead {him} to the shelter of a shepherd's hut",
+     "effects": {
+      "alignment": 4,
+      "log": "You guide {him} through the rain. {npc} thanks you gravely, and the root goes on being {his}."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 17,
+     "realm": -2,
+     "tag": "kn_prodigy"
+    }
+   },
+   "trigger": "vl_steal_root"
+  },
+  {
+   "id": "b2u_vl_bounty2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A crane lands on your windowsill with a jade warrant tied to its leg, and behind it, on the next roof of cloud, {npc} is already drawing.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Meet {him} on the roof",
+     "roll": {
+      "stat": "strength",
+      "dc": 72
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The fight crosses three roofs. On the fourth {npc} yields, and the crane flies home without its warrant."
+     },
+     "fail": {
+      "health": -14,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "{npc} is faster than {his} crane. You wake in a warden's skiff, lighter by a purse."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Let the crane go and leave by the other window",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "By the time {npc} lands, the room is empty and the tea is still warm."
+     },
+     "fail": {
+      "health": -6,
+      "log": "{npc} was waiting under the other window too."
+     }
+    },
+    {
+     "text": "Offer {him} tea and a better price",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "item": {
+       "spirit_stone": -3
+      },
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} drinks, counts the stones, and tears the jade in two. \"I never found you,\" {he} says."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "health": -4,
+      "log": "{npc} drinks the tea and keeps the warrant."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 3
+      }
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2u_vl_bounty3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Two hunters from the Jade Warrants hall, {npc} and a partner, have bought every seat on the skiff you take each season. They are not hiding it.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight them on the open deck",
+     "roll": {
+      "stat": "strength",
+      "dc": 76
+     },
+     "ok": {
+      "fame": 5,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The partner goes over the rail into soft cloud. {npc} decides the price was too low."
+     },
+     "fail": {
+      "health": -16,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "Two of them is one too many. You are put off at the wardens' mooring."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Step off the skiff between isles",
+     "roll": {
+      "stat": "lightness",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You step into the mist and ride the updraught home. The skiff sails on with two angry hunters."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The updraught fails you and the hunters fish you out."
+     }
+    },
+    {
+     "text": "Stay ashore this season",
+     "effects": {
+      "tally": {
+       "infamy": -2
+      },
+      "log": "You do not take the skiff. The hunters ride it twice for nothing and go back to their hall."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2u_vl_bounty4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, an old immortal who hunts warrants to pay for a granddaughter's pills, finds you in a garden of the Lotus Halls. {He} looks tired, and does not draw yet.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him} anyway",
+     "roll": {
+      "stat": "strength",
+      "dc": 66
+     },
+     "ok": {
+      "fame": 3,
+      "tally": {
+       "infamy": 2
+      },
+      "alignment": -3,
+      "npcFlag": "vl_hunter_beaten",
+      "log": "You win, and {npc} sits down on the bench afterwards, looking much older. You leave {him} the garden."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "{npc} is tired, not slow. You wake in the Lotus Halls under guard."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Pay for the pills and let {him} go home",
+     "effects": {
+      "item": {
+       "spirit_stone": -4
+      },
+      "alignment": 5,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "You count out the stones. {npc} looks at them a long time, then folds the warrant away. \"Another hunter will come,\" {he} says. \"Not me.\""
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 4
+      }
+     }
+    },
+    {
+     "text": "Walk out of the garden",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You walk out of the far gate. {npc} lets you; tonight there will be no pills either way."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2u_vl_minister2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the Ministries' champion, has not come with a sword this time. {He} has come with your old friends' names, and a list of what they will lose if you keep running.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Tell {him} your friends are not {his} to threaten",
+     "roll": {
+      "stat": "charm",
+      "dc": 82
+     },
+     "ok": {
+      "fame": 8,
+      "tally": {
+       "infamy": 4
+      },
+      "log": "{npc} looks at you a long time and burns the list. \"Then it is between us,\" {he} says, and goes."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "fame": -3,
+      "log": "{npc} takes your anger to the Court as proof."
+     }
+    },
+    {
+     "text": "Go with {him}, so they lose nothing",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 3,
+      "log": "You go to the Court. Your friends keep their posts; you keep a long sentence."
+     }
+    },
+    {
+     "text": "Strike now, while {his} hands are full of paper",
+     "roll": {
+      "stat": "strength",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 12,
+      "tally": {
+       "infamy": 10
+      },
+      "alignment": -4,
+      "flag": "vlx_elder_gone",
+      "log": "{npc} falls on the bridge, beaten and alive, the list scattering on the wind."
+     },
+     "fail": {
+      "health": -18,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "{npc} was never only holding paper."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2u_vl_manhunt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Every tollhouse lantern on the cloud roads burns red tonight: the signal of the Jade Court that a Scourge of the Clouds is loose, and that every warden must fly.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Ride the storm between the lanterns",
+     "roll": {
+      "stat": "lightness",
+      "dc": 78
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You fly where no warden dares, inside a thunderhead, and come out three isles away."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "log": "The storm throws you into a warden patrol."
+     }
+    },
+    {
+     "text": "Put out the nearest lantern and its wardens",
+     "roll": {
+      "stat": "strength",
+      "dc": 82
+     },
+     "ok": {
+      "fame": 8,
+      "tally": {
+       "infamy": 6
+      },
+      "log": "One lantern goes dark. Then the next. The wardens begin to fly the other way."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "log": "There are too many lanterns and too many wardens."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2g_vl_bounty2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A warrant-bearer, {npc}, has been sitting in your outermost temple for nine days, among your own worshippers, waiting for you to look.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Look, and fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "fame": 5,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The worshippers see their god win. {npc} is sent back to the Death Domain with an empty hand."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "The worshippers see their god lose. That costs more than the faith {npc} takes."
+     }
+    },
+    {
+     "text": "Leave the temple and its prayers for a season",
+     "roll": {
+      "stat": "lightness",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You stop listening there. {npc} waits nine more days, then gives up."
+     },
+     "fail": {
+      "health": -6,
+      "log": "{npc} follows the last prayer to where you are."
+     }
+    },
+    {
+     "text": "Answer {him} as a god answers a prayer",
+     "roll": {
+      "stat": "charm",
+      "dc": 72
+     },
+     "ok": {
+      "tally": {
+       "god_faith": -3,
+       "infamy": -3
+      },
+      "log": "{npc} receives a small, perfect blessing, and a reason to report the temple empty."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 3
+      },
+      "log": "{npc} records the blessing as a bribe."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_bounty3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Two bearers of the Death Domain, {npc} among them, cross your domain's border at the same moment from opposite sides. They have done this before.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Meet them both at once",
+     "roll": {
+      "stat": "strength",
+      "dc": 84
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "You stand at the centre of your own domain and it stands with you. They leave by the same border."
+     },
+     "fail": {
+      "health": -16,
+      "woundOnly": true,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "They take your faith from both sides at once."
+     }
+    },
+    {
+     "text": "Fold your domain shut behind you",
+     "roll": {
+      "stat": "lightness",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "Your border closes like a door. They are left in an empty sky."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The border closes a breath too late."
+     }
+    },
+    {
+     "text": "Leave the domain to them for an age",
+     "effects": {
+      "tally": {
+       "infamy": -2
+      },
+      "log": "You withdraw to a small world and let them search an empty domain. They tire first."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_bounty4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is a young god of a small grief, sent with your warrant because nobody else would carry it. {He} holds it out with both hands, shaking.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Take the warrant and tear it",
+     "effects": {
+      "tally": {
+       "infamy": 3
+      },
+      "fame": 2,
+      "log": "{npc} watches it tear and looks almost relieved. \"They will send someone else,\" {he} says. They will."
+     }
+    },
+    {
+     "text": "Spare {him} the shame and go with {him}",
+     "effects": {
+      "tally": {
+       "infamy": -20
+      },
+      "jail": 2,
+      "log": "You go to the Court with a god of small grief walking beside you, taller than {he} was."
+     }
+    },
+    {
+     "text": "Fight {him}, because the Court will notice if you do not",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 2,
+      "tally": {
+       "infamy": 2
+      },
+      "alignment": -5,
+      "npcFlag": "vl_hunter_beaten",
+      "log": "It is quick, and {npc} is not badly hurt. You feel worse than {he} does."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "{npc} is braver than {he} looks."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_judge2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the Court's judge, sends no bearers today. {He} sends a summons in your own handwriting, copied from the Book: every sin, in your words.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Answer the summons with a better reading",
+     "roll": {
+      "stat": "strategy",
+      "dc": 84
+     },
+     "ok": {
+      "fame": 8,
+      "tally": {
+       "infamy": -6
+      },
+      "log": "{npc} reads your reply twice and adjourns the case. The Court has never done that before."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 6
+      },
+      "fame": -3,
+      "log": "Your reply is entered into the Book beside the sins."
+     }
+    },
+    {
+     "text": "Appear before the Court",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 2,
+      "log": "You stand before the Court and hear your own words read back. The sealing is shorter than the reading."
+     }
+    },
+    {
+     "text": "Burn the summons and the hall that sent it",
+     "roll": {
+      "stat": "strength",
+      "dc": 88
+     },
+     "ok": {
+      "fame": 14,
+      "tally": {
+       "infamy": 10
+      },
+      "alignment": -5,
+      "flag": "vlx_elder_gone",
+      "log": "{npc} withdraws from the ruin of the hall, beaten. The Court will not forget."
+     },
+     "fail": {
+      "health": -18,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "The hall was never only a hall. You are sealed in it."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2g_vl_manhunt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Book of Fates has opened a page for you alone, and every god who reads it may hunt you by right. Thousands have read it this age.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Hide among the gods who hunt you",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You wear a borrowed face to three councils that are hunting you. Nobody looks twice."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "log": "The fourth council knows your voice."
+     }
+    },
+    {
+     "text": "Make an example of the first pantheon to come",
+     "roll": {
+      "stat": "strength",
+      "dc": 84
+     },
+     "ok": {
+      "fame": 8,
+      "tally": {
+       "infamy": 6
+      },
+      "log": "The first pantheon goes home broken. The next ones come slower."
+     },
+     "fail": {
+      "health": -16,
+      "woundOnly": true,
+      "log": "The first pantheon is the strongest."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2p_vl_bounty2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A young hunter with a sling and a folded warrant has followed you two villages, and tonight {npc} has climbed the barn roof across from your window.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Go up and meet {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "It is short. {npc} sits on the roof afterwards, sulking, with the warrant in pieces."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "taels": -80,
+      "log": "The sling is quicker than you thought. You wake in the reeve's lock-up."
+     }
+    },
+    {
+     "text": "Leave by the back lane before dawn",
+     "roll": {
+      "stat": "lightness",
+      "dc": 48
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "By sunrise you are three fields away and the roof is empty."
+     },
+     "fail": {
+      "health": -5,
+      "log": "{npc} was watching the back lane too."
+     }
+    },
+    {
+     "text": "Buy {him} breakfast and the warrant",
+     "effects": {
+      "taels": -120,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} eats two bowls and sells you the warrant. \"There are more,\" {he} says, cheerfully."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_bounty3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} and two brothers, hunters of the kingdom's warrants, have closed the only bridge out of the valley and are taking turns asleep.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Cross the bridge anyway",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The brothers wake up in the river. {npc} decides the bridge is yours."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "taels": -80,
+      "log": "Three of them is too many on a narrow bridge."
+     }
+    },
+    {
+     "text": "Ford the river upstream",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "The water is cold and the bank is steep, but you are across, and the bridge is still being watched."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The current takes you back down to the bridge."
+     }
+    },
+    {
+     "text": "Wait in the valley until they give up",
+     "effects": {
+      "tally": {
+       "infamy": -2
+      },
+      "log": "You live a quiet month in a shepherd's hut. The brothers get bored first."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_bounty4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, who took to hunting warrants when {his} spouse died and the farm failed, finds you at the well. {He} looks at the warrant, then at you, and does not quite raise {his} hands.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 2,
+      "tally": {
+       "infamy": 2
+      },
+      "alignment": -3,
+      "npcFlag": "vl_hunter_beaten",
+      "log": "You win. {npc} sits by the well for a long time afterwards."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "taels": -80,
+      "log": "{npc} has been hungry a long time, and fights like it."
+     }
+    },
+    {
+     "text": "Pay {his} rent for a year and let {him} go",
+     "effects": {
+      "taels": -160,
+      "alignment": 5,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} takes the coins and tears up the warrant. \"I never saw you,\" {he} says, and means it."
+     }
+    },
+    {
+     "text": "Walk away while {he} decides",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You walk away. {npc} lets you, this time."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_champion2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the king's champion, has come to your village without armour. {He} sits at your table and asks your neighbours, one by one, what you have done.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Speak for yourself before they do",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": -4
+      },
+      "log": "{npc} listens to all of it, and leaves without the warrant. \"Not this year,\" {he} says."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 5
+      },
+      "fame": -3,
+      "log": "Your neighbours are more honest than you hoped."
+     }
+    },
+    {
+     "text": "Ride with {him} to the king",
+     "effects": {
+      "tally": {
+       "infamy": -25
+      },
+      "jail": 2,
+      "log": "You ride to the king. Your neighbours keep their quiet village."
+     }
+    },
+    {
+     "text": "Call {him} out into the square",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 12,
+      "tally": {
+       "infamy": 10
+      },
+      "flag": "vlx_elder_gone",
+      "log": "{npc} goes down in the square, beaten and alive, in front of everyone."
+     },
+     "fail": {
+      "health": -18,
+      "woundOnly": true,
+      "jail": 3,
+      "log": "The square watches you lose."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "vl_orthodox"
+  },
+  {
+   "id": "b2p_vl_manhunt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The kingdoms have lit the old beacon hills, one after another across this world, for the first time in a hundred years. Every beacon is for you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Run between the beacons by night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "infamy": -8
+      },
+      "flag": "vlx_flee",
+      "log": "You run from dark hill to dark hill and reach the wild border before dawn."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "log": "A beacon catches you in its light."
+     }
+    },
+    {
+     "text": "Put out the beacon above your village",
+     "roll": {
+      "stat": "strength",
+      "dc": 58
+     },
+     "ok": {
+      "fame": 6,
+      "tally": {
+       "infamy": 5
+      },
+      "log": "The riders who come to light it again turn back."
+     },
+     "fail": {
+      "health": -14,
+      "woundOnly": true,
+      "log": "The riders are already on the hill."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "trigger": "vl_manhunt"
+  },
+  {
+   "id": "b2u_vl_bounty5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A crane-post of the Jade Warrants hall has your warrant pinned to its board, and {npc} is the hunter who just took it down.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Meet {him} at the board",
+     "roll": {
+      "stat": "strength",
+      "dc": 72
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "{npc} pins the warrant back up, beaten, and walks away from it."
+     },
+     "fail": {
+      "health": -14,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "{npc} pins you instead, and the wardens collect."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Take a different isle road",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are three isles away before {npc} finishes reading."
+     },
+     "fail": {
+      "health": -6,
+      "log": "{npc} reads quickly."
+     }
+    },
+    {
+     "text": "Offer to double the bounty for a lost warrant",
+     "effects": {
+      "item": {
+       "spirit_stone": -3
+      },
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} considers it, takes the stones, and loses the warrant in the sea of cloud."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 3
+      }
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2u_vl_bounty6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, a hunter who once served with you on a convoy, finds you at the Isle Bazaar and sits down across from you, warrant in hand.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him} anyway",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "fame": 3,
+      "tally": {
+       "infamy": 2
+      },
+      "alignment": -2,
+      "npcFlag": "vl_hunter_beaten",
+      "log": "It is short and sad. {npc} leaves without the warrant or a word."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "{npc} remembers how you fight."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Remind {him} of the convoy",
+     "roll": {
+      "stat": "charm",
+      "dc": 66
+     },
+     "ok": {
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} folds the warrant away. \"We never met,\" {he} says."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "health": -4,
+      "log": "{npc} remembers the convoy differently."
+     }
+    },
+    {
+     "text": "Leave {him} the table",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You stand and walk into the bazaar crowd."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_bounty5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A warrant-bearer, {npc}, has bound your name into a mortal's prayer, so that every time it is prayed {he} learns where you are.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Find the mortal and answer the prayer",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 78
+     },
+     "ok": {
+      "tally": {
+       "infamy": -3
+      },
+      "log": "You answer the prayer kindly and take your name out of it. {npc} hears nothing more."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The prayer is answered, and {npc} arrives while you are answering."
+     }
+    },
+    {
+     "text": "Fight {npc} when {he} comes",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "{npc} goes back to the Death Domain with the prayer unbound."
+     },
+     "fail": {
+      "health": -15,
+      "woundOnly": true,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "{npc} takes your faith and leaves you for the Court."
+     }
+    },
+    {
+     "text": "Move your temple for an age",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You move. The prayer leads {npc} to an empty altar."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2g_vl_bounty6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, a bearer who once guarded the same procession as you, waits under your temple's eaves with your blot in {his} hand.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "strength",
+      "dc": 78
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "The eaves shake. {npc} leaves with the blot torn."
+     },
+     "fail": {
+      "health": -14,
+      "woundOnly": true,
+      "tally": {
+       "god_faith": -2
+      },
+      "log": "{npc} knows your old guard's stance."
+     }
+    },
+    {
+     "text": "Remind {him} of the procession",
+     "roll": {
+      "stat": "charm",
+      "dc": 72
+     },
+     "ok": {
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} lets the blot fall into your temple's fire."
+     },
+     "fail": {
+      "tally": {
+       "infamy": 2
+      },
+      "log": "{npc} remembers the procession differently."
+     }
+    },
+    {
+     "text": "Leave by the back of the temple",
+     "effects": {
+      "flag": "vlx_flee",
+      "log": "You leave through a worshipper's dream."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_bounty5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The kingdom's warrant with your face is nailed to the tavern door, and {npc}, the tavern keeper's cousin, is reading it very carefully.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Have a word with {him} outside",
+     "roll": {
+      "stat": "strength",
+      "dc": 48
+     },
+     "ok": {
+      "fame": 3,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "{npc} decides the likeness is not very good."
+     },
+     "fail": {
+      "health": -10,
+      "woundOnly": true,
+      "taels": -80,
+      "log": "{npc} has friends in the tavern."
+     }
+    },
+    {
+     "text": "Pull the warrant down and leave",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You are gone with the warrant before {npc} looks up."
+     },
+     "fail": {
+      "health": -5,
+      "log": "{npc} looks up."
+     }
+    },
+    {
+     "text": "Buy {him} a drink and the warrant",
+     "effects": {
+      "taels": -80,
+      "tally": {
+       "infamy": -3
+      },
+      "log": "{npc} drinks, and the warrant goes in the fire."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  },
+  {
+   "id": "b2p_vl_bounty6_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, a hunter with a hawk, has followed you three days across the moor. The hawk circles over you even when {npc} is out of sight.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Darker Roads",
+   "choices": [
+    {
+     "text": "Wait for {him} at the cairn",
+     "roll": {
+      "stat": "strength",
+      "dc": 52
+     },
+     "ok": {
+      "fame": 4,
+      "tally": {
+       "infamy": 2
+      },
+      "npcFlag": "vl_hunter_beaten",
+      "log": "At the cairn it is over. The hawk flies home alone."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "taels": -80,
+      "log": "The hawk sees you first."
+     }
+    },
+    {
+     "text": "Lose the hawk in the forest",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "Under the trees the hawk loses you, and so does {npc}."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The hawk finds you in a clearing."
+     }
+    },
+    {
+     "text": "Wait out the weather in a shepherd's hut",
+     "effects": {
+      "tally": {
+       "infamy": -2
+      },
+      "log": "Three days of rain. The hawk gives up first."
+     }
+    }
+   ],
+   "cooldown": 1,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "vl_hunter",
+     "realm": 0
+    }
+   },
+   "trigger": "vl_bounty"
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

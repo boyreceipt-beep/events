@@ -1,0 +1,445 @@
+{
+ "events": [
+  {
+   "id": "lv28_poison_spring",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A spring in the south has turned deadly overnight. Animals lie dead around it.",
+   "choices": [
+    {
+     "text": "Find the cause",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "A poison sect's waste dumped upstream. You find the pipe."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You fall ill just from the fumes."
+     }
+    },
+    {
+     "text": "Warn every village downstream",
+     "effects": {
+      "alignment": 3,
+      "log": "Nobody drinks. Nobody dies."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_sick_village",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_spring"
+    ]
+   },
+   "weight": 2,
+   "text": "A village that drank the water is falling ill.",
+   "choices": [
+    {
+     "text": "Nurse the sick",
+     "effects": {
+      "alignment": 3,
+      "health": -3,
+      "log": "Hard days. Most recover."
+     }
+    },
+    {
+     "text": "Carry clean water from the mountains",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "Buckets for a week."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_poison_sect",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_spring"
+    ]
+   },
+   "weight": 2,
+   "text": "The poison sect denies everything and sends a warning: stay out of our business.",
+   "choices": [
+    {
+     "text": "Gather proof",
+     "effects": {
+      "comprehension": 2,
+      "log": "Samples, witnesses, a map."
+     }
+    },
+    {
+     "text": "Confront them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "They back down and stop dumping."
+     },
+     "fail": {
+      "health": -14,
+      "log": "They beat you and dump you at the border."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_antidote_race",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_spring"
+    ]
+   },
+   "weight": 2,
+   "text": "A healer has an antidote recipe but needs rare ingredients.",
+   "choices": [
+    {
+     "text": "Gather them",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "Cliff herbs, river roots, a snake's gall. The antidote saves a hundred."
+     },
+     "fail": {
+      "alignment": 2,
+      "health": -4,
+      "log": "You get some. Fewer are saved."
+     }
+    },
+    {
+     "text": "Pay for them",
+     "effects": {
+      "taels": -15,
+      "alignment": 3,
+      "log": "The healer buys them from the market. (−15 taels)"
+     },
+     "req": {
+      "minTaels": 15
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_poisoned_well_town",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_spring"
+    ]
+   },
+   "weight": 2,
+   "text": "Someone poisons the town well, blaming the spring.",
+   "choices": [
+    {
+     "text": "Find the poisoner",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "log": "A merchant who wanted people to buy his water. The magistrate hangs a sign on him."
+     },
+     "fail": {
+      "luck": -1,
+      "log": "The trail goes cold."
+     }
+    },
+    {
+     "text": "Stand guard at the well",
+     "effects": {
+      "alignment": 1,
+      "log": "Nobody tries again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_poison_sect_disciple",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_sect"
+    ]
+   },
+   "weight": 2,
+   "text": "A young poison sect disciple secretly brings you the dumping records.",
+   "choices": [
+    {
+     "text": "Protect them",
+     "effects": {
+      "alignment": 3,
+      "log": "You hide them until it is safe. They leave the sect."
+     }
+    },
+    {
+     "text": "Take the records to the magistrate",
+     "effects": {
+      "fame": 1,
+      "alignment": 1,
+      "log": "Justice, slowly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_spring_clean",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_sect"
+    ]
+   },
+   "weight": 2,
+   "text": "Once the dumping stops, the spring must be cleaned.",
+   "choices": [
+    {
+     "text": "Help dig out the poisoned mud",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "Backbreaking work. The spring runs clear."
+     }
+    },
+    {
+     "text": "Plant cleansing reeds",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "In a year, the water will be sweet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_poison_merchant",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_poison_spring"
+    ]
+   },
+   "weight": 2,
+   "text": "A merchant sells 'poison-proof' charms.",
+   "choices": [
+    {
+     "text": "Expose him",
+     "effects": {
+      "fame": 1,
+      "log": "The crowd drives him off."
+     }
+    },
+    {
+     "text": "Ignore him",
+     "effects": {
+      "luck": 0,
+      "log": "Fools and their silver."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_kid_poison",
+   "cat": "childhood",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You are told never, ever to drink from the spring. So of course you want to.",
+   "choices": [
+    {
+     "text": "Obey",
+     "effects": {
+      "luck": 1,
+      "alignment": 1,
+      "log": "Good. The spring really is poisoned."
+     }
+    },
+    {
+     "text": "Look closely at it",
+     "effects": {
+      "comprehension": 1,
+      "log": "Dead fish. You understand now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_toxic_marsh",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A marsh near the poison spring where strange flowers grow.",
+   "choices": [
+    {
+     "text": "Collect some",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 12,
+      "comprehension": 1,
+      "log": "Rare poisons are also rare medicines. (+12 taels)"
+     },
+     "fail": {
+      "health": -6,
+      "log": "Your hands swell for a week."
+     }
+    },
+    {
+     "text": "Stay out",
+     "effects": {
+      "luck": 1,
+      "log": "Wise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_water_clean",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv28_spring_clean"
+    ]
+   },
+   "weight": 2,
+   "text": "The spring runs clear again. Villagers hold a small festival.",
+   "choices": [
+    {
+     "text": "Drink the first cup",
+     "effects": {
+      "health": 2,
+      "fame": 1,
+      "log": "Sweet and cold. They cheer."
+     }
+    },
+    {
+     "text": "Let the children drink first",
+     "effects": {
+      "alignment": 1,
+      "log": "Laughter by the spring again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv28_poison_lesson",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-12",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "An old healer says: every poison is a medicine in the right dose.",
+   "choices": [
+    {
+     "text": "Ask her to teach you",
+     "effects": {
+      "comprehension": 2,
+      "log": "A month of careful lessons."
+     }
+    },
+    {
+     "text": "Remember it",
+     "effects": {
+      "comprehension": 1,
+      "log": "A good saying for many things."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,429 @@
+{
+ "events": [
+  {
+   "id": "lv45_ruins_found",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A landslide uncovers the stone halls of a sect wiped out three hundred years ago.",
+   "choices": [
+    {
+     "text": "Go and see",
+     "effects": {
+      "comprehension": 1,
+      "log": "Half the jianghu is already there."
+     }
+    },
+    {
+     "text": "Wait for the crowds to leave",
+     "effects": {
+      "luck": 1,
+      "log": "Patience. You go at night, alone."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv45_ruins_gate",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "The ruined gate bears the sect's name: the Azure Cloud Sect. Nobody remembers it.",
+   "choices": [
+    {
+     "text": "Read their precepts carved on the gate",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "'Strength without mercy is weakness.' Old wisdom."
+     }
+    },
+    {
+     "text": "Clean the gate",
+     "effects": {
+      "alignment": 2,
+      "log": "Someone should honour them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_trap",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "The ruins are full of old traps, still working.",
+   "choices": [
+    {
+     "text": "Disarm them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "log": "Clever old mechanisms. You learn from them."
+     },
+     "fail": {
+      "health": -8,
+      "log": "A dart grazes you."
+     }
+    },
+    {
+     "text": "Mark them for others",
+     "effects": {
+      "alignment": 1,
+      "log": "Nobody else is hurt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_scroll",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "In a sealed chamber you find a scroll wrapped in oilcloth.",
+   "choices": [
+    {
+     "text": "Read it carefully",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 6,
+      "comprehension": 1,
+      "log": "A breathing method, lost for three centuries."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The scroll crumbles as you open it. You remember one line."
+     }
+    },
+    {
+     "text": "Take it to scholars",
+     "effects": {
+      "fame": 2,
+      "log": "They restore it. Your name is in the preface."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_rivals",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "Treasure hunters fight over the ruins.",
+   "choices": [
+    {
+     "text": "Drive them out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 1,
+      "log": "The ruins are safe from looters."
+     },
+     "fail": {
+      "health": -10,
+      "alignment": 1,
+      "log": "You drive them out, wounded."
+     }
+    },
+    {
+     "text": "Let the magistrate handle it",
+     "effects": {
+      "luck": 0,
+      "log": "Slowly, badly, but it is handled."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_why",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "Carvings in the main hall show how the sect died: betrayed by its own disciple.",
+   "choices": [
+    {
+     "text": "Reflect on it",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "Every sect carries this danger."
+     }
+    },
+    {
+     "text": "Tell the nearest sect",
+     "effects": {
+      "fame": 1,
+      "log": "The elders listen gravely."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_bones",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "The ruins hold the bones of the last defenders, still at their posts.",
+   "choices": [
+    {
+     "text": "Bury them properly",
+     "effects": {
+      "alignment": 3,
+      "luck": 1,
+      "log": "Three hundred years late, they rest."
+     }
+    },
+    {
+     "text": "Leave them as a memorial",
+     "effects": {
+      "alignment": 1,
+      "log": "They guard forever."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_descendant",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "A poor farmer claims to be a descendant of the Azure Cloud Sect.",
+   "choices": [
+    {
+     "text": "Believe him and help him",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "He has an old token that matches the gate. It is true."
+     }
+    },
+    {
+     "text": "Ask for proof",
+     "effects": {
+      "comprehension": 1,
+      "log": "He has none but his grandmother's stories. That is something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_kid_ruins",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You hear about the ruins and draw a map of where the treasure must be.",
+   "choices": [
+    {
+     "text": "Go treasure hunting in the garden",
+     "effects": {
+      "luck": 1,
+      "log": "You find a very old coin. Treasure!"
+     }
+    },
+    {
+     "text": "Show the map to everyone",
+     "effects": {
+      "charm": 1,
+      "log": "Everyone agrees it is a very good map."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_training_hall",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "The Azure Cloud Sect's training hall, footprints still worn into the stone floor.",
+   "choices": [
+    {
+     "text": "Step in the footprints",
+     "effects": {
+      "comprehension": 3,
+      "log": "A form emerges from where they stood."
+     }
+    },
+    {
+     "text": "Meditate in the hall",
+     "effects": {
+      "qi": 4,
+      "log": "Three hundred years of practice, still in the air."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_restore",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found"
+    ]
+   },
+   "weight": 2,
+   "text": "Some want to rebuild the Azure Cloud Sect.",
+   "choices": [
+    {
+     "text": "Help rebuild",
+     "effects": {
+      "strength": 2,
+      "alignment": 1,
+      "log": "Stone by stone."
+     }
+    },
+    {
+     "text": "Say the dead should rest",
+     "effects": {
+      "comprehension": 0,
+      "log": "Some agree. Some do not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv45_ruins_closed",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-09",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv45_ruins_found",
+     "lv45_ruins_restore"
+    ]
+   },
+   "weight": 2,
+   "text": "The magistrate seals the ruins. The Azure Cloud Sect sleeps again.",
+   "choices": [
+    {
+     "text": "Visit one last time",
+     "effects": {
+      "qi": 1,
+      "log": "A quiet goodbye."
+     }
+    },
+    {
+     "text": "Carve a new marker at the gate",
+     "effects": {
+      "alignment": 1,
+      "log": "So they are not forgotten again."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

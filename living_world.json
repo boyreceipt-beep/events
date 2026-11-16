@@ -1,0 +1,923 @@
+{
+ "events": [
+  {
+   "id": "lwr_bandits_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Halfway through a pine pass, a rope comes up out of the needles and a dozen men with cudgels step onto the road. Their leader has a speech ready about tolls.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "realm": [
+     0,
+     2
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Fight your way through",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The bandits"
+     },
+     "ok": {
+      "log": "The leader is the last one standing, and then he is not. The villagers at the foot of the pass bring you rice cakes.",
+      "taels": 30,
+      "fame": 3,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "There were more of them than the pass let you see. You walk on lighter and bruised.",
+      "health": -15,
+      "taels": -20
+     }
+    },
+    {
+     "text": "Pay the toll (20 taels)",
+     "effects": {
+      "log": "The leader counts it twice and wishes you a pleasant journey. He seems to mean it.",
+      "taels": -20
+     }
+    },
+    {
+     "text": "Run for the trees",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "log": "You are over the ridge before the rope is back in their hands.",
+      "luck": 1
+     },
+     "fail": {
+      "log": "A cudgel catches your shoulder on the way past. You keep running anyway.",
+      "health": -8
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_stronghold_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A whole mountain stronghold has come down to the road: fifty riders and a chief in a lacquered helmet who has heard of you, and wants to be the one who stopped you.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "realm": [
+     3,
+     11
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Challenge the chief before his riders",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 0.9,
+      "foeName": "The stronghold chief"
+     },
+     "ok": {
+      "log": "The chief yields on one knee. His riders scatter into the hills, and the road is safe for a season.",
+      "fame": 8,
+      "taels": 80,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "He is better than his helmet. You cut your way out with nothing to show for it but the cuts.",
+      "health": -18
+     }
+    },
+    {
+     "text": "Talk him out of it",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "log": "By the end of the evening the chief is pouring your tea and asking your advice about his son.",
+      "charm": 2,
+      "fame": 2
+     },
+     "fail": {
+      "log": "The chief does not like the sound of your voice. You leave by the long road, at speed.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Take the long road round",
+     "effects": {
+      "log": "Three days out of your way, but nobody bleeds for it.",
+      "health": -2
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_hermit_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "By a stream an old hermit is trying to catch fish with his bare hands, and failing, cheerfully. He looks up at you as if you were late.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Share your food with him",
+     "effects": {
+      "log": "He eats like a man who has not eaten in a week and talks like one who has not talked in a year. Somewhere in the talk is a thing about breathing you had never understood.",
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Ask him to teach you something",
+     "effects": {
+      "log": "He makes you stand in the cold stream until sunset. You are not sure it was a lesson. Your next forms come easier.",
+      "artYears": 0.5,
+      "health": -3
+     }
+    },
+    {
+     "text": "Leave him to his fish",
+     "effects": {
+      "log": "When you look back he has caught one, and is holding it up for you to see.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_escort_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A cloth merchant with three carts and no guards asks if you are going the same way. He has heard the road ahead is not what it was.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Guard the carts",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.6,
+      "foeName": "The road thieves"
+     },
+     "ok": {
+      "log": "Thieves come at dusk on the second day and leave faster than they came. The merchant pays double.",
+      "taels": 60,
+      "fame": 2,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "You keep the carts, but not the merchant's best bolt of silk, or your temper. He pays half.",
+      "taels": 20,
+      "health": -10
+     }
+    },
+    {
+     "text": "Walk ahead and scout for him",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You find the ambush before it finds him. The carts go round it, and the merchant presses silver into your hand.",
+      "taels": 40
+     },
+     "fail": {
+      "log": "You miss them, and so do they: the carts take another road by luck. The merchant pays you for the walk.",
+      "taels": 10
+     }
+    },
+    {
+     "text": "Wish him luck and go on alone",
+     "effects": {
+      "log": "You hear later that he arrived. You do not hear how.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_cave_1",
+   "cat": "life",
+   "weight": 2,
+   "once": true,
+   "text": "Behind a waterfall, where the cliff should be solid, the spray hangs in a dark square. Someone cut steps into the rock there, long ago, and then tried to hide them.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Climb up and look inside",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "log": "A dry chamber, a cold stone bed, words carved on the wall in a hand nobody writes any more. You sit with them until the light goes. Further in, a sealed door. You mark the place.",
+      "qi": 15,
+      "comprehension": 2,
+      "flag": "road_cave_hint"
+     },
+     "fail": {
+      "log": "The wet steps throw you into the pool. You come up laughing, and soaked, and you mark the place for another day.",
+      "health": -8,
+      "flag": "road_cave_hint"
+     }
+    },
+    {
+     "text": "Mark it on your map and go on",
+     "effects": {
+      "log": "You draw the falls, the cliff and the dark square, and fold the paper small.",
+      "flag": "road_cave_hint"
+     }
+    },
+    {
+     "text": "Leave it to whoever hid it",
+     "effects": {
+      "log": "Some doors are hidden for a reason. You walk on, and the falls close behind you.",
+      "alignment": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "lwr_storm_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A storm drives you into a roadside shrine. Another traveller is already there, wringing out a sleeve, and makes room for you by the little fire without a word.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Share the fire and the talk",
+     "effects": {
+      "log": "You talk until the rain stops, and part without names. It is the best evening of the journey.",
+      "charm": 1,
+      "health": 4
+     }
+    },
+    {
+     "text": "Meditate through the storm",
+     "effects": {
+      "log": "Thunder in the hills, rain on the roof, the fire ticking. Your breathing settles into all of it.",
+      "qi": 8
+     }
+    },
+    {
+     "text": "Push on through the rain",
+     "effects": {
+      "log": "You arrive a day early and a week ill.",
+      "health": -6
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_storyteller_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "At an inn on the road a storyteller is telling a tale to a full room, and it takes you a long moment to understand that the tale is about you. Most of it is wrong.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "minFame": 100
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Correct him, loudly",
+     "effects": {
+      "log": "The room turns to look. Half of them believe you; the other half like his version better.",
+      "fame": 3
+     }
+    },
+    {
+     "text": "Buy him a drink and say nothing",
+     "effects": {
+      "log": "He drinks it, thanks you, and adds a dragon to the third part. You let him.",
+      "charm": 1,
+      "flag": "lwx_up"
+     }
+    },
+    {
+     "text": "Leave before anyone notices",
+     "effects": {
+      "log": "You eat in your room. Through the floor you hear yourself win a duel you lost.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_lost_child_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A small child is sitting at a crossroads, crying with great dignity, and will not say where home is until you sit down too.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Take the child home",
+     "effects": {
+      "log": "Home is a farm two hills away, and a mother who runs the last part of the road. Word of it goes round the villages.",
+      "alignment": 3,
+      "flag": "lwx_up"
+     }
+    },
+    {
+     "text": "Give the child to the next carter",
+     "effects": {
+      "log": "The carter knows the family. You watch the cart out of sight.",
+      "alignment": 1
+     }
+    },
+    {
+     "text": "Point the way and go on",
+     "effects": {
+      "log": "The child goes the way you pointed. You hope it was the right one.",
+      "alignment": -1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_wronged_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "At the edge of a village a crowd is waiting for you on the road, and an old one at the front is holding something up for you to see: a broken name tablet from a family altar.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "lw_tyrant"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Stop, and let them speak",
+     "effects": {
+      "log": "They speak for an hour. You do not argue. Afterwards the road opens, and a few of them nod.",
+      "alignment": 3,
+      "fame": -2,
+      "flag": "lwx_up"
+     }
+    },
+    {
+     "text": "Pay what you can (50 taels)",
+     "effects": {
+      "log": "Silver is not what they wanted, but it is something. The crowd breaks up slowly.",
+      "taels": -50,
+      "flag": "lwx_up"
+     }
+    },
+    {
+     "text": "Walk through them",
+     "effects": {
+      "log": "Nobody quite dares to stop you. The stones start after you have passed.",
+      "health": -5,
+      "alignment": -2,
+      "flag": "lwx_down"
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_grateful_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Villagers recognise you at a ford and will not let you pass until you have eaten. An old man insists on carrying your pack across himself, and nearly drowns doing it.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "lw_hero"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Accept their kindness",
+     "effects": {
+      "log": "Rice, pickles, a bed under the eaves, and children who ask you to show them a form.",
+      "health": 10,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Teach the children a form before you go",
+     "effects": {
+      "log": "They practise it in a row by the ford as you leave, all of them wrong, all of them proud.",
+      "flag": "lwx_up",
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Thank them and go on quickly",
+     "effects": {
+      "log": "They wave you off with more food than you can carry.",
+      "health": 3
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_refugees_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "Families with handcarts fill the road, walking away from the sects' war: grandmothers, chickens, a loom tied on with rope. Nobody looks back.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "flags": [
+     "lw_npc_war"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Give them silver for the road (30 taels)",
+     "effects": {
+      "log": "A woman takes it without a word and puts it in her child's hand.",
+      "taels": -30,
+      "alignment": 4,
+      "flag": "lwx_up"
+     }
+    },
+    {
+     "text": "Walk with them to the next town",
+     "effects": {
+      "log": "Nobody bothers a column with you in it. At the town gate they cheer you, a thin, tired cheer.",
+      "fame": 3,
+      "flag": "lwx_up",
+      "health": -3
+     }
+    },
+    {
+     "text": "Pass them by",
+     "effects": {
+      "log": "You go round them by the fields. It takes most of the day.",
+      "alignment": -1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_raiders_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "On the frozen river at the border, riders from across the steppe are driving off a village's horses. The villagers are watching from the bank with pitchforks and no hope.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "north"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Go out onto the ice after them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.75,
+      "foeName": "The raiders"
+     },
+     "ok": {
+      "log": "The horses come home, and so do you, frozen to the knees. The garrison captain buys you a bowl of hot tea.",
+      "fame": 5,
+      "strength": 2,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "The ice and the raiders together are too much. You get back to the bank, which is something.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Shoot from the bank",
+     "roll": {
+      "stat": "archery",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Two riders go down and the rest let the horses go rather than wait for a third.",
+      "fame": 3,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "Your arrows skitter across the ice. The riders laugh, and are gone.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Help the village count what is left",
+     "effects": {
+      "log": "You stay two days and mend a fence. It is not much. They remember it.",
+      "alignment": 2
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_tang_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A pedlar in Sichuan, in the Tang family's colours, offers you a little lacquered box of remedies: \"For the bites, the fevers, and the friends who turn out not to be.\"",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "sichuan"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Buy the box (40 taels)",
+     "effects": {
+      "log": "Inside are seven tiny jars and a slip of instructions in very small writing. You read it twice.",
+      "taels": -40,
+      "health": 8,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Ask what is really in the jars",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You name three of the herbs before the pedlar stops you, smiling. \"Take one,\" she says, \"for knowing.\"",
+      "health": 5,
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "You sniff the wrong jar. You lose the afternoon, and most of your sense of smell, for a day.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "log": "The pedlar bows. In Sichuan, a polite refusal is also a kind of remedy.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3,
+   "mw": true
+  },
+  {
+   "id": "lwr_barge_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "On a Jiangnan canal barge a young poet is stuck on the last line of a poem about the willows, and asks the whole deck for help.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "jiangnan"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Offer a last line",
+     "roll": {
+      "stat": "poetry",
+      "dc": 40
+     },
+     "ok": {
+      "log": "The deck goes quiet, then applauds. By the next town the poem has your line in it, and your name.",
+      "fame": 4,
+      "charm": 2,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "The poet thanks you kindly and uses someone else's line. It is better. You admit it.",
+      "charm": 1
+     }
+    },
+    {
+     "text": "Buy silk at the next landing",
+     "effects": {
+      "log": "A merchant on the barge sells you a bolt cheap, for the pleasure of the poem.",
+      "taels": 15,
+      "charm": 1
+     }
+    },
+    {
+     "text": "Watch the willows go by",
+     "effects": {
+      "log": "You do not help the poet, and you do not need to. The willows are enough.",
+      "qi": 5
+     }
+    }
+   ],
+   "cooldown": 3,
+   "mw": true
+  },
+  {
+   "id": "lwr_pirates_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "At a harbour town on the coast the fishermen will not put out to sea: a pirate junk has been sitting at the mouth of the bay for a week, waiting for someone to try.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "coast"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Row out and board her",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The pirate captain"
+     },
+     "ok": {
+      "log": "The captain goes over the side. The junk is towed in by noon, and the town feasts on her stores.",
+      "fame": 6,
+      "taels": 50,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "You end up in the bay, swimming for a fishing boat. The pirates sail off laughing, at least.",
+      "health": -14
+     }
+    },
+    {
+     "text": "Trade with the foreign ships instead",
+     "effects": {
+      "log": "A ship from beyond the sea sells you a little bottle of something that smells of another world. It sells on for twice the price.",
+      "taels": 25
+     }
+    },
+    {
+     "text": "Wait for the pirates to leave",
+     "effects": {
+      "log": "They leave on the ninth day. The fishermen go out. Nobody sings about it.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "lwr_caravan_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "A Silk Road caravan has lost its guide in a sandstorm and sits in a ring of camels at an oasis, arguing in four languages about which way the road went.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "west"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Find the road for them",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Stars, a dry riverbed and the lie of the dunes. By morning the caravan is moving, and its master owes you.",
+      "taels": 70,
+      "fame": 3,
+      "flag": "lwx_up"
+     },
+     "fail": {
+      "log": "You find a road. It is not the road. You find the road two days later, and the camels forgive you first.",
+      "health": -6
+     }
+    },
+    {
+     "text": "Trade for oasis herbs",
+     "effects": {
+      "log": "A trader with a turquoise ring sells you a pouch of dried flowers that steady the breath.",
+      "qi": 8,
+      "taels": -10
+     }
+    },
+    {
+     "text": "Rest at the oasis and go on",
+     "effects": {
+      "log": "Dates, cold water and shade. The caravan argues on behind you.",
+      "health": 5
+     }
+    }
+   ],
+   "cooldown": 3,
+   "mw": true
+  },
+  {
+   "id": "lwr_recruiters_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "text": "On the great road through the Central Plains, the disciples of a great sect have set up a table under a banner and are watching every traveller who passes, measuring.",
+   "trigger": "road",
+   "when": {
+    "age": [
+     10,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "region": [
+     "central"
+    ]
+   },
+   "arc": "The Roads Between",
+   "choices": [
+    {
+     "text": "Show them a form",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 0.7,
+      "foeName": "The sect's examiner"
+     },
+     "ok": {
+      "log": "The examiner bows and writes your name in a book. \"Should you ever want a gate,\" she says, \"ours is open.\"",
+      "fame": 4
+     },
+     "fail": {
+      "log": "The examiner is kind about it, which is worse. You walk on with your face hot.",
+      "health": -4
+     }
+    },
+    {
+     "text": "Ask them the news of the sects",
+     "effects": {
+      "log": "They know everything: who is at war, who has a new leader, whose disciples are leaving. You listen for an hour.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Walk past without looking",
+     "effects": {
+      "log": "You feel their eyes on your back for the next half li.",
+      "luck": 1
+     }
+    }
+   ],
+   "cooldown": 3,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,981 @@
+{
+ "events": [
+  {
+   "id": "fam_befriend_dinner",
+   "trigger": "befriend",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "npcAge": [
+     8,
+     999
+    ]
+   },
+   "text": "{npc} has cooked your favourite dish, the one you never stopped asking for, and set out two bowls without saying anything.",
+   "choices": [
+    {
+     "text": "Eat together and talk",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "stayed for dinner and talked"
+      },
+      "health": 5,
+      "log": "It tastes exactly as it always did. {npc} watches you eat and smiles the whole time."
+     }
+    },
+    {
+     "text": "Eat quickly, you have training",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 3,
+       "note": "ate and ran"
+      },
+      "log": "You eat in five minutes. {npc} says nothing, and washes the bowls alone."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} has made the dish you always begged for as a child, and laid out two bowls, and says nothing about it at all."
+   ]
+  },
+  {
+   "id": "fam_befriend_story",
+   "trigger": "befriend",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     4,
+     16
+    ],
+    "npcAge": [
+     10,
+     999
+    ]
+   },
+   "text": "{npc} sits with you by the stove and tells you a story about your grandfather, who once fought off a tiger with a rice pot.",
+   "choices": [
+    {
+     "text": "Ask if it is true",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "listened to my stories"
+      },
+      "comprehension": 1,
+      "log": "'Mostly,' {npc} says. 'The pot was very large.'"
+     }
+    },
+    {
+     "text": "Ask for another story",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "asked for another story"
+      },
+      "charm": 1,
+      "log": "You fall asleep in the middle of the third one. {npc} covers you with a blanket."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fam_befriend_training",
+   "trigger": "befriend",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     10,
+     30
+    ],
+    "npcAge": [
+     8,
+     999
+    ]
+   },
+   "text": "You find {npc} watching you train from the doorway. {He} has brought you a towel and a cup of barley tea, and pretends not to be proud.",
+   "choices": [
+    {
+     "text": "Show {him} what you have learned",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 14,
+       "note": "showed me what they learned"
+      },
+      "log": "{npc} claps at every move like it is a festival. You have never performed for a better audience."
+     }
+    },
+    {
+     "text": "Take the tea and keep going",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "let me watch"
+      },
+      "qi": 2,
+      "log": "{npc} stays in the doorway until the sun goes down."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} is leaning in the doorway while you train, holding a towel and a cup of barley tea, and trying very hard not to look proud."
+   ]
+  },
+  {
+   "id": "fam_ask_help_harvest",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     10,
+     999
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_fam_ask_help_harvest"
+    ]
+   },
+   "text": "{npc}'s back is bad this year, and the harvest is going to rot in the field. {He} does not ask. {He} just looks at the field and sighs.",
+   "choices": [
+    {
+     "text": "Bring in the harvest yourself",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "brought in the harvest when my back was bad"
+      },
+      "strength": 2,
+      "health": -5,
+      "log": "A week of dawn-to-dusk work. The granary is full. {npc} tells the whole village about it, twice.",
+      "flag": "done_fam_ask_help_harvest"
+     }
+    },
+    {
+     "text": "Pay someone to do it",
+     "req": {
+      "minTaels": 30
+     },
+     "effects": {
+      "taels": -30,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "paid for the harvest"
+      },
+      "log": "The field is cleared. {npc} is grateful, and a little sad you did not come yourself.",
+      "flag": "done_fam_ask_help_harvest"
+     }
+    },
+    {
+     "text": "You cannot spare the time",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "left the harvest to rot"
+      },
+      "log": "Half the harvest rots. {npc} never mentions it. That is worse.",
+      "flag": "done_fam_ask_help_harvest"
+     }
+    }
+   ],
+   "variants": [
+    "{npc}'s back has given out this year, and the grain is going to rot standing. {He} does not ask for help. {He} just stands at the edge of the field and sighs."
+   ]
+  },
+  {
+   "id": "fam_ask_help_sick",
+   "trigger": "ask_help",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "A letter from home: {npc} has been coughing all winter and will not see a physician because it costs too much.",
+   "choices": [
+    {
+     "text": "Go home and bring a physician",
+     "effects": {
+      "taels": -40,
+      "mem": {
+       "deed": "saved_life",
+       "w": 35,
+       "note": "came home with a physician"
+      },
+      "log": "It was nearly pneumonia. The physician says another month would have been too late. {npc} scolds you for spending the money, holding your hand the whole time."
+     },
+     "req": {
+      "minTaels": 40
+     }
+    },
+    {
+     "text": "Send money",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "sent money for medicine"
+      },
+      "log": "{npc} recovers by spring. The letter of thanks is mostly about how you should eat more."
+     }
+    },
+    {
+     "text": "Write back that it is probably nothing",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -15,
+       "note": "ignored my illness"
+      },
+      "log": "It was not nothing. {npc} recovers, slowly, and something between you does not."
+     }
+    }
+   ],
+   "variants": [
+    "A letter from home: {npc} has been coughing since the first frost and refuses to see a physician because of the cost."
+   ]
+  },
+  {
+   "id": "fam_repay_savings",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} presses a small cloth bundle into your hands: coins, saved one by one for years. 'For when you need it. Do not argue with me.'",
+   "choices": [
+    {
+     "text": "Accept it",
+     "effects": {
+      "settle": "debt",
+      "taels": 60,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "accepted my savings"
+      },
+      "log": "Sixty taels in copper and silver. You know exactly how long this took. You do not spend it for a long time."
+     }
+    },
+    {
+     "text": "Give it back",
+     "effects": {
+      "settle": "debt",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "gave my savings back"
+      },
+      "alignment": 3,
+      "log": "You slip it back into {his} sewing basket that night. The next morning it is in your pack again. This goes on for a week."
+     }
+    }
+   ],
+   "variants": [
+    "{npc} pushes a knotted handkerchief across the table. Inside are coins, years of them, saved a few at a time. 'For when you need it. And do not argue with me.'",
+    "Before you leave, {npc} slips a heavy little bundle into your sleeve: coins, put by one at a time for years. 'For a bad day. Not one word.'"
+   ]
+  },
+  {
+   "id": "fam_repay_robe",
+   "trigger": "repay",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     10,
+     999
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_fam_repay_robe"
+    ]
+   },
+   "text": "{npc} has sewn you a new winter robe, lined with cotton, with a tiny crane stitched on the inside where only you will see it.",
+   "effects": {
+    "settle": "debt",
+    "health": 5,
+    "charm": 1,
+    "mem": {
+     "deed": "time",
+     "w": 10,
+     "note": "wore the robe I sewed"
+    },
+    "log": "You wear it every winter until it falls apart. You keep the crane.",
+    "flag": "done_fam_repay_robe"
+   },
+   "choices": [],
+   "variants": [
+    "A parcel from {npc}: a winter robe, quilted thick, and on the inside of the collar a small crane in white thread, where nobody else will ever look.",
+    "{npc} has been sewing by lamplight for a month. The result is a padded winter robe with a little crane hidden inside the lining, just for you."
+   ]
+  },
+  {
+   "id": "fam_rumor_matchmaker",
+   "trigger": "rumor",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     18,
+     45
+    ],
+    "married": false,
+    "npcAge": [
+     14,
+     999
+    ]
+   },
+   "text": "You learn that {npc} has been telling every matchmaker in the county how good-looking, kind and rich you are. Two of those are lies.",
+   "choices": [
+    {
+     "text": "Laugh about it",
+     "effects": {
+      "charm": 2,
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "laughed at my matchmaking"
+      },
+      "log": "Three matchmakers visit that month. You hide in the woodshed for all three."
+     }
+    },
+    {
+     "text": "Ask {him} to stop",
+     "effects": {
+      "mem": {
+       "deed": "insulted",
+       "w": -3,
+       "note": "ruined my matchmaking"
+      },
+      "log": "{npc} agrees to stop. {He} does not stop."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fam_befriend_old_age",
+   "trigger": "befriend",
+   "once": false,
+   "npc": {
+    "family": true
+   },
+   "when": {
+    "age": [
+     30,
+     999
+    ],
+    "npcAge": [
+     60,
+     999
+    ]
+   },
+   "text": "{npc} is old now and moves slowly. {He} asks you to walk with {him} to the hill where the family graves are.",
+   "choices": [
+    {
+     "text": "Walk with {him}",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "walked with me to the graves"
+      },
+      "alignment": 2,
+      "log": "{He} tells you the name of every ancestor under the pines. You realise, halfway down, that {he} is telling you so that someone remembers."
+     }
+    },
+    {
+     "text": "Carry {him} on your back",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 18,
+       "note": "carried me up the hill"
+      },
+      "strength": 1,
+      "log": "{npc} protests the whole way up and laughs the whole way down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_befriend_rain",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "acquaintance": true
+   },
+   "text": "Caught in a downpour, you end up sheltering under the same roof as {npc}. There is nothing to do but talk.",
+   "choices": [
+    {
+     "text": "Tell {him} about your dreams",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "told me their dreams in the rain"
+      },
+      "log": "By the time the rain stops, you have both said more than you meant to."
+     }
+    },
+    {
+     "text": "Share your dried meat",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "shared their food"
+      },
+      "log": "{npc} eats half of it and then tells you a joke so bad you both laugh until the rain stops."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_befriend_teach",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "acquaintance": true
+   },
+   "text": "{npc} noticed a flaw in your stance and, awkwardly, offers to show you how to fix it.",
+   "choices": [
+    {
+     "text": "Accept gratefully",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "let me teach them"
+      },
+      "qi": 5,
+      "comprehension": 1,
+      "log": "The fix is small. The difference is not. You buy {him} dinner."
+     }
+    },
+    {
+     "text": "Say you know what you are doing",
+     "effects": {
+      "mem": {
+       "deed": "insulted",
+       "w": -4,
+       "note": "refused my advice"
+      },
+      "log": "Two months later you realise {he} was right. You never say so."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_befriend_festival",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     12,
+     60
+    ]
+   },
+   "text": "{npc} drags you to the Lantern Festival. 'You train too much. Tonight, you are a person.'",
+   "choices": [
+    {
+     "text": "Go and enjoy it",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 14,
+       "note": "came to the Lantern Festival with me"
+      },
+      "health": 5,
+      "charm": 1,
+      "log": "Lanterns on the river, sweet rice balls, fireworks over the rooftops. For one night, the murim does not exist."
+     }
+    },
+    {
+     "text": "Go, but leave early",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "came, briefly"
+      },
+      "log": "You leave before the fireworks. You hear them from the training yard."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_ask_help_brother",
+   "trigger": "ask_help",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "text": "{npc} asks for your help: {his} younger brother has joined a gang and will not come home.",
+   "choices": [
+    {
+     "text": "Go and get him",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "mem": {
+       "deed": "helped",
+       "w": 25,
+       "note": "brought my brother home"
+      },
+      "fame": 3,
+      "log": "You talk to the boy for an hour. He comes home. {npc} does not know how to thank you, so {he} just hugs you."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "tried to bring my brother home"
+      },
+      "log": "The gang does not want to talk. You fight your way out. The boy watches, and thinks about it."
+     }
+    },
+    {
+     "text": "It is not your business",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "would not help my brother"
+      },
+      "log": "{npc} nods and walks away. {He} does not ask you for anything again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_ask_help_letter",
+   "trigger": "ask_help",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcUnlettered": true
+   },
+   "text": "{npc} cannot read, and has received a letter {he} is afraid of. {He} asks you to read it aloud.",
+   "choices": [
+    {
+     "text": "Read it",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "read my letter for me"
+      },
+      "log": "It is from {his} long-lost sister. {npc} cries. You read it three more times."
+     }
+    },
+    {
+     "text": "Teach {him} to read it",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "taught me to read"
+      },
+      "comprehension": 1,
+      "npcFlag": "literate",
+      "log": "It takes a month. The first thing {npc} ever reads alone is that letter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_repay_warning_road",
+   "trigger": "repay",
+   "once": false,
+   "when": {},
+   "text": "{npc} catches up with you at dusk, out of breath. 'Do not take the east road tomorrow. I cannot say how I know. You {debt}; now we are even.'",
+   "choices": [
+    {
+     "text": "Take the west road",
+     "effects": {
+      "settle": "debt",
+      "flag": "wary",
+      "mem": {
+       "deed": "friend",
+       "w": 8,
+       "note": "listened to my warning"
+      },
+      "log": "You take the west road. Two days later, you hear what happened on the east one."
+     }
+    },
+    {
+     "text": "Take the east road anyway",
+     "effects": {
+      "settle": "debt",
+      "mem": {
+       "deed": "insulted",
+       "w": -5,
+       "note": "ignored my warning"
+      },
+      "health": -20,
+      "log": "There were men waiting. You get through. {npc} was right, and {he} will remind you forever."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_repay_teaching",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "npcNotRoles": [
+     "master"
+    ],
+    "age": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc} has not forgotten that you {debt_of}. {He} has nothing to give but one thing: a technique from {his} family, never taught to outsiders.",
+   "choices": [
+    {
+     "text": "Learn it",
+     "effects": {
+      "settle": "debt",
+      "qi": 10,
+      "comprehension": 2,
+      "mem": {
+       "deed": "friend",
+       "w": 12,
+       "note": "honoured my family's secret"
+      },
+      "log": "It is only a breathing rhythm. It is the most useful thing anyone has ever given you."
+     }
+    },
+    {
+     "text": "Refuse: a family secret should stay in the family",
+     "effects": {
+      "settle": "debt",
+      "alignment": 4,
+      "mem": {
+       "deed": "friend",
+       "w": 18,
+       "note": "respected my family"
+      },
+      "log": "{npc} bows deeply. Your refusal meant more to {him} than the technique ever could."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_rumor_heroic",
+   "trigger": "rumor",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "minFame": 15
+   },
+   "text": "You hear a story in a teahouse about a hero who fought off twenty bandits. It is about you. It was four bandits. {npc} has been telling it.",
+   "choices": [
+    {
+     "text": "Correct the story",
+     "effects": {
+      "alignment": 2,
+      "fame": 1,
+      "log": "Nobody believes the correction. By next month, it is thirty bandits."
+     }
+    },
+    {
+     "text": "Let it grow",
+     "effects": {
+      "fame": 5,
+      "log": "By spring, you also killed a dragon. You buy {npc} a drink, and also warn {him} to stop."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_rumor_slander",
+   "trigger": "rumor",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "text": "Word reaches you that {npc} has been telling people you {grudge_of}, and a great deal more that is not true at all.",
+   "choices": [
+    {
+     "text": "Confront {him} in public",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "exposed my lies in public"
+      },
+      "log": "You calmly take the lies apart one by one in front of everyone. {npc} leaves red-faced."
+     },
+     "fail": {
+      "fame": -4,
+      "log": "It turns into a shouting match. People believe whoever shouts last. That is {npc}."
+     }
+    },
+    {
+     "text": "Let your deeds answer",
+     "effects": {
+      "alignment": 3,
+      "fame": -2,
+      "log": "It stings for a season. Then people stop listening to {npc}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_challenge_friendly",
+   "trigger": "challenge",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "npcOpinion": [
+     -40,
+     100
+    ]
+   },
+   "text": "{npc} tosses a wooden sword at your feet. 'I have been training. Let us see who is better now.'",
+   "choices": [
+    {
+     "text": "Accept",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "spar",
+       "w": 5,
+       "note": "beat me fairly, again"
+      },
+      "log": "You win, narrowly. {npc} groans, then demands a rematch next year."
+     },
+     "fail": {
+      "health": -10,
+      "mem": {
+       "deed": "spar",
+       "w": 8,
+       "note": "let me win, or did they?"
+      },
+      "log": "{npc} wins and is unbearable about it for a week."
+     }
+    },
+    {
+     "text": "Decline with a smile",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 2,
+       "note": "laughed off my challenge"
+      },
+      "log": "'Coward,' {npc} says, grinning. You share a meal instead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_court_letters",
+   "trigger": "court",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "married": false
+   },
+   "text": "Letters have been appearing under your door, unsigned, in careful handwriting you slowly realise belongs to {npc}.",
+   "choices": [
+    {
+     "text": "Write back",
+     "effects": {
+      "mem": {
+       "deed": "married",
+       "w": 15,
+       "note": "wrote back to my letters"
+      },
+      "charm": 2,
+      "log": "Letters become walks. Walks become a habit. One evening, {npc} holds your hand and neither of you mentions it."
+     }
+    },
+    {
+     "text": "Tell {him} kindly that you are not ready",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "was kind to me"
+      },
+      "log": "{npc} smiles bravely. The letters stop. You keep the ones you received."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_betray_poison",
+   "trigger": "betray",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{npc} invites you to share a pot of good tea, just the two of you, like old times. Your cup smells faintly of almonds, and {npc} does not drink first.",
+   "choices": [
+    {
+     "text": "Take the cup. It is {npc}. You trust {him}.",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 75
+     },
+     "ok": {
+      "health": -40,
+      "flag": "poisoned",
+      "log": "You only touch it to your lips. The world tilts. You wake three days later in a ditch, alive by some miracle, and understand everything."
+     },
+     "fail": {
+      "die": "{npc}'s poisoned wine",
+      "log": "You only touch it to your lips. The last thing you see is {npc} looking away."
+     }
+    },
+    {
+     "text": "Swap the cups while {he} looks away",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "npcDie": "their own poisoned wine",
+      "fame": 5,
+      "alignment": -3,
+      "log": "{npc} drinks the cup meant for you, and realises what has happened a moment too late."
+     },
+     "fail": {
+      "health": -50,
+      "flag": "poisoned",
+      "deathCause": "{npc}'s poisoned wine",
+      "log": "{npc} sees you swap them. In the struggle, some of it goes down your throat."
+     }
+    },
+    {
+     "text": "Set the cup down and watch {his} face",
+     "effects": {
+      "role": "enemy",
+      "flag": "wary",
+      "mem": {
+       "deed": "insulted",
+       "w": -30,
+       "note": "saw through my poison"
+      },
+      "log": "You set the cup down, slowly. {npc}'s smile does not move, but {his} eyes do. You both know. {He} leaves before dawn."
+     }
+    },
+    {
+     "text": "(You remember this) Knock the cup from {his} hand",
+     "req": {
+      "npcFlags": [
+       "past_killer"
+      ]
+     },
+     "effects": {
+      "role": "enemy",
+      "fame": 8,
+      "flag": "fate_changed",
+      "log": "The tea hisses on the floor where it lands. In another life it reached your lips. Not this time. {npc} stares at you as if you had read {his} mind. In a way, you did."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,430 @@
+{
+ "events": [
+  {
+   "id": "lv39_sea_raid",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Pirates from across the sea strike the coast. Villages burn.",
+   "choices": [
+    {
+     "text": "Go to help",
+     "effects": {
+      "alignment": 3,
+      "log": "You carry the wounded and bury the dead."
+     }
+    },
+    {
+     "text": "Donate to the refugees",
+     "effects": {
+      "taels": -8,
+      "alignment": 2,
+      "log": "(−8 taels) Food and shelter for the homeless."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_coastal_militia",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv39_sea_raid"
+    ]
+   },
+   "weight": 2,
+   "text": "Coastal towns form militias. They need trained fighters.",
+   "choices": [
+    {
+     "text": "Join",
+     "effects": {
+      "fame": 1,
+      "strength": 1,
+      "log": "Weeks of drilling fishermen."
+     }
+    },
+    {
+     "text": "Train their leaders",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "Fewer will die."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_pirate_landing",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv39_coastal_militia"
+    ]
+   },
+   "weight": 2,
+   "text": "Pirates land on the beach at dawn.",
+   "choices": [
+    {
+     "text": "Hold the beach",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 4,
+      "alignment": 2,
+      "log": "They are driven back to their ships."
+     },
+     "fail": {
+      "health": -16,
+      "fame": 2,
+      "log": "You hold, badly wounded."
+     }
+    },
+    {
+     "text": "Get the villagers to the hills",
+     "effects": {
+      "alignment": 3,
+      "log": "The village burns. The villagers live."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_pirate_sword",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_sea_raid"
+    ]
+   },
+   "weight": 2,
+   "text": "The pirates use strange long swords with two-handed grips.",
+   "choices": [
+    {
+     "text": "Study their style",
+     "effects": {
+      "comprehension": 2,
+      "log": "Powerful, but slow to recover."
+     }
+    },
+    {
+     "text": "Collect a captured sword",
+     "effects": {
+      "strength": 1,
+      "log": "A strange, beautiful blade."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_captured_pirate",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_sea_raid"
+    ]
+   },
+   "weight": 2,
+   "text": "A captured pirate turns out to be a fisherman forced to join.",
+   "choices": [
+    {
+     "text": "Speak for him",
+     "effects": {
+      "alignment": 2,
+      "log": "He is released and joins the militia."
+     }
+    },
+    {
+     "text": "Let the magistrate judge",
+     "effects": {
+      "alignment": 0,
+      "log": "He is jailed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_fire_ships",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv39_coastal_militia"
+    ]
+   },
+   "weight": 2,
+   "text": "The militia plans to send fire ships against the pirate fleet.",
+   "choices": [
+    {
+     "text": "Sail a fire ship",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 4,
+      "log": "Your ship hits the flagship. You leap clear."
+     },
+     "fail": {
+      "health": -10,
+      "fame": 2,
+      "log": "You leap clear, singed and soaked."
+     }
+    },
+    {
+     "text": "Help build them",
+     "effects": {
+      "strength": 1,
+      "alignment": 1,
+      "log": "Straw, oil, and prayers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_coast_rebuild",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_sea_raid"
+    ]
+   },
+   "weight": 2,
+   "text": "After the raids, the coast must rebuild.",
+   "choices": [
+    {
+     "text": "Help rebuild homes",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "A month of carpentry."
+     }
+    },
+    {
+     "text": "Help mend nets",
+     "effects": {
+      "alignment": 1,
+      "log": "Fishermen must fish to eat."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_orphans_of_the_sea",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_sea_raid"
+    ]
+   },
+   "weight": 2,
+   "text": "Children orphaned by the raids gather at the temple.",
+   "choices": [
+    {
+     "text": "Help find them homes",
+     "effects": {
+      "alignment": 3,
+      "log": "Families all along the coast take them in."
+     }
+    },
+    {
+     "text": "Teach them to defend themselves",
+     "effects": {
+      "alignment": 2,
+      "log": "They will never be helpless again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_kid_pirates_sea",
+   "cat": "childhood",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You see a real pirate ship far out on the horizon.",
+   "choices": [
+    {
+     "text": "Run and warn everyone",
+     "effects": {
+      "alignment": 1,
+      "fame": 1,
+      "log": "The village is ready. The ship sails past."
+     }
+    },
+    {
+     "text": "Watch it",
+     "effects": {
+      "luck": 1,
+      "log": "You dream of ships for a year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_pirate_island",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_fire_ships"
+    ]
+   },
+   "weight": 2,
+   "text": "A small island where the pirates kept their stores.",
+   "choices": [
+    {
+     "text": "Search it",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 10,
+      "alignment": 1,
+      "log": "Stolen silver, returned to the villages. You keep a little. (+10 taels)"
+     },
+     "fail": {
+      "health": -8,
+      "log": "Traps. You find them the hard way."
+     }
+    },
+    {
+     "text": "Burn their stores",
+     "effects": {
+      "fame": 1,
+      "log": "They will not come back soon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_sea_victory",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_fire_ships"
+    ]
+   },
+   "weight": 2,
+   "text": "The pirate fleet is broken. The coast celebrates.",
+   "choices": [
+    {
+     "text": "Celebrate with the fishermen",
+     "effects": {
+      "charm": 1,
+      "health": 1,
+      "log": "Fresh fish and loud songs."
+     }
+    },
+    {
+     "text": "Go quietly home",
+     "effects": {
+      "qi": 1,
+      "log": "Victory is quieter than people think."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv39_sea_memorial",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-06-28",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv39_sea_victory"
+    ]
+   },
+   "weight": 2,
+   "text": "A memorial is raised for those who died defending the coast.",
+   "choices": [
+    {
+     "text": "Carve a name",
+     "effects": {
+      "alignment": 1,
+      "log": "A friend's name, in stone."
+     }
+    },
+    {
+     "text": "Stand guard at the ceremony",
+     "effects": {
+      "fame": 1,
+      "log": "An honour."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

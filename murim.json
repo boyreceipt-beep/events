@@ -1,0 +1,1908 @@
+{
+ "events": [
+  {
+   "id": "mu_alliance_summons",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "fugitive",
+     "imp_emperor"
+    ],
+    "rep": {
+     "orthodox": [
+      -25,
+      9999
+     ]
+    }
+   },
+   "weight": 3,
+   "text": "A runner in the white-and-blue of the Martial Alliance arrives with a summons: every Orthodox martial artist of Second-Rate or above is called to the Alliance headquarters. War with the Demonic Cult is coming.",
+   "choices": [
+    {
+     "text": "Answer the summons",
+     "effects": {
+      "flag": "alliance_member",
+      "fame": 8,
+      "alignment": 5,
+      "log": "You kneel in the great hall with a thousand others. The Alliance Leader looks down at all of you and says nothing for a long time. Then: 'Some of you will not come home.'"
+     }
+    },
+    {
+     "text": "Send regrets: you are needed at home",
+     "effects": {
+      "fame": -5,
+      "log": "Your letter is polite. The Alliance files it under 'cowards', also politely."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_war_front",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "flags": [
+     "alliance_member"
+    ],
+    "notFlags": [
+     "war_veteran",
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 5,
+   "text": "The war between the Orthodox and the Demonic Cult has begun. Your company is ordered to hold the Iron Gate Pass for three days.",
+   "choices": [
+    {
+     "text": "Hold the pass",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "flag": "war_veteran",
+      "fame": 30,
+      "alignment": 8,
+      "health": -30,
+      "log": "Three days. Three nights. On the fourth morning the Cult withdraws, and the pass is still yours. Half your company is not."
+     },
+     "fail": {
+      "flag": "war_veteran",
+      "health": -70,
+      "deathCause": "the war at the Iron Gate Pass",
+      "log": "The pass falls on the second night. You are carried out under a pile of banners."
+     }
+    },
+    {
+     "text": "Volunteer to carry the wounded",
+     "effects": {
+      "flag": "war_veteran",
+      "fame": 10,
+      "alignment": 10,
+      "health": -15,
+      "log": "You carry men down the mountain until your legs stop working. Some of them live because of you. They never forget your face."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_tournament_grand",
+   "cat": "world",
+   "once": false,
+   "cooldown": 15,
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "The Martial Arts Tournament is held once a decade. Every sect sends its best. The winner's name is carved on the Dragon Stele for a hundred years.",
+   "choices": [
+    {
+     "text": "Enter",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 40,
+      "taels": 300,
+      "flag": "tournament_champion",
+      "log": "Five rounds. You win the final with your last ounce of strength. The crowd roars your name, and you hear it carved into stone as you sleep."
+     },
+     "fail": {
+      "fame": 10,
+      "health": -25,
+      "log": "You reach the last eight and lose to someone who will be a legend. People remember that you made them work for it."
+     }
+    },
+    {
+     "text": "Go only to watch",
+     "effects": {
+      "comprehension": 4,
+      "qi": 8,
+      "log": "A hundred masters, a thousand techniques, one week. You go home with a head full of ideas."
+     }
+    }
+   ],
+   "maxPerLife": 3,
+   "mw": true
+  },
+  {
+   "id": "mu_marriage_duel",
+   "cat": "world",
+   "when": {
+    "age": [
+     17,
+     30
+    ],
+    "married": false
+   },
+   "weight": 2,
+   "text": "The Seomun family announces a marriage-by-duel: whoever defeats their heir in a public bout may ask for the heir's hand. Half the young martial artists in the province have signed up.",
+   "choices": [
+    {
+     "text": "Step onto the stage",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 15,
+      "log": "You win. The heir looks at you, then laughs, then offers you a cup of tea instead of a wedding. You become friends for life. The family is baffled."
+     },
+     "fail": {
+      "fame": 2,
+      "health": -15,
+      "log": "The heir disarms you in four moves and says, kindly, 'Come back when you mean it.'"
+     }
+    },
+    {
+     "text": "Watch the chaos",
+     "effects": {
+      "charm": 1,
+      "log": "Thirty-one challengers. Thirty-one losses. The heir is still single, and extremely smug."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "mu_life_death_duel",
+   "cat": "danger",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "minFame": 80
+   },
+   "weight": 2,
+   "text": "A master of the Unorthodox, famous for never losing, sends you a formal challenge to a life-and-death duel. Refusing will cost you your name in the murim. Accepting may cost you everything else.",
+   "choices": [
+    {
+     "text": "Accept the duel",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 40,
+      "log": "The duel lasts one breath. When the dust settles, the undefeated master is kneeling, and you have spared his life. The murim talks of nothing else for a year."
+     },
+     "fail": {
+      "health": -75,
+      "deathCause": "a life-and-death duel",
+      "log": "He is everything they said. You survive only because he chooses to walk away."
+     }
+    },
+    {
+     "text": "Refuse publicly and explain why",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 5,
+      "log": "'A life is not a wager,' you say, in front of everyone. Somehow, it makes you more respected, not less."
+     },
+     "fail": {
+      "fame": -20,
+      "log": "They call you a coward in every teahouse for a decade."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_fortuitous_cliff",
+   "cat": "explore",
+   "when": {
+    "age": [
+     14,
+     60
+    ],
+    "chance": 0.5
+   },
+   "weight": 1,
+   "text": "You slip on a mountain path and fall into mist. You land, somehow alive, in a hidden valley. At the back of a cave sits a skeleton in a rotted robe, its bony hands resting on a stone box.",
+   "choices": [
+    {
+     "text": "Bow nine times before opening the box",
+     "effects": {
+      "manual": 4,
+      "qi": 20,
+      "item": "stone_milk",
+      "alignment": 5,
+      "log": "Inside: a manual, a jar of stone milk, and a note: 'To the one who bowed. Whoever did not bow found only poison.' You spend three years in the valley before you climb out.",
+      "technique": "void_palm"
+     }
+    },
+    {
+     "text": "Open it straight away",
+     "effects": {
+      "health": -30,
+      "manual": 2,
+      "log": "A needle springs from the lock. You survive the poison, just, and find a manual under a false bottom. You suspect you missed something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_hidden_master_sweeper",
+   "cat": "sect",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "chance": 0.4
+   },
+   "weight": 2,
+   "text": "The old man who sweeps the sect's courtyard has swept around you for years. Today, he catches a falling roof tile with two fingers without looking up.",
+   "choices": [
+    {
+     "text": "Bring him tea every morning",
+     "effects": {
+      "flag": "sweeper_disciple",
+      "comprehension": 3,
+      "log": "A month of tea. Then one morning he says, 'Your breathing is wrong,' and fixes it in one sentence. Every morning after that, one sentence."
+     }
+    },
+    {
+     "text": "Tell the elders what you saw",
+     "effects": {
+      "fame": 1,
+      "log": "When the elders come to look, he is gone. The courtyard is swept perfectly clean."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_hidden_master_final",
+   "cat": "sect",
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "flags": [
+     "sweeper_disciple"
+    ]
+   },
+   "weight": 6,
+   "text": "The sweeper is dying. He calls you to his tiny room and, with a shaking hand, points at the broom leaning in the corner.",
+   "choices": [
+    {
+     "text": "Take the broom",
+     "effects": {
+      "unflag": "sweeper_disciple",
+      "qi": 25,
+      "manual": 5,
+      "fame": 5,
+      "log": "Inside the handle is a manual older than the sect itself. He was the last of a lineage everyone thought extinct. Now you are.",
+      "technique": "void_palm"
+     }
+    },
+    {
+     "text": "Stay with him until the end",
+     "effects": {
+      "unflag": "sweeper_disciple",
+      "alignment": 8,
+      "comprehension": 3,
+      "log": "You hold his hand until morning. He tells you his real name. It is in the history books. You never tell anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_beggars_union_info",
+   "cat": "world",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A beggar with a knotted cord at his belt, the mark of the Beggars' Union, sits down next to you. 'Information, great hero. Fresh from every road in the land. Five taels.'",
+   "choices": [
+    {
+     "text": "Pay for the news",
+     "req": {
+      "minTaels": 5
+     },
+     "effects": {
+      "taels": -5,
+      "flag": "wary",
+      "luck": 2,
+      "log": "Who is hunting whom, which sect is broke, which bridge is watched. The Beggars' Union knows everything, and today, so do you."
+     }
+    },
+    {
+     "text": "Buy him a meal instead",
+     "effects": {
+      "taels": -2,
+      "alignment": 3,
+      "log": "He eats three bowls and tells you the news for free. 'The Union remembers who feeds it,' he says."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "log": "The beggar shrugs. News is cheap, but not free."
+     }
+    }
+   ],
+   "maxPerLife": 2,
+   "mw": true
+  },
+  {
+   "id": "mu_dang_poison_duel",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "You have offended a young heir of the Tang family, the masters of poison and hidden weapons. He smiles at you across the teahouse, and your tea smells faintly of almonds.",
+   "choices": [
+    {
+     "text": "Drink it and force the poison out",
+     "risky": true,
+     "roll": {
+      "stat": "medicine",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 10,
+      "log": "You drink the whole cup, sweat the poison out through your fingertips and set the empty cup down. The Tang heir stops smiling. That night, he sends an apology and a jar of antidote."
+     },
+     "fail": {
+      "health": -55,
+      "flag": "poisoned",
+      "deathCause": "Tang family poison",
+      "log": "The poison is stronger than you are. You survive, but it will linger."
+     }
+    },
+    {
+     "text": "Pour it on the floor and bow",
+     "effects": {
+      "fame": 2,
+      "log": "The floorboards hiss. The heir laughs and waves you off. 'Clever. Leave.'"
+     }
+    },
+    {
+     "text": "Take an antidote first",
+     "req": {
+      "items": [
+       "antidote"
+      ]
+     },
+     "effects": {
+      "item": {
+       "antidote": -1
+      },
+      "fame": 6,
+      "log": "You swallow the antidote, drink the tea, and ask for a second cup. The Tang heir is so impressed he forgets to be angry."
+     }
+    },
+    {
+     "text": "(Ten-Thousand-Poison Body) Shrug it off",
+     "req": {
+      "talent": [
+       "ten_thousand_poison_body"
+      ]
+     },
+     "effects": {
+      "fame": 4,
+      "log": "The poison goes through you like water through a sieve. You feel slightly warm. Everyone watching feels slightly afraid."
+     }
+    }
+   ],
+   "variants": [
+    "You have offended a young heir of the Tang family, masters of poison and hidden weapons. He smiles at you across the teahouse. Your tea smells faintly of bitter almonds."
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_jegal_formation",
+   "cat": "explore",
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "You wander into a bamboo forest and, an hour later, arrive back where you started. And again. The Jegal family is famous for its stone formations, and you are inside one.",
+   "choices": [
+    {
+     "text": "Read the formation",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 5,
+      "fame": 3,
+      "log": "Stones, trees, the angle of the sun. You walk out on the third try. A Jegal elder is waiting, delighted. 'Nobody has done that in forty years. Stay for tea.'"
+     },
+     "fail": {
+      "health": -10,
+      "log": "Two days of circles. A Jegal servant finally leads you out, trying not to laugh."
+     }
+    },
+    {
+     "text": "Sit down and wait to be found",
+     "effects": {
+      "charm": 1,
+      "log": "A child from the Jegal family finds you by sunset and leads you out by the hand. It is humbling."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_namgung_pride",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 1,
+   "text": "A proud Namgung swordsman overhears someone praising your swordsmanship. 'The Namgung are the first family of the sword,' he says, drawing. 'There is no second.'",
+   "choices": [
+    {
+     "text": "Show him a second",
+     "roll": {
+      "stat": "sword",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 15,
+      "log": "Nine exchanges. On the tenth, your blade rests against his collar. He sheathes his sword and bows. 'There is a second,' he admits."
+     },
+     "fail": {
+      "health": -25,
+      "fame": -3,
+      "log": "The Namgung sword is everything they say. He leaves you a cut on the sleeve and a lesson in humility."
+     }
+    },
+    {
+     "text": "Agree that the Namgung are the first",
+     "effects": {
+      "alignment": 2,
+      "log": "He looks disappointed, and leaves. You finish your tea in peace."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_greenwood_alliance",
+   "cat": "danger",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 2,
+   "text": "The chief of one of the Seventy-Two Greenwood Strongholds, the great bandit alliance, invites you to his mountain for wine. He wants you as a sworn brother. He also has two hundred men.",
+   "choices": [
+    {
+     "text": "Accept his table, refuse his brotherhood",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "flag": "greenwood_friend",
+      "log": "You out-talk him at his own table, over tea, and leave as a respected guest. Bandits in this province will leave you alone from now on."
+     },
+     "fail": {
+      "health": -20,
+      "log": "He takes the refusal badly. You leave by the cliff side, quickly."
+     }
+    },
+    {
+     "text": "Swear brotherhood",
+     "effects": {
+      "flag": "greenwood_friend",
+      "alignment": -8,
+      "taels": 100,
+      "fame": 3,
+      "log": "You swear under the black banner. You are now, technically, a bandit. The tea, to everyone's surprise, is excellent."
+     }
+    },
+    {
+     "text": "Decline the invitation",
+     "effects": {
+      "log": "You send a polite letter. He sends back an impolite one. It rhymes."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_escort_agency",
+   "cat": "life",
+   "when": {
+    "age": [
+     18,
+     45
+    ],
+    "factions": [
+     "wanderer",
+     "none"
+    ]
+   },
+   "weight": 3,
+   "text": "The Golden Lion Escort Agency is hiring guards. Good pay, long roads, and bandits who are paid to not attack the agency's flag, mostly.",
+   "choices": [
+    {
+     "text": "Join as an escort",
+     "effects": {
+      "flag": "escort_guard",
+      "taels": 80,
+      "strength": 2,
+      "fame": 3,
+      "log": "A year on the roads. You learn every inn, every shortcut and which bandit chiefs can be reasoned with."
+     }
+    },
+    {
+     "text": "Stay on your own path",
+     "effects": {
+      "log": "The agency's caravans pass you on the road with their lion banners flying. You wave."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_escort_ambush",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [
+     "escort_guard"
+    ]
+   },
+   "weight": 4,
+   "text": "Your caravan is carrying something the agency would not name, and tonight forty masked riders come for it.",
+   "choices": [
+    {
+     "text": "Defend the cargo",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "unflag": "escort_guard",
+      "fame": 15,
+      "taels": 150,
+      "log": "You hold the wagons until dawn. The cargo turns out to be a jade seal for the magistrate. The reward is enormous."
+     },
+     "fail": {
+      "unflag": "escort_guard",
+      "health": -60,
+      "deathCause": "the night ambush on the escort road",
+      "log": "The cargo is lost. So, very nearly, are you."
+     }
+    },
+    {
+     "text": "Lead the riders away from the caravan",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "unflag": "escort_guard",
+      "fame": 12,
+      "taels": 100,
+      "log": "You lead forty riders on a chase through three valleys. The caravan escapes. The riders never find you."
+     },
+     "fail": {
+      "unflag": "escort_guard",
+      "health": -35,
+      "log": "They catch you in the second valley. The caravan escapes anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_court_official",
+   "cat": "world",
+   "when": {
+    "age": [
+     22,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "minFame": 40,
+    "notFlags": [
+     "fugitive",
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_2",
+     "imp_rank_3",
+     "imp_rank_4"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "An official from the imperial court asks you to help arrest a martial artist accused of treason. The murim has an old rule: the court and the murim do not meddle in each other's affairs.",
+   "choices": [
+    {
+     "text": "Refuse: murim matters stay in the murim",
+     "effects": {
+      "fame": 6,
+      "alignment": 3,
+      "log": "The official leaves stiffly. That night, every martial artist in the teahouse raises a cup to you."
+     }
+    },
+    {
+     "text": "Help the court",
+     "effects": {
+      "taels": 200,
+      "fame": -12,
+      "alignment": -3,
+      "log": "The court pays well. The murim does not forget. Doors that were open start closing."
+     }
+    },
+    {
+     "text": "Warn the accused instead",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 5,
+      "log": "He escapes the city an hour before the soldiers arrive. Years later, his sect sends you a gift every spring."
+     },
+     "fail": {
+      "health": -30,
+      "fame": 3,
+      "log": "The soldiers catch you both. You escape. He does not."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_blood_cult_rumour",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFlags": [
+     "blood_cult_1"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "Bodies are found drained of blood in three provinces. The old men in the teahouses whisper a name nobody has said aloud for two hundred years: the Blood Cult.",
+   "choices": [
+    {
+     "text": "Investigate",
+     "effects": {
+      "flag": "blood_cult_1",
+      "fame": 3,
+      "log": "You follow the trail to a burned village. In the ashes: a red bone token carved with a closed eye. You keep it."
+     }
+    },
+    {
+     "text": "It is only a rumour",
+     "effects": {
+      "log": "You decide it is only a rumour. More bodies are found in spring."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_blood_cult_2",
+   "cat": "world",
+   "when": {
+    "age": [
+     22,
+     999
+    ],
+    "flags": [
+     "blood_cult_1"
+    ],
+    "notFlags": [
+     "blood_cult_2"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 4,
+   "text": "The red bone token grows warm in your pocket one night. It is pointing somewhere. Following it would mean walking into the Blood Cult's hands.",
+   "choices": [
+    {
+     "text": "Follow it",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "blood_cult_2",
+      "fame": 10,
+      "log": "It leads you to a hidden altar in an abandoned mine. You see their faces. One of them is an elder of the Orthodox Alliance."
+     },
+     "fail": {
+      "flag": "blood_cult_2",
+      "health": -40,
+      "log": "It was a trap. You escape the mine with burns on your arms and a single name overheard in the dark."
+     }
+    },
+    {
+     "text": "Take the token to the Martial Alliance",
+     "effects": {
+      "flag": "blood_cult_2",
+      "fame": 5,
+      "log": "The Alliance thanks you and takes the token. A week later, the elder who received it is found dead. The token is gone, and you are certain now that the traitor sits in the Alliance's own hall."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_blood_cult_3",
+   "cat": "world",
+   "when": {
+    "age": [
+     25,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "flags": [
+     "blood_cult_2"
+    ],
+    "notFlags": [
+     "blood_cult_done"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 5,
+   "text": "The Blood Cult rises in the open at last. Its leader, the Crimson Patriarch, stands on the walls of a captured city and calls out every master in the land. You know his secrets. You are the only one who does.",
+   "choices": [
+    {
+     "text": "Name the traitor in the Alliance and lead the counterattack",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "flag": "blood_cult_done",
+      "fame": 60,
+      "alignment": 15,
+      "log": "You name the traitor before the whole Alliance and lead the charge up the walls. The Crimson Patriarch falls. The murim will tell this story for a thousand years."
+     },
+     "fail": {
+      "flag": "blood_cult_done",
+      "health": -75,
+      "deathCause": "the Crimson Patriarch",
+      "log": "You reach the Patriarch. You do not beat him. The Alliance wins the day behind you, but you are carried from the wall."
+     }
+    },
+    {
+     "text": "Pass everything you know to the Alliance and fight in the ranks",
+     "effects": {
+      "flag": "blood_cult_done",
+      "fame": 25,
+      "alignment": 10,
+      "health": -25,
+      "log": "Your information wins the war. Someone else gets the glory. You find you do not mind much."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_master_murdered",
+   "cat": "master",
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "hasMaster": true,
+    "chance": 0.25,
+    "notFlags": [
+     "avenge_master"
+    ]
+   },
+   "weight": 2,
+   "text": "You return from a journey to find your master {npc} dead in the courtyard, a single black feather pinned to the chest. The sect says it was an illness. You know better.",
+   "choices": [
+    {
+     "text": "Swear to find the killer",
+     "effects": {
+      "flag": "avenge_master",
+      "alignment": -3,
+      "comprehension": 2,
+      "log": "You burn incense before the coffin and make a promise out loud. Somewhere, someone hears about it and starts to worry.",
+      "npcPass": "murder, by a black-feathered assassin"
+     }
+    },
+    {
+     "text": "Let the sect handle it",
+     "effects": {
+      "alignment": 2,
+      "log": "The sect handles it. That is to say, nothing happens. The feather stays in your drawer for thirty years.",
+      "npcPass": "murder, by a black-feathered assassin"
+     }
+    }
+   ],
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "mu_avenge_master",
+   "cat": "master",
+   "when": {
+    "age": [
+     22,
+     999
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "flags": [
+     "avenge_master"
+    ]
+   },
+   "weight": 5,
+   "text": "Years of searching end at a mountain monastery. The killer is an old monk now, pouring tea for pilgrims. He recognises you at once, and puts down the teapot.",
+   "choices": [
+    {
+     "text": "Take your revenge",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "unflag": "avenge_master",
+      "fame": 20,
+      "alignment": -5,
+      "log": "It is over quickly. Afterwards, you sit in the empty tea room for a long time. You expected to feel more."
+     },
+     "fail": {
+      "unflag": "avenge_master",
+      "health": -45,
+      "log": "He is still terribly strong. He defeats you, then pours you tea. 'Your master was the better man,' he says. 'Go home.'"
+     }
+    },
+    {
+     "text": "Hear him out first",
+     "effects": {
+      "unflag": "avenge_master",
+      "alignment": 12,
+      "comprehension": 4,
+      "log": "He tells you why. It changes nothing about what he did, and everything about how you feel. You leave him to his tea and his guilt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_assassin_contract",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "factions": [
+     "unorthodox",
+     "demonic",
+     "wanderer"
+    ]
+   },
+   "weight": 2,
+   "text": "A courier from the Hushed Lantern Pavilion, the assassins' guild, offers you a contract: one merchant, one night, one thousand taels.",
+   "choices": [
+    {
+     "text": "Take the contract",
+     "effects": {
+      "taels": 1000,
+      "alignment": -30,
+      "fame": 5,
+      "log": "It is done before the second watch. The money is real. So is the look in your reflection the next morning."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 5,
+      "log": "The courier bows and disappears. The merchant dies anyway, next month. Someone else took the job."
+     }
+    },
+    {
+     "text": "Refuse, and warn the merchant",
+     "effects": {
+      "alignment": 12,
+      "flag": "assassins_enemy",
+      "log": "The merchant flees south and lives. The Hushed Lantern Pavilion adds a name to its list. Yours."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_assassins_revenge",
+   "cat": "danger",
+   "when": {
+    "age": [
+     22,
+     999
+    ],
+    "flags": [
+     "assassins_enemy"
+    ],
+    "after": [
+     "mu_assassin_contract"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 4,
+   "text": "It has been years since you crossed the Hushed Lantern Pavilion. They have not forgotten. You notice the same beggar on three different streets in one day.",
+   "choices": [
+    {
+     "text": "Strike first",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "unflag": "assassins_enemy",
+      "fame": 20,
+      "log": "You find their safehouse before they find you. The Pavilion decides, officially, that you are more trouble than you are worth."
+     },
+     "fail": {
+      "health": -65,
+      "deathCause": "the Hushed Lantern Pavilion",
+      "log": "They were expecting you. You escape through a window with three needles in your back."
+     }
+    },
+    {
+     "text": "Disappear for a year",
+     "effects": {
+      "unflag": "assassins_enemy",
+      "fame": -5,
+      "qi": 10,
+      "log": "A year in the mountains, alone. When you come back, the Pavilion has other problems."
+     }
+    }
+   ],
+   "maxPerLife": 1,
+   "mw": true
+  },
+  {
+   "id": "mu_demonic_hunters",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "demonic_practitioner"
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "wanderer",
+     "none"
+    ]
+   },
+   "weight": 4,
+   "text": "Word has spread that you practise demonic arts. A band of Orthodox hunters has come to 'purify' you. Their leader is very polite about it.",
+   "choices": [
+    {
+     "text": "Fight them",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": -8,
+      "log": "They leave with fewer members than they came with. The rumours about you grow darker."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "Orthodox hunters of demonic practitioners",
+      "log": "They were ready for demonic arts. You barely escape into the night."
+     }
+    },
+    {
+     "text": "Flee",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You are three provinces away before they reach your door."
+     },
+     "fail": {
+      "health": -35,
+      "log": "They catch you at the ford. You break free, bleeding."
+     }
+    },
+    {
+     "text": "Seek refuge with the Demonic Cult",
+     "effects": {
+      "faction": "demonic",
+      "sect": "Heavenly Demon Cult",
+      "alignment": -10,
+      "log": "The Cult opens its gates with a smile. It was only a matter of time, they say."
+     }
+    }
+   ],
+   "maxPerLife": 3,
+   "mw": true
+  },
+  {
+   "id": "mu_sworn_siblings",
+   "cat": "life",
+   "npc": {
+    "role": "friend"
+   },
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "npcOpinion": [
+     50,
+     100
+    ]
+   },
+   "weight": 3,
+   "text": "Under a blossoming plum tree, {npc} kneels, cuts {his} palm and holds out the knife. 'We were not born on the same day,' {he} says, 'but let us die on the same day.'",
+   "choices": [
+    {
+     "text": "Swear the oath of sworn siblings",
+     "effects": {
+      "role": "sibling",
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "swore the oath of sworn siblings with me"
+      },
+      "alignment": 3,
+      "log": "Blood, wine, three bows to heaven. From this day, {npc} is family."
+     }
+    },
+    {
+     "text": "Embrace {him} but refuse the oath",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "would not swear the oath"
+      },
+      "log": "'I will not promise to die on your day,' you say. 'I intend to save you from it.' {npc} laughs, a little hurt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_acupoint_sealed",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 1,
+   "text": "A stranger bumps into you in the market, and two fingers touch your side. You cannot move. Your acupoints have been sealed, and your purse is walking away.",
+   "choices": [
+    {
+     "text": "Break the seal with internal energy",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 4,
+      "qi": -10,
+      "log": "You force your energy through the sealed points. It hurts like fire. You catch the thief two streets later."
+     },
+     "fail": {
+      "taels": -40,
+      "health": -10,
+      "log": "You stand frozen in the market for two hours while children poke you. The seal wears off. The purse does not come back."
+     }
+    },
+    {
+     "text": "Wait it out with dignity",
+     "effects": {
+      "taels": -30,
+      "charm": -1,
+      "log": "Two hours of standing very still in a busy market. A pigeon sits on your head. Dignity is relative.",
+      "loss": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_manual_auction",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "minTaels": 500
+   },
+   "weight": 2,
+   "text": "An auction house in the capital is selling a martial manual said to be the lost Ninefold Heaven Palm. Half the murim is here. Some of them are not here to bid.",
+   "choices": [
+    {
+     "text": "Bid 500 taels",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": -500,
+      "manual": 5,
+      "fame": 5,
+      "log": "You win. On the way home, three different people try to rob you. The manual is real."
+     },
+     "fail": {
+      "taels": -500,
+      "manual": 2,
+      "log": "You win, and it is a fake, though a good fake. You learn something from it anyway."
+     }
+    },
+    {
+     "text": "Watch who is really here",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "wary",
+      "fame": 3,
+      "log": "You spot the three assassins in the crowd before the lights go out. You leave early. The auction does not end well."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The lights go out. The manual disappears. So does a lot of the furniture."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_friend_deviation",
+   "cat": "life",
+   "npc": {
+    "role": "friend"
+   },
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "{npc} is in closed-door training, and something is wrong: through the door you hear {him} screaming. {His} qi has turned against {him}.",
+   "choices": [
+    {
+     "text": "Break in and guide {his} qi with yours",
+     "risky": true,
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -20,
+      "mem": {
+       "deed": "saved_life",
+       "w": 50,
+       "note": "saved me from qi deviation"
+      },
+      "fame": 5,
+      "log": "You press your palm to {his} back and fight {his} runaway energy until dawn. {npc} lives, and {his} meridians hold."
+     },
+     "fail": {
+      "qi": -30,
+      "health": -40,
+      "mem": {
+       "deed": "saved_life",
+       "w": 35,
+       "note": "nearly died saving me"
+      },
+      "deathCause": "a friend's runaway qi",
+      "log": "The backlash throws you across the room. But you broke the cycle. {npc} lives."
+     }
+    },
+    {
+     "text": "Run for the healer",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "ran for help when my qi turned"
+      },
+      "log": "The healer arrives in time. Barely. {npc} walks with a limp, and holds no grudge."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_rejuvenation_rumour",
+   "cat": "world",
+   "when": {
+    "age": [
+     40,
+     999
+    ],
+    "realm": [
+     3,
+     5
+    ]
+   },
+   "weight": 1,
+   "text": "A rumour sweeps the murim: an old master in the west has broken through to Harmony and grown young again, like a man of twenty. You look at your own grey hair.",
+   "choices": [
+    {
+     "text": "Travel to see for yourself",
+     "effects": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "You find him. He looks twenty and talks like a grandfather. 'It is not the body that grows young,' he says. 'It is the qi. The body just follows.' You think about it for years."
+     }
+    },
+    {
+     "text": "Train harder instead",
+     "effects": {
+      "qi": 12,
+      "log": "If he can do it, so can you. You train until your grey hairs are the only thing that looks tired."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_sword_qi",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     3,
+     4
+    ],
+    "notFlags": [
+     "sword_qi"
+    ]
+   },
+   "weight": 4,
+   "text": "In the middle of practice, a faint blue light gathers along your blade and a leaf three steps away splits in two. Sword qi. You have reached the level where energy leaves the weapon.",
+   "effects": {
+    "flag": "sword_qi",
+    "fame": 8,
+    "qi": 5,
+    "log": "You practise until midnight just to see it again. From today, the murim will take you seriously."
+   },
+   "choices": [],
+   "mw": true
+  },
+  {
+   "id": "mu_sword_aura",
+   "cat": "misc",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "sword_qi"
+    ],
+    "notFlags": [
+     "sword_aura"
+    ]
+   },
+   "weight": 5,
+   "text": "The blue light on your blade thickens, hardens, and becomes solid: a sword aura, sharp enough to cut through steel as if it were water. Only true masters ever see this.",
+   "effects": {
+    "flag": "sword_aura",
+    "fame": 20,
+    "comprehension": 3,
+    "log": "You cut a boulder in half without touching it. Then you sit down, shaking, and laugh like a child."
+   },
+   "choices": []
+  },
+  {
+   "id": "mu_rival_sect_genius",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     30
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "unorthodox",
+     "demonic",
+     "family"
+    ]
+   },
+   "weight": 2,
+   "text": "The young genius of a rival sect requests a formal bout, with both sects watching. Losing would shame {sect}. Winning would make you famous.",
+   "choices": [
+    {
+     "text": "Accept the bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "fame": 15,
+      "log": "You win on the last exchange. Your sect erupts. The genius bows deeply and asks your name. You will meet again."
+     },
+     "fail": {
+      "fame": -5,
+      "health": -20,
+      "log": "You lose, honourably. Your sect is quiet on the way home. An elder says only: 'Again. Harder.'"
+     }
+    },
+    {
+     "text": "Propose a bout of form instead of force",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "charm": 2,
+      "log": "Two sword forms, performed side by side, judged by the elders. It is the most beautiful bout anyone can remember."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "The elders call it a draw, mostly to be polite."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_demon_heir_romance",
+   "cat": "world",
+   "when": {
+    "age": [
+     17,
+     35
+    ],
+    "married": false,
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 1,
+   "text": "On a moonlit bridge you meet a stranger who fights like the wind and laughs at everything. Only later do you learn this is the Heavenly Demon's own child.",
+   "choices": [
+    {
+     "text": "Meet again, in secret",
+     "effects": {
+      "flag": "demon_heir_bond",
+      "charm": 3,
+      "alignment": -3,
+      "log": "Letters hidden in hollow trees. Meetings on bridges at midnight. It is the most dangerous thing you have ever done, and the happiest."
+     }
+    },
+    {
+     "text": "Never cross that bridge again",
+     "effects": {
+      "alignment": 3,
+      "log": "You take the long way round for the rest of your life. Sometimes, on moonlit nights, you wonder."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_demon_heir_choice",
+   "cat": "world",
+   "when": {
+    "age": [
+     20,
+     40
+    ],
+    "flags": [
+     "demon_heir_bond"
+    ],
+    "married": false
+   },
+   "weight": 5,
+   "text": "War is coming between the Orthodox and the Cult, and your secret has been discovered. Both sides demand that you choose.",
+   "choices": [
+    {
+     "text": "Choose your sect",
+     "effects": {
+      "unflag": "demon_heir_bond",
+      "alignment": 8,
+      "fame": 5,
+      "log": "You burn every letter. On the battlefield, across the lines, you see a figure standing very still. Neither of you raises a weapon."
+     }
+    },
+    {
+     "text": "Choose love, and leave both worlds",
+     "effects": {
+      "unflag": "demon_heir_bond",
+      "faction": "wanderer",
+      "sect": "",
+      "fame": -20,
+      "charm": 5,
+      "health": 10,
+      "log": "You vanish together into the southern mountains. The murim hunts you for a while, then forgets. You never regret it."
+     },
+     "req": {
+      "notFlags": [
+       "sect_head"
+      ]
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_regressor_deja_vu",
+   "cat": "misc",
+   "when": {
+    "age": [
+     6,
+     20
+    ],
+    "flags": [
+     "regressor"
+    ]
+   },
+   "weight": 3,
+   "text": "You wake from a dream of a life you have not lived yet. Faces, places, a death. By noon, the details fade, but one thing stays: you have done this before.",
+   "effects": {
+    "comprehension": 3,
+    "log": "From that day, you train like someone who knows how little time there is."
+   },
+   "choices": []
+  },
+  {
+   "id": "mu_regressor_old_enemy",
+   "cat": "misc",
+   "when": {
+    "age": [
+     10,
+     30
+    ],
+    "flags": [
+     "regressor"
+    ],
+    "notFlags": [
+     "echo_killer"
+    ]
+   },
+   "weight": 2,
+   "text": "A child in the market has a face you know. In another life, that child grew up to kill you. Right now, the child is crying over a dropped rice cake.",
+   "choices": [
+    {
+     "text": "Buy the child a new rice cake",
+     "effects": {
+      "alignment": 8,
+      "luck": 3,
+      "log": "The child beams at you. Maybe this time, things will be different. Maybe that is the point."
+     }
+    },
+    {
+     "text": "Walk away and remember the face",
+     "effects": {
+      "flag": "wary",
+      "log": "You memorise the face. This time, you will see it coming."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_regressor_warning",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     40
+    ],
+    "flags": [
+     "regressor"
+    ],
+    "chance": 0.5
+   },
+   "weight": 2,
+   "text": "You remember, suddenly and clearly, that the bridge over the Yellow River collapses tomorrow. In your last life, you were on it.",
+   "choices": [
+    {
+     "text": "Warn everyone",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 8,
+      "log": "They close the bridge, grumbling. At noon, it falls into the river, empty. People start calling you a prophet."
+     },
+     "fail": {
+      "alignment": 4,
+      "log": "Nobody listens. You stand at the entrance all morning turning people away one by one. You save eleven."
+     }
+    },
+    {
+     "text": "Just take another road",
+     "effects": {
+      "log": "The bridge falls at noon. You were not on it this time. You try not to think about who was."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_regressor_master_reunion",
+   "cat": "misc",
+   "when": {
+    "age": [
+     12,
+     25
+    ],
+    "flags": [
+     "regressor"
+    ],
+    "hasMaster": true
+   },
+   "weight": 2,
+   "text": "{npc} stops the lesson and stares at you. 'You already know this technique. How?' You cannot say that you learned it from your master, in another life, decades from now.",
+   "choices": [
+    {
+     "text": "Tell {him} the truth",
+     "effects": {
+      "comprehension": 3,
+      "log": "Your master listens without laughing, then opens a scroll never shown to anyone. 'Then let us not waste this life.'"
+     }
+    },
+    {
+     "text": "Say you watched {him} in secret",
+     "effects": {
+      "qi": 6,
+      "log": "Your master's eyes narrow, then let it go. You train twice as hard to keep your secret."
+     }
+    }
+   ],
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "mu_heavenly_demon_invasion",
+   "cat": "world",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ],
+    "chance": 0.3,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "The Heavenly Demon Cult comes down from the Hundred Thousand Mountains. City after city opens its gates. The murim holds its breath.",
+   "choices": [
+    {
+     "text": "Join the defence",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 20,
+      "alignment": 10,
+      "health": -25,
+      "log": "The Cult's advance breaks at your city's walls. You were on those walls."
+     },
+     "fail": {
+      "health": -65,
+      "deathCause": "the Heavenly Demon Cult's invasion",
+      "log": "The walls fall. You escape through the river gate with the refugees."
+     }
+    },
+    {
+     "text": "Get civilians out of the city",
+     "effects": {
+      "fame": 8,
+      "alignment": 12,
+      "health": -10,
+      "log": "Nine hundred people, one secret mountain road. You go back for the last family three times."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "alignment": -5,
+      "log": "You watch the smoke from a distant hill. The Cult does not come this far. This time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_crane_tower_poem",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "At the top of the Crane Tower, where famous poets and martial heroes have left verses on the wall for five hundred years, there is one blank space left.",
+   "choices": [
+    {
+     "text": "Write a poem",
+     "roll": {
+      "stat": "poetry",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 12,
+      "charm": 3,
+      "log": "You write eight lines about the river and the long road. By next year, children are reciting them."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "The tower keeper paints over it the following morning. Kindly."
+     }
+    },
+    {
+     "text": "Leave the space for someone better",
+     "effects": {
+      "alignment": 2,
+      "log": "You read every poem on the wall instead. It takes all day. It is worth it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mu_funny_nickname_clash",
+   "cat": "funny",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "flags": [
+     "has_nickname"
+    ]
+   },
+   "weight": 3,
+   "text": "In a teahouse you meet a stranger with exactly the same murim nickname as you. The teahouse goes very quiet. The owner starts moving the furniture.",
+   "choices": [
+    {
+     "text": "Duel for the name",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 8,
+      "log": "You win. The stranger bows and agrees to be called something else. He chooses 'The Other One'. It catches on."
+     },
+     "fail": {
+      "fame": -4,
+      "health": -15,
+      "log": "He wins. For a year, people have to clarify which one of you they mean. It is humiliating."
+     }
+    },
+    {
+     "text": "Share a pot of tea and compare notes",
+     "effects": {
+      "charm": 2,
+      "log": "It turns out you have both been blamed for each other's deeds for years. You split the bill and the reputation."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mu_funny_secret_manual",
+   "cat": "funny",
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "A beggar sells you 'the secret manual of the Heavenly Demon' for three copper coins. You open it. It is a recipe book.",
+   "choices": [
+    {
+     "text": "Try the recipes",
+     "effects": {
+      "health": 10,
+      "charm": 2,
+      "log": "The braised pork is incredible. You decide the Heavenly Demon must have been a very happy man."
+     }
+    },
+    {
+     "text": "Read it very, very carefully for hidden meaning",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "ok": {
+      "qi": 15,
+      "comprehension": 3,
+      "log": "It is a cipher. Every recipe is a breathing technique. The beggar is never seen again."
+     },
+     "fail": {
+      "log": "It is a recipe book. It was always a recipe book. The dumplings are good though."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

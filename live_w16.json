@@ -1,0 +1,419 @@
+{
+ "events": [
+  {
+   "id": "lv16_manual_rumour",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A rumour spreads: a lost manual lies in a ruined temple in the hills.",
+   "choices": [
+    {
+     "text": "Go looking",
+     "effects": {
+      "luck": 1,
+      "log": "Half the jianghu has the same idea."
+     }
+    },
+    {
+     "text": "Stay home and train",
+     "effects": {
+      "strength": 1,
+      "log": "Rumours rarely train anyone."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv16_ruined_temple",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_rumour"
+    ]
+   },
+   "weight": 2,
+   "text": "The ruined temple is crowded with treasure hunters digging everywhere.",
+   "choices": [
+    {
+     "text": "Read the old carvings for clues",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "qi": 4,
+      "log": "The clue points under the bell. You find a sealed box first."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The carvings are just prayers."
+     }
+    },
+    {
+     "text": "Help an old monk who is being pushed around",
+     "effects": {
+      "alignment": 2,
+      "log": "He is the temple's last guardian. He remembers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_fight",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_rumour"
+    ]
+   },
+   "weight": 2,
+   "text": "Two hunters fight over a box they found. It is empty.",
+   "choices": [
+    {
+     "text": "Tell them it is empty",
+     "effects": {
+      "charm": 1,
+      "log": "They stop, embarrassed, and share their dried meat."
+     }
+    },
+    {
+     "text": "Let them fight",
+     "effects": {
+      "luck": 1,
+      "log": "They exhaust each other. You find the real hiding place."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_fake_manuals",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_rumour"
+    ]
+   },
+   "weight": 2,
+   "text": "Hawkers sell 'the lost manual' outside the temple. Ten different versions.",
+   "choices": [
+    {
+     "text": "Buy one for fun",
+     "effects": {
+      "taels": -1,
+      "charm": 1,
+      "log": "Chapter one: \"Breathe.\" (−1 taels)"
+     }
+    },
+    {
+     "text": "Warn the young ones",
+     "effects": {
+      "alignment": 1,
+      "log": "You save a few from wasting their silver."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_guardian",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_ruined_temple"
+    ]
+   },
+   "weight": 2,
+   "text": "At night, a masked guardian attacks anyone near the temple bell.",
+   "choices": [
+    {
+     "text": "Face the guardian",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 2,
+      "comprehension": 2,
+      "log": "You win. The guardian unmasks: the old monk, testing your heart."
+     },
+     "fail": {
+      "health": -6,
+      "log": "The guardian is far stronger. You wake at dawn, bruised, with a note: \"Not yet.\""
+     }
+    },
+    {
+     "text": "Speak to the guardian",
+     "effects": {
+      "alignment": 1,
+      "log": "It lowers its staff and listens."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_truth",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_guardian"
+    ]
+   },
+   "weight": 2,
+   "text": "The monk reveals the truth: the 'manual' is a single page with one sentence.",
+   "choices": [
+    {
+     "text": "Ask to read it",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 2,
+      "log": "'Train every day, and help those who cannot.' You laugh, then stop laughing."
+     }
+    },
+    {
+     "text": "Leave without reading",
+     "effects": {
+      "luck": 1,
+      "log": "Some mysteries are worth keeping."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_rival_hunter",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_rumour"
+    ]
+   },
+   "weight": 2,
+   "text": "A rival treasure hunter offers to split whatever you find.",
+   "choices": [
+    {
+     "text": "Agree",
+     "effects": {
+      "charm": 1,
+      "log": "You find nothing. You find a friend."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "comprehension": 1,
+      "log": "You search alone, faster and lonelier."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_temple_repair",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_ruined_temple"
+    ]
+   },
+   "weight": 2,
+   "text": "The treasure hunters have wrecked the temple. The old monk weeps.",
+   "choices": [
+    {
+     "text": "Help rebuild",
+     "effects": {
+      "strength": 1,
+      "qi": 3,
+      "alignment": 2,
+      "log": "A week of work. The monk teaches you in the evenings."
+     }
+    },
+    {
+     "text": "Organise the hunters to help",
+     "effects": {
+      "fame": 1,
+      "alignment": 2,
+      "log": "Shamed, they rebuild it better than before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_kid_manual",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You find an old book in the attic and decide it is a secret martial manual.",
+   "choices": [
+    {
+     "text": "Practise its moves",
+     "effects": {
+      "strength": 1,
+      "log": "It is a cookbook. You are very good at stirring now."
+     }
+    },
+    {
+     "text": "Hide it under your bed",
+     "effects": {
+      "luck": 1,
+      "log": "Your treasure. Nobody else must know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_cave",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A cave behind the temple, with sword marks all over the walls.",
+   "choices": [
+    {
+     "text": "Study the marks",
+     "effects": {
+      "comprehension": 3,
+      "log": "A master trained here alone for years. You follow their path."
+     }
+    },
+    {
+     "text": "Add your own mark",
+     "effects": {
+      "fame": 1,
+      "log": "Someday someone will study yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_sold",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_rumour"
+    ]
+   },
+   "weight": 2,
+   "text": "A merchant claims to have the real manual and auctions it in the town square.",
+   "choices": [
+    {
+     "text": "Expose him",
+     "effects": {
+      "fame": 1,
+      "alignment": 1,
+      "log": "The crowd turns on him."
+     }
+    },
+    {
+     "text": "Watch the bidding",
+     "effects": {
+      "charm": 0,
+      "log": "A rich fool pays a fortune for a copy of the Analects."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv16_manual_lesson",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-01-18",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv16_manual_truth"
+    ]
+   },
+   "weight": 2,
+   "text": "The rumour dies. The hunters go home. The temple is quiet again.",
+   "choices": [
+    {
+     "text": "Visit the monk once more",
+     "effects": {
+      "qi": 5,
+      "log": "He gives you a real breathing method, small and true."
+     }
+    },
+    {
+     "text": "Train with what you learned",
+     "effects": {
+      "strength": 1,
+      "comprehension": 1,
+      "log": "The best manual is practice."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,1096 @@
+{
+ "events": [
+  {
+   "id": "npc_befriend_wine",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "text": "{npc} turns up at your door with a jar of wine and two cups. 'I was passing,' {he} says. Nobody passes your door.",
+   "choices": [
+    {
+     "text": "Sit up with {him} until dawn",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "drank with me until dawn"
+      },
+      "health": -3,
+      "log": "You talk about everything and nothing. {He} drinks, you keep to tea, and by morning you have a friend."
+     }
+    },
+    {
+     "text": "Thank {him}, but you need to train",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "was honest with me"
+      },
+      "log": "{He} laughs and leaves the jar. 'For when you are human again.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_befriend_child",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     6,
+     15
+    ]
+   },
+   "text": "{npc} shows you a secret place behind the waterfall where the fish are as long as your arm.",
+   "choices": [
+    {
+     "text": "Make it your shared secret",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "kept our waterfall secret"
+      },
+      "luck": 1,
+      "log": "It becomes your place. Neither of you ever tells anyone."
+     }
+    },
+    {
+     "text": "Tell the other children, so everyone can come",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 3,
+       "note": "told everyone about our secret place"
+      },
+      "charm": 2,
+      "log": "By summer half the village swims there. {npc} does not speak to you for a week, then forgives you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_befriend_spar",
+   "trigger": "befriend",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "text": "{npc} asks you for a spar, no blood, just to see how far you have both come.",
+   "choices": [
+    {
+     "text": "Spar seriously",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "mem": {
+       "deed": "spar",
+       "w": 8,
+       "note": "gave me a real fight"
+      },
+      "qi": 6,
+      "log": "You win, barely. {npc} laughs through a split lip."
+     },
+     "fail": {
+      "mem": {
+       "deed": "spar",
+       "w": 8,
+       "note": "gave me a real fight"
+      },
+      "qi": 8,
+      "health": -8,
+      "log": "{npc} wins. You learn more from the loss than from a month of training."
+     }
+    },
+    {
+     "text": "Let {him} win",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "let me win and thought I did not notice"
+      },
+      "log": "{He} notices. {He} is touched anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_help_bandits",
+   "trigger": "ask_help",
+   "once": false,
+   "when": {
+    "age": [
+     15,
+     999
+    ]
+   },
+   "text": "{npc} arrives out of breath. 'Bandits took my younger brother on the mountain road. They want 300 taels. I have forty. Please.'",
+   "choices": [
+    {
+     "text": "Go up the mountain with {him}",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 45,
+       "note": "went up the mountain for my brother"
+      },
+      "fame": 5,
+      "alignment": 5,
+      "log": "You break the bandits' camp and carry the boy down. {npc} bows until {his} forehead touches the road."
+     },
+     "fail": {
+      "health": -45,
+      "mem": {
+       "deed": "helped",
+       "w": 30,
+       "note": "bled for my brother"
+      },
+      "deathCause": "a bandit's blade",
+      "log": "You get the boy out, but a blade finds your side. You barely make it down."
+     }
+    },
+    {
+     "text": "Pay the ransom",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "mem": {
+       "deed": "helped",
+       "w": 40,
+       "note": "paid my brother's ransom"
+      },
+      "log": "The boy comes home. {npc} swears to repay every tael."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -25,
+       "note": "turned me away when my brother was taken"
+      },
+      "log": "{npc} looks at you as if seeing you for the first time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_help_debt",
+   "trigger": "ask_help",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "minTaels": 50
+   },
+   "text": "{npc} is drowning in gambling debts to the Black Wind moneylenders and asks you for 50 taels.",
+   "choices": [
+    {
+     "text": "Lend it",
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "paid my debt to the moneylenders"
+      },
+      "log": "{npc} grips your hand. 'Never again,' {he} swears."
+     }
+    },
+    {
+     "text": "Refuse, and tell {him} to stop gambling",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -8,
+       "note": "lectured me when I needed help"
+      },
+      "log": "{He} leaves angry. You wonder if you were right."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_help_teach",
+   "trigger": "ask_help",
+   "once": false,
+   "when": {
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "text": "{npc} is stuck at {npc_realm}. {He} asks if you would look at {his} breathing, just once.",
+   "choices": [
+    {
+     "text": "Teach {him} for a season",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 25,
+       "note": "taught me when I was stuck"
+      },
+      "npcRealm": 0,
+      "comprehension": 2,
+      "log": "Teaching {npc} shows you gaps in your own method. You both come out stronger."
+     }
+    },
+    {
+     "text": "Keep your methods to yourself",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -6,
+       "note": "would not share even a word"
+      },
+      "log": "Some things are not shared. {npc} nods stiffly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_repay_gift",
+   "trigger": "repay",
+   "once": false,
+   "when": {},
+   "text": "{npc} finds you after {debt_years} years. 'I have not forgotten that you {debt}. Take this.' {He} presses a jade box into your hands.",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "settle": "debt",
+      "item": "ginseng",
+      "mem": {
+       "deed": "friend",
+       "w": 10,
+       "note": "let me repay my debt"
+      },
+      "log": "Inside is a hundred-year ginseng root. {npc} walks away lighter."
+     }
+    },
+    {
+     "text": "Refuse: there was never a debt",
+     "effects": {
+      "settle": "debt",
+      "mem": {
+       "deed": "friend",
+       "w": 25,
+       "note": "said I never owed anything"
+      },
+      "alignment": 3,
+      "log": "{npc} stares, then laughs until {he} cries. You have made a friend for life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_repay_warning",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "notFlags": [
+     "done_npc_repay_warning"
+    ]
+   },
+   "text": "{npc} slips a note under your door at midnight: 'A debt repaid. Do not take the mountain road tomorrow. — for when you {debt}.'",
+   "choices": [
+    {
+     "text": "Take the long road",
+     "effects": {
+      "settle": "debt",
+      "luck": 5,
+      "flag": [
+       "wary",
+       "done_npc_repay_warning"
+      ],
+      "log": "The next day you hear the mountain road was watched by men with crossbows. You never learn whose."
+     }
+    },
+    {
+     "text": "Take the mountain road anyway, sword ready",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The crossbowmen"
+     },
+     "ok": {
+      "settle": "debt",
+      "fame": 6,
+      "log": "The crossbowmen in the pass were not expecting someone who expected them. The road is quiet after that."
+     },
+     "fail": {
+      "settle": "debt",
+      "health": -35,
+      "deathCause": "crossbow bolts on the mountain road",
+      "log": "You should have listened. You crawl home with a bolt in your shoulder."
+     },
+     "risky": true,
+     "effects": {
+      "flag": "done_npc_repay_warning"
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_repay_rescue",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "stat": {
+     "health": 1
+    }
+   },
+   "text": "You are cornered by three men from a rival sect in a mountain town when {npc} drops from the rooftop between you and them. 'This one saved my life once,' {he} says. 'Go home.'",
+   "effects": {
+    "settle": "debt",
+    "fame": 2,
+    "log": "They go home. {npc} walks off before you can thank {him}."
+   }
+  },
+  {
+   "id": "npc_repay_rescue_b",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "stat": {
+     "health": 1
+    }
+   },
+   "text": "A cart-driver's quarrel in a market town turns into knives, and you are the one standing in the road. {npc} shoulders through the crowd and takes the first blow meant for you. 'You stood up for me once,' {he} says, grinning through the blood. 'We are even. Now walk away.'",
+   "effects": {
+    "settle": "debt",
+    "fame": 2,
+    "log": "The knives go back into their sleeves. {npc} wipes {his} mouth and tells you to buy the next round, and not to tell anyone how it started."
+   }
+  },
+  {
+   "id": "npc_repay_rescue_c",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "stat": {
+     "health": 1
+    }
+   },
+   "text": "You do not hear the three riders until {npc} is already in the road in front of your horse, holding up one hand. 'I remember who gave me the lamp that night,' {he} says. 'Turn back. I will tell you why when you are older, or I am.'",
+   "effects": {
+    "settle": "debt",
+    "fame": 2,
+    "log": "The riders see who stands there and think better of it. {npc} watches you go, and is gone by the time you look back."
+   }
+  },
+  {
+   "id": "npc_repay_rescue_d",
+   "trigger": "repay",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "stat": {
+     "health": 1
+    }
+   },
+   "text": "The inn door bursts in, and a debt-collector's men come for you over a matter you thought was settled. {npc}, who happened to be at the next table, puts a coin on the board and says, 'Whatever {he} owes, I owe more to {him}.' The room goes still.",
+   "effects": {
+    "settle": "debt",
+    "fame": 2,
+    "log": "The men count the coin twice and leave. {npc} will not take it back, and will not say why it was so ready in {his} sleeve."
+   }
+  },
+  {
+   "id": "npc_challenge_road",
+   "trigger": "challenge",
+   "once": false,
+   "cat": "npc",
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "text": "{npc}, now at {npc_realm}, blocks your path on the road. '{grudge_years} years ago, you {grudge}. I have not forgotten one day of it. Draw.'",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 6,
+      "mem": {
+       "deed": "beat",
+       "w": -10,
+       "note": "beat me again, on the road"
+      },
+      "log": "You win. {npc} kneels in the dust, shaking with rage, not fear."
+     },
+     "fail": {
+      "health": -45,
+      "fame": -3,
+      "settle": "grudge",
+      "deathCause": "{npc}'s blade",
+      "log": "{npc} wins. {He} looks down at you. 'Now we are even.' {He} leaves you in the dirt."
+     }
+    },
+    {
+     "text": "Apologise",
+     "req": {
+      "npcOpinion": [
+       -100,
+       -30
+      ]
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "settle": "grudge",
+      "mem": {
+       "deed": "apology",
+       "w": 25,
+       "note": "apologised, finally"
+      },
+      "log": "You bow. The road is silent a long time. Then {npc} sheathes {his} sword."
+     },
+     "fail": {
+      "mem": {
+       "deed": "insulted",
+       "w": -10,
+       "note": "apologised like a coward"
+      },
+      "health": -20,
+      "log": "'Too late,' {npc} says, and cuts your cheek to prove it."
+     }
+    },
+    {
+     "text": "Remind {him} who saved {his} life",
+     "req": {
+      "npcMem": [
+       "saved_life"
+      ]
+     },
+     "effects": {
+      "settle": "grudge",
+      "log": "{npc} freezes. The sword point drops. '...Fine. We are even. Next time I will not stop.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_challenge_tournament",
+   "trigger": "challenge",
+   "once": false,
+   "when": {
+    "realm": [
+     1,
+     11
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "text": "At the sect tournament, {npc} steps into the ring and points at you. The crowd goes quiet: everyone knows you {grudge_of}.",
+   "choices": [
+    {
+     "text": "Accept the challenge",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 10,
+      "mem": {
+       "deed": "humiliated",
+       "w": -15,
+       "note": "humiliated me in front of the whole sect, again"
+      },
+      "log": "You win in front of the whole sect. {npc} leaves the ring without a word."
+     },
+     "fail": {
+      "fame": -5,
+      "health": -25,
+      "settle": "grudge",
+      "log": "{npc} wins. Half the sect cheers. You smile, and start training that night."
+     }
+    },
+    {
+     "text": "Decline",
+     "effects": {
+      "fame": -4,
+      "mem": {
+       "deed": "insulted",
+       "w": -5,
+       "note": "refused to face me"
+      },
+      "log": "The crowd mutters. {npc} smirks. You know that face will return."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_challenge_death",
+   "trigger": "challenge",
+   "once": false,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "npcOpinion": [
+     -100,
+     -70
+    ]
+   },
+   "text": "A letter arrives written in blood: '{grudge_years} years ago you {grudge}. Dawn, at the Broken Pine. To the death. — {npc}'",
+   "choices": [
+    {
+     "text": "Go to the Broken Pine",
+     "risky": true,
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 15,
+      "npcDie": "your sword at the Broken Pine",
+      "settle": "grudge",
+      "log": "At dawn, under the Broken Pine, it ends. You bury {npc} yourself."
+     },
+     "fail": {
+      "die": "{npc}'s sword at the Broken Pine"
+     }
+    },
+    {
+     "text": "Do not go",
+     "effects": {
+      "fame": -10,
+      "flag": "wary",
+      "log": "The murim calls you a coward for a season. You are alive to hear it."
+     }
+    },
+    {
+     "text": "Go, and try to talk",
+     "req": {
+      "npcMem": [
+       "saved_life",
+       "helped",
+       "spared"
+      ]
+     },
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "settle": "grudge",
+      "mem": {
+       "deed": "spared",
+       "w": 30,
+       "note": "came to talk instead of kill"
+      },
+      "log": "You talk until the sun is high. {npc} walks away alive, and so do you."
+     },
+     "fail": {
+      "health": -50,
+      "fame": 5,
+      "log": "Talking fails. You win the fight, but spare {him}. It will not be the last time you meet."
+     }
+    },
+    {
+     "text": "(You remember this) You know every move {he} will make",
+     "req": {
+      "npcFlags": [
+       "past_killer"
+      ]
+     },
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.6,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 20,
+      "settle": "grudge",
+      "flag": "fate_changed",
+      "npcDie": "your sword at the Broken Pine",
+      "log": "You watched this duel from the losing side once. Every feint, every lunge: you knew them all. It ends quickly, and differently."
+     },
+     "fail": {
+      "health": -45,
+      "flag": "fate_changed",
+      "log": "Knowing the moves is not the same as stopping them. But you live, which is more than last time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_rumor_town",
+   "trigger": "rumor",
+   "once": false,
+   "when": {
+    "age": [
+     12,
+     999
+    ]
+   },
+   "text": "Rumours are going round the town that you cheat at duels and steal from the people who host you. Everyone knows they started with {npc}.",
+   "choices": [
+    {
+     "text": "Confront {npc} in public",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "humiliated",
+       "w": -15,
+       "note": "made a fool of me in the market"
+      },
+      "log": "You make {npc} look ridiculous in front of the whole market. The rumours die. {His} hatred does not."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "It turns into a shouting match. The rumours only grow."
+     }
+    },
+    {
+     "text": "Ignore it and let your deeds answer",
+     "effects": {
+      "fame": -3,
+      "alignment": 3,
+      "log": "The rumours fade in a year. Mostly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_plot_warning_friend",
+   "trigger": "plot_warning",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "text": "A servant at your inn whispers that a stranger paid well to learn which room you sleep in, and which road you take. The description sounds a great deal like {npc}.",
+   "choices": [
+    {
+     "text": "Change rooms and roads, and sleep with your sword",
+     "effects": {
+      "flag": "wary",
+      "log": "You change everything. For a few weeks, you feel watched."
+     }
+    },
+    {
+     "text": "Go and confront {npc}",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "npcUnflag": "plotting",
+      "fame": 3,
+      "mem": {
+       "deed": "beat",
+       "w": -10,
+       "note": "caught me plotting"
+      },
+      "log": "You catch {npc} with a map of your route. {He} flees. The plot is over, for now."
+     },
+     "fail": {
+      "health": -30,
+      "log": "{npc} is ready for you. You escape, but now {he} knows you know."
+     }
+    },
+    {
+     "text": "Laugh it off",
+     "effects": {
+      "log": "Who would want to kill you? You sleep well. For now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_plot_warning_omen",
+   "trigger": "plot_warning",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "text": "For three nights in a row, a crow sits on your window, and on the third morning you find a black thread tied to your door. An old murim sign: someone has paid for your death. You remember the way {npc} looked at you.",
+   "choices": [
+    {
+     "text": "Take it seriously",
+     "effects": {
+      "flag": "wary",
+      "log": "You stop eating in public and sleep in a different place each night."
+     }
+    },
+    {
+     "text": "It is only a crow",
+     "effects": {
+      "log": "It is only a crow."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_ambush_night",
+   "trigger": "ambush",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "text": "Night, on a lonely road. Four masked men step out of the trees, and behind them, not bothering to hide {his} face, {npc}.",
+   "choices": [
+    {
+     "text": "Fight your way out",
+     "risky": true,
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 10,
+      "health": -30,
+      "npcDie": "your sword on the night road",
+      "log": "When it is over, you are the only one standing. {npc} dies with {his} hatred still in {his} eyes."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "an ambush on the night road",
+      "log": "You break through, bleeding from a dozen cuts, and crawl to a farmhouse by dawn."
+     }
+    },
+    {
+     "text": "Run",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "health": -15,
+      "log": "You vanish into the forest. {npc} will have to try again."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "an ambush on the night road",
+      "log": "They catch you at the river. You get away with your life, and little else."
+     }
+    },
+    {
+     "text": "Remind {him} of the debt between you",
+     "req": {
+      "npcMem": [
+       "saved_life"
+      ]
+     },
+     "effects": {
+      "settle": "grudge",
+      "npcUnflag": "plotting",
+      "log": "{npc} hesitates, then raises a hand. The masked men melt into the trees. 'Once,' {he} says. 'Only once.'"
+     }
+    },
+    {
+     "text": "(I remember this) Leave the road before they strike",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "fame": 6,
+      "npcUnflag": "plotting",
+      "log": "You remember this road, and this night. You were never on it: from the trees you watch {npc} wait for someone who does not come."
+     }
+    },
+    {
+     "text": "(You remember this) You know where they are hiding",
+     "req": {
+      "npcFlags": [
+       "past_killer"
+      ]
+     },
+     "effects": {
+      "npcUnflag": "plotting",
+      "fame": 10,
+      "flag": "fate_changed",
+      "log": "You remember every shadow of this road from the night you died on it. This time you come at them from behind the trees. {npc} never gets to strike."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_ambush_wary",
+   "trigger": "ambush",
+   "once": false,
+   "when": {
+    "flags": [
+     "wary"
+    ]
+   },
+   "weight": 3,
+   "text": "Because you have been careful, you see them first: masked men waiting at the bridge, and {npc} among them.",
+   "choices": [
+    {
+     "text": "Strike first",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 8,
+      "unflag": "wary",
+      "npcDie": "your ambush of the ambushers",
+      "log": "They never get to spring their trap. {npc} does not get up."
+     },
+     "fail": {
+      "health": -40,
+      "unflag": "wary",
+      "log": "You scatter them, but {npc} escapes. So do you, barely."
+     }
+    },
+    {
+     "text": "Take another road",
+     "effects": {
+      "unflag": "wary",
+      "log": "You slip away unseen. {npc} waits at the bridge all night for nobody."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_court_plum",
+   "trigger": "court",
+   "once": false,
+   "when": {
+    "age": [
+     18,
+     60
+    ],
+    "married": false
+   },
+   "text": "{npc} walks with you under the plum blossoms and says nothing for a long time. Then: 'When all this is over, I would like to grow old somewhere quiet. With you.'",
+   "choices": [
+    {
+     "text": "Marry {him}",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "married",
+       "w": 30,
+       "note": "married me under the plum trees"
+      },
+      "health": 10,
+      "log": "You marry in spring. For a while the murim feels very far away."
+     }
+    },
+    {
+     "text": "Not yet. Your path comes first",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "chose the path over me, for now"
+      },
+      "log": "{npc} smiles sadly. 'I will ask again.'"
+     }
+    },
+    {
+     "text": "Tell {him} gently it can never be",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -25,
+       "note": "turned me away under the plum trees"
+      },
+      "log": "{npc} bows and leaves. The blossoms keep falling."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "npc_betray_master",
+   "trigger": "betray",
+   "once": false,
+   "when": {
+    "hasMaster": true
+   },
+   "text": "You learn that {npc} has been selling your techniques to a rival sect, and telling them your weaknesses.",
+   "choices": [
+    {
+     "text": "Confront {him}",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 5,
+      "role": "stranger",
+      "mem": {
+       "deed": "humiliated",
+       "w": -25,
+       "note": "exposed me to the whole sect"
+      },
+      "log": "You expose {npc} before the sect elders. {He} is expelled, and swears revenge."
+     },
+     "fail": {
+      "health": -35,
+      "log": "{npc} strikes first. You survive, and the truth comes out anyway."
+     }
+    },
+    {
+     "text": "Say nothing and change your techniques",
+     "effects": {
+      "comprehension": 4,
+      "flag": "wary",
+      "log": "You rebuild your style in secret. When the rival sect comes, they will be fighting a stranger."
+     }
+    },
+    {
+     "text": "(You remember this) You planted false techniques for {him} to steal",
+     "req": {
+      "npcFlags": [
+       "past_betrayer"
+      ]
+     },
+     "effects": {
+      "fame": 8,
+      "flag": "fate_changed",
+      "log": "You remembered this betrayal, so you let {npc} steal pages full of mistakes. The rival sect trains on them for a year before anyone notices."
+     }
+    }
+   ]
+  },
+  {
+   "id": "npc_betray_peer",
+   "trigger": "betray",
+   "once": false,
+   "when": {
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "junior": true
+   },
+   "text": "{npc} reports to the sect elders that you broke the sect's rules. Half of it is true, which is the dangerous half.",
+   "choices": [
+    {
+     "text": "Defend yourself before the elders",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "mem": {
+       "deed": "humiliated",
+       "w": -15,
+       "note": "made me look like a liar before the elders"
+      },
+      "log": "The elders dismiss the charges. {npc} is sent to clean the latrines for a year."
+     },
+     "fail": {
+      "fame": -8,
+      "taels": -30,
+      "log": "You are fined and confined for a season. You spend it training, and remembering."
+     }
+    },
+    {
+     "text": "Accept the punishment",
+     "effects": {
+      "fame": -3,
+      "comprehension": 3,
+      "alignment": 3,
+      "log": "A season in the punishment cave. Very quiet. Very good for meditation."
+     }
+    },
+    {
+     "text": "(You remember this) Bring proof before {he} can speak",
+     "req": {
+      "npcFlags": [
+       "past_betrayer"
+      ]
+     },
+     "effects": {
+      "fame": 6,
+      "flag": "fate_changed",
+      "mem": {
+       "deed": "humiliated",
+       "w": -20,
+       "note": "was always one step ahead of me"
+      },
+      "log": "You walk into the hall with proof of {npc}'s lies before {he} has finished speaking. The elders turn to {him} instead."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

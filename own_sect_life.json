@@ -1,0 +1,305 @@
+{
+ "events": [
+  {
+   "id": "os_gate_challenge",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     25,
+     999
+    ],
+    "notFlags": [
+     "sect_inherited"
+    ]
+   },
+   "weight": 6,
+   "text": "A master from an older sect stands at your gate and loudly asks whether this 'new sect' has anyone who can actually fight.",
+   "choices": [
+    {
+     "text": "Answer him yourself",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "atGate": true
+     },
+     "ok": {
+      "fame": 20,
+      "log": "He leaves by the same gate, more slowly than he came. Twelve new students apply the next week."
+     },
+     "fail": {
+      "health": -45,
+      "fame": -10,
+      "deathCause": "a challenger at your own gate",
+      "log": "He wins, and says so in every teahouse. Your disciples look at the floor."
+     }
+    },
+    {
+     "text": "Send your best disciple",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 15,
+      "log": "Your disciple wins. 'If the student is this good,' the challenger says, 'I will not trouble the master.'"
+     },
+     "fail": {
+      "fame": -8,
+      "log": "Your disciple loses bravely. You spend a long night making sure they know you are proud of them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "os_disciple_quarrel",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     25,
+     999
+    ]
+   },
+   "weight": 5,
+   "text": "Two of your disciples come to blows over who is your favourite. Everyone is waiting to see what you do.",
+   "choices": [
+    {
+     "text": "Punish them both equally",
+     "effects": {
+      "fame": 3,
+      "alignment": 3,
+      "log": "Two weeks of scrubbing the training ground together. By the end, they are friends. That was the idea."
+     }
+    },
+    {
+     "text": "Name an official senior disciple",
+     "effects": {
+      "fame": 5,
+      "log": "The order is clear now, and the halls are quieter. One of them will always resent it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "os_stolen_manual",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     28,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "Your sect's manual is gone from the library, and so is one of your disciples.",
+   "choices": [
+    {
+     "text": "Hunt them down",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "log": "You catch them at the river crossing. They kneel. What you do next, the whole sect will remember."
+     },
+     "fail": {
+      "fame": -8,
+      "log": "They are gone. Somewhere out there, your art is being taught under another name."
+     }
+    },
+    {
+     "text": "Let them go. The art will find its way",
+     "effects": {
+      "alignment": 5,
+      "fame": 3,
+      "log": "Years later a stranger bows to you on the road: 'My master learned from your sect.' It was worth it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "os_sect_tournament",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     30,
+     999
+    ],
+    "minFame": 200,
+    "notFlags": [
+     "sect_inherited"
+    ]
+   },
+   "weight": 4,
+   "text": "Your sect is invited to the gathering of great sects for the first time. Only real sects are invited. You are a real sect now.",
+   "choices": [
+    {
+     "text": "Go in full ceremony with every disciple",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "taels": -150,
+      "fame": 25,
+      "log": "Banners, uniforms, a perfect bow. The old sects watch the new one arrive and make room."
+     }
+    },
+    {
+     "text": "Go alone, quietly",
+     "effects": {
+      "fame": 10,
+      "log": "You alone, in a plain robe. Some are insulted. Others are very curious."
+     }
+    }
+   ]
+  },
+  {
+   "id": "os_founders_day",
+   "cat": "family",
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     35,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Your disciples have secretly prepared a feast for the anniversary of the sect's founding. There is a painting of you. It is not flattering.",
+   "choices": [
+    {
+     "text": "Laugh and hang it in the main hall",
+     "effects": {
+      "health": 10,
+      "charm": 3,
+      "log": "It hangs there for a hundred years. Future disciples think you had a very strange nose."
+     }
+    },
+    {
+     "text": "Give a speech about the sect's future",
+     "effects": {
+      "fame": 6,
+      "log": "Short, clear, and not one person falls asleep. That is how you know it was good."
+     }
+    }
+   ]
+  },
+  {
+   "id": "my_voice_of_heaven",
+   "cat": "insight",
+   "when": {
+    "realm": [
+     7,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "At Mystic, you can hear the qi of everything: the tree's slow breath, the river's long thought. One day, the mountain seems to be listening back.",
+   "choices": [
+    {
+     "text": "Listen",
+     "effects": {
+      "qi": 30,
+      "comprehension": 3,
+      "log": "For three days you and the mountain say nothing to each other. It is the best conversation of your life."
+     }
+    },
+    {
+     "text": "Speak to it",
+     "effects": {
+      "luck": 5,
+      "log": "You tell it about your life. It does not answer. But the rockslides stop for a hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "my_teach_the_world",
+   "cat": "world",
+   "when": {
+    "realm": [
+     7,
+     11
+    ],
+    "minFame": 300
+   },
+   "weight": 3,
+   "text": "A Mystic master teaching in public: it has not happened in living memory. Thousands would come. Every sect would send spies.",
+   "choices": [
+    {
+     "text": "Teach openly, to anyone",
+     "effects": {
+      "fame": 40,
+      "alignment": 10,
+      "rep": {
+       "orthodox": 10,
+       "unorthodox": 10
+      },
+      "log": "A thousand people on a hillside, and you speak about breathing. Twenty years later, the murim is stronger because of that afternoon."
+     }
+    },
+    {
+     "text": "Keep your arts for your own line",
+     "effects": {
+      "fame": 5,
+      "log": "Some treasures are kept, not shared. Your disciples will be the stronger for it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "my_last_student",
+   "cat": "family",
+   "when": {
+    "realm": [
+     7,
+     11
+    ],
+    "age": [
+     60,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A small child finds your hermitage by accident and asks, with total confidence, to be taught 'the best sword in the world'.",
+   "choices": [
+    {
+     "text": "Take the child as your last disciple",
+     "effects": {
+      "spawn": {
+       "role": "disciple",
+       "ageAbs": 8,
+       "opinion": 60,
+       "tag": "own_disciple"
+      },
+      "fame": 5,
+      "log": "The child is hopeless for a year, then very good, then frightening. Your last disciple, and perhaps your best."
+     }
+    },
+    {
+     "text": "Send the child home with a wooden sword",
+     "effects": {
+      "alignment": 3,
+      "log": "Thirty years later, a great master mentions a wooden sword in every interview. You never find out it was yours."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

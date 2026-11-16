@@ -1,0 +1,422 @@
+{
+ "events": [
+  {
+   "id": "lv10_caravan_missing",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A caravan from the western regions never reached the city. Its merchant guild offers a reward.",
+   "choices": [
+    {
+     "text": "Join the search",
+     "effects": {
+      "strength": 1,
+      "comprehension": 1,
+      "log": "Days in the desert wind. You find tracks."
+     }
+    },
+    {
+     "text": "Ask the camel drivers",
+     "effects": {
+      "comprehension": 1,
+      "log": "They whisper of a caravan carrying something that was not silk."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_caravan_found",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_missing"
+    ]
+   },
+   "weight": 2,
+   "text": "You find the caravan wrecked in a dry gully. The cargo boxes are empty, except one.",
+   "choices": [
+    {
+     "text": "Open the last box",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 25,
+      "log": "A sealed jade tablet with strange writing. The guild pays well. (+25 taels)"
+     },
+     "fail": {
+      "health": -8,
+      "log": "A nest of scorpions."
+     }
+    },
+    {
+     "text": "Bury the drivers first",
+     "effects": {
+      "alignment": 2,
+      "log": "Proper rites for the dead. Then the box."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_survivor",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_missing"
+    ]
+   },
+   "weight": 2,
+   "text": "A single survivor of the caravan hides in a cave, starving.",
+   "choices": [
+    {
+     "text": "Bring him home",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "He says the caravan carried a relic stolen from a western temple."
+     }
+    },
+    {
+     "text": "Give him water and ask what happened",
+     "effects": {
+      "comprehension": 1,
+      "log": "Raiders in red masks. They knew exactly what they wanted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_red_masks",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_missing"
+    ]
+   },
+   "weight": 2,
+   "text": "Raiders in red masks attack the search party.",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 2,
+      "log": "They retreat, leaving a red mask behind."
+     },
+     "fail": {
+      "health": -14,
+      "fame": 1,
+      "log": "You hold them off, wounded."
+     }
+    },
+    {
+     "text": "Fall back to the oasis",
+     "effects": {
+      "luck": 1,
+      "log": "Alive to search another day."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_relic_owner",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_found"
+    ]
+   },
+   "weight": 2,
+   "text": "A monk from the west arrives, searching for the stolen relic.",
+   "choices": [
+    {
+     "text": "Help him",
+     "effects": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "Together you track the relic to a merchant's cellar."
+     }
+    },
+    {
+     "text": "Tell him what you know",
+     "effects": {
+      "alignment": 1,
+      "log": "He bows deeply and goes on alone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_guild_greed",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_relic_owner"
+    ]
+   },
+   "weight": 2,
+   "text": "The merchant guild wants to sell the relic rather than return it.",
+   "choices": [
+    {
+     "text": "Return it to the monk secretly",
+     "effects": {
+      "alignment": 3,
+      "luck": 1,
+      "log": "The guild never knows. The monk blesses you."
+     }
+    },
+    {
+     "text": "Let the guild have it",
+     "effects": {
+      "alignment": -1,
+      "log": "Not your business. It still bothers you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_camel",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_found"
+    ]
+   },
+   "weight": 2,
+   "text": "A lost camel from the caravan follows you everywhere.",
+   "choices": [
+    {
+     "text": "Keep it",
+     "effects": {
+      "luck": 1,
+      "charm": 1,
+      "log": "It spits at everyone but you."
+     }
+    },
+    {
+     "text": "Return it to the guild",
+     "effects": {
+      "taels": 5,
+      "log": "They give you a small reward. (+5 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_desert_storm",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A sandstorm swallows the road.",
+   "choices": [
+    {
+     "text": "Push through",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 1,
+      "log": "You reach the oasis, sand in every crease."
+     },
+     "fail": {
+      "health": -6,
+      "log": "You get lost for a day."
+     }
+    },
+    {
+     "text": "Shelter behind the dunes",
+     "effects": {
+      "health": -1,
+      "log": "You wait it out, eating sand."
+     }
+    }
+   ],
+   "variants": [
+    "A wall of sand rolls over the road and swallows it."
+   ]
+  },
+  {
+   "id": "lv10_kid_caravan",
+   "cat": "childhood",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "A caravan camps outside the village. The camels are the biggest animals you have ever seen.",
+   "choices": [
+    {
+     "text": "Feed a camel",
+     "effects": {
+      "charm": 1,
+      "log": "It eats your sleeve too."
+     }
+    },
+    {
+     "text": "Listen to the drivers' stories",
+     "effects": {
+      "comprehension": 1,
+      "log": "Stories of cities of gold and seas of sand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_western_shrine",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A shrine where caravans leave offerings for safe passage.",
+   "choices": [
+    {
+     "text": "Leave an offering",
+     "effects": {
+      "luck": 2,
+      "log": "May the road be kind."
+     }
+    },
+    {
+     "text": "Read the old caravan names carved there",
+     "effects": {
+      "comprehension": 1,
+      "log": "Hundreds of journeys, some that never ended."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_caravan_reward",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_found"
+    ]
+   },
+   "weight": 2,
+   "text": "The guild pays the searchers. The survivors' families thank you by name.",
+   "choices": [
+    {
+     "text": "Give your share to the drivers' widows",
+     "effects": {
+      "alignment": 3,
+      "log": "They will eat this winter."
+     }
+    },
+    {
+     "text": "Keep your share",
+     "effects": {
+      "taels": 12,
+      "log": "Honest pay for honest work. (+12 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv10_caravan_rumour",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2026-12-07",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv10_caravan_found"
+    ]
+   },
+   "weight": 2,
+   "text": "Teahouses buzz about the lost caravan. Your part in it grows with every telling.",
+   "choices": [
+    {
+     "text": "Tell the true version",
+     "effects": {
+      "alignment": 1,
+      "log": "It is less exciting. People prefer the other one."
+     }
+    },
+    {
+     "text": "Let the story grow",
+     "effects": {
+      "fame": 2,
+      "log": "By spring, you fought a dragon."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

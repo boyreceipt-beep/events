@@ -1,0 +1,441 @@
+{
+ "events": [
+  {
+   "id": "lv31_envoy_arrives",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 2,
+   "text": "An imperial envoy tours the province. Officials tremble; the murim watches.",
+   "choices": [
+    {
+     "text": "Watch the procession",
+     "effects": {
+      "comprehension": 1,
+      "log": "Silk banners, soldiers, and a very bored envoy."
+     }
+    },
+    {
+     "text": "Stay away",
+     "effects": {
+      "luck": 1,
+      "log": "Where officials go, trouble follows."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv31_envoy_assassin",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "Rumours say someone will try to assassinate the envoy.",
+   "choices": [
+    {
+     "text": "Investigate",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "alignment": 2,
+      "log": "You find the assassin's room and alert the guards. The envoy is saved."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "You find nothing. The envoy survives anyway."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "luck": 0,
+      "log": "Imperial politics eat people."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv31_envoy_petition",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "Villagers want to petition the envoy about a corrupt magistrate but are afraid.",
+   "choices": [
+    {
+     "text": "Carry the petition for them",
+     "effects": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "The envoy reads it. The magistrate is investigated."
+     }
+    },
+    {
+     "text": "Help them write it well",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "A clear, strong petition."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_banquet",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ],
+    "notFlags": [
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy holds a banquet and invites famous local fighters to demonstrate.",
+   "choices": [
+    {
+     "text": "Demonstrate your art",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 3,
+      "log": "The envoy applauds. Your name reaches the capital."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "You slip. The envoy laughs kindly."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "fame": 1,
+      "log": "Mystery has its own fame."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_tax",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy announces a new tax on the murim: every martial school and every wandering blade must register.",
+   "choices": [
+    {
+     "text": "Register honestly",
+     "effects": {
+      "alignment": 1,
+      "log": "Paperwork, the true enemy."
+     }
+    },
+    {
+     "text": "Help schools understand the rules",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "Fewer are fined."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv31_envoy_lost",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy's young son wanders off and is lost in the market.",
+   "choices": [
+    {
+     "text": "Find him",
+     "effects": {
+      "fame": 2,
+      "alignment": 1,
+      "log": "He was watching a puppet show. The envoy thanks you personally."
+     }
+    },
+    {
+     "text": "Let the guards find him",
+     "effects": {
+      "luck": 0,
+      "log": "They find him eventually."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_insult",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy's guards push through the crowd, knocking over an old woman.",
+   "choices": [
+    {
+     "text": "Stand up to them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "They apologise. The crowd cheers."
+     },
+     "fail": {
+      "health": -8,
+      "fame": 1,
+      "log": "They beat you. The envoy later apologises."
+     }
+    },
+    {
+     "text": "Help the old woman up",
+     "effects": {
+      "alignment": 2,
+      "log": "She blesses you loudly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_gift",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy hands out gifts to the poor while court painters record his generosity.",
+   "choices": [
+    {
+     "text": "Make sure the poorest get some",
+     "effects": {
+      "alignment": 2,
+      "log": "You push the painters aside."
+     }
+    },
+    {
+     "text": "Laugh at the show",
+     "effects": {
+      "charm": 1,
+      "log": "The court painters paint you laughing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_kid_envoy",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You see the envoy's golden sedan chair pass by.",
+   "choices": [
+    {
+     "text": "Bow like the grown-ups",
+     "effects": {
+      "alignment": 1,
+      "log": "Very proper."
+     }
+    },
+    {
+     "text": "Wave",
+     "effects": {
+      "charm": 1,
+      "fame": 1,
+      "log": "The envoy waves back. You are famous at school."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_road",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 2,
+   "text": "The road the envoy travels, lined with freshly painted fences hiding the poor quarters.",
+   "choices": [
+    {
+     "text": "Look behind the fences",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "The real province. You remember it."
+     }
+    },
+    {
+     "text": "Paint a message on a fence",
+     "effects": {
+      "fame": 1,
+      "log": "The envoy sees it. Maybe."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_leaves",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The envoy leaves. The fences come down. Things return to normal.",
+   "choices": [
+    {
+     "text": "Hope something changed",
+     "effects": {
+      "luck": 1,
+      "log": "A little did."
+     }
+    },
+    {
+     "text": "Keep the petition copy",
+     "effects": {
+      "comprehension": 1,
+      "log": "For next time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv31_envoy_letter",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-03",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv31_envoy_leaves"
+    ]
+   },
+   "weight": 2,
+   "text": "Weeks later, a letter from the capital arrives for you: the envoy remembers your name.",
+   "choices": [
+    {
+     "text": "Frame it",
+     "effects": {
+      "fame": 1,
+      "log": "The village is very impressed."
+     }
+    },
+    {
+     "text": "Keep it hidden",
+     "effects": {
+      "luck": 1,
+      "log": "Imperial attention is not always good."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

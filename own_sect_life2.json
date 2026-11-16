@@ -1,0 +1,361 @@
+{
+ "events": [
+  {
+   "id": "os2_rival_raid",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "Torches on the mountain road at midnight: a rival sect has come to burn your halls and take your manuals.",
+   "choices": [
+    {
+     "text": "Hold the gate yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "atGate": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 25,
+      "taels": 150,
+      "log": "They break on your gate like water on rock. By dawn their leader is begging for his disciples back. (A Great Gate makes this easier.)"
+     },
+     "fail": {
+      "health": -30,
+      "taels": -200,
+      "fame": -10,
+      "deathCause": "a rival sect's raid on your own gate",
+      "log": "They get inside the outer court before you drive them out. Two halls burn. Your disciples will remember this night."
+     },
+     "risky": true
+    },
+    {
+     "text": "Pay them to leave",
+     "effects": {
+      "taels": -300,
+      "fame": -10,
+      "log": "Silver crosses the gate. They leave laughing. Your disciples do not look at you for a week."
+     },
+     "req": {
+      "minTaels": 300
+     }
+    },
+    {
+     "text": "Lead the disciples out and let them have the halls",
+     "effects": {
+      "fame": -15,
+      "log": "You take the disciples out by the back path and watch from the ridge as the torches move through your halls. The raiders carry off the manuals they can and burn the rest. Everyone lives. Nobody is proud."
+     }
+    }
+   ],
+   "cooldown": 12
+  },
+  {
+   "id": "os2_rival_challenge",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "A rival sect sends its best disciple to challenge yours, before witnesses from three provinces.",
+   "choices": [
+    {
+     "text": "Fight on your disciples' behalf",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "atGate": true,
+      "foeMult": 1.3
+     },
+     "ok": {
+      "fame": 15,
+      "log": "You take the challenge yourself, as the head of a sect may. It is over in a breath. The witnesses go home with a story."
+     },
+     "fail": {
+      "fame": -8,
+      "health": -15,
+      "log": "Their champion is better than the rumours. You lose the bout, and your disciples see you bow."
+     }
+    },
+    {
+     "text": "Let your eldest disciple answer",
+     "effects": {
+      "fame": 8,
+      "log": "Your disciple wins narrowly, and walks taller for a year. That is worth more than any bout you could win."
+     }
+    }
+   ],
+   "cooldown": 8
+  },
+  {
+   "id": "os2_alliance_offer",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "faction": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 5,
+   "text": "The Martial Alliance offers your sect a seat at its table, if your disciples will march when the Alliance calls.",
+   "choices": [
+    {
+     "text": "Accept the seat",
+     "effects": {
+      "fame": 20,
+      "rep": {
+       "orthodox": 10
+      },
+      "log": "Your sect's banner hangs in the Alliance hall. Your disciples will be called to every war now."
+     }
+    },
+    {
+     "text": "Stay independent",
+     "effects": {
+      "rep": {
+       "orthodox": -5
+      },
+      "alignment": 2,
+      "log": "The Alliance is offended, politely. Your sect answers to nobody."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "os2_disciple_tournament",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "Your disciples ask for a tournament among themselves, with you as judge.",
+   "choices": [
+    {
+     "text": "Hold it, and judge fairly",
+     "effects": {
+      "fame": 5,
+      "merit": 0,
+      "log": "The youngest wins. Nobody expected it. Every disciple trains twice as hard for a year."
+     }
+    },
+    {
+     "text": "Hold it, and fight the winner yourself",
+     "effects": {
+      "charm": 3,
+      "log": "You fight the winner and lose a single exchange on purpose. They will remember it until they are old."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "mw": true
+  },
+  {
+   "id": "os2_donation",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "A merchant whose caravan your disciples saved offers to fund a new wing for your sect.",
+   "choices": [
+    {
+     "text": "Accept with thanks",
+     "effects": {
+      "taels": 500,
+      "fame": 5,
+      "log": "A new wing, and a merchant who sends rice every winter."
+     }
+    },
+    {
+     "text": "Ask him to fund a village school instead",
+     "effects": {
+      "alignment": 10,
+      "fame": 10,
+      "log": "The school bears your sect's name. The children walk past your gate every morning."
+     }
+    }
+   ],
+   "cooldown": 15
+  },
+  {
+   "id": "os2_spy",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "One of your newest disciples is a spy for a rival sect. Your eldest disciple found the letters.",
+   "choices": [
+    {
+     "text": "Send the spy home with a letter of your own",
+     "effects": {
+      "fame": 5,
+      "log": "Your letter is very polite and very frightening. The rival sect sends no more spies."
+     }
+    },
+    {
+     "text": "Feed the spy false manuals for a year",
+     "effects": {
+      "comprehension": 2,
+      "log": "The rival sect spends a year training forms that do not work. You almost feel sorry for them."
+     }
+    }
+   ],
+   "cooldown": 15
+  },
+  {
+   "id": "os2_old_disciple_returns",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "A disciple who left your sect years ago comes back, older, and asks to be taken in again.",
+   "choices": [
+    {
+     "text": "Take them back",
+     "effects": {
+      "alignment": 6,
+      "log": "They become the gentlest teacher your sect has ever had."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "fame": -3,
+      "log": "They bow and leave. Your other disciples notice how you treat those who leave."
+     }
+    }
+   ],
+   "cooldown": 20
+  },
+  {
+   "id": "os2_famine_sect",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "weight": 5,
+   "text": "The harvest has failed in the valley below your sect, and the farmers are hungry.",
+   "choices": [
+    {
+     "text": "Open the sect's granary",
+     "effects": {
+      "taels": -200,
+      "alignment": 12,
+      "fame": 8,
+      "log": "Your disciples eat plain rice all winter, and the valley never forgets."
+     },
+     "req": {
+      "minTaels": 200
+     }
+    },
+    {
+     "text": "Send disciples to hunt for the valley",
+     "effects": {
+      "alignment": 6,
+      "strength": 1,
+      "log": "A hundred disciples in the mountains all winter. Everyone eats."
+     }
+    }
+   ],
+   "cooldown": 20
+  },
+  {
+   "id": "os2_sect_name_spreads",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "realm": [
+     5,
+     11
+    ]
+   },
+   "weight": 5,
+   "text": "Travellers now say 'a disciple of the {sect}' the way they say 'a disciple of Shaolin'.",
+   "choices": [
+    {
+     "text": "Remind your disciples that names are earned",
+     "effects": {
+      "fame": 10,
+      "log": "They take it to heart. The sect's name grows anyway."
+     }
+    },
+    {
+     "text": "Let them enjoy it",
+     "effects": {
+      "fame": 5,
+      "charm": 2,
+      "log": "A proud sect for a season. Proud sects work hard to stay proud."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "os2_succession_worry",
+   "cat": "sect",
+   "once": false,
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     50,
+     999
+    ]
+   },
+   "weight": 5,
+   "text": "Your eldest disciple quietly asks who will lead the sect when you are gone.",
+   "choices": [
+    {
+     "text": "Promise to name an heir in time",
+     "effects": {
+      "alignment": 2,
+      "log": "They nod. The question will come back, as it should."
+     }
+    },
+    {
+     "text": "Begin teaching them to lead",
+     "effects": {
+      "fame": 5,
+      "log": "They sit in on every decision for a year. The sect will be in good hands."
+     }
+    }
+   ],
+   "cooldown": 20
+  }
+ ],
+ "mwPass": 1
+}

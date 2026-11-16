@@ -1,0 +1,327 @@
+{
+ "events": [
+  {
+   "id": "war_both_ask",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "{war_a} and {war_b} both send envoys to your door. Each wants your sword. Each promises the other side is the wicked one.",
+   "choices": [
+    {
+     "text": "Fight for {war_a}",
+     "effects": {
+      "fame": 10,
+      "rep": {
+       "orthodox": 3
+      },
+      "log": "You join the war. The murim takes note of whose side you chose."
+     }
+    },
+    {
+     "text": "Fight for {war_b}",
+     "effects": {
+      "fame": 10,
+      "rep": {
+       "unorthodox": 3
+      },
+      "log": "You join the war. The murim takes note of whose side you chose."
+     }
+    },
+    {
+     "text": "Refuse them both",
+     "effects": {
+      "alignment": 3,
+      "log": "Both envoys leave insulted. Neutrality has a price, but it is a fair one."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "war_refugees",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "Refugees from the war between {war_a} and {war_b} fill the roads: villagers who had nothing to do with either sect.",
+   "choices": [
+    {
+     "text": "Feed and shelter them",
+     "effects": {
+      "taels": -80,
+      "alignment": 12,
+      "fame": 4,
+      "log": "Your rice store empties. A hundred families eat through the winter."
+     }
+    },
+    {
+     "text": "Escort them to safety",
+     "effects": {
+      "alignment": 8,
+      "health": -5,
+      "fame": 3,
+      "log": "A week on the road, two bandit gangs turned back, and a village of grateful strangers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "war_wounded",
+   "cat": "world",
+   "once": false,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "A wounded disciple of {war_a} collapses at your door, begging you to hide them from {war_b}.",
+   "choices": [
+    {
+     "text": "Hide them",
+     "effects": {
+      "alignment": 8,
+      "rep": {
+       "orthodox": 2
+      },
+      "log": "That night, {war_b} searches the street. They do not search your house. The disciple will never forget it."
+     }
+    },
+    {
+     "text": "Send them away",
+     "effects": {
+      "alignment": -8,
+      "log": "You close the door. You hear the search party find them an hour later."
+     }
+    }
+   ],
+   "cooldown": 12
+  },
+  {
+   "id": "war_mediate",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     25,
+     999
+    ],
+    "minFame": 150
+   },
+   "weight": 4,
+   "text": "Both sides of the war between {war_a} and {war_b} are exhausted. Someone with enough fame could end it.",
+   "choices": [
+    {
+     "text": "Call them to a peace table",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 30,
+      "alignment": 10,
+      "log": "Three days of shouting, one day of silence, and a treaty. The murim calls it your peace."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "The talks collapse on the first day. Both sides blame you a little."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "health": 2,
+      "log": "The war goes on without you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "war_profiteer",
+   "cat": "world",
+   "once": true,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "A merchant offers you a fortune to escort weapons to whichever side of the war pays more.",
+   "choices": [
+    {
+     "text": "Take the job",
+     "effects": {
+      "taels": 300,
+      "alignment": -12,
+      "log": "You grow rich on other people's war. The silver is heavy in more ways than one."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 4,
+      "log": "The merchant finds someone else. At least it was not you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "war_battlefield",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "flags": [
+     "world_war"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "You cross a battlefield of the war between {war_a} and {war_b}. Broken swords, abandoned banners, and silence.",
+   "choices": [
+    {
+     "text": "Bury the dead of both sides",
+     "effects": {
+      "alignment": 10,
+      "health": -5,
+      "log": "It takes three days. Nobody thanks you, and that is fine."
+     }
+    },
+    {
+     "text": "Search for anything useful",
+     "effects": {
+      "taels": 60,
+      "alignment": -5,
+      "log": "A good sword, a pouch of silver, and a bad feeling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "war_my_sect_call",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "flags": [
+     "my_sect_at_war"
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "Your sect is at war. The elders call every disciple to the front.",
+   "choices": [
+    {
+     "text": "Go to the front",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 20,
+      "merit": 60,
+      "log": "You hold a mountain pass for a week. The sect will tell that story for a generation."
+     },
+     "fail": {
+      "health": -30,
+      "merit": 20,
+      "deathCause": "the war between two sects, at the front",
+      "log": "You hold, and pay for it in blood. The sect remembers you stood."
+     },
+     "risky": true
+    },
+    {
+     "text": "Guard the home halls instead",
+     "effects": {
+      "merit": 20,
+      "log": "Someone must protect the young disciples. It is not glorious, but it is not nothing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "war_my_sect_spy",
+   "cat": "sect",
+   "once": true,
+   "when": {
+    "flags": [
+     "my_sect_at_war"
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "In the middle of the war, you discover an elder of your own sect selling plans to the enemy.",
+   "choices": [
+    {
+     "text": "Expose them before the sect",
+     "effects": {
+      "merit": 40,
+      "fame": 10,
+      "log": "The elder is expelled. The war turns, a little, in your sect's favour."
+     }
+    },
+    {
+     "text": "Confront them privately",
+     "effects": {
+      "alignment": 5,
+      "merit": 20,
+      "log": "The elder begs, and confesses everything. You let them leave quietly, with nothing."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

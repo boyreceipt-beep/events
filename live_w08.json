@@ -1,0 +1,426 @@
+{
+ "events": [
+  {
+   "id": "lv08_black_sails",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Black-sailed boats raid the river trade. Merchants will pay well for guards.",
+   "choices": [
+    {
+     "text": "Hire on as a guard",
+     "effects": {
+      "taels": 15,
+      "strength": 1,
+      "log": "Two quiet weeks and one very loud night. (+15 taels)"
+     }
+    },
+    {
+     "text": "Stay ashore",
+     "effects": {
+      "luck": 0,
+      "log": "You hear of the raids at the teahouse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_pirate_boarding",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Pirates board the ferry you are on.",
+   "choices": [
+    {
+     "text": "Fight them off",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 3,
+      "log": "Three pirates go into the river. The rest flee."
+     },
+     "fail": {
+      "health": -14,
+      "fame": 2,
+      "log": "You save the passengers, bleeding."
+     }
+    },
+    {
+     "text": "Hide the children below deck",
+     "effects": {
+      "alignment": 2,
+      "log": "The pirates take silver and leave. Nobody is hurt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_pirate_captain",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_black_sails"
+    ]
+   },
+   "weight": 2,
+   "text": "The pirate captain is rumoured to be a former sect disciple, cast out for a crime he did not commit.",
+   "choices": [
+    {
+     "text": "Seek the truth",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "You find the old records. Perhaps someone will listen."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "luck": 0,
+      "log": "Pirates are pirates."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_river_village",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_black_sails"
+    ]
+   },
+   "weight": 2,
+   "text": "A river village begs for help: the pirates take their fish every week.",
+   "choices": [
+    {
+     "text": "Teach them to defend themselves",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "The next raid meets thirty angry fishermen."
+     }
+    },
+    {
+     "text": "Wait for the raid and fight",
+     "effects": {
+      "fame": 2,
+      "health": -5,
+      "log": "The pirates learn to avoid this village."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_water_fight",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A fight on a rocking deck: every step could send you into the river.",
+   "choices": [
+    {
+     "text": "Fight on the deck",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "log": "You dance across the deck like a heron."
+     },
+     "fail": {
+      "health": -3,
+      "log": "You end up in the river. You swim back, soaked and furious."
+     }
+    },
+    {
+     "text": "Fight from the pier",
+     "effects": {
+      "comprehension": 1,
+      "log": "Solid ground, smart choice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_captive",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_black_sails"
+    ]
+   },
+   "weight": 2,
+   "text": "The pirates have taken a merchant's son for ransom.",
+   "choices": [
+    {
+     "text": "Rescue him by night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "taels": 20,
+      "log": "In and out without a sound. The merchant weeps."
+     },
+     "fail": {
+      "health": -12,
+      "taels": 20,
+      "log": "You are spotted and fight your way out, with the boy."
+     }
+    },
+    {
+     "text": "Carry the ransom",
+     "effects": {
+      "alignment": 1,
+      "log": "The boy comes home. The pirates grow bolder."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_navy_arrives",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_black_sails"
+    ]
+   },
+   "weight": 2,
+   "text": "The river navy finally arrives. The admiral wants local fighters.",
+   "choices": [
+    {
+     "text": "Join the sweep",
+     "effects": {
+      "fame": 2,
+      "strength": 1,
+      "log": "A week on the river. The pirates are broken."
+     }
+    },
+    {
+     "text": "Guide them with local knowledge",
+     "effects": {
+      "comprehension": 1,
+      "fame": 1,
+      "log": "You know every inlet. They are impressed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_pirate_treasure",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_navy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "A captured pirate offers to tell where the loot is buried in exchange for his freedom.",
+   "choices": [
+    {
+     "text": "Hand him to the navy",
+     "effects": {
+      "alignment": 1,
+      "log": "The law is the law."
+     }
+    },
+    {
+     "text": "Take the deal",
+     "effects": {
+      "taels": 20,
+      "alignment": -2,
+      "log": "The loot is real. So is your guilt. (+20 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_kid_pirates",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You and your friends play pirates on a raft in the pond.",
+   "choices": [
+    {
+     "text": "Be the captain",
+     "effects": {
+      "charm": 1,
+      "log": "You sink. Captains go down with the ship."
+     }
+    },
+    {
+     "text": "Be the navy",
+     "effects": {
+      "strength": 1,
+      "log": "You capture everyone. Justice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_pirate_cove",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A hidden cove with the charred wreck of a pirate boat.",
+   "choices": [
+    {
+     "text": "Search the wreck",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 18,
+      "log": "A strongbox under the hull. (+18 taels)"
+     },
+     "fail": {
+      "health": -2,
+      "log": "Rotten wood and eels."
+     }
+    },
+    {
+     "text": "Leave a warning mark for other boats",
+     "effects": {
+      "alignment": 1,
+      "log": "Travellers will know to beware."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_river_song",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The boatmen sing a song about a hero who beat the river pirates. The hero sounds like you.",
+   "choices": [
+    {
+     "text": "Join in",
+     "effects": {
+      "fame": 1,
+      "charm": 1,
+      "log": "The song gets a new verse."
+     }
+    },
+    {
+     "text": "Correct the details",
+     "effects": {
+      "charm": 0,
+      "log": "The boatmen boo. Songs are not for facts."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv08_safe_river",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv08_navy_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "With the pirates gone, the river is busy again. Merchants thank those who helped.",
+   "choices": [
+    {
+     "text": "Accept a gift",
+     "effects": {
+      "taels": 8,
+      "log": "A bolt of silk and warm thanks. (+8 taels)"
+     }
+    },
+    {
+     "text": "Ask them to lower prices for the poor",
+     "effects": {
+      "alignment": 2,
+      "log": "Some do."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

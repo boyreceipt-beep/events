@@ -1,0 +1,412 @@
+{
+ "events": [
+  {
+   "id": "lv40_dying_master",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     60
+    ]
+   },
+   "weight": 2,
+   "text": "A dying master announces he will take one last student before he goes.",
+   "choices": [
+    {
+     "text": "Apply",
+     "effects": {
+      "luck": 1,
+      "log": "Hundreds apply. The tests begin."
+     }
+    },
+    {
+     "text": "Watch the tests",
+     "effects": {
+      "comprehension": 1,
+      "log": "You learn by watching."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_first_test",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     60
+    ],
+    "after": [
+     "lv40_dying_master"
+    ]
+   },
+   "weight": 2,
+   "text": "The first test: sit before his door for three days without food.",
+   "choices": [
+    {
+     "text": "Endure",
+     "roll": {
+      "stat": "health",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 1,
+      "qi": 2,
+      "log": "On the third day, the door opens."
+     },
+     "fail": {
+      "health": -4,
+      "log": "You faint on the second day. He sends you soup."
+     }
+    },
+    {
+     "text": "Bring food to the others waiting",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "He sees. That was the real test."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_second_test",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     60
+    ],
+    "after": [
+     "lv40_first_test"
+    ]
+   },
+   "weight": 2,
+   "text": "The second test: he asks each applicant a single question: 'Why do you fight?'",
+   "choices": [
+    {
+     "text": "To protect",
+     "effects": {
+      "alignment": 2,
+      "log": "He nods slowly."
+     }
+    },
+    {
+     "text": "To grow",
+     "effects": {
+      "comprehension": 2,
+      "log": "He smiles."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_rival_applicant",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     60
+    ],
+    "after": [
+     "lv40_dying_master"
+    ]
+   },
+   "weight": 2,
+   "text": "A rival applicant sabotages others to win.",
+   "choices": [
+    {
+     "text": "Expose them",
+     "effects": {
+      "alignment": 1,
+      "fame": 1,
+      "log": "The master sends them away."
+     }
+    },
+    {
+     "text": "Ignore it",
+     "effects": {
+      "luck": 1,
+      "log": "The master already knows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_chosen",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     60
+    ],
+    "after": [
+     "lv40_second_test"
+    ]
+   },
+   "weight": 2,
+   "text": "The master chooses his last student. It is a quiet farm girl.",
+   "choices": [
+    {
+     "text": "Congratulate her",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 2,
+      "log": "She thanks you, and later shares what she learns."
+     }
+    },
+    {
+     "text": "Ask the master why",
+     "effects": {
+      "comprehension": 1,
+      "log": "'She did not want it for herself.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_master_gift",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_dying_master"
+    ]
+   },
+   "weight": 2,
+   "text": "Before he dies, the master gives every applicant one piece of advice.",
+   "choices": [
+    {
+     "text": "Listen carefully",
+     "effects": {
+      "comprehension": 2,
+      "log": "'Your left foot is always late.' He is right."
+     }
+    },
+    {
+     "text": "Write it down",
+     "effects": {
+      "luck": 1,
+      "log": "You read it for the rest of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_master_funeral",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_chosen"
+    ]
+   },
+   "weight": 2,
+   "text": "The old master dies. Hundreds come to his funeral.",
+   "choices": [
+    {
+     "text": "Carry his coffin",
+     "effects": {
+      "fame": 1,
+      "alignment": 1,
+      "log": "An honour you did not expect."
+     }
+    },
+    {
+     "text": "Practise his form at the grave",
+     "effects": {
+      "comprehension": 1,
+      "log": "The form, still alive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_student_struggles",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_master_funeral"
+    ]
+   },
+   "weight": 2,
+   "text": "The master's last student struggles alone without him.",
+   "choices": [
+    {
+     "text": "Train with her",
+     "effects": {
+      "strength": 1,
+      "comprehension": 1,
+      "log": "Two students of the same dead master."
+     }
+    },
+    {
+     "text": "Encourage her",
+     "effects": {
+      "alignment": 1,
+      "log": "She keeps going."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_kid_last_student",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     5,
+     12
+    ],
+    "hasMaster": false
+   },
+   "weight": 2,
+   "text": "You hear about the old master and tell everyone you will be his student.",
+   "choices": [
+    {
+     "text": "Practise every day",
+     "effects": {
+      "strength": 1,
+      "log": "You get better. He never hears of you. You keep going anyway."
+     }
+    },
+    {
+     "text": "Pretend to be the master",
+     "effects": {
+      "charm": 1,
+      "log": "You teach your friends terrible kung fu."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_master_hut",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_master_funeral"
+    ]
+   },
+   "weight": 2,
+   "text": "The old master's hut, empty now, with his teacup still on the table.",
+   "choices": [
+    {
+     "text": "Sit a while",
+     "effects": {
+      "qi": 3,
+      "log": "A calm that feels like a lesson."
+     }
+    },
+    {
+     "text": "Read his notes",
+     "effects": {
+      "comprehension": 2,
+      "log": "A lifetime of practice in a few pages."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv40_master_legacy",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_master_funeral"
+    ]
+   },
+   "weight": 2,
+   "text": "The master's techniques are copied and spread across the jianghu.",
+   "choices": [
+    {
+     "text": "Learn the true version",
+     "effects": {
+      "comprehension": 2,
+      "log": "From his student, not the copies."
+     }
+    },
+    {
+     "text": "Teach it to the young",
+     "effects": {
+      "alignment": 2,
+      "log": "His art lives on."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv40_last_lesson",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-07-05",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv40_master_funeral"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 2,
+   "text": "Years later, you realise the master's real lesson.",
+   "choices": [
+    {
+     "text": "It was about humility",
+     "effects": {
+      "alignment": 2,
+      "log": "You carry it all your life."
+     }
+    },
+    {
+     "text": "It was about patience",
+     "effects": {
+      "qi": 2,
+      "log": "You are better for it."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

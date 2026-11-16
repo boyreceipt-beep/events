@@ -1,0 +1,180 @@
+{
+ "events": [
+  {
+   "id": "dc_oa_enlight_waterfall",
+   "cat": "insight",
+   "trigger": "oa_enlight_3",
+   "once": false,
+   "maxPerLife": 6,
+   "cooldown": 1,
+   "when": {
+    "flags": [
+     "oa_gate_3"
+    ],
+    "notFlags": [
+     "oa_pass_3"
+    ]
+   },
+   "weight": 5,
+   "text": "Your own art has stopped at its Second Form, and no amount of practice moves it. You climb to a waterfall nobody visits and stand under it until the cold stops mattering. The water falls the same way ten thousand times, and never the same water twice.",
+   "choices": [
+    {
+     "text": "Move with the water, not against it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 2,
+      "flag": "oa_pass_3",
+      "log": "Somewhere in the noise you hear the Third Form. It was in the falling all along. Your art moves again."
+     },
+     "fail": {
+      "health": -5,
+      "log": "The cold wins today. You climb down shivering, the Third Form still behind the water. Another day."
+     }
+    },
+    {
+     "text": "Stand until the water gives up first",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 2,
+      "flag": "oa_pass_3",
+      "log": "At dawn the water is still falling and you are still standing. That is the Third Form: what does not move. Your art moves again."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The water does not give up. Neither, quite, do you, but your knees do. Another day."
+     }
+    },
+    {
+     "text": "Not yet. Walk away and come back",
+     "effects": {
+      "log": "You leave the waterfall to itself. It will still be falling when you are ready."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_oa_enlight_duel",
+   "cat": "insight",
+   "trigger": "oa_enlight_6",
+   "once": false,
+   "maxPerLife": 6,
+   "cooldown": 1,
+   "when": {
+    "flags": [
+     "oa_gate_6"
+    ],
+    "notFlags": [
+     "oa_pass_6"
+    ]
+   },
+   "weight": 5,
+   "text": "A wandering master hears of the art you made and walks three provinces to see it. At dawn, on an empty threshing floor, the stranger bows and says only: \"Show me the Sixth Form.\" You do not have a Sixth Form yet. Perhaps that is the point.",
+   "choices": [
+    {
+     "text": "Fight, and find the form in the fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "the wandering master"
+     },
+     "ok": {
+      "fame": 6,
+      "flag": "oa_pass_6",
+      "log": "Somewhere in the hundredth exchange your hands do something you never taught them. The stranger lowers the blade, smiles, and says, \"That one.\" The Sixth Form is yours."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The stranger is better, and kind about it. \"Not yet,\" they say, and leave you the dawn to think in."
+     }
+    },
+    {
+     "text": "Watch the stranger's art instead",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "oa_pass_6",
+      "log": "You watch a whole morning of someone else's forms, and see at last what your own is missing. The Sixth Form is yours."
+     },
+     "fail": {
+      "log": "Beautiful forms, and none of them yours. The stranger walks on. You will have to find it another way."
+     }
+    },
+    {
+     "text": "Bow back, and decline",
+     "effects": {
+      "log": "\"Another year, then,\" says the stranger, and goes. Some doors open better later."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_oa_enlight_deathbed",
+   "cat": "insight",
+   "trigger": "oa_enlight_9",
+   "once": false,
+   "maxPerLife": 6,
+   "cooldown": 1,
+   "when": {
+    "flags": [
+     "oa_gate_9"
+    ],
+    "notFlags": [
+     "oa_pass_9"
+    ]
+   },
+   "weight": 5,
+   "text": "An old master who once fought you, long ago, is dying in a mountain hermitage and has asked for you by name. The room smells of medicine and pine smoke. \"Your art,\" the old voice says. \"I want to see how it ends before I do.\" It has no ending yet. It has eight Forms and a silence.",
+   "choices": [
+    {
+     "text": "Perform all eight Forms, slowly, and listen to the silence after",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 75
+     },
+     "ok": {
+      "comprehension": 4,
+      "alignment": 3,
+      "flag": "oa_pass_9",
+      "log": "After the Eighth Form you stand still, and the old master nods, and breathes out for the last time. The stillness is the Ninth Form. You understand it as the lamp goes out."
+     },
+     "fail": {
+      "log": "The old master is asleep before you finish. In the morning the hermitage is quiet, and the Ninth Form is still a silence. You burn incense and go home."
+     }
+    },
+    {
+     "text": "Put the art away and simply sit with them",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "charm": 3,
+      "alignment": 5,
+      "flag": "oa_pass_9",
+      "log": "You talk all night about old fights and older friends. At dawn the master is gone, peacefully, and you find the Ninth Form waiting where the art was never meant to go: in letting it rest."
+     },
+     "fail": {
+      "log": "You sit through the night with little to say. The master passes before dawn, and the Ninth Form does not come. Some lessons need more years."
+     }
+    },
+    {
+     "text": "You are not ready to finish it",
+     "effects": {
+      "log": "You bow at the door and leave the old master to the pines. The Ninth Form can wait. Perhaps it should."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

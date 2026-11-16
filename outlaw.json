@@ -1,0 +1,1241 @@
+{
+ "events": [
+  {
+   "id": "dc_olw_arrest_1",
+   "cat": "danger",
+   "trigger": "olw_arrest",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     4
+    ]
+   },
+   "text": "They come at the hour of the rat: not the county constables but eight martial officers of the prefecture, with chains of black iron that no ordinary man could lift. Their captain reads the warrant aloud and keeps one hand on his sabre the whole time.",
+   "choices": [
+    {
+     "text": "Hold out your wrists and go quietly",
+     "effects": {
+      "flag": "olx_quiet",
+      "log": "You let them lock the black iron on. The officers breathe out for the first time since they came in."
+     }
+    },
+    {
+     "text": "Fight your way out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.95,
+      "foeName": "the martial officers"
+     },
+     "ok": {
+      "flag": "olx_won",
+      "log": "The chains go through the wall, the captain goes through the window, and you go over the roof. Behind you the whistles blow for a long time."
+     },
+     "fail": {
+      "flag": "olx_lost",
+      "health": -20,
+      "log": "Eight of them, and they have trained for exactly this. The black iron closes on your wrists while you are still on your feet."
+     }
+    },
+    {
+     "text": "Go over the rooftops before they close in",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "olx_won",
+      "log": "You are three roofs away before the captain finishes the warrant."
+     },
+     "fail": {
+      "flag": "olx_lost",
+      "health": -20,
+      "log": "A net comes down over the eaves. They were waiting on the roofs too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_depot_1",
+   "cat": "danger",
+   "trigger": "olw_arrest",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     4
+    ],
+    "flags": [
+     "infamy_1"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "text": "The Eastern Depot comes for you itself: grey-robed agents of the throne's own secret office, who answer to no magistrate and are said never to have lost a prisoner. Their commander smiles very politely. \"We have a cell ready for you. We would rather you walked to it.\"",
+   "choices": [
+    {
+     "text": "Hold out your wrists and go quietly",
+     "effects": {
+      "flag": "olx_quiet",
+      "log": "You let them lock the black iron on. The officers breathe out for the first time since they came in."
+     }
+    },
+    {
+     "text": "Fight the Depot",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1,
+      "foeName": "the agents of the Eastern Depot"
+     },
+     "ok": {
+      "flag": "olx_won",
+      "log": "The Depot has lost a prisoner. Its commander will be explaining that in the capital for a long time."
+     },
+     "fail": {
+      "flag": "olx_lost",
+      "health": -20,
+      "log": "They fight like one body with twelve arms. When it is over, you are carried, not walked."
+     }
+    },
+    {
+     "text": "Offer the commander a bargain",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "olx_won",
+      "taels": -100,
+      "log": "A purse, a name the Depot wants more than yours, and a door left open. You are wanted all the same."
+     },
+     "fail": {
+      "flag": "olx_lost",
+      "health": -20,
+      "log": "The commander takes the purse, and then he takes you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_depot_2",
+   "cat": "danger",
+   "trigger": "olw_arrest",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     4
+    ],
+    "flags": [
+     "crime_rank_3"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "text": "The Phantom Thief, the warrant calls you, and the Eastern Depot has sent its net-throwers for you specially: twelve of them on the roofs, twelve in the street, and lanterns on poles so that no shadow is left to go into.",
+   "choices": [
+    {
+     "text": "Hold out your wrists and go quietly",
+     "effects": {
+      "flag": "olx_quiet",
+      "log": "You let them lock the black iron on. The officers breathe out for the first time since they came in."
+     }
+    },
+    {
+     "text": "Cut through the nets",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05,
+      "foeName": "the net-throwers of the Eastern Depot"
+     },
+     "ok": {
+      "flag": "olx_won",
+      "log": "The nets were made for a thief. They were not made for a master. The lanterns go out one by one."
+     },
+     "fail": {
+      "flag": "olx_lost",
+      "health": -20,
+      "log": "Silk and steel wire, layer on layer. They roll you up like a carpet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_hunter_1",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 2,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "olw_hunter",
+     "realm": 0,
+     "name": "Ban Cheol-u",
+     "male": true
+    }
+   },
+   "text": "A big man in a fisherman's coat sits down across from you and lays a rolled poster on the table, and on top of it a net of black wire. \"{npc},\" {he} says. \"Iron Net, they call me. Thirty-one masters, and none of them died. I would like you to be thirty-two.\"",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "power",
+      "duel": true
+     },
+     "ok": {
+      "flag": "olx_hunter_won",
+      "fame": 6,
+      "tally": {
+       "infamy": 2
+      },
+      "log": "The net is a fine net. It is also in pieces on the floor, and {npc} is under the table, laughing through a split lip. \"Thirty-one,\" {he} says. \"I will be back.\""
+     },
+     "fail": {
+      "health": -25,
+      "taels": -100,
+      "log": "{npc} rolls you up in black wire and takes your purse to pay for the inn. You cut your way out at dawn, sore and poorer."
+     }
+    },
+    {
+     "text": "Leave before {he} finds the door",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You leave {npc} the bill and a cold cup."
+     },
+     "fail": {
+      "health": -15,
+      "log": "{npc} was watching the door all along. You get out, bleeding."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_hunter_2",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 2,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "olw_hunter",
+     "realm": 0,
+     "name": "Seo Ha-ryeong",
+     "male": false
+    }
+   },
+   "text": "The arrow takes your hat off at two hundred paces. The second one is a letter, tied to the shaft: \"{npc}, of the Black List. The Alliance pays for you alive. I am told alive means breathing.\"",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "power",
+      "duel": true,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "flag": "olx_hunter_won",
+      "fame": 6,
+      "tally": {
+       "infamy": 2
+      },
+      "log": "You close the two hundred paces in a breath. {npc} lowers {his} bow and looks at you for a long moment. \"Next season,\" {he} says. \"Better arrows.\""
+     },
+     "fail": {
+      "health": -25,
+      "taels": -100,
+      "log": "Three arrows, three wounds, and a hunter who never once comes into reach. You get away through the reeds."
+     }
+    },
+    {
+     "text": "Get out of bowshot",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You keep low and put a hill between you and the ridge. No third arrow comes."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The next arrow finds you before the hill does. You get away, bleeding."
+     }
+    },
+    {
+     "text": "Send back a letter of your own on {his} arrow",
+     "effects": {
+      "charm": 1,
+      "log": "\"Not this year,\" you write, and shoot it into the post by {his} feet. Somewhere on the ridge, someone laughs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_hunter_3",
+   "cat": "danger",
+   "trigger": "vl_bounty",
+   "once": false,
+   "cooldown": 2,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "tag": "olw_hunter",
+     "realm": 0,
+     "name": "Gil Mu-hyeon",
+     "male": true
+    }
+   },
+   "text": "The old hunter is waiting on the bridge, alone, with {his} sword across {his} knees and a pot of tea beside {him}. \"{npc},\" {he} says. \"I hunted the last master who had a price like yours. I was young. Sit, drink, and then we will see.\"",
+   "choices": [
+    {
+     "text": "Fight {him}",
+     "roll": {
+      "stat": "power",
+      "duel": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "flag": "olx_hunter_won",
+      "fame": 6,
+      "tally": {
+       "infamy": 2
+      },
+      "log": "The old man yields on the bridge with {his} sword in the river and {his} tea still warm. \"I am too old for this,\" {npc} says, without bitterness. \"But you will meet my students.\""
+     },
+     "fail": {
+      "health": -25,
+      "taels": -100,
+      "log": "The old man moves less than you and hits more. You go over the side of the bridge and come up a long way downstream."
+     }
+    },
+    {
+     "text": "Leave before {he} finds the door",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "You leave {npc} the bill and a cold cup."
+     },
+     "fail": {
+      "health": -15,
+      "log": "{npc} was watching the door all along. You get out, bleeding."
+     }
+    },
+    {
+     "text": "Drink the tea and ask about the last one",
+     "effects": {
+      "comprehension": 2,
+      "log": "{He} talks until the tea is cold: about a master who could not be caught and was, in the end, by a child with a letter. You leave wiser, and {he} lets you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_back_1",
+   "cat": "danger",
+   "trigger": "olw_hunter_back",
+   "once": false,
+   "cooldown": 2,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "{npc} again: the hunter you beat, with a new scar and better gear, standing in the road with the same poster in one hand. The price on it has gone up since last time. So, it seems, has {npc}.",
+   "choices": [
+    {
+     "text": "Fight {him} again",
+     "roll": {
+      "stat": "power",
+      "duel": true
+     },
+     "ok": {
+      "flag": "olx_hunter_won",
+      "fame": 8,
+      "log": "Twice now. {npc} sits down in the dust and laughs until {he} coughs. \"Next time,\" {he} says, and you begin to believe it."
+     },
+     "fail": {
+      "health": -25,
+      "taels": -150,
+      "log": "{npc} has learned you. Every move you make, {he} was waiting for. You buy your way out of the road with your purse."
+     }
+    },
+    {
+     "text": "Pay {him} to retire",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "flag": "olx_hunter_gone",
+      "log": "{npc} counts it twice. \"A farm,\" {he} says. \"With ducks.\" You never see {him} on the road again. (-300 taels)"
+     }
+    },
+    {
+     "text": "Offer {him} a drink: no contract is worth this",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "olx_hunter_gone",
+      "role": "friend",
+      "mem": {
+       "deed": "respected",
+       "w": 15,
+       "note": "stopped hunting me over a drink"
+      },
+      "log": "A long night in a roadside inn. By morning {npc} has torn the poster up and is telling you which of the other hunters to avoid."
+     },
+     "fail": {
+      "health": -15,
+      "log": "{npc} throws the drink in your face and the cup after it. You leave by the window."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_back_2",
+   "cat": "danger",
+   "trigger": "olw_hunter_back",
+   "once": false,
+   "cooldown": 2,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "You know the voice before you see the face. {npc} has brought friends this time, four of them, and a cart with a cage on it, and {he} is not smiling. \"No more inns,\" {he} says. \"No more tea.\"",
+   "choices": [
+    {
+     "text": "Break the five of them",
+     "roll": {
+      "stat": "power",
+      "foeMult": 1.25,
+      "foeRel": 0,
+      "foeName": "{npc} and four hunters"
+     },
+     "risky": true,
+     "ok": {
+      "flag": "olx_hunter_won",
+      "fame": 10,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "The cage goes into the ditch with three of them inside it. {npc} limps away, swearing it is the last time."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "{npc} and the hunters with the cage",
+      "log": "The cage door slams, and it takes you a whole night to tear the bars apart."
+     }
+    },
+    {
+     "text": "Run, and let {him} chase you for a season",
+     "roll": {
+      "stat": "lightness",
+      "dc": 58
+     },
+     "ok": {
+      "flag": "vlx_flee",
+      "log": "Four provinces, three rivers and a mountain. When you finally stop, the road behind you is empty."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "vlx_flee",
+      "log": "They nearly have you at the ford. You leave a sleeve and some blood on the far bank."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_magistrate_1",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 6,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     5,
+     11
+    ],
+    "flags": [
+     "villain"
+    ],
+    "notFlags": [
+     "in_prison",
+     "imp_emperor",
+     "imp_regent"
+    ],
+    "chance": 0.4
+   },
+   "text": "A county magistrate comes to your door in person, alone, in his best robe, with his hat in his hands. No constable of his can arrest you, he says, and he knows it. He asks you, very humbly, to do your business in some other county.",
+   "choices": [
+    {
+     "text": "Grant it, and leave the county",
+     "effects": {
+      "flag": "vlx_flee",
+      "alignment": 2,
+      "log": "You leave before the week is out. In that county they tell the story of the brave magistrate for years."
+     }
+    },
+    {
+     "text": "Pay for the damage you have done here",
+     "req": {
+      "minTaels": 200
+     },
+     "effects": {
+      "taels": -200,
+      "rep": {
+       "orthodox": 3
+      },
+      "tally": {
+       "infamy": -3
+      },
+      "log": "Silver for the burned granary and the broken bridge. The orthodox sects hear of it, and do not know what to make of you. (-200 taels)"
+     }
+    },
+    {
+     "text": "Let him feel your qi, and say nothing",
+     "effects": {
+      "tally": {
+       "infamy": 2
+      },
+      "fame": 3,
+      "log": "He goes white and leaves without his hat. You keep the hat."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_poster_1",
+   "cat": "danger",
+   "weight": 3,
+   "once": true,
+   "arc": "The Price on Your Head",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "olw_none_dare"
+    ],
+    "notFlags": [
+     "in_prison"
+    ]
+   },
+   "text": "The poster at the crossroads is yellow now, and the price on it has been painted over three times, each time bigger. A child stands in front of it reading the number aloud, very slowly, and then reads your realm underneath, and stops. Nobody has taken it down. Nobody has taken it, either.",
+   "choices": [
+    {
+     "text": "Tell the child the true story",
+     "effects": {
+      "charm": 1,
+      "log": "The child listens with both hands over its mouth, and runs off to tell the whole village it met a legend."
+     }
+    },
+    {
+     "text": "Tear the poster down yourself",
+     "effects": {
+      "fame": 5,
+      "tally": {
+       "infamy": 2
+      },
+      "log": "You fold it into your sleeve. By the next market day there is a new one, with a bigger number."
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "log": "The price hangs behind you in the wind. It has been a long time since anyone tried."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_cold_1",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 8,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "infamy_1"
+    ],
+    "notFactions": [
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "in_prison",
+     "pw_life"
+    ]
+   },
+   "text": "An orthodox elder you once shared tea with at a tournament sees you in the market, and crosses the street rather than bow. His disciples look at the ground. Your name has reached the righteous halls.",
+   "choices": [
+    {
+     "text": "Call after him",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "rep": {
+       "orthodox": 4
+      },
+      "log": "He stops. He does not bow, but he listens, and that is more than the others give you."
+     },
+     "fail": {
+      "rep": {
+       "orthodox": -3
+      },
+      "log": "He walks faster. One of his disciples spits on the stones as he passes."
+     }
+    },
+    {
+     "text": "Let him go",
+     "effects": {
+      "log": "You watch his back until the crowd closes over it. The righteous have long memories."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_cold_2",
+   "cat": "danger",
+   "weight": 2,
+   "once": false,
+   "cooldown": 10,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "infamy_2"
+    ],
+    "notFlags": [
+     "in_prison",
+     "pw_life"
+    ]
+   },
+   "text": "At the gate of a righteous sect's spring festival the gatekeeper finds your name on a list, and closes the gate in your face. Through the bars you can see the lanterns, the banners, and a few faces you used to know looking away.",
+   "choices": [
+    {
+     "text": "Go over the wall anyway",
+     "effects": {
+      "tally": {
+       "infamy": 2
+      },
+      "fame": 2,
+      "rep": {
+       "orthodox": -4
+      },
+      "log": "You eat their festival dumplings on their roof, in full view, and leave before the elders reach the ladder."
+     }
+    },
+    {
+     "text": "Leave a gift at the gate and go",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "rep": {
+       "orthodox": 2
+      },
+      "log": "A jar of good wine, with no name on it. In the morning the gatekeeper is drinking it. (-50 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_recruit_1",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 8,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "infamy_1"
+    ],
+    "notFactions": [
+     "unorthodox"
+    ],
+    "notFlags": [
+     "in_prison",
+     "pw_life",
+     "imp_emperor",
+     "imp_regent"
+    ]
+   },
+   "text": "A woman in a black lacquer hat finds you at a gambling house and pays for your table. She is from the unorthodox side, she says, and her people have read your poster with great interest. \"The orthodox spit at your name. We would rather drink with it.\"",
+   "choices": [
+    {
+     "text": "Take their silver for one job",
+     "effects": {
+      "taels": 150,
+      "alignment": -4,
+      "rep": {
+       "unorthodox": 6
+      },
+      "tally": {
+       "infamy": 2
+      },
+      "log": "One job, one night, no questions. The silver is very good. (150 taels)"
+     }
+    },
+    {
+     "text": "Drink with her and promise nothing",
+     "effects": {
+      "rep": {
+       "unorthodox": 4
+      },
+      "log": "A long evening of stories. She leaves a black lacquer token on the table: \"For when you change your mind.\""
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 2,
+      "log": "She shrugs, pays for the table anyway, and is gone before you look up."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_recruit_2",
+   "cat": "danger",
+   "weight": 2,
+   "once": false,
+   "cooldown": 10,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "realm": [
+     4,
+     11
+    ],
+    "flags": [
+     "infamy_2"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "in_prison",
+     "pw_life",
+     "imp_emperor",
+     "imp_regent"
+    ]
+   },
+   "text": "An envoy of the Demonic Cult bows to you on a mountain road, very low, and offers a red envelope with both hands. \"The Cult admires a name the orthodox cannot hold,\" he says. \"There is always a seat by our fire.\"",
+   "choices": [
+    {
+     "text": "Accept the envelope",
+     "effects": {
+      "taels": 100,
+      "rep": {
+       "demonic": 6
+      },
+      "log": "Silver and a red token with a demon's face on it. You put the token away somewhere you will not look at it often. (100 taels)"
+     }
+    },
+    {
+     "text": "Send him back with your thanks",
+     "effects": {
+      "rep": {
+       "demonic": 2
+      },
+      "log": "He bows lower, as if you had said yes."
+     }
+    },
+    {
+     "text": "Burn the envelope in front of him",
+     "effects": {
+      "rep": {
+       "demonic": -5,
+       "orthodox": 3
+      },
+      "alignment": 3,
+      "log": "He watches it burn without a word, bows, and walks back into the mountains."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_summons_1",
+   "cat": "danger",
+   "trigger": "olw_summons",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "hasSect": true
+   },
+   "text": "The elders call you into the hall with the doors shut. On the table in front of them lies your own wanted poster. \"The Alliance asks us what kind of house we keep,\" the eldest says. \"Tell us what to answer.\"",
+   "choices": [
+    {
+     "text": "Swear to end it",
+     "effects": {
+      "flag": "olx_mend",
+      "alignment": 3,
+      "log": "You swear before the ancestors' tablets. The elders take your word, and a heavy penance with it. (Infamy -10, merit -30)"
+     }
+    },
+    {
+     "text": "Lay down your rank and leave",
+     "effects": {
+      "flag": "olx_leave",
+      "log": "You set your token on the table and walk out through the shut doors. Nobody stops you."
+     }
+    },
+    {
+     "text": "Say nothing, and wait for them to blink",
+     "effects": {
+      "rep": {
+       "orthodox": -5
+      },
+      "fame": 2,
+      "log": "The silence goes on for a long time. In the end the elders dismiss you without a word. It will not be the last time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_summons_2",
+   "cat": "danger",
+   "trigger": "olw_summons",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "hasSect": false
+   },
+   "text": "The elders call you into the hall with the doors shut. On the table in front of them lies your own wanted poster. \"The Alliance asks us what kind of house we keep,\" the eldest says. \"Tell us what to answer.\"",
+   "choices": [
+    {
+     "text": "Swear to end it",
+     "effects": {
+      "flag": "olx_mend",
+      "alignment": 3,
+      "log": "You swear before the ancestors' tablets. The elders take your word, and a heavy penance with it. (Infamy -10)"
+     }
+    },
+    {
+     "text": "Lay down your rank and leave",
+     "effects": {
+      "flag": "olx_leave",
+      "log": "You set your token on the table and walk out through the shut doors. Nobody stops you."
+     }
+    },
+    {
+     "text": "Say nothing, and wait for them to blink",
+     "effects": {
+      "rep": {
+       "orthodox": -5
+      },
+      "fame": 2,
+      "log": "The silence goes on for a long time. In the end the elders dismiss you without a word. It will not be the last time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_olw_censure_1",
+   "cat": "danger",
+   "trigger": "olw_censure",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Law and the Master",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "A letter comes from the Martial Alliance with every seal on it. The orthodox world, it says, cannot be led by one whose face hangs at the crossroads. It asks for reparations to those you have wronged, and for an answer.",
+   "choices": [
+    {
+     "text": "Pay the reparations",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "tally": {
+       "infamy": -8
+      },
+      "rep": {
+       "orthodox": 6
+      },
+      "log": "Silver to every family on the list. The letter that comes back is short and almost warm. (-300 taels)"
+     }
+    },
+    {
+     "text": "Answer that your seat is yours, and your deeds too",
+     "effects": {
+      "rep": {
+       "orthodox": -10
+      },
+      "fame": 5,
+      "log": "The answer is read aloud in the Alliance hall. Half of it cheers, quietly. The other half begins to count votes."
+     }
+    },
+    {
+     "text": "Do not answer",
+     "effects": {
+      "rep": {
+       "orthodox": -6
+      },
+      "log": "The letter goes into a drawer. The Alliance writes your silence into its own books."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_assembly_1",
+   "cat": "danger",
+   "trigger": "olw_alliance_1",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Alliance Rides Out",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "No hunter will take your contract, so the Martial Alliance has called a great assembly with one matter on it: you. The banners of every orthodox sect hang in the hall. They will not send hunters. They will come themselves.",
+   "choices": [
+    {
+     "text": "Walk into the assembly and speak",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "olx_ah_end",
+      "tally": {
+       "infamy": -15
+      },
+      "fame": 15,
+      "log": "You stand before ten thousand enemies and tell them exactly what you did and why. When you leave, nobody follows. The vote is put off for a generation."
+     },
+     "fail": {
+      "flag": "olx_ah_next",
+      "health": -15,
+      "log": "They shout you down, then try to hold you. You leave through the roof, and the vote is unanimous."
+     }
+    },
+    {
+     "text": "Send them a letter of defiance",
+     "effects": {
+      "flag": "olx_ah_next",
+      "fame": 8,
+      "tally": {
+       "infamy": 3
+      },
+      "log": "Four words, nailed to the hall door with a sword. The vote is unanimous."
+     }
+    },
+    {
+     "text": "Vanish before they finish talking",
+     "roll": {
+      "stat": "lightness",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "olx_ah_end",
+      "tally": {
+       "infamy": -10
+      },
+      "log": "By the time the assembly votes, nobody knows which province you are in. The hunt dies in committee."
+     },
+     "fail": {
+      "flag": "olx_ah_next",
+      "log": "Their scouts find you in a month. The hunt goes on."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_champion_1",
+   "cat": "danger",
+   "trigger": "olw_alliance_2",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Alliance Rides Out",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ranked": "greats",
+     "opinion": -4
+    }
+   },
+   "text": "The Alliance has named its champion: {npc}, {npc_title}. A white banner is planted on the peak where the two of you are to meet, and the whole murim is coming to watch.",
+   "choices": [
+    {
+     "text": "Meet {him} on the peak",
+     "roll": {
+      "stat": "power",
+      "duel": true
+     },
+     "risky": true,
+     "ok": {
+      "flag": "olx_ah_won",
+      "fame": 30,
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "beat",
+       "w": 14,
+       "note": "beat me as the Alliance's champion"
+      },
+      "log": "At the end {npc} plants {his} own sword in the snow and bows. The white banner comes down. The Alliance has nobody else to send."
+     },
+     "fail": {
+      "flag": "olx_ah_next",
+      "health": -30,
+      "deathCause": "the Alliance's champion, on the white-bannered peak",
+      "log": "{npc} beats you before the whole murim, and lets you live. The Alliance takes that as an answer, and gathers its host."
+     }
+    },
+    {
+     "text": "Ask {him} to talk first",
+     "roll": {
+      "stat": "charm",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "olx_ah_end",
+      "tally": {
+       "infamy": -20
+      },
+      "npcFlag": "rk_met",
+      "mem": {
+       "deed": "respected",
+       "w": 15,
+       "note": "talked instead of fighting"
+      },
+      "log": "A whole night by the fire on the peak. In the morning {npc} goes down the mountain and tells the Alliance there will be no fight."
+     },
+     "fail": {
+      "flag": "olx_ah_next",
+      "log": "{npc} hears you out, then shakes {his} head. \"They did not send me to talk.\" You leave before dawn, and the host gathers."
+     }
+    },
+    {
+     "text": "Do not come to the peak",
+     "effects": {
+      "flag": "olx_ah_next",
+      "fame": -10,
+      "log": "The white banner flies over an empty peak. The Alliance gathers its host."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_olw_host_1",
+   "cat": "danger",
+   "trigger": "olw_alliance_3",
+   "once": false,
+   "cooldown": 0,
+   "arc": "The Alliance Rides Out",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "text": "The Alliance's host has come: a thousand masters of a hundred sects, in ranks on the valley road, with the leader's own banner at their head. This is the last hunt. Whatever happens here, the Alliance will not ride out again for a long time.",
+   "choices": [
+    {
+     "text": "Stand on the road and hold it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "the Alliance's host"
+     },
+     "risky": true,
+     "ok": {
+      "flag": "olx_ah_won",
+      "fame": 50,
+      "log": "By evening the host is going home in pieces, carrying its banners rolled. The song they make of it is not one the Alliance likes."
+     },
+     "fail": {
+      "flag": "olx_ah_lost",
+      "health": -40,
+      "deathCause": "the last hunt of the Martial Alliance",
+      "log": "There are too many of them, and they are too good. You go into the river with three arrows in you."
+     }
+    },
+    {
+     "text": "Break through and go far away",
+     "roll": {
+      "stat": "lightness",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "olx_ah_end",
+      "tally": {
+       "infamy": -15
+      },
+      "log": "You go through their ranks like wind through grass and are gone into the far west. The host marches home with nothing to show for it."
+     },
+     "fail": {
+      "flag": "olx_ah_lost",
+      "health": -30,
+      "log": "They close the gap. You get out, but only just, and only into the river."
+     }
+    },
+    {
+     "text": "Kneel before the banner",
+     "effects": {
+      "flag": "olx_ah_end",
+      "tally": {
+       "infamy": -40
+      },
+      "fame": -20,
+      "rep": {
+       "orthodox": 15
+      },
+      "alignment": 5,
+      "log": "You kneel in the road before a thousand masters. The leader of the Alliance takes your sword and gives it back. \"Go and do better,\" is all that is said. It is the hardest thing you have ever done."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

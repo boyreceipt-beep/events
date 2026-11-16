@@ -1,0 +1,430 @@
+{
+ "events": [
+  {
+   "id": "lv30_guild_hire",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     16,
+     100
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 2,
+   "text": "Two merchant guilds are hiring fighters to protect their shops, and to break the other's.",
+   "choices": [
+    {
+     "text": "Guard, but never attack",
+     "effects": {
+      "taels": 10,
+      "alignment": 1,
+      "log": "Honest work in a dirty war. (+10 taels)"
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "luck": 1,
+      "log": "Guild wars end badly for fighters."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_guild_arson",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "A warehouse of the rival guild is set on fire.",
+   "choices": [
+    {
+     "text": "Help put it out",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 2,
+      "fame": 1,
+      "log": "Saved. Both guilds are surprised."
+     },
+     "fail": {
+      "health": -8,
+      "log": "You save some. The smoke saves you from the rest."
+     }
+    },
+    {
+     "text": "Get the workers out",
+     "effects": {
+      "alignment": 2,
+      "log": "Nobody dies."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_price_war",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "The guilds cut prices to ruin each other. Everything is cheap.",
+   "choices": [
+    {
+     "text": "Stock up",
+     "effects": {
+      "health": 2,
+      "log": "A pantry full for half price."
+     }
+    },
+    {
+     "text": "Warn small shops to hold out",
+     "effects": {
+      "alignment": 1,
+      "log": "Some survive the war."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_guild_spy",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "A guild asks you to spy on the other.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 1,
+      "log": "They respect you more for it."
+     }
+    },
+    {
+     "text": "Pretend to agree and warn the other guild",
+     "effects": {
+      "charm": -1,
+      "comprehension": 1,
+      "log": "Both guilds now distrust each other and you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_street_brawl",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "Guild thugs brawl in the market street.",
+   "choices": [
+    {
+     "text": "Break it up",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 2,
+      "log": "Both sides back off."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Both sides turn on you."
+     }
+    },
+    {
+     "text": "Protect the stall keepers",
+     "effects": {
+      "alignment": 2,
+      "log": "Nobody innocent is hurt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_guild_masters",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "The two guild masters are old friends who fell out over a woman fifty years ago.",
+   "choices": [
+    {
+     "text": "Get them to talk",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "They cry, laugh, and end the war."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "luck": 0,
+      "log": "Old grudges are hard to heal."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_guild_poor",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "The guild war has put porters and clerks out of work.",
+   "choices": [
+    {
+     "text": "Find them other work",
+     "effects": {
+      "alignment": 2,
+      "log": "A few families saved."
+     }
+    },
+    {
+     "text": "Organise them into their own small guild",
+     "effects": {
+      "comprehension": 1,
+      "fame": 1,
+      "log": "They do better than both big ones."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_bribe_official",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_hire"
+    ]
+   },
+   "weight": 2,
+   "text": "One guild bribes the magistrate to arrest the other's leaders.",
+   "choices": [
+    {
+     "text": "Expose the bribe",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "The magistrate is replaced."
+     },
+     "fail": {
+      "luck": -1,
+      "log": "No proof. The arrests go ahead."
+     }
+    },
+    {
+     "text": "Warn the leaders",
+     "effects": {
+      "alignment": 1,
+      "log": "They flee in time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_kid_guild",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "Children of the two guilds are forbidden to play together.",
+   "choices": [
+    {
+     "text": "Play with both",
+     "effects": {
+      "alignment": 2,
+      "log": "You are a peacemaker at eight."
+     }
+    },
+    {
+     "text": "Start your own guild",
+     "effects": {
+      "charm": 1,
+      "log": "The Guild of Sticks and Stones. Very exclusive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_smuggler_tunnel",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A tunnel under the market used by both guilds for smuggling.",
+   "choices": [
+    {
+     "text": "Report it",
+     "effects": {
+      "alignment": 1,
+      "log": "Both guilds are fined."
+     }
+    },
+    {
+     "text": "Explore it",
+     "effects": {
+      "luck": 1,
+      "log": "Crates of silk and a very old rat."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_peace_feast",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv30_guild_masters"
+    ]
+   },
+   "weight": 2,
+   "text": "The guild war ends with a peace feast, awkward and expensive.",
+   "choices": [
+    {
+     "text": "Attend",
+     "effects": {
+      "charm": 1,
+      "log": "Two guild masters toast each other through gritted teeth."
+     }
+    },
+    {
+     "text": "Organise it",
+     "effects": {
+      "fame": 1,
+      "log": "Nobody is poisoned. That is a success."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv30_guild_offer",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-04-26",
+    "age": [
+     18,
+     100
+    ],
+    "after": [
+     "lv30_peace_feast"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 2,
+   "text": "The united guild offers you a permanent post as head of guards.",
+   "choices": [
+    {
+     "text": "Accept for a season",
+     "effects": {
+      "taels": 15,
+      "log": "Good pay, dull nights. (+15 taels)"
+     }
+    },
+    {
+     "text": "Decline",
+     "effects": {
+      "luck": 1,
+      "log": "The road is still calling."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

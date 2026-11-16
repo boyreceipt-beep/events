@@ -1,0 +1,430 @@
+{
+ "events": [
+  {
+   "id": "lv34_bandit_kingdom",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A bandit king has declared himself ruler of a mountain and taxes every road around it.",
+   "choices": [
+    {
+     "text": "Scout the mountain",
+     "effects": {
+      "comprehension": 2,
+      "log": "You map every path and guard post."
+     }
+    },
+    {
+     "text": "Warn travellers",
+     "effects": {
+      "alignment": 1,
+      "log": "Fewer pay his taxes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_recruit",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     18,
+     100
+    ],
+    "after": [
+     "lv34_bandit_kingdom"
+    ]
+   },
+   "weight": 2,
+   "text": "The bandit king offers you a place as his general.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 2,
+      "log": "He laughs. \"Everyone has a price.\""
+     }
+    },
+    {
+     "text": "Pretend to consider and learn his plans",
+     "effects": {
+      "comprehension": 2,
+      "alignment": -1,
+      "log": "Dangerous, and useful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_toll",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_kingdom"
+    ]
+   },
+   "weight": 2,
+   "text": "Bandits demand toll on the mountain road.",
+   "choices": [
+    {
+     "text": "Fight through",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 2,
+      "log": "The toll collectors flee."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You get through, wounded."
+     }
+    },
+    {
+     "text": "Pay the toll",
+     "effects": {
+      "taels": -5,
+      "loss": true,
+      "log": "Cheaper than blood. (−5 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_village_ransom",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_kingdom"
+    ]
+   },
+   "weight": 2,
+   "text": "The bandits take a village headman hostage for ransom.",
+   "choices": [
+    {
+     "text": "Rescue him by night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "alignment": 2,
+      "log": "In and out. The bandits wake to an empty cell."
+     },
+     "fail": {
+      "health": -12,
+      "alignment": 2,
+      "log": "You get him out, but are seen."
+     }
+    },
+    {
+     "text": "Help raise the ransom",
+     "effects": {
+      "alignment": 1,
+      "log": "The village pays. The headman returns thin and angry."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_army",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv34_bandit_kingdom"
+    ]
+   },
+   "weight": 2,
+   "text": "The magistrate raises militia to march on Bandit Mountain.",
+   "choices": [
+    {
+     "text": "Join the militia",
+     "effects": {
+      "fame": 2,
+      "strength": 1,
+      "log": "A hard march. The bandit forts fall one by one."
+     }
+    },
+    {
+     "text": "Train the militia",
+     "effects": {
+      "alignment": 2,
+      "fame": 1,
+      "log": "Farmers become fighters. Fewer die."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_king_duel",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     18,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "The bandit king offers to settle it with a single duel against the best fighter.",
+   "choices": [
+    {
+     "text": "Accept",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.85
+     },
+     "ok": {
+      "fame": 5,
+      "log": "He falls. His men surrender."
+     },
+     "fail": {
+      "health": -18,
+      "fame": 1,
+      "log": "He wins. The militia attacks anyway, and wins."
+     }
+    },
+    {
+     "text": "Let the militia decide",
+     "effects": {
+      "alignment": 1,
+      "log": "A long siege. The bandits starve out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_children",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "The bandit fortress holds the bandits' families: women, old men, children.",
+   "choices": [
+    {
+     "text": "Protect them",
+     "effects": {
+      "alignment": 4,
+      "log": "You make sure none are harmed when the fort falls."
+     }
+    },
+    {
+     "text": "Find them new homes",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "Farms and work in the valleys."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_treasure",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "The bandit king's treasury is found. It is mostly stolen tax money.",
+   "choices": [
+    {
+     "text": "Return it to the villages",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "Every village gets its share."
+     }
+    },
+    {
+     "text": "Take your share as a reward",
+     "effects": {
+      "taels": 20,
+      "log": "The magistrate allows it. (+20 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_kid_bandit",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You and your friends play bandits and heroes. Nobody wants to be the bandit.",
+   "choices": [
+    {
+     "text": "Be the bandit",
+     "effects": {
+      "charm": 1,
+      "log": "You make a great bandit. Everyone wins."
+     }
+    },
+    {
+     "text": "Be the bandit king's horse",
+     "effects": {
+      "luck": 1,
+      "log": "Neigh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_bandit_fort",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "The ruins of the bandit fortress after the siege.",
+   "choices": [
+    {
+     "text": "Search for hidden stores",
+     "effects": {
+      "alignment": 2,
+      "log": "A cellar of grain for the hungry villages."
+     }
+    },
+    {
+     "text": "Climb to the lookout tower",
+     "effects": {
+      "comprehension": 1,
+      "log": "You can see three counties from here."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_reformed_bandit",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "A former bandit asks for work, swearing he has changed.",
+   "choices": [
+    {
+     "text": "Give him a chance",
+     "effects": {
+      "alignment": 2,
+      "luck": 1,
+      "log": "He becomes the most loyal man you know."
+     }
+    },
+    {
+     "text": "Send him to the magistrate",
+     "effects": {
+      "alignment": 0,
+      "log": "The law decides."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv34_mountain_free",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-05-24",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv34_bandit_army"
+    ]
+   },
+   "weight": 2,
+   "text": "The mountain road is free again. Merchants and pilgrims return.",
+   "choices": [
+    {
+     "text": "Walk the road",
+     "effects": {
+      "health": 2,
+      "log": "Birdsong where there were guard posts."
+     }
+    },
+    {
+     "text": "Plant a tree at the old toll gate",
+     "effects": {
+      "alignment": 1,
+      "log": "A reminder."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

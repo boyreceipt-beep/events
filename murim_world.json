@@ -1,0 +1,668 @@
+{
+ "events": [
+  {
+   "id": "mw_manual_seller",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A beggar offers you a martial manual wrapped in oilcloth. 'Ancient,' he says. 'Very ancient. Ten taels.'",
+   "choices": [
+    {
+     "text": "Buy it",
+     "effects": {
+      "taels": -10,
+      "comprehension": 2,
+      "log": "It is a real manual, very ordinary, and actually useful. (−10 taels)"
+     },
+     "req": {
+      "minTaels": 10
+     }
+    },
+    {
+     "text": "Ask to read the first page",
+     "effects": {
+      "comprehension": 1,
+      "alignment": -1,
+      "log": "He lets you. You memorise it and walk away. He shouts after you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_sect_feud_road",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Two sect disciples are dueling on the road, and neither will let you pass.",
+   "choices": [
+    {
+     "text": "Separate them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 2,
+      "log": "Both land in the ditch. Both apologise to you."
+     },
+     "fail": {
+      "health": -8,
+      "log": "They both turn on you. You all end up in the ditch."
+     }
+    },
+    {
+     "text": "Wait and watch",
+     "effects": {
+      "comprehension": 2,
+      "log": "A good duel. You learn from both."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_hidden_expert_cook",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The cook at the roadside inn catches a thrown knife between two fingers without looking up from his pot.",
+   "choices": [
+    {
+     "text": "Ask to be his student",
+     "effects": {
+      "comprehension": 2,
+      "log": "'I am a cook,' he says. He teaches you knife-work while you chop onions."
+     }
+    },
+    {
+     "text": "Pretend you did not see",
+     "effects": {
+      "luck": 1,
+      "log": "He winks. Your meal is free."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_duel_invitation",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A formal duel invitation arrives on red paper. The challenger is someone you have never heard of.",
+   "choices": [
+    {
+     "text": "Accept",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 3,
+      "log": "A good duel. You win, and gain a friend."
+     },
+     "fail": {
+      "health": -12,
+      "log": "You lose to an unknown. Humbling."
+     }
+    },
+    {
+     "text": "Send back a polite refusal",
+     "effects": {
+      "alignment": 1,
+      "log": "The challenger is disappointed and finds someone else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_ten_masters_list",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     35
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 2,
+   "text": "The new list of promising young masters is published. Your name is not on it.",
+   "choices": [
+    {
+     "text": "Train harder",
+     "effects": {
+      "qi": 5,
+      "strength": 1,
+      "log": "Next year."
+     }
+    },
+    {
+     "text": "Laugh about lists",
+     "effects": {
+      "charm": 1,
+      "log": "Lists are for people who need them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_sect_leader_funeral",
+   "cat": "world",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A great sect leader has died. The whole murim comes to the funeral, even enemies.",
+   "choices": [
+    {
+     "text": "Attend and pay respects",
+     "effects": {
+      "fame": 1,
+      "comprehension": 1,
+      "log": "You see every famous master in one courtyard."
+     }
+    },
+    {
+     "text": "Listen to the gossip afterwards",
+     "effects": {
+      "comprehension": 1,
+      "flag": "wary",
+      "log": "Who will succeed him is already being fought over."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mw_poison_duel_watch",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Two poison masters duel by drinking each other's poisons. It takes a week.",
+   "choices": [
+    {
+     "text": "Watch until the end",
+     "effects": {
+      "comprehension": 2,
+      "log": "A draw. Both drink an antidote and go home. You learn a lot about antidotes."
+     }
+    },
+    {
+     "text": "Pick one to cheer for",
+     "effects": {
+      "luck": 0,
+      "log": "A draw. Your favourite bows to the other one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_legendary_blade",
+   "cat": "world",
+   "when": {
+    "age": [
+     18,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A legendary blade is found in a river. Half the murim comes to claim it.",
+   "choices": [
+    {
+     "text": "Compete for it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "fame": 5,
+      "flag": "wary",
+      "strength": 2,
+      "log": "You win it. You also win a lot of enemies."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You are eliminated in the second round."
+     }
+    },
+    {
+     "text": "Watch the chaos",
+     "effects": {
+      "comprehension": 1,
+      "log": "In the end it is stolen by a child. Nobody can find the child."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mw_training_ground",
+   "cat": "explore",
+   "when": {
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "An old training ground in the forest: stakes worn smooth by a thousand years of feet.",
+   "choices": [
+    {
+     "text": "Train on the stakes",
+     "effects": {
+      "strength": 1,
+      "luck": 1,
+      "log": "Your balance improves. You fall off twice."
+     }
+    },
+    {
+     "text": "Read the carvings",
+     "effects": {
+      "comprehension": 1,
+      "log": "Names of students from centuries ago."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_murim_newspaper",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The Beggars' Union posts its monthly news on the teahouse wall: who won, who died, who disappeared.",
+   "choices": [
+    {
+     "text": "Read it all",
+     "effects": {
+      "comprehension": 1,
+      "flag": "wary",
+      "log": "You know who to avoid this month."
+     }
+    },
+    {
+     "text": "Look for your own name",
+     "effects": {
+      "fame": 1,
+      "log": "Not there. Or there, in small print, under \"rumours\"."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mw_blind_swordsman",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A blind swordsman in the market challenges anyone to touch him with a stick.",
+   "choices": [
+    {
+     "text": "Try",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 2,
+      "log": "You touch his sleeve. He laughs and buys you tea."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "He taps you on the head forty times."
+     }
+    },
+    {
+     "text": "Watch him",
+     "effects": {
+      "comprehension": 1,
+      "log": "He hears everything. You learn to listen."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_lost_disciples",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A group of young disciples is lost in the mountains after a training exercise.",
+   "choices": [
+    {
+     "text": "Search for them",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "You find them cold and scared, and lead them home."
+     },
+     "fail": {
+      "alignment": 3,
+      "log": "You find them the next day, very cold."
+     }
+    },
+    {
+     "text": "Alert their sect",
+     "effects": {
+      "alignment": 2,
+      "log": "The sect sends everyone. They are found by dawn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_rival_masters_tea",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Two old masters who hated each other for forty years are drinking tea together in the market, laughing.",
+   "choices": [
+    {
+     "text": "Ask what changed",
+     "effects": {
+      "comprehension": 1,
+      "log": "'We got old,' says one. 'And he makes good tea,' says the other."
+     }
+    },
+    {
+     "text": "Join them",
+     "effects": {
+      "charm": 1,
+      "log": "They tell you stories of each other's worst defeats."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_famous_nickname",
+   "cat": "funny",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Someone in a teahouse gives you a nickname. It is not a flattering one.",
+   "choices": [
+    {
+     "text": "Earn a better one",
+     "effects": {
+      "fame": 2,
+      "log": "You work hard for a year. The new nickname sticks."
+     }
+    },
+    {
+     "text": "Adopt it proudly",
+     "effects": {
+      "charm": 1,
+      "log": "Owning it takes its power away."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_secret_passage",
+   "cat": "explore",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "In an old temple, a loose brick reveals a narrow passage down into the dark.",
+   "choices": [
+    {
+     "text": "Explore it",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 2,
+      "alignment": 1,
+      "log": "A small shrine with an old manual. You leave an offering."
+     },
+     "fail": {
+      "health": -3,
+      "log": "A dead end and a lot of bats."
+     }
+    },
+    {
+     "text": "Put the brick back",
+     "effects": {
+      "alignment": 1,
+      "log": "Some secrets are someone else's."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_master_test",
+   "cat": "misc",
+   "when": {
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A mysterious old man asks you three riddles. 'If you answer, I will teach you something.'",
+   "choices": [
+    {
+     "text": "Answer them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 6,
+      "comprehension": 1,
+      "log": "Three correct. He teaches you a breathing trick you use for the rest of your life."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "One out of three. He laughs and gives you a peach."
+     }
+    },
+    {
+     "text": "Ask him a riddle back",
+     "effects": {
+      "charm": 2,
+      "log": "He cannot answer. He is delighted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_wanted_hero",
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     100
+    ],
+    "notFlags": [
+     "fugitive",
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 2,
+   "text": "A man wanted for murder begs for your help. He swears he killed a slaver.",
+   "choices": [
+    {
+     "text": "Check his story",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 4,
+      "log": "True. You help him escape to the south."
+     },
+     "fail": {
+      "alignment": 1,
+      "log": "You cannot tell. You let him go anyway."
+     }
+    },
+    {
+     "text": "Turn him in",
+     "effects": {
+      "alignment": -2,
+      "log": "The magistrate thanks you. The man looks at you once."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_seclusion_rumour",
+   "cat": "world",
+   "when": {
+    "age": [
+     16,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A famous master emerges from twenty years of seclusion. The murim holds its breath.",
+   "choices": [
+    {
+     "text": "Go and see",
+     "effects": {
+      "comprehension": 1,
+      "log": "He walks through the market, buys noodles and goes home. The murim exhales."
+     }
+    },
+    {
+     "text": "Ignore it",
+     "effects": {
+      "luck": 0,
+      "log": "Masters come and go."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mw_art_scroll_duel",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Two calligraphers duel with brushes, and their strokes cut the paper like blades.",
+   "choices": [
+    {
+     "text": "Watch closely",
+     "effects": {
+      "comprehension": 2,
+      "log": "You see the sword in the brush."
+     }
+    },
+    {
+     "text": "Ask for the winning scroll",
+     "effects": {
+      "charm": 1,
+      "log": "The winner gives it to you. It is beautiful and a little frightening."
+     }
+    }
+   ]
+  },
+  {
+   "id": "mw_hidden_valley",
+   "cat": "explore",
+   "when": {
+    "age": [
+     14,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A hunter tells you about a hidden valley where the grass never dies.",
+   "choices": [
+    {
+     "text": "Find it",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "health": 10,
+      "qi": 5,
+      "log": "A valley of warm springs and rare herbs. You rest there a week."
+     },
+     "fail": {
+      "health": -3,
+      "log": "You find a valley of mud."
+     }
+    },
+    {
+     "text": "Buy him a drink for the story",
+     "effects": {
+      "charm": 1,
+      "log": "He tells three more stories. None of them are true. All of them are good."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

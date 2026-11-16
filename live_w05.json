@@ -1,0 +1,425 @@
+{
+ "events": [
+  {
+   "id": "lv05_healer_arrives",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A physician with a bamboo medicine box arrives in town. She treats the poor for free.",
+   "choices": [
+    {
+     "text": "Help carry her box",
+     "effects": {
+      "comprehension": 1,
+      "alignment": 1,
+      "log": "She teaches you three herbs on the walk."
+     }
+    },
+    {
+     "text": "Have your old wound seen",
+     "effects": {
+      "health": 6,
+      "log": "Needles, herbs, and a scolding. It helps."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_healer_threat",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "Local apothecaries resent the free physician. Men gather outside her door at night.",
+   "choices": [
+    {
+     "text": "Stand guard",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "alignment": 3,
+      "fame": 1,
+      "log": "The men leave without a fight once they see you."
+     },
+     "fail": {
+      "health": -8,
+      "alignment": 3,
+      "log": "A scuffle. She stitches you up herself."
+     }
+    },
+    {
+     "text": "Warn her to move on",
+     "effects": {
+      "alignment": 1,
+      "log": "She leaves at dawn, grateful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_plague_village",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician asks for help in a village struck by fever.",
+   "choices": [
+    {
+     "text": "Go with her",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 3,
+      "health": -3,
+      "log": "A hard week. Most live. You learn a great deal."
+     }
+    },
+    {
+     "text": "Send supplies",
+     "effects": {
+      "taels": -8,
+      "alignment": 2,
+      "log": "Blankets and rice. (−8 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_secret_formula",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician has a formula that cures a common poison. An apothecary offers you silver to steal it.",
+   "choices": [
+    {
+     "text": "Refuse and warn her",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "log": "She thanks you with a copy of a lesser remedy."
+     }
+    },
+    {
+     "text": "Refuse and say nothing",
+     "effects": {
+      "luck": 0,
+      "log": "Some trouble is not yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_fake_doctor",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "A man in the market sells 'the physician's miracle pills'. She has never met him.",
+   "choices": [
+    {
+     "text": "Expose him",
+     "effects": {
+      "fame": 1,
+      "alignment": 1,
+      "log": "The crowd drives him out of town."
+     }
+    },
+    {
+     "text": "Buy one to test",
+     "effects": {
+      "taels": -2,
+      "comprehension": 1,
+      "log": "Flour and ginger. (−2 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_healer_past",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician confides that she was once a disciple of a poison sect.",
+   "choices": [
+    {
+     "text": "Keep her secret",
+     "effects": {
+      "alignment": 1,
+      "luck": 1,
+      "log": "She trusts you completely now."
+     }
+    },
+    {
+     "text": "Ask what made her leave",
+     "effects": {
+      "comprehension": 1,
+      "log": "A story of a sister she could not save. You understand her."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_bone_setting",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "A child has a badly broken arm. The physician needs someone strong to hold it straight.",
+   "choices": [
+    {
+     "text": "Hold it steady",
+     "effects": {
+      "strength": 1,
+      "alignment": 2,
+      "log": "The child screams, then sleeps. The arm will heal straight."
+     }
+    },
+    {
+     "text": "Distract the child with a story",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "The child barely notices the setting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_herb_hunt",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician needs a rare herb that grows only above the cloud line.",
+   "choices": [
+    {
+     "text": "Climb for it",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 3,
+      "log": "You bring back a basketful. She makes medicine for a hundred."
+     },
+     "fail": {
+      "health": -6,
+      "alignment": 1,
+      "log": "You slip and come back with scrapes and a handful."
+     }
+    },
+    {
+     "text": "Pay a herb gatherer",
+     "effects": {
+      "taels": -5,
+      "alignment": 1,
+      "log": "He knows the paths. (−5 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_kid_physician",
+   "cat": "childhood",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "The physician lets you listen to your own heartbeat through a bamboo tube.",
+   "choices": [
+    {
+     "text": "Listen for a long time",
+     "effects": {
+      "comprehension": 1,
+      "log": "Thump. Thump. You are alive. It is amazing."
+     }
+    },
+    {
+     "text": "Ask to be a physician",
+     "effects": {
+      "luck": 1,
+      "log": "She gives you a tiny herb pouch to start."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_medicine_cave",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "A cave where an ancient physician carved remedies into the walls.",
+   "choices": [
+    {
+     "text": "Copy the remedies",
+     "effects": {
+      "comprehension": 2,
+      "log": "Old medicine, still good."
+     }
+    },
+    {
+     "text": "Meditate among the carvings",
+     "effects": {
+      "qi": 3,
+      "health": 2,
+      "log": "A healer's calm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_healer_leaves",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives",
+     "lv05_healer_threat"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician moves on to the next town and asks if you will walk with her part of the way.",
+   "choices": [
+    {
+     "text": "Walk with her a day",
+     "effects": {
+      "comprehension": 1,
+      "health": 1,
+      "log": "She tells you the four signs of a failing heart. It will matter someday."
+     }
+    },
+    {
+     "text": "Give her your best knife for the road",
+     "effects": {
+      "alignment": 1,
+      "log": "She promises to use it only on herbs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv05_your_health",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2026-11-02",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv05_healer_arrives"
+    ]
+   },
+   "weight": 2,
+   "text": "The physician takes your pulse and frowns: 'You are pushing your body too hard.'",
+   "choices": [
+    {
+     "text": "Take her advice and rest",
+     "effects": {
+      "health": 8,
+      "log": "A lighter season. You feel ten years younger."
+     }
+    },
+    {
+     "text": "Ignore it",
+     "effects": {
+      "strength": 1,
+      "log": "She sighs. Physicians are used to that."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

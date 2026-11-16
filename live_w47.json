@@ -1,0 +1,428 @@
+{
+ "events": [
+  {
+   "id": "lv47_summit_called",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     16,
+     100
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "The great sects gather at Mount Song to choose a new Martial Alliance Leader.",
+   "choices": [
+    {
+     "text": "Attend as a spectator",
+     "effects": {
+      "comprehension": 2,
+      "log": "Every famous master in one place."
+     }
+    },
+    {
+     "text": "Help guard the summit",
+     "effects": {
+      "fame": 1,
+      "strength": 1,
+      "log": "An honour and a long week."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv47_summit_candidates",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv47_summit_called"
+    ]
+   },
+   "weight": 2,
+   "text": "Three candidates: a righteous old master, an ambitious young genius, and a cunning diplomat.",
+   "choices": [
+    {
+     "text": "Support the old master",
+     "effects": {
+      "alignment": 1,
+      "log": "Steady and honest."
+     }
+    },
+    {
+     "text": "Support the young genius",
+     "effects": {
+      "fame": 1,
+      "log": "Bold, and dangerous."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_poison",
+   "cat": "danger",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv47_summit_called"
+    ]
+   },
+   "weight": 2,
+   "text": "A candidate is poisoned at the summit banquet.",
+   "choices": [
+    {
+     "text": "Find the poisoner",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 3,
+      "alignment": 2,
+      "log": "The diplomat's servant. The summit is shaken."
+     },
+     "fail": {
+      "luck": -1,
+      "log": "The poisoner escapes. Everyone suspects everyone."
+     }
+    },
+    {
+     "text": "Save the victim",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "alignment": 2,
+      "log": "He lives. The summit remembers you."
+     },
+     "fail": {
+      "alignment": 1,
+      "log": "You slow the poison. A physician does the rest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_duels",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv47_summit_called"
+    ]
+   },
+   "weight": 2,
+   "text": "Candidates duel to prove their worth.",
+   "choices": [
+    {
+     "text": "Watch the duels",
+     "effects": {
+      "comprehension": 3,
+      "log": "Masters at the peak of their art. You learn so much."
+     }
+    },
+    {
+     "text": "Referee a duel",
+     "effects": {
+      "fame": 2,
+      "log": "A terrifying honour."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_demon",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv47_summit_called"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "Word comes that the demonic sects are watching the summit, waiting for weakness.",
+   "choices": [
+    {
+     "text": "Help strengthen the watch",
+     "effects": {
+      "strength": 1,
+      "fame": 1,
+      "log": "Nights on the walls."
+     }
+    },
+    {
+     "text": "Stay calm and train",
+     "effects": {
+      "qi": 2,
+      "log": "Fear helps no one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_speech",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv47_summit_called"
+    ]
+   },
+   "weight": 2,
+   "text": "A young disciple is allowed to address the summit. They freeze.",
+   "choices": [
+    {
+     "text": "Whisper encouragement",
+     "effects": {
+      "alignment": 2,
+      "log": "They find their voice. The speech is remembered."
+     }
+    },
+    {
+     "text": "Start the applause",
+     "effects": {
+      "charm": 1,
+      "log": "Kindness is contagious."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_vote",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "after": [
+     "lv47_summit_candidates"
+    ],
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The sects vote. The old master wins.",
+   "choices": [
+    {
+     "text": "Congratulate him",
+     "effects": {
+      "fame": 1,
+      "log": "He remembers you."
+     }
+    },
+    {
+     "text": "Watch the losers' faces",
+     "effects": {
+      "comprehension": 1,
+      "log": "The young genius is furious. Trouble ahead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_betrayal",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "after": [
+     "lv47_summit_vote"
+    ],
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The young genius refuses the result and walks out with his followers.",
+   "choices": [
+    {
+     "text": "Try to reason with him",
+     "effects": {
+      "alignment": 1,
+      "comprehension": 1,
+      "log": "He listens, a little."
+     }
+    },
+    {
+     "text": "Let him go",
+     "effects": {
+      "luck": 0,
+      "log": "Some roads must be walked alone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_kid_summit",
+   "cat": "funny",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     5,
+     12
+    ]
+   },
+   "weight": 2,
+   "text": "You hear that all the greatest masters are meeting in one place.",
+   "choices": [
+    {
+     "text": "Draw them all",
+     "effects": {
+      "charm": 1,
+      "log": "Your drawings are very heroic and not accurate."
+     }
+    },
+    {
+     "text": "Pretend to be the Alliance Leader",
+     "effects": {
+      "charm": 1,
+      "log": "You order the chickens around."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "lv47_mount_song_path",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "The path up Mount Song, lined with inscriptions from masters of every age.",
+   "choices": [
+    {
+     "text": "Read them all",
+     "effects": {
+      "comprehension": 2,
+      "log": "A thousand years of advice in stone."
+     }
+    },
+    {
+     "text": "Climb in silence",
+     "effects": {
+      "qi": 3,
+      "log": "Your breath and the mountain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_feast",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     16,
+     100
+    ],
+    "after": [
+     "lv47_summit_vote"
+    ]
+   },
+   "weight": 2,
+   "text": "The summit ends with a feast of all the sects together.",
+   "choices": [
+    {
+     "text": "Sit with a rival sect",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "Old grudges thaw over dumplings."
+     }
+    },
+    {
+     "text": "Toast the new leader",
+     "effects": {
+      "fame": 1,
+      "log": "Everyone drinks. Some mean it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "lv47_summit_legacy",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "release": "2027-08-23",
+    "age": [
+     12,
+     100
+    ],
+    "after": [
+     "lv47_summit_vote"
+    ]
+   },
+   "weight": 2,
+   "text": "The summit's decisions change the murim for a generation.",
+   "choices": [
+    {
+     "text": "Remember this moment",
+     "effects": {
+      "luck": 1,
+      "log": "Someday you will tell your students."
+     }
+    },
+    {
+     "text": "Promise to do your part",
+     "effects": {
+      "alignment": 2,
+      "log": "A promise made on the mountain."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,6603 @@
+{
+ "events": [
+  {
+   "id": "b2u_snc_doubt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Before you move, you learn more about {npc} than the commission said: {he} has been paying for the medicine of an isle's whole hamlet, out of {his} own stones.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "You put the thought away. The work is the work."
+     }
+    },
+    {
+     "text": "Spare them and tell the Pavilion nothing",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let {npc} live. The Pavilion will learn it."
+     }
+    },
+    {
+     "text": "Find out who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The client was the one who should have paid for the medicine. You go to them instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2u_snc_poison_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} drinks only cloud-tea brewed by a single servant, and the servant takes the leaves from the same jar every dawn.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Poison the jar yourself",
+     "roll": {
+      "stat": "poison",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The tea is strong that morning. {npc} does not finish it."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The servant tastes it first and falls ill. The wardens come."
+     }
+    },
+    {
+     "text": "Bribe the servant",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The servant brews it. You never ask how they sleep."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The servant runs to {npc}."
+     }
+    },
+    {
+     "text": "Walk away before it is done",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the jar untouched and go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2u_snc_ambush_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} crosses the cloud road to the next isle every tenth day, by skiff, with four guards. The road narrows where the mist is thickest.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Strike from the mist",
+     "roll": {
+      "stat": "archery",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The arrow comes out of the mist and {npc} goes into it."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The guards close round {npc} and come for you."
+     }
+    },
+    {
+     "text": "Board the skiff",
+     "roll": {
+      "stat": "strength",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "It is over before the guards turn round."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "The guards are better than you were told."
+     }
+    },
+    {
+     "text": "Let the skiff pass",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let it go into the mist."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2u_snc_servant_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You spend months as a lamp-tender in the pavilion of {npc}, under a borrowed name. Tonight {he} is alone, reading, and asks you to trim the wick.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it now",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "One touch at the neck. {npc} sleeps, and does not wake."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} turns at the last moment and shouts."
+     }
+    },
+    {
+     "text": "Trim the wick, and leave in the morning",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You trim it, and go. You cannot say why."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2u_snc_duel_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You knock at the gate of {npc}'s pavilion and give your name, as the Pavilion's old law allows a challenger. {npc} comes out with a sword.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} with everything you have",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "It ends in one exchange above the clouds that nobody else sees."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "You are slower than you thought. {npc} lets you go, which is worse.",
+      "deathCause": "a duel with the name on a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow. {npc} bows back. Neither of you will forget it."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2u_snc_guard_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The captain of {npc}'s guard is between you and the door: an immortal with a spear and no fear of you at all.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the captain",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the captain of the guard",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The captain goes down, alive but finished, and the door opens."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The captain is everything they say. You get away over the roof with the commission undone.",
+      "deathCause": "the captain of the guard on a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Go over the roof",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You drop through the roof behind them."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The roof is warded."
+     }
+    },
+    {
+     "text": "Break off and vanish",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You are gone into the clouds."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2u_snc_avenger_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has found you on a bridge of the Isle Bazaar: grown, trained, with the face of the one you killed for the Pavilion long ago.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "You win. The feud ends on the bridge."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "You lose, and they do not finish it."
+     }
+    },
+    {
+     "text": "Beat them and let them go",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You beat them and walk away."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "They are better than you thought."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You talk until dawn. It is not forgiveness. It is something."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "They will not hear you."
+     }
+    },
+    {
+     "text": "Leave the bridge",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave. They will find you again."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2u_snc_wanted_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A warrant hunter has your shape from a failed commission, and is asking at every mooring of the isle.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Lie low until they leave",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "They give up and fly on."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "They come close, and go, and will be back."
+     }
+    },
+    {
+     "text": "Send them a false trail",
+     "effects": {
+      "alignment": -1,
+      "flag": "sncx_cool",
+      "log": "You send them three isles away."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2u_snc_pavilion_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Pavilion's lord sends for you, which happens to few: a cup of cloud-wine in a room with no windows, and a question about what you mean to be.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say the Pavilion's blade",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord nods. You are trusted with more."
+     }
+    },
+    {
+     "text": "Say yourself",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The lord smiles. That is the right answer, and dangerous."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2g_snc_doubt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Before the dream, you read the page of {npc} in the Book: {he} has been feeding a dying world with {his} own divinity for an age.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "You close the Book. The work is the work."
+     }
+    },
+    {
+     "text": "Spare them",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You leave the dream. The Hall will learn it."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The client was the god starving that world. You go to them."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2g_snc_poison_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} drinks nectar from a single cup, filled every dawn by an attendant of clay.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Pour a forgetting into the cup",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The nectar is sweet that dawn. {npc} forgets to be a god."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The clay attendant tastes it and shatters. The Court hears."
+     }
+    },
+    {
+     "text": "Reshape the attendant to do it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "It is done by a servant that cannot be judged."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The clay remembers its maker and refuses."
+     }
+    },
+    {
+     "text": "Leave the cup",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave it."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2g_snc_ambush_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} rides a procession of faith between two temples every age, and the road passes the dark side of the sun.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Strike from the dark",
+     "roll": {
+      "stat": "archery",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The procession arrives without its god."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The procession's guardians turn on you."
+     }
+    },
+    {
+     "text": "Wait for a better age",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let it pass."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2g_snc_servant_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "An age as a keeper in {npc}'s temple, under another name. Tonight {he} sleeps in the inner hall, and dreams.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Enter the dream",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Inside the dream, it is gentle. {npc} does not wake."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} wakes inside the dream and calls the guard."
+     }
+    },
+    {
+     "text": "Keep the temple one more night, and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave. You cannot say why."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2g_snc_duel_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You come to {npc}'s domain openly and say your name, as the Silent Hall's oldest rule allows. {npc} meets you at the border.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} as god against god",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "It is a fair fight between gods, and you win it."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "You lose, and {npc} lets you go, which is worse.",
+      "deathCause": "a duel between gods for the Silent Hall"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow. {npc} remembers."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2g_snc_guard_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A god of watchfulness stands at the door of {npc}'s dream, awake, as such gods always are.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the watcher",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the god of watchfulness",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The watcher falls asleep at last, and the dream is open."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The watcher holds, and you wake bleeding light.",
+      "deathCause": "a god of watchfulness at the door of a dream"
+     },
+     "risky": true
+    },
+    {
+     "text": "Slip past in another dream",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You come in by a dream next door."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "They see you."
+     }
+    },
+    {
+     "text": "Wake yourself and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You wake, far away."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2g_snc_avenger_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, grown into a god, has found you at the Divine Exchange: the child of the god you ended for the Silent Hall.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The feud ends there."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "You lose. They do not finish it."
+     }
+    },
+    {
+     "text": "Beat them and let them go",
+     "roll": {
+      "stat": "strength",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You beat them and leave."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "They are stronger now."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You talk for an age. It will do instead of forgiveness."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "They will not hear you."
+     }
+    },
+    {
+     "text": "Leave",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave. Feuds among gods are patient."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2g_snc_wanted_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A clerk of the Court is reading your page with a finger on a failed piece of quiet work.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go quiet",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "The clerk turns the page."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The finger stays."
+     }
+    },
+    {
+     "text": "Give them another page to read",
+     "effects": {
+      "alignment": -2,
+      "flag": "sncx_cool",
+      "log": "You give them a scandal of someone else."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2g_snc_pavilion_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The lord of the Silent Hall meets you in a dream of an empty hall, and asks what a god is for.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say: to end what should end",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord nods. You are trusted with more."
+     }
+    },
+    {
+     "text": "Say: you do not know yet",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The lord laughs. Good."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2p_snc_doubt_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Before you move, you learn more about {npc} than the paper said: {he} has been quietly feeding the poor of {his} town every winter.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Lodge keeps no list. You keep going."
+     }
+    },
+    {
+     "text": "Spare them",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let {npc} live. The Lodge will learn it."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid was starving the town. You go to them."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2p_snc_poison_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a cook who drinks and a taster who sleeps, and the wine comes in by the back door at dusk.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it yourself",
+     "roll": {
+      "stat": "poison",
+      "dc": 25
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} goes to bed with a headache and does not get up."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The taster is awake. You run, with a cudgel across your back."
+     }
+    },
+    {
+     "text": "Bribe the cook",
+     "roll": {
+      "stat": "charm",
+      "dc": 35
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The cook does it. You never ask how they sleep."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The cook runs to {npc}."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You walk away."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2p_snc_ambush_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} rides the hill road with four guards on market days. The road narrows at the old bridge.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Strike at the bridge",
+     "roll": {
+      "stat": "archery",
+      "dc": 35
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "It is over at the bridge."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The guards come for you."
+     }
+    },
+    {
+     "text": "Let them ride by",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let them pass."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2p_snc_servant_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Months as a servant in the house of {npc}, under another name. Tonight {he} asks you to bring the lamp.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it now",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 30
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "One touch. {npc} sleeps, and does not wake."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} shouts."
+     }
+    },
+    {
+     "text": "Bring the lamp and leave in the morning",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2p_snc_duel_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You knock on the gate of {npc} and give your name. {npc} comes out armed.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} with everything you have",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "A fair fight, and yours."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "A fair fight, and theirs. {npc} lets you crawl away.",
+      "deathCause": "a night duel for the Lodge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow and go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2p_snc_guard_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The captain of {npc}'s guard stands in the corridor between you and the door.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the captain",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the captain of the guard",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The captain goes down, and the door opens."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The captain holds. You get away over the wall.",
+      "deathCause": "the captain of the guard of a target"
+     },
+     "risky": true
+    },
+    {
+     "text": "Over the roof",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You drop in behind."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "Tiles give way."
+     }
+    },
+    {
+     "text": "Vanish",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You are gone."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2p_snc_avenger_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has found you in the market square: grown, armed, with the face of the one you killed for the Lodge.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The feud ends."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "You lose, and live."
+     }
+    },
+    {
+     "text": "Beat them and let them go",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You walk away."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "They are better than you thought."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "It is not forgiveness, but it will do."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "They will not hear."
+     }
+    },
+    {
+     "text": "Leave",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2p_snc_wanted_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Your face is on a notice at the town gate, badly drawn but not badly enough.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Lie low",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "A newer notice covers yours."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "People are still looking."
+     }
+    },
+    {
+     "text": "Leave a false trail",
+     "effects": {
+      "alignment": -1,
+      "flag": "sncx_cool",
+      "log": "They search the wrong hills."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2p_snc_pavilion_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The master of the Lampless Lodge meets you in a cellar with no lamp, and asks what you mean to become.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say the Lodge's blade",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "You are trusted with more."
+     }
+    },
+    {
+     "text": "Say yourself",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The master laughs, quietly."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2u_snc_doubt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The commission names {npc}. You watch {him} for a month first, as you always do, and learn that {he} once carried a stranger's child down the white stairs to a healer, and never told anyone.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Pavilion does not pay for what you learn. It pays for the work."
+     }
+    },
+    {
+     "text": "Spare {him}, and lie to the Pavilion",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You report the target fled to another isle. The Pavilion will learn the truth one day."
+     }
+    },
+    {
+     "text": "Follow the stones back to whoever paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The stones lead to a minister who would rather not repay what {npc} lent. You call on the minister instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2u_snc_poison2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a garden of cloud-peaches and eats one every morning from the same tree, which {he} prunes with {his} own hands.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Graft a poisoned branch onto the tree",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The tree bears one strange peach. {npc} eats it at dawn and lies down under the branches."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The tree rejects the graft, loudly, and the garden's wards wake."
+     }
+    },
+    {
+     "text": "Pay the gardener to choose the peach",
+     "roll": {
+      "stat": "charm",
+      "dc": 72
+     },
+     "ok": {
+      "item": {
+       "spirit_stone": -2
+      },
+      "flag": "sncx_kill",
+      "log": "The gardener chooses. {npc} never asks why that one."
+     },
+     "fail": {
+      "health": -6,
+      "item": {
+       "spirit_stone": -2
+      },
+      "flag": "sncx_fail",
+      "log": "The gardener keeps your stones and loves {npc} more."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Leave the garden as it is",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the peaches to ripen."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2u_snc_ambush2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} meditates every new moon on a pillar of rock that floats alone above the sea of cloud. Only one updraught reaches it.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Ride the updraught in the dark",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You land behind {npc} without a sound, and the meditation does not end; it only stops."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The updraught carries you in too fast. {npc} opens {his} eyes."
+     }
+    },
+    {
+     "text": "Loose an arrow across the gap",
+     "roll": {
+      "stat": "archery",
+      "dc": 68
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The arrow crosses the moonless gap. {npc} does not move again."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The arrow is turned by a ward, and the alarm stone rings."
+     }
+    },
+    {
+     "text": "Let the new moon pass",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You watch the pillar until dawn, and go home."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2u_snc_servant2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Under a borrowed name you have kept the scrolls of {npc} for a year. Tonight {he} asks you to read aloud to {him} until {he} falls asleep.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Read until {he} sleeps, and then",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 52
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You read to the end of the chapter. {npc} sleeps, and you close the book on {him}."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} is still awake at the end of the chapter, watching you."
+     }
+    },
+    {
+     "text": "Read until {he} sleeps, and leave the scroll open",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "In the morning the scroll-keeper is gone. {npc} wonders for a while, and hires another."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2u_snc_duel2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has heard that the Pavilion took a commission on {him}, and has sent you an invitation: the duelling terrace at noon, witnesses welcome.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go to the terrace at noon",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "sncx_kill",
+      "log": "The witnesses go home with a story. {npc} does not go home."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "{npc} beats you in front of every witness on the isle, and lets you live to tell it.",
+      "deathCause": "a duel at noon on the name of a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Send back your regrets",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You do not go. The terrace waits all afternoon; the isles talk all season."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2u_snc_guard2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Between you and {npc} stand two war-puppets of starsteel, bought from a master and set to wake at any step they do not know.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Break the puppets",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "two war-puppets of starsteel",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "Starsteel rings on the floor. The door behind them is open."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The puppets do not tire. You leave by the window with nothing done.",
+      "deathCause": "two war-puppets on a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Walk the way they know",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You learn the step they were set to know, and walk past in it."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "You get the step wrong."
+     }
+    },
+    {
+     "text": "Leave them guarding",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the puppets to guard an untroubled night."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2u_snc_avenger2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "An apprentice of the Lotus Halls, {npc}, asks you for a word at the Lantern Guild's gate. {He} was the student of an immortal on one of your old commissions.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "It is over at the gate. The feud ends there."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} learned more than medicine."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You leave {him} on the gate steps, beaten and alive."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay beaten."
+     }
+    },
+    {
+     "text": "Tell {him} who paid for it",
+     "roll": {
+      "stat": "charm",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "{npc} listens, goes very still, and walks away to find the one who paid."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} does not care who paid."
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You walk on through the gate. {npc} follows at a distance."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2u_snc_wanted2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Your face from a failed commission is on a jade warrant at the Lantern Guild, and the Guild pays well for faces.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go to a far isle for a season",
+     "roll": {
+      "stat": "luck",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "By spring a new face is on the warrant board."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "A Guild factor recognises you at the moorings."
+     }
+    },
+    {
+     "text": "Pay the Guild to lose the warrant",
+     "effects": {
+      "alignment": -1,
+      "item": {
+       "spirit_stone": -3
+      },
+      "flag": "sncx_cool",
+      "log": "Stones change hands. The warrant is filed somewhere nobody looks."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 3
+      }
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2u_snc_pavilion2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Pavilion's lord takes you to the top of its tower, where the names of every commission are carved, and asks which of them you would undo.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say none",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord nods once. More names will come to you."
+     }
+    },
+    {
+     "text": "Name one",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The lord looks at the name you chose for a long time. \"Good,\" the lord says. \"Remember it.\""
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2g_snc_doubt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Silent Hall names {npc}, a god of lost things. When you look into {his} domain you see what {he} does all age: {he} finds what mortals lose and leaves it where they will look.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Hall does not ask what a god does. It asks whether you will."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You tell the Hall the dream was closed to you. The Hall will learn otherwise."
+     }
+    },
+    {
+     "text": "Find the god who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid lost something of their own once, and {npc} gave it back to the wrong person. You call on them instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2g_snc_poison2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} breathes the incense of {his} worlds every dawn, as gods do. The incense of one small world reaches {him} last of all.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Mix a forgetting into that world's incense",
+     "roll": {
+      "stat": "poison",
+      "dc": 48
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} breathes it in at dawn and forgets, one thing after another, that {he} is a god."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The priests of that world smell it first and pray against it."
+     }
+    },
+    {
+     "text": "Persuade a priest of that world to do it",
+     "roll": {
+      "stat": "charm",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The priest does it, for a promise you will keep."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The priest loves {his} god."
+     }
+    },
+    {
+     "text": "Let the incense rise",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let the small world pray as it always has."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2g_snc_ambush2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} crosses the river between the stars once an age to visit a mortal grave. {He} goes alone.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait at the grave",
+     "roll": {
+      "stat": "archery",
+      "dc": 66
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You do it before {he} kneels. You do not stay to see the grave."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The grave's guardian sees you first."
+     }
+    },
+    {
+     "text": "Meet {him} on the river",
+     "roll": {
+      "stat": "strength",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The river between the stars carries {npc} away."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} is stronger on that river than anywhere."
+     }
+    },
+    {
+     "text": "Let {him} visit the grave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} go. Even you will not do it there."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2g_snc_servant2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "For an age you have been one of {npc}'s clay attendants, shaped and named by {him}. Tonight {he} asks you to stand at the foot of {his} bed while {he} dreams.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Step into the dream",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The dream is of a world {npc} made long ago. You end it there, quietly."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} knows the clay of {his} own making."
+     }
+    },
+    {
+     "text": "Stand guard until dawn, and leave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "At dawn one attendant is missing. {npc} counts them twice."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2g_snc_duel2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has read your name in the Book beside {his} own and comes to meet you first, at the border of the domain of war, as gods do.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Meet {him} there",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "sncx_kill",
+      "log": "The War Domain watches, and keeps the result."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The War Domain watches you lose.",
+      "deathCause": "a duel of gods at the border of war"
+     },
+     "risky": true
+    },
+    {
+     "text": "Do not come",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You do not come. The Book records it, in small letters."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2g_snc_guard2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Three lesser gods sworn to {npc} keep the gate of {his} sleep, each awake in turn.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the one awake",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "a sworn god at the gate of sleep",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The sworn god falls asleep at last, and so do the others."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The sworn god wakes the other two.",
+      "deathCause": "sworn gods at the gate of a sleep"
+     },
+     "risky": true
+    },
+    {
+     "text": "Wait for the change of watch",
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Between one watch and the next there is a breath. You go through it."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The watch changes early."
+     }
+    },
+    {
+     "text": "Leave the gate to them",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave. They never knew you were there."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2g_snc_avenger2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A young god of a vengeful river, {npc}, has been following your procession for three domains. {His} worlds once prayed to a god you ended for the Hall.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The river runs quiet after. The feud ends."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} drowns your procession and lets you live."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You send {him} back to {his} riverbed."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "The river does not stay beaten."
+     }
+    },
+    {
+     "text": "Give {his} worlds a blessing",
+     "roll": {
+      "stat": "charm",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You bless the worlds that prayed to the god you ended. {npc} watches, and lets the river rest."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} refuses the blessing for them."
+     }
+    },
+    {
+     "text": "Turn your procession aside",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You turn aside. Rivers are patient."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2g_snc_wanted2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A judge's clerk has found your hand in a dream that ended badly, and is comparing it to every page in the Book.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Change your hand",
+     "roll": {
+      "stat": "luck",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "You write differently for an age. The clerk compares and finds nothing."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The clerk finds a page you missed."
+     }
+    },
+    {
+     "text": "Give the clerk a better case",
+     "effects": {
+      "alignment": -2,
+      "flag": "sncx_cool",
+      "log": "You leave a greater crime of another god on the clerk's desk."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2g_snc_pavilion2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The lord of the Silent Hall shows you a room of sleeping gods who will never wake, every one the Hall's work, and asks which of them you envy.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say none of them",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord nods. You are trusted with more."
+     }
+    },
+    {
+     "text": "Say all of them",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The lord is quiet for a long time. Then: \"So do I.\""
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2p_snc_doubt2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The paper names {npc}. You watch the house a week first, and see {him} every evening teaching the stable boy to read by lamplight.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "You fold the paper away. The Lodge pays for the work, not the letters."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You tell the Lodge the house was empty. The Lodge will find out."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The coins came from a cousin who wants the house. You visit the cousin instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2p_snc_poison2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} takes honey from {his} own hives every morning, on bread, and keeps the hives behind a locked gate.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Get into the hives",
+     "roll": {
+      "stat": "poison",
+      "dc": 28
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The honey is darker that morning. {npc} goes back to bed and stays there."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The bees find you before the honey does."
+     }
+    },
+    {
+     "text": "Pay the hive-keeper",
+     "roll": {
+      "stat": "charm",
+      "dc": 36
+     },
+     "ok": {
+      "taels": -80,
+      "flag": "sncx_kill",
+      "log": "The hive-keeper carries the jar in. You never ask whether they guessed."
+     },
+     "fail": {
+      "health": -6,
+      "taels": -80,
+      "flag": "sncx_fail",
+      "log": "The hive-keeper runs to {npc} with your coins."
+     }
+    },
+    {
+     "text": "Leave the bees be",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the hives to their humming."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2p_snc_ambush2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} walks to the river every evening to watch the boats, alone, along a path through tall reeds.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait in the reeds",
+     "roll": {
+      "stat": "archery",
+      "dc": 36
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The reeds close over the path again."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "A boatman on the river sees you and shouts."
+     }
+    },
+    {
+     "text": "Meet {him} on the path",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "It is quick, and the boats sail on."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} is stronger than {he} looks."
+     }
+    },
+    {
+     "text": "Let {him} watch the boats",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} have the evening."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2p_snc_servant2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "All winter you have chopped wood for the house of {npc} under another name. Tonight {he} asks you in to warm your hands by the fire.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Warm your hands, and then",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 32
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The fire burns low. {npc} sleeps in the chair, and does not wake."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} sees the paper in your sleeve."
+     }
+    },
+    {
+     "text": "Warm your hands, and leave in the morning",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "The woodpile is full and the woodcutter gone. {npc} wonders for a day."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2p_snc_duel2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has heard there is a paper with {his} name, and waits for you in the empty market square at dawn, sword drawn.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Walk into the square",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The market opens on an empty square and a story."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The market opens on you, beaten, and {npc} walking home.",
+      "deathCause": "a dawn duel for the Lodge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Leave {him} waiting",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave {him} waiting until the stalls open."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2p_snc_guard2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps two great dogs that sleep across the door and wake at a breath.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Get past the dogs",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "two great guard dogs",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The dogs sleep on, unhurt, after a little help. The door opens."
+     },
+     "fail": {
+      "health": -18,
+      "flag": "sncx_fail",
+      "log": "The dogs wake the house.",
+      "deathCause": "the guard dogs of a target"
+     },
+     "risky": true
+    },
+    {
+     "text": "Make friends with the dogs first",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "A week of scraps, and they wag at you. The door is yours."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The dogs are not for sale."
+     }
+    },
+    {
+     "text": "Leave the dogs asleep",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave them sleeping across the door."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2p_snc_avenger2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has found you at a village wedding: grown, armed, with the eyes of the one you killed for the Lodge.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight, away from the wedding",
+     "roll": {
+      "stat": "strength",
+      "dc": 46
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "Behind the barn it ends. The music never stops."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} beats you behind the barn and goes back to the dancing."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 42
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You leave {him} by the barn, beaten and alive."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} gets up again."
+     }
+    },
+    {
+     "text": "Tell {him} the truth",
+     "roll": {
+      "stat": "charm",
+      "dc": 46
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You tell {him} everything. {npc} goes home without a word, and does not come back."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} does not want the truth."
+     }
+    },
+    {
+     "text": "Leave the wedding",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave the wedding early. {npc} watches you go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger",
+   "po": true
+  },
+  {
+   "id": "b2p_snc_wanted2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A town crier is reading your description at the crossroads, and it is a good description.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Grow a beard and change towns",
+     "roll": {
+      "stat": "luck",
+      "dc": 42
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "Nobody looks twice at the bearded stranger."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The beard is not enough."
+     }
+    },
+    {
+     "text": "Pay the crier to read it wrong",
+     "effects": {
+      "alignment": -1,
+      "taels": -80,
+      "flag": "sncx_cool",
+      "log": "The crier reads it wrong, loudly, all week."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2p_snc_pavilion2_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The master of the Lampless Lodge walks with you through a town at night, past every house where the Lodge has worked, and asks which you remember.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Say: all of them",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The master nods. You are trusted with more."
+     }
+    },
+    {
+     "text": "Say: none of them",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The master stops walking. \"Then learn to,\" the master says."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2u_snc_doubt3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The commission names {npc}. Every immortal on the isle says the same about {him}: {he} lends stones and never asks for them back.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Pavilion does not pay for gossip. You put it away."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You report that {npc} left for the far isles. The Pavilion will check."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The stones lead to a debtor who would rather owe a corpse. You call on the debtor."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2u_snc_doubt4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is younger than the commission said, barely up the white stairs, and spends {his} evenings teaching ferrymen to read.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "Young or not, the name is on the slip."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let the young immortal keep {his} evenings. The Pavilion will hear of it."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid was a rival of {npc}'s teacher. You go to the rival."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2u_snc_doubt5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You learn that {npc} once refused the Pavilion a commission of {his} own, on a name {he} thought did not deserve it.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Pavilion remembers refusals. So, tonight, do you."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You refuse too. It seems only fair."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid is the name {npc} once spared. You call on that one instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2u_snc_poison3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a pill cauldron burning day and night and tastes every batch.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Salt the cauldron",
+     "roll": {
+      "stat": "poison",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The batch comes out perfect, by every sign. {npc} tastes it and lies down beside the cauldron."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The cauldron turns the poison black, and {npc} smells it."
+     }
+    },
+    {
+     "text": "Bribe the cauldron-keeper",
+     "roll": {
+      "stat": "charm",
+      "dc": 68
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The cauldron-keeper does it, and flies to the far isles the same night."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The cauldron-keeper loves the master more than stones."
+     }
+    },
+    {
+     "text": "Leave the cauldron burning",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the fire to its work."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2u_snc_poison4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} drinks only dew gathered from one white lotus at dawn.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Treat the lotus in the night",
+     "roll": {
+      "stat": "poison",
+      "dc": 48
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The dew is heavy that morning. {npc} drinks it and sits down by the pool for good."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The lotus wilts in an hour, and {npc} knows why."
+     }
+    },
+    {
+     "text": "Leave the lotus alone",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the lotus to its dew."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2u_snc_poison5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} gives a banquet for the Eight Houses, and you have a place among the servers.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Pour for {him} alone",
+     "roll": {
+      "stat": "poison",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} raises the cup to the Eight Houses and never sets it down."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "A taster of the Eight Houses smells the cup first."
+     }
+    },
+    {
+     "text": "Pour the same for everyone",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You pour the wine and leave with the empty jars."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2u_snc_ambush3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} flies a cloud-crane to the Jade Court each dawn, over the Gorge of Winds, where the crane must fly low.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait on the gorge wall",
+     "roll": {
+      "stat": "archery",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The crane comes home without its rider."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The crane screams, and {npc}'s escort wheels toward you."
+     }
+    },
+    {
+     "text": "Leap onto the crane",
+     "roll": {
+      "stat": "lightness",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "It is over above the gorge."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "You miss the crane and catch only the wind."
+     }
+    },
+    {
+     "text": "Let the dawn pass",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You watch the crane fly on."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2u_snc_ambush4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} hosts a moon-viewing on a pavilion roof each autumn, and sends the guards down to the stairs so the guests can talk.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Come up over the eaves",
+     "roll": {
+      "stat": "lightness",
+      "dc": 68
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The guests are looking at the moon. Nobody is looking at {npc}."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "A guest sees you on the eaves and cries out."
+     }
+    },
+    {
+     "text": "Come as a guest",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You raise a cup with {npc}, and the evening ends with one guest fewer."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The steward does not know your face."
+     }
+    },
+    {
+     "text": "Enjoy the moon and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You watch the moon from the next isle, and go home."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2u_snc_ambush5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} walks the white stairs alone once a year, down to a grave below the clouds. Halfway down the mist is thick.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait in the mist halfway",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The mist keeps what happens there."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} hears your step and is ready."
+     }
+    },
+    {
+     "text": "Let {him} visit the grave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} pass. Even you will not do it on those stairs."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2u_snc_servant3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Under another name you have tended {npc}'s cranes for a season. Tonight {he} comes to the roost alone to feed them.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do it among the cranes",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} sleeps among the cranes, and the cranes go on eating."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The cranes shriek and the house wakes."
+     }
+    },
+    {
+     "text": "Hand {him} the feed, and leave by morning",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "In the morning the crane-keeper is gone."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2u_snc_servant4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A year as {npc}'s ink servant. Tonight {he} asks you to stay while {he} writes a letter to someone below the clouds.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait until the letter is sealed",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} sleeps over the letter. You send it on yourself, as {he} would have."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} looks up from the letter at the wrong moment."
+     }
+    },
+    {
+     "text": "Seal the letter for {him} and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You seal it, and leave the house before dawn."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2u_snc_servant5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "For a season you have carried {npc}'s parasol on the isle roads. Tonight a storm comes, and the road home is empty.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "In the storm",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The storm covers everything. The parasol is found in the morning, upside down on the road."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} turns in the rain and sees your hand move."
+     }
+    },
+    {
+     "text": "Hold the parasol to the door, and leave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You see {him} to the door and walk away into the storm."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2u_snc_duel3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} meets you at the Thunder Gate, where duels are fought in the lightning, and bows first.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} in the lightning",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The lightning takes the fight's end and keeps it."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The lightning chooses {npc}. You crawl out of the Gate alive.",
+      "deathCause": "a duel at the Thunder Gate"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow and leave the Gate to the storm."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2u_snc_duel4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has waited on the Lantern Guild's bridge every night for a month. Tonight you come.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Cross the bridge to {him}",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "One lantern goes out on the bridge, then the rest burn on."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "{npc} sends you back across the bridge, beaten, and lets you live.",
+      "deathCause": "a duel on the Lantern bridge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You turn back. {npc} waits another night, then stops."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2u_snc_duel5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You find {npc} meditating on a sunken isle. {He} opens {his} eyes before you land. \"The Pavilion,\" {he} says. \"Come, then.\"",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Come",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The sunken isle is quiet again."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "{npc} closes {his} eyes again before you are out of sight.",
+      "deathCause": "a duel on a sunken isle"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow, and {npc} closes {his} eyes."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2u_snc_guard3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A sworn blade of {npc}'s house keeps the threshold with two swords, and does not sleep.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the sworn blade",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the sworn blade",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The swords go still. The door is open."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The sworn blade is everything they say. You leave over the wall.",
+      "deathCause": "a sworn blade on a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Over the roof",
+     "roll": {
+      "stat": "lightness",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You drop through the roof behind the threshold."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The roof is warded."
+     }
+    },
+    {
+     "text": "Break off",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You go back into the clouds."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2u_snc_guard4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A ward of white jade rings {npc}'s pavilion. It sings at any step it does not know.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Unpick the ward",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You learn its song and walk through it humming."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The ward sings out across the isle."
+     }
+    },
+    {
+     "text": "Go through it fast",
+     "roll": {
+      "stat": "lightness",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You are through before the ward finishes its first note."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The ward is faster."
+     }
+    },
+    {
+     "text": "Leave the ward singing",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave it to its song."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2u_snc_guard5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Three of {npc}'s disciples keep watch on the pavilion roof in turns, and none has ever missed a turn.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the eldest disciple",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the eldest disciple",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The eldest disciple will wake in the morning with a headache. {npc} will not wake."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The eldest disciple holds the roof.",
+      "deathCause": "a disciple on a commission"
+     },
+     "risky": true
+    },
+    {
+     "text": "Wait for the change of watch",
+     "roll": {
+      "stat": "luck",
+      "dc": 66
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Between one watch and the next, you are in."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The watch changes early."
+     }
+    },
+    {
+     "text": "Leave the roof to them",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2u_snc_avenger3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has piloted your skiff for a month under another name. Halfway across the sea of cloud {he} lets go of the pole and turns: the face of one you ended for the Pavilion, younger.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The skiff comes home with one aboard."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You leave {him} the skiff and fly home."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You talk until the skiff drifts ashore. It is not forgiveness. It is a start."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You step off the skiff into the mist."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2u_snc_avenger4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} challenges you on the Duelling Terraces, in front of everyone, and names the immortal you ended for the Pavilion as {his} master.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The terrace goes quiet. The feud ends there."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You leave {him} on the terrace, beaten, alive, and watched."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You tell the terrace who paid. {npc} goes to find the one who paid."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave the terrace. The isles talk for a year."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2u_snc_pavilion3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Pavilion's lord sends you a cloud-peach and a blank commission slip, with a note: \"Write a name. Any name.\"",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Send the slip back blank",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord is pleased. You are trusted with more."
+     }
+    },
+    {
+     "text": "Write your own name",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "A second note comes: \"Interesting.\" Nothing else, yet."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2u_snc_wanted3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Your face from a failed commission is on a jade poster at every Lantern Guild counter, and the Guild sells copies.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Buy every copy through other hands",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "item": {
+       "spirit_stone": -2
+      },
+      "flag": "sncx_cool",
+      "log": "The poster disappears from the isles."
+     },
+     "fail": {
+      "comprehension": 1,
+      "item": {
+       "spirit_stone": -2
+      },
+      "log": "The Guild prints more."
+     },
+     "req": {
+      "itemsAtLeast": {
+       "spirit_stone": 2
+      }
+     }
+    },
+    {
+     "text": "Have another face drawn over yours",
+     "effects": {
+      "alignment": -1,
+      "flag": "sncx_cool",
+      "log": "A stranger's face goes up over yours, and the wardens chase it."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2g_snc_doubt3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The Hall names {npc}, a god of thresholds. In {his} worlds no door is ever locked against a beggar.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Hall does not weigh doors. Neither will you."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You tell the Hall the dream would not open. It will learn otherwise."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid keeps locked doors. You call there instead."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2g_snc_doubt4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} gave away half {his} domain an age ago to a god who had lost theirs, and never asked for it back.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "An old kindness is not your business."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You leave {npc} the half {he} kept."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid is the god {npc} helped. You go to that god."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2g_snc_doubt5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is a god of small hours, and the only one who answers prayers at night.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "Somebody else can answer at night."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let the night keep its god."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid sells lamps. You visit the lamp-seller."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2g_snc_poison3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} eats one star-peach from {his} own orchard each age, picked by {his} own hand.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Ripen a forgetting in the peach",
+     "roll": {
+      "stat": "poison",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} eats it slowly, and forgets, one by one, every world {he} kept."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The orchard's god-tree sheds the peach before it ripens."
+     }
+    },
+    {
+     "text": "Leave the orchard",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the peaches to their age."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2g_snc_poison4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} bathes in a river of the first light every dawn. The river comes from a spring nobody watches.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Cloud the spring",
+     "roll": {
+      "stat": "poison",
+      "dc": 52
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The light is dim that dawn. {npc} goes into it and does not come out."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The spring's spirit wakes and calls for the Court."
+     }
+    },
+    {
+     "text": "Persuade the spring's spirit",
+     "roll": {
+      "stat": "charm",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The spirit does it, for a promise."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The spirit loves its god."
+     }
+    },
+    {
+     "text": "Leave the spring",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let the river run clear."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2g_snc_poison5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "At the Feast of Domains, {npc} drinks from a cup only {his} cupbearer may fill. You have been the cupbearer for an age.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fill it",
+     "roll": {
+      "stat": "poison",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The feast goes on. One seat is empty by the end."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "An elder god at the next seat smells the cup."
+     }
+    },
+    {
+     "text": "Fill it with nectar, and resign",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You fill it honestly and leave the feast for good."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2g_snc_ambush3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} crosses the bridge of stars between two domains alone, every hundred years, to count {his} worlds.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait under the bridge",
+     "roll": {
+      "stat": "archery",
+      "dc": 66
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The count stops at nine hundred and some."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The bridge's guardians see the arrow first."
+     }
+    },
+    {
+     "text": "Meet {him} on the bridge",
+     "roll": {
+      "stat": "strength",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The bridge is empty again."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} is strong on {his} own bridge."
+     }
+    },
+    {
+     "text": "Let {him} count",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} count."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2g_snc_ambush4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} goes down to a mortal world each age, in disguise, to walk its market for a day.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Find {him} in the crowd",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "A stranger falls ill in the market, and the market goes on."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} sees through your disguise first."
+     }
+    },
+    {
+     "text": "Let {him} have the market",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the god to the stalls."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2g_snc_ambush5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} sleeps an age at a time in a cloud above {his} domain, and the cloud drifts with no guard.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Enter the cloud",
+     "roll": {
+      "stat": "lightness",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The cloud drifts on, lighter."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The cloud is a guard after all."
+     }
+    },
+    {
+     "text": "Let the cloud drift",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You watch it go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2g_snc_servant3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "For an age you have tended the lamps in {npc}'s temple. Tonight {he} comes to the inner hall alone to pray to {his} own maker.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "While {he} prays",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The prayer ends in silence, as all prayers do."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} hears you over the prayer."
+     }
+    },
+    {
+     "text": "Trim the lamps, and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "In the morning the lamp-keeper is gone."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2g_snc_servant4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You are one of {npc}'s heralds, and tonight {he} sends you with a message only you may hear the answer to.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Carry an ending instead",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "You deliver it in person."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} reads it in your face."
+     }
+    },
+    {
+     "text": "Carry the message, and do not come back",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "The message arrives. The herald does not return."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2g_snc_servant5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "An age as {npc}'s gardener of stars. Tonight {he} walks the garden alone and asks you which star is ready.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Point, and strike",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 72
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} looks up at the star, and does not look down again."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} looks down at the wrong moment."
+     }
+    },
+    {
+     "text": "Name a star, and leave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You name one. In the morning the gardener is gone."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2g_snc_duel3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} meets you at the border of the War Domain, where gods have always settled such things.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Settle it",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The War Domain keeps the result."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The War Domain watches you lose.",
+      "deathCause": "a duel of gods at the War Domain"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow. The War Domain is disappointed."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2g_snc_duel4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} waits for you in the Hall of the Book, before the page with both your names.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} before the Book",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The Book closes one line."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The Book writes your defeat in small letters.",
+      "deathCause": "a duel before the Book"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the page as it is."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2g_snc_duel5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You come to {npc}'s throne openly. {He} stands, and the domain stands with {him}.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} and the domain",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The domain sits down again, under nobody."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The domain throws you out across three borders.",
+      "deathCause": "a duel for a domain"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow to the throne and go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2g_snc_guard3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "Four lesser gods sworn to {npc} hold the four doors of {his} sleep.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the north door's god",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "a sworn god of the north door",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The north door opens."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The north door holds, and all four wake.",
+      "deathCause": "a sworn god at the door of a sleep"
+     },
+     "risky": true
+    },
+    {
+     "text": "Find a fifth door",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "There is always a fifth door. You find it."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "There is no fifth door."
+     }
+    },
+    {
+     "text": "Leave the doors",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2g_snc_guard4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A beast of the Star Beast Stable lies across {npc}'s threshold, and it has never been asleep.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the star beast",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "a star beast",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The beast lies still, unhurt and asleep at last."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The beast drives you off, roaring.",
+      "deathCause": "a star beast on the quiet work"
+     },
+     "risky": true
+    },
+    {
+     "text": "Befriend it first",
+     "roll": {
+      "stat": "charm",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "An age of patience, and it lets you pass."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "It will not be befriended."
+     }
+    },
+    {
+     "text": "Leave it watching",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the beast to its watch."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2g_snc_guard5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has set {his} own shadow to guard {him} while {he} dreams.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight the shadow",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "{npc}'s shadow",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The shadow lies down, and so does its god."
+     },
+     "fail": {
+      "health": -22,
+      "flag": "sncx_fail",
+      "log": "The shadow is as strong as its god.",
+      "deathCause": "a god's shadow on the quiet work"
+     },
+     "risky": true
+    },
+    {
+     "text": "Wait for noon",
+     "roll": {
+      "stat": "luck",
+      "dc": 68
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "At noon a shadow is smallest. You step over it."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "Noon in that domain never comes."
+     }
+    },
+    {
+     "text": "Leave the shadow",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2g_snc_avenger3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, the heir of a god you ended for the Hall, has taken {his} parent's domain and come to the border of yours.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The border is quiet after."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 76
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You send {him} back to {his} domain."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You give {him} the page of the Book that names who paid."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You withdraw from your border for an age."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2g_snc_avenger4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A priest-god of the domain you emptied for the Hall, {npc}, has walked all the way to your temple to ask why.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The question dies with {him}."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 74
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You send {him} home without an answer."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 78
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You tell {him} why. {npc} walks home with it."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You close the temple doors."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2g_snc_pavilion3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The lord of the Silent Hall asks you to sit in on a judgement of the Court, unseen, and say afterwards who should have been sealed.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Name the judge",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The lord nods once. You are trusted with more."
+     }
+    },
+    {
+     "text": "Name nobody",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The lord is silent a long time, then pleased."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2g_snc_wanted3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A warrant-bearer is asking every god at the Divine Exchange about a hand that matches yours.",
+   "when": {
+    "upper": true,
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Stay out of the Exchange an age",
+     "roll": {
+      "stat": "luck",
+      "dc": 62
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "The bearer asks for an age and moves on."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The bearer finds someone who remembers."
+     }
+    },
+    {
+     "text": "Lend the bearer another hand to follow",
+     "effects": {
+      "alignment": -2,
+      "flag": "sncx_cool",
+      "log": "You give the bearer a better trail, someone else's."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  },
+  {
+   "id": "b2p_snc_doubt3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The paper names {npc}, the miller. You watch a week and see {him} grind the poor's grain for nothing on the last day of each month.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "The Lodge does not pay for flour."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You tell the Lodge the mill was shut."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The coins came from the other miller. You go to the other mill."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2p_snc_doubt4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is the ferrymaster, and the only one who will cross the flood when a child is sick on the far bank.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "Somebody else will learn to cross."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let the ferry keep its master."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid owns the bridge upstream. You visit the bridge."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2p_snc_doubt5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} sings in the square on market days, and every song is about someone the reeve wronged.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Do the work anyway",
+     "effects": {
+      "flag": "sncx_go",
+      "log": "Songs are not your business."
+     }
+    },
+    {
+     "text": "Spare {him}",
+     "effects": {
+      "flag": "sncx_spare",
+      "log": "You let {him} keep singing."
+     }
+    },
+    {
+     "text": "Find who paid",
+     "effects": {
+      "flag": "sncx_client",
+      "log": "The one who paid is the reeve. You visit the reeve."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_doubt"
+  },
+  {
+   "id": "b2p_snc_poison3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} drinks from the well in {his} own yard, and nobody else draws from it.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go to the well at night",
+     "roll": {
+      "stat": "poison",
+      "dc": 28
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} drinks in the morning and goes back to bed."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The yard dog wakes the house."
+     }
+    },
+    {
+     "text": "Leave the well",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave the yard."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2p_snc_poison4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} buys a pie from the same baker every evening on the way home.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Pay the baker's apprentice",
+     "roll": {
+      "stat": "charm",
+      "dc": 36
+     },
+     "ok": {
+      "taels": -40,
+      "flag": "sncx_kill",
+      "log": "The apprentice hands over a different pie."
+     },
+     "fail": {
+      "health": -6,
+      "taels": -40,
+      "flag": "sncx_fail",
+      "log": "The apprentice runs to {npc} with your coins."
+     }
+    },
+    {
+     "text": "Bake the pie yourself",
+     "roll": {
+      "stat": "poison",
+      "dc": 32
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Nobody notices the new baker for one evening."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The baker comes back early."
+     }
+    },
+    {
+     "text": "Walk past the bakery and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You walk past the bakery and out of town."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2p_snc_poison5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} is laid up with gout and takes a tonic from the herb-wife each night.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Change the tonic",
+     "roll": {
+      "stat": "poison",
+      "dc": 30
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The gout troubles {npc} no more."
+     },
+     "fail": {
+      "health": -8,
+      "flag": "sncx_fail",
+      "log": "The herb-wife smells the bottle."
+     }
+    },
+    {
+     "text": "Leave the tonic",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let the herb-wife do the work."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_poison"
+  },
+  {
+   "id": "b2p_snc_ambush3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} rides to the hunt every autumn through the beech wood, and the riders spread out among the trees.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Wait among the beeches",
+     "roll": {
+      "stat": "archery",
+      "dc": 36
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "A riderless horse comes out of the wood."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The hounds find you first."
+     }
+    },
+    {
+     "text": "Let the hunt pass",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You watch the hunt ride by."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2p_snc_ambush4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} crosses the frozen lake on foot every winter to the fair on the far shore.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Meet {him} on the ice",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The ice keeps it."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} is surer on the ice than you."
+     }
+    },
+    {
+     "text": "Let {him} reach the fair",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} cross."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2p_snc_ambush5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} rides home late from the tavern every market day, alone, by the hollow road.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "In the hollow",
+     "roll": {
+      "stat": "archery",
+      "dc": 34
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The horse finds its own way home."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "Two friends ride behind {npc} tonight."
+     }
+    },
+    {
+     "text": "Let {him} ride home",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You let {him} go."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_ambush"
+  },
+  {
+   "id": "b2p_snc_servant3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A season as {npc}'s groom. Tonight {he} comes to the stable alone to see a mare foal.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "While the mare foals",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 32
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "{npc} sits down in the straw and does not get up."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The stable boy comes in with a lamp."
+     }
+    },
+    {
+     "text": "Help with the foal, and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "The foal is born. In the morning the groom is gone."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2p_snc_servant4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "All summer you have kept {npc}'s accounts. Tonight {he} stays late to count the money with you.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "While {he} counts",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 30
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The count stops."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "{npc} looks up from the coins."
+     }
+    },
+    {
+     "text": "Finish the count and leave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "The accounts balance. The clerk does not come back."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2p_snc_servant5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "You have read to {npc}'s old mother every evening for a month. Tonight {npc} sits in to listen.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "After the chapter",
+     "roll": {
+      "stat": "acupoint",
+      "dc": 34
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The old woman sleeps. So does {npc}, for good."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "The old woman is awake after all."
+     }
+    },
+    {
+     "text": "Finish the chapter, and go",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "The reader does not come back."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_servant"
+  },
+  {
+   "id": "b2p_snc_duel3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} meets you at the crossroads gallows-tree at midnight, as the old custom of this world allows.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight {him} at the crossroads",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The crossroads keeps one more story."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "{npc} walks home. You crawl.",
+      "deathCause": "a crossroads duel for the Lodge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You bow and take the other road."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2p_snc_duel4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has heard about the paper and waits for you on the bridge with a quarterstaff.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Cross the bridge",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The river takes the quarterstaff."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "The quarterstaff wins.",
+      "deathCause": "a bridge duel for the Lodge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You do not cross."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2p_snc_duel5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} invites you into {his} yard, shuts the gate, and draws an old soldier's sword.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight in the yard",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The yard is quiet."
+     },
+     "fail": {
+      "health": -26,
+      "flag": "sncx_fail",
+      "log": "{npc} opens the gate for you to limp out.",
+      "deathCause": "a yard duel for the Lodge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Bow and withdraw",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You ask {him} to open the gate. {He} does."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_duel"
+  },
+  {
+   "id": "b2p_snc_guard3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} keeps a hired wrestler at the door, a giant who eats at the door and sleeps standing.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Get past the wrestler",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the hired wrestler",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The wrestler sits down, dazed. The door opens."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "sncx_fail",
+      "log": "The wrestler throws you into the street.",
+      "deathCause": "a hired wrestler"
+     },
+     "risky": true
+    },
+    {
+     "text": "Through the cellar",
+     "roll": {
+      "stat": "lightness",
+      "dc": 38
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The cellar door was never locked."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sncx_fail",
+      "log": "The cellar door was."
+     }
+    },
+    {
+     "text": "Leave",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2p_snc_guard4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}'s three sons take turns at the gate with cudgels.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Go through the eldest son",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the eldest son",
+      "boss": true
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "sncx_kill",
+      "log": "The eldest son sleeps by the gate. The house is open."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "sncx_fail",
+      "log": "The sons drive you off.",
+      "deathCause": "a son at the gate"
+     },
+     "risky": true
+    },
+    {
+     "text": "Wait for the change at the gate",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Between sons, you are through."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "They change early."
+     }
+    },
+    {
+     "text": "Leave them to their gate",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2p_snc_guard5_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A geese-yard lies between the wall and {npc}'s window, and geese wake for anything.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Cross the geese-yard",
+     "roll": {
+      "stat": "lightness",
+      "dc": 42
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "Not one goose stirs."
+     },
+     "fail": {
+      "flag": "sncx_guard",
+      "log": "Every goose wakes."
+     }
+    },
+    {
+     "text": "Bring bread for the geese",
+     "roll": {
+      "stat": "charm",
+      "dc": 36
+     },
+     "ok": {
+      "flag": "sncx_kill",
+      "log": "The geese are busy. You are not."
+     },
+     "fail": {
+      "health": -4,
+      "flag": "sncx_fail",
+      "log": "The geese want more bread."
+     }
+    },
+    {
+     "text": "Leave the geese asleep",
+     "effects": {
+      "flag": "sncx_away",
+      "log": "You leave."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_guard"
+  },
+  {
+   "id": "b2p_snc_avenger3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc}, grown, is the new smith in your town. {He} has been making one blade all month, and you know whose eyes those are.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 46
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The forge goes cold."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 42
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You leave {him} at the forge, beaten."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 46
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You tell {him} who paid. The new blade goes another way."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You leave town."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2p_snc_avenger4_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} has followed you from village to village with a list of names, and yours is the last.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "strength",
+      "dc": 44
+     },
+     "ok": {
+      "flag": "sncx_av_kill",
+      "log": "The list is finished."
+     },
+     "fail": {
+      "health": -12,
+      "woundOnly": true,
+      "flag": "sncx_fail",
+      "log": "{npc} is better than you remember being at that age."
+     }
+    },
+    {
+     "text": "Beat {him} and let {him} go",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_av_spare",
+      "log": "You tear the list and leave {him} on the road."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "sncx_fail",
+      "log": "{npc} does not stay down."
+     }
+    },
+    {
+     "text": "Talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 44
+     },
+     "ok": {
+      "flag": "sncx_av_peace",
+      "log": "You read the list with {him}. Most of the names paid the Lodge."
+     },
+     "fail": {
+      "flag": "sncx_av_flee",
+      "log": "{npc} will not hear a word of it."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "flag": "sncx_av_flee",
+      "log": "You walk on. {npc} follows."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "npc": {
+    "role": "stranger"
+   },
+   "trigger": "snc_avenger"
+  },
+  {
+   "id": "b2p_snc_pavilion3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "The master of the Lampless Lodge asks you to choose the next paper yourself, from the whole box.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Choose the one most deserved",
+     "effects": {
+      "performance": 10,
+      "flag": "snc_pv_told",
+      "log": "The master nods. You are trusted with more."
+     }
+    },
+    {
+     "text": "Close the box",
+     "effects": {
+      "comprehension": 1,
+      "flag": "snc_pv_read",
+      "log": "The master laughs quietly and takes it back."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_pavilion"
+  },
+  {
+   "id": "b2p_snc_wanted3_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "text": "A hunter of the kingdom's warrants is showing your likeness at every inn on the high road.",
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Envelopes",
+   "choices": [
+    {
+     "text": "Keep off the high road",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "sncx_cool",
+      "log": "The hunter gives up and goes home."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "The hunter is patient."
+     }
+    },
+    {
+     "text": "Pay a lookalike to be seen elsewhere",
+     "effects": {
+      "alignment": -1,
+      "taels": -80,
+      "flag": "sncx_cool",
+      "log": "Your lookalike is seen in three towns at once."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "trigger": "snc_wanted"
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

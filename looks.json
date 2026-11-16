@@ -1,0 +1,1321 @@
+{
+ "events": [
+  {
+   "id": "dc_lk_magson_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "At the river market a young noble in sky-blue silk stops dead in front of you, and four servants nearly walk into {his} back. By evening a palanquin is at your door with a jade hairpin on a cushion and a card: {npc}, heir of the county magistrate, would be honoured to have you in {his} household.",
+   "npc": {
+    "role": "lk_magson",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_magson",
+     "age": 2,
+     "opinion": 0,
+     "name": "Hwang Do-yun",
+     "opposite": true
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ]
+   },
+   "arc": "Not For Sale",
+   "choices": [
+    {
+     "text": "Send the hairpin back with a polite note",
+     "effects": {
+      "alignment": 1,
+      "flag": "lk_ms_no",
+      "mem": {
+       "deed": "refused",
+       "w": -6,
+       "note": "sent my hairpin back"
+      },
+      "log": "The palanquin goes away empty. The bearers look at you as if you had refused the sun.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Keep the hairpin, give no answer",
+     "effects": {
+      "taels": 20,
+      "flag": "lk_ms_took",
+      "mem": {
+       "deed": "kept_gift",
+       "w": 4,
+       "note": "kept my hairpin and said nothing"
+      },
+      "log": "The jade is very good. You are fairly sure it will not be the last of it.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Laugh at the card in front of the bearers",
+     "effects": {
+      "fame": 1,
+      "flag": "lk_ms_no",
+      "mem": {
+       "deed": "mocked",
+       "w": -12,
+       "note": "laughed at my card in front of my servants"
+      },
+      "log": "The bearers carry your laughter all the way back to the magistrate's house.",
+      "npcFlag": "lk_magson_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_magson_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has not taken no for an answer. {His} servants follow you through the market, {his} gifts pile up at your gate, and this morning four of {his} household guards were waiting at the bridge. \"The magistrate's heir only wants to talk,\" says the biggest of them, and does not move aside.",
+   "npc": {
+    "role": "lk_magson"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ],
+    "after": [
+     "dc_lk_magson_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_magson_who"
+    ]
+   },
+   "arc": "Not For Sale",
+   "choices": [
+    {
+     "text": "Go through them",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "lk_ms_beat",
+      "mem": {
+       "deed": "shamed",
+       "w": -10,
+       "note": "threw my guards into the river"
+      },
+      "log": "Four guards go into the river one after another. The market cheers. {npc} watches from a teahouse window, white.",
+      "npcFlag": "lk_magson_who"
+     },
+     "fail": {
+      "health": -6,
+      "woundOnly": true,
+      "log": "There are more of them than you thought. You get home bruised, and {his} gifts are still at your gate.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Go over {his} head to the magistrate",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "lk_ms_father",
+      "fame": 1,
+      "log": "The magistrate hears you out, shuts both eyes, and sends for {npc}. The guards stop coming.",
+      "npcFlag": "lk_magson_who"
+     },
+     "fail": {
+      "luck": -1,
+      "log": "The magistrate smiles a great deal and promises nothing. The guards are back the next day.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Stay inside your gate for a season",
+     "effects": {
+      "comprehension": 1,
+      "strength": 1,
+      "log": "You train in the courtyard all season. It is quiet, and you hate that it had to be.",
+      "npcFlag": "lk_magson_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_magson_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The Lantern Festival, and the whole county on the bridge. {npc} pushes through the crowd with a lantern painted with your face, and calls your name so loudly that the musicians stop. Everyone turns to see what you will do.",
+   "npc": {
+    "role": "lk_magson"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ],
+    "after": [
+     "dc_lk_magson_2"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "lk_magson_who"
+    ]
+   },
+   "arc": "Not For Sale",
+   "choices": [
+    {
+     "text": "Tell the whole bridge what {he} has done this year",
+     "effects": {
+      "fame": 3,
+      "alignment": 2,
+      "flag": "lk_end_magson",
+      "mem": {
+       "deed": "exposed",
+       "w": -15,
+       "note": "told the whole bridge what I did"
+      },
+      "log": "You say it plainly: the guards, the gate, the bridge. The crowd turns its back on {npc}, who goes home with the lantern.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Take {him} aside and make a quiet bargain",
+     "effects": {
+      "taels": 30,
+      "comprehension": 1,
+      "flag": "lk_end_magson",
+      "mem": {
+       "deed": "bargain",
+       "w": 2,
+       "note": "made a quiet bargain with me"
+      },
+      "log": "You keep {his} secrets, {npc} keeps {his} distance. Both of you keep the bargain.",
+      "npcFlag": "lk_magson_who"
+     }
+    },
+    {
+     "text": "Take the lantern and set it on the river",
+     "effects": {
+      "alignment": 3,
+      "charm": 1,
+      "flag": "lk_end_magson",
+      "mem": {
+       "deed": "let_go",
+       "w": 8,
+       "note": "let my lantern go down the river, kindly"
+      },
+      "log": "You set it on the water and watch it go. \"That is all it was,\" you say. For once {npc} has nothing to say.",
+      "npcFlag": "lk_magson_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_envy_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "At the martial hall the talk has a new tune: that the instructors smile at you because of your face, that your rank was bought with it. Everyone knows where it comes from. {npc}, three years your senior, has trained twice as hard as anyone here and been noticed half as often.",
+   "npc": {
+    "role": "lk_envy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_envy",
+     "age": 3,
+     "opinion": 0,
+     "male": false,
+     "name": "Mok Seo-ri"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ]
+   },
+   "arc": "The Jealous Senior",
+   "choices": [
+    {
+     "text": "Ask {npc} to train with you",
+     "effects": {
+      "strength": 1,
+      "flag": "lk_ev_train",
+      "mem": {
+       "deed": "trained",
+       "w": 6,
+       "note": "asked me to train when I had wronged them"
+      },
+      "log": "{npc} stares, then agrees through {his} teeth. You train until neither of you can lift an arm.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Answer the rumour in the ring",
+     "effects": {
+      "fame": 1,
+      "strength": 1,
+      "flag": "lk_ev_ring",
+      "log": "You win your next three bouts so cleanly that the rumour has to find a new tune.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Let them talk",
+     "effects": {
+      "comprehension": 1,
+      "flag": "lk_ev_quiet",
+      "log": "They talk. It is surprising how much it hurts.",
+      "npcFlag": "lk_envy_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_envy_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The morning of the hall's contest your practice sword is found snapped in its rack, and someone has slit the sleeve of your robe from shoulder to wrist. {npc} is the only one in the yard who does not look surprised.",
+   "npc": {
+    "role": "lk_envy"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ],
+    "after": [
+     "dc_lk_envy_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_envy_who"
+    ]
+   },
+   "arc": "The Jealous Senior",
+   "choices": [
+    {
+     "text": "Fight with a borrowed sword",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "flag": "lk_ev_won",
+      "log": "The borrowed sword is too heavy and you win anyway. {npc} leaves the yard before the last bout.",
+      "npcFlag": "lk_envy_who"
+     },
+     "fail": {
+      "health": -3,
+      "woundOnly": true,
+      "log": "The borrowed sword turns in your hand in the second bout. You lose, and {npc} wins the day.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Confront {npc} in front of the hall",
+     "effects": {
+      "fame": 1,
+      "alignment": -1,
+      "mem": {
+       "deed": "accused",
+       "w": -10,
+       "note": "accused me in front of the whole hall"
+      },
+      "log": "{npc} denies it, and the hall believes whoever it likes better. It likes you better. It does not feel like winning.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Say nothing and mend the sleeve yourself",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "You sew it badly and wear it anyway. Some of the juniors start slitting their own sleeves for luck.",
+      "npcFlag": "lk_envy_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_envy_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years on, {npc} comes to your door with the rain on {his} shoulders. {He} failed the elders' trial again, and the examiner told {him}, kindly, that {he} might do better if {he} smiled more. {He} laughs at that until {he} is not laughing.",
+   "npc": {
+    "role": "lk_envy"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ],
+    "after": [
+     "dc_lk_envy_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "lk_envy_who"
+    ]
+   },
+   "arc": "The Jealous Senior",
+   "choices": [
+    {
+     "text": "Tell {him} the truth: {he} was always the better student",
+     "effects": {
+      "alignment": 2,
+      "flag": "lk_end_envy",
+      "mem": {
+       "deed": "comforted",
+       "w": 18,
+       "note": "told me I was always the better student"
+      },
+      "log": "{He} does not believe you, and then {he} does. You drink until the rain stops.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Teach {him} what the examiners want to see",
+     "effects": {
+      "charm": 1,
+      "comprehension": 1,
+      "flag": "lk_end_envy",
+      "mem": {
+       "deed": "taught",
+       "w": 12,
+       "note": "taught me how to be seen"
+      },
+      "log": "You teach {him} to stand like someone worth noticing. {He} passes the next trial, and never thanks you, and you do not mind.",
+      "npcFlag": "lk_envy_who"
+     }
+    },
+    {
+     "text": "Close the door",
+     "effects": {
+      "flag": "lk_end_envy",
+      "mem": {
+       "deed": "shut_out",
+       "w": -8,
+       "note": "closed the door on me in the rain"
+      },
+      "log": "You close it. {He} does not knock again.",
+      "npcFlag": "lk_envy_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_painter_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, whose paintings hang in the palace, drops a whole tray of brushes in the street when you pass. {He} follows you three streets begging, with ink on {his} nose, for one afternoon. \"I have painted the Emperor,\" {he} says. \"I have never painted anything like you.\"",
+   "npc": {
+    "role": "lk_painter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_painter",
+     "age": 10,
+     "opinion": 0,
+     "male": false,
+     "name": "Yun Seol-ah"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_divine"
+    ]
+   },
+   "arc": "The Painter of the Capital",
+   "choices": [
+    {
+     "text": "Sit for {him}",
+     "effects": {
+      "charm": 2,
+      "fame": 2,
+      "flag": "lk_pt_sat",
+      "mem": {
+       "deed": "sat",
+       "w": 10,
+       "note": "sat for my painting"
+      },
+      "log": "You sit an afternoon, then a week. The painting, when {he} shows it, does not look like you. It looks like what people see.",
+      "npcFlag": "lk_painter_who"
+     }
+    },
+    {
+     "text": "Ask {him} to paint the beggar on the corner instead",
+     "effects": {
+      "alignment": 2,
+      "flag": "lk_pt_beggar",
+      "mem": {
+       "deed": "humbled",
+       "w": 6,
+       "note": "sent me to paint the beggar, and was right"
+      },
+      "log": "{He} paints the beggar, sulking. It is the best thing {he} ever does, and {he} knows it.",
+      "npcFlag": "lk_painter_who"
+     }
+    },
+    {
+     "text": "Walk faster",
+     "effects": {
+      "luck": 1,
+      "flag": "lk_pt_sat",
+      "log": "{He} gives up at the fourth street, and paints you from memory anyway.",
+      "npcFlag": "lk_painter_who"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_lk_painter_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}'s painting has made you a legend in the capital. Strangers wait at your gate to look at you, a perfume seller has named a scent after you, and a lord of the Inner Court has offered a fortune for the painting, and rather more for an introduction to you.",
+   "npc": {
+    "role": "lk_painter"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_divine"
+    ],
+    "after": [
+     "dc_lk_painter_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "lk_painter_who"
+    ]
+   },
+   "arc": "The Painter of the Capital",
+   "choices": [
+    {
+     "text": "Have the painting burned",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 1,
+      "flag": "lk_end_painter",
+      "mem": {
+       "deed": "burned",
+       "w": -6,
+       "note": "had my best painting burned"
+      },
+      "log": "{npc} weeps, and burns it with {his} own hands. The crowds at your gate thin by the spring.",
+      "npcFlag": "lk_painter_who"
+     }
+    },
+    {
+     "text": "Let the lord buy the painting, and nothing more",
+     "effects": {
+      "taels": 60,
+      "flag": "lk_end_painter",
+      "mem": {
+       "deed": "sold",
+       "w": 8,
+       "note": "made me rich and stayed free"
+      },
+      "log": "The lord pays, looks at you, looks at the painting, and decides the painting is easier. {npc} buys a new house.",
+      "npcFlag": "lk_painter_who"
+     }
+    },
+    {
+     "text": "Give the painting to a temple",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "flag": "lk_end_painter",
+      "log": "The monks hang it where pilgrims leave offerings. It does a great deal of good, and you never go to see it.",
+      "npcFlag": "lk_painter_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_underdog_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Bandits on the Red Pass. Their chief, {npc}, walks down the line of travellers taking purses, and when {he} comes to you {he} does not even stop: {he} takes you for a porter and points you to the baggage. Nobody guards the porters.",
+   "npc": {
+    "role": "lk_underdog",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_underdog",
+     "age": 8,
+     "opinion": 0,
+     "male": true,
+     "name": "Gwak Cheol"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ]
+   },
+   "arc": "Nobody Looks Twice",
+   "choices": [
+    {
+     "text": "Carry the baggage, and watch",
+     "effects": {
+      "comprehension": 2,
+      "flag": "lk_ud_watch",
+      "log": "You carry their loot all the way to their camp and count every man, every horse and every gate.",
+      "npcFlag": "lk_underdog_who"
+     }
+    },
+    {
+     "text": "Strike while {his} back is turned",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 2,
+      "strength": 1,
+      "flag": "lk_ud_struck",
+      "mem": {
+       "deed": "felled",
+       "w": -14,
+       "note": "knocked me into the mud from behind"
+      },
+      "log": "{npc} goes down in the mud before {he} knows what hit {him}. The bandits scatter, and the travellers look at you properly for the first time.",
+      "npcFlag": "lk_underdog_who"
+     },
+     "fail": {
+      "health": -6,
+      "woundOnly": true,
+      "log": "You are not quite fast enough. {npc} knocks you flat, laughs, and leaves you in the road. {He} still does not ask your name.",
+      "npcFlag": "lk_underdog_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_underdog_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "You know {npc}'s camp now: the rotten stockade post, the guard who drinks, the night the loot goes down the river. The county has posted a reward for {him}, and the constable is a fat man who has never once left town.",
+   "npc": {
+    "role": "lk_underdog"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ],
+    "after": [
+     "dc_lk_underdog_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_underdog_who"
+    ]
+   },
+   "arc": "Nobody Looks Twice",
+   "choices": [
+    {
+     "text": "Draw a map for the constable",
+     "effects": {
+      "comprehension": 2,
+      "flag": "lk_ud_map",
+      "log": "The constable stares at the map, then at you. \"Who are you?\" the constable asks. It is a good question.",
+      "npcFlag": "lk_underdog_who"
+     }
+    },
+    {
+     "text": "Go back alone at night",
+     "effects": {
+      "strength": 1,
+      "luck": 1,
+      "flag": "lk_ud_raid",
+      "log": "You slip through the rotten post and empty their stores into the river. By dawn the camp is starving and furious.",
+      "npcFlag": "lk_underdog_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_underdog_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has come down from the pass {him}self to find whoever has been unpicking {his} gang. {He} stands in the village square with {his} blade out, looking at every face, and {his} eyes slide over yours the way they always have.",
+   "npc": {
+    "role": "lk_underdog"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ],
+    "after": [
+     "dc_lk_underdog_2"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_underdog_who"
+    ]
+   },
+   "arc": "Nobody Looks Twice",
+   "choices": [
+    {
+     "text": "Step out and call {him} by name",
+     "roll": {
+      "stat": "strength",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 4,
+      "taels": 40,
+      "flag": "lk_end_underdog",
+      "mem": {
+       "deed": "beaten",
+       "w": -20,
+       "note": "beat me in the village square"
+      },
+      "log": "It is a short fight. {npc} looks up at you from the ground and finally, finally sees you.",
+      "npcFlag": "lk_underdog_who"
+     },
+     "fail": {
+      "health": -8,
+      "woundOnly": true,
+      "fame": 2,
+      "flag": "lk_end_underdog",
+      "log": "{He} is better than you hoped. You hold {him} long enough for the villagers to find their courage, and the square takes {him} together.",
+      "npcFlag": "lk_underdog_who"
+     }
+    },
+    {
+     "text": "Let {him} pass, and send the constable after {him}",
+     "effects": {
+      "comprehension": 1,
+      "taels": 20,
+      "flag": "lk_end_underdog",
+      "log": "{He} walks out of the square and straight into the constable's men, guided there by a map nobody remembers drawing.",
+      "npcFlag": "lk_underdog_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_judge_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Instructor {npc} chooses five candidates for the provincial selection from a yard of thirty. {He} picks the tall ones, the loud ones and the handsome ones, and {his} eye passes over you as if you were part of the wall.",
+   "npc": {
+    "role": "lk_judge",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_judge",
+     "age": 25,
+     "opinion": 0,
+     "male": true,
+     "name": "Baek Mun-su"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ]
+   },
+   "arc": "The Overlooked Candidate",
+   "choices": [
+    {
+     "text": "Watch the five {he} chose",
+     "effects": {
+      "comprehension": 2,
+      "flag": "lk_jd_watch",
+      "log": "You watch them all afternoon. Each has a weakness {he} never saw, and you write them all down.",
+      "npcFlag": "lk_judge_who"
+     }
+    },
+    {
+     "text": "Ask {him} why",
+     "effects": {
+      "comprehension": 1,
+      "flag": "lk_jd_asked",
+      "mem": {
+       "deed": "asked",
+       "w": 2,
+       "note": "asked me plainly why"
+      },
+      "log": "\"You have an ordinary sort of look,\" {npc} says, not unkindly. \"The selection wants a hero.\"",
+      "npcFlag": "lk_judge_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_judge_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The selection is a disaster. Two of {npc}'s five are beaten in the first round, one sprains an ankle showing off, and the fourth is disqualified for a bribe. The instructor sits on the steps of the hall with {his} head in {his} hands.",
+   "npc": {
+    "role": "lk_judge"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ],
+    "after": [
+     "dc_lk_judge_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_judge_who"
+    ]
+   },
+   "arc": "The Overlooked Candidate",
+   "choices": [
+    {
+     "text": "Tell {him} what you saw in each of them",
+     "effects": {
+      "comprehension": 2,
+      "flag": "lk_end_judge",
+      "mem": {
+       "deed": "advised",
+       "w": 12,
+       "note": "saw what I could not"
+      },
+      "log": "{He} listens to the whole list without a word. Then {he} asks you to say it again, slowly, while {he} writes.",
+      "npcFlag": "lk_judge_who"
+     }
+    },
+    {
+     "text": "Ask to take the last place yourself",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 3,
+      "flag": "lk_end_judge",
+      "mem": {
+       "deed": "proved",
+       "w": 10,
+       "note": "proved me wrong in front of the province"
+      },
+      "log": "You win two rounds nobody expected you to win. {npc} stands up on the steps to watch the second.",
+      "npcFlag": "lk_judge_who"
+     },
+     "fail": {
+      "fame": 1,
+      "flag": "lk_end_judge",
+      "log": "You lose in the first round, but well enough that {npc} remembers your name.",
+      "npcFlag": "lk_judge_who"
+     }
+    },
+    {
+     "text": "Leave {him} to it",
+     "effects": {
+      "comprehension": 1,
+      "flag": "lk_end_judge",
+      "log": "You walk past {him} on the steps. {He} does not look up, and that is the whole lesson.",
+      "npcFlag": "lk_judge_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_mask_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Children follow you down the street chanting a rhyme about your face, and one of them throws a stone. Old {npc}, who carves masks for the opera, comes out of {his} shop and chases them off with a broom. Then {he} looks at you for a long time, without flinching, which nobody does.",
+   "npc": {
+    "role": "lk_mask",
+    "spawn": {
+     "role": "stranger",
+     "tag": "lk_mask",
+     "age": 40,
+     "opinion": 0,
+     "male": true,
+     "name": "Bang Il-su"
+    }
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_ugly"
+    ]
+   },
+   "arc": "The Mask Maker",
+   "choices": [
+    {
+     "text": "Thank {him}",
+     "effects": {
+      "charm": 1,
+      "flag": "lk_mk_met",
+      "mem": {
+       "deed": "thanked",
+       "w": 8,
+       "note": "thanked me and came in for tea"
+      },
+      "log": "\"Come in,\" {npc} says. \"I have tea, and I have masks, and I am too old to care what anyone looks like.\"",
+      "npcFlag": "lk_mask_who"
+     }
+    },
+    {
+     "text": "Chase the children yourself",
+     "effects": {
+      "fame": -1,
+      "flag": "lk_mk_met",
+      "log": "They scatter, shrieking. Their mothers will have something to say about you now.",
+      "npcFlag": "lk_mask_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_mask_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has carved you a mask: plain pale wood, a calm face, nothing like an opera mask. \"For the days when you are tired of them looking,\" {he} says. \"Not for always.\"",
+   "npc": {
+    "role": "lk_mask"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_ugly"
+    ],
+    "after": [
+     "dc_lk_mask_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_mask_who"
+    ]
+   },
+   "arc": "The Mask Maker",
+   "choices": [
+    {
+     "text": "Wear it on the road",
+     "effects": {
+      "charm": 1,
+      "luck": 1,
+      "flag": "lk_mk_wore",
+      "log": "With the mask on, strangers speak to you like anyone else. It is wonderful, and it is sad.",
+      "npcFlag": "lk_mask_who"
+     }
+    },
+    {
+     "text": "Hang it on your wall",
+     "effects": {
+      "comprehension": 1,
+      "flag": "lk_mk_kept",
+      "log": "You hang it where you can see it. Some days that is enough.",
+      "npcFlag": "lk_mask_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_mask_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is old and ill now, and has asked for you. {He} has one last mask on {his} bench, half carved: your own face, exactly, every line of it, and somehow it is not ugly at all. \"I wanted you to see what I see,\" {he} says.",
+   "npc": {
+    "role": "lk_mask"
+   },
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_ugly"
+    ],
+    "after": [
+     "dc_lk_mask_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "lk_mask_who"
+    ]
+   },
+   "arc": "The Mask Maker",
+   "choices": [
+    {
+     "text": "Take off the pale mask for good",
+     "effects": {
+      "charm": 3,
+      "alignment": 2,
+      "flag": "lk_end_mask",
+      "mem": {
+       "deed": "last",
+       "w": 20,
+       "note": "took off the mask at the end"
+      },
+      "log": "You leave the pale mask on {his} workbench. You walk home with your own face, and the street can look all it likes.",
+      "npcFlag": "lk_mask_who"
+     }
+    },
+    {
+     "text": "Finish the carving yourself",
+     "effects": {
+      "comprehension": 2,
+      "charm": 1,
+      "flag": "lk_end_mask",
+      "mem": {
+       "deed": "last",
+       "w": 20,
+       "note": "finished my last carving"
+      },
+      "log": "You learn the last cuts from {his} hands, while {he} can still guide them. The face on the bench is finished by dawn, and {he} sleeps at last.",
+      "npcFlag": "lk_mask_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_lafs_1",
+   "cat": "romance",
+   "weight": 60,
+   "once": true,
+   "text": "{npc} has not stopped thinking about the moment {he} first saw you. {He} says so plainly, standing at your gate with flowers {he} clearly bought in a hurry: one look, and the rest of {his} life rearranged itself around you.",
+   "npc": {
+    "role": "lk_lafs"
+   },
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "married": false,
+    "npcFlags": [
+     "lk_lafs"
+    ],
+    "npcNotRoles": [
+     "family",
+     "child",
+     "sibling",
+     "spouse",
+     "love",
+     "disciple",
+     "master"
+    ]
+   },
+   "arc": "Love at First Sight",
+   "choices": [
+    {
+     "text": "Let {him} court you",
+     "effects": {
+      "charm": 1,
+      "role": "love",
+      "npcFlag": "lk_lafs_love",
+      "npcUnflag": "lk_lafs",
+      "flag": "lk_lafs_done",
+      "mem": {
+       "deed": "lafs",
+       "w": 15,
+       "note": "let me court them after one look"
+      },
+      "log": "{npc} laughs out loud with relief, and drops the flowers. You pick them up together."
+     }
+    },
+    {
+     "text": "Ask {him} to start as friends",
+     "effects": {
+      "role": "friend",
+      "npcUnflag": "lk_lafs",
+      "mem": {
+       "deed": "lafs_friend",
+       "w": 6,
+       "note": "asked me to start as friends"
+      },
+      "log": "\"Friends, then,\" {npc} says, as if it were a vow. {He} means to wait."
+     }
+    },
+    {
+     "text": "Tell {him} gently that it cannot be",
+     "effects": {
+      "alignment": 1,
+      "npcUnflag": "lk_lafs",
+      "mem": {
+       "deed": "lafs_no",
+       "w": -4,
+       "note": "told me gently that it could not be"
+      },
+      "log": "{npc} nods, and goes, and leaves the flowers on your step."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_lafs_2",
+   "cat": "romance",
+   "weight": 8,
+   "once": true,
+   "text": "A year of {npc}. {He} still looks at you the way {he} did on the first day, which everyone you know finds either beautiful or unbearable. Tonight {he} has a ring of braided red thread in {his} hand and cannot get the words out.",
+   "npc": {
+    "role": "lk_lafs_love"
+   },
+   "when": {
+    "age": [
+     18,
+     1000000
+    ],
+    "married": false,
+    "after": [
+     "dc_lk_lafs_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "lk_lafs_love"
+    ],
+    "npcNotRoles": [
+     "family",
+     "child",
+     "sibling",
+     "spouse"
+    ]
+   },
+   "arc": "Love at First Sight",
+   "choices": [
+    {
+     "text": "Say the words for {him}",
+     "effects": {
+      "spouse": true,
+      "charm": 1,
+      "mem": {
+       "deed": "wed",
+       "w": 10,
+       "note": "married me, a year after the first look"
+      },
+      "log": "You say them. {npc} says yes before you finish. The wedding is small, and {he} cries through all of it."
+     }
+    },
+    {
+     "text": "Ask for one more year",
+     "effects": {
+      "luck": 1,
+      "mem": {
+       "deed": "waited",
+       "w": 4,
+       "note": "asked for one more year"
+      },
+      "log": "\"One more,\" {npc} agrees, and ties the thread round your wrist anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_street_1",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "arc": "A Face in the Street",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_divine"
+    ]
+   },
+   "text": "A silk merchant follows you halfway down the street, pressing bolts of cloth into your arms and refusing every coin. Behind you the other customers are muttering.",
+   "choices": [
+    {
+     "text": "Take one bolt and pay for it",
+     "effects": {
+      "taels": -5,
+      "charm": 1,
+      "alignment": 1,
+      "log": "He takes the silver as if it burned. The muttering stops."
+     }
+    },
+    {
+     "text": "Take them all",
+     "effects": {
+      "taels": 40,
+      "fame": 1,
+      "alignment": -2,
+      "log": "You go home with an armful of silk and a street full of people who will remember it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_street_2",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "arc": "A Face in the Street",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_fair"
+    ]
+   },
+   "text": "At the inn, a drunk at the next table will not stop talking about your face, louder and louder, until the whole room is listening.",
+   "choices": [
+    {
+     "text": "Put him out into the street",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 1,
+      "log": "He lands in the street with his cup still in his hand. The room goes back to its noodles."
+     },
+     "fail": {
+      "health": -2,
+      "woundOnly": true,
+      "log": "He is heavier than he looks. You both end up in the street, and the innkeeper bars the door on you both."
+     }
+    },
+    {
+     "text": "Pay the innkeeper to send him home",
+     "effects": {
+      "taels": -3,
+      "comprehension": 1,
+      "log": "The innkeeper sends him home in a cart. It is the best money you spend all year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_street_3",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "arc": "A Face in the Street",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_plain"
+    ]
+   },
+   "text": "The sword seller shows his good blades to the handsome customer beside you and his worst ones to you. The handsome customer does not notice the crack in the hilt he is about to buy.",
+   "choices": [
+    {
+     "text": "Point out the crack",
+     "effects": {
+      "comprehension": 1,
+      "charm": 1,
+      "log": "The customer stares at the hilt, at you, and buys you a cup of tea. The seller does not."
+     }
+    },
+    {
+     "text": "Say nothing and buy the good blade he forgot to hide",
+     "effects": {
+      "taels": -6,
+      "strength": 1,
+      "log": "You buy it at the price of the worst one. Nobody looks twice at you, and for once you are glad."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_lk_street_4",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "arc": "A Face in the Street",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "lk_ugly"
+    ]
+   },
+   "text": "A child stops in front of you in the market and stares, and her mother pulls at her arm, mortified. The child will not move. \"Does it hurt?\" she asks.",
+   "choices": [
+    {
+     "text": "Kneel and tell her it does not",
+     "effects": {
+      "charm": 1,
+      "alignment": 1,
+      "log": "She thinks about it, nods, and gives you half a sesame cake. Her mother does not know where to look."
+     }
+    },
+    {
+     "text": "Pull a terrible face at her",
+     "effects": {
+      "charm": 2,
+      "log": "She shrieks with laughter and pulls one back. The mother, against her will, laughs too."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}
