@@ -1,0 +1,338 @@
+{
+ "events": [
+  {
+   "id": "bc_bear_cub",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     12,
+     90
+    ],
+    "pet": [
+     "none"
+    ]
+   },
+   "weight": 4,
+   "text": "Deep in the forest, a black bear cub cries beside its mother, who will never get up again. Hunters' arrows are still in her side.",
+   "choices": [
+    {
+     "text": "Take the cub home",
+     "effects": {
+      "pet": "bear",
+      "alignment": 5,
+      "log": "It bites you twice on the way home and falls asleep in your arms. (A companion: it grows up.)"
+     }
+    },
+    {
+     "text": "Leave it to the forest",
+     "effects": {
+      "alignment": -2,
+      "log": "You walk away. The crying follows you a long way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_wolf_pup",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     12,
+     90
+    ],
+    "pet": [
+     "none"
+    ]
+   },
+   "weight": 4,
+   "text": "In a snowstorm, a grey wolf pup follows you for a whole day, keeping exactly ten paces behind.",
+   "choices": [
+    {
+     "text": "Share your dried meat",
+     "effects": {
+      "pet": "wolf",
+      "log": "That night it sleeps against your back. In the morning it is eleven paces closer. (A companion.)"
+     }
+    },
+    {
+     "text": "Chase it off",
+     "effects": {
+      "log": "It goes. You look back more often than you would like to admit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_wild_horse",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     90
+    ],
+    "pet": [
+     "none"
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 4,
+   "text": "A black stallion runs with the wild herds on the northern steppe. Herders say no one has ever sat on its back for more than a breath.",
+   "choices": [
+    {
+     "text": "Try to tame it",
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "pet": "black_horse",
+      "fame": 5,
+      "log": "Three days, a broken rib, and then it stops fighting and lets you ride. The herders cannot believe it. (A Thousand-Li Horse: journeys free, faster escapes.)"
+     },
+     "fail": {
+      "health": -20,
+      "log": "It throws you into the grass, again and again. On the third day it simply gallops away, and you are almost glad."
+     }
+    },
+    {
+     "text": "Watch it run and let it be",
+     "effects": {
+      "comprehension": 1,
+      "log": "Some things are better wild."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_wild_horse_any",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     16,
+     90
+    ],
+    "pet": [
+     "none",
+     "horse"
+    ],
+    "minTaels": 400
+   },
+   "weight": 4,
+   "text": "A herder offers you a black colt of the old Thousand-Li line, too wild for him to keep, for a fair price.",
+   "choices": [
+    {
+     "text": "Buy it (400 taels)",
+     "req": {
+      "minTaels": 400
+     },
+     "effects": {
+      "taels": -400,
+      "pet": "black_horse",
+      "log": "It takes a month before it lets you near without biting. Then it is yours for life. (A Thousand-Li Horse.)"
+     }
+    },
+    {
+     "text": "Decline",
+     "effects": {
+      "alignment": 0,
+      "log": "The herder shrugs and rides away on it, very slowly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_crane_injured",
+   "cat": "explore",
+   "once": true,
+   "when": {
+    "age": [
+     12,
+     99
+    ],
+    "pet": [
+     "none"
+    ]
+   },
+   "weight": 4,
+   "text": "A white crane with a broken wing stands in the marsh, too proud to fly away and too hurt to try.",
+   "choices": [
+    {
+     "text": "Splint the wing and nurse it",
+     "effects": {
+      "pet": "crane",
+      "alignment": 4,
+      "log": "It takes a season. When it can fly again, it doesn't. (A white crane: energy grows with your bond.)"
+     }
+    },
+    {
+     "text": "Leave it some fish",
+     "effects": {
+      "alignment": 2,
+      "log": "The next morning the fish are gone, and so is the crane."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_cub_grows",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "pet": [
+     "tiger",
+     "bear",
+     "wolf"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "{pet_name} is no longer small. One morning you realise the cub you carried home now carries you.",
+   "choices": [
+    {
+     "text": "Wrestle {pet_name} in the yard",
+     "effects": {
+      "strength": 2,
+      "log": "You lose, laughing, flat on your back. The neighbours bring their children to watch."
+     }
+    },
+    {
+     "text": "Take {pet_name} into the mountains",
+     "effects": {
+      "health": 10,
+      "log": "Two weeks of wandering. {pet_name} hunts, you think. You both come back stronger."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bc_companion_saves",
+   "cat": "danger",
+   "once": false,
+   "when": {
+    "pet": [
+     "tiger",
+     "bear",
+     "wolf"
+    ],
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "Bandits ambush you in a ravine at dusk. Before you can turn, {pet_name} is already between you and the knives.",
+   "choices": [
+    {
+     "text": "Fight beside {pet_name}",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 5,
+      "log": "The bandits break and scatter, screaming about demons. {pet_name} is smug for a week."
+     },
+     "fail": {
+      "health": -20,
+      "log": "You both get hurt, but you both walk out. You tend {pet_name}'s wounds before your own."
+     }
+    },
+    {
+     "text": "Call {pet_name} back and run",
+     "effects": {
+      "luck": 1,
+      "log": "Discretion. {pet_name} is offended for days."
+     }
+    }
+   ],
+   "cooldown": 10
+  },
+  {
+   "id": "bc_horse_race",
+   "cat": "life",
+   "once": false,
+   "when": {
+    "pet": [
+     "horse",
+     "black_horse"
+    ],
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "A rich merchant's son brags that his horse is the fastest in the province, and bets nothing but pride on a race.",
+   "choices": [
+    {
+     "text": "Race {pet_name}",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 6,
+      "charm": 2,
+      "log": "{pet_name} wins by ten lengths and looks back as if to ask what took the other horse so long."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "{pet_name} stops halfway to eat a very interesting flower. You lose with great dignity."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "alignment": 1,
+      "log": "The merchant's son tells everyone you were afraid. {pet_name} glares at him."
+     }
+    }
+   ],
+   "cooldown": 10
+  },
+  {
+   "id": "bc_companion_old",
+   "cat": "life",
+   "once": true,
+   "when": {
+    "pet": [
+     "any"
+    ],
+    "age": [
+     45,
+     999
+    ]
+   },
+   "weight": 4,
+   "text": "{pet_name} is old now, grey at the muzzle, and sleeps in the sun most of the day.",
+   "choices": [
+    {
+     "text": "Spend the whole day beside {pet_name}",
+     "effects": {
+      "alignment": 3,
+      "health": 3,
+      "log": "You talk about old journeys. {pet_name} thumps the ground, remembering too."
+     }
+    },
+    {
+     "text": "Carry {pet_name} to the old places",
+     "effects": {
+      "charm": 2,
+      "log": "One last tour of every place you went together."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

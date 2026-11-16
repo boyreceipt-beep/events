@@ -1,0 +1,3423 @@
+{
+ "events": [
+  {
+   "id": "dc_im2_river_1",
+   "cat": "explore",
+   "weight": 40,
+   "once": true,
+   "text": "The pool behind the waterfall has grown small around you. Below it the stream runs into a real river: wide, brown, slow, full of carp and eels and the shadows of boats. At the great bend under the willows there is a hole in the riverbed so deep the water there is cold even in summer.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ]
+   },
+   "arc": "The River's Quiet Power",
+   "choices": [
+    {
+     "text": "Go down and take the deep hole at the bend",
+     "effects": {
+      "qi": 10,
+      "strength": 3,
+      "log": "An eel lives in it. Then, after one short argument, an eel does not. The bend is yours. The river is very big, and you are very small in it, and neither of those things worries you."
+     }
+    },
+    {
+     "text": "Explore the whole river first, end to end",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 4,
+      "luck": 2,
+      "log": "A whole summer of travelling: weirs, mill-races, a ferry crossing, a town with a stone bridge. You come back to the bend knowing it is the best water on the river."
+     },
+     "fail": {
+      "health": -10,
+      "log": "A mill-race catches you and throws you through the wheel. You come out the other side bruised and much humbler. (-10 health)"
+     }
+    },
+    {
+     "text": "Stay in the waterfall pool a little longer",
+     "effects": {
+      "luck": 3,
+      "log": "Another ten years of quiet. When you finally go down to the river you go as something larger, and the river makes room."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_river_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "Something has changed on the river and the ferrymen have noticed before you have. The water at the bend is calm when the rest of the river is rough. Nets set there come up full. Boats that capsize there drift, somehow, to the bank. \"The bend is kind,\" the ferrymen say, and touch the water before they cross.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The River's Quiet Power",
+   "choices": [
+    {
+     "text": "Keep the bend kind",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You smooth the water under every boat that crosses. Nobody sees you. Everybody knows something is there."
+     }
+    },
+    {
+     "text": "Let them feel, once, who keeps it",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "One evening a ferryman sees a silver back as long as his boat roll under the hull. He touches the water very respectfully from then on, and so does everyone he tells."
+     }
+    },
+    {
+     "text": "Keep the bend for yourself: drive the nets off",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 2
+      },
+      "log": "Torn nets, tipped baskets. The fishermen move upriver and the carp are all yours. The ferrymen still cross, quickly, without touching anything."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_river_3",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A loaded ferry hits the snag at the bend in the spring spate and turns over. Rice sacks, a goat, a pedlar's box of combs, and eleven people go into the brown water at once.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_river_2"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The River's Quiet Power",
+   "choices": [
+    {
+     "text": "Carry as many as you can to the bank",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 4,
+       "legend": 3
+      },
+      "strength": 3,
+      "log": "Eleven in the water, eleven on the bank, coughing. Not one of them saw what lifted them. All of them felt it. The goat drowned. You are sorry about the goat."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "Nine on the bank. Two the river keeps. You search for them until dark and find only the box of combs. (-12 health)"
+     }
+    },
+    {
+     "text": "Calm the water and let them swim",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The bend goes flat as a bowl of milk. They paddle to the bank, astonished, and the ferryman never sails in spring again without first throwing a handful of rice to the bend."
+     }
+    },
+    {
+     "text": "Take the rice sacks instead",
+     "effects": {
+      "qi": 8,
+      "tally": {
+       "fear": 1
+      },
+      "log": "People are their own business. You do not even like rice that much. The ferrymen count the lost sacks and say the bend took its toll."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_frogs_1",
+   "cat": "explore",
+   "weight": 14,
+   "once": true,
+   "text": "On summer nights the paddies by the river roar with frogs, thousands of them, a sound like rain on a roof. When you slide into the first paddy, the whole valley goes silent at once. Up at the farmhouse a door opens. Farmers know what silence in the paddies means.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ]
+   },
+   "arc": "The Frogs of the Paddies",
+   "choices": [
+    {
+     "text": "Feast. A whole valley of frogs",
+     "effects": {
+      "qi": 12,
+      "strength": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The best summer of your life. The farmers keep their children out of the paddies after dark and call the silence \"the long one passing\"."
+     }
+    },
+    {
+     "text": "Take a few and go back to the river",
+     "effects": {
+      "qi": 6,
+      "luck": 2,
+      "log": "The frogs start up again behind you before you reach the bank. The farmer at the door listens, nods, and goes back to bed."
+     }
+    },
+    {
+     "text": "Lie in the paddy and listen to them start again, around you",
+     "effects": {
+      "comprehension": 5,
+      "log": "One by one, slowly, the frogs decide you are not hunting. By midnight you are lying in the middle of the loudest sound in the valley. It is very nearly music."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_frogs_2",
+   "cat": "danger",
+   "weight": 11,
+   "once": true,
+   "text": "Under the old water-mill lives a toad as big as a cooking pot, warty and gold-eyed, that the miller's family feeds and calls the house toad. Tonight it is not sitting in its corner. It is fighting a centipede as long as a spear, red-legged, that has come up out of the mill-race, and the toad is losing.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_frogs_1"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The Frogs of the Paddies",
+   "choices": [
+    {
+     "text": "Help the toad",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You take the centipede behind the head and hold it underwater until it stops. It tastes of iron and bad luck. The toad looks at you with its gold eyes and goes back to its corner, as if nothing happened. The miller finds the body in the morning and burns incense for a week."
+     },
+     "fail": {
+      "health": -18,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Its poison is in you before you have a grip. Between you, you and the toad drive it back into the race, and you spend a month sick at the bend. (-18 health)"
+     }
+    },
+    {
+     "text": "Eat the toad while the centipede holds it",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "fear": 2
+      },
+      "log": "Two hunters, one meal. The centipede gets nothing and goes back into the dark. The miller's house has a run of bad years after that, and the miller's family knows exactly whose fault it is."
+     }
+    },
+    {
+     "text": "Watch and learn how a toad fights",
+     "effects": {
+      "comprehension": 4,
+      "log": "It puffs itself up, it spits, it never once takes its eyes off the head. It loses anyway, slowly. Patience, you learn, is not enough on its own."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eel_1",
+   "cat": "danger",
+   "weight": 13,
+   "once": true,
+   "text": "At the fish weir below the town lives an eel older than the weir, black, thick as a fencepost, with a head scarred white by a hundred hooks. It does not move when you come close. It has been the biggest thing on this river for a long time and has not yet been told otherwise.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ]
+   },
+   "arc": "The Old Eel of the Weir",
+   "choices": [
+    {
+     "text": "Tell it otherwise",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "qi": 10,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "flag": "im2_eel_gone",
+      "log": "It is a long, cold, ugly fight in the dark under the weir. In the end the old eel turns and goes downriver for good, and the weir is yours."
+     },
+     "fail": {
+      "health": -30,
+      "log": "It wraps you and drags you down into the mud and holds you there, patient as a stone, until you stop fighting. Then it lets you go. It does not even bother to finish it.",
+      "deathCause": "the old eel of the weir, in the mud, in the dark"
+     },
+     "risky": true
+    },
+    {
+     "text": "Lie beside it and learn how it has lived so long",
+     "effects": {
+      "comprehension": 5,
+      "luck": 2,
+      "log": "It eats only at night. It never takes bait that is too easy. It has lain still through three floods and two wars. You lie beside it all one winter and come away with the beginning of patience."
+     }
+    },
+    {
+     "text": "Leave the weir to it",
+     "effects": {
+      "luck": 2,
+      "log": "Not every old thing has to be beaten. There is plenty of river."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eel_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The old eel of the weir is dying. It lies on its side in the shallows with its scarred head on a stone, and the town boys are gathering on the bank with sticks, daring each other.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_eel_1"
+    ],
+    "minYearsAfter": 20,
+    "notFlags": [
+     "im2_eel_gone"
+    ]
+   },
+   "arc": "The Old Eel of the Weir",
+   "choices": [
+    {
+     "text": "Rise between the boys and the eel",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The boys see a long silver head come up out of the water between them and the eel. They do not stop running until they reach the temple. The eel dies in the night, in peace, in the mud it chose."
+     }
+    },
+    {
+     "text": "Eat it yourself, as the river would",
+     "effects": {
+      "qi": 15,
+      "log": "You eat it. That is what happens to old things on a river, and it would have done the same to you. Its long patience settles into you like silt."
+     }
+    },
+    {
+     "text": "Let the boys have it",
+     "effects": {
+      "luck": -2,
+      "log": "They drag it up onto the bank and cut it into pieces and argue about who struck the first blow. That night the weir breaks, for no reason at all, and the town says the eel did it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_spirit_1",
+   "cat": "explore",
+   "weight": 13,
+   "once": true,
+   "text": "Something else lives in the deep bend: a cold that is not the water's. It has hands. It takes hold of your tail the first night and pulls, gently, down toward the mud, the way it pulls swimmers every summer. The village calls it the water ghost. It was a girl once, who drowned here in a famine year.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Water Ghost",
+   "choices": [
+    {
+     "text": "Turn and face it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "qi": 10,
+      "comprehension": 3,
+      "log": "You look at it with your gold eyes and do not go down. It lets go, puzzled. A ghost, it turns out, is mostly a habit that no one has interrupted."
+     },
+     "fail": {
+      "health": -15,
+      "log": "It is stronger than it looks, because it is not looking at anything. You tear free with cold in your bones that does not leave until spring. (-15 health)"
+     }
+    },
+    {
+     "text": "Let it hold your tail a while. It is lonely",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "log": "It holds on for an hour and then lets go by itself. After that it sometimes swims beside you, which is very strange, and not entirely unpleasant."
+     }
+    },
+    {
+     "text": "Move to the shallows of the bend and leave the deep to it",
+     "effects": {
+      "luck": 1,
+      "log": "You share the bend: the ghost keeps the bottom and you keep the rest. Every summer a swimmer drowns in the deep, and you hear about it from the ferrymen."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_spirit_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A boy swims out too far on a hot afternoon, to show off, and the water ghost takes him by the ankle. He goes under without a sound. His friends on the bank have not even noticed yet.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_spirit_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Water Ghost",
+   "choices": [
+    {
+     "text": "Go down after him",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "You wrap the boy and pull. The ghost pulls back. The boy comes up out of the river on a silver back and is thrown onto the gravel, alive and screaming. He will tell this story for the rest of his life."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You get him up, half drowned, and the ghost gets your tail instead and holds you under until your lungs burn. (-14 health)"
+     }
+    },
+    {
+     "text": "Wrap the ghost and hold it until the boy floats free",
+     "effects": {
+      "qi": -5,
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It is like holding a cold wind. But it lets go of the boy, who bobs up and splashes ashore and never knows. The ghost sulks in the mud for a year."
+     }
+    },
+    {
+     "text": "The deep is the ghost's. Stay out of it",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The friends search the bank until dark. The ferrymen find him three days later. The village says the bend took him, and does not say which thing in the bend."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_spirit_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "An old woman comes to the bend at dusk with a shaman, a drum, a bowl of rice and a paper dress. She is the drowned girl's younger sister, eighty years old now, and she has saved for a whole life for this rite. The shaman beats the drum and calls the ghost by its name. The ghost does not come. It is hiding behind you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_spirit_2"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Water Ghost",
+   "choices": [
+    {
+     "text": "Carry the ghost up into the light, gently",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "comprehension": 4,
+      "log": "You rise through the water with the cold wrapped round you and break the surface in front of the drum. The shaman screams. The old woman does not. She holds out the paper dress, and the cold goes out of the river and into it, and the dress burns on the water, and the bend is only water from then on."
+     }
+    },
+    {
+     "text": "Lie still and let the ghost choose",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "After a long time the cold lets go of you and goes up toward the drum on its own. The old woman weeps on the bank. You do not see what happens next. You only feel the river get warmer."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "It stays. The drum stops at midnight. The old woman goes home, and dies that winter, and the ghost keeps its place in the deep. Some things cannot be fixed by anyone."
+     }
+    },
+    {
+     "text": "Keep the ghost. It is your companion now",
+     "effects": {
+      "qi": 6,
+      "tally": {
+       "fear": 1
+      },
+      "log": "You coil around the cold in the deep and do not let it go. The shaman packs up the drum and says the bend is held by something stronger now. The old woman goes home without her sister."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_hunter_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "A stranger walks the bank at dawn with a forked staff, a hemp sack and a tied-up chicken. {npc} is a snake-catcher, and the medicine halls in the town have been talking about a silver snake with gold eyes in the river bend. A snake like that, ground into powder, sells for its weight in silver. {He} pegs the chicken in the shallows and settles down in the reeds to wait.",
+   "npc": {
+    "role": "im2_hunter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im2_hunter",
+     "ageAbs": 28,
+     "opinion": -15
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The First Human with a Spear",
+   "choices": [
+    {
+     "text": "Fight {him} when the staff comes down",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 2,
+       "hunted": 1
+      },
+      "npcFlag": "im2_hunter_met",
+      "log": "The fork pins your neck for a breath; then you are round {his} legs and {he} is in the river. {npc} scrambles out without the staff and runs. {He} will be back. Humans who lose always come back."
+     },
+     "fail": {
+      "health": -32,
+      "tally": {
+       "hunted": 2
+      },
+      "npcFlag": "im2_hunter_met",
+      "log": "The fork pins you and the knife comes down and you leave a strip of skin and three scales in the reeds. You get away only because {npc} slips. The medicine hall pays {him} well for the scales. (-32 health)",
+      "deathCause": "a snake-catcher's knife, for the medicine trade"
+     },
+     "risky": true
+    },
+    {
+     "text": "Ignore the chicken. Go deep and wait",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "npcFlag": "im2_hunter_met",
+      "log": "You lie in the cold hole at the bend for six days. On the seventh {npc} eats the chicken and goes home. The first human who ever came to kill you, and you never even saw {his} face. You will."
+     }
+    },
+    {
+     "text": "Take the chicken and the peg too",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 5,
+      "tally": {
+       "legend": 1,
+       "hunted": 1
+      },
+      "npcFlag": "im2_hunter_met",
+      "log": "The chicken, the peg and the cord are gone before {npc} looks up. {He} sits in the reeds for an hour staring at the empty water and then, despite everything, laughs."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "hunted": 1
+      },
+      "npcFlag": "im2_hunter_met",
+      "log": "The staff comes down on your back as you strike. You get away with the chicken and a bruise along half your length. (-15 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_hunter_2",
+   "cat": "danger",
+   "weight": 13,
+   "once": true,
+   "text": "{npc} is back, and not alone. {He} has strung a weighted net across the river below the bend and hired a young swordsman from a small sect who wants a serpent's inner core for the sect's cultivation pills. They mean to drive you down the river into the net with torches and drums.",
+   "npc": {
+    "role": "im2_hunter"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_hunter_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "im2_hunter_met"
+    ]
+   },
+   "arc": "The First Human with a Spear",
+   "choices": [
+    {
+     "text": "Break through the net before they drive you into it",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 2,
+       "hunted": 1
+      },
+      "log": "You hit the net at full speed and the posts come out of the riverbed. The swordsman stands in the shallows with a drawn sword and nothing to point it at. {npc} curses for a full minute without repeating a word."
+     },
+     "fail": {
+      "health": -22,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The net holds long enough for the sword to reach you. You tear free with a cut along your side that takes years to close. (-22 health)"
+     }
+    },
+    {
+     "text": "Go upriver instead, over the waterfall, and wait them out",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You go back to the pool where you hatched and lie there for a season. The young swordsman gets bored and goes off to find an easier beast. {npc} stays a month longer, then goes home too."
+     }
+    },
+    {
+     "text": "Come for the swordsman at night, and leave {npc}",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3,
+       "hunted": 1
+      },
+      "log": "The swordsman wakes in the river wrapped in your coils and screams the whole camp awake. You let go. In the morning the sect boy is gone, and {npc}, alone with the net, looks at the river for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_hunter_3",
+   "cat": "npc",
+   "weight": 11,
+   "once": true,
+   "text": "{npc} is old. {He} limps down to the bend without staff or sack and sits on the stone where {he} used to wait, and talks to the water. \"All those years,\" {he} says. \"All those years I wanted you. Now look at you. Look at me.\" Then {he} slips on the wet stone and goes into the river.",
+   "npc": {
+    "role": "im2_hunter"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_hunter_2"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "im2_hunter_met"
+    ]
+   },
+   "arc": "The First Human with a Spear",
+   "choices": [
+    {
+     "text": "Lift {him} out and lay {him} on the bank",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "mem": {
+       "deed": "saved",
+       "w": 20,
+       "note": "pulled me out of its own river"
+      },
+      "npcFlag": "serpent_friend",
+      "log": "{npc} lies on the gravel, coughing, with a coil as thick as a mooring post drawing back into the water beside {him}. \"Huh,\" {he} says at last. For the rest of {his} life {npc} tells the medicine halls the river snake is a dragon not yet risen, and that anyone who goes after it will answer to {him}."
+     }
+    },
+    {
+     "text": "Let the river decide",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "luck": 2,
+      "log": "The current puts {npc} on the gravel bar below the bend. {He} crawls out and sits there a long while, looking at the water, and never comes back."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "npcPass": "the river bend, at the end",
+      "log": "The river keeps {him}. You find you do not feel the way you expected to. You lie in the deep that night and do not hunt."
+     }
+    },
+    {
+     "text": "Show yourself, and let {him} see what {he} hunted",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "You come up under {npc} and lift {him} out of the water on your back, and for one moment the old snake-catcher looks into the gold eye {he} chased for years. Then you put {him} on the bank and are gone. {He} does not speak for three days."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_flood_1",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The monsoon comes all at once. Three days of rain, and the river is not a river any more but a brown animal going somewhere in a hurry. It takes trees, fences, a whole pigsty with the pigs still in it. It wants to take you too.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Year of the Flood",
+   "choices": [
+    {
+     "text": "Ride it downstream and see where it goes",
+     "effects": {
+      "comprehension": 4,
+      "qi": 8,
+      "log": "You ride the flood for two days and end up in a lake you never knew existed, full of strange fish. You come home a month later, fat and full of the shape of the land."
+     }
+    },
+    {
+     "text": "Hold the bend against it",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 5,
+      "log": "You wrap the oldest willow root and hold on while the whole river goes over you. When it is over, the bend is still where you left it, and so are you."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The root tears out. You are rolled along the riverbed with the boulders for a mile. (-20 health)"
+     }
+    },
+    {
+     "text": "Push the pigsty to the bank",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "It grounds on a sandbar with six pigs sitting on the roof. The farmer who finds them never works out how. The pigs, for their part, are never the same again."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The sty breaks up around you. The pigs swim better than you expected. (-10 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_flood_2",
+   "cat": "danger",
+   "weight": 13,
+   "once": true,
+   "text": "The great flood, the kind that comes once in a long human life. The earth dike above the village is going: water pours through a crack as wide as a door, and behind the dike are three hundred houses asleep. On the dike, a handful of men with torches and baskets of earth are shouting at each other. They are not going to be enough.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_flood_1"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Year of the Flood",
+   "choices": [
+    {
+     "text": "Throw your body into the breach",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 5,
+       "legend": 4
+      },
+      "strength": 5,
+      "flag": "im2_held_the_dike",
+      "log": "You fill the crack with your coils and the water hammers on you all night, and the men with torches see what is lying in the breach and keep throwing earth on top of it anyway. At dawn the water drops. You slide out of a wall of mud and back into the river, and three hundred houses wake up dry."
+     },
+     "fail": {
+      "health": -35,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "im2_held_the_dike",
+      "log": "You hold it until the men can close the crack behind you, and then the water folds you in half and throws you into the fields. You lie in a drowned paddy for a week, not dying, barely. (-35 health)",
+      "deathCause": "the great flood, holding a dike"
+     },
+     "risky": true
+    },
+    {
+     "text": "Stir the water ahead of the flood and wake the village",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "You thrash the river white along the whole length of the village. Dogs bark. Lamps come on. When the dike goes, the houses are empty and the people are on the hill, staring down at the long shape in the moving water that woke them."
+     }
+    },
+    {
+     "text": "This is the river's business, not yours. Go deep",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The flood takes the low half of the village. The people say afterwards that the bend was angry. You were not angry. You were not anything. That is worse, and in time you know it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_flood_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "After the flood the village rebuilds its dike, stronger, and on the night it is finished the elders carry a carved stone down to the bend: a serpent wound round a pillar, rough work by the blacksmith's apprentice. They set it on the bank facing the water and bow three times.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_flood_2"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "im2_held_the_dike"
+    ]
+   },
+   "arc": "The Year of the Flood",
+   "choices": [
+    {
+     "text": "Coil round the stone for one night, where they can see",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "In the morning there are scale-marks in the mud all around the stone. Nobody touches them. The stone is called the Dike Dragon from then on, and children are told to greet it."
+     }
+    },
+    {
+     "text": "Leave it as it is: you did not do it for a stone",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "The stone stands on the bank for three hundred years. Moss grows on it. You visit it sometimes, on quiet nights, which you would not admit to anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_fox_1",
+   "cat": "npc",
+   "weight": 13,
+   "once": true,
+   "text": "There is a fox at the ford who has lived too long to be only a fox. She sits on the stepping-stone at dusk and talks, not with words, the way old animals talk: travellers cross here, she says, and some of them fall in. If more of them fell in, there would be plenty for both of us.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ]
+   },
+   "arc": "The Fox at the Ford",
+   "choices": [
+    {
+     "text": "Refuse her",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "She shrugs, the way only a fox can shrug, and says she will ask again, one day. Foxes are patient too. That is what makes them dangerous."
+     }
+    },
+    {
+     "text": "Agree. Travellers are only meat",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "fear": 3
+      },
+      "log": "For years the ford is a bad crossing. Pedlars drown, a monk drowns, a bride's palanquin goes in. People start to walk two days round to the bridge, and the fox gets bored and leaves."
+     }
+    },
+    {
+     "text": "Lunge for her",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 4,
+      "log": "You get a mouthful of red fur and nothing else. She sits on the far bank, licking her tail, entirely unoffended. \"Fifty years,\" she says."
+     },
+     "fail": {
+      "health": -10,
+      "log": "She is not on the stone any more. She is behind you, and she bites. Then she is gone, laughing. (-10 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_fox_2",
+   "cat": "danger",
+   "weight": 11,
+   "once": true,
+   "text": "A young scholar is crossing the ford on the way to the capital examination, and on the far bank a beautiful traveller with a red silk sash is waiting to share his road. You know that sash. You know the smell under the perfume. She has three tails now, and she is very hungry.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_fox_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Fox at the Ford",
+   "choices": [
+    {
+     "text": "Overturn the scholar's ferry and put him back on the near bank",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "log": "He climbs out soaked, furious, swearing at the river. He takes the long road by the bridge, alone, and passes the examination. He never knows why the river hated him."
+     }
+    },
+    {
+     "text": "Rise out of the ford between them",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "log": "The scholar sees a serpent; the traveller sees an old argument. She bows, very slightly, and walks away into the mist without looking back. The scholar runs all the way to the bridge."
+     },
+     "fail": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "The scholar sees a huge snake and a lovely stranger and runs straight into her arms. Foxes are very good at this."
+     }
+    },
+    {
+     "text": "Not your road. Let it happen",
+     "effects": {
+      "luck": 2,
+      "log": "The scholar never reaches the capital. The fox gets a fourth tail by the next spring. She thanks you for it, which is the worst part."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_fox_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The fox comes to the bend in the middle of a winter night with blood on her fur and seven tails dragging in the snow. An exorcist from a mountain temple is a day behind her, with a peachwood sword and talismans. She asks you, without pride, to let her lie in the deep until he is gone.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_im2_fox_2"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Fox at the Ford",
+   "choices": [
+    {
+     "text": "Hide her in the hole at the bend",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im2_fox_debt",
+      "log": "She lies coiled against your coils in the cold dark for six days, shivering. The exorcist walks the bank and burns talismans on the water and goes away. On the seventh night she is gone, leaving nothing but a red hair on a stone and a debt she will not forget."
+     }
+    },
+    {
+     "text": "Give her to the exorcist",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "fear": 1
+      },
+      "comprehension": 2,
+      "log": "You do not let her into the water. The exorcist finds her at dawn on the bank. You do not watch. A fox who would have had nine tails, and a lot of drowned travellers, and you remember both."
+     }
+    },
+    {
+     "text": "Ask her the price first",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 5,
+      "flag": "im2_fox_debt",
+      "log": "She teaches you, in the deep, one thing foxes know: how to be seen as something you are not. It will be useful. She leaves when the exorcist does."
+     },
+     "fail": {
+      "health": -8,
+      "log": "She bites you for haggling at a time like this, and goes on up the river to find somewhere less greedy. (-8 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_rival_1",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "A black serpent comes down the river out of the high gorges in the autumn: as long as you, older, with a scar where one eye used to be. It does not come to visit. It comes to the bend, to the cold hole under the willows, and lies down in it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Black Serpent",
+   "choices": [
+    {
+     "text": "Drive it out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "flag": "im2_rival_beaten",
+      "log": "The fight churns the bend white for a whole night and the ferrymen do not cross for three days. In the end the black serpent goes back up into the gorges. It will not forget the way down."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "im2_rival_won",
+      "log": "It is older and meaner, and it bites like something that has had to. You end up in the shallows, torn, and the black serpent lies in your hole all winter.",
+      "deathCause": "the black serpent of the gorges"
+     },
+     "risky": true
+    },
+    {
+     "text": "Share the bend: the hole is big enough",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im2_rival_shared",
+      "log": "It watches you all winter with its one eye. In spring it has not attacked you. In the second spring, neither have you. It is not friendship. It is something serpents have no word for."
+     }
+    },
+    {
+     "text": "Let it have the bend and find new water",
+     "effects": {
+      "luck": 3,
+      "flag": "im2_rival_won",
+      "log": "You go downstream to a quieter pool under a cliff. It is not as good. But you are alive, and you are growing, and you can come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_rival_2",
+   "cat": "danger",
+   "weight": 11,
+   "once": true,
+   "text": "The black serpent has been taking the offerings the fishermen leave at the bend, and taking a calf from the pasture now and then, and once a dog. The fishermen do not know there are two of you. They only know the bend has turned greedy, and they have started to talk about calling the snake-catchers.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_rival_1"
+    ],
+    "minYearsAfter": 12
+   },
+   "arc": "The Black Serpent",
+   "choices": [
+    {
+     "text": "Let them see there are two",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "One evening a ferryman sees a silver serpent and a black one in the river together, and runs to tell the village that the bend has a good spirit and a bad one. From then on the offerings are left only at the silver hour, at dusk. The black serpent hunts at night."
+     }
+    },
+    {
+     "text": "Fight it for the bend's good name",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "virtue": 1,
+       "fear": 1
+      },
+      "log": "You drive it into the gorges again. The calves are safe. The village never knows why the bend turned kind again."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "It throws you into the rocks and keeps the bend. The snake-catchers come. They catch nothing, but they are looking for you now. (-20 health)"
+     }
+    },
+    {
+     "text": "Let the snake-catchers come for it",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The catchers come with forks and fire. The black serpent is too old to be caught. So are you. But the whole river has been told there are monsters in it, and it remembers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_rival_3",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Years go by and you both grow. The black serpent is a gureongi too now, a hill of black coils, and it has come to the bend one last time, slow and grey at the edges. It does not want the bend. It lies on the gravel bar in the sun and looks at you with its one eye, and you understand: it has seen the bead in its dreams too.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_im2_rival_2"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Black Serpent",
+   "choices": [
+    {
+     "text": "Lie on the bar beside it, in the sun",
+     "effects": {
+      "comprehension": 5,
+      "flag": "im2_rival_kin",
+      "log": "Two old enemies, side by side, saying nothing for a whole afternoon. At dusk it goes up into the gorges. You know you will meet again, somewhere higher, maybe in a storm."
+     }
+    },
+    {
+     "text": "Finish the old fight while it is weak",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "qi": 20,
+      "strength": 4,
+      "tally": {
+       "fear": 2
+      },
+      "log": "It barely fights. Afterwards you take its strength into yourself and the river is yours alone. It is very quiet."
+     },
+     "fail": {
+      "health": -18,
+      "log": "Weak is not the same as harmless. It leaves its teeth in you and goes. (-18 health)"
+     }
+    },
+    {
+     "text": "Show it the way to the deep pools in the mountains",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "flag": "im2_rival_kin",
+      "log": "You lead it up the river, past the falls, to the pool where you hatched. It stays. You visit. It is a strange thing, having someone to visit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_child_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "Torches on the bank at midnight, and a person in the reeds up to the chest in water, bleeding, holding a sword wrapped in cloth. You know the smell before you know the face: rice cake, years ago, on a leaf. It is {npc}, grown, back from the murim with half a sect on {his} heels. \"It is me,\" {he} whispers to the water. \"If you are still here. It is me.\"",
+   "npc": {
+    "role": "serpent_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "npcFlags": [
+     "fed_the_serpent"
+    ],
+    "npcAge": [
+     20,
+     50
+    ]
+   },
+   "arc": "The Child Who Fed You",
+   "choices": [
+    {
+     "text": "Coil round {npc} and take {him} under the bank",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcFlag": "im2_child_saved",
+      "flag": "im2_child_back",
+      "mem": {
+       "deed": "saved",
+       "w": 25,
+       "note": "hid me in the river from my enemies"
+      },
+      "log": "There is a hollow under the willow roots where a person can breathe. The torches pass over you twice. At dawn {npc} climbs out onto the bank, alive, and puts a hand flat on the water for a long time before {he} goes."
+     },
+     "fail": {
+      "health": -12,
+      "npcFlag": "im2_child_saved",
+      "flag": "im2_child_back",
+      "mem": {
+       "deed": "saved",
+       "w": 18,
+       "note": "took a blade for me in the river"
+      },
+      "log": "A spear finds the reeds and finds you, not {npc}. You keep still with the iron in you until the torches move on. (-12 health)"
+     }
+    },
+    {
+     "text": "Rise out of the river in front of the torches",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 3
+      },
+      "npcFlag": "im2_child_saved",
+      "flag": "im2_child_back",
+      "mem": {
+       "deed": "saved",
+       "w": 25,
+       "note": "rose up and drove them off"
+      },
+      "log": "The pursuers see a serpent the length of a boat rise up out of the black water with gold eyes, and that is the end of the pursuit. {npc} laughs and laughs in the reeds, bleeding, like a child."
+     }
+    },
+    {
+     "text": "Stay deep. The murim is not your business",
+     "effects": {
+      "luck": 1,
+      "log": "The torches find the reeds at dawn. You hear the fight and then you hear nothing. Later you find the cloth that wrapped the sword caught on a root, and you keep it in the deep for a hundred years."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im2_child_2",
+   "cat": "npc",
+   "weight": 15,
+   "once": true,
+   "text": "{npc} comes down to the stream where you were small, with a little one of {his} own on {his} hip and a rice cake in a cloth. {He} breaks off a corner and puts it on a leaf on the flat stone, exactly the same stone, and says to the small one, very seriously: \"Now. We wait. And we do not scream.\"",
+   "npc": {
+    "role": "serpent_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_child_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "fed_the_serpent",
+     "im2_child_saved"
+    ]
+   },
+   "arc": "The Child Who Fed You",
+   "choices": [
+    {
+     "text": "Come up the stream, all of you, and take the rice cake",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "im2_child_line",
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "came for my child too"
+      },
+      "log": "It takes a long time for all of you to arrive at the stone. The small one does not scream. The small one says, \"Again!\" You eat the corner of rice cake, which is a ridiculous mouthful for something your size, and the family has a story it will never stop telling."
+     }
+    },
+    {
+     "text": "Show only your eye, in the deep water by the stone",
+     "effects": {
+      "luck": 2,
+      "flag": "im2_child_line",
+      "mem": {
+       "deed": "trusted",
+       "w": 10,
+       "note": "looked at us from the water"
+      },
+      "log": "One gold eye as big as a bowl, looking up out of the water. The small one stares back and then, gravely, waves. {npc} has to sit down on the stone."
+     }
+    },
+    {
+     "text": "Stay away. You are too large for children now",
+     "effects": {
+      "comprehension": 2,
+      "log": "The rice cake stays on the leaf. {npc} waits until sunset, then takes the little one home, and does not say anything about it. In the morning the rice cake is gone. That is something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_child_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is old: white-haired, thin, carried down to the stream in a chair by two grandchildren. {He} asks them to leave {him} on the flat stone and go up the path and not look back. Then {he} takes a rice cake out of {his} sleeve, a little squashed, and holds it out on a leaf, the way a child of seven did once.",
+   "npc": {
+    "role": "serpent_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_child_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "fed_the_serpent"
+    ]
+   },
+   "arc": "The Child Who Fed You",
+   "choices": [
+    {
+     "text": "Lay your great head on the stone beside {him}",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "farewell",
+       "w": 25,
+       "note": "stayed with me at the end"
+      },
+      "log": "You are so big now that your head alone fills the stone. {npc} rests one hand on it and talks for a long time, about the murim and the sect and the children and the rice cake, and you lie still and listen to all of it. When the grandchildren come back at dusk, {npc} is asleep, smiling, and you are gone."
+     }
+    },
+    {
+     "text": "Take the rice cake, as you did the first time",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "gave_you",
+       "w": 20,
+       "note": "took my rice cake one last time"
+      },
+      "log": "It is sweet and squashed and exactly the same. {npc} laughs the same laugh. Some things a life does not change at all."
+     }
+    },
+    {
+     "text": "Give {him} a scale to take into the dark",
+     "effects": {
+      "health": -6,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "gift",
+       "w": 22,
+       "note": "gave me a silver scale"
+      },
+      "log": "You scrape one silver scale off against the stone and leave it in the old hand. It is buried with {npc} that winter. The grandchildren say it glowed. (-6 health)"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im2_tale_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A child you have never seen comes down to the stream with a rice cake on a leaf and sets it on the flat stone. \"In our family,\" {npc} tells the water, very carefully, as if reciting, \"we feed the serpent of the stream every first full moon. Because it saved us. Because it is a dragon that has not risen yet.\" {He} is the grandchild of the one who fed you.",
+   "npc": {
+    "role": "im2_tale_heir",
+    "spawn": {
+     "role": "friend",
+     "tag": "im2_tale_heir",
+     "ageAbs": 8,
+     "opinion": 30
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "flags": [
+     "im2_child_line"
+    ],
+    "after": [
+     "dc_im2_child_2"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Story They Tell",
+   "choices": [
+    {
+     "text": "Take the rice cake",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "im2_tale_heir",
+      "log": "It is gone when {npc} looks up from bowing. {He} runs all the way home to tell, and is believed, because in that house a child who says the serpent took the rice cake is always believed."
+     }
+    },
+    {
+     "text": "Show yourself, slowly, so as not to frighten {him}",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": "im2_tale_heir",
+      "log": "{npc} does not scream. {He} has been told, all {his} life, what to do: bow, wait, do not scream. {He} does all three, shaking, and you have never been so moved by anything that small."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_tale_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "At the harvest festival the village children laugh at {npc}: a family that feeds a snake rice cakes, every moon, like idiots. {npc} stands by the river with a fist clenched and a rice cake on a leaf and says the serpent is real. Nobody else believes it, and there are a great many of them.",
+   "npc": {
+    "role": "im2_tale_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_tale_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "im2_tale_heir"
+    ]
+   },
+   "arc": "The Story They Tell",
+   "choices": [
+    {
+     "text": "Rise out of the river in the middle of the festival",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "fear": 1
+      },
+      "log": "The lanterns shake. The drums stop. Every child at the festival sees you, and every adult, and you take the rice cake from {npc}'s hand as gently as a cat takes a fish. Nobody laughs at that family again for a hundred years."
+     }
+    },
+    {
+     "text": "Ripple the water at {his} feet, only that",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "comprehension": 2,
+      "log": "Only {npc} sees the circles in the still water, rising and spreading, one, two, three. {He} unclenches the fist. {He} does not need the others to believe. That is the lesson, and {he} learns it at eleven."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_tale_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is grown now and head of the family, and on a spring morning {he} carries a new roof beam down to the river before it goes up on the house. Carved along it, in a careful hand, is the story: the rice cake, the night in the reeds, the stone, the gold eye. At the end {he} has carved: \"It is a dragon. When it rises, we will say so.\"",
+   "npc": {
+    "role": "im2_tale_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_tale_2"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "im2_tale_heir"
+    ]
+   },
+   "arc": "The Story They Tell",
+   "choices": [
+    {
+     "text": "Touch the beam with your head, in front of the whole family",
+     "effects": {
+      "flag": "im_family_bond",
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "npcFlag": "serpent_friend",
+      "log": "Three generations on the riverbank go down on their knees. The beam goes up on the house with a scale-mark on it, and for centuries every child in that family learns the words before learning to read: it is a dragon, and when it rises, we will say so."
+     }
+    },
+    {
+     "text": "Let the river wet the carving, once, as a blessing",
+     "effects": {
+      "flag": "im_family_bond",
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "luck": 3,
+      "log": "A single wave runs up the gravel and over the beam and back. {npc} weeps without embarrassment. The family tells it that way forever: the river read the story, and agreed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_offer_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "A farmer's wife comes down to the bend at first light with a bowl of white rice, three dried fish and a little cup of clear liquor, and sets them on a flat rock at the water's edge. She bows twice. She asks for nothing out loud. Her son fell in the river last spring and came out alive and she has decided whose doing that was.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The First Offerings",
+   "choices": [
+    {
+     "text": "Take the fish and leave the rest",
+     "effects": {
+      "qi": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The rice is still there at noon, the fish are not. She is satisfied. A serpent with tastes is more believable than one without."
+     }
+    },
+    {
+     "text": "Take all of it, cup and all",
+     "effects": {
+      "qi": 6,
+      "tally": {
+       "legend": 1,
+       "fear": 1
+      },
+      "log": "She finds the rock bare, even the cup gone. She tells the village the bend is hungry. More bowls appear. It is, you discover, possible to be worshipped by accident."
+     }
+    },
+    {
+     "text": "Leave it all and push the bowl back to her with the water",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "comprehension": 2,
+      "log": "A little wave sets the bowl down at her feet, the rice not even wet. She sits down hard on the bank. \"It does not want anything,\" she tells everyone. That is the most frightening story of all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_offer_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The village has hired a shaman. On the riverbank there is a table with rice cakes and fruit and a boiled pig's head, and the shaman, in robes of five colours, is dancing on the edge of the water with bells and a fan, calling the Dragon King of the river to come and eat. The shaman, unlike everyone else, is looking straight at the place where you are lying.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_offer_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The First Offerings",
+   "choices": [
+    {
+     "text": "Come up and eat the pig's head in front of everyone",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 4,
+       "fear": 2
+      },
+      "log": "The shaman keeps dancing. Nobody else keeps doing anything. It is the best rite the village has ever paid for and they talk about it for two generations."
+     }
+    },
+    {
+     "text": "Meet the shaman's eyes, and nothing else",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A long look, one old thing to another. The shaman stops dancing, bows very low, and tells the village the river has accepted, which is true. Afterwards the shaman comes alone sometimes, and sits, and you both understand each other well enough."
+     }
+    },
+    {
+     "text": "Do not be called. Stay in the deep",
+     "effects": {
+      "luck": 2,
+      "log": "The rite goes on until midnight. The shaman tells the village the Dragon King was pleased. Shamans are paid to say that. You find you do not mind being lied about kindly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_offer_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Three summers without rain. The paddies are cracked. The elders, frightened and ashamed, do the oldest and worst thing in the stories: they dress a girl of fifteen in white, row her out to the rock in the middle of the bend, tie her there, and row away without looking back. She is not crying. She is staring at the water, waiting for you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_im2_offer_2"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The First Offerings",
+   "choices": [
+    {
+     "text": "Break the ropes and carry her to the bank in front of the village",
+     "effects": {
+      "tally": {
+       "virtue": 5,
+       "legend": 3
+      },
+      "log": "You put her on the bank at the elders' feet, alive, rope trailing, and look at each of them in turn. Nobody ever ties a person to that rock again. She lives to be ninety and tells it as a story about the elders, not about you."
+     }
+    },
+    {
+     "text": "Upset the elders' boat on the way home",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "virtue": 2
+      },
+      "log": "They swim, eventually. When they crawl out, the girl is already sitting on the bank, untied, waiting for them, and so is a very large serpent. That conversation needs no words."
+     }
+    },
+    {
+     "text": "Accept what they offer",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "fear": 6
+      },
+      "log": "The rock is empty in the morning. The village does not speak of it. It does not rain. The fear of the bend goes into every house like damp, and stays for a hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_return_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A grey-bearded man walks up to your old pool below the waterfall with a small boy. The boy picks up a stone to throw into the deep, and the man catches his wrist. You remember that face from forty years ago: one of the boys who threw stones into this very pool, and saw something, and was never believed. He is the headman now.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "flags": [
+     "im_boy_saw"
+    ],
+    "after": [
+     "dc_im_boys_1"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Children Grown Up",
+   "choices": [
+    {
+     "text": "Show yourself to him once more, after forty years",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "He sees the same gold eye, only the size of a dinner plate now. He sits down on the bank and laughs until he cries. \"I told them,\" he says. \"I told every one of them.\" The boy throws nothing, ever."
+     }
+    },
+    {
+     "text": "Stir the water, as you did then",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "fear": 1
+      },
+      "log": "The pool boils for a breath with no wind. The boy drops the stone. The old man nods, slowly, as if somebody has finally answered a letter."
+     }
+    },
+    {
+     "text": "Let it be: he already knows",
+     "effects": {
+      "luck": 2,
+      "comprehension": 2,
+      "log": "The old man tells the boy the rule, and why, and the boy puts the stone down. A rule passed on is worth more than any glimpse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_return_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A wandering swordswoman in a battered bamboo hat stops at the bend and watches the water for a long time. You remember her: the little girl who used to swim out to the rock on dares, the only child in the village who was never afraid of the bend. Bandits are holding the ferry on the far bank tonight, taking a toll in silver and worse. She is going to cross alone.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_im2_return_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Children Grown Up",
+   "choices": [
+    {
+     "text": "Carry her across under the water, unseen, and wait",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "strength": 2,
+      "log": "She lands on the far bank dry, which confuses her more than any bandit could. The fight is short. Two bandits go into the river, and the river, as it happens, is in a bad mood that night."
+     }
+    },
+    {
+     "text": "Overturn the bandits' boats before she arrives",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "fear": 1
+      },
+      "log": "By the time she reaches the ferry there are no boats and a lot of wet, frightened bandits. She looks at the river and bows. She knows."
+     },
+     "fail": {
+      "health": -12,
+      "log": "One boat goes over; the other has a man with a boathook who knows how to use it. (-12 health)"
+     }
+    },
+    {
+     "text": "Let her fight her own fight",
+     "effects": {
+      "comprehension": 2,
+      "log": "She wins. She was always going to win. She sits on the bank afterwards, bleeding a little, and throws a coin into the bend for luck, and you keep it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_monk_1",
+   "cat": "insight",
+   "weight": 11,
+   "once": true,
+   "text": "An old monk sits on the stone bridge every evening for a month, eating his rice ball and looking down into the river. On the last evening he drops a grain of rice into the water and says, to nobody: \"A thousand years is a long time to want one thing. Make sure it is the right thing.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ]
+   },
+   "arc": "The Monk on the Bridge",
+   "choices": [
+    {
+     "text": "Rise and look at him",
+     "effects": {
+      "comprehension": 5,
+      "qi": 8,
+      "log": "He looks back without surprise. \"Ah,\" he says. \"Not a snake, then. Not yet anything else.\" He goes on his way in the morning. You think about the right thing for years."
+     }
+    },
+    {
+     "text": "Eat the grain of rice",
+     "effects": {
+      "luck": 2,
+      "log": "The monk chuckles. \"Well,\" he says, \"that is one answer.\" He leaves the rest of the rice ball on the bridge for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_monk_2",
+   "cat": "insight",
+   "weight": 9,
+   "once": true,
+   "text": "A young monk comes to the bridge with an urn of ashes and the old monk's staff. Before he scatters the ashes into the river, he reads out a line his teacher left for you: \"For the one in the water: wanting the sky is not wrong. Forgetting the ground is.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_monk_1"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Monk on the Bridge",
+   "choices": [
+    {
+     "text": "Carry the ashes down to the sea yourself",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 4,
+      "log": "You take the ashes on your back all the way down the river to where it meets salt water, nine days, and let them go there. You do not know why it matters. It does."
+     }
+    },
+    {
+     "text": "Keep the staff in the deep, with your other things",
+     "effects": {
+      "qi": 10,
+      "luck": 2,
+      "log": "The young monk lets the staff fall into the water when you rise for it, and does not seem surprised. You keep it under the willow roots with the other small treasures you have come to keep. A serpent, it turns out, can have treasures."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_thunder_1",
+   "cat": "insight",
+   "weight": 13,
+   "once": true,
+   "text": "A storm comes up the valley, the kind that walks on legs of lightning. You lift your head out of the river into the rain without deciding to, and for one moment, in the flash, you see it: a light inside the cloud, round and turning, exactly like the bead in your dreams. Then it is gone.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ]
+   },
+   "arc": "The First Thunder",
+   "choices": [
+    {
+     "text": "Climb toward it: up the cliff, into the rain",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 20,
+      "comprehension": 3,
+      "log": "You get halfway up the cliff with the storm pouring over you before it moves on. It is far too soon, and you know it. But you have touched the bottom of the sky."
+     },
+     "fail": {
+      "health": -15,
+      "log": "You fall forty feet onto the rocks. The storm goes on without you, as storms do. (-15 health)"
+     }
+    },
+    {
+     "text": "Watch it until the storm passes",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "You watch the whole storm go up the valley and over the mountains. Somewhere up there is the thing you are for. It is very far away. You are very patient."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_thunder_2",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "You wake one spring and the river is too small. Not the river: you. You have grown again, thick as a pine bough now, and the cold hole under the willows will not hold you any more. The ferrymen whisper. The frogs go silent a mile away.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ]
+   },
+   "arc": "The First Thunder",
+   "choices": [
+    {
+     "text": "Dig the hole deeper with your own body",
+     "effects": {
+      "strength": 5,
+      "qi": 10,
+      "log": "A whole summer of moving stones. When you are done the bend has a hole in it no rope can find the bottom of, and the river flows a little differently all the way to the sea."
+     }
+    },
+    {
+     "text": "Leave the river for the big lake in the hills",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "One night the bend is empty. The ferrymen notice before anyone. Within a year they are leaving offerings on the bank anyway, in case you come back. You do, often."
+     }
+    },
+    {
+     "text": "Spend a year learning how to be this size",
+     "effects": {
+      "comprehension": 5,
+      "log": "Turning in tight water. Moving without a wake. Lying in a paddy without crushing the rice. Being large is a skill, and you learn it, slowly, like a language."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_skin_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "You shed on the gravel bar in the warm days of early summer: a whole skin, silver and whole, longer than a boat. You leave it there. In the morning an old herbalist finds it, and stands holding one end while the other end is still in the willows, and says a word you have not heard before: \"Yong-tae.\" Dragon-skin.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ]
+   },
+   "arc": "The Skin on the Gravel",
+   "choices": [
+    {
+     "text": "Let the herbalist take it",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 2
+      },
+      "log": "The skin is cut into a hundred pieces and sold as medicine for fevers and frights across three counties. Most of them do nothing. Some of them do, and nobody knows why. You do."
+     }
+    },
+    {
+     "text": "Take it back into the river",
+     "effects": {
+      "qi": 8,
+      "log": "You come up out of the willows. The herbalist lets go very quickly and walks home without the skin, and without much dignity, and tells the story anyway."
+     }
+    },
+    {
+     "text": "Eat it, as snakes do",
+     "effects": {
+      "qi": 12,
+      "strength": 2,
+      "log": "All that you were, back into what you are. The herbalist finds only a bare gravel bar and a smell of rain, and is disappointed in a way that lasts the rest of a long life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_skin_2",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "The skin you left has made a small fortune for the herbalist's family, and a small industry: every summer now there are people on the gravel bar at dawn with baskets, hoping. Some of them have nets. Some of them have forks. Not all of them want only your old skin.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_skin_1"
+    ],
+    "minYearsAfter": 12
+   },
+   "arc": "The Skin on the Gravel",
+   "choices": [
+    {
+     "text": "Shed somewhere else from now on",
+     "effects": {
+      "luck": 3,
+      "log": "You shed in the dark of the deep, out of reach. The baskets come for years and find nothing, and the people with forks give up first."
+     }
+    },
+    {
+     "text": "Leave a skin for them every few summers",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2,
+       "hunted": 1
+      },
+      "log": "The herbalist's grandchildren set out a bowl of rice in thanks every year. The people with forks keep coming too. Generosity, you learn, is a lighthouse: it is seen by everyone."
+     }
+    },
+    {
+     "text": "Frighten the bar empty, once and for all",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "strength": 2,
+      "log": "One dawn you come out of the river in the middle of them. Baskets everywhere. Nobody comes to the gravel bar again for a hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_drought_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Drought. The river is a string of brown pools. The farmers come up to yours with their buckets and their prayers, because the old stories say the long one in the pool can call rain. You cannot. Not yet. You can only lie in the shrinking water and feel the heat on your back.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ]
+   },
+   "arc": "The Dry Years",
+   "choices": [
+    {
+     "text": "Lead them to the spring you know in the hills",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You move up the dry streambed at dusk where they can see, and they follow, and at the end of it there is a cold spring under a rock that most of them had forgotten. It saves the village. It does not save the paddies. That will take a much larger serpent."
+     }
+    },
+    {
+     "text": "Hide in the mud until the rain comes",
+     "effects": {
+      "luck": 2,
+      "health": -6,
+      "log": "You lie in the mud for two months, baking. The rain comes in the end, as it always does. Half the village has gone by then. (-6 health)"
+     }
+    },
+    {
+     "text": "Pull up mist from the pool, all your qi at once",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "qi": -10,
+      "log": "A fog rises off the pool at dawn and drifts down over the paddies, and drips, and the rice lifts its heads. It is not rain. It is the first thing you have ever done that is like rain."
+     },
+     "fail": {
+      "health": -10,
+      "qi": -5,
+      "log": "You pull until something inside you tears. A wisp of steam rises and is gone. The farmers do not even see it. (-10 health)"
+     }
+    }
+   ],
+   "cooldown": 15,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_im2_nets_1",
+   "cat": "danger",
+   "weight": 9,
+   "once": false,
+   "text": "A new crew of fishermen from downriver who do not know the bend, or do not care, have stretched a great net right across it, and you are on the wrong side of it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "Nets Across the Bend",
+   "choices": [
+    {
+     "text": "Go straight through it",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The net comes apart like wet paper. The crew sits in their boats looking at the hole and decide, among themselves, to fish somewhere else."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "It is good hemp, and they are good fishermen. You are half out of the water before you tear free, and every one of them sees what was in the net. (-10 health)"
+     }
+    },
+    {
+     "text": "Lie still until they lift it, and go under",
+     "effects": {
+      "luck": 2,
+      "log": "They haul all day and get carp and a lot of weed. You slide under the lead line at dusk while they are arguing about the weight."
+     }
+    },
+    {
+     "text": "Fill their net with fish and let them go home happy",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "You herd every carp in the bend into their net. They go home and tell the downriver villages that the bend is lucky. Which, in a way, it is."
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_im2_den_1",
+   "cat": "life",
+   "weight": 11,
+   "once": true,
+   "text": "The winter is the hardest in living memory, and the river freezes to the bottom at the bend. You go looking for somewhere deeper and find a cleft in the hill full of snakes: adders, rat snakes, grass snakes, hundreds of them tangled together for warmth. They all stop moving when you come in.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     2
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Winter Den",
+   "choices": [
+    {
+     "text": "Coil at the centre of them and sleep",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im2_den_kin",
+      "log": "They flow back around you in the dark, and the den is warmer for your size. In spring they go out into the hills by the hundred and every one of them, in its small way, remembers."
+     }
+    },
+    {
+     "text": "Eat well, and sleep alone at the bottom",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "fear": 1
+      },
+      "log": "A whole winter of food that cannot run away. In spring the den is half empty. The snakes of the hill never come back to it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_den_2",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "The den on the hill is yours now, every winter, and the small snakes come to it from three valleys. This year a farmer's boy has found the cleft and is filling it with brushwood to burn out the nest, as farmers do.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "flags": [
+     "im2_den_kin"
+    ],
+    "after": [
+     "dc_im2_den_1"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Winter Den",
+   "choices": [
+    {
+     "text": "Come up out of the cleft as the fire is lit",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 2
+      },
+      "log": "The boy sees a head come out of the smoke, bigger than any snake's has a right to be. He drops the torch and runs, and the farm never troubles that hill again. The snakes go back to sleep."
+     }
+    },
+    {
+     "text": "Lead the whole den out by a back crack in the hill",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "Hundreds of sleepy snakes, out of the hill in the dark, in a long line behind you, to a new cleft over the ridge. The boy burns an empty den and is very proud of himself."
+     },
+     "fail": {
+      "health": -14,
+      "log": "The back crack is too narrow for you. You hold the smoke off with your body until the small ones are through. (-14 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_painter_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": true,
+   "text": "A scholar with a portable writing table and a servant to carry it sets up on the bank above the bend and paints the river, every morning for a whole summer. The willows, the ferry, the rock. Every painting has the same empty space in the middle of the water, as if waiting for something.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Painter at the Bend",
+   "choices": [
+    {
+     "text": "Fill the space: rise where the painter can see",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "im2_painted",
+      "comprehension": 2,
+      "log": "The brush stops. The painter does not move for the time it takes to burn a stick of incense. Then the brush moves faster than you have ever seen a human move. The painting goes to the capital and is hung in a minister's house, and copied, and copied."
+     }
+    },
+    {
+     "text": "Leave the space empty",
+     "effects": {
+      "luck": 2,
+      "comprehension": 3,
+      "log": "At the end of summer the painter packs up, and leaves the last painting on the bank, weighted with a stone: the river, the willows, and a great empty space in the water. It is the best one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_painter_2",
+   "cat": "life",
+   "weight": 7,
+   "once": true,
+   "text": "A copy of the painting comes back to the river: a merchant's boat is carrying it to sell, and the boatmen are laughing at it because the serpent in it is wrong. Too thin, they say, and its eyes are not gold enough.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_painted"
+    ],
+    "after": [
+     "dc_im2_painter_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Painter at the Bend",
+   "choices": [
+    {
+     "text": "Show the boatmen what it really looks like",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "They never laugh at a painting again. The merchant sells it for three times the price, with the story thrown in."
+     }
+    },
+    {
+     "text": "Let it go downriver. It was a good likeness once",
+     "effects": {
+      "comprehension": 3,
+      "log": "You grow, and the painting does not. That is what paintings are for: to remember the size you were."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_wash_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The women of the village wash at the flat stones below the bend and beat the clothes with wooden paddles, and talk, and the talk is mostly about you: the bend serpent that saved the ferry, the bend serpent that ate the calf, the bend serpent that is really a drowned scholar, the bend serpent that is a dragon in disguise.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im2_river_1"
+    ]
+   },
+   "arc": "The Washing Stones",
+   "choices": [
+    {
+     "text": "Listen all summer and learn what they think you are",
+     "effects": {
+      "comprehension": 5,
+      "log": "You are, it turns out, at least six different things, most of them contradictory. You learn more about humans from the washing stones than from anything else in all your years."
+     }
+    },
+    {
+     "text": "Let one of them see your eye, just to give them something true",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "log": "A paddle drops into the water. There is a silence of exactly the length of one breath, and then more talk than there has ever been at the washing stones, all at once."
+     }
+    },
+    {
+     "text": "Wash their dropped clothes back to them",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "luck": 2,
+      "log": "Every shirt the current takes comes back, folded over a stone downstream. The women start leaving one rice cake on the washing stones each market day, in thanks, and nobody says out loud who for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_ruin_1",
+   "cat": "explore",
+   "weight": 13,
+   "once": true,
+   "text": "Looking for winter shelter, you find a great house falling down at the edge of the valley: tiled roofs sagging, the courtyard full of weeds, the storehouse caved in. One old servant still sweeps it every morning, for nobody. \"There was a great serpent under that storehouse,\" the old servant tells the broom. \"The young master struck it with a hoe. It left. Three years later, this.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ]
+   },
+   "arc": "The House the Serpent Left",
+   "choices": [
+    {
+     "text": "Winter in the ruined storehouse anyway",
+     "effects": {
+      "qi": 10,
+      "comprehension": 3,
+      "flag": "im2_saw_ruin",
+      "log": "The old servant finds you there in the spring and does not run. Instead, very slowly, the servant sets down the broom, kneels, and asks you, please, if you are the one come back. You are not. You leave before the hope gets any bigger."
+     }
+    },
+    {
+     "text": "Lie in the ruin and think about what a serpent is to a house",
+     "effects": {
+      "comprehension": 5,
+      "flag": "im2_saw_ruin",
+      "log": "The house did not fall because of a hoe. It fell because the thing under the storehouse was the luck of the house, and the luck took offence. You had not known that a serpent could be that. You think about it all winter."
+     }
+    },
+    {
+     "text": "Move on. Ruins are bad water",
+     "effects": {
+      "luck": 2,
+      "log": "You find a cold cave on the hill instead and sleep alone. In spring you go down past the great house and the servant is still sweeping."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_ruin_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years later you pass the ruined house again. It is not a ruin: a young couple have bought the land cheap, because nobody wanted it, and patched the roofs, and rebuilt the storehouse with their own hands. On the new storehouse step is a bowl of clean water and a handful of rice, set there every night, for whoever might come.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_im2_ruin_1"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The House the Serpent Left",
+   "choices": [
+    {
+     "text": "Drink, and go on",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They find the bowl empty in the morning and the rice untouched, and are happy all year. A drink of water is a promise of a kind, but not the binding kind."
+     }
+    },
+    {
+     "text": "Leave the bowl. That house is someone else's story",
+     "effects": {
+      "comprehension": 2,
+      "log": "In a few years the house is prosperous again. Something else came to the step: a big yellow rat snake, a humble kind of luck. It is doing very well."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "First frost. You are looking for a winter den and the smell of rice brings you to a farmhouse at the edge of the village: a small poor house, a storehouse on stone footings, the rice in it half eaten by rats. You are halfway under the footings when the door opens and {npc} stands there with a lamp. {He} looks at you, at your size, for a long moment. Then, very quietly: \"Eopgureongi.\" And {he} kneels.",
+   "npc": {
+    "role": "im2_eop_house",
+    "spawn": {
+     "role": "friend",
+     "tag": "im2_eop_house",
+     "ageAbs": 34,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ]
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Stay the winter under the storehouse",
+     "effects": {
+      "qi": 8,
+      "flag": "im2_eop_stay",
+      "npcFlag": "im2_eop_house",
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "came to our house as its eop"
+      },
+      "log": "You curl into the dark under the floor among the stones. By midwinter there are no rats in the storehouse. By spring the household walks softly past it and nobody says the word snake inside the gate."
+     }
+    },
+    {
+     "text": "Eat the rats and go before morning",
+     "effects": {
+      "qi": 6,
+      "log": "You clear the storehouse of rats in one night and are gone by dawn. {npc} finds the floor clean and the rice safe, and burns a stick of incense on the step anyway, in case."
+     }
+    },
+    {
+     "text": "Hiss {him} out of the doorway",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} backs away with the lamp, still bowing, still whispering. You take the den. You do not take the meaning of the bow. Not this year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "You have wintered under the storehouse for three years now, and the house has rules. On the first full moon {npc} sets a bowl of clean water and a cup of rice on the storehouse step. The children are told never to look under the floor at night and never to say \"snake\" inside the gate. When the rice runs low, {npc} says, \"The eop will see to it,\" and somehow the harvest is always a little better than the neighbours'.",
+   "npc": {
+    "role": "im2_eop_house"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_stay"
+    ],
+    "after": [
+     "dc_im2_eop_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "im2_eop_house"
+    ]
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Keep the storehouse: no rat, no rot, no thief",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im2_eop_kept",
+      "log": "The rice in that storehouse never spoils. A thief who climbs in one night comes out much faster than the thief went in. The house buys a second paddy, then a third."
+     }
+    },
+    {
+     "text": "Let the children glimpse you once, so they will believe",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im2_eop_kept",
+      "mem": {
+       "deed": "trusted",
+       "w": 8,
+       "note": "showed itself to the children"
+      },
+      "log": "One gold eye, under the floorboards, in the lamp. The smallest child does not sleep for a week and then grows up to be the most careful keeper of the rules the house ever has."
+     }
+    },
+    {
+     "text": "Take the offering, but do nothing for it",
+     "effects": {
+      "qi": 6,
+      "log": "You eat the rice and drink the water and sleep. The harvest is ordinary. {npc} sets out the bowl anyway, every moon. It is not a bargain to {him}. It is a courtesy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_3",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "A jealous neighbour has seen a serpent as thick as a pine trunk sliding into the storehouse at dusk, and has told the whole village that a demon lives under the house and steals their luck. Now there are men at the gate with staves and pitch torches, and {npc} is standing in front of the storehouse door with empty hands.",
+   "npc": {
+    "role": "im2_eop_house"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_stay"
+    ],
+    "after": [
+     "dc_im2_eop_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "im2_eop_house"
+    ]
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Stay hidden and trust {npc}",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "trusted",
+       "w": 18,
+       "note": "trusted me to stand at the door"
+      },
+      "log": "{npc} talks for an hour without raising {his} voice. It is our eop, {he} says; you have all eaten from this storehouse in the bad years. One by one the torches go out. The neighbour is the last to go, and the neighbour's barn floods that spring."
+     },
+     "fail": {
+      "health": -15,
+      "mem": {
+       "deed": "trusted",
+       "w": 10,
+       "note": "stood at the door for me"
+      },
+      "log": "Somebody pushes past {npc} and throws a torch under the floor. You get out through the back wall with your scales scorched, and wait in the river until the village is asleep, and then you come home. (-15 health)"
+     }
+    },
+    {
+     "text": "Come out and stand beside {npc}",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "mem": {
+       "deed": "defended",
+       "w": 15,
+       "note": "stood beside me against the village"
+      },
+      "log": "You rise out of the dark under the storehouse until your head is higher than the gate. The torches go out much faster than they were lit. Nobody in the village ever says demon again. They say eop, carefully, and they bring the house gifts."
+     }
+    },
+    {
+     "text": "Leave for a season so the house is not burned",
+     "effects": {
+      "luck": -2,
+      "flag": "im2_eop_hid",
+      "log": "You go to the river. The men search the storehouse and find nothing. That year the hail flattens the house's rice, and only the house's. When you come back at first frost, {npc} weeps on the step."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_4",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is old now, and the house is not poor any more: tiled roofs, three storehouses, hired hands at harvest. {He} comes out alone on a winter night, kneels at the storehouse step with the water bowl, and speaks to the dark under the floor for the first time since that first winter. \"I am going soon. My child will keep the rules. Will you keep the house?\"",
+   "npc": {
+    "role": "im2_eop_house"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_kept"
+    ],
+    "after": [
+     "dc_im2_eop_3"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "im2_eop_house"
+    ]
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Lay your head on the step, under {his} hand",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im2_eop_promised",
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "promised",
+       "w": 25,
+       "note": "promised to keep the house"
+      },
+      "npcPass": "old age, in the warm room, with the family round",
+      "log": "An old hand on a head as wide as the step. {npc} says nothing more. In the spring {he} dies in the warm room with the whole family round, and the last thing {he} says is, \"Feed the eop.\""
+     }
+    },
+    {
+     "text": "Stay in the dark. A promise is a chain",
+     "effects": {
+      "comprehension": 4,
+      "flag": "im2_eop_promised",
+      "npcPass": "old age, in the warm room, with the family round",
+      "log": "You do not come out. {npc} waits, and nods, and goes in. In the spring {he} dies, and the bowl is on the step at the next full moon all the same, set there by a younger hand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_5",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The second generation. {npc}, the old keeper's child, keeps the house now, and keeps it well. But this spring {npc}'s youngest is burning with a fever no physician can break, and in the night {npc} comes to the storehouse step with nothing in {his} hands and says: \"If you are our luck, be our luck now.\"",
+   "npc": {
+    "role": "im2_eop_heir",
+    "spawn": {
+     "role": "friend",
+     "tag": "im2_eop_heir",
+     "ageAbs": 36,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_promised"
+    ],
+    "after": [
+     "dc_im2_eop_4"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Give the child your breath: a long night of qi",
+     "effects": {
+      "qi": -15,
+      "health": -10,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "im2_eop_gave",
+      "mem": {
+       "deed": "saved",
+       "w": 30,
+       "note": "saved my child in the night"
+      },
+      "log": "You come up into the warm room for the first time, filling it, and lie around the sickbed all night breathing slow cold river breath over the child. At dawn the fever breaks. Nobody in the house ever forgets the sight of you in that room. (-10 health)"
+     }
+    },
+    {
+     "text": "Leave a shed skin on the step for the physician",
+     "effects": {
+      "health": -5,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im2_eop_gave",
+      "mem": {
+       "deed": "gift",
+       "w": 20,
+       "note": "gave its skin for medicine"
+      },
+      "log": "The physician boils a hand's width of it with roots and the child sweats all night and lives. The rest of the skin is folded in silk and kept in the family shrine for two hundred years. (-5 health)"
+     }
+    },
+    {
+     "text": "A house serpent keeps rice, not lives",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "refused",
+       "w": -15,
+       "note": "would not help my child"
+      },
+      "log": "The child lives anyway, barely, and the house goes on. But {npc} does not set the bowl out quite as early after that, and you notice. You are surprised how much you notice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_6",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A storm comes over the hills, and the thunder speaks to you in a voice you have not heard since you were a water snake. Your qi is so full it aches. Your coils press against the storehouse stones until they crack. Somewhere up in that cloud is the bead. And under you, all night long, the house sleeps, trusting you to be there in the morning. {npc} is awake, at the window, watching the storehouse.",
+   "npc": {
+    "role": "im2_eop_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_promised"
+    ],
+    "after": [
+     "dc_im2_eop_5"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Go out into the storm, just this once",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "flag": "im2_eop_sky",
+      "log": "You go up the hill into the rain and lift your head into the lightning, and the sky pulls at you like a current. At dawn you come back down, soaked, and slide under the storehouse, and {npc} at the window lets out a breath held all night."
+     }
+    },
+    {
+     "text": "Stay. Press yourself flat to the stones until it passes",
+     "effects": {
+      "luck": 3,
+      "flag": "im2_eop_sky",
+      "log": "It is the hardest night of your life. The storm goes on without you, as storms do. In the morning there is a crack in the storehouse wall that the family fills with clay and does not ask about."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_7",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "The third generation's spring. The family stands in the courtyard in their best clothes: {npc}, grey now, and the children, and the children's children, more than twenty of them under one tiled roof that was thatch when you came. They have understood, the way families understand things nobody says: the eop is too big for the storehouse now, too big for any house. It is leaving. And everyone knows what happens to a house when its eop leaves. {npc} has set out the bowl of water one last time, and is waiting to see which way you go.",
+   "npc": {
+    "role": "im2_eop_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_sky"
+    ],
+    "after": [
+     "dc_im2_eop_6"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Coil down under the foundation stone and stay. For good",
+     "effects": {
+      "beastEnding": "eopgureongi",
+      "tally": {
+       "virtue": 4
+      },
+      "log": "You turn from the gate. You go back under the storehouse, down below the footings, below the clay, into the deep cold ground, and you settle there like a root. The sky can have some other serpent. You have a house. Nine generations of children will grow up with the rule about the storehouse at night. Not one of them will ever see you. Every one of them will be kept."
+     }
+    },
+    {
+     "text": "Go, but go openly, in daylight, and leave them standing",
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "legend": 4
+      },
+      "flag": "im2_left_house",
+      "mem": {
+       "deed": "farewell",
+       "w": 25,
+       "note": "left us standing, in the light"
+      },
+      "log": "You go out through the courtyard in full sun, slowly, past every one of them, so that no one can say the eop fled in the night, angry. At the gate you lay a shed skin across the threshold, the whole length of it. Then you go down to the river. The house does not fall. It was never only you holding it up; it was the rules, and the bowl, and three generations of people who learned to keep a promise. They keep climbing."
+     }
+    },
+    {
+     "text": "Stay one more generation. The sky will wait",
+     "effects": {
+      "luck": 3,
+      "flag": "im2_eop_wait",
+      "log": "You go back under the floor. The family lets out a breath that is half relief and half something else. The sky does wait. It is very good at waiting. So, you are finding, are you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_8",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "Another generation, and you are bigger still: the whole storehouse leans a little on your coils now. The child who once lay in that fever is the head of the house, white-haired, and comes down on a spring morning to sit on the step and say the thing nobody else will. \"You stayed for us. You do not have to stay for us forever. But if you do, we will keep the rules until the last of us.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_wait"
+    ],
+    "after": [
+     "dc_im2_eop_7"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Then stay forever",
+     "effects": {
+      "beastEnding": "eopgureongi",
+      "tally": {
+       "virtue": 4
+      },
+      "log": "You settle under the house for the last time. There will be no pearl, no storm, no dragon. There will be rice that never spoils, and children who are never quite as unlucky as they should be, and a bowl of clean water on a stone step every full moon for four hundred years. It is enough. You choose it, and it is enough."
+     }
+    },
+    {
+     "text": "Then go, and let them keep the rules for the next one",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 4
+      },
+      "flag": "im2_left_late",
+      "log": "You go at noon, past the whole household bowing in the courtyard, and down to the river, and do not look back, because if you look back you will stay. On the threshold you leave a shed skin, the whole length of it. The house keeps the rules. The bowl goes on the step every full moon, for whoever might come. The house keeps rising."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_9",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Years after you left the house, a young official in a scholar's black hat comes down to the river bend on a fine horse, dismounts, and bows to the water three times. {npc}'s grandchild: the first of the family to pass the capital examination. Behind on the bank stand the servants with a table of offerings and a silk-wrapped bundle: a strip of your old skin, kept in the family shrine all these years.",
+   "npc": {
+    "role": "im2_eop_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_left_house"
+    ],
+    "notFlags": [
+     "im2_left_late"
+    ],
+    "after": [
+     "dc_im2_eop_7"
+    ],
+    "minYearsAfter": 12
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Rise and bow back",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The servants drop the table. The official does not move, only bows again, lower. That family tells it this way for ever: the eop left so that we would learn to stand. We stood."
+     }
+    },
+    {
+     "text": "Stay deep, and let the river take the offerings gently",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "One by one the dishes slide off the rock into the water. The young official watches the last one go and smiles. Some families need to see. This one, at last, does not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_eop_10",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Years after you left the house, a young official in a scholar's black hat comes down to the river bend on a fine horse, dismounts, and bows to the water three times. {npc}'s grandchild: the first of the family to pass the capital examination. Behind on the bank stand the servants with a table of offerings and a silk-wrapped bundle: a strip of your old skin, kept in the family shrine all these years.",
+   "npc": {
+    "role": "im2_eop_heir"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_left_late"
+    ],
+    "after": [
+     "dc_im2_eop_8"
+    ],
+    "minYearsAfter": 12
+   },
+   "arc": "The House Serpent",
+   "choices": [
+    {
+     "text": "Rise and bow back",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The servants drop the table. The official does not move, only bows again, lower. That family tells it this way for ever: the eop left so that we would learn to stand. We stood."
+     }
+    },
+    {
+     "text": "Stay deep, and let the river take the offerings gently",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "One by one the dishes slide off the rock into the water. The young official watches the last one go and smiles. Some families need to see. This one, at last, does not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_weasel_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A weasel has moved into the house's woodpile: quick, bright-eyed, and convinced that it, not you, is the luck of this house. The old women in the village would agree with it; weasels are luck too, of a smaller and thievish sort. It steals eggs. It steals from the storehouse. It leaves you a dead rat on the step, as if to say: I can do your job.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_stay"
+    ],
+    "notFlags": [
+     "im2_left_house",
+     "im2_left_late"
+    ]
+   },
+   "arc": "Two Lucks in One House",
+   "choices": [
+    {
+     "text": "Drive it off the farm",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "One long chase through the woodpile and the weasel is two valleys away, telling everyone. The eggs are safe."
+     },
+     "fail": {
+      "health": -8,
+      "log": "It is too quick for anything your size. It bites you on the nose and laughs at you from the roof for a month. (-8 health)"
+     }
+    },
+    {
+     "text": "Let it stay: two kinds of luck are better than one",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The weasel keeps the woodpile and you keep the storehouse. The house loses a few eggs and gains a reputation for being doubly lucky."
+     }
+    },
+    {
+     "text": "Eat it",
+     "effects": {
+      "qi": 5,
+      "luck": -2,
+      "log": "One snap. Then the house's hens stop laying for a whole year, and an old woman at the gate tells you with her eyes that a luck should not eat a luck."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im2_weasel_2",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "In the deep of winter a hungry tiger comes down off the mountain and circles the farm, snuffling at the gate. The weasel is screaming from the roof. The household is behind the doors with a lamp and a kitchen knife. The storehouse door is not much of a door.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "flags": [
+     "im2_eop_stay"
+    ],
+    "notFlags": [
+     "im2_left_house",
+     "im2_left_late"
+    ],
+    "after": [
+     "dc_im2_weasel_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "Two Lucks in One House",
+   "choices": [
+    {
+     "text": "Meet the tiger at the gate",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "legend": 4,
+       "virtue": 2
+      },
+      "log": "A tiger and a gureongi in the snow at a farmhouse gate. The tiger has never met anything it could not hold down. It meets one. It goes back to the mountain with your teeth in its shoulder and never comes down to that valley again."
+     },
+     "fail": {
+      "health": -35,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It knows exactly where to bite. You hold the gate anyway until dawn, when the tiger gives up and goes. You lie under the storehouse half dead until spring.",
+      "deathCause": "a tiger in the snow, at the gate of the house you kept"
+     },
+     "risky": true
+    },
+    {
+     "text": "Coil around the house itself and wait",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 3,
+      "log": "The tiger walks around the farm all night and finds, every way it turns, a wall of scales. It goes away at dawn, offended. The household opens the door to a ring of snake-tracks in the snow round the whole house."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,6078 @@
+{
+ "events": [
+  {
+   "id": "dc_sb_yheron_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The heron has been standing in the shallows since dawn, on one leg, perfectly still, the way the old monks sit. It is not meditating. It is waiting for something small to move. You are something small.",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Heron",
+   "choices": [
+    {
+     "text": "Do not move. Not for the whole morning",
+     "roll": {
+      "stat": "luck",
+      "dc": 35
+     },
+     "ok": {
+      "luck": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The heron eats a frog, a minnow and another frog. At noon it unfolds itself and flaps away like a wet umbrella. You have learned that stillness is a kind of strength."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "A beetle walks across your eye and you blink. The beak comes down like a spear. You tear free and go to ground in the mud with a long cut that takes all summer to heal."
+     }
+    },
+    {
+     "text": "Slip away under the lotus roots",
+     "effects": {
+      "comprehension": 3,
+      "log": "You learn every root in the pond that morning, because you have to. By evening you know the pond better than the heron does."
+     }
+    },
+    {
+     "text": "Startle it: burst out of the water at its legs",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The heron leaps a full arm into the air with a shriek of pure outrage and does not come back to this pond for a year. The frogs owe you."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The heron is not startled. The heron is hungry. You escape with a bruise and a great deal of new respect for herons."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yheron_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A heron stands in the shallows of your pond again, one leg folded. It is not the same heron; that one would be long dead. But it has the same tilt of the head. It looks at you, and then, very slowly, at how big you have become, and it takes one careful step back.",
+   "when": {
+    "realm": [
+     1,
+     4
+    ],
+    "after": [
+     "dc_sb_yheron_1"
+    ],
+    "minYearsAfter": 15,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Heron",
+   "choices": [
+    {
+     "text": "Let it fish. There is room now",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "qi": 6,
+      "log": "It fishes your pond every morning for years, and keeps the frog numbers sensible. You come to think of it as a neighbour."
+     }
+    },
+    {
+     "text": "Rise out of the water, slowly, until it leaves",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "strength": 2,
+      "log": "It goes without hurry, as if it had meant to leave anyway. Herons have dignity. You find that you do not hold the grudge you thought you held."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ygeumjul_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "There is a straw rope across the gate of the farmhouse where you shelter under the floor: red peppers, lumps of charcoal and pine twigs twisted into it. Inside, a baby cries. For twenty-one days no neighbour may come in. The house is quiet and warm, and it is the safest place you have ever slept.",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "gumiho",
+     "bulgasari",
+     "juak",
+     "imugi",
+     "cheongryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Birth Rope",
+   "choices": [
+    {
+     "text": "Stay under the warm floor until the rope comes down",
+     "effects": {
+      "qi": 8,
+      "luck": 3,
+      "flag": "sb_ygeumjul_stayed",
+      "log": "The heat of the ondol comes up through the stones into you all winter. On the twenty-second day the rope comes down, the neighbours pour in, and you slip out through the drain, fat and warm."
+     }
+    },
+    {
+     "text": "Keep the rats away from the rice jar, in payment",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_ygeumjul_stayed",
+      "log": "Twenty-one nights, twenty-one rats. The mother of the house tells everyone the birth rope must be very strong this year, because not one grain was stolen."
+     }
+    },
+    {
+     "text": "Leave. Where there are babies there are grown-ups with brooms",
+     "effects": {
+      "luck": 2,
+      "log": "You go out into the snow. Behind you the baby stops crying and starts, unmistakably, to laugh."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ygeumjul_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The baby of the birth rope has grown, all knees and questions. Today {npc} lifts the stone over the drain and finds you, and does not scream. {He} looks at you for a long time and says, very seriously, \"I knew someone was down there. I could hear you being warm.\"",
+   "npc": {
+    "role": "sb_ychild",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ychild",
+     "ageAbs": 7,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "after": [
+     "dc_sb_ygeumjul_1"
+    ],
+    "minYearsAfter": 6,
+    "flags": [
+     "sb_ygeumjul_stayed"
+    ],
+    "beast": [
+     "gumiho",
+     "bulgasari",
+     "juak",
+     "imugi",
+     "cheongryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Birth Rope",
+   "choices": [
+    {
+     "text": "Stay very still and let the child look",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": [
+       "sb_ychild",
+       "sb_ysecret"
+      ],
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "let me look at it and did not run"
+      },
+      "log": "{npc} puts the stone back very gently and never, ever tells. Every few days, a single boiled chestnut appears by the drain."
+     }
+    },
+    {
+     "text": "Flee through the drain",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "sb_ychild",
+      "log": "You go. But the child has seen your eyes, and children never forget eyes. You hear {him} telling the dog about you at dusk."
+     }
+    },
+    {
+     "text": "Hiss and puff yourself up, to frighten {him} off",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "sb_ychild",
+      "log": "{npc} is not frightened. {npc} is delighted. {He} runs to tell the whole village there is a monster under the floor, and nobody believes {him}, which is exactly right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ygeumjul_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Hunters come to the village asking about a strange creature seen in the paddies. Coins are offered. {npc}, a grown farmer now with a birth rope over {his} own gate, listens to them with a face like a closed door.",
+   "npc": {
+    "role": "sb_ychild"
+   },
+   "when": {
+    "realm": [
+     1,
+     4
+    ],
+    "after": [
+     "dc_sb_ygeumjul_2"
+    ],
+    "minYearsAfter": 14,
+    "npcFlags": [
+     "sb_ysecret"
+    ],
+    "beast": [
+     "gumiho",
+     "bulgasari",
+     "juak",
+     "imugi",
+     "cheongryong"
+    ]
+   },
+   "arc": "The Birth Rope",
+   "choices": [
+    {
+     "text": "Trust {him}. Stay where you are",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "trusted",
+       "w": 20,
+       "note": "trusted me with its life when the hunters came"
+      },
+      "log": "\"A strange creature?\" {npc} says. \"Oh, that. It went east. Big as a calf. Smelled terrible.\" The hunters go east. You go nowhere at all."
+     }
+    },
+    {
+     "text": "Leave the village before anyone has to lie for you",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "You go in the night. In the morning there is a chestnut by the drain with no one to eat it, and {npc} stands looking at it for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yeopsin_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "You have been living behind the rice jars in a rich farmer's storehouse, eating rats. This morning the grandmother of the house finds you. She does not reach for a stick. She goes pale, and then she bows, and then she puts down a bowl of clear water. \"Eopsin,\" she whispers. \"The luck of the house has come back.\"",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "gumiho"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Luck of the House",
+   "choices": [
+    {
+     "text": "Accept the water. Be the luck of the house",
+     "effects": {
+      "qi": 6,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_yeopsin",
+      "log": "Nobody in that house will ever chase you out again. The grandmother tells no one outside the family: an eopsin that is talked about leaves. You eat rats and drink offerings and, oddly, the harvest is very good."
+     }
+    },
+    {
+     "text": "Eat the rats, but leave at night before you are a god",
+     "effects": {
+      "comprehension": 3,
+      "log": "You are not a god of anything. You are not sure what you are. It seems wrong to let an old woman bow to that."
+     }
+    },
+    {
+     "text": "Take the rice cake too",
+     "effects": {
+      "luck": 2,
+      "flag": "sb_yeopsin",
+      "log": "The grandmother is overjoyed. An eopsin that eats is an eopsin that stays."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yeopsin_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The grandmother is dead. The grandson who owns the storehouse now is modern-minded, in the way of every generation, and thinks the creature behind the jars is just vermin. Today he comes in with a pitchfork.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "after": [
+     "dc_sb_yeopsin_1"
+    ],
+    "minYearsAfter": 12,
+    "flags": [
+     "sb_yeopsin"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "gumiho"
+    ]
+   },
+   "arc": "The Luck of the House",
+   "choices": [
+    {
+     "text": "Leave quietly. A house that forgets its luck can keep its rats",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You go. Within a few years the storehouse is half empty, the son has sold the east field, and the village says, knowingly, that the eopsin left."
+     }
+    },
+    {
+     "text": "Show yourself, all of you, in the doorway",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "strength": 3,
+      "log": "He drops the pitchfork. He runs to his wife, who runs to the shaman, who comes and says the eopsin is offended. The water bowl is back by sunset, and very much fuller."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "He is braver than he looks. The pitchfork catches you, and you go out through the drain bleeding, and never come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydokkaebi_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "Blue fires float over the marsh at midnight, and behind them comes a dokkaebi: shaggy, grinning, a knobbed club on its shoulder. It squats down at the water and peers at you. \"Little thing,\" it says. \"You have a smell of something that will be big. Wrestle me. If you win, I owe you a favour. If you lose, you owe me one.\"",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Dokkaebi Who Wanted to Wrestle",
+   "choices": [
+    {
+     "text": "Wrestle it",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_ydok_won",
+      "log": "You are tiny and it is enormous, but dokkaebi are all left side, as everyone knows, and you hook it from the right. It goes down into the mud howling with laughter. \"A favour!\" it shouts. \"I owe! Do not forget!\""
+     },
+     "fail": {
+      "health": -6,
+      "flag": "sb_ydok_lost",
+      "log": "It flips you into the reeds with one finger and laughs until the blue fires shake. \"One favour,\" it says, delighted. \"I will come and collect. Do not forget!\""
+     }
+    },
+    {
+     "text": "Riddle with it instead",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 5,
+      "flag": "sb_ydok_won",
+      "log": "\"What gets bigger the more you take away?\" It thinks until dawn and then says \"a hole\" in a very sulky voice, a moment after the rooster. You win on time."
+     },
+     "fail": {
+      "comprehension": 2,
+      "flag": "sb_ydok_lost",
+      "log": "Its riddle is about a millstone, a widow and a bowl of buckwheat, and you never find out the answer. It is very pleased with itself."
+     }
+    },
+    {
+     "text": "Sink and wait for the blue fires to go away",
+     "effects": {
+      "luck": 2,
+      "log": "It sits on the bank sighing until the rooster crows, and leaves a buckwheat jelly on a leaf, in case you change your mind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydokkaebi_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Blue fires on the marsh again, after all these years. The dokkaebi has not aged a day. \"You got big,\" it says, eyeing you up and down. \"About that favour.\"",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ydokkaebi_1"
+    ],
+    "minYearsAfter": 20,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Dokkaebi Who Wanted to Wrestle",
+   "choices": [
+    {
+     "text": "\"You owe me. Make the hunters on the east road get lost for a season\"",
+     "req": {
+      "flags": [
+       "sb_ydok_won"
+      ]
+     },
+     "effects": {
+      "tally": {
+       "hunted": -2
+      },
+      "luck": 3,
+      "log": "For a whole season every hunter on the east road walks in circles, finds their snares full of pine cones and their rice turned to horse dung. They give up and go home. Dokkaebi keep their word, in their own way."
+     }
+    },
+    {
+     "text": "\"I owe you. What do you want?\"",
+     "req": {
+      "flags": [
+       "sb_ydok_lost"
+      ]
+     },
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "It wants a rematch. You wrestle it all night, and it wins, and then you win, and then it declares a draw and drags a whole millstone over as a seat to watch the sunrise with you."
+     }
+    },
+    {
+     "text": "Wrestle it again, for the fun of it",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "legend": 2
+      },
+      "log": "This time you throw it into the next paddy. It comes back covered in mud and absolutely joyful. The villagers find the field flattened in a great circle in the morning and talk of nothing else for a year."
+     },
+     "fail": {
+      "health": -10,
+      "strength": 2,
+      "log": "It throws you into the next paddy. The villagers find the field flattened in a great circle in the morning and talk of nothing else for a year."
+     }
+    },
+    {
+     "text": "Pretend you have never seen it before",
+     "effects": {
+      "luck": 2,
+      "log": "It is deeply offended. It sulks on the bank until dawn, then leaves a buckwheat jelly anyway, because dokkaebi cannot help themselves."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydokkaebi_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You find the dokkaebi's club lying in the reeds, alone, worn smooth. Dokkaebi are made from old things that were loved, a broom, a pestle, a club, and when they are forgotten for long enough they become things again. Nobody has told a story about this marsh's dokkaebi in a generation.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ydokkaebi_2"
+    ],
+    "minYearsAfter": 30,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Dokkaebi Who Wanted to Wrestle",
+   "choices": [
+    {
+     "text": "Carry the club to the crossroads where travellers tell stories",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "comprehension": 3,
+      "log": "A peddler picks it up, hears the strange thump it makes on the ground, and tells a story about it that night at the inn. By the next blue moon, there are fires on the marsh again, and somebody laughing."
+     }
+    },
+    {
+     "text": "Keep it in your hollow, and remember the wrestling",
+     "effects": {
+      "qi": 10,
+      "log": "Some nights it is warm. Some nights it is a little bit heavier than it was. You do not ask."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ytrapper_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "Horsehair snares on every path down to the water. A boy from the burnt-field huts sets them, a thin hungry child with clever fingers. This morning one of them is around you, and {npc} is coming up the path to check it.",
+   "npc": {
+    "role": "sb_ytrapper",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ytrapper",
+     "ageAbs": 11,
+     "opinion": 0,
+     "male": true
+    }
+   },
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Trapper",
+   "choices": [
+    {
+     "text": "Tear free before {he} arrives",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "npcFlag": "sb_ytrapper",
+      "log": "The horsehair parts. When {npc} arrives there is only a broken snare and a strange smell, and {he} squats there for a long time, thinking."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "npcFlag": "sb_ytrapper",
+      "log": "You get free only by leaving blood on the loop. {npc} finds the blood and follows it to the stream, and stands at the edge of the water, looking straight at the place where you are hiding."
+     }
+    },
+    {
+     "text": "Lie still and look at {him}",
+     "effects": {
+      "charm": 3,
+      "npcFlag": [
+       "sb_ytrapper",
+       "sb_ytrap_spared"
+      ],
+      "mem": {
+       "deed": "looked",
+       "w": 15,
+       "note": "looked at me from the snare like a person"
+      },
+      "log": "{npc} kneels, knife out, and meets your eyes, and something goes out of {his} face. {He} cuts the snare. \"You are not a rabbit,\" {he} says. \"I do not know what you are. Go on.\""
+     }
+    },
+    {
+     "text": "Bite through the snare and then through the next five",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "sb_ytrapper",
+      "log": "By the time {npc} gets there every snare on the hill is cut. {He} goes home hungry, and very angry, and very curious."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ytrapper_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is a grown hunter now, the best in three valleys, and {he} has come into the hills with a stranger in a sect's grey robe. You hear them from the ridge. The stranger is paying silver for \"the thing in the water that is not an animal\". {npc} is quiet a long time before answering.",
+   "npc": {
+    "role": "sb_ytrapper"
+   },
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "after": [
+     "dc_sb_ytrapper_1"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "sb_ytrapper"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Trapper",
+   "choices": [
+    {
+     "text": "Wait, and see what {he} says",
+     "req": {
+      "npcFlags": [
+       "sb_ytrap_spared"
+      ]
+     },
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "\"Never seen it,\" says {npc}. The stranger leaves with the silver still in the purse. That evening a rabbit is left on the bank of your stream, already skinned."
+     }
+    },
+    {
+     "text": "Lead them both on a chase into the bramble gorge",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Two days in the brambles. The sect stranger goes home torn to ribbons. {npc} comes out the other side, sits on a rock and starts laughing, alone, at nothing anyone can see."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The sect stranger has a talisman that sees through brambles. An arrow takes you in the flank before you reach the river. They know your shape now."
+     }
+    },
+    {
+     "text": "Leave the valley tonight",
+     "effects": {
+      "tally": {
+       "hunted": -1
+      },
+      "luck": 2,
+      "log": "You go over the ridge in the dark. Behind you, by the smell of the smoke, they sit up all night by a fire, arguing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ytrapper_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "An old hunter climbs the path to your water very slowly, with a stick instead of a bow. It is {npc}. {He} sits on the bank, wheezing, and talks to the water as if you were a person. \"I never caught you,\" {he} says. \"Best thing I ever failed at. I wanted to see you once before I go.\"",
+   "npc": {
+    "role": "sb_ytrapper"
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ytrapper_1"
+    ],
+    "minYearsAfter": 50,
+    "npcFlags": [
+     "sb_ytrapper"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Trapper",
+   "choices": [
+    {
+     "text": "Rise out of the water and let {him} see you",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "shown",
+       "w": 25,
+       "note": "let me see it, once, at the end"
+      },
+      "log": "{npc} looks at you for a long, long time. \"Huh,\" {he} says at last. \"Bigger than I thought.\" It is the happiest you have ever seen a human be."
+     }
+    },
+    {
+     "text": "Stay under, but send a fish leaping at {his} feet",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "{npc} laughs so hard {he} has to lie down. {He} takes the fish home and eats it, and tells the grandchildren it was a gift from the thing in the water. They never believe {him}. {He} does not care."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ytrapper_4",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "There is a small grave mound on the hill above your stream now, with a horsehair snare hung on the wooden marker by someone who understood. {npc}'s grandchildren come every autumn to cut the grass on it, and to look, without admitting it, at the water.",
+   "npc": {
+    "role": "sb_ytrapper"
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ytrapper_3"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "sb_ytrapper"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Trapper",
+   "choices": [
+    {
+     "text": "Keep the grass on the grave cut short, at night, every summer",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, in a house at the foot of the hills",
+      "log": "The grandchildren never once find it overgrown. The story that something keeps the old hunter's grave becomes the story the village tells first, when strangers ask."
+     }
+    },
+    {
+     "text": "Leave the grave to the grandchildren",
+     "effects": {
+      "comprehension": 3,
+      "npcPass": "old age, in a house at the foot of the hills",
+      "log": "Humans should bury their own. You watch from the water, and remember a skinny child with clever fingers who cut you free."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yflood_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The monsoon breaks the riverbank in the night. The flood takes your hollow, your pool, the willow you slept under, and you, tumbling, through a dark full of trees and drowned chickens and somebody's spinning roof.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Flood",
+   "choices": [
+    {
+     "text": "Let the river take you wherever it goes",
+     "effects": {
+      "luck": 4,
+      "comprehension": 2,
+      "log": "You wake in a strange valley three days downstream, on a sandbar, next to a very surprised pig. A new country. A new beginning."
+     }
+    },
+    {
+     "text": "Fight toward the bank",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 5,
+      "log": "You drag yourself onto the bank at dawn, shaking and furious and alive. You have learned how strong water is. You have learned how strong you are."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The river beats you against a dozen rocks before it lets you go. You lie in the mud for a week, healing."
+     }
+    },
+    {
+     "text": "Save a drowning child clinging to the same roof",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You push the roof into the shallows with your whole small strength, and the child crawls ashore and stares at you. Years later that child tells everyone a river spirit saved them. It did not. It was you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yjwibul_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The first full moon of the year. The villagers set fire to the dry grass on the paddy ridges to burn out the rats and the insect eggs, and the children run along them whirling cans of coals on strings, shrieking. The fire is coming down the ridge where you sleep.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Full-Moon Fires",
+   "choices": [
+    {
+     "text": "Run through the stubble toward the river",
+     "roll": {
+      "stat": "luck",
+      "dc": 35
+     },
+     "ok": {
+      "luck": 3,
+      "log": "You slip between two lines of fire and splash into the river. Behind you the children are singing, and the moon is enormous, and you think it is the most beautiful terrible thing you have ever seen."
+     },
+     "fail": {
+      "health": -10,
+      "log": "A whirling can of coals catches you on the back. You reach the river smoking. A child shouts \"a rat as big as a dog!\" and nobody believes it."
+     }
+    },
+    {
+     "text": "Dig down into the cold mud and let it pass over",
+     "effects": {
+      "comprehension": 3,
+      "qi": 6,
+      "log": "The fire roars over you like a summer. Above, the fields are cleaned for spring. Below, you lie in the warm dark and listen to the children going home."
+     }
+    },
+    {
+     "text": "Go toward the people, not away",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You run straight between the children's legs. They scream and then laugh and then argue all the way home about what it was. The moon has been very generous this year, one grandmother says."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ywinter_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A hard winter. The stream freezes over your head and the frogs have gone to sleep in the mud and there is nothing, nothing at all, to eat. Above the ice a single persimmon hangs on a bare branch, left for the magpies by some kind farmer.",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The First Winter",
+   "choices": [
+    {
+     "text": "Sleep. Let the hunger take the winter",
+     "effects": {
+      "qi": 10,
+      "health": -5,
+      "comprehension": 2,
+      "log": "You sleep until the ice cracks in spring. You wake thin and slow and different, as if some of you grew up in the dark without you."
+     }
+    },
+    {
+     "text": "Break through the ice and climb for the persimmon",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "luck": 3,
+      "log": "It is the sweetest thing you have ever eaten. Frozen through, soft as jelly. You will remember the taste of it for the rest of your life."
+     },
+     "fail": {
+      "health": -8,
+      "log": "The magpies get there first and scold you all the way back down to the ice."
+     }
+    },
+    {
+     "text": "Hunt the sleeping frogs in the mud",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "It is not glorious. It is survival. In spring the pond is very quiet, and you are alive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymagpie_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The magpies have found you. Eleven of them, screaming from the persimmon tree over the village well, diving at your hiding place, telling the whole village exactly where you are. Faces are appearing at the doors.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     0,
+     2
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Magpies",
+   "choices": [
+    {
+     "text": "Stay in the hollow and wait them out",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 3,
+      "log": "An old man looks up and says \"visitors coming, the magpies say\", and everyone goes back inside to sweep. A magpie means good news. You are, apparently, good news."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 1
+      },
+      "health": -6,
+      "log": "A boy climbs the tree with a stick. You get out of the hollow and away, but now the whole village has seen something."
+     }
+    },
+    {
+     "text": "Lunge at the nearest magpie",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "You miss. The magpies are outraged, and come back every morning for a month to tell you so."
+     }
+    },
+    {
+     "text": "Move, every night, until they forget you",
+     "effects": {
+      "comprehension": 3,
+      "log": "It takes eleven nights. The magpies keep shouting at your old tree for a week after you leave. They are not very bright. You are learning that you are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yjangseung_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Two carved posts stand at the village gate, a husband and wife of wood, with bulging eyes, painted teeth and letters down their bellies. They are there to turn away smallpox, famine and evil things. As you pass in the dusk, you could swear that both heads turn.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     0,
+     2
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Posts at the Gate",
+   "choices": [
+    {
+     "text": "Bow to them, as the travellers do",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You bow, feeling foolish. Nothing happens. But that night the village dogs do not bark at you, not one of them."
+     }
+    },
+    {
+     "text": "Stare back",
+     "effects": {
+      "qi": 6,
+      "tally": {
+       "fear": 1
+      },
+      "log": "You stare at the posts and the posts stare at you until full dark. In the morning there is a new crack in the wife's painted face. The village carves a new pair the next spring, and wonders why."
+     }
+    },
+    {
+     "text": "Go around the village entirely",
+     "effects": {
+      "comprehension": 2,
+      "log": "It is a long way around. But some doors should not be walked through, even by small things. Especially by small things."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yreflect_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "You see yourself in the still water at noon, and you do not recognise what you see. You are not a frog. You are not a fish, or a rat, or a heron. You are not anything the world has a name for, not yet.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     0,
+     1
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Stranger in the Water",
+   "choices": [
+    {
+     "text": "Stare until you know your own eyes",
+     "effects": {
+      "comprehension": 5,
+      "qi": 6,
+      "log": "It takes the whole afternoon. When the sun goes down you know at least this: whatever you are, those are your eyes, and they will see a great deal."
+     }
+    },
+    {
+     "text": "Splash the water and go and hunt",
+     "effects": {
+      "strength": 3,
+      "log": "Names are for later. Frogs are for now."
+     }
+    },
+    {
+     "text": "Lie beside the reflection, as if it were a sibling",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "For one afternoon you are not alone in the world. It is a strange feeling. It is a good one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ystorm_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "Lightning strikes the pine above your crack in the rock and splits it to the root. For a moment the whole world is white, and something goes into you: a hum, a heat, a thread of something that is not blood.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     0,
+     2
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Lightning Pine",
+   "choices": [
+    {
+     "text": "Hold on to it. Do not let it out",
+     "effects": {
+      "qi": 15,
+      "health": -6,
+      "log": "It burns for a month. Then it settles in the middle of you like a coal under ash. It is a coal of qi, and it is yours."
+     }
+    },
+    {
+     "text": "Let it run out through you into the stone",
+     "effects": {
+      "comprehension": 4,
+      "qi": 5,
+      "log": "The rock under you cracks in a perfect line. You do not keep the lightning, but you remember the way it moved. That is worth more."
+     }
+    },
+    {
+     "text": "Go out into the storm for more",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 25,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The second bolt goes around you like water round a stone. Something in heaven noticed you, small one. It may not have minded."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The second bolt does not go around you.",
+      "deathCause": "lightning, on a cliff, too young to hold it"
+     },
+     "risky": true
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yfalcon_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Winter falconry. A yangban's falconer is on the hill with a goshawk and two dogs, and the hawk has seen something moving on the snow. The something is you. It is a long way to the stream.",
+   "when": {
+    "realm": [
+     1,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Hawk in Winter",
+   "choices": [
+    {
+     "text": "Run for the stream",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The hawk hits the snow a hand behind you in a burst of white. You go under the ice. On the hill the falconer is shouting at the dogs, and the yangban is shouting at the falconer."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The talons find you a body-length from the water. You twist free, half under the ice, half bleeding, and the hawk flies back to the glove with nothing but a mouthful of snow."
+     }
+    },
+    {
+     "text": "Turn and face the hawk",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "It comes down on you and finds something it cannot lift. It lets go and labours away screeching, and the falconer stands on the hill with an empty glove and a look you remember for decades."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The hawk is the stronger.",
+      "deathCause": "a falconer's goshawk, in the snow"
+     },
+     "risky": true
+    },
+    {
+     "text": "Freeze in the snow and trust the white to hide you",
+     "effects": {
+      "comprehension": 3,
+      "log": "The hawk passes over twice and sees only snow. You lie still until the dogs are hoarse and the yangban is bored and the sun is down. You are very, very cold, and alive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ystrawhorse_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "On the twelfth night of the sickness, the village sends the smallpox guest away. They call it mama, the honoured one, so as not to offend it. A shaman rings a bell over a horse made of straw, loads it with rice and a paper banner, and sets it on the river. It drifts down into your reeds and sticks there.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Guest Sent Downriver",
+   "choices": [
+    {
+     "text": "Push it on, out into the current, with great respect",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 3,
+      "log": "You nudge it out into the dark water and watch it go. The village gets well. You are almost sure that was nothing to do with you. Almost."
+     }
+    },
+    {
+     "text": "Eat the rice",
+     "effects": {
+      "health": -12,
+      "comprehension": 3,
+      "log": "You are sick for a month. Some guests, you learn, do not like their luggage opened."
+     }
+    },
+    {
+     "text": "Keep well away from it",
+     "effects": {
+      "comprehension": 2,
+      "log": "It sits in the reeds for three days. Then a flood takes it on. You do not go near that stretch of river again all summer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ywildcat_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A leopard-cat kit has taken your fallen log. It is your size, or nearly, all spots and fury, and it is not leaving. It has clearly never met anything like you, and has decided this is a reason to fight.",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Leopard-Cat Kit",
+   "choices": [
+    {
+     "text": "Fight it for the log",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "It goes off the log in a yowling ball. From then on it hunts the other side of the stream, and glares, and you glare back. A rival. Every young thing should have one."
+     },
+     "fail": {
+      "health": -8,
+      "log": "It scratches your face four times before you can blink and keeps the log. You find a better one. You tell yourself it was better."
+     }
+    },
+    {
+     "text": "Share the log",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Three suspicious days. Then a week. Then it sleeps against you in the rain. When it grows up it goes its own way, but some nights for the rest of its life it comes to sit at the edge of your water."
+     }
+    },
+    {
+     "text": "Let it have the log. The world is big",
+     "effects": {
+      "luck": 2,
+      "comprehension": 2,
+      "log": "There are a thousand logs. It takes you a while to find out there are, but there are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymulgwisin_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "There is a cold place in your river where nothing lives. At night someone stands in it: a drowned girl in white, hair loose, water running off her. A mul gwisin. She looks at you and smiles. \"Come down,\" she says. \"I have been alone so long. Come down and stay with me.\"",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Cold Place in the River",
+   "choices": [
+    {
+     "text": "Keep away from the cold place",
+     "effects": {
+      "luck": 3,
+      "flag": "sb_ymul_met",
+      "log": "You swim far round it every night. Every night she calls. Every night you do not come. She is patient. So, you discover, are you."
+     }
+    },
+    {
+     "text": "Ask her who she was",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "sb_ymul_named",
+      "log": "For a moment she forgets to pull. \"I was the ferryman's daughter,\" she says, puzzled, as if she had not thought of it for years. \"They never found me. They never did the rite.\""
+     },
+     "fail": {
+      "health": -12,
+      "flag": "sb_ymul_met",
+      "log": "You come too close. Cold hands close around you and pull, and you fight your way out of the dark water with the whole night gone and the cold of it in your bones for a year."
+     }
+    },
+    {
+     "text": "Drive her off: churn the water, make noise, be alive",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 1
+      },
+      "flag": "sb_ymul_met",
+      "log": "She hates noise and life. She sinks. But the cold place in the river stays cold."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymulgwisin_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A mudang comes down to the river at last, with a white cloth, a gourd of rice and a long strip of cotton to untie the knots of a drowned soul. Someone in the village finally remembered the ferryman's daughter. The shaman cannot find the place. You know exactly where it is.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "after": [
+     "dc_sb_ymulgwisin_1"
+    ],
+    "minYearsAfter": 4,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Cold Place in the River",
+   "choices": [
+    {
+     "text": "Lie in the cold place, so the cloth goes where it should",
+     "req": {
+      "flags": [
+       "sb_ymul_named"
+      ]
+     },
+     "effects": {
+      "health": -10,
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "log": "It is the coldest night you have ever spent. The mudang sees the ripples, comes straight to them, and unties the knots one by one, singing. At dawn the cold place is just water. A kingfisher is fishing in it by noon."
+     }
+    },
+    {
+     "text": "Splash at the right spot, then hide",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The mudang turns at the splash, stares, and then, without a word, walks into the river exactly there. The rite takes all night. In the morning the river is warmer."
+     }
+    },
+    {
+     "text": "Keep out of it. Human dead are human business",
+     "effects": {
+      "comprehension": 2,
+      "log": "The shaman works on the wrong bank until dawn and goes home tired. The cold place stays. You go on swimming round it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymonk_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "There is a hermitage on the mountain with one old monk, one novice, a bell and a stone water trough, and you have been drinking from the trough at night. The novice, {npc}, has noticed. Tonight {he} leaves a spoon of rice on the rim and sits down in the dark to watch.",
+   "npc": {
+    "role": "sb_ymonk",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ymonk",
+     "ageAbs": 10,
+     "opinion": 10,
+     "male": true
+    }
+   },
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bulgasari"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Novice and the Trough",
+   "choices": [
+    {
+     "text": "Take the rice",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": [
+       "sb_ymonk",
+       "sb_ymonk_friend"
+      ],
+      "mem": {
+       "deed": "came",
+       "w": 15,
+       "note": "came for the rice, every night"
+      },
+      "log": "The next night there is a spoon of rice again. And the next. By winter {npc} is talking to you, quietly, about the old monk's snoring and the sutras {he} cannot memorise."
+     }
+    },
+    {
+     "text": "Drink and go, ignoring the rice",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "sb_ymonk",
+      "log": "{npc} keeps leaving it. You keep not taking it. It becomes a kind of conversation."
+     }
+    },
+    {
+     "text": "Stop coming to the trough",
+     "effects": {
+      "comprehension": 2,
+      "log": "You find a spring higher up. Some nights you hear the bell and wonder about the child with the spoon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymonk_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The old monk has died, and {npc}, still a young man, is alone at the hermitage with the bell. Bandits have heard there is a bronze Buddha up here. Tonight they are coming up the path with torches, and {npc} is sitting in front of the hall with no weapon at all.",
+   "npc": {
+    "role": "sb_ymonk"
+   },
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "after": [
+     "dc_sb_ymonk_1"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "sb_ymonk_friend"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Novice and the Trough",
+   "choices": [
+    {
+     "text": "Ring the bell",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "You hit the great bell with the whole weight of you. It booms down the mountain in the dark like the voice of a god. The torches stop. They go back down. {npc} sits frozen for a while, then laughs until {he} cries."
+     }
+    },
+    {
+     "text": "Wait in the dark beside the path and frighten them off",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 2
+      },
+      "log": "Two eyes in the dark beside the path, a sound like nothing they have heard. The first bandit drops a torch. The rest follow that example at speed."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "fear": 1
+      },
+      "log": "One of them is brave, and has a spear. You drive them off in the end, but you crawl into the trough afterwards, bleeding, and {npc} sits by you all night chanting."
+     }
+    },
+    {
+     "text": "Stay hidden. {He} chose to sit there",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} talks to the bandits for an hour. In the end they leave with a bag of rice and nothing else, ashamed. You learn something that night about what courage looks like when it has nothing in its hands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymonk_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is an old abbot now, the hermitage a real temple with twelve monks and a new hall. Behind the main hall {he} has built a little shrine, as temples do, for the spirit of the mountain. Inside it is a painting, not of the usual old man with a staff, but of a stone water trough, and two eyes under it.",
+   "npc": {
+    "role": "sb_ymonk"
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ymonk_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "sb_ymonk"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Novice and the Trough",
+   "choices": [
+    {
+     "text": "Come to the shrine at night and sit in front of it",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "qi": 10,
+      "log": "The incense curls up into the dark. Somewhere inside, an old person is chanting very quietly, and stops, and laughs, the same laugh as a child with a spoon."
+     }
+    },
+    {
+     "text": "\"Paint the old man with the staff, abbot. I am no god\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You cannot say it, of course; you cannot speak. You knock the painting face down, three nights running. {npc} gets the message and grumbles, and keeps the painting in a drawer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymonk_4",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A stone stupa stands behind the temple now, for the old abbot's ashes. The monks who knew {npc} are old too. A young novice, new this spring, has noticed the water in the stone trough goes down at night, and tonight leaves a spoon of rice on the rim.",
+   "npc": {
+    "role": "sb_ymonk"
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ymonk_3"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "sb_ymonk"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Novice and the Trough",
+   "choices": [
+    {
+     "text": "Take the rice",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, in the middle of the dawn chant",
+      "log": "It is the same spoon. You would know it anywhere. Some things last longer than the people who loved them, and that is what they are for."
+     }
+    },
+    {
+     "text": "Leave a pine cone on the rim in its place",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcPass": "old age, in the middle of the dawn chant",
+      "log": "The novice runs to show the oldest monk, who looks at it for a long time and then says, very gently, \"Ah. It is still here, then.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysimmani_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Three ginseng diggers come up the mountain in a line, in clean white, fasting, no meat or fish for days, an odd number so the mountain god will not take offence. They are climbing toward the hollow where you sleep. In the hollow, beside you, is a root you have been guarding all summer because it smells like sunlight.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bonghwang"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Root That Smelled of Sunlight",
+   "choices": [
+    {
+     "text": "Let them find it",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 3,
+      "flag": "sb_ysim_found",
+      "log": "\"Simbatta!\" The youngest shouts it three times and the other two drop to their knees. They dig for an hour with little bone picks, not breaking a single hair of the root. On the way down the eldest leaves a rice cake on the boulder, to the mountain."
+     }
+    },
+    {
+     "text": "Eat the root before they reach it",
+     "effects": {
+      "qi": 20,
+      "comprehension": 3,
+      "log": "It tastes like a hundred years of sunlight. The diggers find a hole, and a smell, and look at each other, and walk down the mountain without a word."
+     }
+    },
+    {
+     "text": "Lead them astray with noises in the brush",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "They spend a day chasing sounds and decide the mountain god is not pleased with them this year. The root stays. Next summer it has a new leaf."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The eldest is no fool. \"Not a god,\" they say, looking straight at your boulder. \"An animal. A strange one.\" They leave, but they remember the place."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysimmani_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The youngest digger, the one who shouted, comes back up the mountain alone. Old now, still in white, still fasting. The root bought a house, a field, a marriage for a daughter. Beside the boulder this old digger builds a cairn of stones, and pours out rice wine, and bows to the mountain. You are fairly sure the bow is for you.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ysimmani_1"
+    ],
+    "minYearsAfter": 35,
+    "flags": [
+     "sb_ysim_found"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bonghwang"
+    ]
+   },
+   "arc": "The Root That Smelled of Sunlight",
+   "choices": [
+    {
+     "text": "Show your eyes from behind the boulder",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The digger sees, and does not run, and bows again, lower. The cairn is still there a hundred years later, and every digger who climbs that mountain adds a stone."
+     }
+    },
+    {
+     "text": "Stay hidden, and take the gift after",
+     "effects": {
+      "qi": 8,
+      "luck": 2,
+      "log": "It is not very good wine, and you leave it for the mountain. It is the best gift you have ever been given."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_sb_yfamine_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Hail in spring, frost in summer, locusts in the barley. The famine has come down the valley like a slow flood, and now the humans are in the hills, stripping the inner bark off the pines and boiling it, digging for roots, snaring anything that moves. Anything. Your hollow is the last warm place on the mountain.",
+   "when": {
+    "realm": [
+     1,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Hungry Years",
+   "choices": [
+    {
+     "text": "Go deep, far from the humans, until it passes",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "Two years on the high ridges, where nothing lives and nothing hunts. When you come down, half the houses in the valley are empty and the grass grows on the threshing floors."
+     }
+    },
+    {
+     "text": "Drive fish into the shallows where the children dig",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "health": -6,
+      "log": "Every dawn the shallows are full of fish, which there should not be in a famine. The children take them home without asking why. One family lives because of it. Maybe two."
+     }
+    },
+    {
+     "text": "Steal from the snares to survive",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "You live. So do the snares' owners, mostly, but they know now that something big is eating their catch, and hungry people hunt hard."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yfamine_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The hungry years are a story now, told to children who leave rice in the bowl. And there is a part of the story about the shallows that filled with fish every morning, when nothing else in the world was full.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_yfamine_1"
+    ],
+    "minYearsAfter": 30,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Hungry Years",
+   "choices": [
+    {
+     "text": "Fill the shallows once more, in a good year, just to see",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 2,
+      "log": "An old woman who was a child in the famine stands in the river with her skirt hitched up and weeps and laughs at once, holding a fish in each hand."
+     }
+    },
+    {
+     "text": "Leave the story alone",
+     "effects": {
+      "comprehension": 3,
+      "log": "It grows on its own. By the next generation the fish were silver, and spoke."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydare_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The village children have decided there is a monster in your cave, which is true, and that whoever touches the back wall is the bravest in the village, which is debatable. Today the smallest one is coming in with a torch, shaking all over.",
+   "when": {
+    "realm": [
+     1,
+     2
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "bulgasari",
+     "gumiho"
+    ]
+   },
+   "arc": "The Dare",
+   "choices": [
+    {
+     "text": "Let the child touch the wall, and keep very still",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "charm": 2,
+      "log": "The torch passes a hand from your eyes. The child slaps the back wall, screams in triumph and runs. That child is the bravest in the village for the rest of their life, and only you know how brave."
+     }
+    },
+    {
+     "text": "Blink, once, in the torchlight",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The torch goes one way, the child goes the other, and the story of the eyes in the cave goes everywhere. No child goes in again for years."
+     }
+    },
+    {
+     "text": "Make a low sound that shakes the cave",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "strength": 2,
+      "log": "Six children reach the village before the echo stops. Their parents come up with sticks and a dog, find nothing, and forbid the cave forever. Your nights are much quieter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yowl_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The eagle-owl hunts the clearing at night: orange eyes, no sound at all. You have seen it take a hare. Tonight it lands on the dead branch right above the leaf you are hiding under, and turns its head all the way round, slowly, listening.",
+   "when": {
+    "realm": [
+     0,
+     1
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Owl",
+   "choices": [
+    {
+     "text": "Do not move until dawn",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 3,
+      "comprehension": 2,
+      "log": "It listens all night. You do not move all night. At grey dawn it lifts off without a sound, and you find you have learned to be as quiet as an owl."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "Your heartbeat, you would swear, is what gives you away. It drops like a stone. You are under a root before it closes, but not all of you."
+     }
+    },
+    {
+     "text": "Dart for the stream while its head is turned",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "log": "You are in the water before it finishes turning round. Owls do not like water. You remember that."
+     },
+     "fail": {
+      "health": -8,
+      "log": "It sees you go and strikes the water a hand behind you. You lie on the bottom of the stream until your chest burns."
+     }
+    },
+    {
+     "text": "Stay where you are and stare up at it",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "qi": 5,
+      "log": "Two small eyes in the leaves, two big eyes on the branch. After a long time the owl decides you are not prey, or not worth it, and goes. You are not sure which."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ylaundry_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Every fifth morning the village women come to wash clothes on the flat stones above your rock, beating them with wooden laundry bats, gossiping. Thock. Thock. Thock. You know all the village's secrets now: who owes rice, who is courting whom, whose mother-in-law is impossible. Today a laundry bat slips, and floats down onto your rock.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "haechi",
+     "imugi",
+     "cheongryong",
+     "hyeonmu"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "Washing Day",
+   "choices": [
+    {
+     "text": "Push it back upstream to its owner",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The bat comes back against the current and bumps gently into its owner's knee. There is a long silence. Then the gossip starts again, twice as loud, and now it is about you."
+     }
+    },
+    {
+     "text": "Keep it",
+     "effects": {
+      "luck": 2,
+      "log": "It is a very good bat. You have no use for it at all. You keep it under your rock for years, until it rots."
+     }
+    },
+    {
+     "text": "Lie still and keep listening",
+     "effects": {
+      "comprehension": 3,
+      "log": "The bat drifts on. You learn that the miller's son is going to run away to the murim, and that it is the impossible mother-in-law who will give him the money."
+     }
+    }
+   ],
+   "mw": true,
+   "po": true
+  },
+  {
+   "id": "dc_sb_ypaddy_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Transplanting time. The paddy where you hunt frogs is full of farmers in a long line, bent double, pushing seedlings into the mud in rows. The line is coming toward you. A bare foot comes down an arm's length away.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "Transplanting Day",
+   "choices": [
+    {
+     "text": "Slip between the feet, one row at a time",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 3,
+      "comprehension": 2,
+      "log": "Twenty farmers, two hundred steps, and not one foot finds you. You reach the ditch and lie there feeling extremely clever."
+     },
+     "fail": {
+      "health": -6,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "A foot finds you. Its owner shrieks, the line breaks, and for a week the whole village plants rice in thick straw sandals and looks at the water."
+     }
+    },
+    {
+     "text": "Lie flat in the mud and let the line pass over you",
+     "effects": {
+      "comprehension": 3,
+      "qi": 5,
+      "log": "The seedlings go in all around you. By evening you are a creature planted in a rice paddy, and the farmers have gone home. It is a strange way to spend a day."
+     }
+    },
+    {
+     "text": "Eat the frogs the farmers stir up, while they work",
+     "effects": {
+      "strength": 3,
+      "log": "It is the best day of hunting in your life. The farmers notice the frogs going quiet and think it is a good sign for the harvest. It is, for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yotter_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "An otter family has moved into your stretch of river: two old ones and three young, all whiskers and noise, fishing your pools empty and sliding down your mud bank on their bellies for fun.",
+   "when": {
+    "realm": [
+     0,
+     2
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "age": [
+     4,
+     99999
+    ]
+   },
+   "arc": "The Otters",
+   "choices": [
+    {
+     "text": "Play with the young ones",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It takes them a day to stop running away and a week to start chasing you. That summer you learn more about water from three young otters than in all your life before."
+     }
+    },
+    {
+     "text": "Drive them off your river",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The old otters go, complaining, with the young ones in a line behind. The river is quiet and yours again. Rather too quiet."
+     },
+     "fail": {
+      "health": -8,
+      "log": "Otters bite. All five of them. You go upstream and find another pool, and decide that sharing was always the plan."
+     }
+    },
+    {
+     "text": "Watch them fish, and learn",
+     "effects": {
+      "comprehension": 3,
+      "strength": 2,
+      "log": "They hunt as a team: one drives, two wait. You cannot hunt as a team, being only one. But you learn where fish go when they are frightened."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysect_1",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "Three disciples of the Blue Cloud Gate have come into your valley with a net of yellow talismans and a bronze compass whose needle points at living qi. An elder told them a young spirit beast is growing here, and that its core, taken young, is worth ten years of cultivation. The needle is pointing at your pool.",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Blue Cloud Gate",
+   "choices": [
+    {
+     "text": "Lead the needle astray: lie under the waterfall where the qi is wild",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "sb_ysect_fooled",
+      "log": "The needle spins like a top in the waterfall's roar. The three of them argue about it until dawn, and then go home to report that the compass is broken."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "flag": "sb_ysect_seen",
+      "log": "The compass is better than you thought. The net comes down over the waterfall, and you tear through it with yellow paper burning on your back. Now the Blue Cloud Gate knows exactly what you are worth."
+     }
+    },
+    {
+     "text": "Let them stretch the net, then take it down from underneath",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "flag": "sb_ysect_seen",
+      "log": "The talisman net goes into the pool with two disciples still holding it. You let them go, eventually. They climb out shaking and do not stop running until they reach their mountain."
+     },
+     "fail": {
+      "health": -16,
+      "tally": {
+       "hunted": 2
+      },
+      "flag": "sb_ysect_seen",
+      "log": "The talismans burn like nettles. You get out from under the net, but only just, and only by leaving it smoking on the rocks."
+     }
+    },
+    {
+     "text": "Leave the valley before they find you",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "flag": "sb_ysect_fooled",
+      "log": "You go over the pass in the night. The disciples find an empty pool still warm with qi, and a needle that slowly, mournfully, swings to point over the mountains."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysect_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The elder of the Blue Cloud Gate comes in person: a thin old cultivator with a white beard, a sword that hums, and a disciple carrying a lacquered box lined with cinnabar, for your core. {npc} stands on the bank and speaks to the water politely. \"Young one. Come out. I will make it quick.\"",
+   "npc": {
+    "role": "sb_yelder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yelder",
+     "ageAbs": 78,
+     "opinion": -20
+    }
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ysect_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "sb_ysect_seen"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Blue Cloud Gate",
+   "choices": [
+    {
+     "text": "Do not come out",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "{npc} waits three days on the bank. On the fourth {he} drives a talisman into a stone, \"for next time\", and leaves. You stay under for a month before you trust the water again."
+     }
+    },
+    {
+     "text": "Come out, and fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 7,
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "The humming sword touches you twice and you break it on the third stroke. {npc} looks at the two halves for a long moment, bows to you, a real bow, and walks away down the mountain without a word."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The elder has been cultivating for ninety years.",
+      "deathCause": "an elder of the Blue Cloud Gate"
+     },
+     "risky": true
+    },
+    {
+     "text": "Draw {him} into the deep water, where swords are slow",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 2
+      },
+      "log": "In the water the old cultivator is heavy and slow and very, very wet. {npc} crawls out onto the bank coughing, and laughs, for the first time in years by the sound of it. \"Fine,\" {he} says. \"Grow, then.\""
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "{npc} does not follow you into the water. {He} is not a fool. {He} stands on the bank and drives cold qi into the pool until the edges freeze, and you have to break out through the ice on the far side and flee."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysect_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A young swordsman in a torn Blue Cloud robe sits on your bank all night with a lantern, not hunting. In the morning {npc} says to the water: \"My sect teaches that every beast is a core waiting to be taken. My elder came here once, and came home quiet. I want to know what is here.\"",
+   "npc": {
+    "role": "sb_ysectyouth",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ysectyouth",
+     "ageAbs": 20,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ysect_2"
+    ],
+    "minYearsAfter": 20,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Blue Cloud Gate",
+   "choices": [
+    {
+     "text": "Let {him} watch you, for a season",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "comprehension": 3,
+      "log": "All spring {npc} sits and watches you hunt and sleep and simply be. In summer {he} goes back up the mountain and argues with the whole sect. Within a few years the Blue Cloud Gate no longer hunts spirit beasts. It is not entirely your doing. It is a little."
+     }
+    },
+    {
+     "text": "Drive {him} off. A sect is a sect",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "strength": 2,
+      "log": "{npc} goes. But {he} leaves the lantern on the bank, lit, and comes back to refill it every month for a year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ychakho_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Gongs in the hills. The king's tiger-catchers are sweeping the mountain in a long line: spearmen, archers, beaters, men paid by the size of the kill and the order of the strike. They are after a man-eater. They have found your tracks instead, and those tracks are bigger than the man-eater's.",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "baekho",
+     "girin",
+     "haechi"
+    ]
+   },
+   "arc": "The Tiger-Catchers",
+   "choices": [
+    {
+     "text": "Lay a false trail to the man-eater's den",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "The line follows your tracks over two ridges and into a gully, where they find a very surprised, very real man-eater. They get their tiger. The villages sleep again. Nobody asks what made the first tracks."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "health": -10,
+      "log": "The line splits. Half of them stay on your trail for three days. A lucky spear opens your side in a thicket before you lose them in a river."
+     }
+    },
+    {
+     "text": "Go up, onto the cliffs where men cannot follow",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You spend nine days on a ledge eating snow. Below, the gongs go back and forth and back and forth, until at last the line goes home."
+     }
+    },
+    {
+     "text": "Stand on the ridge where the whole line can see you",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 2,
+       "hunted": 2
+      },
+      "log": "Three hundred men stop in the snow at once. Nobody fires. Nobody moves. Then you are gone, and the captain writes in the report a sentence that the clerk in the capital reads twice and does not copy into the record.",
+      "flag": "sb_ychakho_stood"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ychakho_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "An old soldier with one arm comes up into the hills to sit at the place where three hundred tiger-catchers once stopped in the snow. {npc} was the youngest spearman in the line. {He} has been wanting, for decades, to know what it was.",
+   "npc": {
+    "role": "sb_yspearman",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yspearman",
+     "ageAbs": 62,
+     "opinion": 0,
+     "male": true
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ychakho_1"
+    ],
+    "minYearsAfter": 35,
+    "beast": [
+     "baekho",
+     "girin",
+     "haechi"
+    ],
+    "flags": [
+     "sb_ychakho_stood"
+    ]
+   },
+   "arc": "The Tiger-Catchers",
+   "choices": [
+    {
+     "text": "Show yourself, as you did then",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "mem": {
+       "deed": "shown",
+       "w": 20,
+       "note": "showed itself to me, twice"
+      },
+      "log": "{npc} looks at you for a long time without fear. \"So you are real,\" {he} says. \"Good. They called me a liar for decades.\" {He} goes down the hill straight-backed."
+     }
+    },
+    {
+     "text": "Stay hidden. Some questions are better unanswered",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} waits until dark, then bows to the empty snow, which is the right thing to do whether or not anything is there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypeddler_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A pedlar of the bobusang guild, a pack of combs and needles and salted fish on {his} back, stops to drink at your gorge at dawn, looks down, and sees you. {npc} does not run. Pedlars, you will learn, never run from a story. They carry them to market.",
+   "npc": {
+    "role": "sb_ypeddler",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ypeddler",
+     "ageAbs": 34,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Pedlar's Tale",
+   "choices": [
+    {
+     "text": "Let {him} look, and then go under slowly",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_ypeddler",
+      "flag": "sb_ytale",
+      "log": "{npc} sits on the rock for an hour after you have gone, then packs up and walks very fast toward the next market town, already practising."
+     }
+    },
+    {
+     "text": "Rise out of the water and stare back",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "npcFlag": "sb_ypeddler",
+      "flag": "sb_ytale",
+      "log": "{npc} sits down very suddenly. Then {he} takes out a comb, a good one, and lays it on the rock as a gift. It is a gift given on purpose."
+     }
+    },
+    {
+     "text": "Sink before {he} is sure",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "sb_ypeddler",
+      "log": "{npc} rubs {his} eyes, decides it was the dawn light, and goes on. But {he} drinks somewhere else from then on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypeddler_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The story has gone ahead of you on the market roads. You hear it from the bank one market day, told by a stranger at the ferry: the thing in the gorge is as long as a boat, has eyes like lanterns, eats one ox a year, and once saved a pedlar from bandits. Only the eyes are true.",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_sb_ypeddler_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "sb_ytale"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Pedlar's Tale",
+   "choices": [
+    {
+     "text": "Let the story grow",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "charm": 2,
+      "log": "By winter you are as long as two boats and eat three oxen. The bandits on the gorge road find other roads. Stories, it turns out, can guard a place better than spears."
+     }
+    },
+    {
+     "text": "Make one part true: chase the next bandits off the gorge road",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "They come in spring, five of them, for a salt caravan. They leave in spring too, faster. Now the story has two true parts."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Five bandits are more than a story. You drive them off, but you limp for a season, and the caravan drivers sing about it badly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypeddler_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Two generations on, children in the market town skip rope to a song about the gorge. You listen from the reeds under the bridge. In the song the thing in the gorge is a lady in white who drowns unfaithful husbands, which you are not, and you live under a bridge that was built after the song, which is funny.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ypeddler_2"
+    ],
+    "minYearsAfter": 40,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Pedlar's Tale",
+   "choices": [
+    {
+     "text": "Leave the song alone. Songs belong to the people who sing them",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The song outlives the bridge. You find, oddly, that you are proud of it, wrong as it is."
+     }
+    },
+    {
+     "text": "Surface under the bridge in the middle of the song",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The children scatter like sparrows. By evening there is a new verse, about eyes under the bridge, which is at least partly accurate."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yhwajeon_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The mountain people are burning the slope below your den to make a fire-field: fell the trees, burn them where they lie, sow millet in the ash for three or four years until the soil gives out, then move on and burn another. They are poor, they are hungry, and the fire is climbing toward you.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin"
+    ]
+   },
+   "arc": "The Fire-Fields",
+   "choices": [
+    {
+     "text": "Move your den higher. The mountain is wide",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You go up into the rocks. Below, the millet comes up green out of the black. A child in that field will grow up because of it, and so will you."
+     }
+    },
+    {
+     "text": "Turn the fire back with a wind off the ridge",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 10,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "flag": "sb_yhwa_turned",
+      "log": "The wind turns. The fire lies down and dies in its own ash. The farmers stand in the smoke, staring up at the ridge, and decide this slope belongs to something."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The wind will not come. You flee through the smoke with your eyes streaming and spend a month in a cave far from the fire, very angry."
+     }
+    },
+    {
+     "text": "Frighten the farmers off the mountain",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "strength": 2,
+      "log": "They run, leaving their hoes. The fire burns out. The family goes hungry that year, somewhere else, and you know it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yhwajeon_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The fire-field families have left a bowl of millet and a strip of white cloth on a stick at the edge of your slope, every autumn, for twenty years. Now a magistrate's clerk has come to tax the burnt-field people for land that is not theirs, and the families are being driven down off the mountain.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_yhwajeon_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_yhwa_turned"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin"
+    ]
+   },
+   "arc": "The Fire-Fields",
+   "choices": [
+    {
+     "text": "Make the clerk's road impassable, every time the clerk comes",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "Fallen trees. A landslide. A great shape in the fog. After the fourth try the clerk reports the slope uninhabited, and nobody in the capital ever checks."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The clerk comes back with soldiers, who find nothing, but write down that something large lives on the mountain. That piece of paper will cause you trouble for a century."
+     }
+    },
+    {
+     "text": "Stay out of human taxes",
+     "effects": {
+      "comprehension": 3,
+      "log": "The families go down to the valley and become tenants. The slope grows back into forest. In a few years nobody remembers there were fields here, except you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yexile_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A scholar exiled from the capital for a memorial the king did not like lives in a hut above your river, with one servant, a lot of books and nothing to do. {npc} has begun writing a gazetteer of the district: its rivers, its products, its customs and its marvels. You are, it seems, about to become a marvel.",
+   "npc": {
+    "role": "sb_yexile",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yexile",
+     "ageAbs": 48,
+     "opinion": 0,
+     "male": true
+    }
+   },
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Four Lines in a Gazetteer",
+   "choices": [
+    {
+     "text": "Show yourself in the river at dusk, once",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_yexile",
+      "flag": "sb_ywritten",
+      "log": "That night {npc} writes by lamplight for a long time. The entry is four lines long, sober and exact, and calls you \"a creature of uncertain kind, which the people do not harm\"."
+     }
+    },
+    {
+     "text": "Steal {his} ink stone and leave it on a rock in the river",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "sb_yexile",
+      "flag": "sb_ywritten",
+      "log": "{npc} wades out for it, stares at the rock, and writes a whole page about a river spirit with a sense of humour."
+     }
+    },
+    {
+     "text": "Keep out of the scholar's sight",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "sb_yexile",
+      "log": "The gazetteer says of your river only: \"Good carp. Floods in the seventh month.\" It is accurate, and very dull, and you are safe in it. {npc} never sees you once."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yexile_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The exiled scholar was pardoned long ago, and the gazetteer went into the royal library. Now a young official who read the four lines about your river has come to see, and with the official come two hunters in the pay of a minister who collects marvels.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yexile_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "sb_ywritten"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Four Lines in a Gazetteer",
+   "choices": [
+    {
+     "text": "Hide. Let them find only a river",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "They stay a month and find good carp and a flood in the seventh month. The young official writes, under the four lines, \"Not seen.\" You are a little offended."
+     }
+    },
+    {
+     "text": "Show yourself to the official, and only to the official",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The official sees you alone at dawn, and goes back and tells the hunters the river is empty. Under the four lines in the gazetteer, in a different hand: \"Seen. Leave it be.\""
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "health": -10,
+      "log": "The hunters see you too. An arrow, a chase, a long night in a cave. The minister's collection does not get you. It wants you more now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yraid_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Raiders from the north come through the valley on small shaggy horses, burning as they go. The villagers who fetch their water at the spring are running up into your forest with their children and their pots, and the horsemen are following the screams.",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "baekho",
+     "haechi",
+     "gumiho"
+    ]
+   },
+   "arc": "The Riders from the North",
+   "choices": [
+    {
+     "text": "Lead the riders into the bog below the spring",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "flag": "sb_yraid_saved",
+      "log": "Shapes in the dark, a sound in the reeds, and the horses go in up to their bellies. The villagers get away over the ridge. In the morning the bog has kept six horses and given back all the riders, cursing."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "An archer sees you and shoots, and shoots again. The villagers get away while the riders chase you. That was the point, you tell yourself, pulling the arrow out against a rock."
+     }
+    },
+    {
+     "text": "Stand in the path, and let the horses smell you",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "flag": "sb_yraid_saved",
+      "log": "The horses will not go another step. They rear and scream and bolt back down the valley with their riders clinging on. Horses know things men do not."
+     }
+    },
+    {
+     "text": "Go deeper into the forest. This is a human war",
+     "effects": {
+      "luck": 2,
+      "log": "You hear it all night from the high rocks. In the morning the valley is ash, and some of the people who left rice at your spring do not come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yraid_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The valley has been rebuilt. At the place where the riders were turned back, the villagers have set up a tall pole with a carved wooden duck on top, facing north, and every spring they tie a new strip of cloth to it. They call it the pole of the night the riders turned back.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yraid_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "sb_yraid_saved"
+    ],
+    "beast": [
+     "baekho",
+     "haechi",
+     "gumiho"
+    ]
+   },
+   "arc": "The Riders from the North",
+   "choices": [
+    {
+     "text": "Rest beneath it on the anniversary",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "qi": 8,
+      "log": "Someone sees your eyes in the dark beneath the pole and does not scream, only bows and goes home quietly. The next year there is a bowl of rice there too."
+     }
+    },
+    {
+     "text": "Keep your distance. Let it be their pole",
+     "effects": {
+      "comprehension": 3,
+      "log": "The pole is replaced four times in a hundred years, always facing north. The children who tie the cloth no longer know why. They tie it anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymudang_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A village girl came down with the spirit-sickness last spring: fevers, dreams, voices. The old mudang has taken {npc} as apprentice. Today the apprentice comes alone to your river with a fan and a bell, closes {his} eyes, and turns straight toward the place where you are lying.",
+   "npc": {
+    "role": "sb_ymudang",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ymudang",
+     "ageAbs": 15,
+     "opinion": 10,
+     "male": false
+    }
+   },
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Apprentice Who Could Hear",
+   "choices": [
+    {
+     "text": "Come closer, very slowly",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcFlag": [
+       "sb_ymudang",
+       "sb_ymudang_friend"
+      ],
+      "mem": {
+       "deed": "came",
+       "w": 18,
+       "note": "came to me when I called"
+      },
+      "log": "{npc} opens {his} eyes and sees you. Neither of you moves. Then {he} sits down on the rock and laughs, shakily. \"They told me spirits were frightening,\" {he} says. \"You are only enormous.\""
+     }
+    },
+    {
+     "text": "Stay still and see if {he} really knows",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_ymudang",
+      "log": "{npc} stands there until noon, swaying, and then bows to exactly the right patch of water. You are impressed despite yourself."
+     }
+    },
+    {
+     "text": "Move away, quickly",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "sb_ymudang",
+      "log": "{npc} turns as you go, following you with closed eyes along the whole length of the river."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymudang_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is a full mudang now, with drums of {his} own, and the village has asked for a great gut for the river. Rice cakes, paper flowers, a pig's head, three days of dancing. In the middle of the second night, in the trance, the shaman stops, and turns to the river, and calls out to whatever lives in the river, by the name the village uses.",
+   "npc": {
+    "role": "sb_ymudang"
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_ymudang_1"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "sb_ymudang_friend"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Apprentice Who Could Hear",
+   "choices": [
+    {
+     "text": "Rise into the torchlight, for the shaman",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "answered",
+       "w": 25,
+       "note": "rose up when I called it at the gut"
+      },
+      "log": "The drums stop. A hundred people see you at once. {npc} bows, and the whole bank bows too, and from that night the river is not just a river."
+     }
+    },
+    {
+     "text": "Send a ripple only, a sign",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "One long ripple across the torchlit water, from bank to bank. It is enough. {npc} dances until dawn."
+     }
+    },
+    {
+     "text": "Do not answer. You are not their god",
+     "effects": {
+      "comprehension": 4,
+      "log": "{npc} waits, then smiles, and goes on with the dance, and does not call you again. Afterwards {he} leaves the pig's head on the bank anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ymudang_3",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is old, and the gut is for the shaman this time: a send-off for {his} own soul, danced by an apprentice. The white cloth bridge is stretched out over the river, to carry the dead across to the other side. The apprentice is nervous and slow, and the cloth will not tear.",
+   "npc": {
+    "role": "sb_ymudang"
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ymudang_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "sb_ymudang"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Apprentice Who Could Hear",
+   "choices": [
+    {
+     "text": "Help the cloth part",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, after a long life of drums",
+      "log": "The cloth splits clean from end to end, down the middle, and the whole crowd sighs. The apprentice looks at the river with great wide eyes. Somebody has to hear you, after all, now that {npc} cannot."
+     }
+    },
+    {
+     "text": "Lie under the bridge until the rite is done",
+     "effects": {
+      "comprehension": 3,
+      "qi": 8,
+      "npcPass": "old age, after a long life of drums",
+      "log": "It takes all night. In the morning the cloth has torn on its own, and the river is warm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yseonang_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "At the top of the pass there is an old shrine tree hung with coloured cloth and a cairn that every traveller adds a stone to, and spits three times, and bows. You like it here. It is warm in the roots, and the travellers leave rice and dried persimmons for the spirit of the tree.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin"
+    ]
+   },
+   "arc": "The Tree at the Pass",
+   "choices": [
+    {
+     "text": "Eat the offerings, a little, as a spirit would",
+     "effects": {
+      "qi": 6,
+      "luck": 3,
+      "flag": "sb_yseonang",
+      "log": "Every morning the rice is gone. The travellers are very pleased: the spirit of the pass is hungry, therefore real. The cairn grows faster that year."
+     }
+    },
+    {
+     "text": "Guard the pass at night from the wolves",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_yseonang",
+      "log": "No traveller is taken on the pass all winter. The cloth on the tree triples by spring."
+     }
+    },
+    {
+     "text": "Leave the offerings for the real spirit, if there is one",
+     "effects": {
+      "comprehension": 3,
+      "log": "Some mornings the rice is gone anyway. You do not know who ate it. You do not ask."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yseonang_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A new magistrate, very Confucian and very young, has ordered the shrine tree at the pass cut down as a superstition. The woodcutters stand under it with their axes, not wanting to. One of them is crying.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_sb_yseonang_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "sb_yseonang"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin"
+    ]
+   },
+   "arc": "The Tree at the Pass",
+   "choices": [
+    {
+     "text": "Lie across the roots in plain sight",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "The axes are put down very carefully. The woodcutters walk back to the magistrate and explain, with great politeness, that they have seen the superstition and it is enormous. The tree stands."
+     }
+    },
+    {
+     "text": "Let it be cut, and move on",
+     "effects": {
+      "comprehension": 3,
+      "log": "The tree comes down. The cairn stays: no order can stop people adding stones. Within a few years a new tree grows out of the old stump, and the cloth is back on it."
+     }
+    },
+    {
+     "text": "Lie outside the magistrate's window and fill the night with the tree",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 4,
+      "log": "You lie outside the window three nights, thinking about the tree as hard as you can. On the fourth morning the order is cancelled, and the magistrate goes up to the pass alone and adds a stone to the cairn."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "The magistrate sleeps like a log. The tree comes down. You lie in the stump all summer, sulking."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ycomet_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A broom star hangs over the mountains for forty nights, sweeping the sky. The court astrologers write it down. The villagers say it sweeps away kings. And somebody in the village says the comet came the same year as the thing in the pond, and people begin to look at your water with a new face.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Broom Star",
+   "choices": [
+    {
+     "text": "Stay deep until the comet goes",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "Forty nights in the cold dark. The comet goes. The king does not die. The village forgets, mostly."
+     }
+    },
+    {
+     "text": "Lie on the surface and watch it with them",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "Two eyes and a broom star, reflected side by side in the pond. An old woman says it is a sign of a great thing being born. She is not wrong. She is not right either."
+     }
+    },
+    {
+     "text": "Drink the light of it, night after night",
+     "effects": {
+      "qi": 15,
+      "log": "Something in the comet's light is old and cold and full of distance. It goes into you and stays."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydano_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The fifth day of the fifth month: Dano. On the river field the young people wrestle ssireum in a ring of sand for an ox, the girls swing high on a rope under the willow, and everyone has washed their hair in iris water. You watch from the willows. The ox is tied very close to you.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Dano by the River",
+   "choices": [
+    {
+     "text": "Watch the wrestling, and learn",
+     "effects": {
+      "strength": 4,
+      "comprehension": 2,
+      "log": "Hips low, the belt, the turn. By sunset you understand ssireum better than most of the village. Who you will ever wrestle with it is another question."
+     }
+    },
+    {
+     "text": "Untie the ox and send it into the ring",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The ox walks into the sand ring at the moment of the final throw and sits down. The crowd goes wild. The village decides the river is fond of the festival."
+     }
+    },
+    {
+     "text": "Push the swing higher than it has ever gone",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A girl on the swing goes so high she touches a willow leaf with her toe, and comes down shrieking with joy. For the rest of her life she says the wind helped her."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ybear_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "The black bear with the white moon on its chest has ruled this side of the mountain for twenty years. It has smelled you on its acorns, and now it is standing up on its hind legs in your path, taller than a man, roaring.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "baekho",
+     "haechi"
+    ]
+   },
+   "arc": "The Bear with the White Moon",
+   "choices": [
+    {
+     "text": "Fight it for the mountain",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "strength": 7,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "It is the hardest fight of your young life. At the end the bear lies down, panting, and then gets up and walks to the far side of the mountain, and never comes back."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The bear is older than you and has done this before.",
+      "deathCause": "the black bear with the white moon on its chest"
+     },
+     "risky": true
+    },
+    {
+     "text": "Stand your ground, but do not strike",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You stare. It roars. You stare. It drops to four legs, snorts, and goes off to eat acorns somewhere else. You share the mountain after that, by the bear's rules."
+     },
+     "fail": {
+      "health": -18,
+      "log": "The bear does not care for staring. It knocks you into a gully and stands at the top roaring until you leave."
+     }
+    },
+    {
+     "text": "Give it the mountain. Find another",
+     "effects": {
+      "luck": 3,
+      "log": "There is another mountain, and the acorns there are just as good. You think about that bear for years, and, in a strange way, you thank it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yeclipse_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "In the middle of the day the sun begins to be eaten. The villagers bang gongs and pots to frighten off whatever is eating it; the old people say a fire-dog of the dark kingdom has bitten the sun. The air goes cold. And in the dark noon, for one moment, you can feel how small the world is, and how big you will be.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "arc": "The Eaten Sun",
+   "choices": [
+    {
+     "text": "Look straight at it",
+     "effects": {
+      "comprehension": 5,
+      "health": -5,
+      "log": "For a month you see a ring of white fire wherever you look. You also see further than before, in some way that has nothing to do with eyes."
+     }
+    },
+    {
+     "text": "Add your voice to the gongs",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "A sound comes out of you that drowns every gong in the valley. The sun comes back. The village is quite sure who frightened the dog away."
+     }
+    },
+    {
+     "text": "Go down into the dark and wait it out",
+     "effects": {
+      "qi": 10,
+      "luck": 2,
+      "log": "In the dark the eclipse is just a shadow. You let it pass over you like a hand, and come up into a sun that seems brighter for being lost."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ywolves_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "A hard winter has driven the wolves down off the high plateau, seven of them, thin as rakes. They have never seen anything like you, and they are hungry enough not to care. They are circling.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Hungry Wolves",
+   "choices": [
+    {
+     "text": "Break the circle at the leader",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 2
+      },
+      "log": "The leader goes down and the circle breaks like a dropped bowl. Six wolves run, and all winter they hunt very far from you."
+     },
+     "fail": {
+      "health": -16,
+      "log": "They are many and you are one. You get to the frozen river and break through the ice and lie in the black water until they give up."
+     }
+    },
+    {
+     "text": "Lead them to the deer herd in the next valley",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "You run, and they follow, and at the top of the next ridge you let them smell the deer. Wolves are practical. They let you go."
+     }
+    },
+    {
+     "text": "Make yourself as big as you can, and wait",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "luck": 3,
+      "log": "All night they circle. At dawn the oldest wolf sits down, looks at you for a long time, and leads the others away. Respect, of a kind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yferry_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "You surface under the ferry at the wrong moment. The flat boat lurches, the ox bellows, a scholar loses a good horsehair hat, and the old ferryman looks over the side and straight into your eyes.",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Ferry",
+   "choices": [
+    {
+     "text": "Steady the ferry and carry it to the far bank",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "strength": 2,
+      "log": "The ferry crosses faster than it ever has, without the pole. The passengers stand very still the whole way. The ferryman charges them double, for the experience."
+     }
+    },
+    {
+     "text": "Sink back down at once",
+     "effects": {
+      "luck": 3,
+      "log": "The ferry rights itself. The ferryman says nothing. That evening a rice ball drops over the side at the same place, and every evening after that."
+     }
+    },
+    {
+     "text": "Fetch the scholar's hat",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You put it back on the deck, dripping. The scholar writes a poem about it that is studied for three hundred years and nobody believes a word of."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yname_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The village children have decided you need a name. They sit on the bank arguing about it in loud voices, while you lie in the river and listen. \"Big Eyes.\" \"Grandfather River.\" \"Grandmother River.\" \"The Old One.\" \"It is not old, it is young, look at it.\" \"Mister Thing.\"",
+   "when": {
+    "realm": [
+     2,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ],
+    "notFlags": [
+     "sb_named"
+    ]
+   },
+   "arc": "The Naming",
+   "choices": [
+    {
+     "text": "Splash when they say \"The Old One\"",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "They are thrilled. It is The Old One from then on, though you are not old. You will be. They have named you for later.",
+      "flag": "sb_named"
+     }
+    },
+    {
+     "text": "Splash when they say \"Mister Thing\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Mister Thing it is. Grown men in that village say \"Mister Thing\" in a lowered voice for a hundred years, and do not know why the children laugh.",
+      "flag": "sb_named"
+     }
+    },
+    {
+     "text": "Sink, and let them argue forever",
+     "effects": {
+      "luck": 2,
+      "log": "They never agree. Every generation gives you a new name. You collect them, the way magpies collect bright things.",
+      "flag": "sb_named"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ywell_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Two well-diggers have dug down into the cold channel under the hill where you sleep in summer. Their lamp is shining right into your eyes. Both of them are standing very still in the water up to their knees.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Well-Diggers",
+   "choices": [
+    {
+     "text": "Close your eyes and let them have their well",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "They climb out like squirrels. The well is the sweetest water in the village for two hundred years, and nobody lets a bucket fall in it carelessly, ever."
+     }
+    },
+    {
+     "text": "Give them a fright to remember",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "They fill the well in again by sunset. The village digs somewhere else, and the hill gets a name nobody likes to say after dark."
+     }
+    },
+    {
+     "text": "Move to another channel and leave them the water",
+     "effects": {
+      "comprehension": 3,
+      "log": "You find a colder, deeper channel. The well is good. Sometimes, on summer nights, a child leans over it and calls \"hello\" and hears, from very far away, something answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypotter_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The onggi kiln on the hill runs for three days and nights, a long climbing oven full of brown jars, and its outer wall is the warmest place in the valley in autumn. You have been sleeping against it. Tonight the potter comes round the side with a pine log and finds you.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "hyeonmu",
+     "cheongryong",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Warm Kiln",
+   "choices": [
+    {
+     "text": "Stay. Let the potter decide",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_ypotter",
+      "log": "The potter stands there a long time, then throws the log in the stoke-hole and goes back round the other side, muttering \"warm enough for two.\" Every firing after, the potter leaves the same side clear."
+     }
+    },
+    {
+     "text": "Slip away into the dark",
+     "effects": {
+      "luck": 2,
+      "log": "You find a cave instead. It is not as warm. Nothing is ever as warm as a kiln."
+     }
+    },
+    {
+     "text": "Help: drag a fallen pine to the stoke-hole",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_ypotter",
+      "log": "The potter finds a whole tree at the stoke-hole in the morning and decides not to ask. The jars from that firing ring like bells."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypotter_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The potter's great-grandchildren still fire the kiln. On one side of it, in the mortar, someone long ago pressed the shape of two eyes. Every jar fired on that side is marked with two dots, and sells for twice the price, because everyone knows that side is warmed by the mountain.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ypotter_1"
+    ],
+    "minYearsAfter": 60,
+    "flags": [
+     "sb_ypotter"
+    ],
+    "beast": [
+     "imugi",
+     "hyeonmu",
+     "cheongryong",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Warm Kiln",
+   "choices": [
+    {
+     "text": "Sleep against the wall again, for old times' sake",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The family pretends not to see you for three nights, very carefully. That firing is talked of for years."
+     }
+    },
+    {
+     "text": "Leave a gift: a cartload of good clay at the door",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "strength": 2,
+      "log": "It is the best clay in three valleys. The jars made from it are still in use on a terrace of soy jars two hundred years later."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yrival_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "There is something else in the next valley. You have felt it for years, the way you feel weather: another young great creature, growing as you grow. Tonight, for the first time, you see its eyes across the valley, silver in the dusk. It is watching you back.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     3
+    ]
+   },
+   "arc": "The Eyes in the Next Valley",
+   "choices": [
+    {
+     "text": "Go to the ridge between, and meet it",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_yrival_met",
+      "log": "You meet in the fog on the ridge and look at each other for a whole night. Neither of you knows what the other is. In the morning you both go home, and you are less alone than you were."
+     },
+     "fail": {
+      "health": -14,
+      "flag": "sb_yrival_met",
+      "log": "It does not want to be met. The fight is short and confused and both of you go home bleeding. Neither of you crosses the ridge again for decades."
+     }
+    },
+    {
+     "text": "Stay in your own valley. Respect the line",
+     "effects": {
+      "luck": 3,
+      "flag": "sb_yrival_met",
+      "log": "The ridge between the valleys becomes a border neither of you crosses. The villagers on each side, without knowing why, stop marrying across it."
+     }
+    },
+    {
+     "text": "Call out to it across the dark",
+     "effects": {
+      "qi": 8,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_yrival_met",
+      "log": "It calls back. Every herdsman in both valleys sits up in bed. You do this once a year after that, at the first frost, and the villages call it the night the mountains talk."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yrival_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The silver eyes in the next valley are gone. You feel the absence like a missing tooth. A hunting party came back over the ridge last month with something wrapped in oiled cloth on a pole between them, and a sect paid them in gold.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yrival_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_yrival_met"
+    ]
+   },
+   "arc": "The Eyes in the Next Valley",
+   "choices": [
+    {
+     "text": "Grieve it, on the ridge where you met",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You lie on the ridge a whole season. The villages below hear something at night that their grandchildren still call the mountain weeping."
+     }
+    },
+    {
+     "text": "Find the hunters",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "strength": 4,
+      "log": "You find them in an inn on the salt road. You do not kill them. You only look at them, through the paper door, for one whole night. Not one of them ever hunts again."
+     },
+     "fail": {
+      "health": -16,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "They are ready for you. They have done this before. You get away, but now they have a second prize in mind."
+     }
+    },
+    {
+     "text": "Learn from it: go deeper, hide better",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "hunted": -2
+      },
+      "log": "It was not careful enough. You will be. For years nobody sees your eyes at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yice_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "The whole village is out on the frozen river, cutting holes in the ice for smelt. Through the clear ice, one of them sees you lying on the bottom, and screams, and now they are all running across the ice at once, toward the bank, and the ice is starting to crack.",
+   "when": {
+    "realm": [
+     1,
+     3
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Under the Ice",
+   "choices": [
+    {
+     "text": "Hold the cracking sheet together from below",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "You lie against the underside of the sheet and hold it with the weight of you until the last child is on the bank. Nobody goes through. Nobody understands why the ice held."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It breaks anyway. You drive two people toward the bank through the black water and they crawl out alive, blue with cold. You stay down a long time after."
+     }
+    },
+    {
+     "text": "Go downstream fast, away from them",
+     "effects": {
+      "luck": 2,
+      "log": "Without you there, they slow down, and walk off the ice carefully, the way they should have. Fear is a poor guide on thin ice."
+     }
+    },
+    {
+     "text": "Stay perfectly still on the bottom",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The ice holds, just. At the bank they argue all evening about what it was. Nobody fishes that stretch again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yshrine_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The village has built you a shrine. It is very small and slightly crooked: four posts, a thatch roof, a flat stone for an altar. The elders come down the path in clean white with rice, a jar of makgeolli and paper flowers, and bow to your pool, and pray for rain at the right times and no floods at the wrong ones.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Crooked Shrine",
+   "choices": [
+    {
+     "text": "Accept the offerings. Be their guardian",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "qi": 8,
+      "flag": "sb_yshrine",
+      "log": "You leave the makgeolli to the shrine's ants, which is a kindness, and keep the floods off the village that summer, which is not. The shrine gets a second roof the next year."
+     }
+    },
+    {
+     "text": "Show them, once, that something is here",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "flag": "sb_yshrine",
+      "log": "Two eyes open under the green water. The elders bow so low their hats fall off. The shrine becomes the most serious building in the village."
+     }
+    },
+    {
+     "text": "Ignore it. You did not ask to be worshipped",
+     "effects": {
+      "comprehension": 3,
+      "flag": "sb_yshrine",
+      "log": "The elders keep coming anyway. Humans, you are learning, do not need permission to love something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yshrine_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A smooth-tongued stranger has set up as the keeper of your shrine, in a borrowed shaman's robe. {npc} takes the villagers' rice and silver \"for the spirit of the pool\", sells charms with your name on them, and has started telling the village that the spirit demands a daughter.",
+   "npc": {
+    "role": "sb_yfraud",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yfraud",
+     "ageAbs": 38,
+     "opinion": -15
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yshrine_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "sb_yshrine"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Crooked Shrine",
+   "choices": [
+    {
+     "text": "Rise out of the pool in the middle of the next sermon",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "log": "{npc} sees what the spirit of the pool actually looks like, and stops talking in the middle of a word. The borrowed robe is found on the path the next morning. Its owner is never seen in the province again."
+     }
+    },
+    {
+     "text": "Drown every charm {he} sells",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "Every charm dropped in the pool comes floating back up, torn in half. The villagers draw their own conclusions about {npc}, and the conclusions are correct."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "Nobody notices the torn charms. {npc} does very well for two years and then runs off with the shrine bell. The village is embarrassed, and you are angry, and neither helps."
+     }
+    },
+    {
+     "text": "Let the village sort out its own liars",
+     "effects": {
+      "luck": 2,
+      "log": "It takes the village a whole year. When they finally drive {npc} out, they do it with brooms and enormous satisfaction."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yshrine_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The shrine is gone. In its place, on the flat ground by your pool, there is a market every fifth day: rice cakes, straw sandals, salted mackerel, a man who mends pots. Only the flat altar stone is left, and the women who sell greens set their baskets on it. Nobody remembers why it is flat.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yshrine_1"
+    ],
+    "minYearsAfter": 50,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Crooked Shrine",
+   "choices": [
+    {
+     "text": "Let the market be. It is a kind of worship too",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You lie under the green water on market days and listen to people haggle. It is louder than prayer, and more honest."
+     }
+    },
+    {
+     "text": "Steal one rice cake every market day, and let them notice",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It takes the cake-seller a year to notice and another year to start leaving one on the flat stone on purpose. The market gets its old name back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yimmortal_1",
+   "cat": "explore",
+   "weight": 10,
+   "once": true,
+   "text": "On the flat rock at the top of the mountain, two old men in pale robes are playing baduk, and a young woodcutter is leaning on an axe, watching. You come up to look too. The game is very beautiful. One of the old men looks up at you, unsurprised, and says, \"Sit. It will not take long.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     4
+    ]
+   },
+   "arc": "The Game on the Mountain",
+   "choices": [
+    {
+     "text": "Sit and watch the whole game",
+     "effects": {
+      "comprehension": 7,
+      "qi": 15,
+      "flag": "sb_yimmortal",
+      "log": "It does not take long, for them. When the last stone is placed and you look round, the woodcutter's axe handle has crumbled to dust and the pines on the mountain are three times as tall. You have no idea how many years have gone."
+     }
+    },
+    {
+     "text": "Watch three moves, and go",
+     "effects": {
+      "comprehension": 4,
+      "log": "Three moves are enough to change how you think about the mountain, the river, the world. You go down. The woodcutter does not."
+     }
+    },
+    {
+     "text": "Nudge the woodcutter: go home, now",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "The woodcutter blinks, looks at the axe, which is cracking along the handle, and runs. The old men laugh. \"Kind,\" one says. \"Wasteful, but kind.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yimmortal_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A very confused young person with a rotten axe handle comes down the mountain into the village, asking for a family nobody has heard of. The oldest grandmother finally remembers: a great-great-uncle who went up to cut wood one autumn and never came back.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yimmortal_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_yimmortal"
+    ]
+   },
+   "arc": "The Game on the Mountain",
+   "choices": [
+    {
+     "text": "Lead the woodcutter to the family graves, at night, by your eyes",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The woodcutter weeps at the graves and then, in the morning, starts mending the oldest grandmother's roof. A family is a family, a hundred years late or not."
+     }
+    },
+    {
+     "text": "Leave the humans to it. Time is the mountain's joke, not yours",
+     "effects": {
+      "comprehension": 3,
+      "log": "The village never quite believes the woodcutter. The woodcutter never quite believes the village. Both of them, you think, are right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ybounty_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A new magistrate, who wants to be noticed in the capital, has posted a bounty at the yamen gate: one hundred bolts of cloth for the beast of the valley, alive or dead. There is a drawing. It looks nothing like you. Every hunter, debtor and fool in three districts is coming up the road.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "baekho",
+     "bulgasari",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hyeonmu",
+     "imugi"
+    ]
+   },
+   "arc": "One Hundred Bolts of Cloth",
+   "choices": [
+    {
+     "text": "Leave the district until the magistrate is transferred",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "Magistrates are moved every few years. This one lasts two. You come back to find the bounty notice peeling, and a goat drawn on it by children."
+     }
+    },
+    {
+     "text": "Let them hunt the drawing",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "Somebody brings in a very large boar and claims the bounty, because it looks like the drawing. The magistrate, satisfied, writes to the capital. The hunt is over. The boar was innocent."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 3
+      },
+      "health": -14,
+      "log": "One of the hunters is good, and did not look at the drawing. You get away from the pit trap, but not cleanly."
+     }
+    },
+    {
+     "text": "Walk into the market at noon and lie down in front of the yamen",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "fear": 3,
+       "hunted": 2
+      },
+      "log": "Nobody claims the bounty. Nobody even moves. The magistrate looks out of the window, closes it, and takes the notice down that afternoon with his own hands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ybounty_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A debt-ridden hunter has come up your valley for the old bounty, years after it was cancelled, because nobody told {npc}. {He} has three children, a hand-made trap and no real idea what {he} is hunting.",
+   "npc": {
+    "role": "sb_yhunter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yhunter",
+     "ageAbs": 35,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ybounty_1"
+    ],
+    "minYearsAfter": 10,
+    "beast": [
+     "baekho",
+     "bulgasari",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hyeonmu",
+     "imugi"
+    ]
+   },
+   "arc": "One Hundred Bolts of Cloth",
+   "choices": [
+    {
+     "text": "Lead {him} to a deer instead",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "The deer feeds {npc}'s children all winter. {He} never knows {he} was led. {He} tells everyone the mountain is generous, which is true."
+     }
+    },
+    {
+     "text": "Show yourself, so {he} goes home",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "{npc} goes home. Very fast. {He} tells the children there is no bounty and no beast, only a mountain that does not want to be hunted, and that is close enough."
+     }
+    },
+    {
+     "text": "Let {him} spend the winter failing",
+     "effects": {
+      "comprehension": 2,
+      "log": "It is a long, hungry winter in {npc}'s house. You were within your rights. You think about it anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydrought_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "No rain since planting. The paddies are cracked like old pottery. The village climbs to your spring with gongs and a straw effigy, and an old woman pours the last water from her jar over the rock above your pool, and they all kneel, and wait, as if something will happen. They are looking at you.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Dry Year",
+   "choices": [
+    {
+     "text": "Try. Reach for the clouds with everything you have",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "rain": 1,
+       "legend": 3,
+       "virtue": 2
+      },
+      "qi": -10,
+      "flag": "sb_yrain",
+      "log": "You do not know how. You reach anyway, up through the white sky, and something there reaches back. The first drop hits the old woman's upturned face. Then the second. The village dances in the mud until dark."
+     },
+     "fail": {
+      "qi": -8,
+      "comprehension": 3,
+      "log": "You reach and reach and nothing answers. The village goes home slowly. Three days later the rain comes on its own, and they thank you anyway, which is worse."
+     }
+    },
+    {
+     "text": "Lead them to the spring under the black rock",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "You surface, and turn, and look at the black rock until someone understands. They dig. Cold water. Not enough for every paddy, but enough for the seedbeds. Enough."
+     }
+    },
+    {
+     "text": "Sink. Rain is heaven's, not yours",
+     "effects": {
+      "comprehension": 3,
+      "log": "They wait until sunset. Then the old woman bows to the pool anyway and leads them down. You lie in the shrinking water and feel, for the first time, how much they need you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydrought_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Another dry year, the worst in memory. The village does not come with gongs this time. They come with a pig, garlanded, for slaughter at your spring. They remember the rain. They think you want paying.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ydrought_1"
+    ],
+    "minYearsAfter": 12,
+    "flags": [
+     "sb_yrain"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Dry Year",
+   "choices": [
+    {
+     "text": "Call the rain again, and refuse the pig",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "rain": 1,
+       "virtue": 3,
+       "legend": 2
+      },
+      "qi": -12,
+      "log": "The clouds come faster this time, as if they remember you. When the rain starts, the pig wanders off into the forest, garlanded, and lives a long and very confusing life."
+     },
+     "fail": {
+      "qi": -10,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The rain will not come. The pig is killed anyway. You lie in the dry pool and understand that worship can be a weight as well as a gift."
+     }
+    },
+    {
+     "text": "Accept the pig",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "It is a good pig. The rain comes by itself a week later. The village decides it was the pig. Next drought, there will be two pigs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yghostbride_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Travellers have stopped using the pass. There is a cheonyeo gwisin there, a girl who died unmarried, in white, with her hair down, and she stands under the dead tree at midnight and weeps until people's hearts stop. Tonight she turns from the road and looks at you instead.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "bulgasari",
+     "girin",
+     "gumiho",
+     "haechi",
+     "juak"
+    ]
+   },
+   "arc": "The Weeping at the Pass",
+   "choices": [
+    {
+     "text": "Stay with her, and let her weep at you",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_yghost",
+      "log": "She weeps until dawn. You do not die. Nobody has ever just stayed before. In the morning there is a name scratched in the frost on the road, the first thing anyone has known about her in fifty years."
+     }
+    },
+    {
+     "text": "Drive her off the road",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "She is a cold wind with a face. You are something heavier. She goes back into the dead tree, and the pass is open again, for now."
+     },
+     "fail": {
+      "health": -16,
+      "log": "Her grief goes through you like ice water. You wake on the road at noon, shaking, and the travellers who find you cross the pass at a run."
+     }
+    },
+    {
+     "text": "Go round. Not every sorrow is yours to fix",
+     "effects": {
+      "luck": 2,
+      "log": "The pass stays closed. Merchants take the long road for another generation."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yghostbride_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A mudang has finally come to the pass with a straw figure of a bachelor who also died unmarried, two paper crowns and a little wedding table. A spirit marriage, so the girl can rest. But no ghost will come to the table while the living are afraid of her, and the mudang is very afraid.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yghostbride_1"
+    ],
+    "minYearsAfter": 8,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "bulgasari",
+     "girin",
+     "gumiho",
+     "haechi",
+     "juak"
+    ]
+   },
+   "arc": "The Weeping at the Pass",
+   "choices": [
+    {
+     "text": "Lie down beside the wedding table, between the mudang and the dark",
+     "req": {
+      "flags": [
+       "sb_yghost"
+      ]
+     },
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "With you there the mudang stops shaking. The girl comes to the table. The rite goes on all night, bells and rice wine, and at dawn the dead tree at the pass has one green leaf."
+     }
+    },
+    {
+     "text": "Watch from the rocks",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The rite is clumsy and frightened and works anyway, mostly. The weeping at the pass becomes, over the years, a sound like someone humming."
+     }
+    },
+    {
+     "text": "Leave the dead to the mudang",
+     "effects": {
+      "luck": 2,
+      "log": "You go. In the morning the pass is quiet. You never learn whether it was the rite or the girl who simply got tired."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_sb_ysansin_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "You meet the mountain at last. An old man with a white beard sits under the crooked pine on the ledge, a fan in one hand, a peach in the other, a tiger asleep across his feet. He is the sansin, and he has been waiting for you to come up here for a long time. \"So,\" he says. \"You are living on my mountain. What will you give it?\"",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bonghwang",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Old Man of the Mountain",
+   "choices": [
+    {
+     "text": "Bow, and give it your protection",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "flag": "sb_ysansin",
+      "log": "The old man nods as if you have answered an easy question correctly. \"Good,\" he says. \"Then it will give you shelter.\" The peach is suddenly in front of you. You eat it. It tastes of a hundred springs."
+     }
+    },
+    {
+     "text": "\"Nothing. I was here first\"",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "He laughs until the tiger wakes up. \"Nobody was here first,\" he says. \"But that was a brave lie.\" He lets you stay, and charges you nothing, and you suspect you have been let off."
+     },
+     "fail": {
+      "health": -15,
+      "luck": -3,
+      "log": "The tiger wakes. The ledge is suddenly empty and very high. You come down the mountain the fast way."
+     }
+    },
+    {
+     "text": "Ask what the mountain needs",
+     "effects": {
+      "comprehension": 5,
+      "flag": "sb_ysansin",
+      "log": "\"Patience,\" says the old man. \"Ginseng that is left to grow. Snow that is let to lie. Someone who does not want to be its master.\" You look at him. He looks at you. You both know whom he means."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ysansin_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "In the temple below the peak the monks have repainted the mountain spirit's shrine behind the main hall. The old man is in it, with his fan and his peach and his tiger. And in the corner of the painting, half hidden by a cloud, there are two eyes nobody remembers asking the painter for.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ysansin_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_ysansin"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "bonghwang",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Old Man of the Mountain",
+   "choices": [
+    {
+     "text": "Go and look at it at night",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "qi": 10,
+      "log": "The painted old man looks very pleased with himself. So, you notice, does the painted tiger."
+     }
+    },
+    {
+     "text": "Keep the mountain as he asked: leave the ginseng, let the snow lie",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "For years no root on your mountain is dug before its time. The diggers who come say the mountain hides them now. It does."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yplague_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Sickness in the valley: fever, then spots, then the death wail from one house after another. Families who can are fleeing up into your forest with the sick on their backs, to camp by your water, because the old stories say the guest that brings the spots will not follow where you live.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Guest with the Spots",
+   "choices": [
+    {
+     "text": "Let them camp. Guard the camp at night",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "sb_yplague_kept",
+      "log": "All summer there are fires by your water. Some of the sick die anyway. More live. When the families go home, they leave the camp stones in a circle, and you never let the forest grow over it."
+     }
+    },
+    {
+     "text": "Keep away from the sick",
+     "effects": {
+      "luck": 3,
+      "log": "You go up into the high rocks until the fires by your water go out. Some of you is ashamed. Some of you is alive."
+     }
+    },
+    {
+     "text": "Drive them back down. The sickness will follow them",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "log": "They go back down to the dying valley, carrying their sick. The old story about you changes that year. It is not a kind story any more."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yplague_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "In the valley there is a family that calls itself after your water. Their great-grandmother was a child carried up to your forest in the sick year, and lived. Every year on the day they came home, they come back up, and light a fire in the circle of stones, and eat rice there, and go down.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yplague_1"
+    ],
+    "minYearsAfter": 60,
+    "flags": [
+     "sb_yplague_kept"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Guest with the Spots",
+   "choices": [
+    {
+     "text": "Sit at the edge of the firelight",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The youngest children see you and are not afraid. They have been told about you since before they could walk. The fire burns very late that year."
+     }
+    },
+    {
+     "text": "Leave them a fish by the fire, unseen",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They find it in the morning and laugh and cook it. \"It still remembers,\" says the eldest. You do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ybandits_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Twenty bandits have made their camp in your valley, in the hollow where the deer drink, because nobody from the villages will come near it any more. They are here because of you. They are robbing the salt road, and the villages blame the valley, which means they blame you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Hollow Where the Deer Drank",
+   "choices": [
+    {
+     "text": "Make the valley impossible to sleep in",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2,
+       "fear": 2
+      },
+      "log": "Sounds in the night. Eyes beyond the firelight. Their ox carts found at dawn, gently placed in the river. In a month the bandits move on, and the salt road breathes again."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "They are bandits, not villagers. They have spears and torches and nothing to lose. You drive them out in the end, but it takes a fight, and you lose a lot of blood doing it."
+     }
+    },
+    {
+     "text": "Fall on the camp at midnight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 3,
+       "legend": 3
+      },
+      "log": "The camp is empty by dawn. The captured merchant is still tied to a tree, unhurt, and has a story to tell for the rest of a long life."
+     },
+     "fail": {
+      "health": -35,
+      "log": "Twenty spears in the dark.",
+      "deathCause": "bandit spears, in your own valley"
+     },
+     "risky": true
+    },
+    {
+     "text": "Let the humans clear their own road",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "Soldiers come in the autumn and clear the bandits out, and burn the hollow where the deer drank, to be sure. You did not need to do anything. You wish you had."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypainter_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A wandering folk painter has been selling pictures of you in the market. They are full of colour, very cheerful and completely wrong. In the painting you are spotted, have the face of a smiling grandmother, and are holding a magpie. People are hanging them over their doors for luck.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Smiling Picture",
+   "choices": [
+    {
+     "text": "Let the pictures be. They are bringing people luck",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "charm": 3,
+      "log": "For a hundred years the smiling spotted grandmother hangs over doors all over the province. It is the best-loved picture of you there will ever be, and it is not you at all."
+     }
+    },
+    {
+     "text": "Show yourself to the painter, so the next one is truer",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "The painter sees you by the river at dusk and goes very quiet. The next pictures are dark, and huge, and true. Nobody buys them. The painter does not care."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "The painter sees something in the river at dusk, decides it was a log, and paints a smiling grandmother holding a log."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydure_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The whole village is planting rice together in a long line, the farmers' band thumping out the rhythm on drums and gongs, a tall flag at the edge of the paddy. The work song has a new verse this year. It is about you: the thing in the hills that keeps the floods off. They sing it to keep the line moving.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Planting Song",
+   "choices": [
+    {
+     "text": "Lie on the slope above the paddy where they can see your shadow",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The line stops singing and then sings louder. They plant the whole valley in a day, a record. The verse stays in the song for two hundred years."
+     }
+    },
+    {
+     "text": "Listen from the forest, unseen",
+     "effects": {
+      "comprehension": 3,
+      "qi": 6,
+      "log": "It is a good song. It is badly in tune. You will hum it to yourself for a very long time."
+     }
+    },
+    {
+     "text": "Keep the flood promise: watch the river all summer",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "strength": 2,
+      "log": "The summer rain comes and the river rises and does not quite reach the paddies. Nobody knows why. The song knows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yfisher_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The new fisher on the lake is young and poor and has made the mistake of casting a net over the deepest water, which is where you sleep. You wake inside it. The fisher is hauling with all their strength and the little boat is tipping toward you.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Net in the Deep",
+   "choices": [
+    {
+     "text": "Lie still and let yourself be hauled up to the side",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 3,
+      "log": "Your eyes come up out of the water a hand from the fisher's face. The fisher lets go of the net, very gently, and sits down in the bottom of the boat, and says \"excuse me\". You find this so polite that you leave the net untorn."
+     }
+    },
+    {
+     "text": "Tear the net and sink",
+     "effects": {
+      "strength": 2,
+      "log": "The fisher hauls up half a net and an empty lake. A poor family loses its net. You feel bad about it all week."
+     }
+    },
+    {
+     "text": "Fill the net with fish instead, and slip out",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "luck": 2,
+      "log": "The net comes up so full the boat nearly sinks. The fisher rows home singing. From then on, every first catch of the year is thrown back into the deep water."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "The fish escape with you. The fisher hauls up an empty net and a lot of confused weed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydalgyal_1",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "On the mountain path at night there is a ghost with no face: smooth as an egg, white as an egg. The old stories say anyone who looks it in the face dies. A traveller with a lantern has just come round the bend and is about to look up.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     4
+    ]
+   },
+   "arc": "The Ghost with No Face",
+   "choices": [
+    {
+     "text": "Step out between them",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "qi": 10,
+      "log": "You look at the blank face, and it looks at you, and nothing happens. Perhaps you have a face that is too strange to die. The ghost turns away, puzzled. The traveller runs all the way home and lives to be ninety."
+     },
+     "fail": {
+      "health": -35,
+      "log": "You look into a face that is not there.",
+      "deathCause": "the egg-faced ghost on the mountain path"
+     },
+     "risky": true
+    },
+    {
+     "text": "Shake the mugwort hanging in the trees, loudly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The smell of mugwort rolls down the path. The ghost thins and goes. The traveller never looks up at all, only hurries on, and never knows."
+     }
+    },
+    {
+     "text": "Close your own eyes and wait for morning",
+     "effects": {
+      "luck": 3,
+      "log": "You hear the lantern drop. You hear running. You do not hear anything else. In the morning there is only a broken lantern on the path."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ypheasant_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Below the temple a young scholar on the way to the examinations has drawn a bow on a great black snake that is swallowing a pheasant's chicks. The old monks tell a story about this: a snake that took revenge on a man who shot its mate, and a pheasant that rang the temple bell with its own head to save him. Stories, you have found, like to happen again.",
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Bell Below the Peak",
+   "choices": [
+    {
+     "text": "Frighten the snake off before the arrow flies",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "The snake drops the nest and goes, alive. Nobody is shot, nobody wants revenge, nobody has to ring a bell with their head. Some stories are best left unrepeated."
+     }
+    },
+    {
+     "text": "Let the scholar shoot",
+     "effects": {
+      "comprehension": 3,
+      "log": "The arrow flies. That night you lie under the temple and wait, and toward dawn, through the dark, you hear the bell ring once, very softly."
+     }
+    },
+    {
+     "text": "Eat the snake",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "Nobody in this story was expecting that, least of all the snake. The pheasant looks at you for a long time and then goes back to its nest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ycourt_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "An envoy has come from the capital with soldiers and an iron cage. The king, it seems, is building a garden of marvels, and a clerk read a report about your valley. The envoy has ordered the villages to drive the beast into the cage, or pay the grain tax twice.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Garden of Marvels",
+   "choices": [
+    {
+     "text": "Go into hiding. The villages will pay",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The villages pay. It is a hungry winter. Nobody says it is your fault. Nobody leaves rice at your spring that year, either."
+     }
+    },
+    {
+     "text": "Let them drive you, and break the cage",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 4,
+       "fear": 2
+      },
+      "log": "You walk into the cage, and the villages cheer, and the envoy smiles. Then you push. The iron bars bend out like reeds. The envoy writes to the capital that the marvel was unsuitable for the royal garden."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The cage is stronger than it looks. It takes you a day and a night to break out, bleeding, and the soldiers chase you for a week."
+     }
+    },
+    {
+     "text": "Lead the soldiers away from the villages for a whole season",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2,
+       "hunted": 2
+      },
+      "log": "You let them see you, always one ridge away. They follow you over half the province. The villages are left alone. The envoy goes back to the capital thin, sunburnt and empty-handed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ycourt_2",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "The king who wanted a garden of marvels is dead. His garden is overgrown. And in the villages of your valley the children play a game called Envoy and Beast, in which the beast always wins, and the child playing the envoy has to sit in a ring of sticks and sulk.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ycourt_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Garden of Marvels",
+   "choices": [
+    {
+     "text": "Watch the game from the ridge",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 2,
+      "log": "One of them sees you and shouts, and every child in the game bows to the ridge. The envoy sulks harder."
+     }
+    },
+    {
+     "text": "Think about the iron bars, and the bent ones",
+     "effects": {
+      "comprehension": 4,
+      "log": "Kings die. Cages rust. Children's games last longer than either. You find that comforting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yoffering_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Three bad years. The elders have decided the spirit of the pool is angry. Tonight they have left a girl on the flat rock at the water's edge, in white, tied with straw rope, and gone back up the bank with their torches. {npc} is twelve, and not crying, and that is the worst of it.",
+   "npc": {
+    "role": "sb_yoffered",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_yoffered",
+     "ageAbs": 12,
+     "opinion": 10,
+     "male": false
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Girl on the Flat Rock",
+   "choices": [
+    {
+     "text": "Untie {him} and carry {him} home, through the middle of the village",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2,
+       "fear": 1
+      },
+      "npcFlag": [
+       "sb_yoffered",
+       "sb_yoffered_saved"
+      ],
+      "mem": {
+       "deed": "saved",
+       "w": 30,
+       "note": "carried me home through the village"
+      },
+      "log": "You walk into the village at midnight with the child on your back. Everyone wakes. Nobody says a word. Nobody is ever offered to your pool again, and every elder who tied that rope dies a little more ashamed than they lived."
+     }
+    },
+    {
+     "text": "Bite the rope through and push {him} toward the forest",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "sb_yoffered",
+       "sb_yoffered_saved"
+      ],
+      "log": "{npc} looks at you for one long moment and then runs, not toward the village, but away from it. You hope it is the right way."
+     }
+    },
+    {
+     "text": "Show the elders their mistake: drown the torches",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 1
+      },
+      "npcFlag": "sb_yoffered",
+      "log": "Every torch on the bank goes out at once in a great splash. The elders run. In the morning the child walks home alone, wet and furious, and the village is afraid of {npc} for the rest of {his} life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yoffering_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is the village headwoman now, grey-haired and feared and fair. The first thing {he} did in office was to throw the flat rock at the water's edge into the pool. Tonight {he} comes down alone with a lantern and sits where the rock used to be.",
+   "npc": {
+    "role": "sb_yoffered"
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_yoffering_1"
+    ],
+    "minYearsAfter": 35,
+    "npcFlags": [
+     "sb_yoffered_saved"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Girl on the Flat Rock",
+   "choices": [
+    {
+     "text": "Rise and sit with {him}",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "sat",
+       "w": 20,
+       "note": "sat with me where the rock used to be"
+      },
+      "log": "Neither of you can speak to the other. It does not matter. The lantern burns out, and {npc} sits on in the dark until dawn, and goes home."
+     }
+    },
+    {
+     "text": "Stay deep, and let {him} have the place alone",
+     "effects": {
+      "comprehension": 3,
+      "log": "Some things a person needs to sit with alone. You keep the water still all night, so the lantern does not flicker."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ydeer_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A roe deer bursts out of the trees, hunters behind it, and stops at your pool, panting, and looks at you the way creatures sometimes do in the old stories, as if it expected you. A woodcutter with a load of firewood is on the path too, staring at both of you.",
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Deer at the Pool",
+   "choices": [
+    {
+     "text": "Hide the deer in your shadow",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "luck": 3,
+      "log": "The hunters run past the pool without seeing it. The woodcutter, who saw everything, says nothing. That night the deer comes back and stands on the bank for a long time, and then goes up the mountain toward a place where the old stories say heavenly maidens bathe."
+     }
+    },
+    {
+     "text": "Let the woodcutter decide",
+     "effects": {
+      "comprehension": 3,
+      "log": "The woodcutter stacks firewood in front of the deer and sits on it, whistling, until the hunters have gone. You suspect there will be a story about this. There usually is."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "luck": 2,
+      "log": "The deer runs on. The hunters run on. The woodcutter looks at you, and you look at the woodcutter, and both of you go home."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ytomb_1",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "Tomb robbers are digging into the old king's mound on your hill: five of them, lanterns hooded, in the middle of the night. The king has been dead a thousand years. The stone officials at the mound have kept watch the whole time. Tonight, it seems, they need help.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     4
+    ]
+   },
+   "arc": "The Mound on the Hill",
+   "choices": [
+    {
+     "text": "Stand behind the stone officials and open your eyes",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "log": "Five lanterns go out at once. Five robbers go down the hill in five directions. One of them leaves a shovel behind that the village uses for years."
+     }
+    },
+    {
+     "text": "Fill the hole with earth again before dawn",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The robbers come back the next night and find the mound whole and grassed, as if no one had touched it. They do not come back the third night."
+     }
+    },
+    {
+     "text": "Let them take the gold. The dead do not need crowns",
+     "effects": {
+      "comprehension": 3,
+      "log": "The gold crown turns up in a market in the next province, and then in a nobleman's house, and then nowhere. The old king, wherever he is, does not seem to mind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ylost_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A child from the village is lost in the forest in the first snow, and night is falling, and {npc} has sat down under a pine, which is what lost children do, and is going to sleep, which is what lost children must not do.",
+   "npc": {
+    "role": "sb_ylost",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ylost",
+     "ageAbs": 5,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "realm": [
+     2,
+     4
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "juak",
+     "bonghwang"
+    ]
+   },
+   "arc": "Lost in the First Snow",
+   "choices": [
+    {
+     "text": "Lie down around the child and keep {him} warm until the torches come",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "npcFlag": "sb_ylost",
+      "mem": {
+       "deed": "warmed",
+       "w": 30,
+       "note": "kept me warm in the snow when I was lost"
+      },
+      "log": "The search party finds {npc} at dawn, asleep and warm, in a hollow in the snow far too big for a child. Nobody can explain it. {npc} can, and does, for the rest of {his} life."
+     }
+    },
+    {
+     "text": "Make a noise to bring the searchers",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "npcFlag": "sb_ylost",
+      "log": "The torches turn toward the sound. They find {npc} cold and frightened and alive."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1,
+       "virtue": 1
+      },
+      "npcFlag": "sb_ylost",
+      "log": "The searchers hear you and turn back, afraid of what made the noise. You stay with {npc} until morning after all, and carry the child to the village edge yourself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ylost_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has never been afraid of the forest. Now {he} is a woodcutter, and the only one in the village who goes up in the first snow, and the only one who comes home every time. Today {he} leaves a bundle of dried persimmons under the same pine, and sits there for a while, in case.",
+   "npc": {
+    "role": "sb_ylost"
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_sb_ylost_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "sb_ylost"
+    ],
+    "beast": [
+     "baekho",
+     "gumiho",
+     "haechi",
+     "girin",
+     "juak",
+     "bonghwang"
+    ]
+   },
+   "arc": "Lost in the First Snow",
+   "choices": [
+    {
+     "text": "Come and lie in the snow beside {him}",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "charm": 3,
+      "log": "{npc} leans back against you as if it were the most natural thing in the world, and eats a persimmon, and gives you one. Snow falls on both of you. It is a good afternoon."
+     }
+    },
+    {
+     "text": "Eat the persimmons after {he} has gone",
+     "effects": {
+      "luck": 3,
+      "log": "{npc} comes back the next day and finds the bundle empty and laughs out loud, alone in the forest, the way people do when something they believed turns out to be true."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yrelics_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "In the market a trader is selling pieces of you: flakes of black lacquer, a yellowed bone, a dried root that is supposedly your heart, each at a terrible price, with a painted banner of a beast that looks nothing like you. People are buying them. One of them is buying a flake for a sick child.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ]
+   },
+   "arc": "Pieces of You",
+   "choices": [
+    {
+     "text": "Visit the trader's stall at night and leave a real sign",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "In the morning the stall is flattened, the banner is in the river and the ground round the stall is scored by something that was not a man. The trader leaves the province and, in a new province, starts selling something else."
+     }
+    },
+    {
+     "text": "Let it be. Humans comfort themselves",
+     "effects": {
+      "comprehension": 3,
+      "log": "The child with the flake gets better, the way children often do. The parents put the flake in a little silk bag and keep it for three generations. It is a chip of lacquer."
+     }
+    },
+    {
+     "text": "Leave food at the sick child's door instead",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "The child eats well that week. The flake goes in the silk bag anyway, but the family tells the story about the gift."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yswordsman_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A young martial artist has been practising at your waterfall every dawn for a year, trying to cut the falling water so that it stays cut. {npc} cannot do it. You have watched every attempt. Today, frustrated, {he} turns to the plunge pool and shouts, \"If there is a spirit here, show me what I am doing wrong!\"",
+   "npc": {
+    "role": "sb_ysword",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ysword",
+     "ageAbs": 19,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "realm": [
+     3,
+     4
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Sword at the Waterfall",
+   "choices": [
+    {
+     "text": "Rise up through the falling water and let it part around you",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_ysword",
+      "mem": {
+       "deed": "showed",
+       "w": 20,
+       "note": "showed me how the water parts"
+      },
+      "log": "The water does not fight you. It goes round. {npc} stares for a long time, then sheathes the sword and sits down to think. The next year {he} goes down the mountain, and the murim hears about a sword that does not fight the water."
+     }
+    },
+    {
+     "text": "Splash {him} off the rock",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "sb_ysword",
+      "log": "{npc} comes up spluttering, then laughing. \"Fair,\" {he} says. \"I asked.\" {He} practises somewhere drier after that."
+     }
+    },
+    {
+     "text": "Stay hidden. Some lessons are only learned alone",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "sb_ysword",
+      "log": "Three more years. Then one dawn the water stays cut for one heartbeat, and {npc} shouts so loud that you surface in alarm, and the two of you look at each other for the first time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_ycave_1",
+   "cat": "explore",
+   "weight": 10,
+   "once": true,
+   "text": "Exploring under the mountain, you follow an underground river into a cave nobody has entered for a thousand years. On the wall, in red earth, someone painted hunters with spears, and a great beast, and the beast is winning. Under the painting lies a broken bronze mirror and the bones of whoever painted it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The Painted Cave",
+   "choices": [
+    {
+     "text": "Lie in front of the painting a long time",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "Something like you lived here once and was known. You are not the first. You find that you are glad."
+     }
+    },
+    {
+     "text": "Carry the bronze mirror out to the light",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "In the sunlight the broken mirror throws your eyes back at you, cracked and old. A hunter finds it on the riverbank years later, and it ends up in a temple, and the monks say it shows a beast to anyone who looks in it at dusk."
+     }
+    },
+    {
+     "text": "Seal the cave again with a rockfall",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Some places are graves. You leave this one to the painter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yruins_1",
+   "cat": "explore",
+   "weight": 10,
+   "once": true,
+   "text": "You explore the ruins of a fortress town on a hill: walls fallen, a stone stupa cracked in two, foundation stones in the grass where houses were. Within your own memory there was a market here, and children, and a well you drank from at night.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Town That Was",
+   "choices": [
+    {
+     "text": "Find the old well and drink from it again",
+     "effects": {
+      "qi": 8,
+      "comprehension": 3,
+      "log": "It is choked with leaves, but the water underneath is the same. The town is gone. The water is the same. You lie there until dark, thinking about that."
+     }
+    },
+    {
+     "text": "Dig among the stones",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A child's clay whistle, unbroken. You blow through it, carefully. A crow answers. You keep it for a very long time."
+     },
+     "fail": {
+      "health": -6,
+      "log": "A wall you lean on decides it has stood long enough. You get out from under it bruised and dusty, and the crows laugh."
+     }
+    },
+    {
+     "text": "Leave. Ruins are only sad if you remember them",
+     "effects": {
+      "comprehension": 4,
+      "log": "You do remember them. That is the price of living long. You go down the hill, and it is a good price, and you will pay it again and again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_yspring_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": true,
+   "text": "Exploring a snowbound valley, you find a hidden hot spring in a hollow of red pines, steaming in the cold. Deer stand at the edge to warm their legs; a pair of cranes are dancing in the steam. Nothing here has ever seen a human, or you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The Hidden Spring",
+   "choices": [
+    {
+     "text": "Slide into the hot water and soak",
+     "effects": {
+      "qi": 15,
+      "health": 10,
+      "log": "Every ache of every winter of your life comes out of you at once. The deer, after a while, come back. The cranes never stopped dancing."
+     }
+    },
+    {
+     "text": "Watch the cranes, and learn how they move",
+     "effects": {
+      "comprehension": 5,
+      "log": "Step, bow, leap, turn. There is something in it about qi that no human manual has written down. You remember it."
+     }
+    },
+    {
+     "text": "Remember the way, and tell no one",
+     "effects": {
+      "luck": 4,
+      "log": "There is no one to tell. But you remember it, and you come back every hard winter, and it is always there."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

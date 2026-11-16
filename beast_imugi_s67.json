@@ -1,0 +1,3574 @@
+{
+ "events": [
+  {
+   "id": "dc_im6_voice_1",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "Something in your throat has been changing for a decade, like ice cracking slowly in spring. One misty morning a woodcutter stops at the edge of the pool to drink, and before you can think, a sound comes out of you. It is not a hiss. It is a word. The word is: \"Mine.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     6
+    ]
+   },
+   "arc": "The First Word",
+   "choices": [
+    {
+     "text": "Say something kinder, quickly",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "You try \"drink\", and then \"please\", and then, because he is still standing there with his mouth open, \"good morning\". He drops the firewood and runs, but at the top of the slope he turns and bows. The whole valley hears about it by sunset."
+     }
+    },
+    {
+     "text": "Say nothing more. Let him wonder if he heard it",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "He drinks, very slowly, never taking his eyes off the water. For the rest of his life he tells people the pool spoke to him, and for the rest of his life nobody believes him, and he does not care."
+     }
+    },
+    {
+     "text": "Say it again, louder",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 2
+      },
+      "log": "\"MINE.\" The mist shivers. He leaves the firewood, his axe and one straw sandal. You keep the sandal for a century. You are not sure why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_voice_2",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "You practise speaking at night, to the moon on the water, to frogs, to a fox who listens with great politeness. Human words are strange things: small and sharp, like fish bones. The hardest one is your own name, because you have never had one.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_im6_voice_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The First Word",
+   "choices": [
+    {
+     "text": "Take the name the villagers gave you",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "They call you after the pool. When you say it aloud for the first time, the fox flattens its ears, as if it has heard something important."
+     }
+    },
+    {
+     "text": "Make up a name of your own, in no language anyone speaks",
+     "effects": {
+      "comprehension": 5,
+      "qi": 8,
+      "log": "It sounds like water going over a stone. You never tell it to a human. Some things a serpent keeps."
+     }
+    },
+    {
+     "text": "Decide that a thousand years is too old to need a name",
+     "effects": {
+      "luck": 3,
+      "log": "The fox seems disappointed. You remain, to yourself, simply the one who waits."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_scholar_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "A scholar comes to the pool on foot, coughing blood into a sleeve that was white once. {He} has failed the state examination eleven times and has one season left to live, and {he} has walked six days to ask the thousand-year serpent one question: \"Is there a Way? Or did the sages make it up, so that men like me would sit still?\"",
+   "npc": {
+    "role": "im6_scholar",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_scholar",
+     "ageAbs": 58,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Last Question",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"There is a Way. I have watched water find it for a thousand years\"",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcFlag": [
+       "im6_scholar",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "answered",
+       "w": 20,
+       "note": "answered my last question"
+      },
+      "log": "{npc} listens to you talk about water until the stars come out, writing nothing down. \"That is enough,\" {he} says at last. \"That is more than eleven examinations.\" {He} sleeps on the bank that night, smiling."
+     }
+    },
+    {
+     "text": "\"I do not know. I have only been alive a thousand years\"",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "npcFlag": "im6_scholar",
+      "mem": {
+       "deed": "honest",
+       "w": 12,
+       "note": "told me the truth"
+      },
+      "log": "{npc} laughs until the coughing takes over. \"Honest,\" {he} says, wiping {his} mouth. \"The examiners never once were.\" {He} stays a week, and you argue about everything."
+     }
+    },
+    {
+     "text": "\"Ask me something easier, scholar. How deep is my pool?\"",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "im6_scholar",
+      "log": "\"Deeper than the examination,\" {npc} says, and for the first time in years {he} laughs at {his} own life instead of weeping over it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_scholar_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A young person in a scholar's robe comes to the pool with a wrapped bundle and kneels on the same rock. \"My teacher, {npc}, died the winter after visiting you. The last thing {he} wrote was this, for you.\" It is a poem about a serpent who answered a question with a question.",
+   "npc": {
+    "role": "im6_scholar"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_scholar_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "im6_scholar"
+    ]
+   },
+   "arc": "The Last Question",
+   "choices": [
+    {
+     "text": "Ask the student to read it aloud, twice",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "a cough, in the winter, at peace",
+      "log": "The student reads it, and then reads it again. Afterwards they burn it on the rock, as the dead man asked, and the smoke goes up over the water like a question nobody needs to answer."
+     }
+    },
+    {
+     "text": "Keep the poem: sink it to the bottom of the pool",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 1
+      },
+      "npcPass": "a cough, in the winter, at peace",
+      "log": "The paper dissolves in a year. The words do not. On still nights, for centuries, you recite it to the fish."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_bride_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "A bride comes crashing through the reeds in the middle of the night, still in red and green silk, the wedding crown hanging off {his} hair by one pin. Torches on the hill behind. \"They promised me to a magistrate older than my grandfather,\" {npc} gasps at the water. \"I would rather the dragon took me. Will you?\"",
+   "npc": {
+    "role": "im6_bride",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_bride",
+     "ageAbs": 17,
+     "opinion": 0,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Bride in the Reeds",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"No. But I will hide you.\" Call the fog",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "qi": 8,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im6_bride_hid",
+      "npcFlag": [
+       "im6_bride",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "saved",
+       "w": 25,
+       "note": "hid me in the fog"
+      },
+      "log": "Fog pours off the pool like milk. The torches wander in it for an hour and go home cursing. At dawn {npc} is gone, and so is a fishing boat, and on the bank there is a wedding crown, left for you."
+     },
+     "fail": {
+      "qi": -5,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_bride_hid",
+      "npcFlag": "im6_bride",
+      "log": "The fog comes too thin and too late. You have to rise out of the water, the full length of you, before the torches stop. They drop them and run. So, unfortunately, does {npc}, but in the right direction."
+     }
+    },
+    {
+     "text": "\"Swim. I will carry you to the far shore\"",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im6_bride_hid",
+      "npcFlag": [
+       "im6_bride",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "carried",
+       "w": 22,
+       "note": "carried me across the pool"
+      },
+      "log": "{npc} holds on to a horn that is not there yet, then to a ridge of scales, and laughs the whole way across, a little wildly. On the far shore {he} bows three times, takes off the red silk and walks into the hills in a white underrobe."
+     }
+    },
+    {
+     "text": "\"Go back. The pool is no place to run to\"",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "im6_bride",
+      "log": "{npc} looks at you for a long moment, then wipes {his} face and walks back up toward the torches with {his} chin up. You think about that for years."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_im6_bride_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Years later {npc} comes back to the pool in plain cotton, with a herbalist's basket and a little child with {his} eyes holding on to the basket. \"This is the dragon,\" {he} tells the child. \"Bow.\" The child bows, then asks loudly why the dragon has no horns.",
+   "npc": {
+    "role": "im6_bride"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_bride_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "serpent_friend",
+     "im6_bride"
+    ]
+   },
+   "arc": "The Bride in the Reeds",
+   "choices": [
+    {
+     "text": "\"Because I am not finished yet\"",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 3,
+      "log": "The child accepts this completely. {npc} tells you about the years: the hills, the herbalist who took {him} in, the shop in a town where nobody knows about the magistrate. \"You gave me my life,\" {he} says. \"I wanted you to see what I did with it.\""
+     }
+    },
+    {
+     "text": "Show the child a trick: rain on one side of the pool only",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The child stands with one foot in the rain and one in the sun and shrieks with joy. Years later that child becomes a rain-priest, and nobody in the family is surprised."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_bride_3",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "The old magistrate's son has heard the story at last: the bride the dragon stole. He comes to the pool with twenty men, a priest and a great deal of resentment, and demands the serpent hand over the woman it hid decades ago, or pay for her.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "flags": [
+     "im6_bride_hid"
+    ],
+    "after": [
+     "dc_im6_bride_1"
+    ],
+    "minYearsAfter": 35
+   },
+   "arc": "The Bride in the Reeds",
+   "choices": [
+    {
+     "text": "\"She is not mine to hand over. She was never your house's property either\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "He has a speech prepared and you have ruined it. In the end the priest takes him by the sleeve and leads him away, and the twenty men walk home very quietly."
+     }
+    },
+    {
+     "text": "Raise the pool until it laps at their boots",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "log": "The water climbs the bank one step at a time, never hurrying. They retreat one step at a time, never quite running. Nobody asks for payment again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_spy_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The herb gatherer who has visited every day for a month gathers no herbs. {He} measures: the depth of the pool, the width of the inlet, the hour the mist comes. Today, while {he} is lowering a weighted cord, you open one eye right beside it and say, \"Ninety-one arm-lengths. You could have asked.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Herb Gatherer Who Gathers Nothing",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Now tell me which sect sent you\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "im6_spy_known",
+      "npcFlag": "im6_spy",
+      "log": "{npc} tells you everything in a shaking voice: the Cheongun Sect, the elder who wants your inner core, the hunting party being gathered for next spring. You thank {him}. That frightens {him} more than anything."
+     },
+     "fail": {
+      "flag": "im6_spy_known",
+      "npcFlag": "im6_spy",
+      "log": "{npc} says nothing and runs. But you saw the cloud embroidered inside {his} sleeve. The Cheongun Sect, then."
+     }
+    },
+    {
+     "text": "Give {him} the wrong measurements, very helpfully",
+     "effects": {
+      "luck": 4,
+      "flag": "im6_spy_lied",
+      "npcFlag": "im6_spy",
+      "log": "You tell {npc} the inlet is shallow, the mist comes at noon, and you sleep every autumn. {He} writes it all down. Somewhere a sect elder is planning a hunt on the word of a serpent."
+     }
+    },
+    {
+     "text": "\"Stay a while. The ones who sent you do not pay you enough to be this frightened\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_spy_turned",
+      "npcFlag": [
+       "im6_spy",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "spared",
+       "w": 18,
+       "note": "could have eaten me, and talked instead"
+      },
+      "log": "{npc} stays until dark, eating dried persimmons and complaining about {his} sect. By the end {he} is laughing. When {he} leaves, {he} says, \"If they come for you, you will know before they do.\" You believe {him}."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_spy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_spy",
+     "ageAbs": 26,
+     "opinion": -5
+    }
+   }
+  },
+  {
+   "id": "dc_im6_spy_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A note wrapped around a stone falls into the pool at midnight. The hand is {npc}'s. \"They come at the next new moon. Forty men, iron nets, a talisman spear for the reverse scale under your chin. I am sorry. I am one of the forty.\"",
+   "npc": {
+    "role": "im6_spy"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_spy_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im6_spy_turned"
+    ],
+    "npcFlags": [
+     "im6_spy"
+    ]
+   },
+   "arc": "The Herb Gatherer Who Gathers Nothing",
+   "choices": [
+    {
+     "text": "Leave the pool before the new moon",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "hunted": -1
+      },
+      "flag": "im6_core_warned",
+      "log": "The forty come at the new moon and find an empty pool and a stone with \"thank you\" scratched into it. Only one of them understands."
+     }
+    },
+    {
+     "text": "Stay, and let {him} find a reason to be at the back",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "flag": "im6_core_warned",
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "trusted me with its life"
+      },
+      "log": "You stay. You are ready. And when the iron nets come down, the one at the back of the line has quietly cut the cord that holds them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_spy_3",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The Cheongun hunting party arrives at noon, in autumn, exactly as you told their spy: to catch a sleeping, shallow serpent in its narrow inlet. The inlet is not narrow. You are not asleep. Noon is not when the mist comes.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_spy_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im6_spy_lied"
+    ]
+   },
+   "arc": "The Herb Gatherer Who Gathers Nothing",
+   "choices": [
+    {
+     "text": "Let them wade in up to their waists, then rise",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "log": "Forty men in deep water with iron nets that pull them down. You do not have to kill a single one. You let them crawl out and limp home to explain to their elder what a \"shallow\" inlet is."
+     }
+    },
+    {
+     "text": "Call the mist and send them home lost",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "They wander in your fog for three days and come out in the wrong province. The Cheongun Sect does not hunt you again for a generation, out of pure embarrassment."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_farmer_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The third dry summer. The pool is down to half and you are lying in mud you have not felt on your belly for three hundred years. A farmer comes, sunburnt to leather, and holds up an empty jar. \"My fields are dust. My grandchild has stopped crying, which is worse. They say you make rain. Make some.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Empty Jar",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Call the rain on {his} valley",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "rain": 1,
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im6_farmer_rain",
+      "npcFlag": "im6_farmer",
+      "mem": {
+       "deed": "rain",
+       "w": 25,
+       "note": "brought rain when my fields were dust"
+      },
+      "log": "You go up into the white sky and drag the clouds in by their edges, one by one, until the first fat drops crater the dust. {npc} stands in it with the jar held up and does not move until it overflows."
+     }
+    },
+    {
+     "text": "\"Dig there, by the black rock. There is a spring under it\"",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "im6_farmer",
+       "serpent_friend"
+      ],
+      "log": "You have felt that spring under the stone for centuries. {npc} digs for two days and strikes cold water at the depth of a man. The well is still there when the village is a town."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "im6_farmer",
+      "log": "The spring has moved, as springs do. {npc} digs a dry hole and climbs out and looks at you. You call the rain after all, a little, ashamed."
+     }
+    },
+    {
+     "text": "\"Rain belongs to heaven. Ask heaven\"",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "im6_farmer",
+      "log": "{npc} spits into the dust of your bank. \"Heaven,\" {he} says, \"has not been answering.\" {He} walks home with the empty jar."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_farmer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_farmer",
+     "ageAbs": 54,
+     "opinion": 0
+    }
+   }
+  },
+  {
+   "id": "dc_im6_farmer_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is very old now. {He} comes to the pool once more, carried on a grandchild's back, with the same clay jar. It is full of new rice. \"Harvest after harvest,\" {he} says. \"I counted every one. This is your share.\"",
+   "npc": {
+    "role": "im6_farmer"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_farmer_1"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "im6_farmer"
+    ],
+    "flags": [
+     "im6_farmer_rain"
+    ]
+   },
+   "arc": "The Empty Jar",
+   "choices": [
+    {
+     "text": "Eat the rice, grain by grain",
+     "effects": {
+      "qi": 8,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "It takes you most of an afternoon, because you are a serpent the size of a boat and the grains are very small. {npc} watches the whole time, delighted."
+     }
+    },
+    {
+     "text": "\"Plant it at the edge of my pool\"",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The rice comes up wild along the bank and comes up again every year after. The village calls it the serpent's field, and nobody harvests it but the birds."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_child_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "A child of about six has climbed down to the pool alone, which is forbidden, and is talking to you, which is more forbidden. {He} is not afraid. {He} has a list of questions. The first one is: \"Did you have a mother?\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "Questions from a Child",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I had an egg. And a heron who watched it\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": [
+       "im6_child",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "stories",
+       "w": 20,
+       "note": "told me about the egg and the heron"
+      },
+      "log": "You tell {npc} about the spring, and the heron, and the waterfall. {He} decides the heron was the one who raised you. You are surprised to find you do not want to argue."
+     }
+    },
+    {
+     "text": "Answer every question, all afternoon",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "npcFlag": [
+       "im6_child",
+       "serpent_friend"
+      ],
+      "log": "Do you eat people (no), do you sleep (yes, very well), are you a boy or a girl (you are a serpent), can you fly (not yet). The list runs out at sunset. {npc} promises to make a new one."
+     }
+    },
+    {
+     "text": "\"Go home before your family comes looking\"",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "im6_child",
+      "log": "{npc} goes, a little hurt. But at the top of the path {he} shouts back, \"I will come back when I am bigger!\" Children say this. This one means it."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_child",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_child",
+     "ageAbs": 6,
+     "opinion": 15
+    }
+   }
+  },
+  {
+   "id": "dc_im6_child_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is grown now, and has been coming to the pool every summer with a new list. This year there is only one question on it. \"I want to learn the martial way. A real one. Will you teach me how to breathe like the water?\"",
+   "npc": {
+    "role": "im6_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_child_1"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "im6_child",
+     "serpent_friend"
+    ]
+   },
+   "arc": "Questions from a Child",
+   "choices": [
+    {
+     "text": "Teach {him} the breath of the deep: slow, cold, patient",
+     "effects": {
+      "comprehension": 4,
+      "qi": -5,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcRealm": 1,
+      "mem": {
+       "deed": "taught",
+       "w": 25,
+       "note": "taught me to breathe like the water"
+      },
+      "log": "One summer of breathing at the bottom of the shallows with a reed in {his} mouth. When {npc} leaves for the murim, {he} can hold {his} breath for a quarter of an hour and {his} qi moves like a slow river."
+     }
+    },
+    {
+     "text": "\"I am not a master. I am a serpent. Go and find a human teacher\"",
+     "effects": {
+      "luck": 3,
+      "log": "{npc} goes to the mountains and finds one. But {he} writes to you every year, letters wrapped round stones, dropped in the pool, which is the strangest mail any serpent ever received."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im6_child_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "An old master with a white beard and a famous name comes down the path to the pool alone, the way {he} did at six. {npc} sits on the same flat rock with great difficulty and takes out a list. \"Last questions,\" {he} says. \"Will you remember me? And when you fly, will you look down?\"",
+   "npc": {
+    "role": "im6_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_child_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "im6_child",
+     "serpent_friend"
+    ]
+   },
+   "arc": "Questions from a Child",
+   "choices": [
+    {
+     "text": "\"Yes. And yes\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "mem": {
+       "deed": "promise",
+       "w": 30,
+       "note": "promised to look down when it flies"
+      },
+      "log": "{npc} folds the list, puts it in the water, and watches it sink. \"Good,\" {he} says. \"That is all I wanted to know.\" {He} is the human you will think of first, when the sky opens."
+     }
+    },
+    {
+     "text": "Coil around the rock and say nothing, as you did when {he} was small",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The two of you watch the dragonflies until dark. Some questions are answered by staying."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_murderer_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A swordsman wades into your pool at midnight, waist-deep, and lays a blade across {his} palms. \"I killed a family on the east road,\" {npc} says. \"Five of them. For a debt that was not even mine. The monks will not hear me. You are older than the monks. Take my sin, or take me.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Blade in the Water",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I cannot take your sin. Carry it to the family's grave and kneel there\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "im6_murderer",
+      "mem": {
+       "deed": "judged",
+       "w": 15,
+       "note": "refused to forgive me, and showed me where to go"
+      },
+      "log": "{npc} stands in the water a long time, then lays the sword on the bottom of your pool and walks east without it."
+     }
+    },
+    {
+     "text": "Take {him}",
+     "effects": {
+      "strength": 5,
+      "tally": {
+       "fear": 3
+      },
+      "npcDie": "the serpent of the pool, who was asked to",
+      "log": "It is what {he} asked for. The water closes. The sword stays on the bottom of the pool, and for the rest of your life you can feel it there, like a splinter."
+     }
+    },
+    {
+     "text": "\"Wash, then. The water does not forgive. It only cleans\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcFlag": "im6_murderer",
+      "log": "{npc} lays the sword on the bottom of your pool, washes until dawn, and comes out shaking. It is not absolution. It is the first night in a year {he} has slept."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_murderer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_murderer",
+     "ageAbs": 33,
+     "opinion": -10
+    }
+   }
+  },
+  {
+   "id": "dc_im6_murderer_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A grey-haired person in the brown robe of a lay temple servant comes to the pool and asks for the sword back. It is {npc}. \"Twenty years I have dug wells on the east road,\" {he} says. \"Free, for anyone. One for each of the five I took. I am done now. I would like to be buried with it.\"",
+   "npc": {
+    "role": "im6_murderer"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_murderer_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "im6_murderer"
+    ]
+   },
+   "arc": "The Blade in the Water",
+   "choices": [
+    {
+     "text": "Bring the sword up from the bottom",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "mem": {
+       "deed": "returned",
+       "w": 20,
+       "note": "gave me back the sword to be buried with"
+      },
+      "log": "It has rusted to a red stick. {npc} holds it like an infant and thanks you, and walks away very slowly, and the east road has wells on it for three hundred years."
+     }
+    },
+    {
+     "text": "\"The sword stays. That was the price\"",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} bows to the water. \"Yes,\" {he} says. \"That is fair.\" {He} is buried without it, and you keep both the sword and the story."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rain_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A monk climbs down from the hermitage on the ridge: thin, sunburnt, a wooden begging bowl with nothing in it. The valley has had no rain for a hundred days. \"I have chanted for ninety of them,\" {npc} says. \"Heaven is not listening. You are nearer than heaven. I do not ask for myself.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I will think about it\"",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "im6_monk",
+      "flag": "im6_rain_asked",
+      "log": "{npc} bows and sits down on the bank to wait. {He} is still sitting there at sunset, chanting under {his} breath. Monks, you learn, are very good at waiting."
+     }
+    },
+    {
+     "text": "\"Rain is not mine to give, monk. You know that\"",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "im6_monk",
+      "flag": "im6_rain_asked",
+      "log": "\"I know,\" {npc} says. \"And the valley is dying anyway. I only thought you should be asked.\" {He} goes back up the ridge. You lie awake under the white sky."
+     }
+    },
+    {
+     "text": "\"Stay. Talk to me while the sky decides\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": [
+       "im6_monk",
+       "serpent_friend"
+      ],
+      "flag": "im6_rain_asked",
+      "mem": {
+       "deed": "listened",
+       "w": 15,
+       "note": "let me sit with it"
+      },
+      "log": "You talk until midnight: about sutras, about frogs, about what heaven might want. {npc} has a dry way of saying things that makes you laugh, which you did not know you could do."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_monk",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_monk",
+     "ageAbs": 50,
+     "opinion": 10,
+     "male": true
+    }
+   }
+  },
+  {
+   "id": "dc_im6_rain_2",
+   "cat": "insight",
+   "weight": 18,
+   "once": true,
+   "text": "The hundred-and-tenth day. A child in the valley has died of the heat. The rice is straw. Above the pool the sky is a closed lid: no cloud has been sent, and you know, the way old things know, that it was decided up there that none would be. {npc} stands on the bank and does not ask again.",
+   "npc": {
+    "role": "im6_monk"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_rain_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "im6_monk"
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "choices": [
+    {
+     "text": "Give the rain without leave",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "rain": 1,
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "im6_stole_rain",
+      "mem": {
+       "deed": "rain",
+       "w": 30,
+       "note": "gave the rain heaven would not"
+      },
+      "log": "You go up into the sky without permission and tear the clouds open with your own body. It rains for three days. The valley drinks. Somewhere far above, something turns its head and looks down at you."
+     }
+    },
+    {
+     "text": "Climb into the sky and petition heaven first",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 15,
+      "tally": {
+       "rain": 1,
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im6_rain_waited",
+      "log": "You coil on a cloud for a day and a night, saying the monk's words to the empty blue. At dawn a thin grey rain is sent, with leave. It is not enough. But it is clean, and heaven remembers who asked."
+     },
+     "fail": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_rain_waited",
+      "log": "Heaven does not answer. The rain comes eleven days later, on heaven's own schedule, and by then two more people in the valley are dead. {npc} buries them and says nothing to you at all."
+     }
+    },
+    {
+     "text": "Do nothing. Heaven has its reasons",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} goes back up the ridge without a word. The rain comes in its own time. The valley does not build you a shrine that year, or the next."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rain_3",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "Thunder with no cloud. A messenger of heaven comes down the ridge on a stair of lightning to punish the serpent that stole the rain. You flee to the hermitage, and {npc} pours you, the way the old ones can be poured, into the stone water basin under {his} sleeping platform, and goes out into the courtyard to meet it. \"Where is the serpent?\" it asks. {npc} points at the pear tree. \"There,\" {he} says.",
+   "npc": {
+    "role": "im6_monk"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_rain_2"
+    ],
+    "flags": [
+     "im6_stole_rain"
+    ],
+    "npcFlags": [
+     "im6_monk"
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "choices": [
+    {
+     "text": "Stay hidden and trust the monk",
+     "effects": {
+      "luck": 5,
+      "comprehension": 4,
+      "flag": "im6_pear_tree",
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "hidden",
+       "w": 30,
+       "note": "hid it from heaven and pointed at the pear tree"
+      },
+      "log": "The lightning comes down on the pear tree and splits it to the root. The messenger, satisfied, goes back up its stair. It never asks whose pear tree it was. In the basin you shake for an hour, as you have not shaken since you were an egg."
+     }
+    },
+    {
+     "text": "Come out so the monk is not punished in your place",
+     "effects": {
+      "health": -30,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "im6_pear_tree",
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "faced_heaven",
+       "w": 30,
+       "note": "came out to face heaven for me"
+      },
+      "log": "You come out of the basin and up to your full length in the courtyard. The lightning takes you across the back and leaves a white seam in your scales that will never darken. The messenger seems almost satisfied. {npc} weeps, which you did not expect. (-30 health)"
+     }
+    },
+    {
+     "text": "Fight the messenger of heaven",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The messenger of heaven"
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 3,
+       "legend": 3
+      },
+      "flag": "im6_pear_tree",
+      "log": "You meet the lightning with your own body and bite it out of the air. The messenger goes back up the stair, more surprised than hurt. Heaven will remember this. So will every serpent who hears of it."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The lightning takes you across the whole courtyard and does not stop. Heaven's thunder is not a hunter's spear.",
+      "deathCause": "heaven's thunder, for a rain you were not given leave to give"
+     },
+     "risky": true
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rain_4",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The split pear tree in the hermitage courtyard has put out one green shoot from its black stump. {npc} is old now and sweeps around it every morning very carefully. \"There is an old story,\" {he} tells you, \"about a dragon who served a monk like a disciple for years after the monk saved it. I mention this for no reason.\"",
+   "npc": {
+    "role": "im6_monk"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_rain_3"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "im6_monk",
+     "serpent_friend"
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "choices": [
+    {
+     "text": "Serve {him}: carry water, chase off bandits, listen to the sutras",
+     "effects": {
+      "comprehension": 6,
+      "qi": 12,
+      "tally": {
+       "virtue": 2
+      },
+      "mem": {
+       "deed": "served",
+       "w": 25,
+       "note": "served the hermitage like a disciple"
+      },
+      "log": "Ten years of carrying water up a mountain in your mouth, very carefully, like a tiger carrying a kitten. You learn the Diamond Sutra by heart. {npc} says you chant it like a waterfall: too loud, but sincerely."
+     }
+    },
+    {
+     "text": "\"I owe you my life, not my years\"",
+     "effects": {
+      "luck": 3,
+      "log": "{npc} laughs. \"Correct,\" {he} says. \"The old story is a very bad story.\" But you come up the ridge every spring anyway, to see the shoot on the pear tree."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rain_5",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} dies in the winter, very old, sitting up, in the middle of a sutra. The hermitage is too poor for a proper funeral. A few villagers carry the body to the pyre on the ridge through dry, bitter cold.",
+   "npc": {
+    "role": "im6_monk"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_rain_4"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "im6_monk"
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "choices": [
+    {
+     "text": "Send a soft rain after the fire has done its work, with no leave asked",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2,
+       "legend": 2
+      },
+      "npcPass": "old age, in the middle of a sutra",
+      "log": "A warm rain in midwinter, on one ridge only, for one hour. The villagers kneel in it. Up above, something looks down again, and this time it decides not to see."
+     }
+    },
+    {
+     "text": "Coil around the pear tree all night, in the snow",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "npcPass": "old age, in the middle of a sutra",
+      "log": "In the morning the snow has melted in a ring around the tree. In spring it blossoms, for the first time since the lightning."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rain_6",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A long summer storm passes over the pool, and inside the thunder there is a voice that is not a voice: heaven, remembering a serpent who asked first. Rain falls on you that is warmer than any rain should be.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_rain_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "im6_rain_waited"
+    ]
+   },
+   "arc": "The Rain Without Leave",
+   "choices": [
+    {
+     "text": "Open your mouth and drink it",
+     "effects": {
+      "qi": 25,
+      "tally": {
+       "legend": 1
+      },
+      "log": "It goes down like light. Your scales shine for a month afterwards, and the fish keep a respectful distance."
+     }
+    },
+    {
+     "text": "Lie still and let it fall on the valley instead",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "virtue": 2,
+       "rain": 1
+      },
+      "log": "You do not keep it. The valley has the best harvest in a generation, and the old monk on the ridge, hearing why, laughs until there is nothing for it but to sit down."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_shaman_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A mudang dances a gut on your bank for three days, bells and fan and drums, to call up a boy who drowned in the river last spring. On the third night {npc} stops, out of breath, and looks straight at you through the water. \"I know you are there,\" {he} says. \"The boy is in your deep. Give the boy back to the mother who is waiting.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Gut on the Bank",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Bring the boy up, gently",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": [
+       "im6_shaman",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "returned",
+       "w": 25,
+       "note": "gave the drowned boy back"
+      },
+      "log": "You find the boy's body in a silt-hollow at the bottom, where the current took it, and carry it up on your back, very gently. The mother's wailing on the bank is the worst and best sound you have heard in a century."
+     }
+    },
+    {
+     "text": "\"The boy went to the sea, not to me. But I will tell you where\"",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "im6_shaman",
+       "serpent_friend"
+      ],
+      "log": "You can taste the river all the way down. A day's walk south, a willow on a sandbar. {npc} goes. The boy is there."
+     },
+     "fail": {
+      "npcFlag": "im6_shaman",
+      "log": "You guess wrong. {npc} walks four days and comes back empty-handed and says nothing about it, which is somehow worse than shouting."
+     }
+    },
+    {
+     "text": "\"The dead in my water stay in my water\"",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "npcFlag": "im6_shaman",
+      "log": "{npc} bows very low and very carefully, and packs up the bells, and goes. In the villages they start calling your pool the Pool of the Kept Dead."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_shaman",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_shaman",
+     "ageAbs": 45,
+     "opinion": 0
+    }
+   }
+  },
+  {
+   "id": "dc_im6_shaman_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} comes back alone, years later, without the drums. \"The spirits tell me the sky is watching you,\" {he} says. \"When you rise, someone has to name you. I would like it to be someone who has spoken to you. Let me tell your story, in every village I dance in.\"",
+   "npc": {
+    "role": "im6_shaman"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_shaman_1"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "im6_shaman",
+     "serpent_friend"
+    ]
+   },
+   "arc": "The Gut on the Bank",
+   "choices": [
+    {
+     "text": "\"Tell it true. The good parts and the bad\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "For years {npc} sings your story at every gut from here to the coast. The true version. People like it better than the made-up ones."
+     }
+    },
+    {
+     "text": "\"Tell them I am a dragon. Leave out the rest\"",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "charm": 2,
+      "log": "The song {npc} makes is beautiful and only half true. It spreads like fire across three provinces. You do not entirely like it, and you do not ask for it to stop."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_painter_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "An ink painter has been sitting on your bank for a month, painting you on a scroll as long as a boat. It is very good. It is better than good. But the eyes are blank. \"Everyone knows,\" {npc} says without looking up, \"if you paint in a dragon's eyes, it flies off the scroll. I am not a fool.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Painter Who Left Out the Eyes",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Paint them. Let us see\"",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 15,
+      "tally": {
+       "legend": 4
+      },
+      "npcFlag": [
+       "im6_painter",
+       "serpent_friend"
+      ],
+      "log": "{npc} touches two dots of ink to the paper. Nothing happens. Then a wind comes off the pool and the scroll lifts out of {his} hands and flies, rolling and unrolling, out over the valley and away. Neither of you says a word for an hour."
+     },
+     "fail": {
+      "charm": 2,
+      "npcFlag": "im6_painter",
+      "log": "{npc} paints the eyes. Nothing happens at all. \"Well,\" {he} says, \"that is a relief, and also the greatest disappointment of my life.\" {He} sells the scroll for a fortune anyway."
+     }
+    },
+    {
+     "text": "\"Leave them blank. I am not finished yet either\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": [
+       "im6_painter",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "understood",
+       "w": 18,
+       "note": "understood about the eyes"
+      },
+      "log": "{npc} stares at you, then at the scroll, then laughs and rolls it up. \"A dragon without eyes,\" {he} says, \"for a dragon without horns. Perfect.\""
+     }
+    },
+    {
+     "text": "Ask {him} to paint you a fish instead",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "im6_painter",
+      "log": "The fish is so lifelike that a heron lands on the scroll. {npc} considers this the high point of {his} career."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_painter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_painter",
+     "ageAbs": 50,
+     "opinion": 5
+    }
+   }
+  },
+  {
+   "id": "dc_im6_painter_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A merchant arrives with a long scroll in a lacquer case: the work of {npc}, the famous painter, now dead. It shows a serpent in a pool, very like you. The merchant wants to know if you will put your mark on it, a scale pressed into the paper, so it can be sold as the true portrait.",
+   "npc": {
+    "role": "im6_painter"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_painter_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "im6_painter"
+    ]
+   },
+   "arc": "The Painter Who Left Out the Eyes",
+   "choices": [
+    {
+     "text": "Press a scale into the corner",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "npcPass": "old age, brush in hand",
+      "log": "The scroll changes hands eleven times in four hundred years. Every owner swears the serpent in it moves at night."
+     }
+    },
+    {
+     "text": "\"No. Hang it in the village shrine, where it belongs\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, brush in hand",
+      "log": "The merchant argues, then sees how large you are, and stops arguing. The scroll hangs in the shrine. Children are taken to see it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_general_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A general on a lame horse, nineteen soldiers left of three thousand, comes splashing across the ford below your pool at night. The pursuit is an hour behind. {npc} sees you in the river and does not even flinch; {he} is past flinching. \"Serpent,\" {he} says. \"Raise this river behind us, and I will build you a shrine in every town I ever take back.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The General at the Ford",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Raise the river behind them",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "flag": "im6_general_ford",
+      "npcFlag": "im6_general",
+      "mem": {
+       "deed": "saved_army",
+       "w": 25,
+       "note": "raised the river behind us"
+      },
+      "log": "The ford swells into a brown flood in the time it takes to say so. On the far bank, a thousand torches stop at the water and mill about like confused fireflies. Nineteen soldiers sleep on your shore and wake alive."
+     }
+    },
+    {
+     "text": "Hide them in fog, but leave the river as it is",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "im6_general",
+      "log": "The pursuers cross the ford into a fog so thick they lose each other. By morning the nineteen are gone into the hills, and nobody drowned, on either side."
+     }
+    },
+    {
+     "text": "\"Your war is not my river's war\"",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "im6_general",
+      "log": "{npc} nods, as if this is the answer {he} expected from everyone now, and leads the nineteen on into the dark."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_general",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_general",
+     "ageAbs": 44,
+     "opinion": 0
+    }
+   }
+  },
+  {
+   "id": "dc_im6_general_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Banners on the road. {npc} has come back, a victor this time, older, with a lacquered tablet carved in gold: THE SERPENT WHO HELD THE FORD. A shrine is being built on your bank, with a tiled roof and a bell.",
+   "npc": {
+    "role": "im6_general"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_general_1"
+    ],
+    "minYearsAfter": 6,
+    "flags": [
+     "im6_general_ford"
+    ],
+    "npcFlags": [
+     "im6_general"
+    ]
+   },
+   "arc": "The General at the Ford",
+   "choices": [
+    {
+     "text": "Accept the shrine",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "charm": 2,
+      "log": "Soldiers come on the anniversary every year for a century and pour liquor into your pool. You develop opinions about liquor."
+     }
+    },
+    {
+     "text": "\"Build it at the ford instead, for the drowned on both sides\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "log": "{npc} is silent for a long time. Then {he} has the tablet recarved. The shrine at the ford is for the drowned, and it has two altars."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_widow_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "An old woman comes to the pool every year on the same day with a bowl of rice and talks to the water as if it were a son. Her son drowned here forty years ago. This year, for the first time, you answer. \"Grandmother. I am not him.\" She is quiet a long time. \"I know,\" she says. \"But you have been listening, haven't you?\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "Rice for the Drowned",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Yes. Every year. Tell me about him\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im6_widow",
+      "log": "She tells you about him until the rice is cold: the way he whistled, the dog he had, the girl he was too shy to talk to. You keep all of it. When she goes, she pats the water like a head."
+     }
+    },
+    {
+     "text": "Let her go on believing you are him",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "im6_widow",
+      "log": "You say, \"Mother, I am well, the water is warm.\" She cries and laughs at once, and goes home lighter than she has walked in a long time. You are not sure it was right. You are sure it was kind."
+     }
+    },
+    {
+     "text": "\"He is not here. Stop coming, grandmother\"",
+     "effects": {
+      "comprehension": 2,
+      "log": "She takes the bowl and goes. She does not come back the next year. You find, to your surprise, that you wait for her."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_widow_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A middle-aged man comes to the pool on the old woman's day, with a bowl of rice. \"My grandmother died in the spring,\" he says. \"She made me promise to keep coming. She said you would want to hear how the family is.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_widow_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "im6_widow"
+    ]
+   },
+   "arc": "Rice for the Drowned",
+   "choices": [
+    {
+     "text": "\"I would. Sit down\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "He comes every year. Then his daughter does. Then hers. The rice on the bank on that day outlasts the village's name."
+     }
+    },
+    {
+     "text": "Take the rice, and send him home with a carp",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The carp is enormous. The family eats it at the memorial rite, and says it is the best fish anyone has ever tasted, which it is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_merchant_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A salt merchant with a very good hat and an abacus kneels on your bank and lays out a cloth of silver. \"A small thing,\" {npc} says. \"You know where the river will flood next spring. I know how to buy the fields below it, cheap, the year before. We split the difference. Nobody gets hurt who would not have been hurt anyway.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Salt Merchant's Bargain",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Tell {him} the truth and let the farmers know too",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You tell {npc} exactly where the flood will come, and then you tell the farmers the same thing, louder. Nobody sells. {npc} sits on the bank and does sums for an hour, and then, unexpectedly, laughs."
+     }
+    },
+    {
+     "text": "Tell {him} the wrong valley",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "log": "{npc} buys four hundred fields of dry high ground at a great price and waits for a flood that comes somewhere else. {He} is ruined, and somehow in the gossip of the salt guild it is your fault, which it is."
+     }
+    },
+    {
+     "text": "Swallow the silver, and the cloth, and nearly {him}",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3
+      },
+      "log": "{npc} runs faster than a fat merchant should be able to. The salt guild sends no more proposals. The silver sits in your belly for a century and gives you indigestion."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_merchant",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_merchant",
+     "ageAbs": 47,
+     "opinion": -5
+    }
+   }
+  },
+  {
+   "id": "dc_im6_exorcist_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A very young exorcist arrives with a peachwood sword, a satchel of yellow talismans and a speech. The speech is about the demon of the pool and how {npc} has been sent to bind it. You let {him} finish. Then you say, \"Which talisman is for me? I would like to read it.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ]
+   },
+   "arc": "The Exorcist's First Demon",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Read the talisman and correct the characters",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": [
+       "im6_exorcist",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "taught",
+       "w": 18,
+       "note": "corrected my talismans"
+      },
+      "log": "Two of the characters are wrong and one is upside down. {npc} goes red to the ears. You spend the afternoon fixing the whole satchel. {He} goes home with no demon and the best talismans in the province."
+     }
+    },
+    {
+     "text": "Let {him} try, and pretend it works",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "im6_exorcist",
+      "log": "The talisman flutters onto the water. You sink, with a great deal of thrashing and a mournful groan. {npc} reports a complete success. {His} career is made. Every year after, a small bottle of good liquor is left on your bank with no note."
+     }
+    },
+    {
+     "text": "Eat the talismans",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 2
+      },
+      "npcFlag": "im6_exorcist",
+      "log": "They taste of cinnabar and paste. {npc} watches the satchel go down your throat and sits down very suddenly on the bank."
+     }
+    }
+   ],
+   "npc": {
+    "role": "im6_exorcist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_exorcist",
+     "ageAbs": 19,
+     "opinion": -10
+    }
+   }
+  },
+  {
+   "id": "dc_im6_exorcist_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is the chief exorcist of the province now, and the court has ordered the pool sealed: too many stories, too many shrines, a serpent that talks to people. {He} comes alone first. \"I have to seal something,\" {he} says. \"I would prefer it was not you.\"",
+   "npc": {
+    "role": "im6_exorcist"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     9
+    ],
+    "after": [
+     "dc_im6_exorcist_1"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "im6_exorcist",
+     "serpent_friend"
+    ]
+   },
+   "arc": "The Exorcist's First Demon",
+   "choices": [
+    {
+     "text": "Help {him} seal the empty cave upstream instead",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "You coil in the cave long enough for the court officials to see a serpent go in, then leave by an underwater channel only you know. The seal is magnificent. It seals nothing. {npc} gets a promotion."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The seal catches the tip of your tail as you slip out, and burns. {npc} breaks it at once, in front of the officials, and loses {his} post. {He} says it was worth it. (-15 health)"
+     }
+    },
+    {
+     "text": "\"Seal me, then. I can sleep under a seal for a while\"",
+     "effects": {
+      "qi": 20,
+      "tally": {
+       "virtue": 2
+      },
+      "mem": {
+       "deed": "trusted",
+       "w": 25,
+       "note": "let me seal it, trusting I would let it out"
+      },
+      "log": "Thirty years under a seal of yellow paper and river stone. You sleep, mostly. On the day {npc} retires, {he} comes down at dawn and breaks it with {his} own hands, and you rise out of the water into the sun."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_pact_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "Twelve disciples in white and blue climb down to your pool carrying a lacquer chest. They are from the Cheonsong Sect on the ridge, the Heavenly Pine. Their founder, three hundred years dead, left a prophecy: a great serpent would guard the sect for ten generations, and the sect would never fall. \"We believe,\" says the eldest, \"it is you.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     7
+    ]
+   },
+   "arc": "The Ten-Generation Pact",
+   "choices": [
+    {
+     "text": "\"Prophecies are what the dead say to keep the living busy. But go on\"",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im6_pact_open",
+      "log": "They open the chest: spirit herbs, a jade disc, a bronze seal with a serpent on it. They want nothing today, they say. They only want you to think about it. You do."
+     }
+    },
+    {
+     "text": "\"Show me the Heavenly Pine first. Then talk to me of prophecy\"",
+     "effects": {
+      "charm": 3,
+      "flag": "im6_pact_open",
+      "log": "The eldest bows. \"The gate will be open to you,\" she says, \"whenever you come.\" It is the first time in a thousand years anyone has invited you anywhere."
+     }
+    },
+    {
+     "text": "Drive them off with a wave over the bank",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "strength": 2,
+      "log": "Twelve wet disciples and an empty chest go back up the ridge. The prophecy, you suspect, will simply wait. Prophecies are patient. So, unfortunately, are sects."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_pact_2",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "You go up the ridge in a river of fog and coil around the Heavenly Pine's training ground to see what kind of people they are. A hundred disciples practising forms. A cook. A sick old gatekeeper who is still on the gate. And a flood is coming down the valley toward the village below, the kind you can feel in your teeth.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_im6_pact_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "im6_pact_open"
+    ]
+   },
+   "arc": "The Ten-Generation Pact",
+   "choices": [
+    {
+     "text": "Watch what they do about the village",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_pact_worthy",
+      "log": "Before the water reaches the village, the whole sect is down the ridge in the rain, carrying grandmothers. The sect master is waist-deep in the mud with a child on each arm. You think: these, perhaps."
+     },
+     "fail": {
+      "flag": "im6_pact_doubt",
+      "log": "They bar the gate and keep training. The village floods. Afterwards they say a sect that leaves its training is a sect that dies. Perhaps. You stop the water yourself, angry, and go home."
+     }
+    },
+    {
+     "text": "Stop the flood yourself and see who thanks you",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im6_pact_worthy",
+      "log": "You turn the water at the bend. The village thanks the sect. The sect master, to her credit, comes down to your pool that night alone and thanks you, and says the village should know the truth. You find you like her."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_pact_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The Heavenly Pine comes for your answer. The sect master kneels on the bank with the bronze seal. The terms are carved on it: the serpent guards the sect, its gate and its valley for ten generations, and comes when called, and does not leave the pool while the pact lasts. The pool would be honoured. You would be bound. There would be no sky until the tenth generation was buried.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_im6_pact_2"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "im6_pact_worthy"
+    ]
+   },
+   "arc": "The Ten-Generation Pact",
+   "choices": [
+    {
+     "text": "Take the seal into your mouth: be their guardian beast",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 3
+      },
+      "beastEnding": "guardian",
+      "log": "The bronze goes cold, then warm, in your mouth, and the pact goes into you like a hook into a fish. Ten generations of disciples will bow to your pool before they train. Two hundred and fifty years of someone else's children. The sky can wait. It has before."
+     }
+    },
+    {
+     "text": "\"Not bound. But I will be your friend, and that is worth something\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im6_pact_friend",
+      "log": "The sect master is silent a long time, then laughs and puts the seal away. \"The founder would hate this,\" she says. \"I like it.\" The sect builds you a small shrine anyway, and asks nothing of it."
+     }
+    },
+    {
+     "text": "\"One generation. Unbound. Then we will see\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im6_pact_friend",
+      "log": "A long, polite argument. In the end the bronze seal goes back in its chest, and a single handshake is agreed on, which is difficult with a serpent, and is accomplished with a whisker."
+     }
+    },
+    {
+     "text": "Take their offerings and refuse the seal",
+     "effects": {
+      "strength": 3,
+      "qi": 15,
+      "tally": {
+       "fear": 2
+      },
+      "log": "You eat the spirit herbs, swallow the jade disc and push the seal back with your nose. The Heavenly Pine goes home poorer and wiser. The prophecy, you suspect, will now find some other serpent."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_pact_4",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Fire on the ridge. A rival sect has come for the Heavenly Pine in the night, two hundred blades, and the old sect master, very old now, is standing alone at the gate. A disciple runs down to your pool, bleeding. \"We cannot ask you,\" the disciple says. \"We are only telling you.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_im6_pact_3"
+    ],
+    "minYearsAfter": 12,
+    "flags": [
+     "im6_pact_friend"
+    ]
+   },
+   "arc": "The Ten-Generation Pact",
+   "choices": [
+    {
+     "text": "Go up the ridge in a flood",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 3,
+       "virtue": 2,
+       "fear": 1
+      },
+      "flag": "im6_pact_saved",
+      "log": "You come up the ridge as a river comes down it, backwards, and the two hundred go over the edge in a brown wave. In the morning the old sect master is sitting on the gate step with the seal in her lap. \"Now?\" she asks. \"Not yet,\" you say. She laughs."
+     },
+     "fail": {
+      "health": -25,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im6_pact_saved",
+      "log": "They have talisman spears. The fight is long and ugly and a spear finds your flank, but the gate holds, and the sect lives. (-25 health)"
+     }
+    },
+    {
+     "text": "Take the bronze seal now, before the gate falls",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 3
+      },
+      "beastEnding": "guardian",
+      "log": "You go up the ridge and take the seal from the old master's hands in front of the rival sect, and the pact closes on you like a gate. The two hundred see what is coiled around the Heavenly Pine now, and leave. They will not come back for ten generations."
+     }
+    },
+    {
+     "text": "\"Friendship is not a chain.\" Stay in the pool",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "You stay. The sect survives, barely, without you, and the next master never comes down to the pool again. It was your right. It does not feel like one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_core_1",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "A pill master in the capital has written, in a book many people have read, that the inner core of a thousand-year serpent, a naedan the size of a fist, can make a grandmaster of anyone who swallows it. Now there are scouts on every ridge around your pool, counting.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ]
+   },
+   "arc": "The Hunt for the Naedan",
+   "choices": [
+    {
+     "text": "Lie on the bottom in the mud until they lose interest",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "A year of silt and patience. The scouts decide the stories are only stories, and go to ruin some other pool."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "flag": "im6_core_hunted",
+      "log": "A scout sees a bubble the size of a cartwheel rise and burst. The word goes down the ridge. A hunting party is coming."
+     }
+    },
+    {
+     "text": "Rise up in front of them and say: \"Come and take it\"",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2,
+       "hunted": 2
+      },
+      "flag": "im6_core_hunted",
+      "log": "Half the scouts faint. The other half run all the way to their sects. Fear keeps most hunters away; it brings the best ones running."
+     }
+    },
+    {
+     "text": "Visit the pill master's house in a thunderstorm",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "You do not hurt the old man. You only look in at his window, one eye filling the whole frame, and ask politely for a correction to page forty. The second edition says the core is poisonous."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_core_2",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "They come at the new moon: forty cultivators with iron chain nets, and a man with a talisman spear who knows exactly where the reverse scale is on a serpent's throat. The nets come down over the water in the dark.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ],
+    "after": [
+     "dc_im6_core_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im6_core_hunted"
+    ],
+    "notFlags": [
+     "im6_core_warned"
+    ]
+   },
+   "arc": "The Hunt for the Naedan",
+   "choices": [
+    {
+     "text": "Fight them in the water",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 3,
+       "legend": 3
+      },
+      "log": "The spear comes for the reverse scale and finds it, and something in you goes white and enormous. When you come back to yourself the nets are torn, the forty are in the river, and the spear is in three pieces on the bank."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The spear finds the reverse scale. The rest is chains.",
+      "deathCause": "a sect hunting party, for the core in your belly"
+     },
+     "risky": true
+    },
+    {
+     "text": "Dive for the underwater channel and leave the pool to them",
+     "effects": {
+      "luck": 3,
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The nets catch your tail and tear a row of scales away as you go. You come out a league downstream, alive and furious and much less shiny. (-10 health)"
+     }
+    },
+    {
+     "text": "Call the river up into a flood and drown their torches",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "fear": 4,
+       "rain": 1
+      },
+      "log": "The pool overflows its banks in a single breath. Torches, nets, spears, men: the brown water takes everything a mile downriver and sets most of it down on a sandbar. Most of them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_core_3",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "The man with the talisman spear comes back decades later, alone, old, on a stick. He has heard you can speak. \"I spent my whole life wanting your core,\" he says. \"I am dying. I would like to know what it is.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_im6_core_2"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Hunt for the Naedan",
+   "choices": [
+    {
+     "text": "Open your mouth and let him see the light in your throat",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "comprehension": 3,
+      "log": "He looks for a long time at the pale light down there in the dark. \"It is only a pearl of the deep,\" he says at last, very quietly. \"It is only you.\" He goes home and burns his notes."
+     }
+    },
+    {
+     "text": "\"Something you would have to kill me to see. You did not. Go home\"",
+     "effects": {
+      "luck": 3,
+      "log": "He nods, as if that is the answer he was afraid of, and goes home without it. You do not hate him. You find that you would like to, and cannot quite."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_flood_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "The new magistrate has dammed your river upstream to water his own rice estates. The pool is shrinking for the first time in eight hundred years; you can see stones you have not seen since you were a Gureongi. Something in you is rising, slow and brown, and the clouds are rising with it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     7
+    ]
+   },
+   "arc": "The Flood Serpent",
+   "choices": [
+    {
+     "text": "Let the anger go: break the dam",
+     "effects": {
+      "strength": 5,
+      "tally": {
+       "fear": 4,
+       "rain": 1
+      },
+      "flag": "im6_flood_broke",
+      "log": "The dam goes in one night. So does the magistrate's estate, and the road, and the two villages below the road. By morning you are a river again, and the anger is gone, and you look at what you did."
+     }
+    },
+    {
+     "text": "Go to the magistrate's house and speak",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "A serpent's head as long as the magistrate's sedan chair rests on his garden wall and explains, reasonably, about water. He opens the sluices himself, in his nightclothes, before dawn."
+     },
+     "fail": {
+      "tally": {
+       "fear": 2
+      },
+      "flag": "im6_flood_broke",
+      "log": "He calls the archers. The arrows annoy you. The anger comes up after all, and the dam goes with it, and the villages below it."
+     }
+    },
+    {
+     "text": "Swallow the anger and dig a new channel around the dam",
+     "effects": {
+      "comprehension": 4,
+      "health": -10,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A season of tearing through rock with your own body. The river finds its way back to you around the dam, and the magistrate never knows how close he came. (-10 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_flood_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Two villages are under brown water to the roofs. On every roof there are people, wet and silent, looking at the great shape that moves among the drowned trees.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_im6_flood_1"
+    ],
+    "flags": [
+     "im6_flood_broke"
+    ]
+   },
+   "arc": "The Flood Serpent",
+   "choices": [
+    {
+     "text": "Carry them to the hill, roof by roof",
+     "effects": {
+      "health": -10,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Four hundred people ride your back to the hillside, one roof at a time. Not one of them says thank you. Every one of them tells their grandchildren. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the water go down on its own. Do not look at what you did",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "log": "It goes down in three days. Most of them live. They do not forget who they waited for, on those roofs, and who did not come."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_flood_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The villages have built a shrine at the river bend, with a carved wooden serpent painted green and gold: the Gyo shrine. Every spring, before the rains, they drown a black pig there, to keep the flood serpent sleeping.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "im6_flood_broke"
+    ],
+    "after": [
+     "dc_im6_flood_1"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Flood Serpent",
+   "choices": [
+    {
+     "text": "Tell them, in a dream, to stop drowning pigs",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "comprehension": 2,
+      "log": "Six village elders have the same dream on the same night. The next spring they pour a bowl of clear water into the river instead, which is cheaper and, you think, more polite."
+     }
+    },
+    {
+     "text": "Eat the pigs",
+     "effects": {
+      "strength": 3,
+      "qi": 6,
+      "tally": {
+       "fear": 2
+      },
+      "log": "A pig a year for a century. The shrine prospers. Nobody remembers whether it is love or fear any more, which is how most worship ends up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_anger_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": false,
+   "text": "Something small has made you angry: a stone thrown at your head, a dead dog dumped in your pool, a hunter's arrow in your side for no reason at all. You are a Gyo now. When you are angry, the river is angry, and the river does not care how small the reason was.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     8
+    ]
+   },
+   "arc": "When the Gyo Is Angry",
+   "choices": [
+    {
+     "text": "Hold it in. Breathe like the deep",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 10,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The water rises to the lip of the bank, trembles there for an hour, and goes down. Nobody in the village ever knows how close it was."
+     },
+     "fail": {
+      "tally": {
+       "fear": 2,
+       "rain": 1
+      },
+      "health": -5,
+      "log": "It gets away from you. The river comes over the lower fields and takes a mill, a bridge and a season's rice. You are sorry afterwards. Being sorry does not dry anything."
+     }
+    },
+    {
+     "text": "Let it out. They should learn",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3
+      },
+      "log": "The flood goes through the lower village like a hand sweeping a table. Afterwards the rule about stones and dogs and arrows is taught again, with new details."
+     }
+    }
+   ],
+   "cooldown": 15,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_im6_dry_1",
+   "cat": "life",
+   "weight": 8,
+   "once": false,
+   "text": "Drought again. The villages carry a pig's head, rice cakes and a drum down to your bank and perform the rain rite, shouting at the sky and at you. They have heard you can call the rain. They have heard you can talk. They are not sure which one to ask for.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ]
+   },
+   "arc": "The Rain Rite",
+   "choices": [
+    {
+     "text": "Call the rain",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "rain": 1,
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "You go up into the heat and bring the clouds down by their edges. The drum stops. Then it starts again, much faster."
+     }
+    },
+    {
+     "text": "Wait for heaven's own rain",
+     "effects": {
+      "comprehension": 3,
+      "log": "It comes in nine days. The villages say the rite worked eventually. You let them."
+     }
+    },
+    {
+     "text": "Eat the pig's head and do nothing",
+     "effects": {
+      "qi": 5,
+      "tally": {
+       "fear": 2
+      },
+      "log": "The rite was not, it seems, a contract. The villages learn this. Some of them learn to fear you; some of them learn to stop asking."
+     }
+    }
+   ],
+   "cooldown": 12,
+   "maxPerLife": 4
+  },
+  {
+   "id": "dc_im6_hunt_1",
+   "cat": "danger",
+   "weight": 8,
+   "once": false,
+   "text": "Hunters again: a new band, new sect badges, the same harpoons. Every decade there are more who have read the pill master's book and not the second edition.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ]
+   },
+   "arc": "The Harpoons",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "They are not the best band you have met. They will be the last of this decade."
+     },
+     "fail": {
+      "health": -30,
+      "log": "A harpoon goes in under a scale and stays there.",
+      "deathCause": "monster hunters, after your core"
+     },
+     "risky": true
+    },
+    {
+     "text": "Call the mist and slip away",
+     "effects": {
+      "qi": -5,
+      "luck": 2,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "They harpoon a rock in the fog, very bravely, and go home with stories."
+     }
+    },
+    {
+     "text": "Speak to them first",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "It is hard to harpoon something that has just asked your name and how the family is. They leave. One comes back later, alone, to talk."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "They take talking as weakness and shoot. You take the harpoon in the shoulder and the hint. (-10 health)"
+     }
+    }
+   ],
+   "cooldown": 10,
+   "maxPerLife": 4
+  },
+  {
+   "id": "dc_im6_trib_1",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "A thousand years. The sky over the pool goes the colour of a bruise and stays that way for nine days, and on the ninth night the clouds open in a spiral directly above you. Heaven has noticed how old you are. This is the serpent's tribulation, and it does not miss.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     6
+    ]
+   },
+   "arc": "The Thousand-Year Thunder",
+   "choices": [
+    {
+     "text": "Rise to meet the lightning on the peak",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "qi": 30,
+      "tally": {
+       "legend": 3
+      },
+      "log": "Nine strikes. You take every one on your back and the ninth on your head, and when it is over your scales have gone from silver to the grey of storm cloud, and you can taste lightning for a year."
+     },
+     "fail": {
+      "health": -35,
+      "log": "The seventh strike finds the place where the scales are thin.",
+      "deathCause": "the thousand-year tribulation"
+     },
+     "risky": true
+    },
+    {
+     "text": "Go down to the bottom of the pool and endure it there",
+     "effects": {
+      "health": -20,
+      "qi": 15,
+      "log": "The lightning boils the top of the pool and kills every fish in it. Down at the bottom, in the dark, you live. It is not glorious. It is enough. (-20 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_trib_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The second tribulation comes for the Gyo: not lightning this time, but water. Every river in the province rises at once and runs toward your pool, and you understand that heaven wants to see whether a flood serpent can hold a flood in, or whether it will drown the world to save itself.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_im6_trib_1"
+    ]
+   },
+   "arc": "The Thousand-Year Thunder",
+   "choices": [
+    {
+     "text": "Hold the flood in your own body",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 6,
+      "qi": 30,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "You drink a province of floodwater and hold it. For three days you are a serpent the size of a lake. Then, slowly, you let it go into the sea. Not one village drowns."
+     },
+     "fail": {
+      "health": -25,
+      "tally": {
+       "virtue": 1,
+       "fear": 1
+      },
+      "log": "It is too much. Half the water gets past you and the lower valley floods. But only half. (-25 health)"
+     }
+    },
+    {
+     "text": "Let the water go where it will",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "fear": 3,
+       "rain": 1
+      },
+      "log": "You survive the tribulation easily. The province does not survive it nearly as easily. The chroniclers call it the Year of the Gyo."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_skin_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "You shed the thousand-year skin in the reeds at the far end of the lake: three days of tearing, then a long pale ghost of yourself lying in the water, as long as a river barge. In the morning, two village boys find it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ]
+   },
+   "arc": "The Thousand-Year Skin",
+   "choices": [
+    {
+     "text": "Let them keep it",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "luck": 2,
+      "log": "The skin is cut up and sold across three provinces as medicine for fevers, which it does not cure, and for courage, which it does."
+     }
+    },
+    {
+     "text": "Take it back and eat it, as serpents do",
+     "effects": {
+      "qi": 20,
+      "strength": 2,
+      "log": "The boys see the skin slide back into the water by itself. That story spreads further than the skin would have."
+     }
+    },
+    {
+     "text": "Speak to the boys: \"Take a piece each, and no more\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "im6_skin_boys",
+      "log": "Two scales, one each. They keep them all their lives. Their families keep them for longer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_skin_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "An old man comes to the lake with a single scale on a cord around his neck, worn smooth. \"I was one of the two boys,\" he says. \"I have been a swordsman all my life. Every time I should have died, I held this. I brought it back so you could see what it did.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ],
+    "after": [
+     "dc_im6_skin_1"
+    ],
+    "minYearsAfter": 50,
+    "flags": [
+     "im6_skin_boys"
+    ]
+   },
+   "arc": "The Thousand-Year Skin",
+   "choices": [
+    {
+     "text": "\"Keep it. Give it to someone young\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "He gives it to his granddaughter that winter. She will carry it into a war you will hear about, and come home."
+     }
+    },
+    {
+     "text": "Take it back and give him your blessing instead",
+     "effects": {
+      "qi": 5,
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You breathe on him once. He lives to a hundred and four and never catches a cold again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rival_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "There is another voice in the rain. Three valleys over, in a lake you have never seen, another thousand-year serpent has learned to speak, and the first thing it says, across the ridge, in a storm, is: \"The pearl is mine.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ]
+   },
+   "arc": "The Other Voice in the Rain",
+   "choices": [
+    {
+     "text": "\"There is more than one storm, cousin\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_rival_peace",
+      "log": "A long silence. Then a short laugh, like a rockfall. \"Cousin,\" it says. \"I have never had one.\" You talk across the ridge until the storm passes."
+     }
+    },
+    {
+     "text": "\"Then come and take it\"",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "flag": "im6_rival_war",
+      "log": "The other serpent goes quiet. But in every storm after that, you can feel it out there, measuring."
+     }
+    },
+    {
+     "text": "Say nothing. Let it think you did not hear",
+     "effects": {
+      "luck": 3,
+      "log": "It says it again in the next storm, and the one after. It is lonely, you realise. So, perhaps, are you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_rival_2",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "The other serpent comes over the ridge in a summer storm, in the flesh, bronze-black and scarred, and coils on the far side of your lake. It has come to fight, or to talk, and you suspect it has not decided which.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ],
+    "after": [
+     "dc_im6_rival_1"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Other Voice in the Rain",
+   "choices": [
+    {
+     "text": "Fight it for the lake",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "Three days of it, the lake churning, trees going over. On the fourth morning the bronze serpent goes back over the ridge, and does not speak again for a century."
+     },
+     "fail": {
+      "health": -25,
+      "log": "It is older than you, by a decade or two, and it has fought before. It leaves you in the shallows and goes home, not even gloating. (-25 health)"
+     }
+    },
+    {
+     "text": "\"Talk first. We can always fight after\"",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im6_rival_peace",
+      "log": "You talk for a week: about pearls, about humans, about how loud monks are. It tells you about the one storm it nearly caught the pearl in. When it goes home it says, \"Cousin. When the pearl falls, we will see.\" It sounds almost like a promise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_ferry_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "A ferry is lost on the river below your pool in a fog you did not call: thirty passengers, a ferryman asleep in the stern and reeking of liquor, rapids a mile downstream. You can hear a child asking, very calmly, whether they are going to die.",
+   "npc": {
+    "role": "im6_ferry_child",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_ferry_child",
+     "ageAbs": 7,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ]
+   },
+   "arc": "The Ferry in the Fog",
+   "choices": [
+    {
+     "text": "Take the ferry rope in your mouth and tow it to shore",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "Thirty people feel the ferry turn against the current and slide gently onto the sand. The child, {npc}, says, \"There is something pulling us,\" and nobody believes {him} except everybody."
+     }
+    },
+    {
+     "text": "Speak out of the fog: \"Steer left. Now right. Now left\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "A voice in the fog, steady as a stone. Someone grabs the oar and does exactly what it says. They land on the right bank. The ferryman wakes up and takes all the credit."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "health": -5,
+      "log": "Nobody can tell which way \"left\" is in a fog. In the end you have to tow it anyway, and scrape your belly on the rapids doing it. (-5 health)"
+     }
+    },
+    {
+     "text": "Lift the fog with a breath",
+     "effects": {
+      "qi": -8,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The whole river clears in one long sigh. Thirty people see the rapids ahead and the bank to the side and the shape in the water that just saved them, all at once."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_altar_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Officials from the provincial capital arrive with stonemasons. By royal order, your pool is to become a rain altar of the state, where the governor himself will pray in times of drought. Nobody has asked the pool.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     7
+    ]
+   },
+   "arc": "The Royal Rain Altar",
+   "choices": [
+    {
+     "text": "Let them build it",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "im6_altar",
+      "log": "Granite steps down to the water, a stone table, a pavilion with a painted ceiling. The fish are disturbed. You are, a little, flattered."
+     }
+    },
+    {
+     "text": "Speak to the chief official: \"Ask first\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "im6_altar",
+      "log": "The official goes white, then red, then very formal, and bows, and asks. You say yes. He writes it down in the official records: THE POOL CONSENTED. It is still there."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "He faints into the pool, which ends the conversation. The masons go home and the altar is never finished."
+     }
+    },
+    {
+     "text": "Wash the foundations away every night",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "After a month the officials decide the site is inauspicious, which is true, and go and build the altar at a different pool, which, as far as you know, is empty."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_altar_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The worst drought in a lifetime. The governor kneels at your altar in full court robes, sweating, with three hundred officials and a written prayer on yellow silk. Every farmer in the province is watching.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     8
+    ],
+    "after": [
+     "dc_im6_altar_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "im6_altar"
+    ]
+   },
+   "arc": "The Royal Rain Altar",
+   "choices": [
+    {
+     "text": "Give the rain at the exact moment the prayer ends",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "rain": 1,
+       "legend": 4
+      },
+      "log": "He reads the last word, and the first drop hits the yellow silk. Three hundred officials and ten thousand farmers see it. The story reaches the king in a week."
+     }
+    },
+    {
+     "text": "Give the rain three days early, on the farmers, without ceremony",
+     "effects": {
+      "qi": -12,
+      "tally": {
+       "rain": 1,
+       "virtue": 3
+      },
+      "log": "The governor arrives at a pool in pouring rain with nothing to pray for. The farmers know who it was for. So does the governor, eventually."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_debt_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A young swordsman stops at the pool to water a horse. You have never seen {him}. You know the face anyway: you have seen it in still water, long ago, from the other side, in a life when you had hands. {He} carries a jade token on {his} belt, very old, that you once tied there yourself. \"My family says we owe a serpent something,\" {npc} says, puzzled. \"Nobody remembers what.\"",
+   "npc": {
+    "role": "im6_debt",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_debt",
+     "ageAbs": 22,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ],
+    "marks": [
+     "mark:imugi_helped"
+    ]
+   },
+   "arc": "The Face in the Water",
+   "choices": [
+    {
+     "text": "\"You owe nothing. It was paid long ago, in a storm\"",
+     "effects": {
+      "comprehension": 5,
+      "luck": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "im6_debt",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "forgave",
+       "w": 20,
+       "note": "said our family owes nothing"
+      },
+      "log": "{npc} looks at you strangely, as if you have said something {he} has dreamed. Then {he} bows, and waters the horse, and goes on with {his} life lighter than {he} came."
+     }
+    },
+    {
+     "text": "Tell {him} the whole story: the storm, the jewel, the human who helped",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": [
+       "im6_debt",
+       "serpent_friend"
+      ],
+      "mem": {
+       "deed": "told_past",
+       "w": 25,
+       "note": "told me about the ancestor who helped a serpent"
+      },
+      "log": "You tell it as a story about someone else, because it is, mostly. {npc} listens without breathing. At the end {he} says, \"I knew it. I have always known it.\" You do not ask how."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_debt_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is old, and has come back with a grandchild, and the jade token. \"Our family will always be near this pool,\" {he} says. \"I have arranged it. When you go up into the sky, someone of ours will be watching.\"",
+   "npc": {
+    "role": "im6_debt"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ],
+    "after": [
+     "dc_im6_debt_1"
+    ],
+    "minYearsAfter": 35,
+    "marks": [
+     "mark:imugi_helped"
+    ],
+    "npcFlags": [
+     "im6_debt"
+    ]
+   },
+   "arc": "The Face in the Water",
+   "choices": [
+    {
+     "text": "\"Then I will look for your face, when I rise\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "The grandchild stares up at you with eyes you recognise, too. You understand, then, that some debts are not debts at all. They are threads."
+     }
+    },
+    {
+     "text": "\"Tell them to call me what they see. Not what they hope\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "{npc} nods slowly. It is the most honest thing anyone has asked of the family, and they will keep it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_scar_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A hunter comes to the lake carrying an old spear with a talisman burned into the shaft. The moment you see it, a place under your chin aches where nothing has ever touched you in this life. You know that spear. In another life, your own hands held it, in a storm, aimed at a serpent like you.",
+   "npc": {
+    "role": "im6_scar",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_scar",
+     "ageAbs": 35,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ],
+    "marks": [
+     "mark:imugi_hunted"
+    ]
+   },
+   "arc": "The Spear of a Past Life",
+   "choices": [
+    {
+     "text": "Rise and ask where the spear came from",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A family heirloom, the hunter says, from an ancestor who once hunted the great serpent of the abyss. {npc} does not understand why the serpent in front of {him} laughs, low and long, like a rockslide."
+     }
+    },
+    {
+     "text": "Take the spear and break it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The hunter"
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 2
+      },
+      "log": "The shaft snaps in your coils. The ache under your chin goes with it. Something that started a life ago is finished."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The old spear still knows where the reverse scale is. It finds it, and the hunter flees, and you lie in the shallows understanding exactly how your old self felt, on the other end. (-20 health)"
+     }
+    },
+    {
+     "text": "\"Keep it. Teach the young ones why it should never be used\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The hunter hangs the spear over the family door, unused. In that house, for generations, they tell a story about a hunter who changed sides."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im6_walked_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A traveller comes along the path above the pool, stops, looks down into the water a long time, and walks on. You know that walk. Somewhere very far back, in a life with feet, you stood on a path like this one, saw a serpent in a storm, and chose to keep walking. You have never known what you would have found if you had stayed.",
+   "npc": {
+    "role": "im6_walked",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im6_walked",
+     "ageAbs": 30,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     6,
+     10
+    ],
+    "marks": [
+     "mark:imugi_left"
+    ]
+   },
+   "arc": "The One Who Walked On",
+   "choices": [
+    {
+     "text": "Call out after {him}",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "called",
+       "w": 15,
+       "note": "called me back from the path"
+      },
+      "log": "{npc} stops, turns, comes back down. You talk until dark about nothing in particular. It is not the story you missed. It is a new one, and it will do."
+     }
+    },
+    {
+     "text": "Let {him} go. Some people are meant to pass",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "You watch {npc} go over the ridge. For the first time in a thousand years you understand your old self, who walked away. It was not cowardice. It was a different life, waiting."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

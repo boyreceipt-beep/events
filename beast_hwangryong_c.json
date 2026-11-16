@@ -1,0 +1,5376 @@
+{
+ "events": [
+  {
+   "id": "dc_hr_jajang_1",
+   "cat": "npc",
+   "weight": 34,
+   "once": true,
+   "text": "A monk has come home from years of study across the sea: {npc}, thin from the road, with boxes of scriptures and a story. At a far pond, {npc} tells the abbot, a divine man came out of the mist and said that the dragon of the Temple of the Yellow Dragon is the divine man's eldest child, set there to guard it. You are lying under the abbot's floor at the time. It is news to you.",
+   "npc": {
+    "role": "hr_jajang",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_jajang",
+     "ageAbs": 45,
+     "opinion": 15,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ]
+   },
+   "arc": "The Stranger Who Says He Is Your Father",
+   "choices": [
+    {
+     "text": "Listen to every word of it",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "hr_jajang",
+      "flag": "hr_jajang_heard",
+      "log": "The pond, the mist, the voice, the robes. The monk tells it well and believes it entirely. You lie under the floor and turn it over. You were a clod of warm clay in a farmer's house site. Nobody ever told you whose."
+     }
+    },
+    {
+     "text": "Shift under the floor, so the monk knows you heard",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "hr_jajang",
+      "flag": "hr_jajang_heard",
+      "log": "The floor of the abbot's room settles a finger, all at once, like somebody sitting down. The abbot spills the tea. {npc} goes white and then, slowly, very happy. The monk believes the divine man even more now. That may not have been wise."
+     }
+    },
+    {
+     "text": "Lie very still; this is a stranger's story about you",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "hr_jajang",
+      "flag": "hr_jajang_heard",
+      "log": "Nothing moves. {npc} finishes the story and drinks the tea. You are not sure how you feel about being somebody's child. You were never anybody's before. You lie there being nobody's a little longer, on purpose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jajang_2",
+   "cat": "npc",
+   "weight": 24,
+   "once": true,
+   "text": "{npc} has come down into the crypt alone at night to speak to you directly, the divine man's child. {npc} brings the rest of the message: build a pagoda of nine storeys in this temple, and the nine nations round the kingdom will bow, and the land will be at peace. The divine man wants it, {npc} says. Do you?",
+   "npc": {
+    "role": "hr_jajang"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_jajang_1"
+    ],
+    "npcFlags": [
+     "hr_jajang"
+    ]
+   },
+   "arc": "The Stranger Who Says He Is Your Father",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I had no father. I was clay. But I will hold the pagoda up\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_father_denied",
+      "npcFlag": "hr_jajang",
+      "mem": {
+       "deed": "answered",
+       "w": 25,
+       "note": "said you had no father but would hold the pagoda"
+      },
+      "log": "{npc} is startled, and then, oddly, more moved than if you had agreed. \"Then you choose it,\" {npc} says. \"That is better.\" The monk goes to the palace in the morning with the plan."
+     }
+    },
+    {
+     "text": "\"Then I am the divine man's child. Say that I am well\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3,
+       "weight": 2
+      },
+      "flag": "hr_father_accepted",
+      "npcFlag": "hr_jajang",
+      "mem": {
+       "deed": "answered",
+       "w": 30,
+       "note": "accepted your father"
+      },
+      "log": "A father. You try the word on and it fits strangely, like an inherited coat. {npc} weeps, and promises to pass on the message if ever the road leads back to that pond. You have a family now, of a kind, and a duty. Both are heavy. (Weight +2)"
+     }
+    },
+    {
+     "text": "\"What did the divine man look like?\"",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_father_asked",
+      "npcFlag": "hr_jajang",
+      "log": "{npc} thinks, and describes: tall, robed in yellow, slow to speak, with warm hands, and a way of standing as if the ground under the feet were a part of the body. {npc} stops. {npc} looks at the floor. \"Like you,\" {npc} says at last, very quietly. Neither of you knows what that means."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jajang_3",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The monk's story goes up to the throne, and with it the monk's counsel: a pagoda of nine storeys, to make the nine nations bow. The throne agrees. A tower of wood, taller than anything in the kingdom, over the centre of the temple, which is the centre of you. The court is excited. The treasury is not. The engineers are frightened. The ground is a marsh.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_jajang_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Stranger Who Says He Is Your Father",
+   "choices": [
+    {
+     "text": "Firm the ground for it now, years ahead",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "ph_earth": 2,
+       "weight": 2
+      },
+      "flag": "hr_pagoda_ground",
+      "log": "You gather yourself under the centre of the temple, tighter and harder than you have ever been, a fist of stone in the marsh. The engineers dig a test pit and hit something like bedrock where there should be mud. They are delighted. (Earth +2, Weight +2)"
+     }
+    },
+    {
+     "text": "Let them learn the ground honestly",
+     "effects": {
+      "comprehension": 3,
+      "log": "Test pits, piles, rammed earth in layers, years of it. The engineers learn the marsh the hard way and build a foundation that would hold without you. It will not have to. It is good that it could."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jajang_4",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is old now, and has founded other temples, and carried relics to them, and argued with kings, and is dying in a mountain hermitage far from the capital. On the last night {npc} asks the novices to carry the sickbed outside, so it is on the ground. \"The ground goes all the way there,\" {npc} says. \"It will hear.\"",
+   "npc": {
+    "role": "hr_jajang"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_jajang_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "hr_jajang"
+    ]
+   },
+   "arc": "The Stranger Who Says He Is Your Father",
+   "choices": [
+    {
+     "text": "Reach that far, and be warm under the bed",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, on the warm ground of a mountain hermitage",
+      "mem": {
+       "deed": "came",
+       "w": 30,
+       "note": "warmed the ground under me at the end"
+      },
+      "log": "It is very far, and you have never reached so far. The ground under the sickbed goes warm. {npc} smiles, and tells the novices that the divine man's child has come to see the old monk off, and dies before dawn."
+     },
+     "fail": {
+      "comprehension": 2,
+      "npcPass": "old age, in a mountain hermitage",
+      "log": "Too far. You feel it from the edge of your reach, a little light going out in the mountains. You were not there. {npc} believed you were. The novices say {npc} smiled at the end."
+     }
+    },
+    {
+     "text": "Send the message the monk never delivered, back to the pond",
+     "effects": {
+      "charm": 3,
+      "npcPass": "old age, in a mountain hermitage",
+      "log": "You do not know where the pond is. You send it anyway, into the ground, toward the west: the monk has come home, and is going. Whatever stands by that pond in the mist, if anything does, you hope it hears."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jajang_5",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A traveller from the far west, more than a century later, arrives at the temple asking about a pond and a divine man and a child. The story has gone out across the sea and come back changed: now it is the dragon who sent the monk home, and the divine man who was the dragon's dream.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_jajang_3"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "The Stranger Who Says He Is Your Father",
+   "choices": [
+    {
+     "text": "Let the story keep changing",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "A father, a child, a dream, a dragon. Every telling puts you somewhere different in it. You find that you do not need to know which is true. You only need the pagoda to stand."
+     }
+    },
+    {
+     "text": "Answer the traveller from the floor: \"I was clay\"",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "The traveller, who came a long way for a mystery, is given a plain answer by a floor, and is not disappointed at all. \"Clay,\" the traveller writes, \"is the oldest father.\" You like that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_1",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The master builder has come from the enemy kingdom to the west, borrowed by the court with gifts: {npc}, a carpenter of genius, with two hundred craftsmen. {npc} walks the temple ground for a week before touching a tool, and then kneels in the middle of it with a palm on the earth, like a doctor feeling a pulse.",
+   "npc": {
+    "role": "hr_builder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_builder",
+     "ageAbs": 45,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_jajang_3"
+    ]
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Let the builder feel exactly what the ground can bear",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_builder",
+      "flag": "hr_builder_met",
+      "mem": {
+       "deed": "felt",
+       "w": 20,
+       "note": "let me feel you through the temple ground"
+      },
+      "log": "{npc} feels it, and frowns, and feels again, and sits back. \"It is alive,\" {npc} tells the overseer, flatly, as an engineering fact. \"It will hold more than it should. Do not rely on that.\" You like this builder at once."
+     }
+    },
+    {
+     "text": "Hide yourself; let the ground feel like ground",
+     "effects": {
+      "strength": 2,
+      "npcFlag": "hr_builder",
+      "flag": "hr_builder_met",
+      "log": "You go cool and still. {npc} feels ordinary rammed marsh, and plans for ordinary rammed marsh: deeper footings, wider stones, more of everything. It will be the soundest pagoda in the world. It will not need you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_2",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "Years of work. The sixty-four foundation stones set in the rammed earth: twenty-eight round the outside, thirty-six inside, and in the very middle the great centre stone with a socket cut in it for the pillar. Each stone goes down onto you with a sound you feel in your bones.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Take each stone into yourself, level",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "weight": 3,
+       "legend": 1
+      },
+      "log": "Sixty-four and one. Every one level to a hair, and stays level. The builders check with water in a trough and cannot believe it. You are holding up a building that does not exist yet, and you can already feel how heavy it will be. (Weight +3)"
+     }
+    },
+    {
+     "text": "Count them, and remember the count",
+     "effects": {
+      "comprehension": 3,
+      "qi": 10,
+      "log": "Sixty-four and one. You fix the number at your middle, the way a farmer fixes the number of oxen. Whatever happens to this pagoda, you will always know where every one of its feet was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_3",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "The night before the centre pillar is to be raised, {npc} dreams that the kingdom in the west, {npc}'s own kingdom, falls: the palace burning, the river full of boats, the end of everything {npc} was born to. {npc} wakes, and goes to the overseer at dawn, and puts down the tools. \"I am building the thing that will destroy my home.\"",
+   "npc": {
+    "role": "hr_builder"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_2"
+    ],
+    "npcFlags": [
+     "hr_builder"
+    ]
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Shake the earth: you will not let the work stop",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "weight": 2
+      },
+      "flag": "hr_pillar_shook",
+      "log": "The whole temple ground heaves once, and the sky goes dark at midday as if a hand had covered the sun. Two hundred craftsmen fall flat. {npc} stands in the dark, alone and upright, and understands that this is not a dream. (Weight +2)"
+     }
+    },
+    {
+     "text": "Let the builder decide, and wait",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_pillar_left",
+      "log": "You do nothing. {npc} sits by the centre stone for three days without eating. On the fourth day {npc} gets up and picks up the tools again, and says only: \"It will happen whether I build or not. I would rather it happened under something beautiful.\" It is the builder's choice. That matters more than the pillar."
+     }
+    },
+    {
+     "text": "Send the builder a second dream",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "In the second dream the west kingdom falls, and long after, both kingdoms are one, and children in it learn the name of the carpenter who built the tallest tower in the world. {npc} wakes and weeps and goes back to work. You hope the dream was true. You do not know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_4",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The morning of the raising. The earth has shaken; the sky is dark; the craftsmen are on their faces; the great centre pillar, one tree, lies on its rollers by the socket with nobody to lift it. And out of the golden hall come two figures that nobody has seen before: an old monk, and a man built like a granary. They walk to the pillar.",
+   "npc": {
+    "role": "hr_builder"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_3"
+    ],
+    "flags": [
+     "hr_pillar_shook"
+    ]
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Be both of them",
+     "effects": {
+      "strength": 5,
+      "tally": {
+       "legend": 5,
+       "hunted": 2
+      },
+      "flag": [
+       "hr_pillar_raised",
+       "hr_pillar_up"
+      ],
+      "mark": "hr_pillar_stone",
+      "log": "You are the old monk, and you are the strong man. You put your shoulders under the tree that two hundred people could not move, and lift, and walk it up into the sky, and drop it into the socket of the centre stone, into your own heart, with a sound like a bell. Then you walk back into the golden hall and are not there. The sky clears."
+     }
+    },
+    {
+     "text": "Be only the old monk; let the craftsmen be the strength",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "flag": [
+       "hr_pillar_raised",
+       "hr_pillar_up"
+      ],
+      "log": "The old monk walks among the fallen craftsmen and touches each one on the shoulder, and they get up, and take the ropes, and pull, and the pillar goes up into the socket. Then the old monk is gone. Two hundred people raised it. They will tell their grandchildren a monk helped."
+     }
+    },
+    {
+     "text": "Let the two figures fade; let the builder raise it",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "hr_pillar_left",
+       "hr_pillar_up"
+      ],
+      "log": "The two shapes in the golden hall door waver and are gone before anyone sees them clearly. {npc} gets up off the ground, alone, and takes a rope, and then another person does, and another. It takes until dusk. The pillar goes in. It is theirs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_5",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The pagoda rises a storey a season: one, two, five, nine, and the spire on top with its rings of gilt bronze. It is taller than any hill near the capital. From the top, they say, you can see the sea. From the bottom, you can feel every storey of it pressing down through the centre pillar into your heart.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_3"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_pillar_up"
+    ]
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Hold it, all nine",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "weight": 4,
+       "legend": 3,
+       "ph_earth": 1
+      },
+      "flag": "hr_nine_held",
+      "log": "Nine storeys of timber and tile and bronze, a mountain of wood standing on one pillar standing on you. It is the heaviest thing you have ever held and the most beautiful. You decide, the day the spire goes on, that you will hold it as long as it stands. (Weight +4, Earth +1)"
+     }
+    },
+    {
+     "text": "Spread the weight to the sixty-four stones",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": 2
+      },
+      "flag": "hr_nine_held",
+      "log": "Not all on the centre. You ease the load outward, to the inner ring, to the outer ring, sixty-five feet instead of one. The pagoda stands lighter on you. Holding something up, you are learning, is mostly a matter of where you let it rest. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_6",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The master builder goes home to the west when the spire is on, with pay and honours and a face like a closed door. On the last morning {npc} comes to the foot of the pagoda alone and lays a hand on the centre stone, and says, not to anyone: \"I know it was you.\"",
+   "npc": {
+    "role": "hr_builder"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ],
+    "npcFlags": [
+     "hr_builder"
+    ]
+   },
+   "arc": "The Centre Pillar",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Warm the stone under the builder's hand",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "thanked",
+       "w": 30,
+       "note": "warmed the centre stone under my hand"
+      },
+      "log": "Warm, all at once, like a living thing. {npc} leaves the hand there a long time. Then goes home, to the kingdom that will fall, and does not come back. The west kingdom does fall, in the builder's old age. You hope it was quick. You hope the builder remembered the stone."
+     }
+    },
+    {
+     "text": "Say thank you, out loud, from the stone",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "thanked",
+       "w": 30,
+       "note": "thanked me through the centre stone"
+      },
+      "log": "\"Thank you,\" says the stone. {npc} bows to it, the deep bow of one craftsman to another, and walks out of the temple gate without looking back. That is how a builder leaves a finished thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_nine_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "Every envoy who comes to the capital is brought to see the pagoda: from the islands across the strait, from the great empire, from the southern coast kingdoms, from the horse peoples of the north. They stand at its foot with their heads back, and are told that each storey is one of their nations, held down. Some of them laugh. Some of them do not.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ]
+   },
+   "arc": "Nine Enemies",
+   "choices": [
+    {
+     "text": "Let it be a prayer for peace, not a threat",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_nine_prayer",
+      "log": "You warm the ground under every envoy who stands there. They go home remembering a beautiful tower and a strange feeling of being welcome. Nine nations bowing is a threat. Nine nations at peace is a prayer. It is the same tower."
+     }
+    },
+    {
+     "text": "Let them feel the weight of it",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "flag": "hr_nine_threat",
+      "log": "Every envoy who stands at the foot of the pagoda feels the ground press up under the soles of the feet, the way a tower presses down. They go home frightened and say so. Frightened envoys make careful kings. For a while."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_nine_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The envoy of the horse people of the north has been boasting with the temple guards all evening and climbs the pagoda at night to the ninth storey, to shout insults down onto the nation below. The guards are too frightened to follow. It is a long way down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_nine_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Nine Enemies",
+   "choices": [
+    {
+     "text": "Hold the tower still until the envoy climbs down",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Not a creak, not a sway, all night. The envoy comes down at dawn, hoarse and grey, having looked out from the top of the world. In the morning the envoy apologises to the abbot, and means it, which nobody expected."
+     }
+    },
+    {
+     "text": "Sway it, gently, the whole way up",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "A tiny sway at the first storey. More at the fifth. At the ninth, in the wind, the whole top of the pagoda moves like a reed. The envoy comes down on hands and knees and goes home a different person, and tells the story in the north for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_nine_3",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "One of the nine, the island kingdom across the strait, sends a gift: its finest carpenter, to study the pagoda and go home and build one. The court is suspicious. The abbot is delighted. The carpenter is measuring everything, and has asked to see the centre stone.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_nine_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "Nine Enemies",
+   "choices": [
+    {
+     "text": "Let the carpenter see everything",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "hr_nine_shared",
+      "log": "The carpenter measures for a year and goes home and builds a tower of five storeys on the islands, smaller, beautiful, still standing long after yours. Something of the centre went across the strait. A prayer can be copied. A threat cannot."
+     }
+    },
+    {
+     "text": "Keep the centre stone hidden",
+     "effects": {
+      "comprehension": 3,
+      "log": "Every time the carpenter goes near the base, the floor of the first storey is somehow being swept, or repaired, or prayed on. The carpenter goes home with everything but the heart. Some things a centre keeps."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_nine_4",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The wars come anyway. The kingdom fights its neighbours on three sides for a generation, and wins, and the peninsula is one kingdom for the first time. The court says it was the pagoda. The generals say it was the generals. The widows of three kingdoms do not say anything.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_nine_2"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "Nine Enemies",
+   "choices": [
+    {
+     "text": "Hold the widows up",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "weight": 2
+      },
+      "log": "The tower did not win the war. It did not stop it either. You send what warmth you can into every village of every kingdom that lost a son. It is not much. You do it for years. (Weight +2)"
+     }
+    },
+    {
+     "text": "Let the court believe in the pagoda",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "weight": 3
+      },
+      "log": "A tower that unites a kingdom. The court believes it, and the people believe it, and the pagoda becomes the heart of a whole peninsula's faith. You feel it settle on you, every bit of that belief, heavy as the timber. (Weight +3)"
+     }
+    },
+    {
+     "text": "Mourn the nations that were held down",
+     "effects": {
+      "comprehension": 4,
+      "log": "Three kingdoms became one, and two of them are gone. You were built to hold them down. You did not choose it. You lie under your nine storeys and grieve for the west kingdom, whose carpenter built you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sarira_1",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "The monk who came home from across the sea brought relics: a hundred small bright beads in crystal and gold, the remains of a holy body, and some of them go into a box of gilt bronze, and the box goes into a chamber under the centre pillar, which is in the centre stone, which is in you. You can feel them, a hundred tiny cool lights at your heart.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_3"
+    ],
+    "flags": [
+     "hr_pillar_up"
+    ]
+   },
+   "arc": "The Box Under the Pillar",
+   "choices": [
+    {
+     "text": "Hold them close and warm",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_relics_held",
+      "log": "They are very small and very quiet. You fold yourself round the chamber the way you once folded round a jar of rice. You do not know what a holy body is. You know how to keep something."
+     }
+    },
+    {
+     "text": "Listen to what the relics are made of",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_relics_held",
+      "log": "A life, burned down to its last hard core, like charcoal to its glowing heart. Somebody very long ago carried the whole world for a while and then set it down, and this is what was left. You keep listening, for centuries."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sarira_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "Thieves by night. {npc}, a martial artist with a crowbar and a shuttered lantern, has dug in under the pagoda's platform, through the rammed earth, into the chamber under the centre pillar. The box is in {npc}'s arms. It is small. It should be light.",
+   "npc": {
+    "role": "hr_relic_thief",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_relic_thief",
+     "ageAbs": 30,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_sarira_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Box Under the Pillar",
+   "choices": [
+    {
+     "text": "Make the box heavier with every step",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "flag": [
+       "hr_box_heavy",
+       "hr_relics_kept"
+      ],
+      "npcFlag": "hr_relic_thief",
+      "mem": {
+       "deed": "weighed",
+       "w": 30,
+       "note": "made the relic box grow heavier with every step"
+      },
+      "log": "One step, and it weighs a sack of rice. Three steps, an ox. At the mouth of the tunnel {npc} is on both knees with the box pressing {his} arms into the earth, and cannot lift it, and cannot let go. You wait. At dawn the thief sets it down, very gently, back in its place."
+     }
+    },
+    {
+     "text": "Close the tunnel behind the thief",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 2
+      },
+      "flag": "hr_relics_kept",
+      "npcFlag": "hr_relic_thief",
+      "log": "The earth folds shut behind {npc} like a mouth. The thief is in the dark with the box and no way out but the temple guards in the morning. The relics go back. The thief goes to the magistrate, white-haired at thirty."
+     },
+     "fail": {
+      "health": -8,
+      "npcFlag": "hr_relic_thief",
+      "log": "{npc} is quick, quicker than earth. Out through the closing tunnel in a burst of dust, with the box, and away over the temple wall. You feel the relics going, a hundred little lights getting further off. (-8 health)",
+      "flag": "hr_box_lost"
+     }
+    },
+    {
+     "text": "Let the thief go, and see who sent the job",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_relic_thief",
+      "log": "You let the box go out of the tunnel and over the wall and into the night, and follow it through the ground, mile by mile, to the cellar of a great minister's house. Now you know who wanted it. That is worth more than the box, for now.",
+      "flag": [
+       "hr_box_lost"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sarira_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} has come back, years later, without a crowbar, and sits at the foot of the pagoda in the daylight among the pilgrims, and asks the stones quietly: what was in that box, that it weighed so much?",
+   "npc": {
+    "role": "hr_relic_thief"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_sarira_2"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "hr_box_heavy"
+    ],
+    "npcFlags": [
+     "hr_relic_thief"
+    ]
+   },
+   "arc": "The Box Under the Pillar",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Answer: everything you were going to carry, all at once",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_relics_kept",
+      "mem": {
+       "deed": "answered",
+       "w": 25,
+       "note": "told me through the stones what the box weighed"
+      },
+      "log": "{npc} thinks about that for a long time. Then gets up and goes to the abbot and asks to be taken on as a guard of the pagoda. The abbot, who is no fool, says yes. The best guard of a treasury is a reformed thief."
+     }
+    },
+    {
+     "text": "Say nothing; let the thief work it out",
+     "effects": {
+      "charm": 2,
+      "flag": "hr_relics_kept",
+      "log": "{npc} sits there all day and goes home, and comes back the next day, and the next. It takes a year. Then one morning {npc} brings a broom and starts sweeping the platform, and keeps doing it for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sarira_4",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The box that went over the wall is found, a generation later, in the ruin of a great house after its master falls. The relics are still in it, every one. They are carried back to the temple in a procession, and the abbot sets them back under the pillar with his own hands.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_sarira_2"
+    ],
+    "minYearsAfter": 20,
+    "notFlags": [
+     "hr_relics_kept"
+    ],
+    "flags": [
+     "hr_box_lost"
+    ]
+   },
+   "arc": "The Box Under the Pillar",
+   "choices": [
+    {
+     "text": "Take them back in",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_relics_kept",
+      "log": "A hundred little lights, home. You did not know how cold the place at your middle had been until they were back in it."
+     }
+    },
+    {
+     "text": "Notice that the box came home without you",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_relics_kept",
+      "log": "Nobody needed you to fetch it. A minister fell, a ruin was searched, an honest clerk opened a box. The world brought it home. You were only the place it came home to. That is most of what a centre is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_lightning_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "A summer storm, and the tallest thing in the kingdom is the pagoda, and the sky finds it. A white blast at the spire, and then fire at the ninth storey, in the rain. The monks are on the ladders with buckets. The fire is eating down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ]
+   },
+   "arc": "Lightning on the Nine Storeys",
+   "choices": [
+    {
+     "text": "Send the strike down the pillar into yourself",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_lightning_taken",
+      "log": "You call it down. The fire at the top goes out as if blown, and the whole of the strike comes down the centre pillar into your heart like a spear. You do not move for a year. The pagoda loses one storey of roof tiles and nothing else. (-8 health)"
+     }
+    },
+    {
+     "text": "Hold the fire to the top storey and let them fight it",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "hr_lightning_taken",
+      "log": "You hold the lower eight storeys cool and damp from below while the monks fight the ninth. They win at dawn. The repair takes two years. It is theirs."
+     },
+     "fail": {
+      "health": -4,
+      "tally": {
+       "weight": 2
+      },
+      "flag": "hr_lightning_taken",
+      "log": "The fire gets to the seventh before the rain beats it. Three storeys to rebuild. You feel the new timber going in for years, heavy and green. (-4 health, Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_lightning_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The repair. Carpenters swarm over the top storeys for two years, and the abbot finds the money by selling the temple's best land. The new timber is pale against the old. The pagoda stands crooked by a hair, and the carpenters argue about whether it was crooked before.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_lightning_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Lightning on the Nine Storeys",
+   "choices": [
+    {
+     "text": "Straighten it, quietly, from beneath",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 2
+      },
+      "flag": "hr_pagoda_straight",
+      "log": "A hair, over a season. The carpenters come back with a plumb line and find it true, and each one decides it was the others who were wrong. (Weight +2)"
+     }
+    },
+    {
+     "text": "Leave the crook",
+     "effects": {
+      "comprehension": 3,
+      "log": "A hair out of true. You are learning that a thing that has been struck and mended does not stand quite the way it did. That is not a flaw. That is the record of having stood."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_lightning_3",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "In the eighth month the pagoda begins to tilt toward the north, a finger, then a palm. The astrologers go white. Everyone knows what a tilting tower means. Something is coming from the north, or something is going to fall in the palace. You can feel it too: the house over you is rotting at the root.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_lightning_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "Lightning on the Nine Storeys",
+   "choices": [
+    {
+     "text": "Hold the pagoda straight, and keep the kingdom calm",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 3
+      },
+      "flag": "hr_pagoda_straight",
+      "log": "You set yourself against the tilt and push it back, every day, for a year. The astrologers relax. The court relaxes. Whatever is rotting goes on rotting, out of sight. You have bought them a year of not knowing. (Weight +3)"
+     }
+    },
+    {
+     "text": "Let it tilt. Let the omen be read",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_tilt_read",
+      "log": "It leans a palm to the north and stays there. The whole capital sees it. Ministers resign. Guards are doubled. A plot that was ripening in a prince's house is found out a month early, because everyone was looking. The omen was the warning. You let it speak."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_lightning_4",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Another strike, long after the first, and the top storeys burn again. The kingdom is poorer now. There is talk that the pagoda costs more to keep than it is worth, and that a smaller one would do.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_lightning_2"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "Lightning on the Nine Storeys",
+   "choices": [
+    {
+     "text": "Hold it up through every repair, however long it takes",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 3,
+       "legend": 2
+      },
+      "flag": "hr_nine_held",
+      "log": "It takes eleven years and a king's ransom. The pagoda is nine storeys again. You lie under it, holding every one, and you know you will hold it for as long as there is any of it to hold. (Weight +3)"
+     }
+    },
+    {
+     "text": "Let them make it smaller",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -3
+      },
+      "log": "The court argues for years and the money runs out, and the repair is a careful, modest one, and the spire is lower than before. It is lighter on you. Something is lost. Something always is. (Weight -3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_weeping_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The great golden statue in the hall weeps again, as it has before every disaster since it was cast. It weeps because you weep, under the floor, and you weep because you feel what is coming: this time a plague, travelling up the coast road toward the capital. The monks find the tears at the dawn chant and run to the abbot.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ],
+    "flags": [
+     "hr_statue_wept"
+    ]
+   },
+   "arc": "The Statue That Weeps",
+   "choices": [
+    {
+     "text": "Let the tears say exactly what is coming",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "flag": "hr_tears_read",
+      "log": "The tears run in two lines that point, if you look, south-east, down the coast road. The abbot looks. The capital closes the coast gate a week before the sickness reaches it. A city saved by a statue that was only sad."
+     }
+    },
+    {
+     "text": "Weep, and let them guess",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "They guess wrong: a war, a fire, a king. The plague comes anyway. A statue that weeps is a warning. It is not a map. You learn that you cannot always be understood."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_weeping_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The monks have set a novice to watch the statue's face every night, all night, with a lamp, so as to know at once if it weeps. The novices take turns. They are very young and very frightened and very bored.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_weeping_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Statue That Weeps",
+   "choices": [
+    {
+     "text": "Keep the novice company with a little warmth",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The floor of the hall is warm all night under whichever child is watching. The novices start asking for the night watch. One of them grows up to be abbot, and always says the statue was a good friend."
+     }
+    },
+    {
+     "text": "Weep only in the day, so the children can sleep",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It is hard to hold grief for a night. You do it. Whatever is coming, the statue weeps in the morning, at the chant, in front of everyone. The night watch is abolished as useless."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_weeping_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A minister who does not believe in omens has asked the king for leave to melt the statue down, since it frightens the people and the treasury is empty. The court is in uproar. The statue, this morning, is perfectly dry.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_weeping_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Statue That Weeps",
+   "choices": [
+    {
+     "text": "Weep now, in front of the minister",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "The minister is brought to the hall to see the dry face, and while the minister is looking, two tears roll down it. The minister sits down on the floor. The statue stays."
+     }
+    },
+    {
+     "text": "Stay dry, and let the court decide",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "log": "You do nothing. The court argues for a year, and the abbot argues, and in the end the king says: we do not melt the things our grandmothers prayed to. The statue stays because people chose it. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceiling_1",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "A new throne hall, and the court painters are on the scaffolding with gold leaf and mineral pigments, painting you on the ceiling over the throne: a coiled yellow dragon in a ring of cloud. You are, in some way you do not fully understand, going up there. You can feel yourself being painted, stroke by stroke.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     8
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "How Many Claws",
+   "choices": [
+    {
+     "text": "Lend the painting a little of yourself",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_on_ceiling",
+      "log": "The gold on the ceiling has a warmth to it that gold should not have. The painters notice and do not speak of it. When the king sits on the throne for the first time and looks up, the king looks away again quickly."
+     }
+    },
+    {
+     "text": "Watch the painters, and keep to the ground",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_on_ceiling",
+      "log": "A picture of you on a ceiling, and you under the floor, and the throne in between. The king will sit between the two of you. You think that is about right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceiling_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The argument starts on the scaffolding and goes all the way to the council of ministers: how many claws? The great empire to the west sends envoys every year and allows its tributaries four. Five are the emperor's. The chief painter, {npc}, has drawn five in charcoal, and is waiting to be told to rub one out.",
+   "npc": {
+    "role": "hr_ceiling_painter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_ceiling_painter",
+     "ageAbs": 40,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     8
+    ],
+    "after": [
+     "dc_hr_ceiling_1"
+    ]
+   },
+   "arc": "How Many Claws",
+   "choices": [
+    {
+     "text": "Make the charcoal fifth claw impossible to rub out",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "flag": "hr_five_claws",
+      "npcFlag": "hr_ceiling_painter",
+      "log": "It will not come off. Water, bread, a rag, a knife: the fifth claw stays. {npc} paints it in gold in the end, high in the shadow of the coffer where an envoy would have to lie on the floor to count. Nobody lies on the floor."
+     }
+    },
+    {
+     "text": "Let them paint four, and keep the peace",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_four_claws",
+      "npcFlag": "hr_ceiling_painter",
+      "log": "Four claws. The envoys count them and are satisfied. The kingdom is safe another year. You are a dragon with a claw missing on a ceiling, and you find it does not matter to you at all. It matters very much to the king."
+     }
+    },
+    {
+     "text": "Show {npc} in a dream what a centre owes nobody",
+     "effects": {
+      "charm": 3,
+      "flag": "hr_five_claws",
+      "npcFlag": "hr_ceiling_painter",
+      "log": "In the dream {npc} paints on a ceiling as wide as the sky and nobody is counting. {npc} wakes and paints five, quickly, before anyone arrives at the hall, and gold-leafs them before noon. Done is done."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_hr_ceiling_3",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The great empire's envoy has come to the throne hall for an audience, and is looking up. The claws {npc} painted are up there, however many there are. The envoy is counting. The whole court is very still.",
+   "npc": {
+    "role": "hr_ceiling_painter"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     8
+    ],
+    "after": [
+     "dc_hr_ceiling_2"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_five_claws"
+    ],
+    "npcFlags": [
+     "hr_ceiling_painter"
+    ]
+   },
+   "arc": "How Many Claws",
+   "choices": [
+    {
+     "text": "Let a cloud of dust drift across the ceiling",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A little dust comes down off the beams, just then, in the light from the high windows, and the envoy sneezes, and blinks, and loses count, and is too dignified to start again. The audience goes on. The court breathes."
+     }
+    },
+    {
+     "text": "Let the envoy count, and stand by the count",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "weight": 3
+      },
+      "log": "The envoy counts. The envoy's face does not move. A letter goes west, and a letter comes back, and for two years the border is very tense. The kingdom does not back down. It cost more than paint. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceiling_4",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The hall burns in a war and is rebuilt, and rebuilt again, and the ceiling dragon is repainted each time by painters who never knew the last. Each one argues about the claws. Each one decides. You go up onto the ceiling again and again, with four claws or five, like a coat recut for every new owner.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_ceiling_2"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "How Many Claws",
+   "choices": [
+    {
+     "text": "Be whatever they paint",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "log": "Four claws, five, four again. You find you do not mind. The claws were always about the kings, not about you. A centre that insists on its own claws is a king. (Weight -2)"
+     }
+    },
+    {
+     "text": "Keep one thing the same every time: the warmth",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "Whatever the claws, the gold of the ceiling dragon is always faintly warm. Every king who sits under it feels it on the back of the neck. Not one of them ever says so."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceiling_5",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A very great king, near the end of a long reign, has had the throne hall rebuilt once more, larger than any before, and has told the painters, in private, to paint two dragons on the ceiling, and to give them seven claws each. Seven. More than the empire. More than anyone. The painters are terrified. The king is not.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_ceiling_2"
+    ],
+    "minYearsAfter": 60,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "How Many Claws",
+   "choices": [
+    {
+     "text": "Go up onto the ceiling as seven claws",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "weight": 4
+      },
+      "flag": "hr_seven_claws",
+      "mark": "hr_seven_claws",
+      "log": "Seven claws, gold, in the shadows of the highest coffer. You go up into the paint, and you are there, and it is the proudest you have ever been and the heaviest. A small kingdom has said, on its own ceiling, that it is nobody's vassal. (Weight +4)"
+     }
+    },
+    {
+     "text": "Warn the king, in a dream, what pride weighs",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_five_claws",
+      "log": "The king dreams of a ceiling that comes down. In the morning the painters are told: five. Five is defiance enough. The king is not a fool, only proud, and the dream was enough."
+     }
+    },
+    {
+     "text": "Let the painters decide among themselves",
+     "effects": {
+      "charm": 3,
+      "flag": "hr_seven_claws",
+      "log": "They argue all night on the scaffolding. In the morning they paint seven, and swear each other to silence, and nobody outside the hall counts for a hundred years. You did not decide it. You go up anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_robe_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "Yellow is the ruler's colour, because yellow is the centre's, and the centre is you. Only the ruler may wear it. Today a prince of the house, young and impatient, has had a yellow robe made in secret and put it on in front of a mirror, and the palace dressmakers are whispering.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Yellow Robe",
+   "choices": [
+    {
+     "text": "Make the yellow dye run in the first rain",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_robe_faded",
+      "log": "The prince wears it to a garden party under a sky that was clear an hour ago. By the end of the afternoon the robe is a streaky pale lemon and the prince is a laughing-stock. It is the kindest thing you could have done. The king, who would have had the prince arrested, laughs too."
+     }
+    },
+    {
+     "text": "Let the king find out",
+     "effects": {
+      "tally": {
+       "weight": 2,
+       "fear": 1
+      },
+      "log": "The king finds out. The prince is sent to a monastery in the mountains for three years to think about colours. It is a mild punishment, for a house. You feel the father's fear and the son's shame both settle on you. (Weight +2)"
+     }
+    },
+    {
+     "text": "Warm the robe, so the prince feels what it weighs",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The yellow silk is heavy on the prince's shoulders, far heavier than silk, like a yoke. The prince takes it off after a moment, shaking, and burns it, and never wears yellow again, even as king, years later, except when the law requires it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_robe_2",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "A rebel in the southern hills has taken the yellow: a robe dyed with wild gardenia, a banner of yellow hemp, and a proclamation that the dragon has left the old house and come to the hills. Ten thousand hungry farmers have believed it. The royal army is marching.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_robe_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Yellow Robe",
+   "choices": [
+    {
+     "text": "Make it clear in the hills that you have not come",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "weight": 2
+      },
+      "log": "The ground in the rebel camp is cold, hard and stony every night, and the springs run thin. The farmers begin to drift home. The rebellion breaks before the army arrives. Many go home. Some are hanged. (Weight +2)"
+     }
+    },
+    {
+     "text": "Shield the farmers from the army",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "weight": 3
+      },
+      "flag": "hr_robe_rebel_spared",
+      "log": "A landslide closes the pass between the army and the camp for a whole season. By the time it is open, the farmers have gone home and the rebel has fled north, and there is nobody left to punish. The court is furious. The farmers do not know what saved them. (Weight +3)"
+     }
+    },
+    {
+     "text": "Let the colour decide whom it obeys",
+     "effects": {
+      "comprehension": 4,
+      "log": "You do nothing either way. The army comes. The rebel is caught in a week. The yellow banner is burned in the square. Yellow obeys whoever is holding it. You had hoped it might be otherwise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_robe_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A law: no one but the ruler may wear yellow, or paint it on a gate, or use it for a shroud. The farmers' wives who dyed their children's festival jackets with gardenia must dye them again. A village is fined for a yellow shrine cloth. Yellow, your colour, is becoming a frightening one.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_robe_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Yellow Robe",
+   "choices": [
+    {
+     "text": "Keep one yellow thing free: the rice",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Every harvest the fields go gold, all over the kingdom, and no law can fine a rice field. You make the harvests very yellow, for years. It is a small argument. It is the one you have."
+     }
+    },
+    {
+     "text": "Let the law stand; it keeps the house safe",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "weight": 2
+      },
+      "log": "Fewer pretenders, fewer rebels in gardenia robes. The house is safer. The colour is heavier. (Reign +3, Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_robe_4",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Long after the law, an old farmer in a far valley is found to have been buried in a yellow shroud. The magistrate wants the grave opened and the family fined. The family says the dead one was the luckiest farmer in the valley, and lucky things are yellow.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_robe_3"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Yellow Robe",
+   "choices": [
+    {
+     "text": "Make the grave impossible to open",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "The spades hit stone where there was earth yesterday, every time. The magistrate gives up and writes in the report that the grave is in rock. The farmer sleeps in yellow."
+     }
+    },
+    {
+     "text": "Let the magistrate do it; the law is the house's",
+     "effects": {
+      "tally": {
+       "weight": 2
+      },
+      "log": "The grave is opened. The shroud is taken. The family pays. You lie under the valley and feel the old farmer's bones in plain hemp, and think about what you are the colour of. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_1",
+   "cat": "npc",
+   "weight": 26,
+   "once": true,
+   "text": "{npc} is cruel, and you have known it since the first winter of the reign. Now it is not only cold edicts. There are massacres in the provinces: a county that would not pay, a town that sheltered a rebel, a temple that spoke out. And every proclamation says the same thing at the end: by the will of the Yellow Dragon.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house",
+     "hr_cruel_reign"
+    ],
+    "notFlags": [
+     "hr_withdrawn"
+    ],
+    "npcFlags": [
+     "hr_ruler",
+     "hr_cruel"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "choices": [
+    {
+     "text": "Withdraw from the house now",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "hr_withdrawn",
+       "hr_tyrant_left"
+      ],
+      "unflag": "hr_present",
+      "log": "You let go of the palace. Not with a crash: you only stop holding it. That night the pagoda tilts a finger to the north and the great statue weeps. The old ministers know what it means. {npc} does not. Not yet."
+     }
+    },
+    {
+     "text": "Stay, and try to temper the worst of it",
+     "effects": {
+      "tally": {
+       "stain": 1,
+       "weight": 3,
+       "virtue": 1
+      },
+      "log": "You stay. You soften a harvest here, close a road there, send a warning to a town before the soldiers come. Some are saved. The proclamations still say your name. Every one of them stains. (Weight +3)"
+     }
+    },
+    {
+     "text": "Send {npc} a dream of the provinces",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "virtue": 1,
+       "weight": 1
+      },
+      "log": "For one night {npc} walks through a burned county as a farmer, and wakes shouting. The next order of execution is torn up. It does not change a cruel ruler. It buys one town. (Weight +1)"
+     },
+     "fail": {
+      "tally": {
+       "weight": 2,
+       "stain": 1
+      },
+      "log": "{npc} enjoys the dream. The burned county looks, to {npc}, like order. You have only taught the ruler what the provinces look like obedient. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_2",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "{npc} comes down into the crypt at night, alone, which this ruler never does, and lies flat on the stone in a yellow robe and speaks to the floor in a whisper that is almost loving. \"Stay with me for ever. Every king before me was afraid of you. I am not. I will build you nine more pagodas. Stay.\"",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_tyrant_1"
+    ],
+    "flags": [
+     "hr_cruel_reign"
+    ],
+    "npcFlags": [
+     "hr_ruler",
+     "hr_cruel"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I stay with houses, not with you\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": 1
+      },
+      "log": "{npc} lies still a long time. Then laughs, and gets up, and says: \"Then I will be the house.\" And goes up the stairs. You lie in the dark and understand that this ruler means it. (Weight +1)"
+     }
+    },
+    {
+     "text": "Say nothing; the floor is cold",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The stone goes cold as a river in winter under the ruler's cheek. {npc} gets up after a while, shivering and furious, and the next morning orders the crypt sealed. It does not matter. You are not in the crypt. You are everywhere under it."
+     }
+    },
+    {
+     "text": "\"I will stay as long as you are kind\"",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "weight": 2
+      },
+      "log": "{npc} smiles in the dark. \"Then you will stay for ever,\" {npc} says, \"because I decide what kind is.\" It is not a promise. It is a trap. You heard it close. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_3",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The court tailors are embroidering a new robe for {npc}: yellow silk, and on the breast and back and both shoulders a golden dragon, coiled, with five claws. You can feel the needle going in. It goes in, somehow, to you.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_tyrant_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_cruel_reign"
+    ],
+    "npcFlags": [
+     "hr_ruler",
+     "hr_cruel"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "choices": [
+    {
+     "text": "Make the thread knot and break",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "Every gold thread snaps at the third stitch. The tailors are beaten. They try again with new thread and it snaps again. In the end the robe is finished with a dragon that has no eyes. {npc} wears it anyway."
+     }
+    },
+    {
+     "text": "Bear it",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "weight": 3,
+       "stain": 1
+      },
+      "log": "Stitch by stitch, the dragon goes onto the robe, and something of you goes into it. When {npc} puts it on, you feel the ruler's shoulders on your back like a yoke. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_4",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "An old minister of the house, one of the last honest ones, comes to the foot of the pagoda at night and kneels. \"Leave us,\" the old minister begs the stones. \"If you leave, the house falls, and the next one may be kind. If you stay, it stands for ever, and it will never be kind. Leave us. Please.\"",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_tyrant_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_cruel_reign"
+    ],
+    "notFlags": [
+     "hr_withdrawn"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Leave",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "hr_withdrawn",
+       "hr_tyrant_left"
+      ],
+      "unflag": "hr_present",
+      "log": "You let go. The old minister feels the stones go cold and weeps with relief, alone in the dark. The house begins, very slowly, to come down."
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "tally": {
+       "weight": 2
+      },
+      "log": "Not yet. You do not know yourself why not. Perhaps there is a child in the palace you are waiting for. Perhaps you are afraid of what falls with it. The old minister goes home, and is arrested within the month. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_5",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The provinces are in revolt. {npc} has answered with fire. Whole counties burn. The armies wear the yellow dragon on their banners. You feel each fire, and each banner, and the name at the end of each order, and you are very heavy now, and very stained.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_tyrant_3"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "hr_cruel_reign"
+    ],
+    "notFlags": [
+     "hr_withdrawn"
+    ],
+    "npcFlags": [
+     "hr_ruler",
+     "hr_cruel"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "choices": [
+    {
+     "text": "Withdraw",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": [
+       "hr_withdrawn",
+       "hr_tyrant_left"
+      ],
+      "unflag": "hr_present",
+      "log": "You let go, late. Very late. The pagoda tilts. The statue weeps. The rebels hear of it within a week and are twice as many by the spring. The house is coming down now, and some of the stain is coming down with it."
+     }
+    },
+    {
+     "text": "Close the roads to the burning counties",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "weight": 2
+      },
+      "log": "Every road from the capital to the rebel counties goes to mud, or rock, or landslide. The armies cannot reach them for a year. It saves the counties. It does not save you from the banners. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tyrant_6",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The capital is ringed by rebel fires. {npc} sits on the throne in the yellow robe with the dragon on it, under the ceiling where you are painted, over the floor where you lie, and will not leave. \"You are mine,\" {npc} says, to the hall, to the ceiling, to the floor. \"We go together.\" The robe is heavy on you. So is everything.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_tyrant_5"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_cruel_reign"
+    ],
+    "notFlags": [
+     "hr_withdrawn"
+    ],
+    "npcFlags": [
+     "hr_ruler",
+     "hr_cruel"
+    ]
+   },
+   "arc": "The King Who Wants You For Ever",
+   "choices": [
+    {
+     "text": "Let go of the house now, even at the end",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "hr_withdrawn",
+       "hr_tyrant_left"
+      ],
+      "unflag": "hr_present",
+      "log": "You let go. It is the hardest thing you have ever done, because the robe does not want to let go of you, and it tears. When the capital falls, the robe burns, and a little of you burns with it, and the rest of you is lying under the ash, alive, stained, free."
+     }
+    },
+    {
+     "text": "Carry the people out through the ground",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 3,
+       "weight": 4
+      },
+      "log": "Old drains, root cellars, a culvert under the city wall: you open every one, and half the capital crawls out under the rebel fires into the night fields. You are still in the robe. You are still on the throne. But fewer burn with you. (Weight +4)"
+     }
+    },
+    {
+     "text": "Stay. Go with the robe",
+     "req": {
+      "flags": [
+       "hr_stained"
+      ]
+     },
+     "effects": {
+      "beastEnding": "tyrant_robe",
+      "tally": {
+       "fear": 5
+      },
+      "log": "You stay. The rebels come into the hall at dawn. The fire goes up the pillars to the ceiling where you are painted, and the hall comes down, throne and robe and the ruler who would not leave, and you burn with the emblem. For a thousand years after, yellow is a colour people are afraid of."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fall_1",
+   "cat": "life",
+   "weight": 24,
+   "once": true,
+   "text": "You have let go of the house, and the house knows it before it understands it. The pagoda leans a finger to the north. The great statue weeps at the dawn chant. The rice in the royal granary goes musty in a dry year. The oldest ministers begin, very quietly, to send their families to the country.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house",
+     "hr_withdrawn"
+    ]
+   },
+   "arc": "The House Falls",
+   "choices": [
+    {
+     "text": "Let the omens speak plainly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_fall_seen",
+      "log": "Every sign the kingdom has ever read, you let it read: the tilt, the tears, a white rainbow, a well gone sour. Nobody in the capital can say they were not told. That is the kindest thing a departing centre can do."
+     }
+    },
+    {
+     "text": "Let it run down gently, without signs",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "weight": -2
+      },
+      "flag": "hr_fall_seen",
+      "log": "No omens. Only a slow ordinary decline: a little less luck every year, a few more bad harvests, a court that cannot quite remember why it used to be so sure of itself. It is gentler. It is also less fair to those who might have prepared. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fall_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "A founder waits, somewhere in the provinces, the one you appeared to. The old house is running out. The court is talking about the unthinkable: that the ruler might step down, and give the seal to a new house, without a war.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_fall_1"
+    ],
+    "flags": [
+     "hr_house",
+     "hr_withdrawn",
+     "hr_founder_met"
+    ]
+   },
+   "arc": "The House Falls",
+   "choices": [
+    {
+     "text": "Make the old ruler dream of a quiet garden",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_fall_gentle",
+      "log": "A garden in the hills, a pond, no petitions, no seal. The old ruler dreams it three nights running and wakes the fourth morning and asks the ministers how an abdication is done. Nobody has done one for two hundred years. They look it up."
+     }
+    },
+    {
+     "text": "Let the humans find their own way to it",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "flag": "hr_fall_gentle",
+      "log": "It takes them years: letters, envoys, a joining of the two houses, a ceremony in the rain. You do nothing but lie still under all of it. It goes better because it is theirs. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fall_3",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The house is gone, and it did not go gently. Civil war in the provinces, three claimants, and at the end the capital burned for nine days. You lie under the ash with no king on you, and the ash is warm, and in places it is still burning.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_fall_1"
+    ],
+    "notFlags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The House Falls",
+   "choices": [
+    {
+     "text": "Hold the survivors up through the winter",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Every cellar in the burned city is dry and warm all winter, and the wells run clean, and there are roots to dig in the ruined gardens that should not be there. More live than anyone expects. You did not save the house. You saved the people who were under it."
+     }
+    },
+    {
+     "text": "Lie still, and learn what a fall weighs",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -3
+      },
+      "log": "All of it, every coal. And then, one morning, you notice that nothing is pressing on you at all. No house, no throne, no edicts. You did not know how heavy it was until it fell off. (Weight -3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fall_4",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The old house ended in peace: the seal handed over in a hall with the rain loud on the roof, the old ruler bowing to the new, the ministers changing the colour of their belts. A new reign, proclaimed. Nobody died. You feel the weight of the old house slide off your back like a load of wet straw.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_fall_1"
+    ],
+    "flags": [
+     "hr_kept_house",
+     "hr_house"
+    ]
+   },
+   "arc": "The House Falls",
+   "choices": [
+    {
+     "text": "Bless the new house at once",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "legend": 2
+      },
+      "flag": "hr_present",
+      "log": "You settle under the new palace before the ink of the proclamation is dry. The first harvest of the new reign is the best in a few years. The annals write that heaven approved. For once, heaven was you. (Reign +3)"
+     }
+    },
+    {
+     "text": "Watch the old ruler go into the hills",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A small procession up into the hills, a garden, a pond. The old ruler lives another twenty years and grows the best chrysanthemums in the kingdom. You keep that garden warm. Nobody has ever thanked you so well as that old ruler does, by being happy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fall_5",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "You have seen a house fall now, and you were the one who let go. You turn it over in the long nights: whether you should have held on, whether you should have let go sooner, whether there was ever a way to keep a house that did not end in a fall or a handover.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_fall_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The House Falls",
+   "choices": [
+    {
+     "text": "No. Houses end. That is what they are for",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_houses_end",
+      "log": "A house is a thing people build to live in for a while. You are the ground under it. The ground does not mourn a house; it holds the next one. You will hold the next one."
+     }
+    },
+    {
+     "text": "Promise yourself to let go sooner, next time",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_let_go_sooner",
+      "log": "Sooner. Before the provinces burn. Before the robe. You make the promise at your middle, where you keep everything, and you hope that when the time comes you will be brave enough to keep it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_1",
+   "cat": "npc",
+   "weight": 26,
+   "once": true,
+   "text": "Far in the north, at a great river, a young archer is running from a king who wants the archer dead: {npc}, born, they say, from an egg, and able to shoot a fly off a spindle at a hundred paces. The pursuers are close. The river is wide. {npc} stands on the bank and calls on the river to help. And the river does: turtles rise, hundreds of them, and the reeds weave together over their backs.",
+   "npc": {
+    "role": "hr_archer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_archer",
+     "ageAbs": 20,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     8
+    ],
+    "notFlags": [
+     "hr_destiny",
+     "hr_destiny_spent"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "choices": [
+    {
+     "text": "Firm the riverbed under the turtles",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "hr_archer",
+      "flag": [
+       "hr_archer_seen",
+       "hr_destiny"
+      ],
+      "mem": {
+       "deed": "crossed",
+       "w": 30,
+       "note": "held the turtle bridge firm over the river"
+      },
+      "log": "The turtles are the river's, not yours. But the riverbed is earth, and earth is you, and the turtles find their feet on a ridge of hard ground that was not there yesterday. {npc} runs across. The bridge dissolves behind. The pursuers stand on the far bank and shout."
+     }
+    },
+    {
+     "text": "Watch: this is the river's gift, not yours",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "hr_archer",
+      "flag": [
+       "hr_archer_seen",
+       "hr_destiny"
+      ],
+      "log": "You watch {npc} cross on the backs of the turtles, quick and light, and the bridge come apart behind like a held breath let go. A founder, you think. You have never seen one start before. You know what it looks like now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} has founded a kingdom in the north: a capital on a mountain fortress west of a river valley, a hall of logs, a few thousand people, a great many horses. It is small and rough and full of hope. The new king rides out every morning to the hill east of the capital and looks at the sky, as if expecting someone.",
+   "npc": {
+    "role": "hr_archer"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_founder_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "hr_archer"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "choices": [
+    {
+     "text": "Send the new kingdom a good first harvest",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ph_earth": 1
+      },
+      "log": "The valley under the mountain fortress has its best year in living memory. The new kingdom eats. Its people decide their king is lucky. They are right. (Earth +1)"
+     }
+    },
+    {
+     "text": "Let it find its own feet",
+     "effects": {
+      "comprehension": 3,
+      "log": "A thin first year, a hard winter, a raid from the steppe. They survive it. A kingdom that survives its first winter alone is a kingdom. You watch from far off and are glad you did not help."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "{npc} has climbed the hill east of the capital alone, and is calling you down. Not a prayer: a summons, the way a king calls a minister. \"Yellow Dragon of the centre, come down and meet the king.\" {npc} has no right to summon you. {npc} does it anyway, every spring, with perfect confidence.",
+   "npc": {
+    "role": "hr_archer"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_founder_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "hr_archer"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Come down, this once, and meet the king",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "hunted": 2
+      },
+      "flag": [
+       "hr_archer_met",
+       "hr_dfounder_came"
+      ],
+      "mem": {
+       "deed": "came",
+       "w": 40,
+       "note": "came down to the eastern hill for me"
+      },
+      "log": "Down out of the clouds onto the eastern hill, gold and enormous, and the archer-king stands in front of you without a flicker and bows exactly as deep as one ruler bows to another. You find you like this person very much. You talk until sunset, about rivers."
+     }
+    },
+    {
+     "text": "Answer from under the hill, without coming down",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_archer_met",
+      "log": "The hill goes warm under the king's feet. {npc} laughs, delighted, and sits down on the warm grass and talks to it all afternoon. The summons was answered. That was all the king wanted."
+     }
+    },
+    {
+     "text": "Ignore the summons",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "Nothing. {npc} waits until dusk and goes home, and comes back next spring, and the next. Confidence, it turns out, does not need an answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_4",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "{npc} is old. The kingdom in the north is strong, its people fed, its borders held, its heir grown. The archer-king still rides to the eastern hill every morning, slowly now, and sits there. Today {npc} does not ride home.",
+   "npc": {
+    "role": "hr_archer"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_founder_3"
+    ],
+    "minYearsAfter": 30,
+    "npcFlags": [
+     "hr_archer"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "choices": [
+    {
+     "text": "Keep the hill warm under the old king",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_archer_died",
+      "npcPass": "old age, on the hill east of the capital, at dawn",
+      "mem": {
+       "deed": "stayed",
+       "w": 30,
+       "note": "kept the hill warm for me at the end"
+      },
+      "log": "The grass is warm. The old archer lies back on it and looks at the sky and is not afraid. When they come to look, they find the king on the hilltop, peaceful, facing east. The whole kingdom mourns. You do not mourn yet. You have been told something, from above."
+     }
+    },
+    {
+     "text": "Promise the old king you will come",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_archer_died",
+      "npcPass": "old age, on the eastern hill",
+      "log": "\"I will come,\" you say, from under the hill. {npc} smiles and says, \"I know,\" and closes both eyes. Heaven is already speaking to you, far above. It wants you to go down to the eastern hill."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_5",
+   "cat": "insight",
+   "weight": 20,
+   "once": true,
+   "text": "Heaven speaks to you, which it almost never does: the archer-king of the north is dead, and is waiting on the hill east of the capital, and you are to go down and meet the king, and carry the king up. You have never been sent anywhere before. You have only ever been the place things come to.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_founder_4"
+    ],
+    "flags": [
+     "hr_archer_died"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "choices": [
+    {
+     "text": "Go down",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_archer_waiting",
+      "log": "Up out of the earth and into the sky and north, a long golden road through the clouds, and down toward a small hill east of a small capital where somebody is standing in court robes on the grass, not afraid at all, waiting."
+     }
+    },
+    {
+     "text": "Ask heaven why you",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_archer_waiting",
+      "log": "Heaven does not explain. Heaven only says: you are the centre; a king stands on the centre; when a good king dies, who else should carry the king? You go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_founder_6",
+   "cat": "life",
+   "weight": 24,
+   "once": true,
+   "text": "Dawn on the eastern hill. The archer-king stands on the grass in court robes, young again, the great bow over one shoulder. Below, the whole capital is on its roofs, looking up. You come down out of the cloud and lower your head to the hilltop, and the king steps onto it, lightly, as onto a bridge of turtles, and you rise.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_founder_5"
+    ],
+    "flags": [
+     "hr_archer_waiting"
+    ]
+   },
+   "arc": "The Archer at the River",
+   "choices": [
+    {
+     "text": "Carry the king up through the cloud, and come back down",
+     "effects": {
+      "tally": {
+       "carried": 1,
+       "kept": 1,
+       "legend": 5,
+       "weight": -8
+      },
+      "flag": [
+       "hr_archer_carried",
+       "hr_destiny_spent"
+      ],
+      "log": "Up, and up, the city getting small, the king laughing on your head in the wind. At the edge of heaven the king steps off, and bows, and goes in. You turn and come back down to the centre, where you belong, lighter than you have been in a hundred years. (Weight -8)",
+      "unflag": [
+       "hr_destiny"
+      ]
+     }
+    },
+    {
+     "text": "Carry the king, and ask one question on the way",
+     "effects": {
+      "tally": {
+       "carried": 1,
+       "kept": 1,
+       "legend": 4,
+       "weight": -6
+      },
+      "comprehension": 3,
+      "flag": [
+       "hr_archer_carried",
+       "hr_destiny_spent"
+      ],
+      "log": "\"Were you ever afraid?\" you ask, in the wind. \"Of everything,\" the king says. \"Every day. That is why I summoned you. I wanted to see what being unafraid looked like.\" You come back down to the centre with that. (Weight -6)",
+      "unflag": [
+       "hr_destiny"
+      ]
+     }
+    },
+    {
+     "text": "Rise with the king, and do not come back down",
+     "effects": {
+      "beastEnding": "carried_king",
+      "tally": {
+       "legend": 5
+      },
+      "log": "You rise, and keep rising, the king on your head, and you do not turn back at the edge of heaven. The centre below you is empty, and somebody else will fill it. The two of you are seen together on every eastern hill at dawn, for as long as there are hills."
+     },
+     "req": {
+      "flags": [
+       "hr_dfounder_came"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_heir_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "{npc} has two heirs. The elder is strong, quick, and a born commander, and the court loves it. The younger is gentle and reads all day and is kind to servants, and the court overlooks it. {npc} is afraid of the elder. You can feel it in the edicts: a parent watching a child grow taller.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "Two Heirs",
+   "choices": [
+    {
+     "text": "Remember how this goes in every house",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_heir_known",
+      "log": "A father who feared a strong son, in house after house, and the sons who were not killed. You decide again what you decided then: you will not choose between them. You will stay with whoever is chosen."
+     }
+    },
+    {
+     "text": "Warm the ground under both of them, equally",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_heir_known",
+      "log": "The archery range and the reading pavilion are equally warm. The two heirs, who do not know why, grow up liking the same corner of the courtyard and meeting there. They are friends, mostly. That may be the best you can do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_heir_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "{npc} comes down to the crypt at night with the question no ruler should ask a floor: which one? \"You have seen every king of this house,\" {npc} says. \"You know what a king is. Tell me which of my children to choose.\"",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_heir_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "Two Heirs",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"I stay with whoever you choose. That is all I can do\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "flag": "hr_heir_refused",
+      "log": "{npc} is angry, and then afraid, and then, slowly, understands. The choice goes back up the stairs with the ruler, where it belongs. It is a heavy choice, and it is not yours. (Weight -2)"
+     }
+    },
+    {
+     "text": "\"Choose the one who asks the floor nothing\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "{npc} thinks about that for a long time. Neither heir has ever been down to the crypt. Then the ruler laughs, a little wildly, and says, \"That is no answer,\" and goes up the stairs, and you can feel the ruler thinking all night."
+     }
+    },
+    {
+     "text": "Name one",
+     "effects": {
+      "tally": {
+       "weight": 5,
+       "legend": 2
+      },
+      "flag": "hr_heir_named",
+      "log": "You name one. {npc} bows and goes up the stairs with an answer. The other heir will never know why, and you will carry that, and every bad year of the chosen one's reign will lie on you as if you had made it. (Weight +5)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_heir_3",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "An heir has been chosen, and the other has been sent to a distant province as governor, with honour and guards and a great deal of distance. The court holds its breath. Brothers have killed each other for less in every house you have lain under.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_heir_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "Two Heirs",
+   "choices": [
+    {
+     "text": "Keep the road between them open and dry",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_heir_stayed",
+      "log": "Letters go back and forth along that road for years, and the road is always passable, in every season. The brothers never become close. They never become enemies. You count it a victory."
+     }
+    },
+    {
+     "text": "Stay with the chosen one, and only that one",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "weight": 2
+      },
+      "flag": "hr_heir_stayed",
+      "log": "You settle under the heir's palace and hold it. The distant governor feels no luck from you at all, and governs well anyway, and is better loved in the province than the king is in the capital. (Reign +3, Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_heir_4",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The heirs are old now, or dead, and the next pair are already in the courtyard, one with a bow and one with a book. It is always the same courtyard. It is always the same fear.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_heir_3"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "Two Heirs",
+   "choices": [
+    {
+     "text": "Warm the same corner of the courtyard",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "charm": 2,
+      "log": "The two new children find the warm corner on their own, the way the old heirs did, and meet there. You will do this for every pair of heirs in this house. It is a small thing. It is the only thing a centre can do about a father's fear."
+     }
+    },
+    {
+     "text": "Let this pair find their own way",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "Nothing from you. They quarrel, and grow up, and one of them is a good king and the other a good poet, and neither ever knows that the ground decided to trust them. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ministers_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The house has a council now: six ministers, each with a department, rice and rites and war and law and works and officials, meeting every morning in a hall over you. They could carry a great deal of what you carry, if you let them. You could let them.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Council of Ministers",
+   "choices": [
+    {
+     "text": "Give the council the year's hardest choice",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -5,
+       "shared": 1
+      },
+      "flag": "hr_ministers_trusted",
+      "log": "A famine in the south, and the treasury empty: who pays? You do not tilt it. The six of them argue for a month and decide something you would not have, and it works, mostly. You feel a load go off your back and onto six. (Weight -5)"
+     }
+    },
+    {
+     "text": "Keep the hard choices, and let them do the small ones",
+     "effects": {
+      "tally": {
+       "weight": 2,
+       "legend": 1
+      },
+      "log": "They do the small ones well. The big ones come down to you in the night, in dreams, in tremors, in a well running dry at the right moment. The council never learns to carry the big ones. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ministers_2",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The ministers have been quarrelling for years: the minister of rites against the minister of war, the old families against the new, the south against the north. Every decision takes a year. The ruler is bored and the treasury is thin. And yet, you notice, the kingdom does not fall.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_ministers_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "hr_ministers_trusted"
+    ]
+   },
+   "arc": "The Council of Ministers",
+   "choices": [
+    {
+     "text": "Let them quarrel",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -3,
+       "shared": 1
+      },
+      "log": "A quarrel is a kind of holding up: six people pulling a load six ways, so that it does not go any one way too fast. It is slow and ugly and it works. You let it work. (Weight -3)"
+     }
+    },
+    {
+     "text": "Settle the worst of it with a sign",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "weight": 3
+      },
+      "log": "A tremor under the war minister's chair at the exact moment of the worst speech. The council goes quiet. The decision is made by noon. You have settled it, and so it is yours now, and so is the next one. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ministers_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "One minister in the council has been right for years: {npc}, the minister of works, who keeps saying the river dykes are rotten and the granaries are empty and the border forts are paper. Nobody listens. {npc} has started standing alone by the window in council, looking at the river.",
+   "npc": {
+    "role": "hr_minister",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_minister",
+     "ageAbs": 50,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_ministers_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Council of Ministers",
+   "choices": [
+    {
+     "text": "Make the dyke fail where only the council can see",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "weight": 2
+      },
+      "npcFlag": "hr_minister",
+      "log": "A small section of the river dyke slumps in a dry month, right under the council's windows, with nobody hurt. The council looks out, and then at {npc}. The dyke money is voted by noon. A small disaster, to prevent a large one. You chose it, and you carry it. (Weight +2)"
+     }
+    },
+    {
+     "text": "Send {npc} patience, and let the council learn",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2,
+       "shared": 1
+      },
+      "npcFlag": "hr_minister",
+      "mem": {
+       "deed": "steadied",
+       "w": 20,
+       "note": "kept me from giving up, from under the council hall"
+      },
+      "log": "{npc} does not give up, which is all you do: a little warmth under a tired person's feet at the window, every morning, for years. In the eleventh year the council listens. The dykes are rebuilt before the great flood, by eleven months. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ministers_4",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The great flood comes, as {npc} said it would. The dykes hold, or they do not, depending on what the council did. {npc} is old and stands on the dyke in the rain with the workers, refusing to go home.",
+   "npc": {
+    "role": "hr_minister"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_ministers_3"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "hr_minister"
+    ]
+   },
+   "arc": "The Council of Ministers",
+   "choices": [
+    {
+     "text": "Hold the dyke from beneath",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcPass": "old age, years later, at home, the river quiet",
+      "log": "The water comes up to the lip and stops, as if it had hit a wall under the wall. {npc} stands on the dyke all night and at dawn the river goes down. The old minister dies at home years later, in bed, and is buried facing the river."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The dyke holds in the middle and goes at one end. Three villages flood. {npc} is carried off the dyke by the workers, soaked, furious, alive. It would have been thirty villages. (-8 health)"
+     }
+    },
+    {
+     "text": "Trust the dykes they built",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "npcPass": "old age, at home, the river quiet",
+      "log": "You do nothing. The dykes hold, because a tired minister spent years insisting on them. {npc} goes home at dawn and sleeps for two days. It was all theirs. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ministers_5",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The ruler is dead and the heir is a child, and for twelve years the kingdom is governed by the council of ministers alone, in the child's name. The ministers are terrified. They meet every morning in the hall over you as if the floor might open.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_ministers_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Council of Ministers",
+   "choices": [
+    {
+     "text": "Hold the floor very still, and let them govern",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -4,
+       "shared": 1
+      },
+      "log": "Twelve years. Slow, careful, frightened, competent. When the heir comes of age the treasury is fuller than when the old king died. The ministers hand back the seal and go home and sleep for a month. (Weight -4)"
+     }
+    },
+    {
+     "text": "Hold the whole kingdom up yourself until the child grows",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 5,
+       "reign": 3
+      },
+      "log": "You take the full weight of a kingdom with no king, every harvest and border and quarrel, for years. The ministers think they did it. You lie under them, very heavy, and let them think so. (Weight +5)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_examination_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The state examination, held once every three years in the palace courtyard over you: a thousand candidates, ink and paper and silence, each one trying to write their way into the government. The centre is measuring talent. It is a very human way of being a centre, and you watch it with interest.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Keep the courtyard warm and still for all of them",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "log": "No wind lifts a paper, no rain blots an essay, and the old man in the third row who has failed nine times has warm feet for once. You do not help anyone write. You only keep the floor fair."
+     }
+    },
+    {
+     "text": "Feel which of them are honest",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_exam_known",
+      "log": "Some of them have answers sewn into their sleeves. Some have paid the examiners. Most have studied by lamplight for ten years. You can feel the difference in the way they sit. You remember it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_examination_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "In the corner of the examination courtyard, a candidate in a patched robe is writing an essay on the set question, what holds a kingdom together, and the essay is about a crossroads: a village crossroads where five roads meet, and a funeral and a wedding met and bowed. {npc} grew up there. You lay under it, once, for forty years.",
+   "npc": {
+    "role": "hr_candidate",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_candidate",
+     "ageAbs": 24,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_examination_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Make sure the examiners read it",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "hr_exam_essay",
+      "npcFlag": "hr_candidate",
+      "mem": {
+       "deed": "read",
+       "w": 30,
+       "note": "read my essay about the crossroads"
+      },
+      "log": "The wind does not lift a single paper in the courtyard all day, except one, which blows onto the chief examiner's desk at the end. The examiner reads it, and reads it again. {npc} passes, in the first rank. A crossroads essay in the first rank. You are absurdly proud."
+     }
+    },
+    {
+     "text": "Let the essay take its chance",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "hr_exam_essay",
+      "npcFlag": "hr_candidate",
+      "log": "{npc} passes, on merit, in the second rank, and goes home to the crossroads village a government official. The essay is copied by students for a hundred years. You did nothing. That is the best kind."
+     },
+     "fail": {
+      "comprehension": 2,
+      "npcFlag": "hr_candidate",
+      "log": "{npc} fails. A rich candidate with an answer in the sleeve passes in that place. {npc} goes home and becomes the village schoolteacher, and teaches the crossroads essay to every child for years. You are not sure that is a failure."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_hr_examination_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} has been appointed magistrate of a county in the south: your old county, the one where the yamen sat on your back for eighty years. {npc} arrives, and walks into the yamen courtyard, and stops, and stands there feeling the ground, the way somebody once stood at a crossroads.",
+   "npc": {
+    "role": "hr_candidate"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_examination_2"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_exam_essay"
+    ],
+    "npcFlags": [
+     "hr_candidate"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Warm the courtyard in welcome",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "mem": {
+       "deed": "welcomed",
+       "w": 30,
+       "note": "warmed the old yamen courtyard when I arrived"
+      },
+      "log": "Warm, all at once. {npc} laughs out loud in front of the clerks, and from that day governs the county as if the ground were listening, which it is, from very far away. The leaning tablet at the gate is straightened at last."
+     }
+    },
+    {
+     "text": "Let the county judge {npc} on its own",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "No sign. {npc} governs well anyway, because the essay was true. The county raises a tablet of good government when the term ends. You find out about it a hundred years later, and are glad. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_examination_4",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A scandal: the examiners of the last three examinations have been selling the questions. Half the young officials of the kingdom bought their places. The court is in uproar. The ruler wants the examinations abolished.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_examination_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Examination Hall",
+   "choices": [
+    {
+     "text": "Shake the examiners' hall the day the truth comes out",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "The hall where the questions were sold cracks from floor to roof in a still noon, in front of witnesses. The examinations are not abolished. The examiners are. The next examination is honest out of sheer terror."
+     }
+    },
+    {
+     "text": "Let the ministers repair it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2,
+       "shared": 1
+      },
+      "log": "They argue for a year and invent new rules: sealed names, copied essays so no examiner knows the hand, guards at the gate. It works better than terror would have. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_peace_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A good house, a good ruler, an even wheel, and for once everything at the same time. Forty years without a war. The granaries full, the roads mended, the examinations honest, the borders quiet. The people call it the reign of great peace. You lie under it, and it is light.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house",
+     "hr_even"
+    ],
+    "notFlags": [
+     "hr_cruel_reign"
+    ]
+   },
+   "arc": "The Years of Great Peace",
+   "choices": [
+    {
+     "text": "Rest, for the first time in centuries",
+     "effects": {
+      "health": 8,
+      "qi": 12,
+      "tally": {
+       "weight": -3
+      },
+      "flag": "hr_peace_reign",
+      "log": "You do almost nothing for years. The kingdom holds itself up. You doze under it like an old dog under a warm porch. It is the best rest you have ever had. (Weight -3)"
+     }
+    },
+    {
+     "text": "Watch it carefully: peace is when things rot unseen",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_peace_reign",
+      "log": "You watch. The dykes are fine. The granaries are fine. The young officials have never seen a famine and do not believe in them. That is the one thing that is not fine. You make a note."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_peace_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "Sixty years of peace, and nobody in the government has ever had to repair anything in a hurry. The old dyke-keepers are dead. The famine granaries have been sold off as warehouses. The army is a parade. The kingdom has forgotten how to fix things.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_peace_1"
+    ],
+    "minYearsAfter": 45,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Years of Great Peace",
+   "choices": [
+    {
+     "text": "Send a small trouble, to remind them",
+     "effects": {
+      "tally": {
+       "weight": 2,
+       "legend": 1
+      },
+      "log": "A flood, a small one, in one county, with plenty of warning. The government scrambles, fails, learns, and rebuilds the old dyke-keepers' office within the year. You chose a small disaster on purpose. It sits on you, small and sharp. (Weight +2)"
+     }
+    },
+    {
+     "text": "Wait, and let them find out themselves",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "The trouble comes on its own, a bad winter after a bad summer. The government fails, learns, and rebuilds, at more cost than if you had warned them. It was theirs to learn. (Weight -2)"
+     }
+    },
+    {
+     "text": "Warn the young ruler in a dream",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "A dream of a dry granary in a full year. The young ruler wakes uneasy, and orders an inspection, and the inspectors find the famine stores sold. Heads roll, figuratively. The granaries are bought back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_peace_3",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "A spring morning in the great peace, and you try something: you take your attention off the kingdom entirely, for one season, and lie under it like ordinary earth. Nothing. Nobody notices. The harvest comes in.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_peace_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_peace_reign"
+    ]
+   },
+   "arc": "The Years of Great Peace",
+   "choices": [
+    {
+     "text": "Be glad",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "weight": -3,
+       "shared": 1
+      },
+      "flag": "hr_kingdom_alone",
+      "log": "They did not need you this year. It is the best news you have ever had, and it feels exactly like grief. (Weight -3)"
+     }
+    },
+    {
+     "text": "Come back at once, uneasy",
+     "effects": {
+      "tally": {
+       "weight": 2
+      },
+      "log": "You come back after a month, sure that something must have gone wrong. Nothing has. You hold it up anyway. You do not know how not to, yet. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_peace_4",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The great peace ends, as peaces do: an old ruler, a disputed heir, a border raid. The people who lived through it remember it the rest of their lives as the time when everything worked. They do not remember you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_peace_1"
+    ],
+    "minYearsAfter": 65
+   },
+   "arc": "The Years of Great Peace",
+   "choices": [
+    {
+     "text": "That is right",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "A peace that people remember the dragon for is not a peace. It is a favour. You lie under the new troubles and are, quietly, very proud."
+     }
+    },
+    {
+     "text": "Keep the memory of it at your middle",
+     "effects": {
+      "qi": 10,
+      "log": "Sixty years when everything held. You will need to remember that it is possible. Later, when you are holding up four directions, you will remember it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_chroniclers_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "A weak ruler, and a court that needs omens. The flatterers have discovered that a yellow dragon appearing goes in the annals as a sign of heaven's favour, and they have started seeing one: over the palace at the New Year, over the ruler's hunting ground, in a well. You have not appeared anywhere. The historians are told to write it down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "What the Annals Say",
+   "choices": [
+    {
+     "text": "Make the false sighting fail in public",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "flag": "hr_annals_corrected",
+      "log": "The minister who saw a yellow dragon in the palace well leans over the well to show the ruler, and the water is the dullest grey anybody has ever seen. The court laughs. The sightings stop for a while."
+     }
+    },
+    {
+     "text": "Let the historians decide what to write",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_annals_corrected",
+      "log": "The chief historian writes, in the annals the ruler is not allowed to read: on this day the ministers reported a yellow dragon; the historian did not see it. One honest line. It is worth more than any appearance you could make."
+     }
+    },
+    {
+     "text": "Let it be written; it steadies a weak reign",
+     "effects": {
+      "tally": {
+       "reign": 2,
+       "weight": 2
+      },
+      "flag": "hr_annals_flattered",
+      "log": "The annals fill with yellow dragons that never were. The weak ruler feels stronger and rules a little better for it. You are a lie in the official record now, and the lie is heavy. (Reign +2, Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_chroniclers_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A young historian has found, in the archives, the old line about the palace on the marsh: in such a year, a yellow dragon appeared, and the king made it a temple. The young historian wants to know if it was true, or a flattery too, and has come to the temple at night to ask the floor.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_chroniclers_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "What the Annals Say",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"That one was true\"",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "log": "The young historian goes back to the archive and writes in the margin, in very small characters: confirmed by the floor. Nobody will ever believe that margin. It is the truest line in the annals."
+     }
+    },
+    {
+     "text": "\"Which do you think?\"",
+     "effects": {
+      "comprehension": 3,
+      "log": "The historian thinks. \"True,\" the historian says at last, \"because they made it a temple, and a temple costs more than a flattery.\" You like this historian. You hope the archive is kind to them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_chroniclers_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A historian of the annals has been ordered by a ruler to show the ruler the record of the ruler's own reign, which no ruler is permitted to read. The historian has refused, and is on the floor of the throne hall with a guard's spear at the throat, and still refusing.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_chroniclers_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "What the Annals Say",
+   "choices": [
+    {
+     "text": "Shake the hall: the record is not the ruler's",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The throne hall heaves, and the spear drops, and the ruler is thrown out of the throne onto the floor beside the historian. In the silence the ruler gets up, and dusts off the robe, and says: \"Very well. Keep your book.\" The rule stands for a very long time."
+     }
+    },
+    {
+     "text": "Hold the historian up; let the ruler decide",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Warmth under the historian, all through the long minute. The ruler looks at the calm face on the floor and lowers the hand. The book is not read. The historian keeps writing. The courage was the historian's. You only kept the floor steady."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sealcarvers_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "At noon on the summer solstice a group of court alchemists comes into the temple courtyard with cords, a bronze gnomon, and a block of white jade on a cushion. {npc}, their chief, is measuring a shadow on the paving that has no object to cast it: your shadow, faint and gold, lying under the stones at noon. They are going to carve it into a seal.",
+   "npc": {
+    "role": "hr_alchemist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_alchemist",
+     "ageAbs": 45,
+     "opinion": -20
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The Seal Carvers",
+   "choices": [
+    {
+     "text": "Pull your shadow down out of reach",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "hunted": -2
+      },
+      "flag": "hr_seal_refused",
+      "npcFlag": "hr_alchemist",
+      "log": "You sink, deep, cold, and the gold shadow on the paving fades to nothing at noon. {npc} measures empty stone for an hour and packs the cords away with a face like a locked box. Not this year."
+     }
+    },
+    {
+     "text": "Let them measure, and see what they want",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "hunted": 3
+      },
+      "flag": "hr_seal_measured",
+      "npcFlag": "hr_alchemist",
+      "log": "They measure every line of you, and {npc} writes it down in a book bound in black silk. They want a seal of the realm that is not only a seal: one that is a dragon, bound in jade, so that every decree it stamps carries the centre with it. You understand the danger now. They have your measure."
+     }
+    },
+    {
+     "text": "Break the gnomon in their hands",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "hunted": 1
+      },
+      "flag": "hr_seal_refused",
+      "npcFlag": "hr_alchemist",
+      "log": "The bronze snaps. The jade block cracks on its cushion. {npc} looks down at the stones for a long time and says, quietly, to the others: \"We will try again.\" It is not a threat. It is worse. It is patience."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sealcarvers_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} has come down into the crypt alone, with the black silk book, and sits on the floor and reads your measure aloud to you, line by line, as if to show you that it is known. Then {npc} asks a question: \"Would it be so bad? Every law of the realm, sealed with the centre. You would never have to be carried by a bad king again. You would carry them all.\"",
+   "npc": {
+    "role": "hr_alchemist"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_sealcarvers_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "hr_alchemist"
+    ]
+   },
+   "arc": "The Seal Carvers",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"No. A seal cannot let go\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_seal_refused",
+      "log": "{npc} is silent a long time. \"No,\" {npc} agrees at last. \"It cannot. That is the point of a seal.\" And goes up the stairs with the book. You know they will come again. You know now what you are refusing."
+     }
+    },
+    {
+     "text": "\"Burn the book, and I will forget your name\"",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "hunted": -2
+      },
+      "flag": "hr_seal_refused",
+      "log": "{npc} looks at the book, and at the floor, and laughs. The book does not burn. But {npc} does leave the court the next year, and the alchemists without their chief are slower, and the seal is a generation further off."
+     }
+    },
+    {
+     "text": "Say nothing, and let them believe you consented",
+     "effects": {
+      "tally": {
+       "hunted": 3,
+       "weight": 2
+      },
+      "flag": "hr_seal_measured",
+      "log": "Silence. {npc} takes it as a yes and goes up the stairs smiling. The jade is ordered from the mountains that week. (Weight +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sealcarvers_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The alchemists have a workshop now, inside the palace, with a jade block the size of a fist on a bench and a carver who has been working it for three years. You can feel the carving from under the palace: a coiled dragon, in your proportions, and every cut of the chisel is a small cold tug at your middle.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_sealcarvers_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_seal_measured"
+    ]
+   },
+   "arc": "The Seal Carvers",
+   "choices": [
+    {
+     "text": "Crack the jade along a hidden flaw",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "hunted": -3
+      },
+      "flag": "hr_seal_refused",
+      "log": "There is a flaw in the stone, deep inside, that nobody saw. You find it and lean on it, and the half-carved seal falls in two on the bench. Three years of work. The alchemists will need a new block from the mountains, and a new carver, because the old one has gone home to think."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "flag": "hr_seal_measured",
+      "log": "The jade is flawless. You lean and nothing gives. The chisel goes on. The seal is a little nearer finished every year, and you lie under the palace with the small cold tug in you, getting stronger."
+     }
+    },
+    {
+     "text": "Go deep and far, out of the carver's measure",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "hunted": -2,
+       "weight": -2
+      },
+      "log": "You sink and spread and change your shape, the way old earth slowly changes under a river. The carving goes on, but it is carving a dragon that is not quite you any more. The tug at your middle weakens. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tortoise_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "Something is coming down the north road. Very slowly. You first feel it in the winter, a great weight moving one step a day through the snow of the northern passes. By spring it has come a mile. It is old and patient and enormous and it is coming to you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ]
+   },
+   "arc": "The Tortoise Who Climbed to Ask",
+   "choices": [
+    {
+     "text": "Wait for it",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_tortoise_coming",
+      "log": "You wait. You are good at waiting. So, it turns out, is whatever is coming. It will take years. You find you are looking forward to it in a way you have not looked forward to anything in centuries."
+     }
+    },
+    {
+     "text": "Firm the road for its feet",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_tortoise_coming",
+      "log": "The north road is dry and firm under the great slow feet, mile after mile. It does not go faster. It goes more comfortably. That seems to be what it wanted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tortoise_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "Eleven years. The Black Tortoise of the north has climbed eleven years to reach you, with the black serpent of its shell coiled round it, and now it stands over the centre, its feet in your ground, and lowers its old head to the earth, and asks, in a voice like ice moving: what does winter look like, from the centre?",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_tortoise_1"
+    ],
+    "minYearsAfter": 11
+   },
+   "arc": "The Tortoise Who Climbed to Ask",
+   "choices": [
+    {
+     "text": "\"Like one season of five. Necessary, and not the whole\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_tortoise_met",
+      "log": "The Tortoise thinks about that for a whole season, standing over you. Then it nods, very slowly. \"In the north,\" it says, \"winter is everything. I wanted to know if it was. Thank you.\" It is the first of the four guardians to come to the centre. It will not be the last."
+     }
+    },
+    {
+     "text": "\"I do not know. Show me\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_tortoise_met",
+      "log": "The Tortoise is surprised: the centre is supposed to know. Then it shows you, in the cold that comes up through its feet: the ice on the rivers, the long dark, the seeds asleep. You feel winter properly for the first time. \"There,\" it says. \"Now you know what I hold.\""
+     }
+    },
+    {
+     "text": "Answer with warmth, not words",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_tortoise_met",
+      "log": "You warm the ground under the old cold feet. The Tortoise stands in it for a long time, eyes half closed. \"That,\" it says at last, \"is what winter looks like from the centre. It looks like being expected.\" It goes home happy, for a tortoise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tortoise_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The Black Tortoise is going home, as slowly as it came. At the edge of your feeling, on the north road, it stops and looks back once. The serpent on its shell lifts its head. The message comes down through the ground: the others will come too, one day. East, west, south. When they do, the centre should be ready.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_tortoise_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Tortoise Who Climbed to Ask",
+   "choices": [
+    {
+     "text": "Promise to be ready",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_four_promised",
+      "log": "You do not know yet what ready means. You promise anyway. The Tortoise goes on north, one step a day, and you feel it for eleven more years, getting smaller."
+     }
+    },
+    {
+     "text": "Ask why the centre is empty",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_four_promised",
+      "log": "The answer takes a whole winter to come down the north road. \"Because nobody has yet agreed to stand there,\" it says. \"The centre is not a place. It is where the four agree.\" You keep that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_tortoise_4",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "A long time after the Black Tortoise has gone home, a stone turtle is found in a field on the north road: a worn old shape carved by nobody, with a serpent in the pattern of its shell. The villagers set a stone slab on its back and carve on it the record of their village. It is the first time a road has remembered a visit.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_tortoise_3"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Tortoise Who Climbed to Ask",
+   "choices": [
+    {
+     "text": "Keep the stone turtle warm",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ph_water": 1
+      },
+      "log": "The stone is never quite frozen, even in the worst winter, and the village record on its back never cracks. North and centre, holding something up together. (Water +1)"
+     }
+    },
+    {
+     "text": "Let it be the north's, not yours",
+     "effects": {
+      "comprehension": 3,
+      "log": "A tortoise's footprint is a tortoise's footprint. You leave it cold and northern, the way its maker would want it, and the village record on it stands for a thousand years anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_overcome_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Wood breaks earth, across a whole kingdom now. The spring will not end and the forests march: roots heave the palace terraces, the royal tombs crack, and in the summer rains half the hillside fields of three provinces slide into the valleys. You feel every root in your own body.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_over_wood"
+    ]
+   },
+   "arc": "The Overcoming Cycle",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Hold the tombs and the terraces",
+     "effects": {
+      "strength": 3,
+      "health": -8,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You set yourself under the oldest things first: the tombs, the palace, the temple. They hold. The fields go. A kingdom can replant a field. (-8 health)"
+     }
+    },
+    {
+     "text": "Move the people off the slopes before the rains",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "Tremor after tremor under the hill villages all spring, until the people move down to the valley floors to sleep. When the rains come the slopes go into the valleys and the people are already there, alive."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_overcome_2",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Fire melts metal, across the kingdom. A summer of fires: the capital's armoury, the royal mint, the bronze bell foundry, all burned in one season, and half the harvest of the south with them. The army has no spears and the treasury has no coin.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_over_fire"
+    ]
+   },
+   "arc": "The Overcoming Cycle",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Pull the fires down into yourself",
+     "effects": {
+      "health": -8,
+      "strength": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You drink the heat out of the ground of the burning cities, all summer. You are scorched to your middle by autumn. The fires do not spread. (-8 health)"
+     }
+    },
+    {
+     "text": "Save the granaries first",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Every granary in the south sinks a hand into the cool earth, its floor sealed with clay. The mint burns, the armoury burns. The kingdom is poor and armed with sticks that winter. It is not hungry."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_overcome_3",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Earth dams water, and you are a kingdom's worth of earth. The great rivers run low. The capital's wells go dry, one after another, from the palace outward. The rice terraces of three provinces crack. It is not a curse. It is only you, too big.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_over_earth"
+    ]
+   },
+   "arc": "The Overcoming Cycle",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Make yourself smaller, deliberately",
+     "effects": {
+      "health": -10,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "You give up ground: you let yourself loosen and thin and sink, like a fist opening, for a whole year. It hurts in a way you did not know you could hurt. The wells come back one by one. (-10 health)"
+     }
+    },
+    {
+     "text": "Lead the people to the deep springs",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "There are springs under the old temple ruins and the forgotten shrines that nobody has drawn from in a century. The ground over them goes soft and green. People dig, and drink."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_overcome_4",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Metal cuts wood. A war, across the whole kingdom: armies marching through the forests, forges stripping the hills for charcoal, the great pines of the royal mountains cut for ships. The slopes come down in the rain. The war goes on regardless.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_over_metal"
+    ]
+   },
+   "arc": "The Overcoming Cycle",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Close the passes to the armies",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "fear": 2
+      },
+      "log": "Rockfall in every pass between the two armies for a season. They cannot reach each other. They negotiate instead, furiously, by envoy. It is not peace. It is a pause. (Wars stop more often in pauses than people think.)"
+     }
+    },
+    {
+     "text": "Hold the stripped slopes",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You grip the bare hills from below, all through the rains. The war goes on, but the villages under the hills stay standing. (-8 health)"
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_overcome_5",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Water quenches fire. A summer that does not come, across the whole kingdom: rain from the fifth month to the ninth, hearths out, the rice green in the paddies at harvest. The famine begins in the autumn.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_over_water"
+    ]
+   },
+   "arc": "The Overcoming Cycle",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Warm the seed-rice in every granary",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "health": -6,
+      "log": "Whatever is eaten that winter, the seed is kept dry and sound everywhere. In spring there is something to plant. (-6 health)"
+     }
+    },
+    {
+     "text": "Send the warmth up through the palace floors to the poorhouses",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The relief kitchens of the capital have the only warm floors in the kingdom that winter. People walk for days to sleep on them. Many live who would not have."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_turn_1",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "Under the nine storeys you find something new in yourself: not only holding the five phases, but turning them. The strong one can feed the next. Wood can give itself to fire, fire to earth, earth to metal, metal to water, water to wood. You feel the wheel under your heart like a millstone, waiting to be pushed.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "The Wheel Turns",
+   "choices": [
+    {
+     "text": "Push it, once, gently",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_metal": 2
+      },
+      "comprehension": 3,
+      "flag": "hr_wheel_turned",
+      "log": "Earth feeds metal. Your own strength goes round the wheel and comes out as a good year for the smithies and the mines, and a clean bright autumn. It works. You have turned the world a tenth of an inch. (Earth -2, Metal +2)"
+     }
+    },
+    {
+     "text": "Study it first",
+     "effects": {
+      "comprehension": 5,
+      "flag": "hr_wheel_turned",
+      "log": "A whole year of watching the five flow into each other, the way a miller watches the water before touching the wheel. When you do turn it, you will know exactly how far."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_turn_2",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "You have been turning the wheel for years now, and you notice something you did not expect: every turn costs the strong phase, and the strong phase is somebody's. The forges you cool are a smith's living. The spring you hold back is a farmer's orchard.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_turn_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Wheel Turns",
+   "choices": [
+    {
+     "text": "Turn it anyway; the whole matters more",
+     "effects": {
+      "tally": {
+       "ph_wood": -2,
+       "ph_fire": 2,
+       "weight": 2
+      },
+      "log": "Wood feeds fire. An orchard has a thin year so a cold valley can have a warm one. The orchard keeper curses the weather. You carry the curse. (Wood -2, Fire +2, Weight +2)"
+     }
+    },
+    {
+     "text": "Turn it more slowly, a little at a time",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "ph_water": -1,
+       "ph_wood": 1
+      },
+      "log": "A finger a year, not a hand. Nobody's living is broken. The wheel takes longer to even out. A centre that turns the world must turn it slowly enough for people to keep their feet. (Water -1, Wood +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_turn_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "For one season, by luck and work, the wheel is even: all five phases nearly level, nothing overrunning anything. The world is very quiet. Spring hands to summer, summer to the long days, the long days to autumn, autumn to winter, without a quarrel.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_turn_1"
+    ],
+    "flags": [
+     "hr_even"
+    ]
+   },
+   "arc": "The Wheel Turns",
+   "choices": [
+    {
+     "text": "Hold still and feel it",
+     "effects": {
+      "qi": 15,
+      "health": 6,
+      "log": "It is like being a struck bell that has finished ringing: perfectly still, perfectly full. It will not last. You hold it as long as it does."
+     }
+    },
+    {
+     "text": "Remember exactly how it feels",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You fix it at your middle: this is what even feels like. You will need to find your way back to it, again and again, for the rest of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceilingempty_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "You have left the house, and the throne-hall ceiling knows it first. The painted dragons over the throne are only paint now. The old ministers look up at them during audiences, and look at each other, and say nothing.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_withdrawn"
+    ]
+   },
+   "arc": "The Paint on the Ceiling",
+   "choices": [
+    {
+     "text": "Let them see it is only paint",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Gold leaf and mineral blue and a little glue. The court looks up and sees it plainly for the first time. It is a strange kind of honesty, for a ceiling."
+     }
+    },
+    {
+     "text": "Leave a little warmth up there anyway",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Not for the house. For the painters, long dead, who put you there. The gold stays faintly warm. The ministers still look at each other."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceilingempty_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The ruler of the house has noticed. Every night now the ruler comes into the empty throne hall and stands under the ceiling and asks it to come back. Not in the crypt: here, looking up, at the paint.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_ceilingempty_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "hr_withdrawn"
+    ]
+   },
+   "arc": "The Paint on the Ceiling",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Answer from the floor, not the ceiling",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": 1
+      },
+      "log": "\"I was never up there,\" you say, from under the throne. The ruler starts, and looks down, and does not understand. A house that looks for its dragon in paintings has forgotten where the ground is."
+     }
+    },
+    {
+     "text": "Stay silent; you have chosen",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "weight": -2
+      },
+      "log": "Silence, every night. The ruler stops coming after a year. The house goes on running down. You chose, and you are keeping the choice. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_ceilingempty_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A new reign, a new hall, and a new painter on the scaffolding with gold leaf, painting a dragon on the ceiling over a throne you do not hold. The painter has never seen you and paints you anyway, from the old patterns.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_ceilingempty_1"
+    ],
+    "minYearsAfter": 10,
+    "notFlags": [
+     "hr_withdrawn"
+    ]
+   },
+   "arc": "The Paint on the Ceiling",
+   "choices": [
+    {
+     "text": "Go up into the new paint",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "weight": 2
+      },
+      "log": "You go up, and the gold is warm again, and the new house feels it on the backs of their necks. You chose to come back. It is heavy. It is right, perhaps. (Weight +2)"
+     }
+    },
+    {
+     "text": "Let the new dragon be only a painting",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "A beautiful painting of a dragon. It is enough for the new house. They never know the difference. You are learning that a house can stand on a picture of you. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_easthill_1",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "A king you upheld is dead, and before dawn heaven sends you down to the hill east of the capital. The king is there in court robes, waiting on the grass, not afraid. Below, the city is waking, and the first people are coming out onto the roofs and looking east.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "flags": [
+     "hr_carry_ready"
+    ]
+   },
+   "arc": "The Hill East of the Capital",
+   "choices": [
+    {
+     "text": "Lower your head to the hill, and carry the king up",
+     "effects": {
+      "unflag": "hr_carry_ready",
+      "tally": {
+       "kept": 1,
+       "carried": 1,
+       "legend": 5,
+       "hunted": 2,
+       "weight": -10
+      },
+      "log": "The king steps onto your head as onto a stair, and you rise. The whole city sees it at once and a great shout goes up off the roofs. At the edge of heaven the king steps off and bows, and you come back down to the centre, lighter. (Weight -10)"
+     }
+    },
+    {
+     "text": "Talk with the king on the hill first",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "kept": 1,
+       "carried": 1,
+       "legend": 3,
+       "weight": -10
+      },
+      "log": "You sit on the hill together, the dead king and the dragon, while the sun comes up. The king tells you what it was like, being stood on you. You tell the king what it was like, being stood on. Then the light reaches the roofs, and it is time. You lower your head to the hill, the king steps up as onto a stair, and you rise. At the edge of heaven the king steps off and bows, and you come back down to the centre, lighter. (Weight -10)",
+      "unflag": "hr_carry_ready"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_easthill_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The people of the capital have started to climb the eastern hill at dawn on the anniversary of the king's death, to look at the sky. A shrine is going up at the top: one stone, flat, the shape of a dragon's head, where the king is said to have stepped.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_easthill_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Hill East of the Capital",
+   "choices": [
+    {
+     "text": "Keep the stone warm at dawn",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "Every anniversary at dawn the stone is warm, and the climbers put their hands on it, and are glad. It is a very small thing to keep. It is one of the best."
+     }
+    },
+    {
+     "text": "Let the hill be only a hill",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "The stone is cold, and the climbers come anyway, and remember a good king. Memory does not need you to be warm. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_easthill_3",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "You have carried a king up now, and you understand something about the house you could not before: a house is not the palace or the throne or the seal. It is a line of people who were stood on you, one after another, and then set down. You held each of them. You set each of them down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     9,
+     9
+    ],
+    "after": [
+     "dc_hr_easthill_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Hill East of the Capital",
+   "choices": [
+    {
+     "text": "Set the next one down gently, too",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_carry_learned",
+      "log": "Whoever comes next, you will carry them, and then you will let them go at the edge of heaven, and come back. That is the work. You are good at the first half. You are learning the second."
+     }
+    },
+    {
+     "text": "Wonder whether you could go up with one, and stay",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_carry_learned",
+      "log": "At the edge of heaven, with a good king on your head, you could keep going. Nobody would stop you. The centre would be empty, and someone else would come. You put the thought at your middle. It is a dangerous thought. It is a beautiful one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_abbot_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The new abbot of the Temple of the Yellow Dragon is {npc}, a farmer's child who came to the temple at nine to escape a famine and never left. {npc} has heard the old abbots' stories and does not quite believe them, and comes to the centre stone at midnight to test the floor with a plain question: are you hungry?",
+   "npc": {
+    "role": "hr_abbot2",
+    "spawn": {
+     "role": "friend",
+     "tag": "hr_abbot2",
+     "ageAbs": 50,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ]
+   },
+   "arc": "The Abbot of the Nine Storeys",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"No. But thank you for asking\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "hr_abbot2",
+      "mem": {
+       "deed": "answered",
+       "w": 25,
+       "note": "said thank you through the centre stone"
+      },
+      "log": "{npc} sits down on the stone very suddenly. Then laughs, the laugh of a farmer's child who has been proved right about something absurd. Nobody has ever asked you that before. It is the kindest question in all your years."
+     }
+    },
+    {
+     "text": "\"Sometimes. For rain, mostly\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_abbot2",
+      "log": "{npc} nods as if this were the most natural answer in the world, and that summer has the monks carry a bucket of well water to the centre stone every morning and pour it into the socket. You do not need it. You enjoy it enormously."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_abbot_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} has a harder question tonight. The court wants the temple to pray for victory in a war of conquest. The monks are divided. {npc} sits on the centre stone and asks: is the pagoda a prayer for peace, or a threat to the nine nations? What were you built for?",
+   "npc": {
+    "role": "hr_abbot2"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_hr_abbot_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "hr_abbot2"
+    ]
+   },
+   "arc": "The Abbot of the Nine Storeys",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"For peace. Whatever they told the envoys\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "hr_abbot2",
+      "log": "{npc} goes to the palace the next day and refuses the victory prayers, politely, and offers prayers for a short war and a fair peace instead. The court is furious. The abbot is not dismissed. Some of the generals are relieved."
+     }
+    },
+    {
+     "text": "\"I was built for whatever they needed. Decide what they need now\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2,
+       "shared": 1
+      },
+      "npcFlag": "hr_abbot2",
+      "log": "{npc} sits up all night. In the morning the abbot calls the monks together and they decide, all of them, by argument. It takes a week. It is the temple's answer, not yours. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_abbot_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is dying in the abbot's quarters and has asked to be carried out to the centre stone. The monks lay the old abbot on it in the moonlight. 'Well,' {npc} says to the stone, \"I never did find out what you eat.\"",
+   "npc": {
+    "role": "hr_abbot2"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_abbot_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "hr_abbot2"
+    ]
+   },
+   "arc": "The Abbot of the Nine Storeys",
+   "choices": [
+    {
+     "text": "\"Rain, and rice, and kindness. You fed me well\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcPass": "old age, on the centre stone of the pagoda",
+      "mem": {
+       "deed": "thanked",
+       "w": 30,
+       "note": "said I fed it well"
+      },
+      "log": "{npc} laughs once, very softly, and closes both eyes on the warm stone, and the monks chant until dawn. The stone is warm all night under them."
+     }
+    },
+    {
+     "text": "Be warm, without words",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "old age, on the centre stone of the pagoda",
+      "log": "Warm, all through, like a hearthstone. {npc} sighs, the way the cold sigh in front of a fire, and is gone by dawn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bellcast_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The temple is casting a great bell: bronze from a hundred villages, pots and spoons and hairpins melted together, a casting pit dug in the yard over you, and a founder who has made three bells and broken two. It will weigh as much as forty oxen. It is going to hang over you for as long as it hangs.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_pillar_5"
+    ]
+   },
+   "arc": "The Great Bell",
+   "choices": [
+    {
+     "text": "Hold the casting pit perfectly still",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 2,
+       "ph_metal": 2
+      },
+      "flag": "hr_bell_cast",
+      "log": "The bronze goes in, glowing, and the ground does not move a hair for the three days it takes to cool. They break the mould and the bell is whole, and when they strike it the first time you feel the sound go through you from top to bottom, all of you, like a shiver of joy. (Metal +2)"
+     }
+    },
+    {
+     "text": "Warm the pit so it cools slowly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ph_fire": 1
+      },
+      "flag": "hr_bell_cast",
+      "log": "Slowly, slowly, a week. The founder has never had a casting cool so evenly. The bell has a deep, warm voice that carries across three counties. (Fire +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bellcast_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The great bell rings at dawn and dusk, every day. You have come to feel it the way a body feels its heartbeat: not noticed, and missed the moment it stops. In a storm the monks ring it all night, for the fishermen on the coast.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_bellcast_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Great Bell",
+   "choices": [
+    {
+     "text": "Ring with it, under the ground",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The bell rings and the ground answers, very low, so that the fishermen far out in the storm feel it through the hull before they hear it. Some of them steer by it. The monks never know why the bell carries so far."
+     }
+    },
+    {
+     "text": "Listen to what the bell is made of",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Pots, spoons, hairpins, a dead child's silver bracelet, a soldier's buckle. A hundred villages, ringing. You know the voice of every one of them in the sound. You decide that wherever this bell goes, you will want to go with it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bellcast_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "An envoy of the horse peoples of the steppe, visiting the temple, stands under the great bell for a long time, and measures it with a rope, and asks the monks how much it weighs, and whether it could be moved. The monks laugh. You do not.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "after": [
+     "dc_hr_bellcast_1"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Great Bell",
+   "choices": [
+    {
+     "text": "Remember the envoy's face",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_bell_marked",
+      "log": "A face that measures a bell the way a farmer measures an ox. You fix it at your middle. Somewhere north, some day, horsemen will remember how heavy the bell was. So will you."
+     }
+    },
+    {
+     "text": "Make the bell seem to weigh twice as much",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1
+      },
+      "flag": "hr_bell_marked",
+      "log": "The rope the envoy throws over the beam sags as if a mountain hung on it. The envoy goes home and reports that the bell cannot be moved. It is not quite true. It buys the bell a few hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_quarrel_1",
+   "cat": "npc",
+   "weight": 8,
+   "once": false,
+   "text": "{npc} and the heir have quarrelled again, loudly, in front of the court: about a war, or a minister, or a tax, or the way the heir looks at the throne. You feel it through the palace floor, two weights pulling against each other on your back.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "An Heir's Quarrel",
+   "choices": [
+    {
+     "text": "Warm the floor between them until they sit down",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The pavilion floor is warm and the afternoon is long and both of them, without meaning to, sit down. Sitting people quarrel less. By evening they are only sulking."
+     }
+    },
+    {
+     "text": "Stay out of it: a centre does not take sides in a house",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -1
+      },
+      "log": "You lie still. They shout themselves hoarse and go to opposite ends of the palace. It is theirs to mend. They usually do, in their own time. (Weight -1)"
+     }
+    },
+    {
+     "text": "Shake the pavilion so they both remember the ground",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "weight": 2
+      },
+      "log": "The pavilion lurches. Ruler and heir grab the same pillar. For a moment they are just two frightened people holding on to the same thing. It does not end the quarrel. It reminds them what they share. (Weight +2)"
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_hr_omen_1",
+   "cat": "life",
+   "weight": 8,
+   "once": false,
+   "text": "A courtier has seen you again, in the clouds over the royal hunt, or in a fish's scales, or in a cracked tortoise shell, and has painted it, and is presenting it to the throne as an omen of heaven's favour. The ruler is pleased. You were nowhere near any of it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "A Flatterer's Omen",
+   "choices": [
+    {
+     "text": "Let the painting fade on the scroll by evening",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "By dusk the painted dragon on the scroll is a pale smear. The court decides it was an omen of something else. The courtier is very quiet for a month."
+     }
+    },
+    {
+     "text": "Let it pass; flattery is cheap",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "weight": 1
+      },
+      "log": "Another false sighting in the annals. They pile up on you like dust on a beam: light, each one. Not light, all together. (Weight +1)"
+     }
+    },
+    {
+     "text": "Send the ruler a dream of the real centre",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The ruler dreams of a plain warm floor, no clouds, no scales, no omens. In the morning the ruler looks at the courtier's painting for a long time and says, mildly, \"It does not look like that.\" The courtier does not understand."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_hr_sariraecho_1",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "In a life that was not yours, centuries from now or centuries ago, somebody stood over the centre stone of a ruined temple at night and stopped a band of diggers from taking the box. You feel the shape of that night in your own centre stone, as if someone had stood guard over it before it was laid.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_sarira_1"
+    ],
+    "marks": [
+     "mark:hmhr_stopped_diggers"
+    ]
+   },
+   "arc": "The Stone That Breathed",
+   "choices": [
+    {
+     "text": "Stand guard in return",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_relics_kept",
+      "log": "Somebody guarded your heart in a time you will never see. You guard it now, for both of you. No thief ever gets as far as the chamber again while you lie here."
+     }
+    },
+    {
+     "text": "Wonder who it was",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A martial artist, you think, with good hands and a stubborn back. Somebody who did not need to and did. You will never meet them. You think of them every time the stone goes cold at night."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sariraecho_2",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "In a life that was not yours, somebody took the relic box from under this stone, and it grew heavier at every step, and in the end they carried it back. You know the weight they felt. It is your weight. You put it in the box yourself, or you will.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_sarira_1"
+    ],
+    "marks": [
+     "mark:hmhr_carried_box"
+    ]
+   },
+   "arc": "The Stone That Breathed",
+   "choices": [
+    {
+     "text": "Forgive the thief before the theft",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "They carried it back. That is the only part that counts. You keep the box a little lighter for anyone who ever means to bring it home."
+     }
+    },
+    {
+     "text": "Keep the box heavy, as it was for them",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 1
+      },
+      "flag": "hr_box_heavy",
+      "log": "Heavy, then. It taught someone something once. It can teach again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_sariraecho_3",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "In a life that was not yours, somebody put the centre stone of this pagoda back in its place and sat on it until dawn, and by dawn they knew the stone was breathing. You are breathing now, under the stone, slowly. You have always breathed like this. Somebody noticed first.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_hr_sarira_1"
+    ],
+    "marks": [
+     "mark:hmhr_sat_stone"
+    ]
+   },
+   "arc": "The Stone That Breathed",
+   "choices": [
+    {
+     "text": "Breathe a little slower, for whoever sat there",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "legend": 1
+      },
+      "log": "In, a season. Out, a season. Somebody, somewhere in time, is sitting on you in the dark and feeling it, and is not afraid."
+     }
+    },
+    {
+     "text": "Keep the stone warm for the next one to sit",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "The centre stone is always warm, in every season, and pilgrims sit on it without being told to. They do not know why. One of them, one day, will know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_pillar_7",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The morning of the raising. There is no omen and no dark sky: only the great centre pillar, one tree, lying on its rollers by the socket, and two hundred craftsmen at the ropes, and {npc} at the head of them, checking every knot twice. It is a great weight. It will not rise by being looked at.",
+   "npc": {
+    "role": "hr_builder"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     7,
+     7
+    ],
+    "after": [
+     "dc_hr_pillar_3"
+    ],
+    "notFlags": [
+     "hr_pillar_shook"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Centre Pillar",
+   "choices": [
+    {
+     "text": "Lend the ropes a little of yourself",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "legend": 2
+      },
+      "flag": [
+       "hr_pillar_raised",
+       "hr_pillar_up"
+      ],
+      "log": "The ropes take the strain and the tree comes up, slowly, as if the ground itself were pushing from beneath. Two hundred people raised it. They will tell their grandchildren that it went up as though it wanted to."
+     }
+    },
+    {
+     "text": "Hold the socket still, and nothing more",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "hr_pillar_left",
+       "hr_pillar_up"
+      ],
+      "log": "The centre stone does not move a hair as the foot of the pillar comes down into it. It takes until dusk. {npc} sets the last wedge with a mallet, and stands back, and does not say a word. It is theirs."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

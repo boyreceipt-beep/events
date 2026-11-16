@@ -1,0 +1,4456 @@
+{
+ "events": [
+  {
+   "id": "dc_sb_ay_famine_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The rice has run out and the barley is still green. The old people call this time the barley hill: the stretch of late spring a family has to climb on grass gruel and boiled pine bark before the harvest comes. The village near you is halfway up the hill and slipping. Children with swollen bellies search the field edges for anything that can be eaten, and come closer to you every day.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "arc": "The Barley Hill",
+   "choices": [
+    {
+     "text": "Lead the children, by being seen ahead of them, to the patch of wild greens no one has found",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "sb_ay_famine_led",
+      "log": "They follow the strange thing at the edge of their sight to a hollow full of shepherd's purse and wild garlic. They pick until dark. The barley ripens nine days later, and every one of those children is alive to eat it."
+     }
+    },
+    {
+     "text": "Keep out of sight. Hungry people are dangerous",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "You stay still and quiet and let them pass. A boy looks straight at the place where you are and sees only grass. The village gets over the hill, barely, with three fewer old people than it started with."
+     }
+    },
+    {
+     "text": "Draw them away from the poisonous roots they keep digging",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_ay_famine_led",
+      "log": "Every time a hand reaches for the wrong root, something rustles nearby and the child goes to look. By the end of spring they have learned which roots to leave, without knowing who taught them."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "You frighten them instead of guiding them. They run home and say there is a ghost in the field, and nobody goes there to forage again that year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_famine_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The village has made a granary rule: every household puts one measure of grain into a common jar at harvest, and in the barley-hill months it is shared out. They wrote the rule into their compact and read it aloud at the new year. At the end of the reading, the old headman adds a line that is not written anywhere: \"And leave a handful at the field edge, for the one who showed the children where the greens were.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     5
+    ],
+    "after": [
+     "dc_sb_ay_famine_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "sb_ay_famine_led"
+    ]
+   },
+   "arc": "The Barley Hill",
+   "choices": [
+    {
+     "text": "Leave the handful where it is. Let it feed the sparrows",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "The sparrows eat it, and the village sees an empty plate and is satisfied. It is a perfectly good arrangement. Everyone gets something."
+     }
+    },
+    {
+     "text": "Take it, so they know it was received",
+     "effects": {
+      "qi": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The handful vanishes overnight, every year, for as long as the rule lasts. The village tells visitors about it with great pride."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_famine_3",
+   "cat": "insight",
+   "weight": 4,
+   "once": true,
+   "text": "Another barley-hill spring, a worse one, a generation on. But the common jar is there, and the compact, and a headman who was one of the children you led to the greens. She stands at the jar with a measuring scoop and shares out grain by the household, fairly, while the young people grumble that it is not enough.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_famine_2"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Barley Hill",
+   "choices": [
+    {
+     "text": "Bring them the luck of the year: a warm spell, an early barley",
+     "effects": {
+      "qi": -8,
+      "luck": 2,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The barley turns gold ten days early. The young people say it was the weather. The headman looks toward you for a long moment, then gets back to her scoop."
+     }
+    },
+    {
+     "text": "Let them climb it with their own jar",
+     "effects": {
+      "comprehension": 4,
+      "log": "They make it. Not everyone, but nearly everyone, and they did it themselves. You find you are prouder of the jar than of anything you have done."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_child_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A child from the village has found you. {npc} is about eight and was sent out for greens and has not gone home. {He} sits a careful distance away with a boiled potato on a leaf, pushes it toward you, and waits with the huge patience of a child who has decided something.",
+   "npc": {
+    "role": "sb_ay_child",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ay_child",
+     "ageAbs": 8,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     3
+    ]
+   },
+   "arc": "The Child Who Keeps Coming Back",
+   "choices": [
+    {
+     "text": "Take the potato",
+     "effects": {
+      "qi": 3,
+      "charm": 2,
+      "npcFlag": "sb_ay_child",
+      "flag": "sb_ay_child_met",
+      "log": "{npc} claps both hands over {his} mouth to keep from shouting. {He} comes back the next day with another potato, and the next, and tells no one, which for a child of eight is a vow of iron."
+     }
+    },
+    {
+     "text": "Stay perfectly still and let {him} look",
+     "effects": {
+      "comprehension": 2,
+      "npcFlag": "sb_ay_child",
+      "flag": "sb_ay_child_met",
+      "log": "{npc} looks at you until the light goes, then leaves the potato and runs home. In the morning the potato is gone and there is a small new pile of stones where {he} sat. A child's altar."
+     }
+    },
+    {
+     "text": "Frighten {him} home. The world is not safe for children who wander",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "sb_ay_child",
+      "log": "{npc} runs home in tears. Then, three days later, {he} is back, standing further off, with two potatoes. Some children cannot be frightened, only made more polite."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_child_2",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} is grown now, and leaving. The family has no land, and {he} has been taken on as a servant in a town three days away. {He} comes to the old place one last time, with a potato out of habit, and sits there talking to you about the town, as if you had asked.",
+   "npc": {
+    "role": "sb_ay_child"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     5
+    ],
+    "after": [
+     "dc_sb_ay_child_1"
+    ],
+    "minYearsAfter": 9,
+    "npcFlags": [
+     "sb_ay_child"
+    ]
+   },
+   "arc": "The Child Who Keeps Coming Back",
+   "choices": [
+    {
+     "text": "Give {him} something to take: a smooth stone from where you rest",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcFlag": "sb_ay_child_stone",
+      "log": "{npc} turns the stone over and over, then ties it into a cloth and hangs it round {his} neck. {He} does not cry until {he} is out of sight, which is how you know {he} is grown."
+     }
+    },
+    {
+     "text": "Follow {him} to the edge of the district, out of sight",
+     "effects": {
+      "qi": -4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_ay_child_stone",
+      "log": "Two men on the road eye the young servant with the bundle, then look past {him} at something in the trees and decide to be somewhere else. {npc} never knows."
+     }
+    },
+    {
+     "text": "Let {him} go. Children leave",
+     "effects": {
+      "comprehension": 3,
+      "log": "You watch the road until the dust settles. The clearing is very quiet that winter. You did not know a potato could leave such a hole."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_child_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is old. {He} has come back to the village to die, and has climbed out to the old clearing on a stick, with a grandchild holding {his} other hand. The grandchild is carrying a boiled potato on a leaf, and has plainly been told exactly what to do with it.",
+   "npc": {
+    "role": "sb_ay_child"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     7
+    ],
+    "after": [
+     "dc_sb_ay_child_2"
+    ],
+    "minYearsAfter": 45,
+    "npcFlags": [
+     "sb_ay_child_stone"
+    ]
+   },
+   "arc": "The Child Who Keeps Coming Back",
+   "choices": [
+    {
+     "text": "Show yourself to both of them, once",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "mark": "sb_ay_child",
+      "log": "The grandchild drops the potato. {npc} laughs, a dry old laugh, and says, \"I told you.\" That night {he} sleeps more easily than {he} has in years, and in the spring {he} is buried facing the clearing."
+     }
+    },
+    {
+     "text": "Take the potato, as you always did",
+     "effects": {
+      "qi": 3,
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The potato is gone when they look back. The grandchild comes alone the next week, with two, and you begin again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_names_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The village has started calling you something. You hear it from the field edges: the Old One, says one grandmother. That Thing, says another. The children have their own name, and it is rude. Names are how humans decide what a thing is for. Whatever you do this year, they will remember it in the name.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     3
+    ],
+    "notFlags": [
+     "sb_named"
+    ]
+   },
+   "arc": "What They Call You",
+   "choices": [
+    {
+     "text": "Do something kind, where they can see",
+     "effects": {
+      "qi": -3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": [
+       "sb_ay_names_kind",
+       "sb_named"
+      ],
+      "log": "A lost calf comes home with something moving just behind it, out of sight. By winter you are the Kind Neighbour. The children keep their own name, but they say it nicely now."
+     }
+    },
+    {
+     "text": "Do something frightening, where they can see",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 2
+      },
+      "flag": [
+       "sb_ay_names_fear",
+       "sb_named"
+      ],
+      "log": "The dogs howl all one night and every lamp in the village gutters at once. By winter you are the One We Do Not Name, which is still a name, and the most careful one."
+     }
+    },
+    {
+     "text": "Do nothing, and see what they make of that",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "They settle on the Quiet One. It is not bad, as names go. It asks very little of you.",
+      "flag": "sb_named"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_names_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A generation on, the name has changed. A travelling storyteller passed through and told the village a grander tale about you than any of them had thought of, and gave you a grand name to go with it. The grandmothers disapprove. The children love it. The new name promises things you have never done.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     5
+    ],
+    "after": [
+     "dc_sb_ay_names_1"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "What They Call You",
+   "choices": [
+    {
+     "text": "Try to live up to the new name",
+     "effects": {
+      "qi": -5,
+      "strength": 2,
+      "tally": {
+       "legend": 2
+      },
+      "log": "You do one or two of the things in the story, so that it is at least partly true. It is exhausting. It is also, you notice, how most legends are made."
+     }
+    },
+    {
+     "text": "Keep the grandmothers' name. It was true",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The grand name fades in a few years, as stories do. The old one stays. The grandmothers die smug."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_names_3",
+   "cat": "insight",
+   "weight": 4,
+   "once": true,
+   "text": "Nobody in the village now remembers why you are called what you are called. The name has worn smooth, like a step. A child asks a schoolmaster what it means, and the schoolmaster, who does not know, invents a meaning on the spot, with great confidence. The child writes it down.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     7
+    ],
+    "after": [
+     "dc_sb_ay_names_2"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "What They Call You",
+   "choices": [
+    {
+     "text": "Let the invented meaning stand",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "It is written now, which means it is true. You are slightly different from this year on, because a schoolmaster could not say I do not know."
+     }
+    },
+    {
+     "text": "Show the child, privately, the old meaning",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "The child sees something by the path home that explains it all at once. The child grows up, becomes a schoolmaster, and corrects the book. Some debts take one lifetime to pay."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_plague_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A fever has come up the road from the market town. The village has done what villages do: the sick family has been moved to a straw hut at the field edge, close to you, and food is left on a stone by the path, and nobody goes nearer than that. At night you can hear them in the hut, the mother singing to keep the children awake, because she is afraid of what happens to the ones who sleep.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The Fever Year",
+   "choices": [
+    {
+     "text": "Stay near the hut through the worst nights, and send them what warmth and qi you can",
+     "effects": {
+      "qi": -10,
+      "health": -5,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "sb_ay_plague_kept",
+      "log": "The hut is warmer than it should be, all through the cold rain. Three of the five live. The mother says, ever afterwards, that something kept watch at the door, and the village decides she was delirious."
+     }
+    },
+    {
+     "text": "Keep the curious away from the hut, so the fever does not spread",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1,
+       "virtue": 1
+      },
+      "flag": "sb_ay_plague_kept",
+      "log": "The boys who dare each other to touch the hut find something in the reeds that makes them run home white-faced. The fever stays in the hut, and goes no further."
+     }
+    },
+    {
+     "text": "Move away until the fever passes",
+     "effects": {
+      "luck": 2,
+      "log": "You go where the air is clean and come back in the spring. The hut is gone, burned. Nobody says how many came out of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_plague_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "One of the children from the fever hut is grown, and has become a village healer of the old sort: herbs, needles, a great deal of firm talk. When a fever comes now, the healer goes straight into the house, and is never ill, and says only that a fever is afraid of anyone who has already been kept safe once.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_plague_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "sb_ay_plague_kept"
+    ]
+   },
+   "arc": "The Fever Year",
+   "choices": [
+    {
+     "text": "Go with the healer, unseen, to the worst houses",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "For years the healer's houses are the ones where the children live. People start to send for the healer from three valleys away. The healer leaves a bowl of gruel on the stone by the path every winter, out of habit, and you eat it."
+     }
+    },
+    {
+     "text": "Let the healer's skill be the healer's own",
+     "effects": {
+      "comprehension": 3,
+      "log": "The healer is good, truly good, and loses some and saves many. You watch the skill grow, year by year, a thing entirely human. It is like watching a tree."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_plague_3",
+   "cat": "life",
+   "weight": 3,
+   "once": true,
+   "text": "There is a flat stone by the path at the field edge where no hut has stood for generations. People still leave a bowl of rice on it when someone in the house has a fever. Nobody remembers the hut. Everybody knows about the stone.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     7
+    ],
+    "after": [
+     "dc_sb_ay_plague_2"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "The Fever Year",
+   "choices": [
+    {
+     "text": "Keep taking the bowls, and keep the fevers gentle",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "The village has fewer fever deaths than its neighbours, every decade, for no reason a magistrate can find."
+     }
+    },
+    {
+     "text": "Leave the bowls. Let the sparrows have them",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The sparrows grow fat and loud, and the village decides the sparrows are your messengers. Nobody is allowed to throw stones at sparrows there for two hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_shrine_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An old woman has built a shrine to you. It is three flat stones and a straw roof, about knee high, and inside is a bowl of clear water that she changes every morning. She rubs her palms together in front of it and asks for small things: a grandson's cough, a hen that has stopped laying. She never asks for anything large. She seems to think it would be rude.",
+   "when": {
+    "realm": [
+     1,
+     4
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "Three Stones and a Straw Roof",
+   "choices": [
+    {
+     "text": "Answer one small prayer: the cough, the hen",
+     "effects": {
+      "qi": -3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "sb_ay_shrine_answered",
+      "log": "The cough goes and the hen lays two eggs in a morning. She thanks the shrine at great length and then, very politely, asks about the neighbour's goat."
+     }
+    },
+    {
+     "text": "Drink the water. It is a gift",
+     "effects": {
+      "qi": 4,
+      "flag": "sb_ay_shrine_answered",
+      "log": "The bowl is dry every evening. She refills it with deep satisfaction. Nothing else in her life is so reliably received."
+     }
+    },
+    {
+     "text": "Leave it be. You are not a god",
+     "effects": {
+      "comprehension": 2,
+      "log": "She keeps it anyway. She does not seem to need you to be anything in particular, only there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_shrine_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The old woman is dead, and her daughter-in-law has taken over the shrine, with less warmth and more method. The water is changed on the first and fifteenth days only. The prayers are longer and more specific. There is a list. It includes a lawsuit over a field boundary.",
+   "when": {
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_shrine_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_ay_shrine_answered"
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "Three Stones and a Straw Roof",
+   "choices": [
+    {
+     "text": "Help with the lawsuit",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The boundary stone is found exactly where the family said it was, under a hedge nobody had looked behind. The neighbours start their own shrine to you out of pure spite."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The boundary stone is found exactly where the neighbours said it was. The daughter-in-law gives the shrine a long, cold look and changes the water monthly after that."
+     }
+    },
+    {
+     "text": "Ignore the list. Answer only the prayers the old woman would have made",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The children's coughs clear, the hens lay, the lawsuit is lost. The daughter-in-law is baffled, and slowly, over twenty years, comes to pray the way her mother-in-law did."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_shrine_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The shrine is a heap of three stones in the grass. The straw roof rotted long ago. The family moved to the town. A road surveyor sits on the stones to eat lunch, notices how flat they are, and wonders aloud if anybody wants them for a doorstep.",
+   "when": {
+    "realm": [
+     1,
+     8
+    ],
+    "after": [
+     "dc_sb_ay_shrine_2"
+    ],
+    "minYearsAfter": 80,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "Three Stones and a Straw Roof",
+   "choices": [
+    {
+     "text": "Make the surveyor uneasy enough to leave them",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1,
+       "fear": 1
+      },
+      "log": "The surveyor's lunch tastes of nothing and every bird in the hedge stops singing. The surveyor puts the stones back exactly as they were, apologises to them out loud, and routes the road a little to the east."
+     }
+    },
+    {
+     "text": "Let the stones go. The prayers were the shrine, not the stones",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They become a doorstep in a new house by the road. A child sits on them every evening. You decide that counts."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_lost_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": false,
+   "text": "Snow and dusk together, and two travellers have lost the road. They are close to you, going in a slow circle, the way lost people do. Their lantern is nearly out. If they stop to rest, they will not get up.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "Lost in the White",
+   "choices": [
+    {
+     "text": "Let them see something ahead of them, and keep it just ahead, all the way to the village",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "sb_ay_lost_led",
+      "log": "They follow it without a word, too cold to be afraid. When the village dogs start barking, the thing they were following is gone. They tell the story badly, the way true stories are told."
+     }
+    },
+    {
+     "text": "Make a noise behind them, so they keep moving",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1,
+       "virtue": 1
+      },
+      "flag": "sb_ay_lost_led",
+      "log": "They run, in terror, in exactly the right direction. Fear is a very good guide, if somebody aims it."
+     }
+    },
+    {
+     "text": "It is not your road",
+     "effects": {
+      "comprehension": 2,
+      "log": "In the morning there are two shapes under the snow, and a lantern. The spring thaw makes it a story the village tells to children, to keep them home in winter."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 1
+  },
+  {
+   "id": "dc_sb_ay_lost_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Someone has put up a post by the road where travellers lose their way in snow: a carved pole with a rag tied to it and a line painted down the side, pointing toward the village. Underneath, in rough letters: IF YOU ARE LOST, FOLLOW WHAT YOU SEE. DO NOT BE AFRAID OF IT.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_lost_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "sb_ay_lost_led"
+    ]
+   },
+   "arc": "Lost in the White",
+   "choices": [
+    {
+     "text": "Keep the bargain the post makes",
+     "effects": {
+      "qi": -4,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "The post is repainted every autumn for a hundred years. Hardly anyone dies on that road in winter. The few who do, the village says, must have been afraid."
+     }
+    },
+    {
+     "text": "Let the post do the work now",
+     "effects": {
+      "comprehension": 3,
+      "log": "It does, mostly. People are good at following signs, it turns out, when someone has told them it is all right to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_war_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "An army is passing: three days of feet and carts and banners on the road, going toward a war somewhere south. The village has emptied into the hills. On the third night a young soldier slips out of the column and hides close to you, shaking, with a spear he is too frightened to let go of. The sergeants are coming back down the road with torches, counting.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     4
+    ]
+   },
+   "arc": "The Army on the Road",
+   "choices": [
+    {
+     "text": "Draw the torches away from the soldier",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "sb_ay_war_hid",
+      "log": "A rustle in the wrong reeds, then another further off. The sergeants follow it into a marsh and come out wet and swearing. The soldier stays where he is until the column is a day gone, then goes home a long way round."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The sergeants find the soldier anyway, and notice something else in the reeds. One of them remembers it. For years there are rumours in the army about the thing by that road."
+     }
+    },
+    {
+     "text": "Stay still. This is a human quarrel",
+     "effects": {
+      "luck": 2,
+      "log": "They take the soldier back to the column. You never learn what happened to him. The road is quiet for months afterwards, and quieter still in your thoughts."
+     }
+    },
+    {
+     "text": "Frighten the whole column into hurrying past",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 2
+      },
+      "flag": "sb_ay_war_hid",
+      "log": "The horses shy and the drovers curse, and the officers decide this stretch of road is bad luck and march through the night. Nobody goes back to count anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_war_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The war is over, and the soldier who hid by the road has come back, older, with a wife and a small field near the village. Every year on the night he deserted, he puts a cup of rice wine at the edge of the reeds and sits with it until it is dark. He never says why. His children think he is strange.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_war_1"
+    ],
+    "minYearsAfter": 8,
+    "flags": [
+     "sb_ay_war_hid"
+    ]
+   },
+   "arc": "The Army on the Road",
+   "choices": [
+    {
+     "text": "Take the cup, and leave it for the dead",
+     "effects": {
+      "qi": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The cup is always empty by morning. He nods at it, rinses it, and goes to work. It is the only conversation the two of you ever have, and it lasts for years."
+     }
+    },
+    {
+     "text": "Show him something, once: that he was seen, and it was all right",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "He sits very still for a long time. Then he goes home and, for the first time, tells his children what he did in the war. They are much less ashamed of him than he expected."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_war_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "A farmer's plough turns up an old rusted spearhead at the edge of the reeds. The farmer's grandmother takes it from him, cleans it, and hangs it in the house above the ancestor tablets. \"Your grandfather's,\" she says. \"He was a coward, and it is why you are alive. Never mock the reeds.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     8
+    ],
+    "after": [
+     "dc_sb_ay_war_2"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "The Army on the Road",
+   "choices": [
+    {
+     "text": "Bless the house with a quiet year",
+     "effects": {
+      "qi": -4,
+      "luck": 2,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "Good rain, no fevers, a calf. The farmer is careful about the reeds after that, and his own children are made to be careful too."
+     }
+    },
+    {
+     "text": "Watch, and remember the column on the road",
+     "effects": {
+      "comprehension": 4,
+      "log": "Three days of feet and carts, and one boy who did not want to die. Of all of them, his is the line that is still here."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_moon_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The first full moon of the year. The village has built a moon house of pine branches and straw in the frozen field and is waiting for the moon to rise to set it alight. Whoever sees the moon first will have a lucky year. The children are already cracking nuts with their teeth against boils, and swinging cans of embers on strings until the field is full of fire circles. Nobody has noticed you at the field edge.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The First Full Moon",
+   "choices": [
+    {
+     "text": "Watch the fire with them, from the dark",
+     "effects": {
+      "comprehension": 3,
+      "qi": 4,
+      "log": "The moon house goes up with a roar and sparks climb into the moonlight. The heat reaches you at the field edge. You find you have been holding a breath, the way they all have."
+     }
+    },
+    {
+     "text": "Let one child see you, at the moment the moon rises",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_ay_moon_seen",
+      "log": "A small girl turns to shout that she has seen the moon first, and sees you instead. She shouts something else. Nobody believes her, and from that year on the village watches the field edge as much as the sky."
+     }
+    },
+    {
+     "text": "Help the moon house burn bright and clean",
+     "effects": {
+      "qi": -3,
+      "luck": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_ay_moon_seen",
+      "log": "It burns straight and high, and falls the right way, toward the south, which means a good harvest. The old men argue for weeks about why it was so perfect."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_moon_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The first full moon again, a generation on. Now there is something new in the custom: before they light the moon house, the village leaves a share of the five-grain rice at the field edge, toward you, and the children are told not to look that way until the fire is lit. They all look that way.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_moon_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "sb_ay_moon_seen"
+    ]
+   },
+   "arc": "The First Full Moon",
+   "choices": [
+    {
+     "text": "Accept the rice",
+     "effects": {
+      "qi": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The bowl is empty when the fire dies. The children are sure they saw something. They each saw something different. All of them tell it for the rest of their lives."
+     }
+    },
+    {
+     "text": "Leave the rice and take a kite instead: the one cut loose to carry away the year's bad luck",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "The kite comes down near you and does not go up again. Whose bad luck was on it, you never know. It is a heavy kite. You keep it anyway, so it lands on nobody else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_moon_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The moon house is smaller now. Half the village has gone to the towns. The young people who are left build it in an afternoon, laughing, a little embarrassed by the whole thing. But they still leave the bowl at the field edge, and they still do not look that way, and they still all look.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     8
+    ],
+    "after": [
+     "dc_sb_ay_moon_2"
+    ],
+    "minYearsAfter": 70
+   },
+   "arc": "The First Full Moon",
+   "choices": [
+    {
+     "text": "Give them one perfect moonrise",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The cloud parts at the exact moment. The fire catches clean. Nobody laughs. They stand there in the light, a few young people in a big field, and for a moment the whole old village is with them."
+     }
+    },
+    {
+     "text": "Let it be small. Small is still a fire",
+     "effects": {
+      "comprehension": 3,
+      "log": "It burns down in an hour. They go home warm. It is enough, and you find you mean that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_quiet_1",
+   "cat": "insight",
+   "weight": 4,
+   "once": false,
+   "text": "A lonely year. Nothing happens. The village goes about its planting and harvest without once looking your way. The persimmon trees drop their leaves, and the farmers leave the last few fruits on the branches for the magpies, as they always do. The fruit is for the magpies. You had not known you would notice.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The Long Quiet",
+   "choices": [
+    {
+     "text": "Go closer to the village, just to hear them",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You listen to a family argue about a pig for an hour. It is the best hour of the year. On the way back, a dog barks at you, and somebody comes out with a lamp."
+     }
+    },
+    {
+     "text": "Stay with the silence and grow in it",
+     "effects": {
+      "qi": 8,
+      "comprehension": 2,
+      "log": "The quiet turns out to have a bottom, and at the bottom there is more of you than you knew. By spring your qi runs deeper and slower, like water under ice."
+     }
+    },
+    {
+     "text": "Watch the magpies eat the persimmons",
+     "effects": {
+      "luck": 2,
+      "log": "They squabble and steal and shout all winter. You are less alone than you thought. You were simply looking for the wrong company."
+     }
+    },
+    {
+     "text": "Count the chimneys in the village, every evening, to be sure they are all still there",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Thirty-one, every evening, all winter. In the spring there are thirty-two: a new house, a young couple. You are absurdly pleased, and do not know who to tell."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_sb_ay_quiet_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "After the lonely years, a single odd day: a woodcutter stops near you to rest, looks around, and says to nobody, \"Good morning,\" just in case. Then he eats his rice ball and goes on.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_quiet_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Long Quiet",
+   "choices": [
+    {
+     "text": "Remember him",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "He does it every time he passes, for years. Good morning, just in case. You never answer, and you never miss it."
+     }
+    },
+    {
+     "text": "Answer, in the only way you can: a warm wind, a thrush singing nearby",
+     "effects": {
+      "qi": -2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "He stops chewing. He looks round slowly. Then he grins, says \"Good morning\" again, louder, and goes off whistling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_drought_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "No rain since the planting. The seedlings are yellow and the wells are mud. A wandering shaman has told the village whose fault it is: the strange thing near the fields has been angered, or is greedy, or is simply bad luck. There is a crowd coming toward you with sticks, a straw effigy and a bell.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     4
+    ]
+   },
+   "arc": "They Say You Did This",
+   "choices": [
+    {
+     "text": "Leave before they arrive, and let them burn the effigy",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "They burn the effigy where you had been and go home feeling better. The rain comes eleven days later, as rain does. The shaman is paid very well."
+     }
+    },
+    {
+     "text": "Stay where they can see you, and do not move",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "flag": "sb_ay_drought_stood",
+      "log": "The crowd stops. The bell stops. Something in the way you wait makes every stick feel very small. They go home in silence. The shaman leaves the district that night."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 2
+      },
+      "deathCause": "a frightened village that blamed you for a drought",
+      "log": "Fear makes a crowd brave. The first stick lands, and then all of them."
+     },
+     "risky": true
+    },
+    {
+     "text": "Find them water: the old spring under the rocks that dried up a lifetime ago",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "qi": -8,
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "flag": "sb_ay_drought_stood",
+      "log": "You lead the shaman, of all people, to the place where the ground is damp. They dig. Water. The shaman takes the credit and you let it. The village keeps its seedlings alive by hand."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "There is nothing there but cold damp stone. The crowd takes your being there as proof of guilt, and burns the effigy so close to you that the smoke stings for a week."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_drought_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Another dry summer, a generation later, and the village is arguing in the headman's yard. The old people say leave the thing near the fields alone, it stood its ground once and the rain came. The young people say it is the cause. A boy is sent, on a dare, to throw a stone at you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_drought_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "sb_ay_drought_stood"
+    ]
+   },
+   "arc": "They Say You Did This",
+   "choices": [
+    {
+     "text": "Let the stone land and do nothing",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The stone lands. Nothing happens. The boy stands there, astonished, and goes back and tells them it is only a dumb harmless thing. The argument ends in a shrug, which is safer than awe."
+     }
+    },
+    {
+     "text": "Send the stone back, gently, to land at the boy's feet",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The boy runs all the way home. The young people stop arguing. In the autumn, the boy brings a basket of chestnuts and leaves it, very carefully, about forty paces away."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_drought_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "In dry years now, the village has a rite of its own invention. They come to the edge of the fields with a bowl of water from every well, pour it out together on the ground toward you, and say: we share what we have. It does not bring rain. It was never meant to. It is an apology older than anyone alive.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     8
+    ],
+    "after": [
+     "dc_sb_ay_drought_2"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "They Say You Did This",
+   "choices": [
+    {
+     "text": "Accept the apology",
+     "effects": {
+      "qi": 5,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The water sinks in and the ground there is green all summer, a strip of green beside the brown. The village calls it the forgiven strip and plants beans in it."
+     }
+    },
+    {
+     "text": "Answer it with what you can spare",
+     "effects": {
+      "qi": -6,
+      "luck": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A cool wind at night, a heavy dew in the mornings, enough to keep the seedlings alive until the late rain. They do not know it was you. It is better that way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_snare_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": true,
+   "text": "A trapper has set a line of snares along the paths near you, for whatever is worth a pelt. The snares are clever and they are everywhere. This morning one of them has caught a young deer by the leg, and the deer is screaming, and the trapper is still an hour away.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     1,
+     4
+    ]
+   },
+   "arc": "The Trapper's Line",
+   "choices": [
+    {
+     "text": "Free the deer and tear up the snares",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "virtue": 1,
+       "hunted": 1
+      },
+      "flag": "sb_ay_snare_torn",
+      "log": "The deer bolts. Every snare on the line is ripped up and tied in knots. The trapper finds them and stands there a long time, and starts asking in the village about what lives out there."
+     }
+    },
+    {
+     "text": "Free the deer only, and leave the trapper his living",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "One empty snare, wire bent wide. The trapper curses his luck and resets it. A man has to eat, too."
+     }
+    },
+    {
+     "text": "Keep clear. A snare does not care what it catches",
+     "effects": {
+      "luck": 3,
+      "log": "You keep well away from the paths all winter. It is a long, cramped winter. The trapper does well."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ay_snare_2",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "The trapper is back, with a better wire and a theory. Every snare on the line this year is set for something bigger than a deer. They are set, in fact, for you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     2,
+     6
+    ],
+    "after": [
+     "dc_sb_ay_snare_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "sb_ay_snare_torn"
+    ]
+   },
+   "arc": "The Trapper's Line",
+   "choices": [
+    {
+     "text": "Spring every snare with a dead branch, one by one, and leave",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2,
+       "hunted": -1
+      },
+      "log": "The trapper walks the line and finds every snare sprung on a stick, laid neatly, like a reply. He sits on a log, laughs for a while, and gives up trapping there for good."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "One wire you did not see bites deep before it gives. You tear free and spend a month mending. (-12 health)"
+     }
+    },
+    {
+     "text": "Go somewhere else until the trapper gives up",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "He keeps the line all winter and catches nothing but a badger. In the spring he moves on, and tells people the thing was never real."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_fall_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A royal house is falling. You can hear it in the roads: first messengers riding hard, then soldiers going the wrong way, and now refugees from the capital, court ladies in torn silk and scholars carrying books instead of food. Among them, in plain clothes, leading an old horse, is a young prince of the old house, whom the new masters very much want to find.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Fall of a House",
+   "choices": [
+    {
+     "text": "Hide the prince's party near you through the search",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 2,
+       "legend": 2,
+       "hunted": 1
+      },
+      "flag": "sb_am_fall_hid",
+      "log": "The searchers pass within a stone's throw three times and see nothing but trees and fog. The prince leaves in the spring for the far north, and never forgets."
+     }
+    },
+    {
+     "text": "Let the refugees through and keep out of royal business",
+     "effects": {
+      "luck": 3,
+      "log": "The road empties. Later you hear the prince was taken at a ferry two counties on. The new house is generous to the commoners and plants pine trees along the roads. Dynasties, you learn, change faster than pines."
+     }
+    },
+    {
+     "text": "Show the searchers a sign: the old house is under protection",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "flag": "sb_am_fall_hid",
+      "log": "The searchers' horses will not go past a certain bend. The officers report that heaven has not finished with the old house. The new king has the report burned and the officers demoted, and is very careful on roads."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_fall_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The new dynasty has had its histories written. The old house is described as corrupt and cursed, the new as chosen by heaven. In one chapter there is a line about you: the strange power near the road that sheltered the last prince. The historians have decided you were a demon. A magistrate comes to read the line aloud at the edge of your country, as an official rebuke.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_fall_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_am_fall_hid"
+    ]
+   },
+   "arc": "The Fall of a House",
+   "choices": [
+    {
+     "text": "Hear the rebuke out, in silence",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The magistrate reads to the end, rolls up the scroll, looks round nervously at nothing, and leaves. The villagers who came to watch go home and tell their children the opposite of everything in it."
+     }
+    },
+    {
+     "text": "Let the magistrate's scroll blow away mid-sentence",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The page with your line on it goes up into the sky and is never found. The official history has a hole in that chapter to this day. Scholars blame worms."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_am_fall_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "Long after the house fell, a family from the far north comes south with a genealogy wrapped in oiled cloth. Their ancestor was a prince who hid near you one winter. They are farmers now, with rough hands and an old horse. They have come to bow to whatever it was, and do not know what to bow toward.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_fall_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The Fall of a House",
+   "choices": [
+    {
+     "text": "Let them feel where to bow",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "mark": "sb_am_fall",
+      "log": "Every one of them turns, without being told, toward the same patch of trees. They bow until their foreheads touch the ground. A royal house is nothing now. A debt is still a debt."
+     }
+    },
+    {
+     "text": "Let them bow to the road, where it happened",
+     "effects": {
+      "comprehension": 3,
+      "log": "They bow to the muddy bend where the searchers' horses once stopped. It is the right place, really. Every turn in history is a bend in some road."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_enemy_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "An exorcist has come for you, hired by a county that wants a quieter neighbourhood. {npc} is very good: a ring of torches, talismans on every tree, a peachwood sword, and a chant {he} learned from {his} own grandmother. {He} has found you. {He} has no intention of leaving without finishing.",
+   "npc": {
+    "role": "sb_am_enemy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_am_enemy",
+     "ageAbs": 45,
+     "opinion": -20
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Exorcist's Grandchild",
+   "choices": [
+    {
+     "text": "Meet the binding with your whole strength",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 2,
+       "fear": 2
+      },
+      "npcFlag": "sb_am_enemy",
+      "flag": "sb_am_enemy_beat",
+      "log": "The talismans burn up together in a single flash. {npc} is thrown across the clearing and gets up slowly, with a burned hand {he} will carry for life. {He} looks at you for a long time before {he} goes."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "an exorcist's binding, met head on",
+      "log": "The binding closes, and closes, and does not stop closing."
+     },
+     "risky": true
+    },
+    {
+     "text": "Slip out of the ring before it closes",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "npcFlag": "sb_am_enemy",
+      "flag": "sb_am_enemy_beat",
+      "log": "You are three valleys away before the chant ends. {npc} finds the ring empty and is, for the first time in {his} career, beaten. {He} never forgives it."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "hunted": 2
+      },
+      "npcFlag": "sb_am_enemy",
+      "flag": "sb_am_enemy_beat",
+      "log": "The edge of the binding catches you as you go. You escape, burned and slow, and {npc} knows exactly how much {he} hurt you. (-15 health)"
+     }
+    },
+    {
+     "text": "Let {him} see that you have harmed no one",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_am_enemy",
+      "log": "{npc} stops the chant halfway, frowning. {He} walks the district for a week, asking questions, and goes back to the county and returns the fee. {He} is not paid again for some years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_enemy_2",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A young person in plain clothes with a burned peachwood sword across {his} back has come looking for you. {npc} is the grandchild of the exorcist who fought you, and has spent ten years learning {his} grandparent's chant. The old exorcist died cursing your name. {npc} has come to finish it, or, {he} says, at least to understand it.",
+   "npc": {
+    "role": "sb_am_heir",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_am_heir",
+     "ageAbs": 24,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_enemy_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "sb_am_enemy_beat"
+    ]
+   },
+   "arc": "The Exorcist's Grandchild",
+   "choices": [
+    {
+     "text": "Fight, if {he} insists",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "npcFlag": "sb_am_heir",
+      "log": "{npc} is good, but young. You end it without hurting {him} badly. {He} sits in the dirt for a while, then laughs, a little wildly. \"Nobody ever said you held back,\" {he} says."
+     },
+     "fail": {
+      "health": -15,
+      "npcFlag": "sb_am_heir",
+      "log": "The young chant is sharper than the old one. It costs you blood to end it. {npc} goes home believing {he} won. (-15 health)"
+     }
+    },
+    {
+     "text": "Show {him} what the old exorcist never stayed to see: the people you have kept",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcFlag": "sb_am_heir",
+      "flag": "sb_am_heir_peace",
+      "log": "{npc} spends a season in the villages near you, asking about you. {He} hears about lost travellers and fever huts and a barley hill. At the end of it, {he} breaks the burned sword over {his} knee and buries it."
+     }
+    },
+    {
+     "text": "Leave the district until {he} gives up",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": 1
+      },
+      "npcFlag": "sb_am_heir",
+      "log": "{npc} waits a whole year, then goes home. You come back to find {his} talismans on every tree, faded by rain, still faintly warm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_enemy_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is old now, and still an exorcist, of a different kind: {he} goes from village to village making peace between people and the powers near them, instead of war. {He} has trained a dozen others. Today {he} has brought them all to the edge of your country to show them, {he} says, the first one {he} ever made peace with.",
+   "npc": {
+    "role": "sb_am_heir"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_enemy_2"
+    ],
+    "minYearsAfter": 35,
+    "flags": [
+     "sb_am_heir_peace"
+    ],
+    "npcFlags": [
+     "sb_am_heir"
+    ]
+   },
+   "arc": "The Exorcist's Grandchild",
+   "choices": [
+    {
+     "text": "Let the students see you, briefly",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "Twelve young faces go white, then wondering. {npc} stands among them looking smug and very old. The exorcists of that school never again carry a sword."
+     }
+    },
+    {
+     "text": "Stay hidden. Let {him} teach them that peace does not need proof",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The students see nothing, and {npc} tells them that is the lesson. The good ones understand. You hear about that school, now and then, for three hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_scholar_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A scholar has come from the capital to study you. Not to pray, not to hunt: to study. {npc} belongs to a new school that believes everything under heaven can be measured, and has a cord, an ink stone, a notebook and a very unhappy servant. {He} sleeps in the field, measures everything you touch, and writes it all down.",
+   "npc": {
+    "role": "sb_am_scholar",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_am_scholar",
+     "ageAbs": 34,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Scholar Who Measured You",
+   "choices": [
+    {
+     "text": "Let {him} measure. Leave clear signs where {he} can find them",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_am_scholar",
+      "flag": "sb_am_scholar_helped",
+      "log": "{npc} fills a whole notebook in a month and goes home almost dancing. The servant goes home almost crying. The notebook becomes a chapter in a great encyclopaedia, with diagrams that are nearly right."
+     }
+    },
+    {
+     "text": "Leave signs that make no sense at all",
+     "effects": {
+      "luck": 3,
+      "charm": 2,
+      "npcFlag": "sb_am_scholar",
+      "log": "{npc} measures for a year and goes home with a notebook full of contradictions and a theory that you exist in several places at once. It is a famous theory. It is wrong in the most interesting way."
+     }
+    },
+    {
+     "text": "Give {him} nothing to find",
+     "effects": {
+      "tally": {
+       "hunted": -1
+      },
+      "npcFlag": "sb_am_scholar",
+      "log": "{npc} measures for a season and writes that the thing is a superstition. {He} is not sure. The last page of the notebook says only, \"Something watched me the whole time.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_scholar_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is back, older, with a second notebook and no servant. The first book made {his} name, and then {his} school fell from favour at court, and {he} was exiled to a county near you, which {he} chose. {He} sits in the field in the evenings, not measuring, just sitting.",
+   "npc": {
+    "role": "sb_am_scholar"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_scholar_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "sb_am_scholar"
+    ]
+   },
+   "arc": "The Scholar Who Measured You",
+   "choices": [
+    {
+     "text": "Stay near {him}, close enough to be felt",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_am_scholar_friend",
+      "log": "{npc} feels you near and does not reach for the notebook. The two of you keep company through the long evenings of a long exile. {He} writes nothing about it, which is how you know it mattered."
+     }
+    },
+    {
+     "text": "Leave {him} a new mystery to measure, to keep {his} mind alive",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "sb_am_scholar_friend",
+      "log": "{npc} finds it at dawn and laughs aloud for the first time in years. The second notebook fills up. The exile is long, but {he} is not idle for one day of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_scholar_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} is dying in a borrowed room in the county town. The second notebook is on the table. {He} has asked to be carried out to the field once more, and the neighbours, who think {he} is mad, have done it, and left {him} on a mat in the evening light.",
+   "npc": {
+    "role": "sb_am_scholar"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_scholar_2"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "sb_am_scholar_friend"
+    ]
+   },
+   "arc": "The Scholar Who Measured You",
+   "choices": [
+    {
+     "text": "Come close, closer than ever, so {he} sees you clearly at last",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "mark": "sb_am_scholar",
+      "npcPass": "old age, on a mat in the field",
+      "log": "{npc} looks at you for a long time and smiles. \"I had the proportions wrong,\" {he} says. {He} dies before the light goes. The notebook is found to end with a blank page, headed: the true measure."
+     }
+    },
+    {
+     "text": "Stay in the trees, where {he} has always known you are",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "old age, on a mat in the field",
+      "log": "{He} talks to the trees until dark, about measures and errors and how glad {he} was to be wrong. The neighbours come back and find {him} gone, peaceful, facing the woods."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_omen_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Someone has seen you and reported it to the county, and the county to the province, and the province to the court. A new king has just taken the throne. Everything strange is an omen this year. An official has come with a scribe to decide which kind you are: a sign of heaven's favour, or a warning.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "An Omen for the Throne",
+   "choices": [
+    {
+     "text": "Be seen again, in a good light, on a good day",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_am_omen_good",
+      "log": "You are seen at dawn on the king's birthday in a column of pale light. The official writes a joyful report. An amnesty is declared, and taxes are cut in the province for a year. Many people bless you who will never know why."
+     }
+    },
+    {
+     "text": "Be seen in a storm, in a bad light",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 3,
+       "legend": 1
+      },
+      "flag": "sb_am_omen_bad",
+      "log": "The official writes a grim report. The young king, frightened, eats plain food for a month, opens the granaries and asks his ministers to criticise him. Fear, it turns out, can also be useful."
+     }
+    },
+    {
+     "text": "Be seen by no one, and let them guess",
+     "effects": {
+      "comprehension": 3,
+      "log": "The official writes that the report was unfounded, and the scribe writes a poem about it that is better than the report. You become a footnote and a poem. There are worse fates."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_omen_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The king whose reign you marked is old, and the court has learned to use you. Whenever a reform needs support, someone remembers your sighting and reads it whichever way helps. A faction has now announced that you have been seen again, which you have not, and that heaven wants the king's chief minister dismissed.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_omen_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "An Omen for the Throne",
+   "choices": [
+    {
+     "text": "Let them see you, plainly, on a day that makes the lie obvious",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "You are seen by half a county on the day the faction said you were somewhere else. The faction falls instead of the minister. Lying about omens becomes, briefly, very unfashionable."
+     }
+    },
+    {
+     "text": "Stay out of it. Courts lie about everything",
+     "effects": {
+      "luck": 3,
+      "log": "The minister falls. The next one is worse. You learn that a story about you can do things you never would, and that it no longer needs you at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_omen_3",
+   "cat": "insight",
+   "weight": 4,
+   "once": true,
+   "text": "The court astronomers have a book now, a thick one, of every time you have been seen and what it was taken to mean. A young astronomer has spent a year comparing the book with the weather records, the harvests, and the deaths of kings, and has written a short memorial to the throne concluding that you mean nothing at all.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_omen_2"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "An Omen for the Throne",
+   "choices": [
+    {
+     "text": "Agree with the young astronomer",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The memorial is suppressed and the astronomer is sent to a remote post, where the star charts the astronomer draws are the best in the country for years. You are glad to be free of a job you never asked for."
+     }
+    },
+    {
+     "text": "Prove the astronomer wrong, once, gently",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "legend": 3
+      },
+      "log": "You are seen in the courtyard of the observatory itself, at midnight, by the astronomer alone. The memorial is withdrawn. The book gets a new page, in a very shaky hand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_ash_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "In the middle of summer the sky goes dark in the north and grey dust begins to fall: fine, soft, endless, like snow that does not melt. A great mountain far away has burst. The sun is a dim red coin. The ash lies on the fields, the roofs, the wells. The rice will not grow under it. Every living thing near you is choking.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Year It Rained Ash",
+   "choices": [
+    {
+     "text": "Pour your qi into the ground near the village and keep one field alive",
+     "effects": {
+      "qi": -15,
+      "health": -5,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "sb_am_ash_field",
+      "log": "One field stays green all that grey summer, in a circle, like a coin on ash. The village eats from it through the winter, and plants its seed in the spring. That circle feeds them into a new world."
+     }
+    },
+    {
+     "text": "Keep the wells clear of the ash, night after night",
+     "effects": {
+      "qi": -8,
+      "strength": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_am_ash_field",
+      "log": "Every morning the wells are clean when every other surface is grey. The village is hungry, but it is not poisoned. Thirst would have killed them faster than hunger."
+     }
+    },
+    {
+     "text": "Save your strength. This is too large for anyone",
+     "effects": {
+      "comprehension": 3,
+      "log": "You watch the grey summer, the black winter, the hungry spring. Half the district leaves. The other half lives, somehow. You learn what too large means."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_ash_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The ash has become soil, and the soil is strange and rich. The children of the grey summer are farmers now, and the green circle field is still there, and nobody will plough it. They plant it by hand, and the first rice from it each year goes to the ancestors and to you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_ash_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "sb_am_ash_field"
+    ]
+   },
+   "arc": "The Year It Rained Ash",
+   "choices": [
+    {
+     "text": "Accept the first rice",
+     "effects": {
+      "qi": 5,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It tastes faintly of smoke and very strongly of gratitude. The circle field becomes the most famous field in the province, and the rice from it is sold at a ridiculous price to people who have never had to eat ash."
+     }
+    },
+    {
+     "text": "Let them give it to the poorest house instead",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "A sign appears: the rice bowl is pushed, overnight, to the door of the widow at the end of the road. They take the hint. The circle field's first rice goes to whoever needs it most, for three hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_ash_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "A traveller digging a well near the village goes down through the soil and finds, two spans deep, a layer of fine grey ash, and in it, perfectly preserved, the print of a child's hand. Nobody alive remembers the grey summer. The traveller asks what it was.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_ash_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The Year It Rained Ash",
+   "choices": [
+    {
+     "text": "Let the old circle field answer for you",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "An old farmer tells the story, wrong in a hundred details and right in the only one that matters: something kept a field alive. The traveller writes it down, and it becomes a chapter of a book about the north."
+     }
+    },
+    {
+     "text": "Remember the child, whose hand that was",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You do remember. A girl, playing in the ash on the first day because it looked like snow. She grew up, had children, and is under the hill now. Her hand is two spans down. Her grandchildren are standing on it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_eumsa_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The villages near you built you a real shrine long ago: a painted hall, a plaque, rites in spring and autumn. Now a new magistrate has arrived, a strict Confucian, who calls every such shrine lewd and wasteful and has orders from the court to tear them down. The soldiers have ropes on the roof beam.",
+   "when": {
+    "realm": [
+     5,
+     7
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Lewd Shrine",
+   "choices": [
+    {
+     "text": "Stop the soldiers",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "The magistrate's soldiers"
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "fear": 3,
+       "legend": 2
+      },
+      "flag": "sb_am_eumsa_stood",
+      "log": "The ropes snap together. The axes slide off the beams as if they were greased. The soldiers drop everything and run, and the magistrate is left alone in the yard, listening to nothing."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a magistrate's soldiers, over a shrine",
+      "log": "There are more soldiers than you thought, and their iron is very old and very cold."
+     },
+     "risky": true
+    },
+    {
+     "text": "Let the shrine fall. The rite was never in the wood",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_am_eumsa_fell",
+      "log": "The roof comes down in a cloud of dust and old paint. That night, the villagers meet in a kitchen behind a closed door and hold the autumn rite anyway, in whispers, with a bowl of water for an altar."
+     }
+    },
+    {
+     "text": "Visit the magistrate in a dream instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "sb_am_eumsa_stood",
+      "log": "The magistrate wakes before dawn, sits up a long time, and writes to the court that this one shrine is an old place of filial piety and should be spared. It is, though the paint on the plaque is changed to a Confucian motto."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 1
+      },
+      "flag": "sb_am_eumsa_fell",
+      "log": "The magistrate dreams of you and takes it as proof. The shrine comes down by noon, and the magistrate has the ground salted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_eumsa_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The magistrate who came for your shrine is long dead. The villages kept the rite all the same, as a family custom too small for any law to see: a bowl of water in a kitchen, a handful of rice, a few words. It has outlasted every law against it so far. A young official has just discovered it, and is wondering whether to report it.",
+   "when": {
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_eumsa_1"
+    ],
+    "minYearsAfter": 50,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Lewd Shrine",
+   "choices": [
+    {
+     "text": "Let the young official see what the rite is, in truth",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The official sits through a kitchen rite, watching a grandmother pour water and say thank you to something unseen. The report never gets written. In old age, the official keeps a bowl of water in the kitchen too."
+     }
+    },
+    {
+     "text": "Let the official report it. You will survive one more law",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The report is filed, read, and forgotten. The rite goes on in the kitchens. It has outlasted better laws than this one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_eumsa_3",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A new age, a gentler court. The villagers have petitioned to rebuild your shrine, and the petition has been granted. They are arguing about how it should look. Nobody living has seen the old one. A grandmother has a description from her grandmother. A carpenter has ideas.",
+   "when": {
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_eumsa_2"
+    ],
+    "minYearsAfter": 80,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Lewd Shrine",
+   "choices": [
+    {
+     "text": "Guide the carpenter's hand toward something true",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The carpenter cannot explain why the beams went the way they did. The grandmother cries the first time she sees it. It is not the old shrine. It is the shrine the old one wanted to be."
+     }
+    },
+    {
+     "text": "Let them build what they like. It is their shrine",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "It is gaudy and cheerful and too big. Children play in it. You find you like it better than the solemn old hall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_rising_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "The farmers have risen. Years of crooked tax-collectors, a famine, a court that would not listen: now there are ten thousand of them, with bamboo spears and flails, and a leader with a white banner who has come to the edge of your country with an offering. {npc} wants your blessing. A sign would bring another ten thousand.",
+   "npc": {
+    "role": "sb_am_rebel",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_am_rebel",
+     "ageAbs": 38,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Rising in the North",
+   "choices": [
+    {
+     "text": "Give the sign",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "hunted": 2
+      },
+      "npcFlag": "sb_am_rebel",
+      "flag": "sb_am_rising_blessed",
+      "log": "Light on the hill at dawn, over the white banner. Ten thousand more come in a week. The court sends an army. Whatever happens now, you are part of it."
+     }
+    },
+    {
+     "text": "Refuse, gently: you will not send farmers to die with your name on their lips",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_am_rebel",
+      "log": "{npc} stands a long time waiting for a sign that does not come, then shoulders {his} banner and goes. Fewer follow {him}. Fewer die."
+     }
+    },
+    {
+     "text": "Shelter the families the rising has left behind",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "sb_am_rebel",
+      "flag": "sb_am_rising_blessed",
+      "log": "The rebels march. The old, the young and the sick stay near you, where no soldier comes for some reason all winter. Whatever happens to the rising, these will live."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_rising_2",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The rising has been crushed. The royal army is burning villages that fed the rebels, and the soldiers are coming down the road near you. The families of the rebels are hiding in the woods, hundreds of them. The army has orders. The army is also very tired, and a long way from home.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_rising_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "sb_am_rising_blessed"
+    ]
+   },
+   "arc": "The Rising in the North",
+   "choices": [
+    {
+     "text": "Turn the army aside",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The royal army's vanguard"
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 3,
+       "fear": 2,
+       "hunted": 1
+      },
+      "log": "The vanguard reaches the bend near you and stops as if it had walked into a wall. The horses will not go on. The general, a sensible man, decides the villages beyond have been punished enough."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a royal army, held at a bend in the road",
+      "log": "An army is a very large thing. It keeps coming."
+     },
+     "risky": true
+    },
+    {
+     "text": "Lead the families out through the back ways, at night",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Hundreds of people follow something they cannot see through woods they do not know. At dawn they are two counties away. The army burns empty houses."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1,
+       "hunted": 1
+      },
+      "log": "Most of them get out. Not all. The soldiers find the rear of the column at a ford. You will remember the ford."
+     }
+    },
+    {
+     "text": "It is not your war. Stay out of it",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The army passes. The smoke goes up. The villages near you are rebuilt in a few years, and stay quiet for a hundred, and never put out another bowl for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_rising_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The rising is a song now. Children sing it skipping rope: the white banner, the bamboo spears, the light on the hill. In the song the farmers won. They did not. But the tax laws were changed the next year, quietly, by a frightened court, so perhaps the song is not entirely wrong.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_rising_2"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Rising in the North",
+   "choices": [
+    {
+     "text": "Let the song be true",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "It is true enough. They lost the war and won the tax. Most victories, you suspect, look like that up close."
+     }
+    },
+    {
+     "text": "Remember the ford, which the song leaves out",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Somebody should. You remember the names you heard called at the ford, every one, and say them to yourself at the turn of every year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_fest_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The autumn rite the villages hold for you has outgrown the villages. Pedlars come for it now, and masked dancers, and a farmers' band from the next county. There is wrestling, and a swing, and far too much rice wine. The rite itself is still at the heart of it, a short prayer and a bowl. Hardly anyone hears it over the drums.",
+   "when": {
+    "realm": [
+     5,
+     7
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Festival That Grew",
+   "choices": [
+    {
+     "text": "Bless the whole noisy thing",
+     "effects": {
+      "qi": -5,
+      "luck": 2,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "sb_am_fest_blessed",
+      "log": "Fine weather, no fights, the wrestling won by a skinny underdog. People say it was the best festival in living memory. They will say that every year now."
+     }
+    },
+    {
+     "text": "Show yourself, briefly, to the few who are listening to the prayer",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_am_fest_blessed",
+      "log": "Five old people and one small child, standing by the bowl while the drums go on, see you. They never tell anyone. They meet at the bowl every year for the rest of their lives."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_fest_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Festival time again. The fair is bigger every year, and the rite at its heart a little smaller: a bowl, a prayer, a few old people. This year a quarrel breaks out between two villages over whose band plays first, and the quarrel is turning into a fight.",
+   "when": {
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_fest_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "sb_am_fest_blessed"
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Festival That Grew",
+   "choices": [
+    {
+     "text": "End the fight with a sudden hush over the whole fair",
+     "effects": {
+      "qi": -4,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "log": "Every drum stops at once. Every voice. For three breaths there is no sound at all, and then the two bandmasters, very pale, agree to play together. It becomes the custom."
+     }
+    },
+    {
+     "text": "Let them fight. Festivals are for that too",
+     "effects": {
+      "strength": 2,
+      "luck": 1,
+      "log": "Bloody noses, broken gongs, and by midnight everyone is drinking together. Next year they will do it all again. You find you are looking forward to it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_fest_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "Generations on, the festival is famous across the province, and its name is your name, though nobody thinks of you when they say it. It is just the name of a fair. A small child at the edge of the crowd is standing by an old bowl nobody else is looking at, and asking a grandparent what it is for.",
+   "when": {
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_fest_1"
+    ],
+    "minYearsAfter": 150,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "The Festival That Grew",
+   "choices": [
+    {
+     "text": "Let the child see you, as the old ones did",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "mark": "sb_am_fest",
+      "log": "The child stares. The grandparent, who once stood at that bowl as a child too, sees the child staring and starts, very quietly, to cry."
+     }
+    },
+    {
+     "text": "Let the grandparent answer",
+     "effects": {
+      "comprehension": 3,
+      "log": "The grandparent explains, badly and lovingly. The child is not impressed and goes back to the wrestling. But the child will remember, at the right age, and come back to the bowl."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_exile_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A famous official has been exiled to the district near you: a court faction lost, and {npc} was sent as far from the capital as the law allows, to live in a borrowed cottage and never write to anyone. {He} is planting a tea garden. {He} is also, you notice, writing a great deal.",
+   "npc": {
+    "role": "sb_am_exile",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_am_exile",
+     "ageAbs": 40,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Exile's Garden",
+   "choices": [
+    {
+     "text": "Keep {his} garden from the frost",
+     "effects": {
+      "qi": -4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_am_exile",
+      "log": "The tea bushes thrive when every other garden is blackened. {npc} notices, and leaves a cup of tea on the wall every morning, for whoever it is."
+     }
+    },
+    {
+     "text": "Let {him} feel watched, so {he} is careful what {he} writes",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "sb_am_exile",
+      "log": "{npc} burns half of what {he} writes and hides the rest in a jar. The burnt half was dangerous. The jar half becomes, a century later, a classic."
+     }
+    },
+    {
+     "text": "Watch, and learn what a scholar does when {he} is beaten",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "sb_am_exile",
+      "log": "{He} gets up at dawn, plants, reads, writes, teaches the village children their letters for free. Every day. You learn more from {his} exile than from most kings."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_exile_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "Long years. {npc} has written five hundred volumes, taught a generation of village children, and grown old among the tea bushes. Now a pardon has come from the capital. {He} can go home. {He} is standing at the garden gate with the letter in {his} hand, not moving.",
+   "npc": {
+    "role": "sb_am_exile"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_exile_1"
+    ],
+    "minYearsAfter": 18,
+    "npcFlags": [
+     "sb_am_exile"
+    ]
+   },
+   "arc": "The Exile's Garden",
+   "choices": [
+    {
+     "text": "Make the garden bloom, out of season, as a farewell",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": "sb_am_exile_left",
+      "log": "{npc} walks through flowering tea in winter to the road. {He} looks back once, bows to the garden, and goes to the capital, where {he} finds {he} has no friends left. {He} always says the garden was the best of it."
+     }
+    },
+    {
+     "text": "Let {him} choose",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_am_exile_left",
+      "log": "{He} goes. Then, a year later, {he} comes back, with the five hundred volumes on a cart, and stays until {he} dies."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_exile_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The tea garden is still there, run wild, and people come to see it now: the place where the great scholar wrote the books. They read the poems carved on a stone by the gate. One of the poems is about the frost that never touched the garden, and the cup of tea left on the wall for a friend never seen.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_exile_2"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "The Exile's Garden",
+   "choices": [
+    {
+     "text": "Keep the garden from the frost, still",
+     "effects": {
+      "qi": -3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The wild tea is the first green thing in the district every spring. Pilgrims pick a leaf each and carry it home. It is a better monument than the stone."
+     }
+    },
+    {
+     "text": "Read the poem, slowly",
+     "effects": {
+      "comprehension": 4,
+      "charm": 1,
+      "log": "It is a good poem. It says you were a friend. You had not known that was what you were."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_census_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The court is counting everything again: households, fields, oxen, temples. The census official has a column for local spirits, because the court wants to know what the people are spending rice on. The villagers have listed you. The official wants to know whether you are a household, a temple or a nuisance, and whether you can be taxed.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     7
+    ]
+   },
+   "arc": "The Census Comes for You",
+   "choices": [
+    {
+     "text": "Be entered as a household, and pay",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_am_census_paid",
+      "log": "A sack of rare herbs appears outside the official's tent at dawn: more than the tax. The register has you as a household of one, head of household unknown. You are, legally, a resident now."
+     }
+    },
+    {
+     "text": "Be entered as nothing at all",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "The official's brush keeps drying up whenever it reaches your line. The column is left blank. Blank is a very safe thing to be in a register."
+     }
+    },
+    {
+     "text": "Make the official think twice about counting things that cannot be counted",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "The official's lamp goes out, the register flips shut, the brush rolls away into the dark. The official writes, at the end of the census: some things in this county should not be counted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_census_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "As a registered household, you have obligations. A summons has come: one adult from every household to do a month of labour on the county wall. The village headman, who registered you, is in a great deal of trouble.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     9
+    ],
+    "after": [
+     "dc_sb_am_census_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "sb_am_census_paid"
+    ]
+   },
+   "arc": "The Census Comes for You",
+   "choices": [
+    {
+     "text": "Send the labour: a month of the wall built faster than any crew",
+     "effects": {
+      "qi": -8,
+      "strength": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "The section of wall assigned to your household is found finished one morning, stone fitted to stone, better than the rest. The magistrate signs the receipt and does not ask questions."
+     }
+    },
+    {
+     "text": "Let the headman pay a fine on your behalf, and repay it",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The headman pays. A month later he finds a fine old ginseng root on his doorstep, worth ten fines. He becomes the only man in history to profit from registering a spirit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_am_census_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "Your household has been on the county register for generations. You have paid every tax, in herbs and walls and one memorable year in silence. A new official, checking old ledgers, has found that your household has never had a death, a birth or a marriage, and has written to ask, politely, how old the head of household is.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     5,
+     16
+    ],
+    "after": [
+     "dc_sb_am_census_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The Census Comes for You",
+   "choices": [
+    {
+     "text": "Answer truthfully, in the ledger, in a hand nobody can read",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "A line appears in the ledger overnight, in no script anyone knows. The official stares at it for a week, then writes beside it: confirmed. It is the bravest thing a clerk ever did."
+     }
+    },
+    {
+     "text": "Let the household die, on paper",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "hunted": -1
+      },
+      "log": "The ledger records the household extinct, no heirs. The village holds a small funeral for you, laughing and crying. It is the strangest, sweetest thing you have ever attended."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_sb_ah_founder_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "You have seen three royal houses rise and fall, the way the people near you see three summers. Now a fourth is beginning. A general who has won every battle has come alone to kneel at the edge of your country, with his army far behind him. He wants to found a dynasty. He wants to know if you will allow it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Dynasties Like Weather",
+   "choices": [
+    {
+     "text": "Allow it, and say what you expect of it",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "sb_ah_founder_blessed",
+      "log": "\"Feed them,\" you say. \"That is all a house is for.\" He hears it. He builds granaries before palaces, and for three generations his house remembers why. Then it forgets, as houses do."
+     }
+    },
+    {
+     "text": "Refuse to judge. Thrones are human business",
+     "effects": {
+      "comprehension": 4,
+      "log": "He waits until noon, then rises, a little ashamed of having asked. He founds his dynasty anyway. You find you could not have stopped it, and that he knew that, and asked regardless. You think better of him for that."
+     }
+    },
+    {
+     "text": "Show him what happened to the last three houses",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "flag": "sb_ah_founder_blessed",
+      "log": "He sees it: the rise, the pride, the famine, the fall, three times. He stands up white. His dynasty is the most cautious in history, and lasts the longest."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_ah_founder_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The house you saw founded is old now, and rotten in the usual places. A child king, a grasping regent, a court that sells offices. A young official has come, as the founder once did, to kneel at the edge of your country and ask you to bring the house down.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_founder_1"
+    ],
+    "minYearsAfter": 200,
+    "flags": [
+     "sb_ah_founder_blessed"
+    ]
+   },
+   "arc": "Dynasties Like Weather",
+   "choices": [
+    {
+     "text": "Refuse. Ending a house is not yours to do",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The official goes away and does it the human way: twenty years of memorials, exile, recall, reform. The house survives, chastened, for another century. Slower is sometimes better."
+     }
+    },
+    {
+     "text": "Send a warning to the regent instead",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The regent dreams of the founder kneeling before you, and of the granaries before palaces, and wakes, and resigns, which no regent in history has done before or since."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_founder_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The founder's dynasty has fallen too. Its palaces are a field where farmers dig up roof tiles with patterns worn off them. A new kind of government sits in the capital, with no king at all. Nobody kneels at the edge of your country now. They hardly know it is there.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_founder_2"
+    ],
+    "minYearsAfter": 300
+   },
+   "arc": "Dynasties Like Weather",
+   "choices": [
+    {
+     "text": "Be glad. You were never meant to be asked",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You watch the new government stumble along by itself, making its own mistakes. It is like watching a child walk. You decide not to help."
+     }
+    },
+    {
+     "text": "Go once through the old palace field, among the tiles",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You find the place where the granaries stood, before the palaces. Somebody is growing cabbages there. It is exactly right."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_ah_last_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The village that first knew you is dying. Not of war or famine: the young went to the towns, one by one, and did not come back. Now there is one old woman left, in the last house, who still puts out a cup of water for you every morning, the way her mother did. She is the last person alive who knows the old name.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Last Who Remembers",
+   "choices": [
+    {
+     "text": "Keep her company, every day she has left",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_ah_last_kept",
+      "log": "She talks to you every morning, about her mother, about the moon house, about a boy who went to the town. She lives four more years, and is never once alone."
+     }
+    },
+    {
+     "text": "Ask her to say the old name, so someone remembers it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "sb_ah_last_kept",
+      "log": "She says it, slowly, and laughs. \"Nobody has called you that since I was a girl.\" You keep the name. It is the last thing that village gives anyone."
+     }
+    },
+    {
+     "text": "Let her be. She does not need to be watched to be loved",
+     "effects": {
+      "luck": 2,
+      "log": "She puts out the cup every morning until one morning she does not. You find her asleep in the sun. The cup is full. You drink it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_last_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "A young person from the town has come to the empty village with a notebook, asking about a great-grandmother who lived here. The house is fallen in. There is nobody left to ask. The visitor sits on the step where the old woman sat, and puts out, without knowing why, a cup of water.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_last_1"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "sb_ah_last_kept"
+    ]
+   },
+   "arc": "The Last Who Remembers",
+   "choices": [
+    {
+     "text": "Tell the visitor about the great-grandmother",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "You tell it all: the cup, the moon house, the boy who went to the town. The visitor writes it down with shaking hands. It becomes a book, then a family story, then a place people visit."
+     }
+    },
+    {
+     "text": "Drink the water, so the visitor sees it go",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "qi": 3,
+      "log": "The cup is empty in the time it takes to look away. The visitor sits very still, then laughs, the old woman's exact laugh. Some things come down in blood."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_last_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "Grass has covered the empty village completely. Only you know where the lane ran, where the moon house burned, where the fever hut stood. You are, you realise, the village's only archive. When you are gone, it is gone.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_last_2"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "The Last Who Remembers",
+   "choices": [
+    {
+     "text": "Keep it all, carefully, every name",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You go over them like beads: every face, every quarrel, every bowl of water. It takes a whole winter. You will do it again every winter, for as long as you last."
+     }
+    },
+    {
+     "text": "Let some of it go. Forgetting is also a mercy",
+     "effects": {
+      "qi": 8,
+      "luck": 2,
+      "log": "You keep the old woman and the children who left food and the moon house, and let the rest settle like silt. It is lighter. You hope they would understand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_names_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": true,
+   "text": "You have been called a hundred things. You count them one quiet year: a protector, a nuisance, a demon in some history, a god, a joke, a song. A storyteller in the market town is performing a long sung tale about you tonight, with a drum and a fan, and has added a new name of her own.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Thousand Names",
+   "choices": [
+    {
+     "text": "Go to hear it, unseen",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It takes five hours. She gets almost everything wrong and makes the crowd weep three times. The new name is better than any of the true ones. You keep it."
+     }
+    },
+    {
+     "text": "Let the names be. A name is a coat others put on you",
+     "effects": {
+      "comprehension": 4,
+      "qi": 5,
+      "log": "You set them all down, one by one, and for a whole season are nothing in particular. It is the most restful season of your life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_names_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A child's book of tales has your story in it now, with a picture that looks nothing like you. Children all over the country know it. Most of them think you are made up. One of them, a stubborn small person in the town near you, does not, and has come to the edge of your country to prove it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_names_1"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "The Thousand Names",
+   "choices": [
+    {
+     "text": "Be proved real, to one child",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "mark": "sb_ah_names",
+      "log": "The child runs home and tells everyone and nobody believes a word. The child does not care. The child knows. Thirty years later, the child writes a better book."
+     }
+    },
+    {
+     "text": "Stay a story. Stories last longer",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "The child waits until dark and goes home stubborn as ever. A story that might be true, you think, is the strongest kind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_names_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "In all your names, one thing has never changed: they always called you by what you did for them, or to them. Never by what you are. This year, for the first time, a person comes to the edge of your country and asks what you would like to be called.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_names_2"
+    ],
+    "minYearsAfter": 80
+   },
+   "arc": "The Thousand Names",
+   "choices": [
+    {
+     "text": "Give them a name you chose yourself",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "They write it down and carry it home. It spreads slowly, then everywhere. It is the only one of your names that fits."
+     }
+    },
+    {
+     "text": "Say that the first name, the one the first village gave you, was the right one",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "They have never heard it. They carry it home anyway. In a hundred years, the first name is back in use, and nobody knows why it sounds so homely."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_war_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "An invasion. A foreign army has crossed the border and is coming down the old roads, and the king has fled the capital. Both sides have heard of you. An envoy from the invaders has come with gold and a promise: stand aside, and your country will be spared. An envoy from the king has come with nothing but a plea.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Both Sides Want You",
+   "choices": [
+    {
+     "text": "Stand with the people near you, against the invaders",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The invading vanguard"
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 4,
+       "virtue": 2,
+       "fear": 2,
+       "hunted": 1
+      },
+      "flag": "sb_ah_war_fought",
+      "log": "The vanguard comes onto the plain near you and does not come off it in any order. They go round your country after that, a long way round, for the rest of the war."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a foreign army, faced on the plain for the people near you",
+      "log": "There are too many, and they are very used to killing things they do not understand."
+     },
+     "risky": true
+    },
+    {
+     "text": "Shelter everyone who comes, from either side, and fight no one",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 4,
+       "legend": 1
+      },
+      "flag": "sb_ah_war_fought",
+      "log": "Farmers, deserters, a wounded enemy scout, a lost royal messenger: all of them sleep near you that winter, and nobody harms anybody. It is the only peaceful place in the country."
+     }
+    },
+    {
+     "text": "Take neither offer. Wars end. You do not",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "You watch seven years of war go past your edges. It ends, as they do. You did not choose a side. You are not sure, afterwards, that this was the same as being neutral."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_war_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "The war is long over. On the plain near you, farmers keep turning up arrowheads, and once a helmet of a foreign shape. A delegation has come from across the sea, from the invaders' country, with incense and an apology their grandparents never made. Some of the villagers want to turn them away.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_war_1"
+    ],
+    "minYearsAfter": 100,
+    "flags": [
+     "sb_ah_war_fought"
+    ]
+   },
+   "arc": "Both Sides Want You",
+   "choices": [
+    {
+     "text": "Accept the incense",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The smoke goes up straight in a dead calm. Both sides see it. The villagers let the delegation stay the night, stiffly, and by morning are teaching them how to make rice wine."
+     }
+    },
+    {
+     "text": "Let the villagers decide. The grief is theirs",
+     "effects": {
+      "comprehension": 4,
+      "log": "They argue all day. In the end, an old woman whose family lost the most walks out, takes the incense, and lights it herself. You could not have done that. Only she could."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_war_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "A boy ploughing the plain turns up a skull. Then another. A whole field of them, from the war. The county wants to rebury them, but nobody knows whose they are, which side, which country. They come and ask you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_war_2"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "Both Sides Want You",
+   "choices": [
+    {
+     "text": "Tell them the truth: they are mixed, and it does not matter now",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "They bury them all together, under one mound, with one stone that says only: those who died here. Pilgrims come from two countries."
+     }
+    },
+    {
+     "text": "Separate them, carefully, so each can go home",
+     "effects": {
+      "qi": -8,
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "log": "It takes you a year. You remember every face. Some of them sail home across the sea in plain boxes, two hundred years late. Their villages hold funerals for strangers they have always been waiting for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_cholera_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A new sickness has come from across the sea: it starts with cramps in the legs, as if a rat were climbing inside, and kills in a day. People call it the rat sickness. They paste pictures of cats on every gate to frighten the rat spirit off. The town near you is full of paper cats. It is not working.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Cats on Every Gate",
+   "choices": [
+    {
+     "text": "Go into the town and find what the cats cannot: the bad well",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "sb_ah_cholera_well",
+      "log": "It is the well by the tannery, the one everyone uses because it is closest. You make it known, by whatever sign it takes, that nobody should drink there. The deaths fall in half within a month."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You find two bad wells, and miss a third. The sickness slows, but does not stop. You learn something about small things killing large numbers."
+     }
+    },
+    {
+     "text": "Keep the sickness off the villages at least",
+     "effects": {
+      "qi": -12,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The villages close their roads and you hold them closed. They lose almost no one. The town loses a third. You did what you could with what you had."
+     }
+    },
+    {
+     "text": "Paint a cat yourself",
+     "effects": {
+      "charm": 2,
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A paper cat appears on the town gate overnight, painted with a confidence no human hand has. People flock to touch it. It does nothing to the sickness at all, but the panic eases, and calm people boil their water."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_cholera_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "The sickness has come back, the way it does every few summers now. But a young healer in the town has a new idea, from foreign books: that it lives in the water, not in a rat. Nobody believes {npc}. {He} has come to the edge of your country to ask if it is true.",
+   "npc": {
+    "role": "sb_ah_healer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ah_healer",
+     "ageAbs": 29,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_cholera_1"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "Cats on Every Gate",
+   "choices": [
+    {
+     "text": "Tell {him} yes, and which wells",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "npcFlag": "sb_ah_healer",
+      "log": "{npc} closes the wells the next day, with the magistrate shouting at {him}. The deaths stop. The magistrate stops shouting. In a few years, every town in the province boils its water."
+     }
+    },
+    {
+     "text": "Let {him} find out alone, as a healer must",
+     "effects": {
+      "comprehension": 2,
+      "luck": 2,
+      "npcFlag": "sb_ah_healer",
+      "log": "{npc} works it out in a terrible month of tests and deaths. {He} is right. {He} will be right for the rest of {his} life, and never quite forgive you for not saying so."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_cholera_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "Children in the town still paint cats on the gates at midsummer. It is a festival now, a children's game with prizes for the fiercest cat. None of them know about the sickness. They only know that the cats are lucky.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_cholera_1"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "Cats on Every Gate",
+   "choices": [
+    {
+     "text": "Judge the contest, secretly",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Every year one cat is found the next morning with a small ring of warm air around it, and the whole town agrees that one won. The children paint more fiercely every year."
+     }
+    },
+    {
+     "text": "Remember the paper cats on the dead houses",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "A game that was a prayer that was a fear. You let them have the game. That is what the prayer was for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_jokbo_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A great clan is revising its genealogy, the thick book of every ancestor back forty generations. On one early page, beside the name of a founding ancestor, an old note says: this one was kept alive in a hard year by the power near the village. The young editors want to cut it as superstition. The old ones want to keep it. They have sent someone to ask you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Genealogy",
+   "choices": [
+    {
+     "text": "Ask them to keep the note",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "sb_ah_jokbo_kept",
+      "log": "The note stays, copied into the new edition in fine characters. The young editors grumble. The clan grows to forty thousand people, every one of whom has, somewhere on a shelf, a line about you."
+     }
+    },
+    {
+     "text": "Let them cut it. Their ancestors were their own",
+     "effects": {
+      "comprehension": 4,
+      "log": "The note goes. The book is tidier. You find you do not mind. The ancestor lived; that was the point, not the footnote."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_jokbo_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "At the clan's great autumn rite, among the rows of ancestor tablets, there is a new tablet now, small and plain, at the very end. It has no name on it, only a description: the one who kept our ancestor. Forty thousand people bow to it once a year, along with their grandparents.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_jokbo_1"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "sb_ah_jokbo_kept"
+    ]
+   },
+   "arc": "The Genealogy",
+   "choices": [
+    {
+     "text": "Attend the rite, unseen",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It is strange to be someone's ancestor. You find it suits you. You stay until the last cup is poured."
+     }
+    },
+    {
+     "text": "Ask them to put the food from your tablet out for the hungry",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "log": "An elder dreams it and does it. From that year the clan feeds the poor of three towns from the end of the table. The tablet becomes the most loved in the hall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_jokbo_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "A child of the clan, ten generations on from the ancestor you kept, is very ill. The family has tried every physician. The grandmother has come alone to the edge of your country, without telling anyone, and is kneeling with the clan genealogy in her arms, open at the old page.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_jokbo_2"
+    ],
+    "minYearsAfter": 200
+   },
+   "arc": "The Genealogy",
+   "choices": [
+    {
+     "text": "Keep this one too",
+     "effects": {
+      "qi": -15,
+      "health": -5,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "mark": "sb_ah_jokbo",
+      "log": "The fever breaks at dawn. The grandmother writes a second note in the genealogy, beside the child's name, in the same words as the first, ten generations apart."
+     }
+    },
+    {
+     "text": "Comfort the grandmother, and let the child's life be what it will be",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The child lives, as it happens, by the physician's skill. The grandmother never knows whether you helped. You never tell her. Neither of you minds."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_history_1",
+   "cat": "npc",
+   "weight": 5,
+   "once": true,
+   "text": "A historian is writing the history of the country from the beginning, and has realised there is a witness still living. {npc} has come with a desk, a mat, and a cart of books, and asks if you will testify: what the first kings were like, which battles happened, whether the famous stories are true.",
+   "npc": {
+    "role": "sb_ah_history",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ah_history",
+     "ageAbs": 46,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Historian",
+   "choices": [
+    {
+     "text": "Testify, honestly, even where it hurts",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "npcFlag": "sb_ah_history",
+      "flag": "sb_ah_history_told",
+      "log": "You talk for a year. Half the famous stories are wrong. Some of the heroes were cruel, and some of the villains were tired men doing their best. {npc} writes it all down, and goes pale, and goes on writing."
+     }
+    },
+    {
+     "text": "Tell only the stories that will help them now",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_ah_history",
+      "flag": "sb_ah_history_told",
+      "log": "You choose carefully. A brave queen, a good famine minister, a war that need not have happened. {npc} writes a history that teaches. It is not quite true. It is very useful."
+     }
+    },
+    {
+     "text": "Refuse. History belongs to the people who lived it",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "sb_ah_history",
+      "log": "{npc} waits a month, then packs the cart. \"You are right,\" {he} says to the trees. \"But you would have been a wonderful footnote.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_history_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "The history has been published, and there is uproar. Clans whose famous ancestors you described honestly are furious. A powerful family has had {npc} arrested for slander. The only witness for the defence is you.",
+   "npc": {
+    "role": "sb_ah_history"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_history_1"
+    ],
+    "minYearsAfter": 6,
+    "flags": [
+     "sb_ah_history_told"
+    ],
+    "npcFlags": [
+     "sb_ah_history"
+    ]
+   },
+   "arc": "The Historian",
+   "choices": [
+    {
+     "text": "Appear at the trial",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "npcFlag": "sb_ah_history_freed",
+      "log": "The court hall goes silent when you arrive. Nobody is quite sure afterwards what they saw. The case is dismissed. The powerful family has its ancestor's statue quietly taken down."
+     }
+    },
+    {
+     "text": "Send a sign to the judge, privately",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "npcFlag": "sb_ah_history_freed",
+      "log": "The judge finds every record {npc} cited, in the archive, exactly where {he} said. The case is dismissed on the evidence. It is a better precedent than a miracle."
+     }
+    },
+    {
+     "text": "Let {him} stand trial alone. Truth must stand on its own",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} is fined and freed. The book stays in print. {He} does not visit you again, and you are not sure {he} is wrong about that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_history_3",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "Students now read {npc}'s history in schools. Your testimony is in it, set off in a different typeface. {npc} is very old, and has come back one last time with the newest edition, to read you the chapter about yourself.",
+   "npc": {
+    "role": "sb_ah_history"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_history_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "sb_ah_history_freed"
+    ]
+   },
+   "arc": "The Historian",
+   "choices": [
+    {
+     "text": "Listen to the whole chapter",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "It is fair. It is careful. It gets one thing wrong, the colour of a banner, and you decide not to mention it. {npc} closes the book and the two of you stay together until the light goes."
+     }
+    },
+    {
+     "text": "Correct the banner",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "{npc} laughs until {he} has to sit down, and corrects it in the margin with a shaking brush. The next edition has the right colour, and a footnote thanking the oldest living source."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_comet_1",
+   "cat": "insight",
+   "weight": 4,
+   "once": false,
+   "text": "The broom star is back. You have seen it come before: every lifetime of a long-lived human, the same pale smear in the same part of the sky. Each time, the people below panic, or pray, or write it down. This time an astronomer on the observatory platform is drawing it, with the names of everyone on duty that night.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ]
+   },
+   "arc": "The Star That Comes Back",
+   "choices": [
+    {
+     "text": "Watch the sky with them, through the whole night",
+     "effects": {
+      "comprehension": 4,
+      "qi": 6,
+      "log": "You watch it cross the dark, slow and indifferent, the way it always does. In the morning the astronomer signs the drawing. You feel, briefly, like a colleague."
+     }
+    },
+    {
+     "text": "Calm the town below, which thinks the world is ending",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "No riots, no fires, no panicked runs on the granaries. The magistrate is praised for keeping order. You let him have it."
+     }
+    },
+    {
+     "text": "Remember every return, and count them",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You count. More than you expected. It is a way of measuring your own life against something that does not care, and you find it oddly comforting."
+     }
+    }
+   ],
+   "cooldown": 70,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_sb_ah_comet_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, a star-reading official, has worked out from the old ledgers that the broom star comes back on time, like a guest, and has predicted the next return to the year. The court thinks {he} is mad. {He} has come to the edge of your country to ask if you, who have seen it many times, can confirm it.",
+   "npc": {
+    "role": "sb_ah_comet",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ah_comet",
+     "ageAbs": 52,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_comet_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Star That Comes Back",
+   "choices": [
+    {
+     "text": "Confirm it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_ah_comet",
+      "log": "{npc} goes home calm and certain, and dies twenty years before the star returns, exactly on time. {His} prediction is read aloud at the observatory the night it appears."
+     }
+    },
+    {
+     "text": "Say nothing. Let the sky confirm it",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_ah_comet",
+      "log": "{npc} goes home uncertain and spends the rest of {his} life checking the arithmetic. It is correct. It always was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_comet_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The broom star returns, on time. Nobody panics now. Families climb out onto the roofs with snacks to watch it. A child asks a parent how long it has been coming. The parent says: since before anyone. The child asks if anyone has seen every one.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_comet_1"
+    ],
+    "minYearsAfter": 70
+   },
+   "arc": "The Star That Comes Back",
+   "choices": [
+    {
+     "text": "Answer the child, softly, from the dark",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "\"I have,\" you say. The child looks round, finds no one, and decides it was the star. The child grows up to be an astronomer. They always do."
+     }
+    },
+    {
+     "text": "Let the question hang in the air",
+     "effects": {
+      "comprehension": 3,
+      "log": "Nobody answers. The star crosses. You think of all the families on all the roofs, all the returns, and how none of them were alone, though they thought they were."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_forget_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": true,
+   "text": "People have stopped believing in you. Not in anger: they simply stopped. The rites became customs, the customs became games, the games became things grandparents do. A schoolmaster in the town near you teaches the children that the old powers were the way ignorant people explained the weather.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "When They Stop Believing",
+   "choices": [
+    {
+     "text": "Remind them, once, unmistakably",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "Something happens in the town square at noon that nobody can explain. The schoolmaster has to revise a lesson. Belief comes back for a generation, nervous and too loud, and then fades again."
+     }
+    },
+    {
+     "text": "Let them stop. They do not need you now",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_ah_forget_let",
+      "log": "They have granaries, physicians, roads with posts, boiled water. They earned all of it. You watch them be fine without you, and it is the proudest you have ever been."
+     }
+    },
+    {
+     "text": "Visit the schoolmaster quietly, to talk about the weather",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The schoolmaster is very shaken, and very curious, and teaches the next class rather differently: that the old powers might be the way people explained the weather, or might not, and that a good mind keeps a door open."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_forget_2",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "Even unbelieved in, you are still useful. Lovers meet at your old shrine because it is quiet. Old people go there to sit. A boy who is being beaten at home hides there every evening, and talks to the broken plaque the way you talk to someone you know is not listening.",
+   "when": {
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_forget_1"
+    ],
+    "minYearsAfter": 10,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "When They Stop Believing",
+   "choices": [
+    {
+     "text": "Listen",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Every evening, for a year. On the worst nights, the shrine is warm. On the last night, the boy says he is leaving to apprentice in a town far off. He thanks the plaque. He does not know why."
+     }
+    },
+    {
+     "text": "Send the boy's father a very bad dream",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "virtue": 1
+      },
+      "log": "The father wakes shouting, three nights in a row, and the fourth night does not drink. It is not a cure. It is a year of better evenings, which is a great deal for a boy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_forget_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "Nobody believes in you. Nobody needs to. And still, every new year, someone in the town leaves a cup of water at the broken shrine. You have never seen who. It is not belief. It is something older and simpler than belief: a habit of kindness, passed down without its reasons.",
+   "when": {
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_forget_2"
+    ],
+    "minYearsAfter": 60,
+    "beast": [
+     "baekho",
+     "bonghwang",
+     "cheongryong",
+     "girin",
+     "gumiho",
+     "haechi",
+     "hwangryong",
+     "hyeonmu",
+     "imugi",
+     "juak"
+    ]
+   },
+   "arc": "When They Stop Believing",
+   "choices": [
+    {
+     "text": "Find out who it is",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "An old man who sells pickles, whose grandmother did it, and her grandmother. He does not know why. He would be embarrassed to be asked. You do not ask."
+     }
+    },
+    {
+     "text": "Do not find out. Let it stay a gift with no giver",
+     "effects": {
+      "comprehension": 5,
+      "qi": 5,
+      "log": "You drink the water every new year. It is the best thing anyone has ever given you, and you will never know whose hand it was. That, you decide, is what it means to be a world's old friend."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_road_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": false,
+   "text": "Travellers at the crossroads near you, lost, as travellers have been lost near you for ages. This lot are pilgrims, or refugees, or simply people who took a wrong turning; it hardly matters. They make a small fire and argue about the way. One of them looks into the dark, toward you, and goes quiet.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ]
+   },
+   "arc": "The Travellers Who Came the Long Way",
+   "choices": [
+    {
+     "text": "Set them on the right road",
+     "effects": {
+      "qi": -3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "In the morning the right road is obvious to all of them, though none of them can say why. They go. One of them looks back."
+     }
+    },
+    {
+     "text": "Stay by their fire, just out of the light, and listen to them",
+     "effects": {
+      "charm": 2,
+      "comprehension": 2,
+      "log": "They talk late about where they are going and what they left. After ages of travellers, it is still the same two things. You never tire of hearing it."
+     }
+    },
+    {
+     "text": "Let them find their own way",
+     "effects": {
+      "luck": 2,
+      "log": "They argue until dawn and pick the wrong road, then the right one. Most of life, you think, goes like that."
+     }
+    }
+   ],
+   "cooldown": 20,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_sb_ah_road_2",
+   "cat": "npc",
+   "weight": 4,
+   "once": true,
+   "text": "One of the travellers you set on the right road years ago has come back on purpose. {npc} found what {he} was looking for at the end of it, and has walked all the way back to the crossroads to say so, to the dark beyond the firelight, not knowing if anything is there.",
+   "npc": {
+    "role": "sb_ah_road",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_ah_road",
+     "ageAbs": 35,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_road_1"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The Travellers Who Came the Long Way",
+   "choices": [
+    {
+     "text": "Let {him} know something is there",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": "sb_ah_road",
+      "log": "The fire flares, and settles, and is warmer. {npc} smiles, a little foolishly, and sits until morning. {He} plants a tree at the crossroads before {he} leaves."
+     }
+    },
+    {
+     "text": "Stay silent. Let the thanks be enough on its own",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_ah_road",
+      "log": "{npc} says it all to the darkness and goes home lighter. Thanks do not need to be heard to have been given."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_ah_road_3",
+   "cat": "insight",
+   "weight": 3,
+   "once": true,
+   "text": "The tree a grateful traveller once planted at the crossroads is old and huge now, and travellers sleep under it, and tie strips of cloth to its branches for a safe road. It has become a shrine without anyone deciding. You did not ask for it. You never ask for any of them.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     16
+    ],
+    "after": [
+     "dc_sb_ah_road_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The Travellers Who Came the Long Way",
+   "choices": [
+    {
+     "text": "Keep the tree",
+     "effects": {
+      "qi": -4,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "It survives two storms and a woodcutter with debts. It will survive you, probably. That seems right."
+     }
+    },
+    {
+     "text": "Watch the cloth strips move in the wind",
+     "effects": {
+      "comprehension": 4,
+      "log": "Blue, red, yellow, white, black. A thousand small hopes, all for the same thing: to arrive. You find yourself hoping it with them."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

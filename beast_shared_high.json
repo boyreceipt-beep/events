@@ -1,0 +1,5634 @@
+{
+ "events": [
+  {
+   "id": "dc_sb_hfounder_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "The old kingdom is rotting from the palace down. Three provinces are in revolt and each has a warlord who claims the throne. One of them, {npc}, climbs your mountain alone, unarmed but for a sword laid on the rock, and speaks to the summit as if it were a person. \"They say the one who sleeps here has watched four dynasties. Tell me if I should be the fifth. If you say no, I will go home and farm.\"",
+   "npc": {
+    "role": "sb_hfounder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hfounder",
+     "ageAbs": 31,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Founder's Oath",
+   "choices": [
+    {
+     "text": "\"Be the fifth. But swear the oath to me, not to your generals\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_hfounder_oath",
+      "npcFlag": [
+       "sb_hfounder",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "blessed",
+       "w": 25,
+       "note": "blessed my banner"
+      },
+      "log": "{npc} swears: no famine taxes, no slaves taken in war, the granaries open in bad years. Ten years later {npc} is crowned. The oath is carved on a stone at the foot of your mountain, in a hand that is not very good."
+     }
+    },
+    {
+     "text": "\"Go home and farm. Kings are a weather that passes\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hfounder",
+      "log": "{npc} looks at the sword a long time, then leaves it on the rock and walks down. Someone else becomes king. You keep the sword. Kings, you have noticed, rarely come back for their swords."
+     }
+    },
+    {
+     "text": "\"Ask the people in the valley, not the mountain\"",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_hfounder_oath",
+      "npcFlag": [
+       "sb_hfounder",
+       "sb_friend"
+      ],
+      "log": "{npc} goes down into the valley and spends a season eating barley with farmers. When the war comes, the farmers follow. It is the strangest army anyone has seen, and it wins."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hfounder_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A procession winds up the mountain road: drums, yellow parasols, a sedan chair, three hundred officials in rank badges. {npc} is a king now, grey at the temples, and has come to offer you a title cut in gold on a lacquered board: GUARDIAN OF THE STATE. The officials are sweating. The king is not.",
+   "npc": {
+    "role": "sb_hfounder"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hfounder_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "sb_hfounder_oath"
+    ],
+    "npcFlags": [
+     "sb_hfounder"
+    ]
+   },
+   "arc": "The Founder's Oath",
+   "choices": [
+    {
+     "text": "Accept, and remind {npc} of the oath in front of everyone",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "charm": 2,
+      "flag": "sb_hfounder_title",
+      "mem": {
+       "deed": "reminded",
+       "w": 15,
+       "note": "reminded me of my oath in front of the court"
+      },
+      "log": "Your voice comes down off the summit and recites the oath, clause by clause. Three hundred officials hear what their king promised. {npc} smiles the whole time. That was why {npc} brought them."
+     }
+    },
+    {
+     "text": "Refuse the title. \"Guard the state yourself\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The gold board goes back down the mountain unhung. The court historians record that the spirit of the mountain was modest. The court historians are wrong; you simply hate being written on."
+     }
+    },
+    {
+     "text": "Ask instead for the granary on the east road to be opened, today",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "asked_grain",
+       "w": 18,
+       "note": "asked me for grain, not glory"
+      },
+      "log": "The king sends a runner before the procession has even turned around. That winter the east road eats. Ballad-singers do not care about this part of the story, but the east road does."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hfounder_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Long years pass. The oath-stone at the foot of your mountain is green with moss, and the dynasty that swore it has a boy king, a regent who takes a tenth of every harvest for himself, and a famine in the south. A farmer scrapes the moss off the stone with a sickle and reads the oath aloud to a crowd. Then the crowd looks up at you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hfounder_1"
+    ],
+    "minYearsAfter": 150,
+    "flags": [
+     "sb_hfounder_oath"
+    ]
+   },
+   "arc": "The Founder's Oath",
+   "choices": [
+    {
+     "text": "Speak the oath from the summit, so the capital hears it",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "flag": "sb_hfounder_called",
+      "log": "The words roll down the river valley for three days, from village to village, as fast as a running man. The regent falls within the year. The boy king opens the granaries and is remembered better than he deserved."
+     }
+    },
+    {
+     "text": "Stay silent. A dead king's oath binds only the dead",
+     "effects": {
+      "comprehension": 4,
+      "log": "The crowd waits until dusk, then goes home. In a few years there is a new dynasty, and its founder does not climb any mountains. You find you miss the habit."
+     }
+    },
+    {
+     "text": "Send the rain to the south, where the famine is, and let the oath speak for itself",
+     "effects": {
+      "qi": -12,
+      "tally": {
+       "rain": 1,
+       "virtue": 3
+      },
+      "log": "A grey rain walks south for a month. The harvest is late but it comes. The farmer with the sickle carves a new line under the oath: AND THE MOUNTAIN KEPT IT."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hpagoda_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "A great monk back from the west has told the king: build a pagoda of nine storeys, one for each nation that threatens the kingdom, and the nine will bow. The master builder, borrowed from the enemy kingdom across the river, has dreamed every night that the pillar will not stand. On the morning the great centre pillar is to be raised, the ground shakes, and the builder sees a shadow on the clouds and kneels to it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "Nine Storeys for Nine Enemies",
+   "choices": [
+    {
+     "text": "Steady the earth under the pillar until it stands",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "sb_hpagoda_raised",
+      "log": "The pillar goes up with the whole capital holding its tongue. It stands. The builder weeps on the scaffold, and that night carves something small on the underside of the top beam, which nobody will read for six hundred years."
+     }
+    },
+    {
+     "text": "Let it shake. A pagoda that needs a beast to stand is a bad pagoda",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "fear": 1
+      },
+      "flag": "sb_hpagoda_raised",
+      "log": "The ground settles on its own. The builder, shaken, digs the foundation twice as deep. The pagoda will stand eight hundred years, and you were right, which is a cold comfort to a frightened carpenter."
+     }
+    },
+    {
+     "text": "Speak to the builder: \"Your own kingdom is one of the nine. Do you still want it to stand?\"",
+     "effects": {
+      "charm": 3,
+      "comprehension": 3,
+      "flag": "sb_hpagoda_raised",
+      "log": "The builder is quiet for a long time. \"A thing well made belongs to nobody,\" the builder says at last, and goes back up the scaffold. You think about that answer for a century."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpagoda_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Long years on. The pagoda is the tallest thing in the kingdom, and from the top storey a monk can see the smoke of the invaders' camp across the plain. They are horsemen from the northern steppe, and they have burned every temple from the border to here. The abbot asks the sky, very politely, whether the nine storeys were a promise or only a hope.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hpagoda_1"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "Nine Storeys for Nine Enemies",
+   "choices": [
+    {
+     "text": "Hide the temple in fog for as long as you can hold it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 15,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "flag": "sb_hpagoda_saved",
+      "log": "For nine days the horsemen ride in circles in a grey nothing that smells of incense. On the tenth they give up and go south. The pagoda stands, untouched, and the monks ring the bell for a whole day."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The fog holds for five days and breaks on the sixth. The horsemen find the temple and burn it, pagoda and all. You see the pillar you steadied fall, burning, nine storeys of it. (-10 health)"
+     }
+    },
+    {
+     "text": "Carry the monks and the scriptures out by night. Let the wood burn",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Four hundred monks and eighty chests of sutras, carried through the dark to a hidden valley. In the morning the pagoda burns like a torch the size of a mountain. The monks watch from far away, alive, and do not stop chanting."
+     }
+    },
+    {
+     "text": "Go down onto the plain and break the horsemen's camp",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 4,
+       "legend": 3
+      },
+      "flag": "sb_hpagoda_saved",
+      "log": "Their horses scatter in the night and do not stop running until the river. The steppe army withdraws and tells a story about the plain that its grandchildren will still be telling."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "ten thousand steppe arrows on a burning plain",
+      "log": "There are more of them than there are stars."
+     },
+     "risky": true
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpagoda_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Only the foundation stones are left where the pagoda stood: sixty-four great stones in the grass, and the socket of the centre pillar, full of rainwater. Children jump from stone to stone. An old farmer grazes a cow there. Nobody remembers the nine enemies, and three of the nine nations no longer exist.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hpagoda_2"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "Nine Storeys for Nine Enemies",
+   "choices": [
+    {
+     "text": "Spend a night among the stones, remembering the builder",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "The rainwater in the pillar socket reflects the stars. You remember the builder's hands, the smell of new pine, the shaking ground. Nobody else alive does. That is what it means to be old."
+     }
+    },
+    {
+     "text": "Show the farmer's child where the treasure box under the pillar lies",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The child digs, finds a small gilt box full of reliquaries and the builder's carving, and runs. In a hundred years scholars will argue about it. The cow does not care."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcomet_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A broom star stands in the northeast, its long white sweep across the sky. At the palace the king has stopped eating, and three ministers have already blamed three other ministers. The royal astronomer, {npc}, an old and careful person with ink on both thumbs, climbs to the observatory with a record book and asks the night, \"You have seen these before. Is it a punishment, or only a star?\"",
+   "npc": {
+    "role": "sb_hcomet",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hcomet",
+     "ageAbs": 63,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Broom Star",
+   "choices": [
+    {
+     "text": "\"A star. It came seventy-six years ago, and it will come again\"",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "flag": "sb_hcomet_told",
+      "npcFlag": [
+       "sb_hcomet",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "taught",
+       "w": 22,
+       "note": "told me the broom star returns"
+      },
+      "log": "{npc} writes it down exactly, with the date, the direction, the length of the sweep. \"Then I will tell the king it is a guest who keeps appointments,\" {npc} says. Nobody is executed that year, which is rare in a broom-star year."
+     }
+    },
+    {
+     "text": "\"A punishment. Tell the king to free the prisoners and cut the taxes\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "sb_hcomet",
+      "log": "It is a lie, and a good one. The king, terrified, empties the prisons and halves the tax in three provinces. The comet leaves on its own schedule. The provinces remember it as the kindest star."
+     }
+    },
+    {
+     "text": "Say nothing. Let {npc} sit with not knowing",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "sb_hcomet",
+      "log": "{npc} watches until dawn and records everything, without a verdict. It is the most honest page in the whole court history, and it is the only one nobody reads."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcomet_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The broom star is back in the northeast, exactly when you said. A young astronomer with the same ink-stained thumbs is on the observatory, holding an old record book open to a page in a dead hand. \"My great-grandfather wrote that the night told him this star keeps appointments,\" the astronomer says. \"Was it you?\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hcomet_1"
+    ],
+    "minYearsAfter": 75,
+    "flags": [
+     "sb_hcomet_told"
+    ]
+   },
+   "arc": "The Broom Star",
+   "choices": [
+    {
+     "text": "\"It was. Write that it came on time\"",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "comprehension": 3,
+      "mark": "sb_hcomet",
+      "log": "The new page goes next to the old one. In the annals of the kingdom the comet is recorded every time it returns, for a thousand years, with no gap. Scholars after the end of the world will find that strange."
+     }
+    },
+    {
+     "text": "\"It was an old astronomer who worked it out. Give the credit to the dead\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "The young astronomer writes the great-grandfather's name in red ink beside the date. The family keeps the book for nine generations. Nobody ever writes your name in it, which is exactly right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcomet_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The broom star returns a third time and finds a different kingdom. The observatory is a ruin; the new dynasty has built its own on the other side of the river. Nobody climbs up to ask you anything. A fisher's child on the riverbank points at the sky and says, \"Look, a star with a broom,\" and goes back to the nets.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hcomet_2"
+    ],
+    "minYearsAfter": 75
+   },
+   "arc": "The Broom Star",
+   "choices": [
+    {
+     "text": "Watch it with the child until it sets",
+     "effects": {
+      "luck": 3,
+      "qi": 8,
+      "log": "The child falls asleep on the bank. You keep watch. The broom star does not care about kingdoms and neither, tonight, do you."
+     }
+    },
+    {
+     "text": "Count the kingdoms it has outlived. Then count your own",
+     "effects": {
+      "comprehension": 5,
+      "log": "Three passes for the star, three dynasties for the river. You have seen them all. The star will see more. Somewhere between the two of you is the shape of time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hgeomancer_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A monk with a geomancer's compass has walked every ridge of the peninsula for thirty years, mapping the veins of the earth the way a physician maps a pulse. {npc} has come to the end of the map and found a ridge that is not on it, because it is you. \"The earth's qi gathers here like water in a bowl,\" {npc} says, very excited. \"A capital built in this valley would last five hundred years.\"",
+   "npc": {
+    "role": "sb_hgeo",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hgeo",
+     "ageAbs": 55,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Geomancer's Map",
+   "choices": [
+    {
+     "text": "\"Build it. But the valley floor floods. Build on the north bank\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_hgeo_capital",
+      "npcFlag": [
+       "sb_hgeo",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "advised",
+       "w": 20,
+       "note": "corrected my map"
+      },
+      "log": "{npc} redraws the map on the spot. The next dynasty builds its capital where you said. In five hundred years the river floods the south bank eleven times. The palace never gets wet."
+     }
+    },
+    {
+     "text": "\"Leave it off the map. A capital would cut the valley open\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_hgeo",
+      "log": "{npc} burns that page. The capital goes elsewhere. The valley stays rice paddies and herons, and a thousand years later it is still the quietest place in the kingdom."
+     }
+    },
+    {
+     "text": "\"Draw me on your map. As a mountain, not as myself\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_hgeo_capital",
+      "npcFlag": [
+       "sb_hgeo",
+       "sb_friend"
+      ],
+      "log": "You appear on the map as a ridge called the Sleeping Guardian. Every geomancer after {npc} copies it. You become, by accident, part of the official shape of the country."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hgeomancer_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The capital has risen in the valley as the geomancer drew it: walls on the ridges, four great gates, a palace with its back to your mountain. A new king's chief minister, a practical person who does not believe in veins of qi, wants to quarry your southern face for the new city walls.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hgeomancer_1"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "sb_hgeo_capital"
+    ]
+   },
+   "arc": "The Geomancer's Map",
+   "choices": [
+    {
+     "text": "Let them quarry, and move a little in your sleep each night",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "Every morning the quarry is in a slightly different place. The masons stop work after a month. The minister writes a memorandum on the unreliability of granite, which the court finds very funny."
+     }
+    },
+    {
+     "text": "Show the minister a better quarry, on a hill nobody loves",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The minister is not grateful, exactly, but is practical. The walls go up from the ugly hill, and the ugly hill becomes famous for it. Even hills can be lucky."
+     }
+    },
+    {
+     "text": "Let the quarry cut. Walls protect people too",
+     "effects": {
+      "health": -12,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It aches, a cold ache like a pulled tooth, for a hundred years. But the walls hold against two sieges, and you can hear the children on them in the evenings. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hblocks_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The court has fled to an island in the river mouth, and across the strait the mainland burns. The horsemen from the steppe cannot cross water. On the island a thousand monks are carving the whole of the scriptures into birch blocks, eighty thousand of them, because the first set was burned and the abbot believes that if the words are cut again, the kingdom will be protected. The abbot asks you to keep the strait.",
+   "when": {
+    "realm": [
+     8,
+     9
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Eighty Thousand Blocks",
+   "choices": [
+    {
+     "text": "Keep the strait: make every crossing current run wrong",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "flag": "sb_hblocks_kept",
+      "log": "For years no raft crosses. The steppe horsemen build boats, and the boats come back to the mainland shore with nobody aboard, or do not come back. The carving goes on, a block a day per monk."
+     }
+    },
+    {
+     "text": "\"Words do not stop horses. Send the people inland to the mountains\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Some listen and go to the mountain fortresses; some stay to carve. Both survive, in the end, which is not something you could have promised either of them."
+     }
+    },
+    {
+     "text": "Teach the carvers to soak the birch in seawater three years, so it lasts",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_hblocks_kept",
+      "log": "The abbot looks at the sea, then at the wood, then at the shadow on the water. The blocks are soaked, boiled in salt, dried in shade. Eight hundred years later they still have not warped."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hblocks_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The last block is cut. The war ended in a bad peace, the court went back to the mainland, and the blocks are to be carried on the backs of monks to a temple deep in the southern mountains. It is a long road through bandit country, in the monsoon, with eighty thousand pieces of wood.",
+   "when": {
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hblocks_1"
+    ],
+    "minYearsAfter": 12,
+    "flags": [
+     "sb_hblocks_kept"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Eighty Thousand Blocks",
+   "choices": [
+    {
+     "text": "Walk the road with them, out of sight, from the island to the temple",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "log": "Bandits find the procession twice and both times decide, for reasons they cannot explain, to go home. Not one block is lost. The monks say the road felt guarded. They are right."
+     }
+    },
+    {
+     "text": "Hold back the monsoon for the month of the journey",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": 12,
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "log": "The monsoon waits, heavy and grey, until the last block is under the temple roof. Then it falls for a week. The abbot says it was courtesy."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "rain": 1
+      },
+      "log": "The rain will not wait. Three cartloads of blocks soak through. The carvers spend a year recutting them, and you spend the year ashamed. (-8 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hblocks_3",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "Lightning has set the temple's hillside alight. The fire comes up through the pines toward the long hall where the blocks are kept, the hall with the slatted windows the builders designed so the wood could take the air. Monks are running with buckets. It will not be enough.",
+   "when": {
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hblocks_2"
+    ],
+    "minYearsAfter": 100,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Eighty Thousand Blocks",
+   "choices": [
+    {
+     "text": "Turn the wind. Let the fire burn back on itself",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "mark": "sb_hblocks",
+      "log": "The wind swings round like a gate. The fire eats its own path and dies in black stumps a stone's throw from the hall. The blocks sleep on. Nobody ever learns that the wind had a reason."
+     }
+    },
+    {
+     "text": "Call rain from a clear sky",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 10,
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "mark": "sb_hblocks",
+      "log": "A single black cloud forms over the temple and empties itself. The monks stand in it laughing. The hall is wet for a week, and the blocks drink it and do not warp."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The cloud comes too late for the outer buildings. You put the last of the fire out with the weight of yourself, rolling in it. The hall is saved; your side is not. (-15 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hprophecy_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A forbidden book is being copied by hand in every village: the dynasty will fall, a True Man will come from a sea island, and a new house will rule eight hundred years from a mountain capital. In the newest copy, someone has added a line: the great beast of your mountain will rise for the True Man. {npc}, a preacher with a burning voice, has brought three hundred farmers to your slopes to wait for you to rise.",
+   "npc": {
+    "role": "sb_hpro",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hpro",
+     "ageAbs": 38,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Book of Jeong Gam",
+   "choices": [
+    {
+     "text": "Rise, and tell them the line is forged",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "npcFlag": "sb_hpro",
+      "log": "Three hundred faces turn up to the sky as your voice comes down. The farmers go home. {npc} does not. {npc} sits on the slope alone, and says, \"Then what do I tell them to hope for?\" You have no answer."
+     }
+    },
+    {
+     "text": "Stay hidden. Their hope is not yours to break",
+     "effects": {
+      "luck": 2,
+      "flag": "sb_hpro_waits",
+      "npcFlag": "sb_hpro",
+      "log": "They wait all winter. Some starve. In spring {npc} leads the rest down the mountain to attack the county seat, saying the beast is waiting for courage. You hear the fighting from the summit."
+     }
+    },
+    {
+     "text": "Speak to {npc} alone: \"What would you do with eight hundred years?\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_hpro_waits",
+      "npcFlag": [
+       "sb_hpro",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "asked",
+       "w": 18,
+       "note": "asked me what I would do with the years"
+      },
+      "log": "{npc} talks until dawn: land for those who till it, no hereditary slaves, schools in every village. It is a good list. It will cost a great many lives. You both know that by morning."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hprophecy_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The rising has come. {npc}'s farmers have taken four county seats, and the royal army is marching on them with muskets and cavalry. From your summit you can see both camps. The farmers are singing the prophecy. The soldiers are mostly farmers' sons.",
+   "npc": {
+    "role": "sb_hpro"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hprophecy_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_hpro_waits"
+    ],
+    "npcFlags": [
+     "sb_hpro"
+    ]
+   },
+   "arc": "The Book of Jeong Gam",
+   "choices": [
+    {
+     "text": "Rise between the two armies, and let both see you",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "fear": 3
+      },
+      "flag": "sb_hpro_stopped",
+      "mem": {
+       "deed": "stopped",
+       "w": 20,
+       "note": "stood between the armies"
+      },
+      "log": "Nobody fires. Nobody charges. The two armies look at the thing on the mountain for an hour, and then the officers start negotiating, because nobody wants to fight under that. The terms are bad for the rebels, but they are alive."
+     }
+    },
+    {
+     "text": "Send a flood down the valley between them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -10,
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "flag": "sb_hpro_stopped",
+      "log": "The river rises between the camps and stays risen for a month. Neither army can cross. By the time it falls, the court has sent a different general, one who talks first."
+     },
+     "fail": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "The flood comes too soon and takes the rebels' camp. The royal army walks in over the mud. You did not choose a side, and the river chose one for you."
+     }
+    },
+    {
+     "text": "Do nothing. This is the human world, and the humans must decide it",
+     "effects": {
+      "comprehension": 4,
+      "log": "The battle lasts a day. The rising is broken. {npc} is taken to the capital. The book is burned in every village, and copied again in secret the same night."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hprophecy_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A century after the rising, a schoolteacher brings a class of village children up your mountain. In the valley below there are now schools in every village and no hereditary slaves; it took four more risings and three kings to do it. The teacher reads them the old forbidden book, and stops at the line about you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hprophecy_1"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "The Book of Jeong Gam",
+   "choices": [
+    {
+     "text": "Let the children hear your voice, once",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "charm": 3,
+      "log": "\"The book was wrong,\" you tell them. \"Nobody rose for the True Man. The farmers rose for themselves.\" The children are disappointed. The teacher is not."
+     }
+    },
+    {
+     "text": "Let them have the story. They will make it true their own way",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The children go home and tell their families the beast rose for the farmers. It did not. But a story can do work in the world that a fact cannot."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbell_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The great bell for the royal temple has cracked in the mould three times. The casters are frightened; the king is impatient. A rumour has started in the market: the bell needs a child, given willingly, and a poor widow who once offered her baby to the alms-collecting monks as a joke is being looked at by everyone.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Bell That Cries",
+   "choices": [
+    {
+     "text": "Go into the head caster's dream and show where the mould is too thin",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "sb_hbell_saved",
+      "log": "The caster wakes, measures, swears and thickens the mould by a finger on the north side. The fourth pour holds. The widow's baby grows up in the market, loud and healthy, and never knows."
+     }
+    },
+    {
+     "text": "Stand over the courtyard on pour night, so everyone feels watched",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "flag": "sb_hbell_saved",
+      "log": "Nobody does anything wicked with that sky looking down. The pour cracks again. The casters try a different alloy, and a different master, and a sixth time. The rumour dies of its own foolishness."
+     }
+    },
+    {
+     "text": "Warm the bronze from below so it cools evenly",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "qi": 8,
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "flag": "sb_hbell_saved",
+      "log": "The bronze cools slowly, all night, as if on a kang floor. In the morning the bell is whole. The casters swear it is the best bronze they have ever poured, and they are right."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Too much heat. The mould bursts in a spray of bronze. Nobody is hurt, but the casters are now terrified of you, the widow, and the bell, in that order. It takes them two more years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbell_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The great bell has rung at the royal temple for generations. Its voice goes out for forty li, deep and then rising, and the villagers say it cries like a child calling its mother. They tell the story of the child in the bronze as if it were true. A young monk asks you, privately, whether it is.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hbell_1"
+    ],
+    "minYearsAfter": 100,
+    "flags": [
+     "sb_hbell_saved"
+    ]
+   },
+   "arc": "The Bell That Cries",
+   "choices": [
+    {
+     "text": "\"There is no child in the bell. There is a widow's grandchild's grandchild in the market\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The young monk laughs with relief and runs down to the market to look. Later, in the annals, the monk writes the truth beside the legend. The legend wins anyway; legends usually do."
+     }
+    },
+    {
+     "text": "\"Let the bell keep its story. It sounds better for it\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The monk is troubled for a month and then rings the bell at dawn, and listens, and understands. Some sounds need a story to be heard properly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hgranary_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Two harvests have failed. The relief granary of the county is supposed to lend grain in spring and take it back at harvest, but the clerks have been lending out half-measures cut with chaff and sand, and demanding full measures back. The new magistrate, {npc}, has found out, and has come to your mountain at night to ask what a magistrate with no friends at court can do.",
+   "npc": {
+    "role": "sb_hgr",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hgr",
+     "ageAbs": 36,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Relief Granary",
+   "choices": [
+    {
+     "text": "\"Open the granary. I will see that no one stops you\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "flag": "sb_hgr_open",
+      "npcFlag": [
+       "sb_hgr",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "backed",
+       "w": 22,
+       "note": "stood behind me when I opened the granary"
+      },
+      "log": "{npc} opens the doors at dawn and measures every sack honestly with the villagers watching. The chief clerk sends for relatives with clubs. They arrive, look up at the sky, and decide to go home."
+     }
+    },
+    {
+     "text": "\"Count the sand. Every grain. Then send the count to the capital\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_hgr_open",
+      "npcFlag": "sb_hgr",
+      "log": "It takes {npc} a month of sifting. The count goes to the capital in a sealed box. A royal secret inspector arrives the next spring, dressed as a beggar, and the clerks are in chains by summer."
+     }
+    },
+    {
+     "text": "Lead {npc} to the store of acorns and kudzu root in the high forest",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_hgr",
+      "log": "The famine foods of the mountain are bitter, but the county eats. {npc} writes a little book about which roots can be eaten and how to leach the acorns. It is copied for two hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hgranary_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A stone tablet has been put up by the granary gate by the villagers, praising {npc}'s good government. It is the custom; most such tablets are bought by the magistrates themselves. This one was not. {npc} is old now, and comes to your mountain on a mule to say goodbye before going home to die in a southern village.",
+   "npc": {
+    "role": "sb_hgr"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hgranary_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "sb_hgr_open"
+    ],
+    "npcFlags": [
+     "sb_hgr"
+    ]
+   },
+   "arc": "The Relief Granary",
+   "choices": [
+    {
+     "text": "\"Your tablet is the only honest one in the province\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcPass": "old age, in a southern village, poor",
+      "log": "{npc} laughs until the mule shies. \"Then I am the poorest honest magistrate in the province,\" {npc} says. Both of those things are true."
+     }
+    },
+    {
+     "text": "Walk {npc} home, as a shadow on the road",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "npcPass": "old age, in a southern village, poor",
+      "log": "For nine days, no bandit, no storm, no lame mule. In the southern village they say a cloud followed the old magistrate all the way home and then went back north."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hsonnim_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The honoured guest has come to the valley: the pox, which the villagers dare not call by its name. Every house with a sick child has a bowl of clean water and a straw horse ready, and the mudang is going from door to door. The mudang stops at the village gate, looks up at your mountain, and says, \"You are an older guest than this one. Ask it to leave.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Honoured Guest",
+   "choices": [
+    {
+     "text": "Speak to the sickness as a guest: politely, firmly, all night",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -10,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "You do not know if it hears. But the fevers break, one by one, and on the thirteenth day the mudang sends the straw horse down the road with the guest on it. Only four children are marked. None are buried."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "health": -8,
+      "log": "The guest does not listen to mountains. It stays its full time. Eleven small graves. The mudang does not blame you, which is worse. (-8 health)"
+     }
+    },
+    {
+     "text": "Send clean cold water down every stream into the village",
+     "effects": {
+      "qi": -6,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It is not a cure. It is cold water for burning children, as much as they want. It helps more than anyone expected."
+     }
+    },
+    {
+     "text": "\"I am not a guest here. I live here. That is the difference\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The mudang thinks about that, then nods and goes back to the doors. The pox stays its time and leaves. The mudang decides it was an answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhwarang_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A band of flower youths, sons and daughters of the nobility in bright silk with flowers in their hair, has climbed your mountain on pilgrimage. They sing, they practise the sword, they carve vows on the rocks: loyalty, filial piety, never retreat in battle. Their leader, {npc}, sixteen and absolutely certain of everything, challenges the mountain to a test of courage.",
+   "npc": {
+    "role": "sb_hhw",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hhw",
+     "ageAbs": 16,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Flower Youths",
+   "choices": [
+    {
+     "text": "Give them a test: a night on the summit, with you watching",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 3,
+      "npcFlag": "sb_hhw",
+      "log": "They sit back to back on the summit all night, shaking, singing to keep their courage up. At dawn they come down transformed, and very hungry. They will fight in three wars together, and remember the night more than any of them."
+     }
+    },
+    {
+     "text": "Add a vow to their rock: \"Never kill a prisoner\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "sb_hhw",
+      "log": "The new line appears on the rock overnight, cut deeper than the others. {npc} reads it in the morning and goes pale. The band argues about it for a week. It becomes the sixth vow."
+     }
+    },
+    {
+     "text": "\"Courage is easy at sixteen. Come back at sixty\"",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "sb_hhw",
+      "log": "{npc} is insulted. {npc} does come back at sixty, alone, with a stick, and sits on the rock and laughs at the vows. \"You were right,\" {npc} says. \"It is harder now.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hsurvey_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The court is making a new land register. Surveyors with knotted ropes are measuring every field and forest in the province for tax, and they have come to measure your mountain. The chief surveyor would like to know who owns it, so the right person can be taxed.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Land Register",
+   "choices": [
+    {
+     "text": "\"I own it. Send the bill to the sky\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The chief surveyor writes, with a very steady hand, OWNER: THE MOUNTAIN. TAX: WAIVED. It is the only entry in the register that nobody at court ever questions."
+     }
+    },
+    {
+     "text": "\"The villagers who cut the firewood own it\"",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "log": "The register lists the mountain as the common land of four villages. It stays that way for three hundred years, through two dynasties, because nobody wants to explain to the mountain why they changed it."
+     }
+    },
+    {
+     "text": "Move the measuring poles a little every night",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "After a month the mountain measures larger each day. The surveyors give up and estimate. The estimate is very generous to the villagers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hnobi_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A runaway house slave has crawled into a cave on your mountain with dogs on the slope below. The hereditary slave register says {npc} belongs to a family in the county town, and {npc}'s children will belong to them too. {npc} looks into the dark of the cave and sees your eyes, and does not scream. \"Eat me or hide me,\" {npc} says. \"Either is better than going back.\"",
+   "npc": {
+    "role": "sb_hnobi",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hnobi",
+     "ageAbs": 24,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Iron Ring",
+   "choices": [
+    {
+     "text": "Hide {npc}. Send the dogs running after a deer",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "sb_hnobi",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "hid",
+       "w": 25,
+       "note": "hid me in the cave from the dogs"
+      },
+      "log": "The dogs find a scent they like better and go baying down the other side of the mountain. At dawn {npc} walks north to where nobody knows a face. The register keeps a name that belongs to nobody."
+     }
+    },
+    {
+     "text": "Go down and burn the slave register in the county office",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 3,
+       "fear": 1
+      },
+      "npcFlag": [
+       "sb_hnobi",
+       "sb_friend"
+      ],
+      "log": "A ball of lightning falls on the county office in the night. The building is untouched except for one chest of registers, which is ash. Two hundred families wake up belonging to nobody. The magistrate calls it heaven's will and means it."
+     },
+     "fail": {
+      "tally": {
+       "fear": 2
+      },
+      "npcFlag": "sb_hnobi",
+      "log": "The lightning takes the wrong chest: the tax ledgers. The registers survive. The county celebrates for a different reason, and {npc} still has to run north."
+     }
+    },
+    {
+     "text": "\"Running is your choice. So is the road. I will not decide it\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_hnobi",
+      "log": "{npc} sits in the cave until the dogs are gone, and goes. You never learn which way. You think about it more often than you expected."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hexam_1",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "The night before the state examination, a candidate kneels at the little shrine on your slope and prays to you to know the questions. {npc} has studied for nineteen years. {npc}'s village has sold its common ox to pay for the journey.",
+   "npc": {
+    "role": "sb_hexam",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hexam",
+     "ageAbs": 34,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Night Before the Examination",
+   "choices": [
+    {
+     "text": "Tell {npc} the questions",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "npcFlag": "sb_hexam",
+      "log": "{npc} passes first of three hundred, and is a bad official for years, because {npc} never learned to answer a question nobody had told {npc} in advance."
+     }
+    },
+    {
+     "text": "\"I do not know the questions. I know you have studied nineteen years\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "sb_hexam",
+      "log": "{npc} sleeps for the first time in a week. {npc} passes in the middle of the list and is a decent magistrate, and the village gets a new ox."
+     }
+    },
+    {
+     "text": "\"Go home. The examination is bought this year\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hexam",
+      "log": "{npc} does not believe you and sits the examination, and fails, and the top three names are all nephews of ministers. {npc} goes home and opens a village school. It is a better life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcourtlady_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "An old woman in a faded palace robe sits by your stream with a small box. She served in the palace fifty years and has been dismissed now the queen she served is dead. In the box are letters the queen wrote to a brother executed for treason, never sent. \"They would burn them,\" she says. \"Will you keep them? You will outlive the people who would burn them.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Queen's Letters",
+   "choices": [
+    {
+     "text": "Keep them in a cave, dry, for a hundred years",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "sb_hletters",
+      "log": "She puts the box in your cave and goes home and dies in peace the next spring. The letters wait in the dark, quiet as seeds."
+     }
+    },
+    {
+     "text": "\"Read them to me first. Then decide\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "She reads until the light goes. The queen was funny, and lonely, and her brother was innocent. When she finishes, she burns them herself. \"There,\" she says. \"Now you know, and they cannot have it.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcourtlady_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A historian of the new dynasty, which has no reason to protect the old one's secrets, is writing the history of the dead queen. Rumour has led the historian to your mountain. Your cave still has a small box in it, dry.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     12
+    ],
+    "after": [
+     "dc_sb_hcourtlady_1"
+    ],
+    "minYearsAfter": 100,
+    "flags": [
+     "sb_hletters"
+    ]
+   },
+   "arc": "The Queen's Letters",
+   "choices": [
+    {
+     "text": "Give the historian the letters",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "The brother's name is cleared in a history book two hundred years too late. His descendants, farmers now, put up a tablet. The old court lady's name is in the preface."
+     }
+    },
+    {
+     "text": "Keep them. They were written to one person",
+     "effects": {
+      "comprehension": 3,
+      "log": "The historian writes the queen as she appears in the court records: stiff, silent, grieving. You know better. Perhaps that is enough."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hguild_1",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "The grain-barge guild of the river has had a good century, mostly because the river under your mountain has no wrecks. The guild master, {npc}, has come to propose a formal arrangement: a tenth of the guild's profit burned as offering each year, if you will keep the river kind, and sink the barges of rival guilds.",
+   "npc": {
+    "role": "sb_hguild",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hguild",
+     "ageAbs": 50,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "realm": [
+     8,
+     9
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu"
+    ]
+   },
+   "arc": "The Barge Guild",
+   "choices": [
+    {
+     "text": "\"Keep the river kind for everyone. Burn nothing\"",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "sb_hguild",
+      "log": "{npc} looks disappointed, then calculates, then cheers up: a kind river for everyone is still a kind river. The rival guilds prosper too. Grain gets cheaper. Nobody thanks you, and that is fine."
+     }
+    },
+    {
+     "text": "\"A tenth to the granaries, not to the fire\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcFlag": "sb_hguild",
+      "log": "The guild opens three river granaries and puts the mountain's name over the doors. In famine years the barge-men give grain away and call it your tithe."
+     }
+    },
+    {
+     "text": "Sink one of {npc}'s own barges, empty, as an answer",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3
+      },
+      "npcFlag": "sb_hguild",
+      "log": "The barge goes down with no one aboard, in a perfectly calm river, in front of the whole guild. {npc} never proposes anything to a mountain again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hstele_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The stele that a dead king put up to praise you has weathered so badly the inscription can barely be read. A young stonemason has been sent by the new county magistrate to re-cut it, and has asked, quite reasonably, what it said.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Weathered Stele",
+   "choices": [
+    {
+     "text": "Tell the mason the original words",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "The mason re-cuts every flattering word exactly. The stele will last another five hundred years saying things about you that were not entirely true even then."
+     }
+    },
+    {
+     "text": "Tell the mason to cut something truer",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "The new inscription is short: A MOUNTAIN THAT LISTENS. Scholars in later centuries call it the most mysterious stele in the province."
+     }
+    },
+    {
+     "text": "\"Leave it blank. Let the moss have it\"",
+     "effects": {
+      "luck": 3,
+      "log": "The mason polishes the stone smooth and leaves. The children of the village use the blank stele to practise writing with water. It is the best use it has ever had."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcensor_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A royal censor has knelt outside the palace gate for three days in the snow, holding up a memorial that says the king's favourite is selling offices. The king will not read it. The censor will die of cold before giving up. You can see it all from a long way off.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Censor in the Snow",
+   "choices": [
+    {
+     "text": "Warm the snow under the censor",
+     "effects": {
+      "qi": -5,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The snow melts in a circle around one kneeling official and nowhere else. The whole capital comes to look. On the fifth day the king, unnerved, reads the memorial."
+     }
+    },
+    {
+     "text": "Blow the memorial into the king's window",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The scroll lands on the king's writing table, unrolled. The favourite is banished within the month. The censor catches a cold and lives to be eighty."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The wind takes the scroll into the palace pond. The censor wades in after it, which is very brave and very cold, and is finally carried home by friends."
+     }
+    },
+    {
+     "text": "Let it be. A censor who must be rescued by a beast has not won",
+     "effects": {
+      "comprehension": 4,
+      "log": "On the seventh day the king reads it. The censor wins alone, nearly frozen, and the victory is entirely human. You are glad you only watched."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbandit_1",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "A bandit band has made your forest its home: forty outlaws who rob tax convoys and leave rice on the doorsteps of the poor, which makes them heroes in the villages and criminals at court. Their chief, {npc}, has been told the forest has an owner. {npc} comes to the oldest tree to ask permission, which no bandit ever does.",
+   "npc": {
+    "role": "sb_hbandit",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hbandit",
+     "ageAbs": 40,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Righteous Outlaws",
+   "choices": [
+    {
+     "text": "\"Stay. But no killing in my forest\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcFlag": [
+       "sb_hbandit",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "sheltered",
+       "w": 20,
+       "note": "let us stay in the forest"
+      },
+      "log": "For years no convoy guard dies in the forest. The guards begin to prefer this route; they lose the rice but keep their lives. The ballads say the chief made a pact with the mountain. The ballads are right."
+     }
+    },
+    {
+     "text": "\"Go. The army will follow you here, and burn my trees\"",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "sb_hbandit",
+      "log": "{npc} bows and moves the band to the next province. The army burns those trees instead. You are not proud of how relieved you are."
+     }
+    },
+    {
+     "text": "\"Rice for the poor is good. Rice taken by fear is still fear. Find another way\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hbandit",
+      "log": "{npc} argues all night and leaves without agreeing. Years later you hear that a former bandit chief has become a famous grain merchant who sells cheap in bad years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hmap_1",
+   "cat": "explore",
+   "weight": 10,
+   "once": true,
+   "text": "A mapmaker has walked the whole peninsula, every pass and river, carving the map onto woodblocks so it can be printed. {npc} has climbed your mountain three times and each time the measurements come out differently. \"Either I am going mad,\" {npc} says to the summit, \"or you moved.\"",
+   "npc": {
+    "role": "sb_hmap",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hmap",
+     "ageAbs": 45,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     8,
+     9
+    ]
+   },
+   "arc": "The Mapmaker",
+   "choices": [
+    {
+     "text": "\"I moved. Put me down where I am now\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "sb_hmap",
+      "log": "{npc} is delighted, not frightened. \"Then I will draw you as you are today,\" {npc} says, \"and if you move again, that is your problem.\" The map is the best ever made of the country. You are on it."
+     }
+    },
+    {
+     "text": "Lie still for a whole season so the measurements agree",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hmap",
+      "log": "It is surprisingly hard to lie still for a season. But the measurements agree, and the map is printed, and the woodblocks of your mountain are the most precise on it."
+     }
+    },
+    {
+     "text": "Show {npc} the passes that no map has ever had",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "sb_hmap",
+      "log": "Three hidden passes go onto the map. Within a few years they are trade roads. The mountain is busier than you might have liked, and you knew it would be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbaduk_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "Two old people in pale robes are playing baduk on a flat stone at the top of your mountain. You did not see them come. Their stones click like rain on tiles. A young woodcutter has stopped to watch, leaning on the axe. One of the players looks up at you without surprise. \"Sit,\" the immortal says. \"We need a judge. The other one keeps cheating.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Rotten Axe Handle",
+   "choices": [
+    {
+     "text": "Sit and judge the game",
+     "effects": {
+      "comprehension": 6,
+      "qi": 15,
+      "flag": "sb_hbaduk_judged",
+      "log": "It is one game. It takes, as far as you can tell, an afternoon. Neither of them cheats, which is the joke. When it ends in a draw by half a point, they bow to you and are gone. The woodcutter is still standing there."
+     }
+    },
+    {
+     "text": "Send the woodcutter home first, quickly",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You nudge the woodcutter down the path before the first stone is placed. The immortals laugh. \"Kind,\" says one. \"Boring,\" says the other. The woodcutter gets home in time for supper, and never knows what was saved."
+     }
+    },
+    {
+     "text": "Ask to play the winner",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "comprehension": 8,
+      "qi": 20,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_hbaduk_judged",
+      "log": "You lose by one stone, which no mortal player has ever managed. The immortal grins and leaves you the bowl of black stones. They are always warm."
+     },
+     "fail": {
+      "comprehension": 4,
+      "flag": "sb_hbaduk_judged",
+      "log": "You lose by forty stones. The immortal is very gracious about it, which is worse. \"Come back in a thousand years,\" the immortal says. You plan to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbaduk_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A confused young person in very old-fashioned clothes is wandering the village below, holding an axe whose handle has rotted to powder. The woodcutter. To the woodcutter it was one afternoon. To the village it was a hundred years, and everyone the woodcutter knew is a grave.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hbaduk_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_hbaduk_judged"
+    ]
+   },
+   "arc": "The Rotten Axe Handle",
+   "choices": [
+    {
+     "text": "Lead the woodcutter to the grave of the woodcutter's mother",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "You find it, under a pine nobody planted on purpose. The woodcutter weeps there a whole day. Then, because there is nothing else to do, the woodcutter finds a new handle for the axe."
+     }
+    },
+    {
+     "text": "Find the woodcutter's great-grandchildren, and introduce them",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The family takes in a great-grandparent younger than any of them. It is awkward for about a year. After that, the woodcutter is just the one in the family who tells the oldest stories, all of them true."
+     }
+    },
+    {
+     "text": "Take the woodcutter back up the mountain to look for the immortals",
+     "effects": {
+      "luck": 4,
+      "log": "There is only the flat stone and the lines of the board scratched in it. The woodcutter touches them and nods, and seems to make some decision you are not told about."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbaduk_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The same two immortals are back on the flat stone, the same game, it seems, half a point still between them. \"You have grown,\" says one, looking you over. \"Judge again. This time the stakes are only time.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hbaduk_1"
+    ],
+    "minYearsAfter": 200
+   },
+   "arc": "The Rotten Axe Handle",
+   "choices": [
+    {
+     "text": "Judge, and let a century pass",
+     "effects": {
+      "comprehension": 6,
+      "qi": 25,
+      "log": "When you look up, the pines on the summit are different pines. The immortals bow and go. In the valley there is a new dynasty you have never been introduced to."
+     }
+    },
+    {
+     "text": "\"I have watched enough of my friends die while I sat still. Not this time\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 3,
+      "log": "The immortals look at each other. \"That,\" says one, \"is the most interesting move anyone has played at this table in five thousand years.\" They pack up the stones and leave you the afternoon."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hseobok_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A ship from the great empire across the sea has anchored below the waterfall that falls straight into the ocean. Its envoy, {npc}, carries an order from an emperor who has burned books and buried scholars: bring back the herb of no death from the sacred mountain, or do not come back. Five hundred boys and girls wait on the shore. {npc} has climbed to the mist at the top, where you are, and is too tired to be afraid.",
+   "npc": {
+    "role": "sb_hseo",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hseo",
+     "ageAbs": 47,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Envoy of the First Emperor",
+   "choices": [
+    {
+     "text": "\"There is no herb of no death. Do not go back\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "sb_hseo_stayed",
+      "npcFlag": [
+       "sb_hseo",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "freed",
+       "w": 25,
+       "note": "told me not to go back"
+      },
+      "log": "{npc} sits down in the mist and laughs and laughs. Then {npc} goes down to the shore and tells five hundred children they will never see the emperor again. They cheer so loudly that the gulls rise from the whole cliff."
+     }
+    },
+    {
+     "text": "Give {npc} a common mountain herb, and let the emperor believe",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 3
+      },
+      "npcFlag": "sb_hseo",
+      "log": "{npc} looks at the little green leaves, then at you, and understands exactly what you are doing. \"The emperor will die anyway,\" {npc} says. \"But I will not die for failing.\" The ship sails back. History has lost it ever since."
+     }
+    },
+    {
+     "text": "\"Some herbs are for those who climb on their own feet. You did. Eat\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "sb_hseo_stayed",
+      "npcFlag": [
+       "sb_hseo",
+       "sb_friend"
+      ],
+      "npcRealm": 1,
+      "log": "It is only mountain fern, and the clean air, and the first honest rest {npc} has had in years. But {npc} comes down the mountain lighter, and lives to be ninety-nine, which feels like no death at all."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hseobok_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is carving words into the cliff beside the waterfall that falls into the sea, a little each day, very old now. Below, on the shore, the five hundred are grandparents, and their grandchildren fish and dive and speak the island's tongue. The carving says: SEOBOK PASSED HERE.",
+   "npc": {
+    "role": "sb_hseo"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hseobok_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "sb_hseo_stayed"
+    ],
+    "npcFlags": [
+     "sb_hseo"
+    ]
+   },
+   "arc": "The Envoy of the First Emperor",
+   "choices": [
+    {
+     "text": "\"Add: AND STAYED\"",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcPass": "old age, on the island, by the waterfall",
+      "log": "{npc} cuts the two words smaller, under the others, smiling. The sea will wear the whole carving away in time, and the town that grows there will keep the name anyway."
+     }
+    },
+    {
+     "text": "Watch {npc} finish, and say nothing",
+     "effects": {
+      "comprehension": 3,
+      "npcPass": "old age, on the island, by the waterfall",
+      "log": "It takes a month. When it is done {npc} sits by it every evening until there are no more evenings. The divers carry {npc} up the mountain to be buried in the mist."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hseobok_3",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "Many centuries later an envoy from the empire across the sea visits the island and asks to see the carving by the waterfall, which nobody can find any more. The local guide says the words are gone but the mountain remembers them. The guide does not know how right that is.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hseobok_2"
+    ],
+    "minYearsAfter": 300
+   },
+   "arc": "The Envoy of the First Emperor",
+   "choices": [
+    {
+     "text": "Show the envoy where the carving was",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "A wave pulls back further than any wave should, and for a moment there are faint marks on the wet black rock. The envoy bows to the cliff. The guide pretends not to have seen."
+     }
+    },
+    {
+     "text": "Let the carving stay lost. The children were the message",
+     "effects": {
+      "comprehension": 4,
+      "log": "The envoy goes home with a poem about a waterfall. Down on the shore a diver laughs at something, and you hear the old envoy in it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hjade_1",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "A stair of cloud comes down to your summit at dawn, and a messenger in jade-green robes climbs down it with a golden scroll. \"By order of the Jade Emperor, Okhwang Sangje, ruler of the heavens: the great beast of this mountain is to present itself at court, to be entered in the register of heaven.\" The messenger looks at you. \"There is a form,\" the messenger adds. \"It is very long.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "Summoned to the Jade Court",
+   "choices": [
+    {
+     "text": "Climb the stair and present yourself",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_hjade_court",
+      "log": "The stair goes up through the morning and into a light that has no sun in it. You fill in the form. It asks for your name, your age, your deeds, and your intentions, in that order, in triplicate."
+     }
+    },
+    {
+     "text": "\"Heaven knows where I live. If it wants me, it can come down\"",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The messenger is speechless for a long moment, then writes something on the back of the scroll, rolls it up and climbs back into the sky. Heaven has never received that answer before. It is not sure what to do with it."
+     }
+    },
+    {
+     "text": "Ask the messenger to sit down and rest first. It is a long stair",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_hjade_court",
+      "log": "Nobody has ever asked. The messenger sits, and tells you court gossip for an hour: which star is feuding with which, why the rain ministry is always late. Then the two of you climb together, friends."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hjade_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The Jade Court: a hall of green stone so long the far end is in another season. Officials of heaven line it, in charge of thunder, rain, the dead, the stars, the kitchen gods. The Jade Emperor does not look at you. A clerk reads your register aloud: every rain you sent, every life you took, every flood you held back. Then the clerk asks what you want.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hjade_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_hjade_court"
+    ]
+   },
+   "arc": "Summoned to the Jade Court",
+   "choices": [
+    {
+     "text": "\"Nothing. I came because I was asked\"",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "There is a sound in the hall like a thousand brushes stopping at once. The Jade Emperor looks at you, for the first time. Then looks away again. Your register is stamped with a seal you do not recognise."
+     }
+    },
+    {
+     "text": "\"A seat in this hall, one day\"",
+     "effects": {
+      "qi": 20,
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "The clerk writes it down without comment, as if this is asked every day. Perhaps it is. A minister with a thunder badge watches you leave with something like interest."
+     }
+    },
+    {
+     "text": "\"Rain for the dry provinces of the south, without waiting for the rain ministry\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "rain": 1
+      },
+      "log": "The rain minister, who is present, turns a colour. The clerk writes it down. Three months later the south gets its rain, on time, for the first time in a decade."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hjade_3",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "A messenger of heaven arrives with a commission. A river god in the west has been drowning a girl every year as a bride, and heaven, which is very busy, would like the matter handled by a local power. You are the local power. The messenger hands you a writ with your name already on it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hjade_2"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "Summoned to the Jade Court",
+   "choices": [
+    {
+     "text": "Go west and tell the river god to stop, politely",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "The river god is old and lonely and stupid with it. You talk for three days. The god agrees to take offerings of rice wine and paper brides instead. The village holds a festival you are not invited to, which is correct."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Politeness does not work. The river god fights. You win, but the river runs muddy for a year and you limp for ten. No more brides go into it. (-12 health)"
+     }
+    },
+    {
+     "text": "Go west and break the river god's shrine",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 3,
+       "legend": 3
+      },
+      "log": "The shrine comes down. The god flees downstream to the sea and is not heard of again. The writ goes back to heaven marked COMPLETE, in your own hand."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a drowning river god, in its own deep water",
+      "log": "It is the god's water, and you are a guest in it."
+     },
+     "risky": true
+    },
+    {
+     "text": "\"Heaven can handle its own river gods\"",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The messenger takes back the writ, offended. Another girl goes into the river that year. It is not your fault. You remember her name anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hjade_4",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A second cloud stair, unasked for. This time it is not a messenger who comes down it but a minister of heaven in person, with the thunder badge, and an offer. \"There is a vacancy,\" the minister says. \"Rain over the eastern provinces. The last holder was careless. You would sit in the hall, and never come down.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hjade_2"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "Summoned to the Jade Court",
+   "choices": [
+    {
+     "text": "\"Thank you. I am still needed down here\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "The minister nods, as if expecting it. \"The vacancy will still be there in five hundred years,\" the minister says. \"It always is.\""
+     }
+    },
+    {
+     "text": "Ask for a century to think about it",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "log": "\"A century,\" the minister agrees, and climbs back up. You think about it nearly every day. Down in the valley a village is born, grows, and is renamed twice while you think."
+     }
+    },
+    {
+     "text": "\"The eastern provinces can have their rain from me, from here\"",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "qi": -10,
+      "log": "The minister laughs, which shakes the cloud stair. \"Done,\" says heaven, unofficially. It is not in any register. The rain comes on time anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hchiwon_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A scholar who passed the examination in the great empire across the sea, came home, and tried for ten years to save a dying court with memorials nobody read, has given up. {npc} has been wandering the mountains for years, sleeping in temples, writing poems on rocks. Now {npc} stands at the edge of your forest and says, \"I have heard that the old ones of the mountains know the road out of the world. Show me.\"",
+   "npc": {
+    "role": "sb_hchiwon",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hchiwon",
+     "ageAbs": 62,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "Straw Sandals at the Forest Edge",
+   "choices": [
+    {
+     "text": "Show {npc} the way into the mist",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 4
+      },
+      "npcFlag": "sb_hchiwon",
+      "mark": "sb_hchiwon",
+      "log": "{npc} takes off the straw sandals and sets them neatly on a rock, and walks into the mist barefoot, and does not come back. The monks below find the sandals and tell a story about an immortal. You know only that the mist closed gently."
+     }
+    },
+    {
+     "text": "\"There is no road out. There is a temple below that needs a teacher\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 3,
+      "npcFlag": "sb_hchiwon",
+      "log": "{npc} spends the last years teaching novices to write, in a temple full of the scriptures, and is buried with ordinary honours. The poems on the rocks are still there. The students carry them on."
+     }
+    },
+    {
+     "text": "\"Write me a poem first. Then I will decide\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "sb_hchiwon",
+      "log": "It is about water running in a gorge so loudly that the noise of the world cannot be heard. You keep it. You decide, in the end, that the poem was the answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hchiwon_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Pilgrims come to the rock where the scholar's sandals were found. There is a small shrine now, and an old monk who sells rubbings of the poems. A young pilgrim, very earnest, sits on the rock and waits to be shown the way out of the world too.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hchiwon_1"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "Straw Sandals at the Forest Edge",
+   "choices": [
+    {
+     "text": "Show the young pilgrim the way back down instead",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "The pilgrim is angry for a week and then, slowly, is not. Some roads out of the world are for the end of a life, not the start of one."
+     }
+    },
+    {
+     "text": "Let the mist come, and let the pilgrim decide",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The pilgrim sits in the mist all night and comes out at dawn the same person, shivering, with a better poem. That is the usual result, and a good one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhalmang_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "A giant grandmother older than you, so large her head is in the clouds over the island's crater and her laundry is the island's hills, has noticed you. Seolmundae Halmang, the islanders call her. She waves you over. \"Peer,\" she says, \"the islanders want a bridge to the mainland. I said I would build one if they made me a skirt of silk. They are short one bolt. Help me or help them?\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Grandmother's Bridge",
+   "choices": [
+    {
+     "text": "Help the islanders find the last bolt",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "You find a merchant ship with silk aboard, becalmed off the coast, and push it gently to the island. The hundredth bolt is woven. The grandmother puts on the skirt and begins to lay stones into the sea, and stops, a third of the way, because she has had a better idea. The islanders forgive her."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "There is no more silk on the island, or near it. Ninety-nine bolts. The grandmother shrugs a shrug that makes the tide turn, and stops building. The rocks she laid stick out of the sea forever."
+     }
+    },
+    {
+     "text": "\"An island without a bridge stays an island. That is not bad\"",
+     "effects": {
+      "comprehension": 4,
+      "log": "The grandmother laughs until it rains. \"You have been talking to islanders,\" she says. \"They are always of two minds.\" The bridge is never built. The island keeps its own tongue for two thousand years."
+     }
+    },
+    {
+     "text": "Help the grandmother: lay stones beside her, with no skirt needed",
+     "effects": {
+      "strength": 5,
+      "tally": {
+       "legend": 3
+      },
+      "log": "For a month the two of you lay stones into the sea, and the islanders watch from the cliffs. Then the grandmother sits down and says she is tired, and the bridge stops a third of the way. It is a very good reef."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhalmang_2",
+   "cat": "danger",
+   "weight": 8,
+   "once": true,
+   "text": "The grandmother has decided, on a whim, to measure the depth of the island's pools with her own legs. The first one comes to her ankles; the second, her knees. The third is the bottomless one, and she is already wading toward it, laughing.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hhalmang_1"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Grandmother's Bridge",
+   "choices": [
+    {
+     "text": "Warn her about the bottomless pool",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "She looks at you, and her face is very old and very kind. \"I know, peer,\" she says. \"Everything that is born gets to choose its pool.\" She stops anyway, for you, and sits on the shore, and that day she lives."
+     }
+    },
+    {
+     "text": "Go in first, and find the bottom for her",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 5,
+      "qi": 20,
+      "tally": {
+       "legend": 3
+      },
+      "log": "There is a bottom. It is very far down, and cold enough to stop a heart. You come up half-drowned and report it. The grandmother laughs so hard that a new hill appears on the island."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a bottomless pool, gone into for a peer",
+      "log": "There is no bottom."
+     },
+     "risky": true
+    },
+    {
+     "text": "Let her go. She is older than you, and chooses for herself",
+     "effects": {
+      "comprehension": 5,
+      "log": "She wades out and goes down laughing, all of her, and the pool closes. The island feels lighter and emptier. The islanders say the mountain is her, and they are right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hmaiden_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Three maidens of heaven come down every full moon to bathe in your mountain pool, and hang their robes of light on the pine by the water. Tonight a woodcutter is hiding behind the rock. A deer the woodcutter saved from hunters has given advice: steal one robe, and the maiden cannot go home, and must stay and marry. The woodcutter's hand is already on the branch.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Robe on the Pine",
+   "choices": [
+    {
+     "text": "Shake the pine so the robes fall into the water, in sight of the maidens",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "charm": 2,
+      "log": "All three maidens snatch their robes and are gone up a ladder of moonlight before the woodcutter can move. The woodcutter sits by the pool a long time, ashamed, and then goes and tells the deer exactly what it can do with its advice."
+     }
+    },
+    {
+     "text": "Let it happen. Heaven's daughters are not yours to guard",
+     "effects": {
+      "luck": 3,
+      "flag": "sb_hmaiden_stolen",
+      "log": "One robe vanishes into the rocks. Two maidens rise. The third stands in the water shivering and furious. A life begins tonight that neither of them chose."
+     }
+    },
+    {
+     "text": "Speak to the woodcutter, quietly: \"A bride taken by theft is a prisoner\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The woodcutter's hand comes off the branch. The next full moon, the woodcutter comes to the pool in daylight, with a gift of chestnuts, and simply waits. Some maidens of heaven, it turns out, like chestnuts."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_sb_hmaiden_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years later. The maiden from heaven has three children with the woodcutter, and on the night the woodcutter finally showed her the stolen robe, she put it on, took a child under each arm and one on her back, and rose. The woodcutter is at your pool every night now, looking up.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hmaiden_1"
+    ],
+    "minYearsAfter": 12,
+    "flags": [
+     "sb_hmaiden_stolen"
+    ]
+   },
+   "arc": "The Robe on the Pine",
+   "choices": [
+    {
+     "text": "Take the woodcutter to the gate of heaven to ask",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 10,
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "Heaven lets the woodcutter in, to visit, once a year. The children have grown. Whether the maiden forgives, nobody ever tells you. The woodcutter comes back each time quieter and less sad."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The gate of heaven does not open for a stolen marriage. You come back in a thunderstorm with a weeping woodcutter clinging to you. (-10 health)"
+     }
+    },
+    {
+     "text": "\"You stole the robe. This is the price\"",
+     "effects": {
+      "comprehension": 3,
+      "log": "The woodcutter nods, and keeps looking up. In the villages they say the woodcutter became a rooster, crowing at the sky every dawn. That is not what happened, but it is what it was like."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbulgae_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The sun goes dark at noon. In the valley the villagers bang pots and gongs and shout at the sky: the fire-dog of the Dark Kingdom, they say, has been sent again by its king to steal the sun, and it bites, and burns its mouth, and lets go, but it always tries again. Today you can see it. It is very large and very hungry, and it has noticed you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Fire-Dogs of the Dark Kingdom",
+   "choices": [
+    {
+     "text": "Answer it. Let the fire-dog know the sun is guarded",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "flag": "sb_hbulgae_met",
+      "log": "Your voice goes up into the copper dark. The fire-dog flinches, and lets go of the sun early, and slinks back to its dark kingdom. The villagers say the eclipse was short this year. They have no idea."
+     }
+    },
+    {
+     "text": "Ask the fire-dog why it keeps trying",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_hbulgae_met",
+      "log": "It has been ordered to. Its king lives in a land with no light and wants some. It burns its mouth every time. It looks at you with something like envy, and lets go of the sun, and goes home."
+     }
+    },
+    {
+     "text": "Help the villagers: make the gongs louder",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "sb_hbulgae_met",
+      "log": "You add your voice to the pots and gongs. The valley makes such a noise that the birds fall silent for a week. The sun comes back. Everyone feels responsible, which is half the point of a gong."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hbulgae_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The moon goes red and dark at midnight: the fire-dog again, trying the moon this time, which is cold enough to freeze its mouth. Afterwards it does not go home. It lies down on the next mountain, panting smoke, and looks at you across the valley. It has nowhere to be until its king sends it again.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hbulgae_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "sb_hbulgae_met"
+    ]
+   },
+   "arc": "The Fire-Dogs of the Dark Kingdom",
+   "choices": [
+    {
+     "text": "Let it rest on your mountain, peer to peer",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "qi": 10,
+      "log": "It sleeps a week on the north slope and the snow there melts. Then it goes back to the dark. Every eclipse after that, you feel it nod to you on its way."
+     }
+    },
+    {
+     "text": "Send it home. The Dark Kingdom's servants are not welcome here",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 2
+      },
+      "log": "It goes, without a fight, head low and smoking. The eclipses keep coming. It never stops on your mountain again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcore_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The elders of a great sect have done the arithmetic: a beast of your age carries a core worth three generations of cultivation. Their grand elder, {npc}, has been preparing for forty years. Three hundred swordsmen, a binding formation of nine flags, chains forged in a volcano. {npc} sends a courteous letter first, asking you to surrender with dignity.",
+   "npc": {
+    "role": "sb_hcore",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hcore",
+     "ageAbs": 81,
+     "opinion": -20
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Sect That Wants Your Core",
+   "choices": [
+    {
+     "text": "Write back. Courteously. Decline",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2,
+       "hunted": 1
+      },
+      "flag": "sb_hcore_war",
+      "npcFlag": "sb_hcore",
+      "log": "Your letter is cut into the face of a cliff, each character the size of a house, in a single night. The sect's disciples read it from their camp. Forty of them go home before the elder can stop them."
+     }
+    },
+    {
+     "text": "Visit the camp at night, and let them see what they are hunting",
+     "effects": {
+      "tally": {
+       "fear": 4
+      },
+      "npcFlag": "sb_hcore",
+      "log": "You do nothing but open your eyes above the camp. By dawn the three hundred are gone, and their elder with them, pale, and very angry, carried down the mountain by disciples who will not look back."
+     }
+    },
+    {
+     "text": "Invite {npc} to come alone and talk",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1,
+       "hunted": 1
+      },
+      "flag": "sb_hcore_war",
+      "npcFlag": "sb_hcore",
+      "log": "{npc} comes, which takes courage. The talk is long. It turns out the elder is dying, and the core is not for the sect at all. It is for {npc}. It always is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcore_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The binding formation goes up around your mountain: nine flags, nine pillars of light, three hundred swords humming in their scabbards. The chains are coming. {npc} stands at the centre of the formation, so old the wind seems to hurt, and gives the order.",
+   "npc": {
+    "role": "sb_hcore"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hcore_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_hcore_war"
+    ],
+    "npcFlags": [
+     "sb_hcore"
+    ]
+   },
+   "arc": "The Sect That Wants Your Core",
+   "choices": [
+    {
+     "text": "Break the formation at its weakest flag",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The binding formation"
+     },
+     "ok": {
+      "strength": 6,
+      "qi": 15,
+      "tally": {
+       "legend": 4,
+       "fear": 3
+      },
+      "log": "The seventh flag-bearer is the youngest, and frightened. The flag falls. The formation unravels like a dropped scroll. The sect retreats without its chains, and the murim talks about nothing else for a generation."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a sect's nine-flag binding formation and three hundred swords",
+      "log": "The formation holds."
+     },
+     "risky": true
+    },
+    {
+     "text": "Go still. Let the formation close on nothing, and leave through the earth",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 10,
+      "tally": {
+       "legend": 3,
+       "hunted": -1
+      },
+      "log": "The chains close on a mountain that is only a mountain. You are three valleys away, in a river. The sect's greatest formation captures a hill. Its disciples will be mocked for this until the end of the dynasty."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The chains catch you half out of the ground. It takes a day to tear free. You get away, wounded and furious. (-20 health)"
+     }
+    },
+    {
+     "text": "Speak to {npc} across the formation: \"Your death is not mine to cure\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "hunted": -1
+      },
+      "comprehension": 3,
+      "mem": {
+       "deed": "refused",
+       "w": 15,
+       "note": "told me the truth in front of my disciples"
+      },
+      "log": "The whole sect hears it. Three hundred swords go slowly still. {npc} stands at the centre of the light for a long time, and then gives the order to take down the flags."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hcore_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The sect that once besieged your mountain has a new sect master, and a rule in its founding scroll: never hunt the beast of the eastern mountain. The new master has come to ask why. Nobody alive remembers.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hcore_2"
+    ],
+    "minYearsAfter": 90
+   },
+   "arc": "The Sect That Wants Your Core",
+   "choices": [
+    {
+     "text": "Tell the whole story, without flattering anyone",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The new master listens to the end, and writes it down, unflattering parts and all, and adds it to the founding scroll. The rule stays. Now there is a reason under it."
+     }
+    },
+    {
+     "text": "\"Hunt me, then, and find out\"",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "strength": 2,
+      "log": "The master bows deeply and goes home and makes the rule stricter. Some lessons are better learned second-hand."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hflute_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A floating hill with one stalk of bamboo on it is drifting toward the shore below the sea tomb of a dead king, who asked to be buried in the waves to guard the coast forever. The bamboo splits in two by day and joins into one by night. The new king, {npc}, waits on the shore pavilion. {npc} has dreamed that a flute cut from it would calm ten thousand waves. You can feel the bamboo listening for your answer.",
+   "npc": {
+    "role": "sb_hflute",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hflute",
+     "ageAbs": 28,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "realm": [
+     9,
+     10
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Flute That Calms the Waves",
+   "choices": [
+    {
+     "text": "Guide the hill to the shore so the king can cut the bamboo",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "sb_hflute_cut",
+      "npcFlag": "sb_hflute",
+      "log": "The bamboo is cut at night, while it is one. The flute is made. When it is played, the sea goes as flat as a mirror and the enemy fleet off the coast drifts home. {npc} keeps it in a treasury that it will outlast."
+     }
+    },
+    {
+     "text": "\"A flute that calms every wave also calms the ones that should be fought\"",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "sb_hflute",
+      "log": "{npc} thinks about this on the pavilion all day. In the end the bamboo is cut anyway, but {npc} plays the flute only twice in a long reign. A good king, you decide."
+     }
+    },
+    {
+     "text": "Ask the dead king in the sea what to do",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "sb_hflute_cut",
+      "npcFlag": "sb_hflute",
+      "log": "The tomb under the waves answers in a voice like a bell under water: \"Give it to my heir. The flute will be needed.\" You do. You never forget that voice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hflute_2",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "The wave-calming flute has been lost, found, stolen, hidden in a pagoda and lost again for six centuries. Now a thief in a mountain hut has it, and plays it badly to stop a flood in a village nobody else will help. The thief has no idea what it is. The flood stops anyway.",
+   "when": {
+    "realm": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_sb_hflute_1"
+    ],
+    "minYearsAfter": 150,
+    "flags": [
+     "sb_hflute_cut"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Flute That Calms the Waves",
+   "choices": [
+    {
+     "text": "Let the thief keep it",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "The thief plays it every rainy season, very badly, and the village never floods. The flute seems content. It was always for waves, not for kings."
+     }
+    },
+    {
+     "text": "Return it to the royal treasury",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "log": "It sits in a lacquer case for two hundred years, unplayed, catalogued. You are not sure you did right. The village floods the next year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpeach_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A crane comes down out of a clear sky with an attendant of heaven on its back and a single peach on a golden tray, as large as a child's head. \"From the orchard of the Queen Mother of the West,\" the attendant says. \"It ripens once in three thousand years. She heard you were patient.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Peach of Heaven",
+   "choices": [
+    {
+     "text": "Eat it",
+     "effects": {
+      "qi": 35,
+      "health": 10,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It tastes of a spring morning that has not happened yet. For a year you feel the weight of every one of your years drop away, one by one, like snow off a pine."
+     }
+    },
+    {
+     "text": "Plant the stone on your mountain",
+     "effects": {
+      "luck": 5,
+      "tally": {
+       "legend": 3
+      },
+      "log": "The attendant is shocked. Nobody has ever planted one. The tree comes up in three hundred years, which you can wait for."
+     }
+    },
+    {
+     "text": "Give it to the oldest person in the valley",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "charm": 2,
+      "log": "An old grandmother of ninety eats a peach of heaven with her three teeth and lives to a hundred and forty, scolding everyone. Heaven is not amused. The valley is delighted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hstarfall_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": true,
+   "text": "A star falls into your forest with a sound like the world's largest door closing. The court astronomers will record it as a bad omen. In the crater, still hot, is a lump of black star-iron, and the swordsmiths of three provinces are already on the road to fight over it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Fallen Star",
+   "choices": [
+    {
+     "text": "Bury the star-iron deep, where no smith will ever find it",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Three provinces of swordsmiths dig holes all over your mountain for a year and find nothing. No sword is made from the star. No war is fought over the sword."
+     }
+    },
+    {
+     "text": "Give it to the poorest smith, who came on foot",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "The sword is not beautiful. It is honest and sharp and never breaks. It goes from hand to hand for six hundred years and is never once used to kill someone kneeling."
+     }
+    },
+    {
+     "text": "Swallow it",
+     "effects": {
+      "strength": 6,
+      "qi": 15,
+      "tally": {
+       "fear": 2
+      },
+      "log": "It burns going down. For a decade you feel heavier, and colder, and the lightning comes to your mountain more often, as if looking for something it lost."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hthunder_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "Heaven tests what grows too strong: once in an age, a thunder tribulation comes down on the old beasts of the mountains, nine strikes, and what survives it is changed. The clouds over your summit are black at noon and the villagers below have run for the caves. The first strike is gathering.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Thunder Tribulation",
+   "choices": [
+    {
+     "text": "Meet all nine strikes, head on",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The ninth thunder"
+     },
+     "ok": {
+      "qi": 40,
+      "strength": 6,
+      "tally": {
+       "legend": 4
+      },
+      "log": "Nine strikes. You take them all. On the ninth the clouds break open and sunlight falls on a mountain scorched glass-black, and on you, changed."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "heaven's ninth thunder",
+      "log": "The ninth strike is the one that decides."
+     },
+     "risky": true
+    },
+    {
+     "text": "Take the strikes into the earth through the mountain",
+     "effects": {
+      "health": -20,
+      "qi": 25,
+      "comprehension": 4,
+      "log": "Each bolt goes through you and down into the rock. The mountain splits in three new places. You survive, smaller in some way you cannot name and larger in another. (-20 health)"
+     }
+    },
+    {
+     "text": "Shelter the villagers in the caves first, and take what is left",
+     "effects": {
+      "health": -25,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "qi": 15,
+      "log": "You spread yourself over the cave mouths while the strikes come. Nine. The villagers come out to find the mountain black and you very still, and alive. They bring rice for a year. (-25 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hsansin_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The mountain spirit of the next peak, an old person with a white beard, a staff and a tiger that is only a tiger, has come over to complain. Since you arrived, the villagers have been bringing their offerings to you instead. The spirit's shrine is empty. The tiger is thin.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Neighbour Spirit",
+   "choices": [
+    {
+     "text": "Tell the villagers to give the offerings back to the shrine",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "charm": 2,
+      "log": "The villagers are confused, but obedient. The shrine is full again within a month. The tiger is fat by autumn. The spirit sends you a jar of wild honey, with no note, which is spirit manners."
+     }
+    },
+    {
+     "text": "\"Offerings go where the people choose. Win them back\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The spirit sulks for a hundred years, then starts answering prayers about lost cows very promptly. The villagers drift back. Competition, it turns out, is good for gods."
+     }
+    },
+    {
+     "text": "Share: build a second altar at the old shrine, for both of you",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "charm": 3,
+      "log": "The shrine has two altars now, one for the spirit and one for the shadow on the mountain. The tiger sleeps across both. The villagers think this is a very good arrangement."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hyeomra_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "Two messengers of the King of the Underworld in black hats arrive at your cave with a summons. Your name is on it. Your time is up. They seem very sure. One of them is checking the list again, because the other one has already made one mistake this year and they were both punished for it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Wrong Name",
+   "choices": [
+    {
+     "text": "Ask to see the list",
+     "effects": {
+      "comprehension": 4,
+      "luck": 3,
+      "log": "It is a person in the village with a very similar name, who is ninety-three and ready. The messengers apologise, very stiffly. You walk them to the right house, and sit with the old one until it is done."
+     }
+    },
+    {
+     "text": "\"Come back in a thousand years\"",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The messengers confer, and decide this is above their rank. They go back to the underworld for instructions and do not come back. Somewhere in the King's ledgers your name has a question mark beside it."
+     }
+    },
+    {
+     "text": "Feed them. It is a long walk from the underworld",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They are very hungry. Over rice and soup they admit they would never have dared take you anyway. They leave you a black thread from their hats, for luck. Death's messengers, it turns out, are mostly tired."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hghosts_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": true,
+   "text": "Every year on the night of the old battle, an army of the dead marches across the plain below your mountain: ten thousand soldiers of a kingdom that fell a thousand years ago, still waiting for the order to stand down. Nobody alive can give it. Their kingdom has no king left to give it. Perhaps a very old thing could.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Army That Still Marches",
+   "choices": [
+    {
+     "text": "Give the order, in the old kingdom's tongue",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 3
+      },
+      "qi": 15,
+      "log": "You remember the words, barely. The ten thousand stop. Their general turns and looks up at you and salutes. Then they are mist, and then they are gone, and the plain is a plain."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "log": "You say it wrong. The army marches on through you, cold as river ice. Next year you will try again with better grammar."
+     }
+    },
+    {
+     "text": "Go with them once, so they are not alone",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "All night you go beside the dead. They do not speak. At dawn they fade, and you feel, for the first time, how long a thousand years is for a soldier."
+     }
+    },
+    {
+     "text": "Let the mudang of the plain do it. It is her work",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The mudang holds a gut for three days on the hill. On the third night the army stops marching. She looks up at your mountain afterwards and nods, colleague to colleague."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hdokkaebi_1",
+   "cat": "explore",
+   "weight": 9,
+   "once": true,
+   "text": "The dokkaebi of four provinces are holding their great moon feast on your mountain, without asking, which is how dokkaebi do everything. Their king, a stout goblin with a magic club that knocks out whatever is wished for, notices you and puffs up. \"Wrestle me,\" the goblin king says. \"Winner keeps the mountain.\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Goblin Moon Feast",
+   "choices": [
+    {
+     "text": "Wrestle the goblin king",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 3
+      },
+      "log": "You win, eventually, by being more than the goblin thinks you are. The goblin king laughs and gives you the club. It knocks out whatever is wished for, but only buckwheat jelly, for some reason."
+     },
+     "fail": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You lose, because dokkaebi cheat, always, with the left leg. The goblin king is so pleased that you may keep the mountain anyway. It was never really the point."
+     }
+    },
+    {
+     "text": "Refuse, and join the feast instead",
+     "effects": {
+      "charm": 4,
+      "qi": 10,
+      "log": "It goes on until dawn. They sing, they dance, they rename three hills after themselves. In the morning there are buckwheat husks everywhere and a headache on the whole range."
+     }
+    },
+    {
+     "text": "\"The mountain is not mine to bet. It belongs to the villagers\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "The goblin king is baffled by the idea of a mountain belonging to humans, and leaves to think about it. The dokkaebi thereafter play tricks on the villagers only gently."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcrow_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The three-legged crow that lives in the sun has come down to rest on the pine on your summit. It is very hot and very proud and it has a question it asks every great beast it meets: \"What is the use of you? The sun rises because of me. What rises because of you?\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Crow in the Sun",
+   "choices": [
+    {
+     "text": "\"The rice, when I send the rain\"",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "rain": 1
+      },
+      "charm": 2,
+      "log": "The crow considers this, and allows that rice is a respectable thing to make rise. It leaves one feather of its own that never stops being warm."
+     }
+    },
+    {
+     "text": "\"Nothing rises because of me. Things stay standing\"",
+     "effects": {
+      "comprehension": 5,
+      "log": "The crow tilts its head, all three feet shifting on the branch. \"Interesting,\" it says, and flies back into the sun. It comes back every hundred years to argue."
+     }
+    },
+    {
+     "text": "\"Courage, sometimes, in the people who see me\"",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 3,
+      "log": "The crow laughs, a sound like a forge, and says that is the vainest answer it has heard this age, and also correct."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhermit_1",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A hermit has been sitting on a ledge of your cliff for sixty years, cultivating, eating pine needles and dew. {npc} is very close to becoming an immortal, and very close to dying of old age, and does not know which will come first. \"Old one,\" {npc} says to the cloud sea. \"Tell me which way to lean.\"",
+   "npc": {
+    "role": "sb_hhermit",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hhermit",
+     "ageAbs": 88,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Hermit on the Ledge",
+   "choices": [
+    {
+     "text": "\"Lean toward the valley. Teach someone before you go\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "npcFlag": "sb_hhermit",
+      "log": "{npc} comes down, slowly, and takes one disciple, a goatherd. {npc} dies three years later, not an immortal. The goatherd becomes one, ninety years on, and visits you."
+     }
+    },
+    {
+     "text": "Lend {npc} a little of your qi, to see if it is enough",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -15,
+      "tally": {
+       "legend": 3
+      },
+      "npcFlag": "sb_hhermit",
+      "npcRealm": 2,
+      "log": "It is enough. One morning the ledge is empty except for the gourd. On clear days, very high up, you see someone small sitting on a cloud, waving."
+     },
+     "fail": {
+      "qi": -15,
+      "npcPass": "old age, on a cliff ledge, almost there",
+      "log": "It is not enough. {npc} dies on the ledge, smiling, almost. You keep the gourd."
+     }
+    },
+    {
+     "text": "\"Do not lean. Sitting is what you are good at\"",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "sb_hhermit",
+      "log": "{npc} laughs so hard the pine shakes, and sits on. Whatever comes, comes. You admire that more than you say."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhorse_1",
+   "cat": "explore",
+   "weight": 8,
+   "once": true,
+   "text": "The heavenly horse that carried a dead king's soul to the sky, painted on the saddle flaps buried in the king's tomb, has come back down. Someone has dug into the tomb in the valley. The horse is looking for the king's bones, and for whoever moved them.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Heavenly Horse",
+   "choices": [
+    {
+     "text": "Help the horse find the grave robbers",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "Three robbers in a pawnshop in the market town, with a gold crown in a rice sack. The horse looks at them. They will tell the story of that look for the rest of their short and honest lives. The crown goes back."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "log": "The robbers are gone over the sea with the crown. The horse stands on the tomb a long time, then goes back up. The king's bones you return yourself, one by one."
+     }
+    },
+    {
+     "text": "\"The king has been dead a thousand years. Let it go, peer\"",
+     "effects": {
+      "comprehension": 4,
+      "log": "The horse looks at you with eyes like the moon on water. Then it lies down in the meadow and sleeps a hundred years, and when it wakes it seems to have let go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpeers_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A turtle minister in a court hat climbs out of the sea with an invitation sealed in coral. The Dragon King of the Eastern Sea holds a banquet once in five hundred years for the great powers of the land and water, and this time your name is on the list. The turtle adds, privately, that the seating is a matter of very great delicacy.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Banquet Under the Eastern Sea",
+   "choices": [
+    {
+     "text": "Go, and take the lowest seat",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "flag": "sb_hpeers_went",
+      "log": "The lowest seat is next to an old river spirit who is very funny and knows everyone. By the third course you know every feud in the sea. The Dragon King notices where you sat, and remembers it."
+     }
+    },
+    {
+     "text": "Go, and take the seat you are given",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "sb_hpeers_went",
+      "log": "It is closer to the top than you expected. A great power of the north mountains glares at you over the soup. The Dragon King raises a cup to you. You are, it seems, somebody now."
+     }
+    },
+    {
+     "text": "Decline. The valley needs you this season",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "The turtle minister is horrified and impressed in equal parts. The Dragon King is said to have laughed. An invitation comes again in five hundred years, which is very soon, for the sea."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpeers_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "At the banquet under the sea, a quarrel: the great power of the north mountains accuses the spirit of the western river of stealing its rain for a hundred years. Both turn to you, the newest and least committed guest, and ask you to judge. The Dragon King sips wine and watches.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hpeers_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "sb_hpeers_went"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Banquet Under the Eastern Sea",
+   "choices": [
+    {
+     "text": "Judge for the river: the mountain's rain ran downhill, as rain does",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The river spirit weeps with relief. The power of the north mountains will not forgive you for three hundred years. The Dragon King nods, very slightly. A correct answer has a price."
+     }
+    },
+    {
+     "text": "Judge for neither: \"Share the rain, and stop counting it\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Both are offended; neither is defeated. They agree, sulking, to share. The provinces between them have the best rice for a century. The Dragon King laughs so hard a tide comes in early."
+     }
+    },
+    {
+     "text": "\"I have not been here long enough to judge my elders\"",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "It is the safest answer. Everyone at the table recognises it as the safest answer. The quarrel goes on. You go home with your peace and a little less of their respect."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpeers_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The Dragon King of the Eastern Sea is dying. Not soon, as humans count it; a few centuries. The turtle minister comes to your shore with a sealed message: the King would like to know, privately, whether you would consider the sea, when the time comes.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hpeers_2"
+    ],
+    "minYearsAfter": 200,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Banquet Under the Eastern Sea",
+   "choices": [
+    {
+     "text": "\"The sea has its own. Let one of the King's children rule it\"",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "comprehension": 3,
+      "log": "The turtle bows almost to the sand. The King, it is said, wanted to hear exactly that, from someone who could have said otherwise."
+     }
+    },
+    {
+     "text": "\"Tell the King I am honoured, and undecided\"",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "legend": 3
+      },
+      "log": "The turtle swims back with your answer. The sea is calm for a whole year. Somewhere under it, an old king smiles and plans."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hjangsan_1",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "Something on the next mountain calls to travellers at night in the voices of their dead mothers, their lost children, their friends. The villagers call it the Jangsan Tiger, though it is not exactly a tiger, and it is old, nearly as old as you. Seven travellers have walked off the path toward a voice they knew this year. None came back. Tonight it calls in a voice you know, a human friend of yours, long dead.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Voice in the Pines",
+   "choices": [
+    {
+     "text": "Go to it. Peers can talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "flag": "sb_hjang_pact",
+      "log": "It is lonely; that is all it is, a thing that learned to speak only in other people's voices. You talk until dawn, and it stops calling travellers. Some nights, now, it calls you, in the voice of your friend. You let it."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "fear": 1
+      },
+      "log": "It does not want to talk. It wants the voice back. You fight in the dark among the pines and both go home bleeding. (-15 health)"
+     }
+    },
+    {
+     "text": "Answer it in your own voice, loudly, every night, until it stops",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "It takes a month. Every night your voice from one mountain and a dead person's voice from the other. The villagers stay indoors. Then one night only your voice. You win, and are not sure what."
+     }
+    },
+    {
+     "text": "Put up a warning: walk in threes at night, and answer no one by name",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The rule spreads through the province: never answer a voice by name at night. It saves more lives than any fight would, and lasts longer than the creature does."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hjangsan_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The Jangsan Tiger is dying, of age, on the next mountain. It calls to you one last time, in the voices of every traveller it ever took, one after another, as if handing them over.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hjangsan_1"
+    ],
+    "minYearsAfter": 120,
+    "flags": [
+     "sb_hjang_pact"
+    ]
+   },
+   "arc": "The Voice in the Pines",
+   "choices": [
+    {
+     "text": "Listen to every one, and remember the names",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It takes all night. In the morning you go down to the villages and tell each family the last word their lost one said. It is grief, but it is an ending."
+     }
+    },
+    {
+     "text": "Ask for your old friend's voice once more",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "It gives it to you, and for an hour you talk to someone dead a thousand years. Then the creature stops breathing, and the pines are only pines."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hgangcheori_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Gangcheori has come out of the south: a beast that was once like you, the old people say, and lost its way to heaven and turned bitter, and now wherever it walks the rivers shrink and the rice dies in the field. It is three valleys away, and walking north. Toward you.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Where Gangcheori Walks",
+   "choices": [
+    {
+     "text": "Meet it at the border of your valley",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "qi": 15,
+      "tally": {
+       "legend": 4,
+       "rain": 1
+      },
+      "flag": "sb_hgang_driven",
+      "log": "You fight it in the dry riverbed for a day and a night. When it turns back south, the clouds you were holding back all fall at once, and the river comes down roaring after it."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "Gangcheori's burning drought",
+      "log": "Its drought is stronger than your rain."
+     },
+     "risky": true
+    },
+    {
+     "text": "Drown its road: flood the valleys ahead of it",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "flag": "sb_hgang_driven",
+      "log": "It hates water more than anything. It turns aside at every wet valley and walks away east, toward the sea, where it will be the sea's problem. Three provinces are saved and two are a little flooded."
+     }
+    },
+    {
+     "text": "Talk to it. It was once a beast like you",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_hgang_talked",
+      "log": "It stops at the edge of your valley and listens, steaming. It does not want to burn anything. It cannot stop. \"What would you do,\" it asks, \"if heaven had shut the door on you?\" You do not have a good answer yet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hgangcheori_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Gangcheori is back, thinner, older, still burning. This time it has come to your summit to ask, in a voice like a dry well, if you will help it climb to heaven's gate and knock. Perhaps the door will open twice.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hgangcheori_1"
+    ],
+    "minYearsAfter": 60,
+    "flags": [
+     "sb_hgang_talked"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Where Gangcheori Walks",
+   "choices": [
+    {
+     "text": "Carry it up to the gate",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "qi": 20,
+      "tally": {
+       "virtue": 3,
+       "legend": 3
+      },
+      "mark": "sb_hgang",
+      "log": "The gate does open, a crack. Gangcheori goes through, and behind it, for the first time in five hundred years, the south has rain in spring."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The gate stays shut. You both fall a long way back to earth. Gangcheori goes south again, but slower now, and it sends you a dry pinecone every century, which is how it says thank you. (-15 health)"
+     }
+    },
+    {
+     "text": "\"I cannot open heaven for you. But I can rain behind you wherever you walk\"",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "rain": 1,
+       "virtue": 3
+      },
+      "log": "For a hundred years you follow it at a distance with clouds, and the drought behind it lasts only days. It is a strange friendship. It is also the end of a famine nobody in the south will ever know about."
+     }
+    },
+    {
+     "text": "\"Heaven shut the door for a reason. Go\"",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "luck": 2,
+      "log": "It goes. Somewhere in you is the knowledge that it could have been you, and the knowledge does not go anywhere."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hgangcheori_3",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "In the south, where Gangcheori walked, the farmers have a custom now: in drought years they make a straw figure of the drought beast and carry it to the river and throw it in, singing. A child asks a grandmother where the custom came from. The grandmother points north, at your mountain.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hgangcheori_1"
+    ],
+    "minYearsAfter": 150,
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "Where Gangcheori Walks",
+   "choices": [
+    {
+     "text": "Send a little rain to the next festival",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "log": "It rains the day the straw beast goes into the river. It is a coincidence, mostly. The custom is firmly fixed for another five hundred years."
+     }
+    },
+    {
+     "text": "Let the custom live on its own",
+     "effects": {
+      "comprehension": 3,
+      "log": "Customs, like rivers, find their own way. This one outlives three dynasties without any help from you at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hsiege_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A king has fled into the mountain fortress on your ridge with thirteen thousand soldiers and fifty days of grain, in the coldest winter in memory. The northern army surrounds every valley. Inside, the ministers argue all day: fight, or kneel. On the fifteenth night a young officer, {npc}, climbs alone to the highest wall and asks the mountain whether help is coming. It is not.",
+   "npc": {
+    "role": "sb_hsiege",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hsiege",
+     "ageAbs": 24,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Forty-Five Days in the Fortress",
+   "choices": [
+    {
+     "text": "\"No help is coming. Tell the king the truth\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": [
+       "sb_hsiege",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "truth",
+       "w": 20,
+       "note": "told me the truth on the wall"
+      },
+      "log": "{npc} goes down and tells the king, and is beaten for it by a minister who wanted to hear something else. But the king remembers, later, who told the truth."
+     }
+    },
+    {
+     "text": "Warm the fortress: hold the worst of the cold off the walls",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "sb_hsiege",
+      "log": "The snow falls on the besiegers and melts on the walls. Nobody inside freezes that winter. They will still run out of rice. But they do not freeze."
+     }
+    },
+    {
+     "text": "Break the siege yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The northern army"
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "fear": 4
+      },
+      "strength": 5,
+      "npcFlag": "sb_hsiege",
+      "flag": "sb_hsiege_broken",
+      "log": "You come down on the northern camp like an avalanche. Their horses run to the river. The army withdraws a week's march to reconsider. It is a reprieve, not a victory, and the king knows it, and so do you."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the northern army's cannon, in the snow below the fortress",
+      "log": "They have brought cannon."
+     },
+     "risky": true
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hsiege_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The forty-fifth day. The grain is gone. The king comes out of the fortress gate in a plain blue robe, as a subject, and walks down to the riverbank, where the northern emperor sits on a nine-step platform. There the king will kneel three times and bow nine times. {npc} walks behind, shaking, and looks up at you.",
+   "npc": {
+    "role": "sb_hsiege"
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hsiege_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "sb_hsiege"
+    ]
+   },
+   "arc": "Forty-Five Days in the Fortress",
+   "choices": [
+    {
+     "text": "Let it happen. The kingdom will live, humbled",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hsiege",
+      "log": "Three kneelings. Nine bows. The sound of the royal forehead on the frozen ground carries a long way in the quiet. The kingdom lives. The king never smiles again. {npc} remembers every sound for years."
+     }
+    },
+    {
+     "text": "Darken the sky over the ceremony, so all know heaven is grieving",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "npcFlag": "sb_hsiege",
+      "log": "The ceremony takes place under a black noon sky. The northern emperor hurries it. Afterwards, in every village, they say even heaven would not watch. It is a small thing. It is not nothing."
+     }
+    },
+    {
+     "text": "Promise {npc}: \"I will remember the cold, and the kneeling, and who did it\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "promise",
+       "w": 25,
+       "note": "promised to remember the kneeling"
+      },
+      "log": "{npc} nods, unable to speak. Two years later the conquerors make the kingdom raise a stone on the riverbank praising their emperor's virtue. You remember the truth underneath it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hsiege_3",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Long years later, the stone on the riverbank praising the conquering emperor has been pulled down, buried, dug up, and stood up again in a park, where children climb on the stone turtle that carries it. The northern empire is gone. So is the kingdom that knelt. The fortress walls on your ridge are a place where old people walk in the autumn.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hsiege_2"
+    ],
+    "minYearsAfter": 250
+   },
+   "arc": "Forty-Five Days in the Fortress",
+   "choices": [
+    {
+     "text": "Tell the walls' story to a child who asks",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The cold, the forty-five days, the young officer on the wall. The child listens, then runs to the end of the wall to look at the view. That is what the walls are for now. It is a good use."
+     }
+    },
+    {
+     "text": "Let the walls be a walk in the autumn and nothing more",
+     "effects": {
+      "comprehension": 4,
+      "log": "Grief has a shelf life even for something as old as you. You find, on the ridge in the autumn, that you have finally put it down."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hseawar_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A great army has crossed the sea from the east and taken the southern ports in a fortnight. The capital has fallen. The king has fled north. In the temple below your mountain an old abbot, {npc}, has put down the rosary and picked up a staff, and is calling the monks of eight provinces to fight. \"I know it is against the precepts,\" {npc} says to your summit. \"Tell me if it is against you.\"",
+   "npc": {
+    "role": "sb_hsea",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hsea",
+     "ageAbs": 72,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Seven-Year War",
+   "choices": [
+    {
+     "text": "\"It is not against me. Go. I will watch your roads\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "sb_hsea_monks",
+      "npcFlag": [
+       "sb_hsea",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "blessed",
+       "w": 22,
+       "note": "watched our roads"
+      },
+      "log": "Five thousand monks march out of the mountains. For seven years no ambush ever catches them on a mountain road. They fight, they nurse, they bury, and the righteous armies follow them."
+     }
+    },
+    {
+     "text": "\"Pick up the staff. But carry the wounded first\"",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "sb_hsea_monks",
+      "npcFlag": "sb_hsea",
+      "log": "{npc} makes it the order of the monk army: the wounded of both sides, first. It is the only army in the war that does it. Their enemies learn to surrender to monks."
+     }
+    },
+    {
+     "text": "\"The precepts are older than this war. Keep them\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_hsea",
+      "log": "{npc} bows and stays in the temple, and the temple becomes a hospital, and then it is burned. {npc} lives. Many of the monks who stayed do not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hseawar_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The enemy fleet is coming up the narrow strait, three hundred ships against thirteen. The admiral of the thirteen has chosen the strait for its current, which turns hard at the change of the tide. If it turns early, the thirteen are lost. If it turns at the right moment, the three hundred are.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hseawar_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "sb_hsea_monks"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Seven-Year War",
+   "choices": [
+    {
+     "text": "Hold the tide until the moment is right",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 15,
+      "tally": {
+       "legend": 4,
+       "virtue": 1
+      },
+      "log": "You hold the whole sea still for one long hour, and then let it go. The current turns into the enemy's faces. Thirteen ships hold the strait. The admiral never knows, and writes in a diary that night only that the sea was kind."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You cannot hold it. The current turns when it turns. The admiral had counted on it anyway, to the minute. The thirteen win without you, and you learn something about human courage. (-15 health)"
+     }
+    },
+    {
+     "text": "Leave the sea alone. The admiral counted on the real tide",
+     "effects": {
+      "comprehension": 5,
+      "log": "The admiral was right. The current turns exactly when the old fishermen said it would. The thirteen hold the strait. It is entirely a human victory, and better for it."
+     }
+    },
+    {
+     "text": "Rise from the strait in front of the enemy fleet",
+     "effects": {
+      "tally": {
+       "fear": 4,
+       "legend": 3
+      },
+      "log": "The lead ships see something in the water and turn, and the ships behind them collide. It is a disaster in a narrow place. The admiral of the thirteen sees it too, and says nothing about it in any report."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hseawar_3",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "Seven years of war are over. The enemy has gone home across the sea. Half the farmland is waste, the palaces are ash, and in the temple below your mountain {npc}, very old now, is carving names onto a memorial stone: monks, farmers, soldiers, and at the bottom, in smaller characters, the enemy dead buried on the mountain too.",
+   "npc": {
+    "role": "sb_hsea"
+   },
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hseawar_1"
+    ],
+    "minYearsAfter": 7,
+    "npcFlags": [
+     "sb_hsea"
+    ],
+    "beast": [
+     "imugi",
+     "cheongryong",
+     "hyeonmu",
+     "hwangryong"
+    ]
+   },
+   "arc": "The Seven-Year War",
+   "choices": [
+    {
+     "text": "Help carve the names, through the night, in the stone",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 3
+      },
+      "npcPass": "old age, in the temple, after the war",
+      "log": "The names are cut deep and clean, more than any one carver could manage in a night. {npc} finds them in the morning and sits down in front of the stone. That is where {npc} dies, the next spring, very peacefully."
+     }
+    },
+    {
+     "text": "Bring rain for the waste fields, to start the first harvest",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "npcPass": "old age, in the temple, after the war",
+      "log": "The first harvest after the war is thin, but it comes. {npc} lives to see it, and dies before the second, satisfied."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hlastking_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The kingdom you have watched for ages is ending. Its last king, old and tired, has decided to give the realm to the rising kingdom in the north rather than see the capital burned. The king climbs to the royal tombs on your slope to tell the ancestors, and, since you are there too, tells you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Thousand-Year Kingdom Ends",
+   "choices": [
+    {
+     "text": "\"You save a million lives with one shame. It is a good trade\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The king weeps on the tomb steps. Then the procession goes north, three hundred carts and the crown on a cushion. The capital does not burn. It becomes a provincial town, and lives."
+     }
+    },
+    {
+     "text": "\"So long a kingdom should not end with a surrender. Fight\"",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "flag": "sb_hlast_fight",
+      "log": "The king looks up at you for a long time, then shakes the old head. \"I am too old to make a widow of every house for my pride,\" the king says. The procession goes north anyway. You are, for once, ashamed."
+     }
+    },
+    {
+     "text": "Say nothing, and bow to the last king of a long line",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The king sees the vast shadow bow on the mountain, and bows back. Nobody else ever knows. In the north, the new court treats the old king with honour. It is the best end a kingdom can have."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hlastking_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The crown prince would not surrender. {npc} has left the capital in clothes of rough hemp, and is walking to the diamond mountains in the far north-east to live in a hut on the rocks, eating grass, until death. {npc} stops at your mountain on the way, because {npc} played on its slopes as a child.",
+   "npc": {
+    "role": "sb_hlast",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hlast",
+     "ageAbs": 30,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hlastking_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Thousand-Year Kingdom Ends",
+   "choices": [
+    {
+     "text": "Walk {npc} to the diamond mountains",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "npcFlag": "sb_hlast",
+      "mem": {
+       "deed": "walked",
+       "w": 20,
+       "note": "walked with me to the diamond mountains"
+      },
+      "log": "You go as a shadow on the road, and nobody bothers a prince in hemp clothes. At the mountains, {npc} sits on a rock and says, \"This is far enough.\" The hemp-clad prince lives there forty years. The pilgrims still find the hut."
+     }
+    },
+    {
+     "text": "\"Stay. Your people need someone to remember them who is not their conqueror\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hlast",
+      "log": "{npc} thinks about it all night on your slope and goes north anyway at dawn. \"You will remember them,\" {npc} says. \"You remember everything.\" It is not exactly a compliment."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hlastking_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The old capital is a quiet town of rice fields and grave mounds as big as hills. Farmers plough around the royal tombs, and one of them has found a gold crown in a furrow, hung with jade and leaves of beaten gold that tremble at a touch. Nobody alive remembers the kingdom it belonged to except you.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hlastking_1"
+    ],
+    "minYearsAfter": 300
+   },
+   "arc": "The Thousand-Year Kingdom Ends",
+   "choices": [
+    {
+     "text": "Tell the farmer whose it was",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The farmer, who is a practical person, listens, then reburies it, very carefully, in the same tomb. \"The king might want it,\" the farmer says. The crown waits another thousand years."
+     }
+    },
+    {
+     "text": "Let the farmer take it to the magistrate",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The crown goes to the new court and then to a treasury, and then, much later, behind glass, where people stand for a long time looking at the trembling gold leaves. You find you like that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hruins_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A temple stood in the valley below you for five hundred years. A war burned it; a dynasty that disliked monks did not rebuild it. Now there is a market day in its old courtyard every five days, around the one stone pagoda that survived. A fishmonger leans against the pagoda to sell dried pollack. Nobody remembers the temple's name.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Temple That Became a Market",
+   "choices": [
+    {
+     "text": "Make the pagoda chime on market days, once, at noon",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 3,
+      "flag": "sb_hruins_chime",
+      "log": "A single clear note, from nowhere, every fifth day at noon. The market adopts it as its clock within a year. It becomes the noon bell of the valley, without anyone ever asking what rings it."
+     }
+    },
+    {
+     "text": "Let the market be a market",
+     "effects": {
+      "comprehension": 4,
+      "flag": "sb_hruins_chime",
+      "log": "The monks chanted here for five hundred years. Now the fishmongers shout. Both are prayers of a sort. You listen to both."
+     }
+    },
+    {
+     "text": "Whisper the temple's name to the fishmonger",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "sb_hruins_chime",
+      "log": "The fishmonger is startled, and then tells everyone, and the market takes the old temple's name. It is the only thing that survives of it, apart from the pagoda."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hruins_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The market around the pagoda has become a town. The town has become a county seat. There is a magistrate's office where the monks' kitchen was, and a school where the sutra hall stood. A boy at the school is writing an essay on the pagoda for the examination, and has come to the foot of your mountain to think.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hruins_1"
+    ],
+    "minYearsAfter": 150,
+    "flags": [
+     "sb_hruins_chime"
+    ]
+   },
+   "arc": "The Temple That Became a Market",
+   "choices": [
+    {
+     "text": "Give the boy the temple's whole history in a dream",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The essay is so detailed that the examiners accuse the boy of copying a lost book. There is no lost book. The boy passes anyway, on the strength of the poetry."
+     }
+    },
+    {
+     "text": "Let the boy find it alone",
+     "effects": {
+      "luck": 3,
+      "log": "The boy gets most of it wrong and writes it beautifully. It becomes the official history of the town. You are the only one who knows it is wrong, and you decide that is fine."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hruins_3",
+   "cat": "insight",
+   "weight": 6,
+   "once": true,
+   "text": "The county seat is a ruin now in its turn: a later war, a moved road, a river that changed its bed. Weeds in the magistrate's yard. And in the middle of it all, the stone pagoda, unbroken, three towns old, with an old woman leaning on it selling dried pollack, as if nothing had happened.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hruins_2"
+    ],
+    "minYearsAfter": 250
+   },
+   "arc": "The Temple That Became a Market",
+   "choices": [
+    {
+     "text": "Buy a fish. Somehow",
+     "effects": {
+      "charm": 4,
+      "luck": 3,
+      "log": "You leave a silver coin from a dynasty five hundred years dead on her mat at night. She takes it to a scholar in the next town and is suddenly comfortable for the rest of her life. That is, you decide, the price of a fish."
+     }
+    },
+    {
+     "text": "Watch the stone pagoda outlast another age",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "You and the pagoda are the only two things here that remember all three towns. It does not speak. You do not need it to."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hmago_1",
+   "cat": "explore",
+   "weight": 10,
+   "once": true,
+   "text": "Mago Halmi, the giant grandmother who made the mountains by carrying rocks in her skirt, is walking across the peninsula again, which she does every few thousand years to tidy up. Her skirt has a hole in it. Rocks are falling out of it into the paddies of a village below, each one the size of a house.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Grandmother Who Moves Mountains",
+   "choices": [
+    {
+     "text": "Catch the rocks before they land",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "You catch eleven of them and set them down gently on the hill. The grandmother notices and pats you, which knocks the wind out of you for a week. The eleven rocks are still on the hill. They have names now."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You catch four and the fifth catches you. The village is spared; you are not, quite. The grandmother apologises in a voice like an avalanche. (-12 health)"
+     }
+    },
+    {
+     "text": "Tell her about the hole",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "She looks down, startled, and laughs, and sits down on a mountain to mend it with a pine. While she sews, she tells you how she made the sea. It takes a hundred years. It is the best story you have ever heard."
+     }
+    },
+    {
+     "text": "Let the rocks fall. She made this land; she can remake it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The rocks fall in the paddies. The village moves up the valley. In a thousand years the rocks are called the Grandmother's Droppings and children climb them on festival days. The land does not mind being remade."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hmago_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The grandmother has come back to sit on your mountain. She is tired, and her skirt is empty, and she is thinking of lying down for good and becoming a range. \"Peer,\" she says, \"when I am a mountain, who will tell the villages I was a grandmother?\"",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hmago_1"
+    ],
+    "minYearsAfter": 200
+   },
+   "arc": "The Grandmother Who Moves Mountains",
+   "choices": [
+    {
+     "text": "\"I will\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "mark": "sb_hmago",
+      "log": "She lies down along the southern horizon and becomes a range with a soft profile like a sleeping face. You tell every village, for a thousand years, who that is. They still call it the Grandmother."
+     }
+    },
+    {
+     "text": "\"Do not lie down yet. There is still tidying to do\"",
+     "effects": {
+      "charm": 3,
+      "luck": 3,
+      "log": "She laughs, a landslide of a laugh, and gets up, and goes north to move a lake. Some peers just need a reason."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_himugi_1",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "In a lake in the next province lives an Imugi that has waited three thousand years to become a dragon, and never has. Each time it was about to rise, someone saw it, or a storm failed, or heaven was busy. It has heard of you. It would like to know, as one old thing to another, whether it is worth going on waiting.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "beast": [
+     "cheongryong",
+     "baekho",
+     "hyeonmu",
+     "haechi",
+     "bonghwang",
+     "girin",
+     "gumiho",
+     "juak",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Imugi Who Never Rose",
+   "choices": [
+    {
+     "text": "\"Yes. Waiting is not failing\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "sb_himugi_waits",
+      "log": "The Imugi sinks back into its lake, and for the first time in a thousand years it sleeps without dreaming of the sky."
+     }
+    },
+    {
+     "text": "\"No. Stop waiting. Be what you are, here\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The Imugi is silent a long time, then laughs, which makes the lake slosh over its banks. It becomes the guardian of that lake and is loved there for another three thousand years. It never rises. It does not mind."
+     }
+    },
+    {
+     "text": "\"I will watch for you next time. No one will see you rise but me\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "sb_himugi_waits",
+      "log": "It looks at you with an expression you will never forget. \"Then call me when the storm is right,\" it says."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_himugi_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The storm is right. Black clouds over the next province, lightning walking on the lake, the rain coming sideways. The old Imugi is rising out of the water, slowly, three thousand years of waiting in one motion. On the shore a child has come out to see what the noise is. If the child sees, it is over again.",
+   "when": {
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_himugi_1"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "sb_himugi_waits"
+    ],
+    "beast": [
+     "cheongryong",
+     "baekho",
+     "hyeonmu",
+     "haechi",
+     "bonghwang",
+     "girin",
+     "gumiho",
+     "juak",
+     "bulgasari"
+    ]
+   },
+   "arc": "The Imugi Who Never Rose",
+   "choices": [
+    {
+     "text": "Throw your shadow over the child",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 3
+      },
+      "mark": "sb_himugi",
+      "log": "The child sees only darkness and goes back inside, grumbling about the storm. Behind the dark, an old Imugi becomes a dragon at last and goes up into the cloud, and the whole sky is lit green for a moment. You hear it thank you from a very great height."
+     }
+    },
+    {
+     "text": "Let the child see. Some things must be risked, and witnessed",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The child sees, and points, and shouts. \"Dragon!\" And the old Imugi, hearing itself named dragon, rises anyway. A child's word was the right word after all. Nobody had ever thought of that before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hcount_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A quiet year. You find yourself counting the kingdoms you have watched rise and fall from this mountain. The count comes out differently each time, because some ended slowly and some were really two, and one was only ever a rebellion with a good flag.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Counting Kingdoms",
+   "choices": [
+    {
+     "text": "Count them by their founders",
+     "effects": {
+      "comprehension": 4,
+      "log": "Brave, all of them, and most of them liars, and every one certain the dynasty would last ten thousand years. You liked several of them. You remember the young faces best."
+     }
+    },
+    {
+     "text": "Count them by their famines",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It is a darker list, and more honest. Kingdoms end, mostly, when the rice ends. You resolve, again, to watch the rice."
+     }
+    },
+    {
+     "text": "Stop counting. Count the cranes on the river instead",
+     "effects": {
+      "luck": 3,
+      "qi": 10,
+      "log": "Forty-one cranes. Next year, thirty-eight. The year after, fifty. It is a much more satisfying history."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hstory_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "At the autumn festival in the valley a storyteller with a fan and a drummer is performing the legend of the great beast of the mountain. You. It is completely wrong. In this version you ate a general, married a princess, and were born from an egg laid by the moon. The crowd loves it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Wrong Legend",
+   "choices": [
+    {
+     "text": "Let the legend be. It is theirs now",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "You listen to the whole performance, through three encores. The princess part is the best. You go home and find yourself humming the drummer's refrain for a decade."
+     }
+    },
+    {
+     "text": "Visit the storyteller that night and correct the facts",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The storyteller listens politely, nods, takes notes, and next year performs the princess version again, with one of your corrections added as a new scene. It is still wrong. It is better."
+     }
+    },
+    {
+     "text": "Send a gentle gust that flips the storyteller's fan at the princess part",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The crowd thinks it is part of the show. It becomes part of the show. For three hundred years, storytellers flip their fans at the princess part. Nobody knows why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hchildking_1",
+   "cat": "npc",
+   "weight": 9,
+   "once": true,
+   "text": "The king is seven. The regents fight over the child like dogs over a bone. One night the child king climbs out of the palace through a gap in the back wall, all the way up the hill behind it, and sits on a rock under your mountain in a red robe much too big. {npc} is not crying. {npc} is very, very angry.",
+   "npc": {
+    "role": "sb_hchild",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hchild",
+     "ageAbs": 7,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Child on the Throne",
+   "choices": [
+    {
+     "text": "\"Tell me who is cruel to you. All of them\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "fear": 2
+      },
+      "npcFlag": "sb_hchild",
+      "mem": {
+       "deed": "listened",
+       "w": 25,
+       "note": "listened to me on the hill"
+      },
+      "log": "{npc} names nine people. The next morning, nine people in the palace wake to find great furrows in the earth outside their doors, which you did not quite intend. The regents behave very carefully for a decade."
+     }
+    },
+    {
+     "text": "Teach {npc} to be patient",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "sb_hchild",
+      "log": "It is a long night. You tell {npc} about the reeds and the flood, about which plants survive. {npc} goes back down before dawn and waits eleven years, and then takes the government in one morning, without bloodshed."
+     }
+    },
+    {
+     "text": "Carry {npc} back to bed, and say nothing",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "sb_hchild",
+      "log": "{npc} falls asleep on the way. In the morning the palace swears it was a dream. {npc} does not, and climbs the hill once a year for the rest of the reign, just to sit on the rock."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hstarchart_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The new dynasty is carving the whole sky into a stone slab: every star of the twenty-eight mansions, copied from an old rubbing of a chart lost in a river a thousand years ago. The chief astronomer has noticed that one cluster of stars has moved since the old chart was made. Or something has moved in front of it.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Sky in Stone",
+   "choices": [
+    {
+     "text": "\"The stars have moved. A thousand years is long, even for stars\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The astronomer corrects the stars and carves the date beside them. It is the most accurate chart in the world for three hundred years."
+     }
+    },
+    {
+     "text": "\"I have been in the way. I will move\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "That night you lie elsewhere. The cluster reappears. The astronomer carves it and then, in the empty corner of the slab, carves something small and vague that nobody ever explains."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_sb_hyoung_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "A young beast has come to your mountain: small, hungry, hunted, with the faint glow of something that will one day be what you are. It does not know what it is. Nobody told it. Neither did anyone tell you, once.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Young One",
+   "choices": [
+    {
+     "text": "Let it stay, and teach it to hide",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "comprehension": 2,
+      "flag": "sb_hyoung_kept",
+      "log": "It stays a hundred years, a hundred years of small questions, and leaves one spring for a mountain of its own. It never writes. Young things do not. It sends a storm in your direction every few decades, which is the same thing."
+     }
+    },
+    {
+     "text": "Send it away. Every great beast must climb alone",
+     "effects": {
+      "comprehension": 4,
+      "log": "It goes, looking back. You are not sure you were right. You are sure that you were not raised, and you are still here. That proves less than you would like it to."
+     }
+    },
+    {
+     "text": "Tell it every danger you ever met, and let it choose",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "flag": "sb_hyoung_kept",
+      "log": "It listens to your whole life in a night, terrified and delighted, and leaves at dawn with a hundred warnings and no fear at all. That is how the young do it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hyoung_2",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A great power has risen in the west, in its own mountains, and the villages there tell stories about it. One of them is about an old beast in the east who took it in when it was small. The power sends you, by a flock of cranes, a single word: Teacher.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_sb_hyoung_1"
+    ],
+    "minYearsAfter": 200,
+    "flags": [
+     "sb_hyoung_kept"
+    ]
+   },
+   "arc": "The Young One",
+   "choices": [
+    {
+     "text": "Send back: \"Peer\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "charm": 3,
+      "log": "The cranes carry it west. That year the rains in the west and the east come at the same time, as if two powers had agreed it between them."
+     }
+    },
+    {
+     "text": "Send back nothing, and be quietly proud",
+     "effects": {
+      "qi": 15,
+      "comprehension": 2,
+      "log": "You do not reply. The young one did not expect a reply. Some things are complete in one word."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hdescend_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A young person comes up your mountain with a family register so old the paper is brown. Twenty-six generations back, an ancestor's name has a strange note beside it: friend of the mountain. {npc} has walked four days to ask if it is true, and what that ancestor was like.",
+   "npc": {
+    "role": "sb_hdesc",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hdesc",
+     "ageAbs": 22,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "Friend of the Mountain",
+   "choices": [
+    {
+     "text": "Tell {npc} everything you remember",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": [
+       "sb_hdesc",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "remembered",
+       "w": 25,
+       "note": "remembered my ancestor"
+      },
+      "log": "You remember a laugh, a habit of humming off-key, a way of bowing too fast. {npc} laughs, because {npc} has the same laugh. Twenty-six generations, and the laugh survived."
+     }
+    },
+    {
+     "text": "\"It is true. The rest is yours to find\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "sb_hdesc",
+      "log": "{npc} spends a year in the archives and comes back with a whole life, wrong in places. You correct one detail. {npc} writes the book anyway."
+     }
+    },
+    {
+     "text": "\"Your ancestor would want you to be your own friend of the mountain\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "npcFlag": [
+       "sb_hdesc",
+       "sb_friend"
+      ],
+      "log": "{npc} comes back every year after that. In the family register, the note is copied beside a second name."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hwhale_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "The oldest whale in the eastern sea has come to the cliffs below you to die. It is older than you are, just barely, and it wants to tell someone what the sea was like before there were kingdoms on the shore.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Oldest Whale",
+   "choices": [
+    {
+     "text": "Listen, for as long as it takes",
+     "effects": {
+      "comprehension": 6,
+      "qi": 15,
+      "log": "It takes a season. The sea before kingdoms was very quiet, and the fish were very large, and the whale's mother sang a song that no living thing now knows except you. When it is done, the whale goes down and does not come up."
+     }
+    },
+    {
+     "text": "Ask about the other great ones it met",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It met many. Most are gone into mountains or rivers or the sky. A few are still out there. It names them, and where, and you realise how small the world of the great ones has become."
+     }
+    },
+    {
+     "text": "Ask the divers to keep its bones from the traders",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 3,
+      "log": "The divers guard the beach for a month. The bones are buried on the headland, and the divers hold a rite there every year, and nobody remembers why except that it was asked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hhunter_1",
+   "cat": "danger",
+   "weight": 9,
+   "once": true,
+   "text": "The last beast hunter of a family that has hunted great beasts for forty generations has come to your mountain alone. The family's records say you are the last one worth hunting. {npc} is old, has no children, and wants to end the family's work properly. \"One way or the other,\" {npc} says.",
+   "npc": {
+    "role": "sb_hhunter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "sb_hhunter",
+     "ageAbs": 66,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Last Hunter",
+   "choices": [
+    {
+     "text": "Fight {npc} fairly, as the family deserves",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 3,
+       "hunted": -2
+      },
+      "npcFlag": "sb_hhunter",
+      "log": "It is a good fight, short and real. When {npc} is down, you do not finish it. {npc} lies in the snow and laughs. \"Forty generations,\" {npc} says. \"And it ends with a beast being polite.\" {npc} goes home and burns the records."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the last spear of a forty-generation hunting family",
+      "log": "Forty generations of practice are in the spear."
+     },
+     "risky": true
+    },
+    {
+     "text": "\"Your family has hunted long enough. Stay a winter, and tell me about them\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 2,
+       "hunted": -2
+      },
+      "npcFlag": [
+       "sb_hhunter",
+       "sb_friend"
+      ],
+      "mem": {
+       "deed": "spared",
+       "w": 20,
+       "note": "listened to my family's story"
+      },
+      "log": "{npc} stays the winter in a cave on your mountain, telling stories of forty generations of hunts, some of which were about you. In spring {npc} leaves the spear behind, stuck in the snow, and goes south."
+     }
+    },
+    {
+     "text": "Show {npc} the graves of the great beasts the family killed",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "hunted": -1
+      },
+      "npcFlag": "sb_hhunter",
+      "log": "There are many. {npc} visits every one, alone, over a year. When {npc} is done, {npc} does not come back to your mountain. That is an answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hfestival_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "The valley's great festival is in your honour, and it has changed. Four hundred years ago it was a solemn rite of thanks for rain. Now there are masked dancers, a straw figure of you that looks like a confused ox, wrestling, rice cakes, and a great deal of drinking. Nobody prays any more. Everyone is very happy.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Festival That Changed",
+   "choices": [
+    {
+     "text": "Send a light rain at the end, the old way",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "legend": 2
+      },
+      "log": "A gentle rain at sunset. The old people, who remember the rite from their grandparents, kneel in it. The young people dance in it. Both are right."
+     }
+    },
+    {
+     "text": "Enjoy it exactly as it is",
+     "effects": {
+      "charm": 4,
+      "qi": 10,
+      "log": "You watch all three days. The straw figure is very bad. You love it. At the end they burn it, and the smoke goes up past you, and you take in a little of the festival."
+     }
+    },
+    {
+     "text": "Steal the straw figure on the last night",
+     "effects": {
+      "luck": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "In the morning the straw figure is on your summit, neatly arranged, looking out over the valley. The village is delighted. It becomes part of the festival, sending the figure up the mountain. You have to keep doing it now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hname_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "You have had many names. The first humans who saw you gave you one; each kingdom renamed you; the monks had one, the shamans another, the court a title. Tonight an old mudang at the foot of your mountain is calling all of them, in order, from a scroll her family has kept for nine hundred years. She stops at the last. \"What should the next one be?\" she asks.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Scroll of Names",
+   "choices": [
+    {
+     "text": "\"The one the first humans gave me\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "She writes the first name again at the bottom of the scroll. It is a small plain word, a farmer's word. It suits you better than any of the titles did."
+     }
+    },
+    {
+     "text": "\"None. Let the next ones find me without a name\"",
+     "effects": {
+      "comprehension": 5,
+      "log": "She leaves the space blank and rolls up the scroll. Her granddaughter will call you only \"the mountain\", and that, it turns out, is enough."
+     }
+    },
+    {
+     "text": "Tell her the name you call yourself",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "qi": 10,
+      "log": "She writes it, in characters that do not quite fit it, and promises never to say it aloud. She never does. The scroll keeps it, the last name on a very long list."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hpilgrim_1",
+   "cat": "life",
+   "weight": 9,
+   "once": true,
+   "text": "You have become a pilgrimage. Pilgrims from three kingdoms climb your mountain every spring, tie ribbons to the pines, and leave prayers on paper in the cracks of the rocks. There are thousands of prayers. Most of them are about children, debts and rain. One of them, in a child's hand, asks you to come down and play.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Pilgrim Stair",
+   "choices": [
+    {
+     "text": "Answer the rain prayers",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "log": "It is the one kind you can actually answer. The spring rains come on time in three kingdoms. The pilgrims double the next year, which is a mixed blessing."
+     }
+    },
+    {
+     "text": "Answer the child's prayer",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "One small pilgrim, separated from the group, spends an afternoon playing hide-and-seek with a very large shadow among the rocks, and wins, because you let the child win. Nobody believes the story. The child does not care."
+     }
+    },
+    {
+     "text": "Read every prayer, and answer none",
+     "effects": {
+      "comprehension": 5,
+      "log": "It takes a year. You learn more about humans from their prayers than from three thousand years of watching them. What they want, mostly, is to be less afraid."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sb_hseat_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Heaven has decided you are ready. A stair of light comes down onto your summit, and at the top of it there is a seat waiting among the powers. Not yet an order; an invitation. Below you, the valley you have watched for ages is lighting its evening fires.",
+   "when": {
+    "beastAny": true,
+    "realm": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Stair of Light",
+   "choices": [
+    {
+     "text": "Climb a few steps, look back, and come down again",
+     "effects": {
+      "comprehension": 5,
+      "qi": 20,
+      "tally": {
+       "legend": 2
+      },
+      "log": "From the tenth step, the valley looks like a handful of embers. From the twentieth, you cannot see the faces. You come down. Heaven, which has seen this before, leaves the stair where it is."
+     }
+    },
+    {
+     "text": "\"Not until the valley no longer needs me\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "The stair fades slowly, as if reluctant. That night a child in the valley dreams of a golden staircase and a voice saying \"not yet\", and wakes up comforted for no reason."
+     }
+    },
+    {
+     "text": "Ask heaven what the seat is for",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "There is a long pause from the top of the stair, as if nobody has ever asked. Then an official says, a little defensively: \"Watching.\" You already do that. You stay where you are."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,3415 @@
+{
+ "events": [
+  {
+   "id": "dc_im10_witness_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "The ferry at Black Reed Crossing turns over in the spring flood, and you lift it out of the river on your back like a leaf on a carp: eleven passengers, a goat, and the ferry keeper, a young person called {npc} who does not scream, does not faint, and does not stop staring. The passengers see a monster. {npc} is looking at the pearl in your claw. An Imugi with a pearl needs one thing more than wind: a human who will look up at the right moment and say the right word.",
+   "npc": {
+    "role": "im10_ferry",
+    "spawn": {
+     "role": "friend",
+     "tag": "im10_ferry",
+     "ageAbs": 19,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The One Who Will Speak",
+   "choices": [
+    {
+     "text": "Speak to {him}: tell {him} what you are",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "im10_speaker",
+      "mem": {
+       "deed": "saved",
+       "w": 15,
+       "note": "pulled my ferry out of the flood and spoke to me"
+      },
+      "log": "You tell {npc} the old rule, there on the bank in the rain: when you rise, the first human to see you names you, and the name decides. {npc} listens to all of it, dripping, and then says very seriously: \"Then I had better be first.\""
+     }
+    },
+    {
+     "text": "Set the ferry down and sink away without a word",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "npcFlag": "im10_speaker",
+      "mem": {
+       "deed": "saved",
+       "w": 10,
+       "note": "pulled my ferry out of the flood"
+      },
+      "log": "The passengers run. {npc} stays on the bank until dark, looking at the water where you went down. The next morning there is a bowl of rice on the ferry landing, facing the river."
+     }
+    },
+    {
+     "text": "Frighten them all: nobody must know where your pool is",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "You open your jaws over the ferry until the goat faints. They tell the story in every inn on the river, and in every telling you are a little more of a snake."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_witness_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "{npc} has been practising. At dawn {he} stands on the rock above your pool and shouts \"DRAGON!\" at the water, listens to the echo, then tries it again lower, with more dignity. The village thinks the ferry keeper has gone soft in the head. {He} asks you whether it should be \"Great Dragon\" or only \"Dragon\", and whether it still counts if {he} is hoarse from the rain.",
+   "npc": {
+    "role": "im10_ferry"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_witness_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "im10_speaker"
+    ]
+   },
+   "arc": "The One Who Will Speak",
+   "choices": [
+    {
+     "text": "Teach {him} to be ready: you will rise at night, in a storm, without warning",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "serpent_friend",
+      "flag": "im10_witness_found",
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "trusted me with the word"
+      },
+      "log": "From then on {npc} sleeps with the door unbarred on stormy nights and a straw raincoat by the bed. {His} neighbours stop laughing after the third year. By the tenth they are doing it too."
+     }
+    },
+    {
+     "text": "Tell {him} the word matters less than the heart behind it",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "serpent_friend",
+      "flag": "im10_witness_found",
+      "mem": {
+       "deed": "taught",
+       "w": 12,
+       "note": "told me the heart matters more than the word"
+      },
+      "log": "{npc} thinks about this for a long time. \"Then I will say it with my whole heart,\" {he} decides, \"and also very loudly, in case heaven is hard of hearing.\""
+     }
+    },
+    {
+     "text": "Ask {him} to stop: you would rather owe no human anything",
+     "effects": {
+      "luck": 2,
+      "log": "{npc} stops shouting at the pool. But {he} keeps the straw raincoat by the door anyway, and you notice that on stormy nights the ferry keeper's lamp is always lit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_witness_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Decades now, and the storm you are waiting for has not come. {npc} is grey now and walks to the pool with a stick. Today {he} brings a small grandchild and makes the child say it to the water, twice, clearly: \"Dragon.\" \"If I am gone when you go up,\" {npc} says, \"one of us will still be awake. The whole family knows the word now. We take turns on stormy nights.\"",
+   "npc": {
+    "role": "im10_ferry"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_witness_2"
+    ],
+    "minYearsAfter": 30,
+    "npcFlags": [
+     "serpent_friend"
+    ]
+   },
+   "arc": "The One Who Will Speak",
+   "choices": [
+    {
+     "text": "Rise out of the pool so the child never forgets you",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "im10_witness_line",
+      "mem": {
+       "deed": "honoured",
+       "w": 12,
+       "note": "showed itself to my grandchild"
+      },
+      "log": "The child does not scream either. It runs in the family. That night every house at Black Reed Crossing hears, through the rain, a small voice practising: \"Dragon. Dragon. DRAGON.\""
+     }
+    },
+    {
+     "text": "Leave one of your scales on the rock for {npc} to hang by the door",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_witness_line",
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "gave our family a scale to keep"
+      },
+      "log": "It is the size of a shield and the colour of deep water. {npc} hangs it beside the door, and the family will keep it there long after the house has been rebuilt four times."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_flood_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "Three days of rain, and the earthen dam above Ten Willows groans like an old ox. Below it: eight hundred roofs, a market, a schoolroom where children chant the Thousand Character Classic. The magistrate has already left for the county seat \"to report\". The water has not left.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Dam at Ten Willows",
+   "choices": [
+    {
+     "text": "Lay your body across the breach",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 4,
+       "virtue": 3
+      },
+      "flag": "im10_saved_town",
+      "log": "You lie across the gap all night with the river pressing on your back like a mountain. At dawn the rain stops. The whole town is standing on the wall, and nobody is saying \"snake\"."
+     },
+     "fail": {
+      "health": -25,
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "flag": "im10_saved_town",
+      "log": "The dam comes apart under you, but you hold the worst of it long enough for the town to climb its roofs. You lose a hand-span of scales on the stones. (-25 health)"
+     }
+    },
+    {
+     "text": "Cut a new channel with your tail and lead the flood into the old riverbed",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 3,
+       "virtue": 3
+      },
+      "flag": "im10_saved_town",
+      "log": "You plough a furrow a li long and the flood follows you into it like a dog. Ten Willows loses three rice paddies and nothing else."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_saved_town",
+      "log": "The channel is too shallow. Half the market goes under, but nobody drowns: you spend the night lifting people out of the water one by one. (-10 health)"
+     }
+    },
+    {
+     "text": "Let it break. Towns are built and drowned; you are waiting for a pearl",
+     "effects": {
+      "luck": 2,
+      "alignment": -3,
+      "tally": {
+       "fear": 2
+      },
+      "log": "Ten Willows is mud by morning. Someone saw a great shape in the river, watching, doing nothing. That story travels too, and it does not use the word \"dragon\"."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_flood_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Ten Willows has rebuilt, and on the new dam the masons have carved a long shape with four claws and a ball in one of them. The town elders come to your pool in their best hats. They want to hold a festival every year on the night of the flood, and they would like to know, respectfully, what they should call it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_flood_1"
+    ],
+    "minYearsAfter": 8,
+    "flags": [
+     "im10_saved_town"
+    ]
+   },
+   "arc": "The Dam at Ten Willows",
+   "choices": [
+    {
+     "text": "\"The Night the Dragon Lay Down.\" The word is important",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "The elders write it down with great care. Every year after, eight hundred households say the word \"dragon\" in one night, and somewhere above the clouds someone is counting."
+     }
+    },
+    {
+     "text": "Let them choose",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "They argue for a month. In the end it is called the Festival of Uncle Water, which is not what you would have chosen, but the children love you for it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_painter_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The river villages are building you a shrine, and they have hired a painter from the county town: a thin, anxious man who has never seen you and has painted, from the villagers' descriptions, a very long snake with a surprised face. The villagers think it is fine. You think heaven might be looking at it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Painter of the River Shrine",
+   "choices": [
+    {
+     "text": "Put your head through the door and sit for him",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "He drops the brush, picks it up, and paints for nine days without sleeping. The beast on the wall has four claws, a pearl, and your eyes. Pilgrims come from three counties to stand in front of it."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "log": "He faints. His apprentice finishes the wall. It now has legs, a beard and a moustache, and is somehow still a snake."
+     }
+    },
+    {
+     "text": "Leave a print in the clay outside the shrine: four toes",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The painter counts the toes, goes pale, and paints over the whole wall. \"Four toes,\" he tells everyone who will listen. \"A snake does not have toes.\""
+     }
+    },
+    {
+     "text": "It does not matter what a wall says",
+     "effects": {
+      "luck": 2,
+      "log": "The surprised snake stays on the wall. Generations of village children grow up looking at it and thinking that is what you look like, which is a little unfair."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_envoy_1",
+   "cat": "explore",
+   "weight": 18,
+   "once": true,
+   "text": "A sea turtle the size of a sedan chair has crawled forty li up the river to your pool, wearing a black gauze official's hat tied under its chin. It bows three times, very slowly, and unrolls a scroll of kelp. \"Byeolju, Registrar of the Water Palace, on behalf of His Majesty the Dragon King of the East Sea. His Majesty has heard of the serpent with the pearl. His Majesty would be pleased to receive you.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Envoy from Yonggung",
+   "choices": [
+    {
+     "text": "Follow it down to the sea",
+     "effects": {
+      "qi": 10,
+      "flag": "im10_yonggung_invite",
+      "log": "Forty li of river, then salt, then dark. The turtle swims ahead of you with enormous dignity, and every fish in the East Sea gets out of its way."
+     }
+    },
+    {
+     "text": "Ask what a king wants with a serpent",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_yonggung_invite",
+      "log": "\"His Majesty,\" the turtle says, \"is old.\" It will not say more on a riverbank where frogs might hear. You find yourself following it anyway."
+     }
+    },
+    {
+     "text": "Send it home: you belong to the sky, not the sea",
+     "effects": {
+      "luck": 2,
+      "log": "The turtle bows again, rolls up the kelp, and begins the forty li back. It does not look surprised. Turtles never do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_envoy_2",
+   "cat": "explore",
+   "weight": 16,
+   "once": true,
+   "text": "Yonggung lies under the East Sea: halls of coral and nacre lit by pearls, courtiers in fish-scale robes, a throne room where the water is so still you can hear the tide thinking. The Dragon King is very old. Long ago, he tells you, he was a human king called Munmu, who asked to be buried in the sea so that he could become a dragon and guard the coast from raiders. He has guarded it for a thousand years. \"The coast,\" he says, \"needs a dragon that is not tired.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_envoy_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im10_yonggung_invite"
+    ]
+   },
+   "arc": "The Envoy from Yonggung",
+   "choices": [
+    {
+     "text": "Bow to him, one guardian to another",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_offered_throne",
+      "log": "The old king laughs, a sound like a wave turning over a stone. \"A serpent with manners. Byeolju, write that down.\" The turtle already has."
+     }
+    },
+    {
+     "text": "Look at the coast through his eyes",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "flag": "im10_offered_throne",
+      "log": "He lets you see it: every fishing village from the river mouth to the cape, every child on every beach, a thousand years of black sails on the horizon turned back. It is heavy. It is also, you think, beautiful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_envoy_3",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The turtle comes up the river a last time, older, with a new hat. \"His Majesty asks for your answer before his strength goes. When you rise, you may rise into the sky, as serpents do. Or you may rise into the sea, and take the coral seal, and be Yongwang after him.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_envoy_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "im10_offered_throne"
+    ]
+   },
+   "arc": "The Envoy from Yonggung",
+   "choices": [
+    {
+     "text": "Accept: when you rise, you will rise into the East Sea",
+     "effects": {
+      "flag": "east_sea",
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "The turtle bows so low its hat floats off. Far out at sea, an old dragon who was once a king closes his eyes and, for the first time in a thousand years, sleeps without watching the horizon."
+     }
+    },
+    {
+     "text": "Promise to guard the coast from the sky instead",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "comprehension": 3,
+      "log": "\"A promise from the sky,\" the old king says when the turtle tells him. \"Well. It has been a long time since anyone up there promised us anything.\" He keeps waiting for a successor, but he sleeps a little easier."
+     }
+    },
+    {
+     "text": "Decline. The sky has been waiting longer",
+     "effects": {
+      "luck": 3,
+      "log": "The turtle rolls up the kelp without a word. Somewhere in the East Sea an old king sighs and goes on watching the horizon, as he has every night for a thousand years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rival_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "You know its smell before you see it: the other Imugi, the one you fought for the Nine Falls and in the end did not kill. It is older than you, its scales gone dull at the edges, and its claw is empty. Six hundred years of storms, and it never caught a pearl. It lies at the mouth of your gorge and does not ask for anything.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "flags": [
+     "im8_rival_respect"
+    ]
+   },
+   "arc": "Two Serpents, One Pearl",
+   "choices": [
+    {
+     "text": "Go out and lie beside it",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_rival_near",
+      "log": "Two serpents in one gorge, like two old soldiers on a bench. Neither of you says anything for a whole winter. It is the best winter in centuries."
+     }
+    },
+    {
+     "text": "Tell it about the storm where you caught yours",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_rival_near",
+      "log": "It listens to every detail: the wind, the angle of the cloud, the exact moment you closed your claw. \"I was always a breath late,\" it says at last. \"Always.\""
+     }
+    },
+    {
+     "text": "Warn it off: a pearl draws thieves, and you know it too well",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "strength": 2,
+      "log": "It goes without a word. At the bend of the river it looks back once, and then the mist takes it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rival_2",
+   "cat": "explore",
+   "weight": 18,
+   "once": true,
+   "text": "A real storm, the kind that comes once in a century. The other serpent climbs with you, again and again, and falls back each time, its empty claw closing on rain. On the third night you understand something the old stories hint at and never say outright: the pearl in your claw is warm enough for two.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_rival_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "im10_rival_near"
+    ]
+   },
+   "arc": "Two Serpents, One Pearl",
+   "choices": [
+    {
+     "text": "Hold the pearl out to it in the cloud",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "flag": "im10_pearl_shared",
+      "log": "Its claw touches the pearl beside yours. The pearl does not dim. It burns brighter, as if it had been waiting for this. Below you the whole valley is lit like noon."
+     }
+    },
+    {
+     "text": "Climb higher with it and help it reach for one of its own",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "luck": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_pearl_shared",
+      "log": "A second pearl, for one heartbeat, tumbling through the cloud. It misses by a scale. It catches your tail instead, and you both fall laughing, as serpents laugh, and land together in the gorge."
+     },
+     "fail": {
+      "health": -15,
+      "flag": "im10_pearl_shared",
+      "log": "Lightning finds you both. You fall a long way, tangled together. At the bottom it says, \"Well. At least I was not late this time.\" (-15 health)"
+     }
+    },
+    {
+     "text": "Keep your pearl close. Some things cannot be shared",
+     "effects": {
+      "luck": 2,
+      "log": "The storm passes. In the morning the other serpent is gone from the gorge, and only a few dull scales on the rocks say it was ever there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rival_3",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The great storm comes in the eighth month: black from horizon to horizon, thunder walking on the mountains. You and the other serpent coil together at the foot of the falls with one pearl between you. Heaven will see two shapes rising. It might call one a snake. It might call both dragons. It has never, as far as anyone knows, been asked.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_rival_2"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "im10_pearl_shared"
+    ]
+   },
+   "arc": "Two Serpents, One Pearl",
+   "choices": [
+    {
+     "text": "Rise together, coiled around one pearl",
+     "effects": {
+      "beastEnding": "twin",
+      "log": "Up the falls, into the cloud, two bodies around one light. On the bank below, a child points with both hands and shouts what nobody has ever shouted before: \"TWO DRAGONS!\" And heaven, after a moment's thought, agrees."
+     }
+    },
+    {
+     "text": "Lend it the pearl for this storm, and wait for the next",
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "legend": 2
+      },
+      "log": "It rises alone, your pearl in its claw, and you are the one on the bank shouting \"Dragon!\" into the rain. A month later the pearl comes falling back out of a clear sky into your pool, with a scale wrapped around it like a thank-you letter."
+     }
+    },
+    {
+     "text": "Rise alone. It understood when it lost the Nine Falls; it will understand now",
+     "effects": {
+      "strength": 4,
+      "luck": 2,
+      "log": "You go up. It stays. At the top of the cloud you look down once, and it is still there at the foot of the falls, watching you go, and you cannot tell from that height whether it is angry or proud."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_ledger_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The pearl dims. Not every day: only on the days you remember certain things. A fishing boat you sank for being in your water. A deer you took for sport, not hunger. A village you watched drown because you were sleeping and did not want to wake. The pearl does not forget anything, and it seems to have opinions.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Ledger of Heaven",
+   "choices": [
+    {
+     "text": "Go back to those places and look at them",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im10_ledger_open",
+      "log": "The village is a field now. The boat is a shrine. Nobody there remembers what happened, and that is somehow the worst part. The pearl watches you look."
+     }
+    },
+    {
+     "text": "Polish the pearl and think about other things",
+     "effects": {
+      "luck": 2,
+      "flag": "im10_ledger_open",
+      "log": "It brightens. It does not stay bright."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_ledger_2",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A clerk from the Heavenly Bureau of Deeds arrives on a small grey cloud: grey robe, ink on the fingers, a ledger nearly as long as you are. \"Routine review before an ascension,\" it says, unrolling. \"Debits. Credits. Debits.\" It runs a finger down a column that takes most of the afternoon. \"Close. Very close. Heaven has an option for cases like yours. It is rarely taken.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_ledger_1"
+    ],
+    "minYearsAfter": 4,
+    "flags": [
+     "im10_ledger_open"
+    ]
+   },
+   "arc": "The Ledger of Heaven",
+   "choices": [
+    {
+     "text": "Ask what the option is",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_option_known",
+      "log": "\"Back to the egg,\" says the clerk. \"From the beginning, in the same spring, remembering everything. The ledger starts clean. The memory does not. Most decline. Most are not sure afterwards that they were right.\""
+     }
+    },
+    {
+     "text": "Argue every line",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "luck": 4,
+      "flag": "im10_option_known",
+      "log": "You win four entries on technicalities and one on mercy. The clerk is impressed, which clerks are not supposed to be. Then it tells you about the option anyway."
+     },
+     "fail": {
+      "flag": "im10_option_known",
+      "log": "You lose every argument. The clerk was there for all of them, it turns out, in a manner of speaking. It tells you about the option, kindly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_ledger_3",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The clerk returns on the night of the first spring storm and does not unroll the ledger this time. \"You may rise with it as it stands,\" it says. \"Or you may go back to the spring, and the heron, and the cold water, and do it all again knowing what you know now.\" Rain on the pool. The pearl, waiting.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_ledger_2"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "im10_option_known"
+    ]
+   },
+   "arc": "The Ledger of Heaven",
+   "choices": [
+    {
+     "text": "Go back to the spring",
+     "effects": {
+      "beastEnding": "egg",
+      "log": "The clerk makes one small mark with its brush. Cold water. Green light. A waterfall so constant it is almost silence. On the rock above, a heron, watching. You remember everything. This time you will not waste a single year."
+     }
+    },
+    {
+     "text": "Rise with what you have done. You will carry it",
+     "effects": {
+      "comprehension": 4,
+      "strength": 3,
+      "log": "The clerk rolls the ledger up. \"Most say that,\" it says. \"The ones who mean it sometimes make good dragons.\" It is gone before you can ask which kind you are."
+     }
+    },
+    {
+     "text": "Not yet. Spend the next years paying it down, one rain at a time",
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "rain": 1
+      },
+      "log": "Rain on every valley you ever wronged, and some you did not. Somewhere a grey clerk turns a page, and the numbers move, slowly, in the right direction."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_wish_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The Yeouiju is a wish-pearl: every child in the land knows that much. So a woman from the salt villages walks four days to your pool with her son in a sling on her back, burning with a fever no physician can name, and kneels on the stones, and does not say anything at all, because she has used up all her words on the road.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Wish-Pearl",
+   "choices": [
+    {
+     "text": "Breathe the pearl's light over the boy",
+     "effects": {
+      "health": -10,
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "im10_wishes_known",
+      "log": "It costs you something you cannot name. The fever breaks before she reaches the bottom of the path. She does not look back, in case looking back undoes it. (-10 health)"
+     }
+    },
+    {
+     "text": "Send rain to the herb slopes of the next valley, and her there",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "rain": 1,
+       "virtue": 1
+      },
+      "flag": "im10_wishes_known",
+      "log": "A storm over one valley, and the purple fever-root comes up through the wet earth overnight. The herb-woman there knows what to do with it. The pearl, you decide, is not for everything."
+     }
+    },
+    {
+     "text": "The pearl is not for wishing",
+     "effects": {
+      "luck": 2,
+      "log": "She carries him home. He lives, or he does not. You do not go to find out, and you think about that more than you expected to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_wish_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "There is a line of people at your pool now, all the way down the mountain path: the sick, the poor, a man who wants a better ox. And among them, in a wide pilgrim's hat, a cultivator of the Black Pine Sect with a soul-binding net folded under the robe, waiting patiently for a turn that is not for wishing.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ],
+    "after": [
+     "dc_im10_wish_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "im10_wishes_known"
+    ]
+   },
+   "arc": "The Wish-Pearl",
+   "choices": [
+    {
+     "text": "Rise and take the net before it opens",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 1,
+       "legend": 2
+      },
+      "log": "The net tears like wet paper. The pilgrim runs down the path through the line of people, who all agree afterwards that they never trusted that hat."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The net closes around the pearl and your claw together, and for one terrible moment it is being pulled out of the world. You tear free with half the net still in your scales.",
+      "deathCause": "a soul-binding net, with the pearl already in your claw"
+     },
+     "risky": true
+    },
+    {
+     "text": "Close the pool. No more wishes",
+     "effects": {
+      "luck": 3,
+      "log": "Mist on the pool for a whole year. The line goes home. So does the pilgrim, disappointed, and the Black Pine Sect writes in its records that the serpent is \"too clever by half\"."
+     }
+    },
+    {
+     "text": "Let the line move, and let the pilgrim wait a very long time",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You grant the sick their health and the man his better ox. By the time the pilgrim reaches the front, a whole season has passed, and nobody wants to try anything in front of three hundred grateful farmers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_tale_1",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "In the market at Hadong a storyteller with a fan tells your story to a crowd for a copper a head. It is mostly wrong. In this version you are a fallen prince, you have nine heads, and you once ate a whole army. The crowd loves it. Some of what people say about you, you notice, will be what the witness believes.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     10,
+     10
+    ]
+   },
+   "arc": "The Storyteller of Hadong",
+   "choices": [
+    {
+     "text": "Raise the river until it laps the platform, gently",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "The storyteller looks down at the water round the ankles, and changes the next part: the serpent, it turns out, is merciful to storytellers. The crowd claps even harder."
+     }
+    },
+    {
+     "text": "Let the storyteller go on",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "Nine heads. Fine. By the end of the summer, half the province is telling the story, and in every version, at the end, you become a dragon. That is the only part that matters."
+     }
+    },
+    {
+     "text": "Visit that night in the mist and tell it properly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "The storyteller listens until dawn, fan trembling. The new version is shorter, truer, and has only one head. It does even better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_throne_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "Forty ships with black sails come over the horizon at dawn, heading for the salt villages: the same raiders, or their great-grandchildren, that old King Munmu turned back for a thousand years. Byeolju the turtle, now your registrar, adjusts its hat. \"Your Majesty,\" it says. It is still strange to hear.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "flags": [
+     "east_sea"
+    ]
+   },
+   "arc": "The Throne Under the East Sea",
+   "choices": [
+    {
+     "text": "Raise the sea under them",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 3
+      },
+      "qi": 10,
+      "log": "One wave, the height of a temple, and then a very calm sea with a great deal of wood in it. The salt villages light lamps on the shore that night, all facing east."
+     }
+    },
+    {
+     "text": "Fog, and a current that carries them home",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "Forty ships sail all day into grey and wake up in their own harbour. The raiders go home and tell their children the sea is haunted. It is, by you."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The fog thins at noon, and you have to do it the hard way after all, ship by ship, sparing whom you can. (-10 health)"
+     }
+    },
+    {
+     "text": "Rise in front of them and let them look",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "log": "Forty ships turn around without a single arrow. Their admiral writes in the log: \"Encountered the king of this coast. Did not stay to discuss.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_throne_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Court day in Yonggung. A thousand petitions from a thousand fish: the mackerel dispute the herrings' spawning grounds, a clam has been insulted, the octopus treasurer reports a shortfall of pearls and will not meet your eye with any of its eight arms. Being a king, you discover, is mostly listening to fish.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_throne_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "east_sea"
+    ]
+   },
+   "arc": "The Throne Under the East Sea",
+   "choices": [
+    {
+     "text": "Hear every petition, all of them, to the end",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It takes eleven years. The clam is satisfied. The court says there has never been such a king."
+     }
+    },
+    {
+     "text": "Audit the octopus",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "luck": 4,
+      "log": "Three hundred pearls under a rock in the treasurer's private grotto. The octopus is demoted to Keeper of Small Shells and is, frankly, relieved."
+     },
+     "fail": {
+      "charm": 2,
+      "log": "Eight arms, eight ledgers, and none of them agree. You give up. The octopus is promoted for its thoroughness."
+     }
+    },
+    {
+     "text": "Leave the court to Byeolju and go and guard the coast",
+     "effects": {
+      "strength": 3,
+      "luck": 2,
+      "log": "The turtle runs the court for a century with enormous dignity and slightly too many forms. Nobody complains, because complaints also require forms."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_drought_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Another dry year somewhere below you. A whole province of cracked paddies, wells gone to mud, and on every hill a little smoke where farmers burn paper prayers addressed, in careful brushwork, to you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Drought Petition",
+   "choices": [
+    {
+     "text": "Bring the rain",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "log": "Three days of rain over the whole province. On the fourth day, every village carries out a bowl of the first rice to the hilltops, and leaves it there for the clouds."
+     }
+    },
+    {
+     "text": "File the request with heaven first, properly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "rain": 1
+      },
+      "log": "Permission comes back stamped and approved, nineteen days later. You bring the rain on the twentieth. The farmers never know about the nineteen days, but you do."
+     }
+    },
+    {
+     "text": "Not this year. Let them dig deeper wells",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "They dig. Some of the wells find water. In that province, for a century, the dragon is a thing you pray to and do not count on."
+     }
+    }
+   ],
+   "cooldown": 40,
+   "maxPerLife": 4
+  },
+  {
+   "id": "dc_im10_king_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A young king has built you a shrine on the cliffs above the sea: granite, twelve steps, a bronze bell, and a stele that lists the king's own titles at considerably greater length than yours. {npc} kneels in the rain for three days. On the fourth {he} asks: rain for the southern provinces, and, since you are listening anyway, a little help against the kingdom across the river.",
+   "npc": {
+    "role": "im10_king",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im10_king",
+     "ageAbs": 24,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     11
+    ]
+   },
+   "arc": "The King on the Cliff",
+   "choices": [
+    {
+     "text": "Give the rain. Ignore the rest",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "npcFlag": "im10_king_bond",
+      "mem": {
+       "deed": "rain",
+       "w": 10,
+       "note": "gave my provinces rain and refused me a war"
+      },
+      "log": "Rain on the south, nothing on the river. {npc} understands the message, sulks for a year, and then quietly signs a treaty. Kings, you find, can learn."
+     }
+    },
+    {
+     "text": "Give both",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "npcFlag": "im10_king_bond",
+      "mem": {
+       "deed": "ally",
+       "w": 15,
+       "note": "gave me rain and victory"
+      },
+      "log": "Rain on the south and a flood on the river at exactly the wrong moment for the other side. {npc} adds three lines to the stele. The kingdom across the river adds a different kind of line to its histories."
+     }
+    },
+    {
+     "text": "Give nothing: a dragon is not a granary",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} goes home soaked and furious. The southern provinces find their own water. The shrine stays, because nobody wants to be the one who pulls down a dragon shrine."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_king_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is past forty now, heavier, with a court full of physicians. {He} climbs the twelve steps alone and asks for something a king should not: to live forever. \"Think what I could do for the people,\" {npc} says, \"with five hundred years.\"",
+   "npc": {
+    "role": "im10_king"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     11
+    ],
+    "after": [
+     "dc_im10_king_1"
+    ],
+    "minYearsAfter": 16,
+    "npcFlags": [
+     "im10_king_bond"
+    ]
+   },
+   "arc": "The King on the Cliff",
+   "choices": [
+    {
+     "text": "Tell {him} the truth: no pool makes a king immortal",
+     "effects": {
+      "comprehension": 3,
+      "mem": {
+       "deed": "honest",
+       "w": 6,
+       "note": "told me the truth about forever"
+      },
+      "log": "{npc} stands at the top of the cliff for a long time. Then {he} goes back down and, for the first time, starts choosing an heir with care."
+     }
+    },
+    {
+     "text": "Give {him} one scale. It will not make {him} immortal, but {he} will think it might",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "mem": {
+       "deed": "gift",
+       "w": 10,
+       "note": "gave me a scale against death"
+      },
+      "log": "{npc} wears the scale at the throat for the rest of a long life, and outlives two physicians, three chancellors and a rebellion, mostly out of confidence."
+     }
+    },
+    {
+     "text": "Show {him} what five hundred years looks like",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3
+      },
+      "mem": {
+       "deed": "vision",
+       "w": 12,
+       "note": "showed me five hundred years in its eye"
+      },
+      "log": "You let {npc} look into your eye: the pool, the heron, a thousand winters under the ice. {He} comes out of it weeping, and the next spring frees half the prisons in the kingdom."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} looks into your eye and sees only the dark at the bottom of the pool. {He} goes down the twelve steps shaking and never asks you for anything again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_king_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The twelfth ruler of the old king's line climbs to the cliff shrine at night. The stele is cracked; the bell was melted down for arrows last winter; rebels are at the capital gates. {npc} is seventeen, wears the winged crown badly, and asks you only one thing: whether the dynasty deserves to be saved.",
+   "npc": {
+    "role": "im10_heir",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im10_heir",
+     "ageAbs": 17,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_king_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The King on the Cliff",
+   "choices": [
+    {
+     "text": "Save it, for the sake of the first king who knelt here",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "Thunder over the rebel camp for nine nights. The dynasty lasts another sixty years, and {npc} spends all of them trying to deserve it."
+     }
+    },
+    {
+     "text": "Tell {him} dynasties are seasons, and this one is ending",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "honest",
+       "w": 8,
+       "note": "told me the truth about my dynasty"
+      },
+      "log": "{npc} opens the gates in the morning, and the city is not burned. The new dynasty keeps the cliff shrine, and even repairs the stele."
+     }
+    },
+    {
+     "text": "Carry {npc} away to the mountains, crown and all",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "charm": 2,
+      "log": "A dragon takes the last king of a dynasty out of the palace on its back, in the rain. {npc} lives to be eighty in a mountain village, keeps bees, and is very happy."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_emperor_1",
+   "cat": "explore",
+   "weight": 14,
+   "once": true,
+   "text": "An edict comes up the river on a barge with ninety oarsmen, written in vermilion on yellow silk: the Son of Heaven in the Central Plains commands the dragon of the eastern waters to appear at the palace on the winter solstice, so that the empire may see heaven's favour resting on the throne.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Son of Heaven",
+   "choices": [
+    {
+     "text": "Go, and make the visit memorable",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "fear": 1
+      },
+      "flag": "im10_court_visit",
+      "log": "You arrive with the dawn and a great deal of weather. The palace historians use up a whole year of ink."
+     }
+    },
+    {
+     "text": "Send rain on the palace instead, exactly at noon on the solstice",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "legend": 2,
+       "rain": 1
+      },
+      "log": "Ten thousand officials stand in the courtyard for six hours in the rain. The court historian records that \"the dragon expressed its favour in the form of water\". Nobody can prove otherwise."
+     }
+    },
+    {
+     "text": "Ignore it",
+     "effects": {
+      "luck": 2,
+      "flag": "im10_snubbed_emperor",
+      "log": "The solstice comes and goes. In the Central Plains, someone very important stands on some very long steps for a very long time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_emperor_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Ten thousand officials face-down on frozen stone. Incense enough to fog a valley. And the Son of Heaven, alone on the steps, asks you before the whole court the question every dynasty asks sooner or later: does heaven's mandate rest on this throne? Every official is listening. So, you suspect, is heaven.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_emperor_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im10_court_visit"
+    ]
+   },
+   "arc": "The Son of Heaven",
+   "choices": [
+    {
+     "text": "Say yes",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The word goes out to every province by fast horse. The dynasty lasts two more centuries, and for both of them the emperors are very nervous about thunder."
+     }
+    },
+    {
+     "text": "Say the mandate rests on full granaries, not on thrones",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "The court goes completely silent. The Son of Heaven goes pale, then thoughtful, and the next spring the imperial granaries open in three famine provinces. The historians record your words and argue about them for a thousand years."
+     }
+    },
+    {
+     "text": "Say nothing. Look at the Son of Heaven for a very long time",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "An hour. Not a word. Then you go. The court interprets it eleven different ways, and every faction is sure it was about the other ten."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_emperor_3",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The Son of Heaven did not enjoy being ignored. A writ arrives, carried by forty imperial exorcists with bronze mirrors and peach-wood swords: the dragon of the east is declared a rebellious serpent, and is to be \"corrected\".",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_emperor_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "im10_snubbed_emperor"
+    ]
+   },
+   "arc": "The Son of Heaven",
+   "choices": [
+    {
+     "text": "Correct them first",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "Forty exorcists, forty bronze mirrors, and one very wet afternoon. They go home on foot. The writ is quietly withdrawn and never mentioned again."
+     },
+     "fail": {
+      "health": -20,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The mirrors hurt more than they should. You drive them off, but you spend a decade in the deep letting the cuts close. (-20 health)"
+     }
+    },
+    {
+     "text": "Let them come, and simply be too large to correct",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "luck": 2,
+      "log": "They chant for a month at the edge of your waters. You sleep through it. Eventually they report that the serpent has been \"corrected in principle\" and go home."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_war_1",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "Two kingdoms have fought for nine years over one river mouth. Today their fleets meet in the estuary below your clouds: two hundred ships, thirty thousand soldiers, and a great many of them boys who were fishermen last spring.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Battle at the River Mouth",
+   "choices": [
+    {
+     "text": "Rise out of the sea between the fleets",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "virtue": 2
+      },
+      "flag": "im10_war_ended",
+      "log": "Nobody fights in front of a dragon. By evening the two admirals are standing on a sandbar in the middle of the estuary, not looking at you, signing anything they are handed."
+     }
+    },
+    {
+     "text": "Raise a storm that sinks both fleets",
+     "effects": {
+      "tally": {
+       "fear": 4,
+       "legend": 2
+      },
+      "flag": "im10_war_ended",
+      "alignment": -4,
+      "log": "The war ends in an afternoon. Both kingdoms make peace within the month, because neither has a ship left. For a century, fishermen on that coast pray to you in a whisper."
+     }
+    },
+    {
+     "text": "Fog: let nobody find anybody",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "flag": "im10_war_ended",
+      "log": "Three days of fog so thick the fleets sail in circles and run out of water. The war ends, as many wars do, in exhaustion and embarrassment."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The fog lifts at noon and the fleets find each other after all. You save what sailors you can from the water afterwards."
+     }
+    },
+    {
+     "text": "It is a human war. Let the humans finish it",
+     "effects": {
+      "luck": 2,
+      "log": "The river runs red for a week. The fishermen who come home tell their children that the dragon watched, and did nothing, and nobody can quite explain why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_war_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A peace stele stands at the river mouth now, and the treaty on it names you as its witness: whoever breaks the peace answers to the dragon. Ten years later, one of the two kings sends a quiet envoy with a quiet question. Would the dragon, perhaps, look away, just once, for one small campaign?",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_war_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "im10_war_ended"
+    ]
+   },
+   "arc": "The Battle at the River Mouth",
+   "choices": [
+    {
+     "text": "Answer with thunder over that king's palace, every night for a month",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The envoy is never sent again. The king takes up calligraphy instead of war, and is said to be very bad at it."
+     }
+    },
+    {
+     "text": "Go and speak to the king face to face",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3
+      },
+      "charm": 3,
+      "log": "An hour in the palace garden, a dragon and a king, talking about what a river mouth is worth. The king renews the treaty for a hundred years."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The king hears only the size of you, not the words. The peace holds, from terror. It is not the kind you wanted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_war_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Sixty years on, the estuary where the fleets met is a market: salt from one shore, rice from the other, children of both kingdoms selling crabs off the same sandbar. An old veteran sits by the peace stele telling anyone who will listen about the day the dragon rose. He is the last one alive who saw it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_war_2"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "The Battle at the River Mouth",
+   "choices": [
+    {
+     "text": "Show yourself in the clouds, once, for the old man",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "The whole market looks up. The old man does not. He is looking at the children looking up, and he is grinning like a boy."
+     }
+    },
+    {
+     "text": "Leave a fat sea bream in his fishing basket every morning",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "log": "He never says where the fish come from. When he dies, there is a bream on his doorstep, and the whole market understands."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rabbit_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The Dragon King of the South Sea is ill, and as the most senior dragon within a thousand li you are invited down to the sickbed, which among dragons is a kind of argument. Fourteen physicians have failed. The fifteenth, a catfish with a beard down to its fins, announces the only cure: the fresh liver of a land rabbit. The whole court turns, as one, to the only official in Yonggung who can walk on land: a turtle, who goes very still inside its shell.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Rabbit's Liver",
+   "choices": [
+    {
+     "text": "Volunteer the turtle loudly, before it can hide",
+     "effects": {
+      "charm": 3,
+      "flag": "im10_rabbit_sent",
+      "log": "\"An excellent choice,\" you say, \"a minister of rare courage.\" The turtle gives you a look that will last for three hundred years and sets off for land."
+     }
+    },
+    {
+     "text": "Prescribe something else: you have eaten a thousand herbs",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "im10_rabbit_sent",
+      "log": "Sea-ginseng and a breath of thunder. The king feels better for a month. Then the catfish, who does not like being contradicted, finds a relapse, and the turtle is sent anyway."
+     },
+     "fail": {
+      "flag": "im10_rabbit_sent",
+      "log": "The catfish quotes three classics at you. You quote one back. The court votes for the classics, and the turtle is sent for a rabbit."
+     }
+    },
+    {
+     "text": "Offer to go to land and fetch one yourself",
+     "effects": {
+      "luck": 3,
+      "flag": "im10_rabbit_sent",
+      "log": "The court is horrified. A dragon, shopping for rabbits! The turtle is sent instead, partly to save the dignity of dragons."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rabbit_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The turtle comes back with a rabbit on its shell, a rabbit promised a ministry, a silk hat and a palace by the sea. The rabbit is wearing the hat. It takes one look at the throne room, the sick king, and the physicians sharpening knives, and says: \"Ah. My liver. Majesty, I would give it gladly. But as everyone knows, rabbits take their livers out each morning and wash them in a mountain stream, and mine is drying on a rock under a pine. If someone could take me back for it...\" The king believes every word. You have eaten rabbits. You know exactly where a rabbit keeps its liver.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_rabbit_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im10_rabbit_sent"
+    ]
+   },
+   "arc": "The Rabbit's Liver",
+   "choices": [
+    {
+     "text": "Say nothing. It is the best lie you have heard in a century",
+     "effects": {
+      "charm": 4,
+      "luck": 2,
+      "flag": "im10_rabbit_free",
+      "log": "You catch the rabbit's eye across the throne room. It catches yours. Something passes between you: one liar to one connoisseur of liars. The turtle carries it back to land at dawn."
+     }
+    },
+    {
+     "text": "Clear your throat, very meaningfully",
+     "effects": {
+      "comprehension": 2,
+      "flag": "im10_rabbit_free",
+      "log": "The rabbit, without missing a beat, adds that the liver must also be blessed by a dragon before it can be used, \"for obvious reasons\". The king looks at you hopefully. You find you cannot ruin it."
+     }
+    },
+    {
+     "text": "Tell the king the truth",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "comprehension": 2,
+      "flag": "im10_rabbit_free",
+      "log": "The king does not believe you either. A rabbit's word, it turns out, beats a dragon's, when the rabbit is more confident. The turtle carries it back to land anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rabbit_3",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "On the shore the rabbit leaps off the turtle's back, throws the silk hat in the sea, and laughs from the top of a dune: \"A liver outside the body! What fools live under the water!\" Then it is gone into the pines. The turtle sits on the wet sand. It cannot go home without a liver. It cannot stay on land. It looks up at you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_rabbit_2"
+    ],
+    "flags": [
+     "im10_rabbit_free"
+    ]
+   },
+   "arc": "The Rabbit's Liver",
+   "choices": [
+    {
+     "text": "Carry the turtle home and speak for it at court",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "log": "You tell the court the rabbit was a master of the strategic arts and no ordinary minister could have caught it. The turtle is not punished. It is, in fact, given a medal, which it wears for three hundred years."
+     }
+    },
+    {
+     "text": "Cure the king yourself: one breath of pearl-light",
+     "effects": {
+      "health": -10,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "The old king sits up, sneezes coral dust, and asks for breakfast. The catfish physician claims the credit, naturally. (-10 health)"
+     }
+    },
+    {
+     "text": "Laugh until the sea shakes",
+     "effects": {
+      "luck": 3,
+      "charm": 2,
+      "log": "The tide comes in twice that afternoon. The fishermen on that coast still argue about why. The turtle, despite everything, starts laughing too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_rabbit_4",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "Thirty years later, in a market town on land, a singer with a drum and a fan performs the whole story for a crowd: the sick king, the brave turtle, the clever rabbit and its liver on a rock. It takes four hours. You are in it, coiled round a pillar, for one line, and in that line you are described as \"a large eel\".",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_rabbit_3"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Rabbit's Liver",
+   "choices": [
+    {
+     "text": "Rain on the singer, gently, during the eel line",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "log": "From then on every singer of that song pauses at the eel line and glances at the sky, and the line is quietly changed to \"a dragon of great dignity\". You consider this a victory."
+     }
+    },
+    {
+     "text": "Let it be. The rabbit deserves the story",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "The song lasts longer than the dynasty. Every child in the land knows the rabbit. You find you do not mind being the eel."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_dragons_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "You are not the only dragon. You learn this the first spring after you rise, when a red dragon from the southern mountains comes to see what the new one looks like, circles you twice, sniffs, and says that your scales are \"very fresh\".",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     11
+    ]
+   },
+   "arc": "The Other Dragons",
+   "choices": [
+    {
+     "text": "Bow, the young to the old",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_met_dragons",
+      "log": "\"Manners,\" says the red dragon, sounding pleased and a little disappointed. \"We had better invite you to things, then.\""
+     }
+    },
+    {
+     "text": "Circle it back, closer",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im10_met_dragons",
+      "log": "Two dragons, circling, for a whole day over three provinces. At sunset the red dragon laughs and says, \"Fresh, but not soft.\" Every dragon in the land has heard of you by winter."
+     },
+     "fail": {
+      "health": -15,
+      "flag": "im10_met_dragons",
+      "log": "It is two thousand years older and has done this before. You end up in a lake. \"Fresh,\" it repeats, kindly, and flies off. (-15 health)"
+     }
+    },
+    {
+     "text": "Ignore it and go on raining",
+     "effects": {
+      "luck": 2,
+      "flag": "im10_met_dragons",
+      "log": "The red dragon watches you rain on a valley for an hour, then sniffs again, approvingly this time, and leaves."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_dragons_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The Council of the Four Seas meets once a century on the peaks above the clouds. This time there is one question: an Imugi in the north is about to rise, and it has eaten three villages on the way. The old dragons want to stop it at the gate of heaven. They turn to the youngest of them, who was an Imugi not so long ago.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_dragons_1"
+    ],
+    "minYearsAfter": 60,
+    "flags": [
+     "im10_met_dragons"
+    ]
+   },
+   "arc": "The Other Dragons",
+   "choices": [
+    {
+     "text": "Speak for it: let the witness decide, as the witness decided for you",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The council grumbles and agrees. On the night of the storm, a woodcutter looks up and screams \"snake\". You watch it fall, and you are not sure whether you feel relief or grief. Both, probably."
+     }
+    },
+    {
+     "text": "Agree. Three villages",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "strength": 3,
+      "log": "Seven dragons meet it at the gate of heaven. It does not rise. In the north they say the sky had seven sets of eyes that night."
+     }
+    },
+    {
+     "text": "Go and look at it yourself first",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3
+      },
+      "log": "Three villages, yes: villages of hunters who poisoned its pool and killed its mate. You tell the council. The council, for once, is silent. The Imugi rises, and a child calls it a dragon."
+     },
+     "fail": {
+      "luck": 2,
+      "log": "It hides from you and you learn nothing. The council decides without you, and you never find out if they were right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_dragons_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The red dragon who called your scales fresh is dying. Dragons die rarely and slowly, the way mountains wear down. It is lying on its peak in the snow, its colour gone to the red of old bricks, and it asks you to carry its pearl back to the hot spring in the south where it hatched, five thousand years ago.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_dragons_2"
+    ],
+    "minYearsAfter": 150
+   },
+   "arc": "The Other Dragons",
+   "choices": [
+    {
+     "text": "Carry the pearl south",
+     "effects": {
+      "qi": 20,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A small spring, steaming, in a forest of bamboo. You lay the pearl in it. The water turns gold for a moment, then clear. Somewhere, very faintly, a red dragon laughs."
+     }
+    },
+    {
+     "text": "Stay with it until the end",
+     "effects": {
+      "comprehension": 5,
+      "log": "It takes eleven years. It tells you everything: every storm, every king, every mistake. At the end it says, \"Your scales are not fresh any more.\" It is the kindest thing anyone has ever said to you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_bureau_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A clerk from the Ministry of Rain arrives on a small cloud with a large form. Dragons, it explains, are to be registered. Rain is allocated: so many measures per province per season, approved in triplicate by the Bureau of Clouds and the Office of Thunder, and stamped by the seal-keeper of the Jade Emperor. Your rain to date, the clerk says carefully, has been unregistered.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Ministry of Rain",
+   "choices": [
+    {
+     "text": "Fill in the form",
+     "effects": {
+      "comprehension": 4,
+      "flag": "im10_bureau",
+      "log": "Name, stage, colour, number of claws, provinces rained upon in the last five centuries (attach a list). It takes nine years. The clerk says you have very good handwriting, for a dragon."
+     }
+    },
+    {
+     "text": "Ask what happens to unregistered dragons",
+     "effects": {
+      "luck": 2,
+      "flag": "im10_bureau",
+      "log": "The clerk tells you about Imok, the dragon who rained for the monk Boyang without leave and was struck by heaven's thunder for it. Then it slides the form across again, very politely."
+     }
+    },
+    {
+     "text": "Eat the form",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "charm": 2,
+      "flag": "im10_bureau",
+      "log": "It tastes of ink and procedure. The clerk, unfazed, produces another from its sleeve. It has, it seems, done this before."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_bureau_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A province below you has had no rain for two years, and the Ministry's allocation for it this season is, according to the form, zero. Under the form, in the real world, children are eating bark.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_bureau_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "im10_bureau"
+    ]
+   },
+   "arc": "The Ministry of Rain",
+   "choices": [
+    {
+     "text": "Rain anyway, and take the punishment",
+     "effects": {
+      "health": -20,
+      "tally": {
+       "rain": 1,
+       "virtue": 4
+      },
+      "log": "Three days of rain. On the fourth, heaven's thunder finds you, as it found Imok. It hurts exactly as much as the stories say. The province plants rice. (-20 health)"
+     }
+    },
+    {
+     "text": "Appeal through the proper channels",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "log": "An emergency allocation, approved in only forty days. You argued with six offices and the Office of Thunder personally. The rain arrives just before the seed rice is eaten."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "Your appeal is approved, with great sympathy, for the following dynasty. You find another way: you sit over the province and weep, which is not, technically, rain."
+     }
+    },
+    {
+     "text": "Fog is not rain. Nobody allocates fog",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A thick wet fog for three months: the fields drink it in, the wells fill. The Ministry opens an inquiry into fog. It is still open."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_bureau_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The Ministry, having audited you for all these years, offers you a position: Assistant Supervisor of Rain for the Eastern Provinces, Third Grade, with a desk, a seal, and a cloud of your own. The clerk who first brought the form, now very senior, delivers the offer in person and looks almost proud.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_bureau_2"
+    ],
+    "minYearsAfter": 100
+   },
+   "arc": "The Ministry of Rain",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "comprehension": 5,
+      "qi": 15,
+      "log": "You are a very good Assistant Supervisor. Droughts in the east become rare. You also learn where heaven keeps all its forms, which will be useful one day."
+     }
+    },
+    {
+     "text": "Decline: you are a dragon, not a desk",
+     "effects": {
+      "luck": 3,
+      "strength": 2,
+      "log": "The clerk sighs and files your refusal, in triplicate. \"They always decline,\" it tells a younger clerk later. \"The good ones.\""
+     }
+    },
+    {
+     "text": "Accept, and never once come to the office",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "rain": 1
+      },
+      "log": "Your desk gathers dust for five hundred years. Your rain, however, is always on time, and nobody in heaven quite dares to raise the matter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_home_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "You go back to the spring where you hatched. It is so small. You could drink it in one breath. The waterfall is a thread. And on the rock above, grey, on one leg, a heron stands and watches you the way only patient things watch. It cannot be the same heron. It is perhaps the grandchild of the grandchild of the grandchild of it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Spring With No Name",
+   "choices": [
+    {
+     "text": "Lie down around the spring, as small as you can make yourself",
+     "effects": {
+      "qi": 15,
+      "comprehension": 3,
+      "log": "It takes most of a day to fit. The water is as cold as you remember. For one night you are an egg again in your mind, and the whole long road is still in front of you."
+     }
+    },
+    {
+     "text": "Bless the spring: it will never run dry",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im10_blessed_spring",
+      "log": "You breathe on the water. It is the same spring, but deeper now in some way you cannot see. Whatever hatches here next will have a better start than you had."
+     }
+    },
+    {
+     "text": "Stare the heron down, for old times' sake",
+     "effects": {
+      "luck": 3,
+      "log": "The heron looks at a dragon the size of a hill. The dragon looks at the heron. After a long time the heron puts its other foot down, which is, you decide, a draw."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_home_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Centuries later, passing over the mountains, you feel something in the spring and come down. There is an egg in it: pearl-white, resting between two stones, exactly where you once rested. On the rock above, a heron.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     13
+    ],
+    "after": [
+     "dc_im10_home_1"
+    ],
+    "minYearsAfter": 300
+   },
+   "arc": "The Spring With No Name",
+   "choices": [
+    {
+     "text": "Watch over it, as the heron watched over you",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "luck": 2,
+      "log": "Two years on a mountainside, a dragon and a heron, not quite agreeing about anything. When the egg hatches, a finger-long serpent looks up at both of you and decides, wisely, to hide under a stone."
+     }
+    },
+    {
+     "text": "Leave it to find its own way",
+     "effects": {
+      "comprehension": 4,
+      "log": "You go back up into the clouds. Some roads have to be walked from the very beginning by whoever is walking them. You will look in on it in a thousand years."
+     }
+    },
+    {
+     "text": "Leave one of your scales beside it",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "qi": 10,
+      "log": "One scale, the size of a door, laid on the bank. Whatever hatches will grow up thinking dragons are real, because there is proof by the water."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_line_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Black Reed Crossing has a bridge now, and the ferry keeper who practised the word on the rock above your pool is long dead. The family still keeps a scale by the door. Tonight the youngest of them, {npc}, has come to the river alone to tell the water that the house is about to be taken for a magistrate's debt.",
+   "npc": {
+    "role": "im10_kin",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im10_kin",
+     "ageAbs": 30,
+     "opinion": 30
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_witness_2"
+    ],
+    "minYearsAfter": 100,
+    "flags": [
+     "im10_witness_found"
+    ]
+   },
+   "arc": "The Ferry Keeper's Line",
+   "choices": [
+    {
+     "text": "Fill {npc}'s nets with a year of fish in a night",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "npcFlag": "im10_kin_bond",
+      "mem": {
+       "deed": "saved",
+       "w": 15,
+       "note": "saved our house with a river of fish"
+      },
+      "log": "The nets come up so full they tear. The debt is paid by noon. {npc} stands at the river all the next evening, saying thank you to the water, over and over."
+     }
+    },
+    {
+     "text": "Visit the magistrate during a thunderstorm",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "npcFlag": "im10_kin_bond",
+      "mem": {
+       "deed": "avenged",
+       "w": 10,
+       "note": "frightened the magistrate off our house"
+      },
+      "log": "One eye at the magistrate's window, the size of the window. The debt is forgiven by morning, along with several others, and the magistrate retires to a monastery."
+     }
+    },
+    {
+     "text": "Tell {npc} the family must stand on its own feet",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} goes away hurt. But {he} sells the scale by the door to a collector for enough to pay the debt three times over, and you realise that this, too, was a gift you gave long ago."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_line_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A distant cousin of the ferry keeper's line is touring the county with a cart, claiming dragon blood and selling \"water from the dragon's own pool\" in little clay jars. It is water from a ditch. Business is excellent. {npc} has come to the river, mortified, to apologise on behalf of the family.",
+   "npc": {
+    "role": "im10_kin"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_line_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "im10_kin_bond"
+    ]
+   },
+   "arc": "The Ferry Keeper's Line",
+   "choices": [
+    {
+     "text": "Make the next batch real",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "luck": 2,
+      "log": "For one season the jars cure coughs and fevers. The cousin is so frightened by actual success that the cart is sold within the year. {npc} laughs about it for the rest of {his} life."
+     }
+    },
+    {
+     "text": "Turn every jar in the county back into ditch water, visibly",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 2
+      },
+      "log": "Mud and frogs in every jar on the same morning. The cousin leaves the county at speed. {npc} is very satisfied, and slightly frightened of you for the first time."
+     }
+    },
+    {
+     "text": "Tell {npc} not to worry: every legend has its frauds",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "{npc} goes home reassured. The cousin goes on selling ditch water for years, and the strange thing is, people say it works."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_line_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A plague goes through Black Reed Crossing, and when it has passed, the ferry keeper's line is one child: {npc}, nine years old, sitting on the riverbank with the old scale in {his} lap, because {he} was told that if anything terrible ever happened, this is where you go.",
+   "npc": {
+    "role": "im10_last",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im10_last",
+     "ageAbs": 9,
+     "opinion": 30
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_line_2"
+    ],
+    "minYearsAfter": 120
+   },
+   "arc": "The Ferry Keeper's Line",
+   "choices": [
+    {
+     "text": "Carry {npc} to a great orthodox sect and leave {him} at the gate with the scale",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "mem": {
+       "deed": "saved",
+       "w": 15,
+       "note": "carried me to the sect gate"
+      },
+      "log": "A dragon at the gate of the sect, a child on its back. The sect elders take {npc} in without a single question. Forty years later {npc} is a master the whole murim knows, and {he} still bows to every river."
+     }
+    },
+    {
+     "text": "Stay by the river and raise {npc} yourself, a little",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "comprehension": 3,
+      "mem": {
+       "deed": "raised",
+       "w": 18,
+       "note": "raised me by the river"
+      },
+      "log": "Fish every morning, stories every night, a dragon teaching a child to swim. The village takes {npc} in eventually. {He} never quite stops talking to the water."
+     }
+    },
+    {
+     "text": "Find {npc} a family in the village, quietly",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "A childless couple finds a basket of fish and a nine-year-old on their step one morning. They take the hint. The scale goes back up by a new door."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_temple_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The human world worships you now: a temple of nine halls on Mount Sobaek, three hundred monks, pilgrims from every province. At the gate there is a stall selling genuine dragon scales. They are carp scales, painted blue. The abbot has grown very fat on them, and has begun to promise, in your name, things you have never promised.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Temple on Mount Sobaek",
+   "choices": [
+    {
+     "text": "Descend on the temple in thunder",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "One clap of thunder, directly over the stall. The abbot is found three days later in a cave, meditating, sincerely, for the first time in years."
+     }
+    },
+    {
+     "text": "Shed a real scale at the gate, free, for anyone who needs it",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "log": "A scale the size of a door, outside the gate, with the morning rain on it. The stall goes out of business by noon. Pilgrims touch the scale for luck for six hundred years, until it shines like a mirror."
+     }
+    },
+    {
+     "text": "Let them be: worship is for the worshippers",
+     "effects": {
+      "comprehension": 3,
+      "log": "You leave the temple to its own sins. Prayers rise from it like smoke, most of them honest. Those are the ones you answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_temple_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Among the three hundred monks of your temple there is a novice, {npc}, who sweeps the courtyard at night and talks to the sky while sweeping. Not prayers. Just talk: the weather, the abbot's snoring, a cat. \"Everyone here wants something from you,\" {npc} says one night, to the clouds. \"I thought you might like somebody who does not.\"",
+   "npc": {
+    "role": "im10_novice",
+    "spawn": {
+     "role": "friend",
+     "tag": "im10_novice",
+     "ageAbs": 15,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     13
+    ],
+    "after": [
+     "dc_im10_temple_1"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Temple on Mount Sobaek",
+   "choices": [
+    {
+     "text": "Answer, quietly, out of the clouds",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "friend",
+       "w": 15,
+       "note": "talked to me at night in the courtyard"
+      },
+      "log": "Fifty years of nights. The weather, the abbot, the cat, then the cat's kittens. When {npc} is old, {he} becomes abbot, and the stall at the gate never comes back."
+     }
+    },
+    {
+     "text": "Send down one warm night in the middle of winter for {him}",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "mem": {
+       "deed": "gift",
+       "w": 10,
+       "note": "gave me a warm night in winter"
+      },
+      "log": "The snow melts in one courtyard only. {npc} sweeps it in the warm dark, grinning, and says nothing to anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_alliance_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Nine masters of the Murim Alliance, the heads of nine orthodox sects, stand on the cliff above your lake and bow together, which none of them has done to anyone in forty years. The Heavenly Demon Cult has risen again in the west. Its army is three months from the Central Plains. They ask the dragon to stand with the orthodox sects.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Murim and the Dragon",
+   "choices": [
+    {
+     "text": "Agree. A demon army is a flood like any other",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "im10_alliance_sworn",
+      "log": "The nine masters bow again. One of them, the old abbot of the Shaolin, bows a little longer, and you suspect that is the only bow of the nine that means it."
+     }
+    },
+    {
+     "text": "Refuse: a dragon has no sect",
+     "effects": {
+      "comprehension": 4,
+      "log": "They go back down the cliff in nine different moods. The war is fought without you. Both sides, interestingly, claim afterwards that the dragon was secretly theirs."
+     }
+    },
+    {
+     "text": "Ask to hear the Cult's side first",
+     "effects": {
+      "luck": 2,
+      "flag": "im10_cult_heard",
+      "log": "Nine faces go very still. The Shaolin abbot, alone of them, nods slowly, as if this were the first sensible thing anyone has said all year."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_alliance_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The pass at Black Wind Ridge. Orthodox banners on one side, the red banners of the Cult on the other, and at the front of the Cult's army, alone, the Heavenly Demon: a figure in black with a palm that has killed masters of every sect. The Heavenly Demon looks up at you and smiles, which nobody has ever done.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_alliance_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im10_alliance_sworn"
+    ]
+   },
+   "arc": "The Murim and the Dragon",
+   "choices": [
+    {
+     "text": "Meet the Heavenly Demon in the air above the pass",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "legend": 4
+      },
+      "log": "One exchange, at a height where the air is thin. The Heavenly Demon falls back into the pass, alive, laughing, beaten. The Cult's army goes home. The murim talks of nothing else for a hundred years."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The palm finds the place under your chin where the reverse scale grows. The pain is beyond anything. You drop into the gorge like a felled tree, and the battle goes on without you.",
+      "deathCause": "the Heavenly Demon's palm, at the pass of Black Wind Ridge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Shield the retreating disciples instead of fighting",
+     "effects": {
+      "health": -15,
+      "tally": {
+       "virtue": 4
+      },
+      "log": "You coil across the mouth of the pass while three thousand young disciples, from both armies, run past you to safety. No one wins. Almost no one dies. (-15 health)"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_alliance_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The Cult's envoy comes to your lake alone, unarmed, in a red robe faded to pink, and does not bow. \"The Alliance calls us demons,\" the envoy says. \"The Alliance burned our villages in the west and called that orthodoxy. We came east because our children were hungry. Ask the rain, if you do not believe me. You are the rain.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_alliance_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "im10_cult_heard"
+    ]
+   },
+   "arc": "The Murim and the Dragon",
+   "choices": [
+    {
+     "text": "Go west and look",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Burnt villages, empty granaries, children. You go to the Alliance with what you saw. It is the most awkward meeting in the history of the murim, and also the start of the first peace in two centuries."
+     }
+    },
+    {
+     "text": "Rain on the west, for three years, and stay out of the war",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "log": "The western harvests come back. Half the Cult's army goes home to plant. The other half fights on, but with far less conviction, and loses."
+     }
+    },
+    {
+     "text": "Send the envoy away: it is not your war",
+     "effects": {
+      "luck": 2,
+      "log": "The envoy leaves without a word. You think about the faded red robe for longer than you expected."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_reverse_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "One scale under your chin grows the wrong way: the yeokrin, the reverse scale. Every hunter in the murim knows about it. Tonight you wake to a weight on your throat as light as a dragonfly, and a needle-thin blade raised over that one scale.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Reverse Scale",
+   "choices": [
+    {
+     "text": "Roll over into the lake, assassin and all",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 2
+      },
+      "log": "A dragon turning over is a small earthquake. The assassin comes up spluttering on the far shore, blade gone, and is never seen in that province again."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The needle goes in a finger's depth before you throw it off. For a month the whole lake tastes of your blood.",
+      "deathCause": "a needle through the reverse scale, in your sleep, after two thousand years"
+     },
+     "risky": true
+    },
+    {
+     "text": "Let the rage come",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "strength": 4,
+      "health": -10,
+      "log": "The touch, and then nothing you can remember for an hour. When you come back to yourself, the lake is boiling, the shore is a crater, and the assassin is a long way away and running. Now you know why kings fear the reverse scale. (-10 health)"
+     }
+    },
+    {
+     "text": "Hold perfectly still, and ask who sent it",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "im10_assassin_spared",
+      "log": "A long silence on your throat. Then the blade lowers. A sect paid for your reverse scale, the assassin says, to make a sword. \"I did not know,\" it says, \"that you would ask.\""
+     },
+     "fail": {
+      "health": -15,
+      "log": "The assassin strikes at your voice, misses the scale by a hair, and vanishes into the reeds. (-15 health)"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_reverse_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Twenty years later the assassin who once knelt on your throat comes back to the lake, grey-haired, with a hut built on the shore and a fishing rod. Three times since, hunters have come for your reverse scale. Three times they have found someone already waiting for them in the reeds.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_reverse_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "im10_assassin_spared"
+    ]
+   },
+   "arc": "The Reverse Scale",
+   "choices": [
+    {
+     "text": "Let it stay. Every lake should have a keeper",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 3,
+      "log": "It fishes on your shore for years and never once catches anything you did not let it catch. You both know. Neither of you says so."
+     }
+    },
+    {
+     "text": "Tell it the debt is paid and it can go",
+     "effects": {
+      "comprehension": 3,
+      "log": "It nods, packs the hut onto its back, and walks away. Hunters stop coming. You find, to your surprise, that you miss it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_spite_1",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "A valley in the north has not had rain in eleven years, and the cause is coiled at the bottom of it: a Gangcheori, an Imugi that rose once, heard the word \"snake\", and fell. It is thin and black as burnt rope, and the air around it shimmers. When it sees you it says: \"So somebody said the other word, for you.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "The Burnt Valley",
+   "choices": [
+    {
+     "text": "Fight it: the valley comes first",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "log": "It fights like something with nothing left to lose, because it has nothing. When it is over, rain falls on the valley for the first time in eleven years, and you do not enjoy it as much as you thought you would."
+     },
+     "fail": {
+      "health": -20,
+      "log": "Spite burns hotter than you knew. It drives you out of the valley with your scales smoking. (-20 health)"
+     }
+    },
+    {
+     "text": "Lie down at the edge of the heat and talk to it",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_spite_talk",
+      "log": "It does not answer for a year. Then it does."
+     }
+    },
+    {
+     "text": "Rain on the valley all around it",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2
+      },
+      "flag": "im10_spite_talk",
+      "log": "The rain hisses into steam a li from it. But the edges of the valley go green. It watches the green come, and does not move, and does not stop you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_spite_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "It tells you its story at last. Nine hundred years of kindness: a village it saved from floods, children it carried across the river. Then the storm, the pearl, the climb, and a woodcutter on a path who was frightened, only frightened, and screamed. \"One word,\" it says. \"Nine hundred years and one word.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_spite_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "im10_spite_talk"
+    ]
+   },
+   "arc": "The Burnt Valley",
+   "choices": [
+    {
+     "text": "Go up to heaven and petition for a second hearing",
+     "effects": {
+      "comprehension": 3,
+      "flag": "im10_appeal",
+      "log": "The Ministry of Fates has never had an appeal from a dragon on behalf of a Gangcheori. There is no form for it. They begin, reluctantly, to draft one."
+     }
+    },
+    {
+     "text": "Tell it that the spite is the only part it chose",
+     "effects": {
+      "comprehension": 5,
+      "log": "It looks at you for a very long time. Then, for one afternoon, the heat around it fades, and a little rain gets through. It is not much. It is not nothing."
+     }
+    },
+    {
+     "text": "Stay with it, and say nothing",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "A dragon and a Gangcheori in a dead valley, for years. Slowly, one blade at a time, grass comes back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_spite_3",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The appeal is granted, after forty years, nine offices and one memorable argument with the Office of Thunder: the Gangcheori may rise once more, if a human witness calls it a dragon. It has not been kind to humans for a long time. No human in the north has a good word for it. It is coiled at the foot of a waterfall in the rain, waiting, with a pearl you fetched for it from a storm, and it is afraid.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     13
+    ],
+    "after": [
+     "dc_im10_spite_2"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "im10_appeal"
+    ]
+   },
+   "arc": "The Burnt Valley",
+   "choices": [
+    {
+     "text": "Find the woodcutter's descendant and bring them to the falls",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 4,
+       "legend": 2
+      },
+      "log": "A young woodcutter, great-great-grandchild of the one who screamed, stands in the rain and looks up at the black shape climbing the falls, and says, in a small clear voice: \"Dragon.\" Heaven agrees. Two dragons in the north now."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 2
+      },
+      "health": -10,
+      "log": "The woodcutter's descendant takes one look and runs. It falls again. But this time it falls without spite, and it lies at the foot of the falls laughing, in the rain, like someone who has put down something heavy. (-10 health)"
+     }
+    },
+    {
+     "text": "Bring every child from the valleys it once saved, nine hundred years ago",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 3
+      },
+      "log": "You tell the story to every village it saved. Three hundred children stand on the hillsides in the rain, all shouting the word at once. Heaven, overwhelmed, agrees just to make them stop."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_firedogs_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "The sun goes dark at noon. Every village below you is out in the fields banging gongs and pots and shouting, because everyone knows what is happening: the fire dogs of Gamangnara, the kingdom of darkness, have been sent again by their king to steal the sun. One has it in its jaws now, and it is very hot, and the dog is very stubborn.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ]
+   },
+   "arc": "The Fire Dogs of Gamangnara",
+   "choices": [
+    {
+     "text": "Chase the dog across the sky",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 3
+      },
+      "log": "A dragon and a fire dog across the whole width of the sky. It spits the sun out halfway across. The villages cheer louder than the gongs."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The dog snaps at your tail and singes the scales black. It spits the sun out anyway, a few breaths later, because it was too hot to hold. (-15 health)"
+     }
+    },
+    {
+     "text": "Roar with the gongs",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 3,
+      "log": "A roar from the clouds that rattles every pot in the province. The dog drops the sun at once. Below, every farmer is sure it was their own pot that did it."
+     }
+    },
+    {
+     "text": "Wait. The dogs always spit it out",
+     "effects": {
+      "comprehension": 4,
+      "log": "You have seen this before. Every few centuries a dog bites, burns its mouth, and lets go. The villages do not know that, and you decide not to tell them. The gongs are good for them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_firedogs_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "An envoy from Gamangnara finds you at the edge of the world, where the light gives out. It is a fire dog, small and old, with its ears down. \"Our king does not want to steal the sun,\" it says. \"Our king only wants a little light. It is very dark in Gamangnara. It has always been very dark.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_firedogs_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Fire Dogs of Gamangnara",
+   "choices": [
+    {
+     "text": "Give it a lamp lit from your pearl",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "qi": 10,
+      "log": "The old dog carries the lamp home in its jaws, very carefully. The eclipses become rarer after that. In Gamangnara, they say, there is now one lamp, and everyone takes turns sitting near it."
+     }
+    },
+    {
+     "text": "Ask heaven why a kingdom was made with no light",
+     "effects": {
+      "comprehension": 5,
+      "log": "Heaven's answer runs to eleven scrolls and does not, in the end, answer. But a clerk adds Gamangnara to the list of places that receive starlight, which is something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_horns_1",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "The horns come in over a winter: two branching points of bone through the top of your skull, an ache like teeth. And then, one night, they open. You can hear prayers. Not the loud ones at the temples: all of them, from everywhere, every whisper to the sky from every village in the land, at once.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     12
+    ]
+   },
+   "arc": "The Horns of Heaven",
+   "choices": [
+    {
+     "text": "Listen to all of them",
+     "effects": {
+      "comprehension": 6,
+      "health": -10,
+      "log": "A year of it, without sleep. Then you learn to hear them the way the sea hears rain: all of it, none of it drowning you. (-10 health)"
+     }
+    },
+    {
+     "text": "Listen for one voice only",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "A child in a mountain village, asking the sky for her grandmother to stop coughing. You find the village by morning. The cough stops by noon. After that you listen to one voice a day, every day, for a thousand years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_horns_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Among the prayers one night: a voice you have not heard in centuries, though it is a different throat now. Someone at Black Reed Crossing, or a hut on the shore of a lake, or a cliff above the sea, is telling the sky about a dragon that was once a serpent, and is getting the story almost right.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_horns_1"
+    ],
+    "minYearsAfter": 40
+   },
+   "arc": "The Horns of Heaven",
+   "choices": [
+    {
+     "text": "Go and see who it is",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 3,
+      "log": "An old grandparent and a ring of children by a fire. You stay in the clouds above and listen to the whole story. The children are told the dragon is listening. They believe it. They are right."
+     }
+    },
+    {
+     "text": "Let it be. Some stories are better heard from far away",
+     "effects": {
+      "comprehension": 4,
+      "luck": 2,
+      "log": "You lie on your peak and listen to the end. In this version, you are kind. You decide to try to deserve it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_wings_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Something is growing between your shoulders: two hard knots under the scales that itch like nothing has ever itched. A child from the village below the ridge, who is not afraid of anything, climbs up to your head and asks the question children ask: \"Do dragons die?\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     12
+    ]
+   },
+   "arc": "The Itch Between the Shoulders",
+   "choices": [
+    {
+     "text": "Tell the truth: rarely, slowly, and yes",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The child thinks about it. \"Then you had better do something good with it,\" the child says, and goes home for supper. You lie on the ridge until morning, thinking."
+     }
+    },
+    {
+     "text": "Tell the child dragons become something else",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "\"Like what?\" Wings, you say, without meaning to. The child tells the whole village that the dragon on the ridge is going to fly. They wait two hundred years to see it, generation after generation."
+     }
+    },
+    {
+     "text": "Ask the child to scratch between your shoulders",
+     "effects": {
+      "luck": 3,
+      "log": "It takes the child an hour and a rake. It is the best hour you have had in five centuries."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_wings_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The knots are wings now, small and folded, and they will not be finished for centuries. There is nothing above the winged dragon. You know that. After Eungryong, there is only being Eungryong. You look down from the ridge at the human world, which has changed its kings eleven times while you were growing horns.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_im10_wings_1"
+    ],
+    "minYearsAfter": 200
+   },
+   "arc": "The Itch Between the Shoulders",
+   "choices": [
+    {
+     "text": "Spend the waiting years on the humans",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "rain": 1
+      },
+      "log": "Rain where it is needed. A word to a king now and then. A fish in an old fisherman's net. Small things, for centuries. The wings grow anyway."
+     }
+    },
+    {
+     "text": "Spend them in the deep, remembering",
+     "effects": {
+      "qi": 20,
+      "comprehension": 3,
+      "log": "You go back down to the abyss where you waited as an Imugi, and let the whole long life go past you once more: the heron, the pearl, the storm, the word. It is a good life. It is not finished."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im10_nap_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "You close your eyes for a short nap in the lake and open them, as far as you can tell, a moment later. There is a teahouse where your shrine used to be. The kingdom has a different name. The children by the shore are wearing hats you have never seen, and they are pointing at you and asking their parents what you are.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ]
+   },
+   "arc": "A Dragon's Nap",
+   "choices": [
+    {
+     "text": "Rise and remind them",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "The teahouse empties in a breath. By the next spring there is a shrine again, beside the teahouse, which does excellent business from pilgrims. Everyone is happy, including the teahouse."
+     }
+    },
+    {
+     "text": "Go and find out what happened while you slept",
+     "effects": {
+      "comprehension": 4,
+      "luck": 2,
+      "log": "Eighty years. Two wars, one plague, a new dynasty, a fashion in hats. You read every stele between the lake and the capital, and catch up on the world the way you catch fish: patiently."
+     }
+    },
+    {
+     "text": "Close your eyes again. It will all still be here",
+     "effects": {
+      "qi": 15,
+      "log": "It is. Mostly. The teahouse is a temple when you next wake, then a teahouse again. You find this comforting."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im10_nap_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "The new dynasty has an opinion about you. A decree has been posted at the lake, forbidding worship of \"the serpent in the water\" on pain of a fine. The old woman who runs the teahouse reads it out to you herself, every word, then tears it down and uses it to light the stove.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "after": [
+     "dc_im10_nap_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "A Dragon's Nap",
+   "choices": [
+    {
+     "text": "Pay the new dynasty a visit",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 2
+      },
+      "log": "One visit, in a thunderstorm, at the window of the minister who wrote the decree. The decree is withdrawn. A new one appears, praising \"the dragon in the water\", in larger characters."
+     }
+    },
+    {
+     "text": "Leave it to the old woman",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "She sees off two magistrates and a tax collector, armed with a ladle. The decree is never enforced at your lake. You send her a good harvest every year until she dies at ninety-four."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,880 @@
+{
+ "events": [
+  {
+   "id": "biz_robbers_night",
+   "once": false,
+   "maxPerLife": 3,
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ],
+    "notFlags": [
+     "biz_guarded"
+    ]
+   },
+   "weight": 4,
+   "text": "Past midnight, a crash downstairs: four masked robbers are prying open the strongbox of your business.",
+   "choices": [
+    {
+     "text": "Go down and stop them",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 4,
+      "flag": "bizx_rep_up",
+      "log": "Two run, two are carried to the magistrate. The whole street hears that your business is not an easy mark."
+     },
+     "fail": {
+      "taels": -60,
+      "health": -15,
+      "log": "There are more of them than you thought. They leave bruised, and so do you, with the night's takings. (−60 taels)"
+     }
+    },
+    {
+     "text": "Stay hidden and let them take the box",
+     "effects": {
+      "taels": -80,
+      "log": "They take the strongbox and leave the ledgers. Silver can be earned again. (−80 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_robbers_road",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ],
+    "notFlags": [
+     "biz_guarded"
+    ]
+   },
+   "weight": 3,
+   "text": "A cart carrying your goods to market is stopped on the road by bandits. The driver runs back to you, white-faced.",
+   "choices": [
+    {
+     "text": "Ride out after them",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 3,
+      "log": "You catch them at the ford. The goods come home; the bandits do not want to talk about it."
+     },
+     "fail": {
+      "taels": -50,
+      "health": -10,
+      "log": "They know the hills better than you do. The goods are gone. (−50 taels)"
+     }
+    },
+    {
+     "text": "Pay the driver well and write off the cargo",
+     "effects": {
+      "taels": -40,
+      "flag": "bizx_rep_up",
+      "log": "The driver is grateful, and tells everyone you are a fair employer. (−40 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_rival_merchant",
+   "once": false,
+   "maxPerLife": 3,
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 4,
+   "text": "A merchant opens the same kind of business across the street from yours, with a bigger sign and lower prices.",
+   "choices": [
+    {
+     "text": "Win the customers back with better service",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "bizx_rep_up",
+      "log": "Within a season, the regulars are back. The new sign is taken down by winter."
+     },
+     "fail": {
+      "flag": "bizx_rival",
+      "log": "The cheaper prices win this year. Your takings fall."
+     }
+    },
+    {
+     "text": "Lower your prices to match",
+     "effects": {
+      "flag": "bizx_rival",
+      "log": "A price war. Both of you lose silver this year, but you keep your customers."
+     }
+    },
+    {
+     "text": "Offer to buy the rival out",
+     "effects": {
+      "taels": -120,
+      "log": "The merchant takes your silver and moves to another city. The street is yours again. (−120 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_rival_price_war",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner",
+     "biz_lv2"
+    ]
+   },
+   "weight": 3,
+   "text": "Someone is spreading a rumour that your business cheats its customers. The trail leads to a rival merchant guild.",
+   "choices": [
+    {
+     "text": "Find proof and shame them in public",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "flag": "bizx_rep_up",
+      "log": "You find the paid gossip and their paymaster. The guild apologises in front of the whole market."
+     },
+     "fail": {
+      "flag": "bizx_rep_down",
+      "log": "You cannot prove it. The rumour lingers for a season."
+     }
+    },
+    {
+     "text": "Ignore it and let your work speak",
+     "effects": {
+      "flag": "bizx_rep_down",
+      "log": "Some customers stay away for a while. Most come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_inspector_bribe",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 4,
+   "text": "A county inspector walks through your business, frowning at everything, and finally says the paperwork has \"problems\". A small gift would solve them.",
+   "choices": [
+    {
+     "text": "Pay the bribe",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "alignment": -2,
+      "log": "The problems vanish with the silver. The inspector will be back next year. (−50 taels)"
+     }
+    },
+    {
+     "text": "Refuse, and show every page of your books",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "alignment": 2,
+      "flag": "bizx_rep_up",
+      "log": "Your books are perfect. The inspector leaves with nothing but a sour face."
+     },
+     "fail": {
+      "taels": -90,
+      "log": "The inspector finds a missing seal and fines you properly. (−90 taels)"
+     }
+    },
+    {
+     "text": "Report the inspector to the magistrate",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "The magistrate thanks you, and the inspector is moved to a distant county. Some officials now dislike your name."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_cult_protection",
+   "once": false,
+   "maxPerLife": 3,
+   "cat": "danger",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ],
+    "notFlags": [
+     "biz_guarded"
+    ]
+   },
+   "weight": 3,
+   "text": "Three men in black and red robes sit down in your business and order nothing. Their leader explains that the Demonic Cult protects shops on this street, for a monthly fee.",
+   "choices": [
+    {
+     "text": "Pay the protection money",
+     "req": {
+      "minTaels": 70
+     },
+     "effects": {
+      "taels": -70,
+      "alignment": -2,
+      "flag": "biz_cult_paid",
+      "log": "They leave with the silver and a bowl of your best, unpaid for. (−70 taels)"
+     }
+    },
+    {
+     "text": "Throw them out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 8,
+      "flag": "biz_cult_defied",
+      "log": "They leave through the door, not quite on their feet. The street is grateful. The Cult will remember."
+     },
+     "fail": {
+      "health": -25,
+      "flag": "bizx_fire",
+      "deathCause": "the Demonic Cult, over a shopfront",
+      "log": "They beat you badly and break half the furniture on the way out. Business is slow for the rest of the year."
+     },
+     "risky": true
+    },
+    {
+     "text": "Ask the orthodox sects for help",
+     "effects": {
+      "taels": -30,
+      "alignment": 2,
+      "log": "A disciple of a righteous sect sits by your door for a month. The Cult goes elsewhere, for now. (−30 taels)"
+     }
+    },
+    {
+     "text": "Bow low and say the shop cannot pay",
+     "effects": {
+      "fame": -5,
+      "alignment": -1,
+      "log": "They look around your empty tables, take a jar of wine for their trouble, and promise to come back next month. The whole street watched you bow."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "biz_cult_return",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner",
+     "biz_cult_defied"
+    ],
+    "notFlags": [
+     "biz_guarded"
+    ]
+   },
+   "weight": 5,
+   "text": "The men in black and red robes are back, more of them this time, and they are not here to talk about fees.",
+   "choices": [
+    {
+     "text": "Stand at the door and fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "fame": 12,
+      "log": "You hold the door. By morning the whole county knows the Cult lost a fight to a shopkeeper."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "bizx_fire",
+      "deathCause": "a Demonic Cult raid on your business",
+      "log": "They break in and wreck the place. You survive; the year's takings do not."
+     },
+     "risky": true
+    },
+    {
+     "text": "Close for a season and wait for them to lose interest",
+     "effects": {
+      "flag": "bizx_rival",
+      "log": "You lose a season of business, but nobody is hurt."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "biz_famous_guest",
+   "cat": "npc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 4,
+   "text": "A famous wandering swordmaster walks into your business, sits by the window and stays all afternoon. People gather outside just to look.",
+   "choices": [
+    {
+     "text": "Serve them yourself, and refuse payment",
+     "effects": {
+      "flag": "bizx_boom",
+      "fame": 3,
+      "log": "The swordmaster nods once and leaves a line of calligraphy on your wall. Customers come from three counties to see it."
+     }
+    },
+    {
+     "text": "Ask for a lesson in exchange",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "artYears": 0.5,
+      "log": "An amused hour in the back courtyard. You learn more than you expected."
+     },
+     "fail": {
+      "log": "The swordmaster laughs and says no, kindly. They still pay double.",
+      "taels": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_poet_guest",
+   "cat": "npc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 3,
+   "text": "A celebrated poet spends a rainy week at your business and writes a poem about it that the whole province is soon reciting.",
+   "choices": [
+    {
+     "text": "Hang the poem above the door",
+     "effects": {
+      "flag": "bizx_boom",
+      "log": "Your business is in a poem now. Strangers arrive asking for the table by the window."
+     }
+    },
+    {
+     "text": "Ask the poet to write one about the owner instead",
+     "effects": {
+      "flag": "bizx_rep_up",
+      "charm": 2,
+      "log": "The poem about you is shorter, kinder and a little too honest. People still come to see who it is about."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_fire",
+   "cat": "danger",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 2,
+   "text": "Fire! A lamp tipped in the night, and flames are climbing the back wall of your business.",
+   "choices": [
+    {
+     "text": "Run into the smoke to save what you can",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You come out coughing, with the ledgers and the strongbox. The building will be rebuilt.",
+      "flag": "bizx_fire"
+     },
+     "fail": {
+      "health": -20,
+      "flag": "bizx_fire",
+      "deathCause": "a fire at your own business",
+      "log": "The smoke is worse than the fire. Neighbours pull you out. The building is half gone."
+     },
+     "risky": true
+    },
+    {
+     "text": "Organise the street into a bucket line",
+     "effects": {
+      "flag": "bizx_fire",
+      "fame": 3,
+      "log": "The whole street turns out. The building is saved, though not the year's profits. The neighbours remember who led them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_flood_stock",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 2,
+   "text": "A week of heavy rain floods the storeroom of your business. Half the stock is ruined.",
+   "choices": [
+    {
+     "text": "Throw it out and restock at once",
+     "effects": {
+      "taels": -60,
+      "log": "New stock costs silver, but the shelves are full again before the rain ends. (−60 taels)"
+     }
+    },
+    {
+     "text": "Sell the damaged goods cheap",
+     "effects": {
+      "flag": "bizx_rep_down",
+      "taels": -20,
+      "log": "Bargain hunters clear the storeroom. You lose a little silver and a little reputation."
+     }
+    },
+    {
+     "text": "Dry what you can with your own hands",
+     "effects": {
+      "flag": "bizx_rep_down",
+      "strength": 1,
+      "log": "Three days of carrying wet sacks into the sun. You save a third of it and lose your customers' patience."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_army_contract",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner",
+     "biz_lv4"
+    ]
+   },
+   "weight": 4,
+   "text": "An officer of the provincial army arrives with a sealed letter: the army needs supplies for a winter campaign, and your business is large enough to provide them.",
+   "choices": [
+    {
+     "text": "Accept, and deliver everything on time",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 600,
+      "fame": 6,
+      "log": "Every cart arrives on the day promised. The army pays in full, and asks for you by name next time. (+600 taels)"
+     },
+     "fail": {
+      "taels": 250,
+      "flag": "bizx_rep_down",
+      "log": "Half the carts are late in the snow. The army pays, but much less. (+250 taels)"
+     }
+    },
+    {
+     "text": "Accept, but charge the army double",
+     "effects": {
+      "taels": 700,
+      "alignment": -4,
+      "log": "The quartermaster pays without blinking. Somewhere a soldier eats a little less this winter. (+700 taels)"
+     }
+    },
+    {
+     "text": "Decline: the army's business brings the army's enemies",
+     "effects": {
+      "alignment": 1,
+      "log": "The officer leaves, offended. Your business stays out of the war."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_staff_betrayal",
+   "cat": "npc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner",
+     "biz_managed"
+    ]
+   },
+   "weight": 2,
+   "text": "Your manager has vanished in the night, along with the strongbox, the best stock and the ledgers that would show how long it has been going on.",
+   "choices": [
+    {
+     "text": "Track them down",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You find them at an inn two towns away, counting your silver. Most of it comes home. They do not.",
+      "flag": "bizx_fire_manager"
+     },
+     "fail": {
+      "taels": -150,
+      "flag": "bizx_fire_manager",
+      "log": "The trail goes cold at the river. The silver is gone. (−150 taels)"
+     }
+    },
+    {
+     "text": "Let them go and learn from it",
+     "effects": {
+      "taels": -120,
+      "flag": "bizx_fire_manager",
+      "log": "You write off the loss and start again. Next time you will choose more carefully. (−120 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_ledger_check",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 3,
+   "text": "A night with the ledgers by lamplight. The numbers are almost right, but not quite, and the difference has a shape.",
+   "choices": [
+    {
+     "text": "Follow the numbers",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 60,
+      "log": "A supplier has been overcharging you for years. The silver comes back, with an apology. (+60 taels)"
+     },
+     "fail": {
+      "log": "By dawn your eyes ache and the numbers still do not explain themselves."
+     }
+    },
+    {
+     "text": "Close the book and sleep",
+     "effects": {
+      "log": "Some mysteries are cheaper to leave alone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_loyal_staff",
+   "cat": "npc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner"
+    ]
+   },
+   "weight": 3,
+   "text": "An old employee of your business asks for a moment. A rival offered them double wages to leave, and they want you to know they said no.",
+   "choices": [
+    {
+     "text": "Raise their wages anyway",
+     "effects": {
+      "taels": -30,
+      "flag": "bizx_rep_up",
+      "log": "They go back to work with a straight back. The others notice. (−30 taels)"
+     }
+    },
+    {
+     "text": "Thank them warmly",
+     "effects": {
+      "log": "They were not asking for silver. Being thanked was enough."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_branch_letter",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "biz_owner",
+     "biz_branches"
+    ]
+   },
+   "weight": 3,
+   "text": "A letter from your branch in another city: business is good, the staff are honest, and could you please visit one day?",
+   "choices": [
+    {
+     "text": "Travel to visit them",
+     "effects": {
+      "flag": "bizx_rep_up",
+      "log": "The branch staff throw a dinner in your honour. You come home with ideas and a sore stomach."
+     }
+    },
+    {
+     "text": "Send a gift instead",
+     "effects": {
+      "taels": -20,
+      "log": "A crate of good wine goes south. The branch writes back twice as warmly. (−20 taels)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_offer_teahouse",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [],
+    "notFlags": [
+     "biz_owner"
+    ],
+    "minTaels": 660
+   },
+   "weight": 2,
+   "text": "An old teahouse owner wants to retire to the countryside and asks if you would buy the teahouse, regulars, go boards and all.",
+   "choices": [
+    {
+     "text": "Buy it (660 taels)",
+     "req": {
+      "minTaels": 660
+     },
+     "effects": {
+      "taels": -660,
+      "flag": "bizx_buy_teahouse",
+      "log": "You sign the deed and take the keys. (−660 taels)"
+     }
+    },
+    {
+     "text": "Wish them well and say no",
+     "effects": {
+      "log": "They find another buyer by spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_offer_inn",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [],
+    "notFlags": [
+     "biz_owner"
+    ],
+    "minTaels": 1100
+   },
+   "weight": 2,
+   "text": "The widowed owner of a busy roadside inn is tired of the work and offers to sell it to someone they trust.",
+   "choices": [
+    {
+     "text": "Buy it (1100 taels)",
+     "req": {
+      "minTaels": 1100
+     },
+     "effects": {
+      "taels": -1100,
+      "flag": "bizx_buy_inn",
+      "log": "You sign the deed and take the keys. (−1100 taels)"
+     }
+    },
+    {
+     "text": "Wish them well and say no",
+     "effects": {
+      "log": "They find another buyer by spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_offer_pawnshop",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [],
+    "notFlags": [
+     "biz_owner"
+    ],
+    "minTaels": 880
+   },
+   "weight": 2,
+   "text": "A pawnbroker with no heirs offers to sell you the shop, the counter, the ledgers and every unclaimed sword in the back room.",
+   "choices": [
+    {
+     "text": "Buy it (880 taels)",
+     "req": {
+      "minTaels": 880
+     },
+     "effects": {
+      "taels": -880,
+      "flag": "bizx_buy_pawnshop",
+      "log": "You sign the deed and take the keys. (−880 taels)"
+     }
+    },
+    {
+     "text": "Wish them well and say no",
+     "effects": {
+      "log": "They find another buyer by spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_offer_pharmacy",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [],
+    "notFlags": [
+     "biz_owner"
+    ],
+    "minTaels": 1320
+   },
+   "weight": 2,
+   "text": "An elderly pharmacist, too frail for the drawers and scales, offers to sell you the pharmacy and its recipes.",
+   "choices": [
+    {
+     "text": "Buy it (1320 taels)",
+     "req": {
+      "minTaels": 1320
+     },
+     "effects": {
+      "taels": -1320,
+      "flag": "bizx_buy_pharmacy",
+      "log": "You sign the deed and take the keys. (−1320 taels)"
+     }
+    },
+    {
+     "text": "Wish them well and say no",
+     "effects": {
+      "log": "They find another buyer by spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "biz_offer_smithy",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "flags": [],
+    "notFlags": [
+     "biz_owner"
+    ],
+    "minTaels": 1540
+   },
+   "weight": 2,
+   "text": "A smith with a bad shoulder offers to sell you the forge, the anvils and the apprentices who come with them.",
+   "choices": [
+    {
+     "text": "Buy it (1540 taels)",
+     "req": {
+      "minTaels": 1540
+     },
+     "effects": {
+      "taels": -1540,
+      "flag": "bizx_buy_smithy",
+      "log": "You sign the deed and take the keys. (−1540 taels)"
+     }
+    },
+    {
+     "text": "Wish them well and say no",
+     "effects": {
+      "log": "They find another buyer by spring."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,744 @@
+{
+ "events": [
+  {
+   "id": "dc_im_spring_1",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "Cold water, green light, the sound of a waterfall so constant it is almost silence. Something round and white rests between two stones at the bottom of a spring that has no name. On the rock above, a grey heron stands on one leg and watches the egg the way only patient things watch.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     0,
+     0
+    ]
+   },
+   "arc": "The Egg in the Spring",
+   "choices": [
+    {
+     "text": "Stay still. Very still",
+     "effects": {
+      "luck": 3,
+      "log": "You stay still for a whole season. So does the heron. In the end the heron is the first to give up, which you will remember."
+     }
+    },
+    {
+     "text": "Turn toward the warmth of the sun on the water",
+     "effects": {
+      "qi": 6,
+      "log": "Light comes down through the water in moving threads. You lean toward it without knowing what leaning is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_spring_2",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "Spring floods come down the mountain in the night, brown and loud. The current takes your stone and rolls it, and you with it, toward the lip of the waterfall.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     0,
+     0
+    ],
+    "after": [
+     "dc_im_spring_1"
+    ]
+   },
+   "arc": "The Egg in the Spring",
+   "choices": [
+    {
+     "text": "Wedge yourself into the roots of the bank",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "log": "A willow root catches you like a hand. In the morning the water is clear again and you are exactly where a serpent should be."
+     },
+     "fail": {
+      "health": -15,
+      "log": "Over the falls, into the pool below, onto stones. The shell holds. Something inside it learns what falling is. (-15 health)"
+     }
+    },
+    {
+     "text": "Let the water take you",
+     "effects": {
+      "luck": 4,
+      "log": "Over the falls and down into a deeper, darker pool, the kind the old stories call a dragon pool. It is a better place to hatch than the one you came from."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_heron_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "You are as long as a finger and as thick as a reed, and the world is enormous and wants to eat you. The heron that watched your egg for two years has not forgotten you. Its shadow falls across the shallows.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     1
+    ],
+    "age": [
+     2,
+     6
+    ]
+   },
+   "arc": "The Heron",
+   "choices": [
+    {
+     "text": "Freeze among the stones",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 2,
+      "log": "The beak comes down a hair's width from your head and comes up with a minnow instead. You learn that stillness is a kind of armour."
+     },
+     "fail": {
+      "health": -12,
+      "log": "The beak takes your tail. You tear free and leave a little of yourself behind. (-12 health)"
+     }
+    },
+    {
+     "text": "Dart for the deep water",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 2,
+      "log": "Into the black water where herons do not go. Down there you are just another dark shape."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Too slow. The heron pins you for a moment against the stones before you wriggle free. (-10 health)"
+     }
+    },
+    {
+     "text": "Strike at its foot",
+     "effects": {
+      "strength": 3,
+      "health": -6,
+      "log": "You bite a heron's ankle. It is like biting a twig. But the heron, astonished, flies off, and you are the first serpent in the pool ever to make it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_heron_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The heron is old now. It stands in the shallows in the cold, not fishing, just standing, its feathers ragged. You are longer than it is tall.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     3
+    ],
+    "after": [
+     "dc_im_heron_1"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The Heron",
+   "choices": [
+    {
+     "text": "Leave it its last winter",
+     "effects": {
+      "alignment": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You swim past it every day until the snow. In spring it is gone. You find you miss it, which surprises you."
+     }
+    },
+    {
+     "text": "Take it, as it would have taken you",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "It does not fight. Afterwards the pool is very quiet, and it is yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_child_1",
+   "cat": "npc",
+   "weight": 25,
+   "once": true,
+   "text": "A human child comes down to the stream with a basket of washing and finds you sunning yourself on a flat stone. {He} does not scream. {He} looks at you for a long time, then very slowly breaks off a corner of a rice cake and holds it out on a leaf.",
+   "npc": {
+    "role": "serpent_child",
+    "spawn": {
+     "role": "friend",
+     "tag": "serpent_child",
+     "ageAbs": 7,
+     "opinion": 25
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     2
+    ]
+   },
+   "arc": "The Child with the Rice Cake",
+   "choices": [
+    {
+     "text": "Take the rice cake",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "fed_the_serpent",
+      "log": "It is sweet and sticky and nothing like a frog. {npc} laughs, delighted, and comes back the next day, and the next. Somebody in the world has decided you are a friend."
+     }
+    },
+    {
+     "text": "Slide away into the water",
+     "effects": {
+      "npcFlag": "fed_the_serpent",
+      "log": "{npc} leaves the rice cake on the stone anyway. It is gone in the morning. Neither of you mentions it, but the leaf with a rice cake on it appears every few days for the rest of the summer."
+     }
+    },
+    {
+     "text": "Hiss and show your fangs",
+     "effects": {
+      "strength": 1,
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} drops the rice cake and runs. From then on the village children say there is a little demon in the stream."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_child_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is older now and has started bringing a friend, who does not believe in the stream serpent. \"Show {him},\" {npc} whispers to the water. \"Please. {He} says I made you up.\"",
+   "npc": {
+    "role": "serpent_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     3
+    ],
+    "after": [
+     "dc_im_child_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "fed_the_serpent"
+    ]
+   },
+   "arc": "The Child with the Rice Cake",
+   "choices": [
+    {
+     "text": "Rise out of the water and look at them both",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "mem": {
+       "deed": "trusted",
+       "w": 12,
+       "note": "showed itself when I asked"
+      },
+      "log": "The friend falls over backwards into the reeds. {npc} has never been so proud of anything in {his} life."
+     }
+    },
+    {
+     "text": "Stay hidden: this is between you and {npc}",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "kept_secret",
+       "w": 6,
+       "note": "kept our secret"
+      },
+      "log": "Nothing in the water moves. The friend laughs. {npc} does not mind, really. Some things are better as secrets."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_child_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} comes to the stream for the last time before leaving the village: grown, with a travel bundle and a sword wrapped in cloth. {He} sits on the flat stone and talks to the water for an hour about where {he} is going.",
+   "npc": {
+    "role": "serpent_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_im_child_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "fed_the_serpent"
+    ]
+   },
+   "arc": "The Child with the Rice Cake",
+   "choices": [
+    {
+     "text": "Leave something on the stone for {him}: a shed skin",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "gave me its skin to carry"
+      },
+      "log": "{npc} wraps the skin in silk and carries it into the murim. Years later {he} will tell people it is the reason {he} is still alive."
+     }
+    },
+    {
+     "text": "Coil on the stone beside {him} until {he} goes",
+     "effects": {
+      "mem": {
+       "deed": "farewell",
+       "w": 10,
+       "note": "saw me off"
+      },
+      "log": "Neither of you says anything. When {he} goes, {he} looks back four times."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_im_frogs_1",
+   "cat": "explore",
+   "weight": 14,
+   "once": true,
+   "text": "Your first real hunt: a frog as big as your head, sitting on a lily pad, entirely sure of itself.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     1
+    ],
+    "age": [
+     2,
+     6
+    ]
+   },
+   "arc": "The First Hunt",
+   "choices": [
+    {
+     "text": "Wait under the pad for it to drop its guard",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 35
+     },
+     "ok": {
+      "qi": 6,
+      "strength": 2,
+      "log": "An afternoon of waiting, one strike, and you have learned the whole art of hunting: be where they will be, before they are."
+     },
+     "fail": {
+      "log": "The frog leaves first. Frogs, you learn, are also patient."
+     }
+    },
+    {
+     "text": "Lunge",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "strength": 3,
+      "log": "You get it, and then you have to work out how to swallow something wider than you are. It takes most of the day. It is worth it."
+     },
+     "fail": {
+      "health": -4,
+      "log": "The frog kicks you in the face and leaves. Your pride is the only thing that is really hurt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_net_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A fisherman's net comes up out of the river with you in it, tangled among the carp. The old man in the boat squints at you. \"A snake,\" he says. \"With eyes like that. Huh.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     2
+    ]
+   },
+   "arc": "The Fisherman's Net",
+   "choices": [
+    {
+     "text": "Lie still and look at him",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "He looks at you a long time, then untangles you with great care and puts you back. \"Grow big,\" he says. \"Remember who let you go.\" You will."
+     },
+     "fail": {
+      "health": -8,
+      "log": "He shakes you out of the net onto the deck and pokes you with an oar until you go over the side. Not cruel. Not kind. Just a fisherman."
+     }
+    },
+    {
+     "text": "Bite your way out",
+     "effects": {
+      "strength": 2,
+      "health": -5,
+      "log": "You chew through three strands of hemp and drop back into the river before he can decide what you are. He tells the whole village about the snake that ate his net."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_net_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The old fisherman's boat is moored at the same bend in the river every evening now, and every evening he drops one small carp over the side, without looking, and says: \"For the snake with the eyes.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     2,
+     4
+    ],
+    "after": [
+     "dc_im_net_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Fisherman's Net",
+   "choices": [
+    {
+     "text": "Take the carp",
+     "effects": {
+      "qi": 4,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "An old man and a serpent, the same bend of the river, ten years of evenings. When he stops coming, you know why, and you go and lie in the water below his house for a whole night."
+     }
+    },
+    {
+     "text": "Bring him something back: drive the fish into his net",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "His nets come up full for the rest of his life. He never says it was you. He builds a little shrine at the bend of the river instead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_winter_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "A hard winter. The stream freezes from the edges inward. Every instinct you have says: go down, go deep, go still.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     1
+    ],
+    "age": [
+     2,
+     5
+    ]
+   },
+   "arc": "The First Winter",
+   "choices": [
+    {
+     "text": "Find the deepest hollow under the ice and sleep",
+     "effects": {
+      "qi": 8,
+      "log": "You sleep under the ice for four months and dream of nothing at all. In spring you wake longer than you went to sleep."
+     }
+    },
+    {
+     "text": "Stay awake and hunt the sleeping fish",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 4,
+      "log": "Everything else is asleep. You are not. It is the best winter any serpent in the stream has ever had."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The cold gets into your blood. You spend the last of the winter half frozen in the mud, wondering if this is how it ends. It is not. (-15 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_bead_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "One night, deep in the pool, you dream of a shining bead falling through the sky, turning over and over, and you wake with your mouth open as if you had tried to catch it. You do not know what it is. Some part of you does.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     2
+    ]
+   },
+   "arc": "The Dream of the Bead",
+   "choices": [
+    {
+     "text": "Lie awake and try to remember the dream",
+     "effects": {
+      "comprehension": 4,
+      "qi": 5,
+      "log": "You never quite remember it. But for the rest of your life, when lightning flashes, you look up."
+     }
+    },
+    {
+     "text": "Go back to sleep",
+     "effects": {
+      "luck": 2,
+      "log": "The dream comes again, every hundred years or so, a little closer each time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_boys_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Village boys have found your pool. They throw stones into it to see how deep it is, and shout to hear the echo off the rock wall. The old women of the village would beat them for it: you do not throw stones into a dragon pool. The boys have not been told.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     3
+    ]
+   },
+   "arc": "The Pool That Must Not Be Named",
+   "choices": [
+    {
+     "text": "Stir up the water until they run",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "log": "The pool boils for a breath without any wind. The boys run home white-faced, and the next day every child in the village is told the old rule again."
+     }
+    },
+    {
+     "text": "Ignore them. Boys go home eventually",
+     "effects": {
+      "luck": 2,
+      "log": "They get bored by sunset. One of them leaves a stone on the bank, balanced on another, as if in apology."
+     }
+    },
+    {
+     "text": "Let one of them see you, just for a moment",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im_boy_saw",
+      "log": "One boy sees a silver head and a gold eye in the dark water. Nobody believes him. Forty years later he is the village headman, and he still does not throw stones into the pool."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_otter_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "An otter has moved into the stream: quick, clever, hungry, and very interested in anything long and silver.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     2
+    ]
+   },
+   "arc": "The Otter",
+   "choices": [
+    {
+     "text": "Fight it for the stream",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 1
+      },
+      "log": "A long, ugly afternoon. The otter leaves the stream for good and tells every otter downriver about you."
+     },
+     "fail": {
+      "health": -30,
+      "log": "It is faster than you and it has done this before. You barely get away into the reeds.",
+      "deathCause": "an otter, before you were anything at all"
+     },
+     "risky": true
+    },
+    {
+     "text": "Move to the waterfall pool, where it cannot follow",
+     "effects": {
+      "luck": 2,
+      "log": "You find a crack behind the falls where the water is loud and the otter cannot go. It becomes your home for years."
+     }
+    },
+    {
+     "text": "Let it have the shallows, and keep the deep",
+     "effects": {
+      "comprehension": 3,
+      "log": "You share the stream without ever agreeing to. It is your first lesson in territory: you do not have to own everything to own enough."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_lantern_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "A paper lantern drifts down the river one summer night, glowing, with a prayer written on it in a child's hand. It catches on the reeds right above your head.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     3
+    ]
+   },
+   "arc": "The Lantern on the River",
+   "choices": [
+    {
+     "text": "Push it gently back into the current",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "log": "It floats on down toward the sea with its prayer. You never know what it asked for. You hope it got it."
+     }
+    },
+    {
+     "text": "Keep it in the reeds and watch it until it burns out",
+     "effects": {
+      "comprehension": 3,
+      "log": "It burns for an hour, then the paper catches and it is gone in a breath. You think about that for longer than a serpent should."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im_shrine_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Someone has built a tiny shrine of three stones by your stream, with a bowl of rice in front of it. You do not know who it is for. Then you realise the bowl is facing the water.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     1,
+     3
+    ]
+   },
+   "arc": "The First Shrine",
+   "choices": [
+    {
+     "text": "Eat the rice",
+     "effects": {
+      "qi": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "In the morning the bowl is empty, and the village knows. The next bowl has a little meat in it."
+     }
+    },
+    {
+     "text": "Leave it, but let them see you near it",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "An old woman sees a silver shape coiled around the shrine at dawn. By the next festival there are five shrines."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

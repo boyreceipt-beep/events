@@ -1,0 +1,5412 @@
+{
+ "events": [
+  {
+   "id": "dc_cq_simmani_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "Five ginseng diggers come up the north slope in single file at the end of summer: five, because a party must be an odd number. They have eaten no meat and no fish for a week, they wear clean white, and at the flat rock below your pool the eldest, {npc}, sets out a bowl of rice and a cup for the mountain god and asks to be shown one root. You are lying in the bracken a spear's length away. Under your chin, where your breath has fallen every night for twenty years, grows a ginseng with five leaves to a stem and a crown of red berries.",
+   "npc": {
+    "role": "cq_simmani",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_simmani",
+     "ageAbs": 61,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Ginseng Diggers",
+   "choices": [
+    {
+     "text": "Breathe on the berries so they flash red as {npc} turns",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcFlag": "cq_simmani",
+      "mem": {
+       "deed": "shown",
+       "w": 15,
+       "note": "showed me the root"
+      },
+      "log": "{npc} goes very still, then shouts \"Simbatta!\" three times, the old cry that means \"I have seen it\". The other four bow and wait while {he} digs for half a day with a deer-horn pick, never breaking one hair root. The best rice cake stays on the rock for the mountain god. You eat it."
+     }
+    },
+    {
+     "text": "Lie on the plant. It grew on your breath; it is yours",
+     "effects": {
+      "qi": 10,
+      "strength": 2,
+      "tally": {
+       "pride": 1
+      },
+      "flag": "cq_simmani_x",
+      "npcFlag": "cq_simmani",
+      "log": "They search the slope until dusk and go down with nothing but bracken burrs. {npc} looks back once at the bracken where you lie, a long look, the look of someone who has been doing this for forty years and knows when the mountain is saying no."
+     }
+    },
+    {
+     "text": "Move your tail off a smaller root further down, where the youngest is digging",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "cq_simmani",
+      "log": "The youngest finds it and shouts the cry in a cracked voice and weeps. {npc} pats the youngest on the back and does not dig at all that day. You keep the old root under your chin, and the old digger keeps a certain look on the bracken."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_simmani_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The youngest of the five diggers comes back up the slope alone, out of season, with a buyer in a red sash who smells of a sect's medicine hall, a sack of lime, and a map. Somebody has sold the place where the mountain gives roots. {npc}, the eldest, is not with them. {He} is down at the village, mending a fence, knowing nothing.",
+   "npc": {
+    "role": "cq_simmani"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_cq_simmani_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "cq_simmani"
+    ]
+   },
+   "arc": "The Ginseng Diggers",
+   "choices": [
+    {
+     "text": "Rise out of the pool, horns first, and look at them",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "The buyer drops the lime sack and the map and does not stop running until the river. The youngest stands frozen, then kneels in the bracken and weeps, and you let the youngest go. Some mistakes are made only once."
+     }
+    },
+    {
+     "text": "Draw the old root deeper into the earth, where no pick will find it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 8,
+      "log": "You breathe the root down a hand, two hands, under a stone. They dig all day and find stone. The buyer calls the youngest a liar and leaves without paying, which is its own kind of justice."
+     },
+     "fail": {
+      "tally": {
+       "ward": -1
+      },
+      "health": -5,
+      "log": "The root will not go deeper; roots have their own minds. They dig it out in the afternoon. You lie in the bracken with an ache under your chin where it was, as if a tooth had gone. (-5 health)"
+     }
+    },
+    {
+     "text": "Bring {npc} up the slope with a crow calling all the way",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "called",
+       "w": 10,
+       "note": "sent a crow to lead me up the slope"
+      },
+      "log": "{npc} follows the crow up the slope, puffing, and comes out of the trees on the two of them with the lime and the map. {He} says nothing at all. The youngest goes down the mountain and never digs again. The buyer is chased into the river by an old person with a deer-horn pick."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_simmani_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} is too old for the mountain now, but a grandchild has carried {him} up the north slope on an A-frame for one last look. At the flat rock {he} sets down a bowl of rice and, beside it, the deer-horn pick, worn to a sliver. \"Forty-four summers,\" {he} tells the rock. \"I never once took what I was not shown.\"",
+   "npc": {
+    "role": "cq_simmani"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_cq_simmani_2"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "cq_simmani"
+    ]
+   },
+   "arc": "The Ginseng Diggers",
+   "choices": [
+    {
+     "text": "Show {him} the old root one last time, berries red",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "npcPass": "old age, after a last climb",
+      "mem": {
+       "deed": "shown",
+       "w": 20,
+       "note": "showed me the old root and let it be"
+      },
+      "log": "{npc} sees it through the bracken, red as a coal, and does not shout and does not dig. {He} just bows to it, and to the bracken, and is carried home. That winter {he} dies smiling. The grandchild becomes a digger and leaves rice on the rock every year."
+     }
+    },
+    {
+     "text": "Let the grandchild find a root of their own, close by",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "ward": 1
+      },
+      "npcPass": "old age, after a last climb",
+      "log": "The grandchild shouts the cry in a high clear voice, three times. {npc} laughs until {he} has to sit down. The pick stays on the rock until moss takes it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dokkaebi_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "A moonless night, and blue fires bobbing over the ford like lanterns nobody is holding. Out of them hops a goblin on one leg, with one horn, one eye, a knobbed club and a smell of old straw. \"Long thing in the pool!\" it shouts. \"This ford is mine at night. Wrestle me for it, or pay the toll like the miller's wife.\" The miller's wife, you happen to know, pays in buckwheat jelly.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Goblin at the Ford",
+   "choices": [
+    {
+     "text": "Wrestle it: hook the one leg",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "cq_dokkaebi_met",
+      "log": "You get a coil round the one leg and it goes over into the shallows with a squawk. It sits up dripping and laughing. \"Nobody has thrown me since the old king's time,\" it says. \"The ford is yours at night. I will want a rematch.\""
+     },
+     "fail": {
+      "health": -8,
+      "flag": "cq_dokkaebi_met",
+      "log": "It is much stronger than it is tall. It throws you over its hip into the deep water three times, and on the third it apologises, sincerely, and helps you up. (-8 health)"
+     }
+    },
+    {
+     "text": "Push on its right side, where goblins are weak",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "cq_dokkaebi_met",
+      "log": "It falls over like a broom knocked off a wall, which, you will later learn, is roughly what it is. \"Who told you that?\" it demands. Nobody did. You watched."
+     },
+     "fail": {
+      "health": -5,
+      "flag": "cq_dokkaebi_met",
+      "log": "You push its left side, which is the wrong side. It is very pleased about this. (-5 health)"
+     }
+    },
+    {
+     "text": "Share the miller's wife's buckwheat jelly with it instead",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "cq_dokkaebi_met",
+      "log": "You eat the jelly together on the bank, the goblin talking the whole time: about the old king, about a fox it owes money, about how nobody wrestles properly any more. It is the most anyone has talked to you in forty years. You stay till cockcrow."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dokkaebi_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The goblin comes back with friends, which is worse: a broom with a face, a sieve with a voice, a pestle that rolls everywhere, all the old things thrown out of the village houses over the years and come back to life the way old things do. They want to hold a feast at your pool. In return the goblin offers to knock anything you like out of the ground with its club: \"Gold, come out! Rice, come out! Whatever you want.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_cq_dokkaebi_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "cq_dokkaebi_met"
+    ]
+   },
+   "arc": "The Goblin at the Ford",
+   "choices": [
+    {
+     "text": "Ask for rice, out of the ground, in the poorest widow's yard",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ward": 1
+      },
+      "flag": "cq_dk_widow",
+      "log": "In the morning the widow by the upper paddies finds three sacks of rice in the yard and a lot of small footprints, some of them from a broom. She tells nobody. The goblins come back for her jelly every month after that."
+     }
+    },
+    {
+     "text": "Ask them to mend the mill weir in one night",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "They build all night, singing badly. At dawn the weir is mended with stones no ten men could lift, crooked in a way that works better than straight. The miller says goblins did it. He is right, which nobody believes."
+     }
+    },
+    {
+     "text": "Ask for nothing. A feast is a feast",
+     "effects": {
+      "charm": 4,
+      "log": "The feast is very loud and lasts until the sky goes grey. The broom dances with the pestle. You laugh for the first time in your life, a sound like a stone rolling down a stream, and the goblins cheer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dokkaebi_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The widow by the upper paddies has grown comfortable on goblin rice, and tired of goblins: they eat all her jelly, they rearrange her pots, they want to wrestle her son. So she has hung red cloth on her gate and smeared it with a horse's blood, and now the goblins sit weeping at the edge of your pool, because they cannot get in to say goodbye.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_cq_dokkaebi_2"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "cq_dk_widow"
+    ]
+   },
+   "arc": "The Goblin at the Ford",
+   "choices": [
+    {
+     "text": "Carry their goodbye to her yourself, in the night",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You put your nose over her wall and leave a broom, very clean, on the step. She understands. In the morning she leaves one last bowl of jelly outside the red gate, and the goblins eat it and go up the river for ever, singing."
+     }
+    },
+    {
+     "text": "Tell them it is fair. Guests should know when to leave",
+     "effects": {
+      "comprehension": 3,
+      "log": "They sulk for a year. Then the broom says, \"The dragon is right,\" and that settles it. They take up with a family of charcoal-burners on the far side of the mountain, who deserve them."
+     }
+    },
+    {
+     "text": "Let them live at the ford with you instead",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 2
+      },
+      "log": "Blue fires over your ford every moonless night for a hundred years after. The village calls it the goblin ford and crosses it only by day, which keeps the children out of the deep water."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_seonang_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "On the pass above the village of the well stands an old pine hung with strips of five colours, over a cairn taller than a child. Travellers add three stones, spit once for luck, and pray for the road. You like to sleep curled round the cairn on cold nights; the stones keep the day's warmth. At dawn a girl in travelling clothes comes up the pass alone, ahead of a bride's palanquin, adds her three stones, and tells the tree in a whisper that she does not know the family she is going to, and she is frightened.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Cairn on the Pass",
+   "choices": [
+    {
+     "text": "Push a green scale out between the stones where she will see it",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "flag": "cq_seonang_scale",
+      "log": "She finds it, blue-green and shining, and goes pale, and then very red, and puts it in her sleeve. She goes down the far side of the pass with her chin up. A scale is not a promise. She treats it like one."
+     }
+    },
+    {
+     "text": "Make the old pine sigh over her, in a windless dawn",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The cloth strips lift all together and the pine sighs once. She bows to it three times and goes on, less frightened, more puzzled, which is not a bad way to arrive anywhere."
+     }
+    },
+    {
+     "text": "Lie still. The road is hers to walk",
+     "effects": {
+      "comprehension": 3,
+      "log": "She wipes her face, straightens her collar and walks on. You hear the palanquin bearers singing on the far side of the pass for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_seonang_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The cairn on the pass is taller than a man now, and travellers say the pass is lucky: nobody has been robbed on it in twenty years, nobody has frozen. A woman with three children and an ox cart stops at the pine on her way home to visit her mother. The children each add three stones. She adds nine, and ties a strip of blue cloth to the lowest branch, and says to the stones, \"Thank you. It was a good house after all.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_cq_seonang_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "cq_seonang_scale"
+    ]
+   },
+   "arc": "The Cairn on the Pass",
+   "choices": [
+    {
+     "text": "Let her see you, just your eye, between the stones",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "She sees it and does not scream. She nods to it, as to an old neighbour, and tells the children to bow, and they do, without knowing to what. That family adds stones to the cairn for six generations."
+     }
+    },
+    {
+     "text": "Lay a warm breath on the ox cart's road ahead, all the way down",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "log": "The snow on the far side of the pass melts a day early, in a strip exactly the width of an ox cart. Nobody ever explains it. The cairn grows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dure_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "Transplanting time, and the whole village works as one team behind its farming flag: a tall pole, a long banner lettered FARMING IS THE GREAT ROOT OF ALL UNDER HEAVEN, a drum, a gong and a lot of shouting. At the crossroads the team of the well village meets the team of the upper village behind its own flag, and by custom the younger village's flag must bow first. Each says the other is younger. The poles are coming down to a fighting angle.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Farming Flag",
+   "choices": [
+    {
+     "text": "Send one gust that bows both flags at once",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "cq_dure_met",
+      "log": "Both banners dip together, exactly, like two old men bowing in a doorway. There is a silence. Then the drummers laugh, and somebody shares a gourd of makgeolli, and both teams go back to planting a little behind time."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "flag": "cq_dure_met",
+      "log": "Your gust bows the upper village's flag and nearly knocks the bearer into the paddy. The well village cheers. The upper village swears revenge next year. You have, without meaning to, picked a side."
+     }
+    },
+    {
+     "text": "Lift your head out of the paddy beside the crossroads",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "pride": 1,
+       "fear": 1
+      },
+      "flag": "cq_dure_met",
+      "log": "Both flags go down to the mud at once, and so do both teams. Nobody fights. Nobody plants either, for the rest of the day. You had not thought that far."
+     }
+    },
+    {
+     "text": "Let them settle it. It is their quarrel",
+     "effects": {
+      "comprehension": 2,
+      "flag": "cq_dure_met",
+      "log": "They shout for an hour, then the oldest woman of the upper village points out that the rice will not plant itself, and both flags bow at the same time out of pure tiredness."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dure_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A dry spring, and transplanting day has come with the paddies only half flooded. The team stands at the edge of the beds with the seedlings in bundles, and the drummer, who is young and has heard the stories, turns toward your pool and beats the drum at it. Not a prayer. A demand. You are a Neck-Star Dragon now; you could answer.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_cq_dure_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "The Farming Flag",
+   "choices": [
+    {
+     "text": "Answer: a morning of rain on the paddies",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "virtue": 2,
+       "ward": 1
+      },
+      "qi": -8,
+      "log": "It rains all morning and the team plants in it, singing, mud to the knee. The young drummer never stops beating the whole time. At noon you are tired and pleased, and the drummer is unbearable for a month."
+     }
+    },
+    {
+     "text": "Shift the stream into the dry upper beds instead",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "ward": 1
+      },
+      "log": "You put your shoulder against the stream bank and lean, and the water goes where you lean it. They plant in creek water, which is less glorious than rain and much more reliable."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The bank gives too much and a seedling bed washes into the river. The team plants what is left by hand-carried water and grumbles at the drummer. (-8 health)"
+     }
+    },
+    {
+     "text": "Do not answer a drum. Let them carry water",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "They carry it in buckets on yokes from the river, all day, and plant late and badly. That night the drummer comes and sits by the pool and says nothing. Next spring the village digs a reservoir. It is a better answer than rain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_dure_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The well village's farming flag is old and torn, and the team has saved for a new one. A travelling painter is to paint a dragon on it, under the great letters. The trouble is that the painter has never seen a dragon, and is sitting on the paddy dyke with a brush, drawing a large carp with a moustache.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_cq_dure_2"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Farming Flag",
+   "choices": [
+    {
+     "text": "Rise out of the paddy at dawn and hold still for an hour",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "pride": 2
+      },
+      "log": "The painter drops the brush, picks it up and paints faster than anyone has ever painted. The flag is famous across three counties. The dragon on it has a slightly smug expression, which you consider unfair and accurate."
+     }
+    },
+    {
+     "text": "Leave a shed horn-bud husk on the dyke for the painter to copy",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The painter turns the husk over and over, then paints horns that are almost right. The rest is still mostly carp. You find, looking at it on transplanting day, that you are very fond of it."
+     }
+    },
+    {
+     "text": "Let it be a carp with a moustache",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "The village carries a moustached carp into the paddies for years and is proud of it. When anyone laughs, they say a dragon is whatever helps you plant. You agree."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_toad_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "Every evening a poor girl at the bottom of the village sets a little of her own rice on the doorstep for a toad, a fat brown one that lives under the step and has grown fat on her kindness. And every spring the village sends one girl up the gorge to the shrine of its god, who is never seen, and the girl never comes back. This spring the lot has fallen on the girl with the toad. The village says it is an honour. Her mother has stopped speaking.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Toad and the Centipede",
+   "choices": [
+    {
+     "text": "Go up the gorge tonight and see what this god is",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "cq_toad_known",
+      "log": "The shrine smells of old blood and vinegar. In the rafters, folded on itself like a red rope, sleeps a centipede as long as a boat. It is not a god. It has only been fed like one."
+     },
+     "fail": {
+      "health": -6,
+      "flag": "cq_toad_known",
+      "log": "Something in the rafters hears you before you see it and rattles a hundred legs. You back out with a burning scratch across your nose. Whatever it is, it is no god. (-6 health)"
+     }
+    },
+    {
+     "text": "Watch the toad",
+     "effects": {
+      "luck": 3,
+      "flag": "cq_toad_known",
+      "log": "That night the toad does not eat. It sits on the step looking up the gorge, and in the morning it is gone. You think you know where it went. You go after it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_toad_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The night of the offering. The girl is tied in the shrine hall in white, with a bowl of rice before her. The toad is on the threshold, puffed up to twice its size. And down the rafters, leg over leg over leg, comes the god of the gorge: red, glistening, longer than a boat, its jaws working.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_cq_toad_1"
+    ],
+    "flags": [
+     "cq_toad_known"
+    ]
+   },
+   "arc": "The Toad and the Centipede",
+   "choices": [
+    {
+     "text": "Fight it yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "flag": "cq_toad_fought",
+      "log": "You take it behind the head and it wraps you in a hundred legs and bites and bites, and you do not let go until it stops. In the morning the village finds the girl asleep beside a dead centipede and a toad, and an ox-long furrow in the mud down to the river."
+     },
+     "fail": {
+      "health": -30,
+      "log": "Its poison is in you before you have it by the neck.",
+      "deathCause": "the poison of the centipede god of the gorge"
+     },
+     "risky": true
+    },
+    {
+     "text": "Breathe your warmth into the toad, and let it fight",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "cq_toad_toad",
+      "log": "The toad swells until it fills the threshold and spits a stream of white poison into the centipede's face. The centipede bites it. They fight until dawn and die together on the shrine floor. The girl walks home alone, untied, and buries the toad under her step."
+     }
+    },
+    {
+     "text": "Carry the girl out and leave the god to its empty shrine",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1,
+       "fear": 1
+      },
+      "log": "You break the door and carry her down the gorge in your jaws, like a cat with a kitten. The god does not follow. Next spring the village has no one to send and is afraid all year, and then, when nothing happens, ashamed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_toad_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The girl from the gorge is a grown woman with a house of her own, and in the corner of her yard there is a little shrine no higher than a knee: a flat stone, a toad carved on it, a bowl of rice every evening. Children of the village leave rice there too now. Nobody goes up the gorge in spring any more.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_cq_toad_2"
+    ],
+    "minYearsAfter": 12,
+    "anyFlags": [
+     "cq_toad_fought",
+     "cq_toad_toad"
+    ]
+   },
+   "arc": "The Toad and the Centipede",
+   "choices": [
+    {
+     "text": "Leave a smooth green pebble beside the carved toad",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "ward": 1,
+       "legend": 1
+      },
+      "log": "She finds it in the morning and laughs out loud, and puts it beside the toad, and the next morning there are two bowls of rice. You eat one. You suspect the other is for a toad."
+     }
+    },
+    {
+     "text": "Go up the gorge and pull down the old shrine",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The rafters come down in a cloud of old dust and old fear. In a few years the gorge is full of azaleas, and children go up it in spring to pick them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hansik_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "Cold Food Day, a hundred and five days after the winter solstice. No fire is lit in the village; everyone eats cold mugwort cakes and goes up the hill to weed the family graves, bow, and set out food. By noon every mound on the hill is neat as a shaved head except one, at the edge, sunk and shaggy: a peddler who died on the road thirty years ago and was buried here by strangers. No family. No name.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Grave Nobody Weeds",
+   "choices": [
+    {
+     "text": "Weed it yourself, after they go home",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "flag": "cq_hansik_tended",
+      "log": "Claws are bad at weeding and good at patience. By moonrise the grave is neat. You put a cold mugwort cake on it, stolen from the next mound, and the next mound's grandfather, you feel, does not mind."
+     }
+    },
+    {
+     "text": "Plant wild azaleas round it with your breath",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "cq_hansik_tended",
+      "log": "In a month the nameless grave is the brightest thing on the hill. The village decides a holy person must be buried there and begins weeding it out of nervousness."
+     }
+    },
+    {
+     "text": "Let it be. The hill will take it back",
+     "effects": {
+      "luck": 2,
+      "log": "The grass closes over it. You think, sometimes, of how many graves there must be on how many hills that nobody weeds, and you have no answer for that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hansik_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "A stranger comes up the hill on Cold Food Day: a young person from the coast with a salt-stained bundle and a wooden ancestral tablet, asking every family the same question. A peddler, long ago, a grandfather who went inland with a pack of combs and never came home. Someone points to the edge of the hill, to the neat grave with the azaleas.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_cq_hansik_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "cq_hansik_tended"
+    ]
+   },
+   "arc": "The Grave Nobody Weeds",
+   "choices": [
+    {
+     "text": "Let a warm wind find the stranger there and stay",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The stranger kneels at the grave a long time. Then the stranger asks the village who kept it, and nobody knows, and the stranger bows to the whole hill, very low, and to the ridge behind it. You lie in the ridge and feel it land."
+     }
+    },
+    {
+     "text": "Leave a comb you found by the road decades ago on the mound",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "It is one of his. The stranger knows the carving at once and sits down hard in the grass. The family on the coast tells the story of the dragon who kept the comb for a hundred years."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "It is the wrong comb, someone else's, from someone else's story. The stranger keeps it anyway. Every comb lost on a road is somebody's grandfather's, the stranger says."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hwarang_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "Eleven young men from the capital camp at your pool on their way round the famous mountains: flower youths, with powdered faces and flowers in their caps, bows and good swords, singing old songs at night and swearing loud oaths about loyalty and friends. On the third morning one of them sees you in the pool. Their leader, a tall boy of seventeen, wades straight in. \"I have sworn never to retreat in battle,\" he announces. \"I will ride the dragon.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Flower Youths",
+   "choices": [
+    {
+     "text": "Let him on, and take him once round the pool, gently",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "cq_hwarang_met",
+      "log": "He holds on to your horn buds and laughs the whole way round, and climbs off soaking and solemn, and the eleven of them bow to the pool together and sing you a song about rivers. It is not a good song. You remember every word."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "flag": "cq_hwarang_met",
+      "log": "He falls off at the first turn and goes under. You fish him out by the collar. He bows, dripping, and swears it was a strategic retreat. The others never let him forget it."
+     }
+    },
+    {
+     "text": "Throw him gently into the deep end",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "flag": "cq_hwarang_met",
+      "log": "He comes up spluttering and laughing and bows to you from the water. \"Then I will come back stronger,\" he says. The others write a poem about it on the rock with charcoal. The rain has it off in a week."
+     }
+    },
+    {
+     "text": "Sink to the bottom and let them think they dreamed it",
+     "effects": {
+      "luck": 2,
+      "flag": "cq_hwarang_met",
+      "log": "He searches the pool all morning and finds only trout. On the road they argue about it for a hundred li, which is, after all, what young men on mountains are for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hwarang_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "An army comes up the river road, going north to a war: banners, horses, spears in their thousands. At its head rides a general of forty-odd with a scarred face and, absurdly, a dried flower tucked in his helmet. He halts the army at your pool, dismounts, wades in to the knees and bows. \"I swore not to retreat,\" he tells the water. \"I have not. I would like to come home.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_cq_hwarang_1"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "cq_hwarang_met"
+    ]
+   },
+   "arc": "The Flower Youths",
+   "choices": [
+    {
+     "text": "Rise and touch his helmet with your nose",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "Ten thousand soldiers see the dragon of the pool bless their general. They march north singing. Most of them come home. He does, scarred and limping, and comes to the pool to tell you so."
+     }
+    },
+    {
+     "text": "Send a fog down the river road ahead of them, to hide them from the enemy's scouts",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The fog goes with them for three days. They cross the border unseen, and the war is shorter than anyone expected."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The fog goes three days the wrong way. They march in sunshine. They come home anyway, fewer."
+     }
+    },
+    {
+     "text": "Lie still. The war is not yours",
+     "effects": {
+      "comprehension": 2,
+      "log": "He waits a long time for an answer, then smiles and wades out. \"Still a strategic retreat,\" he says, to nobody. The army goes north. You never learn what happened to him, and you think about it for a century."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_mirror_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "A windless dawn, and the pool is a mirror. You see yourself whole for the first time: longer than an ox, scales the colour of spring water over moss, and on your brow two horn buds, pale and new, like shoots of bamboo. You look for a long time. You look, if you are honest, much better than you expected.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     3
+    ]
+   },
+   "arc": "The Still Pool",
+   "choices": [
+    {
+     "text": "Admire it until the sun breaks the mirror",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "pride": 2
+      },
+      "log": "You turn your head this way and that. The horn buds look very fine from the left. A heron watches you do this all morning with an expression you choose not to understand."
+     }
+    },
+    {
+     "text": "Roll in the mud of the bank, horns and all",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "pride": -2
+      },
+      "log": "You come out brown and ridiculous and much happier. The heron, you feel, approves."
+     }
+    },
+    {
+     "text": "Look past yourself, at the sky in the water",
+     "effects": {
+      "comprehension": 4,
+      "qi": 6,
+      "log": "Behind your reflection the last stars are going out, and one of them, low in the east, is the Horn. It does not look at your horns at all. It looks at what you will do with them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_kite_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The first full moon of the year: the boys of the village fly kites on the hill, and at dusk they write their names and birth years on them, cut the strings, and let the wind carry the year's bad luck away. One kite comes down on the ice of your pool. On it, in a mother's careful hand, is the name of a child who has been coughing since autumn.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Bad-Luck Kite",
+   "choices": [
+    {
+     "text": "Carry it high and far, over the mountains, before you let it go",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "qi": -5,
+      "flag": "cq_kite_took",
+      "log": "You go up on the night wind with the kite in your teeth and drop it over the sea. That spring the cough leaves the child. The mother does not know why. She knows it worked."
+     }
+    },
+    {
+     "text": "Take the bad luck into yourself",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "cq_kite_took",
+      "log": "You breathe the kite in, paper and name and cough and all. For a season you cough like a bellows and the village hears thunder in the hills all winter. The child is well by the barley harvest. (-8 health)"
+     }
+    },
+    {
+     "text": "Leave it on the ice",
+     "effects": {
+      "luck": 2,
+      "log": "The ice melts and the kite goes down to the bottom of the pool. The child coughs until spring and then, like most children, gets better on its own."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_kite_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The coughing child is a big loud boy now, and every first full moon, instead of cutting his kite loose on the hill like the others, he brings it to the edge of your pool, writes one word on it, and lets it go over the water. The word is always \"Thanks\". Nobody told him. His mother may have dreamed it.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_cq_kite_1"
+    ],
+    "minYearsAfter": 8,
+    "flags": [
+     "cq_kite_took"
+    ]
+   },
+   "arc": "The Bad-Luck Kite",
+   "choices": [
+    {
+     "text": "Catch it, every year, and keep them all",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "By his old age there is a stack of forty kites on a dry ledge under the waterfall, each one with the same word, the handwriting getting better and then, at the end, worse."
+     }
+    },
+    {
+     "text": "Send it back to him on the wind",
+     "effects": {
+      "luck": 3,
+      "log": "It lands in his yard every year. He tells his children the dragon writes back. It does not. It sends the same word, which, he says, is the point."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_ox_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Ploughing time, and a young farmer's only ox, still in its yoke, slides down the bank and into the deep end of your pool. It thrashes. The farmer hauls on the rope and screams for help that is half a valley away. An ox is a family's whole fortune. This one is also, you notice, exactly as long as you.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     3,
+     4
+    ]
+   },
+   "arc": "The Ox in the Pool",
+   "choices": [
+    {
+     "text": "Go under it and push it up onto the bank",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You heave, the ox heaves, and it comes out onto the grass like a sack of grain. The farmer sees a long blue-green back go down into the water and stands there with the rope for a long time. The ox, which saw everything, ploughs very respectfully past your pool for the rest of its life."
+     },
+     "fail": {
+      "health": -6,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "An ox is heavier than an ox-long dragon. You get it to the shallows at last, exhausted, and lie on the bottom while the farmer drags it out, too frightened to look at anything. (-6 health)"
+     }
+    },
+    {
+     "text": "Hold its head above the water until help comes",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "charm": 2,
+      "log": "Half the village comes running with ropes and finds an ox floating calmly with its chin resting on something under the water. They pull it out. Nobody asks what it was resting on. Everybody wonders."
+     }
+    },
+    {
+     "text": "It is an ox. Let the farmer save it",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "pride": 1
+      },
+      "log": "The farmer saves it, somehow, an hour later, both of them half dead. You watched the whole time. You tell yourself it was a lesson for the farmer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_bell_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The temple downriver is casting a great bronze bell for a dead king. Twice the bronze has cracked in the mould. The monks go from village to village begging brass spoons and bowls for a third casting, and at the poorest house a young widow laughs at them in the doorway: \"I have nothing. Only my child. Take the child.\" A joke. The abbot has since dreamed that the bell will only ring with that child in it, and has gone very quiet.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "The Bell That Will Not Ring",
+   "choices": [
+    {
+     "text": "Go down the river and watch the foundry",
+     "effects": {
+      "comprehension": 3,
+      "flag": "cq_bell_known",
+      "log": "You lie in the reeds below the temple and watch: the pit, the clay mould as tall as a house, the furnaces, the monks who do not look at each other. The abbot walks the yard at night alone. You do not like what is in his face."
+     }
+    },
+    {
+     "text": "Watch the widow's house instead",
+     "effects": {
+      "charm": 2,
+      "flag": "cq_bell_known",
+      "log": "She does not laugh any more. She sits in the doorway every evening with the child asleep on her back and her hand on its foot, and looks at the temple roof down the river."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_bell_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The night of the third casting. The furnaces roar, the bronze glows in the crucibles, and two monks come up the lane to the widow's house with a lantern and not a word between them. She does not scream. She has known for a month. You are a Neck-Star Dragon, and your star is honest speech, and you still cannot say one human word.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_cq_bell_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "cq_bell_known"
+    ]
+   },
+   "arc": "The Bell That Will Not Ring",
+   "choices": [
+    {
+     "text": "Take the widow and child into the river and away, tonight",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "log": "You rise in the lane before the lantern, and the monks drop it, and you take mother and child on your back down the dark river to the next county, where nobody has dreamed anything. The bronze is poured without them and cracks a third time."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 2,
+       "fear": 2
+      },
+      "log": "The monks shout, the village wakes, torches. You get them away, but the whole valley saw the river dragon steal a woman and child in the night. The story will be told wrong for a hundred years."
+     }
+    },
+    {
+     "text": "Go to the mould first and give the bronze a scale of your own",
+     "effects": {
+      "health": -15,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "flag": "cq_bell_scale",
+      "log": "You tear a scale from under your chin and drop it into the crucible as it pours. It hisses like a spring in a fire. The bronze runs blue-green for one breath, and the monks see it and stop, and look at each other, and the abbot sends the lantern back up the lane. (-15 health)"
+     }
+    },
+    {
+     "text": "Rain on the foundry until the furnaces die",
+     "effects": {
+      "qi": -12,
+      "tally": {
+       "rain": 1,
+       "virtue": 1
+      },
+      "flag": "cq_bell_rain",
+      "log": "You pull every cloud in the province over one temple and drown it. The furnaces hiss out. The casting is put off a year. In that year the abbot dreams again, and this time, perhaps because of the rain, he dreams differently."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_bell_3",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The bell is hung at last: taller than three men, with flying spirits cast on its sides, and on its top a dragon bent into a loop to hold it, and beside the dragon a hollow pipe like a bamboo flute. At dawn the monk swings the log. The sound goes down the river and up the hills and keeps going, a long, low, wavering note, like someone calling.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_cq_bell_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Bell That Will Not Ring",
+   "choices": [
+    {
+     "text": "Answer it, once, from the pool",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "pride": 1
+      },
+      "log": "The bell calls and the pool answers, a rumble under the water. The monks hear it. The widow, wherever she is, hears it. From then on the bell is said to have a dragon in it, and perhaps, it does."
+     }
+    },
+    {
+     "text": "Listen to what it says",
+     "effects": {
+      "comprehension": 5,
+      "qi": 8,
+      "log": "It does not say a mother's name, as you feared it would. It says something wordless and wide, like a valley breathing. Honest speech, you think, may not need words at all."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_chilseok_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The seventh evening of the seventh month. The magpies have all gone from the village, up to make their bridge across the river of stars so the weaver and the herdsman can meet for their one night of the year. In the courtyards the women set out bowls of clean water and wheat cakes and pray. Rain tonight, they say, is the lovers' tears of joy; rain tomorrow morning is their tears at parting. The clouds are yours to call now.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     6
+    ]
+   },
+   "arc": "The Seventh Evening",
+   "choices": [
+    {
+     "text": "A soft rain this evening",
+     "effects": {
+      "tally": {
+       "rain": 1,
+       "legend": 1,
+       "virtue": 1
+      },
+      "charm": 2,
+      "log": "A warm small rain falls on the courtyards at dusk, and every woman at every table smiles at once. Joy, then. The magpies come home with bald heads, as they always do, and the wheat is the best in years."
+     }
+    },
+    {
+     "text": "Rain tomorrow morning, because partings are true too",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "rain": 1
+      },
+      "log": "Grey rain at dawn. The old women nod; they know that rain. A girl who said goodbye to someone last spring sits in it a long time. You stay with her, as a cloud, until it stops."
+     }
+    },
+    {
+     "text": "Keep the sky clear, so everyone can see the bridge",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": 1
+      },
+      "log": "A clear night and the river of stars blazing. The children say they can see the magpies. You do not rain. The lovers, you suppose, can manage their own tears."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_neckvoice_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Your neck has grown long this past decade, and something in your throat has grown with it. One bright noon, lying on the hill above the village and watching a wedding in a courtyard below, you try to hum. What comes out is thunder: one great boom out of a clear blue sky. The bride drops the wooden geese. Every guest looks up.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "Thunder from a Clear Sky",
+   "choices": [
+    {
+     "text": "Hum again, more gently, to make it sound like a blessing",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "A second roll of thunder, softer, almost a purr. The bride's grandmother announces that heaven approves. Everyone cheers. The couple are held to be lucky for life, and, being told so, mostly are."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1,
+       "fear": 1
+      },
+      "log": "It comes out louder. A pig gets loose. The groom's family decides it is an omen and the two families argue about which of them it was aimed at until the first grandchild."
+     }
+    },
+    {
+     "text": "Keep your mouth shut for a whole year",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "A year of not making a sound. It is harder than lying still. You learn exactly where in your long throat the thunder lives, and how to keep it there."
+     }
+    },
+    {
+     "text": "Go up to the gorge where nobody lives, and practise",
+     "effects": {
+      "strength": 2,
+      "qi": 6,
+      "log": "For a month the gorge booms night and day and the woodcutters say the mountain is angry. By the end you can make three sounds: thunder, a smaller thunder, and something like a cough."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_cq_neckvoice_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "Years of practice, in the gorge or in silence, and one night it happens: a sound comes out of your long throat that is not thunder. It is not a word either. It is the sound a true thing makes when it is said, low and plain, and the echo brings it back to you unchanged. Above the gorge the Neck star is very bright.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_cq_neckvoice_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "Thunder from a Clear Sky",
+   "choices": [
+    {
+     "text": "Make the sound again, for the star",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "The second time it comes easier. The star does not answer, but the gorge does, and the gorge has never lied to anyone."
+     }
+    },
+    {
+     "text": "Keep it. Save it for when it matters",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "You fold it away in your throat like a letter not yet sent. Some day you will have words, and you will want to remember what a true sound was before you had them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_potter_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "A potter has built a climbing kiln up your flank, a long clay tunnel like a sleeping caterpillar, with stoke-holes all along its back, and three firings running every jar in it has cracked. Today {npc} kneels in the ash beside the broken pots, black to the elbows, and says to the hillside, not expecting an answer: \"Is it you? Have I offended the ridge?\" You can answer now.",
+   "npc": {
+    "role": "cq_potter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_potter",
+     "ageAbs": 44,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Potter's Kiln",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Your kiln lies across my vein. Move it three steps north\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ward": 2,
+       "legend": 1
+      },
+      "npcFlag": "cq_potter",
+      "mem": {
+       "deed": "answered",
+       "w": 18,
+       "note": "told me where to build"
+      },
+      "log": "{npc} falls over backwards into the shards. Then {he} gets up, bows to the hillside, and moves the whole kiln three steps north, brick by brick, in one summer. The next firing comes out whole and ringing."
+     }
+    },
+    {
+     "text": "\"Fire it again tonight. I will keep it warm\"",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "cq_potter",
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "kept my kiln warm all night"
+      },
+      "log": "You breathe heat up through the rock under the kiln all night, slow and even, the way a hen sits on eggs. {npc} feeds the fire and listens to the ridge breathing and does not sleep. Every jar comes out sound, and faintly green."
+     }
+    },
+    {
+     "text": "\"I was carried home once, in a water jar\"",
+     "effects": {
+      "charm": 4,
+      "npcFlag": "cq_potter",
+      "mem": {
+       "deed": "story",
+       "w": 15,
+       "note": "told me about the jar"
+      },
+      "log": "You tell {npc} about the well, the first water, the jar on a woman's head. {He} listens with clay drying on {his} hands. When you finish, {he} says, \"Then I know what to make,\" and goes to dig fresh clay. The cracked kiln, you both forget, is still cracked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_potter_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} comes up the ridge with a jar on an A-frame: chest high, wide in the shoulder, glazed brown with ash and leaf-water, and across its belly, drawn with four fingers through the wet glaze, a long line that loops and climbs. It is you. It is the best thing {he} has ever made. \"For the first water,\" {he} says. \"Where should it go?\"",
+   "npc": {
+    "role": "cq_potter"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_cq_potter_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "cq_potter"
+    ]
+   },
+   "arc": "The Potter's Kiln",
+   "choices": [
+    {
+     "text": "\"At the old well in the village, for whoever draws first\"",
+     "effects": {
+      "tally": {
+       "ward": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "honoured",
+       "w": 12,
+       "note": "set my jar at the well"
+      },
+      "log": "The jar stands by the well for three hundred years. Every first full moon, the winner of the race to the well fills it before anything else. Nobody remembers why. The potter's family does."
+     }
+    },
+    {
+     "text": "\"Keep it. Sell the next ones. Feed the household\"",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "{npc} laughs and does not sell it. {He} sells the next forty, which are almost as good, and the kiln on the dragon ridge becomes famous in three provinces."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_potter_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The kiln is cold for the first time in decades. {npc} has died, and the apprentices stand around the stoke holes not knowing whether they are allowed to light it without {him}. The eldest of them looks up at the ridge and asks, very politely, if the ridge has an opinion.",
+   "npc": {
+    "role": "cq_potter"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ],
+    "after": [
+     "dc_cq_potter_2"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "cq_potter"
+    ]
+   },
+   "arc": "The Potter's Kiln",
+   "choices": [
+    {
+     "text": "\"Light it. {npc} would be furious if you let the clay dry\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "ward": 2
+      },
+      "npcPass": "old age, beside the kiln",
+      "log": "They light it, and the first firing after the funeral comes out perfect, every jar, and they all cry over them. The kiln burns for two hundred years more."
+     }
+    },
+    {
+     "text": "Warm the kiln yourself, once, for the old potter",
+     "effects": {
+      "qi": -8,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcPass": "old age, beside the kiln",
+      "log": "The cold kiln grows warm from inside with no fire lit. The apprentices bow to it all night. In the morning they find one jar inside that nobody made, green, with a loop drawn on its belly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_talchum_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The Dano festival in the village, and a mask troupe has come over the pass: the aristocrat with the split lip, the tipsy monk, and the servant Malttugi with a horsehair whip, who mocks his master in front of everyone until the crowd cries with laughter. Everyone laughs except the county magistrate in the front row, who looks exactly like the aristocrat mask. After the dance his men take the troupe leader away in a rope.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Mask Dance",
+   "choices": [
+    {
+     "text": "Speak from the ridge: \"It was a play, magistrate\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1,
+       "pride": 1
+      },
+      "log": "The voice comes out of the dark hillside over the whole festival. The magistrate goes white. The rope is untied before anyone is told to untie it. Next day the magistrate leaves the county early and the troupe performs a second time, to a bigger crowd."
+     }
+    },
+    {
+     "text": "Let a wind blow the magistrate's hat into the river",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The crowd laughs harder than it did at the dance. A laughed-at magistrate cannot flog anyone that evening without looking even sillier. The troupe leader is let go with a fine, and adds the hat to the play."
+     }
+    },
+    {
+     "text": "Stay silent. It is between the play and the magistrate",
+     "effects": {
+      "comprehension": 3,
+      "log": "The troupe leader gets twenty strokes and is on the road again in a week, limping, with a new scene in the play about a magistrate. Some things cannot be stopped by flogging. You watch to see which."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_talchum_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The mask troupe is back, and has a new character: a dragon, in a long green cloth carried by four dancers, with a great papier mask and goggling eyes. It is very proud. It brags, it struts, it trips over its own tail and is rescued by Malttugi the servant, and the whole of the village is rolling in the dust laughing. They keep looking up at the ridge to see if they are allowed.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_cq_talchum_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Mask Dance",
+   "choices": [
+    {
+     "text": "Laugh with them, a long roll of thunder",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "pride": -4,
+       "legend": 1
+      },
+      "log": "The thunder of a dragon laughing at itself goes round the valley. The dancers nearly drop the cloth. From then on the dragon scene is the best-loved part of the play, and you never miss it."
+     }
+    },
+    {
+     "text": "Rain on the performance, just a little, as a comment",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "pride": 1
+      },
+      "log": "A small sulky shower on the dragon scene and nowhere else. The crowd laughs even harder. The troupe writes the rain into the play."
+     }
+    },
+    {
+     "text": "Ask them to show the dragon bowing, at the end",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -2,
+       "virtue": 1
+      },
+      "log": "They add it: the proud dragon, rescued, bows to the servant. Three hundred years later it is still in the play, and scholars argue about what it means."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pansori_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A young singer has come to the waterfall in your gorge to find a voice the old way: by singing against falling water, all day, every day, until the voice can cut through it. {npc} sings the same passage a thousand times. There is blood at the corner of {his} mouth now. {He} does not stop. You speak, and {npc} stops.",
+   "npc": {
+    "role": "cq_singer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_singer",
+     "ageAbs": 19,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Singer at the Waterfall",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Again. The third line is a lie\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "cq_singer",
+      "mem": {
+       "deed": "taught",
+       "w": 18,
+       "note": "told me the third line was a lie"
+      },
+      "log": "{npc} stares at the water a long time. Then {he} sings it again, and the third line is different, smaller and truer, and you both hear it cut through the falls. \"Again,\" you say. {He} laughs, and spits blood, and sings."
+     }
+    },
+    {
+     "text": "\"Rest. Blood is not a voice\"",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "cq_singer",
+      "mem": {
+       "deed": "cared",
+       "w": 15,
+       "note": "told me to rest"
+      },
+      "log": "{npc} sits on the rock and cries, all at once, from tiredness. Then {he} sleeps in the spray all afternoon. The next day {he} sings less and listens more, and the voice comes faster."
+     }
+    },
+    {
+     "text": "Sing back, the way water sings",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 4,
+      "npcFlag": "cq_singer",
+      "mem": {
+       "deed": "sang",
+       "w": 20,
+       "note": "sang with the dragon at the falls"
+      },
+      "log": "You sing under the falls, low, and {npc} finds the note above yours and holds it. For one breath the two voices and the water are one sound. {He} will try to find that breath again for the rest of {his} life."
+     },
+     "fail": {
+      "npcFlag": "cq_singer",
+      "log": "Your singing comes out as a landslide. {npc} is very kind about it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pansori_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} comes back to the village famous: a singer with a drummer and a folding fan, who has sung before governors. On the threshing floor, to the whole valley, {he} sings a new song nobody has heard: the long story of an egg in a well, a jar, a field, a ridge. It takes four hours. It is about you. It is not entirely accurate.",
+   "npc": {
+    "role": "cq_singer"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_cq_pansori_1"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "cq_singer"
+    ]
+   },
+   "arc": "The Singer at the Waterfall",
+   "choices": [
+    {
+     "text": "Let it be inaccurate. It is a good song",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3,
+       "pride": 1
+      },
+      "log": "The song goes round the country for a hundred years. In it you are braver, kinder and much better at wrestling goblins. You hear it sung by strangers and find, to your surprise, that you prefer their version."
+     }
+    },
+    {
+     "text": "Correct one line, from the ridge, in front of everyone",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "pride": -1
+      },
+      "log": "The valley gasps. {npc} bows to the ridge, changes the line, and goes on without missing a beat. That corrected line is the one everybody remembers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pansori_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} comes back to the waterfall old, with no voice left at all: decades of singing have worn it to a whisper. {He} sits on the same wet rock and listens to the water. \"I gave it all away,\" {he} whispers. \"Will you keep the song? Someone has to.\"",
+   "npc": {
+    "role": "cq_singer"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ],
+    "after": [
+     "dc_cq_pansori_2"
+    ],
+    "minYearsAfter": 35,
+    "npcFlags": [
+     "cq_singer"
+    ]
+   },
+   "arc": "The Singer at the Waterfall",
+   "choices": [
+    {
+     "text": "\"I will sing it to the water, every spring\"",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "npcPass": "old age, voice gone, content",
+      "mem": {
+       "deed": "kept",
+       "w": 25,
+       "note": "kept my song"
+      },
+      "log": "And you do: every spring the waterfall carries a long low song that nobody can quite make out. Singers come to the gorge to train against it. They say it improves them."
+     }
+    },
+    {
+     "text": "Sing it now, to {him}, the whole four hours",
+     "effects": {
+      "charm": 4,
+      "qi": -5,
+      "npcPass": "old age, voice gone, content",
+      "log": "You get every line wrong in a slightly different way from the way {he} got it wrong. {npc} laughs the whole way through and corrects you in a whisper."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_sijo_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A poet from the capital rides up the valley on a small donkey, famous for verses and for refusing everyone. {npc} stops at the stream that runs down your flank, the one that carries your vein to the river, and sings to it: \"Blue stream in the green hills, do not boast of how fast you run. Once you reach the sea you cannot come back. The bright moon fills the empty hills. Rest a while, and then go.\" Then {he} looks straight at the ridge. \"I know what you are,\" {he} says. \"I meant it for you.\"",
+   "npc": {
+    "role": "cq_poet",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_poet",
+     "ageAbs": 27,
+     "opinion": 0,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Blue Stream",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Answer with a verse of your own",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "You answer: the stream does not run to boast; it runs because the hill is behind it, and the moon only fills the hills because the water holds it still. {npc} is silent, then laughs with delight and writes it down. It is copied in the capital for two hundred years, credited to a hermit."
+     },
+     "fail": {
+      "charm": 1,
+      "log": "Your verse has eleven syllables too many and a thunderclap in the middle. {npc} applauds anyway, politely, which is worse."
+     }
+    },
+    {
+     "text": "Slow the stream, so it runs quietly past {him}",
+     "effects": {
+      "tally": {
+       "pride": -3
+      },
+      "comprehension": 2,
+      "log": "The stream goes slow and glassy and the moon settles in it. {npc} nods. \"Good,\" {he} says. \"Most things that run fast never learn that.\" {He} rides on at dawn."
+     }
+    },
+    {
+     "text": "\"I am not running anywhere. I am a ridge\"",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "pride": 1
+      },
+      "log": "\"Everything runs,\" says {npc}, \"even ridges. Only slower.\" {He} rides away singing the verse again, louder, and the hills seem to agree."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_tigerword_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The White Tiger lies on the saddle between the ridges and does not look at you, which is how it starts difficult conversations. \"I hear you talk to them now,\" it says. \"The humans.\" A pause. \"Twenty years ago I killed a hunter on my ridge. He had me in a pit with a spear. His widow's son is grown, and practises with a bow every day, and looks at my ridge. I would like him to know I am sorry. I would also like him not to try.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Tiger Wants a Word",
+   "choices": [
+    {
+     "text": "\"I will carry it to him\"",
+     "effects": {
+      "tally": {
+       "tiger": 3,
+       "virtue": 1
+      },
+      "flag": "cq_tw_carried",
+      "log": "The Tiger says nothing, which is thanks. You go down the pale ridge at night to a hut where a young man is waxing a bowstring by a lamp, and you begin, for the first time in your life, to speak for someone else."
+     }
+    },
+    {
+     "text": "\"Your words are yours. Learn to send them in a dream\"",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "tiger": 2
+      },
+      "comprehension": 3,
+      "flag": "cq_tw_dream",
+      "log": "It takes the Tiger a whole winter to learn, lying beside you on the saddle, ears flat with effort. In spring it goes into the young hunter's sleep and says one sentence, badly. It is enough."
+     },
+     "fail": {
+      "tally": {
+       "tiger": -1
+      },
+      "flag": "cq_tw_carried",
+      "log": "The Tiger cannot do it; tigers are not built for dreams. It looks at you with something like shame. You carry the message after all, and do not mention the lesson again."
+     }
+    },
+    {
+     "text": "\"A tiger does not apologise to hunters\"",
+     "effects": {
+      "tally": {
+       "tiger": -2,
+       "pride": 1
+      },
+      "log": "The Tiger gets up and walks back to its own ridge without a word. That autumn the young hunter goes up the pale ridge with a bow. You hear about it from the crows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_tigerword_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Spring on the pale ridge. The hunter's son comes up the path with the bow unstrung on his back and stops at the edge of the meadow where the White Tiger lies in the open, as it never lies, waiting. They look at each other for a long time. You are watching from the saddle, ready, and do not know for what.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ],
+    "after": [
+     "dc_cq_tigerword_1"
+    ],
+    "minYearsAfter": 1,
+    "anyFlags": [
+     "cq_tw_carried",
+     "cq_tw_dream"
+    ]
+   },
+   "arc": "The Tiger Wants a Word",
+   "choices": [
+    {
+     "text": "Say nothing. It is theirs",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "tiger": 2
+      },
+      "log": "The young man sets the bow down in the grass. The Tiger lowers its head. Then the young man turns and goes down the mountain, and never comes up the pale ridge again, and never once says why. The Tiger comes to the saddle that night and lies close."
+     }
+    },
+    {
+     "text": "Speak the Tiger's words aloud for it, one more time",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "tiger": 1,
+       "virtue": 1
+      },
+      "log": "Your voice comes over the meadow. The young man listens, then answers, not to you but to the Tiger: \"My father set the pit. I know.\" He leaves the bow on a rock. Children find it, years later, rotted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_barley_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The barley hump: the hungry weeks of late spring when last year's rice is gone and the barley is still green. This year it is long. The village has eaten its seed and its dogs, and now the families are up on your back with knives, stripping the soft white inner bark from the red pines to boil. Every strip hurts a little. Pines stripped all the way round will die. A great many pines are being stripped all the way round.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Barley Hump",
+   "choices": [
+    {
+     "text": "Let them strip it. The pines will grow back in fifty years",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "virtue": 2,
+       "ward": 1
+      },
+      "flag": "cq_barley",
+      "log": "You lie still under the knives for a month. The valley lives. By summer your back is a forest of white dead trunks, and it aches every winter for half a century, and you are not sorry. (-8 health)"
+     }
+    },
+    {
+     "text": "Lead them to the north slope, where bracken and arrowroot grow thick",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "ward": 2
+      },
+      "flag": "cq_barley",
+      "log": "A child sees a green light moving on the north slope and follows it, and finds arrowroot thick as rope under the snowmelt. By evening the whole village is digging. The pines keep their bark."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "cq_barley",
+      "log": "The arrowroot there is thin this year. They dig, and they strip the pines too. It is enough, just, and it is a long spring."
+     }
+    },
+    {
+     "text": "Speak: \"Take only from the north side of each tree\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "cq_barley",
+      "log": "The voice from the ridge stops every knife on the mountain. Then the knives go to the north side of the trunks only, carefully, a strip each. The pines live, scarred on one side. Two hundred years later you can still tell which way is north on your back by the scars."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_barley_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Another barley hump, a bad one, but you are older now, and the wind and the human world answer you. The village headman has rice; the county granary has more; the landlord at the valley mouth has most of all, behind a locked gate, and is waiting for prices to rise.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "after": [
+     "dc_cq_barley_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "cq_barley"
+    ]
+   },
+   "arc": "The Barley Hump",
+   "choices": [
+    {
+     "text": "Counsel the headman in a dream: a common granary, filled every autumn",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "ward": 4,
+       "virtue": 2
+      },
+      "log": "He wakes and calls a village meeting before breakfast. Every household gives a measure every autumn, and the granary at the shrine is never empty again in a spring. It is a very small thing to change the world with. It works."
+     }
+    },
+    {
+     "text": "Blow the landlord's granary doors off their hinges",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "pride": 2,
+       "ward": 2
+      },
+      "log": "The doors go into the river at midnight, and in the morning the whole valley is standing in his yard with sacks. Nobody takes more than a sack. He never locks a granary again, and never looks at your ridge without flinching."
+     }
+    },
+    {
+     "text": "Wake the green: ripen the barley three weeks early",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "ward": 3,
+       "virtue": 1
+      },
+      "log": "You breathe on the barley fields every night for a week and they go gold in the middle of spring. The hungry weeks end in a day. The old people say they have never seen it. They are right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_heartheat_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "Since the fire star came down into your chest, you feel the valley. Not see: feel. A mother sitting up with a fevered child. A boy who failed the county examination, lying in the dark with his eyes open. An old man who has outlived everyone. Every grief in the village is a thread pulling at the coal under your ribs, all night, every night, and you cannot sleep.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     8
+    ]
+   },
+   "arc": "The Coal in the Chest",
+   "choices": [
+    {
+     "text": "Feel all of it. That is what the star is for",
+     "effects": {
+      "comprehension": 5,
+      "health": -6,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You stop fighting it and let every thread in. It is unbearable for a month, then for a year, and then one night it is not; it is only the valley, breathing, sad and alive. (-6 health)"
+     }
+    },
+    {
+     "text": "Close your chest. A guardian cannot carry every sorrow",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "pride": 2
+      },
+      "log": "You fold the coal away and sleep. The valley goes on grieving without you. You are rested, and something in you is a little colder, and you notice it, and you do not like it."
+     }
+    },
+    {
+     "text": "Go to them, one at a time, in their dreams",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "One dream a night: a green wind for the fevered child, a long road for the boy who failed. You cannot fix one of them. But each of them wakes having been visited, and that, you find, pulls the thread a little looser."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_heartheat_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The seventh month, and the Great Fire sinks into the west at dusk, the old farmers' sign that the heat is breaking. For the first time since it came into you, the coal in your chest cools. You can still feel the valley. But now, you notice, you can also think about it.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "after": [
+     "dc_cq_heartheat_1"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Coal in the Chest",
+   "choices": [
+    {
+     "text": "Think about the boy who failed the examination",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "Feeling his grief told you he was sad. Thinking about it tells you he was cheated: the examiner's nephew sat the same paper. Understanding, it seems, is what feeling turns into when it cools. You have work to do."
+     }
+    },
+    {
+     "text": "Let the cool settle. Some things are only to be felt",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "You lie in the first cool night of the year and let the valley be sad without solving it. The star in your chest glows steadily, neither hot nor cold. It seems to approve."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_sansin_1",
+   "cat": "explore",
+   "weight": 14,
+   "once": true,
+   "text": "An old man with a white beard to his belt and a feather fan sits under the pine at the peak where the shrine painting shows him, with a striped tiger, not the White one, asleep across his feet. The mountain god. \"This mountain was mine before you lay down on it,\" he says pleasantly. \"Now you talk. Your voice frightens my ginseng diggers, and they leave me less rice. I think you owe me rent.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Mountain God's Rent",
+   "choices": [
+    {
+     "text": "Pay: one good rain a year on the peak",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ward": 1
+      },
+      "qi": -5,
+      "log": "He considers this, stroking his beard. \"Acceptable,\" he says. \"Rain on my pine first.\" Every year after, the first rain falls on his pine. His tiger sleeps better, and so, oddly, do you."
+     }
+    },
+    {
+     "text": "Argue: the ridge gives the mountain its springs",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You argue for a whole afternoon. He enjoys it enormously. At the end he says you owe him nothing, and he owes you nothing, and you should both come to the peak more often and argue. You do."
+     },
+     "fail": {
+      "tally": {
+       "pride": 1
+      },
+      "log": "He has been arguing with ginseng diggers and geomancers for three thousand years. You lose on every point. He charges you two rains, for the trouble."
+     }
+    },
+    {
+     "text": "Promise to speak more softly near the diggers",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "\"Good manners,\" he says, surprised. \"From a dragon.\" He pats his tiger. \"Did you hear that?\" The tiger did not. It is asleep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_sansin_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The mountain god's striped tiger is dying, very old, lying in the shrine yard with its head on the old man's knee. He strokes its ears and does not look at you. \"Gods get tigers,\" he says. \"Tigers do not get gods. They go where everything goes. I have had eleven. It does not get easier.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ],
+    "after": [
+     "dc_cq_sansin_1"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Mountain God's Rent",
+   "choices": [
+    {
+     "text": "Lie down beside them until it is over",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "It takes until dawn. The old man hums a song the diggers sing, and you keep the wind off the shrine yard. When it is over he says, \"Thank you,\" and nothing else, and the next spring there is a twelfth tiger, a cub, very rude."
+     }
+    },
+    {
+     "text": "Bring the White Tiger to the peak",
+     "req": {
+      "flags": [
+       "cq_tiger_ally"
+      ]
+     },
+     "effects": {
+      "tally": {
+       "tiger": 2,
+       "virtue": 1
+      },
+      "log": "The White Tiger comes up the peak, looks at the old striped one, and lies down nose to nose with it without a word. The mountain god watches them and, for the first time in your acquaintance, weeps."
+     }
+    },
+    {
+     "text": "Breathe spring into it, one more season",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "It stands up, shakes, and walks the peak for one more spring, slowly. The old man laughs and scolds you for interfering. He does not stop smiling all season."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_exile_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A minister has been exiled to a thatched hut at the valley mouth: a thin one, with a court robe gone pale at the seams that {he} puts on, on the first and fifteenth of every month, to bow north toward the capital. {npc} has written a memorial to the king every month for six years. None has been answered. Tonight {he} asks the ridge, politely, as one asks a senior colleague: \"Does the king remember me?\"",
+   "npc": {
+    "role": "cq_exile",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_exile",
+     "ageAbs": 52,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ]
+   },
+   "arc": "The Exile's Memorial",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"No. The king has forgotten you\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "cq_exile",
+      "mem": {
+       "deed": "honest",
+       "w": 15,
+       "note": "told me the truth about the king"
+      },
+      "log": "{npc} sits very still. Then {he} takes off the court robe, folds it, and the next morning goes down to the village and offers to teach the children their letters, for rice. {He} turns out to be a terrible minister and a wonderful teacher."
+     }
+    },
+    {
+     "text": "\"Write to the valley instead. It will answer\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "ward": 2
+      },
+      "npcFlag": "cq_exile",
+      "log": "{npc} laughs for the first time in six years. {He} writes the village a proper irrigation plan in the style of a royal memorial, with footnotes. The headman cannot read it. {npc} reads it aloud, and they dig the ditch together."
+     }
+    },
+    {
+     "text": "Carry {his} memorial to the capital, in the king's dream",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "cq_exile",
+      "flag": "cq_exile_pardon",
+      "log": "The king dreams of a blue-green dragon holding a scroll in its teeth, and wakes, and asks for it, and reads it, and is ashamed. A pardon goes south by fast horse."
+     },
+     "fail": {
+      "npcFlag": "cq_exile",
+      "log": "The king dreams of a dragon and wakes in a fright and orders more guards. The memorial is not read. You tell {npc} the truth, and {he} thanks you anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_exile_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "A rider comes up the valley road: a royal pardon for {npc}, recall to the capital, an office, a house. {npc} reads it on the step of the thatched hut with half the village's children around {him}, slates in their hands, waiting for their lesson. {He} looks up at the ridge.",
+   "npc": {
+    "role": "cq_exile"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ],
+    "after": [
+     "dc_cq_exile_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "cq_exile_pardon"
+    ],
+    "npcFlags": [
+     "cq_exile"
+    ]
+   },
+   "arc": "The Exile's Memorial",
+   "choices": [
+    {
+     "text": "\"Go. The capital needs one honest minister more than we need one teacher\"",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "log": "{npc} goes. {He} is honest at court for years and is exiled again for it, to the same hut, and comes back up the valley road laughing, and the children, grown now, send their own children to {him}."
+     }
+    },
+    {
+     "text": "\"Stay. Nobody will remember the office. They will remember the letters\"",
+     "effects": {
+      "tally": {
+       "ward": 3
+      },
+      "comprehension": 2,
+      "log": "{npc} sends the rider back with a polite refusal written in perfect court style. The village becomes the only village in the county where every farmer can read a land deed. Nobody cheats them again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_nun_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A hermit has lived in a hut the size of a woodshed on your shoulder for twelve years, alone, eating pine needles and barley, sitting all winter. One morning, without opening {his} eyes, {npc} says: \"You have been listening to me breathe for twelve years. Ask your question.\" You had not known you had one.",
+   "npc": {
+    "role": "cq_nun",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_nun",
+     "ageAbs": 50,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     9
+    ]
+   },
+   "arc": "The Hermit on the Shoulder",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Does a dragon have the Buddha nature?\"",
+     "effects": {
+      "comprehension": 5,
+      "npcFlag": "cq_nun",
+      "mem": {
+       "deed": "asked",
+       "w": 15,
+       "note": "asked the old question"
+      },
+      "log": "{npc} opens {his} eyes for the first time and looks at you with enormous amusement. \"Does a dog?\" {he} says. \"Go and sit on that for a hundred years.\" You do. It is the best hundred years of your life."
+     }
+    },
+    {
+     "text": "\"Why do you sit, when the valley needs hands?\"",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "cq_nun",
+      "log": "\"Why do you lie still, when the valley needs rain?\" says {npc}. \"You know why. So that the hands do not shake.\" You think about that through a whole winter, and conclude it was not an answer, and conclude it was."
+     }
+    },
+    {
+     "text": "\"Are you lonely?\"",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": [
+       "cq_nun",
+       "dragon_friend"
+      ],
+      "mem": {
+       "deed": "asked",
+       "w": 20,
+       "note": "asked if I was lonely"
+      },
+      "log": "{npc} laughs out loud, which startles a jay off the roof. \"Not since you came,\" {he} says. After that {he} talks to the rock wall every evening, and you answer, and it is a very quiet friendship and it lasts {his} whole life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_nun_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} has been sitting for three days without moving, and this morning there is frost on {his} eyebrows that does not melt. The wooden fish drum lies beside {him}. In the hut there is only a little barley and a brush poem, still wet: four lines about a dragon who learned to lie still.",
+   "npc": {
+    "role": "cq_nun"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     7,
+     10
+    ],
+    "after": [
+     "dc_cq_nun_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "cq_nun"
+    ]
+   },
+   "arc": "The Hermit on the Shoulder",
+   "choices": [
+    {
+     "text": "Ring the wooden fish once, for {him}",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "sitting, in the snow, in the hermitage",
+      "log": "The sound goes out over the valley. In the village they hear it and know, and climb up with a bier. You lie still around the hermitage while they work, as the poem said."
+     }
+    },
+    {
+     "text": "Keep the hut standing, empty, for the next one",
+     "effects": {
+      "tally": {
+       "ward": 1,
+       "legend": 1
+      },
+      "npcPass": "sitting, in the snow, in the hermitage",
+      "log": "No snow ever crushes its roof, no wind takes its door. Thirty years later another hermit comes, young, with a bundle, and finds the poem still pinned to the wall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_embank_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "Below the valley mouth the county is building an embankment across the plain to hold the river for the dry months: earth and stone, as long as a day's walk, with stone sluice gates, ten thousand labourers with A-frames of earth. Three times it has broken at the same place in the middle, where the old marsh was. In the marsh lives a white dragon, older than you, smaller than you, and of very bad temper, who considers the marsh its own.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Long Embankment",
+   "choices": [
+    {
+     "text": "Go down and speak to the white dragon",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "cq_embank",
+      "log": "It hisses at you for a day. On the second day it talks: the marsh was its nest, its eggs never hatched, the humans fill it with earth as if nothing lived there. You promise it nothing, but you listen, and it lets the bank stand for a season."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "flag": "cq_embank",
+      "log": "It will not speak to a dragon of the hills. \"Ridge-lizard,\" it calls you, and dives. The bank breaks a fourth time that spring."
+     }
+    },
+    {
+     "text": "Hold the broken place yourself, with your body, while they build",
+     "effects": {
+      "health": -12,
+      "strength": 3,
+      "tally": {
+       "ward": 2,
+       "legend": 2
+      },
+      "flag": "cq_embank",
+      "log": "You lie across the gap through the spring flood like a living dam while ten thousand people throw earth on your back. They do not know what they are building on. The bank holds. The white dragon watches from the reeds, furious. (-12 health)"
+     }
+    },
+    {
+     "text": "Counsel the magistrate: bend the bank round the marsh",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "ward": 1
+      },
+      "flag": "cq_embank",
+      "log": "The magistrate wakes from a dream of a green hand drawing a curve on a map, and redraws it. The bank bends round the marsh like an elbow. It costs a year and a great deal of earth. The white dragon is suspicious but quieter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_embank_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The bank breaks again in the autumn flood, and the old people say the marsh wants a bride. The magistrate's own child, {npc}, seventeen, has heard them, and has put on white, and is walking along the top of the embankment toward the break, alone, at dusk, very straight. Nobody stops {him}. Some of them are crying. Some of them are relieved.",
+   "npc": {
+    "role": "cq_embank_child",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_embank_child",
+     "ageAbs": 17,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "after": [
+     "dc_cq_embank_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "cq_embank"
+    ]
+   },
+   "arc": "The Long Embankment",
+   "choices": [
+    {
+     "text": "Rise out of the river in front of {npc} and block the way",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "cq_embank_bride",
+      "npcFlag": "cq_embank_child",
+      "mem": {
+       "deed": "stopped",
+       "w": 25,
+       "note": "stood in my way as the sky dragon"
+      },
+      "log": "{npc} walks straight into the blue-green wall of you and stops, and looks up a long way, and sits down on the bank and weeps for the first time. You take {him} home on your back along the top of the embankment, and the crowd parts in silence."
+     }
+    },
+    {
+     "text": "Let {npc} go in, and catch {him} under the water",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "cq_embank_bride",
+      "npcFlag": "cq_embank_child",
+      "log": "{npc} goes into the black water and you are there, under it. The white dragon is there too, and for one long moment the two of you hold the same human between you. Then it lets go. You bring {npc} up a mile downstream, alive, and the white dragon does not follow."
+     },
+     "fail": {
+      "tally": {
+       "virtue": 1
+      },
+      "health": -10,
+      "flag": "cq_embank_bride",
+      "npcFlag": "cq_embank_child",
+      "log": "The white dragon is quicker. You have to fight it for {npc} in the flood, in the dark, and you win, barely, and bring {him} up half drowned and alive. The white dragon will not forgive this. (-10 health)"
+     }
+    },
+    {
+     "text": "Speak to the crowd: \"The marsh does not want a bride. It wants its nest back\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2,
+       "ward": 1
+      },
+      "flag": "cq_embank_bride",
+      "npcFlag": "cq_embank_child",
+      "log": "Ten thousand people hear the sky speak. {npc} stops on the bank. The magistrate, shaking, orders a pool left open in the middle of the marsh, for whatever lives there. The bank holds that winter. Nobody goes in."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_embank_3",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The white dragon comes up out of the marsh at the autumn equinox, when you rise, and meets you over the embankment: smaller than you, older, scarred, its pale whiskers stiff with anger. \"The plain was water before it was rice,\" it says. \"You side with the ones who fill in nests. Fight me, ridge-lizard, or give me back the marsh.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_embank_1"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Long Embankment",
+   "choices": [
+    {
+     "text": "Fight it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 3,
+       "fear": 2,
+       "pride": 3
+      },
+      "log": "It is a long fight, in the air, in the rain, over ten thousand upturned faces. You win. It goes down into the marsh and does not come up for a century. The bank never breaks again. The people make songs about it; the marsh makes none."
+     },
+     "fail": {
+      "health": -35,
+      "log": "It is older than you, and fighting for its home.",
+      "deathCause": "the white dragon of the marsh, over the long embankment"
+     },
+     "risky": true
+    },
+    {
+     "text": "Share it: the marsh pool stays open, the bank goes round",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 3,
+       "ward": 2,
+       "pride": -2
+      },
+      "log": "It takes a season of arguing in the rain. In the end there is a bank with a bend in it and a deep pool inside the bend where nothing is ever planted. The white dragon lives there. On still nights it and you talk across the plain, two old things with opinions."
+     }
+    },
+    {
+     "text": "Lie down and let it strike you once, for the nest",
+     "effects": {
+      "health": -20,
+      "tally": {
+       "virtue": 2,
+       "pride": -4
+      },
+      "log": "It strikes. It is surprised you let it. Something goes out of it with the blow, a long anger. It goes back down into the marsh without another word, and the bank holds. (-20 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_embank_4",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Thirty years on, the plain below the embankment is the richest rice land in the province. On the ninth day of the ninth moon the villages make two dragons of straw, one blue and one white, as long as a street, and carry them along the top of the bank with drums, and make them fight and then bow to each other, and burn them at dusk with offerings for a young person who once walked the bank in white.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_embank_2"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Long Embankment",
+   "choices": [
+    {
+     "text": "Rise at dusk over the burning straw dragons",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "pride": 1
+      },
+      "log": "The crowd sees the sky full of blue-green, and the smoke of two straw dragons going up into it. The children who see it will tell it to grandchildren who will not believe it."
+     }
+    },
+    {
+     "text": "Watch from the clouds, and rain gently when the fire is done",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "rain": 1,
+       "ward": 1
+      },
+      "log": "A soft rain on the ashes, exactly as the drums stop. The old people nod. In the marsh pool, the white dragon surfaces, looks up at you, and goes down again. It is the closest it will come to thanks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_registers_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The slaves of the county are rising. Their leader, {npc}, a woodcutter-slave of the magistrate's household, has come up the ridge at night to the dragon's shrine with a torch. \"Are generals and ministers born of a different seed?\" {he} asks the dark. \"On the night of the lantern festival we burn the registers at the county office, every name, and nobody is anybody's property again. The wind will decide how far the fire goes. You are the wind.\"",
+   "npc": {
+    "role": "cq_rebel",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_rebel",
+     "ageAbs": 40,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Burned Registers",
+   "choices": [
+    {
+     "text": "\"I will hold the wind steady. The registers only\"",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "cq_registers_burned",
+      "npcFlag": "cq_rebel",
+      "mem": {
+       "deed": "helped",
+       "w": 22,
+       "note": "held the wind for the registers"
+      },
+      "log": "On the festival night the courtyard fire goes straight up like a pillar, not a spark to the roofs. Ten thousand names go up in it. In the morning there is a county where nobody can prove who owns whom."
+     }
+    },
+    {
+     "text": "\"Not with fire. Fire never stays where it is told\"",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "cq_rebel",
+      "log": "{npc} looks at you for a long time. \"Then what?\" {he} says. You do not have an answer that does not take a hundred years. {He} goes down the ridge without one."
+     }
+    },
+    {
+     "text": "Warn the magistrate in a dream",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "pride": 1
+      },
+      "npcFlag": "cq_rebel",
+      "flag": "cq_registers_warned",
+      "log": "The magistrate doubles the guard. On the festival night the rebels find soldiers waiting. Some escape up your ridge. Some do not. You tell yourself you prevented a fire."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_registers_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The army comes for {npc} and the others: three hundred men, from the provincial garrison, with a list. The rebels have gone up into the caves of your ridge with their families. The general sends a herald to the foot of the ridge: hand them down, or the villages that fed them burn instead.",
+   "npc": {
+    "role": "cq_rebel"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "after": [
+     "dc_cq_registers_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "cq_rebel"
+    ]
+   },
+   "arc": "The Burned Registers",
+   "choices": [
+    {
+     "text": "Fog the ridge for a month, until the army goes home",
+     "effects": {
+      "qi": -15,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "A month of fog so thick the soldiers rope themselves together to cross the village street. The rebels walk out over the far pass with their children and are never found. The general reports them all drowned."
+     }
+    },
+    {
+     "text": "Speak to the general: \"Burn nothing. Take me to court instead\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 3,
+       "pride": 1
+      },
+      "log": "The general is a sensible person and does not try to arrest the sky. The villages are spared. The rebels are pardoned three years later, quietly, because the court cannot work out how to punish a dragon."
+     }
+    },
+    {
+     "text": "Let the law take its course",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} walks down alone, in the end, to save the villages. You watch {him} taken away. The registers are rewritten within the year, from memory, which is long."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_registers_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Forty years after the fire, the grandchildren of the county's slaves are farming their own fields at the valley mouth. Some of the old families have tried three times to rebuild the registers from memory and old deeds, and there is a lawsuit in the county office, and a clerk with a ledger is walking the fields asking every farmer whose child they are.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_registers_1"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "cq_registers_burned"
+    ]
+   },
+   "arc": "The Burned Registers",
+   "choices": [
+    {
+     "text": "Blow the clerk's ledger into the river, every time",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1,
+       "pride": 1
+      },
+      "log": "After the seventh ledger the clerk asks for a different post. The lawsuit dies of exhaustion. The fields stay where they are."
+     }
+    },
+    {
+     "text": "Counsel the new magistrate: deeds for the land, in the farmers' own names",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "ward": 3,
+       "virtue": 2
+      },
+      "log": "Paper against paper. The new deeds are drawn up in a winter, every field, every name, with the magistrate's seal. It is much harder to burn a deed that protects you. Nobody tries."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_market_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The village is poorer than it should be, and you know exactly why: the trade road from the coast goes round the next valley, because your river has no ford. The peddlers with their A-frames, the salt carts, the fish, the news, all of it goes past on the far side of the hills. A river can be moved. You could do it in a night.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Shift the riverbed and lay a stone ford in one night",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "ward": 4,
+       "legend": 2
+      },
+      "flag": "cq_market_ford",
+      "log": "In the morning there is a wide stony shallow where the deep water was, and by the end of the year the salt carts come through it. The village holds its first market in the autumn."
+     }
+    },
+    {
+     "text": "Counsel the headman: build a bridge, with your own hands, together",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ward": 3,
+       "virtue": 1
+      },
+      "flag": "cq_market_ford",
+      "log": "It takes the valley three winters to build the bridge, stone by stone. It is crooked. It is theirs. They love it far more than anything you could have laid in one night."
+     }
+    },
+    {
+     "text": "Leave the road where it is. Trade brings tax collectors",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "The valley stays poor and quiet. The next valley gets the market, and the tax collectors, and a robbery a month. Your people hear about it and are not sure whether to envy them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_market_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Every fifth day the market fills the riverbank: salt, dried pollock, combs, rope, pots from the ridge kilns, an ox for sale, a fortune-teller, a man selling dragon scales that are painted fish skin. Prosperity has come to the village, and so has the county tax collector, who has doubled the market levy and is pocketing half.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_market_1"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "cq_market_ford"
+    ]
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Buy one of the painted scales, in human shape, and laugh",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "You pay a copper you borrowed from a tree spirit for a scale that is clearly carp. The seller swears it came off the dragon of the ridge. You agree that it did. It is on your back now, under the real ones."
+     }
+    },
+    {
+     "text": "Make the tax collector's scales weigh true, every market day",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "ward": 2
+      },
+      "log": "His weights grow heavier in his hand when he cheats, until he cannot lift them. The market laughs at him every fifth day. He leaves the county by the river road."
+     }
+    },
+    {
+     "text": "Stir a storm over the market whenever he comes",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "ward": 1
+      },
+      "log": "He comes on market day and the sky goes black over his head and nowhere else. He comes on a different day. Then he stops coming. The market thrives. The peddlers say the ridge has opinions about tax."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_seowon_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "A Confucian academy has been built at the valley mouth: a lecture hall, a shrine for a sage, forty students in white who rise before dawn to read the classics aloud. Now the scholars have drafted a petition to the governor: the shaman's shrine under the old tree, and the altar to the dragon of the ridge, are unorthodox and improper, and must be pulled down. The valley's old mudang has heard, and stands in front of her shrine with her arms folded.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Academy and the Shrine",
+   "choices": [
+    {
+     "text": "Blow the petition out of the courier's hands, every time it is sent",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "pride": 1
+      },
+      "flag": "cq_seowon_x",
+      "log": "Four couriers, four petitions, four gusts at the valley mouth. The fifth courier walks to the governor in a dead calm, and the governor, who has heard about the first four, decides not to read it."
+     }
+    },
+    {
+     "text": "Appear at the academy's dawn reading, and listen",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "cq_seowon_x",
+      "log": "Forty students look up from their books at the sky and stop reading. You say, \"Go on.\" They go on, voices shaking, the passage on the gentleman who reveres heaven. It is a very good passage. Nobody sends the petition."
+     }
+    },
+    {
+     "text": "Let it happen. The shrine is the mudang's fight, not yours",
+     "effects": {
+      "luck": 2,
+      "flag": "cq_seowon_x",
+      "log": "The governor orders the shrine pulled down. The villagers do it slowly, and badly, and put it back up behind the granary a month later. The scholars pretend not to know. Everybody wins a little and loses a little."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_cq_seowon_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The master of the academy comes up the ridge alone at night, without a lantern: an old scholar with a white beard and a famous name. {npc} sits down on a rock and addresses the dark politely. \"I do not believe in dragons,\" {he} says. \"I am told I should debate one. Very well. Convince me you are not a superstition.\"",
+   "npc": {
+    "role": "cq_seowon_master",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_seowon_master",
+     "ageAbs": 63,
+     "opinion": -5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "after": [
+     "dc_cq_seowon_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Academy and the Shrine",
+   "choices": [
+    {
+     "text": "Debate {him}: the classics, line for line",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "cq_seowon_master",
+      "mem": {
+       "deed": "debated",
+       "w": 18,
+       "note": "out-argued me on the classics"
+      },
+      "log": "You quote the Book of Changes on dragons, hidden, seen, flying and arrogant, and argue it till dawn. {npc} concedes nothing, then laughs and says it was the best debate of {his} life, and that {he} still does not believe in you."
+     },
+     "fail": {
+      "tally": {
+       "pride": 1
+      },
+      "npcFlag": "cq_seowon_master",
+      "log": "{npc} takes your arguments apart one by one, beautifully. You have been alive nine hundred years and have never once been out-argued. It is extremely annoying."
+     }
+    },
+    {
+     "text": "Say nothing. Let {him} sit in the dark with the ridge breathing",
+     "effects": {
+      "luck": 3,
+      "npcFlag": "cq_seowon_master",
+      "log": "{npc} sits until dawn. The ridge breathes. The pines move without wind. In the morning {he} goes down without a word, and the next week quietly drops the whole matter, and never says why."
+     }
+    },
+    {
+     "text": "Show {him} the view of the valley at dawn",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "cq_seowon_master",
+      "log": "The sun comes up over the village: the academy, the shrine, the market, the fields, the smoke of breakfast. \"Superstition or not,\" you say, \"this is what I keep.\" {npc} looks for a long time and says, \"That is an argument.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_seowon_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Thirty years on, the academy and the shrine stand on either side of the valley mouth. The best student of the academy this generation is the mudang's grandson, who reads the classics by day and drums for his grandmother's rites by night, and has been told by both sides to choose.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_seowon_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Academy and the Shrine",
+   "choices": [
+    {
+     "text": "Tell him he need not choose",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "ward": 2,
+       "virtue": 1
+      },
+      "log": "He passes the county examination and serves as a magistrate who holds the official rain rites properly and also, privately, asks his grandmother. It rains well in his county. Nobody can prove why."
+     }
+    },
+    {
+     "text": "Let him choose, and keep both doors open",
+     "effects": {
+      "comprehension": 3,
+      "log": "He chooses the academy, then the drum, then the academy again. By old age he has written a book about both that pleases nobody and is read for three hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_iron_1",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "A monk has been hiding in a cave on your ridge for a year: monks are hunted in the lowlands this reign. To pass the time he shaped a little beast out of cooked rice, the size of a mouse, and fed it a needle for company. It ate the needle. Then his scissors. Now it is the size of a dog, it has eaten the cave's iron door-hinges and his rice pot, and it is looking hungrily at the night, and at you.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ]
+   },
+   "arc": "The Iron-Eater",
+   "choices": [
+    {
+     "text": "Let it live. Iron-eaters have their uses",
+     "effects": {
+      "comprehension": 3,
+      "flag": "cq_iron_met",
+      "log": "It sniffs at your claws, decides you are not iron, and goes off down the ridge with its nose in the air like a hound on a scent. The monk watches it go with the face of someone who has made a mistake and is not sure what kind."
+     }
+    },
+    {
+     "text": "Feed it, carefully: only the vein-cutters' stakes",
+     "effects": {
+      "flag": [
+       "cq_iron_met",
+       "cq_iron_fed"
+      ],
+      "tally": {
+       "stakes": -2,
+       "ward": 2
+      },
+      "log": "You show it where the old iron lies in your ridge, the stakes, the blood needles, every one. It eats them like barley sugar. The ache you have carried in your bones for centuries goes out with them. It looks up at you with great affection and a full stomach."
+     }
+    },
+    {
+     "text": "Crush it while it is small",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "pride": 1
+      },
+      "log": "It is harder than iron already, but not harder than a dragon. You grind it back to rice and needles. The monk weeps over it, and over himself, and goes deeper into the mountains."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "cq_iron_met",
+      "log": "It bites you, and swallows the tip of one claw, and runs. Your claw is iron enough for it, apparently. (-10 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_iron_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The iron-eater is the size of an ox now, with a hide like a hedge of needles, and it has found the villages. In the village it has eaten every plough, sickle, hoe and cooking pot, every lock, every nail out of every door. The farmers cannot plant. The smiths cannot keep up. It sleeps in the threshing floor afterwards, full and pleased, and the children feed it nails.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_iron_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "cq_iron_met"
+    ]
+   },
+   "arc": "The Iron-Eater",
+   "choices": [
+    {
+     "text": "Lead it away up the ridge to the old mine, where there is iron in the rock",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 3,
+      "tally": {
+       "ward": 2,
+       "virtue": 1
+      },
+      "log": "It follows your trail of nails up into the hills and finds the old seam, and stays there, gnawing the mountain, as happy as a cow in clover. The valley buys new ploughs. They are very careful with them."
+     },
+     "fail": {
+      "tally": {
+       "ward": -2
+      },
+      "log": "It follows the nails up the hill, eats the nails, and comes back down for the smithy. The whole valley ploughs with wooden ploughs that spring, and the harvest is thin."
+     }
+    },
+    {
+     "text": "Ask the monk to call it back",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The monk comes down out of hiding to the threshing floor and calls it by a name, a silly one. It comes. He sits with it in the cave all summer, chanting, and it eats less. Not none. Less."
+     }
+    },
+    {
+     "text": "Drive it out of the valley with storm",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "ward": 1
+      },
+      "qi": -10,
+      "log": "It goes over the pass in a gale, needles rattling, and into the next county, where it eats a garrison's armoury. You hear about it. You are not proud of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_iron_3",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The court has heard. A company of soldiers comes against the iron-eater with spears and swords, and it eats them, the spears and swords, not the soldiers, and grows. Then they try fire. It walks out of the burning straw with its needles red-hot, and walks straight down the street of the nearest village, setting every thatch alight.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_iron_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Iron-Eater",
+   "choices": [
+    {
+     "text": "Rain on it, and on the village, with everything you have",
+     "effects": {
+      "qi": -20,
+      "tally": {
+       "rain": 1,
+       "virtue": 2,
+       "legend": 2
+      },
+      "log": "The hardest rain the valley has ever seen. The thatches hiss out. The iron-eater stands in the street steaming and, for the first time, shrinking. Water was the thing it could not eat. It slinks back up to its mine and is never so large again."
+     }
+    },
+    {
+     "text": "Fight it in the burning street",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "strength": 6,
+      "flag": "cq_iron_gone",
+      "tally": {
+       "legend": 4,
+       "fear": 1,
+       "pride": 2
+      },
+      "log": "You take it in your coils and squeeze until the needles bend and the heat goes out of it. When you let go it is a cold lump of iron the size of an ox, quite dead. They make it into a bell for the temple. It rings slightly flat."
+     },
+     "fail": {
+      "health": -35,
+      "log": "Its needles are red-hot and there are ten thousand of them.",
+      "deathCause": "the iron-eater, in a burning village street"
+     },
+     "risky": true
+    },
+    {
+     "text": "Lead it into the deep river pool and sink it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "cq_iron_gone",
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It follows you because it trusts you, into the deep pool, and sinks like the iron it is. It is still down there. On still nights you can hear it, very faintly, chewing an anchor."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "ward": -2
+      },
+      "log": "It will not go into the water; it smells the trick. Half the village burns before the soldiers bring buckets. (-12 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_iron_4",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Years later. The iron-eater lives on under your ridge, small again, the size of a dog, very old for a thing made of rice. Every few years, when the vein-cutters' men come at night with their stakes, it eats them by morning. It considers this its job. It is, you suspect, the happiest creature in the province.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     12
+    ],
+    "after": [
+     "dc_cq_iron_1",
+     "dc_cq_iron_3"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "cq_iron_fed"
+    ],
+    "notFlags": [
+     "cq_iron_gone"
+    ]
+   },
+   "arc": "The Iron-Eater",
+   "choices": [
+    {
+     "text": "Let it keep the job",
+     "effects": {
+      "tally": {
+       "stakes": -2,
+       "ward": 2
+      },
+      "luck": 3,
+      "log": "Nobody drives an iron stake into your ridge and finds it there in the morning ever again. The vein-cutters' school puts your ridge on a list of places not worth the iron."
+     }
+    },
+    {
+     "text": "Lie with it in the sun on the ridge, now and then",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It sleeps against your side like a dog against a stove. You never quite work out what it is. Neither, you think, does it. It does not seem to mind."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_stele_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The county magistrate, who has taxed the village twice for the same harvest, has decided the valley loves him, and has made the valley pay for a stone to say so: a stele on a stone turtle at the valley mouth, carved with his name and the words ETERNAL GRATITUDE FOR VIRTUOUS GOVERNMENT. Each household was charged a measure of rice for it. The unveiling is tomorrow. You are the Winnowing Star, and it is winter, and the wind does what you say.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Virtue Stele",
+   "choices": [
+    {
+     "text": "Crack it, top to bottom, the night before the unveiling",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 2,
+       "pride": 1
+      },
+      "log": "Frost goes into the stone and splits it down the middle, right through his name. Unveiled, it looks like a verdict. He leaves the county in the spring. The halves stand there for three hundred years."
+     }
+    },
+    {
+     "text": "Let the frost write the truth into the stone, a little each winter",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "Every winter the frost eats a stroke out of a character, and every spring the inscription says something slightly different. In a few years it says THE VALLEY PAID FOR THIS. Nobody carved it. Everybody reads it."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "The frost writes nonsense into it. Scholars come from the capital to study the mysterious characters for a century."
+     }
+    },
+    {
+     "text": "Counsel the next magistrate to put a second stone beside it, with the rice accounts",
+     "effects": {
+      "tally": {
+       "ward": 2,
+       "virtue": 1
+      },
+      "log": "The second stone lists every measure of rice paid, by household, and what it bought: one stone turtle. The two stand side by side. Magistrates of that county are very careful for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_heirs_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The house of the first settlers, the oldest family in the village, has lost its head, and two grandsons claim the ancestral tablets, the land and the right to lead the rites. The elder is slow, honest and kind to every tenant. The younger is clever, cold, and has already worked out how to double the rents. The clan cannot decide. Somebody has asked the ridge.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     9
+    ]
+   },
+   "arc": "The Two Heirs",
+   "choices": [
+    {
+     "text": "Bless the elder: the tablets, and a good harvest to prove it",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ward": 2
+      },
+      "log": "The elder leads the rites, badly, with great sincerity. The tenants' rents go down. The younger goes to the capital, becomes a clerk, and does very well, where cleverness and coldness are better paid."
+     }
+    },
+    {
+     "text": "Winnow them: make each farm one field for a year, and see",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "ward": 2
+      },
+      "log": "The elder's field feeds the neighbours. The younger's field makes a profit and a lawsuit. The clan sees it with its own eyes and decides, and nobody can blame the ridge."
+     },
+     "fail": {
+      "tally": {
+       "ward": -1
+      },
+      "log": "The year is a drought and both fields fail. Nobody learns anything except that the ridge is not always helpful."
+     }
+    },
+    {
+     "text": "Do nothing. It is not a dragon's house",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "pride": -1
+      },
+      "log": "The younger wins, by cleverness, and doubles the rents. In a few years the tenants have left and the house is poorer than ever. Some judgements are made by not judging."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_outlaw_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "There is an outlaw in the caves of your ridge: {npc}, a tenant's child who killed a landlord's steward and ran. {He} and forty followers rob the tax-grain barges on the river and the storehouses of the worst landlords, and every few months sacks of rice appear on the doorsteps of the poorest houses in the village. {He} has heard about you. {He} leaves a sack on the ridge shrine, too.",
+   "npc": {
+    "role": "cq_outlaw",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_outlaw",
+     "ageAbs": 28,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ]
+   },
+   "arc": "The Righteous Bandit",
+   "choices": [
+    {
+     "text": "Shelter {him}. The caves are deep",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ward": 1
+      },
+      "npcFlag": "cq_outlaw",
+      "flag": "cq_outlaw_sheltered",
+      "log": "The soldiers who come after {npc} lose themselves in your caves and come out in the wrong valley. {He} leaves a sack on the shrine every autumn after that, and once, a jar of the best makgeolli in the province, which you pour into the stream."
+     }
+    },
+    {
+     "text": "Test {him}: send a fat merchant past who is honest",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "cq_outlaw",
+      "log": "{npc} stops the merchant, reads the ledgers in the cart, and lets the merchant go with an apology and an escort. You are almost disappointed. You had hoped for a reason to dislike {him}."
+     }
+    },
+    {
+     "text": "Drive {him} off the ridge. Robbery is robbery",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "cq_outlaw",
+      "log": "A rockfall closes the caves. {npc} moves {his} band to the next county, and the doorsteps of the village stop finding rice, and the poorest houses blame the ridge."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_outlaw_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A royal commander with five hundred men has sealed the valley to take {npc}. They are going house to house in the village, asking who took the rice, and the rice is still in the jars. By evening someone will talk. {npc} has come out of the caves to the ridge shrine and is sitting there with {his} sword across {his} knees.",
+   "npc": {
+    "role": "cq_outlaw"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "after": [
+     "dc_cq_outlaw_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "cq_outlaw_sheltered"
+    ],
+    "npcFlags": [
+     "cq_outlaw"
+    ]
+   },
+   "arc": "The Righteous Bandit",
+   "choices": [
+    {
+     "text": "\"Go over the pass tonight. I will close it behind you\"",
+     "effects": {
+      "qi": -12,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "A landslide closes the pass an hour after {npc} and the forty cross it. The commander searches the valley for a month, finds rice in every jar and nobody who knows where it came from, and leaves."
+     }
+    },
+    {
+     "text": "\"Give yourself up. Save the village\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ward": 2
+      },
+      "log": "{npc} looks at you a long time, then nods, and walks down to the commander with the sword held out hilt first. The village is left alone. You go into the commander's dreams for a year after, until the sentence is changed to exile."
+     }
+    },
+    {
+     "text": "Speak to the commander from the sky",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3,
+       "pride": 2
+      },
+      "log": "The commander is a brave person and stands in the rain listening to a dragon explain the tax-grain accounts of the province. Then the commander sends a report to the court that names the landlords instead of the outlaw."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_outlaw_3",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is old, grey, limping, and has come back over the pass alone. The band is long gone; the landlords are mostly dead; one of them, {he} admits, was not as bad as {he} thought. {He} wants to be buried on your ridge, near the caves, with no stone.",
+   "npc": {
+    "role": "cq_outlaw"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     9,
+     11
+    ],
+    "after": [
+     "dc_cq_outlaw_2"
+    ],
+    "minYearsAfter": 30,
+    "npcFlags": [
+     "cq_outlaw"
+    ]
+   },
+   "arc": "The Righteous Bandit",
+   "choices": [
+    {
+     "text": "\"Stay, and keep the caves\"",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ward": 1
+      },
+      "npcPass": "old age, in the caves, keeping them",
+      "log": "{npc} lives in the caves ten more years, growing beans, telling stories to the boys of the village that grow better every telling. {He} is buried there with no stone, as asked. Every boy in the village knows the place."
+     }
+    },
+    {
+     "text": "\"Go down to the village. They remember the rice\"",
+     "effects": {
+      "charm": 3,
+      "npcPass": "old age, in a house in the village",
+      "log": "They remember. A house is found, and a bowl, and a seat at the threshing floor at every festival. {npc} dies there, warm, much embarrassed by the attention."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_baduk_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "Two immortals have sat down on a flat stone on your back to play baduk: white beards, cloud robes, one with a gourd, one with a fan, clicking stones onto the board very slowly. A young woodcutter came up the path with an axe, stopped to watch, and has been watching ever since. To him it has been an hour. It has been three days. The handle of the axe he is leaning on has begun, very slowly, to turn to dust.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Immortals' Game",
+   "choices": [
+    {
+     "text": "Shrug, gently, so the woodcutter stumbles and looks up",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "cq_baduk_woke",
+      "log": "He staggers, looks at his axe, looks at the sky, and runs down the mountain, three days late for supper and very confused. The immortals glare at you. \"It was a good game,\" says the one with the fan. \"He was learning something.\""
+     }
+    },
+    {
+     "text": "Lie still. A good game should not be interrupted",
+     "effects": {
+      "comprehension": 3,
+      "flag": "cq_baduk_slept",
+      "log": "You lie still and watch the game too. It is very beautiful, the black and the white, the long slow fight for a corner. When at last it ends you look round, and the woodcutter is still there, and the axe handle is gone."
+     }
+    },
+    {
+     "text": "Ask to play the winner",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 6,
+      "qi": 15,
+      "flag": "cq_baduk_woke",
+      "log": "The game you play takes a year and you lose by half a stone, and the immortal with the gourd says it is the best game a dragon has ever played, which is to say, the only one. The woodcutter, distracted by the novelty, goes home only a month late."
+     },
+     "fail": {
+      "comprehension": 3,
+      "flag": "cq_baduk_slept",
+      "log": "You lose in forty moves. The immortals are delighted and set up another game at once. The woodcutter, enthralled, does not move."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_baduk_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The woodcutter goes home down the mountain with an axe head and no handle, to a village he does not recognise. Strangers in his house. A great-great-grandchild, very old, is told the story of a young ancestor who went up the dragon ridge to cut wood and never came back, and here he is, at the gate, younger than everyone.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_cq_baduk_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "cq_baduk_slept"
+    ]
+   },
+   "arc": "The Immortals' Game",
+   "choices": [
+    {
+     "text": "Go down and explain, as well as anyone can",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "You tell them in a dream, all of them at once. In the morning the family takes him in, the youngest great-great-great-grandfather in the province. He lives a long time and is very good with children, being, in many ways, one."
+     }
+    },
+    {
+     "text": "Let him find his own way in his own century",
+     "effects": {
+      "comprehension": 3,
+      "log": "He becomes a story: the woodcutter who watched the immortals play. He tells it himself, in the market, for coppers, for years, and never gets it quite right, because he missed the end of the game."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_baduk_3",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The immortal with the gourd comes back alone, sets the board on the flat stone on your back, and taps it. \"A game,\" it says. \"No woodcutters this time. Just you. You have learned something since, I think. Show me.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     13
+    ],
+    "after": [
+     "dc_cq_baduk_1"
+    ],
+    "minYearsAfter": 60
+   },
+   "arc": "The Immortals' Game",
+   "choices": [
+    {
+     "text": "Play to win",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "comprehension": 5,
+      "tally": {
+       "legend": 2,
+       "pride": 2
+      },
+      "log": "You win by a stone and a half after a hundred years of play. The immortal looks at the board for a long time, then sweeps the stones into the bowls. \"Again,\" it says. You are not sure whether it is pleased."
+     },
+     "fail": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "You lose, as you lose every time. The immortal hums. \"You still play like a dragon,\" it says. \"All attack, no corners.\" It is the most useful thing anyone has said to you in a thousand years."
+     }
+    },
+    {
+     "text": "Play to learn, and give away the corners",
+     "effects": {
+      "comprehension": 6,
+      "qi": 15,
+      "tally": {
+       "pride": -3
+      },
+      "log": "You lose beautifully. The immortal laughs aloud for the first time in your acquaintance. \"There,\" it says. \"Now you play like the east. Everything given, and still the board is yours.\" Somewhere a season turns."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pearl_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "A light falls out of heaven at the sea mouth: a pearl the size of a man's head, burning white, the wish-pearl that dragons are painted holding. And from the southern islands, faster than you, comes a black dragon, lean as a whip, racing for it. \"It is mine!\" it shouts across the storm. It is younger than you. It might be right.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Pearl from Heaven",
+   "choices": [
+    {
+     "text": "Race for it",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 3,
+       "pride": 3
+      },
+      "flag": "cq_pearl_won",
+      "log": "You take it out of the air a length ahead of the black dragon. It burns in your claw, warm, alive, full of every wish anyone ever made. The black dragon screams and goes back south. You have the pearl. Now you have to decide what a pearl is for."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "pride": 1
+      },
+      "flag": "cq_pearl_lost",
+      "log": "The black dragon is faster and wants it more. It takes the pearl a breath ahead of you and lashes you across the face with its tail for good measure. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the black dragon have it",
+     "effects": {
+      "tally": {
+       "pride": -3,
+       "virtue": 1
+      },
+      "flag": "cq_pearl_lost",
+      "log": "You slow, on purpose, and the black dragon takes it and stops in the air, astonished, looking back at you. It does not thank you. But it does not forget."
+     }
+    },
+    {
+     "text": "Stop and ask whose it is",
+     "effects": {
+      "comprehension": 4,
+      "flag": "cq_pearl_lost",
+      "log": "While you are asking, the black dragon takes it. But you see, below, in the sea mouth, an old grey serpent with its head out of the water, watching the pearl go, with the face of something that has waited a very long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pearl_2",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "You have the pearl, and everyone knows it. Kings send envoys. Sects send thieves. Your valley asks for rain, health, sons, a new bridge, and you could give every wish. At the sea mouth an old grey serpent, an imugi that has waited a thousand years, has come up out of the deep and lies on the rocks without asking for anything. A pearl from heaven, the old stories say, is how a serpent becomes a dragon. This one fell where it lay.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     12
+    ],
+    "after": [
+     "dc_cq_pearl_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "cq_pearl_won"
+    ]
+   },
+   "arc": "The Pearl from Heaven",
+   "choices": [
+    {
+     "text": "Give the pearl to the serpent",
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "pride": -4,
+       "legend": 2
+      },
+      "log": "You lay it in front of the old grey head. It looks at you for a long time. Then it takes the pearl in its mouth, and the sea mouth goes white, and a new dragon rises out of the storm, grey and enormous, weeping. It bows to you once, and goes up."
+     }
+    },
+    {
+     "text": "Keep it, and grant the valley's wishes, carefully",
+     "effects": {
+      "tally": {
+       "ward": 5,
+       "pride": 3
+      },
+      "qi": 15,
+      "log": "One wish a year, small ones: a bridge, a well, a fever lifted. The valley becomes the luckiest in the land. The pearl grows a little dimmer each time, and you grow a little prouder, and the serpent at the sea mouth goes back down into the deep."
+     }
+    },
+    {
+     "text": "Throw it back into the sky",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "pride": -2
+      },
+      "log": "It goes up like a star in reverse and does not come down. Wherever it went, it went without you holding it. You feel very light afterwards, and a little foolish, and right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_pearl_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The black dragon of the southern islands comes north to find you, a hundred years older and no longer lean. It lands on your ridge and folds itself up awkwardly. \"About the pearl,\" it says. \"I have been thinking about it for a century. I want to know what you would have done with it.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     13
+    ],
+    "after": [
+     "dc_cq_pearl_1"
+    ],
+    "minYearsAfter": 90,
+    "notFlags": [
+     "cq_pearl_won"
+    ]
+   },
+   "arc": "The Pearl from Heaven",
+   "choices": [
+    {
+     "text": "Tell it honestly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "You tell it the truth, which is that you do not know. The black dragon laughs, a sound like surf on rocks. \"Neither did I,\" it says. \"I kept it in a cave for a hundred years and was afraid to wish.\" It stays a season. You are friends, more or less, after that."
+     }
+    },
+    {
+     "text": "Challenge it to a race, for no pearl at all",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "Round the eastern sea and back, for nothing. You win by a whisker. It wins the next one. You race every century after, and the fishermen of three coasts time their seasons by it."
+     },
+     "fail": {
+      "strength": 2,
+      "log": "It wins easily, still faster. It is delighted. You are, unexpectedly, delighted too."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_duelist_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "A grandmaster has climbed the highest peak in the land, above the clouds, to stand where the Flying Dragon passes: the strongest sword of the age, white-haired, unbeaten for forty years and bored to death of it. \"Nobody on the ground is worth drawing for,\" {npc} calls into the wind. \"Come down, dragon. One exchange. I want to know if I am anything.\"",
+   "npc": {
+    "role": "cq_duelist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cq_duelist",
+     "ageAbs": 70,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     12
+    ]
+   },
+   "arc": "The Grandmaster Who Climbed the Clouds",
+   "choices": [
+    {
+     "text": "Give {him} the exchange",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "legend": 4,
+       "pride": 3
+      },
+      "npcFlag": "cq_duelist",
+      "mem": {
+       "deed": "dueled",
+       "w": 20,
+       "note": "gave me the one exchange I wanted"
+      },
+      "log": "One cut, one strike of a five-clawed foot, a sound like a mountain cracking. When the cloud settles {npc} is on {his} back in the snow, laughing, sword broken, and there is a fine line cut in the scales of your foreleg. \"Something,\" {he} says. \"I am something.\""
+     },
+     "fail": {
+      "health": -35,
+      "log": "The best sword of the age is very, very good.",
+      "deathCause": "the sword of a grandmaster above the clouds"
+     },
+     "risky": true
+    },
+    {
+     "text": "\"You are something. Go home and teach it\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -2,
+       "virtue": 1
+      },
+      "npcFlag": "cq_duelist",
+      "log": "{npc} stands in the wind a long time, sword half drawn. Then {he} sheathes it. \"Teaching,\" {he} says, as if tasting a new word. {He} goes down the mountain. Twenty years later there are three swordsmen in the land almost as good as {him}."
+     }
+    },
+    {
+     "text": "Fly past without stopping",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": 1
+      },
+      "npcFlag": "cq_duelist",
+      "log": "You go by like weather. {npc} watches you go, and sits down in the snow, and laughs until {he} cries. \"Not even worth stopping for,\" {he} says. \"Good. Good. I needed that.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_duelist_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "A young swordsman climbs the same peak above the clouds with a broken sword wrapped in silk: {npc}'s, the grandmaster's, dead now, very old, in bed, to everyone's surprise. The young one is the last student. \"My teacher said to bring it back to you,\" the student says. \"And to say: thank you for the answer.\"",
+   "npc": {
+    "role": "cq_duelist"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     10,
+     13
+    ],
+    "after": [
+     "dc_cq_duelist_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "cq_duelist"
+    ]
+   },
+   "arc": "The Grandmaster Who Climbed the Clouds",
+   "choices": [
+    {
+     "text": "Take the broken sword and keep it in the clouds",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcPass": "old age, in bed, to everyone's surprise",
+      "log": "It lies in the heart of a cloud on the eastern sky for a thousand years. Sometimes, in a storm, a swordsman on the ground sees the gleam and thinks it is lightning."
+     }
+    },
+    {
+     "text": "Give the student the exchange the teacher had",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "npcPass": "old age, in bed, to everyone's surprise",
+      "log": "A gentle one: you let the student touch your foreleg once with the flat of the blade, on the old scar. The student goes down the mountain different. In a few years it is the best sword of a new age."
+     },
+     "fail": {
+      "npcPass": "old age, in bed, to everyone's surprise",
+      "log": "The student cuts too hard, out of grief, and you have to knock the blade away. Nobody is hurt. The student weeps on the summit, and you stay until it is over."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_yeongdeung_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The second moon, and on the windy island in the southern sea the Wind Grandmother comes in on her own gale, as she does every year: white hair streaming, a basket on her hip, sowing seeds of shells and sea grass over the sea floor for the divers to harvest. The island's divers make her a rite on the black rocks. She looks up at you in the sky with a sharp old eye. \"Land spring,\" she says. \"Everybody sings about land spring. Who sings for the sea?\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ]
+   },
+   "arc": "The Wind Grandmother",
+   "choices": [
+    {
+     "text": "\"You do. Teach me the sea spring\"",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "pride": -2
+      },
+      "flag": "cq_wind_grandmother",
+      "log": "She takes you down under the waves for the whole of her two weeks: the kelp waking, the abalone, the divers going down on one breath with their nets. When she leaves on her straw boat she says you are a slow learner and a good one."
+     }
+    },
+    {
+     "text": "Sing for the sea yourself, with the island's rite",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 4,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "cq_wind_grandmother",
+      "log": "The shaman on the rocks hears something under the drums: a long low voice singing for the sea. The divers have the best season in living memory. The Wind Grandmother sniffs and says it was adequate."
+     },
+     "fail": {
+      "flag": "cq_wind_grandmother",
+      "log": "Your song comes out as a spring thunderstorm, which is the wrong season for the sea. The Wind Grandmother laughs so hard her gale blows the offerings off the rocks."
+     }
+    },
+    {
+     "text": "\"The east wind is mine. Your gale is late\"",
+     "effects": {
+      "tally": {
+       "pride": 3
+      },
+      "strength": 2,
+      "log": "She sets down her basket and blows. You spend three days in a typhoon you did not order, learning that an old woman with a gale is not to be argued with in her own month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_yeongdeung_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The farewell rite on the island: the oldest men push a little straw boat loaded with rice cakes out into the waves to carry the Wind Grandmother home, and the shaman scatters millet seed on a mat to read the year from where it falls. The Wind Grandmother sits in the straw boat, which is far too small for her, and beckons you down. \"Read the seeds with me,\" she says. \"It is my last year. Someone has to know how.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_cq_yeongdeung_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "cq_wind_grandmother"
+    ]
+   },
+   "arc": "The Wind Grandmother",
+   "choices": [
+    {
+     "text": "Learn to read the seeds",
+     "effects": {
+      "comprehension": 5,
+      "qi": 15,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The millet on the mat is a map: here the shoals, here the storm, here a diver who must not go out on the ninth day. Next year the shaman reads it, and you read it with her, and the diver stays home."
+     }
+    },
+    {
+     "text": "\"Not your last. Come back in spring, with me\"",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 1
+      },
+      "log": "\"Spring is your business,\" she says, but she comes back, in the second moon, a little smaller, on a softer wind. The island says the grandmother has grown gentle. She says she has grown lazy, and has a dragon to help."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_ipchun_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The first day of spring by the old calendar, and the people of every village in the land are writing the same four characters and pasting them on their gates: GREAT LUCK AT THE START OF SPRING. Ten thousand gates, a hundred thousand, all addressed to you, as if spring could be invited by letter. In one village one gate is bare. Behind it a family in mourning white has not felt like writing anything this year.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "Lucky Spring on Every Gate",
+   "choices": [
+    {
+     "text": "Go to the bare gate first",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "ward": 1
+      },
+      "log": "You come in through the bare gate as a warm wind, and the plum by the kitchen opens one bud, and a child in white sees it and runs to tell the others. Nobody writes anything. Nobody needs to."
+     }
+    },
+    {
+     "text": "Come to every gate at once, as you always do",
+     "effects": {
+      "qi": 15,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Spring comes everywhere on the same morning, to every gate, written or not. It is what you are. The bare gate gets it too. You hope that is enough."
+     }
+    },
+    {
+     "text": "Write the four characters yourself, in frost, on the bare gate",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "charm": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "In the morning there they are on the bare gate, in frost-white, in a hand nobody in the village has. They melt by noon. The family talks about them for the rest of their lives, and writes them again the next year themselves."
+     },
+     "fail": {
+      "luck": 1,
+      "log": "The frost characters come out slightly wrong, the way a child writes them. The family laughs for the first time since the funeral. Perhaps that was the point."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_swallow_1",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "The third day of the third moon: the swallows come back from the far south, the girls fry azalea petals on rice cakes, and everyone walks out on the new green. One swallow is late, and lands on your wind with a mended leg, bound with thread and a twig. A poor farmer did it, it tells you, last autumn, a man too poor to feed his own children, who still had thread for a bird. \"I want to give him something,\" it says. \"I am a swallow. I have nothing. You are spring.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "The Swallow's Seed",
+   "choices": [
+    {
+     "text": "Give it a gourd seed full of spring",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "ward": 1
+      },
+      "flag": "cq_swallow_seed",
+      "log": "The swallow drops it in the poor man's yard. A gourd vine comes up over the roof in a week, and in autumn the gourds are as big as rice jars. When he saws them open, they are full of rice. Only rice. He weeps anyway; it is what he needed."
+     }
+    },
+    {
+     "text": "Give it a good season for him, nothing magic",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ward": 1
+      },
+      "log": "His field has the best year in the village and nobody can explain it. He thanks heaven. The swallow nests under his eaves every year after, and he never knows it is a messenger."
+     }
+    },
+    {
+     "text": "\"You are a swallow. Your thanks is to come back\"",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "The swallow thinks about this and comes back, every spring, to his eaves, for the rest of its life, and its children after it. The farmer considers this the luckiest thing that ever happened to him. He is right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_swallow_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The poor farmer's rich brother has heard about the gourds. He has caught a swallow in his own yard, broken its leg on purpose, bound it with silk thread, and set it free with a great show of pity. The swallow comes to you limping. It does not want to give him anything. It is very frightened of him.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ],
+    "after": [
+     "dc_cq_swallow_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "cq_swallow_seed"
+    ]
+   },
+   "arc": "The Swallow's Seed",
+   "choices": [
+    {
+     "text": "Give the rich brother a gourd seed too",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 2
+      },
+      "log": "His gourds grow as big as houses. When he saws them open, out come goblins with clubs, a flood of muddy water, and a moneylender with a ledger. He loses everything and goes to live with his poor brother, who takes him in. The story is told for a thousand years."
+     }
+    },
+    {
+     "text": "Mend the swallow's leg yourself, and send it far away",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "It flies south a month early, whole, and never comes back to his yard. His eaves stay empty for the rest of his life. He never knows why, which is the worst punishment you can think of for a man who must know everything."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_chilseong_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The Seven Stars of the north come across the sky to the east one night, in a line, seven old spirits in white: the Dipper, who keep the length of human lives. Every night in ten thousand villages, mothers set out a bowl of clean water to them for their children's years. Tonight one mother's child is dying, and the seven have come to ask a strange favour: \"Lend us your seven stars for one night. Fourteen is a stronger number than seven.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ]
+   },
+   "arc": "The Seven Stars of the North",
+   "choices": [
+    {
+     "text": "Lend them, and let the east go dark for a night",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "flag": "cq_chilseong_lent",
+      "log": "For one night the Eastern Palace is dark, and astronomers across the land write frightened reports, and a child with a fever opens its eyes and asks for water. In the morning your stars come back, a little brighter for the use."
+     }
+    },
+    {
+     "text": "\"Lives are yours to count, not mine\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": 1
+      },
+      "log": "The seven bow and go back north. The child lives, or does not; you do not ask. You tell yourself it was not your mansion. It was not. You think about it for a long time anyway."
+     }
+    },
+    {
+     "text": "Go yourself, as spring, to the child's room",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "cq_chilseong_lent",
+      "log": "You come in through a crack in the paper door as a warm green breath, and the fever breaks like ice in a thaw. The seven stars watch from the window, and the eldest nods. \"That works too,\" it says."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_chilseong_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The child the Seven Stars saved is very old now, a grandmother of forty grandchildren, and every night she sets out two bowls of clean water on her terrace: one facing north, one facing east. Tonight she is dying, gently, and the seven old spirits have come for her, and they look at you, and at the second bowl.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ],
+    "after": [
+     "dc_cq_chilseong_1"
+    ],
+    "minYearsAfter": 70,
+    "flags": [
+     "cq_chilseong_lent"
+    ]
+   },
+   "arc": "The Seven Stars of the North",
+   "choices": [
+    {
+     "text": "Drink from the east bowl, and let her go with the seven",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "You drink the water and she sees you do it, and smiles, and goes north with the seven old men, holding the youngest one's sleeve. Forty grandchildren set out two bowls every night after."
+     }
+    },
+    {
+     "text": "Blossom the plum by her terrace one last time",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "ward": 1
+      },
+      "log": "In the middle of autumn the old plum by her terrace opens all at once. She looks at it, and laughs, and goes. The plum flowers every autumn after, out of season, and the family never explains it to anyone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_steppe_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "You are spring, and spring does not stop at the mountains. Far to the north, past the last rice field, past the last tiled roof, there is a grassland as wide as a sky, where herders live in felt tents and count the year by the foals. Here nobody calls you by any name at all. A mare is foaling in the last snow at dawn, and the herder kneeling beside her is praying to a sky that is, this morning, you.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "Spring on the Grasslands",
+   "choices": [
+    {
+     "text": "Come early here, a week before the east",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The snow goes off the grass a week early and the foal stands up on green. The herder sings a song in a language you have never heard. It is about you. It does not need your name."
+     }
+    },
+    {
+     "text": "Come as the herders know you: a hard wind and then grass",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "pride": -1
+      },
+      "log": "You learn the grassland spring: not blossom and rain, but a wind that hurts and then, all at once, grass to the horizon. It is a different spring. It is still you. You did not know you could be this."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_seaspring_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "Spring under the sea comes late and green: the kelp waking, the fish turning north, light coming down through the water a little longer every day. The Dragon King of the eastern sea receives you in his palace of coral with great formality, as one king receives another, and then, when the courtiers have gone, leans over and says: \"You were an egg in a village well. I remember. I sent the rain that night.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "Spring Under the Sea",
+   "choices": [
+    {
+     "text": "Thank him for the rain",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "pride": -2,
+       "virtue": 1
+      },
+      "log": "He waves it away, pleased. \"Everybody forgets the rain,\" he says. \"They remember the well.\" You stay a season in the coral palace, and learn how the sea does spring, slowly, from the bottom up."
+     }
+    },
+    {
+     "text": "Ask him who laid the egg",
+     "effects": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "He looks at you a long time. \"Nobody laid it,\" he says at last. \"Spring wanted to be somebody for a while, and the well was there.\" You think about that for a hundred years, and it never stops being strange."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_mago_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The ground shakes, and it is not you. A grandmother taller than the mountains is walking across the land with an apron full of boulders, as she did when the world was new and she set the hills where they are. She stops at your valley, squats down with a grunt, and looks at your old ridge. \"Crooked,\" she says. \"I always meant to fix that. Hold still.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "The Giant Grandmother",
+   "choices": [
+    {
+     "text": "Hold still. She made the mountains",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "pride": -3
+      },
+      "flag": "cq_mago_met",
+      "log": "She nudges your old ridge a hand to the left with her thumb. Every house in the village rattles. Afterwards the river runs a little straighter and the morning sun comes into the valley a quarter of an hour earlier, and nobody has ever been able to explain that either."
+     }
+    },
+    {
+     "text": "\"It is crooked because I lay there, Grandmother\"",
+     "effects": {
+      "charm": 4,
+      "flag": "cq_mago_met",
+      "log": "She peers at you, close, with an eye the size of a pond. \"Ah,\" she says. \"So it is. Then it is the right kind of crooked.\" She pats the ridge, and gets up, and goes north, and an earthquake follows her like a dog."
+     }
+    },
+    {
+     "text": "Ask her what she meant the world to be",
+     "effects": {
+      "comprehension": 5,
+      "qi": 15,
+      "flag": "cq_mago_met",
+      "log": "\"Lived in,\" she says. \"That is all. Mountains for the back, water for the front, something kind on the left and the right.\" She looks at you and the old White Tiger's ridge. \"Good. That part worked.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_mago_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The giant grandmother comes back older and much smaller, the size of a hill now, tired, her apron empty. She sits down on your old ridge with her back against the sky. \"The world is made,\" she says. \"Nobody needs a grandmother with boulders any more. They need spring. Tell me, is it tiring, being needed every year?\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ],
+    "after": [
+     "dc_cq_mago_1"
+    ],
+    "minYearsAfter": 150,
+    "flags": [
+     "cq_mago_met"
+    ]
+   },
+   "arc": "The Giant Grandmother",
+   "choices": [
+    {
+     "text": "\"Yes. It is the best thing I know\"",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "She laughs, and the hills echo it. \"Good answer,\" she says. She sleeps on your ridge for a season, and when she goes, there is a new hill at the valley mouth, the shape of an old woman sleeping, and the children slide down it in winter."
+     }
+    },
+    {
+     "text": "Lend her a spring of her own, on one hill",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "legend": 2
+      },
+      "log": "You make one hill bloom for her alone, out of season, all azalea. She sits in it and cries a little, which is an earthquake in the next province. Afterwards she says it was the best present anyone ever gave her, including the mountains, which she gave to herself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_graves_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "Cold Food Day, a hundred and five days after the solstice: no fires, cold mugwort cakes, families on every hill in the land weeding their graves. You are spring, so you are on every hill at once, and you find you know where they all are: the farmers, the potters and the singers, the hunters, the first hand that ever drew water. Thousands of years of people. Every one of them, today, under new grass.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "Cold Food Day",
+   "choices": [
+    {
+     "text": "Visit every one, in order, all day",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 2,
+       "pride": -3
+      },
+      "log": "It takes the whole day, being everywhere. Over each one you bring up one small green thing: a violet, a shoot of bracken, a single azalea. By dusk the hills are full of names nobody living remembers but you."
+     }
+    },
+    {
+     "text": "Visit one: the grave of the first water",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "An old grave by an old well, long ago flattened by ploughs, that nobody weeds because nobody knows. You know. You lie there all day as a warm wind, and in the evening the well water tastes, for one hour, like the first water of a year long gone."
+     }
+    },
+    {
+     "text": "Let the living weed. Spring is for them",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "ward": 2
+      },
+      "log": "You give the day to the living: the children sliding on the grave hills, the grandmothers unpacking cold cakes. The dead, you feel, would approve. Most of them were very practical people."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_late_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "One year, for the first time in all your thousand years as spring, you do not want to come. Nothing is wrong. You are only tired, in a way no Dive cures: tired of beginning, every year, the same beginning. The ice stays on the paddies. The plum stays shut. In ten thousand villages people look at the sky and then at each other.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "The Year Spring Was Late",
+   "choices": [
+    {
+     "text": "Come anyway. That is what being spring means",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "pride": -2
+      },
+      "log": "You come a week late, heavily, like an old farmer getting up before dawn. Nobody notices the difference except a few very old women, who say the spring is tired this year, and leave out extra rice."
+     }
+    },
+    {
+     "text": "Rest one more week, and let them wait",
+     "effects": {
+      "luck": 3,
+      "flag": "cq_late_spring",
+      "log": "A week of hard frost in the third month. Some seedlings die. In a village you know, a child goes out into a frozen field with a stick and a handful of seeds and plants them anyway, alone, on principle."
+     }
+    },
+    {
+     "text": "Ask the Black Tortoise to hold winter a little longer, for you",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "pride": -1
+      },
+      "flag": "cq_late_tortoise",
+      "log": "The tortoise and the snake of the north look at you with something like tenderness. \"Everybody gets tired,\" says the tortoise. \"Even spring,\" says the snake. They hold winter, a week, carefully, so that nothing dies."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_late_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The child who planted seeds in the frozen field is grown, a farmer, and this spring stands at the edge of that same field at dawn as you come over the hills, on time, and says to the empty air: \"I knew you would. I planted first anyway. I always do now. Just in case you are tired.\"",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ],
+    "after": [
+     "dc_cq_late_1"
+    ],
+    "minYearsAfter": 20,
+    "flags": [
+     "cq_late_spring"
+    ]
+   },
+   "arc": "The Year Spring Was Late",
+   "choices": [
+    {
+     "text": "Bring that field up first, every year, for the rest of that life",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "ward": 2,
+       "virtue": 1
+      },
+      "log": "Every spring for years, that field is the first green in the land. The farmer never says a word about it to anyone, and plants first, every year, just in case."
+     }
+    },
+    {
+     "text": "Rest in the field for a day, as a warm wind, and let a human begin the spring",
+     "effects": {
+      "comprehension": 5,
+      "qi": 15,
+      "log": "For one day spring is something that is done to you, by a farmer with a stick, and you find it is the most restful day you have had in a thousand years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_messengers_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Three messengers of the underworld in black robes and tall black hats stand at the gate of a cottage in the village with a summons in red. The old woman inside is ready to go, and tells them so, and asks for only one thing: to see the plum in the yard flower once more. It is late winter. The plum is ten days from flowering. The messengers have a schedule.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ]
+   },
+   "arc": "The Three Messengers",
+   "choices": [
+    {
+     "text": "Bring spring ten days early, to one tree",
+     "effects": {
+      "qi": -10,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "The plum opens in the night, alone in a frozen village. She sits at the door in the morning and looks at it until noon, and then she gets up and goes out to the messengers herself, and they wait for her politely, because even they have heard of you."
+     }
+    },
+    {
+     "text": "Ask the messengers to wait ten days",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The three confer, look at their scroll, look at the sky full of you, and sit down on the woodpile to wait. For ten days the old woman feeds them rice cakes. On the tenth the plum flowers. They all go together, and she is laughing."
+     },
+     "fail": {
+      "tally": {
+       "pride": 1
+      },
+      "log": "They do not bargain, even with spring. She goes that night. In the morning you flower the plum anyway, over her empty room, and her grandchildren find it and understand."
+     }
+    },
+    {
+     "text": "Let them do their work. Every spring is the last for someone",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "pride": -2
+      },
+      "log": "She goes. The plum flowers ten days later, as it was always going to. Her granddaughter sits under it and tells you about her. You listen. That, too, is spring."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_northwinter_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The Black Tortoise of the north invites you, formally, through a snow goose, to spend one winter in the north with it and the snake: to see where your autumn goes when you hand it over. You have been a guardian for centuries and have never once seen winter from the inside.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     12,
+     13
+    ]
+   },
+   "arc": "A Winter in the North",
+   "choices": [
+    {
+     "text": "Go, and sit the whole winter on the ice",
+     "effects": {
+      "comprehension": 5,
+      "qi": 20,
+      "tally": {
+       "pride": -3
+      },
+      "log": "Six months of dark and snow and the tortoise saying nothing and the snake saying everything. It is the most peaceful season of your life. When you go back south you understand spring better, the way you understand a door better from the other side."
+     }
+    },
+    {
+     "text": "Decline politely. The valley needs you even in winter",
+     "effects": {
+      "tally": {
+       "ward": 2
+      },
+      "luck": 2,
+      "log": "The snow goose takes your answer back north. The tortoise sends another, a hundred years later, with the same invitation, word for word. The north is patient. It will ask again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hatchling_1",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The first full moon of a year, and you feel it the way spring feels a seed: in a village well far to the south, on the cold stones under the water, there is an egg. Blue-green, the size of a fist. At first cockcrow women will race up the lane with water jars. You were that egg, once. This one is not you. It is somebody new.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ]
+   },
+   "arc": "Another Egg",
+   "choices": [
+    {
+     "text": "Watch, and do nothing. That is how it was for you",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "pride": -2
+      },
+      "flag": "cq_hatchling",
+      "log": "A young woman wins the race, draws the first water, floats her straw, and carries the jar home on her head, and does not know what is in it. You are spring, so you are there. You do not help. You remember being glad, later, that nobody did."
+     }
+    },
+    {
+     "text": "Warm the well, so the egg does not take a chill",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ward": 1
+      },
+      "flag": "cq_hatchling",
+      "log": "The well water is warm that morning, which the women take as luck. It is. Something on the stones at the bottom stirs, very slightly, and settles, content."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hatchling_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The new dragonet has hatched in its water jar, lizard-sized, three claws to a foot, and has already made an enemy of the kitchen cat and a friend of the grandmother, who says do not tell. It does not know what it is. It does not know you exist. Tonight, for the first time, it lifts its head out of the jar and looks at the stars, and finds seven in the east, in a line.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ],
+    "after": [
+     "dc_cq_hatchling_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "cq_hatchling"
+    ]
+   },
+   "arc": "Another Egg",
+   "choices": [
+    {
+     "text": "Let the seven stars shine a little brighter, once",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "It looks at them all night. In the morning the grandmother finds it asleep on the rim of the jar, facing east. She says it is a good sign. She is right, though not for the reason she thinks."
+     }
+    },
+    {
+     "text": "Stay as you are. It must find them itself",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "pride": -2
+      },
+      "log": "The seven stars are just stars that night. It looks anyway. Some of the best things you ever did, you remember, were the ones you worked out alone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cq_hatchling_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The young dragon is in the field now, dog-sized, and has been seen: by a poor farmer who told nobody. It is frightened of the farmers' sickles and rather proud of its new horns. And it has made its first mistake: it breathed on a neighbour's field to make it green, and the drought took the rest of the valley instead, and now it lies in the paddy at night and does not understand.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     13,
+     13
+    ],
+    "after": [
+     "dc_cq_hatchling_2"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "Another Egg",
+   "choices": [
+    {
+     "text": "Come into its dream, once, as an old dragon would",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You say very little: that spring is not a thing you give, but a thing you share, and that every dragon learns it the hard way, and that you did too. It wakes and lies in the paddy thinking. Next year it breathes on the whole valley, thinly, and it is enough."
+     }
+    },
+    {
+     "text": "Let it learn, as you learned",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "pride": -2
+      },
+      "log": "It works it out by the end of summer, slowly, wrongly, then rightly. You watch it light, a hundred years later, its first star, the Horn. You are very nearly proud. You let yourself be."
+     }
+    },
+    {
+     "text": "Send the White Tiger's grandchildren to keep an eye on it",
+     "req": {
+      "flags": [
+       "cq_tiger_ally"
+      ]
+     },
+     "effects": {
+      "tally": {
+       "tiger": 2,
+       "virtue": 1
+      },
+      "log": "Two young white tigers turn up on the right ridge of its valley, bored and nosy. The young dragon has no idea how lucky it is. It will, in three hundred years, when they meet on a saddle between two ridges."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

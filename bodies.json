@@ -1,0 +1,279 @@
+{
+ "events": [
+  {
+   "id": "bd_nine_yang_cure",
+   "cat": "misc",
+   "when": {
+    "age": [
+     10,
+     40
+    ],
+    "meridians": [
+     "nineYang"
+    ]
+   },
+   "weight": 5,
+   "text": "The Nine Yang Burning Meridians are cooking you from the inside: your fevers never break, and physicians say you will not see forty. An old text speaks of a Cold Jade Bed at the bottom of a northern lake, where the fire can be drawn out.",
+   "choices": [
+    {
+     "text": "Dive for the Cold Jade Bed",
+     "risky": true,
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "flag": [
+       "yinyang_cured"
+      ],
+      "meridians": "heavenly",
+      "lifespan": 30,
+      "fame": 10,
+      "log": "You sleep forty nights on the jade at the bottom of the frozen lake. The fire in your veins turns to steady light: your burning meridians become the Heaven-Born Martial Body."
+     },
+     "fail": {
+      "health": -55,
+      "deathCause": "the frozen lake",
+      "log": "The lake nearly takes you. You come up blue and shaking, and the fire is still there."
+     }
+    },
+    {
+     "text": "Seek a master of the coldest yin arts",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": [
+       "yinyang_cured"
+      ],
+      "lifespan": 20,
+      "qi": 10,
+      "log": "An old nun of the yin arts lays her palms on your back for forty-nine days. The fire banks. Not forever, but for a very long time."
+     },
+     "fail": {
+      "lifespan": 5,
+      "log": "She helps a little, and refuses to do more. It buys you a few years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bd_demon_body_envoy",
+   "cat": "encounter",
+   "once": true,
+   "when": {
+    "age": [
+     10,
+     22
+    ],
+    "meridians": [
+     "demonBody"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "A woman in black silk finds you at the market and does not let go of your wrist. 'A Heavenly Demon Body. The Cult has looked for one like you for thirty years.' She smiles. 'The Hundred Thousand Mountains would make you a god.'",
+   "choices": [
+    {
+     "text": "Ask what they would teach you",
+     "effects": {
+      "alignment": -10,
+      "qi": 15,
+      "flag": "cult_courted",
+      "log": "She shows you one breathing pattern, there in the street. Your meridians drink it like dry earth drinks rain."
+     }
+    },
+    {
+     "text": "Pull your hand away",
+     "effects": {
+      "alignment": 5,
+      "flag": "cult_courted",
+      "log": "She lets go, and laughs. 'The mountains will wait. Your body will call you back to us.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "bd_demon_body_hunted",
+   "cat": "danger",
+   "when": {
+    "age": [
+     15,
+     60
+    ],
+    "meridians": [
+     "demonBody"
+    ],
+    "alignment": [
+     20,
+     100
+    ]
+   },
+   "weight": 3,
+   "text": "A Shaolin elder stops you on the road, his face grave. 'I can feel what you were born as. A Heavenly Demon Body, walking a righteous road.' He hesitates. 'The others would not believe it. They would kill you to be safe.'",
+   "choices": [
+    {
+     "text": "Show him your heart",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 5,
+      "fame": 8,
+      "log": "He watches you for a long time and then bows. 'Then you are the strangest and best thing I have seen in fifty years.' He vouches for you to the orthodox sects."
+     },
+     "fail": {
+      "health": -25,
+      "log": "He does not believe you. You leave that province by night, with a palm-print bruise on your back."
+     }
+    },
+    {
+     "text": "Leave before he decides",
+     "effects": {
+      "luck": 1,
+      "log": "You walk away fast and do not look back. Behind you, he says a prayer for you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "bd_profound_yin_suitors",
+   "cat": "romance",
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "married": false,
+    "meridians": [
+     "profoundYin"
+    ]
+   },
+   "weight": 4,
+   "text": "Three young masters of three great families have sent gifts this month. A Profound Yin Body is a treasure to cultivators, and everyone seems to know what you are.",
+   "choices": [
+    {
+     "text": "Return every gift",
+     "effects": {
+      "alignment": 3,
+      "fame": 3,
+      "log": "You send them all back with the same polite note. The gossip only grows."
+     }
+    },
+    {
+     "text": "Keep the best of them",
+     "effects": {
+      "taels": 150,
+      "charm": 2,
+      "log": "A jade hairpin, a bolt of cloud silk and a box of silver. You write three very careful thank-you letters."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bd_sword_bones_saint",
+   "cat": "encounter",
+   "once": true,
+   "when": {
+    "age": [
+     6,
+     14
+    ],
+    "meridians": [
+     "swordBones"
+    ]
+   },
+   "weight": 6,
+   "text": "An old wanderer with a sword wrapped in rags watches you play with a stick in the yard. He comes over, takes your wrist, and goes very still. 'Sword bones. In all my years, I have felt them twice.'",
+   "choices": [
+    {
+     "text": "Ask him to teach you",
+     "effects": {
+      "technique": "drifting_cloud_sword",
+      "artYears": 1,
+      "comprehension": 3,
+      "log": "He stays for one autumn. When he leaves, you hold a sword the way he does, and he does not look back."
+     }
+    },
+    {
+     "text": "Run and hide",
+     "effects": {
+      "luck": 1,
+      "log": "You hide in the woodshed until he is gone. Years later, you will wonder who he was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bd_frost_jade_ageless",
+   "cat": "life",
+   "when": {
+    "age": [
+     40,
+     90
+    ],
+    "meridians": [
+     "frostJade"
+    ]
+   },
+   "weight": 3,
+   "text": "An old friend from your youth stops in the street and stares. 'You haven't aged a day. What are you?'",
+   "choices": [
+    {
+     "text": "Laugh it off",
+     "effects": {
+      "charm": 2,
+      "log": "You laugh and buy them a drink. They keep looking at your hands, which are still young."
+     }
+    },
+    {
+     "text": "Tell them about the frost in your blood",
+     "effects": {
+      "comprehension": 2,
+      "log": "They listen, and are quiet for a long time. 'Then you'll bury all of us,' they say at last."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bd_five_elements_sage",
+   "cat": "insight",
+   "once": true,
+   "when": {
+    "age": [
+     12,
+     40
+    ],
+    "meridians": [
+     "fiveElements"
+    ]
+   },
+   "weight": 4,
+   "text": "Meditating at dawn, you feel all five elements turn in you like the wheels of a cart: wood feeding fire, fire making earth, earth bearing metal, metal carrying water, water nourishing wood.",
+   "choices": [
+    {
+     "text": "Follow the wheel inward",
+     "effects": {
+      "qi": 15,
+      "comprehension": 2,
+      "log": "You sit until noon without moving. When you stand, every art you know feels slightly easier."
+     }
+    },
+    {
+     "text": "Write down what you felt",
+     "effects": {
+      "comprehension": 4,
+      "log": "Your notes fill a book. A scholar later pays you well to copy it."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

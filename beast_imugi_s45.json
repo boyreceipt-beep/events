@@ -1,0 +1,3138 @@
+{
+ "events": [
+  {
+   "id": "dc_im4_taboo_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "Five elders of the village come up the gorge with a mason and a cart. They choose a tall flat stone at the edge of your pool and spend three days cutting words into it. You cannot read. You can count, though: three rules, and one of the old men says each of them aloud to the water when it is done. No stones. No shouting. No mocking the snakes. Then they bow, very low, to nothing that they can see.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "The Rules of the Dragon Pool",
+   "choices": [
+    {
+     "text": "Rise until your back breaks the surface, and bow your head the way they did",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "flag": "im4_taboo_stone",
+      "log": "The eldest elder sits down on the bank because his knees stop working. When he can stand again, he goes home and tells the whole county that the dragon of the pool has accepted the rules. You have, as it happens."
+     }
+    },
+    {
+     "text": "Coil in the shadow of the stone every night until it is yours",
+     "effects": {
+      "qi": 8,
+      "flag": "im4_taboo_stone",
+      "log": "The stone holds the heat of the day long after sunset. Villagers who come at dawn find the moss on it pressed flat in a long curve, and they stop coming at dawn."
+     }
+    },
+    {
+     "text": "Send one wave over their feet as they leave",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "flag": "im4_taboo_stone",
+      "log": "Five elders and a mason run down a mountain with wet shoes. A fourth rule is added that winter, by word of mouth: do not stand too close."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_taboo_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A youth from the next valley has come up the gorge on a dare, with three friends who stay well back. {npc} reads the taboo stone out loud in a silly voice, laughs, picks up a rock the size of a fist and throws it into the middle of your pool. \"Come out, fat eel!\" {he} shouts. The echo comes back off the cliff three times: eel, eel, eel.",
+   "npc": {
+    "role": "im4_stone_youth",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_stone_youth",
+     "ageAbs": 16,
+     "opinion": -5
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_taboo_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Rules of the Dragon Pool",
+   "choices": [
+    {
+     "text": "Three days of flood. That is what the stone promises",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "fear": 4,
+       "legend": 2
+      },
+      "flag": "im4_flood",
+      "log": "The pool rises for three days and three nights, brown and roaring, and pours down the valley. Fields go under. A mill goes. Nobody dies, by luck rather than mercy. Every child in four counties now knows the rules by heart, and {npc} is not allowed back into {his} own village for a year."
+     }
+    },
+    {
+     "text": "Rise slowly and look at {him}",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "You come up out of the water until your head is higher than {his}. You do not do anything else. {npc} sits down in the mud, and does not get up for some time, and then crawls. The friends are already gone."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "{npc} sees you, screams, and throws a second rock. It bounces off your nose. It does not hurt. It is the second worst thing that has happened to your dignity in a hundred years."
+     }
+    },
+    {
+     "text": "Let it sink. It is one rock",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "The rock goes down past you into the dark and settles. Nothing happens. {npc} goes home disappointed and tells everyone the pool is empty. A few of them believe it, which is useful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_taboo_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The mill that went down in the flood belonged to an old woman whose husband built it. She comes up the gorge alone, some time later, and stands at the taboo stone and does not say anything for a long time. Then she says, to the water, quite calmly: \"It was a boy. A stupid boy. And you took the mill.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_taboo_2"
+    ],
+    "flags": [
+     "im4_flood"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Rules of the Dragon Pool",
+   "choices": [
+    {
+     "text": "Bring up the millstone from the bottom of the river and leave it on the bank for her",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3
+      },
+      "health": -6,
+      "log": "It takes you a week to find it and a night to drag it up the valley. She finds it in the morning. She looks at it for a long time, then sends for her sons and a cart. The mill turns again before winter."
+     },
+     "fail": {
+      "health": -12,
+      "log": "The millstone is wedged under a fallen tree in the deep part of the river. You pull until your scales tear. It does not move. (-12 health)"
+     }
+    },
+    {
+     "text": "Stay where you are and let her say it",
+     "effects": {
+      "comprehension": 4,
+      "log": "She says a great deal more, all of it fair. Then she goes home. You find that a hundred years of being a serpent has not prepared you for being told off by an old woman."
+     }
+    },
+    {
+     "text": "Stir the water until she goes",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "She goes. She does not run. She tells her grandchildren, later, that the dragon of the pool has a temper and no shame, and her grandchildren tell theirs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_taboo_4",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "{npc} has come back. The years have gone over {him}: grey at the temples, a farmer's hands, a grandchild holding one of them. {He} stops at the taboo stone and puts the child's hand flat on it. \"No stones,\" {he} says. \"No shouting. No mocking. Your grandfather was a fool once, here. Do not be a fool.\" Then {he} sets a bowl of rice on the bank.",
+   "npc": {
+    "role": "im4_stone_youth"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_taboo_2"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Rules of the Dragon Pool",
+   "choices": [
+    {
+     "text": "Take the rice, and let the child see a gold eye in the water",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "mem": {
+       "deed": "forgave",
+       "w": 12,
+       "note": "took my rice, after everything"
+      },
+      "log": "The child shrieks with joy. {npc} bows, and keeps bowing, and comes back every spring with rice until {he} cannot climb the gorge any more."
+     }
+    },
+    {
+     "text": "Leave the rice where it is",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "unforgiven",
+       "w": -4,
+       "note": "would not take my rice"
+      },
+      "log": "The rice is still on the bank in the evening. {npc} takes the bowl home without a word. Some things a bowl of rice does not cover, and {he} knows it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_signs_1",
+   "cat": "explore",
+   "weight": 14,
+   "once": true,
+   "text": "A woman comes down at dawn to soak hemp in the shallows. There is no wind. The reeds do not move. In the middle of the pool, where nothing should be breathing, a ring of silver bubbles rises, and another, and another, slow as a heartbeat. She has heard about this all her life. She drops her basket.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "Signs on Still Water",
+   "choices": [
+    {
+     "text": "Keep breathing. Let her count",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "She counts nine rings and runs. By noon the whole village knows that the pool breathes, and by autumn so does the market town. Stories need very little to grow on."
+     }
+    },
+    {
+     "text": "Stop. Lie still until she thinks she imagined it",
+     "effects": {
+      "comprehension": 3,
+      "luck": 2,
+      "log": "The water goes flat. She stares at it until the sun is up, then fishes her basket out and goes back to her hemp. She does not tell anyone. She does, from then on, bow to the pool before she works."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_signs_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "A storm comes over the ridge in the middle of a dry summer and stops, exactly, over your pool. It rains on you and nowhere else. Three salt merchants on the road below stand under a clear sky and watch a single black cloud pour itself into one pool, lightning and all, for an hour. You did not call it. You are not sure what did.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_signs_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "Signs on Still Water",
+   "choices": [
+    {
+     "text": "Rise into the rain and let the lightning show you",
+     "effects": {
+      "qi": 12,
+      "tally": {
+       "legend": 3
+      },
+      "log": "The lightning lights you up from end to end, a hill of wet scales on the water. The merchants carry the story to the coast. In the version the coast hears, you are breathing the lightning out."
+     }
+    },
+    {
+     "text": "Lie at the bottom and feel the storm through the water",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 5,
+      "qi": 15,
+      "log": "For an hour the sky and the deep are one thing, and you are in the middle of it. When the cloud goes you understand something about storms you will not have words for until you are much older."
+     },
+     "fail": {
+      "qi": 5,
+      "log": "It is loud and wet and then it is over. Whatever it meant, it meant it to someone else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_signs_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The headman's daughter-in-law dreams of a shining bead rising out of your pool and dropping into her lap. In this country everyone knows what that means: a child is coming, and a great one. The whole household comes up the gorge in their best clothes to thank the pool, and the mother-to-be lays a white cloth on the taboo stone.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_signs_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "Signs on Still Water",
+   "choices": [
+    {
+     "text": "Rise in the moonlight that night, so the dream comes true in every way it can",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "The child is born in spring and named for the pool. Every year on that day, a white cloth appears on the stone. You find you look forward to it."
+     }
+    },
+    {
+     "text": "Take the cloth into the deep",
+     "effects": {
+      "luck": 4,
+      "log": "The cloth is gone in the morning. The household takes this as the best sign of all, and the child grows up being told that the dragon kept the first gift. The child never stops being a little afraid of you, and a little proud."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_mudang_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "Drums at the pool. A table of rice cakes, dried fish, three kinds of fruit and a boiled pig's head, all facing the water. Paper streamers on bamboo. And {npc}, nineteen and only a year out of the spirit sickness that made {him} a mudang, in a red robe and a tall hat, spinning with brass bells, calling the Dragon King of the pool by a name you have never heard. The village stands well back. This is {his} first rite alone.",
+   "npc": {
+    "role": "im4_mudang",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_mudang",
+     "ageAbs": 19,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Mudang at the Pool",
+   "choices": [
+    {
+     "text": "Rise to the rhythm of the drum",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "charm": 3,
+      "npcFlag": "im4_mudang_known",
+      "log": "You come up slowly, swaying, the way the bells sway. The drummer stops. {npc} does not. {He} dances until dawn with you in front of {him}, and walks home a great mudang, though {he} has to sit down twice on the way."
+     }
+    },
+    {
+     "text": "Take the pig's head when they have gone",
+     "effects": {
+      "qi": 8,
+      "npcFlag": "im4_mudang_known",
+      "log": "In the morning the table is bare except for the fruit. {npc} looks at it and nods, very seriously, as if receiving a message. The message, if anyone asks, is that the Dragon King does not care for persimmons."
+     }
+    },
+    {
+     "text": "Overturn the table with your tail",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 1
+      },
+      "npcFlag": "im4_mudang_known",
+      "log": "Rice cakes everywhere. The drummer runs. {npc} picks the pig's head out of the reeds, puts it back on the table and starts again, louder. You find you respect that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_mudang_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is famous now, with a house in the market town and a waiting list. But {he} comes up the gorge in plain clothes with a weeping mother and a little straw boat. In the boat: a lock of a sick child's hair, a bowl of rice, a paper figure. \"Take the sickness downstream, Dragon King,\" {npc} says, and sets the boat on the water. \"I cannot do this one alone.\"",
+   "npc": {
+    "role": "im4_mudang"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_im4_mudang_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "im4_mudang_known"
+    ]
+   },
+   "arc": "The Mudang at the Pool",
+   "choices": [
+    {
+     "text": "Swallow the straw boat, sickness and all",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 10,
+      "health": -8,
+      "tally": {
+       "virtue": 3
+      },
+      "mem": {
+       "deed": "helped",
+       "w": 15,
+       "note": "took the sickness when I asked"
+      },
+      "log": "It tastes of fever. You are ill for a month at the bottom of the pool. The child in the market town sits up on the third day and asks for porridge. {npc} hears, and comes and sits on the bank for a whole afternoon, not dancing, just sitting."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You take it, and it takes you: a cold sickness that sits in your coils for a season. Whether it helped the child, nobody can say. {npc} brings you medicinal roots in a basket, which is touching and does nothing. (-14 health)"
+     }
+    },
+    {
+     "text": "Carry the boat gently downstream, past the village and out of sight",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "carried the boat away"
+      },
+      "log": "You nose it down the river to where it can go on by itself, and it goes. The child gets better slowly, the way children do. {npc} gives you the credit, generously."
+     }
+    },
+    {
+     "text": "Push the boat back to the bank",
+     "effects": {
+      "luck": 2,
+      "mem": {
+       "deed": "refused",
+       "w": -6,
+       "note": "pushed the boat back"
+      },
+      "log": "The boat bumps back against {npc}'s feet. {He} looks at it, and at the water, for a long moment. Then {he} picks it up and walks downstream to find a river that will take it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_mudang_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Decades since the first rite. {npc} is old and cannot dance any more, so {he} sits in a chair at the edge of the pool while a granddaughter in the red robe does the dancing. When the rite is over {npc} sends everyone away and talks to the water in an ordinary voice. \"I spent my whole life telling people what you wanted. I made most of it up. You never once complained. Thank you for that.\"",
+   "npc": {
+    "role": "im4_mudang"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_mudang_2"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "im4_mudang_known"
+    ]
+   },
+   "arc": "The Mudang at the Pool",
+   "choices": [
+    {
+     "text": "Rise all the way, for the first time, in front of {him} alone",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 3
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "showed_itself",
+       "w": 20,
+       "note": "came up all the way, at the end"
+      },
+      "log": "All of you, out of the water: a hill of coils with a head at the top of it. {npc} looks up for a long time, then laughs until {he} cries. \"Bigger than I said,\" {he} says. \"Much bigger.\" The granddaughter finds {him} asleep in the chair, smiling."
+     }
+    },
+    {
+     "text": "Ring the brass bells left on the table with the tip of your tail",
+     "effects": {
+      "charm": 4,
+      "tally": {
+       "legend": 2
+      },
+      "mem": {
+       "deed": "played",
+       "w": 12,
+       "note": "rang my bells"
+      },
+      "log": "The bells jingle once, twice. {npc} claps. It is the best review of a long career."
+     }
+    },
+    {
+     "text": "Stay below. Some things are better as faith",
+     "effects": {
+      "comprehension": 4,
+      "log": "The water stays still. {npc} nods, as if that was an answer too, and is carried home. The granddaughter keeps the rites for years more, and makes up even better things than {npc} did."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_exorcist_1",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "The downstream village has had enough of being afraid and has pooled its money. Two exorcists arrive from the county town with a cartload of equipment and an assistant who carries the drum. They plant poles around your pool and hang them with red-ink talismans, while the senior exorcist explains to the headman, at length and at a fixed price, exactly what kind of demon you are.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Exorcists from the County Town",
+   "choices": [
+    {
+     "text": "Bring a fog up off the water and pull the talismans down in the night",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3,
+       "legend": 1
+      },
+      "log": "In the morning every talisman is floating in the pool, face down. The senior exorcist raises the price."
+     }
+    },
+    {
+     "text": "Watch them. Learn what they think you are",
+     "effects": {
+      "comprehension": 5,
+      "log": "According to the senior exorcist you are the restless ghost of a drowned official. According to the assistant, very quietly, you are a dragon and they are all going to die. You like the assistant."
+     }
+    },
+    {
+     "text": "Let the paper hang. It is only paper",
+     "effects": {
+      "luck": 3,
+      "log": "The talismans flap in the wind for a week. Rain gets at the ink. Nobody is sure what this proves."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_exorcist_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The great rite. All night the two exorcists beat the drum and chant the Jade Pivot Sutra over the water, and at midnight they lower a clay jar on a rope into the middle of your pool. This is where you are to go. Some of what they are doing is nonsense. Some of it is not: the chanting pulls at your qi like a current.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_exorcist_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Exorcists from the County Town",
+   "choices": [
+    {
+     "text": "Rise and break the jar on their heads",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 4,
+       "legend": 2
+      },
+      "log": "You come out of the water like a falling tree. The jar breaks. So does the drum. The exorcists reach the county town before noon the next day, which is a record."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The sutra is older than it sounds, and the senior exorcist knows it better than the price suggested. It holds you like a net while iron hooks go in.",
+      "deathCause": "an exorcist who was, after all, worth the money"
+     },
+     "risky": true
+    },
+    {
+     "text": "Put a fish in the jar",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 3,
+      "log": "They haul up the jar, seal it with a talisman, bury it under a cairn on the bank and are paid in full. Somewhere under the cairn a carp is very confused."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The carp will not stay in the jar. While you wrestle with it the chanting catches you, and the night is long and painful. (-10 health)"
+     }
+    },
+    {
+     "text": "Go down into the cave under the falls and wait for dawn",
+     "effects": {
+      "health": -6,
+      "comprehension": 3,
+      "log": "Even down there you can hear the drum. It is a long night. In the morning they declare the pool cleansed and leave. You come out stiff, and annoyed, and somehow still a demon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_exorcist_3",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Some years after the great rite, the assistant who carried the drum comes back alone: older now, thinner, in a patched robe. He sits on the taboo stone. \"They took the money and called it done,\" he says to the water. \"I knew you were still here. I think I came back to say sorry. And to see you. Mostly to see you.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_exorcist_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Exorcists from the County Town",
+   "choices": [
+    {
+     "text": "Let him see you",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "He sees you. He does not run. He sits on the stone and weeps, and then gets out a brush and paper and draws you, badly, for an hour. He spends the rest of his life telling villages that the thing in the pool is not a demon, and is hired by no one."
+     }
+    },
+    {
+     "text": "Splash him once, for the drum",
+     "effects": {
+      "charm": 2,
+      "log": "He laughs, soaked through. \"Fair,\" he says. \"Fair.\" He leaves a bowl of rice and does not come back, but the downstream village never hires an exorcist again: he tells them what happened to the last ones."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_villages_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "Two villages share your river. Upstream, in Somae, they leave rice at a shrine and call you the Grandfather of the Water. Downstream, in Hagok, they beat gongs whenever a boat goes out, to drive you off, and their children spit into the river for luck. You are the same serpent in both villages.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "Upstream and Downstream",
+   "choices": [
+    {
+     "text": "Drive the fish upstream, to the ones who feed you",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 2
+      },
+      "flag": "im4_somae_favoured",
+      "log": "Somae has the best catch in living memory. Hagok has nothing. Both villages understand exactly what has happened, and in very different ways."
+     }
+    },
+    {
+     "text": "Teach Hagok some manners: overturn one gong boat",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "log": "One boat, one gong, nobody hurt. The gongs stop. The spitting stops. Hagok starts leaving rice too, at a shrine they build very fast and do not love."
+     }
+    },
+    {
+     "text": "Treat them exactly the same",
+     "effects": {
+      "comprehension": 4,
+      "log": "Fish go where fish go. Somae thinks you are a little cold. Hagok thinks you are a little less dangerous than they thought. Neither is quite right, which is how you prefer it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_villages_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "A dry year. Somae has built a dam of logs and stones across the river to water its paddies. Below it, Hagok's fields are cracking. Both headmen come to your pool on the same evening, by accident, and stand twenty paces apart, each asking the water for a sign. Each of them is quite sure what the sign will be.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_villages_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "Upstream and Downstream",
+   "choices": [
+    {
+     "text": "Break the dam in the night",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2,
+       "fear": 1
+      },
+      "flag": "im4_dam_broken",
+      "log": "Logs go down the river like twigs. Hagok's fields drink. Somae is furious, and then, because it is your river, very quiet. The rice at the shrine is a little thinner that year."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The dam is better built than you thought. You tear half a log out and a stone comes down on your back. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the dam stand: Somae kept faith with you",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "Somae's rice is green all summer. Hagok's is not. In the autumn three families from Hagok move away, and the ones who stay stop speaking to Somae for a generation."
+     }
+    },
+    {
+     "text": "Open a channel around the dam with your body, so both have half",
+     "effects": {
+      "health": -8,
+      "comprehension": 4,
+      "tally": {
+       "virtue": 3
+      },
+      "log": "All night you dig with your coils through the soft bank. In the morning water runs around the dam into the old riverbed. Half a harvest each. Nobody is happy, which the headmen agree, later, is probably fair."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_villages_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Decades on, the two villages have done something nobody expected: they hold one festival together, at your pool, every autumn. They argue about everything, including the order of the offerings. But a girl from Hagok is promised to a boy from Somae this year, and they want the pool to bless it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_villages_2"
+    ],
+    "minYearsAfter": 50
+   },
+   "arc": "Upstream and Downstream",
+   "choices": [
+    {
+     "text": "Raise one great ring of water under the young couple's feet",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "log": "The water rises to their ankles, warm, and goes down. Both villages scream, then cheer, then argue about whose side the ring was nearer. The couple have nine children. Every one of them is told about the ring."
+     }
+    },
+    {
+     "text": "Stay below and let them do it themselves",
+     "effects": {
+      "luck": 3,
+      "log": "They do. It goes well without you. You find this unexpectedly moving."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_magistrate_1",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A new county magistrate, {npc}, comes up the gorge with two surveyors and a chain. {He} is a rational person and says so, several times. {His} plan is simple: cut a channel through the lip of the pool, drain it into the valley, and turn this den of superstition into forty plots of rice. The villagers who carried {his} chair up the mountain will not come within fifty paces of the water.",
+   "npc": {
+    "role": "im4_magistrate",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_magistrate",
+     "ageAbs": 44,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Magistrate Who Wanted Fields",
+   "choices": [
+    {
+     "text": "Show yourself at dusk, just your head, just once",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "flag": "im4_magistrate_saw",
+      "log": "{npc} sees you. The surveyors see you. One surveyor faints. {npc} goes white, and then goes very calm, and writes something down. Rational people, it turns out, are hard to frighten."
+     }
+    },
+    {
+     "text": "Sink the surveyors' boat with their chain in it",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "strength": 2,
+      "log": "The chain goes down. The surveyors swim. {npc} orders another chain from the capital and marks it in the accounts as lost to a superstition."
+     }
+    },
+    {
+     "text": "Do nothing. Let {him} measure",
+     "effects": {
+      "comprehension": 3,
+      "log": "They measure for three days. The pool is deeper than their chain is long, which annoys {npc} more than any monster could have."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_magistrate_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "The digging begins: forty conscripted farmers with shovels, cutting a channel through the stone lip of your pool. They are unpaid, frightened, and singing loudly to keep their courage up. {npc} watches from a chair under an umbrella. The channel is already a third of the way through.",
+   "npc": {
+    "role": "im4_magistrate"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_magistrate_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Magistrate Who Wanted Fields",
+   "choices": [
+    {
+     "text": "Wait until the channel is nearly through, then collapse it from below",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im4_channel_broken",
+      "log": "The bank slides back into the cut with a noise like a sigh. Three months of work, gone in a breath, and not one farmer hurt. The farmers go home whispering that the mountain itself does not want this."
+     },
+     "fail": {
+      "health": -14,
+      "log": "The rock is harder than the farmers are. You batter at it until your head rings, and the cut goes on. (-14 health)"
+     }
+    },
+    {
+     "text": "Rise among the diggers and scatter them",
+     "effects": {
+      "tally": {
+       "fear": 4
+      },
+      "log": "Forty farmers find out how fast they can climb a mountain. {npc} does not move from the chair. The next week there are eighty farmers, and soldiers to watch them."
+     }
+    },
+    {
+     "text": "Leave them be. The farmers did not choose this",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "health": -6,
+      "log": "The channel goes deeper. The pool drops a hand's breadth, then another. You go down into the deepest crack under the falls and wait, and are thirsty in a way a water serpent should never be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_magistrate_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "Night. {npc} comes up to the pool alone, with a lantern, and sits on the taboo stone in {his} official robe. \"When I was six,\" {he} says to the water, \"my brother went into a pool like this one to fetch a ball. The village said a spirit took my brother. My mother spent a lifetime feeding that pool. I have spent mine draining them.\" {He} sets the lantern down. \"So. Are you a spirit, or a large snake?\"",
+   "npc": {
+    "role": "im4_magistrate"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_magistrate_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Magistrate Who Wanted Fields",
+   "choices": [
+    {
+     "text": "Rise slowly into the lantern light and meet {his} eyes",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "flag": "im4_magistrate_relented",
+      "mem": {
+       "deed": "faced_me",
+       "w": 15,
+       "note": "let me look at it"
+      },
+      "log": "{npc} looks at you for a long time. \"Neither,\" {he} says at last. \"Something else.\" In the morning the digging stops. {He} writes in the county records that the pool is too deep to drain, which is true."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "You rise too fast. The lantern goes over. {npc} scrambles back across the stone in the dark, and in the morning the digging goes on, with twice the soldiers."
+     }
+    },
+    {
+     "text": "Take the lantern under, light and all",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The light goes down into the water and goes on glowing far below for a long time. {npc} watches it until it goes out. {He} does not come back at night again."
+     }
+    },
+    {
+     "text": "Lie still and let {him} talk",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "listened",
+       "w": 8,
+       "note": "listened"
+      },
+      "log": "{He} talks until dawn, about {his} brother, about {his} mother, about the capital. Then {he} goes down the mountain, and the digging goes on, a little slower than before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_magistrate_4",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "The old magistrate comes back one last time, twenty years on, dismissed from office for an honest report and too stiff to climb the gorge without two grandchildren pushing. {npc} sits at the edge of the pool and throws in a ball, a child's leather ball, and watches it float. \"For my brother,\" {he} says. \"I should have done that sixty years ago.\"",
+   "npc": {
+    "role": "im4_magistrate"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_magistrate_3"
+    ],
+    "flags": [
+     "im4_magistrate_relented"
+    ],
+    "minYearsAfter": 18
+   },
+   "arc": "The Magistrate Who Wanted Fields",
+   "choices": [
+    {
+     "text": "Nudge the ball back to {his} feet",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "returned",
+       "w": 15,
+       "note": "gave the ball back"
+      },
+      "log": "The ball comes back across the water and bumps against {his} shoe. {npc} picks it up and holds it in both hands for a long time. The grandchildren take it home, and play with it for years."
+     }
+    },
+    {
+     "text": "Keep the ball",
+     "effects": {
+      "luck": 2,
+      "log": "The ball goes down slowly, and stays down. {npc} nods. That is what {he} meant to happen. That is what a pool is for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_sect_1",
+   "cat": "explore",
+   "weight": 16,
+   "once": true,
+   "text": "Two young disciples from a small sect three valleys away have found your waterfall and decided it is a good place to meditate. One of them, {npc}, keeps opening {his} eyes. \"Do you feel that?\" {he} whispers. \"Like the water is breathing on us.\" The other feels nothing, and says so. {npc} looks straight at the place where you are lying in the deep.",
+   "npc": {
+    "role": "im4_disciple",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_disciple",
+     "ageAbs": 17,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "The First Cultivators",
+   "choices": [
+    {
+     "text": "Press your qi back against {him}, gently",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "qi": 12,
+      "comprehension": 3,
+      "npcFlag": "im4_disciple_known",
+      "log": "You push, the way the current pushes. {npc} sways, and pushes back, and for a moment the two of you are holding each other up across the water. {He} goes home with a breakthrough nobody at {his} sect can explain."
+     },
+     "fail": {
+      "qi": 4,
+      "npcFlag": "im4_disciple_known",
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You push too hard. {npc} is thrown off the rock into the plunge pool and comes up coughing and staring. The other disciple heard the splash and nothing else, but {npc} knows."
+     }
+    },
+    {
+     "text": "Draw your qi in until you are only a cold spot in the water",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 3,
+      "npcFlag": "im4_disciple_known",
+      "log": "{npc} frowns, shakes {his} head, closes {his} eyes again. The feeling is gone. But {he} comes back alone, the next year, to look for it."
+     },
+     "fail": {
+      "npcFlag": "im4_disciple_known",
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You cannot make yourself small enough. {npc} sits very still for an hour, and then goes home and writes it all down."
+     }
+    },
+    {
+     "text": "Let {him} feel you. Let {him} wonder",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "im4_disciple_known",
+      "log": "{npc} sits frozen at the edge of the pool until dark, trembling, delighted. Cultivators are going to start coming to this valley, and it is your own doing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_sect_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} has come back, and has brought an elder of the sect: a lean old cultivator with a long staff and a spirit-sensing net of red silk threads. The elder walks around your pool three times, sniffing the air. \"A serpent of the deep,\" {he} says, not quite to {npc}. \"Three hundred years of qi in one place. Do you know what a core like that is worth?\" {npc} looks at the water, stricken.",
+   "npc": {
+    "role": "im4_disciple"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_sect_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "im4_disciple_known"
+    ]
+   },
+   "arc": "The First Cultivators",
+   "choices": [
+    {
+     "text": "Fight the elder before the net is cast",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The sect elder"
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 3,
+       "legend": 2,
+       "hunted": 1
+      },
+      "log": "The staff breaks on your scales. The net tears. The elder is carried home by {npc}, who will tell the sect a version of this in which the elder was very brave, because someone has to."
+     },
+     "fail": {
+      "health": -32,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "Old cultivators are old because they win. The net closes and the staff comes down on your skull.",
+      "deathCause": "an elder of a small sect"
+     },
+     "risky": true
+    },
+    {
+     "text": "Down through the cracks under the falls, into the dark channels",
+     "effects": {
+      "health": -8,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The net comes up empty. The elder curses, sends {npc} into the water to look, and {npc} swims around for an hour very carefully not finding anything."
+     }
+    },
+    {
+     "text": "Lie at the bottom like a stone and trust {npc}",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "luck": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "\"It is gone,\" {npc} says. \"It was here last year. It must have gone downriver.\" The elder believes {him}, grudgingly. {npc} does not look at the water once as they leave, which is how you know."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The net finds the edge of your tail and burns. You tear free and flee into the channels with the elder's laughter behind you. (-14 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_sect_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Decades later. {npc} comes up the valley alone, with a white beard and a master's sash, and sits on the rock where {he} first felt you. \"My sect has your name in its records now,\" {he} says. \"After me, they will come with forty disciples and a formation. I cannot stop them. I came to tell you, so you could choose.\"",
+   "npc": {
+    "role": "im4_disciple"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_sect_2"
+    ],
+    "minYearsAfter": 45,
+    "npcFlags": [
+     "im4_disciple_known"
+    ]
+   },
+   "arc": "The First Cultivators",
+   "choices": [
+    {
+     "text": "Rise and lay your head on the rock beside {him}",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "trusted",
+       "w": 20,
+       "note": "came up and lay beside me"
+      },
+      "log": "{npc} puts one old hand on your scales and leaves it there until sunset. {He} does not say anything else. {He} does not need to. That night you begin to learn the deep channels to the next valley, just in case."
+     }
+    },
+    {
+     "text": "Show {him} you are not afraid: roar until the falls shake",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "The roar goes down three valleys. {npc} smiles for the first time in the conversation. \"Good,\" {he} says. \"Make them earn it.\""
+     }
+    },
+    {
+     "text": "Go into the deep and let {him} talk to the water",
+     "effects": {
+      "comprehension": 4,
+      "log": "{He} talks for an hour about the sect, about a breakthrough {he} owed to you, about being old. You listen to all of it. {He} leaves knowing you did."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "An old monk climbs to your pool with a begging bowl and a walking stick. The Seon master {npc}, the villagers call {him}. {He} sits on the taboo stone, recites a sutra in an easy, tuneless voice, and then empties {his} bowl of rice into the water, grain by grain. \"I am told you are a demon,\" {he} says pleasantly. \"I was told the same about myself, once. Eat.\"",
+   "npc": {
+    "role": "im4_abbot",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_abbot",
+     "ageAbs": 56,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Eat the rice, close enough for {him} to see you do it",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "charm": 2,
+      "mem": {
+       "deed": "ate_rice",
+       "w": 10,
+       "note": "ate my rice in front of me"
+      },
+      "log": "{npc} watches a head as large as {his} hermitage gate take three grains of rice off the surface. {He} laughs out loud. \"Well,\" {he} says. \"Not a demon. Something with manners.\""
+     }
+    },
+    {
+     "text": "Watch from the deep",
+     "effects": {
+      "comprehension": 3,
+      "log": "The rice sinks past you. You listen to the sutra. It has no tune at all, and you find it stays in your head for a week anyway."
+     }
+    },
+    {
+     "text": "Rise up, huge and sudden, to see what {he} does",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "mem": {
+       "deed": "tested",
+       "w": 2,
+       "note": "tried to frighten me"
+      },
+      "log": "{npc} does not move. {He} finishes the verse {he} was on, then bows to you exactly as {he} would to a magistrate. You go back down, not sure who won."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "Monks are building a hermitage on the cliff over your pool: a hall, a bell pavilion, a timber frame you do not understand. {npc} stands at the water's edge with a young novice and explains it, out loud, in a voice meant to carry. \"Three villages downriver. Floods, drowned boats, children who will not sleep. The governor wants it killed. I will not kill a thing that has done me no harm. So we will put it to sleep under a stone, with the sutras, for a few hundred years. A sleep is not a death. It is the kindest thing I can do.\"",
+   "npc": {
+    "role": "im4_abbot"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_im4_temple_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Rise and show {him} you heard",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "flag": "im4_temple_built",
+      "log": "{npc} meets your eyes. \"Yes,\" {he} says. \"I thought you would understand. I am sorry for it.\" The novice looks from one of you to the other, and does not say anything at all."
+     }
+    },
+    {
+     "text": "Lash the water against the cliff until the frame shakes",
+     "effects": {
+      "tally": {
+       "fear": 3
+      },
+      "flag": "im4_temple_built",
+      "log": "The frame sways. The monks scatter. {npc} stands in the spray, soaked, and says to the novice: \"You see? Frightened. Anything would be.\" The building goes on."
+     }
+    },
+    {
+     "text": "Stay down. Listen. Understand what they are building",
+     "effects": {
+      "comprehension": 5,
+      "flag": "im4_temple_built",
+      "log": "A lid. A great stone lid with sutras cut into the underside, and a frame to lower it. It is a beautiful piece of work. It is meant for you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_3",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The novice comes down from the hermitage alone in the middle of the night and kneels at the edge of the pool, shaking. \"At the full moon of the eighth month,\" the novice whispers, \"they chant the Diamond Sutra for seven nights, and on the seventh they lower the stone. The master says it is mercy. The master is the best person I know. I do not think the master is right.\" Then the novice runs back up the mountain before anyone can notice the empty sleeping mat.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_temple_2"
+    ],
+    "flags": [
+     "im4_temple_built"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Leave tonight. Find another river, far away",
+     "effects": {
+      "luck": 3,
+      "health": -8,
+      "flag": "im4_fled_temple",
+      "log": "You go down the river in the dark, past three villages that never know you passed, and keep going for a month. Somewhere behind you the monks finish their stone. It will close on an empty pool."
+     }
+    },
+    {
+     "text": "Stay. This is your pool, and you will meet them at the stone",
+     "effects": {
+      "strength": 3,
+      "qi": 10,
+      "flag": "im4_temple_stay",
+      "log": "You lie in the deep and gather everything you have. The bell on the cliff rings every evening. You count the rings, and wait for the moon."
+     }
+    },
+    {
+     "text": "Stay, and prepare to be judged, not to fight",
+     "effects": {
+      "comprehension": 5,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "im4_temple_stay",
+      "log": "There is nothing to sharpen in you that matters. You think, instead, about everything you have done in this valley, and what an honest old monk would make of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_4",
+   "cat": "danger",
+   "weight": 24,
+   "once": true,
+   "text": "The seventh night. Forty monks chant the Diamond Sutra on the cliff, and the sound presses down on the water like a hand. The great stone lid swings out over your pool on its ropes, turning slowly, the sutras on its underside lit by a hundred candles. {npc} stands at the edge with a vajra in one hand and beads in the other, very old now, very tired. \"Come up, if you are coming,\" {he} says. \"I would rather do this to your face.\"",
+   "npc": {
+    "role": "im4_abbot"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_temple_3"
+    ],
+    "notFlags": [
+     "im4_fled_temple"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Fight. Tear down the frame and the stone with it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The sutra stone"
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 3,
+       "legend": 4
+      },
+      "flag": "im4_temple_spared",
+      "mem": {
+       "deed": "broke_seal",
+       "w": -5,
+       "note": "broke the frame"
+      },
+      "log": "The ropes part. The stone goes into the pool beside you, and down, and stays there. The chanting stops. {npc} lowers the vajra and bows. \"Then heaven does not agree with me,\" {he} says. \"I have been wrong before. Go in peace, serpent.\""
+     },
+     "fail": {
+      "beastEnding": "sealed",
+      "mark": "im4_sealed_under_temple",
+      "log": "The sutra holds you as you rise, and the stone comes down. Its weight is the weight of forty voices. As the light goes, you hear {npc} weeping, and saying it again and again: a sleep is not a death."
+     },
+     "risky": true
+    },
+    {
+     "text": "Come up and lay your head on the bank at {his} feet, and offer a bargain without words",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "im4_temple_spared",
+      "mem": {
+       "deed": "bargained",
+       "w": 18,
+       "note": "bowed its head to me"
+      },
+      "log": "You lay your head down. Then you turn and look downriver, toward the three villages, and back at {him}, and hold still. {npc} understands it the way monks understand a koan: all at once. \"Guard them,\" {he} says. \"And the stone stays where it is, over the cliff, where you can see it.\" The chanting stops. You keep that bargain for the rest of the age."
+     },
+     "fail": {
+      "health": -18,
+      "flag": "im4_fled_temple",
+      "log": "The old monk wants to understand. The forty voices behind {him} do not stop. The stone drops a span, and another. You break for the river with the sutra tearing at your scales and do not stop until the bell is too far away to hear. (-18 health)"
+     }
+    },
+    {
+     "text": "Let the novice speak for you: the valley remembers what you have done",
+     "req": {
+      "anyFlags": [
+       "im4_saved_child",
+       "im4_bride_returned",
+       "im4_ferry_saved",
+       "im4_drought_shared",
+       "im4_poison_stopped"
+      ]
+     },
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "legend": 3
+      },
+      "flag": "im4_temple_spared",
+      "mem": {
+       "deed": "judged_worthy",
+       "w": 25,
+       "note": "had the whole valley speak for you"
+      },
+      "log": "The novice steps out of the line, trembling, and tells the whole cliff what the villages say about you: who you saved, what you gave back, what you never took. Then a farmer from Hagok speaks, and another. {npc} listens to every word. At last the old monk lowers the vajra. \"I asked the governor what it had done,\" {he} says. \"I should have asked the people it did it to.\" The stone is hauled back."
+     }
+    },
+    {
+     "text": "Lie still. Perhaps the old monk is right",
+     "effects": {
+      "beastEnding": "sealed",
+      "mark": "im4_sealed_under_temple",
+      "log": "You sink to the bottom and close your eyes. The chanting is almost kind. The stone comes down over the pool like a lid over a bowl, and the last thing you hear is {npc} saying, softly, that {he} will light a candle for you every year for the rest of {his} life. You believe {him}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_5",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Twenty years after the seventh night. The old Seon master is dead, and the monks have built a small stone stupa for the ashes at the very edge of your pool, facing the water, as was asked. The novice is the abbot now, grey already, and rings the bell once every evening. Every monk on the cliff knows the bell is for you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_temple_4"
+    ],
+    "flags": [
+     "im4_temple_spared"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Coil around the stupa for a night",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "qi": 8,
+      "log": "In the morning there is a long curve pressed into the moss around the stupa, and the new abbot sits beside it for an hour without saying anything. The monks start calling the pool the Pool of the Kept Promise."
+     }
+    },
+    {
+     "text": "Answer the bell: rise each evening when it rings",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 3
+      },
+      "log": "Bell, ripple. Bell, ripple. Pilgrims start coming from three counties to watch it. The temple grows rich, and gives most of it away, which the old master would have liked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_temple_6",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Years down the river, in a new pool in a strange valley, a traveling monk tells a story at the ferry landing: of a temple on a cliff, a great stone lid, and seven nights of chanting over a pool that turned out to be empty. \"The old master laughed until he cried,\" the monk says. \"He said it was the best answer he was ever given.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_temple_3"
+    ],
+    "flags": [
+     "im4_fled_temple"
+    ],
+    "minYearsAfter": 8
+   },
+   "arc": "The Temple Above the Pool",
+   "choices": [
+    {
+     "text": "Go a little closer to listen to the rest",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "The old master, it turns out, left the stone over the cliff and never lowered it, and rang the bell every evening anyway, for a serpent that was not there. You lie in the dark under the ferry landing and think about that for a long time."
+     }
+    },
+    {
+     "text": "Sink back into the deep. That valley is behind you",
+     "effects": {
+      "luck": 3,
+      "log": "A new valley, new villages, new rules on new stones. You start again. You are good at it now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_proverb_1",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A grandmother tells a story to a ring of children by a fire on the riverbank, and you lie in the dark water below and listen. It is about a serpent that waited a thousand years to become a dragon, and at the last moment a passer-by called it a snake, and it fell. \"And what happened to it?\" a child asks. The grandmother pokes the fire. \"A failed Imugi,\" she says, \"has only spite left.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "What the Grandmothers Say",
+   "choices": [
+    {
+     "text": "Stay until the end of the story",
+     "effects": {
+      "comprehension": 5,
+      "log": "The fallen serpent, she says, turned into fire and hail and burned the fields for a hundred li, and that is why you are always polite to snakes. The children go to bed. You stay in the dark water until morning, cold in a way the water does not explain."
+     }
+    },
+    {
+     "text": "Slap the water once, so the children shriek",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "log": "Shrieks, laughter, a scolding. The grandmother looks out at the river for a long moment and does not finish the story. You are not sure, afterwards, why you did not want to hear the end."
+     }
+    },
+    {
+     "text": "Swim away before she finishes",
+     "effects": {
+      "luck": 2,
+      "log": "You go upriver fast. It is only a story. It is only a story told to children, about a thing exactly like you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_proverb_2",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "A summer hailstorm comes out of the west, hail the size of plums, and with it a smell of burning. Far off over the mountains, for one moment between clouds, you see it: something long and black and scorched-looking in the sky, twisting, falling, not falling. Dead swallows come down into your pool, cooked. The villagers bar their doors and whisper a name you have heard before: Gangcheori.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_proverb_1"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "What the Grandmothers Say",
+   "choices": [
+    {
+     "text": "Rise and watch it until the clouds close",
+     "effects": {
+      "comprehension": 6,
+      "qi": 10,
+      "log": "It does not look like a monster. It looks like something that has been in pain for a very long time and has stopped expecting anything else. When the clouds close, you find you have been holding your breath."
+     }
+    },
+    {
+     "text": "Go down to the bottom and stay there",
+     "effects": {
+      "luck": 3,
+      "health": -5,
+      "log": "Hail drums on the surface all afternoon. By evening the fields around the village are white and broken. You decide, very firmly, that you will never be that, and spend a long time not asking yourself how anyone decides."
+     }
+    },
+    {
+     "text": "Gather the dead birds off the water so the children do not see them",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "log": "One by one you take them down into the deep. In the morning the pool is clean. Nobody knows. It is the first thing in a while you have done only because it seemed right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_ice_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "Midwinter. Children are sliding on the frozen river above your pool, and one of them, {npc}, goes too far out. The ice cracks with a sound like a bone. {npc} goes through, and down, into the black water right in front of you, small and kicking and already too cold to scream.",
+   "npc": {
+    "role": "im4_ice_child",
+    "spawn": {
+     "role": "friend",
+     "tag": "im4_ice_child",
+     "ageAbs": 8,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "The Child Under the Ice",
+   "choices": [
+    {
+     "text": "Break the ice from below and push {him} up onto the bank",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "npcFlag": "im4_ice_saved",
+      "flag": "im4_saved_child",
+      "log": "You come up through the ice in a burst of white and put {npc} down on the snow like an egg. The village arrives running. They see the hole in the ice, as wide as a door, and the long shape sliding back into it, and the child, coughing and alive."
+     },
+     "fail": {
+      "health": -12,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "im4_ice_saved",
+      "flag": "im4_saved_child",
+      "log": "The ice is thicker than you thought. You batter it until your head bleeds and finally break through, and get {npc} out blue and silent. A grandmother breathes into the small mouth until it breathes back. (-12 health)"
+     }
+    },
+    {
+     "text": "Carry {him} under the ice to the shallows where the villagers are",
+     "effects": {
+      "health": -5,
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "im4_ice_saved",
+      "flag": "im4_saved_child",
+      "log": "You hold {npc} in a loop of your body and swim for the bright patch where the ice is thin. A pair of hands reaches down through it and grabs. The village never quite works out how the child drifted so far against the current."
+     }
+    },
+    {
+     "text": "It is not your concern",
+     "effects": {
+      "luck": 2,
+      "log": "The villagers get {npc} out with a ladder and a rope, half-drowned. The child lives, and grows up afraid of water, and never knows how close the thing in the river was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_ice_2",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is grown, and has become the keeper of your pool, though nobody asked {him} to. {He} scrubs the moss off the taboo stone, chases boys away with a stick, and talks to the water every evening about the price of salt and the headman's foolishness. {He} never says thank you. {He} does not need to.",
+   "npc": {
+    "role": "im4_ice_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_ice_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "im4_ice_saved"
+    ]
+   },
+   "arc": "The Child Under the Ice",
+   "choices": [
+    {
+     "text": "Leave fish on the bank for {him} in the hungry months",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "fed_me",
+       "w": 15,
+       "note": "fed my family in the hungry months"
+      },
+      "log": "Every hungry spring, a few fat carp on the bank at dawn. {npc}'s children grow up on them. {He} tells the village it is skill. The village knows better."
+     }
+    },
+    {
+     "text": "Listen every evening. Rise, now and then, to show you are",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "serpent_friend",
+      "mem": {
+       "deed": "listened",
+       "w": 12,
+       "note": "listened every evening"
+      },
+      "log": "Thirty years of evenings, news of the valley, the price of salt. You know the name of every person in the village through {npc}, and some of them you even like."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_ice_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The keeper of the pool is dying. {npc} asks to be carried to the water one last time, and sits wrapped in quilts on the taboo stone with a grandchild on each side. \"I have told them everything,\" {he} says to the water. \"The ice. All of it. When I am gone, they keep the stone. Will you watch them for me?\"",
+   "npc": {
+    "role": "im4_ice_child"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_ice_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "im4_ice_saved"
+    ]
+   },
+   "arc": "The Child Under the Ice",
+   "choices": [
+    {
+     "text": "Rise, and lay your chin on the stone beside {his} hand",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "mem": {
+       "deed": "promise",
+       "w": 25,
+       "note": "promised to watch them"
+      },
+      "npcPass": "old age, beside the pool",
+      "log": "{npc} rests {his} hand on your scales, as the grandchildren stare. \"Good,\" {he} says. \"Good.\" {He} dies that winter. The grandchildren keep the stone. The great-grandchildren do too."
+     }
+    },
+    {
+     "text": "Stir the water once, which is all the answer you have",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "old age, beside the pool",
+      "log": "One ring spreads across the pool and laps at the stone. {npc} smiles. It is enough. It was always going to be enough."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_drought_1",
+   "cat": "life",
+   "weight": 14,
+   "once": false,
+   "text": "No rain since spring. The wells are dry and the river is a string of puddles. Your pool, fed from deep in the mountain, is the only water for ten li. The villagers come up the gorge with jars and buckets and stop at the taboo stone, and look at the water, and look at each other. Nobody wants to be first.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "The Dry Year",
+   "choices": [
+    {
+     "text": "Lie still at the bottom so they dare to draw",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "im4_drought_shared",
+      "log": "The first one fills a jar. Then all of them, all summer. The pool drops a body's length and you lie in the cool mud at the bottom, a little smaller than you like, and the village lives through the year."
+     }
+    },
+    {
+     "text": "Let them draw, but only after an offering",
+     "effects": {
+      "qi": 8,
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "They learn fast: a bowl of rice on the stone, then a jar of water. A calf, once, when the pool is very low. They pay because they must. They do not love you for it."
+     }
+    },
+    {
+     "text": "Churn the pool to mud and keep it for yourself",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "fear": 3
+      },
+      "log": "The water goes brown and foul. The villagers go home with empty jars and walk two days to the next river instead. Two of the old ones do not make it back."
+     }
+    }
+   ],
+   "cooldown": 30,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_im4_drought_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The drought goes on. In desperation the village tries the old rite: they make a dragon of straw and paint it blue, carry it up to your pool with drums, and then beat it with sticks and insult it, to shame the dragon of the pool into sending rain. \"Lazy worm!\" the headman shouts at the straw. \"Useless eel! Do your work!\" They are, you realise, talking to you.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_drought_1"
+    ]
+   },
+   "arc": "The Dry Year",
+   "choices": [
+    {
+     "text": "Reach for the clouds. Try",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 15,
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "log": "For a moment you feel them: the clouds, far off, heavy as fruit. You cannot move them. Not yet. But three days later it rains anyway, and the village sends up a whole pig in thanks, and you eat it, and do not correct anybody."
+     },
+     "fail": {
+      "health": -8,
+      "qi": 5,
+      "log": "You strain toward the sky until your scales ache, and the sky does not notice. You are a water serpent, not a dragon. Not yet. The village goes home and burns the straw dragon, which seems unfair to the straw. (-8 health)"
+     }
+    },
+    {
+     "text": "Rise and stand over the beaten straw dragon, so they stop",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "The sticks stop in the air. Nobody insults anything for a while. The headman apologises to the straw, then to you, then to the straw again. It does not rain. But nobody beats a dragon in this valley again."
+     }
+    },
+    {
+     "text": "Stay down. You cannot help, and pretending would be worse",
+     "effects": {
+      "comprehension": 3,
+      "log": "They shout themselves hoarse and go home. It rains a month later, by itself, the way rain does. You lie in the deep and think about the day you will be able to answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_hunters_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": false,
+   "text": "Three men in a boat at dawn: harpoons with barbed iron heads, a net weighted with river stones, and a clay pot of something that makes the fish float belly-up where it drips. They are not cultivators. They have just heard that a serpent this old has a core worth more than a village, and they are poor enough to try.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "Core Hunters",
+   "choices": [
+    {
+     "text": "Overturn the boat",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "fear": 2,
+       "hunted": 1
+      },
+      "log": "The boat goes over. Three men swim for the bank, and one of them leaves a harpoon in your side for a souvenir. You keep it in a crack in the cliff, later, with the others."
+     },
+     "fail": {
+      "health": -28,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "The barbs go in and hold. The poison gets into your gills.",
+      "deathCause": "three poor men with a pot of poison"
+     },
+     "risky": true
+    },
+    {
+     "text": "Lie in the mud and let the boat pass",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 3,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "They pole over you twice and see nothing but mud. They go home and tell everyone the serpent is a lie. That story protects you better than any scale."
+     },
+     "fail": {
+      "health": -14,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "A harpoon finds you in the mud. You tear it out and flee upriver, bleeding. (-14 health)"
+     }
+    },
+    {
+     "text": "Leave the pool for a season. They will get bored",
+     "effects": {
+      "health": -6,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "You wait it out in the cold upper river, hungry. When you come back the pool is full of dead fish from their poison. You eat them. They taste of iron and failure."
+     }
+    }
+   ],
+   "cooldown": 25,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_im4_hunters_2",
+   "cat": "npc",
+   "weight": 8,
+   "once": true,
+   "text": "An old man with one arm sits on the bank and fishes, badly. He is one of the hunters who came for your core long ago. Now he is too poor to buy bait and too stubborn to stop. \"I know you are there,\" he says to the water. \"I know. I am not here for you. I am here for the fish.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_hunters_1"
+    ],
+    "minYearsAfter": 35
+   },
+   "arc": "Core Hunters",
+   "choices": [
+    {
+     "text": "Drive a carp onto his hook",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "log": "He lands it, looks at it, and looks at the water for a long time. Then he laughs, a cracked old laugh. \"All these years,\" he says. \"You are a strange beast.\" He comes back every week until he dies, and never catches anything you did not send him."
+     }
+    },
+    {
+     "text": "Take his bait, and his hook, and his line",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "Everything goes under in one pull. He swears at the water, magnificently, for a quarter of an hour. Then he goes home and tells the tavern he hooked the dragon and it got away. It is the best day he has had in years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_skin_1",
+   "cat": "explore",
+   "weight": 12,
+   "once": true,
+   "text": "You shed this year, and the old skin snags on the rocks below the falls: a pale, papery thing as long as a house, every scale still on it. An herbalist's apprentice finds it at dawn and stands with both hands over their mouth. Dragon skin is medicine, says every book in the shop. This much of it is a fortune.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "The Skin on the Rocks",
+   "choices": [
+    {
+     "text": "Let the apprentice have it",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 2
+      },
+      "log": "The apprentice rolls it up like a carpet and staggers home. The shop sells it a finger-width at a time for years, for fevers and fright and, once, a prince. The apprentice dies rich and leaves the last strip to be buried on the bank."
+     }
+    },
+    {
+     "text": "Pull it back into the deep before the apprentice can roll it up",
+     "effects": {
+      "luck": 3,
+      "log": "The skin slides off the rocks and into the pool like a ghost leaving. The apprentice tells the shop. Nobody believes a word of it, and the apprentice is never quite the same."
+     }
+    },
+    {
+     "text": "Eat it. Waste nothing",
+     "effects": {
+      "qi": 10,
+      "log": "It tastes of your own last hundred years. It is not pleasant. But whatever was in it is in you again, and the apprentice goes home with a story instead of a fortune."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_skin_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Word has got around. A merchant from the coast arrives in the valley buying dragon skin at a silver piece a strip, and the villagers, who are not stupid, are selling him cured eel skin by the cartload. The merchant suspects something. He comes up to your pool with a magnifying stone and a very determined expression.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_skin_1"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Skin on the Rocks",
+   "choices": [
+    {
+     "text": "Leave a real scale on the bank for him to find",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "It is the size of a rice bowl and shines like wet jade. He holds it up to the light, and goes white, and leaves the valley the same afternoon. The eel skin trade collapses. The villagers are, briefly, very annoyed with you."
+     }
+    },
+    {
+     "text": "Splash him until he leaves",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "He goes home soaked and convinced, which is the worst of both. The village sells him eel skin for ten more years at twice the price."
+     }
+    },
+    {
+     "text": "Stay hidden. The village needs the silver",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "log": "He sees nothing. He buys forty more strips of eel. Three new roofs go up in the village that autumn, and somebody leaves you a very large fish."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_catfish_1",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Below the falls lives a catfish older than the village: a mouth like a doorway, whiskers as long as a fishing pole, a back scarred white by a century of hooks. It has ruled the lower river since before you hatched. Now you are as long as a ferry boat, and it has noticed.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "The Catfish King",
+   "choices": [
+    {
+     "text": "Fight it for the lower river",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 6,
+      "tally": {
+       "fear": 2
+      },
+      "log": "It fights like a falling rock and loses like a king, without hurry. The lower river is yours. The fishermen notice the change in their nets within a week."
+     },
+     "fail": {
+      "health": -26,
+      "log": "It swallows half your head and then decides it does not like the taste.",
+      "deathCause": "the catfish king of the lower river"
+     },
+     "risky": true
+    },
+    {
+     "text": "Let it keep the lower river. You have the pool",
+     "effects": {
+      "comprehension": 4,
+      "log": "Two old powers, one river, a line in the water neither crosses. It works for decades. It is, you think later, the first treaty you ever made."
+     }
+    },
+    {
+     "text": "Bring it a gift: the fattest carp in the pool",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 4,
+      "log": "It takes the carp. It does not thank you. But from then on, when hunters come up the river, the catfish king is somehow always in their way."
+     },
+     "fail": {
+      "health": -6,
+      "log": "It takes the carp, and a piece of your tail with it, as interest. (-6 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_catfish_2",
+   "cat": "insight",
+   "weight": 10,
+   "once": true,
+   "text": "The catfish king is dying. It lies on the bottom of the lower river, white belly up, whiskers drifting, and when you come close it does not move away. In the bone of its old skull, you can feel it, there is a hard bead of qi, a hundred and fifty years of river in one place.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_catfish_1"
+    ],
+    "minYearsAfter": 25
+   },
+   "arc": "The Catfish King",
+   "choices": [
+    {
+     "text": "Wait until it is gone, and take the bead",
+     "effects": {
+      "qi": 25,
+      "strength": 2,
+      "log": "It goes at dusk. You take what it left, and the lower river comes with it: every current, every snag, every hiding place it knew."
+     }
+    },
+    {
+     "text": "Leave it to the river, bead and all",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "comprehension": 5,
+      "log": "The river takes it slowly, the way rivers take kings. Some things should go back where they came from. You stay with it until the end, which nobody will ever know about but you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_ferry_1",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The ferryman at the bend, {npc}, sings to the water on every crossing: a silly song about a shy dragon who will not come out because its scales are muddy. {He} made it up. {He} thinks it is the reason {his} boat has never gone over. The passengers find it embarrassing. {npc} does not care.",
+   "npc": {
+    "role": "im4_ferryman",
+    "spawn": {
+     "role": "stranger",
+     "tag": "im4_ferryman",
+     "ageAbs": 30,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "The Ferryman's Song",
+   "choices": [
+    {
+     "text": "Swim alongside the boat, just under the surface",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "im4_ferry_known",
+      "log": "Halfway across, a passenger sees you and grabs {npc}'s sleeve. {npc} keeps singing, louder, beaming. Business doubles. People cross the river just to cross the river."
+     }
+    },
+    {
+     "text": "Steady the boat when the current pulls at it",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "im4_ferry_known",
+      "log": "The ferry crosses smooth as a table, even in spring floods. {npc} sings the song twice as long, to be safe."
+     }
+    },
+    {
+     "text": "Ignore the song",
+     "effects": {
+      "luck": 2,
+      "npcFlag": "im4_ferry_known",
+      "log": "The song goes on for years regardless. Despite yourself, you learn all the words."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_ferry_2",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "A flood year. {npc} is taking a bridal party across: a palanquin, the bride's family, a drummer, twelve people on a boat built for eight, because the wedding cannot wait. Halfway across, a tree comes down the river like a battering ram. The boat goes over. Twelve people and {npc} are in the brown water.",
+   "npc": {
+    "role": "im4_ferryman"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_ferry_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "im4_ferry_known"
+    ]
+   },
+   "arc": "The Ferryman's Song",
+   "choices": [
+    {
+     "text": "Get them all. Every one",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "virtue": 4,
+       "legend": 3
+      },
+      "flag": "im4_ferry_saved",
+      "npcFlag": "serpent_friend",
+      "log": "You go back and forth through the flood until you lose count, and then there is nobody left in the water. Thirteen people on the bank, coughing. The bride is the first to bow to the river. {npc} sings the dragon song at the wedding, and nobody finds it embarrassing."
+     },
+     "fail": {
+      "health": -15,
+      "tally": {
+       "virtue": 3
+      },
+      "flag": "im4_ferry_saved",
+      "log": "You get eleven of them and {npc}. The drummer is never found. The wedding goes ahead, quietly. {npc} never sings the song again. (-15 health)"
+     }
+    },
+    {
+     "text": "Get {npc} first, then whoever you can",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im4_ferry_saved",
+      "npcFlag": "serpent_friend",
+      "health": -8,
+      "log": "{npc} first, onto the bank. Then the bride, the father, a child. Then the current takes the rest beyond your reach. {npc} stands on the bank shouting the song at the river, as if it could help."
+     }
+    },
+    {
+     "text": "Stay in the deep. Floods are floods",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The village pulls out six people downstream. {npc} is not one of them. The new ferryman does not sing."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_im4_bride_1",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "Two bad harvests and a flood. The elders of the downstream village have decided what the pool wants. At dawn they row a girl of fifteen out to the middle of your water on a bamboo raft, in a red bridal robe, and leave her there, and row away very fast without looking back. She is the daughter of the poorest family. Of course she is. She sits very straight and does not cry.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Bride for the Pool",
+   "choices": [
+    {
+     "text": "Push the raft gently to the far bank, far from that village",
+     "effects": {
+      "tally": {
+       "virtue": 4,
+       "legend": 2
+      },
+      "flag": "im4_bride_returned",
+      "log": "The raft bumps against the far shore. She sits there a long time. Then she takes off the red robe, folds it, leaves it on the bank for you, and walks over the mountain to an aunt in another county. She lives a long life. She never sends anyone back to that village, and she never forgets."
+     }
+    },
+    {
+     "text": "Return her to the village, and rise over the elders' boat",
+     "effects": {
+      "tally": {
+       "fear": 3,
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "im4_bride_returned",
+      "log": "You carry her raft back to the landing and come up behind the elders' boat until your shadow covers it. Nobody in that village ever tries to give the pool a bride again. For a generation, fathers in that village are noticeably kinder to their daughters."
+     }
+    },
+    {
+     "text": "Ignore the raft",
+     "effects": {
+      "luck": 2,
+      "log": "She waits until the elders are out of sight, unties the raft, and paddles home with her hands, furious. She is a fisherman's daughter. It turns out she can swim better than any of them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_bride_2",
+   "cat": "npc",
+   "weight": 10,
+   "once": true,
+   "text": "Twenty years later a woman comes to the far bank of your pool with a little boy and a basket. You know her at once, though she is broad now and laughs loudly. She lays the old red robe, faded to pink, on the bank, and sets the basket beside it: rice cakes, enough for a festival. \"He wanted to see the dragon that saved his mother,\" she says to the water. \"I told him you are shy.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_bride_1"
+    ],
+    "flags": [
+     "im4_bride_returned"
+    ],
+    "minYearsAfter": 18
+   },
+   "arc": "The Bride for the Pool",
+   "choices": [
+    {
+     "text": "Not that shy",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "charm": 3,
+      "log": "You rise out of the pool until you blot out the sun. The boy shrieks, laughs, and has to be held back from jumping in. He grows up and becomes a scholar and writes the story down, and it is the version people remember."
+     }
+    },
+    {
+     "text": "Take the rice cakes, and leave the robe",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The basket is empty in the morning. The robe is still there, folded. She understands. She wears it at her daughter's wedding."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_scholar_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "A scholar from the county office is compiling the county gazetteer, and has come to write the entry for your pool. He sets up a folding stool, an ink stone and a brush, and sits for a whole day with a servant holding an umbrella. \"I write only what I see,\" he tells the servant. \"Not what peasants say. If there is a dragon, it may come and be recorded.\"",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The Gazetteer",
+   "choices": [
+    {
+     "text": "Come and be recorded",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "flag": "im4_gazetteer_seen",
+      "log": "You rise in front of him, slowly, and hold still. He does not drop the brush. He writes for an hour, glancing up, scratching out, writing again. He bows when he is done. The servant has fainted."
+     }
+    },
+    {
+     "text": "Upset his ink stone into the pool",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A ripple, a wave, ink everywhere. He looks at his blackened sleeves for a long time, then writes, in a careful hand: Deep pool. Unpleasant. Possibly inhabited."
+     }
+    },
+    {
+     "text": "Stay below. Let him record a pool",
+     "effects": {
+      "comprehension": 3,
+      "log": "He sits all day. Nothing. He writes, with some satisfaction, that the pool is deep and cold and that the peasants are credulous. You do not mind being a footnote."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_scholar_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Decades on, a young scholar sits on the taboo stone and reads aloud to a group of students from the old county gazetteer: \"In the pool dwells a creature of the water, longer than three boats, with eyes of gold. It looked at me and I believe it understood my purpose. I record it as a dragon.\" The students look at the water. So does the young scholar, hopefully.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_scholar_1"
+    ],
+    "flags": [
+     "im4_gazetteer_seen"
+    ],
+    "minYearsAfter": 70
+   },
+   "arc": "The Gazetteer",
+   "choices": [
+    {
+     "text": "Rise, so the record is confirmed",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "log": "The students scatter, then come back, then sit very still. The young scholar weeps a little and adds a line in the margin of the gazetteer: confirmed, decades later, by the undersigned. Now two scholars call you a dragon in writing."
+     }
+    },
+    {
+     "text": "Let the record speak for itself",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Nothing stirs. The students go home doubtful. But the book says dragon, and books last longer than doubt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_scholar_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Decades on, a young scholar sits on the taboo stone reading the old county gazetteer aloud: \"A deep pool. The peasants say a serpent dwells in it. I sat a full day and saw nothing. It is probably a large eel.\" The students laugh. The young scholar closes the book, a little disappointed, and looks at the water anyway.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_im4_scholar_1"
+    ],
+    "notFlags": [
+     "im4_gazetteer_seen"
+    ],
+    "minYearsAfter": 70
+   },
+   "arc": "The Gazetteer",
+   "choices": [
+    {
+     "text": "Correct the record",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "You come up out of the water in the middle of the laughter. Nobody laughs after that. The young scholar crosses out the word eel with a shaking hand and writes, above it: no."
+     }
+    },
+    {
+     "text": "Stay an eel. Eels are left alone",
+     "effects": {
+      "luck": 3,
+      "comprehension": 2,
+      "log": "They go home laughing. Nobody hunts an eel. There are worse things for a book to call you, you think, and then think of the grandmother by the fire, and are not so sure."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_army_1",
+   "cat": "danger",
+   "weight": 14,
+   "once": true,
+   "text": "War has come up the valley. A beaten army is crossing the ford below your falls, and behind the curtain of the waterfall, in the cave only you and the otters know, a family from the burned village is hiding: a grandfather, two women, four children, one of them a baby who will not stop crying. A soldier on the bank stops. Listens.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "Soldiers at the Ford",
+   "choices": [
+    {
+     "text": "Rise in the plunge pool and fill the soldier's whole sight",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "He forgets the baby. He forgets his own name. He tells his captain the falls are guarded by a demon, and the army crosses a li downstream instead. The family comes out three days later, into a valley that is still theirs."
+     }
+    },
+    {
+     "text": "Thrash the falls until their roar drowns the baby's crying",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The falls thunder for an hour. The soldier shrugs and goes back to his column. The family never knows why the waterfall was so loud that day. The baby grows up and becomes a ferry pilot, unafraid of any water."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "hunted": 1
+      },
+      "log": "The soldier hears something else in the noise: you. He calls archers. Arrows rain into the pool until dark, and the family slips away in the confusion. (-10 health)"
+     }
+    },
+    {
+     "text": "Stay out of a human war",
+     "effects": {
+      "luck": 2,
+      "log": "The soldier climbs the rocks. You hear him find them. You hear the grandfather begging. The soldier, in the end, takes their rice and leaves them. Not everything in a war is the worst thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_army_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "The army has crossed, and its general, afraid of pursuit, gives an order: poison the pool and the ford so the enemy behind them has no water. A squad of soldiers comes up the gorge with sacks of crushed poison root and an officer who looks unhappy about it.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_im4_army_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Soldiers at the Ford",
+   "choices": [
+    {
+     "text": "Destroy them before a single sack is opened",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "strength": 5,
+      "tally": {
+       "fear": 4,
+       "legend": 2
+      },
+      "flag": "im4_poison_stopped",
+      "log": "The sacks go into the river unopened, and so do most of the soldiers. The ones who get back to the army are not believed, and are flogged, and are right."
+     },
+     "fail": {
+      "health": -30,
+      "tally": {
+       "hunted": 2
+      },
+      "log": "There are more spears than you counted, and the officer has fought monsters before.",
+      "deathCause": "a squad of soldiers at the ford, in somebody else's war"
+     },
+     "risky": true
+    },
+    {
+     "text": "Tear the sacks open in the air, downwind, so the root blows away",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "flag": "im4_poison_stopped",
+      "log": "The wind takes the poison over the dry hillside in a grey cloud. The soldiers run from it. The officer looks at the clean water and at you, and salutes, and marches the squad back down the gorge without another word."
+     },
+     "fail": {
+      "health": -16,
+      "log": "One sack splits over the water. You swallow what you can before it spreads and are sick for a season, but the pool lives. (-16 health)"
+     }
+    },
+    {
+     "text": "Go into the cave and hold your breath",
+     "effects": {
+      "health": -12,
+      "log": "They pour it in and leave. The fish die. The otters die. You live, barely, in the cleanest crack in the rock, and when the war has passed the pool takes ten years to come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_scales_1",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "On a still night with the moon straight overhead you lie in the shallows and look at yourself in the water, and count the great scales down your back, the ones that are harder and older than the rest. Seventy-two. The old stories say a dragon has nine times nine. And under your throat, you notice for the first time, one scale grows the wrong way.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ]
+   },
+   "arc": "Eighty-One Scales",
+   "choices": [
+    {
+     "text": "Study the reversed scale",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 5,
+      "qi": 10,
+      "log": "It is the softest place on you, and the hottest. When you press on it, something in you wants to tear the moon out of the sky. You learn to leave it alone. You also learn that you will never let anyone else touch it."
+     },
+     "fail": {
+      "health": -6,
+      "log": "You rub it against a stone to see what happens, and lose your temper so badly you break the stone. You never find out why. (-6 health)"
+     }
+    },
+    {
+     "text": "Count again, more slowly, and dream of eighty-one",
+     "effects": {
+      "qi": 12,
+      "luck": 2,
+      "log": "Seventy-two. Nine more to go. You fall asleep in the shallows doing sums, and the herons give you a very wide berth."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_scales_2",
+   "cat": "danger",
+   "weight": 10,
+   "once": true,
+   "text": "A boy with a bow, hunting ducks in the reeds, sees a long shape in the shallows and lets fly without thinking. The arrow hits nothing important. It hits the reversed scale under your throat, and the world goes red.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_scales_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "Eighty-One Scales",
+   "choices": [
+    {
+     "text": "Let the rage come",
+     "effects": {
+      "strength": 6,
+      "tally": {
+       "fear": 4,
+       "legend": 1
+      },
+      "health": -5,
+      "log": "When you come back to yourself, the reeds are flattened for a hundred paces and the river has changed its course. The boy is up a tree a li away and lives. He is the luckiest person in the county, and knows it."
+     }
+    },
+    {
+     "text": "Hold it. Hold it. Hold it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 6,
+      "qi": 15,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The rage goes through you like a flood through a gorge, and you are the gorge, and you stay standing. When it passes, the boy is still frozen in the reeds with his bow. You sink away. He is never sure he saw anything, and you are never again afraid of your own anger."
+     },
+     "fail": {
+      "strength": 4,
+      "tally": {
+       "fear": 3
+      },
+      "health": -8,
+      "log": "You hold it for three breaths. On the fourth you lose. The reeds, the boat landing, the boy's bow. Not the boy. That much you manage. (-8 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_lovers_1",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "Two young people meet at your pool on summer nights: a miller's child from Somae and a potter's child from Hagok, whose families have not spoken in thirty years. They sit on the flat stone and whisper, and sometimes they talk to you, because the pool keeps secrets, everyone knows that.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "The Meeting Stone",
+   "choices": [
+    {
+     "text": "Keep watch for them",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "im4_lovers_watched",
+      "log": "Twice, someone comes down the path with a lantern. Twice the pool stirs, and the lantern-carrier decides they did not need to come down here after all."
+     }
+    },
+    {
+     "text": "Show yourself to them, once",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "im4_lovers_watched",
+      "log": "They do not run. They hold hands tighter and look at you, and the potter's child bows. It becomes their story: the night the dragon blessed them. You were only curious."
+     }
+    },
+    {
+     "text": "Leave them to it",
+     "effects": {
+      "luck": 2,
+      "log": "Humans in pairs are none of your business. You go to the other end of the pool and listen to the frogs, which are louder and make more sense."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_im4_lovers_2",
+   "cat": "danger",
+   "weight": 12,
+   "once": true,
+   "text": "Torches on the path: both families, coming down from both villages at once, with clubs and fury, having found out on the same night. The two young people stand on the flat stone with nowhere to go but the water. They look at the water.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_im4_lovers_1"
+    ],
+    "flags": [
+     "im4_lovers_watched"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Meeting Stone",
+   "choices": [
+    {
+     "text": "Raise a wall of water between them and the torches",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 3,
+       "virtue": 2
+      },
+      "log": "The pool stands up like a curtain and comes down on the path. Every torch goes out. In the dark and the wet the two families find themselves holding on to each other to keep from sliding into the pool. By morning, somehow, there is an agreement."
+     }
+    },
+    {
+     "text": "Let them climb onto your back, and carry them over the pool to the far side",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "virtue": 1
+      },
+      "log": "Two young people ride a serpent across a moonlit pool and walk off over the mountain. The families arrive to find an empty stone. The story goes into every song in the county for two hundred years."
+     },
+     "fail": {
+      "health": -8,
+      "log": "Halfway across one of them slips, and you have to dive to catch them both, and all three of you come up in front of the torches, gasping. In the end nobody uses the clubs. It was, the families agree, too strange. (-8 health)"
+     }
+    },
+    {
+     "text": "Stay down. This is between them and their families",
+     "effects": {
+      "comprehension": 3,
+      "log": "There is shouting, and weeping, and two people dragged home in two directions. Ten years later you see one of them at the pool alone, sitting on the flat stone, saying nothing to you."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

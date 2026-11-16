@@ -1,0 +1,4967 @@
+{
+ "events": [
+  {
+   "id": "dc_imbv_diver_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A pearl diver from the salt villages, {npc}, swims down to your pool every evening, further each time, holding {his} breath until {his} lips go blue. {He} is not after oysters. {He} is counting your scales, one dive at a time, and scratching the count on a slate.",
+   "npc": {
+    "role": "imbv_diver",
+    "spawn": {
+     "role": "stranger",
+     "tag": "imbv_diver",
+     "ageAbs": 19,
+     "opinion": 10,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Pearl Diver",
+   "choices": [
+    {
+     "text": "Let {him} count",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "flag": "im_bv_counted",
+      "log": "You lie still. By the twentieth evening {he} has a number, and {he} cries a little when {he} writes it down, because it is bigger than any number {his} village has."
+     }
+    },
+    {
+     "text": "Rise under {npc} and carry {him} up gently",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "{He} comes up on your back like a fish in a net, gasping, and then laughing. Nobody in the salt villages will ever believe {him}."
+     }
+    },
+    {
+     "text": "Stir the bottom so {he} cannot see",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "qi": 10,
+      "log": "Silt boils up. {He} surfaces blind and swearing, and does not come back for a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_diver_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} comes back with an elder of {his} village. They stand on the rock and argue in whispers. The elder wants to sell your count to a magistrate who pays for omens. {npc} wants to burn the slate.",
+   "npc": {
+    "role": "imbv_diver"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_imbv_diver_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Pearl Diver",
+   "choices": [
+    {
+     "text": "Show yourself to the elder",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "log": "You lift your head out of the water until the elder sits down on the rock without meaning to. Nobody sells anything that year."
+     }
+    },
+    {
+     "text": "Wait, and let them decide",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "comprehension": 2,
+      "flag": "im_bv_slate_burned",
+      "log": "In the end {npc} wins. You watch the slate burn on the rock, a small red light, and something in you is grateful."
+     }
+    },
+    {
+     "text": "Take the slate yourself, in the night",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 1
+      },
+      "flag": "im_bv_slate_kept",
+      "log": "The slate lies at the bottom of your pool now, among the stones. A number written by someone who wanted to know you."
+     },
+     "fail": {
+      "health": -8,
+      "log": "You knock it into the current and it is gone. They blame each other for a year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_diver_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "A drought. The salt villages walk to your pool with bowls, and {npc} walks at the front. {He} does not ask for rain. {He} asks if you are thirsty too, because the pool is lower than {he} has ever seen it.",
+   "npc": {
+    "role": "imbv_diver"
+   },
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_imbv_diver_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Pearl Diver",
+   "choices": [
+    {
+     "text": "Give them the pool and go deeper into the river",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "virtue": 3,
+       "rain": 1
+      },
+      "health": -10,
+      "log": "You go down the river to the deep bend and leave them your water. When the rain comes back they build a small shrine on the black rock and put a pearl in it."
+     }
+    },
+    {
+     "text": "Call the rain, whatever it costs you",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The drought"
+     },
+     "ok": {
+      "tally": {
+       "legend": 5,
+       "rain": 1
+      },
+      "qi": -20,
+      "log": "It takes three nights. On the fourth morning the sky opens and the villages stand in it with their mouths open like children."
+     },
+     "fail": {
+      "tally": {
+       "legend": 1
+      },
+      "health": -20,
+      "log": "The sky does not answer. You are weak for a season, and {npc} brings you fish, which is absurd, and you eat them."
+     }
+    },
+    {
+     "text": "Keep your pool",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "qi": 15,
+      "log": "They go home with empty bowls. {npc} looks back once. You will remember that look for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_otter_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "An otter matriarch has built a raft of logs across the mouth of your bend, and her family fishes your water as if they had always owned it. She sits at the front and stares at you with no fear at all. She has eleven children, and they are all watching.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Otter Queen",
+   "choices": [
+    {
+     "text": "Break the raft with your tail",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "strength": 2,
+      "log": "Logs everywhere. The otters scatter, and the matriarch swims a slow circle around your head before she goes, to show she is leaving on her own terms."
+     }
+    },
+    {
+     "text": "Share the bend",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "luck": 2,
+      "flag": "im_bv_otters",
+      "log": "They fish the shallows and you keep the deep. In a hard winter the children sleep against your coils for warmth, and you let them."
+     }
+    },
+    {
+     "text": "Out-stare her",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 1
+      },
+      "charm": 3,
+      "log": "She blinks first. The raft is moved downstream by morning, every log, with great dignity."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "You blink first. The otters stay. You tell yourself you were thinking about something else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_dam_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A county magistrate is damming your river to water his own fields. The workmen drive piles by day and pray to you by night, because they know whose river it is. The water above the dam rises a little every week. Below it, three villages are going dry.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Magistrate's Dam",
+   "choices": [
+    {
+     "text": "Lean on the dam until it breaks",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "The piles go out like teeth. The river runs to the villages again, and the magistrate writes a long report blaming the weather."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The dam holds and you scrape your belly raw on its stakes. The workmen look away, ashamed for you."
+     }
+    },
+    {
+     "text": "Leave it, and send fish down to the dry villages",
+     "effects": {
+      "tally": {
+       "virtue": 3
+      },
+      "qi": -10,
+      "log": "Every night you herd the carp below the dam. The dry villages eat, and wonder why the fish come so thick now."
+     }
+    },
+    {
+     "text": "Show yourself to the magistrate",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 3
+      },
+      "log": "He sees you from his parasol and drops it. The dam is gone within the month, and he asks to be posted somewhere without rivers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_rival_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "Another serpent has come up the river, younger than you and hungrier, with a pearl-dream in its eyes. It wants your bend, because your bend is closer to the sky. It does not ask. It coils at the mouth of the gorge and waits for you to come out.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Other Serpent",
+   "choices": [
+    {
+     "text": "Fight it in the gorge",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "qi": 25,
+      "log": "Rock breaks. Pines go into the river. In the end it goes back down the way it came, slower, and the gorge is yours."
+     },
+     "fail": {
+      "tally": {
+       "fear": -1
+      },
+      "health": -30,
+      "log": "It bites deep and goes past you, and for a season it hunts your bend before it moves on. You heal in the mud."
+     }
+    },
+    {
+     "text": "Show it the way to an empty river",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "flag": "im_bv_younger",
+      "log": "You lead it three days south to a river nobody holds. It goes into the water without looking back. Years later you hear it has a shrine of its own."
+     }
+    },
+    {
+     "text": "Wait it out, deep and still",
+     "effects": {
+      "qi": 20,
+      "health": -5,
+      "log": "Forty days. It gets bored before you do. Patience is the oldest thing you own."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_imbv_monk_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "An old monk is building a stone bridge over your river alone, one stone a day. He says it will take him forty years and he has perhaps ten left. He talks to you while he works, about nothing, the way old men talk to cats.",
+   "when": {
+    "beast": [
+     "imugi"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Bridge Monk",
+   "choices": [
+    {
+     "text": "Carry stones for him at night",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 1
+      },
+      "strength": 2,
+      "log": "Every morning there are more stones than he set. He does not ask. He finishes the bridge in six years, and he names it for a fish, which you think is about right."
+     }
+    },
+    {
+     "text": "Listen, and never answer",
+     "effects": {
+      "comprehension": 4,
+      "log": "Ten years of an old man talking. When he dies on the bridge with a stone in his hands, you find you have learned a whole sutra without meaning to."
+     }
+    },
+    {
+     "text": "Tell him the river does not want a bridge",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "luck": 2,
+      "log": "He looks at you a long time and puts down the stone. \"No,\" he says. \"I suppose it would not.\" He goes up the mountain instead, and you miss him."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_farmer_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "An old farmer on the eastern terraces, {npc}, plants by the stars, not by the almanac, and {his} rice is better than anyone's. {He} has noticed that the star {he} plants by moves when you move. {He} sits on the dyke at night and watches it, and watches the sky where you are.",
+   "npc": {
+    "role": "cqbv_farmer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "cqbv_farmer",
+     "ageAbs": 58,
+     "opinion": 15,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Farmer Who Counts Stars",
+   "choices": [
+    {
+     "text": "Hold still in the sky for {him}",
+     "effects": {
+      "tally": {
+       "ward": 2,
+       "legend": 1
+      },
+      "comprehension": 2,
+      "log": "You hang still above the terraces for a whole planting. {His} seedlings come up in straight lines, as if drawn with a brush."
+     }
+    },
+    {
+     "text": "Move, to see what {he} does",
+     "effects": {
+      "luck": 3,
+      "flag": "cq_bv_farmer_followed",
+      "log": "{He} follows the star with {his} whole field, a week late and grumbling. Rice planted by a dragon's whim. It is the best year {he} has ever had."
+     }
+    },
+    {
+     "text": "Hide behind a cloud",
+     "effects": {
+      "qi": 10,
+      "log": "{He} waits three nights, then plants by the almanac like everyone else, and complains to {his} wife about the sky."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_farmer_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The county has sent a clerk with a new almanac, the court's own, and an order that every farmer plant by it. {npc} refuses. The clerk has two soldiers and a list of names, and the old man's is first.",
+   "npc": {
+    "role": "cqbv_farmer"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_cqbv_farmer_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Farmer Who Counts Stars",
+   "choices": [
+    {
+     "text": "Send a wind through the clerk's papers",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "Every page of the court almanac goes over the terraces like a flock of white birds. The clerk goes home with nothing to read from."
+     }
+    },
+    {
+     "text": "Let the court have its way, and keep the old man's rice alive in secret",
+     "effects": {
+      "tally": {
+       "ward": 2,
+       "virtue": 2
+      },
+      "qi": -15,
+      "log": "{He} plants by the court's date and you nurse the late seedlings with dew. Nobody knows why {his} field still does best."
+     }
+    },
+    {
+     "text": "Show the clerk the star",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "cq_bv_clerk_saw",
+      "log": "The clerk looks up, and up, and writes a report to the capital that nobody there will believe, and the next year the clerk plants by the stars too."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "The clerk sees a cloud. The old man is fined a sack of rice, and pays it laughing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_farmer_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} is dying in the spring, in the middle of planting. {His} son does not know the stars. The terraces wait. The old man asks to be carried up to the dyke one last night, to show the boy which star.",
+   "npc": {
+    "role": "cqbv_farmer"
+   },
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_cqbv_farmer_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Farmer Who Counts Stars",
+   "choices": [
+    {
+     "text": "Shine as you never have",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "ward": 3
+      },
+      "qi": -20,
+      "log": "The whole terrace sees it. The boy will never forget which star, and the old man dies pleased, with {his} finger still pointing."
+     }
+    },
+    {
+     "text": "Come down and sit beside them",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "charm": 3,
+      "log": "A dragon on a rice dyke, coiled round two farmers, and none of the three says much. In the morning the boy plants. You watch every row."
+     }
+    },
+    {
+     "text": "Stay where you are",
+     "effects": {
+      "comprehension": 3,
+      "log": "The old man finds the star without you, because {he} always could. That, you think, was the lesson."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_tiger_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A tiger of the western ridges has started taking toll from the travellers on the eastern road, your road. Not a white one: an old striped thief with a torn ear. It sits in the pass and lets through whoever drops meat. The merchants have started to call it the Lord of the East.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Tiger's Toll",
+   "choices": [
+    {
+     "text": "Come down on the pass in a storm",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "ward": 2
+      },
+      "log": "Thunder in the pass, and then no tiger. The merchants go back to calling the east by its right name."
+     },
+     "fail": {
+      "health": -15,
+      "log": "It is quicker in the rocks than you are in the air. It leaves, but it leaves you scratched, and laughing at you."
+     }
+    },
+    {
+     "text": "Make the road too wet for it",
+     "effects": {
+      "tally": {
+       "ward": 1
+      },
+      "qi": 10,
+      "log": "A month of mist in the pass. Tigers hate wet fur. It goes home grumbling."
+     }
+    },
+    {
+     "text": "Let it be: it is only hungry",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "log": "It grows fat and old in the pass, and in the end the merchants are fond of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_kite_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The eastern capital holds a kite contest every spring, and this year every child has made a dragon kite, blue, because a story about you has gone round the markets. Hundreds of paper dragons in the wind. One of them has a broken string and is going out to sea.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Kite Contest",
+   "choices": [
+    {
+     "text": "Catch the lost kite and bring it back",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "charm": 2,
+      "log": "A little girl gets her kite back from the sky, carried in a cloud the size of a house. She does not win the contest. She does not care."
+     }
+    },
+    {
+     "text": "Fly among them, very high",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "Nobody on the wall can tell which dragon is real. The poets argue about it for years."
+     }
+    },
+    {
+     "text": "Blow them all higher",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "ward": 1
+      },
+      "log": "Every kite goes up at once, a blue flock, and the city stands still with its face turned up."
+     },
+     "fail": {
+      "tally": {
+       "fear": 1
+      },
+      "log": "Too much wind. Strings snap and kites go out over the sea, and the children cry, and you feel enormous and clumsy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cqbv_diviner_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A diviner in the market sells your name. \"The Azure Dragon told me,\" he says, and reads a fortune, and takes silver. He is wrong about everything, and people have started to plant late and marry badly on his word.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The False Diviner",
+   "choices": [
+    {
+     "text": "Rain only on his stall",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "log": "Every day, a small black cloud over one stall. In a week he has packed up his slips and gone to a dry province."
+     }
+    },
+    {
+     "text": "Make one of his fortunes come true",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "luck": 3,
+      "flag": "cq_bv_diviner",
+      "log": "He promises a widow her son will come home from the war, and you send a wind to the ship. When the boy walks into the market, the diviner faints."
+     }
+    },
+    {
+     "text": "Leave him: people believe what they want",
+     "effects": {
+      "comprehension": 3,
+      "log": "He grows rich. You learn something about men and gods that you did not want to know."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_cqbv_eel_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "An eel the size of a boat has taken the lake below your mountain and calls itself a dragon. It eats the fishermen's nets and sometimes the fishermen. It has never seen a real one. It thinks the sky is a story.",
+   "when": {
+    "beast": [
+     "cheongryong"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Eel King",
+   "choices": [
+    {
+     "text": "Show it a real one",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "ward": 2
+      },
+      "qi": 15,
+      "log": "It sees you come down through the water and it understands, too late and all at once, what a dragon is. The lake is the fishermen's again."
+     },
+     "fail": {
+      "health": -20,
+      "log": "Eels fight dirty in mud. You win in the end, but you carry the bite for years."
+     }
+    },
+    {
+     "text": "Drive it into the river and let the sea take it",
+     "effects": {
+      "tally": {
+       "ward": 1,
+       "virtue": 1
+      },
+      "log": "It goes, thrashing. The fishermen put up a little blue flag on the shore, which you pretend not to notice."
+     }
+    },
+    {
+     "text": "Teach it what the sky is",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "It takes a long time. In the end it eats only fish, and it looks up sometimes, and you call that a beginning."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_hunter_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "{npc}, a tiger hunter's daughter, has come to your mountain with {his} dead father's bow. You did not kill the father. A striped tiger did, three valleys away. {He} does not know there is a difference, and {he} has been tracking you for nine days.",
+   "npc": {
+    "role": "bhbv_hunter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "bhbv_hunter",
+     "ageAbs": 21,
+     "opinion": -15,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Hunter's Daughter",
+   "choices": [
+    {
+     "text": "Let {him} find you, and sit",
+     "effects": {
+      "tally": {
+       "balance": 1,
+       "legend": 1
+      },
+      "charm": 2,
+      "log": "{He} finds you sitting in the snow like a cat by a stove. {He} draws, and does not shoot, and you both stay there until it gets dark."
+     }
+    },
+    {
+     "text": "Lead {him} to the tiger that did it",
+     "effects": {
+      "tally": {
+       "balance": 2
+      },
+      "flag": "bh_bv_led",
+      "log": "Three valleys. {He} follows your tracks the whole way, swearing. At the end {he} finds what {he} came for."
+     }
+    },
+    {
+     "text": "Frighten {him} off the mountain",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "One roar, close. {He} runs. {He} will be back, you think, and you are right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_hunter_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} has come back with five men from the garrison and a cage on a cart. {He} is not with them as a hunter now. {He} is with them to say which tiger. {He} stands at the back and will not look up at your ridge.",
+   "npc": {
+    "role": "bhbv_hunter"
+   },
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bhbv_hunter_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Hunter's Daughter",
+   "choices": [
+    {
+     "text": "Break the cage in front of them",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "The cart goes over the edge in pieces. The soldiers go down the mountain faster. {npc} stays, and laughs, once."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "health": -15,
+      "log": "A spear in the shoulder before you are away. They will tell the story wrong in the garrison."
+     }
+    },
+    {
+     "text": "Go to {npc}, past the soldiers",
+     "effects": {
+      "tally": {
+       "balance": 2,
+       "legend": 2
+      },
+      "flag": "bh_bv_trusted",
+      "log": "The soldiers do not move. You lie down at {his} feet. \"Not this one,\" {he} says, very clearly, and they take the cart home empty."
+     }
+    },
+    {
+     "text": "Vanish into the high snow",
+     "effects": {
+      "qi": 15,
+      "log": "They search for a month and find only pawprints that stop at a cliff."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_hunter_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "Winter. A starving band of deserters has come up into the villages under your mountain, and {npc} is the only one there with a bow. {He} sends a boy up to the snowline with a message: a strip of red cloth tied to a pine.",
+   "npc": {
+    "role": "bhbv_hunter"
+   },
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bhbv_hunter_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Hunter's Daughter",
+   "choices": [
+    {
+     "text": "Come down on the deserters",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The deserters"
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "balance": 1
+      },
+      "log": "A white shape in the snow, and twelve men who will never again carry a sword. The village puts a tiger painting over every door that spring."
+     },
+     "fail": {
+      "tally": {
+       "legend": 2
+      },
+      "health": -25,
+      "log": "They have spears and fire. You drive them off, bleeding. {npc} binds your leg with the red cloth, very carefully."
+     }
+    },
+    {
+     "text": "Guard the village by night and let {npc} do the rest",
+     "effects": {
+      "tally": {
+       "balance": 2,
+       "virtue": 2
+      },
+      "log": "Every night they hear you on the ridge, and every morning another deserter has gone. {He} shoots only one. It is enough."
+     }
+    },
+    {
+     "text": "Leave it to the humans",
+     "effects": {
+      "tally": {
+       "balance": -1
+      },
+      "log": "The village holds, barely. The red cloth is still on the pine in spring, faded."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_bear_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "An old black bear has woken early from its sleep and taken the cave you den in. It is half blind and very angry. It smells of honey and rot. It is too old to hunt, and it knows it, and it would rather die fighting in a warm cave than starve outside.",
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Bear's Cave",
+   "choices": [
+    {
+     "text": "Take the cave back",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "hunger": -10
+      },
+      "log": "It is over fast. You eat well, and the cave smells of bear for a year."
+     },
+     "fail": {
+      "health": -25,
+      "log": "An old bear's paw is still a bear's paw. You take the cave in the end, but you limp through the winter."
+     }
+    },
+    {
+     "text": "Give it the cave for its last winter",
+     "effects": {
+      "tally": {
+       "balance": 1,
+       "virtue": 2
+      },
+      "health": -5,
+      "log": "You sleep in the snow. In spring it does not come out, and you go in, and it is curled up as if it were only resting."
+     }
+    },
+    {
+     "text": "Bring it food",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "hunger": 10
+      },
+      "log": "A deer at the cave mouth every week. It never thanks you. In spring it walks away down the mountain, slow, and you have your cave."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_border_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "Two kingdoms are setting their border across your mountain. Surveyors with ropes and carved stones are drawing a line straight through your hunting ground, and both sides want the pass. Soldiers will follow the stones. They always do.",
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Border Stones",
+   "choices": [
+    {
+     "text": "Move the stones every night",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "luck": 2,
+      "log": "Every morning the line is somewhere else. In the end both kingdoms agree the mountain is unlucky, and put the border in the valley."
+     }
+    },
+    {
+     "text": "Mark the true line yourself",
+     "effects": {
+      "tally": {
+       "balance": 2
+      },
+      "flag": "bh_bv_border",
+      "log": "Claw marks on every rock along the ridge, deep and old-looking. The surveyors follow them without knowing why. The line falls where no village is cut in half."
+     }
+    },
+    {
+     "text": "Let the humans draw their lines",
+     "effects": {
+      "comprehension": 2,
+      "log": "The stones stand. The soldiers come, and leave, and come. The mountain does not care where its border is. You try not to care either."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bhbv_ghost_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A changgwi, a ghost of someone a tiger ate long ago, is leading a wedding procession up your mountain in the night: lanterns, drums, a red palanquin. The bride in the palanquin is alive. She is from the village. The ghost means to give her to a tiger that is not you.",
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Tiger Ghost's Wedding",
+   "choices": [
+    {
+     "text": "Stand in the path",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "ghosts": -1
+      },
+      "log": "The lanterns go out one by one. The ghost bows, very low, and is gone. The bride walks home barefoot, singing to stay awake."
+     },
+     "fail": {
+      "tally": {
+       "ghosts": 1
+      },
+      "health": -10,
+      "log": "The drums do not stop. You fight in the dark against things you cannot bite, and save the bride, and the ghost escapes."
+     },
+     "req": {
+      "notFlags": [
+       "bh_ghost_oath"
+      ]
+     }
+    },
+    {
+     "text": "Follow, and find the other tiger",
+     "effects": {
+      "tally": {
+       "balance": 1,
+       "legend": 2
+      },
+      "qi": 10,
+      "log": "A striped man-eater waits at the top. It does not wait long. The bride goes home in the morning, carried on a white tiger's back, which the village will never stop talking about."
+     }
+    },
+    {
+     "text": "Wake the village and let them come for her",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Torches up the mountain. The ghost flees from fire, as they do. The bride's mother hits you with a broom by mistake."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_bhbv_painter_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A court painter has been sent to paint the White Tiger for the king's new screen. He has painted a hundred tigers and never seen one. He sits by your stream with his brushes and shakes so hard he cannot draw a line.",
+   "when": {
+    "beast": [
+     "baekho"
+    ],
+    "stage": [
+     7,
+     8
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Painter of Tigers",
+   "choices": [
+    {
+     "text": "Sleep in the sun for him, all afternoon",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "He paints until dark. The screen hangs in the throne hall now, a sleeping white tiger, and every minister who passes it walks a little more quietly."
+     }
+    },
+    {
+     "text": "Stalk him, just a little",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "He paints you crouching. It is the best thing he ever made, and he never paints again."
+     }
+    },
+    {
+     "text": "Knock over his ink",
+     "effects": {
+      "charm": 2,
+      "log": "He laughs, which surprises you both, and draws you from memory, wrong in every detail and somehow right."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_ferry_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A ferry girl on the north river, {npc}, has learned that if {he} steers over your shell the current cannot take {his} boat. {He} does it every crossing now, and talks to you through the hull, knocking twice for hello. {He} has never seen you. {He} thinks you are a rock with opinions.",
+   "npc": {
+    "role": "hybv_ferry",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hybv_ferry",
+     "ageAbs": 15,
+     "opinion": 20,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Ferry Girl",
+   "choices": [
+    {
+     "text": "Knock back",
+     "effects": {
+      "tally": {
+       "patience": 2
+      },
+      "charm": 2,
+      "flag": "hy_bv_knock",
+      "log": "Two knocks from under the boat. {He} drops {his} pole. The next morning {he} brings rice cakes and drops them overboard, one for each knock."
+     }
+    },
+    {
+     "text": "Stay a rock",
+     "effects": {
+      "tally": {
+       "patience": 3
+      },
+      "log": "{He} talks to the rock for years. You learn the whole village from under a boat."
+     }
+    },
+    {
+     "text": "Rise, just enough to be seen",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "guile": 1
+      },
+      "log": "One black eye in the water. {He} does not scream. {He} says, \"Oh. Good,\" and keeps poling."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_ferry_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "A river magistrate has seized the ferry for a toll bridge, and {npc} is in the way. {He} still crosses at night on a raft of reeds, and knocks, and asks you what to do.",
+   "npc": {
+    "role": "hybv_ferry"
+   },
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hybv_ferry_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Ferry Girl",
+   "choices": [
+    {
+     "text": "Hold the river still so the bridge piles will not set",
+     "effects": {
+      "tally": {
+       "guile": 2,
+       "legend": 1
+      },
+      "log": "Every pile drifts. The engineers swear the river bottom moves, and they are right. The bridge is never built."
+     }
+    },
+    {
+     "text": "Let the bridge come, and keep {him} safe on it",
+     "effects": {
+      "tally": {
+       "patience": 2,
+       "virtue": 2
+      },
+      "log": "{He} becomes the toll-keeper, of all things. {He} knocks twice on the bridge piles every night, and you hear it."
+     }
+    },
+    {
+     "text": "Tip the magistrate's barge",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "fear": 2,
+       "legend": 2
+      },
+      "log": "One wet magistrate on the shingle, and one ferry given back by morning."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 2
+      },
+      "health": -10,
+      "log": "The barge rights itself. The magistrate sends for a priest to exorcise the river."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_ferry_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "Spring flood. The whole river is moving, and {npc} is on {his} ferry in the middle of it with a family {he} would not leave behind. {He} is knocking on the hull, over and over, and the water is too loud for anyone but you to hear.",
+   "npc": {
+    "role": "hybv_ferry"
+   },
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hybv_ferry_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Ferry Girl",
+   "choices": [
+    {
+     "text": "Rise under the ferry and carry it to shore",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "knot": 3
+      },
+      "health": -10,
+      "log": "A black island comes up under them in the flood and walks them to the bank. The family never gets over it. {npc} pats your shell as if you were a horse."
+     }
+    },
+    {
+     "text": "Turn the flood with your back",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The spring flood"
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "patience": 2
+      },
+      "qi": -20,
+      "log": "The river bends round you like water round a stone, because that is what you are. The ferry spins into the slack and grounds safely."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The flood is stronger. You save the ferry and lose a piece of your shell to a log. It grows back slower than you would like."
+     }
+    },
+    {
+     "text": "Hold the knot of your two heads and wait",
+     "effects": {
+      "tally": {
+       "knot": 2
+      },
+      "comprehension": 2,
+      "log": "You wait one breath too long, and {he} steers to the bank alone, and later says {he} knew you were thinking about it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_snakes_1",
+   "cat": "insight",
+   "weight": 20,
+   "once": true,
+   "text": "Your two heads have not agreed for a season. The serpent wants to go south where the fish are fat. The tortoise wants to stay in the cold where nothing changes. You lie in the mud and argue with yourself, and the frogs listen.",
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Serpent's Quarrel",
+   "choices": [
+    {
+     "text": "Go south, a little",
+     "effects": {
+      "tally": {
+       "guile": 3,
+       "knot": -2
+      },
+      "qi": 15,
+      "log": "The serpent is happy for a year. The tortoise sulks. The fish are very good."
+     }
+    },
+    {
+     "text": "Stay, and wait for the serpent to tire",
+     "effects": {
+      "tally": {
+       "patience": 3,
+       "knot": -1
+      },
+      "log": "It does not tire. It sulks too. Two sulking heads on one shell is a long winter."
+     }
+    },
+    {
+     "text": "Meet in the middle: the river mouth",
+     "effects": {
+      "tally": {
+       "knot": 4
+      },
+      "comprehension": 3,
+      "log": "Brackish water, neither fat fish nor stillness. Both heads hate it equally, which is a kind of peace."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_scribes_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A party of scholars has come north to read the cracks on your shell. They believe the old kings wrote omens there. They set up tents on the ice and copy every line, and argue about what the cracks mean, and one of them has started to read them aloud to you.",
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Scribes of the North",
+   "choices": [
+    {
+     "text": "Lie still and be read",
+     "effects": {
+      "tally": {
+       "patience": 2,
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "They go home with a book. It is mostly wrong. One line is right, and it frightens them."
+     }
+    },
+    {
+     "text": "Move, and spoil their copy",
+     "effects": {
+      "tally": {
+       "guile": 2
+      },
+      "luck": 2,
+      "log": "The ice cracks under their tents. They go home with half a book and a story about the shell that walked away."
+     }
+    },
+    {
+     "text": "Give them one true omen",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hy_bv_omen_given",
+      "log": "You turn so the low sun lights one crack. They copy it with shaking hands. Ten years later it comes true, and the court remembers who brought it."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "They read it upside down. A court astrologer builds a career on it anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_pirates_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "Raiders from the far north cross the frozen sea on sleds in the dead of winter, to the fishing villages under your water. They come every hard year. The fishermen have started to leave rice cakes on the ice for you, which is a kind of question.",
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Ice Pirates",
+   "choices": [
+    {
+     "text": "Break the ice under the sleds",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "fear": 2
+      },
+      "log": "A black shell comes up through the ice and the sea opens. The raiders go home on foot, those who go home."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 1
+      },
+      "health": -20,
+      "log": "The ice is thick and they have axes. You drive them off, but you carry an axe mark for a century."
+     }
+    },
+    {
+     "text": "Warm the sea so the ice fails early",
+     "effects": {
+      "tally": {
+       "patience": 1,
+       "virtue": 2
+      },
+      "qi": -15,
+      "log": "The thaw comes a month early. The raiders do not cross that year, or the next, and nobody knows why spring came so soon."
+     }
+    },
+    {
+     "text": "Eat the rice cakes and do nothing",
+     "effects": {
+      "tally": {
+       "guile": 1
+      },
+      "log": "The village holds this time. Next winter there are no rice cakes on the ice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hybv_crane_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "An old crane says it has lived a thousand years and you are a hatchling. It stands on your shell every evening and lectures you about patience. It is lying about its age. It is very good at the lecture.",
+   "when": {
+    "beast": [
+     "hyeonmu"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crane's Wager",
+   "choices": [
+    {
+     "text": "Out-wait it",
+     "effects": {
+      "tally": {
+       "patience": 3
+      },
+      "comprehension": 2,
+      "log": "You do not move for a hundred days. On the hundred and first it admits it is only three hundred, and flies away embarrassed."
+     }
+    },
+    {
+     "text": "Learn the lecture",
+     "effects": {
+      "comprehension": 4,
+      "log": "It is lying about its age and right about everything else. You remember the lecture for longer than it lives."
+     }
+    },
+    {
+     "text": "Tip it into the marsh",
+     "effects": {
+      "tally": {
+       "guile": 2
+      },
+      "charm": 1,
+      "log": "It comes up spluttering and never mentions patience again, though it keeps visiting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_widow_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "{npc}, a widow, has beaten the complaint drum at the county office every morning for a year. {His} husband was hanged for a theft the magistrate's nephew did. The clerks have stopped hearing the drum. You have not.",
+   "npc": {
+    "role": "hcbv_widow",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hcbv_widow",
+     "ageAbs": 44,
+     "opinion": 10,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Widow's Case",
+   "choices": [
+    {
+     "text": "Stand beside {him} at the drum",
+     "effects": {
+      "tally": {
+       "truths": 2,
+       "clarity": 3
+      },
+      "log": "The clerks come out, see a horned beast sitting next to the widow, and go back in very quickly to fetch the magistrate."
+     }
+    },
+    {
+     "text": "Find the nephew first",
+     "effects": {
+      "tally": {
+       "truths": 1
+      },
+      "flag": "hc_bv_nephew",
+      "luck": 2,
+      "log": "The nephew is in a wine house with the stolen silver hairpin up a sleeve. You sit in the doorway until morning, and the nephew does not leave."
+     }
+    },
+    {
+     "text": "Wait, and watch the magistrate",
+     "effects": {
+      "tally": {
+       "clarity": 2
+      },
+      "comprehension": 2,
+      "log": "You learn whom the magistrate fears and whom the magistrate owes, and that the man cannot sleep. A judge who cannot sleep knows something."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_widow_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The magistrate has agreed to hear {npc} again, in public, to make {him} stop, and has hired a man to swear to seeing the husband steal. The man stands in the courtyard sweating, and keeps looking at your horn.",
+   "npc": {
+    "role": "hcbv_widow"
+   },
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hcbv_widow_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Widow's Case",
+   "choices": [
+    {
+     "text": "Look at the false witness",
+     "effects": {
+      "tally": {
+       "truths": 3,
+       "legend": 2
+      },
+      "log": "The witness breaks at once, and confesses it, loudly, to the whole courtyard."
+     }
+    },
+    {
+     "text": "Butt the magistrate's table",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "kindling": 1
+      },
+      "log": "The table goes over, and under it the nephew's confession, which the magistrate had all along."
+     },
+     "fail": {
+      "tally": {
+       "kindling": 2
+      },
+      "health": -5,
+      "log": "You misjudge it, and the table is just a table. The courtyard laughs. The widow does not."
+     }
+    },
+    {
+     "text": "Let {npc} speak, and keep your horn down",
+     "effects": {
+      "tally": {
+       "clarity": 3,
+       "truths": 1
+      },
+      "charm": 2,
+      "log": "{He} speaks for an hour, and nobody interrupts {him}, because you are there."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_widow_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "The magistrate is removed. The new one is young and frightened and wants to do right, and has asked {npc} to bring out every case the old one buried. There are three hundred. {He} asks if you will sit in the room while {he} reads them.",
+   "npc": {
+    "role": "hcbv_widow"
+   },
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hcbv_widow_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Widow's Case",
+   "choices": [
+    {
+     "text": "Sit through all three hundred",
+     "effects": {
+      "tally": {
+       "truths": 6,
+       "clarity": 2
+      },
+      "health": -10,
+      "log": "Two winters. A great many people come home, and a few go to prison, and the widow grows old reading in a room with a horned beast asleep by the brazier."
+     }
+    },
+    {
+     "text": "Take only the cases where someone is still alive to save",
+     "effects": {
+      "tally": {
+       "truths": 3,
+       "virtue": 2
+      },
+      "log": "Forty-one cases. Forty-one doors that open again. It is not all of them, and you both know it."
+     }
+    },
+    {
+     "text": "Leave it to the new magistrate",
+     "effects": {
+      "tally": {
+       "kindling": 1
+      },
+      "comprehension": 2,
+      "log": "The new magistrate does well enough. You find you trust the young one more than you expected, which is a lesson in itself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_bandit_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A bandit chief on the mountain road has heard that you can tell the honest from the false, and he has come to you with a strange request: he wants you to judge his men. One of them is a spy for the garrison. He does not know which, and he does not want to kill the wrong one.",
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Honest Bandit",
+   "choices": [
+    {
+     "text": "Judge them",
+     "effects": {
+      "tally": {
+       "truths": 2,
+       "kindling": 1
+      },
+      "log": "You walk the line once and stop at the third man. He runs. The chief lets him go, which surprises everyone, including you."
+     }
+    },
+    {
+     "text": "Judge the chief instead",
+     "effects": {
+      "tally": {
+       "truths": 3,
+       "clarity": 2
+      },
+      "log": "You sit in front of him until he tells you about the village he burned when he was young. Then you get up and leave. He disbands the band by spring."
+     }
+    },
+    {
+     "text": "Refuse: you do not serve bandits",
+     "effects": {
+      "tally": {
+       "clarity": 1
+      },
+      "log": "He shrugs. \"Neither do I,\" he says, and goes back up the mountain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_fire_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "The county granary is burning at night. Someone set it, to hide the fact that it was already empty. The villagers form a bucket line, and the fire is winning, and all of them are looking at you.",
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Burning Storehouse",
+   "choices": [
+    {
+     "text": "Eat the fire",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "kindling": 4
+      },
+      "log": "You walk into the storehouse and breathe in. The flames go into you like water into sand. Inside, the bins are empty, and everyone sees it."
+     },
+     "fail": {
+      "tally": {
+       "kindling": 5
+      },
+      "health": -25,
+      "log": "Too much fire, too fast. You put it out and lie in the ashes for a day, hot as a coal."
+     }
+    },
+    {
+     "text": "Find who set it",
+     "effects": {
+      "tally": {
+       "truths": 2,
+       "clarity": 2
+      },
+      "log": "The granary burns. The storekeeper is found by morning, with the grain merchant's silver in his boots."
+     }
+    },
+    {
+     "text": "Help with the buckets like anyone",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "strength": 2,
+      "log": "A horned beast in a bucket line, passing water with its mouth. The fire goes out at dawn. The village never forgets it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_twin_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "Another haechi has come to the capital, and the court has taken it up. It judges quickly and without mercy, and its horn has a crack down the middle that it does not seem to know about. Three men it judged false were hanged last month. You are not sure all of them were.",
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Other Haechi",
+   "choices": [
+    {
+     "text": "Challenge it before the court",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "truths": 3,
+       "legend": 3
+      },
+      "log": "Two beasts on the palace steps, and a third man brought out in chains. You say true. It says false. The court waits, and the man's wife confesses she did it. The other haechi leaves the capital that night."
+     },
+     "fail": {
+      "tally": {
+       "kindling": 3
+      },
+      "health": -10,
+      "log": "The court believes the one it already has. You leave the capital with your horn hot and your heart worse."
+     }
+    },
+    {
+     "text": "Show it the crack",
+     "effects": {
+      "tally": {
+       "clarity": 3,
+       "virtue": 2
+      },
+      "log": "It looks at its own reflection in a palace pool for a long time. Then it goes up the mountains to the springs, and you hope it comes back clean."
+     }
+    },
+    {
+     "text": "Leave it to heaven",
+     "effects": {
+      "tally": {
+       "kindling": 2
+      },
+      "log": "Heaven is slow. Two more men hang before it acts."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hcbv_school_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A village schoolmaster has started teaching law to farmers' children, which is not allowed, and he uses you as his example. \"What would the haechi say?\" he asks, and thirty children turn to the doorway where you are asleep.",
+   "when": {
+    "beast": [
+     "haechi"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Village School",
+   "choices": [
+    {
+     "text": "Wake up and listen",
+     "effects": {
+      "tally": {
+       "clarity": 2,
+       "legend": 1
+      },
+      "comprehension": 2,
+      "log": "They argue for an hour about a stolen chicken. Two of them will be magistrates someday. You can already tell which."
+     }
+    },
+    {
+     "text": "Keep sleeping",
+     "effects": {
+      "tally": {
+       "clarity": 1
+      },
+      "log": "\"You see,\" says the schoolmaster, \"it does not need to say anything.\" The children nod very seriously."
+     }
+    },
+    {
+     "text": "Butt the schoolmaster, gently",
+     "effects": {
+      "tally": {
+       "truths": 1
+      },
+      "charm": 2,
+      "log": "He has been taking an extra sack of rice from each family. He gives it all back in the morning and keeps teaching, for free, and better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_flute_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "An old flute maker, {npc}, has been trying for forty years to cut a flute that plays your note, the note of the Shao music. Every flute {he} makes is almost right. {He} plays them all to the bamboo grove, one after another, hoping you will come.",
+   "npc": {
+    "role": "bgbv_flute",
+    "spawn": {
+     "role": "stranger",
+     "tag": "bgbv_flute",
+     "ageAbs": 62,
+     "opinion": 15,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Flute Maker",
+   "choices": [
+    {
+     "text": "Come and sing the note once",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "accord": 2
+      },
+      "comprehension": 2,
+      "log": "{He} drops the flute. Then {he} picks it up and cuts a new one, very fast, with {his} hands shaking, before {he} forgets."
+     }
+    },
+    {
+     "text": "Drop a feather in {his} grove",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "purity": 1
+      },
+      "flag": "bg_bv_feather",
+      "log": "{He} finds it at dawn and does not touch it for three days. Then {he} makes a flute with the feather tied to it, and it plays almost right."
+     }
+    },
+    {
+     "text": "Listen from far away",
+     "effects": {
+      "tally": {
+       "seed": 1
+      },
+      "log": "Forty years of almost right. It is more beautiful than the right note, you think, and do not tell {him}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_flute_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The court has heard of {npc}. They want {his} flutes for the coronation, all of them, and they have sent an official to buy the grove and cut every stalk for the palace workshop. The old man stands in {his} grove with a sickle and will not move.",
+   "npc": {
+    "role": "bgbv_flute"
+   },
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bgbv_flute_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Flute Maker",
+   "choices": [
+    {
+     "text": "Perch above {him} while the official watches",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "Nobody cuts a grove a phoenix sits in. The official goes home and tells the court it was a bad omen to try."
+     }
+    },
+    {
+     "text": "Fly to the court and sing there",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "accord": 2
+      },
+      "log": "The new king hears the note from the palace roof, and orders the grove left alone forever, and a flute bought from the old man at any price {he} names. {He} names one copper."
+     },
+     "fail": {
+      "tally": {
+       "purity": -3
+      },
+      "log": "The court is loud and does not listen. You come back with your feathers dulled by incense smoke."
+     }
+    },
+    {
+     "text": "Let the court have the bamboo",
+     "effects": {
+      "tally": {
+       "seed": 2
+      },
+      "comprehension": 2,
+      "log": "The grove is cut. It grows back, as bamboo does. The old man plants it again, slower now, and you help."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_flute_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} has finished one flute that {he} thinks is right. {He} is dying, and {he} cannot play it any more. {He} has asked {his} granddaughter to play it at the funeral, and the girl is afraid of playing it wrong.",
+   "npc": {
+    "role": "bgbv_flute"
+   },
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bgbv_flute_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Flute Maker",
+   "choices": [
+    {
+     "text": "Sing with the girl at the grave",
+     "effects": {
+      "tally": {
+       "legend": 4,
+       "accord": 3
+      },
+      "log": "The flute and the phoenix together, over a bamboo grove. The mourners say afterwards that the old man sat up in {his} coffin. {He} did not. It was close."
+     }
+    },
+    {
+     "text": "Let the girl play alone, and listen",
+     "effects": {
+      "tally": {
+       "purity": 2,
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The girl plays it almost right, and you realize that was always the right note, and you sing it back, very quietly, from the top of the grove."
+     }
+    },
+    {
+     "text": "Take the flute to heaven for {him}",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "qi": 20,
+      "flag": "bg_bv_flute_taken",
+      "log": "You carry it up into the clouds. Some nights, very high, it plays by itself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_crow_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The crows of the capital have decided they are your court. They follow you in a black cloud wherever you fly and quarrel loudly about precedence. The people below think it is an omen. The omen-readers cannot agree what of.",
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crow Court",
+   "choices": [
+    {
+     "text": "Send them away",
+     "effects": {
+      "tally": {
+       "purity": 2
+      },
+      "log": "One cry, and the sky is empty. The crows sulk on the bell tower for a year."
+     }
+    },
+    {
+     "text": "Make them useful",
+     "effects": {
+      "tally": {
+       "accord": 2,
+       "legend": 1
+      },
+      "luck": 2,
+      "log": "You teach them to carry seeds to the burned hills. In a few years the hills are green and the crows are insufferable about it."
+     }
+    },
+    {
+     "text": "Let them follow",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "purity": -2
+      },
+      "log": "A phoenix with a black court. The poets love it. The temple does not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_tyrant_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A cruel provincial governor has painted your likeness on every gate of his city and tells the people you blessed his rule. He has never seen you. He taxes the farmers to build you a tower so you will come and sit on it.",
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Painted Phoenix",
+   "choices": [
+    {
+     "text": "Come, and sit on the tower, and then leave forever",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "purity": 1
+      },
+      "log": "One morning you are there on the top of his tower. The city sees. Then you fly away to the south, and everyone sees that too, and by autumn he is gone."
+     }
+    },
+    {
+     "text": "Burn the paintings with one pass of your wings",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "Every painted phoenix in the city catches at once, a small clean fire on every gate. Nothing else burns. The governor resigns the next day."
+     },
+     "fail": {
+      "tally": {
+       "purity": -3
+      },
+      "health": -10,
+      "log": "The fire is too wide. A gatehouse burns, and the people blame you, and the governor uses it."
+     }
+    },
+    {
+     "text": "Never go near it",
+     "effects": {
+      "tally": {
+       "purity": 2
+      },
+      "log": "His tower stands empty. The people stop believing the paintings. That takes ten years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_egg_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A farmer's wife has found an egg in her henhouse, red and warm, bigger than a goose egg. It is not yours. It is not anyone's that you know. Something laid it there and went away, and she has been keeping it warm under her own coat.",
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Egg in the Wrong Nest",
+   "choices": [
+    {
+     "text": "Take it to the cinnabar caves",
+     "effects": {
+      "tally": {
+       "seed": 2,
+       "legend": 1
+      },
+      "log": "You carry it to where your own egg was. Whether it hatches there you will not know for a hundred years."
+     }
+    },
+    {
+     "text": "Leave it with her",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "accord": 1
+      },
+      "flag": "bg_bv_egg_left",
+      "log": "She keeps it warm all winter. In spring it hatches into a red rooster that crows at sunrise in five notes, and the village is very proud of it."
+     }
+    },
+    {
+     "text": "Find what laid it",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "A young phoenix from the far south, lost and frightened, sitting on a temple roof three provinces away. You fly it home."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "Nothing. The mystery stays with you, a small warm thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bgbv_fire_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "A forest fire has cut the mountain pass, and a column of refugees is caught between the flames and the soldiers behind them. A phoenix is a creature of fire. The refugees do not know if that means you will save them or that you started it.",
+   "when": {
+    "beast": [
+     "bonghwang"
+    ],
+    "stage": [
+     8,
+     9
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Burning Pass",
+   "choices": [
+    {
+     "text": "Fly through the fire and open a way",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "purity": 1
+      },
+      "log": "You go through the burning pass three times, and the fire parts behind you like a curtain. Two thousand people walk out. Every one of them looks up."
+     },
+     "fail": {
+      "tally": {
+       "legend": 2
+      },
+      "health": -25,
+      "log": "Most get through. You come out the other side with your tail feathers black, and they take a season to grow back gold."
+     }
+    },
+    {
+     "text": "Lead them round by the high ridge",
+     "effects": {
+      "tally": {
+       "accord": 2,
+       "virtue": 2
+      },
+      "log": "A three-day walk instead of one. Nobody dies. Some of them curse you the whole way."
+     }
+    },
+    {
+     "text": "Rain on the fire with your song",
+     "effects": {
+      "tally": {
+       "purity": 2
+      },
+      "qi": -20,
+      "log": "It takes all night to call the clouds. By morning the fire is steam and the refugees are wet and alive."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_prince_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A young prince, {npc}, exiled by {his} uncle, has heard that a qilin appears to rightful rulers. {He} has walked into the mountains to find you, with one servant and no shoes left, so that you can tell {him} whether {he} is one.",
+   "npc": {
+    "role": "gibv_prince",
+    "spawn": {
+     "role": "stranger",
+     "tag": "gibv_prince",
+     "ageAbs": 17,
+     "opinion": 5,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Exiled Prince",
+   "choices": [
+    {
+     "text": "Let {him} see you",
+     "effects": {
+      "tally": {
+       "times": 2,
+       "legend": 2
+      },
+      "log": "{He} sees you across a meadow at dawn and weeps, and then {he} asks you, very formally, whether {he} should go back. You do not answer. {He} goes back anyway."
+     }
+    },
+    {
+     "text": "Let {him} look for a while longer",
+     "effects": {
+      "tally": {
+       "lightfoot": 1
+      },
+      "comprehension": 2,
+      "flag": "gi_bv_tested",
+      "log": "{He} searches a whole autumn. By the end {he} has stopped asking whether {he} deserves a throne and started asking whether anyone deserves one. That is the right question."
+     }
+    },
+    {
+     "text": "Hide: a qilin does not make kings",
+     "effects": {
+      "tally": {
+       "lightfoot": 2
+      },
+      "log": "{He} leaves with nothing. You wonder for years if you were wrong."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_prince_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} has an army now, a small one, and {his} uncle has a large one. The night before the battle {he} walks out of {his} camp alone and stands in the field, waiting to see if you will come.",
+   "npc": {
+    "role": "gibv_prince"
+   },
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gibv_prince_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Exiled Prince",
+   "choices": [
+    {
+     "text": "Come, and walk the battlefield beside {him}",
+     "effects": {
+      "tally": {
+       "times": 3,
+       "legend": 3
+      },
+      "log": "The uncle's scouts see a qilin walking the field by moonlight with the prince. Half the uncle's army is gone by morning, and the battle is very short."
+     }
+    },
+    {
+     "text": "Do not come: let {him} find out who {he} is",
+     "effects": {
+      "tally": {
+       "unbent": 2
+      },
+      "comprehension": 2,
+      "log": "{He} fights without an omen. {He} wins, barely, and buries everyone, and never forgets that {he} did it alone."
+     }
+    },
+    {
+     "text": "Stop the battle",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "times": 4,
+       "legend": 2
+      },
+      "log": "You stand between the two armies at dawn and neither will shoot first. By noon the uncle and the nephew are talking in a tent. It is a bad peace, but it is a peace."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 3
+      },
+      "health": -15,
+      "log": "Someone shoots. A qilin does not run from arrows, but it should have."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_prince_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} is king, and {he} is not a bad one, and {he} is lonely. {He} has ordered a meadow kept wild near the capital, with no hunting and no road, in case you ever want to visit. Nobody may walk in it but {him}.",
+   "npc": {
+    "role": "gibv_prince"
+   },
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gibv_prince_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Exiled Prince",
+   "choices": [
+    {
+     "text": "Visit, once a year",
+     "effects": {
+      "tally": {
+       "times": 3,
+       "legend": 2
+      },
+      "log": "Every spring {he} waits in the meadow, and every spring you come. The kingdom has forty good years, and people say the king has a friend."
+     }
+    },
+    {
+     "text": "Never go, so that {he} rules for the people and not for you",
+     "effects": {
+      "tally": {
+       "unbent": 2,
+       "virtue": 2
+      },
+      "log": "{He} waits for years and stops. {He} becomes a better king than {he} would have been. You watch from far away."
+     }
+    },
+    {
+     "text": "Bring {him} a foal you found orphaned",
+     "effects": {
+      "tally": {
+       "times": 2
+      },
+      "charm": 3,
+      "flag": "gi_bv_foal",
+      "log": "Not a qilin: a wild horse foal. {He} raises it {him}self in the meadow and it is the only thing {he} ever talks to honestly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_hunt_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "A royal hunt has come into your forest with a hundred riders and hounds, and somebody has told the hunt master that a qilin lives here. The hunt master wants its horn for the king's medicine. The hounds have your scent.",
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Royal Hunt",
+   "choices": [
+    {
+     "text": "Run, lightly, over water",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "lightfoot": 2
+      },
+      "log": "You cross the river on the surface of the water and the hounds stop at the bank, whining. The hunt master goes home with nothing and a story nobody believes."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 4
+      },
+      "health": -15,
+      "log": "An arrow grazes your flank as you go over the ridge. They will be back."
+     }
+    },
+    {
+     "text": "Stand still in the open",
+     "effects": {
+      "tally": {
+       "times": 2,
+       "legend": 3
+      },
+      "log": "The riders pull up. Nobody draws. A qilin standing in the open is not prey, it is a question, and none of them wants to be the one who answers it wrong."
+     }
+    },
+    {
+     "text": "Lead them into the bog",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "unbent": 1
+      },
+      "log": "Forty horses in mud to the belly. The hunt is over before noon, very wet, and the king laughs when he hears."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_deer_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A white stag in the eastern hills has been mistaken for you, and people have started to leave offerings at its feet. It is only a deer. It is very proud. A lord has heard and is on his way with archers, to take the qilin's horn.",
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The White Deer",
+   "choices": [
+    {
+     "text": "Show yourself to the lord first",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "times": 1
+      },
+      "log": "He sees the real one, and lowers his bow, and forgets the deer entirely. It lives to be very old and very vain."
+     }
+    },
+    {
+     "text": "Lead the deer away into the deep hills",
+     "effects": {
+      "tally": {
+       "lightfoot": 2,
+       "virtue": 1
+      },
+      "log": "Three days of walking with a sulking white stag. It is the strangest company you have ever kept."
+     }
+    },
+    {
+     "text": "Leave it: it chose the offerings",
+     "effects": {
+      "comprehension": 2,
+      "log": "The lord takes a white deer's antlers home and calls them a qilin's horn. His medicine does nothing. You think about vanity for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_drought_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A hard age is starting. The rains have failed two years, and the farmers below your hills are eating their seed grain. They say a qilin only walks in good times, and you are walking, so the good times must be coming. They are waiting for you to be right.",
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Drought Year",
+   "choices": [
+    {
+     "text": "Stay, and make them right",
+     "effects": {
+      "tally": {
+       "times": 3,
+       "legend": 2
+      },
+      "qi": -15,
+      "log": "You walk the dry fields every night. The third year it rains. Whether it was you, nobody can say, and that is the point."
+     }
+    },
+    {
+     "text": "Leave, so they will stop waiting and act",
+     "effects": {
+      "tally": {
+       "unbent": 2,
+       "times": -1
+      },
+      "comprehension": 2,
+      "log": "They dig wells. It is harder than waiting. It works."
+     }
+    },
+    {
+     "text": "Find them the old spring under the hill",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "times": 2,
+       "virtue": 2
+      },
+      "log": "Your hoof strikes the rock where the water is. The spring has been there a thousand years, waiting for someone to listen."
+     },
+     "fail": {
+      "health": -5,
+      "log": "Dry rock. You keep looking all summer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gibv_scholar_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "An old court historian has retired to a hut in your hills to write the true chronicle of his age, the one the court will not allow. He writes all night by one lamp. He has written that a qilin was seen in his lifetime, and he wants to be sure it is true before he dies.",
+   "when": {
+    "beast": [
+     "girin"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Scholar's Ink",
+   "choices": [
+    {
+     "text": "Look in at his window",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "times": 1
+      },
+      "comprehension": 2,
+      "log": "He sees you, and writes one line, and blows out the lamp, and sleeps for the first time in a year."
+     }
+    },
+    {
+     "text": "Leave a hoofprint in his ink",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "charm": 2,
+      "log": "He finds it in the morning, a perfect print in the ink stone. He presses the chronicle's last page into it, as a seal."
+     }
+    },
+    {
+     "text": "Let him die not knowing",
+     "effects": {
+      "tally": {
+       "unbent": 1
+      },
+      "comprehension": 2,
+      "log": "He writes it anyway. \"It was seen,\" he writes, \"and if it was not, it should have been.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_exorcist_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A young exorcist, {npc}, has come to your mountain with a box of talismans and a list. Every fox on the list is dead except you. {He} has worked through it for ten years. {He} is not afraid of you. {He} is tired, and {he} wants to go home.",
+   "npc": {
+    "role": "gmbv_exorcist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "gmbv_exorcist",
+     "ageAbs": 23,
+     "opinion": -10,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Exorcist's Apprentice",
+   "choices": [
+    {
+     "text": "Let {him} find you, and talk",
+     "effects": {
+      "tally": {
+       "heart": 3
+      },
+      "charm": 2,
+      "log": "You meet {him} on the grave field with your face on. {He} knows at once. {He} sits down anyway and shares {his} rice ball, and asks how old you are, and does not write it down."
+     }
+    },
+    {
+     "text": "Lead {him} in circles for a month",
+     "effects": {
+      "tally": {
+       "suspicion": -5,
+       "legend": 1
+      },
+      "luck": 2,
+      "log": "Foxfire, false trails, a whole month of the same three hills. {He} goes home with {his} list unfinished and a cough."
+     }
+    },
+    {
+     "text": "Burn {his} list while {he} sleeps",
+     "effects": {
+      "tally": {
+       "suspicion": 3,
+       "fear": 2
+      },
+      "flag": "gm_bv_list_burned",
+      "log": "{He} wakes to ash. {He} looks at it a long time, and then {he} laughs, and you are not sure if that is good."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_exorcist_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "{npc}'s master has come, an old exorcist with a hundred years of talismans and no patience, who wants to know why the apprentice came back with the list unfinished. The apprentice will not say. The old man is walking up your mountain alone.",
+   "npc": {
+    "role": "gmbv_exorcist"
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gmbv_exorcist_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Exorcist's Apprentice",
+   "choices": [
+    {
+     "text": "Face the old exorcist",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The old exorcist"
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "qi": 20,
+      "log": "Talismans burn in the air like moths. In the end the old man sits down on a grave, out of breath, and says no fox has slipped every binding in a hundred years, until now."
+     },
+     "fail": {
+      "tally": {
+       "suspicion": 6
+      },
+      "health": -25,
+      "log": "A talisman sticks. It takes you a season to burn it off, and the village below hears you scream."
+     }
+    },
+    {
+     "text": "Hide behind the apprentice's lie",
+     "effects": {
+      "tally": {
+       "heart": 2,
+       "suspicion": -2
+      },
+      "log": "{npc} tells {his} master there is no fox here, only an old woman who keeps foxes. The master does not believe a word of it, and goes home anyway, trusting the apprentice more than any talisman."
+     }
+    },
+    {
+     "text": "Give up a tail to buy peace",
+     "effects": {
+      "tally": {
+       "bead": -2,
+       "heart": 3
+      },
+      "health": -15,
+      "log": "You leave a tail on the grave field for the old man to find. The old man takes it home as proof. It hurts more than you expected, and grows back slower."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_exorcist_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} is a master now, with {his} own apprentice. {He} has come back to the mountain to tell you {he} has stopped hunting foxes, and {his} school with {him}. {He} wants to know if you will teach {his} students the one thing {he} could never learn: how to tell a fox that harms from a fox that does not.",
+   "npc": {
+    "role": "gmbv_exorcist"
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gmbv_exorcist_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Exorcist's Apprentice",
+   "choices": [
+    {
+     "text": "Teach them",
+     "effects": {
+      "tally": {
+       "heart": 4,
+       "legend": 2
+      },
+      "comprehension": 3,
+      "log": "Ten students on a grave field at night, with talismans they are not allowed to use. You teach them for a year. When they leave, three foxes on the next mountain are still alive because of it."
+     }
+    },
+    {
+     "text": "Refuse: humans should not know",
+     "effects": {
+      "tally": {
+       "suspicion": -4
+      },
+      "log": "{He} nods. \"No,\" {he} says, \"I suppose we should not.\" {He} goes down the mountain and you never see {him} again, and you miss {him} more than you thought."
+     }
+    },
+    {
+     "text": "Teach {him} alone",
+     "effects": {
+      "tally": {
+       "heart": 3
+      },
+      "charm": 2,
+      "flag": "gm_bv_taught",
+      "log": "Just the two of you, an old man and an older fox, sitting on a grave mound talking until dawn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_inn_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "There is another fox. {npc} keeps an inn on the pass, and {he} is younger than you by a few hundred years, and {he} eats a traveller now and then when the winter is long. {He} has found out what you are, and {he} has sent you a jar of wine and an invitation.",
+   "npc": {
+    "role": "gmbv_inn",
+    "spawn": {
+     "role": "stranger",
+     "tag": "gmbv_inn",
+     "ageAbs": 36,
+     "opinion": 20,
+     "male": false
+    }
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Fox Inn",
+   "choices": [
+    {
+     "text": "Go to the inn",
+     "effects": {
+      "tally": {
+       "heart": 1
+      },
+      "charm": 2,
+      "flag": "gm_bv_inn_met",
+      "log": "Lanterns, warm wine, and a woman with too many teeth when {he} smiles. {He} wants a partner. {He} wants to know how you got so old without being caught."
+     }
+    },
+    {
+     "text": "Send the wine back",
+     "effects": {
+      "tally": {
+       "suspicion": -2,
+       "heart": 2
+      },
+      "log": "The jar comes back the next week, full again, with a note: \"You will need a friend someday.\" {He} is not wrong."
+     }
+    },
+    {
+     "text": "Warn the travellers off the pass",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "suspicion": 2
+      },
+      "log": "A fox at the bottom of the pass, turning travellers back with bad weather and worse luck. {His} inn is empty that winter, and {he} knows why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_inn_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} has been seen. A traveller escaped {his} kitchen and ran to the county, and now there are soldiers on the pass with dogs and fire. {He} comes to your grave mound at midnight with {his} tails out and {his} face gone. {He} is asking for a place to hide.",
+   "npc": {
+    "role": "gmbv_inn"
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gmbv_inn_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Fox Inn",
+   "choices": [
+    {
+     "text": "Hide {him} in your den",
+     "effects": {
+      "tally": {
+       "heart": 3,
+       "suspicion": 5
+      },
+      "log": "Two foxes in one den while the dogs howl above. {He} sleeps for three days, and wakes up crying, and you do not ask about what."
+     }
+    },
+    {
+     "text": "Send {him} over the mountains",
+     "effects": {
+      "tally": {
+       "heart": 1,
+       "suspicion": -1
+      },
+      "luck": 2,
+      "log": "You give {him} a road and a face that will last a year. {He} goes. Whether {he} will eat travellers in the next province is up to {him} now."
+     }
+    },
+    {
+     "text": "Hand {him} to the soldiers",
+     "effects": {
+      "tally": {
+       "suspicion": -6,
+       "heart": -4
+      },
+      "log": "They never think to look for a second fox. You live, and {he} does not, and you do not sleep well for a hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_inn_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "Years later. A letter in a fox's hand, left on your grave mound with a jar of wine: {npc} keeps a different inn now, in a different province, and {he} has not eaten anyone in nine years. {He} wants to know if it gets easier.",
+   "npc": {
+    "role": "gmbv_inn"
+   },
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     9,
+     10
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_gmbv_inn_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Fox Inn",
+   "choices": [
+    {
+     "text": "Go and tell {him} the truth",
+     "effects": {
+      "tally": {
+       "heart": 4
+      },
+      "comprehension": 2,
+      "log": "It does not get easier. It gets familiar. You stay a month, and eat {his} cooking, and leave {him} a face that will last a decade."
+     }
+    },
+    {
+     "text": "Write back a lie",
+     "effects": {
+      "tally": {
+       "heart": 2
+      },
+      "charm": 2,
+      "log": "\"Yes,\" you write. \"It gets easier.\" Maybe for {him} it will."
+     }
+    },
+    {
+     "text": "Pour the wine on the mound and keep the letter",
+     "effects": {
+      "tally": {
+       "bead": 1
+      },
+      "log": "You keep the letter under your bead for a long time. Someone, somewhere, is trying the same thing you are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_scholar_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A scholar of the capital saw your tails once, forty years ago, when he was a child lost on your mountain. He has spent his life collecting fox stories, and his book is almost done. He has never told anyone the one that was true.",
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Scholar Who Saw",
+   "choices": [
+    {
+     "text": "Visit him, wearing a face",
+     "effects": {
+      "tally": {
+       "heart": 2,
+       "suspicion": 1
+      },
+      "charm": 2,
+      "log": "An old man and a stranger drinking tea. He talks about the fox on the mountain for an hour, and his hands shake, and at the end he says, \"You have her eyes.\" You leave quickly."
+     }
+    },
+    {
+     "text": "Let the book be published",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "suspicion": 3
+      },
+      "log": "It sells in every market. The capital is full of fox talk for a year. Most of it is wrong. The one true story is the shortest chapter."
+     }
+    },
+    {
+     "text": "Steal the last chapter",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "suspicion": -4
+      },
+      "log": "The book is published without the true story. He never notices, or says he does not."
+     },
+     "fail": {
+      "tally": {
+       "suspicion": 4
+      },
+      "log": "A servant sees a fox in the study. The rumour is worse than the book would have been."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_tiger_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "A tiger spirit has become lord of the next mountain and has decided your mountain is part of its domain. It wants a tribute of one tail every hundred years. It is very old and very strong and it does not believe in foxes who say no.",
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Mountain Lord's Tax",
+   "choices": [
+    {
+     "text": "Say no",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "A night of fighting on the ridge between the two mountains. In the morning the tiger goes home, and the border is where you say it is."
+     },
+     "fail": {
+      "tally": {
+       "bead": -1
+      },
+      "health": -30,
+      "log": "It takes something from you that is not a tail. You keep the mountain, but you are weaker for a century."
+     }
+    },
+    {
+     "text": "Trick it into owing you",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 3,
+      "flag": "gm_bv_tiger_owes",
+      "log": "You lose a game of go to it on purpose, then win the next three, and by the end of the night it owes you a mountain. It is very confused, and very honourable, and it pays."
+     }
+    },
+    {
+     "text": "Pay one tail and keep the peace",
+     "effects": {
+      "tally": {
+       "bead": -2,
+       "heart": 1
+      },
+      "health": -10,
+      "log": "It takes the tail with great courtesy. It grows back. The tiger is a good neighbour after that, which you did not expect."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_child_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A half-fox child has been found at a mountain temple: a girl of six with ears she cannot hide and a tail she sits on. Her mother was a fox, and is dead. The monks are arguing whether to raise her or burn her. You can hear them from your mountain.",
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Fox Child",
+   "choices": [
+    {
+     "text": "Take her",
+     "effects": {
+      "tally": {
+       "heart": 5,
+       "suspicion": 3
+      },
+      "flag": "gm_bv_kit",
+      "log": "You come down the temple roof in the night and carry her away. She bites you. She will bite you for the next fifty years, and you will let her."
+     }
+    },
+    {
+     "text": "Teach her to hide her ears, and leave her with the monks",
+     "effects": {
+      "tally": {
+       "heart": 3
+      },
+      "comprehension": 2,
+      "log": "One night, one lesson. In the morning she is just a girl, and the monks decide to raise her. She becomes the abbess, a hundred years later."
+     }
+    },
+    {
+     "text": "Speak for her to the abbot, wearing a face",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "heart": 3,
+       "legend": 1
+      },
+      "log": "An old woman at the temple gate, and an old abbot who understands more than he says. The child stays. The abbot puts a bowl of rice outside every full moon after that."
+     },
+     "fail": {
+      "tally": {
+       "suspicion": 4
+      },
+      "log": "The abbot sees through the face. He does not burn the child, but he sends her far away, and you lose her trail."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_gmbv_mirror_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A pedlar is selling bronze mirrors that show the true face of whoever looks in them. They are real: you can tell from across the market. Half the capital has bought one, and every fox within a hundred li has gone very quiet.",
+   "when": {
+    "beast": [
+     "gumiho"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Mirror Seller",
+   "choices": [
+    {
+     "text": "Buy every mirror he has",
+     "effects": {
+      "tally": {
+       "suspicion": -3
+      },
+      "luck": 2,
+      "log": "You pay in gold that will be leaves by morning. He comes back the next night with more. It is a long winter."
+     }
+    },
+    {
+     "text": "Look in one, in front of him",
+     "effects": {
+      "tally": {
+       "heart": 2,
+       "suspicion": 2
+      },
+      "comprehension": 3,
+      "log": "Nine tails, a thousand years, and something in the eyes you did not expect. He looks at the mirror, then at you, and gives it to you for free."
+     }
+    },
+    {
+     "text": "Find who makes them",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "comprehension": 2,
+      "flag": "gm_bv_mirrors",
+      "log": "An old blind smith in the hills, who made them to find the fox that took his daughter. You tell him which fox. It was not you. He stops making mirrors."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_potter_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A kiln master in the south, {npc}, has been trying to fire a glaze the colour of your wing for twenty years. Every firing fails. {He} has started to leave the kiln mouth open at night, hoping you will come, because {he} has heard that a fire you touch never cracks a pot.",
+   "npc": {
+    "role": "jkbv_potter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "jkbv_potter",
+     "ageAbs": 47,
+     "opinion": 15,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Kiln Master",
+   "choices": [
+    {
+     "text": "Breathe into {his} kiln",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "smoulder": -2
+      },
+      "log": "One breath. In the morning every pot in the kiln is the colour of a summer dusk. {He} sits down in the ash and does not speak for an hour."
+     }
+    },
+    {
+     "text": "Teach {him} to read {his} own fire",
+     "effects": {
+      "tally": {
+       "swallow": 1
+      },
+      "comprehension": 2,
+      "flag": "jk_bv_kiln_taught",
+      "log": "You sit on the kiln roof and sing when the fire is right. By the end of the season {he} knows the song."
+     }
+    },
+    {
+     "text": "Leave {him} to it",
+     "effects": {
+      "comprehension": 1,
+      "log": "Twenty years of failure is a kind of fire too. You leave it burning."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_potter_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "A merchant from the capital has bought {npc}'s red celadon and wants a thousand more by spring, for the palace. The kiln master is old, and a thousand pots will kill {him}, and the merchant has already paid.",
+   "npc": {
+    "role": "jkbv_potter"
+   },
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_jkbv_potter_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Kiln Master",
+   "choices": [
+    {
+     "text": "Fire the thousand pots yourself, in one night",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The kiln fire"
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "smoulder": 3
+      },
+      "log": "The whole hillside glows red till dawn. A thousand pots, every one perfect. The merchant goes home and never asks how."
+     },
+     "fail": {
+      "tally": {
+       "smoulder": 6
+      },
+      "health": -15,
+      "log": "Half crack. The fire got away from you. The old man saves what {he} can and pays back the rest."
+     }
+    },
+    {
+     "text": "Give the merchant a fright",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "log": "A red bird on the merchant's cart, very close, very hot. The merchant decides a hundred pots is plenty."
+     }
+    },
+    {
+     "text": "Let the old man decide",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "swallow": 1
+      },
+      "log": "{He} makes three hundred and sends a letter with them: \"Red is slow.\" The palace, oddly, accepts it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_potter_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} is dying, and wants to be cremated in {his} own kiln, as kiln masters were in the old days. {His} sons think it is undignified. {He} has asked you to light the fire, because {he} does not trust them to do it right.",
+   "npc": {
+    "role": "jkbv_potter"
+   },
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_jkbv_potter_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Kiln Master",
+   "choices": [
+    {
+     "text": "Light it",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "smoulder": -3
+      },
+      "log": "A clean, high fire, the colour of your wing. {His} sons stand and watch it all night, and in the morning they pick up {his} tools."
+     }
+    },
+    {
+     "text": "Light it, and fire {his} last pots with {him}",
+     "effects": {
+      "tally": {
+       "legend": 4
+      },
+      "comprehension": 2,
+      "log": "{His} last firing. The pots come out a colour nobody can name. They are in a temple now, and the monks say they are warm to the touch in winter."
+     }
+    },
+    {
+     "text": "Persuade {him} to let {his} sons do it",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "They do it wrong, and it does not matter. {He} is gone, and they did it together."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_beacon_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "Someone has lit the southern beacons in a time of peace. The signal runs from hill to hill toward the capital: invasion. There is no invasion. By morning an army will march south for nothing, and leave the north empty.",
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The False Beacon",
+   "choices": [
+    {
+     "text": "Put out the beacons one by one",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "smoulder": 2
+      },
+      "log": "You fly the chain all night, eating each fire as it is lit. The signal never reaches the capital. The soldiers on the hills tell a story nobody believes."
+     },
+     "fail": {
+      "tally": {
+       "smoulder": 4
+      },
+      "health": -20,
+      "log": "Too many hills, too fast. The signal gets through. The army marches south, and comes back in a month, angry."
+     }
+    },
+    {
+     "text": "Find who lit them",
+     "effects": {
+      "tally": {
+       "swallow": 1
+      },
+      "comprehension": 2,
+      "log": "A bribed watchman, a northern lord's silver. The lord is quietly removed. Nobody marches anywhere."
+     }
+    },
+    {
+     "text": "Light a second beacon that means \"false\"",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 2,
+      "log": "There is no such signal. There is now: a red flame that dances. The beacon keepers learn it in a week, and keep it for three hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_swallows_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A storm has sat on the southern sea for a month, and the swallows cannot fly home. They line every wall and roof of the port town, millions of them, and the people say it is an omen of the end of the dynasty. The swallows are only tired.",
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Swallow Road Closed",
+   "choices": [
+    {
+     "text": "Lead them through the storm",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "swallow": 3,
+       "legend": 3
+      },
+      "log": "A red light at the front of a black cloud of birds, going straight into the wind. Most of them make it. The port town says the dynasty is safe."
+     },
+     "fail": {
+      "tally": {
+       "swallow": 1
+      },
+      "health": -20,
+      "log": "The storm wins. You come back with half of them. The other half wait for the weather, as swallows have always done."
+     }
+    },
+    {
+     "text": "Keep them warm until it breaks",
+     "effects": {
+      "tally": {
+       "swallow": 2,
+       "virtue": 2
+      },
+      "qi": -15,
+      "log": "A month of warm roofs. The people leave rice on the walls. When the storm breaks the birds go all at once, and the sky is black with them for an hour."
+     }
+    },
+    {
+     "text": "Tell the people it is only weather",
+     "effects": {
+      "tally": {
+       "smoulder": -1
+      },
+      "charm": 2,
+      "log": "Nobody believes a bird. The storm breaks anyway, and the dynasty does not fall, and they say the omen was wrong."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_jkbv_firefly_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A little girl from a burned village has been stealing embers from temple lamps, one at a time, and carrying them home in a jar. Her village has no fire. Nobody will give them any, because they are blamed for the fire that burned them out.",
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Fire Thief",
+   "choices": [
+    {
+     "text": "Give her a fire that will not go out",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "smoulder": -2
+      },
+      "flag": "jk_bv_ember",
+      "log": "One ember from your own breast, in her jar. It burns for a hundred years in that village, and they say it was stolen from heaven, which is almost true."
+     }
+    },
+    {
+     "text": "Find out who really burned the village",
+     "effects": {
+      "tally": {
+       "swallow": 1,
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "The landlord, for the insurance of a merchant guild. The village is cleared. The girl keeps stealing embers anyway, out of habit."
+     }
+    },
+    {
+     "text": "Let her keep stealing",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "log": "She is very good at it. Twenty years later she is a famous thief, and the temples are proud to have been robbed by her."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_jkbv_phoenix_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A phoenix from the eastern courts has come south and says the south belongs to it, because it is a bird of fire too. It is beautiful and rude and has a large following of poets. You are not sure if this is a war or a misunderstanding.",
+   "when": {
+    "beast": [
+     "juak"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Red Rival",
+   "choices": [
+    {
+     "text": "Sing it down",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "A singing match over the southern sea that the fishermen talk about for a century. It flies home east, still beautiful, a little quieter."
+     },
+     "fail": {
+      "tally": {
+       "smoulder": 3
+      },
+      "log": "It sings better than you. You burn a hillside in a temper, which is worse."
+     }
+    },
+    {
+     "text": "Show it the south: the swallows, the kilns, the beacons",
+     "effects": {
+      "tally": {
+       "swallow": 1,
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "A long tour. By the end it understands that the south is not a throne, it is a job. It goes home with a lot to think about."
+     }
+    },
+    {
+     "text": "Let it have the poets",
+     "effects": {
+      "tally": {
+       "smoulder": -2
+      },
+      "log": "The poets follow it east. The south is quieter, and you like it better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_mason_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A mason, {npc}, has been hired to lay the foundation of a new palace over the place you sleep. {He} feels you in the earth: every stone {he} sets settles a little, as if something under it breathed. {He} has stopped work and is waiting for a sign.",
+   "npc": {
+    "role": "hrbv_mason",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hrbv_mason",
+     "ageAbs": 55,
+     "opinion": 15,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Mason's Foundation",
+   "choices": [
+    {
+     "text": "Settle every stone {he} sets",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "shared": 1
+      },
+      "log": "{His} foundation is the straightest anyone has ever seen. {He} tells the court it was the earth, and {he} means you."
+     }
+    },
+    {
+     "text": "Shift the site a little east",
+     "effects": {
+      "tally": {
+       "weight": -2
+      },
+      "comprehension": 2,
+      "flag": "hr_bv_moved",
+      "log": "The stones will not settle until {he} moves the line. {He} moves it. The palace stands a little crooked on the plans and perfectly square on the ground."
+     }
+    },
+    {
+     "text": "Stay asleep",
+     "effects": {
+      "tally": {
+       "weight": 2
+      },
+      "log": "{He} builds anyway, nervously. The palace is heavy on your back for a long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_mason_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The court has decided the palace should be twice as tall. {npc} says the earth will not carry it. The chief minister says the mason is a coward and has {him} beaten, and hires another.",
+   "npc": {
+    "role": "hrbv_mason"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hrbv_mason_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Mason's Foundation",
+   "choices": [
+    {
+     "text": "Shrug, once, under the new walls",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "fear": 2
+      },
+      "log": "A crack runs up every new wall at once. The court decides one storey is very dignified. The old mason is hired back, with an apology."
+     },
+     "fail": {
+      "tally": {
+       "weight": 4
+      },
+      "health": -15,
+      "log": "The walls hold, and the weight lands on your spine. You will feel that palace for a hundred years."
+     }
+    },
+    {
+     "text": "Carry the weight, and remember who put it there",
+     "effects": {
+      "tally": {
+       "weight": 4,
+       "stain": 1
+      },
+      "log": "The palace rises. The minister falls the next year, for other reasons. The weight stays."
+     }
+    },
+    {
+     "text": "Send the chief minister a dream",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "The minister dreams of a yellow dragon with a palace on its back, groaning, and wakes up and cancels the second storey before breakfast."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_mason_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} has asked to be buried under the threshold of the palace {he} built, as masons were in the old days. The court is horrified. {He} has no family to argue for {him}, only an apprentice and you.",
+   "npc": {
+    "role": "hrbv_mason"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_hrbv_mason_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Mason's Foundation",
+   "choices": [
+    {
+     "text": "Take {him} under the threshold yourself",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "shared": 2
+      },
+      "log": "One night the threshold stone is lifted and set back. Nobody knows how. Every king who crosses it after that walks a little more carefully."
+     }
+    },
+    {
+     "text": "Make the court agree",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "weight": -2
+      },
+      "charm": 2,
+      "log": "The earth under the throne hall trembles until they do. {He} is buried with honour, and the apprentice lays the stone."
+     }
+    },
+    {
+     "text": "Let {him} be buried in {his} village",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Under a pine, facing the palace. You think {he} would have liked the view better than the threshold."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_market_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The great market at the centre of the city has crooked scales. Every merchant uses them, every buyer knows, and nobody can stop it, because the market guild owns the scales. The poor pay a little more for every handful of rice.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crooked Scales",
+   "choices": [
+    {
+     "text": "Make every scale in the market true, at once",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "shared": 2
+      },
+      "log": "One morning every scale weighs right, and no merchant can make it lie. The guild blames the earth. The poor eat a little more."
+     }
+    },
+    {
+     "text": "Make the guild's own scales lie against them",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "luck": 2,
+      "log": "The guild buys its rice by its own scales for a month and goes broke. It is very satisfying. It is not quite justice."
+     }
+    },
+    {
+     "text": "Leave it: the centre holds what is put on it",
+     "effects": {
+      "tally": {
+       "weight": 2
+      },
+      "comprehension": 2,
+      "log": "You carry the crooked scales too. It is a small weight. They add up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_flood_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "The great yellow river is breaking its levees in the spring flood. It carries your earth with it, the yellow earth of the centre, out to the sea. If it breaks through at the bend, a hundred villages drown.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Yellow River",
+   "choices": [
+    {
+     "text": "Lie down across the bend",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "legend": 4,
+       "shared": 1
+      },
+      "log": "A levee of yellow earth rises where there was none. The river turns. A hundred villages wake up dry and never know how close it was."
+     },
+     "fail": {
+      "tally": {
+       "weight": 3
+      },
+      "health": -25,
+      "log": "You hold the bend, barely, and the water goes over your back for three days. Some fields are lost. No villages."
+     }
+    },
+    {
+     "text": "Open the old channel to the north",
+     "effects": {
+      "tally": {
+       "shared": 2
+      },
+      "comprehension": 2,
+      "log": "A thousand-year-old riverbed, dry and forgotten. The flood goes into it like a tired animal into its old den."
+     }
+    },
+    {
+     "text": "Let the river go where it wants",
+     "effects": {
+      "tally": {
+       "weight": -1
+      },
+      "log": "It takes the bend and two villages. The river was there first. You tell yourself that, and it does not help."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_rebels_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "A peasant rebellion is rising on the central plain. Its leader has heard that the Yellow Dragon carries kings, and he has sworn his oath on a clod of yellow earth from your sleeping place. He thinks you will carry him.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Rebels' Oath",
+   "choices": [
+    {
+     "text": "Carry him, a little way",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "weight": 3
+      },
+      "log": "His army wins three battles it should have lost. Then you set him down. He is not a king. He is a good general. He takes the lesson badly."
+     }
+    },
+    {
+     "text": "Carry the peasants, not him",
+     "effects": {
+      "tally": {
+       "shared": 3,
+       "virtue": 2
+      },
+      "log": "The rebellion fails, but the taxes come down, which is what they wanted all along."
+     }
+    },
+    {
+     "text": "Refuse the oath",
+     "effects": {
+      "tally": {
+       "weight": -2
+      },
+      "comprehension": 2,
+      "log": "The clod of earth crumbles in his hand. He loses heart. His men go home to their fields. It is not a story anyone will sing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hrbv_tortoise_1",
+   "cat": "insight",
+   "weight": 20,
+   "once": true,
+   "text": "The four guardians at the edges of the world have stopped speaking to each other. The tortoise of the north and the bird of the south are in a quarrel about the seasons, and the seasons are going wrong. They all look to the centre.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Four at the Edges",
+   "choices": [
+    {
+     "text": "Call them together",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "shared": 2
+      },
+      "log": "A council at the centre of the world. It takes a hundred years. The seasons come back."
+     },
+     "fail": {
+      "tally": {
+       "weight": 3
+      },
+      "log": "Nobody comes. You hold the seasons together yourself for a while, and it is very heavy."
+     }
+    },
+    {
+     "text": "Carry the season between them",
+     "effects": {
+      "tally": {
+       "shared": 2
+      },
+      "comprehension": 3,
+      "log": "You become the between-season, the late summer that belongs to no one. The quarrel goes on, but the year turns."
+     }
+    },
+    {
+     "text": "Wait for them to tire",
+     "effects": {
+      "tally": {
+       "weight": 1
+      },
+      "log": "They tire. The seasons come back, slowly, a little crooked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_smith_1",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "The last smith in a village whose iron you ate, {npc}, has come to find you. {He} has no iron left to work and no ploughs to mend, and the village is going hungry. {He} stands in front of you with an empty hammer and asks, very politely, for a little of it back.",
+   "npc": {
+    "role": "bsbv_smith",
+    "spawn": {
+     "role": "stranger",
+     "tag": "bsbv_smith",
+     "ageAbs": 60,
+     "opinion": 10,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Last Smith",
+   "choices": [
+    {
+     "text": "Give {him} back a ploughshare",
+     "effects": {
+      "tally": {
+       "iron": -3,
+       "virtue": 2
+      },
+      "flag": "bs_bv_plough",
+      "log": "You cough up a ploughshare, warm and clean. {He} takes it home on {his} back, and the village ploughs that spring."
+     }
+    },
+    {
+     "text": "Give {him} back everything you took from that village",
+     "effects": {
+      "tally": {
+       "iron": -8,
+       "legend": 3
+      },
+      "log": "Ploughs, pots, hinges, a temple bell. {He} needs three carts and a week. The village holds a festival, and burns no effigy of you that year."
+     }
+    },
+    {
+     "text": "Refuse: iron in you is iron safe from swords",
+     "effects": {
+      "tally": {
+       "iron": 1
+      },
+      "comprehension": 2,
+      "log": "{He} nods slowly. \"Swords,\" {he} says. \"Yes.\" {He} goes home and starts making ploughs out of wood."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_smith_2",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "The general of the province has heard that {npc} gets iron from the beast, and has sent soldiers to take it for swords. The old man has hidden the ploughshares in the well. The soldiers are digging.",
+   "npc": {
+    "role": "bsbv_smith"
+   },
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bsbv_smith_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Last Smith",
+   "choices": [
+    {
+     "text": "Eat the soldiers' swords",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The soldiers"
+     },
+     "ok": {
+      "tally": {
+       "iron": 4,
+       "legend": 3,
+       "hunted": 2
+      },
+      "log": "Twenty soldiers with empty scabbards, very quiet. They go home and say the beast came for their swords and left them alive, which is true."
+     },
+     "fail": {
+      "tally": {
+       "hunted": 4
+      },
+      "health": -20,
+      "log": "Spears in the joints of your scales. You eat the swords in the end, but the general now knows where you are."
+     }
+    },
+    {
+     "text": "Sit on the well",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "hunted": 1
+      },
+      "log": "They cannot dig through you. They try for a day. Then they go home, and the general writes a very angry letter to the court."
+     }
+    },
+    {
+     "text": "Let the soldiers have it",
+     "effects": {
+      "tally": {
+       "iron": 1
+      },
+      "comprehension": 2,
+      "log": "The ploughshares become swords. The smith does not speak to you for a year. Then {he} does, because there is no one else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_smith_3",
+   "cat": "life",
+   "weight": 30,
+   "once": true,
+   "text": "{npc} is dying. {He} asks for one thing: that you take {his} hammer when {he} is gone, and not eat it. It is the only iron {he} ever made that {he} was proud of.",
+   "npc": {
+    "role": "bsbv_smith"
+   },
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ],
+    "after": [
+     "dc_bsbv_smith_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Last Smith",
+   "choices": [
+    {
+     "text": "Keep the hammer, uneaten, under your scales",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "bs_bv_hammer",
+      "log": "It is the only iron in you that you did not eat. Some nights you feel it there, like a heartbeat that is not yours."
+     }
+    },
+    {
+     "text": "Give the hammer to {his} apprentice",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "iron": -1
+      },
+      "log": "A girl of twelve with a hammer too big for small hands, who will be a smith one day. You will make sure there is iron."
+     }
+    },
+    {
+     "text": "Eat it, gently, as {he} would have hated",
+     "effects": {
+      "tally": {
+       "iron": 2
+      },
+      "comprehension": 2,
+      "log": "You cannot help it. It tastes of {him}. You are sorry for a hundred years, and the hammer is still there in you, somehow, unbroken."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_bell_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The monks of a mountain temple have rung their great bell every dawn for six hundred years. You can smell it from three valleys away. It smells like the best meal of your life. The monks have started sleeping around it with sticks.",
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Temple Bell",
+   "choices": [
+    {
+     "text": "Leave the bell",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "log": "You lie down outside the temple wall every dawn and listen to it ring instead. The monks stop sleeping with sticks after a year."
+     }
+    },
+    {
+     "text": "Eat one small piece of it",
+     "effects": {
+      "tally": {
+       "iron": 2,
+       "fear": 1
+      },
+      "log": "A notch out of the rim. The bell sounds a little sad after that. The monks call it the Beast's Bite and charge pilgrims to see it."
+     }
+    },
+    {
+     "text": "Eat it",
+     "effects": {
+      "tally": {
+       "iron": 6,
+       "hunted": 3
+      },
+      "log": "Six hundred years of bronze. It is the best meal of your life. The temple sends a monk to the court with a complaint written in very angry calligraphy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_army_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "An army is marching to burn a rebel county, and its armour, swords, spears and helmets are the most iron you have smelled in one place in a hundred years. The county is full of farmers. The army will be there by tomorrow.",
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Iron Army",
+   "choices": [
+    {
+     "text": "Eat the army's iron, all of it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "tally": {
+       "iron": 8,
+       "legend": 4,
+       "hunted": 4
+      },
+      "log": "Three thousand men in their underclothes in a mountain pass. They do not burn anything. They walk home."
+     },
+     "fail": {
+      "tally": {
+       "iron": 3,
+       "hunted": 5
+      },
+      "health": -30,
+      "log": "Spears, fire and three thousand men. You eat half and run. The county is spared, barely."
+     }
+    },
+    {
+     "text": "Block the pass and wait",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "hunted": 2
+      },
+      "log": "They cannot get around you and they cannot move you. After a week the general decides the rebellion is not worth it."
+     }
+    },
+    {
+     "text": "Let them pass",
+     "effects": {
+      "tally": {
+       "iron": 1
+      },
+      "comprehension": 1,
+      "log": "The county burns. You eat the swords afterwards, from the ashes. It is not the same."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_child_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A child in a ruined village brings you a rusty nail every evening. Just one. The village has nothing else to give, and the child has decided you are hungry and nobody else will feed you.",
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Child Who Feeds You",
+   "choices": [
+    {
+     "text": "Eat the nail, every evening",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1
+      },
+      "charm": 2,
+      "log": "One nail a night for six years. When the child grows up and leaves, you find the village has rebuilt itself around you, and calls you its guardian."
+     }
+    },
+    {
+     "text": "Give the child something back",
+     "effects": {
+      "tally": {
+       "iron": -2,
+       "virtue": 3
+      },
+      "flag": "bs_bv_child_gift",
+      "log": "A spoon, a needle, a little bronze bell. The child keeps them all in a box. Years later the box is the village's treasure."
+     }
+    },
+    {
+     "text": "Refuse the nail, gently",
+     "effects": {
+      "comprehension": 2,
+      "log": "The child keeps bringing it anyway. Some gifts are for the giver."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_bsbv_rival_1",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "There is something else that eats iron. It is smaller than you, red with rust, and it does not eat iron: it rots it. Where it has been, swords crumble and ploughs turn to red dust. It has found your trail and is following it, eating what you leave.",
+   "when": {
+    "beast": [
+     "bulgasari"
+    ],
+    "stage": [
+     11,
+     12
+    ],
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Rust Eater",
+   "choices": [
+    {
+     "text": "Fight it",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "tally": {
+       "legend": 3,
+       "iron": 2
+      },
+      "log": "It is not hard to beat. It is hard to stop it rotting your scales afterwards. You lie in a river for a month."
+     },
+     "fail": {
+      "tally": {
+       "iron": -3
+      },
+      "health": -20,
+      "log": "It gets into your joints. You win, and you are red at the edges for a decade."
+     }
+    },
+    {
+     "text": "Lead it to a battlefield",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "comprehension": 2,
+      "log": "Ten thousand swords in a valley, rotting. It eats until it bursts. The valley grows the best barley in the province afterwards."
+     }
+    },
+    {
+     "text": "Leave it a pile of iron and walk away fast",
+     "effects": {
+      "tally": {
+       "iron": -4
+      },
+      "luck": 2,
+      "log": "It stops to eat. It is still there, as far as you know, eating the same pile, slowly."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,5458 @@
+{
+ "events": [
+  {
+   "id": "dc_hr_crossroads_1",
+   "cat": "life",
+   "weight": 100,
+   "once": true,
+   "text": "You have come a hand's width a year down the lane, and now you lie under the place where five roads meet: the road from the hills, the road to the river, the market road, the road to the county town, and the old road that goes past the graves. All day, feet. Straw sandals, ox hooves, cart wheels, a horse now and then. Every one of them is going somewhere else.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     3
+    ]
+   },
+   "arc": "Where Five Roads Meet",
+   "choices": [
+    {
+     "text": "Listen to where each road is going",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_cross_arrived",
+      "log": "The hill road carries charcoal and firewood. The river road carries fish and gossip. The market road carries everything twice. The county road carries tax rice and bad news. The grave road carries the dead and those who miss them. You learn the five voices, and you never mistake them again."
+     }
+    },
+    {
+     "text": "Warm the place where they cross",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_cross_arrived",
+      "log": "Travellers start to stop at the crossroads without knowing why: to shift a pack, to retie a sandal, to sit a moment. The ground is warm there in every season. By the end of the year there is a bench, and then an old woman selling barley tea beside it."
+     }
+    },
+    {
+     "text": "Settle deep and hold the crossing firm",
+     "effects": {
+      "strength": 3,
+      "qi": 8,
+      "flag": "hr_cross_arrived",
+      "log": "The ruts fill and do not come back. In the rainy season the five roads go to mud everywhere except in the middle, where they meet. Carters learn to make for the middle and wait there for the mud to dry. You hold them up, all of them, and it is not heavy yet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_crossroads_2",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "A funeral bier comes down the grave road with its bell and its paper banners, and a wedding procession comes up the market road with its red sedan and its drummers, and they meet in the middle, right over you. Neither will give way. The mourners say the dead do not wait. The wedding party says the living have waited long enough.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "Where Five Roads Meet",
+   "choices": [
+    {
+     "text": "Let the dead go first",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "You tilt the ground a hair toward the grave road, and the bier-bearers find themselves walking before they decide to. The wedding party grumbles and then bows its heads as the bier goes by. The bride, inside the sedan, is the only one who thinks it a good omen."
+     }
+    },
+    {
+     "text": "Let the living go first",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The sedan-bearers find the road under them firm and easy and are across before anyone can argue. The mourners shout. Then the old man on the bier is carried past a wedding drum still beating, and his widow laughs out loud for the first time in a week."
+     }
+    },
+    {
+     "text": "Shiver the ground so both stop, and bow to each other",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "hr_cross_both",
+      "log": "A small tremor, exactly in the middle. Both parties stop dead. In the silence somebody bows, and then everybody does: the mourners to the bride, the drummers to the bier. Then they go round each other, slowly, like water round a stone. The village tells it for a hundred years."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_hr_crossroads_3",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "The village has set a guard at the crossroads against the bandits of the hill road: {npc}, a young villager with a spear and a lantern who sleeps on duty every single night, curled on the warm ground right over you, snoring at the stars.",
+   "npc": {
+    "role": "hr_guard",
+    "spawn": {
+     "role": "friend",
+     "tag": "hr_guard",
+     "ageAbs": 19,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "Where Five Roads Meet",
+   "choices": [
+    {
+     "text": "Keep {him} warm and keep watch yourself",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "npcFlag": "hr_guard",
+      "mem": {
+       "deed": "watched",
+       "w": 20,
+       "note": "never once robbed on my watch"
+      },
+      "log": "Nobody is ever robbed at the crossroads on the nights {npc} sleeps there, which is all of them. {npc} gets a reputation as the best guard in the county and is honestly baffled by it."
+     }
+    },
+    {
+     "text": "Wake {him} with a jolt whenever a stranger comes",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "hr_guard",
+      "log": "The ground jumps under the sleeper every time a footstep comes down the hill road. {npc} learns to wake at a touch, and then to sleep lightly, and in the end becomes a real guard, grumbling the whole way."
+     }
+    },
+    {
+     "text": "Send {him} a dream of the road",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_guard",
+      "log": "In the dream the five roads go on for ever, and at the end of each there is a different life. {npc} wakes at dawn and sits looking down each road in turn. That autumn {npc} leaves by the river road and does not come back for years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_crossroads_4",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "A small child stands at the crossroads in the dusk, crying without any noise, the way lost children do when they have been crying a long time. Five roads, and the child came down one of them and does not know which.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_2"
+    ]
+   },
+   "arc": "Where Five Roads Meet",
+   "choices": [
+    {
+     "text": "Warm the road home, only that one",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "charm": 2,
+      "log": "One road goes warm under the small bare feet. The child stops crying, considers, and walks up it, faster and faster. An hour later you feel a whole house running down the same road with torches, and meeting the child halfway."
+     }
+    },
+    {
+     "text": "Keep the child warm in the middle until someone comes",
+     "effects": {
+      "health": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The child sits down on the warm spot and falls asleep. At midnight a frantic grandfather comes down the hill road with a torch and finds the child asleep in the exact middle of the crossroads, unharmed and quite warm. He never lets go of the small hand again, all the way home."
+     }
+    },
+    {
+     "text": "Make the old tea-seller look up",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The tea-seller, packing up, feels the bench shiver and turns round and sees the child. Tea-sellers know every face on five roads. Within the hour the child is home, and the tea-seller has a story to tell for the rest of the season."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_crossroads_5",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "Travellers add a stone to the heap at the crossroads as they pass, for luck on the road: a pebble from the hill road, a smooth one from the river, a chip of roof-tile. The heap is waist-high now, with a straw rope round it and strips of cloth tied to a pole. The village has started calling the crossroads by a name, and the name is yours.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_2"
+    ],
+    "minYearsAfter": 5,
+    "notFlags": [
+     "hr_azure_rose"
+    ]
+   },
+   "arc": "Where Five Roads Meet",
+   "choices": [
+    {
+     "text": "Accept the stones, one by one",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "qi": 8,
+      "log": "Every stone is a small weight and a small wish, set down on you by somebody going somewhere else. You take each one. By the end of the year you know four hundred travellers by the stone they left, and you wish every one of them a dry road.",
+      "flag": "hr_cairn_named"
+     }
+    },
+    {
+     "text": "Give a little luck back down each road",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "No robbers on the hill road that year. No drowning at the river ford. No lame ox on the market road. The cairn grows faster. Luck, it turns out, is something people will happily carry stones for.",
+      "flag": "hr_cairn_named"
+     }
+    },
+    {
+     "text": "Wonder whether a cairn is a gift or a load",
+     "effects": {
+      "comprehension": 4,
+      "log": "Both. You decide it is both. That is the first thing you learn about being honoured: it weighs something. You are not heavy yet. You can feel where the heaviness will come from.",
+      "flag": "hr_cairn_named"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_wheel_1",
+   "cat": "insight",
+   "weight": 30,
+   "once": true,
+   "text": "Wood first. The spring in the valley does not end. The willows leaf, and leaf again; the barley shoots up too fast and falls over in the wind; the bamboo comes up through the floor of a farmer's storehouse. Everything green is pushing, and it is pushing against you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "The Five in the World",
+   "choices": [
+    {
+     "text": "Hold the spring back, gently",
+     "effects": {
+      "tally": {
+       "ph_wood": -2,
+       "ph_earth": 1
+      },
+      "comprehension": 2,
+      "log": "You set your weight against the pushing, the way a hand rests on a lid. The barley stops falling over. The bamboo stops at the storehouse floor and goes sideways, sulking. The year turns to summer a little late and a little steadier. (Wood -2, Earth +1)"
+     }
+    },
+    {
+     "text": "Let it feed the summer instead",
+     "effects": {
+      "tally": {
+       "ph_wood": -2,
+       "ph_fire": 2
+      },
+      "log": "Wood feeds fire. You turn the push of the spring toward the summer, and the summer comes early and hot and the barley ripens all at once. The farmers are out in the fields by moonlight. (Wood -2, Fire +2)"
+     }
+    },
+    {
+     "text": "Let it grow. A strong spring is a good thing",
+     "effects": {
+      "tally": {
+       "ph_wood": 2
+      },
+      "luck": 2,
+      "log": "The valley is greener than anyone remembers. The orchards are a sea. Somewhere at the edge of your feeling a terrace wall bulges where the roots are getting into it. (Wood +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_wheel_2",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "Fire. The smithy on the market road has a new bellows and a new smith who loves it. The forge is never cold. Sparks go up into the thatch of the next house every week, and the well water by the smithy is warm to the touch.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_wheel_1"
+    ]
+   },
+   "arc": "The Five in the World",
+   "choices": [
+    {
+     "text": "Cool the ground under the forge",
+     "effects": {
+      "tally": {
+       "ph_fire": -2,
+       "ph_earth": 1
+      },
+      "strength": 2,
+      "log": "The smith finds the forge sulky all season, slow to catch and quick to die down. The neighbours stop finding scorch marks in the thatch. Fire makes earth: some of the heat goes into you, and you are warmer for it. (Fire -2, Earth +1)"
+     }
+    },
+    {
+     "text": "Let the fire feed the earth",
+     "effects": {
+      "tally": {
+       "ph_fire": -1,
+       "ph_earth": 2
+      },
+      "qi": 6,
+      "log": "You drink the forge-heat down through the floor of the smithy like a root drinking rain. The smith never knows why the forge is so steady. You grow. Earth grows. (Fire -1, Earth +2)"
+     }
+    },
+    {
+     "text": "Let it burn bright; the village needs ploughshares",
+     "effects": {
+      "tally": {
+       "ph_fire": 2,
+       "ph_metal": 1
+      },
+      "log": "Every farmer in the valley has a new ploughshare by spring, and the smith is a rich man. A thatch catches once, and the whole street puts it out with buckets. (Fire +2, Metal +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_wheel_3",
+   "cat": "insight",
+   "weight": 22,
+   "once": true,
+   "text": "Earth: your own. A great harvest, and then another. The granaries are full, the storehouses are full, the jars behind every house are full, and still the rice comes in. It is the earth phase swelling, and it is you, and it feels very good. In the next valley, a well has gone low.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_wheel_2"
+    ]
+   },
+   "arc": "The Five in the World",
+   "choices": [
+    {
+     "text": "Give some of the plenty to metal: let them sell it",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_metal": 2
+      },
+      "comprehension": 2,
+      "log": "Earth bears metal. The surplus goes to market and comes back as coin and iron and new tools. The granaries are merely full, not bursting. The next valley's well creeps back up a hand's width. (Earth -2, Metal +2)"
+     }
+    },
+    {
+     "text": "Keep it. A full granary is a full granary",
+     "effects": {
+      "tally": {
+       "ph_earth": 2
+      },
+      "health": 4,
+      "log": "You lie heavy and content under a valley of full jars. It is the best year you have ever felt. In the next valley the well goes lower. Earth dams water. You know it, and you do not quite look at it. (Earth +2)"
+     }
+    },
+    {
+     "text": "Send the extra down into the deep wells",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_water": 2,
+       "virtue": 1
+      },
+      "log": "You loosen your hold on the deep ground, and the water that you have been holding back without knowing it runs on into the wells of the next valley. Your own harvest is ordinary next year. Theirs is not a disaster. (Earth -2, Water +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_wheel_4",
+   "cat": "insight",
+   "weight": 20,
+   "once": true,
+   "text": "Metal. Two families at the crossroads are feuding over a sword: an old blade dug out of a field that lies on the boundary of both. Knives come out at the well. The sword lies on a shrine shelf in neither house, waiting, and everything metal in the village feels sharper this year.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_wheel_3"
+    ]
+   },
+   "arc": "The Five in the World",
+   "choices": [
+    {
+     "text": "Rust the sword overnight, so there is nothing to fight over",
+     "effects": {
+      "tally": {
+       "ph_metal": -2,
+       "ph_earth": 1,
+       "virtue": 1
+      },
+      "log": "In the morning the famous blade is a red flake of rust in the shape of a sword. Both families look at it for a long time. Then one of the grandfathers starts to laugh, and after a while the other does too. (Metal -2, Earth +1)"
+     }
+    },
+    {
+     "text": "Let the metal cool into water",
+     "effects": {
+      "tally": {
+       "ph_metal": -2,
+       "ph_water": 2
+      },
+      "comprehension": 2,
+      "log": "Metal gathers water. That autumn the dew lies heavy on every blade in the village, every hoe and every knife, and somehow nobody feels like drawing anything. The feud cools into a long sour silence, which is better. (Metal -2, Water +2)"
+     }
+    },
+    {
+     "text": "Let them fight it out",
+     "effects": {
+      "tally": {
+       "ph_metal": 2,
+       "fear": 1
+      },
+      "log": "They do, at the crossroads, over you. Nobody dies. Two men are carried home and a house burns. The sword goes to the magistrate, who keeps it. Everything metal is sharper still. (Metal +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_wheel_5",
+   "cat": "insight",
+   "weight": 18,
+   "once": true,
+   "text": "Water. A wet summer, and then the river. It comes over the low fields in a night and stands brown in the paddies and in the market street and up to the knees of the stone cairn at the crossroads. It is pressing down on you from above, cold, heavy, everywhere.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_wheel_4"
+    ]
+   },
+   "arc": "The Five in the World",
+   "choices": [
+    {
+     "text": "Rise and dam it: earth overcomes water",
+     "effects": {
+      "tally": {
+       "ph_water": -3,
+       "ph_earth": 1,
+       "legend": 2
+      },
+      "strength": 3,
+      "flag": "hr_wheel_learned",
+      "log": "You push up under the low fields like a back under a load, and the water runs off you toward the river, all of it, in a single morning. The village calls it a miracle. You feel it in your middle as a hard, dry ache. Earth overcomes water, and it is not gentle. (Water -3, Earth +1)"
+     }
+    },
+    {
+     "text": "Drink it slowly, and let it feed the wood",
+     "effects": {
+      "tally": {
+       "ph_water": -2,
+       "ph_wood": 2
+      },
+      "qi": 8,
+      "flag": "hr_wheel_learned",
+      "log": "Water feeds wood. You take the flood down into yourself and pass it on to every root in the valley. The fields drain in a week instead of a month, and next spring the orchards are astonishing. (Water -2, Wood +2)"
+     }
+    },
+    {
+     "text": "Let it stand. Floods leave good silt",
+     "effects": {
+      "tally": {
+       "ph_water": 1
+      },
+      "comprehension": 3,
+      "flag": "hr_wheel_learned",
+      "log": "The water goes in its own time. It leaves a hand of black silt on every field, and the next harvest is a fat one. Five spokes, one hub. You begin to see: not one of them is the enemy. Only too much of any. (Water +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangseung_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "At the village gate, a little way up the road from you, stand the two carved posts: Great General Under Heaven, tall and fierce in a scholar's hat, and the General Under the Earth, shorter, rounder, with a painted grin. They have stood there longer than the oldest grandmother. The second one has noticed you, and has views about whose ground this is.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "The Generals at the Gate",
+   "choices": [
+    {
+     "text": "Bow to them both, as the newcomer",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_posts_met",
+      "log": "The tall one ignores you, as a general should. The short one looks surprised, and then very pleased with itself. Under the Earth is its title, after all. You let it think so. A post that keeps demons out of the village can think anything it likes."
+     }
+    },
+    {
+     "text": "Explain, politely, that the ground goes down further than its feet",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_posts_met",
+      "log": "The General Under the Earth is a post. Its feet go down a forearm into the clay, and below that it has never thought about. It thinks about it now. For a whole season its painted grin looks slightly less certain."
+     }
+    },
+    {
+     "text": "Ignore them: they are only wood",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "fear": 1
+      },
+      "flag": "hr_posts_met",
+      "log": "Only wood. That winter a fever comes up the road from the river and stops dead at the gate, and turns, and goes away up the hill road instead. You felt it stop. Only wood, you think, rather less certainly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangseung_2",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The village carves new posts at the first full moon, as it does every few years: two alder trunks, the faces cut with an adze, the eyes painted, the names written down the front in black ink. The old posts are laid in the ditch to rot. The new ones are sunk into the ground beside them, a forearm deep, into the clay that is the edge of you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_jangseung_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Generals at the Gate",
+   "choices": [
+    {
+     "text": "Take the new posts in firmly",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They go in straight and stay straight. The carvers say these are the best-set posts in the county. The old General Under the Earth, in the ditch, rotting, says nothing at all. You keep a little warmth under it until it is gone."
+     }
+    },
+    {
+     "text": "Hold the old posts up a little longer",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "You warm the ditch so the old wood rots slowly, and for years four generals stand at the gate, two fierce and new and two grey and leaning. Travellers think the village is doubly protected. It is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangseung_3",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "Something comes up the river road one night that is not a person: a cold, a sickness with a shape, walking. It reaches the gate and the posts. The General Under Heaven glares. The General Under the Earth grins its painted grin. The thing waits, testing. Their feet are in your ground.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_jangseung_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Generals at the Gate",
+   "choices": [
+    {
+     "text": "Lend the posts your strength through their feet",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "hr_posts_friends",
+      "log": "You push up into the wood, and the two posts are suddenly very much more than wood. The thing at the gate steps back. It turns, and goes back down the river road, and the village has a winter without a single cough. The General Under the Earth is unbearable about it for years."
+     }
+    },
+    {
+     "text": "Let the posts do their own work",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "flag": "hr_posts_friends",
+      "log": "They do it. The thing waits all night and goes before dawn. You realise you did not need to do anything, and that this is a new feeling: something in your ground that holds up without you. You like it more than you expected."
+     },
+     "fail": {
+      "health": -6,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It gets past the short one. You catch it in the road beyond, in the clay, and hold it there until dawn burns it off. It costs you. Three houses cough for a month and nobody dies. (-6 health)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangseung_4",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "A travelling official has had the posts' faces painted over in plain white, because a fierce face at a gate is superstition, and superstition is bad for the county. The villagers are frightened. The General Under the Earth, faceless, has gone very quiet in your ground.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ],
+    "after": [
+     "dc_hr_jangseung_2"
+    ]
+   },
+   "arc": "The Generals at the Gate",
+   "choices": [
+    {
+     "text": "Let the paint peel by spring",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The white flakes off in the first rain and the faces come through underneath, fiercer than before, as if they had been sharpening themselves under the paint. The villagers repaint them anyway, very bright. The official never comes back to check."
+     }
+    },
+    {
+     "text": "Speak to the faceless one through the ground",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "flag": "hr_posts_friends",
+      "log": "A face is only paint, you tell it. Its feet are still in the ground, and so is its work. The post is quiet for a long time. Then, very faintly, you feel it grin under the white. It does not need you to agree."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_apprentice_1",
+   "cat": "npc",
+   "weight": 26,
+   "once": true,
+   "text": "A young geomancer comes to the crossroads with an old compass, the many-ringed wooden kind, its needle wobbling. {npc} is the apprentice of an old geomancer who once walked this valley and said it had a navel. The old one is dead. The apprentice has the compass and the notes and a great deal to prove.",
+   "npc": {
+    "role": "hr_apprentice",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_apprentice",
+     "ageAbs": 24,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     3
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "The Apprentice's Map",
+   "choices": [
+    {
+     "text": "Make the needle point straight down",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "hr_apprentice",
+      "mem": {
+       "deed": "needle",
+       "w": 20,
+       "note": "turned my compass down into the ground"
+      },
+      "log": "The needle swings, shivers, and points at the ground between {npc}'s knees, which no compass needle can do. {npc} sits back on both heels and stares at it. Then {npc} starts writing very fast."
+     }
+    },
+    {
+     "text": "Let the compass find you honestly, in its own time",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_apprentice",
+      "log": "It takes {npc} nine days of pacing and measuring and arguing with the old notes. On the ninth evening the lines on the map all meet at the crossroads, and {npc} laughs out loud and the tea-seller asks what is so funny."
+     }
+    },
+    {
+     "text": "Send {him} up the lane to the farmhouse first",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "luck": 2,
+      "npcFlag": "hr_apprentice",
+      "log": "{npc} goes back up the lane to the farmhouse in the old notes and finds a jar behind it with a straw cap, still warm. The family there tells stories. By the time {npc} comes back to the crossroads, there is a line on the map that runs from the jar to you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_apprentice_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} has drawn the valley as a body: the hills for shoulders, the river for a vein, the crossroads for its navel. The map goes to the county town and is copied. People begin to come and stand at the crossroads to feel the luck of the centre. Some of them want to buy the land.",
+   "npc": {
+    "role": "hr_apprentice"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_apprentice_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "hr_apprentice"
+    ]
+   },
+   "arc": "The Apprentice's Map",
+   "choices": [
+    {
+     "text": "Make the land too stony to build on",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Every buyer who digs a test pit hits stone a spade down, the hard kind, everywhere. The crossroads stays a crossroads. {npc} is accused of drawing a false map and does not mind at all."
+     }
+    },
+    {
+     "text": "Let them come and stand, and be lucky",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 2
+      },
+      "log": "They stand, and go home, and have their good years. The crossroads is famous for a while. A shrine goes up, small and crooked, built by the tea-seller's grandson. {npc} writes it all down."
+     }
+    },
+    {
+     "text": "Shake the map in {npc}'s hands as a warning",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The paper jumps, and the ink of the navel runs in a little gold smear. {npc} looks at it a long time and then, quietly, makes no more copies. The ones already out are enough to make trouble, but less."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_apprentice_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is old now, and has come back to the crossroads to die near the navel of the valley, which every geomancer secretly wants. A little shrine of stones and a straw rope, a bowl of water, and an old person sitting by it in the sun, talking to the ground as if it were a colleague.",
+   "npc": {
+    "role": "hr_apprentice"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_apprentice_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "hr_apprentice"
+    ]
+   },
+   "arc": "The Apprentice's Map",
+   "choices": [
+    {
+     "text": "Answer, once, in warmth",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "hr_navel_shrine",
+      "npcPass": "old age, in the sun at the crossroads",
+      "mem": {
+       "deed": "answered",
+       "w": 30,
+       "note": "answered me at the end"
+      },
+      "log": "The stones of the little shrine go warm under {npc}'s hand. {npc} nods, as at a colleague who has finally agreed about something, and closes both eyes in the sun, and does not open them. The shrine stays. People call it the Navel."
+     }
+    },
+    {
+     "text": "Keep the bowl of water clear for a season",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_navel_shrine",
+      "npcPass": "old age, at the navel of the valley",
+      "log": "The water in the bowl never once has a leaf or a fly in it all summer. {npc} notices on the first day and smiles on every day after. In the autumn {npc} is gone, and the bowl is still clear."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_siteroot_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "Someone from the farmhouse up the lane comes down to the crossroads with a carrying frame: {npc}, of the family above the jar, going to the market alone. {npc} stops in the middle of the crossroads, for no reason {he} could name, and stands there feeling the ground, as the grandmother of that house once felt a jar.",
+   "npc": {
+    "role": "site_family"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ],
+    "npcFlags": [
+     "site_family"
+    ],
+    "notFlags": [
+     "hr_stayed_site"
+    ]
+   },
+   "arc": "The Root Under the Jar",
+   "choices": [
+    {
+     "text": "Warm the ground for {him}, like the jar",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "mem": {
+       "deed": "warmed",
+       "w": 20,
+       "note": "warmed the crossroads like the jar at home"
+      },
+      "log": "{npc} puts a palm down flat on the road, in front of everyone, and takes it away and puts it back. Then {npc} grins, the grin of somebody who has found out a family secret, and goes to market whistling."
+     }
+    },
+    {
+     "text": "Send {him} on to market with luck",
+     "effects": {
+      "luck": 3,
+      "log": "The best price in the market for {npc}'s beans, and a good word from a peddler, and a dry road home. {npc} tells the family it was a lucky day. The family looks at each other and does not say anything."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_siteroot_2",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "The family above the jar has started leaving a handful of the tenth-month rice at the crossroads cairn, as well as in the jar behind the house. Nobody told them to. {npc} does it on the way to market, every year, and bows once.",
+   "npc": {
+    "role": "site_family"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_siteroot_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "site_family"
+    ],
+    "notFlags": [
+     "hr_stayed_site"
+    ]
+   },
+   "arc": "The Root Under the Jar",
+   "choices": [
+    {
+     "text": "Take the rice and keep both places warm",
+     "effects": {
+      "health": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The jar behind the house and the cairn at the crossroads: two homes, one handful each. You are stretched a little thinner and warmer than before. The family's luck does not change. It does not need to."
+     }
+    },
+    {
+     "text": "Leave the rice for the birds, and the luck for the family",
+     "effects": {
+      "charm": 2,
+      "luck": 2,
+      "log": "Sparrows have the rice by noon. {npc} sees them at it and laughs, and does not mind. The old lord of the site has always been a little odd. The family's ox lives to thirty."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_siteroot_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Word comes down the lane in the winter: the farmhouse is to be pulled down for a bigger one, and the jar behind it with it. The family argues for a week. The youngest says the jar stays. The eldest says a jar is a jar.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_siteroot_2"
+    ],
+    "minYearsAfter": 10,
+    "notFlags": [
+     "hr_stayed_site"
+    ]
+   },
+   "arc": "The Root Under the Jar",
+   "choices": [
+    {
+     "text": "Make the jar too warm to touch the day they come to move it",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "fear": 1
+      },
+      "log": "Nobody will lift it. The new house is built round it, with a gap in the wall so the jar stays in the corner of the yard where it always was. The builder thinks the family is mad. The family thinks the builder is lucky not to have been bitten."
+     }
+    },
+    {
+     "text": "Let them move it, and follow it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "They carry it ten paces to the new corner of the new yard, and you send a root after it through the clay, slowly, all winter. By spring it is warm again in its new place. A centre can move ten paces. You did not know that."
+     }
+    },
+    {
+     "text": "Let the old jar go: you are under a crossroads now",
+     "effects": {
+      "qi": 8,
+      "log": "The old jar is broken in the rebuilding and the family buys a new one, and sets new rice in it with a new straw cap, and it is cold for a whole year. Then, one morning in the tenth month, a little warm. You did not mean to. Some things do not stay let go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_market_1",
+   "cat": "life",
+   "weight": 40,
+   "once": true,
+   "text": "The crossroads has become a market. Every fifth day the five roads bring it in: salt from the coast, cloth from the weavers' villages, cattle from the hills, pots, knives, straw shoes, dried fish, medicine roots. By noon there are three thousand feet on you, haggling. By dusk the place is empty and swept, and you lie under the litter of the day, counting it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ]
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Learn every voice in it",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_market_known",
+      "log": "The salt-seller who lies about the weight and the cloth-seller who lies about the weave. The cattle dealer who never lies, and charges for it. The old woman with medicine roots who knows more than the county doctor. In a year you know them all. In two you know their children."
+     }
+    },
+    {
+     "text": "Keep the ground dry and firm on market days",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "ph_earth": 1
+      },
+      "flag": "hr_market_known",
+      "log": "It never rains hard on a market day. Or it does, and the market ground drains in an hour. The traders begin to say this is the luckiest market in the province. It brings more traders. (Earth +1)"
+     }
+    },
+    {
+     "text": "Feel what the whole market weighs",
+     "effects": {
+      "qi": 8,
+      "flag": "hr_market_known",
+      "log": "Salt and cloth and cattle and coin, and more than that: debts, bargains, quarrels, a match between two families settled over a bowl of soup. A market is heavier than a crossroads. It is not only the things. It is all the agreeing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_market_2",
+   "cat": "danger",
+   "weight": 22,
+   "once": true,
+   "text": "A bull at the cattle pens breaks its rope and goes through the market at a run, head down, through the pottery, through the cloth, toward the place where the children are watching a puppet show.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ]
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Open a soft rut in front of it",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "The ground goes soft as a paddy under the bull's front hooves, ten paces from the children. It goes down on its knees in the mud, astonished, and sits there blowing until its owner comes. The puppeteer never finishes the show. Nobody cares."
+     }
+    },
+    {
+     "text": "Make the ground tremble so the crowd scatters",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "Everyone runs at once, the children too, in every direction, which is exactly right. The bull goes through an empty space and into the river, and stands there cooling off and looking embarrassed."
+     },
+     "fail": {
+      "health": -4,
+      "tally": {
+       "fear": 1
+      },
+      "log": "Everyone runs, and some run the wrong way. A pot-seller's stall goes over and a boy breaks an arm. The bull is caught at the river. It could have been worse. You feel every broken pot in your middle. (-4 health)"
+     }
+    },
+    {
+     "text": "Calm the bull through its hooves",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Warmth comes up through four hooves into a very frightened animal. It slows. It stops. It stands in the middle of the cloth stalls breathing hard, and then lowers its head and eats a bolt of green hemp. The cloth-seller wants compensation. That is a different story."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_market_3",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The rice-cake seller and the knife-grinder have fought for eleven market days over the same patch of ground: the exact middle of the market, where the five roads meet, where everybody passes and everybody stops. Both of them say it is lucky. Both of them are right.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Make the middle too warm to sit on",
+     "effects": {
+      "comprehension": 3,
+      "log": "The ground is warm as a bathhouse floor in the exact middle. Neither of them can bear to sit there for long. In the end they set up on either side of the warm patch and glare at each other across it, and everyone walks through the middle between them, and both do very well."
+     }
+    },
+    {
+     "text": "Favour the rice cakes: food before knives",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1,
+       "ph_earth": 1
+      },
+      "log": "The knife-grinder's wheel will not turn on that spot, however much grease. The rice-cake seller sets up in triumph. The knife-grinder moves to the county road and does better there. Nobody quite knows why. (Earth +1)"
+     }
+    },
+    {
+     "text": "Favour the knives: a market needs edges",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "ph_metal": 1
+      },
+      "log": "The rice cakes go stale on the middle patch, every time. The grinder sets up there, sparks flying, and every farmer brings a sickle. The rice-cake seller moves to the grave road and sells to mourners, who are always hungry. (Metal +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_market_4",
+   "cat": "danger",
+   "weight": 16,
+   "once": true,
+   "text": "A typhoon on a market day. The sky goes yellow at noon and the wind comes in off the sea, and three thousand people are caught in the open with their cattle and their cloth and their children. The stalls begin to go.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ],
+    "after": [
+     "dc_hr_market_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Hold the whole market down",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "legend": 3,
+       "virtue": 1
+      },
+      "log": "The wind takes every roof in the county and not one stall in the market. People lie flat on the warm ground and hold on to it, and it holds on to them. Afterwards they come out and look at each other and do not quite say it."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You hold the middle. The edges go: awnings, baskets, a cow tumbling over and over into the ditch, unhurt and furious. Nobody dies. You lie exhausted under the ruin of the day. (-8 health)"
+     }
+    },
+    {
+     "text": "Open the cellars and the ditches for them to shelter",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "The ground opens a little everywhere, the drains and the root cellars and the old ditches, deep and dry. People crawl into them with their children and their goods. The stalls blow away. The people do not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_market_5",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The market has become a town. Tiled roofs round the square, a permanent inn, a drum tower that beats the five-day rhythm. The county has noticed and sent a clerk with a ledger. The five roads are paved for a mile out with flat stones. Every stone is set into you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_3"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Five-Day Market",
+   "choices": [
+    {
+     "text": "Bear the stones gladly",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_market_town",
+      "log": "A town is heavier than a market. You take every paving stone and every roof-beam and the drum tower's foundation, and settle under them, and find you can. It is the first time you think: I could carry a great deal. It is not quite a happy thought."
+     }
+    },
+    {
+     "text": "Keep one patch of the old earth bare in the middle",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_market_town",
+      "log": "They pave the whole square except the middle, where the stones will not lie flat, however often they are reset. In the end they leave it bare, and put the cairn back there. A town with a patch of dirt at its heart. It suits you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scale_1",
+   "cat": "npc",
+   "weight": 26,
+   "once": true,
+   "text": "{npc}, the biggest rice merchant in the market, has two sets of weights: a heavy set for buying and a light set for selling. Today an old widow from the hills brings in a whole year's rice to sell, and {npc} weighs it with the heavy ones. Half a year of work is gone in a breath, and the widow does not know it.",
+   "npc": {
+    "role": "hr_merchant",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_merchant",
+     "ageAbs": 40,
+     "opinion": -10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     4
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ]
+   },
+   "arc": "The Crooked Scale",
+   "choices": [
+    {
+     "text": "Make the false weight show itself",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 1,
+       "ph_metal": 1
+      },
+      "npcFlag": "hr_merchant",
+      "flag": "hr_scale_seen",
+      "log": "The iron weight on the beam slides of its own accord, a full notch, in front of the queue. A peddler sees it. Then everyone sees it. {npc} goes the colour of old rice and weighs it again, honestly, in silence. (Metal +1)"
+     }
+    },
+    {
+     "text": "Send the widow a stranger who knows weights",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "hr_merchant",
+      "flag": "hr_scale_seen",
+      "log": "A travelling grain clerk, passing through, stops beside the scale and looks at the weights and says, mildly, that those are not county weights. The widow gets the full price. {npc} gets a look from the clerk that lasts the rest of the year."
+     }
+    },
+    {
+     "text": "Watch, and learn how cheating feels from below",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "hr_merchant",
+      "flag": "hr_scale_seen",
+      "log": "It feels like a stone in your sandal, a tiny wrongness that the whole market stands on. You learn what it is today. You will feel it in every market and every county and every kingdom you ever lie under."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scale_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} has new weights, and they are honest, and {npc} hates every one of them. Now {npc} wets the rice before selling it so it weighs more, and cuts the cloth a finger short. There are a hundred ways to cheat that do not involve a scale.",
+   "npc": {
+    "role": "hr_merchant"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_scale_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "hr_merchant"
+    ]
+   },
+   "arc": "The Crooked Scale",
+   "choices": [
+    {
+     "text": "Dry the rice in the sacks overnight",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ph_earth": 1
+      },
+      "log": "Every sack that {npc} wets is bone-dry by morning, however much water went in. The merchant stands over them, damp to the elbows, and begins to suspect the market itself. Correctly. (Earth +1)"
+     }
+    },
+    {
+     "text": "Let it go. You cannot watch every sack",
+     "effects": {
+      "comprehension": 3,
+      "log": "You cannot. That is the second lesson. A centre that tries to catch every cheat in a market becomes a market inspector, and a market inspector is not a dragon. You let the small cheats be small. You watch the big ones."
+     }
+    },
+    {
+     "text": "Give {npc} one honest year of very good business",
+     "effects": {
+      "charm": 3,
+      "luck": 2,
+      "log": "An honest year, and somehow the best year {npc} has ever had: more customers, better rice, a new storehouse. {npc} does not understand it. {npc} does not cheat again, out of superstition. You will take superstition."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scale_3",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The county sends a market inspector with a set of standard measures in a locked box, a ladle and a peck and a steelyard, and a seal. The inspector is to make every measure in the market match the box. The inspector is also, you can feel at once, open to small gifts.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_scale_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Crooked Scale",
+   "choices": [
+    {
+     "text": "Make the inspector's own measures true",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ph_metal": 1,
+       "ph_earth": 1
+      },
+      "flag": "hr_scale_honest",
+      "log": "The box measures are a little false themselves, and the inspector knows it. By the end of the visit they are not, and the inspector does not know how. The whole market is measured against a true standard for the first time in its life. (Metal +1, Earth +1)"
+     }
+    },
+    {
+     "text": "Let the inspector take the gifts and do the work anyway",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_scale_honest",
+      "log": "The gifts go into a sleeve. The measures still come out right, because you keep the beam steady through the whole inspection. The inspector goes home richer and honest by accident. You learn that rule can work through crooked people. It is not a comfortable lesson."
+     }
+    },
+    {
+     "text": "Shame the inspector in front of the market",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "legend": 1
+      },
+      "log": "The locked box falls open in the middle of the square, and the seal rolls out, and so does a purse that is not the county's. The inspector is recalled. The next inspector is very, very honest and very slow. Fear works. It is slow."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scale_4",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is old, and the business has gone to {his} child, who weighs everything twice and gives a handful over. The old merchant sits at the edge of the market in the sun, watching the scale, and one day says to nobody in particular: it was the ground. I always knew it was the ground.",
+   "npc": {
+    "role": "hr_merchant"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_scale_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "hr_merchant"
+    ]
+   },
+   "arc": "The Crooked Scale",
+   "choices": [
+    {
+     "text": "Warm the ground under the old merchant",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcPass": "old age, in the sun at the edge of the market",
+      "mem": {
+       "deed": "forgave",
+       "w": 20,
+       "note": "warmed the market ground for me at the end"
+      },
+      "log": "{npc} feels it, and laughs, a dry old laugh, and puts a palm on the stones. That winter {npc} dies, and the child puts a small honest weight in the coffin. You think that is the right joke."
+     }
+    },
+    {
+     "text": "Stay cool. Some things are not forgiven by being warm",
+     "effects": {
+      "comprehension": 3,
+      "npcPass": "old age, at home",
+      "log": "Nothing. {npc} sits in the sun a while, nods as if the ground had answered anyway, and goes home. The widow from the hills died poor. You have not forgotten."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scale_5",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "There is a saying in the province now: honest as the scales at the crossroads market. Merchants from three counties bring their weights to be tried there. A stone weight with a dragon carved on it hangs on a post in the middle of the square, and nobody remembers who made it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_scale_3"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "hr_scale_honest"
+    ]
+   },
+   "arc": "The Crooked Scale",
+   "choices": [
+    {
+     "text": "Keep the saying true",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "mark": "hr_honest_scale",
+      "log": "Year after year, every weight tried there comes out true or comes out shamed. The saying goes into the songs. Somebody, generations from now, will buy a scale in this market and be astonished that it is honest. You will be gone by then. The scale will not."
+     }
+    },
+    {
+     "text": "Let the town keep it true without you",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You stop watching the scale, a little at a time, to see what happens. Nothing happens. The town does it now. The merchants watch each other. It is the first thing you have ever given away that kept working."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_crooked_1",
+   "cat": "life",
+   "weight": 8,
+   "once": false,
+   "text": "Another market day, another thumb on a scale: a salt-seller who has found a new way to make a peck hold less. It is small. It is always small. The whole market stands on a thousand small things like it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_hr_scale_1"
+    ]
+   },
+   "arc": "A Thumb on the Scale",
+   "choices": [
+    {
+     "text": "Make the peck true again, quietly",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ph_metal": 1
+      },
+      "log": "The peck holds a peck. The salt-seller frowns at it for a week, then shrugs. The farmers go home with the salt they paid for, and never know it was ever otherwise. (Metal +1)"
+     }
+    },
+    {
+     "text": "Let the salt spill in front of everyone",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "log": "The false bottom of the peck gives way in the middle of a sale. Salt everywhere, and a hollow where there should not be one. The queue goes very quiet. The salt-seller packs up early that day, and the next."
+     }
+    },
+    {
+     "text": "Let this one go",
+     "effects": {
+      "comprehension": 2,
+      "log": "Not every cheat is yours to catch. Somebody in the queue notices, and says so, loudly, and the salt-seller blusters and gives a handful over. The market can do it too. Good."
+     }
+    }
+   ],
+   "cooldown": 6,
+   "maxPerLife": 1
+  },
+  {
+   "id": "dc_hr_troupe_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "The first full moon, and the farmers' band comes down to the crossroads now, not to one yard: the little gong, the hourglass drum, the barrel drum, the big gong, and the whole village dancing behind. They stamp in a ring round the cairn and sing to the earth to stay quiet and kind for another year.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "The Band at the First Full Moon",
+   "choices": [
+    {
+     "text": "Stamp back, once, under the whole ring",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 2,
+      "log": "Once, from below, under two hundred feet. The ring stops dead. Then the little gong starts again, twice as fast, and the dancing goes on until dawn, wilder than anyone can remember."
+     }
+    },
+    {
+     "text": "Lie quiet and kind, as they ask",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "qi": 6,
+      "log": "They ask the earth to be still, and you are still. It is an odd thing to be begged for, and an easy thing to give. The year is a quiet one, as asked."
+     }
+    },
+    {
+     "text": "Warm the ground for the dancers' bare feet",
+     "effects": {
+      "health": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The frozen crossroads goes soft and warm under the dancing. Nobody's feet hurt that night. The old drummer says it is the best ground in the county for stamping, and means it as high praise."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 1
+  },
+  {
+   "id": "dc_hr_bobusang_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The peddlers follow the five-day markets round the province on foot: the pack-peddlers with cloth and ginseng and brass on their backs, the frame-peddlers with pots and salt and dried fish on wooden carrying frames. Their old headman stops at the market cairn and lays a coin on it, and asks the ground, out loud, for safe roads.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ]
+   },
+   "arc": "The Peddlers' Guild",
+   "choices": [
+    {
+     "text": "Give them safe roads",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "hr_guild_blessed",
+      "log": "No robbers on any road that leads to your market, all year. The peddlers notice before anyone else does. They notice everything. By the next season every peddler in the province stops at your cairn."
+     }
+    },
+    {
+     "text": "Ask what they carry besides goods",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_guild_blessed",
+      "log": "News. Letters. Marriages arranged between markets ten days apart. Medicine. Rumours of war. Songs. The peddlers are the roads walking. You decide, listening, that they are a kind of crossroads too, a moving one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bobusang_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} is a young frame-peddler who has decided the market cairn is lucky. Every fifth day, every market, {npc} stops and lays a pebble and asks for luck. It has been going on for years. It is going to go on, you begin to suspect, for decades.",
+   "npc": {
+    "role": "hr_peddler",
+    "spawn": {
+     "role": "friend",
+     "tag": "hr_peddler",
+     "ageAbs": 20,
+     "opinion": 15
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_bobusang_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Peddlers' Guild",
+   "choices": [
+    {
+     "text": "Answer every time, a little",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "hr_peddler",
+      "mem": {
+       "deed": "luck",
+       "w": 25,
+       "note": "always answered me at the market cairn"
+      },
+      "log": "A small luck every fifth day: a sale, a dry road, a lost knife found. Nothing that makes {npc} rich. Everything that makes {npc} keep walking. Years of it, very small, add up to a life."
+     }
+    },
+    {
+     "text": "Answer once, big, and see what happens",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "npcFlag": "hr_peddler",
+      "log": "A whole cartload of brassware, abandoned by a frightened merchant on the hill road, waiting for {npc}. {npc} is rich for a year, and then not, and is back at the cairn the next fifth day with a pebble. Big luck does not change a peddler. Small luck is what they live on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bobusang_3",
+   "cat": "life",
+   "weight": 16,
+   "once": true,
+   "text": "The peddlers have a guild now, with a headquarters in the market town, a seal, rules, a fund for funerals, and rods for punishing members who cheat. The county uses them to carry messages in a crisis. They are proud, and useful, and growing. Today their headmen are deciding that only guild members may sell in your market.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_bobusang_1"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Peddlers' Guild",
+   "choices": [
+    {
+     "text": "Let the rule stand. Order is good for a market",
+     "effects": {
+      "tally": {
+       "ph_metal": 1,
+       "legend": 1
+      },
+      "flag": "hr_guild_power",
+      "log": "The guild runs the market from that year on. It is honest, mostly, and orderly, and closed. The old woman with the medicine roots is turned away. You feel the market grow heavier and stiffer, like a field trodden flat. (Metal +1)"
+     }
+    },
+    {
+     "text": "Make the market ground refuse the rule",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "flag": "hr_guild_checked",
+      "log": "The guild's rods split in the rain. Their stalls lean. Every outsider who sets up on the edge of the market has a remarkable day. The headmen, who are not fools, take the rule back after a year and call it their own generosity."
+     }
+    },
+    {
+     "text": "Send the old headman a dream of the first coin on the cairn",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_guild_checked",
+      "log": "The old headman remembers walking these roads with nothing, asking the ground for luck. At the next meeting the old one stands up and says so. The rule fails by one voice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bobusang_4",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is old and bent under the carrying frame, and comes to the cairn for the last time with a pebble from every market in the province, a whole bagful, forty years of fifth days. {npc} pours them out on the cairn one by one, naming each market, and asks for nothing.",
+   "npc": {
+    "role": "hr_peddler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_bobusang_2"
+    ],
+    "minYearsAfter": 40,
+    "npcFlags": [
+     "hr_peddler"
+    ]
+   },
+   "arc": "The Peddlers' Guild",
+   "choices": [
+    {
+     "text": "Thank {him}, through the warm stones",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcPass": "old age, at home, the carrying frame by the door",
+      "mem": {
+       "deed": "thanked",
+       "w": 30,
+       "note": "thanked me at the end"
+      },
+      "log": "Every pebble is warm as {npc} lays it down. {npc} notices on the third, and goes very slowly through the rest. At the end {npc} bows to the cairn as to an old partner, and walks home, and does not walk the roads again."
+     }
+    },
+    {
+     "text": "Keep one pebble at your middle",
+     "effects": {
+      "comprehension": 3,
+      "npcPass": "old age, in a market inn",
+      "log": "One pebble from the river market sinks into the ground under the cairn and is not found again. It is the one {npc} named last. You keep it. It is a very small weight, and you are glad of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fever_1",
+   "cat": "danger",
+   "weight": 18,
+   "once": true,
+   "text": "A fever comes in with a load of cloth from the coast. It goes out again with every peddler, every buyer, every cart. In a week it is in eleven villages. A centre gathers things in from five roads; it sends them out again just as fast. This is one of them.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "arc": "The Market Fever",
+   "choices": [
+    {
+     "text": "Close the roads: make every one a mire",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "fear": 1
+      },
+      "flag": "hr_fever_closed",
+      "log": "All five roads go to deep mud overnight, in a dry month. Nobody can come and nobody can go. The market dies for a season. The fever stops at the edge of the town. Hungry is better than dead, the herb-seller says. The salt-sellers do not agree."
+     }
+    },
+    {
+     "text": "Let the market run, and hold the sick up",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 2
+      },
+      "health": -4,
+      "log": "You spend the whole season pushing warmth up into every sickbed in the town. Fewer die than anyone can explain. You are thin and cold by the end of it. (-4 health)"
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "There are too many beds. You hold up what you can and feel the rest go. It is the first time you understand that a centre cannot hold up everything, and that it is going to keep trying. (-10 health)"
+     }
+    },
+    {
+     "text": "Draw the herb-seller to the right root",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A root that the old herb-seller never noticed in twenty years is suddenly everywhere at the edge of the market road, pushing up through the dust. The herb-seller tries it. It works. The fever passes in a month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fever_2",
+   "cat": "life",
+   "weight": 14,
+   "once": true,
+   "text": "After the fever, the town burns the cloth that brought it, in a great smoky heap in the square, and then argues for a month about who should pay the cloth merchants. The cloth merchants want the town to pay. The town wants the coast to pay. The coast is a long way off.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_fever_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Market Fever",
+   "choices": [
+    {
+     "text": "Warm the ashes into good soil for the poorest field",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ph_wood": 1
+      },
+      "log": "The ash goes on a widow's field outside the town and the next year's cabbages are the size of drums. It does not settle the argument. It does feed somebody. (Wood +1)"
+     }
+    },
+    {
+     "text": "Let them argue; it is theirs to settle",
+     "effects": {
+      "comprehension": 3,
+      "log": "They argue for a whole year and settle in the end by splitting it three ways, which satisfies nobody, which is how you know it is fair. You did nothing. It took them a year. It would have taken you an afternoon. You begin to see why that is not the point."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_fever_3",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "Years later a new cloth ship comes up from the coast, and the town will not let it unload. The captain swears the crew is healthy. The town remembers. A centre has a long memory and a short temper about the same thing twice.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_hr_fever_2"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Market Fever",
+   "choices": [
+    {
+     "text": "Tell the town, in the ground, that the ship is clean",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The ground under the quay is warm and easy, and somehow the town feels it. They unload, nervously, and nobody falls sick. The market has its cloth again, and a long memory that has learned one exception."
+     }
+    },
+    {
+     "text": "Let them be careful",
+     "effects": {
+      "comprehension": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The ship waits a month at anchor while the town makes up its mind. Nobody falls sick. The captain is furious. The town feels safe. Both are right, which is the trouble with being a centre."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bandits_1",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "Bandits have found the crossroads. It is the best place in the county to rob anybody: five roads to come from, five roads to escape by, and every cart has to pass through the middle. Tonight they have a salt merchant's cart stopped right over you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     4
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "The Crossroads Bandits",
+   "choices": [
+    {
+     "text": "Throw the bandits off their feet",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the crossroads bandits"
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "legend": 2,
+       "fear": 1
+      },
+      "flag": "hr_bandits_routed",
+      "log": "The ground bucks under them like a startled horse. Clubs fly. The bandits scatter down four different roads and the salt merchant down the fifth. The crossroads is quiet before the dust settles."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "fear": 1
+      },
+      "log": "The ground bucks, and the cart goes over, and a bandit with a spear stabs at the earth in a panic and finds you. It is a small wound in a large body. They get away with half the salt. (-8 health)"
+     }
+    },
+    {
+     "text": "Close four roads and leave them only the road to the county jail",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_bandits_routed",
+      "log": "Four roads go soft as rice porridge under their feet. The fifth is firm and dry and leads, in a mile, straight to the guardhouse. They run down it in the dark. The guards cannot believe their luck."
+     }
+    },
+    {
+     "text": "Let the salt go and keep the merchant safe",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "charm": 2,
+      "log": "You hold the ground still under the merchant and let the bandits take what they came for. Nobody is hurt. Salt can be bought again. The merchant does not think so, loudly, all the way home."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bandits_2",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "The bandits' chief has noticed that the crossroads fights back. {npc} comes alone at midnight to the cairn, sits down, and talks to it like a rival: you cost me two good men and a winter's salt. What do you want? Nobody else talks to the ground. {npc} has guessed.",
+   "npc": {
+    "role": "hr_bandit_chief",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_bandit_chief",
+     "ageAbs": 35,
+     "opinion": -15
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_bandits_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_bandits_routed"
+    ]
+   },
+   "arc": "The Crossroads Bandits",
+   "choices": [
+    {
+     "text": "Make the cairn warm, and wait",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "hr_bandit_chief",
+      "mem": {
+       "deed": "heard",
+       "w": 15,
+       "note": "listened"
+      },
+      "log": "{npc} feels it, and goes very still. Then {npc} talks all night: a burned village, a debt, a magistrate. In the morning {npc} goes away up the hill road, and the robberies stop for a whole year. Nobody tells the village why."
+     }
+    },
+    {
+     "text": "Shake the cairn down on {npc}'s feet",
+     "effects": {
+      "tally": {
+       "fear": 2
+      },
+      "npcFlag": "hr_bandit_chief",
+      "log": "The stones come down. {npc} jumps clear, laughing, a little wildly, and says: so that is a no. The band moves to the next county. They are robbing somebody else now. That is not quite the same as stopping."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bandits_3",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "The old bandit chief has come back, grey, without a band, and taken a job as the crossroads guard. {npc} sleeps on duty sometimes, right over you, the way an old guard once did. The village has no idea. Some nights {npc} sits up and tells the cairn who is coming down which road, before they come.",
+   "npc": {
+    "role": "hr_bandit_chief"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_hr_bandits_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "hr_bandit_chief"
+    ]
+   },
+   "arc": "The Crossroads Bandits",
+   "choices": [
+    {
+     "text": "Keep the old guard company",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "npcPass": "old age, asleep at the crossroads",
+      "log": "Years of it. Nobody is robbed. When {npc} dies, asleep on the warm ground one autumn night, the village buries the old guard by the cairn and never learns whose bones they are honouring. You do not tell them. It is a good grave."
+     }
+    },
+    {
+     "text": "Let {npc} be a guard, and nothing more",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You give no sign. {npc} guards the crossroads well, the way only an old thief can, and teaches the young guards which bushes to watch. The county has never had such a safe road and does not know why."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_bandits_4",
+   "cat": "danger",
+   "weight": 8,
+   "once": false,
+   "text": "Robbers on the roads again, as there always are where roads meet. A new band this time, young and hungry, waiting in the ditch by the market road for the evening carts.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_bandits_1"
+    ]
+   },
+   "arc": "The Crossroads Bandits",
+   "choices": [
+    {
+     "text": "Turn the ditch to mud under them",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "the road robbers"
+     },
+     "ok": {
+      "strength": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The ditch fills with warm mud to the waist in a breath. The robbers flounder out, robbed of their dignity, and the carts go by laughing. The band breaks up that season."
+     },
+     "fail": {
+      "health": -5,
+      "log": "The mud comes too slowly and they are out and onto the road. A carter loses a purse and a tooth. You feel the purse more than the tooth, oddly. (-5 health)"
+     }
+    },
+    {
+     "text": "Warn the carters with a tremor",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The road shivers under the first ox, and the ox stops and will not go on, and the carters look about and see the shapes in the ditch. They go round by the river road. Nobody is robbed tonight."
+     }
+    },
+    {
+     "text": "Let the county guard deal with it",
+     "effects": {
+      "comprehension": 2,
+      "log": "You leave it. Some nights the guards are there and some nights not. A centre that rescues every cart becomes a cart-guard. You are learning, slowly and not happily, what not to carry."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 1
+  },
+  {
+   "id": "dc_hr_magistrate_1",
+   "cat": "npc",
+   "weight": 34,
+   "once": true,
+   "text": "The town is a county seat now, and the county has a yamen built over you: a gate, a courtyard, a hall with a tiled roof, and a desk. At the desk sits {npc}, the new magistrate, three months in office. Every decision {npc} makes, you feel: a tax, a sentence, a refusal, a pardon, each one set down on your back like a sack.",
+   "npc": {
+    "role": "hr_magistrate",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_magistrate",
+     "ageAbs": 38,
+     "opinion": 0
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     5
+    ]
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Bear it, and learn what each one weighs",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 2
+      },
+      "npcFlag": "hr_magistrate",
+      "flag": "hr_mag_met",
+      "log": "A flogging weighs more than a fine. A pardon weighs nearly nothing, and a wrong pardon weighs more than anything. A tax in a bad year is a millstone. You learn the scale of it. You will carry it for the rest of your life, in larger and larger sizes. (Weight +2)"
+     }
+    },
+    {
+     "text": "Shift under the hall, so {npc} feels it too",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "hr_magistrate",
+      "flag": "hr_mag_met",
+      "log": "The desk creaks. The floor tilts a hair. {npc} looks up from the papers and frowns at the floor for a long time, and the next sentence {npc} gives is lighter. You have discovered that a ruler can be made to feel the ground."
+     }
+    },
+    {
+     "text": "Lie still and see what kind of magistrate this is",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "hr_magistrate",
+      "flag": "hr_mag_met",
+      "log": "You give no sign. You watch. A ruler who does not know the ground is listening is a ruler you can know truly. In a month you know {npc} better than {npc}'s own family does."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_magistrate_2",
+   "cat": "npc",
+   "weight": 22,
+   "once": true,
+   "text": "A test, though {npc} does not know it is one. A rich landowner and a tenant farmer come to the yamen over the same paddy. The landowner has a deed, freshly written. The tenant has forty years of working it, and a grandfather who cleared it. A silver ingot has already changed hands, in a sleeve, in the corridor.",
+   "npc": {
+    "role": "hr_magistrate"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_hr_magistrate_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "hr_magistrate"
+    ]
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Send {npc} a dream of the paddy being cleared",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 2,
+       "weight": 1
+      },
+      "flag": "hr_magistrate_good",
+      "log": "That night {npc} dreams of a young farmer with an axe and a field of stumps, sweating, forty years ago. In the morning {npc} sends the silver back, rules for the tenant, and looks as if no sleep was had at all. (Weight +1)"
+     }
+    },
+    {
+     "text": "Let {npc} choose freely, and remember it",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "virtue": 1
+      },
+      "flag": "hr_magistrate_good",
+      "log": "{npc} rules for the tenant, and returns the silver, without any help from you. You feel the weight of it settle on your back and find it is light. An honest ruler is the lightest thing to carry. You did not know that."
+     },
+     "fail": {
+      "tally": {
+       "weight": 4
+      },
+      "flag": "hr_magistrate_greedy",
+      "log": "{npc} rules for the landowner and keeps the silver. The tenant walks out of the yamen gate past the place you lie, and the ruling sits on you like a cold stone all winter. (Weight +4)"
+     }
+    },
+    {
+     "text": "Make the forged deed's ink run in front of the court",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "fear": 1,
+       "weight": 1
+      },
+      "flag": "hr_magistrate_good",
+      "log": "The ink of the new deed runs down the paper in a warm damp morning like tears. Everybody in the court sees it. {npc} has no choice. The tenant keeps the paddy. {npc} is uneasy in that hall ever after, which is not a bad thing for a magistrate. (Weight +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_magistrate_3",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} has a new rice measure made for the county tax: the same size outside as the old one, a finger deeper inside. The county will pay a tenth more and never see it. It is a very clever measure, and every farmer who pours rice into it pours a little of themselves onto your back.",
+   "npc": {
+    "role": "hr_magistrate"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_hr_magistrate_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "hr_magistrate"
+    ]
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Crack the new measure on the first day",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ph_metal": 1,
+       "weight": -2
+      },
+      "log": "It splits along the false bottom the first time it is filled, in the yamen courtyard, in front of a queue of farmers. The old measure comes back out of the storehouse. {npc} blames the carpenter. Everybody knows. (Metal +1, Weight -2)"
+     }
+    },
+    {
+     "text": "Make {npc} carry a sack of tax rice to the granary personally",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "A clerk falls ill, and another, and on the third day {npc} ends up carrying sacks in the courtyard in an official robe, cursing. By evening {npc} knows exactly what a tenth more weighs. The measure quietly disappears."
+     }
+    },
+    {
+     "text": "Bear it, and wait",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "weight": 3
+      },
+      "flag": "hr_magistrate_greedy",
+      "log": "A tenth more, every autumn, on your back. You learn the exact weight of a small greed repeated a thousand times. It is heavier than a large one. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_magistrate_4",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "{npc}, the captain of the yamen guard, stands alone in the empty courtyard after midnight and asks the ground a question nobody has asked it before: whose county is this, really? The magistrate's? The king's? The farmers'? The captain has been thinking about it for a long time, standing guard on top of you.",
+   "npc": {
+    "role": "hr_captain",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_captain",
+     "ageAbs": 34,
+     "opinion": 5
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_magistrate_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Warm the stones under the captain's feet",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1
+      },
+      "npcFlag": "hr_captain",
+      "mem": {
+       "deed": "answered",
+       "w": 20,
+       "note": "warmed the yamen courtyard when I asked"
+      },
+      "log": "No answer, only warmth. {npc} stands in it a long time and then laughs quietly and says: the ground's, then. Of course. {npc} guards the yamen differently after that, as if guarding something under it."
+     }
+    },
+    {
+     "text": "Shake the gate, once: not yours to ask",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "npcFlag": "hr_captain",
+      "log": "The great gate bangs in the windless night. {npc} jumps, and bows to nothing, and goes back to the guardroom. A good soldier knows when a question has been refused. You are not sure you were right to refuse it."
+     }
+    },
+    {
+     "text": "Answer in a dream: whoever is standing on it",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "hr_captain",
+      "log": "In the dream {npc} stands on the yamen roof and sees the whole county, and every farmer in it standing on their own field. Whoever is standing on it. {npc} wakes puzzled, and is kinder to the farmers at the gate from then on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_magistrate_5",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A famine year. {npc} sits in the yamen at night with the county granary ledger and the relief orders from the capital and a list of villages, and has to choose which villages get rice first. Each name {npc} writes goes straight down onto your back. It is the heaviest night you have ever felt.",
+   "npc": {
+    "role": "hr_magistrate"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     5
+    ],
+    "after": [
+     "dc_hr_magistrate_2"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "hr_magistrate"
+    ]
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Carry it all yourself, without a sign",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "weight": 5,
+       "virtue": 1
+      },
+      "log": "You hold every name. {npc} writes until dawn and never knows that the ground under the desk was holding up the choosing. The relief goes out. You lie under the yamen for a month after, unable to move. (Weight +5)"
+     }
+    },
+    {
+     "text": "Let {npc} feel how heavy it is, and share it with the village heads",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -4,
+       "shared": 1
+      },
+      "flag": "hr_mag_shared",
+      "log": "The ledger gets heavier and heavier in {npc}'s hands until {npc} puts it down and sends for the village heads instead, all eleven, and they choose together through the night, arguing. They choose better than {npc} would have. You feel the weight spread out across the county like rain on a field. (Weight -4)"
+     }
+    },
+    {
+     "text": "Make the granary find a forgotten store",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "A clerk, sent to count the empty bins again, finds a sealed room nobody has opened in thirty years, full of old rice, dry and sound. Every village gets something. The choosing is still hard. It is less hard."
+     },
+     "fail": {
+      "tally": {
+       "weight": 3
+      },
+      "log": "The forgotten store is there, but the rats found it first. Nothing in it but husks. {npc} chooses alone after all, by candlelight, and you carry every name. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_magistrate_6",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc}'s term is over. The magistrate is going back to the capital with a cartload of books and less silver than anyone expected. The county is arguing about whether to raise a stone tablet at the yamen gate, carved with the magistrate's name and the words good government. Some want it. Some would rather throw stones at it.",
+   "npc": {
+    "role": "hr_magistrate"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_magistrate_5"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "hr_magistrate"
+    ]
+   },
+   "arc": "The New Magistrate",
+   "choices": [
+    {
+     "text": "Let the tablet stand, if the county wants it",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "weight": -3
+      },
+      "flag": "hr_good_stele",
+      "log": "The tablet goes up at the gate, and you take its foot firmly into the ground. When the magistrate's cart rolls past it, {npc} looks at it and does not quite smile. The weight of all those years lifts off your back as the cart goes, all at once, like a load set down. (Weight -3)"
+     }
+    },
+    {
+     "text": "Tilt the tablet, a little, so nobody forgets",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "It leans. However often they straighten it, it leans. In a hundred years it is a famous leaning tablet, and children ask why, and the old people say: because nobody is all good. That is true of everybody. You leave it leaning. (Weight -2)"
+     }
+    },
+    {
+     "text": "Let the cart go, and keep the years",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "weight": 1
+      },
+      "log": "The magistrate goes. The decisions do not. Every ruling of those years is still on your back, and you find you do not know how to put them down. Somebody new is already unpacking at the desk. (Weight +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_elders_1",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "Under the great zelkova at the edge of the square the village elders meet, as they have met for three hundred years: seven old people on straw mats with long pipes, deciding the things the magistrate never hears about. Today it is water: whose paddy gets the stream first in a dry spring. You know the right answer. You could make it happen tonight.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "flags": [
+     "hr_weight_on"
+    ]
+   },
+   "arc": "The Elders Under the Zelkova",
+   "choices": [
+    {
+     "text": "Give it to the elders, and let them decide",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -4,
+       "shared": 1
+      },
+      "flag": "hr_elders_trusted",
+      "log": "You do nothing. They argue for three days, smoke a great deal, and decide on a turn-by-turn order that is not quite what you would have done. It is theirs. You feel the water question go off your back and onto seven bent ones, which are used to it. (Weight -4)"
+     }
+    },
+    {
+     "text": "Decide it yourself, quietly, with the stream",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "weight": 2,
+       "ph_water": 1
+      },
+      "log": "The stream finds its own way, at night, to the right paddies in the right order. The elders arrive at the meeting to find it already settled and are relieved and a little hurt. You carry the water now. (Weight +2, Water +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_elders_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The elders decide badly. A dispute over a boundary stone, and they give it to the family with the most sons, as elders sometimes do. A widow loses a strip of field. You could undo it. You gave them the deciding.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_elders_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_elders_trusted"
+    ]
+   },
+   "arc": "The Elders Under the Zelkova",
+   "choices": [
+    {
+     "text": "Leave it decided",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "log": "It is wrong, and you leave it, and it is the hardest thing you have done under this village. Next year one of the elders, without knowing why, gives the widow a strip of his own. The village is lumpy and unfair and alive. (Weight -2)"
+     }
+    },
+    {
+     "text": "Move the boundary stone back in the night",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "weight": 3
+      },
+      "log": "The stone is back where it was by morning. The family with the sons accuses the widow. The elders accuse each other. Nobody trusts the stones now. You have taken the deciding back, and its weight with it. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_elders_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The elders have been deciding for years now, things you once would have done yourself: water, boundaries, the timing of the harvest, who marries whom across the stream. They are good at it. Better than they were. One of them sits down on the root of the zelkova one evening and says: it is as if somebody is listening.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_elders_1"
+    ],
+    "minYearsAfter": 15,
+    "flags": [
+     "hr_elders_trusted"
+    ]
+   },
+   "arc": "The Elders Under the Zelkova",
+   "choices": [
+    {
+     "text": "Warm the root, to say you are",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1,
+       "weight": -2
+      },
+      "log": "The root is warm. The old one keeps a hand on it a long time, and tells nobody, and is very slightly kinder in every decision after. The weight of all that deciding sits on the zelkova now, and the zelkova is very old and does not mind. (Weight -2)"
+     }
+    },
+    {
+     "text": "Stay cool: let them think they are alone",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -3
+      },
+      "log": "Nobody is listening, the old one decides, and goes on deciding well anyway. That is the point. You feel lighter than you have since the yamen was built. (Weight -3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_elders_4",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The zelkova is dying. Five hundred years old, hollow, struck by lightning twice, and this spring only one branch leafs. The elders sit under it anyway. They are talking about whether to cut it down and plant a new one, and where the meetings will be held for the hundred years it takes to grow.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     5,
+     6
+    ],
+    "after": [
+     "dc_hr_elders_3"
+    ],
+    "minYearsAfter": 10
+   },
+   "arc": "The Elders Under the Zelkova",
+   "choices": [
+    {
+     "text": "Pour your warmth into the old roots",
+     "effects": {
+      "health": -5,
+      "tally": {
+       "virtue": 2,
+       "ph_wood": 2
+      },
+      "log": "All spring and summer, warmth up into dead wood. In autumn three more branches have leaves. It will live another sixty years. It costs you more than you expected, and you would do it again. (Wood +2, -5 health)"
+     }
+    },
+    {
+     "text": "Let it go, and warm the seedling instead",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "ph_wood": 1
+      },
+      "log": "They plant a seedling beside it and the old tree comes down in the winter. The elders meet under the stump and a sapling, in the sun, grumbling. It will take a hundred years. You have a hundred years. (Wood +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_drought_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Earth dams water, and the earth is you. You have grown too strong, too heavy, too full, and the water of the valley has nowhere to go. The wells go dry one by one, from the yamen well outwards. The paddies crack. The rice stands brown in them. It is not a curse. It is only you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "flags": [
+     "hr_over_earth"
+    ]
+   },
+   "arc": "Earth Dams Water",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Lie still and feel every dry well",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "Every one. The village well, the temple well, the deep well at the inn. Every bucket that comes up empty. You do not look away. If this is what too much of you does, you mean to know its exact shape."
+     }
+    },
+    {
+     "text": "Loosen your hold on the deep water",
+     "effects": {
+      "health": -6,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You make yourself smaller, softer, as far down as you can reach. It hurts the way unclenching a cramped hand hurts. By autumn three wells have a little water in the bottom. It is not enough. It is a start. (-6 health)"
+     }
+    },
+    {
+     "text": "Send the people to the river with buckets",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The road to the river is firm and smooth all summer, for the first time anyone can remember. A line of people with buckets walks it every day from dawn. The rice is lost. The people are not."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_drought_2",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The drought year is over, but the people remember. The county shaman holds a rain rite at the river, with a dragon painted on a great sheet of paper hung from a pole, and a pig, and drums. The rite is to beg the dragon to give back the water. You are the dragon, in a way. Just not the one they painted.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_drought_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Earth Dams Water",
+   "choices": [
+    {
+     "text": "Give back the water: earth yields to water",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_water": 2,
+       "virtue": 1
+      },
+      "log": "You let go, deliberately, the way you never have, and the water you had been damming without meaning to runs on into the wells. Earth shrinks. Water swells. The rite is declared a great success. (Earth -2, Water +2)"
+     }
+    },
+    {
+     "text": "Watch the rite, and learn what they think a dragon is",
+     "effects": {
+      "comprehension": 3,
+      "log": "A dragon, they think, is something in the sky that has the rain and will not give it. They are half right. The painted dragon on the paper is blue. You are not offended. You are taking notes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_drought_3",
+   "cat": "insight",
+   "weight": 16,
+   "once": true,
+   "text": "A warning year. The wells are not dry, not yet, but they are lower than they were, and the old well-digger at the inn says the water tastes of clay. You can feel why. You are a little too much this year: too heavy, too warm, too full of yourself.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "Earth Dams Water",
+   "choices": [
+    {
+     "text": "Stop growing for a season",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_water": 1
+      },
+      "comprehension": 3,
+      "log": "You do not settle. You do not feed. You lie as light as you can, all season, and the wells come up a finger, and the water tastes of water again. (Earth -2, Water +1)"
+     }
+    },
+    {
+     "text": "Give the extra to the forges: earth bears metal",
+     "effects": {
+      "tally": {
+       "ph_earth": -2,
+       "ph_metal": 2
+      },
+      "log": "The smithies have a good year: iron ore turns up in a farmer's ditch, and the hill forge has fuel to spare. The wells come back. Somewhere, something metal grows a little sharper. (Earth -2, Metal +2)"
+     }
+    },
+    {
+     "text": "Ignore it. It is a good harvest",
+     "effects": {
+      "health": 4,
+      "tally": {
+       "ph_earth": 1
+      },
+      "log": "It is a very good harvest. The wells go a little lower. The old well-digger says nothing, because nobody asks. (Earth +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_drought_4",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "Years after the drought, the old well at the inn has water in it again, sweet and cold. The innkeeper's grandson lowers a bucket and drinks and says it is the best water in the county. It is. You let it through on purpose now.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_hr_drought_2"
+    ],
+    "minYearsAfter": 5
+   },
+   "arc": "Earth Dams Water",
+   "choices": [
+    {
+     "text": "Keep it sweet",
+     "effects": {
+      "tally": {
+       "virtue": 1,
+       "ph_water": 1
+      },
+      "log": "Every bucket, sweet and cold. You keep a channel open through yourself all the time now, a little looseness at your middle where the water goes by. It is a small discomfort. You have stopped minding it. (Water +1)"
+     }
+    },
+    {
+     "text": "Remember why it was dry",
+     "effects": {
+      "comprehension": 4,
+      "log": "You remember. You will need to remember this later, when you are a great deal bigger and a great deal more full of yourself. Earth dams water. You are earth."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_coldsummer_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Water quenches fire. The summer does not come. It rains in the fifth month and the sixth and the seventh, cold, steady, endless. Hearths will not stay lit. The rice stays green in the paddies and never fills. The children are coughing, and there is no dry wood anywhere.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "flags": [
+     "hr_over_water"
+    ]
+   },
+   "arc": "Water Quenches Fire",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Hold what warmth you have under the houses",
+     "effects": {
+      "health": -6,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "You give your heat up through every floor in the village, all summer, the way you once warmed a single jar. The children stop coughing. The rice still does not ripen. You are cold to your middle by autumn. (-6 health)"
+     }
+    },
+    {
+     "text": "Drink the rain as fast as it falls",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "You take the water down as fast as it comes, and the paddies drain, and the floors are dry. It is not enough to make the summer come. It is enough that the houses do not rot. Some rice is saved."
+     }
+    },
+    {
+     "text": "Show the farmers which slopes still get the sun",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "One south slope, one sheltered terrace, one corner of a field by the warm wall of the yamen: the ground there is drier and the rice does fill, a little. The farmers find it by the colour. It is a hungry winter. Not a starving one."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_coldsummer_2",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The winter after the cold summer. The granaries are half empty. The magistrate's relief rice is late. In the market the price of a peck has tripled, and the peddlers are not coming, because nobody has anything to buy with.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_coldsummer_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Water Quenches Fire",
+   "choices": [
+    {
+     "text": "Warm the seed-rice so it keeps through the spring",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ph_fire": 1
+      },
+      "log": "Whatever else gets eaten, the seed-rice in every house stays dry and sound and warm. In the spring there is something to plant. A hungry year does not become two. (Fire +1)"
+     }
+    },
+    {
+     "text": "Bring the summer back gently next year",
+     "effects": {
+      "tally": {
+       "ph_water": -2,
+       "ph_fire": 2
+      },
+      "comprehension": 2,
+      "log": "In the eighteen days before summer you hold the hand-over carefully, and the next summer comes in hot and early and whole. The rice ripens a week ahead. (Water -2, Fire +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_coldsummer_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A warning year: too much rain in spring, and it does not want to stop. The river is high and grey and the frogs are loud in the paddies all day. Water is swelling. Fire, the summer, is waiting at the door for its turn and cannot get in.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "Water Quenches Fire",
+   "choices": [
+    {
+     "text": "Turn the rain toward the woods: water feeds wood",
+     "effects": {
+      "tally": {
+       "ph_water": -2,
+       "ph_wood": 2
+      },
+      "log": "The rain goes into the hills and the forests drink it, and the bamboo grows like a song. The paddies drain. Summer gets in the door on time. (Water -2, Wood +2)"
+     }
+    },
+    {
+     "text": "Let it rain",
+     "effects": {
+      "tally": {
+       "ph_water": 1
+      },
+      "qi": 6,
+      "log": "It rains, and you drink, and grow a little softer. Summer comes late and thin. Nothing bad happens this year. (Water +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hills_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Metal cuts wood. The forge town up the river has grown too hungry: swords for the garrison, ploughshares, iron pots, nails for the yamen roof. It needs charcoal, and charcoal needs trees, and the hills behind the town are bare to the ridge. In the summer rains the slopes come down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "flags": [
+     "hr_over_metal"
+    ]
+   },
+   "arc": "Metal Cuts Wood",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Hold the bare slopes with your own strength",
+     "effects": {
+      "strength": 3,
+      "health": -5,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You grip the hillside from beneath, the way roots should have. Two slopes stay. One comes down on an empty field. Nobody dies. You lie under the hills all summer with your grip locked, aching. (-5 health)"
+     }
+    },
+    {
+     "text": "Warn the valley farms with a tremor before each slide",
+     "effects": {
+      "luck": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "Every time a slope is about to go, the ground under the farms below it trembles first, a long low shiver. The farmers learn to run. The houses go. The people do not."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_hills_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The forge town has sent a man up into the bare hills with a sack of pine seedlings. One man, one sack. The slope is a mile wide. It would take a lifetime.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_hills_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Metal Cuts Wood",
+   "choices": [
+    {
+     "text": "Warm every seedling the man plants",
+     "effects": {
+      "tally": {
+       "ph_wood": 2,
+       "virtue": 1
+      },
+      "log": "Every one takes. The man comes back with another sack, and then the town sends three more men, because it is working. In a few years the slope is a young forest. (Wood +2)"
+     }
+    },
+    {
+     "text": "Let the forges cool a little, to give the trees time",
+     "effects": {
+      "tally": {
+       "ph_metal": -2,
+       "ph_water": 1
+      },
+      "comprehension": 2,
+      "log": "Ore is harder to find for a few years, the seams thinner, the iron poorer. The forges slow. The hills breathe. Metal gathers water: the springs on the bare slopes start up again. (Metal -2, Water +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hills_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A warning year: the garrison has doubled, and every forge in the county is working day and night. The smoke hangs over the river. Somebody is preparing for a war that has not been announced. The hills are thinning.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "Metal Cuts Wood",
+   "choices": [
+    {
+     "text": "Let the metal cool into water",
+     "effects": {
+      "tally": {
+       "ph_metal": -2,
+       "ph_water": 2
+      },
+      "log": "A wet autumn, and every blade in the garrison rusts at the edge. The quartermaster is furious. The hills keep their trees another year. (Metal -2, Water +2)"
+     }
+    },
+    {
+     "text": "Let them arm. A county must defend itself",
+     "effects": {
+      "tally": {
+       "ph_metal": 2,
+       "fear": 1
+      },
+      "strength": 2,
+      "log": "The forges roar all winter. The garrison is the best armed in the province. The hills behind the forge town are bare to the ridge. (Metal +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_landslide_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Wood breaks earth, and earth is you. A spring too strong for too long, and the roots have got into everything: the terrace walls, the paddy dykes, the foundations of the yamen. In the summer rains the terraces split along the roots and whole fields slide downhill, rice and all. You feel it as a tearing at your edges.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "flags": [
+     "hr_over_wood"
+    ]
+   },
+   "arc": "Wood Breaks Earth",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Hold the terraces together from beneath",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "strength": 3,
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "log": "You pull the cracked walls back together like the edges of a wound and hold them all summer. Two fields are lost. Thirty are saved. The farmers say the terraces were built by their great-grandfathers, and are proud of them."
+     },
+     "fail": {
+      "health": -8,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You hold, and the roots are stronger. Field after field goes downhill. You are torn at the edges for a year, like a coat at the seams. (-8 health)"
+     }
+    },
+    {
+     "text": "Let the fields go and keep the houses",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You put everything you have under the village and nothing under the fields. Five fields slide. Not one house cracks. The farmers rebuild terraces all winter. They are alive to do it."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_landslide_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "After the slides, the farmers rebuild the terraces with stone, and the magistrate sends woodcutters into the thickets along the dykes. A whole hillside of young trees is coming down.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_landslide_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Wood Breaks Earth",
+   "choices": [
+    {
+     "text": "Let the woodcutters cut: wood feeds fire",
+     "effects": {
+      "tally": {
+       "ph_wood": -2,
+       "ph_fire": 2
+      },
+      "log": "The wood goes to the hearths and the kilns, and the winter is warm, and the pottery of the county has a famous year. The terraces hold. (Wood -2, Fire +2)"
+     }
+    },
+    {
+     "text": "Ask the roots to go down, not sideways",
+     "effects": {
+      "tally": {
+       "ph_wood": -1,
+       "ph_earth": 1
+      },
+      "comprehension": 3,
+      "log": "It takes years of patience, warm below and cool above, coaxing. The roots learn. The terraces hold without the hillside being stripped. You are proud of this one. (Wood -1, Earth +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_landslide_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A warning year: the bamboo is coming up through the floor of the yamen storehouse, and the willows along the stream have doubled. Spring will not hand over to summer. Wood is pushing everything.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "Wood Breaks Earth",
+   "choices": [
+    {
+     "text": "Feed the push into the summer",
+     "effects": {
+      "tally": {
+       "ph_wood": -2,
+       "ph_fire": 2
+      },
+      "log": "Wood feeds fire. The summer arrives in a rush, hot and early, and the bamboo browns at the tips and stops. (Wood -2, Fire +2)"
+     }
+    },
+    {
+     "text": "Hold the line under the storehouse",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "ph_wood": -1
+      },
+      "log": "The bamboo stops at the floor. It goes sideways along under the boards, sulking, all summer. Nothing is broken. Nothing is settled either. (Wood -1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_armoury_1",
+   "cat": "life",
+   "weight": 40,
+   "once": false,
+   "text": "Fire melts metal. A summer of fires: a dry wind, a careless lamp, and the county armoury goes up in a night, every spear and helmet in it running red and soft. The granary beside it catches. The harvest goes up with it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "flags": [
+     "hr_over_fire"
+    ]
+   },
+   "arc": "Fire Melts Metal",
+   "trigger": "hr_calamity",
+   "choices": [
+    {
+     "text": "Open the ground under the granary, to save the grain",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The granary floor sags and splits, and half the rice pours down into a cool cavern in the clay, out of the fire. The roof falls in on empty bins. In the morning they dig the rice out, smoky and sound."
+     }
+    },
+    {
+     "text": "Smother the fire with dust",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "strength": 2,
+      "log": "A wall of yellow dust comes up off the whole square and down on the fire like a blanket. The armoury is lost. The granary is singed. The town is saved."
+     },
+     "fail": {
+      "health": -7,
+      "tally": {
+       "legend": 1
+      },
+      "log": "The dust comes up and the wind takes it the wrong way. The granary burns. You lie under the ash all night, feeling every coal. (-7 health)"
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 2
+  },
+  {
+   "id": "dc_hr_armoury_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The smiths are trying to recast the spears from the melted lumps of the old armoury. It is not going well. The iron is burnt and brittle, and the garrison commander is shouting.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     6
+    ],
+    "after": [
+     "dc_hr_armoury_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "Fire Melts Metal",
+   "choices": [
+    {
+     "text": "Cool the forge-water: let metal come back",
+     "effects": {
+      "tally": {
+       "ph_fire": -2,
+       "ph_metal": 2
+      },
+      "log": "The quench is cold and clean every time, and the spears come out true. The commander stops shouting. The summer finally cools. (Fire -2, Metal +2)"
+     }
+    },
+    {
+     "text": "Let the spears stay broken",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The garrison has no spears for a year. Nothing happens. The commander discovers that a county can go a year without spears. You file it away."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_armoury_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "A warning year: a hot dry summer, and three fires already in the market town, small ones. The thatch is like tinder. Fire is waxing. Metal, autumn, is far away.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "flags": [
+     "hr_wheel"
+    ]
+   },
+   "arc": "Fire Melts Metal",
+   "choices": [
+    {
+     "text": "Draw the heat down into yourself: fire makes earth",
+     "effects": {
+      "tally": {
+       "ph_fire": -2,
+       "ph_earth": 1
+      },
+      "qi": 6,
+      "log": "You drink the heat out of the ground of the town all summer. The fires stop. You are very warm, and a little bigger. (Fire -2, Earth +1)"
+     }
+    },
+    {
+     "text": "Let the summer burn",
+     "effects": {
+      "tally": {
+       "ph_fire": 1
+      },
+      "luck": 2,
+      "log": "A hot, golden summer and a great melon harvest. Two more small fires. The town is careful with its lamps. (Fire +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_azure_1",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "Weather over the ridge, and not the ordinary kind. A young dragon of the east has grown up in the pool of the next valley, green-blue, proud, all rain and spring, and it has felt you: something large and old and warm lying under a crossroads where it thinks a dragon ought not to be. It sends a storm over the ridge, as a challenge.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_crossroads_1"
+    ]
+   },
+   "arc": "The Dragon of the Next Valley",
+   "choices": [
+    {
+     "text": "Answer with stillness",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_azure_met",
+      "log": "You lie still under the storm and let it rain. Earth does not move. The young one in the next valley is baffled, and then furious, and sends a bigger storm. You drink it. This could go on a long time."
+     }
+    },
+    {
+     "text": "Answer with a tremor along the ridge",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_azure_met",
+      "log": "The ridge shrugs. Stones roll down into the next valley's pool. There is a long silence over there. Then thunder, loud and delighted. It wanted an answer. It has one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_azure_2",
+   "cat": "danger",
+   "weight": 20,
+   "once": true,
+   "text": "The young dragon comes over the ridge itself on a night of wind, a long shape in the rain over your valley, and dives at the crossroads as if the earth were water. It wants a real fight. If it wins, the whole valley will see it rise. If it loses, it will go back to its pool and sulk for a hundred years.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_azure_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "arc": "The Dragon of the Next Valley",
+   "choices": [
+    {
+     "text": "Fight it, earth against rain",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "the young dragon of the east"
+     },
+     "ok": {
+      "strength": 4,
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_azure_beaten",
+      "log": "It hits the ground and the ground does not give, and it hits again, and you hold, and hold, until it hangs in the rain over the crossroads, exhausted, and goes back over the ridge. It will be a long time before it rises. You are stronger than it. You are not sure you are glad."
+     },
+     "fail": {
+      "health": -10,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_azure_rose",
+      "log": "It is quicker than you, and younger, and it finds the soft places in the wet ground. It tears up out of the crossroads in a column of rain and goes up into the clouds, and the whole valley sees it rise. You lie cracked and soaked. You lost. Something in you does not mind. (-10 health)"
+     }
+    },
+    {
+     "text": "Let it win",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_azure_rose",
+      "log": "You give a little, then a little more, carefully, so it will not know. It drives down into the crossroads and up out of it in a pillar of water and light, and goes up into the sky, and the whole valley is out of doors in the rain, pointing. It rose. That is all it needed. You stay where you are, which is all you needed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_azure_3",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The village has named the crossroads after that night: the Place Where the Dragon Rose. There is a stone with the words cut in it. They are talking about the dragon from the east, the one they saw. Nobody mentions anything under the ground. Nobody ever saw that.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     3,
+     5
+    ],
+    "after": [
+     "dc_hr_azure_2"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "hr_azure_rose"
+    ],
+    "notFlags": [
+     "hr_cairn_named"
+    ]
+   },
+   "arc": "The Dragon of the Next Valley",
+   "choices": [
+    {
+     "text": "Let the stone say what it says",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 3,
+      "log": "The stone says a dragon rose here, and a dragon did. It just was not you. A ruler who needs to be the one in every story is not much of a ruler. You lie under the stone, content, and it is a very good stone."
+     }
+    },
+    {
+     "text": "Warm the stone, so they wonder",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "charm": 2,
+      "log": "The stone is warm in winter, all through. The village decides the dragon left something of itself behind. Close enough."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_azure_4",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "Years later, in a summer of drought in the next valley, rain comes over the ridge from the east. Not much, and only on your fields, and exactly enough. It comes every dry summer after that. Somewhere over the ridge, someone remembers a fight.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     6
+    ],
+    "after": [
+     "dc_hr_azure_2"
+    ],
+    "minYearsAfter": 15,
+    "anyFlags": [
+     "hr_azure_rose",
+     "hr_azure_beaten"
+    ]
+   },
+   "arc": "The Dragon of the Next Valley",
+   "choices": [
+    {
+     "text": "Accept the rain with thanks",
+     "effects": {
+      "tally": {
+       "ph_water": 1,
+       "virtue": 1
+      },
+      "log": "It soaks down to you, and you feel in it the young dragon, older now, sending what it can. That fight was the best thing you ever gave away. (Water +1)"
+     }
+    },
+    {
+     "text": "Send warmth back up the ridge",
+     "effects": {
+      "tally": {
+       "ph_wood": 1
+      },
+      "charm": 2,
+      "log": "The east slope of the ridge comes up in early flowers that year. In the clouds, a pleased rumble. Two dragons who never met again, being polite to each other across a ridge, for centuries. (Wood +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_1",
+   "cat": "life",
+   "weight": 100,
+   "once": true,
+   "text": "You have gone a long way under the land, a little every year, from county to county, toward the low ground east of a moon-shaped fortress where a young king lives. The ground there is marsh: reeds, herons, black water. Now there are surveyors in it with cords and stakes, and a yellow banner on a pole, and the king's men are saying the word palace.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ]
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Lie under the marsh and wait",
+     "effects": {
+      "comprehension": 3,
+      "qi": 10,
+      "flag": "hr_palace_seen",
+      "log": "The cords go across the reeds in straight lines, right over you, and meet in a square, and the square has a centre, and the centre is where you lie. Of course it is. You wait to see what they build."
+     }
+    },
+    {
+     "text": "Firm the marsh under the stakes",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "legend": 1
+      },
+      "flag": "hr_palace_seen",
+      "log": "The surveyors find that the marsh, which should swallow a stake to the head, holds every one firm. The chief surveyor reports to the king that the ground is better than it looks. The chief surveyor has no idea."
+     }
+    },
+    {
+     "text": "Make the marsh hard to build on",
+     "effects": {
+      "tally": {
+       "fear": 1
+      },
+      "flag": "hr_palace_seen",
+      "log": "The stakes sink. The cords go slack. The surveyors wade about in black water for a month, swearing. The king, who is young and stubborn, sends more surveyors. You are beginning to suspect there will be a palace anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_2",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "The foundation blocks come down the river on rafts: cut stone, each the size of a farmhouse, dragged on rollers through the drained marsh by hundreds of labourers singing to keep time. They are setting them on you, one by one. Every block is a weight you have never carried before. The palace is going to be very heavy.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_1"
+    ]
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Take each block as it comes",
+     "effects": {
+      "strength": 4,
+      "tally": {
+       "weight": 3
+      },
+      "log": "One, and then another, and then forty. By the end of the season you lie under a stone floor the size of a village, and you can feel every block, and it is the heaviest thing you have ever held, and you are holding it. (Weight +3)"
+     }
+    },
+    {
+     "text": "Ease the labourers' rollers",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 2
+      },
+      "log": "The ground under the rollers is smooth and firm and slightly downhill, wherever they go. Nobody is crushed that season, which the overseer says has never happened on a royal work. The labourers sing better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_3",
+   "cat": "life",
+   "weight": 26,
+   "once": true,
+   "text": "Dawn, and the foundations are laid, and the king himself has come down to see. And you rise. You do not mean to, exactly. It is the first time anyone has ever built a whole kingdom's centre on you, and you come up out of the stones the way a breath comes up out of a sleeper.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_2"
+    ]
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Rise fully, into the light, and let them see you",
+     "effects": {
+      "tally": {
+       "legend": 5,
+       "hunted": 2
+      },
+      "flag": "hr_palace_risen",
+      "log": "Up out of the marsh and the stones, gold, enormous, coiling into the mist above the half-built palace. The labourers fall flat. The surveyors drop their cords. The king stands. For a long moment the young king and the yellow dragon look at each other. Then you sink back down, and the stones close over you, and nothing will ever be the same."
+     }
+    },
+    {
+     "text": "Show only a gold shape in the mist",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_palace_risen",
+      "log": "A long shape of gold light in the mist over the foundations, there and gone. Half the workers saw a dragon. Half saw sunrise. The king saw a dragon. That is the half that matters."
+     }
+    },
+    {
+     "text": "Stay down, and let the earth tremble once",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_palace_risen",
+      "log": "A single deep tremor, and the reeds all bending one way, and the foundation stones humming. Nobody saw anything. Everybody felt something. The king asks the court astrologers, and the astrologers, who are not fools, say a yellow dragon has appeared."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_4",
+   "cat": "life",
+   "weight": 22,
+   "once": true,
+   "text": "The king will not build a palace on a dragon. The work stops. Then it starts again, differently: the plans for a throne hall become plans for a golden hall; the plans for the king's bedchamber become a lecture hall for monks. The king has decided it will be a temple, and it will be named for you: the Temple of the Yellow Dragon.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_3"
+    ]
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Accept the name",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_temple_named",
+      "log": "The Temple of the Yellow Dragon. It is the first time you have had a name that was not a place. You lie under it and try it on, the way a child tries on a new jacket. It is big. You will grow into it."
+     }
+    },
+    {
+     "text": "Wonder why a king would give up a palace",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_temple_named",
+      "log": "Fear, partly. Faith, partly. And partly a young king who knows that a temple where a dragon rose will be worth more to the kingdom than a palace ever could. Kings are not simple. You begin to learn them."
+     }
+    },
+    {
+     "text": "Feel the weight change as the plans change",
+     "effects": {
+      "qi": 10,
+      "tally": {
+       "weight": -2
+      },
+      "flag": "hr_temple_named",
+      "log": "A palace is heavy with ambition. A temple is heavy with prayer. Prayer is lighter. Not much lighter. You notice the difference. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_5",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "It takes them a generation to build it: the golden hall, the lecture hall, the gate, the covered walks, the monks' quarters, the bell pavilion, the wall. Monks come. Chanting begins at dawn every day over your head and goes on until dusk. You have never been prayed on before.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_4"
+    ],
+    "minYearsAfter": 20
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Listen to the chanting",
+     "effects": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "You do not understand a word. You understand the shape of it: the same words, over and over, thousands of times, trying to hold something up by saying it. You know about holding things up. You lie under it and feel, for the first time, that you are not the only one."
+     }
+    },
+    {
+     "text": "Keep the temple ground firm and dry",
+     "effects": {
+      "strength": 3,
+      "tally": {
+       "virtue": 1,
+       "ph_earth": 1
+      },
+      "log": "The temple on the marsh never once floods, never once cracks, never once sinks a finger. The master builders say it is the best foundation in the kingdom. (Earth +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_palace_6",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "The royal chroniclers write it down: in such a year, in the second month, a yellow dragon appeared at the site of the new palace east of the moon fortress, and the king made it a temple. It is in the annals. For once, the chroniclers are right.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_5"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Palace on the Marsh",
+   "choices": [
+    {
+     "text": "Be pleased to be recorded truly",
+     "effects": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 2,
+      "log": "You have heard what the annals say about things. Comets that were lamps. Rains that were sorcerers. This time they wrote what happened. You find you are absurdly pleased, the way a farmer is pleased to be written in the census with the right number of oxen."
+     }
+    },
+    {
+     "text": "Worry about what else they will write",
+     "effects": {
+      "comprehension": 3,
+      "log": "If a dragon appearing goes in the annals, then a dragon appearing is useful. Somebody will notice that. Somebody, some day, will need a dragon to appear, and you will not have appeared, and they will write it anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangyuk_1",
+   "cat": "life",
+   "weight": 24,
+   "once": true,
+   "text": "A ship has drifted ashore on the south coast with nobody aboard: only a cargo of yellow iron and gold, three little clay models of holy figures, and a letter. The letter says a king of a far western land gathered this metal to cast great images and failed, and set it adrift to find a land where the casting would succeed. Every land it reached failed. The governor of the coast has sent it all to your temple.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_4"
+    ]
+   },
+   "arc": "The Ship of Gold and Iron",
+   "choices": [
+    {
+     "text": "Feel the metal as it comes into the temple",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_jangyuk_seen",
+      "log": "Gold and iron from the other side of the world, carried by a sea that did not care. It has been tried and failed over so many times it feels tired. It comes to rest over you like a traveller sitting down at last."
+     }
+    },
+    {
+     "text": "Make the temple ready to receive it",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "ph_metal": 2
+      },
+      "flag": "hr_jangyuk_seen",
+      "log": "Earth bears metal. You draw yourself up under the casting yard of the temple, firm and dry and warm. If anywhere in the world can cast this, it is going to be here. (Metal +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangyuk_2",
+   "cat": "life",
+   "weight": 20,
+   "once": true,
+   "text": "The casting. A pit in the temple yard, a clay mould the height of three men, furnaces going for a week. The metal is poured, glowing. In the far western land it failed. In every land since, it failed. The founders stand round the pit without breathing.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_jangyuk_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Ship of Gold and Iron",
+   "choices": [
+    {
+     "text": "Hold the mould steady through the pour",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "strength": 3,
+      "flag": "hr_statue_cast",
+      "log": "The ground does not shift a hair while the metal goes in. It cools. They break the mould. A great golden figure stands in the pit, whole, perfect, sixteen feet tall. The founders weep. You feel the metal settle at last, as if it had come home."
+     },
+     "fail": {
+      "health": -6,
+      "tally": {
+       "legend": 2
+      },
+      "flag": "hr_statue_cast",
+      "log": "A crack in the mould, a hiss of metal into the clay. You hold the rest. When they break it, the figure is whole except one hand, which they recast in the spring. It is still the first success anywhere in the world. (-6 health)"
+     }
+    },
+    {
+     "text": "Warm the mould from below so it cools evenly",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "legend": 2,
+       "ph_fire": 1
+      },
+      "flag": "hr_statue_cast",
+      "log": "Slowly, slowly, for a month. It is the patience the far western founders did not have. When the mould is broken the figure is flawless, and the gold has a warmth to it that nobody can explain. (Fire +1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangyuk_3",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The king who named your temple dies. That night, before anyone outside the palace knows, the great golden statue in your temple sheds tears: two lines of wet down its gilded face, to the floor. The monks find them at the dawn chant. They are terrified. They do not know it is because you wept first, under the floor, and the statue is standing on you.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_jangyuk_2"
+    ],
+    "minYearsAfter": 25,
+    "flags": [
+     "hr_statue_cast"
+    ]
+   },
+   "arc": "The Ship of Gold and Iron",
+   "choices": [
+    {
+     "text": "Let them see it, and wonder",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "fear": 1
+      },
+      "flag": "hr_statue_wept",
+      "log": "By noon the whole capital knows the statue wept, and by evening it knows why. From that day on, when the great statue weeps, the kingdom holds its breath. You did not mean to make an omen. You were only sad."
+     }
+    },
+    {
+     "text": "Stop weeping, so the statue stops",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_statue_wept",
+      "log": "You go still and dry, with difficulty. The tears on the statue's face are drying by noon. The monks argue for a month about whether they saw it. They did. They will see it again. You cannot always stop."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_jangyuk_4",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "The old abbot, {npc}, has worked it out. {npc} sits alone in the golden hall at night in front of the statue, and then gets down off the cushion and lies flat on the floor, ear to the stone, and says: it is not the statue, is it. It is you. Tell me what is coming next time, before you weep, so I can warn the king.",
+   "npc": {
+    "role": "hr_abbot",
+    "spawn": {
+     "role": "friend",
+     "tag": "hr_abbot",
+     "ageAbs": 70,
+     "opinion": 20
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_jangyuk_3"
+    ]
+   },
+   "arc": "The Ship of Gold and Iron",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Promise to tell",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "npcFlag": "hr_abbot",
+      "flag": "hr_abbot_warned",
+      "mem": {
+       "deed": "promised",
+       "w": 25,
+       "note": "promised to warn me"
+      },
+      "log": "\"Yes,\" you say, the floor says, quietly. {npc} lies there a long time with eyes shut, and then gets up, and bows, and goes to bed. The next time grief is coming, the abbot knows a season early."
+     }
+    },
+    {
+     "text": "Refuse: grief is not a warning service",
+     "effects": {
+      "comprehension": 3,
+      "npcFlag": "hr_abbot",
+      "log": "\"I weep when I am sad,\" you say. \"Not to be useful.\" {npc} sits up, and thinks about that, and laughs softly, and bows to the floor as to an equal. \"Then I will just have to be sad with you,\" {npc} says."
+     }
+    },
+    {
+     "text": "Say nothing, and stay warm under {npc}",
+     "effects": {
+      "charm": 3,
+      "npcFlag": "hr_abbot",
+      "log": "No word. Only warmth, coming up through the cold stone of the golden hall into an old body lying on it. {npc} falls asleep there, and is found at dawn by the novices, and refuses to explain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_solgeo_1",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "A painter has come to your temple: {npc}, a farmer's child from the hills who taught themself to draw by scratching trees on rocks with a stick. {npc} is painting an old pine on the wall of the golden hall, and has been at it for a month, and it is the most alive thing you have ever seen on a wall.",
+   "npc": {
+    "role": "hr_painter",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_painter",
+     "ageAbs": 30,
+     "opinion": 10
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_4"
+    ]
+   },
+   "arc": "The Painted Pine",
+   "choices": [
+    {
+     "text": "Warm the wall so the paint dries true",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "npcFlag": "hr_painter",
+      "mem": {
+       "deed": "warmed",
+       "w": 15,
+       "note": "dried my paint on the temple wall like sunlight"
+      },
+      "log": "The wall drinks the paint evenly, never too fast, never cracking. {npc} notices on the third day and stops, brush in the air, and looks at the wall, and then goes on painting faster, as if afraid it might change its mind."
+     }
+    },
+    {
+     "text": "Watch how it is done",
+     "effects": {
+      "comprehension": 4,
+      "npcFlag": "hr_painter",
+      "log": "Every needle is one stroke. Every crack in the bark is the side of a brush dragged once. {npc} paints the way you hold the ground: no stroke that is not needed, and every stroke holding the next one up."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_solgeo_2",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "The pine is finished, and the birds believe it. Sparrows, crows, a pair of magpies: they fly at the wall of the golden hall to land on the branches and hit the plaster and fall, stunned, onto the stone walk. The monks pick them up all day. The whole capital comes to see.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_solgeo_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Painted Pine",
+   "choices": [
+    {
+     "text": "Warn the birds through the wall",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "flag": "hr_pine_told",
+      "log": "The wall hums when a bird comes near, a low warm hum that a bird can feel and a monk cannot. The birds turn aside at the last moment, puzzled, and land on the roof instead, and stare at the pine. Nobody is hurt. The crowds are a little disappointed."
+     }
+    },
+    {
+     "text": "Let them believe it",
+     "effects": {
+      "tally": {
+       "legend": 3
+      },
+      "flag": "hr_pine_believed",
+      "mark": "hr_pine_wall",
+      "log": "They believe it, and fall, and the monks pick them up, and most of them fly away dazed. The painter becomes the most famous painter in the kingdom. You are not sure it is right. It is certainly true: the world believed a picture of itself."
+     }
+    },
+    {
+     "text": "Soften the stone walk under the wall",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1,
+       "legend": 1
+      },
+      "flag": "hr_pine_believed",
+      "log": "The flagstones under the painted pine are always warm and slightly soft, like moss. The birds fall and get up and shake themselves and fly. Some come back to try again. A pine, they seem to think, is worth a bump."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_solgeo_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} is old and comes to sit in front of the pine every evening. The paint has faded a little. The birds still come, fewer. {npc} has started talking to the wall, the way the old do, and tonight says: I always thought the wall helped me. Was it you?",
+   "npc": {
+    "role": "hr_painter"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_solgeo_2"
+    ],
+    "minYearsAfter": 35,
+    "npcFlags": [
+     "hr_painter"
+    ]
+   },
+   "arc": "The Painted Pine",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Answer: the pine was all yours",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2
+      },
+      "npcPass": "old age, in front of the painted pine",
+      "mem": {
+       "deed": "praised",
+       "w": 30,
+       "note": "said the pine was all mine"
+      },
+      "log": "\"All yours,\" you say, from the floor. {npc} is very quiet. Then {npc} says thank you, to the wall or the floor or the pine, and goes to bed, and in the winter does not wake. The monks find a last little sketch of a sparrow by the bed."
+     }
+    },
+    {
+     "text": "Answer: it was both of us",
+     "effects": {
+      "comprehension": 3,
+      "npcPass": "old age, in the temple",
+      "log": "\"Both of us,\" you say. {npc} laughs, delighted, a farmer's child who painted with a dragon and was right to suspect it. The old painter dies that winter, smiling, people say."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_solgeo_4",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "Some years after the painter is dead, the pine has faded to a ghost, and the abbot has it repainted by a court painter with expensive green. It is a fine painting. It is a painting of a pine. The birds stop coming. Nobody notices for a year, and then everybody does.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_solgeo_3"
+    ],
+    "minYearsAfter": 15
+   },
+   "arc": "The Painted Pine",
+   "choices": [
+    {
+     "text": "Grieve, quietly, under the wall",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "You lie under the golden hall and feel the birds not coming. Something that was alive is now only correct. You will remember this when kings ask you to make things correct."
+     }
+    },
+    {
+     "text": "Warm the new paint, to see if it wakes",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "tally": {
+       "legend": 2
+      },
+      "charm": 2,
+      "log": "A single sparrow, one spring morning, flies at the new pine and bumps it and falls. Only one. The monks cheer. The court painter is insufferable about it for the rest of a long life."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "Nothing. Warm paint is still paint. Whatever the old painter put in that wall, you cannot put it back. It was never yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hwangnyongguk_1",
+   "cat": "life",
+   "weight": 18,
+   "once": true,
+   "text": "A little kingdom in the north has heard of the temple where a yellow dragon rose, and has named itself for you: the Kingdom of the Yellow Dragon. It is very small and very proud. Its king has sent a gift to a strong young prince of the great neighbour to the south, to test that prince: a bow so stiff no grown warrior in the little kingdom can draw it.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_palace_4"
+    ]
+   },
+   "arc": "The Bow of the Yellow Dragon Kingdom",
+   "choices": [
+    {
+     "text": "Wish the little kingdom well",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 1
+      },
+      "flag": "hr_little_kingdom",
+      "log": "A kingdom named for you. It is a strange feeling, like hearing a stranger use your childhood name. You send a little luck north, to a land you will never lie under. It arrives as a mild winter."
+     }
+    },
+    {
+     "text": "Worry about the test",
+     "effects": {
+      "comprehension": 3,
+      "flag": "hr_little_kingdom",
+      "log": "A gift that is a test is not a gift. A strong prince who is tested will want to prove it. You feel, from very far away, a quarrel beginning that will not be the little kingdom's to end."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hwangnyongguk_2",
+   "cat": "insight",
+   "weight": 14,
+   "once": true,
+   "text": "Word comes south with the peddlers: the prince drew the bow, and drew it further, and broke it across one knee in front of the envoys, laughing, to show the little kingdom what it thought of tests. The little kingdom is ashamed. The prince's own father is angrier than the little kingdom is.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_hwangnyongguk_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "arc": "The Bow of the Yellow Dragon Kingdom",
+   "choices": [
+    {
+     "text": "Feel for the prince, too strong for a father",
+     "effects": {
+      "comprehension": 4,
+      "log": "A strong heir is a danger to a father who is not as strong. You do not know this yet the way you will. You learn the first lesson of it now, from far away: the strongest child is not the safest one."
+     }
+    },
+    {
+     "text": "Feel for the shamed little kingdom",
+     "effects": {
+      "tally": {
+       "virtue": 1
+      },
+      "charm": 2,
+      "log": "A small proud kingdom with a broken bow and nothing to say. You send it a good harvest. Pride heals better on a full stomach."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hwangnyongguk_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "{npc}, the king of the little Yellow Dragon kingdom, has come all the way south to your temple in secret, alone but for two guards. {npc} kneels in the crypt at night and speaks to the floor. The prince's own father has written: the prince will visit to apologise; kill the prince while there. {npc} does not know what to do. {npc} came to ask the dragon the kingdom is named for.",
+   "npc": {
+    "role": "hr_little_king",
+    "spawn": {
+     "role": "stranger",
+     "tag": "hr_little_king",
+     "ageAbs": 50,
+     "opinion": 20,
+     "male": true
+    }
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_hwangnyongguk_2"
+    ]
+   },
+   "arc": "The Bow of the Yellow Dragon Kingdom",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"A guest is a guest. Send the prince home alive\"",
+     "effects": {
+      "tally": {
+       "virtue": 3,
+       "legend": 2
+      },
+      "flag": "hr_guest_spared",
+      "npcFlag": "hr_little_king",
+      "mem": {
+       "deed": "counselled",
+       "w": 30,
+       "note": "told me to spare the prince"
+      },
+      "log": "{npc} weeps with relief, which tells you the answer was already there and only needed permission. The prince comes, and kneels, and the little king raises the prince up and sends the guest home with gifts. Whatever the father does next, it will not be by your kingdom's hand."
+     }
+    },
+    {
+     "text": "\"You must decide this. It is your house, not mine\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "npcFlag": "hr_little_king",
+      "log": "{npc} sits back on the cold floor for a long time. Then gets up, and bows, and goes home, and when the prince comes, the little king looks at the young face and cannot do it, and sends the guest home with courtesy. It was always going to be that answer. It had to be the king's. (Weight -2)"
+     }
+    },
+    {
+     "text": "\"Obey the great neighbour. A small kingdom survives by obeying\"",
+     "effects": {
+      "tally": {
+       "weight": 4,
+       "fear": 1
+      },
+      "npcFlag": "hr_little_king",
+      "log": "{npc} goes home grey-faced. When the prince comes, the little king means to do it, and looks at the young face, and cannot. The prince is sent home alive anyway. You said the wrong thing and a human did the right one. You carry that. (Weight +4)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_hwangnyongguk_4",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "Years later the peddlers bring the end of the story south: the strong prince went home, and the father did not forgive, and the prince's story ended badly, far away, by the father's order and not by any guest's knife. The little Yellow Dragon kingdom is long since swallowed by its neighbours. Its name is in one line of the annals.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_hwangnyongguk_3"
+    ],
+    "minYearsAfter": 30
+   },
+   "arc": "The Bow of the Yellow Dragon Kingdom",
+   "choices": [
+    {
+     "text": "Keep the little kingdom's name",
+     "effects": {
+      "tally": {
+       "legend": 1
+      },
+      "comprehension": 3,
+      "log": "One line in the annals and one place at your middle. A small kingdom that was named for you, and at the one moment that mattered, would not kill a guest. That is a good thing to have been named after."
+     }
+    },
+    {
+     "text": "Think about fathers and heirs",
+     "effects": {
+      "comprehension": 4,
+      "flag": "hr_heirs_lesson",
+      "log": "A father who feared his son more than he loved him. You will lie under many fathers. You decide now, in the dark under the temple, that you will never take a side between a king and an heir. You will only stay with whoever is chosen. It is the only safe thing a centre can do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_kingdom_1",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "A royal house stands on you now. {npc} sits on the throne a mile from your temple and the whole kingdom leans on that throne, and the throne leans on you. You can feel every edict as it is sealed. Do you hold this house up with everything you have, or keep a little distance, the way you keep the market's scale?",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "The House Beneath You",
+   "choices": [
+    {
+     "text": "Uphold the house: bless the ruler",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "legend": 2,
+       "weight": 2
+      },
+      "flag": [
+       "hr_present",
+       "hr_first_upheld"
+      ],
+      "npcFlag": "hr_upheld",
+      "log": "You settle under the palace and hold it up, and the harvests come in, and the borders hold, and the court calls it a fortunate reign. {npc} never knows why it is so easy. It is not easy for you. (Reign +3, Weight +2)"
+     }
+    },
+    {
+     "text": "Keep your distance: let the house stand on its own",
+     "effects": {
+      "comprehension": 3,
+      "unflag": "hr_present",
+      "log": "You stay under your temple, not under the palace. The house stands, a little shakily, on its own feet. You feel every wobble and do not catch it. It is very hard to watch. It is lighter."
+     }
+    },
+    {
+     "text": "Watch {npc} for a year before you decide",
+     "effects": {
+      "comprehension": 4,
+      "log": "A year of edicts, of audiences, of meals, of moods. You learn how {npc} sleeps and what {npc} does when angry. A centre should know what it is holding up before it holds it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_kingdom_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "The court has a habit now: when anything goes well, the ministers say it is the dragon's favour, and when anything goes badly, they say the dragon is displeased. {npc} has started asking the court astrologers every morning what the dragon thinks. The astrologers make it up.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_kingdom_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "The House Beneath You",
+   "choices": [
+    {
+     "text": "Make one of the astrologers dream the truth",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "The youngest astrologer dreams of a great warm floor that does not have opinions about the price of salt. In the morning the young astrologer tells {npc} the truth: the dragon does not think about most things. {npc} is relieved, and the astrologers are furious."
+     }
+    },
+    {
+     "text": "Let them make it up; it keeps the court careful",
+     "effects": {
+      "tally": {
+       "legend": 1,
+       "reign": 2
+      },
+      "log": "A court that thinks a dragon is watching is a careful court. The lies are mostly harmless. You know, though, that one day somebody will make up something harmful, and say it was you. (Reign +2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_kingdom_3",
+   "cat": "npc",
+   "weight": 20,
+   "once": true,
+   "text": "Something is wrong with {npc}. You felt it from the first winter: a coldness in the edicts, a pleasure in the sentences. Today a provincial governor who failed to collect a tax is to be put to death in the capital square, and the court says the dragon wills it.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_kingdom_1"
+    ],
+    "minYearsAfter": 1,
+    "flags": [
+     "hr_house",
+     "hr_cruel_reign"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "The House Beneath You",
+   "choices": [
+    {
+     "text": "Shake the square, so the court is afraid",
+     "effects": {
+      "tally": {
+       "fear": 2,
+       "weight": 2
+      },
+      "log": "The square heaves under the scaffold. The crowd scatters. The execution is put off, and off, and in the end the governor is exiled instead. {npc} is furious, and frightened, and that will not last. (Weight +2)"
+     }
+    },
+    {
+     "text": "Withhold the harvest blessing, so the court notices",
+     "effects": {
+      "tally": {
+       "reign": -3,
+       "virtue": 1
+      },
+      "log": "A thin harvest. The court murmurs that the dragon is displeased, and this time it is true. {npc} is not moved. A cruel ruler is not stopped by thin rice. (Reign -3)"
+     }
+    },
+    {
+     "text": "Endure it: you cannot leave a house yet",
+     "effects": {
+      "strength": 2,
+      "tally": {
+       "weight": 3
+      },
+      "log": "Not yet. You are bound to this house by the palace stones over you, and you cannot leave it yet. You lie under the square while it is done. The weight of it settles on you like ash. (Weight +3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_kingdom_4",
+   "cat": "npc",
+   "weight": 16,
+   "once": true,
+   "text": "A good year in the reign of {npc}: a bridge over the great river, a granary in every county, a law that a farmer's land cannot be taken for a debt. The court is very pleased with itself. You lie under the palace and feel the kingdom settle, the way a house settles after it is finished.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "after": [
+     "dc_hr_kingdom_1"
+    ],
+    "minYearsAfter": 5,
+    "flags": [
+     "hr_house"
+    ],
+    "notFlags": [
+     "hr_cruel_reign"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "The House Beneath You",
+   "choices": [
+    {
+     "text": "Hold it all a little steadier",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "legend": 1,
+       "weight": 2
+      },
+      "log": "The bridge stands. The granaries stay dry. The law is kept, mostly. You feel the house get heavier as it gets stronger, and you find you do not mind it yet. (Reign +3, Weight +2)"
+     }
+    },
+    {
+     "text": "Let the court have the credit",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "It was their bridge and their law. You only kept the ground under them still. A ruler who can do good things without a dragon is worth more than one who cannot. You keep quiet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_kingdom_5",
+   "cat": "insight",
+   "weight": 12,
+   "once": true,
+   "text": "The house has stood on you for a long time now. Rulers have come and gone; the throne is the same throne, the palace a little larger every reign. You find that you know the house the way a field knows its farmer: not its names, but its weight, and the way it walks.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_kingdom_1"
+    ],
+    "minYearsAfter": 30,
+    "flags": [
+     "hr_house"
+    ]
+   },
+   "arc": "The House Beneath You",
+   "choices": [
+    {
+     "text": "Bind yourself to the house for good",
+     "effects": {
+      "tally": {
+       "reign": 4,
+       "weight": 3,
+       "legend": 2
+      },
+      "flag": "hr_house_bound",
+      "log": "You settle deeper under the palace. The house is yours and you are its, and the kingdom will remember this reign as the one when the dragon came to stay. It is a beautiful feeling. It is a very heavy one. (Reign +4, Weight +3)"
+     }
+    },
+    {
+     "text": "Remember that houses end",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "flag": "hr_houses_end",
+      "log": "Every roof you have lain under has been pulled down, outgrown or handed on: a farmhouse, a market, a yamen. This one will end too. You hold it up, and you keep one small place at your middle that is not holding it up, so that when it ends, something of you is left. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_audience_1",
+   "cat": "npc",
+   "weight": 30,
+   "once": true,
+   "text": "Midnight. Somebody has come down the steps into the crypt under the golden hall, alone, with one candle: {npc}, the ruler, without guards or crown, in a night robe. {npc} kneels on the stone floor, right over you, and asks the floor a question as if expecting it to answer. 'They say this was to be my palace, and a dragon rose here. Then whose house is this?'",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     6
+    ],
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "Whose House Is This?",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Yours, while you keep it well\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "reign": 2
+      },
+      "flag": "hr_house_answer_theirs",
+      "npcFlag": "hr_heard_floor",
+      "mem": {
+       "deed": "answered",
+       "w": 30,
+       "note": "spoke to me through the floor of the crypt"
+      },
+      "log": "It is the first thing you have ever said to a human in words. The voice comes up through the stone, slow and dry and much quieter than you expected. The candle shakes. {npc} does not run. {npc} says, very softly, \"And if I do not keep it well?\" You say nothing. That is also an answer. (Reign +2)"
+     }
+    },
+    {
+     "text": "\"Mine. You are welcome in it\"",
+     "effects": {
+      "tally": {
+       "legend": 3,
+       "weight": 2
+      },
+      "flag": "hr_house_answer_mine",
+      "npcFlag": "hr_heard_floor",
+      "mem": {
+       "deed": "answered",
+       "w": 25,
+       "note": "said I was a guest"
+      },
+      "log": "The first word you ever speak to a human, and it is a claim. {npc} bows to the floor, a deep bow, the bow of a guest to a host. From then on {npc} rules as a guest rules: carefully, and never quite at ease. (Weight +2)"
+     }
+    },
+    {
+     "text": "\"The people's. We are both standing on them\"",
+     "effects": {
+      "tally": {
+       "legend": 2,
+       "virtue": 2
+      },
+      "flag": "hr_house_answer_people",
+      "npcFlag": "hr_heard_floor",
+      "mem": {
+       "deed": "answered",
+       "w": 30,
+       "note": "said the house was the people's"
+      },
+      "log": "{npc} sits back on both heels and looks at the floor for a long time. \"Then what are you?\" {npc} asks. \"The ground under the people,\" you say. \"And what am I?\" \"The roof,\" you say. {npc} goes up the stairs in the dark, thinking, and does not sleep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_audience_2",
+   "cat": "npc",
+   "weight": 18,
+   "once": true,
+   "text": "{npc} has come back to the crypt, as you knew {he} would, with a list. A drought in the south, a quarrel between two ministers, a border town that wants to go over to the neighbour. {npc} wants to know what the dragon would do.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_audience_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "hr_ruler",
+     "hr_heard_floor"
+    ]
+   },
+   "arc": "Whose House Is This?",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Answer one, and refuse the rest",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "npcFlag": "hr_heard_floor",
+      "log": "The drought, you answer: open the county granaries now, not later. The rest are the ruler's. {npc} is disappointed, and then, walking up the stairs, is not. A ruler who gets every answer from the floor is not a ruler. (Weight -2)"
+     }
+    },
+    {
+     "text": "Answer all of them",
+     "effects": {
+      "tally": {
+       "reign": 3,
+       "weight": 4,
+       "legend": 1
+      },
+      "npcFlag": "hr_heard_floor",
+      "log": "You answer every one, well. The drought is eased, the ministers reconciled, the border town kept. {npc} comes back the next month with a longer list. And the next. You begin to understand where this goes. (Reign +3, Weight +4)"
+     }
+    },
+    {
+     "text": "Ask {npc} what {he} would do, and listen",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1,
+       "weight": -1
+      },
+      "npcFlag": "hr_heard_floor",
+      "log": "{npc} is startled, and then talks for an hour, and by the end has answered all three, mostly well. You say only \"yes\" twice and \"think again\" once. {npc} goes up the stairs taller. (Weight -1)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_audience_3",
+   "cat": "npc",
+   "weight": 14,
+   "once": true,
+   "text": "{npc} has a child now, and has brought the child down into the crypt at midnight to meet the floor. A small person in a silk jacket, clutching a candle with both hands, terrified and delighted. 'Say something,' {npc} whispers. 'Say something to the next one.'",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_audience_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "hr_ruler",
+     "hr_heard_floor"
+    ]
+   },
+   "arc": "Whose House Is This?",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Say the child's name, kindly",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "legend": 1,
+       "virtue": 1
+      },
+      "log": "The child drops the candle. In the dark the child laughs, high and astonished, and {npc} laughs too, and for a moment the crypt under the Temple of the Yellow Dragon is a nursery. The heir will never be afraid of the dark."
+     }
+    },
+    {
+     "text": "Say nothing: the child should not grow up needing a floor",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -2
+      },
+      "log": "Silence. The child waits, disappointed. {npc} waits, puzzled. Then they go up, the child complaining. Later, much later, the heir will rule well and never once come down the crypt stairs. You chose that. (Weight -2)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_audience_4",
+   "cat": "npc",
+   "weight": 12,
+   "once": true,
+   "text": "{npc} is old and comes down the crypt stairs slowly, with a stick, one last time. {npc} sits on the floor, not kneeling, and puts both hands flat on the stone, and asks it again, the first question, as if the answer might have changed: 'Whose house was it?'",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_audience_3"
+    ],
+    "minYearsAfter": 30,
+    "npcFlags": [
+     "hr_ruler",
+     "hr_heard_floor"
+    ]
+   },
+   "arc": "Whose House Is This?",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "\"Yours. You kept it well\"",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 2,
+       "legend": 2
+      },
+      "mem": {
+       "deed": "blessed",
+       "w": 30,
+       "note": "said I kept the house well"
+      },
+      "log": "{npc} nods slowly, as if hearing a verdict, and leans back against the crypt wall, and stays there until the novices come. Whatever else the annals say, this ruler heard it from the floor."
+     }
+    },
+    {
+     "text": "\"It was never anyone's. That is why it stood\"",
+     "effects": {
+      "comprehension": 4,
+      "tally": {
+       "weight": -3
+      },
+      "log": "{npc} laughs, an old dry laugh, and says, \"I was afraid you would say that.\" And then, \"Thank you.\" The old ruler goes up the stairs for the last time. The weight of a whole reign comes off your back as the footsteps go. (Weight -3)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_petition_1",
+   "cat": "npc",
+   "weight": 8,
+   "once": false,
+   "text": "{npc} has come down to the crypt at night again with a folded petition, as rulers of this house have learned to do. This year it is a rain that will not come, or a son who will not listen, or a minister who will not stop. {npc} lays the paper on the stone and waits.",
+   "npc": {
+    "role": "hr_ruler"
+   },
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     6,
+     7
+    ],
+    "after": [
+     "dc_hr_audience_1"
+    ],
+    "flags": [
+     "hr_house"
+    ],
+    "npcFlags": [
+     "hr_ruler"
+    ]
+   },
+   "arc": "A Ruler's Petition",
+   "trigger": "beast_talk",
+   "choices": [
+    {
+     "text": "Grant it",
+     "effects": {
+      "tally": {
+       "reign": 2,
+       "weight": 3,
+       "legend": 1
+      },
+      "log": "You do what is asked. It goes well. {npc} goes up the stairs lighter, and you feel the petition settle on your back with all the others. (Reign +2, Weight +3)"
+     }
+    },
+    {
+     "text": "Give it back: \"This one is yours\"",
+     "effects": {
+      "comprehension": 3,
+      "tally": {
+       "weight": -2
+      },
+      "log": "The paper slides back across the stone toward {npc}'s knees. {npc} looks at it a long time, picks it up, and goes away to deal with it. Not every petition is a weight you have to take. (Weight -2)"
+     }
+    },
+    {
+     "text": "Answer with a question",
+     "effects": {
+      "charm": 2,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "\"What would you do if I were not here?\" you ask. {npc} thinks, and answers, and it is a good answer. \"Then do that,\" you say. It is the most useful thing a floor can say."
+     }
+    }
+   ],
+   "cooldown": 5,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_hr_scaleecho_1",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "In a life that was not yours, somebody bought an honest scale for a market like this one, paid good coin for it, and set it in the middle of the square for anybody to use. The scale in front of you now is not that scale. But the beam of it hangs exactly level in the dawn, before anyone has touched it, as if it remembered.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ],
+    "marks": [
+     "mark:hmhr_true_scale"
+    ]
+   },
+   "arc": "A Ruler's Petition",
+   "choices": [
+    {
+     "text": "Keep the beam level, for whoever bought the first one",
+     "effects": {
+      "tally": {
+       "virtue": 2,
+       "ph_metal": 1
+      },
+      "log": "A debt you never owed, paid forward in a thousand fair weighings. The beam hangs level every dawn for as long as you lie under that market. (Metal +1)"
+     }
+    },
+    {
+     "text": "Put the first grain on the pan yourself",
+     "effects": {
+      "luck": 3,
+      "tally": {
+       "legend": 1
+      },
+      "log": "One grain of rice, from nowhere, on the pan at dawn. The beam does not move. A grain is too small to weigh. The market-keeper finds it, and leaves it there, and nobody ever brushes it off."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scaleecho_2",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "Somebody, in a life that was not yours, made a cheating merchant weigh his own false weights in front of the whole market, until he wept. You feel the shape of that day in this market's ground, like an old footprint under new mud. The cheats here are careful in a way they do not understand.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ],
+    "marks": [
+     "mark:hmhr_shamed_merchant"
+    ]
+   },
+   "arc": "A Ruler's Petition",
+   "choices": [
+    {
+     "text": "Be glad of the footprint",
+     "effects": {
+      "tally": {
+       "fear": 1,
+       "legend": 1
+      },
+      "strength": 2,
+      "log": "Fear keeps a market honest for a long time, and somebody planted it here for you. You do not have to be frightening. Somebody already was."
+     }
+    },
+    {
+     "text": "Wish the shamed merchant had been forgiven, after",
+     "effects": {
+      "tally": {
+       "virtue": 2
+      },
+      "comprehension": 2,
+      "log": "Somebody wept in a market once, long before you, and was shamed for good reason. You hope somebody gave him a bowl of soup afterwards. You will try to be the kind of centre that remembers both halves."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_hr_scaleecho_3",
+   "cat": "insight",
+   "weight": 24,
+   "once": true,
+   "text": "Somebody, in a life that was not yours, once knelt in a market square in front of everybody and put a hand on the packed earth and said thank you to it. Nobody had ever said that to a market floor. You feel it now, in this ground, the way a field keeps the memory of a kind hand.",
+   "when": {
+    "beast": [
+     "hwangryong"
+    ],
+    "stage": [
+     4,
+     5
+    ],
+    "after": [
+     "dc_hr_market_1"
+    ],
+    "marks": [
+     "mark:hmhr_thanked_ground"
+    ]
+   },
+   "arc": "A Ruler's Petition",
+   "choices": [
+    {
+     "text": "Say it back, to the next person who kneels",
+     "effects": {
+      "charm": 3,
+      "tally": {
+       "virtue": 1
+      },
+      "log": "A child drops a coin and kneels to look for it in the dust. The ground under the small hand goes warm, and the coin is right there. The child says thank you without knowing why. You are even now, you think. Then you think you never will be."
+     }
+    },
+    {
+     "text": "Keep the thanks at your middle",
+     "effects": {
+      "qi": 10,
+      "log": "You put it with the other warm things you keep at your middle. It is a very small thing to keep. It is one of the heaviest, in the good way."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

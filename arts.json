@@ -1,0 +1,660 @@
+{
+ "events": [
+  {
+   "id": "art_poetry_contest",
+   "cat": "misc",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "weight": 2,
+   "text": "A magistrate is holding a poetry contest at the Pavilion of Falling Plums. The prize is a jade brush and, more importantly, an audience with half the scholars of the province.",
+   "choices": [
+    {
+     "text": "Enter with a poem about the mountains",
+     "roll": {
+      "stat": "poetry",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 8,
+      "charm": 2,
+      "taels": 40,
+      "log": "Your poem is read aloud twice. The magistrate asks for a copy. By autumn, strangers are quoting you in teahouses."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "Your poem rhymes 'mountain' with 'mountain'. A child in the audience points this out."
+     }
+    },
+    {
+     "text": "Watch and learn",
+     "effects": {
+      "comprehension": 2,
+      "log": "You listen to the best poets in the province. On the walk home, lines start arriving in your head."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "art_poetry_love_letter",
+   "cat": "misc",
+   "when": {
+    "age": [
+     15,
+     40
+    ],
+    "married": false
+   },
+   "weight": 1,
+   "text": "A tongue-tied young swordsman begs you to write a love letter for him. 'You have a way with words. I have a way with... swords.'",
+   "choices": [
+    {
+     "text": "Write it",
+     "roll": {
+      "stat": "poetry",
+      "dc": 55
+     },
+     "ok": {
+      "charm": 2,
+      "taels": 20,
+      "log": "The letter works. At the wedding, the bride tells you, quietly, that she knew who really wrote it. She married him anyway."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "The letter is so overwrought that the young lady returns it with corrections. In red ink."
+     }
+    },
+    {
+     "text": "Tell him to speak from the heart",
+     "effects": {
+      "alignment": 2,
+      "log": "He stammers his way through a confession. It is terrible. It works."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "art_calligraphy_sign",
+   "cat": "misc",
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "A new restaurant owner asks you to paint the signboard for her shop. Whatever you write, the whole street will read for years.",
+   "choices": [
+    {
+     "text": "Paint it with your best brushwork",
+     "roll": {
+      "stat": "poetry",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "taels": 30,
+      "log": "Your characters are so strong that people come to eat just to look at the sign. The owner feeds you free for life."
+     },
+     "fail": {
+      "fame": 1,
+      "log": "It is legible. That is the nicest thing anyone says about it."
+     }
+    },
+    {
+     "text": "Decline: you are a martial artist, not a painter",
+     "effects": {
+      "log": "She hires a scholar. His sign is beautiful. You feel oddly jealous."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_go_old_monk",
+   "cat": "misc",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "An old monk at the roadside shrine has a Go board and no opponent. 'Win,' he says, 'and I will tell you a secret about your martial art.'",
+   "choices": [
+    {
+     "text": "Play",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 10,
+      "log": "You win by a single stone. He smiles and taps your chest twice. 'You breathe like you play: too fast.' He is right. Everything changes a little."
+     },
+     "fail": {
+      "comprehension": 1,
+      "log": "He crushes you in forty moves, then pours you tea. 'Again next year,' he says."
+     }
+    },
+    {
+     "text": "Watch him play against himself",
+     "effects": {
+      "comprehension": 2,
+      "log": "He plays both sides for an hour. Somehow, both sides lose. You think about it all week."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "art_strategy_war_council",
+   "cat": "misc",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFlags": [
+     "fugitive"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "rep": {
+     "orthodox": [
+      -20,
+      100
+     ]
+    }
+   },
+   "weight": 2,
+   "text": "Bandits are massing to attack the county town, and the garrison captain is out of ideas. Someone mentions that you play Go.",
+   "choices": [
+    {
+     "text": "Plan the defence",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 15,
+      "taels": 80,
+      "alignment": 5,
+      "log": "You flood the low road, feint with the militia and close the trap at the river. The bandits never reach the walls."
+     },
+     "fail": {
+      "fame": -3,
+      "health": -20,
+      "log": "The bandits do something you did not expect. The town holds, barely, and you are in the thick of it."
+     }
+    },
+    {
+     "text": "Stay out of it",
+     "effects": {
+      "log": "The town holds without you, at a cost. You hear the bells for the dead from the next valley."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_medicine_village_sick",
+   "cat": "misc",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A child in the village has a fever that the local healer cannot break. The parents come to you because they heard you know herbs.",
+   "choices": [
+    {
+     "text": "Treat the child",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 6,
+      "log": "Three nights of willow bark, cold cloths and a needle behind the ear. On the fourth morning the child asks for dumplings."
+     },
+     "fail": {
+      "alignment": 3,
+      "log": "You do what you can. The healer from the next town arrives in time. You study harder after that."
+     }
+    },
+    {
+     "text": "Send them to the city physician",
+     "effects": {
+      "taels": -10,
+      "log": "You pay for the cart. The child lives. You wonder if you could have done it yourself."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "art_medicine_poison_antidote",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "flags": [
+     "poisoned"
+    ]
+   },
+   "weight": 4,
+   "text": "The old poison still lives in your blood. With what you now know of medicine, you think you could brew a cure.",
+   "choices": [
+    {
+     "text": "Brew it",
+     "roll": {
+      "stat": "medicine",
+      "dc": 60
+     },
+     "ok": {
+      "unflag": "poisoned",
+      "health": 20,
+      "log": "Seven herbs, three days of simmering, one horrible cup. The numbness in your hands finally, completely, goes away."
+     },
+     "fail": {
+      "health": -15,
+      "log": "Close. Not close enough. You spend a week sweating it out."
+     }
+    },
+    {
+     "text": "Leave it for now",
+     "effects": {
+      "log": "You tell yourself there will be time. There usually is. Usually."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_medicine_wounded_enemy",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 1,
+   "text": "On the road you find a wounded man in the black robes of the Demonic Cult. He is barely breathing, and he is very young.",
+   "choices": [
+    {
+     "text": "Heal him",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 8,
+      "flag": "healed_cultist",
+      "log": "He wakes, stares at you, and says nothing. Before dawn he is gone. A black lotus is left folded on your pack. A debt, in their language."
+     },
+     "fail": {
+      "alignment": 4,
+      "log": "You try. He dies at dawn, holding your sleeve. You bury him under a pine."
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "alignment": -3,
+      "log": "Behind you, the crows are already circling."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "art_lightness_rooftops",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A thief snatches a widow's purse in the night market and vanishes up onto the rooftops.",
+   "choices": [
+    {
+     "text": "Chase him across the roofs",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 4,
+      "log": "Three rooftops, one clothesline and a very surprised pigeon later, you land in front of him. The widow gets her purse back. The crowd applauds."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -1,
+      "log": "You go through a roof instead of across it, into someone's kitchen. The thief escapes. The family feeds you anyway."
+     }
+    },
+    {
+     "text": "Shout for the guards",
+     "effects": {
+      "log": "The guards arrive, eventually. The thief is long gone."
+     }
+    }
+   ],
+   "variants": [
+    "In the night market a thief grabs a widow's purse and is up on the rooftops before anyone can shout."
+   ]
+  },
+  {
+   "id": "art_lightness_cliff",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     14,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A rare Snow Lotus grows halfway down a sheer cliff, where no one could possibly reach it.",
+   "choices": [
+    {
+     "text": "Reach it anyway",
+     "risky": true,
+     "roll": {
+      "stat": "lightness",
+      "dc": 60
+     },
+     "ok": {
+      "item": "spirit_fruit",
+      "qi": 10,
+      "fame": 3,
+      "log": "You run down the cliff face as if it were a garden path, pluck the lotus and run back up. It glows faintly in your hands."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a fall from the Snow Lotus cliff",
+      "log": "The rock crumbles under your foot. A pine tree catches you, twenty feet down. You climb back up with nothing but bruises."
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "log": "Some treasures are meant to stay where they are. You tell yourself that on the whole walk home."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_sword_duel_ronin",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     18,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "A wandering swordsman with a notched blade stops you on a bridge. 'I hear you are good with a sword,' he says. 'Show me.'",
+   "choices": [
+    {
+     "text": "Cross swords",
+     "roll": {
+      "stat": "sword",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 8,
+      "comprehension": 2,
+      "log": "Three exchanges. Then he steps back, sheathes his blade and bows. 'Good.' He leaves you a single note on footwork that changes everything."
+     },
+     "fail": {
+      "health": -25,
+      "comprehension": 2,
+      "log": "He disarms you in one move and kicks your sword back to you. 'Again, in five years.' You will be ready."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "fame": -1,
+      "log": "He shrugs and walks on. You wonder all week what you might have learned."
+     }
+    }
+   ],
+   "variants": [
+    "A wandering swordsman with a chipped blade blocks your way on a bridge. 'They say you know the sword,' he says. 'Show me.'"
+   ]
+  },
+  {
+   "id": "art_sword_forging",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "minTaels": 150
+   },
+   "weight": 1,
+   "text": "A famous smith agrees to forge you a sword, if you spend a month at the forge helping. His price is 150 taels and your patience.",
+   "choices": [
+    {
+     "text": "Pay and work the forge",
+     "roll": {
+      "stat": "sword",
+      "dc": 45
+     },
+     "ok": {
+      "taels": -150,
+      "strength": 3,
+      "fame": 5,
+      "flag": "fine_sword",
+      "log": "The smith watches you test the blade and nods. 'It knows you.' A good sword is half the fight."
+     },
+     "fail": {
+      "taels": -150,
+      "strength": 2,
+      "log": "The sword is excellent. You are not yet worthy of it. You will grow into it."
+     }
+    },
+    {
+     "text": "Too expensive",
+     "effects": {
+      "log": "You keep your old blade. It has never complained."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_sword_rain_insight",
+   "cat": "misc",
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "chance": 0.4
+   },
+   "weight": 2,
+   "text": "Practising in a summer storm, you realise you can see every raindrop before it falls.",
+   "choices": [
+    {
+     "text": "Cut the rain",
+     "roll": {
+      "stat": "sword",
+      "dc": 65
+     },
+     "ok": {
+      "qi": 20,
+      "comprehension": 4,
+      "fame": 3,
+      "log": "For one breath, not a single drop touches you. Then you are soaked, laughing, and something in your swordsmanship has changed forever."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "You cut a lot of rain. The rain wins, as rain does. Still, you felt something."
+     }
+    },
+    {
+     "text": "Just stand and feel it",
+     "effects": {
+      "qi": 8,
+      "log": "You stand in the storm until your mind is as clear as the sky after it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_fist_tavern",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "Five drunk mercenaries decide the old tavern keeper owes them free wine.",
+   "choices": [
+    {
+     "text": "Put them out with your bare hands",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 3,
+      "log": "Five mercenaries, one door, one very tidy exit. The tavern keeper hangs a piece of the broken table on the wall in your honour."
+     },
+     "fail": {
+      "health": -25,
+      "alignment": 2,
+      "log": "You get three of them out. The other two get you out. The keeper patches you up in the kitchen."
+     }
+    },
+    {
+     "text": "Pay for their wine and let them leave",
+     "effects": {
+      "taels": -10,
+      "log": "They leave, loudly. The keeper refills your cup for free for the rest of the year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_teach_village_children",
+   "cat": "misc",
+   "when": {
+    "age": [
+     30,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "The village children follow you everywhere, begging you to teach them 'real kung fu'.",
+   "choices": [
+    {
+     "text": "Teach them basic stances every morning",
+     "effects": {
+      "fame": 4,
+      "alignment": 4,
+      "charm": 2,
+      "log": "Twenty children, one dusty yard, a lot of falling over. Years later, one of them becomes a famous swordsman and tells everyone where it began."
+     }
+    },
+    {
+     "text": "Teach them to read instead",
+     "effects": {
+      "alignment": 5,
+      "comprehension": 1,
+      "log": "They groan. Later, the ones who can read are the ones who understand the manuals."
+     }
+    }
+   ]
+  },
+  {
+   "id": "art_old_age_masterpiece",
+   "cat": "aging",
+   "when": {
+    "age": [
+     60,
+     999
+    ],
+    "notFlags": [
+     "rejuvenated"
+    ]
+   },
+   "weight": 2,
+   "text": "You are old now. Your hands shake a little, but when they hold a brush or a sword, they do not.",
+   "choices": [
+    {
+     "text": "Write down everything you know",
+     "effects": {
+      "fame": 10,
+      "comprehension": 2,
+      "flag": "wrote_manual",
+      "log": "It takes a whole winter. When it is done, your manual goes to the nearest library. Your name will outlive you."
+     }
+    },
+    {
+     "text": "Paint the mountain you were born under",
+     "roll": {
+      "stat": "poetry",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 6,
+      "charm": 3,
+      "log": "It is the best thing you have ever made. Someone offers a fortune for it. You give it to a child instead."
+     },
+     "fail": {
+      "log": "It is not the mountain you remember. It is the mountain as it is now. Maybe that is better."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}
