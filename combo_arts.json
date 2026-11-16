@@ -1,0 +1,165 @@
+{
+ "events": [
+  {
+   "id": "dc_cmb_scenes_torn_manual_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 12,
+   "text": "At the back of a bookstall, under a pile of almanacs, you find half a manual with no cover. The first pages are one art, the last pages another, and in the middle someone has drawn the two of them as a single figure, with notes crowded into every margin.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cmb_seek"
+    ]
+   },
+   "arc": "Combination Arts",
+   "choices": [
+    {
+     "text": "Buy it and read the middle pages (20 taels)",
+     "req": {
+      "minTaels": 20
+     },
+     "effects": {
+      "log": "You read it by lamplight three nights running. On the third night the figure in the middle stops being two drawings and becomes one.",
+      "taels": -20,
+      "flag": "cmbx_hint"
+     }
+    },
+    {
+     "text": "Read it standing at the stall",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "The bookseller coughs twice, but you have it before the third cough. The two arts in the middle pages were always one.",
+      "flag": "cmbx_hint"
+     },
+     "fail": {
+      "log": "The bookseller takes it out of your hands and puts it back under the almanacs. You remember only that it mattered.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Leave it",
+     "effects": {
+      "log": "You put it back. On the road home you keep turning the drawing over in your mind, and cannot quite see it again.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cmb_scenes_two_masters_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 12,
+   "text": "Two old masters are arguing in the corner of a teahouse, loud enough for the whole room. One says the two arts must never be mixed. The other says the greatest technique of their youth was nothing but the two of them done at once, and slaps the table to show how.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cmb_seek"
+    ]
+   },
+   "arc": "Combination Arts",
+   "choices": [
+    {
+     "text": "Pour their tea and listen",
+     "effects": {
+      "log": "You keep their cups full for an hour. Somewhere in the second pot the one who slapped the table shows it again, slowly, for you.",
+      "flag": "cmbx_hint"
+     }
+    },
+    {
+     "text": "Ask them to settle it with a spar",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "log": "They go out into the yard grumbling. Neither of them wins, and in the middle of it you see exactly what the table-slapper meant.",
+      "flag": "cmbx_hint",
+      "fame": 1
+     },
+     "fail": {
+      "log": "They both turn on you at once, agree that the young know nothing, and go back to arguing.",
+      "charm": -1
+     }
+    },
+    {
+     "text": "Drink up and go",
+     "effects": {
+      "log": "You leave them to it. Behind you the table is slapped again, and a cup falls.",
+      "comprehension": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_cmb_scenes_bridge_spar_1",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 12,
+   "text": "From a bridge at dusk you watch a stranger train alone on the bank below: one art, then a second, then for three breaths something that is neither and both. Then the stranger looks up at the bridge, and it stops.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cmb_seek"
+    ]
+   },
+   "arc": "Combination Arts",
+   "choices": [
+    {
+     "text": "Go down and ask about it",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "log": "The stranger laughs and shows it once more, all the way through. \"It is not mine,\" the stranger says. \"It was never anyone's. It is just there, between the two.\"",
+      "flag": "cmbx_hint"
+     },
+     "fail": {
+      "log": "By the time you reach the bank there is only a wet footprint on a stone, and the river.",
+      "luck": -1
+     }
+    },
+    {
+     "text": "Stay on the bridge and watch the shadows",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You do not move until it is dark, and the stranger, thinking you gone, does it once more. It is enough.",
+      "flag": "cmbx_hint"
+     },
+     "fail": {
+      "log": "Your foot scrapes the stone. The stranger picks up a coat and walks away along the bank.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Walk on",
+     "effects": {
+      "log": "You walk on. Halfway home your own hands try to do what the stranger did, and do not know how.",
+      "artYears": 1
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

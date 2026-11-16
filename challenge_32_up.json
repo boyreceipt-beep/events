@@ -1,0 +1,184 @@
+{
+ "events": [
+  {
+   "id": "b4_challenge_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge",
+   "text": "Your challenge to {npc} is pinned on the board of the Jade Court, and by evening every isle knows the hour. {npc} sends back one word on a jade slip: \"Gladly.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "Above the Clouds",
+   "choices": [
+    {
+     "text": "Meet {him} on the platform at dawn",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true
+     },
+     "ok": {
+      "log": "The sun is not yet clear of the clouds when {npc} goes down on one knee on the jade, and the watchers go very quiet."
+     },
+     "fail": {
+      "log": "{npc} is better than you thought. The isles will talk about it for a century."
+     }
+    },
+    {
+     "text": "Take the challenge down from the board",
+     "effects": {
+      "log": "You take it down. Somebody laughs, softly, on the next isle.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_up_2",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge",
+   "text": "The platform hangs over nothing, as they all do. {npc} is already there, sword across {his} knees, as if {he} had been waiting a thousand years and could wait a thousand more.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "Above the Clouds",
+   "choices": [
+    {
+     "text": "Step onto the platform",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true
+     },
+     "ok": {
+      "log": "It is short. {npc} ends on the jade and you end standing."
+     },
+     "fail": {
+      "log": "It is short. You end on the jade and {npc} ends standing."
+     }
+    },
+    {
+     "text": "Bow, and say you have changed your mind",
+     "effects": {
+      "log": "{npc} bows back, very slightly. The watchers do not.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_death_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge_death",
+   "text": "You have written it plainly on the board of the Jade Court: to the death. The Court sends a witness, as the old law says, and the witness asks each of you once more if you are sure.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "Above the Clouds",
+   "choices": [
+    {
+     "text": "Say yes",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true,
+      "toDeath": true
+     },
+     "risky": true,
+     "ok": {
+      "log": "It is long and almost silent. At the end {npc} is on the jade and cannot rise, and the witness waits to see what you will do."
+     },
+     "fail": {
+      "log": "It goes against you from the first exchange.",
+      "deathCause": "a duel to the death with {npc} above the clouds"
+     }
+    },
+    {
+     "text": "Say you are not",
+     "effects": {
+      "log": "You lower your sword before the first exchange. The witness writes it down. So does {npc}.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_death_up_2",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge_death",
+   "text": "Two isles drift together for the duel, as is done for the ones to the death, and the immortals of both come out to stand at the edges. {npc} does not look at them. {He} looks only at you.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "Above the Clouds",
+   "choices": [
+    {
+     "text": "Fight to the end",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true,
+      "toDeath": true
+     },
+     "risky": true,
+     "ok": {
+      "log": "When it is done, {npc} is down on the grass between the isles and everyone at the edges waits for you."
+     },
+     "fail": {
+      "log": "It is over sooner than anyone at the edges expected.",
+      "deathCause": "a duel to the death with {npc} above the clouds"
+     }
+    },
+    {
+     "text": "Call it off before the isles meet",
+     "effects": {
+      "log": "The isles drift apart again with nobody hurt. {npc} looks at you across the widening gap for a long time.",
+      "fame": -2
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

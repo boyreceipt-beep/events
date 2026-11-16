@@ -1,0 +1,2391 @@
+{
+ "events": [
+  {
+   "id": "cf_al_eggs",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_alchemy_1"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "An old woman stands at your door with a basket of eggs. Her son cut his leg on a plough and it has gone hot and red. She has heard you are learning to brew.",
+   "choices": [
+    {
+     "text": "Brew a salve and take the eggs",
+     "effects": {
+      "alignment": 4,
+      "fame": 1,
+      "log": "The leg heals. The eggs are excellent. For a month, strangers nod to you in the street."
+     }
+    },
+    {
+     "text": "Brew it, and ask a fair price",
+     "effects": {
+      "taels": 15,
+      "log": "She pays, slowly, coin by coin. The leg heals."
+     }
+    },
+    {
+     "text": "Tell her to find a real physician",
+     "effects": {
+      "alignment": -2,
+      "log": "You close the door. Later you hear the leg never healed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_fakes",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_alchemy_1",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A stall in the market sells grey pills wrapped in paper with your name brushed on it. They are chalk and pig fat. People are buying them.",
+   "choices": [
+    {
+     "text": "Confront the seller in front of the crowd",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 4,
+      "taels": 20,
+      "log": "You crack a pill open in front of everyone. The seller runs. The crowd buys yours instead."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "He shouts louder than you. Half the crowd now thinks YOU are the fake."
+     }
+    },
+    {
+     "text": "Brew a better batch and sell it next to his stall",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 25
+     },
+     "ok": {
+      "fame": 3,
+      "taels": 30,
+      "log": "By noon his stall is empty and yours is sold out."
+     },
+     "fail": {
+      "taels": -10,
+      "log": "Your batch comes out lumpy. His looks nicer. Nobody can tell the difference except you."
+     }
+    },
+    {
+     "text": "Let it go",
+     "effects": {
+      "log": "Your name keeps selling pig fat for a season, then the stall is gone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_partner",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "The owner of the Hundred-Herb Hall offers you a corner of his shop and all his customers, for a third of what your pills earn. \"Your hands, my customers. You will still come out ahead.\"",
+   "choices": [
+    {
+     "text": "Shake on it",
+     "effects": {
+      "taels": 60,
+      "flag": "alch_partner",
+      "log": "A corner, a cauldron, and customers who already trust the sign over the door. (Your orders pay half again as much, and the Hall buys your pills at a better price.)"
+     }
+    },
+    {
+     "text": "Stay your own master",
+     "effects": {
+      "luck": 1,
+      "log": "You keep your own fire. It is smaller, but it is yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_plague",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "craft_alchemy_2"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A fever is burning through the villages downriver. The county physician is dead. A runner begs you to come with whatever you can brew.",
+   "choices": [
+    {
+     "text": "Go, and brew for free",
+     "req": {
+      "items": [
+       "spirit_herb"
+      ]
+     },
+     "roll": {
+      "stat": "alchemy",
+      "dc": 38
+     },
+     "ok": {
+      "item": {
+       "spirit_herb": -3
+      },
+      "fame": 12,
+      "alignment": 8,
+      "rep": {
+       "orthodox": 6
+      },
+      "log": "Forty days over the cauldron. The fever breaks. Three villages carve your name over their gates."
+     },
+     "fail": {
+      "item": {
+       "spirit_herb": -3
+      },
+      "health": -25,
+      "fame": 4,
+      "alignment": 6,
+      "log": "You save some, and catch it yourself. You live, barely."
+     }
+    },
+    {
+     "text": "Go, and charge what the dying will pay",
+     "effects": {
+      "taels": 180,
+      "alignment": -8,
+      "fame": -3,
+      "log": "You leave rich. Nobody downriver says your name kindly."
+     }
+    },
+    {
+     "text": "Stay away from the fever",
+     "effects": {
+      "log": "You hear later how many died. You do not ask the number twice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_elder",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "An elder of a mountain sect visits in plain clothes. His grandson's foundation is cracked, and only a Marrow-Cleansing Pill brewed fresh will close it.",
+   "choices": [
+    {
+     "text": "Brew it with everything you have",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 220,
+      "fame": 8,
+      "rep": {
+       "orthodox": 5
+      },
+      "flag": "favour_sect_elder",
+      "log": "The boy walks again within a month. The elder bows to you, which elders do not do."
+     },
+     "fail": {
+      "fame": -3,
+      "log": "The pill is not enough. The elder thanks you anyway, which is worse."
+     }
+    },
+    {
+     "text": "Ask for a manual from their library instead of silver",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 50
+     },
+     "ok": {
+      "manual": 3,
+      "fame": 5,
+      "log": "The boy recovers. A sect manual arrives wrapped in yellow silk, with a note: 'This never left the library.'"
+     },
+     "fail": {
+      "fame": -3,
+      "log": "The pill fails, and the manual stays on its shelf."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "log": "He nods and goes to find someone else. You wonder if they were better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_poison",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "craft_alchemy_3"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A woman in a veil puts three hundred taels on your table. \"Something that looks like the heart giving out. For a man who deserves it.\" She does not say his name.",
+   "choices": [
+    {
+     "text": "Brew it",
+     "effects": {
+      "taels": 300,
+      "alignment": -15,
+      "rep": {
+       "demonic": 6,
+       "unorthodox": 5
+      },
+      "flag": "poisoner",
+      "log": "A week later, a magistrate's heart gives out at dinner. You burn the rest of the herbs."
+     }
+    },
+    {
+     "text": "Brew something harmless and keep the silver",
+     "effects": {
+      "taels": 300,
+      "flag": "cheated_veil",
+      "log": "She leaves satisfied. You hope she never learns what was in the vial."
+     }
+    },
+    {
+     "text": "Refuse and tell the magistrate",
+     "effects": {
+      "fame": 3,
+      "alignment": 6,
+      "rep": {
+       "orthodox": 3
+      },
+      "log": "The magistrate takes your statement and the description. The woman is never seen in the city again."
+     }
+    },
+    {
+     "text": "Refuse and forget you saw her",
+     "effects": {
+      "log": "She takes her silver and her veil and goes elsewhere."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_duel",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_alchemy_3",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Old Master Gu of the Seven-Furnace Hall challenges you to a pill duel in the city square: same herbs, one hour, the crowd judges the pills.",
+   "choices": [
+    {
+     "text": "Accept the duel",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 18,
+      "taels": 100,
+      "log": "Your pill smells of spring rain. His smells of smoke. The crowd carries you to the teahouse."
+     },
+     "fail": {
+      "fame": -6,
+      "log": "His pill glows. Yours cracks. He is gracious about it, which hurts more."
+     }
+    },
+    {
+     "text": "Decline: real alchemy is not a show",
+     "effects": {
+      "fame": -2,
+      "comprehension": 1,
+      "log": "Some call it cowardice. You spend the day studying instead."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_patriarch",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_alchemy_4",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Riders of the Great Family come at midnight. Their patriarch is dying of a qi deviation that three physicians could not stop. \"Name your price,\" says the eldest son, \"after.\"",
+   "choices": [
+    {
+     "text": "Go, and save him",
+     "risky": false,
+     "roll": {
+      "stat": "alchemy",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 1500,
+      "fame": 22,
+      "rep": {
+       "orthodox": 10
+      },
+      "flag": "favour_family",
+      "log": "Nine days of needles and pills. On the tenth, the patriarch sits up and asks for wine. The family will remember you for three generations."
+     },
+     "fail": {
+      "fame": -10,
+      "rep": {
+       "orthodox": -4
+      },
+      "log": "He dies on the third night. The family does not blame you aloud."
+     }
+    },
+    {
+     "text": "Save him, and ask for their sword manual as the price",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 65
+     },
+     "ok": {
+      "manual": 4,
+      "fame": 15,
+      "rep": {
+       "orthodox": 6
+      },
+      "flag": "favour_family",
+      "log": "He lives. The eldest son goes pale at your price, and pays it."
+     },
+     "fail": {
+      "fame": -10,
+      "log": "He dies. Nobody mentions the manual again."
+     }
+    },
+    {
+     "text": "Refuse: a Great Family's quarrels are not yours",
+     "effects": {
+      "rep": {
+       "orthodox": -3
+      },
+      "log": "They leave without a word. Their patriarch is buried within the month."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_apprentice",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_alchemy_4"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A thin youth has slept outside your door for three nights. \"I can't pay. I can sweep, carry, and I never forget a herb once I've smelled it.\"",
+   "choices": [
+    {
+     "text": "Take the youth in",
+     "effects": {
+      "alignment": 4,
+      "spawn": {
+       "role": "disciple",
+       "opinion": 40,
+       "ageAbs": 14
+      },
+      "log": "You teach the first lesson: never brew angry. Your apprentice writes it on the wall."
+     }
+    },
+    {
+     "text": "Send them away with a meal",
+     "effects": {
+      "alignment": 1,
+      "log": "They eat, bow, and go. You hope someone else took them in."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_al_alliance",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "served_cult",
+     "sabotaged_alliance",
+     "fugitive",
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "rep": {
+     "orthodox": [
+      -25,
+      9999
+     ]
+    }
+   },
+   "weight": 3,
+   "text": "The Leader of the Martial Alliance comes to your door himself, without guards. The Demonic Cult is marching on the Central Plains. \"I need a hundred Lesser Return Pills for my vanguard. Only you can brew that many in time.\"",
+   "choices": [
+    {
+     "text": "Brew them, honestly and well",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 68
+     },
+     "ok": {
+      "taels": 3000,
+      "fame": 30,
+      "rep": {
+       "orthodox": 15
+      },
+      "flag": [
+       "favour_alliance",
+       "brewed_for_alliance"
+      ],
+      "log": "A hundred pills, every one perfect. When the vanguard holds the pass, the Leader says your name in front of the whole Alliance."
+     },
+     "fail": {
+      "fame": 10,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "You manage sixty. It is enough to hold the pass, barely."
+     }
+    },
+    {
+     "text": "Name a price that makes him flinch",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 68
+     },
+     "ok": {
+      "taels": 7000,
+      "fame": 12,
+      "rep": {
+       "orthodox": 3
+      },
+      "flag": "brewed_for_alliance",
+      "log": "He pays. The pills are perfect. The Alliance remembers both."
+     },
+     "fail": {
+      "taels": 2000,
+      "fame": -5,
+      "log": "He pays, the pills fall short, and the elders mutter about greed."
+     }
+    },
+    {
+     "text": "Refuse. The murim's wars are not yours",
+     "effects": {
+      "rep": {
+       "orthodox": -10
+      },
+      "flag": "refused_alliance",
+      "log": "He leaves without anger, which is somehow worse."
+     }
+    },
+    {
+     "text": "Brew them flawed, for the Cult's silver",
+     "effects": {
+      "taels": 4000,
+      "alignment": -25,
+      "rep": {
+       "demonic": 20,
+       "orthodox": -5
+      },
+      "flag": "sabotaged_alliance",
+      "log": "The pills look perfect. On the third day of the battle, the vanguard's energy fails all at once."
+     },
+     "risky": true
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_al_demon",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "job_heavenly_demon",
+     "imp_emperor"
+    ],
+    "factions": [
+     "none",
+     "orthodox",
+     "family",
+     "unorthodox",
+     "wanderer"
+    ]
+   },
+   "weight": 3,
+   "text": "Black-robed envoys of the Demonic Cult carry you, blindfolded, up a mountain. The Heavenly Demon lies wounded on a throne of bone. \"They say you are the best. Heal me, or your city burns.\"",
+   "choices": [
+    {
+     "text": "Heal him",
+     "risky": true,
+     "roll": {
+      "stat": "alchemy",
+      "dc": 72
+     },
+     "ok": {
+      "taels": 4000,
+      "fame": 25,
+      "rep": {
+       "demonic": 25,
+       "orthodox": -10
+      },
+      "flag": [
+       "favour_cult",
+       "served_cult"
+      ],
+      "log": "He stands on the seventh day. \"The Cult owes you a life,\" he says. \"Few can say that and live.\""
+     },
+     "fail": {
+      "health": -55,
+      "deathCause": "the Heavenly Demon's displeasure",
+      "rep": {
+       "demonic": -10
+      },
+      "log": "The wound reopens. So do several of yours."
+     }
+    },
+    {
+     "text": "Brew him a slow poison that tastes of medicine",
+     "risky": true,
+     "roll": {
+      "stat": "alchemy",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 60,
+      "rep": {
+       "orthodox": 30,
+       "demonic": -60
+      },
+      "alignment": 15,
+      "flag": "poisoned_heavenly_demon",
+      "log": "He thanks you and sends you home with gold. On the ninth night he falls into a sleep his physicians cannot break, and the Cult's march on the Central Plains is called off. Nobody can prove a thing. The teahouses do not need proof."
+     },
+     "fail": {
+      "health": -100,
+      "deathCause": "the Heavenly Demon, who could taste the poison",
+      "log": "He smells it before it touches his lips."
+     }
+    },
+    {
+     "text": "Refuse to his face",
+     "effects": {
+      "health": -45,
+      "fame": 15,
+      "rep": {
+       "orthodox": 8,
+       "demonic": -15
+      },
+      "deathCause": "the Heavenly Demon's guards",
+      "log": "His guards break you and throw you down the mountain. You live. People say you are mad, and brave."
+     },
+     "risky": true
+    },
+    {
+     "text": "Kneel and tell him the wound is beyond you",
+     "effects": {
+      "fame": -10,
+      "health": -5,
+      "rep": {
+       "demonic": -5
+      },
+      "log": "You touch your forehead to the bone floor and tell him the truth: no pill you know can close that wound. He is silent a long time, then has you carried down the mountain, blindfolded again. Your city does not burn. Your name as the best alchemist does."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_al_emperor",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_alchemy_5",
+     "craft_alchemy_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 3,
+   "text": "A eunuch from the palace arrives with a hundred soldiers and a scroll: the Son of Heaven requires an elixir of immortality.",
+   "choices": [
+    {
+     "text": "Tell him the truth: there is no such thing",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 10,
+      "log": "The eunuch is silent a long time. \"Then brew him the next best thing,\" he says, \"and never say that sentence again.\""
+     },
+     "fail": {
+      "jail": 2,
+      "log": "Truth is not a gift the palace accepts. Two years in the cells."
+     }
+    },
+    {
+     "text": "Brew the finest longevity elixir of your life",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 80
+     },
+     "ok": {
+      "taels": 5000,
+      "fame": 40,
+      "lifespan": 3,
+      "flag": "imperial_alchemist",
+      "log": "The Emperor feels young for a year. You are named Alchemist of the Inner Court, and you keep a little of the elixir for yourself."
+     },
+     "fail": {
+      "taels": 500,
+      "fame": 5,
+      "log": "He feels nothing in particular. You are paid, dismissed, and not called again."
+     }
+    },
+    {
+     "text": "Flee the city before the soldiers return",
+     "effects": {
+      "region": "jiangnan",
+      "fame": -5,
+      "log": "You leave by night, cauldron on your back."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_al_sabotage_found",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "sabotaged_alliance"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.5,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "Alliance investigators have traced the betrayal to you: the flawed pills, the weak rivets, the gap in the wall. Three of them are at your door, and they are not here to talk.",
+   "choices": [
+    {
+     "text": "Fight your way out",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "fame": -10,
+      "rep": {
+       "orthodox": -20
+      },
+      "log": "You leave three bodies and a burning house. The Alliance posts your face in every town."
+     },
+     "fail": {
+      "health": -80,
+      "deathCause": "Alliance justice",
+      "log": "They were the best the Alliance had."
+     }
+    },
+    {
+     "text": "Confess and take the punishment",
+     "effects": {
+      "jail": 6,
+      "rep": {
+       "orthodox": 5
+      },
+      "alignment": 10,
+      "unflag": "sabotaged_alliance",
+      "log": "Six years in the Alliance prison. When you come out, you never brew for silver again."
+     }
+    },
+    {
+     "text": "Run to the Cult that paid you",
+     "effects": {
+      "faction": "demonic",
+      "rep": {
+       "demonic": 10
+      },
+      "log": "The Cult takes you in. Nobody there asks why."
+     },
+     "req": {
+      "notFlags": [
+       "sect_head"
+      ]
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_rf_hoe",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_refining_1"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "On the same morning, a farmer brings you a cracked hoe and a bandit brings you a notched sword. Both want them by tonight.",
+   "choices": [
+    {
+     "text": "The farmer first",
+     "effects": {
+      "alignment": 3,
+      "taels": 5,
+      "log": "The hoe is perfect. The bandit leaves angry, and you find your door kicked in a week later."
+     }
+    },
+    {
+     "text": "The bandit first: he pays better",
+     "effects": {
+      "taels": 30,
+      "alignment": -3,
+      "log": "The sword is perfect. You hear later what it was used for."
+     }
+    },
+    {
+     "text": "Both, and no sleep",
+     "roll": {
+      "stat": "refining",
+      "dc": 25
+     },
+     "ok": {
+      "taels": 35,
+      "fame": 2,
+      "log": "Hoe and sword, both by dusk. Your arms do not lift for two days."
+     },
+     "fail": {
+      "taels": 10,
+      "log": "The hoe is fine. The sword snaps. The bandit has opinions about that."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_rf_heirloom",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_refining_2",
+     "craft_refining_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A famous swordsman lays a broken blade on your anvil. It belonged to his master, and his master's master. \"Make it whole. Do not make it new.\"",
+   "choices": [
+    {
+     "text": "Reforge it, every fold by hand",
+     "roll": {
+      "stat": "refining",
+      "dc": 40
+     },
+     "ok": {
+      "taels": 300,
+      "fame": 9,
+      "rep": {
+       "orthodox": 3
+      },
+      "log": "He weeps when he holds it. It rings exactly the way it used to."
+     },
+     "fail": {
+      "fame": -4,
+      "log": "It is whole. It is not the same. He pays, and does not come back."
+     }
+    },
+    {
+     "text": "Tell him the blade's time is done",
+     "effects": {
+      "comprehension": 1,
+      "log": "He argues, then agrees, then asks you to forge its successor someday."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_rf_cult_order",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_refining_3"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "factions": [
+     "none",
+     "orthodox",
+     "family",
+     "unorthodox",
+     "wanderer"
+    ]
+   },
+   "weight": 3,
+   "text": "A merchant with dead eyes orders two hundred sabres, paid in advance, no questions. The silver is stamped with a black flame: the Demonic Cult.",
+   "choices": [
+    {
+     "text": "Take the order",
+     "effects": {
+      "taels": 1200,
+      "alignment": -6,
+      "rep": {
+       "demonic": 12,
+       "orthodox": -8
+      },
+      "log": "Two hundred sabres go north on carts. You do not watch them leave."
+     }
+    },
+    {
+     "text": "Take it, and send the delivery route to the Alliance",
+     "roll": {
+      "stat": "refining",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 1200,
+      "fame": 10,
+      "rep": {
+       "orthodox": 12,
+       "demonic": -10
+      },
+      "log": "The Alliance seizes the carts on the road. The Cult never learns who talked. Probably."
+     },
+     "fail": {
+      "taels": 1200,
+      "health": -30,
+      "rep": {
+       "demonic": -20
+      },
+      "log": "The Cult learns who talked. Their visit is short and leaves marks."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "rep": {
+       "demonic": -4
+      },
+      "log": "The merchant smiles with his mouth only and leaves."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_rf_tomb_sword",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "craft_refining_4",
+     "craft_refining_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A sect has dug a sword out of an ancient tomb: rusted to the hilt, still humming. They want it restored, and they will pay in the one thing you cannot buy.",
+   "choices": [
+    {
+     "text": "Restore it",
+     "roll": {
+      "stat": "refining",
+      "dc": 55
+     },
+     "ok": {
+      "item": {
+       "meteor_iron": 1
+      },
+      "fame": 18,
+      "rep": {
+       "orthodox": 6
+      },
+      "log": "Under the rust is a blade that drinks the light. In thanks, the sect gives you a fist-sized lump of meteor iron."
+     },
+     "fail": {
+      "fame": -6,
+      "log": "The rust was holding it together. The sect elders stare at the pieces for a long time."
+     }
+    },
+    {
+     "text": "Leave the dead their sword",
+     "effects": {
+      "luck": 2,
+      "log": "Some things are buried for a reason. The sect finds someone else, and nothing good comes of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_rf_alliance",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_refining_5",
+     "craft_refining_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "served_cult",
+     "sabotaged_alliance",
+     "fugitive",
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "rep": {
+     "orthodox": [
+      -25,
+      9999
+     ]
+    }
+   },
+   "weight": 3,
+   "text": "The Alliance Leader needs armour for three hundred of his guard before the Cult's spring offensive. \"I hear you can make steel listen.\"",
+   "choices": [
+    {
+     "text": "Forge it, honestly and well",
+     "roll": {
+      "stat": "refining",
+      "dc": 68
+     },
+     "ok": {
+      "taels": 3500,
+      "fame": 28,
+      "rep": {
+       "orthodox": 15
+      },
+      "flag": [
+       "favour_alliance",
+       "brewed_for_alliance"
+      ],
+      "log": "When the Cult's first charge breaks on the guard's line, the steel holds. They call it your armour in the songs."
+     },
+     "fail": {
+      "fame": 8,
+      "log": "It is good armour, not great. It holds, mostly."
+     }
+    },
+    {
+     "text": "Forge it, at a ruinous price",
+     "effects": {
+      "taels": 7000,
+      "fame": 10,
+      "rep": {
+       "orthodox": -2
+      },
+      "log": "He pays, because he must. The armour is excellent. The Alliance treasurer never forgives you."
+     }
+    },
+    {
+     "text": "Weaken every rivet, for the Cult's gold",
+     "effects": {
+      "taels": 5000,
+      "alignment": -25,
+      "rep": {
+       "demonic": 20
+      },
+      "flag": "sabotaged_alliance",
+      "log": "The rivets give on the first day of battle. You hear the numbers and drink until you cannot."
+     },
+     "risky": true
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "rep": {
+       "orthodox": -8
+      },
+      "log": "He nods and goes to a lesser smith."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_rf_demon_blade",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_refining_5",
+     "craft_refining_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "job_heavenly_demon",
+     "imp_emperor"
+    ],
+    "factions": [
+     "none",
+     "orthodox",
+     "family",
+     "unorthodox",
+     "wanderer"
+    ]
+   },
+   "weight": 3,
+   "text": "The Heavenly Demon sends a single envoy with a lump of black meteor iron. \"Forge my master a blade that drinks blood. You have one winter.\"",
+   "choices": [
+    {
+     "text": "Forge it",
+     "roll": {
+      "stat": "refining",
+      "dc": 72
+     },
+     "ok": {
+      "taels": 4000,
+      "fame": 25,
+      "alignment": -10,
+      "rep": {
+       "demonic": 25,
+       "orthodox": -12
+      },
+      "flag": [
+       "favour_cult",
+       "served_cult"
+      ],
+      "log": "The blade drinks the light in your forge. The Heavenly Demon carries it into battle the next spring, and the songs curse your name with his."
+     },
+     "fail": {
+      "taels": 1000,
+      "rep": {
+       "demonic": -5
+      },
+      "log": "A good blade. Not a legend. The envoy's disappointment is quiet and cold."
+     }
+    },
+    {
+     "text": "Forge it with a hidden flaw that will break on the third kill",
+     "risky": true,
+     "roll": {
+      "stat": "refining",
+      "dc": 85
+     },
+     "ok": {
+      "fame": 60,
+      "alignment": 15,
+      "rep": {
+       "orthodox": 25,
+       "demonic": -40
+      },
+      "flag": "flawed_demon_blade",
+      "log": "It breaks in his hand at the Battle of the Yellow River. The Alliance never learns who to thank. You do not tell them."
+     },
+     "fail": {
+      "health": -100,
+      "deathCause": "the Heavenly Demon, who found the flaw",
+      "log": "He tests it on the forge's anvil first. Then on you."
+     }
+    },
+    {
+     "text": "Send the iron back",
+     "effects": {
+      "health": -40,
+      "fame": 12,
+      "rep": {
+       "demonic": -15
+      },
+      "deathCause": "the Cult's envoy",
+      "log": "The envoy breaks your right hand on your own anvil. It heals crooked. You forge with the left for a year."
+     },
+     "risky": true
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_ar_ghost",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_arrays_1"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A merchant's new house is haunted: doors slam, the cook won't stay, his wife hears weeping. He'll pay anyone who can stop it.",
+   "choices": [
+    {
+     "text": "Look at the house the way an array master would",
+     "roll": {
+      "stat": "arrays",
+      "dc": 22
+     },
+     "ok": {
+      "taels": 60,
+      "fame": 3,
+      "log": "The house sits on a broken earth vein. You move two stones in the garden and the weeping stops. You never tell him there was no ghost."
+     },
+     "fail": {
+      "taels": 10,
+      "log": "You move every stone in the garden. The weeping continues. It turns out to be the cook."
+     }
+    },
+    {
+     "text": "Tell him to burn incense and leave",
+     "effects": {
+      "taels": 5,
+      "log": "He pays you five taels for the advice. It works about as well as it deserved."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_ar_small_sect",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "craft_arrays_3",
+     "craft_arrays_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "A small sect in the hills, forty disciples and one old master, expects a bandit army before the harvest. They have no silver, only rice and gratitude.",
+   "choices": [
+    {
+     "text": "Lay them a defensive array for rice and gratitude",
+     "roll": {
+      "stat": "arrays",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 6,
+      "rep": {
+       "orthodox": 5
+      },
+      "log": "The bandits walk into fog that will not lift and come out where they started. Twice. They go home."
+     },
+     "fail": {
+      "fame": 3,
+      "health": -15,
+      "alignment": 4,
+      "log": "The array buys them half a night. You fight the rest of it beside them."
+     }
+    },
+    {
+     "text": "Ask for their sect's old array manual as payment",
+     "roll": {
+      "stat": "arrays",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 3,
+      "fame": 8,
+      "log": "The array holds. Their manual is three hundred years old and changes how you see stone."
+     },
+     "fail": {
+      "fame": 2,
+      "log": "It holds, barely. They have no manual to give."
+     }
+    },
+    {
+     "text": "Wish them luck",
+     "effects": {
+      "log": "You hear later that the sect is gone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_ar_tomb",
+   "cat": "explore",
+   "when": {
+    "flags": [
+     "craft_arrays_3"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Deep in the hills you find a tomb door sealed by an array older than the dynasty. The stones are still warm.",
+   "choices": [
+    {
+     "text": "Break the array",
+     "risky": true,
+     "roll": {
+      "stat": "arrays",
+      "dc": 52
+     },
+     "ok": {
+      "item": {
+       "spirit_fruit": 1,
+       "spirit_stone": 6
+      },
+      "comprehension": 2,
+      "log": "The last stone turns with a sigh. Inside: a jade box with a scarlet fruit, and a floor paved with spirit stones."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "an ancient killing array",
+      "log": "The array was not sealing the tomb. It was guarding it. You crawl out bleeding."
+     }
+    },
+    {
+     "text": "Copy the pattern and leave the dead alone",
+     "effects": {
+      "comprehension": 2,
+      "log": "You fill twelve pages with the pattern. Some of it you will understand in ten years."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_ar_rival",
+   "cat": "rival",
+   "when": {
+    "flags": [
+     "craft_arrays_4",
+     "array_guard"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Your guardian array wakes you at midnight: someone is caught in it, walking in circles in your courtyard. It is {npc}, your rival, with a knife.",
+   "choices": [
+    {
+     "text": "Let {him} walk until dawn, then open the gate",
+     "effects": {
+      "fame": 5,
+      "alignment": 3,
+      "mem": {
+       "deed": "spared",
+       "w": 25,
+       "note": "let me walk out of the array alive"
+      },
+      "log": "At dawn you open the array and hand back the knife. {npc} leaves without a word. The story spreads anyway."
+     }
+    },
+    {
+     "text": "Hand {him} to the magistrate",
+     "effects": {
+      "fame": 3,
+      "mem": {
+       "deed": "humiliated",
+       "w": -25,
+       "note": "handed me to the magistrate like a thief"
+      },
+      "log": "{npc} spends a season in a cell, plotting."
+     }
+    },
+    {
+     "text": "Close the array on {him}",
+     "effects": {
+      "alignment": -15,
+      "rep": {
+       "demonic": 4
+      },
+      "npcDie": "your killing array",
+      "log": "By dawn the courtyard is quiet. You bury {npc} under the plum tree."
+     }
+    }
+   ],
+   "npc": {
+    "role": "rival"
+   }
+  },
+  {
+   "id": "cf_ar_alliance",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_arrays_5",
+     "craft_arrays_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "served_cult",
+     "sabotaged_alliance",
+     "fugitive",
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "rep": {
+     "orthodox": [
+      -25,
+      9999
+     ]
+    }
+   },
+   "weight": 3,
+   "text": "The Martial Alliance's headquarters will be besieged within the month. The Leader asks you to lay the Great Mountain-Sealing Array around it. \"Without it, we fall.\"",
+   "choices": [
+    {
+     "text": "Lay the great array",
+     "roll": {
+      "stat": "arrays",
+      "dc": 70
+     },
+     "ok": {
+      "taels": 3000,
+      "fame": 35,
+      "rep": {
+       "orthodox": 18
+      },
+      "flag": [
+       "favour_alliance",
+       "brewed_for_alliance"
+      ],
+      "log": "For forty days the Cult's army beats on air. On the forty-first, they go home. The Alliance raises a stone with your name at the gate."
+     },
+     "fail": {
+      "fame": 10,
+      "health": -20,
+      "log": "The array cracks on the thirtieth day. It was enough, just."
+     }
+    },
+    {
+     "text": "Lay it, but leave one gap only you know",
+     "effects": {
+      "taels": 3000,
+      "fame": 30,
+      "flag": [
+       "favour_alliance",
+       "alliance_backdoor",
+       "brewed_for_alliance"
+      ],
+      "rep": {
+       "orthodox": 15
+      },
+      "log": "The array holds. Somewhere in the eastern wall is a door only you can open. You tell no one. You may never need it."
+     }
+    },
+    {
+     "text": "Sell the gap to the Cult",
+     "effects": {
+      "taels": 6000,
+      "alignment": -30,
+      "rep": {
+       "demonic": 25,
+       "orthodox": -10
+      },
+      "flag": "sabotaged_alliance",
+      "log": "The Cult walks in through the eastern wall on the second night. You count your silver and do not sleep."
+     },
+     "risky": true
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "rep": {
+       "orthodox": -10
+      },
+      "log": "The Leader looks very tired. He thanks you anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_ar_cult_prison",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "craft_arrays_5",
+     "craft_arrays_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "job_heavenly_demon",
+     "imp_emperor"
+    ],
+    "factions": [
+     "none",
+     "orthodox",
+     "family",
+     "unorthodox",
+     "wanderer"
+    ]
+   },
+   "weight": 3,
+   "text": "The Heavenly Demon has captured an Alliance elder and wants a prison no master can walk out of. His envoy waits at your gate with a cart of gold.",
+   "choices": [
+    {
+     "text": "Build the prison",
+     "effects": {
+      "taels": 4000,
+      "alignment": -10,
+      "rep": {
+       "demonic": 20,
+       "orthodox": -10
+      },
+      "flag": [
+       "favour_cult",
+       "served_cult"
+      ],
+      "log": "The elder sits in a circle of stones and cannot cross it. You were very good at this. You wish you were not."
+     }
+    },
+    {
+     "text": "Build it with a key that a patient prisoner could find",
+     "roll": {
+      "stat": "arrays",
+      "dc": 80
+     },
+     "ok": {
+      "taels": 4000,
+      "fame": 20,
+      "alignment": 10,
+      "rep": {
+       "orthodox": 15
+      },
+      "log": "Two years later, the elder walks out of the Cult's mountain on his own. He sends you a single plum blossom."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the Heavenly Demon, who found the key",
+      "rep": {
+       "demonic": -30
+      },
+      "log": "The Cult's own array masters find the key in a month. They find you in two."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "health": -35,
+      "rep": {
+       "demonic": -10
+      },
+      "deathCause": "the Cult's envoy",
+      "log": "The envoy leaves the gold and breaks both your hands on the gatepost instead."
+     },
+     "risky": true
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_bd_monks",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_body_2"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Three wandering monks laugh at your 'iron skin' and offer a wager: ten blows from their staves. If you are still standing, they'll teach you their breathing.",
+   "choices": [
+    {
+     "text": "Take ten blows",
+     "roll": {
+      "stat": "body",
+      "dc": 32
+     },
+     "ok": {
+      "strength": 2,
+      "fame": 4,
+      "log": "On the tenth blow a staff breaks. The monks stop laughing and keep their word."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You make it to seven. They help you home, still laughing, but kindly."
+     }
+    },
+    {
+     "text": "Decline: you have nothing to prove",
+     "effects": {
+      "log": "They shrug and walk on, arguing about lunch."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_bd_assassin",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "craft_body_3"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "In a crowded market, someone slides a knife between your ribs. It bends.",
+   "choices": [
+    {
+     "text": "Turn around",
+     "effects": {
+      "fame": 10,
+      "log": "The assassin stares at the bent knife, then at you, then runs. The story of the knife that bent is told in every teahouse by nightfall."
+     }
+    },
+    {
+     "text": "Pretend it worked, and follow them home",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 6,
+      "taels": 80,
+      "log": "They lead you to the man who paid them. You have a long conversation with him."
+     },
+     "fail": {
+      "health": -15,
+      "log": "They notice. The second knife was poisoned."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_bd_wrestler",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "craft_body_4",
+     "craft_body_known"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "The capital's champion wrestler, the Mountain Ox, has never lost. He has heard of you and sent a challenge on a pig's hide.",
+   "choices": [
+    {
+     "text": "Wrestle the Ox",
+     "roll": {
+      "stat": "body",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 18,
+      "taels": 200,
+      "log": "It takes an hour. When the Ox goes down, the ground shakes and the crowd goes silent, then wild."
+     },
+     "fail": {
+      "health": -30,
+      "fame": 4,
+      "log": "You lose, but you last longer than anyone ever has. The Ox buys you dinner."
+     }
+    },
+    {
+     "text": "Send back the pig's hide with a polite note",
+     "effects": {
+      "fame": -2,
+      "log": "The note is read aloud in the capital, to much laughter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_bd_vajra",
+   "cat": "insight",
+   "when": {
+    "flags": [
+     "craft_body_5"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "The abbot of the Diamond Temple invites you to sit in their Bell Hall for one night while the great bell is struck. No one with an ordinary body survives it.",
+   "choices": [
+    {
+     "text": "Sit under the bell",
+     "risky": true,
+     "roll": {
+      "stat": "body",
+      "dc": 70
+     },
+     "ok": {
+      "lifespan": 6,
+      "strength": 5,
+      "fame": 25,
+      "log": "At dawn you walk out of the Bell Hall. The abbot bows to the ground. Something in your bones will not age the way it used to."
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "the great bell of the Diamond Temple",
+      "log": "On the ninety-ninth stroke, something gives."
+     }
+    },
+    {
+     "text": "Thank the abbot and decline",
+     "effects": {
+      "comprehension": 2,
+      "log": "He smiles. \"Knowing your limit is also a body.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_thief_notes",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "craft_alchemy_3"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "Your workshop has been broken into. Nothing is missing except your book of notes, years of formulas.",
+   "choices": [
+    {
+     "text": "Hunt the thief down",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "log": "You find the book in a rival hall, being copied. The copier is very apologetic, and very bruised."
+     },
+     "fail": {
+      "comprehension": -2,
+      "log": "It is gone. You start a new book, angrier."
+     }
+    },
+    {
+     "text": "Let it go: what is in your hands cannot be stolen",
+     "effects": {
+      "comprehension": 2,
+      "log": "You rewrite it from memory in a month, and it is better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_fu_family_debt",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "favour_family"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.5
+   },
+   "weight": 24,
+   "text": "A rider in Great Family colours finds you on the road. \"The patriarch has not forgotten. He asks what you need.\"",
+   "choices": [
+    {
+     "text": "Silver for my work",
+     "effects": {
+      "taels": 600,
+      "unflag": "favour_family",
+      "log": "A chest of silver arrives that evening, with the family seal on every bar."
+     }
+    },
+    {
+     "text": "A manual from their library",
+     "effects": {
+      "manual": 4,
+      "unflag": "favour_family",
+      "log": "A manual bound in black silk, its first page signed by the patriarch himself."
+     }
+    },
+    {
+     "text": "Nothing now. Keep the debt",
+     "effects": {
+      "fame": 3,
+      "log": "The rider bows. \"Then the family owes you still.\" People notice that kind of thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_fu_elder_vouch",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "favour_sect_elder"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.5
+   },
+   "weight": 24,
+   "text": "The sect elder whose grandson you saved has been telling everyone about you. His sect sends an invitation and a gift.",
+   "choices": [
+    {
+     "text": "Accept the gift and their thanks",
+     "effects": {
+      "fame": 6,
+      "item": {
+       "ginseng": 1
+      },
+      "rep": {
+       "orthodox": 4
+      },
+      "unflag": "favour_sect_elder",
+      "log": "A hundred-year ginseng in a jade box, and a standing welcome at their gate."
+     }
+    },
+    {
+     "text": "Ask the elder to teach you a little",
+     "effects": {
+      "comprehension": 3,
+      "artYears": 1,
+      "unflag": "favour_sect_elder",
+      "log": "He spends a month correcting how you hold your breath, your brush and your pride."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_fu_alliance_prison",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "favour_alliance"
+    ],
+    "inPrison": true,
+    "age": [
+     12,
+     999
+    ]
+   },
+   "weight": 48,
+   "text": "Word reaches the Alliance that you are in a cell. A letter with the Leader's own seal arrives on the prison governor's desk.",
+   "choices": [
+    {
+     "text": "Walk out",
+     "effects": {
+      "free": true,
+      "unflag": "favour_alliance",
+      "log": "The cell door opens before noon. The governor apologises twice. The Alliance's debt to you is paid."
+     }
+    },
+    {
+     "text": "Serve out your sentence anyway",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "log": "You thank the governor and go back to your cell. A debt you did not call in is a debt still owed, and the Alliance remembers it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_fu_alliance_honour",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "favour_alliance"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.35,
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "weight": 18,
+   "text": "The Martial Alliance holds a banquet for those who served in the war, and your name is read aloud before the sect leaders.",
+   "choices": [
+    {
+     "text": "Stand and accept the honour",
+     "effects": {
+      "fame": 20,
+      "rep": {
+       "orthodox": 10
+      },
+      "unflag": "favour_alliance",
+      "log": "Sect leaders who never spoke to you before raise their cups to you."
+     }
+    },
+    {
+     "text": "Send your thanks, but stay away",
+     "effects": {
+      "fame": 8,
+      "luck": 2,
+      "log": "Your empty seat is talked about all night. Modesty becomes part of the legend."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_fu_cult_protection",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "favour_cult"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.4
+   },
+   "weight": 24,
+   "text": "Bandits ring you on a lonely road. Then their leader sees the black-flame token the Cult gave you, and goes very pale.",
+   "choices": [
+    {
+     "text": "Show it plainly",
+     "effects": {
+      "rep": {
+       "demonic": 4,
+       "orthodox": -2
+      },
+      "log": "They melt into the trees without a word. The Cult's protection is real, and so is its price."
+     }
+    },
+    {
+     "text": "Hide it and fight them honestly",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 4,
+      "log": "You win without the Cult. It feels better than you expected."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You lose a purse and some blood. Pride is expensive."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_fu_cult_second",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "favour_cult"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.35,
+    "notFlags": [
+     "job_heavenly_demon",
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 24,
+   "text": "The Cult's envoy is back. \"The Heavenly Demon remembers your service. He has another task, and he does not ask twice.\"",
+   "choices": [
+    {
+     "text": "Serve again",
+     "effects": {
+      "taels": 2000,
+      "rep": {
+       "demonic": 15,
+       "orthodox": -10
+      },
+      "alignment": -10,
+      "log": "Another season of work you will not talk about, and more gold than you can spend in a year."
+     }
+    },
+    {
+     "text": "Refuse, politely",
+     "effects": {
+      "health": -30,
+      "unflag": "favour_cult",
+      "rep": {
+       "demonic": -10
+      },
+      "deathCause": "the Cult's envoy",
+      "log": "The envoy shows you what the Cult does with people who say no, then lets you live, this once."
+     },
+     "risky": true
+    },
+    {
+     "text": "Go to the Alliance and tell them everything",
+     "effects": {
+      "fame": 15,
+      "rep": {
+       "orthodox": 15,
+       "demonic": -30
+      },
+      "unflag": "favour_cult",
+      "log": "The Alliance listens carefully and gives you guards. You will need them."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_fu_imperial_stipend",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "imperial_alchemist"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "imp_rebel"
+    ]
+   },
+   "weight": 30,
+   "text": "The palace stipend arrives with a eunuch, two guards and a list of what the Inner Court would like brewed this year.",
+   "choices": [
+    {
+     "text": "Brew what they ask",
+     "effects": {
+      "taels": 400,
+      "fame": 3,
+      "log": "Three hundred pills for the palace, and silver enough for a year."
+     }
+    },
+    {
+     "text": "Brew it, and slip a better formula into the Empress's tea",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 70
+     },
+     "ok": {
+      "taels": 400,
+      "fame": 8,
+      "charm": 2,
+      "log": "The Empress sends her personal thanks. The Inner Court suddenly remembers your name."
+     },
+     "fail": {
+      "taels": 200,
+      "log": "She does not notice. Neither does anyone else."
+     }
+    }
+   ],
+   "once": false,
+   "cooldown": 3,
+   "maxPerLife": 6,
+   "mw": true
+  },
+  {
+   "id": "cf_fu_backdoor",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "alliance_backdoor"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.3,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 36,
+   "text": "The Cult's army is at the Alliance's gate again. Only you know about the gap in the eastern wall of your great array.",
+   "choices": [
+    {
+     "text": "Tell the Alliance and seal it",
+     "effects": {
+      "fame": 10,
+      "rep": {
+       "orthodox": 8
+      },
+      "unflag": "alliance_backdoor",
+      "log": "The elders go pale, then thank you. The wall is whole for the first time."
+     }
+    },
+    {
+     "text": "Use it to slip in and fight beside them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 25,
+      "rep": {
+       "orthodox": 12
+      },
+      "unflag": "alliance_backdoor",
+      "log": "You appear inside the walls at the worst moment for the Cult. The defenders say a ghost came through the stone."
+     },
+     "fail": {
+      "health": -35,
+      "fame": 8,
+      "unflag": "alliance_backdoor",
+      "log": "You get in, you get hurt, and the line holds anyway."
+     }
+    },
+    {
+     "text": "Sell it to the Cult",
+     "effects": {
+      "taels": 8000,
+      "alignment": -35,
+      "rep": {
+       "demonic": 25,
+       "orthodox": -20
+      },
+      "flag": "sabotaged_alliance",
+      "unflag": "alliance_backdoor",
+      "log": "The Cult walks in through the east. You never look at your silver the same way again."
+     },
+     "risky": true
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cf_fu_veil_returns",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "cheated_veil"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.4
+   },
+   "weight": 36,
+   "text": "The veiled woman is back, and this time she is not alone. \"The man is still breathing. I paid you for a funeral.\"",
+   "choices": [
+    {
+     "text": "Return the three hundred taels",
+     "effects": {
+      "taels": -300,
+      "unflag": "cheated_veil",
+      "log": "She takes it, counts it, and leaves. Her men look disappointed."
+     },
+     "req": {
+      "minTaels": 300
+     }
+    },
+    {
+     "text": "Talk your way out",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "unflag": "cheated_veil",
+      "luck": 1,
+      "log": "You tell her the man is protected by something stronger than poison. She believes you, almost."
+     },
+     "fail": {
+      "health": -30,
+      "unflag": "cheated_veil",
+      "log": "Her men are not interested in talking."
+     }
+    },
+    {
+     "text": "Fight",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 5,
+      "unflag": "cheated_veil",
+      "log": "Her men go down. She does not. She simply leaves, which is worse."
+     },
+     "fail": {
+      "health": -40,
+      "unflag": "cheated_veil",
+      "deathCause": "the veiled woman's men",
+      "log": "They leave you in the street with a broken arm and your purse gone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_fu_poisoner_found",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "poisoner"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.35
+   },
+   "weight": 30,
+   "text": "The dead magistrate's son has spent years asking questions. Tonight he is at your door with a constable and a vial that smells exactly like your work.",
+   "choices": [
+    {
+     "text": "Deny everything",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "luck": -2,
+      "log": "He cannot prove it. He leaves. He will be back."
+     },
+     "fail": {
+      "jail": 5,
+      "unflag": "poisoner",
+      "fame": -15,
+      "log": "The constable finds your notebook. Five years."
+     }
+    },
+    {
+     "text": "Confess and beg his forgiveness",
+     "effects": {
+      "jail": 3,
+      "alignment": 12,
+      "unflag": "poisoner",
+      "fame": -10,
+      "log": "Three years in a cell. When you come out, he is waiting with a cup of tea and nothing to say."
+     }
+    },
+    {
+     "text": "Run",
+     "effects": {
+      "region": "west",
+      "fame": -8,
+      "flag": "fugitive",
+      "unflag": "poisoner",
+      "log": "You leave the province that night with a bag of herbs and a new name."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cf_fu_refused",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "refused_alliance"
+    ],
+    "inPrison": false,
+    "age": [
+     12,
+     999
+    ],
+    "chance": 0.4
+   },
+   "weight": 30,
+   "text": "The pass fell the spring you refused the Alliance. A one-armed veteran recognises you in the market and stops in front of you.",
+   "choices": [
+    {
+     "text": "Hear him out",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "unflag": "refused_alliance",
+      "log": "He tells you about the pass, slowly, every name. You do not argue. When he leaves, you sit a long time."
+     }
+    },
+    {
+     "text": "Give him silver for the widows",
+     "effects": {
+      "taels": -200,
+      "fame": 4,
+      "rep": {
+       "orthodox": 4
+      },
+      "unflag": "refused_alliance",
+      "log": "He takes it for them, not for you. Word gets round anyway."
+     },
+     "req": {
+      "minTaels": 200
+     }
+    },
+    {
+     "text": "Walk past him",
+     "effects": {
+      "fame": -4,
+      "rep": {
+       "orthodox": -3
+      },
+      "log": "He says your name to the whole market. People remember."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

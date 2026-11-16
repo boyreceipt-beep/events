@@ -1,0 +1,726 @@
+{
+ "events": [
+  {
+   "id": "dc_sect_outer_1",
+   "cat": "sect",
+   "arc": "Sweeping the Steps",
+   "when": {
+    "flags": [
+     "job_outer_disciple"
+    ],
+    "age": [
+     12,
+     40
+    ]
+   },
+   "weight": 14,
+   "text": "An outer disciple sweeps a thousand steps every dawn. An inner disciple comes down them at a run, kicking your pile apart on purpose, and the whole yard watches to see what the new sweeper does.",
+   "choices": [
+    {
+     "text": "Sweep it again, saying nothing",
+     "effects": {
+      "comprehension": 3,
+      "merit": 10,
+      "flag": "sect_patient",
+      "log": "Every morning for a month. On the thirty-first he stops, watches you, and sweeps the last ten steps himself."
+     }
+    },
+    {
+     "text": "Put the broom across his shins",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 4,
+      "merit": -10,
+      "flag": "sect_fighter",
+      "log": "He limps. You are given the privies for a season, and a nickname that stays."
+     },
+     "fail": {
+      "health": -10,
+      "merit": -20,
+      "flag": "sect_fighter",
+      "log": "He is faster than he looks. The broom snaps, you take the fall, and the yard laughs for a week."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_outer_2",
+   "cat": "sect",
+   "arc": "Sweeping the Steps",
+   "when": {
+    "anyFlags": [
+     "job_outer_disciple",
+     "job_inner_rank"
+    ],
+    "age": [
+     12,
+     45
+    ],
+    "after": [
+     "dc_sect_outer_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The outer disciples' rice has been thin for a season. You find out why: the steward sells half of it in town. He is an elder's nephew.",
+   "choices": [
+    {
+     "text": "Take it to the elder himself",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "merit": 40,
+      "fame": 4,
+      "flag": "sect_steward_exposed",
+      "log": "The elder is quiet for a long time, then has his nephew carry rice up the thousand steps for a year. The outer yard eats."
+     },
+     "fail": {
+      "merit": -30,
+      "flag": "sect_steward_enemy",
+      "log": "The elder hears you out and does nothing. The steward learns who spoke, and the outer yard's rice stays thin."
+     }
+    },
+    {
+     "text": "Buy rice in town and say nothing",
+     "effects": {
+      "taels": -40,
+      "alignment": 4,
+      "merit": 15,
+      "log": "The disciples eat and never know why. The steward keeps selling. You keep buying."
+     },
+     "req": {
+      "minTaels": 40
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_outer_3",
+   "cat": "sect",
+   "arc": "Sweeping the Steps",
+   "when": {
+    "flags": [
+     "job_outer_disciple"
+    ],
+    "age": [
+     14,
+     45
+    ],
+    "after": [
+     "dc_sect_outer_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The inner selection. Twelve outer disciples, three places. The night before, your closest friend among them asks you to lose to him on purpose; his family will disown him if he fails again.",
+   "choices": [
+    {
+     "text": "Fight honestly",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "merit": 30,
+      "promote": true,
+      "flag": "sect_inner_honest",
+      "log": "You win your place. He loses his, and his family. He leaves the mountain without saying goodbye."
+     },
+     "fail": {
+      "merit": 10,
+      "flag": "sect_inner_failed",
+      "log": "You lose by a hair, and your friend, who was never asked to lose, wins the place and does not look at you."
+     }
+    },
+    {
+     "text": "Lose to him",
+     "effects": {
+      "alignment": 8,
+      "merit": -10,
+      "flag": "sect_gave_place",
+      "log": "He takes the place and weeps. Three years later he is a core disciple who opens every door for you he can reach."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_inner_1",
+   "cat": "sect",
+   "arc": "The Inner Hall",
+   "when": {
+    "flags": [
+     "job_inner_rank"
+    ],
+    "age": [
+     14,
+     50
+    ]
+   },
+   "weight": 14,
+   "text": "Inner disciples get a room, a manual and an enemy. Yours is the elder's own disciple, who was promised your room, and who has found that your manual's third page is missing.",
+   "choices": [
+    {
+     "text": "Ask the elder for the page, in front of everyone",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "merit": 20,
+      "manual": 2,
+      "flag": "sect_inner_rival",
+      "log": "The elder produces the page from his disciple's sleeve without a word. You have the method and an enemy for life."
+     },
+     "fail": {
+      "merit": -15,
+      "flag": "sect_inner_rival",
+      "log": "The hall laughs at you instead. The elder keeps the page, and your enemy keeps the grin."
+     }
+    },
+    {
+     "text": "Work out the third page yourself",
+     "effects": {
+      "comprehension": 6,
+      "merit": 10,
+      "flag": "sect_inner_rival",
+      "log": "A winter of guessing. The page you write is not the original. Years later an elder says it is better."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_inner_2",
+   "cat": "sect",
+   "arc": "The Inner Hall",
+   "when": {
+    "anyFlags": [
+     "job_inner_rank",
+     "job_core_rank"
+    ],
+    "age": [
+     15,
+     55
+    ],
+    "after": [
+     "dc_sect_inner_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "A rival sect's disciples challenge the inner hall to a friendly exchange of pointers. Friendly means someone goes home carried. The elders want to know who will stand first.",
+   "choices": [
+    {
+     "text": "Stand first",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 8,
+      "merit": 35,
+      "flag": "sect_stood_first",
+      "log": "You win the first bout and set the tone. The rival sect goes home carrying two. Your name is spoken on their mountain."
+     },
+     "fail": {
+      "health": -15,
+      "merit": 10,
+      "flag": "sect_stood_first",
+      "log": "You go down in the second exchange, and the rival sect carries the bout home. The elders say nothing, which is worse."
+     }
+    },
+    {
+     "text": "Let the elder's disciple stand first",
+     "effects": {
+      "merit": 5,
+      "alignment": 2,
+      "log": "He loses badly. The elders remember that you stepped back, and read it two ways."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_inner_3",
+   "cat": "sect",
+   "arc": "The Inner Hall",
+   "when": {
+    "anyFlags": [
+     "job_inner_rank",
+     "job_core_rank"
+    ],
+    "age": [
+     15,
+     60
+    ],
+    "after": [
+     "dc_sect_inner_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "Your old enemy in the inner hall is accused of stealing a secret manual. You know he did not: you saw who did, and it was an elder's nephew.",
+   "choices": [
+    {
+     "text": "Speak for your enemy",
+     "effects": {
+      "alignment": 10,
+      "merit": 20,
+      "fame": 4,
+      "flag": "sect_defended_rival",
+      "log": "He is cleared. He never thanks you and never again works against you, which from him is the same thing."
+     }
+    },
+    {
+     "text": "Say nothing. He would not speak for you",
+     "effects": {
+      "alignment": -8,
+      "merit": 10,
+      "flag": "sect_let_rival_fall",
+      "log": "He is expelled. The nephew rises. You rise faster, and sleep less."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_core_1",
+   "cat": "sect",
+   "arc": "Pillar of the Next Generation",
+   "when": {
+    "anyFlags": [
+     "job_core_rank",
+     "job_sect_instructor"
+    ],
+    "age": [
+     18,
+     60
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 14,
+   "text": "A core disciple carries the sect's name outside it. Your first mission: a town the sect protects has not paid its tithe, and the elders want it collected with the sect's dignity intact.",
+   "choices": [
+    {
+     "text": "Collect it, and find out why they stopped",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "merit": 40,
+      "fame": 6,
+      "flag": "sect_town_friend",
+      "log": "A bandit band took it first. You take it back from the bandits. The town pays double the next year without being asked."
+     },
+     "fail": {
+      "merit": 15,
+      "flag": "sect_town_grudge",
+      "log": "The town will not say why. You collect what they give you, and the elders note the shortfall."
+     }
+    },
+    {
+     "text": "Collect it. Reasons are not your mission",
+     "effects": {
+      "merit": 25,
+      "alignment": -6,
+      "flag": "sect_town_grudge",
+      "log": "They pay. They also stop sending their children to the sect's outer hall."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_core_2",
+   "cat": "sect",
+   "arc": "Pillar of the Next Generation",
+   "when": {
+    "anyFlags": [
+     "job_core_rank",
+     "job_sect_instructor",
+     "job_elder_rank"
+    ],
+    "age": [
+     20,
+     65
+    ],
+    "after": [
+     "dc_sect_core_1"
+    ],
+    "minYearsAfter": 3,
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head"
+    ]
+   },
+   "weight": 6,
+   "text": "An elder takes you aside: the Sect Leader is too old, too soft, too slow to act against the Cult. There will be a vote. He wants your voice and your sword.",
+   "choices": [
+    {
+     "text": "Stand with the elder",
+     "effects": {
+      "merit": 30,
+      "flag": "sect_faction_elder",
+      "alignment": -4,
+      "log": "You are a faction now. Doors open that were closed, and others close that were open."
+     }
+    },
+    {
+     "text": "Tell the Sect Leader",
+     "effects": {
+      "merit": 20,
+      "flag": "sect_faction_leader",
+      "alignment": 4,
+      "log": "The Leader thanks you and does nothing, which was the elder's whole point. The elder knows who told."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_sect_core_3",
+   "cat": "sect",
+   "arc": "Pillar of the Next Generation",
+   "when": {
+    "anyFlags": [
+     "job_core_rank",
+     "job_sect_instructor",
+     "job_elder_rank"
+    ],
+    "age": [
+     20,
+     70
+    ],
+    "after": [
+     "dc_sect_core_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The vote is tomorrow. The elder's faction will win by one. The one is a core disciple who owes you a life, and who asks you what to do.",
+   "choices": [
+    {
+     "text": "Tell him to vote his conscience",
+     "effects": {
+      "alignment": 8,
+      "merit": 15,
+      "flag": "sect_vote_free",
+      "log": "He votes for the Leader. The vote fails by one. The elder leaves the mountain with forty disciples and founds a sect that hates yours."
+     }
+    },
+    {
+     "text": "Tell him to vote with the elder",
+     "effects": {
+      "merit": 40,
+      "alignment": -6,
+      "flag": "sect_vote_elder",
+      "log": "The Leader steps down with dignity. The elder leads. Your seat on the council is the youngest in the sect's history."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_elder_1",
+   "cat": "sect",
+   "arc": "The Council Hall",
+   "when": {
+    "anyFlags": [
+     "job_elder_rank",
+     "job_vice_leader"
+    ],
+    "age": [
+     30,
+     80
+    ]
+   },
+   "weight": 14,
+   "text": "An elder's seat, and the first thing on the table: a disciple caught selling the sect's manual to a merchant. He is seventeen and his mother is in the outer yard, dying slowly and expensively.",
+   "choices": [
+    {
+     "text": "Expel him, as the rules say",
+     "effects": {
+      "merit": 20,
+      "alignment": -6,
+      "flag": "sect_hard_elder",
+      "log": "He goes. His mother dies in the spring. The manual stays in the sect, and so does a certain cold around your seat."
+     }
+    },
+    {
+     "text": "Pay the mother's physician and keep him",
+     "effects": {
+      "taels": -150,
+      "alignment": 10,
+      "merit": 10,
+      "flag": "sect_kind_elder",
+      "log": "He never sells anything again. Twenty years later he is the elder who sits beside you and votes with you on everything."
+     },
+     "req": {
+      "minTaels": 150
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_elder_2",
+   "cat": "sect",
+   "arc": "The Council Hall",
+   "when": {
+    "anyFlags": [
+     "job_elder_rank",
+     "job_vice_leader"
+    ],
+    "age": [
+     32,
+     85
+    ],
+    "after": [
+     "dc_sect_elder_1"
+    ],
+    "minYearsAfter": 3,
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "weight": 6,
+   "text": "The Alliance asks the sect for a hundred disciples for the war against the Cult. The Leader wants to send them. You have taught most of the hundred.",
+   "choices": [
+    {
+     "text": "Lead them yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "risky": true,
+     "ok": {
+      "fame": 25,
+      "merit": 60,
+      "flag": "sect_led_war",
+      "log": "Sixty-one come home. All sixty-one carry you up the thousand steps."
+     },
+     "fail": {
+      "health": -30,
+      "merit": 30,
+      "deathCause": "the war against the Cult",
+      "log": "The war takes more than you promised it would. You bring the survivors home on stretchers, and carry the rest in your head."
+     }
+    },
+    {
+     "text": "Argue against sending them",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "merit": 30,
+      "alignment": 6,
+      "flag": "sect_kept_disciples",
+      "log": "The council keeps them home. The Alliance remembers. The hundred grow up to be the sect's strongest generation."
+     },
+     "fail": {
+      "merit": -20,
+      "flag": "sect_overruled",
+      "log": "Your argument is sound and the council deaf. The hundred march, and you write every name down."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_sect_elder_3",
+   "cat": "sect",
+   "arc": "The Council Hall",
+   "when": {
+    "anyFlags": [
+     "job_elder_rank",
+     "job_vice_leader"
+    ],
+    "age": [
+     35,
+     90
+    ],
+    "after": [
+     "dc_sect_elder_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The Leader is dying and has named you, in private, as the next. In public, two elders have more votes and one of them was your friend for most of your life.",
+   "choices": [
+    {
+     "text": "Let the friend take it",
+     "effects": {
+      "alignment": 10,
+      "merit": 20,
+      "flag": "sect_yielded_seat",
+      "log": "He leads well for a decade and names you in his will. The sect calls you the elder who could have been Leader twice."
+     }
+    },
+    {
+     "text": "Claim the Leader's word",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "promote": true,
+      "fame": 20,
+      "flag": "sect_claimed_seat",
+      "log": "The council splits and then bends. You lead. Your friend of a lifetime bows and never dines with you again."
+     },
+     "fail": {
+      "merit": -30,
+      "flag": "sect_claim_failed",
+      "log": "The council hears the Leader's word as a dying man's wish, and votes the other way. You keep your seat and lose a little of your name."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_sect_leader_1",
+   "cat": "sect",
+   "arc": "The Leader's Seat",
+   "when": {
+    "flags": [
+     "job_sect_leader"
+    ],
+    "age": [
+     40,
+     95
+    ]
+   },
+   "weight": 14,
+   "text": "The first spring as Leader. A great family offers an alliance by marriage: their daughter to your most gifted disciple, and their silver to your leaking roofs. The disciple loves someone else.",
+   "choices": [
+    {
+     "text": "The sect comes first",
+     "effects": {
+      "taels": 800,
+      "alignment": -8,
+      "merit": 30,
+      "flag": "sect_sold_marriage",
+      "log": "The roofs are mended. The disciple marries, is correct to his wife for forty years, and never smiles at you again."
+     }
+    },
+    {
+     "text": "Refuse. The sect does not sell its children",
+     "effects": {
+      "alignment": 12,
+      "fame": 10,
+      "taels": -100,
+      "flag": "sect_refused_marriage",
+      "log": "The roofs leak another decade. The disciple becomes the strongest sword the sect has raised, and he raised it for you."
+     }
+    }
+   ],
+   "once": true,
+   "po": true
+  },
+  {
+   "id": "dc_sect_leader_2",
+   "cat": "sect",
+   "arc": "The Leader's Seat",
+   "when": {
+    "flags": [
+     "job_sect_leader"
+    ],
+    "age": [
+     42,
+     99
+    ],
+    "after": [
+     "dc_sect_leader_1"
+    ],
+    "minYearsAfter": 3,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "A Cult hall master comes alone to your gate under a white flag, asking sanctuary: he has turned, he says, and carries the Cult's plans for the summer. The Alliance would kill him on sight.",
+   "choices": [
+    {
+     "text": "Give him sanctuary",
+     "effects": {
+      "alignment": 8,
+      "fame": -6,
+      "flag": "sect_sheltered_cultist",
+      "log": "His plans are real. The Cult's summer fails. The Alliance never forgives you for sheltering him, and never stops using what he knew."
+     }
+    },
+    {
+     "text": "Hand him to the Alliance",
+     "effects": {
+      "alignment": -6,
+      "fame": 10,
+      "merit": 20,
+      "log": "He dies at the Alliance's gate with his plans in his sleeve. Half of them were real."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_sect_leader_3",
+   "cat": "sect",
+   "arc": "The Leader's Seat",
+   "when": {
+    "flags": [
+     "job_sect_leader",
+     "has_child"
+    ],
+    "age": [
+     50,
+     99
+    ],
+    "after": [
+     "dc_sect_leader_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "You have led for many years. The elders ask you to name a successor. Your choice is between your own child, who is good, and a disciple who is great.",
+   "choices": [
+    {
+     "text": "The disciple",
+     "effects": {
+      "alignment": 10,
+      "fame": 14,
+      "flag": "sect_named_disciple",
+      "log": "Your child takes it better than you expected and worse than they show. The sect under the disciple becomes the first in the murim."
+     }
+    },
+    {
+     "text": "Your child",
+     "effects": {
+      "alignment": -4,
+      "flag": "sect_named_child",
+      "log": "The sect calls it a dynasty. Your child leads honestly and unremarkably, and the great disciple founds a sect that overtakes yours in twenty years."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

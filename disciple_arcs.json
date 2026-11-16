@@ -1,0 +1,678 @@
+{
+ "events": [
+  {
+   "id": "ds_genius_rises",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "prodigy"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} has outpaced every other disciple in the sect. The others have started to whisper that {he} is your favourite.",
+   "choices": [
+    {
+     "text": "Praise {him} before the whole sect",
+     "effects": {
+      "npcFlag": "arc_proud",
+      "mem": {
+       "deed": "honoured",
+       "w": 10,
+       "note": "praised me before everyone"
+      },
+      "log": "{npc} glows. The other disciples go very quiet. You have made a star, and perhaps a problem."
+     }
+    },
+    {
+     "text": "Praise {him} in private, and push {him} harder",
+     "effects": {
+      "npcFlag": "arc_humble",
+      "mem": {
+       "deed": "taught",
+       "w": 8,
+       "note": "pushed me harder than anyone"
+      },
+      "log": "{npc} trains until {his} hands bleed, and never once boasts."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_genius_jealous",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "arc_proud"
+    ],
+    "after": [
+     "ds_genius_rises"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} has heard you spent an evening teaching another disciple. {He} confronts you in the courtyard: 'Why them? I am better.'",
+   "choices": [
+    {
+     "text": "Tell {him} the truth: being better is not enough",
+     "effects": {
+      "npcFlag": "arc_redeemed",
+      "npcUnflag": "arc_proud",
+      "mem": {
+       "deed": "taught",
+       "w": 6,
+       "note": "told me a hard truth"
+      },
+      "alignment": 3,
+      "log": "{npc} storms off. Three days later {he} comes back and asks what else there is to learn. It is a beginning."
+     }
+    },
+    {
+     "text": "Put {him} in charge of the outer disciples",
+     "effects": {
+      "npcFlag": "arc_redeemed",
+      "npcUnflag": "arc_proud",
+      "mem": {
+       "deed": "trusted",
+       "w": 12,
+       "note": "trusted me with the outer disciples"
+      },
+      "fame": 5,
+      "log": "Responsibility does what praise could not. {npc} becomes a fierce, fair teacher."
+     }
+    },
+    {
+     "text": "Rebuke {him} before everyone",
+     "effects": {
+      "npcFlag": [
+       "left_sect",
+       "arc_left"
+      ],
+      "npcUnflag": [
+       "own_disciple",
+       "arc_proud"
+      ],
+      "role": "rival",
+      "mem": {
+       "deed": "humiliated",
+       "w": -30,
+       "note": "shamed me before the whole sect"
+      },
+      "log": "{npc} bows, white-faced. That night {he} leaves the sect without a word, and takes a manual with {him}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_genius_returns",
+   "cat": "world",
+   "once": true,
+   "npc": {
+    "role": "rival"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "arc_left"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "ds_genius_jealous"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 5,
+   "text": "Years later, {npc}, the genius who left your sect, stands at your gate. {He} is strong now, and wants you to see it.",
+   "choices": [
+    {
+     "text": "Accept the challenge",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "fame": 15,
+      "mem": {
+       "deed": "beat",
+       "w": 10,
+       "note": "beat me, and then helped me up"
+      },
+      "log": "You win, and help {him} up. {npc} weeps. Then {he} asks to come home. You say yes.",
+      "rejoin": true
+     },
+     "fail": {
+      "health": -20,
+      "fame": -5,
+      "mem": {
+       "deed": "respected",
+       "w": 5,
+       "note": "fought me honestly"
+      },
+      "log": "{npc} wins. {He} does not gloat. {He} bows, the way you taught {him}, and leaves."
+     }
+    },
+    {
+     "text": "Invite {him} in for tea instead",
+     "effects": {
+      "alignment": 8,
+      "mem": {
+       "deed": "forgave",
+       "w": 20,
+       "note": "forgave me without a word"
+      },
+      "log": "Tea, then silence, then everything {he} never said. {npc} stays the night, and then stays.",
+      "rejoin": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_quiet_one",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ],
+    "notFlags": [
+     "successor_named"
+    ]
+   },
+   "weight": 5,
+   "text": "You notice {npc} for the first time in years: always the last to bed, the first awake, the one the younger disciples go to when they cry.",
+   "choices": [
+    {
+     "text": "Begin teaching {him} to lead",
+     "effects": {
+      "npcFlag": "chosen_successor",
+      "mem": {
+       "deed": "trusted",
+       "w": 15,
+       "note": "saw me when no one else did"
+      },
+      "log": "{npc} is terrified, then careful, then very good at it. (You may have found your successor.)",
+      "flag": [
+       "successor_named"
+      ]
+     }
+    },
+    {
+     "text": "Leave {him} be",
+     "effects": {
+      "log": "Some people are happiest unseen. {npc} goes on quietly holding your sect together."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_successor_test",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "chosen_successor"
+    ],
+    "after": [
+     "ds_quiet_one"
+    ]
+   },
+   "weight": 5,
+   "text": "The elders doubt your chosen successor. They want {npc} tested in front of the whole sect.",
+   "choices": [
+    {
+     "text": "Let {him} face the test",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 10,
+      "mem": {
+       "deed": "honoured",
+       "w": 15,
+       "note": "believed in me before the elders"
+      },
+      "log": "{npc} answers every question, and the last one with a question of {his} own. The elders stop doubting."
+     },
+     "fail": {
+      "mem": {
+       "deed": "time",
+       "w": 5,
+       "note": "stood by me when I failed"
+      },
+      "log": "{npc} stumbles. You stand beside {him} and say {he} will be ready in time. {He} will."
+     }
+    },
+    {
+     "text": "Defend {him} with your own authority",
+     "effects": {
+      "mem": {
+       "deed": "protected",
+       "w": 12,
+       "note": "defended me before the elders"
+      },
+      "log": "The elders back down. They will remember, and so will {npc}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_successor_ready",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "chosen_successor"
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "ds_successor_test"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} has run the sect for a season while you were in seclusion. Nothing burned down. Several things improved.",
+   "choices": [
+    {
+     "text": "Tell {him} {he} is ready",
+     "effects": {
+      "mem": {
+       "deed": "honoured",
+       "w": 20,
+       "note": "told me I was ready"
+      },
+      "fame": 5,
+      "log": "{npc} says nothing for a long moment, then bows lower than you have ever seen anyone bow."
+     }
+    },
+    {
+     "text": "Ask {him} what {he} would change",
+     "effects": {
+      "fame": 8,
+      "log": "{npc} has a list. It is a good list. The sect changes, and is better for it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_betrayal_signs",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ],
+    "npcOpinion": [
+     -100,
+     30
+    ]
+   },
+   "weight": 5,
+   "text": "Small things: {npc} is out at night, has new silver, and cannot meet your eyes. An elder thinks {he} is selling the sect's art.",
+   "choices": [
+    {
+     "text": "Watch and wait",
+     "effects": {
+      "npcFlag": "arc_suspect",
+      "log": "You say nothing and watch. It is the hardest thing you have done as head of the sect."
+     }
+    },
+    {
+     "text": "Ask {him} directly",
+     "effects": {
+      "npcFlag": "arc_confessed",
+      "mem": {
+       "deed": "forgave",
+       "w": 15,
+       "note": "asked me straight instead of spying on me"
+      },
+      "taels": -50,
+      "log": "{npc} breaks down: a sick mother, a debt, a rival sect that pays well. {He} begs forgiveness, and you pay the debt before the week is out."
+     },
+     "req": {
+      "minTaels": 50
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_betrayal_caught",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "arc_suspect"
+    ],
+    "after": [
+     "ds_betrayal_signs"
+    ]
+   },
+   "weight": 5,
+   "text": "You follow {npc} at night to a rival sect's agent, a sealed copy of your sect's art in {his} hands.",
+   "choices": [
+    {
+     "text": "Step out of the shadows",
+     "effects": {
+      "npcUnflag": "arc_suspect",
+      "npcFlag": "arc_caught",
+      "log": "{npc} drops the manual and kneels in the mud. The agent runs. You have to decide what kind of leader you are."
+     }
+    },
+    {
+     "text": "Let it happen, and feed them a false manual",
+     "effects": {
+      "npcUnflag": "arc_suspect",
+      "comprehension": 2,
+      "log": "The rival sect trains a false art for a year. {npc} never knows you saw."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_betrayal_judgement",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple",
+     "arc_caught"
+    ],
+    "after": [
+     "ds_betrayal_caught"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} kneels before the whole sect, waiting for your judgement for selling its art.",
+   "choices": [
+    {
+     "text": "Expel {him}",
+     "effects": {
+      "npcFlag": "left_sect",
+      "npcUnflag": [
+       "own_disciple",
+       "arc_caught"
+      ],
+      "role": "rival",
+      "mem": {
+       "deed": "humiliated",
+       "w": -25,
+       "note": "expelled me before the whole sect"
+      },
+      "merit": 0,
+      "log": "{npc} walks out of the gate with nothing. The sect is quiet for a month. Discipline holds."
+     }
+    },
+    {
+     "text": "Forgive {him}, and pay {his} debt",
+     "effects": {
+      "npcUnflag": "arc_caught",
+      "taels": -150,
+      "alignment": 10,
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "forgave me and paid my debt"
+      },
+      "log": "The sect is shocked. {npc} becomes the most loyal disciple you will ever have."
+     },
+     "req": {
+      "minTaels": 150
+     }
+    }
+   ]
+  },
+  {
+   "id": "ds_breakthrough_feast",
+   "cat": "sect",
+   "once": false,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect",
+     "retired_in_1_6"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} has broken through to a new realm. The whole sect wants a feast, and {npc} wants you to say something.",
+   "choices": [
+    {
+     "text": "Say something short and true",
+     "effects": {
+      "mem": {
+       "deed": "honoured",
+       "w": 10,
+       "note": "spoke at my breakthrough feast"
+      },
+      "log": "Three sentences. {npc} remembers every word for the rest of {his} life."
+     }
+    },
+    {
+     "text": "Give {him} your old sword",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "gave me their own old sword"
+      },
+      "log": "The whole hall goes silent. {npc} holds it like it might break."
+     }
+    }
+   ],
+   "cooldown": 8
+  },
+  {
+   "id": "ds_disciples_in_love",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ],
+    "npcAge": [
+     18,
+     99
+    ]
+   },
+   "weight": 5,
+   "text": "Two of your disciples, {npc} and another, are in love, and terrified you will forbid it.",
+   "choices": [
+    {
+     "text": "Bless them",
+     "effects": {
+      "alignment": 6,
+      "mem": {
+       "deed": "honoured",
+       "w": 10,
+       "note": "blessed us"
+      },
+      "log": "The whole sect cheers. A wedding in the main hall, the first of many."
+     }
+    },
+    {
+     "text": "Tell them to wait until their training is done",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 3,
+       "note": "made us wait"
+      },
+      "log": "They wait. They are very, very patient about it, and very obvious."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "ds_wants_to_wander",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ],
+    "notFlags": [
+     "dl_wander_told"
+    ]
+   },
+   "weight": 5,
+   "text": "{npc} asks permission to leave for three years and wander the murim alone, as many a young fighter has.",
+   "choices": [
+    {
+     "text": "Let {him} go, with your blessing",
+     "effects": {
+      "mem": {
+       "deed": "trusted",
+       "w": 12,
+       "note": "let me wander"
+      },
+      "comprehension": 1,
+      "log": "{npc} leaves at dawn. Letters arrive from every corner of the empire. {He} comes back changed, and better.",
+      "flag": [
+       "dl_wander_told"
+      ]
+     }
+    },
+    {
+     "text": "Ask {him} to stay one more year",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 2,
+       "note": "asked me to stay a year"
+      },
+      "log": "{npc} stays, a little sadly. The year is a good one anyway.",
+      "flag": [
+       "dl_wander_told"
+      ]
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "ds_saves_founder",
+   "cat": "sect",
+   "once": true,
+   "npc": {
+    "role": "disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "npcFlags": [
+     "own_disciple"
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 5,
+   "text": "On the road, an assassin's knife comes for your back. {npc} steps into it first.",
+   "choices": [
+    {
+     "text": "Carry {him} home yourself",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "carried me home after I took a knife for them"
+      },
+      "alignment": 5,
+      "log": "{npc} lives, barely. When {he} wakes, {his} first question is whether you are hurt."
+     }
+    },
+    {
+     "text": "Leave {him} with a physician and hunt the assassin",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 25,
+       "note": "avenged the knife I took for them"
+      },
+      "fame": 5,
+      "log": "You find the assassin by morning. When {npc} wakes, the danger is over and you are sitting by the bed."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

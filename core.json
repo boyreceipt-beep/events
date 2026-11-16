@@ -1,0 +1,1071 @@
+{
+ "events": [
+  {
+   "id": "baby_bite",
+   "cat": "childhood",
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     0,
+     2
+    ]
+   },
+   "weight": 2,
+   "text": "You bit your father's finger so hard he claimed you had a martial artist's jaw. Your mother said you were hungry.",
+   "effects": {
+    "strength": 1
+   },
+   "variants": [
+    "Your father let you chew on his finger once and regretted it loudly. He said you had a martial artist's jaw. Your mother said you were hungry."
+   ]
+  },
+  {
+   "id": "baby_fever",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     0,
+     3
+    ]
+   },
+   "weight": 1,
+   "text": "A fever nearly took you in your second winter. The village healer sat up with you for three nights.",
+   "effects": {
+    "health": -10,
+    "comprehension": 2
+   },
+   "variants": [
+    "In your second winter you burned with fever, and the village healer did not leave your side for three nights."
+   ]
+  },
+  {
+   "id": "baby_words",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     1,
+     3
+    ]
+   },
+   "weight": 2,
+   "text": "Your first word was 'sword'. Nobody in the family owns one. Nobody knows where you heard it.",
+   "effects": {
+    "flag": "strange_child"
+   }
+  },
+  {
+   "id": "baby_dog",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     2,
+     4
+    ]
+   },
+   "weight": 1,
+   "text": "You tried to arm-wrestle the neighbour's dog. The dog won. You were not discouraged.",
+   "effects": {
+    "strength": 1
+   }
+  },
+  {
+   "id": "child_stick_sword",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     5,
+     9
+    ]
+   },
+   "weight": 2,
+   "text": "You carve a sword from a branch and declare yourself the strongest under heaven. The chickens are not impressed.",
+   "choices": [
+    {
+     "text": "Practise swinging until dark",
+     "effects": {
+      "strength": 2,
+      "log": "Your arms ache. Your heart sings."
+     }
+    },
+    {
+     "text": "Challenge the rooster",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 1,
+      "log": "The rooster retreats. Word spreads among the village children."
+     },
+     "fail": {
+      "health": -5,
+      "log": "The rooster wins. Word spreads anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_storyteller",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     5,
+     10
+    ]
+   },
+   "weight": 2,
+   "text": "A travelling storyteller tells the village about the Heavenly Demon, the Sword Saint, and the day a single swordsman held a mountain pass against a thousand men.",
+   "choices": [
+    {
+     "text": "Listen until the last word",
+     "effects": {
+      "comprehension": 3,
+      "flag": "dreams_of_murim",
+      "log": "That night you dream of mountain passes."
+     }
+    },
+    {
+     "text": "Ask him if any of it is true",
+     "effects": {
+      "comprehension": 1,
+      "log": "He laughs. 'All of it. None of it. Go and find out.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "child_bully_mud",
+   "cat": "childhood",
+   "npc": {
+    "role": "rival"
+   },
+   "when": {
+    "age": [
+     6,
+     11
+    ]
+   },
+   "weight": 3,
+   "text": "{npc} pushes you into the mud in front of the other children and laughs.",
+   "choices": [
+    {
+     "text": "Get up and fight",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "mem": {
+       "deed": "humiliated",
+       "w": -35,
+       "note": "threw me in the mud in front of everyone"
+      },
+      "fame": 1,
+      "log": "You throw {npc} in the mud instead. {He} will remember this."
+     },
+     "fail": {
+      "health": -8,
+      "strength": 1,
+      "log": "You lose, and eat more mud. Next time."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "comprehension": 1,
+      "log": "You walk away. It burns more than any beating."
+     }
+    },
+    {
+     "text": "Offer {him} half your lunch",
+     "effects": {
+      "mem": {
+       "deed": "gift",
+       "w": 15,
+       "note": "shared your lunch with me when I was cruel"
+      },
+      "log": "{npc} stares at the rice ball as if it might bite. Then {he} eats it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_friend_river",
+   "cat": "childhood",
+   "npc": {
+    "role": "friend"
+   },
+   "when": {
+    "age": [
+     6,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "{npc} slips on the riverbank and goes under the fast water.",
+   "choices": [
+    {
+     "text": "Jump in after {him}",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 35
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 60,
+       "note": "pulled me out of the river when we were children"
+      },
+      "log": "You drag {npc} onto the bank, both of you coughing. {He} never forgets it."
+     },
+     "fail": {
+      "health": -35,
+      "mem": {
+       "deed": "saved_life",
+       "w": 50,
+       "note": "nearly drowned pulling me out of the river"
+      },
+      "log": "You both nearly drown. A fisherman pulls you out by your hair.",
+      "deathCause": "the fast water of the river"
+     }
+    },
+    {
+     "text": "Run for help",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "ran for help when I was drowning"
+      },
+      "log": "You run faster than you have ever run. The adults get there in time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_well_manual",
+   "cat": "childhood",
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     7,
+     11
+    ],
+    "notFlags": [
+     "found_well_manual"
+    ],
+    "chance": 0.035
+   },
+   "weight": 1,
+   "text": "Chasing a cat, you fall down an old dry well. At the bottom, under the leaves, is an oilcloth bundle: a thin book of breathing exercises.",
+   "choices": [
+    {
+     "text": "Study it in secret",
+     "effects": {
+      "manual": 1,
+      "flag": "found_well_manual",
+      "log": "The characters are hard. You learn them anyway. Your breath begins to move differently."
+     }
+    },
+    {
+     "text": "Give it to your father",
+     "effects": {
+      "flag": "found_well_manual",
+      "taels": 20,
+      "log": "Your father sells it for twenty taels and buys a pig. It is a very good pig."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_beggar_master",
+   "cat": "childhood",
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "realm": 5,
+     "age": 60
+    }
+   },
+   "when": {
+    "age": [
+     7,
+     12
+    ],
+    "realm": [
+     0,
+     0
+    ],
+    "notFlags": [
+     "met_hermit"
+    ],
+    "chance": 0.03
+   },
+   "weight": 1,
+   "text": "A filthy old beggar at the edge of the village watches you train with a stick. 'Your stance is wrong,' {he} says. 'Your breathing is worse. Bring me a chicken and I will fix both.'",
+   "choices": [
+    {
+     "text": "Steal a chicken for {him}",
+     "effects": {
+      "alignment": -5,
+      "manual": 2,
+      "master": true,
+      "flag": "met_hermit",
+      "mem": {
+       "deed": "gift",
+       "w": 20,
+       "note": "brought me a stolen chicken when I was starving"
+      },
+      "log": "{npc} eats the chicken, bones and all. Then {he} teaches you to breathe. You have a master."
+     }
+    },
+    {
+     "text": "Buy a chicken with your savings",
+     "req": {
+      "minTaels": 5
+     },
+     "effects": {
+      "taels": -5,
+      "manual": 2,
+      "master": true,
+      "flag": "met_hermit",
+      "mem": {
+       "deed": "gift",
+       "w": 25,
+       "note": "spent your last coins to feed an old beggar"
+      },
+      "log": "{npc} looks at the coins, then at you, a long time. 'Honest. Rare. Sit down.' You have a master."
+     }
+    },
+    {
+     "text": "Tell {him} to get lost",
+     "effects": {
+      "flag": "met_hermit",
+      "log": "{He} shrugs and wanders off. Years later you will hear what {he} was, and wonder."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_temple_monk",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     6,
+     12
+    ],
+    "flags": [
+     "born_orphan"
+    ],
+    "realm": [
+     0,
+     0
+    ],
+    "chance": 0.35
+   },
+   "weight": 3,
+   "text": "The old monk who feeds the temple orphans notices you copying the monks' morning forms from behind a pillar.",
+   "choices": [
+    {
+     "text": "Ask him to teach you",
+     "effects": {
+      "manual": 1,
+      "alignment": 5,
+      "log": "He teaches you the temple's breathing method. 'For health,' he says. You know better."
+     }
+    },
+    {
+     "text": "Keep watching in secret",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "manual": 1,
+      "log": "You piece the method together from watching. The monk pretends not to notice."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "You learn the shapes but not the breath behind them."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_beggar_union",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     6,
+     12
+    ],
+    "flags": [
+     "born_beggar"
+    ],
+    "realm": [
+     0,
+     0
+    ],
+    "chance": 0.35
+   },
+   "weight": 3,
+   "text": "An old beggar with a green bamboo staff watches you outrun two guards with a stolen bun. 'Fast legs,' he says. 'Wasted on buns.'",
+   "choices": [
+    {
+     "text": "Learn from him",
+     "effects": {
+      "manual": 1,
+      "flag": "beggars_union",
+      "log": "He teaches you the Beggars' Union's footwork and breathing. The bun was worth it."
+     }
+    },
+    {
+     "text": "Run away from him too",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You get away. Probably. He was smiling."
+     },
+     "fail": {
+      "manual": 1,
+      "flag": "beggars_union",
+      "log": "He catches you with one finger on your collar, and teaches you anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "child_ruined_sect",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     8,
+     12
+    ],
+    "flags": [
+     "born_ruined_sect"
+    ],
+    "realm": [
+     0,
+     0
+    ]
+   },
+   "weight": 4,
+   "text": "Your grandfather gives you a scorched manual wrapped in silk. 'All that is left of our sect. Someone destroyed us. One day you will learn who.'",
+   "effects": {
+    "manual": 2,
+    "flag": "sect_revenge",
+    "log": "The manual smells of old smoke. You read it until the candle dies."
+   }
+  },
+  {
+   "id": "child_family_training",
+   "cat": "childhood",
+   "when": {
+    "age": [
+     6,
+     11
+    ],
+    "flags": [
+     "born_great_family"
+    ]
+   },
+   "weight": 3,
+   "text": "Your family's martial instructor tests the children. The elders watch, making notes on who is worth investing in.",
+   "choices": [
+    {
+     "text": "Give everything",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "manual": 2,
+      "fame": 3,
+      "log": "You impress the elders. They give you the family's inner breathing method early."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You collapse in the last round. An elder writes something short in the ledger."
+     }
+    },
+    {
+     "text": "Hold back and watch the others",
+     "effects": {
+      "comprehension": 4,
+      "log": "You learn more from watching than they do from fighting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "child_sick_mother",
+   "cat": "childhood",
+   "npc": {
+    "role": "mother"
+   },
+   "when": {
+    "age": [
+     8,
+     14
+    ]
+   },
+   "weight": 1,
+   "text": "{npc} falls ill. The healer says only a mountain herb that grows on the cliffs above the village can help.",
+   "choices": [
+    {
+     "text": "Climb the cliffs yourself",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 50,
+       "note": "climbed the cliffs for my medicine"
+      },
+      "strength": 2,
+      "log": "You come back bleeding with a fistful of the herb. {npc} lives."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a fall from the cliffs",
+      "log": "You fall. A woodcutter finds you. The herb is still in your fist, crushed."
+     }
+    },
+    {
+     "text": "Sell your things to pay a herb gatherer",
+     "effects": {
+      "taels": -20,
+      "mem": {
+       "deed": "helped",
+       "w": 25,
+       "note": "sold everything you had for my medicine"
+      },
+      "log": "The gatherer climbs. Your mother lives. You own nothing, and do not mind."
+     }
+    },
+    {
+     "text": "Stay by the bed and look after {npc}",
+     "effects": {
+      "health": -3,
+      "mem": {
+       "deed": "cared",
+       "w": 15,
+       "note": "sat by my bed every night"
+      },
+      "log": "You fetch water, cool {npc}'s forehead and sleep on the floor beside the bed. It is a long, frightening winter, but the fever breaks at last. You are thinner by spring, and {npc} never forgets who stayed."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sect_test_azure",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 4,
+     "age": 40
+    }
+   },
+   "when": {
+    "age": [
+     12,
+     16
+    ],
+    "factions": [
+     "none"
+    ],
+    "notFlags": [
+     "tried_azure"
+    ]
+   },
+   "weight": 4,
+   "text": "The Mount Hua Sect, one of the Orthodox Alliance's nine great sects, is holding its entrance test in the provincial town. Hundreds of children queue in the square. Elder {npc} watches from the steps.",
+   "choices": [
+    {
+     "text": "Take the test",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "faction": "orthodox",
+      "sect": "Mount Hua Sect",
+      "manual": 2,
+      "master": true,
+      "flag": "tried_azure",
+      "alignment": 5,
+      "log": "You pass. Elder {npc} taps your shoulder with a fan. 'This one is mine.' You are a disciple of the Mount Hua Sect."
+     },
+     "fail": {
+      "flag": "tried_azure",
+      "log": "You fail the meridian test. On the road home you promise yourself: they will regret it."
+     }
+    },
+    {
+     "text": "Stay home",
+     "effects": {
+      "flag": "tried_azure",
+      "log": "You watch the carts leave for town from the rooftop."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_test_iron_pine",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 4,
+     "age": 55
+    }
+   },
+   "when": {
+    "age": [
+     12,
+     16
+    ],
+    "factions": [
+     "none"
+    ],
+    "notFlags": [
+     "tried_iron_pine"
+    ],
+    "alignment": [
+     -20,
+     100
+    ]
+   },
+   "weight": 4,
+   "text": "Monks of the Shaolin Temple arrive in the valley to choose novices. Their test is simple: carry two buckets of water up nine hundred steps without spilling.",
+   "choices": [
+    {
+     "text": "Carry the buckets",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "faction": "orthodox",
+      "sect": "Shaolin Temple",
+      "manual": 2,
+      "master": true,
+      "flag": "tried_iron_pine",
+      "alignment": 10,
+      "log": "You reach the top with the buckets full and your legs shaking. Abbot's disciple {npc} nods once. You are a novice of the Shaolin Temple."
+     },
+     "fail": {
+      "flag": "tried_iron_pine",
+      "strength": 2,
+      "log": "You spill on step six hundred. The monks bow politely and leave."
+     }
+    },
+    {
+     "text": "Shaving your head? No thanks",
+     "effects": {
+      "flag": "tried_iron_pine",
+      "log": "You keep your hair. It is very good hair."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_family_ceremony",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 4,
+     "age": 50
+    }
+   },
+   "when": {
+    "age": [
+     12,
+     15
+    ],
+    "factions": [
+     "family"
+    ],
+    "flags": [
+     "born_great_family"
+    ]
+   },
+   "weight": 6,
+   "text": "When the children of the family come of age, they are formally entered into the clan's martial lineage. Elder {npc} will choose who trains under the inner hall.",
+   "choices": [
+    {
+     "text": "Enter the inner hall trial",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "manual": 3,
+      "master": true,
+      "fame": 5,
+      "log": "You win a place in the inner hall. Elder {npc} becomes your master. The cousins will not forgive you."
+     },
+     "fail": {
+      "manual": 2,
+      "log": "Outer hall. Respectable. Nobody says the word 'disappointing' out loud."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sect_black_wind",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 3,
+     "age": 38
+    }
+   },
+   "when": {
+    "age": [
+     13,
+     18
+    ],
+    "factions": [
+     "none"
+    ],
+    "notFlags": [
+     "met_black_wind"
+    ]
+   },
+   "weight": 4,
+   "text": "Bandits of the Black Wind Stronghold ride into the village for their 'protection fee'. Their lieutenant, {npc}, sees you standing your ground instead of hiding. 'You. You have guts. Want to eat meat every day?'",
+   "choices": [
+    {
+     "text": "Join the Black Wind",
+     "effects": {
+      "faction": "unorthodox",
+      "sect": "Black Wind Stronghold",
+      "manual": 2,
+      "master": true,
+      "alignment": -15,
+      "flag": "met_black_wind",
+      "log": "You ride out with the bandits. The village does not wave goodbye."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "flag": "met_black_wind",
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "turned down my offer in front of my men"
+      },
+      "log": "{npc} laughs. 'Your loss.' The fee is doubled this year."
+     }
+    },
+    {
+     "text": "Spit at {his} feet",
+     "risky": false,
+     "effects": {
+      "flag": "met_black_wind",
+      "health": -25,
+      "fame": 2,
+      "mem": {
+       "deed": "insulted",
+       "w": -20,
+       "note": "spat at my feet in front of my men"
+      },
+      "log": "{npc} beats you half to death, and remembers your face."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_demonic_scout",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 4,
+     "age": 45,
+     "male": false
+    }
+   },
+   "when": {
+    "age": [
+     12,
+     18
+    ],
+    "factions": [
+     "none"
+    ],
+    "talent": [
+     "demon_blood"
+    ]
+   },
+   "weight": 8,
+   "text": "A woman in red visits the village at night, walks straight past a dozen houses and stops at yours. 'The blood in you is very old,' says {npc} of the Heavenly Demon Cult. 'It will wake whether you like it or not. Come, and learn to ride it.'",
+   "choices": [
+    {
+     "text": "Go with {him}",
+     "effects": {
+      "faction": "demonic",
+      "sect": "Heavenly Demon Cult",
+      "manual": 3,
+      "master": true,
+      "alignment": -25,
+      "log": "You leave before dawn without a word. The Cult's mountain is colder than you imagined, and far more beautiful."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "alignment": 5,
+      "flag": "refused_cult",
+      "log": "{npc} smiles. 'We will meet again. Blood always comes home.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_wanderer_choice",
+   "cat": "sect",
+   "when": {
+    "age": [
+     16,
+     20
+    ],
+    "factions": [
+     "none"
+    ],
+    "realm": [
+     1,
+     5
+    ]
+   },
+   "weight": 3,
+   "text": "You have your own method now, and no sect. The murim is wide, and nobody is telling you where to stand.",
+   "choices": [
+    {
+     "text": "Become a wandering martial artist",
+     "effects": {
+      "faction": "wanderer",
+      "luck": 5,
+      "log": "You buy a bamboo hat and a cheap sword. The road is your sect."
+     }
+    },
+    {
+     "text": "Keep looking for a sect",
+     "effects": {
+      "log": "Not yet. Somewhere, a sect is waiting for someone exactly like you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "sect_late_orthodox",
+   "cat": "sect",
+   "npc": {
+    "spawn": {
+     "role": "elder",
+     "realm": 4,
+     "age": 50
+    }
+   },
+   "when": {
+    "age": [
+     17,
+     30
+    ],
+    "factions": [
+     "none",
+     "wanderer"
+    ],
+    "realm": [
+     1,
+     3
+    ],
+    "minFame": 10,
+    "notFlags": [
+     "late_invite",
+     "fugitive"
+    ],
+    "rep": {
+     "orthodox": [
+      -20,
+      100
+     ]
+    },
+    "alignment": [
+     -30,
+     100
+    ]
+   },
+   "weight": 2,
+   "text": "Word of you has reached the Wudang Sect. Elder {npc} arrives with an offer: an outer disciple's place, and a real sword manual. 'Late bloomers are rare. So are good swords.'",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "faction": "orthodox",
+      "sect": "Wudang Sect",
+      "manual": 3,
+      "master": true,
+      "flag": "late_invite",
+      "log": "You kneel to your new master. The manual is heavier than any sword."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "flag": "late_invite",
+      "mem": {
+       "deed": "rejected",
+       "w": -5,
+       "note": "turned down Wudang"
+      },
+      "log": "{npc} bows. 'Wudang does not ask twice.'"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "mortal_no_method",
+   "cat": "misc",
+   "when": {
+    "age": [
+     16,
+     40
+    ],
+    "realm": [
+     0,
+     0
+    ],
+    "notFlags": [
+     "mortal_road"
+    ]
+   },
+   "weight": 8,
+   "text": "Everyone your age with a sect is already gathering internal energy. You still have none. A retired guard in the tavern notices you staring at the swords on the wall.",
+   "choices": [
+    {
+     "text": "Pay him for lessons (50 taels)",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "manual": 1,
+      "flag": "mortal_road",
+      "log": "It is a guard's method, crude and slow. It is a method."
+     }
+    },
+    {
+     "text": "Work his fields for a year in exchange",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "manual": 1,
+      "strength": 3,
+      "log": "A year of hoeing and breathing exercises. At the end of it, a thin thread of energy stirs below your navel.",
+      "flag": "mortal_road"
+     },
+     "fail": {
+      "strength": 3,
+      "log": "A year of hoeing. He teaches you the words, but the energy never comes. 'Some bodies are just bodies,' he says, kindly.",
+      "flag": "mortal_road"
+     }
+    },
+    {
+     "text": "Give up the dream",
+     "effects": {
+      "flag": [
+       "mortal_road",
+       "gave_up"
+      ],
+      "log": "You put the dream away like an old coat. Some nights you still dream of mountain passes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "meridian_cure",
+   "cat": "misc",
+   "when": {
+    "age": [
+     14,
+     60
+    ],
+    "meridians": [
+     "blocked"
+    ],
+    "notFlags": [
+     "cure_offered"
+    ]
+   },
+   "weight": 2,
+   "text": "A wandering physician from the south examines your wrist and frowns. 'Blocked meridians. I have seen worse. I can open them, but it will hurt like nothing you have ever felt, and it will cost 300 taels.'",
+   "choices": [
+    {
+     "text": "Pay and endure the treatment",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "meridians": "ordinary",
+      "health": -35,
+      "flag": "cure_offered",
+      "log": "Forty days of needles and fire. When it ends, your energy flows like a river through a broken dam."
+     }
+    },
+    {
+     "text": "Work for him as an assistant instead",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "meridians": "ordinary",
+      "flag": "cure_offered",
+      "health": -30,
+      "log": "Two years carrying his herb chest. On the last night he keeps his promise."
+     },
+     "fail": {
+      "flag": "cure_offered",
+      "comprehension": 3,
+      "log": "You learn a lot of medicine. He leaves without a word one morning."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "flag": "cure_offered",
+      "log": "'Stubborn,' he says. 'Good. You will need that.'"
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

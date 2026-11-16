@@ -1,0 +1,442 @@
+{
+ "events": [
+  {
+   "id": "dc_master_sweeper",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     14,
+     50
+    ],
+    "anyFlags": [
+     "ever_sect",
+     "job_outer_disciple",
+     "job_inner_rank"
+    ]
+   },
+   "weight": 4,
+   "text": "The old sweeper at the sect gate has swept the same stones for forty years. Today a drunk First-Rate shoves him, and the broom moves once, and the First-Rate is sitting in the gutter wondering how.",
+   "choices": [
+    {
+     "text": "Bow, and ask to carry his broom",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "master": true,
+      "manual": 3,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "bowed to a sweeper"
+      },
+      "log": "{npc} looks at you a long time, then hands you the broom. For three years you sweep and he teaches, and nobody in the sect notices."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "He looks through you, nods once, and goes back to his stones. You wonder what you almost learned."
+     }
+    },
+    {
+     "text": "Pretend you saw nothing",
+     "effects": {
+      "luck": 3,
+      "log": "He goes back to sweeping. The drunk never comes back. You wonder for years."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": true,
+     "ageAbs": 70,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_master_cook",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     12,
+     50
+    ]
+   },
+   "weight": 4,
+   "text": "The tavern cook cuts a radish into a flower in nine strokes you cannot follow. Her cleaver moves like a sword that has decided to be kind.",
+   "choices": [
+    {
+     "text": "Ask her who taught her to cut",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "master": true,
+      "manual": 3,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "asked about the cleaver"
+      },
+      "log": "'A sect that no longer exists,' {npc} says, and after a long look: 'Come back after closing.' You learn knife-work that is not about knives."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "She shuts the kitchen door. 'Closed.' You hear the cleaver and learn nothing."
+     }
+    },
+    {
+     "text": "Compliment the radish",
+     "effects": {
+      "charm": 2,
+      "log": "She snorts and gives you an extra bowl. The cleaver stays a cleaver."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": false,
+     "ageAbs": 55,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_master_beggar",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     12,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "A beggar under the bridge catches a thrown coin between two fingers without looking up from his bowl. Later, a thrown knife, the same way.",
+   "choices": [
+    {
+     "text": "Sit down beside him",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "master": true,
+      "manual": 2,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "sat with a beggar"
+      },
+      "log": "{npc} shares his rice and, over a winter, the Beggars' Sect's palm method, which he says he owes to nobody anymore."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "alignment": 2,
+      "log": "He eyes you, drops your coin in his bowl, and says nothing. You do not know what you missed."
+     }
+    },
+    {
+     "text": "Give him a coin and go",
+     "effects": {
+      "alignment": 3,
+      "taels": -1,
+      "log": "He catches it without looking. You are a li away before you wonder how a beggar catches knives."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": true,
+     "ageAbs": 65,
+     "realm": 2
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_master_fisher",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     12,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "An old woman fishes the river with no bait and a line that never goes slack. Her basket is full. The fish, you notice, swim to her.",
+   "choices": [
+    {
+     "text": "Ask what the bait is",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "master": true,
+      "flag": "met_hidden_master",
+      "comprehension": 6,
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "asked about the bait"
+      },
+      "log": "'Stillness,' {npc} says. She teaches you a breathing method the texts call lost, one morning at a time, with the fish watching."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "She smiles and the line stays still. 'Not today,' she says, and you walk home none the wiser."
+     }
+    },
+    {
+     "text": "Buy a fish",
+     "effects": {
+      "taels": -2,
+      "health": 3,
+      "log": "It is the best fish you have eaten. The line stays taut all the way home in your memory."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": false,
+     "ageAbs": 72,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_master_gatekeeper",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     14,
+     55
+    ]
+   },
+   "weight": 4,
+   "text": "The gatekeeper of a county town checks papers with a bored face and, when a cart tries to run the gate, stops it with one hand on the shaft. The ox stops too.",
+   "choices": [
+    {
+     "text": "Come back at the change of watch and bow",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "master": true,
+      "manual": 3,
+      "strength": 4,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "bowed at the gate"
+      },
+      "log": "{npc} was a Shaolin instructor once, before a woman and a gate. He teaches you the Iron Shirt in the gatehouse after dark."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "He stamps your papers with a bored face. The gate is only a gate tonight."
+     }
+    },
+    {
+     "text": "Show your papers and pass",
+     "effects": {
+      "luck": 2,
+      "log": "He stamps them without looking. The ox is still staring at him when you leave."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": true,
+     "ageAbs": 50,
+     "realm": 2
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_master_nun",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     12,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "A nun begging rice at the market steps aside from a runaway horse so smoothly that the horse seems to have moved around her. Nobody saw. You saw.",
+   "choices": [
+    {
+     "text": "Follow her to her temple",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "master": true,
+      "manual": 3,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "followed her to the temple"
+      },
+      "log": "The temple is a hut. The nun, {npc}, is Emei's lost elder. She teaches you steps that leave no footprint in snow."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "She is gone round a corner before you reach it. You never find the temple."
+     }
+    },
+    {
+     "text": "Put rice in her bowl",
+     "effects": {
+      "alignment": 4,
+      "taels": -2,
+      "log": "She blesses you in a voice too young for her face. You see her, years later, in a city a thousand li away, unchanged."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": false,
+     "ageAbs": 60,
+     "realm": 2
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_master_drunk",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     16,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "The town drunk falls down the inn stairs every night and has never once been hurt. Tonight you watch him fall, and it is the most perfect lightness form you have ever seen, performed by a man who cannot stand.",
+   "choices": [
+    {
+     "text": "Carry him home and ask",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "master": true,
+      "manual": 2,
+      "flag": "met_hidden_master",
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "carried me home"
+      },
+      "log": "Sober, for an hour each dawn, {npc} teaches you the Drunken Eight Immortals' steps, and says you are the first to ask in twenty years."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "He wakes up cursing, a perfectly ordinary drunk. You wonder if you imagined the fall."
+     }
+    },
+    {
+     "text": "Step over him",
+     "effects": {
+      "alignment": -2,
+      "log": "He lands perfectly behind you. You hear him laugh."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": true,
+     "ageAbs": 58,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_master_musician",
+   "cat": "encounter",
+   "arc": "The Sweeper Was a Dragon",
+   "when": {
+    "age": [
+     12,
+     60
+    ]
+   },
+   "weight": 4,
+   "text": "A blind musician plays the two-stringed fiddle at the crossroads. When a bandit tries to take his bowl, the note he plays puts the bandit on his knees with his hands over his ears.",
+   "choices": [
+    {
+     "text": "Ask him to teach you the note",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "master": true,
+      "flag": "met_hidden_master",
+      "comprehension": 5,
+      "mem": {
+       "deed": "respect",
+       "w": 20,
+       "note": "asked for the note"
+      },
+      "log": "{npc} teaches you to listen first, for a year, and then one note. It is enough."
+     },
+     "fail": {
+      "flag": "met_hidden_master",
+      "log": "He plays a sad little tune and says nothing more. The note stays his."
+     }
+    },
+    {
+     "text": "Put a coin in the bowl and listen",
+     "effects": {
+      "charm": 3,
+      "log": "He plays something for you alone. You hum it for the rest of your life and never find anyone who knows it."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "male": true,
+     "ageAbs": 66,
+     "realm": 2
+    }
+   }
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,703 @@
+{
+ "events": [
+  {
+   "id": "dc_dao_sword_1",
+   "cat": "insight",
+   "arc": "The Sword Dao",
+   "when": {
+    "stat": {
+     "sword": 75
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You wake one morning and the sword is not in your hand; it is in the way you reach for a cup. An old swordsman watching you pour says, quietly, that you have begun to understand what a sword is for.",
+   "choices": [
+    {
+     "text": "Ask him what it is for",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_sword_1",
+      "log": "'Nothing,' he says. 'That is the beginning.' You spend a year learning what he meant and the sword gets quieter and faster."
+     }
+    },
+    {
+     "text": "Pour his cup and say nothing",
+     "effects": {
+      "comprehension": 4,
+      "flag": "dao_sword_1",
+      "log": "He nods as if you had answered. Perhaps you had."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_sword_2",
+   "cat": "insight",
+   "arc": "The Sword Dao",
+   "when": {
+    "stat": {
+     "sword": 85
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_sword_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A night when the moon is full and the blade is in your hand without your having drawn it. You see the gap in every stance in the yard, including your own, including the moon's.",
+   "choices": [
+    {
+     "text": "Cut the gap",
+     "effects": {
+      "flag": "dao_sword",
+      "fame": 12,
+      "comprehension": 8,
+      "log": "The Sword Dao. From now on no feint fools your eyes and no tell is hidden from you. The murim has a name for people like you and it is not a kind one, only a true one."
+     }
+    },
+    {
+     "text": "Sheathe the blade and go to bed",
+     "effects": {
+      "comprehension": 6,
+      "lifespan": 2,
+      "flag": "dao_sword_declined",
+      "log": "You sleep very well. The understanding stays, gentler, and you are never again in a hurry with a sword."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_wind_1",
+   "cat": "insight",
+   "arc": "The Dao of the Wind",
+   "when": {
+    "stat": {
+     "lightness": 70
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You step off a roof without thinking and land without sound, and only when a child applauds do you realise you did not use the method. You simply went where the wind would have gone.",
+   "choices": [
+    {
+     "text": "Follow the wind for a season",
+     "effects": {
+      "comprehension": 5,
+      "flag": "dao_wind_1",
+      "log": "You walk where the wind walks: ridges, river mouths, the gaps between crowds. By winter you are somewhere else before anyone sees you leave."
+     }
+    },
+    {
+     "text": "Go back to the method",
+     "effects": {
+      "strength": 3,
+      "flag": "dao_wind_1",
+      "log": "The method is safe and good. The wind waits."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_wind_2",
+   "cat": "insight",
+   "arc": "The Dao of the Wind",
+   "when": {
+    "stat": {
+     "lightness": 80
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_wind_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A storm on the mountain, and you walk into it because something in you wants to see whether the wind will carry a person who has stopped weighing anything.",
+   "choices": [
+    {
+     "text": "Let it carry you",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_wind",
+      "fame": 12,
+      "comprehension": 8,
+      "log": "It does. The Dao of the Wind: a blow that would have landed finds nothing where you were. The murim calls you a ghost for the rest of your life."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "a storm you walked into on purpose",
+      "log": "The wind has opinions about you. It throws you against the rock, and you come down soaked and bruised and a little wiser."
+     }
+    },
+    {
+     "text": "Shelter under the rock",
+     "effects": {
+      "comprehension": 5,
+      "flag": "dao_wind_declined",
+      "log": "The storm passes. You are very fast and very light and quite alive."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_heart_1",
+   "cat": "insight",
+   "arc": "The Heart Dao",
+   "when": {
+    "stat": {
+     "poetry": 70
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A poem comes to you entire while you watch a rival draw his blade, and you understand his whole life from the way he holds it: the father, the debt, the fear. You could write it down or cut it.",
+   "choices": [
+    {
+     "text": "Write it down and give it to him",
+     "effects": {
+      "alignment": 8,
+      "charm": 6,
+      "flag": "dao_heart_1",
+      "log": "He reads it, and sheathes the blade, and weeps, and is your friend for decades."
+     }
+    },
+    {
+     "text": "Keep it and cut",
+     "effects": {
+      "flag": "dao_heart_1",
+      "comprehension": 4,
+      "log": "You win the bout in one exchange because you knew where his fear would put his feet. The poem stays in your sleeve."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_heart_2",
+   "cat": "insight",
+   "arc": "The Heart Dao",
+   "when": {
+    "stat": {
+     "poetry": 80
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_heart_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "You have read a thousand people the way you read that one. On a quiet night it turns around: you read yourself, all of it, and do not look away.",
+   "choices": [
+    {
+     "text": "Look",
+     "effects": {
+      "flag": "dao_heart",
+      "comprehension": 10,
+      "fame": 8,
+      "lifespan": 3,
+      "log": "The Heart Dao. Nobody's rhythm breaks yours again, in a fight or out of one. People say talking to you is like being seen for the first time."
+     }
+    },
+    {
+     "text": "Look away",
+     "effects": {
+      "comprehension": 4,
+      "flag": "dao_heart_declined",
+      "log": "Some rooms stay closed. You are the finest reader of people in the murim, and nobody has read you."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_body_1",
+   "cat": "insight",
+   "arc": "The Iron Dao",
+   "when": {
+    "stat": {
+     "body": 70
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A cart runs over your foot in the market and you notice because of the shouting. Your body has stopped reporting small things. The old body-tempering masters call this the first silence.",
+   "choices": [
+    {
+     "text": "Seek the second silence",
+     "roll": {
+      "stat": "body",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "dao_body_1",
+      "strength": 8,
+      "log": "Three months under a waterfall in winter. The body stops reporting large things too, and starts simply handling them."
+     },
+     "fail": {
+      "health": -15,
+      "flag": "dao_body_1",
+      "log": "The waterfall wins. You come out shaking, and the second silence stays a rumour."
+     }
+    },
+    {
+     "text": "Buy better boots",
+     "effects": {
+      "health": 5,
+      "flag": "dao_body_1",
+      "log": "A practical answer. Your body goes on being quietly extraordinary and you go on noticing the shouting."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_body_2",
+   "cat": "insight",
+   "arc": "The Iron Dao",
+   "when": {
+    "stat": {
+     "body": 80
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_body_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A master of the Vajra Body offers to hit you as hard as he can, once, as a test or a lesson. He has killed two students this way. He is quite honest about it.",
+   "choices": [
+    {
+     "text": "Let him",
+     "roll": {
+      "stat": "body",
+      "dc": 80
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_body",
+      "fame": 15,
+      "strength": 10,
+      "lifespan": 3,
+      "log": "You are moved back one step. He bows to the ground. The Iron Dao: blows that land on you land on something that does not care."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a single blow from a Vajra master",
+      "log": "He hits you, and the world goes. You wake days later to find him sitting by your bed, remarkably quiet."
+     }
+    },
+    {
+     "text": "Decline politely",
+     "effects": {
+      "comprehension": 4,
+      "flag": "dao_body_declined",
+      "log": "He respects that too. You remain very hard to hurt and very easy to live with."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_poison_1",
+   "cat": "insight",
+   "arc": "The Hundred Poisons Dao",
+   "when": {
+    "stat": {
+     "poison": 65
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You can taste a poison before it reaches your tongue now, and name it. A Tang elder, hearing this, sends you a cup. You name all seven.",
+   "choices": [
+    {
+     "text": "Drink it anyway",
+     "roll": {
+      "stat": "poison",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_poison_1",
+      "health": 10,
+      "fame": 8,
+      "log": "Nothing. Your body has made peace with poison the way a river makes peace with rain. The elder is delighted and a little afraid."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a Tang elder's cup",
+      "log": "The cup is stronger than your boast. You spend three days learning the names of poisons from the inside."
+     }
+    },
+    {
+     "text": "Pour it into his garden",
+     "effects": {
+      "flag": "dao_poison_1",
+      "alignment": 4,
+      "comprehension": 4,
+      "log": "The roses die. The elder laughs for a long time and sends a second cup, of tea."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_poison_2",
+   "cat": "insight",
+   "arc": "The Hundred Poisons Dao",
+   "when": {
+    "stat": {
+     "poison": 75
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_poison_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The valley where every plant kills. The Ten Thousand Poison Valley's founders walked through it once, barefoot, and came out as something else. The path is still there.",
+   "choices": [
+    {
+     "text": "Walk it barefoot",
+     "roll": {
+      "stat": "poison",
+      "dc": 80
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_poison",
+      "fame": 15,
+      "lifespan": 5,
+      "comprehension": 8,
+      "log": "You come out of the valley on the fourth day. Nothing that grows can hurt you, and everything you touch in a fight carries a little of the valley with it."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the valley where every plant kills",
+      "log": "The valley takes its toll on the fourth day, and you crawl out on your hands, poisoned in places you never knew could be."
+     }
+    },
+    {
+     "text": "Walk around",
+     "effects": {
+      "comprehension": 4,
+      "flag": "dao_poison_declined",
+      "log": "You know every poison there is and none of them know you. That is enough mastery for one life."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_life_1",
+   "cat": "insight",
+   "arc": "The Dao of Living Things",
+   "when": {
+    "stat": {
+     "medicine": 70
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You set a farmer's broken arm and feel, for a moment, the bone wanting to knit, as if you could simply ask it to. You ask. It does, a month early.",
+   "choices": [
+    {
+     "text": "Ask again, with the next patient",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_life_1",
+      "alignment": 4,
+      "log": "It works often enough that the medicine hall starts calling you something you ask them not to."
+     }
+    },
+    {
+     "text": "Call it luck and use splints",
+     "effects": {
+      "comprehension": 3,
+      "flag": "dao_life_1",
+      "log": "A good physician with a very good luck. The asking waits."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_life_2",
+   "cat": "insight",
+   "arc": "The Dao of Living Things",
+   "when": {
+    "stat": {
+     "medicine": 80
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_life_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A patient the texts say is dead: no pulse, no breath, warm. You can feel the thread of life in her, thin as a hair, and you can feel where it wants to go.",
+   "choices": [
+    {
+     "text": "Hold the thread",
+     "roll": {
+      "stat": "medicine",
+      "dc": 80
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_life",
+      "fame": 18,
+      "lifespan": 6,
+      "alignment": 8,
+      "log": "She breathes on the third hour. The Dao of Living Things: your own wounds close faster than they should, and the dying come to your door from three provinces."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "holding another's life thread too long",
+      "log": "The thread slips. You hold on a breath too long, and the cost comes out of you instead."
+     }
+    },
+    {
+     "text": "Let her go gently",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 6,
+      "flag": "dao_life_declined",
+      "log": "You close her eyes. You are the best physician alive, and you know where the line is, and you keep it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_mind_1",
+   "cat": "insight",
+   "arc": "The Dao of the Board",
+   "when": {
+    "stat": {
+     "strategy": 70
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Over a game of go with a stranger, you see the whole of the next forty moves and, for a moment, the whole of the stranger's next forty years. He loses the game. You lose your appetite.",
+   "choices": [
+    {
+     "text": "Play on, and tell him what you saw",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_mind_1",
+      "charm": 3,
+      "log": "He changes two of the forty years because of what you told him, and writes to you when the rest come true."
+     }
+    },
+    {
+     "text": "Resign the game",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 3,
+      "flag": "dao_mind_1",
+      "log": "Some things are better not seen. You do not play go for a year, and see them anyway."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_mind_2",
+   "cat": "insight",
+   "arc": "The Dao of the Board",
+   "when": {
+    "stat": {
+     "strategy": 80
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_mind_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A war is coming to the province and both sides send for you. From a hilltop you can see how it ends, and how it could end instead, and that the second needs one person to be in the wrong place at the right time.",
+   "choices": [
+    {
+     "text": "Be in that place",
+     "roll": {
+      "stat": "strategy",
+      "dc": 80
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_mind",
+      "fame": 25,
+      "comprehension": 10,
+      "log": "The war ends a year early and a thousand people fewer die. Nobody knows why except you. The Dao of the Board: you see three moves ahead of anyone, in a fight or a court."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "standing in the right place in a war",
+      "log": "The right place turns out to be the wrong one. You come out of the war with a scar and the wrong side's thanks."
+     }
+    },
+    {
+     "text": "Advise one side and go home",
+     "effects": {
+      "taels": 300,
+      "fame": 8,
+      "flag": "dao_mind_declined",
+      "log": "They win. The war takes the year it was always going to take. You are the most sought-after strategist in the murim."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_sound_1",
+   "cat": "insight",
+   "arc": "The Dao of One Note",
+   "when": {
+    "stat": {
+     "sonic": 60
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You hum while sharpening a blade and the blade sings back, and a crack you did not know was in it opens along the note. A blind musician in the market hears it and finds you by the sound.",
+   "choices": [
+    {
+     "text": "Learn the note from him",
+     "effects": {
+      "comprehension": 5,
+      "flag": "dao_sound_1",
+      "charm": 4,
+      "log": "One note, held correctly, finds the crack in anything: a blade, a wall, a liar's story."
+     }
+    },
+    {
+     "text": "Buy him a meal and keep your blade",
+     "effects": {
+      "alignment": 3,
+      "flag": "dao_sound_1",
+      "log": "He eats and plays and tells you the note will find you when it is ready."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_sound_2",
+   "cat": "insight",
+   "arc": "The Dao of One Note",
+   "when": {
+    "stat": {
+     "sonic": 70
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_sound_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The great bell of the mountain temple has not rung since the war. The monks say it is cracked. You can hear that it is not: it is waiting for a note.",
+   "choices": [
+    {
+     "text": "Sing to the bell",
+     "roll": {
+      "stat": "sonic",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "dao_sound",
+      "fame": 15,
+      "comprehension": 8,
+      "charm": 6,
+      "log": "The bell answers across three valleys. The Dao of One Note: your voice carries into the fight and takes the rhythm out of anyone who hears it."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The bell does not answer. Your voice cracks on the third breath, and the monks politely study their sandals."
+     }
+    },
+    {
+     "text": "Let the bell rest",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 4,
+      "flag": "dao_sound_declined",
+      "log": "The monks thank you for not trying. You go on knowing the note and using it only for blades and liars."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

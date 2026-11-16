@@ -1,0 +1,509 @@
+{
+ "events": [
+  {
+   "id": "cm_peddler_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A book peddler's mule shies at a snake on the road and his crate bursts open in the dust. You help him gather the books. He is grateful, and in a hurry. \"Take one,\" he says. \"The craft primers nobody buys. Whichever you like.\"",
+   "when": {
+    "age": [
+     12,
+     1000000
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Keep the alchemy primer",
+     "effects": {
+      "log": "You keep a thin book of furnace fires and herb weights, stained brown at the corners. You read it under a tree that afternoon, and again that night. (A basic alchemy manual: Alchemy can now be studied, to level 3.)",
+      "flag": "cman_alchemy_1"
+     }
+    },
+    {
+     "text": "Keep the forging primer",
+     "effects": {
+      "log": "You keep a smith's primer of folds, quenches and the colours of hot iron. You read it under a tree that afternoon, and again that night. (A basic forging manual: Refining can now be studied, to level 3.)",
+      "flag": "cman_refining_1"
+     }
+    },
+    {
+     "text": "Keep the array primer",
+     "effects": {
+      "log": "You keep a primer of stone patterns, with the earth's veins drawn in faded red. You read it under a tree that afternoon, and again that night. (A basic array manual: Arrays can now be studied, to level 3.)",
+      "flag": "cman_arrays_1"
+     }
+    },
+    {
+     "text": "Keep the talisman primer",
+     "effects": {
+      "log": "You keep a primer of brush strokes, every talisman drawn in one unbroken line. You read it under a tree that afternoon, and again that night. (A basic talisman manual: Talismans can now be studied, to level 3.)",
+      "flag": "cman_talisman_1"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cm_shrine_1",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A roadside shrine keeps a lending shelf for travellers: a few worn books under a little roof, and a sign asking you to leave one in return. Most are sutras. Three are craft primers.",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Borrow the alchemy primer and leave a copy of your own notes",
+     "effects": {
+      "log": "You leave your notes and take a thin book of furnace fires and herb weights, stained brown at the corners. Whoever wrote it had a patient hand. (A basic alchemy manual: Alchemy can now be studied, to level 3.)",
+      "flag": "cman_alchemy_1"
+     }
+    },
+    {
+     "text": "Borrow the forging primer and leave a copy of your own notes",
+     "effects": {
+      "log": "You leave your notes and take a smith's primer of folds, quenches and the colours of hot iron. Whoever wrote it had a patient hand. (A basic forging manual: Refining can now be studied, to level 3.)",
+      "flag": "cman_refining_1"
+     }
+    },
+    {
+     "text": "Borrow the array primer and leave a copy of your own notes",
+     "effects": {
+      "log": "You leave your notes and take a primer of stone patterns, with the earth's veins drawn in faded red. Whoever wrote it had a patient hand. (A basic array manual: Arrays can now be studied, to level 3.)",
+      "flag": "cman_arrays_1"
+     }
+    },
+    {
+     "text": "Leave the shelf as it is",
+     "effects": {
+      "log": "You add a coin to the offering bowl instead and walk on. Somebody else will need those books more.",
+      "luck": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "cm_way_alchemy_1",
+   "cat": "life",
+   "weight": 12,
+   "once": false,
+   "text": "The master's alchemy manual is open on the bench, and you have not turned a page in a year. Every recipe in it you can brew with your eyes shut. The last page is blank, and you have begun to suspect it was left blank on purpose.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_way_alchemy"
+    ],
+    "notFlags": [
+     "cman_alchemy_4"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Brew without the book, by smell and by the colour of the smoke",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You throw the recipe away and listen to the cauldron instead. Near dawn the smoke turns a colour no book names, and you understand that the fire was the teacher all along. (Your own way: Alchemy can rise to 9 and 10.)",
+      "flag": "cman_alchemy_4",
+      "unflag": "cm_way_alchemy",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The brew turns to tar. You sit with the ruined cauldron until morning and are a little wiser for it. The way is there. You have not found it yet.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and watch ordinary craftsmen work for a season",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "A village tinker mends a pot with a trick no manual would stoop to, and something in you turns over and settles. Your craft has been too proud. (Your own way: Alchemy can rise to 9 and 10.)",
+      "flag": "cman_alchemy_4",
+      "unflag": "cm_way_alchemy",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You learn a dozen small tricks and none of them the one you came for. The season was not wasted. It was not the answer either.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Not yet. Keep working as you are",
+     "effects": {
+      "log": "You close the manual and go back to the work you know. The question will keep, and so will you.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "cm_way_refining_1",
+   "cat": "life",
+   "weight": 12,
+   "once": false,
+   "text": "The master's forging manual has nothing more to teach you. You have folded every fold in it, quenched in every oil it names. Yet the blades you forge are still the book's blades, not your own.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_way_refining"
+    ],
+    "notFlags": [
+     "cman_refining_4"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Forge one blade the book says cannot be forged",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "For a month you break every rule in the manual, one at a time. On the last night the steel takes a shape that is nobody's but yours, and it rings like a bell. (Your own way: Refining can rise to 9 and 10.)",
+      "flag": "cman_refining_4",
+      "unflag": "cm_way_refining",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The blade cracks in the quench. You keep the two halves on the wall. The way is there. You have not found it yet.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and watch ordinary craftsmen work for a season",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "A village tinker mends a pot with a trick no manual would stoop to, and something in you turns over and settles. Your craft has been too proud. (Your own way: Refining can rise to 9 and 10.)",
+      "flag": "cman_refining_4",
+      "unflag": "cm_way_refining",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You learn a dozen small tricks and none of them the one you came for. The season was not wasted. It was not the answer either.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Not yet. Keep working as you are",
+     "effects": {
+      "log": "You close the manual and go back to the work you know. The question will keep, and so will you.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "cm_way_arrays_1",
+   "cat": "life",
+   "weight": 12,
+   "once": false,
+   "text": "You can lay every array in the master's manual in your sleep. But the earth's veins under your feet do not run the way the book drew them, and lately you have started to hear them run.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_way_arrays"
+    ],
+    "notFlags": [
+     "cman_arrays_4"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Lay an array by listening to the earth, not the book",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You walk the hills barefoot for a season and set the stones where the ground asks for them. When the last stone goes down the whole valley seems to breathe out. (Your own way: Arrays can rise to 9 and 10.)",
+      "flag": "cman_arrays_4",
+      "unflag": "cm_way_arrays",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The stones sit where you put them and do nothing at all. The earth keeps its own counsel this year. The way is there. You have not found it yet.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and watch ordinary craftsmen work for a season",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "A village tinker mends a pot with a trick no manual would stoop to, and something in you turns over and settles. Your craft has been too proud. (Your own way: Arrays can rise to 9 and 10.)",
+      "flag": "cman_arrays_4",
+      "unflag": "cm_way_arrays",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You learn a dozen small tricks and none of them the one you came for. The season was not wasted. It was not the answer either.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Not yet. Keep working as you are",
+     "effects": {
+      "log": "You close the manual and go back to the work you know. The question will keep, and so will you.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "cm_way_talisman_1",
+   "cat": "life",
+   "weight": 12,
+   "once": false,
+   "text": "The master's talisman manual is worn soft from your hands. Every stroke in it you can write blindfold. But a talisman is a word spoken to heaven, and lately you feel you have only ever repeated other people's words.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_way_talisman"
+    ],
+    "notFlags": [
+     "cman_talisman_4"
+    ]
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Write a talisman of your own, in a script no book holds",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "The brush moves before you know what it will write. The paper glows faintly, then steadily, with a word that is yours. (Your own way: Talismans can rise to 9 and 10.)",
+      "flag": "cman_talisman_4",
+      "unflag": "cm_way_talisman",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "The paper stays only paper. You burn it, and the smoke tells you nothing yet. The way is there. You have not found it yet.",
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and watch ordinary craftsmen work for a season",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "log": "A village tinker mends a pot with a trick no manual would stoop to, and something in you turns over and settles. Your craft has been too proud. (Your own way: Talismans can rise to 9 and 10.)",
+      "flag": "cman_talisman_4",
+      "unflag": "cm_way_talisman",
+      "luck": 1
+     },
+     "fail": {
+      "log": "You learn a dozen small tricks and none of them the one you came for. The season was not wasted. It was not the answer either.",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Not yet. Keep working as you are",
+     "effects": {
+      "log": "You close the manual and go back to the work you know. The question will keep, and so will you.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 3
+  },
+  {
+   "id": "cm_master_alchemy_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Word of your alchemy has travelled. One evening an old alchemist whose pills three sects still quarrel over is waiting at your door, older than you expected and sharper. \"I have watched your work for a year,\" they say. \"My own manual should not go into the ground with me. Serve me one season, and it is yours.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_atmaster_alchemy"
+    ],
+    "notFlags": [
+     "cman_alchemy_3"
+    ],
+    "chance": 0.15
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Serve the old master for a season, grinding herbs and tending their furnace",
+     "effects": {
+      "log": "A season of grinding herbs and tending their furnace, and of being corrected without mercy. On the last day they press their own alchemy manual into your hands, every margin black with notes. (A master's alchemy manual: Alchemy can now rise to level 8.)",
+      "flag": "cman_alchemy_3",
+      "unflag": "cm_atmaster_alchemy",
+      "health": -5
+     }
+    },
+    {
+     "text": "Thank them, and say you will find your own road to it",
+     "effects": {
+      "log": "They shrug, not offended. \"Then find it,\" they say, and are gone by morning.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 1
+  },
+  {
+   "id": "cm_master_refining_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Word of your forging has travelled. One evening an old smith whose blades hang in four sect halls is waiting at your door, older than you expected and sharper. \"I have watched your work for a year,\" they say. \"My own manual should not go into the ground with me. Serve me one season, and it is yours.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_atmaster_refining"
+    ],
+    "notFlags": [
+     "cman_refining_3"
+    ],
+    "chance": 0.15
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Serve the old master for a season, working their bellows and sweeping their forge",
+     "effects": {
+      "log": "A season of working their bellows and sweeping their forge, and of being corrected without mercy. On the last day they press their own forging manual into your hands, every margin black with notes. (A master's forging manual: Refining can now rise to level 8.)",
+      "flag": "cman_refining_3",
+      "unflag": "cm_atmaster_refining",
+      "health": -5
+     }
+    },
+    {
+     "text": "Thank them, and say you will find your own road to it",
+     "effects": {
+      "log": "They shrug, not offended. \"Then find it,\" they say, and are gone by morning.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 1
+  },
+  {
+   "id": "cm_master_arrays_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Word of your array has travelled. One evening an old array master who once sealed a whole valley is waiting at your door, older than you expected and sharper. \"I have watched your work for a year,\" they say. \"My own manual should not go into the ground with me. Serve me one season, and it is yours.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_atmaster_arrays"
+    ],
+    "notFlags": [
+     "cman_arrays_3"
+    ],
+    "chance": 0.15
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Serve the old master for a season, carrying their stones up and down the hills",
+     "effects": {
+      "log": "A season of carrying their stones up and down the hills, and of being corrected without mercy. On the last day they press their own array manual into your hands, every margin black with notes. (A master's array manual: Arrays can now rise to level 8.)",
+      "flag": "cman_arrays_3",
+      "unflag": "cm_atmaster_arrays",
+      "health": -5
+     }
+    },
+    {
+     "text": "Thank them, and say you will find your own road to it",
+     "effects": {
+      "log": "They shrug, not offended. \"Then find it,\" they say, and are gone by morning.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 1
+  },
+  {
+   "id": "cm_master_talisman_1",
+   "cat": "life",
+   "weight": 10,
+   "once": false,
+   "text": "Word of your talisman has travelled. One evening an old talisman master whose seals guard the capital gates is waiting at your door, older than you expected and sharper. \"I have watched your work for a year,\" they say. \"My own manual should not go into the ground with me. Serve me one season, and it is yours.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "cm_atmaster_talisman"
+    ],
+    "notFlags": [
+     "cman_talisman_3"
+    ],
+    "chance": 0.15
+   },
+   "arc": "The Craft Manuals",
+   "choices": [
+    {
+     "text": "Serve the old master for a season, grinding their ink and cutting their paper",
+     "effects": {
+      "log": "A season of grinding their ink and cutting their paper, and of being corrected without mercy. On the last day they press their own talisman manual into your hands, every margin black with notes. (A master's talisman manual: Talismans can now rise to level 8.)",
+      "flag": "cman_talisman_3",
+      "unflag": "cm_atmaster_talisman",
+      "health": -5
+     }
+    },
+    {
+     "text": "Thank them, and say you will find your own road to it",
+     "effects": {
+      "log": "They shrug, not offended. \"Then find it,\" they say, and are gone by morning.",
+      "comprehension": 1
+     }
+    }
+   ],
+   "cooldown": 1
+  }
+ ],
+ "mwPass": 1
+}

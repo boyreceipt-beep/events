@@ -1,0 +1,944 @@
+{
+ "events": [
+  {
+   "id": "era_bc_1b",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "The well in the next valley runs red for three days. The magistrate says iron in the rock. The children who drank from it sleep through the day and walk at night, and they all walk east.",
+   "choices": [
+    {
+     "text": "Follow the children east",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The red priest"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 6,
+      "alignment": 6,
+      "flag": "era_bc_saw_altar",
+      "log": "A shrine in a cave, a priest in red, and the children kneeling. You carry them home two at a time. The priest does not follow, which frightens you more."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a Blood Cult priest in a cave",
+      "log": "The priest is stronger than any priest should be. You get the children out. Not all of yourself."
+     }
+    },
+    {
+     "text": "Seal the well and warn the sects",
+     "effects": {
+      "fame": 3,
+      "alignment": 3,
+      "log": "Nobody believes you for a month. Then they do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_bc_1c",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "A wandering monk dies on your doorstep with his blood running backward, up the steps, toward the door. Before he dies he says one word: altar.",
+   "choices": [
+    {
+     "text": "Burn the body as the old books say",
+     "effects": {
+      "comprehension": 4,
+      "flag": "era_bc_knows_rite",
+      "log": "It burns with a sound like singing. You know now what you are dealing with, and you know one way to stop it."
+     }
+    },
+    {
+     "text": "Take his prayer beads to his temple",
+     "effects": {
+      "alignment": 6,
+      "fame": 3,
+      "log": "The abbot weeps, then gives you a list of seven monks who went to fight the Cult. Six names are crossed out."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_bc_2b",
+   "trigger": "era_blood_cult",
+   "cat": "sect",
+   "text": "The alliance against the Blood Cult needs scouts who can go where a banner cannot. The Beggars' Sect elder looks at you a long time and says you have the right kind of face.",
+   "choices": [
+    {
+     "text": "Go among them in disguise",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "merit": 30,
+      "flag": "era_bc_spy",
+      "log": "Three months in red. You learn their signs, their prayers, and where the altar is. You never quite get the smell out of your hair."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "found out among the Blood Cult",
+      "log": "They find you out on the last night. You leave by the roof, bleeding."
+     }
+    },
+    {
+     "text": "Guard the alliance camp instead",
+     "effects": {
+      "merit": 15,
+      "fame": 3,
+      "log": "Unglamorous work. Twice a red shadow comes at night and twice you are there."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_bc_2c",
+   "trigger": "era_blood_cult",
+   "cat": "sect",
+   "text": "Two sects of the alliance against the Blood Cult quarrel over who leads the vanguard, and the quarrel turns to swords at the council fire while the Cult burns another village.",
+   "choices": [
+    {
+     "text": "Step between the swords",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The quarrelling sects"
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 6,
+      "log": "Both blades stop on yours. In the silence you point east, at the smoke. They march together the next morning."
+     },
+     "fail": {
+      "health": -20,
+      "fame": 6,
+      "log": "You take a cut from each side. It shames them into peace, which is what you wanted, just more painful."
+     }
+    },
+    {
+     "text": "Lead the vanguard yourself",
+     "effects": {
+      "fame": 8,
+      "merit": 20,
+      "health": -10,
+      "log": "Nobody wanted it enough to follow anyone else. They follow you."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_bc_3b",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "Your own master's old friend, a gentle elder who taught children the sword, is found at a crossroads draining a merchant. The Blood Cult took him in the spring. He still knows your name.",
+   "choices": [
+    {
+     "text": "Fight him",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.9,
+      "foeName": "The fallen elder"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "alignment": 4,
+      "log": "At the end he thanks you, in his own voice, for the first time in months."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "an elder taken by the Blood Cult",
+      "log": "He was always faster than you. He stops before the last blow, and you never know why."
+     }
+    },
+    {
+     "text": "Bring the rite that frees the taken",
+     "req": {
+      "flags": [
+       "era_bc_knows_rite"
+      ]
+     },
+     "effects": {
+      "alignment": 10,
+      "fame": 12,
+      "log": "The monk's rite works. He wakes in a cell, weeping, himself. He spends the rest of his life atoning, and teaching children again."
+     }
+    },
+    {
+     "text": "Back away and send word to the sects",
+     "effects": {
+      "fame": -4,
+      "alignment": 2,
+      "log": "He watches you go and does not follow. You send word to the nearest sect, and three days later they hunt him down. They tell you he asked for you at the end."
+     }
+    }
+   ],
+   "when": {
+    "hasMaster": true
+   },
+   "mw": true
+  },
+  {
+   "id": "era_bc_3c",
+   "trigger": "era_blood_cult",
+   "cat": "danger",
+   "text": "A field hospital behind the lines. The Blood Cult's wounds do not close, and the physicians say the only cure is qi poured in from a living cultivator, a little from each, every night.",
+   "choices": [
+    {
+     "text": "Give your qi every night",
+     "effects": {
+      "lifespan": -2,
+      "alignment": 12,
+      "fame": 6,
+      "log": "A season of it. You grow thin and grey at the temples. Forty people walk out of that hospital who should not have."
+     }
+    },
+    {
+     "text": "Hunt the cultist who poisoned the blades",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The poisoner"
+     },
+     "ok": {
+      "fame": 10,
+      "merit": 20,
+      "log": "Without the source the wounds begin to close on their own."
+     },
+     "fail": {
+      "health": -25,
+      "log": "You find the poisoner and the poisoner finds you first."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "era_di_1b",
+   "trigger": "era_demon_invasion",
+   "cat": "world",
+   "text": "A Cult rider gallops through your town at dawn, scattering leaflets: the Heavenly Demon offers every martial artist a place, a rank and a salary. Half the town is reading them by noon.",
+   "choices": [
+    {
+     "text": "Burn the leaflets in the square",
+     "effects": {
+      "alignment": 4,
+      "fame": 5,
+      "rep": {
+       "orthodox": 4
+      },
+      "log": "A show of loyalty. The Cult notes your name. So does the Alliance."
+     }
+    },
+    {
+     "text": "Keep one, and read it closely",
+     "effects": {
+      "comprehension": 4,
+      "flag": "era_di_read_offer",
+      "log": "The salary is real. So is the clause at the bottom about the families of those who leave."
+     }
+    },
+    {
+     "text": "Ride after the rider",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "merit": 15,
+      "log": "You catch the rider at the ford. He carries a map of every town on the road, with notes in the margins."
+     },
+     "fail": {
+      "health": -10,
+      "log": "His horse is faster, and his men are waiting at the ford."
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_1c",
+   "trigger": "era_demon_invasion",
+   "cat": "world",
+   "text": "The Martial Alliance posts a call to arms on every temple gate. Under it someone has written in charcoal: and who will feed our children while you die for their banners?",
+   "choices": [
+    {
+     "text": "Answer the call",
+     "effects": {
+      "merit": 20,
+      "fame": 5,
+      "health": -5,
+      "log": "Three days' march to the muster. The food is bad and the songs are good.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Organise the town instead",
+     "effects": {
+      "alignment": 8,
+      "charm": 4,
+      "log": "Walls, wells, a night watch and a granary. When the war comes past, it finds a town that is ready.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_2b",
+   "trigger": "era_demon_invasion",
+   "cat": "danger",
+   "text": "The Cult's beast-tamers drive a herd of maddened oxen with burning tails at the Alliance line, and your company stands right in their path.",
+   "choices": [
+    {
+     "text": "Hold the line",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.8,
+      "foeName": "The burning oxen"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "merit": 25,
+      "log": "The oxen break on the shields and the tamers behind them break on you.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a stampede of burning oxen",
+      "log": "Something with horns and fire goes over you.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Open the line and let them through",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 12,
+      "merit": 25,
+      "log": "The oxen pour through the gap and into the Cult's own camp behind.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -20,
+      "merit": 5,
+      "log": "Half go through the gap. Half do not.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_2c",
+   "trigger": "era_demon_invasion",
+   "cat": "danger",
+   "text": "A Cult officer offers your besieged town a bargain: open the gate and only the soldiers die. The magistrate is weeping. The soldiers are looking at you.",
+   "choices": [
+    {
+     "text": "Challenge the officer to single combat",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.85,
+      "foeName": "The Cult officer"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "alignment": 6,
+      "log": "He accepts, as men of the Cult do. He loses, as you hoped. His men withdraw a day's march to argue about it.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a Cult officer before the town gate",
+      "log": "The whole town watches you fall. Then they close the gate.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Lead the townsfolk out by night",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 10,
+      "fame": 8,
+      "log": "Six hundred people through the river reeds before dawn. The Cult takes an empty town.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "alignment": 4,
+      "health": -20,
+      "log": "Most get out. The ones who do not are a debt you carry.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_3b",
+   "trigger": "era_demon_invasion",
+   "cat": "sect",
+   "text": "Someone in the Alliance has been selling the Cult the medicine shipments. A wounded courier dies in your arms holding a receipt with a sect seal on it.",
+   "choices": [
+    {
+     "text": "Take the receipt to the Alliance Lord",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 12,
+      "merit": 30,
+      "log": "The Alliance Lord reads it twice and goes very quiet. An elder is gone from the council by morning.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -15,
+      "log": "The receipt goes missing from your room that night, and your room is on fire.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Find the buyer yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The buyer's guards"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "flag": "era_di_traitor_caught",
+      "log": "A warehouse at the docks and a man you used to drink with. He confesses everything before you even draw.",
+      "unflag": "era_di_aloof"
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a traitor's hired blades",
+      "log": "The buyer has guards. Better ones than you expected.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_di_3c",
+   "trigger": "era_demon_invasion",
+   "cat": "sect",
+   "text": "A captured Cult officer will name the Alliance traitor if you swear to let him walk free. The Alliance elders say no oath to a demon binds. He is watching you to see whether you agree.",
+   "choices": [
+    {
+     "text": "Swear, and keep it",
+     "effects": {
+      "alignment": 6,
+      "fame": 8,
+      "flag": "era_di_kept_oath",
+      "log": "He names the traitor. You walk him to the border yourself. Years later a Cult elder spares a village because of it.",
+      "unflag": "era_di_aloof"
+     }
+    },
+    {
+     "text": "Swear, and break it",
+     "effects": {
+      "alignment": -10,
+      "merit": 30,
+      "log": "He names the traitor. The elders execute him at dawn. You win the war a little faster and sleep a little worse.",
+      "unflag": "era_di_aloof"
+     }
+    }
+   ],
+   "when": {
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_fa_1b",
+   "trigger": "era_famine",
+   "cat": "life",
+   "text": "The temple has a rice store, and the abbot says it is for the monks' winter. Outside the gate, a woman sits with a child who has stopped crying, which is worse.",
+   "choices": [
+    {
+     "text": "Talk to the abbot",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 8,
+      "fame": 5,
+      "log": "The abbot opens the store and the monks fast instead. He thanks you for reminding him."
+     },
+     "fail": {
+      "alignment": 2,
+      "log": "The abbot is unmoved. You give the woman your own rice."
+     }
+    },
+    {
+     "text": "Take the rice by night",
+     "effects": {
+      "alignment": 2,
+      "taels": 0,
+      "flag": "era_fa_temple_rice",
+      "log": "Nobody in the town says a word to the temple about where the rice went. The abbot never says a word either. You suspect he left the door open."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_fa_1c",
+   "trigger": "era_famine",
+   "cat": "life",
+   "text": "A sect elder buys up the province's grain to feed his disciples through the famine. His disciples are fat. The farmers who grew it are eating bark.",
+   "choices": [
+    {
+     "text": "Shame him in public",
+     "roll": {
+      "stat": "poetry",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 6,
+      "log": "Your verses run through three towns in a week. The elder sells the grain back at cost to save his face."
+     },
+     "fail": {
+      "fame": -3,
+      "log": "Nobody wants to cross a sect elder over a poem."
+     }
+    },
+    {
+     "text": "Raid his granary",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The elder's disciples"
+     },
+     "risky": true,
+     "ok": {
+      "alignment": 8,
+      "fame": 6,
+      "rep": {
+       "orthodox": -5
+      },
+      "log": "Two carts of rice into the villages before dawn. The sect never proves it was you."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a sect's granary guards",
+      "log": "His disciples are fat, but they are not slow."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_fa_2b",
+   "trigger": "era_famine",
+   "cat": "danger",
+   "text": "A cannibal inn on the famine road: the soup is too rich, the innkeeper smiles too much, and the cellar door is chained from the outside.",
+   "choices": [
+    {
+     "text": "Break the cellar open",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeMult": 1.0,
+      "foeName": "The innkeeper's gang"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "alignment": 8,
+      "log": "Eleven travellers in the cellar, alive. The innkeeper runs. The road is safe for the rest of the famine."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a cannibal inn on the famine road",
+      "log": "There were more of them than the smile suggested."
+     }
+    },
+    {
+     "text": "Leave quietly and report it",
+     "effects": {
+      "alignment": 2,
+      "log": "The magistrate's men find the inn empty three days later. And the cellar."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_fa_2c",
+   "trigger": "era_famine",
+   "cat": "danger",
+   "text": "A child steals your purse in the famine market, and a crowd catches her and is about to beat her to death for it. She is perhaps nine.",
+   "choices": [
+    {
+     "text": "Tell them it was a gift",
+     "effects": {
+      "alignment": 8,
+      "taels": -20,
+      "flag": "era_fa_saved_thief",
+      "log": "The crowd mutters and lets her go. She keeps the purse. Ten years later a famous thief-catcher sends you a sack of rice every winter, with no name on it."
+     }
+    },
+    {
+     "text": "Take back the purse and let them",
+     "effects": {
+      "alignment": -12,
+      "log": "The crowd does what crowds do. You have your purse."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_ga_1b",
+   "trigger": "era_golden_age",
+   "cat": "world",
+   "text": "The golden years bring a fashion for martial poetry duels: two fighters, one blade each, and a verse for every exchange. The capital is mad for it.",
+   "choices": [
+    {
+     "text": "Enter the poetry duels",
+     "roll": {
+      "stat": "poetry",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 12,
+      "charm": 4,
+      "log": "Your verse about a falling plum blossom is sung in teahouses for a decade. You also won the fight."
+     },
+     "fail": {
+      "fame": 2,
+      "log": "You win the fight and lose the poem. The crowd boos the winner."
+     }
+    },
+    {
+     "text": "Write verses for other fighters",
+     "effects": {
+      "taels": 80,
+      "comprehension": 3,
+      "log": "Lucrative. Three champions win with your words in their mouths."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_ga_1c",
+   "trigger": "era_golden_age",
+   "cat": "world",
+   "text": "The Emperor, in a good mood, pardons every martial artist in the prisons for the anniversary. The roads fill with people who have old debts to settle.",
+   "choices": [
+    {
+     "text": "Keep the peace on the roads",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The pardoned men"
+     },
+     "ok": {
+      "fame": 10,
+      "merit": 15,
+      "alignment": 4,
+      "log": "A month of it. You settle six old feuds with words and two with your fists."
+     },
+     "fail": {
+      "health": -20,
+      "log": "One pardoned man had been waiting a long time to settle with anyone."
+     }
+    },
+    {
+     "text": "Hire the best of them",
+     "effects": {
+      "taels": -50,
+      "fame": 4,
+      "log": "A pardoned assassin makes an excellent bodyguard, it turns out. Expensive, polite, and very good at noticing things."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "mw": true
+  },
+  {
+   "id": "era_ga_2b",
+   "trigger": "era_golden_age",
+   "cat": "life",
+   "text": "The golden years bring silk from the west and new ideas with it. A merchant offers to fund a martial academy in your name, open to anyone who can pay, no bloodline asked.",
+   "choices": [
+    {
+     "text": "Found the academy",
+     "effects": {
+      "taels": 200,
+      "fame": 10,
+      "flag": "era_ga_academy",
+      "log": "The old sects sneer. The farmers' children come anyway, and some of them are very good."
+     }
+    },
+    {
+     "text": "Refuse: arts are not for sale",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 3,
+      "log": "The merchant shrugs and funds someone else. The academy is a great success. You were right and it does not matter."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_ga_2c",
+   "trigger": "era_golden_age",
+   "cat": "life",
+   "text": "Peace makes the young lazy. A sect elder asks you to teach the young disciples what a real fight is like, because none of them has ever seen one.",
+   "choices": [
+    {
+     "text": "Teach them hard",
+     "effects": {
+      "performance": 6,
+      "fame": 6,
+      "flag": "era_ga_taught",
+      "log": "They hate you for a year. Twenty years later, when the next war comes, they write to thank you."
+     }
+    },
+    {
+     "text": "Tell them stories instead",
+     "effects": {
+      "charm": 4,
+      "comprehension": 3,
+      "log": "War stories, by the fire. They listen. Some of them even learn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_cr_1b",
+   "trigger": "era_crackdown",
+   "cat": "danger",
+   "text": "The Iron Decree: martial artists must register at the yamen, have their arts written down, and wear a copper tag. The line outside the yamen is long and silent.",
+   "choices": [
+    {
+     "text": "Register",
+     "effects": {
+      "fame": -2,
+      "alignment": 2,
+      "flag": "era_cr_registered",
+      "log": "Your name in a ledger. Your arts in another. The copper tag is cold against your chest for years."
+     }
+    },
+    {
+     "text": "Go underground",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "era_cr_underground",
+      "fame": 4,
+      "log": "A different name, a different town, a sword wrapped in a fishing pole."
+     },
+     "fail": {
+      "jail": 1,
+      "log": "Caught at the city gate with a sword in a fishing pole."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   }
+  },
+  {
+   "id": "era_cr_1c",
+   "trigger": "era_crackdown",
+   "cat": "danger",
+   "text": "Depot agents arrest your neighbour, an old woman who taught tai chi in the temple yard, as a dangerous martial artist. The whole street watches from behind closed shutters.",
+   "choices": [
+    {
+     "text": "Speak for her at the yamen",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 8,
+      "fame": 6,
+      "log": "The magistrate is embarrassed. She is home by evening."
+     },
+     "fail": {
+      "alignment": 6,
+      "fame": -3,
+      "log": "They let her go and put your name on a list."
+     }
+    },
+    {
+     "text": "Break her out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Depot agents"
+     },
+     "risky": true,
+     "ok": {
+      "alignment": 8,
+      "fame": 8,
+      "log": "She is surprisingly good at climbing walls for her age."
+     },
+     "fail": {
+      "jail": 2,
+      "deathCause": "the Depot's guards",
+      "log": "The cell next to hers is quite comfortable, she tells you."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   }
+  },
+  {
+   "id": "era_cr_2b",
+   "trigger": "era_crackdown",
+   "cat": "world",
+   "text": "The Depot burns sect libraries in the market square. A young official with a scholar's hands is secretly saving one book from every pile.",
+   "choices": [
+    {
+     "text": "Help him",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 6,
+      "alignment": 6,
+      "flag": "era_cr_saved_books",
+      "log": "A cellar under a bookshop, a thousand books, and one frightened scholar. When the decree falls, he gives the books back, sect by sect."
+     },
+     "fail": {
+      "health": -15,
+      "log": "A guard sees you with a book under your shirt."
+     }
+    },
+    {
+     "text": "Report him",
+     "effects": {
+      "alignment": -10,
+      "taels": 50,
+      "log": "The Depot pays well. The scholar is gone by morning."
+     }
+    }
+   ]
+  },
+  {
+   "id": "era_cr_2c",
+   "trigger": "era_crackdown",
+   "cat": "world",
+   "text": "A rebel general plans to march on the capital and end the Iron Decree by force. She wants martial artists. She also wants to be Emperor, which she has not mentioned to the martial artists.",
+   "choices": [
+    {
+     "text": "Join her",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "The capital's guards"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 12,
+      "merit": 20,
+      "log": "The march fails, as you suspected, but it frightens the court into tearing the decree down a year early."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a rebel march on the capital",
+      "log": "The capital's walls are high and the crossbows are many."
+     }
+    },
+    {
+     "text": "Warn the other martial artists",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "comprehension": 4,
+      "log": "Half of them go home. The general marches anyway, and fails, with fewer friends to bury."
+     },
+     "fail": {
+      "log": "Nobody listens. Everybody marches."
+     }
+    }
+   ],
+   "when": {
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

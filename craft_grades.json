@@ -1,0 +1,428 @@
+{
+ "events": [
+  {
+   "id": "cg_patron",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A steward in plain good cloth buys one of your pills from a stall that resold it, and walks three days to find whose it was. \"My master has eaten from every furnace in the province,\" {he} says. \"He sent back a pill this morning to ask if it could be repeated.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_alchemy"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Name a fair yearly price and sign",
+     "effects": {
+      "taels": 180,
+      "fame": 3,
+      "tally": {
+       "cg_patron": 1
+      },
+      "log": "A chest comes at each new year. The master never writes, but the empty bottles come back washed."
+     }
+    },
+    {
+     "text": "Say that good work cannot be promised by the year",
+     "effects": {
+      "fame": 5,
+      "alignment": 2,
+      "log": "{npc} bows and goes. Before the month is out two other houses have sent to ask what kind of alchemist turns down a chest."
+     }
+    },
+    {
+     "text": "Ask who the master is before anything else",
+     "effects": {
+      "comprehension": 2,
+      "log": "{npc} tells you, carefully. You now know more about the province than you did, and why a rich man eats so many pills."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "cg_rival",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "An alchemist from the next county sets a small brown bottle on your table without greeting you. \"Mine,\" {he} says. \"Open yours beside it. People have been telling me about you, and I have decided to find out.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_alchemy",
+     "craft_alchemy_2"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Open them side by side, in front of the street",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "flag": "cg_rival_beaten",
+      "log": "The street smells it before they see it. {npc} looks at your pill for a long time, then asks, quietly, what you do about the second boil."
+     },
+     "fail": {
+      "fame": -2,
+      "comprehension": 2,
+      "log": "Side by side, the street cannot agree and neither can you. {npc} leaves one trick behind without seeming to mean to."
+     }
+    },
+    {
+     "text": "Trade a recipe note instead of a contest",
+     "effects": {
+      "comprehension": 3,
+      "alignment": 2,
+      "log": "You talk until the lamp runs dry. It is the first time in years anyone has argued with you about charcoal."
+     }
+    },
+    {
+     "text": "Tell {him} your furnace is not a stage",
+     "effects": {
+      "fame": -1,
+      "log": "{npc} takes the brown bottle back with a look of mild disappointment, and leaves it, on second thought, on your step."
+     }
+    }
+   ],
+   "npc": {
+    "role": "rival"
+   }
+  },
+  {
+   "id": "cg_elder",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "An elder comes to look over the medicine you have brought to the hall, and goes on looking well past the point of courtesy. \"Who taught you the last step of this?\" {he} asks. {He} has made this pill for forty years, and it has never looked like that.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_high_work"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false,
+    "hasSect": true
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Show {him} the last step, in the open hall",
+     "effects": {
+      "alignment": 4,
+      "fame": 3,
+      "log": "The elder copies it down in a hand that shakes a little. By summer the whole medicine hall is doing it, and it is called the elder's method."
+     }
+    },
+    {
+     "text": "Say your hands simply learned it",
+     "effects": {
+      "fame": 1,
+      "flag": "cg_elder_cold",
+      "log": "{npc} nods as if {he} believed it. Your next requests to the medicine hall come back slower than they used to."
+     }
+    },
+    {
+     "text": "Credit the sect's own teaching, loudly",
+     "effects": {
+      "charm": 1,
+      "fame": 1,
+      "log": "It is not quite a lie and {npc} knows it. {He} lets you have it, and is careful around you from then on."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "cg_relative",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "{npc}, your own kin, has been lying in the back room for most of the winter, and the physician has stopped naming a day to come back. {He} has heard what comes out of your workshop now. {He} does not ask. {He} just happens to mention it, twice.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_alchemy"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Give {him} a salve from your own bag, and stay the night",
+     "req": {
+      "items": [
+       "healing_salve"
+      ]
+     },
+     "effects": {
+      "item": {
+       "healing_salve": -1
+      },
+      "alignment": 6,
+      "mem": {
+       "deed": "cg_nursed",
+       "w": 20,
+       "note": "sat up with me through the worst of it"
+      },
+      "log": "By the third day {he} is complaining about the soup. Nobody in the house has ever been so glad to hear it."
+     }
+    },
+    {
+     "text": "Pay the physician to come back",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "alignment": 2,
+      "log": "The physician comes. It is a long spring, but it is a spring."
+     }
+    },
+    {
+     "text": "Sit with {him}, since that is what you have today",
+     "effects": {
+      "alignment": 3,
+      "log": "You have nothing to give {him} but the afternoon. {He} seems to think it was the better medicine, and may be right."
+     }
+    }
+   ],
+   "npc": {
+    "role": "family"
+   }
+  },
+  {
+   "id": "cg_swordsman",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A swordsman stops you in the road and asks to hold the blade you made. {He} weighs it across two fingers and rings it with a knuckle, and for a moment looks like someone who has heard a voice from a long way off. \"I would have walked further for this,\" {he} says.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_refining"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Take {his} order, at a smith's price",
+     "effects": {
+      "taels": 120,
+      "fame": 3,
+      "log": "You forge {him} something honest. A year later you hear {his} name at an inn, in a story that goes well for {him}."
+     }
+    },
+    {
+     "text": "Tell {him} a blade this good is wasted on anyone in a hurry",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 4,
+      "log": "{npc} laughs out loud, and sits down in the road to hear the rest. You acquire a friend and a great deal of advice about scabbards."
+     },
+     "fail": {
+      "fame": -1,
+      "log": "{npc} stops laughing partway through. It is a very long walk to the next inn, with {him} walking just behind you."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "cg_monk",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A travelling monk reads a talisman you wrote, front and back, then holds it up against the sun. \"You did not lift the brush,\" {he} says. \"I have seen perhaps four people not lift the brush. Three of them were dead before I met them, in the sense that I read their work.\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_talisman"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Ask what the fourth one was like",
+     "effects": {
+      "comprehension": 3,
+      "log": "The story takes until nightfall and involves a goat. You come away with a better way of holding your breath on the long stroke."
+     }
+    },
+    {
+     "text": "Write {him} one for the road",
+     "effects": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "{npc} folds it into a sleeve and does not thank you. A month later a temple you have never heard of sends you a bag of good cinnabar."
+     }
+    },
+    {
+     "text": "Say you have a great deal of work to do",
+     "effects": {
+      "fame": -1,
+      "log": "{npc} nods, gives the talisman back with both hands, and is gone before you have picked up the brush again."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "cg_lord",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "A landlord who has had three array masters out to his estate walks the bounds of your home with his hands behind him. The stones do not hum. \"The others all hummed,\" {he} says, a little accusingly. \"Yours are just quiet, and it is warmer here than it should be. What would you ask to do mine?\"",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "flags": [
+     "craft_graded_arrays"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Lay it for him, and charge for the three who came before",
+     "effects": {
+      "taels": 220,
+      "fame": 3,
+      "log": "It takes a season. His three masters are not pleased, and neither is his bookkeeper, but his house has stopped creaking in the night."
+     }
+    },
+    {
+     "text": "Tell him what is wrong with his three masters' work, for nothing",
+     "effects": {
+      "alignment": 3,
+      "fame": 4,
+      "log": "You sketch it on the back of a bill. By the end of the year he has told most of the county, with improvements."
+     }
+    },
+    {
+     "text": "Say that you do not lay arrays for people you do not know",
+     "effects": {
+      "taels": 10,
+      "log": "He looks at you as if he were not used to the words. Next spring he sends a small gift and a very well-written letter, in case you have changed your mind."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  },
+  {
+   "id": "cg_collector",
+   "cat": "life",
+   "weight": 4,
+   "once": true,
+   "text": "An old collector asks to see the work you are proudest of, and looks at it through a glass for as long as it takes tea to go cold. \"Forty years,\" {he} says at last. \"I have looked at the best of everyone. I have only ever needed to stop looking twice.\" {He} names a sum that is not polite.",
+   "when": {
+    "age": [
+     20,
+     1000000
+    ],
+    "flags": [
+     "craft_perfect_work"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "inPrison": false
+   },
+   "arc": "Work That Is Noticed",
+   "choices": [
+    {
+     "text": "Sell {him} the next one, and only the next one",
+     "effects": {
+      "taels": 900,
+      "fame": 8,
+      "log": "It goes into a cabinet behind three locks. People start to speak your name in the voice they use for the dead and the very expensive."
+     }
+    },
+    {
+     "text": "Refuse the money and let {him} look as long as {he} likes",
+     "effects": {
+      "alignment": 5,
+      "fame": 5,
+      "comprehension": 2,
+      "log": "{npc} comes back every year after that, with a glass and bad tea. You learn more from what {he} stops at than you have from most teachers."
+     }
+    },
+    {
+     "text": "Ask {him} what the second one was",
+     "effects": {
+      "comprehension": 3,
+      "log": "{npc} tells you. It is in a family's shrine in the far south, and nobody living knows who made it. You find you are thinking about that for a long time."
+     }
+    }
+   ],
+   "npc": {
+    "role": "stranger"
+   }
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

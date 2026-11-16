@@ -1,0 +1,425 @@
+{
+ "events": [
+  {
+   "id": "dc_heaven_omen_1",
+   "cat": "world",
+   "arc": "Heaven Is Watching",
+   "when": {
+    "flags": [
+     "heaven_eye_1"
+    ],
+    "age": [
+     12,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "Since the clear-sky thunder, birds fly around your house and never over it. A fortune-teller in the market refuses your coin and tells you, quietly, to stop doing whatever you are doing.",
+   "choices": [
+    {
+     "text": "Ask what heaven wants",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "comprehension": 4,
+      "flag": "heaven_knows_why",
+      "log": "'Nothing,' she says. 'That is the trouble. It only watches.'"
+     },
+     "fail": {
+      "luck": -3,
+      "log": "The fortune-teller says nothing at all, and the birds that followed you home say the rest. Your luck sours for a season."
+     }
+    },
+    {
+     "text": "Keep doing it",
+     "effects": {
+      "fame": 3,
+      "alignment": -2,
+      "log": "The birds keep circling. You get used to it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_omen_2",
+   "cat": "world",
+   "arc": "Heaven Is Watching",
+   "when": {
+    "flags": [
+     "heaven_eye_1"
+    ],
+    "age": [
+     14,
+     99
+    ],
+    "after": [
+     "dc_heaven_omen_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "Lightning strikes your old training post every year on the same night. This year you are standing beside it, and the bolt hangs in the air for a breath, as if deciding.",
+   "choices": [
+    {
+     "text": "Touch the lightning",
+     "roll": {
+      "stat": "body",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "strength": 6,
+      "qi": 6,
+      "flag": "heaven_touched",
+      "log": "It goes through you and out into the ground and something in your channels is wider afterwards."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "lightning on a clear night",
+      "log": "The bolt takes you instead of the post. You wake in a ditch with your hair standing on end, alive for reasons nobody can name."
+     }
+    },
+    {
+     "text": "Step back and bow",
+     "effects": {
+      "luck": 4,
+      "alignment": 3,
+      "log": "The bolt falls on the post. You bow again, to be safe."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_omen_3",
+   "cat": "world",
+   "arc": "Heaven Is Watching",
+   "when": {
+    "flags": [
+     "heaven_eye_1"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_heaven_omen_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A Taoist from the far mountains walks a month to see you, looks at you for exactly one breath, and says that heaven has a ledger and your page is getting very full.",
+   "choices": [
+    {
+     "text": "Ask how to empty it",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 4,
+      "flag": "heaven_ledger_kind",
+      "log": "'Kindness,' he says, 'and fewer miracles.' He walks back the way he came."
+     }
+    },
+    {
+     "text": "Ask how to fill it faster",
+     "effects": {
+      "alignment": -6,
+      "comprehension": 4,
+      "flag": "heaven_ledger_bold",
+      "log": "He laughs for a long time, then tells you, and walks back very fast."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_trial_1",
+   "cat": "world",
+   "arc": "Heaven's Trials",
+   "when": {
+    "flags": [
+     "heaven_eye_2"
+    ],
+    "age": [
+     16,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "A drought falls on your province alone, and the priests say a person who has defied heaven lives here. Everyone knows who they mean. The rain stays on the borders, watching.",
+   "choices": [
+    {
+     "text": "Climb the mountain and speak to the sky",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "fame": 12,
+      "alignment": 6,
+      "flag": "heaven_trial_rain",
+      "log": "You shout at heaven for a day. Heaven answers with rain, as a parent answers a child: not because you are right, but because you are loud."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a mountain in a drought heaven sent",
+      "log": "You shout until your voice breaks and heaven only watches. You are carried down the mountain half-dead from thirst."
+     }
+    },
+    {
+     "text": "Leave the province so the rain comes",
+     "effects": {
+      "alignment": 8,
+      "fame": -3,
+      "flag": "heaven_trial_left",
+      "log": "You are a day past the border when the first rain falls behind you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_trial_2",
+   "cat": "world",
+   "arc": "Heaven's Trials",
+   "when": {
+    "flags": [
+     "heaven_eye_2"
+    ],
+    "age": [
+     18,
+     99
+    ],
+    "after": [
+     "dc_heaven_trial_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "A heavenly envoy in white comes down a ray of light and offers you a choice: give up the cultivation road and heaven will forget you, or walk on and be tested again.",
+   "choices": [
+    {
+     "text": "Walk on",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "qi": 10,
+      "flag": "heaven_envoy_beaten",
+      "log": "The envoy tests you with a single sword stroke. You stand. The envoy goes back up the light and the sky is quiet for a decade."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a heavenly envoy",
+      "log": "The envoy's single stroke puts you on your back. It looks down at you for a long moment, and goes back up the light without finishing it."
+     }
+    },
+    {
+     "text": "Ask the envoy to sit and talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 8,
+      "flag": "heaven_envoy_friend",
+      "log": "The envoy sits. It has never been asked. It tells you heaven is lonely, and leaves with a cup of your tea."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The envoy does not sit. It takes the offered cup as an insult and leaves a scorch across the table, and across your hand."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_trial_3",
+   "cat": "world",
+   "arc": "Heaven's Trials",
+   "when": {
+    "flags": [
+     "heaven_eye_2"
+    ],
+    "age": [
+     20,
+     99
+    ],
+    "after": [
+     "dc_heaven_trial_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Heaven's last trial wears the face of someone you loved who is dead, and asks you to come with them, now, and stop all this.",
+   "choices": [
+    {
+     "text": "Refuse",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "risky": true,
+     "ok": {
+      "lifespan": 5,
+      "comprehension": 10,
+      "flag": "heaven_trial_passed",
+      "log": "It cries, then it smiles, then it is only light. Heaven has tested you three times and you are still here."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a trial that wore a beloved face",
+      "log": "You hesitate, and the face almost has you. You tear free at the last step, shaking, and heaven lets you go this once."
+     }
+    },
+    {
+     "text": "Hold them one last time",
+     "effects": {
+      "alignment": 6,
+      "lifespan": -2,
+      "flag": "heaven_trial_held",
+      "log": "It is the face, not the person. You hold it anyway. Heaven, embarrassed, does not try that again."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_side_1",
+   "cat": "world",
+   "arc": "The Heavens Take a Side",
+   "when": {
+    "flags": [
+     "heaven_eye_3"
+    ],
+    "age": [
+     20,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "For three nights the stars did not move. Now two of them do: a red star toward your house, a white star away. The astrologers of the court argue over which is you.",
+   "choices": [
+    {
+     "text": "Follow the white star",
+     "effects": {
+      "alignment": 10,
+      "flag": "heaven_side_white",
+      "log": "It leads you to a mountain temple that has been expecting you for a century. They have kept your room."
+     }
+    },
+    {
+     "text": "Follow the red star",
+     "effects": {
+      "alignment": -10,
+      "fame": 6,
+      "flag": "heaven_side_red",
+      "log": "It leads you to a battlefield that has not happened yet, and you walk it, and learn every step of it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_heaven_side_2",
+   "cat": "world",
+   "arc": "The Heavens Take a Side",
+   "when": {
+    "flags": [
+     "heaven_eye_3"
+    ],
+    "age": [
+     22,
+     99
+    ],
+    "after": [
+     "dc_heaven_side_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The sky over your head is clear in a storm and stormy in a calm. The murim understands: heaven has stopped hiding that it is personally interested in you. Some sects want you dead for it. Some want to worship you.",
+   "choices": [
+    {
+     "text": "Let them worship",
+     "effects": {
+      "fame": 15,
+      "alignment": -4,
+      "flag": "heaven_worshipped",
+      "log": "A temple with your face on the altar. It makes you uneasy, and very well-fed."
+     }
+    },
+    {
+     "text": "Go into seclusion until it passes",
+     "effects": {
+      "lifespan": 4,
+      "comprehension": 8,
+      "flag": "heaven_secluded",
+      "log": "Ten years in a cave. When you come out, the sky has forgotten its grudge and remembered only that it liked you."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_heaven_side_3",
+   "cat": "world",
+   "arc": "The Heavens Take a Side",
+   "when": {
+    "flags": [
+     "heaven_eye_3"
+    ],
+    "age": [
+     25,
+     99
+    ],
+    "after": [
+     "dc_heaven_side_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A rainbow touches the ground at your feet and stays there. It is a bridge. On the far side, very small, a gate. Heaven is inviting you, early, to see what it has been deciding.",
+   "choices": [
+    {
+     "text": "Cross the bridge",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "lifespan": 15,
+      "fame": 20,
+      "flag": "heaven_crossed",
+      "log": "On the other side, someone at a desk with a ledger looks up, surprised, and closes your page. You walk back with the rest of your life unwritten."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "a rainbow bridge heaven built",
+      "log": "The bridge is only light, and light does not hold. You fall a long way and wake at its foot, alive, with the rainbow already fading."
+     }
+    },
+    {
+     "text": "Bow and stay on the ground",
+     "effects": {
+      "alignment": 8,
+      "lifespan": 6,
+      "flag": "heaven_declined",
+      "log": "The rainbow lingers, then fades with something like respect. You will get there on your own feet."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

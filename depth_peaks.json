@@ -1,0 +1,891 @@
+{
+ "events": [
+  {
+   "id": "dc_peak_bridge_1",
+   "cat": "danger",
+   "arc": "The Night on the Bridge",
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 16,
+   "text": "A rope bridge over the gorge is the only way out of the valley, and a bandit army is coming up the road behind three hundred villagers. Someone has to hold the bridge until the last of them is across.",
+   "choices": [
+    {
+     "text": "Say you will hold it",
+     "effects": {
+      "flag": "peak_bridge_called",
+      "fame": 2,
+      "log": "The headman stares at you, then starts the villagers moving. You walk to the middle of the bridge and wait for the dark."
+     }
+    },
+    {
+     "text": "Help the old and the children across first",
+     "effects": {
+      "flag": "peak_bridge_called",
+      "alignment": 4,
+      "log": "You carry the first ones yourself. The army's torches are already on the far ridge."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "One rope bridge over the gorge is the valley's only way out, and a bandit army is coming up the road behind three hundred villagers. Someone must hold the bridge until the last one is across."
+   ]
+  },
+  {
+   "id": "dc_peak_bridge_2",
+   "cat": "danger",
+   "arc": "The Night on the Bridge",
+   "when": {
+    "flags": [
+     "peak_bridge_called"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_peak_bridge_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Sooner or later the bandits come. Torches on the far end of the bridge, the valley's families crossing behind you, the last of them still on the planks. The bandit chief laughs and walks out onto the bridge alone.",
+   "choices": [
+    {
+     "text": "Hold the bridge",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "risky": true,
+     "ok": {
+      "fame": 18,
+      "alignment": 10,
+      "flag": "peak_bridge",
+      "log": "You hold it until dawn. When the sun comes up the last villager is across and the bandits have gone home. The valley still sings about the night on the bridge."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "holding a bridge so others could cross",
+      "log": "The chief is stronger. A rock from the far bank, thrown by a very angry grandmother, is the only reason you are still on your feet."
+     }
+    },
+    {
+     "text": "Cut the ropes when the last one is over",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "fame": 14,
+      "alignment": 8,
+      "flag": "peak_bridge",
+      "log": "The bridge falls into the gorge with half the bandit army on it. You are hanging from the last rope, and the villagers pull you up."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "peak_bridge",
+      "log": "The ropes are wet and the knife is blunt. The bridge goes, and so do you, but the villagers haul you out of the gorge half-drowned."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "Sooner or later the bandits arrive. Torches gather at the far end of the bridge while the last families are still on the planks behind you. The bandit chief laughs, and steps out onto the bridge alone."
+   ]
+  },
+  {
+   "id": "dc_peak_flood_1",
+   "cat": "danger",
+   "arc": "The Flood Year",
+   "when": {
+    "age": [
+     18,
+     75
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 16,
+   "text": "The rains have not stopped in forty days and the old dam above the town is weeping at the seams. The magistrate has already fled with the tax money.",
+   "choices": [
+    {
+     "text": "Organise the town",
+     "effects": {
+      "flag": "peak_flood_called",
+      "charm": 2,
+      "log": "Sandbags, ropes, boats, a list of who cannot walk. People listen, because nobody else is talking."
+     }
+    },
+    {
+     "text": "Climb up and look at the dam",
+     "effects": {
+      "flag": "peak_flood_called",
+      "comprehension": 2,
+      "log": "You put your hand on the stone and feel it moving. Not tonight. Tomorrow night."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "Forty days of rain, and the old dam above the town is seeping at every seam. The magistrate has already left, and so has the tax money."
+   ]
+  },
+  {
+   "id": "dc_peak_flood_2",
+   "cat": "danger",
+   "arc": "The Flood Year",
+   "when": {
+    "flags": [
+     "peak_flood_called"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_peak_flood_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Sooner or later the dam breaks, and it breaks at midnight. The water comes down the valley like a wall, and there are still people in the low town.",
+   "choices": [
+    {
+     "text": "Go into the water for them",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "fame": 18,
+      "alignment": 12,
+      "flag": "peak_flood",
+      "log": "Eleven trips into the black water. The twelfth time there is nobody left to bring out. The town carves your name on the new dam."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the flood, going back for one more",
+      "log": "The twelfth trip is the one the water nearly takes. They fish you out downstream at dawn with a child still clamped to your coat."
+     }
+    },
+    {
+     "text": "Lead everyone to the high ground",
+     "roll": {
+      "stat": "strategy",
+      "dc": 40
+     },
+     "ok": {
+      "fame": 14,
+      "alignment": 10,
+      "flag": "peak_flood",
+      "log": "Two thousand people on the temple hill watching their town go under. Every one of them alive. They rebuild it around you."
+     },
+     "fail": {
+      "alignment": 6,
+      "flag": "peak_flood",
+      "log": "Half the town does not listen until the water is in the streets. You get the rest up the hill, and stand there counting."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_peak_pass_1",
+   "cat": "danger",
+   "arc": "The Pass at Iron Gate",
+   "when": {
+    "age": [
+     20,
+     65
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 16,
+   "text": "A rider gallops into town: an army of the Heavenly Demon Cult is marching on the Iron Gate pass, and the garrison there is thirty men and a cook.",
+   "choices": [
+    {
+     "text": "Ride to the pass",
+     "effects": {
+      "flag": "peak_pass_called",
+      "fame": 2,
+      "log": "Days of hard riding. The garrison commander is nineteen and very glad to see anyone."
+     }
+    },
+    {
+     "text": "Gather every fighter in town and ride",
+     "effects": {
+      "flag": "peak_pass_called",
+      "charm": 2,
+      "log": "Eleven martial artists, four hunters and a drunk with a spear. It will have to do."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "A rider comes in at full gallop: a Heavenly Demon Cult army is marching on the Iron Gate pass, held by thirty soldiers and a cook."
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_peak_pass_2",
+   "cat": "danger",
+   "arc": "The Pass at Iron Gate",
+   "when": {
+    "flags": [
+     "peak_pass_called"
+    ],
+    "age": [
+     20,
+     95
+    ],
+    "after": [
+     "dc_peak_pass_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Sooner or later the Cult's army reaches the Iron Gate, and it comes at dawn. Black banners fill the valley below. Thirty men, a cook, and you, in a pass three people wide.",
+   "choices": [
+    {
+     "text": "Stand in the narrowest place",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.75
+     },
+     "risky": true,
+     "ok": {
+      "fame": 22,
+      "merit": 30,
+      "flag": "peak_pass",
+      "log": "Three days. The Cult never gets through, and turns back on the fourth morning. Thirty men walk out of the pass. The cook writes the song."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "the Pass at Iron Gate",
+      "log": "The Cult breaks through the narrow place on the second night. You fall back with the garrison and the cook, whose pot holds the second line longer than you did."
+     }
+    },
+    {
+     "text": "Bring the mountain down on them",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 18,
+      "flag": "peak_pass",
+      "log": "A night of digging and one great shove, and the pass is a wall of stone. The army has to go around, three weeks around, and the war is decided elsewhere because of it."
+     },
+     "fail": {
+      "health": -25,
+      "flag": "peak_pass",
+      "log": "The charge goes off early and the pass is only half-blocked. You get the garrison out in the dark, and the war goes on past the Gate."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "Sooner or later the Cult reaches the Iron Gate, and it comes at dawn, black banners filling the valley. Thirty soldiers, a cook, and you, in a pass three people wide."
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_peak_library_1",
+   "cat": "danger",
+   "arc": "The Burning Library",
+   "when": {
+    "age": [
+     16,
+     80
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 16,
+   "text": "The great library of the province is on fire, and inside it are the only copies of a thousand manuals and the old librarian, who will not leave without them.",
+   "choices": [
+    {
+     "text": "Run in",
+     "effects": {
+      "flag": "peak_library_called",
+      "health": -5,
+      "log": "The heat is a wall. The librarian is on the third floor, throwing books out of the window."
+     }
+    },
+    {
+     "text": "Organise a bucket line first",
+     "effects": {
+      "flag": "peak_library_called",
+      "charm": 2,
+      "log": "Two hundred people and a river. It buys a little time."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "The great library of the province is burning. Inside are the only copies of a thousand manuals, and an old librarian who will not leave without them."
+   ]
+  },
+  {
+   "id": "dc_peak_library_2",
+   "cat": "danger",
+   "arc": "The Burning Library",
+   "when": {
+    "flags": [
+     "peak_library_called"
+    ],
+    "age": [
+     16,
+     95
+    ],
+    "after": [
+     "dc_peak_library_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Sooner or later the old library burns for good. The third floor is alight, and the librarian is holding the oldest book in the building and shouting at you to take it and go.",
+   "choices": [
+    {
+     "text": "Take the librarian and the book",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "risky": true,
+     "ok": {
+      "fame": 16,
+      "comprehension": 8,
+      "alignment": 8,
+      "flag": "peak_library",
+      "log": "Out of the window, with an old man on your back and a book in your teeth. The book is the founding manual of three sects. The old man lives another fifteen years."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a burning library",
+      "log": "The window frame gives way. You and the old man go down together into the courtyard with the book between you. All three survive, singed."
+     }
+    },
+    {
+     "text": "Carry out as many books as you can",
+     "effects": {
+      "strength": 4,
+      "comprehension": 10,
+      "fame": 10,
+      "flag": "peak_library",
+      "log": "Forty trips. Four hundred books. The librarian makes you sit down and read one of them before you are allowed to sleep."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "The old library is burning for the last time. The third floor is in flames, and the librarian clutches the oldest book in the building, shouting at you to take it and run."
+   ]
+  },
+  {
+   "id": "dc_peak_ship_1",
+   "cat": "danger",
+   "arc": "The Plague Ship",
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 16,
+   "text": "A ship drifts into the harbour with a yellow flag and nobody on deck. The harbour master wants to burn it at anchor. Someone on board is still ringing the bell.",
+   "choices": [
+    {
+     "text": "Row out to it",
+     "effects": {
+      "flag": "peak_ship_called",
+      "alignment": 3,
+      "log": "The bell keeps ringing as you climb aboard. Below decks, forty people, alive, sick, and terrified."
+     }
+    },
+    {
+     "text": "Talk the harbour master down",
+     "effects": {
+      "flag": "peak_ship_called",
+      "charm": 2,
+      "log": "He agrees to hold his torch. He makes it very clear that he will not hold it twice."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "A ship with a yellow flag drifts into the harbour with nobody on deck. The harbour master wants it burned where it sits. Somewhere on board, a bell is still ringing."
+   ]
+  },
+  {
+   "id": "dc_peak_ship_2",
+   "cat": "danger",
+   "arc": "The Plague Ship",
+   "when": {
+    "flags": [
+     "peak_ship_called"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_peak_ship_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Sooner or later the yellow flag comes into the harbour again. Forty sick people, a ship that cannot dock, and a harbour master with a torch waiting for dawn.",
+   "choices": [
+    {
+     "text": "Nurse them through the night",
+     "roll": {
+      "stat": "medicine",
+      "dc": 40
+     },
+     "risky": true,
+     "ok": {
+      "alignment": 14,
+      "fame": 14,
+      "flag": "peak_ship",
+      "log": "By dawn the fever has broken in half of them. The harbour master puts out his torch and sends a physician. Thirty-eight walk ashore."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the plague on the yellow-flag ship",
+      "log": "The fever takes you too, on the second night. You wake in a bed ashore, and are told you were singing."
+     }
+    },
+    {
+     "text": "Sail the ship out yourself",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 10,
+      "fame": 10,
+      "flag": "peak_ship",
+      "log": "A clean island two days south, a spring, and forty people who get better in the sun. You come back to the harbour a legend and a little sunburnt."
+     },
+     "fail": {
+      "health": -25,
+      "flag": "peak_ship",
+      "log": "The wind drops. You drift for three days and are towed in by a fishing boat, with thirty-one still alive."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "Sooner or later the yellow-flagged ship returns to the harbour. Forty sick aboard, no berth that will take them, and a harbour master with a torch, waiting for first light."
+   ]
+  },
+  {
+   "id": "dc_peak_siege_1",
+   "cat": "danger",
+   "arc": "The Siege of Little Willow",
+   "when": {
+    "age": [
+     20,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 16,
+   "text": "A warlord's army surrounds Little Willow, a town with a wall the height of a man and nobody who knows how to fight. They ask you to stay.",
+   "choices": [
+    {
+     "text": "Stay",
+     "effects": {
+      "flag": [
+       "peak_siege_called",
+       "peak_siege_inside"
+      ],
+      "charm": 2,
+      "log": "You teach farmers to hold spears. They are bad at it, and getting better."
+     }
+    },
+    {
+     "text": "Go for help, through the lines",
+     "effects": {
+      "flag": [
+       "peak_siege_called",
+       "peak_siege_outside"
+      ],
+      "luck": 2,
+      "log": "Over the wall at night and into the army's camp, wearing a dead soldier's coat."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "A warlord's army has ringed Little Willow, a town whose wall is no taller than a man and whose people have never held a sword. They beg you to stay."
+   ]
+  },
+  {
+   "id": "dc_peak_siege_2",
+   "cat": "danger",
+   "arc": "The Siege of Little Willow",
+   "when": {
+    "flags": [
+     "peak_siege_called",
+     "peak_siege_inside"
+    ],
+    "age": [
+     20,
+     95
+    ],
+    "after": [
+     "dc_peak_siege_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Sooner or later the warlord returns to Little Willow, and this time he sits down to wait. By day forty the food is gone, the wall is cracked, and he sends a message: give him the person who has been holding the town together, and the rest can live.",
+   "choices": [
+    {
+     "text": "Walk out to the warlord",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "alignment": 12,
+      "flag": "peak_siege",
+      "log": "You walk out alone and challenge him in front of his army. He accepts, because he has to. He loses, because you have to. His army goes home."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "walking out to a warlord's army",
+      "log": "You walk out alone and lose. The warlord, who admires nerve, sends you back over the wall with a bandage and an offer of terms."
+     }
+    },
+    {
+     "text": "Hold one more day",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 16,
+      "flag": "peak_siege",
+      "log": "On the forty-first morning the Alliance's banners appear on the hills. Little Willow held. It still does, and its children still play 'siege' with you as the hero."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "peak_siege",
+      "log": "The forty-first morning is no better. You hold, barely, and the Alliance's banners come on the forty-third day."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_peak_emperor_1",
+   "cat": "danger",
+   "arc": "Before the Emperor",
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "fugitive",
+     "imp_emperor",
+     "imp_rebel",
+     "imp_regent"
+    ]
+   },
+   "weight": 16,
+   "text": "The Emperor, curious about the murim, commands a duel in the palace between his champion and a martial artist of the people. Your name comes out of the jar.",
+   "choices": [
+    {
+     "text": "Go to the capital",
+     "effects": {
+      "flag": "peak_emperor_called",
+      "fame": 3,
+      "log": "Marble floors, silk walls, and a champion who has never lost and never been allowed to."
+     }
+    },
+    {
+     "text": "Go, and bring your own people",
+     "effects": {
+      "flag": "peak_emperor_called",
+      "charm": 2,
+      "log": "Half your town follows you to the capital to watch. They have never seen marble before either."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "The Emperor wants to see the murim for himself: a duel in the palace, his champion against a fighter of the people. Your name is drawn from the jar."
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_peak_emperor_2",
+   "cat": "danger",
+   "arc": "Before the Emperor",
+   "when": {
+    "flags": [
+     "peak_emperor_called"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_peak_emperor_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The day of the duel comes at last. The palace courtyard, the court in silk, the Emperor on a high chair. His champion bows and smiles. Losing will shame your people. Winning may shame him.",
+   "choices": [
+    {
+     "text": "Fight to win",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.85
+     },
+     "risky": true,
+     "ok": {
+      "fame": 24,
+      "taels": 300,
+      "flag": "peak_emperor",
+      "log": "You win. The court goes silent. Then the Emperor laughs, and stands, and applauds, and the whole court follows a beat later. He gives you a jade token that opens any gate in the empire."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the Emperor's champion",
+      "log": "The champion has never lost for a reason. You are carried out through a silent court, and the Emperor, at least, sends a physician."
+     }
+    },
+    {
+     "text": "Fight to a draw, and let both keep their faces",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 18,
+      "charm": 6,
+      "flag": "peak_emperor",
+      "log": "A hundred exchanges, and no one falls. The Emperor declares both champions, and the champion thanks you in private for the rest of his life."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "peak_emperor",
+      "log": "You misjudge the hundredth exchange, and the champion has to choose between a draw and a cut. He cuts. The court pretends not to have seen."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "The day of the palace duel arrives. The courtyard, the court in silk, the Emperor high on his chair. His champion bows and smiles. To lose shames your people. To win may shame the throne."
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_peak_mountain_1",
+   "cat": "danger",
+   "arc": "When the Mountain Fell",
+   "when": {
+    "age": [
+     18,
+     70
+    ],
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 16,
+   "text": "An earthquake in the night. The mountain above the mining village has split, and the miners' families are gathering at the mouth of the shaft: sixty men are down there.",
+   "choices": [
+    {
+     "text": "Go down the shaft",
+     "effects": {
+      "flag": "peak_mountain_called",
+      "health": -5,
+      "log": "Dust, dark, and somewhere ahead the sound of men singing to keep each other awake."
+     }
+    },
+    {
+     "text": "Organise the digging from above",
+     "effects": {
+      "flag": "peak_mountain_called",
+      "charm": 2,
+      "log": "Shifts, timbers, water. The families dig with their hands until you give them shovels."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "An earthquake in the night splits the mountain above the mining village. The miners' families crowd the mouth of the shaft: sixty are still below."
+   ]
+  },
+  {
+   "id": "dc_peak_mountain_2",
+   "cat": "danger",
+   "arc": "When the Mountain Fell",
+   "when": {
+    "flags": [
+     "peak_mountain_called"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_peak_mountain_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The mine calls you back, sooner or later. The last chamber: sixty miners behind a fall of rock, and the roof above it groaning. One more shake and the whole hill comes down.",
+   "choices": [
+    {
+     "text": "Hold up the roof while they crawl out",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "fame": 18,
+      "strength": 6,
+      "alignment": 10,
+      "flag": "peak_mountain",
+      "log": "Sixty men crawl past you under a roof you are holding with your back. The last one out pulls you after him, and the mountain falls a breath later."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "holding up a mountain",
+      "log": "The roof comes down on one shoulder. You get the last man out, and afterwards cannot lift that arm for a season."
+     }
+    },
+    {
+     "text": "Cut a new way through the rock",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 14,
+      "alignment": 8,
+      "flag": "peak_mountain",
+      "log": "Two days with a pick and your bare hands. Fifty-eight come out alive. The village builds a shrine at the shaft, and does not put your name on it, because you asked them not to."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "peak_mountain",
+      "log": "The rock will not yield fast enough. Fifty-one come out alive, and you never speak of the other nine."
+     }
+    }
+   ],
+   "once": true,
+   "variants": [
+    "Sooner or later the mine calls you back. In the last chamber, sixty miners wait behind a wall of fallen rock while the roof above groans. One more tremor and the hill comes down."
+   ]
+  },
+  {
+   "id": "dc_peak_siege_3",
+   "cat": "danger",
+   "arc": "The Siege of Little Willow",
+   "when": {
+    "flags": [
+     "peak_siege_called",
+     "peak_siege_outside"
+    ],
+    "age": [
+     20,
+     95
+    ],
+    "after": [
+     "dc_peak_siege_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Sooner or later the Alliance's relief column crests the hills above Little Willow, with you riding at its head. The town below is on its fortieth day without food, and the warlord's camp lies between you and the gate. The captain asks how you want to go in.",
+   "choices": [
+    {
+     "text": "Break through the camp to the gate",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "alignment": 12,
+      "flag": "peak_siege",
+      "log": "You go through the camp like a blade through silk, the column at your back, and the gate opens before you reach it. The warlord's army is gone by morning, and Little Willow names a street after you."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "the warlord's camp outside Little Willow",
+      "log": "The camp closes round you. The column cuts you out, bleeding, and takes the gate without you."
+     }
+    },
+    {
+     "text": "Light every beacon on the hills at dawn",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 16,
+      "flag": "peak_siege",
+      "log": "A hundred fires on a hundred hills. The warlord counts them, believes them, and is gone before the sun is up. Little Willow held, and its children still play 'siege' with you as the hero."
+     },
+     "fail": {
+      "health": -30,
+      "flag": "peak_siege",
+      "log": "The warlord counts the fires and guesses right. The fight is short, ugly, and won, but not by you."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

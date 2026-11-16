@@ -1,0 +1,543 @@
+{
+ "events": [
+  {
+   "id": "b4_cure_trial_1_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_1",
+   "text": "The map's first cross is a gorge where the river runs underground for a mile. The way in is a crack behind a waterfall, and the water comes down hard enough to break a careless back.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Read the water and go in at the slack",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You wait a day and a night for the rhythm of it, and go in between two falls. Behind the water there are steps cut by a hand.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "You misread it. The water throws you back into the pool, and you crawl out bruised.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Go through by strength",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You go through like a post through a flood, and come out on the far side on steps cut by a hand.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "The water wins this time. You come out half drowned.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Mark the place and come back another year",
+     "effects": {
+      "log": "You fold the map. The waterfall will be there.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_2_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_2",
+   "text": "The second cross is a hall cut in the rock, and its floor is a board of a hundred herbs set in clay. A physician of long ago left a note on the wall: whoever would learn to mend must first know what kills.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Name the herbs, one by one, aloud",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You name them. Ninety-seven are medicine and three are poison, and you step around the three. The far door opens.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "You name a poison as a cure, and the hall fills with a bitter smoke that takes a week to leave your chest.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Trust your nose and walk the safe herbs",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Your nose is honest. You cross without a single wrong step, and the far door opens.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "One wrong step, one bitter cloud. You stagger back out to the steps.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Copy the board, and study it a year first",
+     "effects": {
+      "log": "You copy every herb by lamplight and leave to study. The board will wait.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_3_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_3",
+   "text": "The third cross is a small dry room with a cauldron in it, cold for two hundred years, and a sealed box. The note on the box says it opens only for one who has kept a fire steady through a whole night.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Light the cauldron and keep it steady till dawn",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "At dawn the box opens by itself. Inside, on silk gone brown: the Pill of the Mended Well, every step, in a careful hand.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "The fire jumps at the third hour, and the box stays shut. You will have to come back.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Feed the fire with your own qi, all night",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "Your qi holds the fire like a hand around a candle. At dawn the box opens, and the recipe is inside.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "Your qi gives out before the dawn. The box stays shut.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Rest first. Come back stronger",
+     "effects": {
+      "log": "You leave the cauldron cold. It has waited two hundred years.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_1_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_1_up",
+   "text": "The chart's first mark is the underside of a drifting isle, where its roots hang into the open sky. The way in is a climb up through the roots with nothing below you but cloud.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Read the wind and climb between the gusts",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You climb with the wind, never against it, and come up into a hollow where steps are cut into the isle.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "A gust takes you off the roots. You catch the cloud-road a long way down, shaken.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Climb straight up by strength",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You go up through the roots hand over hand, and come into a hollow with steps cut into the isle.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "Your grip goes. You fall to the cloud-road and climb no more that year.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Mark the isle and come back another year",
+     "effects": {
+      "log": "You note the isle's drift. It will come round again.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_2_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_2_up",
+   "text": "The second mark is a hall of a hundred cloud-herbs grown in jade pots, left by a healer of the Isles who went down a thousand years ago and never came back up. A plaque says: learn what harms before you learn what mends.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Name the cloud-herbs aloud",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You name them all, and three you leave well alone. The far door slides open.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "You touch a harmful one, and your hand goes numb for a season.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Trust your nose among the pots",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Your nose is honest. You cross the hall untouched.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "One wrong breath. You wake on the steps outside.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Copy the pots, and study a year first",
+     "effects": {
+      "log": "You copy every pot onto a jade slip and leave to study.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_3_up_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_3_up",
+   "text": "The third mark is a cold furnace of white jade and a sealed slip-case. It opens, says the plaque, for one who keeps a cloud-fire steady from dusk to dawn.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Keep the cloud-fire steady till dawn",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "At dawn the case opens. Inside, on a slip of jade: the Pill of the Mended Well, every step.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "The cloud-fire gutters in the small hours, and the case stays shut.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Hold the fire with your own energy, all night",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "Your energy holds the fire. At dawn the case opens, and the recipe is yours.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "Your energy gives out before dawn. The case stays shut.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Rest first. Come back stronger",
+     "effects": {
+      "log": "You leave the furnace cold. It is used to waiting.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_1_gd_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_1_gd",
+   "text": "The chart's first hall is the gate of a fallen healer-god's temple, at the edge of a domain nobody tends. The gate is guarded by its god's last prayer, still burning, which lets in only those who mean to heal.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Speak the prayer back to it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You speak it back, word for word, and mean it. The flame bows, and the gate opens on a stair.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "You stumble on the last line. The flame scorches you back down the steps.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Walk through the flame and bear it",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "log": "You walk through it and it does not burn what it was made to keep out. The stair beyond is open.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "The flame was right about you, this year. You come out singed.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Mark the temple and come back in a better year",
+     "effects": {
+      "log": "You mark the gate in your chart. A dead god's temple is patient.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_2_gd_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_2_gd",
+   "text": "The second hall holds a hundred offerings of herbs from a hundred worlds, still fresh on their altars. A carving says: the healer who does not know poison is a poisoner.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Name each offering, and its harm",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You name them all, and the three that kill. The inner door opens.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "You reach for a killing one. Your hand burns black for a season.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Let your divine sense find the safe path",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Your sense is true. You cross the hall, and the inner door opens.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "Your sense misleads you. You are carried out by the temple's own wind.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Copy the altars, and study an age first",
+     "effects": {
+      "log": "You copy the altars into your memory and go. They will keep.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_cure_trial_3_gd_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_cure_trial_3_gd",
+   "text": "The last hall holds a furnace of starlight, cold since its god fell, and a sealed tablet. It opens for one who keeps the star-fire steady through a whole night of the gods.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ]
+   },
+   "arc": "The Crippled Cure",
+   "choices": [
+    {
+     "text": "Keep the star-fire steady through the night",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "At dawn the tablet opens: the Pill of the Mended Well, every step, in a god's own hand.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "The star-fire wavers before dawn. The tablet stays sealed.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Feed the fire with your own divine power",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "Your power holds the fire. At dawn the tablet opens, and the recipe is yours.",
+      "flag": "b4x_cure_ok"
+     },
+     "fail": {
+      "log": "Your power runs thin before dawn. The tablet stays sealed.",
+      "flag": "b4x_cure_fail",
+      "health": -8
+     }
+    },
+    {
+     "text": "Rest first. Come back stronger",
+     "effects": {
+      "log": "You leave the furnace cold. Its god will not mind.",
+      "flag": "b4x_cure_wait"
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

@@ -1,0 +1,1973 @@
+{
+ "events": [
+  {
+   "id": "dc_dl_love_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} has been slipping out after the evening bell. You follow, quiet as a cat, and find {him} under the plum trees by the river, holding hands with a disciple in the blue of a rival sect. They have not noticed you. They are practising a sword form together, badly, and laughing every time they miss.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcAge": [
+     18,
+     32
+    ]
+   },
+   "arc": "A Disciple in Love",
+   "choices": [
+    {
+     "text": "Leave them be. You were young once",
+     "effects": {
+      "npcFlag": "dl_love",
+      "mem": {
+       "deed": "trusted",
+       "w": 10,
+       "note": "pretended not to see us"
+      },
+      "alignment": 3,
+      "log": "You walk back the long way. In the morning {npc} brings your tea and cannot meet your eye. You say nothing. It is the kindest thing you do all year."
+     }
+    },
+    {
+     "text": "Step out of the dark and correct their footwork",
+     "effects": {
+      "npcFlag": "dl_love",
+      "mem": {
+       "deed": "taught",
+       "w": 14,
+       "note": "fixed our sword form under the plum trees"
+      },
+      "charm": 2,
+      "log": "Two faces go white, then red. You fix their stance, theirs and {his}, and walk away. Behind you, after a long silence, someone starts laughing."
+     }
+    },
+    {
+     "text": "Order {him} home. A rival sect is a rival sect",
+     "effects": {
+      "npcFlag": "dl_love",
+      "mem": {
+       "deed": "humiliated",
+       "w": -14,
+       "note": "dragged me home like a child"
+      },
+      "log": "{npc} follows you home without a word. That night the training yard is empty, and the sound of crying carries a long way in the hills."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_love_2",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "An elder of the rival sect is at your gate with six disciples behind him. \"Your student has stolen the heart of ours,\" he says, \"and our sect's secrets with it, no doubt.\" {npc} stands at your shoulder, white to the lips. Somewhere behind the elder, a young disciple in blue is not allowed to look up.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_love_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "dl_love"
+    ]
+   },
+   "arc": "A Disciple in Love",
+   "choices": [
+    {
+     "text": "\"Then let us settle it like martial artists.\" Draw",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The rival sect's elder",
+      "atGate": true
+     },
+     "ok": {
+      "npcFlag": "dl_love_free",
+      "fame": 12,
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "fought for my heart at the gate"
+      },
+      "log": "Thirty exchanges. On the thirty-first the elder steps back and sheathes. \"Your sect fights for its own,\" he says, almost approving. \"Fine. Let the children marry.\""
+     },
+     "fail": {
+      "npcFlag": "dl_love_lost",
+      "health": -18,
+      "fame": -6,
+      "mem": {
+       "deed": "respected",
+       "w": 8,
+       "note": "fought for me and lost"
+      },
+      "log": "You lose, cleanly. The elder bows and takes his disciple home. {npc} binds your wounds without a word, and never speaks that name again in your hearing."
+     }
+    },
+    {
+     "text": "Invite him in. Matches are made over tea, not swords",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "npcFlag": "dl_love_free",
+      "alignment": 4,
+      "mem": {
+       "deed": "helped",
+       "w": 24,
+       "note": "talked the old man round"
+      },
+      "log": "By the third pot the elder is telling you about his own wife. By the fourth he is negotiating the dowry. You never once mention swords."
+     },
+     "fail": {
+      "npcFlag": "dl_love_free",
+      "taels": -200,
+      "loss": true,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "paid my bride price out of the sect purse"
+      },
+      "log": "He will not be talked round. He will, it turns out, be paid. Two hundred taels leave the treasury, and two young people start breathing again."
+     }
+    },
+    {
+     "text": "\"Take your disciple home. Mine will not see them again\"",
+     "effects": {
+      "npcFlag": "dl_love_lost",
+      "mem": {
+       "deed": "betrayed",
+       "w": -32,
+       "note": "gave my heart away to keep the peace"
+      },
+      "log": "The gate closes. {npc} kneels where you can see {him} until the moon is down, and then gets up and goes to train, and does not stop for a year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_love_3",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "A wedding in your hall. {npc} in red, the rival sect's disciple in red beside {him}, and both sects glaring at each other across the banquet tables like it is a battlefield, which it nearly was. They need an elder to stand for the couple. Everyone looks at you.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_love_2"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "dl_love_free"
+    ]
+   },
+   "arc": "A Disciple in Love",
+   "choices": [
+    {
+     "text": "Stand for them and give the speech of your life",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 4,
+      "mem": {
+       "deed": "saved_life",
+       "w": 22,
+       "note": "stood for us at the wedding"
+      },
+      "flag": "dl_wedding",
+      "log": "You talk about two schools that are really one river. By the end the rival elder is wiping his eyes, and the two sects are drinking from the same jar."
+     },
+     "fail": {
+      "fame": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "stood for us, even if the speech was terrible"
+      },
+      "flag": "dl_wedding",
+      "log": "The speech is terrible. Nobody minds. {npc} hugs you in front of everyone, which nobody in your sect has ever dared do."
+     }
+    },
+    {
+     "text": "Give them your old sword as a wedding gift",
+     "effects": {
+      "mem": {
+       "deed": "saved_life",
+       "w": 34,
+       "note": "gave us the sword from the master's own hip"
+      },
+      "fame": 6,
+      "flag": "dl_wedding",
+      "log": "You unbuckle the sword you have carried for so many years and put it in {npc}'s hands. The hall goes quiet. Some gifts are a speech all by themselves."
+     }
+    },
+    {
+     "text": "Pay for the feast and slip away early",
+     "effects": {
+      "taels": -120,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "paid for our wedding feast"
+      },
+      "flag": "dl_wedding",
+      "log": "You pay for everything and leave at the second course. Weddings are for the young. From the hill path you can hear them singing your sect's song, off key."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dc_dl_love_4",
+   "cat": "sect",
+   "weight": 5,
+   "once": true,
+   "text": "Years have passed since the elder took his disciple home. {npc} never married. Tonight you find {him} under the old plum tree by the river, practising a sword form for two, alone, very well now.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_love_2"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dl_love_lost"
+    ]
+   },
+   "arc": "A Disciple in Love",
+   "choices": [
+    {
+     "text": "Take up the other half of the form",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "danced the second half of our form with me"
+      },
+      "qi": 12,
+      "log": "You take the empty place. For a while there are two swords under the plum tree again. Neither of you says a word about it, then or ever."
+     }
+    },
+    {
+     "text": "Tell {him} you were wrong that day",
+     "effects": {
+      "mem": {
+       "deed": "forgave",
+       "w": 26,
+       "note": "said they were wrong, years too late"
+      },
+      "alignment": 6,
+      "log": "\"I know,\" says {npc}. \"I forgave you the first winter.\" {He} sheathes. \"I just never stopped practising.\""
+     }
+    },
+    {
+     "text": "Leave {him} to it",
+     "effects": {
+      "log": "Some things are not yours to mend. You go back up the hill. The sword keeps time with the river until dawn."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_demon_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": true,
+   "text": "Cleaning the disciples' hall, you find a book under {npc}'s pillow. Black binding, no title, and the pages are warm to the touch, the way a sleeping animal is warm. The first line reads: THE WEAK DIE SO THE STRONG MAY EAT.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcRealm": [
+     1,
+     6
+    ]
+   },
+   "arc": "The Black Manual",
+   "choices": [
+    {
+     "text": "Burn it in front of {him}, page by page",
+     "effects": {
+      "npcFlag": "dl_demon_burned",
+      "mem": {
+       "deed": "humiliated",
+       "w": -10,
+       "note": "burned the book in front of me"
+      },
+      "alignment": 4,
+      "log": "{npc} watches every page curl. {He} does not argue. That night you notice {he} is moving {his} lips, the way a child does reciting something by heart."
+     }
+    },
+    {
+     "text": "Put it back exactly where it was. Watch",
+     "effects": {
+      "npcFlag": "dl_demon_watched",
+      "log": "You slide it back under the pillow, the corner folded just so. Then you start watching {npc} the way you once watched your own rival."
+     }
+    },
+    {
+     "text": "Read it first. Know your enemy",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "npcFlag": "dl_demon_watched",
+      "qi": 15,
+      "log": "You read all night. You understand why {npc} kept it: it works. You also understand what it costs. You put it back and start watching."
+     },
+     "fail": {
+      "npcFlag": "dl_demon_watched",
+      "alignment": -6,
+      "health": -10,
+      "log": "Three pages in, something in your meridians turns over like a sleeper. You slam the book. Your hands shake until noon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_demon_2",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "The rims of {npc}'s eyes have gone red, and stay red. A junior disciple turns up at breakfast with bruises the shape of fingers and will not say who. {npc} breaks through to {npc_realm} in a single night, and the courtyard trees on that side of the hall have dropped all their leaves in spring.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_demon_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "dl_demon_watched"
+    ]
+   },
+   "arc": "The Black Manual",
+   "choices": [
+    {
+     "text": "Hold {him} down and purge the demonic qi with your own",
+     "roll": {
+      "stat": "medicine",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "dl_demon_saved",
+      "qi": -25,
+      "health": -10,
+      "mem": {
+       "deed": "saved_life",
+       "w": 34,
+       "note": "burned the demon out of me"
+      },
+      "alignment": 6,
+      "log": "It takes three days. On the third, {npc} vomits something black and weeps like a child, and {his} eyes are {his} own again."
+     },
+     "fail": {
+      "npcFlag": "dl_demon_lost",
+      "qi": -25,
+      "health": -25,
+      "mem": {
+       "deed": "humiliated",
+       "w": -20,
+       "note": "tried to cage me"
+      },
+      "log": "The demonic qi throws you across the room. When you get up, the window is broken and {npc} is gone into the night."
+     }
+    },
+    {
+     "text": "Chain {him} in the cellar and teach orthodox breathing for a year",
+     "effects": {
+      "npcFlag": "dl_demon_saved",
+      "alignment": 4,
+      "npcRealm": -1,
+      "mem": {
+       "deed": "saved_life",
+       "w": 14,
+       "note": "chained me in the dark and saved me"
+      },
+      "log": "A year in the dark, breath by breath. {npc} comes out a realm lower and a person again. {He} does not thank you. {He} does not need to."
+     }
+    },
+    {
+     "text": "Expel {him} before {he} hurts anyone else",
+     "effects": {
+      "npcFlag": "dl_demon_lost",
+      "npcUnflag": "own_disciple",
+      "role": "rival",
+      "mem": {
+       "deed": "betrayed",
+       "w": -40,
+       "note": "threw me out when I needed help"
+      },
+      "alignment": 2,
+      "log": "You break {his} disciple token in front of the whole hall. {npc} laughs, which is worse than anything {he} could have said, and walks out the gate."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_dl_demon_3",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "{npc} comes to your room in the middle of the night, shaking. \"I memorised it before you burned it,\" {he} says. \"Every page. I can't stop reciting it. It's in my sleep. Master, please, make it stop.\"",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_demon_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "dl_demon_burned"
+    ]
+   },
+   "arc": "The Black Manual",
+   "choices": [
+    {
+     "text": "Sit with {him} until dawn and unteach it, line by line",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "dl_demon_saved",
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "sat up all night and took the black book out of my head"
+      },
+      "log": "For every line of the black book you give {him} a line of your own art to put in its place. By dawn {he} is asleep on your floor, reciting yours."
+     },
+     "fail": {
+      "npcFlag": "dl_demon_saved",
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "tried all night"
+      },
+      "npcRealm": -1,
+      "log": "It does not come out cleanly. {npc} loses a realm to the fighting of it. But {he} keeps the person, and in the end that is the trade you would make."
+     }
+    },
+    {
+     "text": "Give {him} a sleeping draught and a harder training schedule",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 8,
+       "note": "gave me medicine and drills"
+      },
+      "npcFlag": "dl_demon_watched",
+      "log": "Exhaustion is a kind of cure. It is not the kind that lasts. You start watching {his} eyes again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_demon_4",
+   "cat": "world",
+   "weight": 6,
+   "once": true,
+   "text": "A rider in black at your gate, with a banner you know: the Heavenly Demon Cult. The new Young Lord of the Cult takes off a lacquered mask, and it is {npc}, your disciple that was. \"Master,\" {he} says, as politely as ever. \"I came to show you what I became.\"",
+   "npc": {
+    "role": "dl_demon_lost"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_demon_2"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "dl_demon_lost"
+    ]
+   },
+   "arc": "The Black Manual",
+   "choices": [
+    {
+     "text": "Answer with your sword",
+     "roll": {
+      "stat": "power",
+      "atGate": true
+     },
+     "ok": {
+      "fame": 25,
+      "alignment": 8,
+      "mem": {
+       "deed": "beat",
+       "w": 20,
+       "note": "beat me and did not kill me"
+      },
+      "npcFlag": "dl_demon_beaten",
+      "log": "You beat {him} with the first form you ever taught {him}. {He} lies in the dirt and starts laughing, then weeping, and you cannot tell which is the demon."
+     },
+     "fail": {
+      "health": -30,
+      "fame": -10,
+      "mem": {
+       "deed": "beat",
+       "w": 6,
+       "note": "beat my old master"
+      },
+      "deathCause": "the sword of the disciple who became a demon",
+      "log": "{npc} beats you with your own art, made black. {He} leaves you alive. That is the cruellest thing about it."
+     },
+     "risky": true
+    },
+    {
+     "text": "\"Come home. The door was never locked\"",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "rejoin": true,
+      "npcFlag": "dl_demon_saved",
+      "alignment": 10,
+      "mem": {
+       "deed": "forgave",
+       "w": 40,
+       "note": "opened the door after everything"
+      },
+      "log": "The mask falls in the dust. {npc} walks through the gate on foot, and the Demon Cult rides home without its Young Lord."
+     },
+     "fail": {
+      "mem": {
+       "deed": "respected",
+       "w": 4,
+       "note": "still asked me home"
+      },
+      "log": "\"You never lock the door,\" {npc} says, \"and that is why I left.\" The riders turn west."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_dl_stand_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "A runner reaches you three days from home: bandits, forty of them, have heard the founder is away. They mean to burn your sect by the new moon. In the hall there is only {npc} and the children.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcRealm": [
+     2,
+     8
+    ],
+    "npcAge": [
+     16,
+     60
+    ]
+   },
+   "arc": "The Gate Holds",
+   "choices": [
+    {
+     "text": "Ride for home through the night",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "npcFlag": "dl_stand_together",
+      "fame": 12,
+      "health": -10,
+      "log": "You come over the wall at moonrise with your horse dead behind you. {npc} is in the gate already. Together, the two of you hold it until the bandits break."
+     },
+     "fail": {
+      "npcFlag": "dl_stand_alone",
+      "health": -8,
+      "log": "You ride two horses to death and still come over the hill at dawn, to smoke, and silence, and the gate standing."
+     }
+    },
+    {
+     "text": "Send word: \"{npc}, the gate is yours\"",
+     "effects": {
+      "npcFlag": "dl_stand_alone",
+      "mem": {
+       "deed": "trusted",
+       "w": 18,
+       "note": "trusted me with the gate"
+      },
+      "log": "You send the runner back with one line. Then you sit very still for three days and do not sleep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_stand_2",
+   "cat": "sect",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} held the gate. Seventeen bandits will never trouble anyone again, and the children did not see a single one of them. {npc} has a cut from brow to jaw and will not let the physician touch it until you have seen it, because that is how you taught {him} to report.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_stand_1"
+    ],
+    "npcFlags": [
+     "dl_stand_alone"
+    ]
+   },
+   "arc": "The Gate Holds",
+   "choices": [
+    {
+     "text": "Give {him} a name before the whole sect: Gatekeeper",
+     "effects": {
+      "npcFlag": "dl_gatekeeper",
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "named me Gatekeeper before everyone"
+      },
+      "fame": 14,
+      "npcRealm": 1,
+      "log": "You call the whole sect into the yard and give {npc} the name. {He} keeps a straight face for nearly a whole breath."
+     }
+    },
+    {
+     "text": "Teach {him} the hidden form you have never shown anyone",
+     "effects": {
+      "qi": -10,
+      "npcRealm": 1,
+      "mem": {
+       "deed": "taught",
+       "w": 34,
+       "note": "taught me the hidden form after the gate"
+      },
+      "log": "That night, alone in the hall, you show {npc} the form you meant to take to your grave. {He} learns it in an hour. {He} earned it in a night."
+     }
+    },
+    {
+     "text": "Shout at {him} for nearly dying, then hold {him} like a child",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 24,
+       "note": "shouted and then held me"
+      },
+      "alignment": 3,
+      "log": "You shout until your voice cracks. Then you are holding {him}, and {his} blood is on your robe, and neither of you mentions it later."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_revenge_1",
+   "cat": "danger",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} kneels in your doorway at dawn. \"Master. The bandit who killed my parents has been seen in the next county. I ask leave to go.\" {His} knuckles are white on the sword hilt. You taught {him} that sword. You know exactly how good {he} is, and how good {he} is not.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcAge": [
+     15,
+     40
+    ]
+   },
+   "arc": "An Old Debt of Blood",
+   "choices": [
+    {
+     "text": "\"Then I am coming with you\"",
+     "effects": {
+      "npcFlag": "dl_rev_with",
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "came with me to face the past"
+      },
+      "log": "{npc} looks up as if {he} had not even dared hope. You pack in silence. Revenge is no place for a student alone."
+     }
+    },
+    {
+     "text": "\"Not yet. Revenge with half an art is suicide.\" Train {him} first",
+     "effects": {
+      "npcFlag": "dl_rev_wait",
+      "mem": {
+       "deed": "taught",
+       "w": 8,
+       "note": "made me wait and train"
+      },
+      "log": "{npc} bows, and goes to the yard, and is still there at midnight. Patience is the hardest form you will ever teach."
+     }
+    },
+    {
+     "text": "Forbid it outright",
+     "effects": {
+      "npcFlag": "dl_rev_forbid",
+      "mem": {
+       "deed": "rejected",
+       "w": -12,
+       "note": "forbade me my own revenge"
+      },
+      "log": "\"Yes, Master,\" says {npc}. Not one word more. You do not like the quiet of it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_revenge_2",
+   "cat": "danger",
+   "weight": 6,
+   "once": true,
+   "text": "The bandit chief is old now, grey and lame, running a tea stall at a crossroads. A little girl, his granddaughter, is doing her letters on an upturned crate. {npc} stops in the road. {His} sword is half out of the scabbard.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_revenge_1"
+    ],
+    "minYearsAfter": 1,
+    "npcFlags": [
+     "dl_rev_with"
+    ]
+   },
+   "arc": "An Old Debt of Blood",
+   "choices": [
+    {
+     "text": "Let {npc} decide. Step back",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "dl_rev_peace",
+      "alignment": 12,
+      "mem": {
+       "deed": "respected",
+       "w": 26,
+       "note": "let me choose mercy myself"
+      },
+      "log": "{npc} sheathes. {He} buys two cups of tea, pays double, and walks away. On the road home {he} cries once, briefly, and is lighter afterwards."
+     },
+     "fail": {
+      "npcFlag": "dl_rev_blood",
+      "alignment": -6,
+      "mem": {
+       "deed": "helped",
+       "w": 10,
+       "note": "stood behind me while I did it"
+      },
+      "log": "It is quick. The little girl screams. {npc} wipes the blade and does not look at her. You will both hear that scream for years."
+     }
+    },
+    {
+     "text": "Stay {his} hand. \"Look at the child\"",
+     "effects": {
+      "npcFlag": "dl_rev_peace",
+      "alignment": 10,
+      "mem": {
+       "deed": "rejected",
+       "w": -6,
+       "note": "stopped my hand"
+      },
+      "log": "{npc} looks at the child for a long time. Then {he} turns and walks, and you follow, and halfway home {he} takes your sleeve like {he} did at twelve."
+     }
+    },
+    {
+     "text": "Do it yourself, so the stain is yours",
+     "effects": {
+      "flag": "took_life",
+      "alignment": -10,
+      "npcFlag": "dl_rev_peace",
+      "mem": {
+       "deed": "saved_life",
+       "w": 24,
+       "note": "took the blood on their own hands for me"
+      },
+      "log": "You step past {npc} and it is done before {he} can move. \"There,\" you say. \"Now it is mine, not yours.\" {He} never forgets that you did it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_revenge_3",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "{npc} comes back from the provinces after a week away nobody gave {him} leave for. There is dried blood on {his} sleeve that is not {his}, and the next county sends word that a certain bandit chief is dead.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_revenge_1"
+    ],
+    "minYearsAfter": 2,
+    "npcFlags": [
+     "dl_rev_forbid"
+    ]
+   },
+   "arc": "An Old Debt of Blood",
+   "choices": [
+    {
+     "text": "Punish {him}: thirty days of silence in the meditation cave",
+     "effects": {
+      "mem": {
+       "deed": "humiliated",
+       "w": -8,
+       "note": "punished me for doing what I had to"
+      },
+      "alignment": 3,
+      "log": "Thirty days in the cave. On the thirty-first {npc} comes out thinner and quieter, and bows to you, and it is not clear who has learned what."
+     }
+    },
+    {
+     "text": "Say nothing. Clean the sword together",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "cleaned the blood off my sword with me"
+      },
+      "alignment": -4,
+      "log": "You clean the blade side by side in the dark. Neither of you says anything. Some things a master shares without blessing them."
+     }
+    },
+    {
+     "text": "Ask {him} how it felt",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "asked me how it felt, and listened"
+      },
+      "alignment": 4,
+      "log": "\"Empty,\" says {npc}, after a long time. \"I thought it would be full.\" You nod. That is the lesson. You could never have taught it."
+     },
+     "fail": {
+      "mem": {
+       "deed": "rejected",
+       "w": -4,
+       "note": "asked me questions I could not answer"
+      },
+      "log": "{npc} just looks at you. \"Ask me in ten years, Master.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_fever_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": true,
+   "text": "A scream from the meditation hall. {npc} is sitting rigid in lotus, sweat pouring off {him}, veins standing out black on {his} arms: qi deviation, the bad kind, the kind that cripples or kills before dawn.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcRealm": [
+     1,
+     8
+    ]
+   },
+   "arc": "The Wild Qi",
+   "choices": [
+    {
+     "text": "Put your palm on {his} back and pour in your own qi",
+     "effects": {
+      "qi": -40,
+      "health": -10,
+      "npcFlag": "dl_fever_saved",
+      "mem": {
+       "deed": "saved_life",
+       "w": 40,
+       "note": "poured their own qi into me when I was dying"
+      },
+      "log": "You give and give until your own meridians ache. Near dawn the black fades from {his} arms. You lose a year of training. {He} keeps {his} life."
+     }
+    },
+    {
+     "text": "Needles and herbs: you know a little medicine",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "npcFlag": "dl_fever_saved",
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "sat up all night with needles and saved me"
+      },
+      "log": "Thirty-six needles, four hours, one very steady hand. {npc} opens {his} eyes at sunrise and asks if {he} can train tomorrow."
+     },
+     "fail": {
+      "npcRealm": -1,
+      "npcFlag": "dl_fever_scarred",
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "tried to save my cultivation"
+      },
+      "log": "{npc} lives. {His} cultivation does not, all of it: {he} wakes a realm lower, and very quiet."
+     }
+    },
+    {
+     "text": "Send for the best physician in the province, whatever it costs",
+     "effects": {
+      "taels": -180,
+      "npcFlag": "dl_fever_saved",
+      "mem": {
+       "deed": "saved_life",
+       "w": 26,
+       "note": "paid a fortune to save me"
+      },
+      "log": "The physician comes at a gallop and leaves with a purse that empties your treasury. {npc} lives. It is the best money you ever spent."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_fever_2",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "Your own breakthrough, finally: you sit down in the cave knowing it may go wrong. When you open your eyes at the worst moment, {npc} is sitting behind you with a palm on your back, pouring {his} own qi into you, the way you once did for {him}.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_fever_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dl_fever_saved"
+    ]
+   },
+   "arc": "The Wild Qi",
+   "choices": [
+    {
+     "text": "Let {him}. Take the gift",
+     "effects": {
+      "qi": 35,
+      "health": 20,
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "let me give back what they gave"
+      },
+      "alignment": 3,
+      "log": "{His} qi is warm and stubborn, like {him}. You come out of the cave stronger than you went in, and {npc} pretends to have been passing by."
+     }
+    },
+    {
+     "text": "\"Stop. You will hurt your own cultivation\"",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 10,
+       "note": "worried about my cultivation even then"
+      },
+      "log": "\"Master,\" {npc} says through gritted teeth, \"be quiet and breathe.\" You do as you are told, for once."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_rivals_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} and your other senior disciple have stopped speaking. They train at opposite ends of the yard and eat at opposite ends of the table, and the juniors have started picking sides. Everyone knows what it is about: one day, one of them will sit in your seat.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcRealm": [
+     2,
+     8
+    ],
+    "npcAge": [
+     20,
+     60
+    ],
+    "notFlags": [
+     "successor_named"
+    ]
+   },
+   "arc": "One Seat at the Head of the Hall",
+   "choices": [
+    {
+     "text": "Name {npc} your successor now, and end it",
+     "effects": {
+      "npcFlag": "chosen_successor",
+      "flag": [
+       "dl_successor_named",
+       "successor_named"
+      ],
+      "mem": {
+       "deed": "trusted",
+       "w": 30,
+       "note": "named me successor before the whole hall"
+      },
+      "log": "You say it once, in front of everyone. {npc} bows to the floor. Your other disciple bows too, a little late. Peace, of a kind."
+     }
+    },
+    {
+     "text": "Hold a duel between them, before the sect",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "dl_rivals_duel",
+      "fame": 6,
+      "mem": {
+       "deed": "respected",
+       "w": 12,
+       "note": "let us settle it with swords"
+      },
+      "log": "A clean duel, well judged. {npc} wins by a hair and helps the other up. The juniors stop picking sides that same afternoon."
+     },
+     "fail": {
+      "npcFlag": "dl_rivals_duel",
+      "mem": {
+       "deed": "humiliated",
+       "w": -6,
+       "note": "set us against each other in public"
+      },
+      "log": "It goes badly. Someone breaks an arm. The yard is quieter afterwards, but not better."
+     }
+    },
+    {
+     "text": "\"The seat is earned over ten years, not taken in a day\"",
+     "effects": {
+      "npcFlag": "dl_rivals_wait",
+      "mem": {
+       "deed": "taught",
+       "w": 6,
+       "note": "made us wait ten years"
+      },
+      "log": "Both of them hate this answer equally, which is how you know it is the right one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_rivals_2",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "text": "Ten years, near enough. {npc} has become the kind of martial artist the juniors imitate without meaning to. Your other senior has become the kind they go to when something is wrong. The elders want an answer.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_rivals_1"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "dl_rivals_wait"
+    ]
+   },
+   "arc": "One Seat at the Head of the Hall",
+   "choices": [
+    {
+     "text": "{npc} leads; the other keeps the hall's heart. Two seats",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "chosen_successor",
+      "fame": 10,
+      "alignment": 4,
+      "mem": {
+       "deed": "trusted",
+       "w": 30,
+       "note": "found a way for both of us"
+      },
+      "log": "Two chairs at the head of the table. It has never been done. It works, which in the murim is the same as tradition.",
+      "flag": [
+       "successor_named"
+      ]
+     },
+     "fail": {
+      "npcFlag": "chosen_successor",
+      "mem": {
+       "deed": "trusted",
+       "w": 18,
+       "note": "chose me in the end"
+      },
+      "log": "You choose {npc}. The other bows, and leaves for a sect in the south within the year. You visit, once. It is very polite.",
+      "flag": [
+       "successor_named"
+      ]
+     }
+    },
+    {
+     "text": "Choose the other. {npc} will understand",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -18,
+       "note": "passed me over for the seat"
+      },
+      "alignment": 2,
+      "log": "{npc} does understand. That is the worst of it. {He} stays, and serves, and never once complains where you can hear."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_dl_wander_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": true,
+   "text": "{npc} asks to leave the mountain for three years: to wander, to fight strangers, to see the sea. \"Everything I know, Master, I know from you. I want to know what I am without you.\"",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "npcAge": [
+     18,
+     40
+    ],
+    "npcRealm": [
+     1,
+     8
+    ],
+    "notFlags": [
+     "dl_wander_told"
+    ]
+   },
+   "arc": "Three Years on the Road",
+   "choices": [
+    {
+     "text": "Let {him} go with your blessing and a purse",
+     "effects": {
+      "taels": -60,
+      "npcFlag": [
+       "dl_wander",
+       "away"
+      ],
+      "cooldown": 3,
+      "mem": {
+       "deed": "trusted",
+       "w": 18,
+       "note": "let me go and see the world"
+      },
+      "log": "{npc} walks down the mountain at dawn. You stand at the gate until {he} is a speck, and then a little longer.",
+      "flag": [
+       "dl_wander_told"
+      ]
+     }
+    },
+    {
+     "text": "Give {him} a letter to an old friend on the coast",
+     "effects": {
+      "npcFlag": [
+       "dl_wander",
+       "dl_wander_letter",
+       "away"
+      ],
+      "cooldown": 3,
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "sent me to an old friend"
+      },
+      "log": "You write half the night. Some friendships are kept for exactly this.",
+      "flag": [
+       "dl_wander_told"
+      ]
+     }
+    },
+    {
+     "text": "Refuse. {He} is not ready",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -10,
+       "note": "would not let me see the world"
+      },
+      "log": "{npc} bows and stays. Every evening after that {he} stands at the gate and looks at the road.",
+      "flag": [
+       "dl_wander_told"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_wander_2",
+   "cat": "sect",
+   "weight": 7,
+   "once": true,
+   "text": "{npc} comes home after three years. {He} is browner, quieter, carries a sword you have never seen, and has a scar on {his} hand {he} will not explain. That evening {he} asks you to spar, and moves in ways you never taught.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ],
+    "age": [
+     0,
+     999
+    ],
+    "after": [
+     "dc_dl_wander_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "dl_wander"
+    ]
+   },
+   "arc": "Three Years on the Road",
+   "choices": [
+    {
+     "text": "Spar, and learn from your student",
+     "effects": {
+      "qi": 20,
+      "comprehension": 4,
+      "npcRealm": 1,
+      "mem": {
+       "deed": "mentored",
+       "w": 22,
+       "note": "learned from me after the road"
+      },
+      "log": "{npc} beats you twice in ten exchanges with a southern trick. You make {him} show you it until midnight. The teacher has things to learn."
+     }
+    },
+    {
+     "text": "Ask about the scar",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "mem": {
+       "deed": "helped",
+       "w": 20,
+       "note": "asked about the scar and listened"
+      },
+      "fame": 6,
+      "log": "It is a long story, with a river pirate, a village and a girl in it, and it ends with {npc} being sung about in three counties. Your sect's name is in the song."
+     },
+     "fail": {
+      "log": "\"Another time, Master.\" {He} rubs the scar and smiles. You will hear it at {his} wedding, probably."
+     }
+    },
+    {
+     "text": "Ask what {he} found out about {him}self",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 16,
+       "note": "asked what I had found on the road"
+      },
+      "alignment": 4,
+      "log": "\"That I am still yours,\" {npc} says, \"but not only yours.\" It is the right answer. You are prouder than you can say."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dl_feast_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "text": "The whole sect felt it in the night: {npc} broke through to {npc_realm}. By morning the juniors have strung lanterns in the yard without asking anyone, and the cook is weeping into a pot of something enormous.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_breakthrough",
+   "choices": [
+    {
+     "text": "Throw the feast. The sect pays",
+     "effects": {
+      "taels": -60,
+      "fame": 4,
+      "flag": "dfeast",
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "threw a feast for my breakthrough"
+      },
+      "log": "Lanterns, wine, a drum someone found in the attic. {npc} is toasted until {he} hides under a table. It is a very good night."
+     }
+    },
+    {
+     "text": "A private gift: the pill you were saving for yourself",
+     "effects": {
+      "flag": "dfeast",
+      "mem": {
+       "deed": "saved_life",
+       "w": 22,
+       "note": "gave me the pill they were saving for themselves"
+      },
+      "qi": -8,
+      "log": "You press the little jade box into {his} hand when nobody is looking. {npc} knows exactly what it is. {He} can't speak."
+     }
+    },
+    {
+     "text": "\"Good. Now the real work begins.\" Double {his} training",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 6,
+       "note": "doubled my training the day after"
+      },
+      "log": "{npc} grins like a wolf and is in the yard before you. Some disciples want lanterns. Some want a harder mountain."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_feast_2",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} reached {npc_realm} this year, quietly, the way {he} does everything. You only find out because the old gate guard tells you, very pleased, that {he} has never seen a disciple's sword move like that.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_breakthrough",
+   "choices": [
+    {
+     "text": "Call the sect together and say it out loud",
+     "effects": {
+      "fame": 3,
+      "flag": "dfeast",
+      "mem": {
+       "deed": "respected",
+       "w": 16,
+       "note": "said my name before the whole sect"
+      },
+      "log": "You say it in front of everyone: {npc}, {npc_realm}. The quiet ones remember those moments longest."
+     }
+    },
+    {
+     "text": "Find {him} in the yard and simply bow",
+     "effects": {
+      "mem": {
+       "deed": "respected",
+       "w": 20,
+       "note": "bowed to me, once, in the yard"
+      },
+      "log": "You bow, master to disciple. {npc} goes red to the ears and bows back three times. Neither of you mentions it again."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_feast_3",
+   "cat": "sect",
+   "weight": 3,
+   "once": false,
+   "text": "{npc} has broken through to {npc_realm}, and has done it faster than you did at {his} age. The other masters at the provincial meeting raise their cups to you, a little enviously.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_breakthrough",
+   "choices": [
+    {
+     "text": "Raise your cup back, and tell them it was all {his} doing",
+     "effects": {
+      "fame": 6,
+      "flag": "dfeast",
+      "mem": {
+       "deed": "respected",
+       "w": 12,
+       "note": "gave me the credit in front of the masters"
+      },
+      "log": "Modesty is a weapon too. By the end of the evening three of them are trying to poach {npc}, and {he} is turning them all down."
+     }
+    },
+    {
+     "text": "Take the credit. You did train {him}",
+     "effects": {
+      "fame": 9,
+      "mem": {
+       "deed": "humiliated",
+       "w": -4,
+       "note": "took the credit for my breakthrough"
+      },
+      "log": "It is true and it is not, and {npc} hears every word from the door."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_surpass_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "It happens on an ordinary morning. You and {npc} are sparring, the way you have a thousand times, and {he} moves and you are simply not fast enough any more. {npc}, {npc_realm} now, above you, stands over you with the practice sword at your throat, and is the one who looks frightened.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_surpass",
+   "choices": [
+    {
+     "text": "Laugh, get up, and bow to your student",
+     "effects": {
+      "flag": "surpassed_by_disciple",
+      "npcFlag": "surpassed_master",
+      "alignment": 6,
+      "qi": 18,
+      "mem": {
+       "deed": "respected",
+       "w": 36,
+       "note": "bowed to me when I surpassed them"
+      },
+      "log": "\"Bluer than the indigo,\" you say, getting up. \"It is the whole point of a teacher.\" {npc} cries. You watch {his} form for the rest of the morning and learn three things."
+     }
+    },
+    {
+     "text": "Ask {him} to teach you what {he} just did",
+     "effects": {
+      "flag": "surpassed_by_disciple",
+      "npcFlag": "surpassed_master",
+      "comprehension": 5,
+      "qi": 24,
+      "mem": {
+       "deed": "respected",
+       "w": 30,
+       "note": "asked me to teach them"
+      },
+      "log": "The student teaches the master. {npc} is a terrible teacher, too quick and too kind. You learn it anyway. The juniors watch with their mouths open."
+     }
+    },
+    {
+     "text": "Say nothing. Go to your room. Close the door",
+     "effects": {
+      "npcFlag": "surpassed_master",
+      "alignment": -6,
+      "mem": {
+       "deed": "rejected",
+       "w": -22,
+       "note": "walked away when I surpassed them"
+      },
+      "log": "You close the door and sit in the dark. You are not proud of the hour that follows. {npc} stands outside it the whole time."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_surpass_2",
+   "cat": "sect",
+   "weight": 3,
+   "once": false,
+   "text": "A letter from the provincial masters' meeting: {npc}, your disciple, has been seated above you at the banquet, because {he} is {npc_realm} now and you are not. They ask, delicately, whether you would like to come anyway.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_surpass",
+   "choices": [
+    {
+     "text": "Go, and sit below your student, smiling all night",
+     "effects": {
+      "flag": "surpassed_by_disciple",
+      "npcFlag": "surpassed_master",
+      "fame": 10,
+      "alignment": 5,
+      "mem": {
+       "deed": "respected",
+       "w": 30,
+       "note": "sat below me and smiled all night"
+      },
+      "log": "You sit below {npc} and toast {him} first. Half the masters there never forgave their own students for surpassing them. You can see them watching you."
+     }
+    },
+    {
+     "text": "Send your congratulations and a gift. Stay home",
+     "effects": {
+      "flag": "surpassed_by_disciple",
+      "npcFlag": "surpassed_master",
+      "taels": -40,
+      "mem": {
+       "deed": "helped",
+       "w": 18,
+       "note": "sent a gift instead of envy"
+      },
+      "log": "You send the best wine in the cellar and a letter of four words: \"I always knew it.\" {npc} keeps the letter for the rest of {his} life."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_branch_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} asks to see you alone. {He} kneels. \"Master, the people of the far valley have no school. I would like to build one there, under our name, teaching our art. A branch of this tree, not a new one.\"",
+   "npc": {
+    "disciple": true
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "trigger": "disciple_branch",
+   "choices": [
+    {
+     "text": "Give your blessing, and the sect's seal for the new gate",
+     "effects": {
+      "flag": "branch_founded",
+      "npcFlag": "branch_founder",
+      "fame": 16,
+      "alignment": 4,
+      "mem": {
+       "deed": "trusted",
+       "w": 30,
+       "note": "blessed my branch sect"
+      },
+      "log": "You carve the seal yourself. A year later word comes from the valley: forty children in the yard, and your art in every one of them."
+     }
+    },
+    {
+     "text": "Give {him} your own copy of the sect manual to take",
+     "effects": {
+      "flag": "branch_founded",
+      "npcFlag": "branch_founder",
+      "fame": 20,
+      "mem": {
+       "deed": "saved_life",
+       "w": 38,
+       "note": "gave me the master's own manual for my branch"
+      },
+      "log": "It is the copy with your notes in the margins, years of them. {npc} holds it like it might break. The valley school is famous within ten years."
+     }
+    },
+    {
+     "text": "Refuse. One sect, one head",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -26,
+       "note": "refused my branch"
+      },
+      "alignment": -2,
+      "log": "{npc} bows and stays. But something has closed in {him}, and you notice that {he} stops bringing you {his} questions."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_branch_2",
+   "cat": "sect",
+   "weight": 3,
+   "once": false,
+   "text": "A letter from {npc}: {he} has found a burned-out temple in the hills, with a good spring and good stone, and three orphans already following {him} around. {He} asks, formally, for permission to found a branch of your sect there.",
+   "npc": {
+    "disciple": true
+   },
+   "when": {
+    "flags": [
+     "own_sect"
+    ]
+   },
+   "trigger": "disciple_branch",
+   "choices": [
+    {
+     "text": "Write back: \"Yes. Make it better than mine\"",
+     "effects": {
+      "flag": "branch_founded",
+      "npcFlag": "branch_founder",
+      "fame": 14,
+      "mem": {
+       "deed": "trusted",
+       "w": 28,
+       "note": "told me to make it better than theirs"
+      },
+      "log": "You write it in your best hand. {npc} hangs the letter in the new gatehouse, where it is still hanging, they say, a hundred years later."
+     }
+    },
+    {
+     "text": "Ride out and lay the first stone yourself",
+     "effects": {
+      "flag": "branch_founded",
+      "npcFlag": "branch_founder",
+      "fame": 18,
+      "health": -6,
+      "mem": {
+       "deed": "saved_life",
+       "w": 30,
+       "note": "rode out and laid the first stone themselves"
+      },
+      "log": "You lay the first stone and sleep in the ruin with three orphans and your disciple. It is the most hopeful night you have had in years."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_champion_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} comes home from the Gathering of Young Heroes as its champion. The road up the mountain is lined with villagers who have never cared about martial arts in their lives and are now cheering themselves hoarse.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "disciple_champion",
+   "choices": [
+    {
+     "text": "Carry {him} up the last stretch on your shoulders",
+     "effects": {
+      "fame": 8,
+      "mem": {
+       "deed": "saved_life",
+       "w": 24,
+       "note": "carried me up the mountain like a child"
+      },
+      "log": "Your knees object. You do it anyway. {npc} laughs the whole way up, and you never let {him} forget how heavy {he} was."
+     }
+    },
+    {
+     "text": "A quiet word at the gate: \"Now you have a name to live up to\"",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 14,
+       "note": "reminded me what the name costs"
+      },
+      "alignment": 3,
+      "log": "{npc} nods, and for a moment looks older than {his} years. Then the juniors drag {him} off to the banquet."
+     }
+    },
+    {
+     "text": "Open the sect for anyone who wants to learn, for a month",
+     "effects": {
+      "fame": 14,
+      "taels": -50,
+      "log": "Three hundred hopefuls queue at your gate. You keep eleven. One of them will matter very much, one day."
+     }
+    }
+   ],
+   "cooldown": 0,
+   "maxPerLife": 99
+  },
+  {
+   "id": "dc_dl_bond_1",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} knocks at midnight with a lamp and a question: one move of the sect form has been bothering {him} for a month. Would you show {him}, just once, slowly?",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "ask_help",
+   "choices": [
+    {
+     "text": "Show {him}, slowly, as many times as it takes",
+     "effects": {
+      "mem": {
+       "deed": "taught",
+       "w": 12,
+       "note": "showed me the move at midnight"
+      },
+      "comprehension": 2,
+      "log": "Forty times, by lamplight. On the forty-first {npc} gets it, and so, in a way you did not expect, do you."
+     }
+    },
+    {
+     "text": "\"Come back at dawn\"",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -3,
+       "note": "sent me away at midnight"
+      },
+      "log": "{He} is at your door at dawn. Exactly at dawn."
+     }
+    }
+   ],
+   "cooldown": 6
+  },
+  {
+   "id": "dc_dl_bond_2",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} brings you the silver {he} earned on a mission, all of it, wrapped in a cloth, and puts it on your table without a word.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "repay",
+   "choices": [
+    {
+     "text": "Accept it. A disciple's gift should be accepted",
+     "effects": {
+      "taels": 25,
+      "mem": {
+       "deed": "helped",
+       "w": 12,
+       "note": "accepted my first silver"
+      },
+      "log": "You put it in the sect treasury with your own hands, so {he} sees it go in. It is the proudest you have ever seen {him}."
+     }
+    },
+    {
+     "text": "Buy {him} a good sword with it instead",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "turned my silver into a sword"
+      },
+      "log": "You go down to the smith together. {npc} carries that sword for the rest of {his} road."
+     }
+    }
+   ],
+   "cooldown": 6
+  },
+  {
+   "id": "dc_dl_bond_3",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "\"Master,\" says {npc}, very formally, at the end of training, \"I challenge you.\" The whole yard stops. {He} only wants to see how far {he} has come. {His} hands are shaking.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "challenge",
+   "choices": [
+    {
+     "text": "Accept, and fight seriously",
+     "roll": {
+      "stat": "power"
+     },
+     "ok": {
+      "mem": {
+       "deed": "respected",
+       "w": 12,
+       "note": "took my challenge seriously"
+      },
+      "fame": 2,
+      "log": "You win, but {he} makes you work for it. \"Again next year,\" you say. {He} lights up like a lantern."
+     },
+     "fail": {
+      "mem": {
+       "deed": "respected",
+       "w": 18,
+       "note": "lost to me fairly"
+      },
+      "flag": "beaten_by_student",
+      "log": "{npc} wins, and stares at {his} own sword as if it has done something without {him}. Then {he} bursts into tears. You laugh until your ribs hurt."
+     }
+    },
+    {
+     "text": "Accept, and let {him} win",
+     "effects": {
+      "mem": {
+       "deed": "rejected",
+       "w": -6,
+       "note": "let me win, and I could tell"
+      },
+      "log": "{npc} can tell. \"Master,\" {he} says, deeply offended, \"do it properly.\" Fair enough."
+     }
+    }
+   ],
+   "cooldown": 6
+  },
+  {
+   "id": "dc_dl_bond_4",
+   "cat": "sect",
+   "weight": 4,
+   "once": false,
+   "text": "{npc} brings you tea in the evening, which is not {his} job, and sits down, which {he} has never done, and asks what you wanted to be when you were {his} age.",
+   "npc": {
+    "disciple": true
+   },
+   "trigger": "befriend",
+   "choices": [
+    {
+     "text": "Tell {him} the truth, foolish dreams and all",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 16,
+       "note": "told me the truth, foolish young dreams and all"
+      },
+      "charm": 2,
+      "log": "You tell {him} everything. {He} laughs at the right places and goes quiet at the right places. By the end of the evening you understand {him} better, and {he} understands why you teach the way you do."
+     }
+    },
+    {
+     "text": "Ask about {his} dreams instead",
+     "effects": {
+      "mem": {
+       "deed": "helped",
+       "w": 14,
+       "note": "asked about my dreams"
+      },
+      "log": "{He} wants to found a school for orphans, it turns out, and has wanted it since {he} was nine. You file that away very carefully."
+     }
+    }
+   ],
+   "cooldown": 6
+  }
+ ],
+ "mwPass": 1
+}

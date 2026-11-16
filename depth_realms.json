@@ -1,0 +1,826 @@
+{
+ "events": [
+  {
+   "id": "dc_realm_lake_1",
+   "cat": "explore",
+   "arc": "The Palace Under the Lake",
+   "when": {
+    "realm": [
+     2,
+     9
+    ],
+    "age": [
+     16,
+     80
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "Once every sixty years the Mirror Lake drains in a single night, and the roofs of a palace stand in the mud, gold-tiled and dry. A hundred martial artists are already camped on the shore.",
+   "choices": [
+    {
+     "text": "Walk down into the lakebed",
+     "effects": {
+      "flag": "realm_lake_entered",
+      "log": "The mud holds your feet like hands. The palace gate is open and smells of a spring morning."
+     }
+    },
+    {
+     "text": "Watch who goes in, and who comes out",
+     "effects": {
+      "comprehension": 4,
+      "flag": "realm_lake_watched",
+      "log": "Forty go in. Nineteen come out. You learn a great deal about the nineteen."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_lake_2",
+   "cat": "explore",
+   "arc": "The Palace Under the Lake",
+   "when": {
+    "flags": [
+     "realm_lake_entered"
+    ],
+    "age": [
+     16,
+     95
+    ],
+    "after": [
+     "dc_realm_lake_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Inside the drowned palace a corridor of mirrors shows you as you will be in thirty years. In one mirror you are a legend. In another you are dead at forty. A third is blank.",
+   "choices": [
+    {
+     "text": "Step through the blank mirror",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "flag": "realm_lake_deep",
+      "comprehension": 8,
+      "log": "Behind the blank mirror is a room with no reflections, and a door."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "the mirrors of the drowned palace",
+      "log": "The blank mirror shows you something, and the something looks back. You are thrown out of the palace gate with your hair white at the temples and no memory of the hour."
+     }
+    },
+    {
+     "text": "Smash the mirror where you die",
+     "effects": {
+      "alignment": 2,
+      "luck": 4,
+      "flag": "realm_lake_deep",
+      "log": "The glass screams. A door opens behind the shards. You decide not to read anything into that."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_lake_3",
+   "cat": "explore",
+   "arc": "The Palace Under the Lake",
+   "when": {
+    "flags": [
+     "realm_lake_deep"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_realm_lake_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The palace's heart: a throne of water held in the shape of a throne, and on it a jade slip, and the water is starting to come back.",
+   "choices": [
+    {
+     "text": "Take the jade slip",
+     "effects": {
+      "manual": 3,
+      "comprehension": 8,
+      "fame": 10,
+      "flag": "realm_lake_slip",
+      "log": "The Mirror Palace Method. You run the whole way back with the lake at your heels and come up the shore on the last dry step."
+     }
+    },
+    {
+     "text": "Sit on the throne",
+     "roll": {
+      "stat": "body",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "meridianUp": true,
+      "lifespan": 6,
+      "flag": "realm_lake_throne",
+      "log": "The water closes over you and you breathe it. When the lake drains again in sixty years, you will remember how. Your meridians remember now."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the Palace Under the Lake, when the water came back",
+      "log": "The water closes over you and will not let go. They find you on the shore at dawn, blue-lipped and breathing, with the lake already filling behind you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_desert_1",
+   "cat": "explore",
+   "arc": "The City Under the Sand",
+   "when": {
+    "realm": [
+     2,
+     9
+    ],
+    "age": [
+     18,
+     80
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "A sandstorm uncovers a city's walls on the western trade road, and the caravan masters will not go past it. They say it was buried in a single night for a crime nobody remembers.",
+   "choices": [
+    {
+     "text": "Enter the city",
+     "effects": {
+      "flag": "realm_desert_entered",
+      "log": "Streets of glass-smooth stone, empty market stalls, and in every doorway, a sitting statue facing in."
+     }
+    },
+    {
+     "text": "Hire on as the caravan's guard and go around",
+     "effects": {
+      "taels": 60,
+      "log": "Good money. The caravan masters say thank you in a way that means 'you were wise'."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_desert_2",
+   "cat": "explore",
+   "arc": "The City Under the Sand",
+   "when": {
+    "flags": [
+     "realm_desert_entered"
+    ],
+    "age": [
+     18,
+     95
+    ],
+    "after": [
+     "dc_realm_desert_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The statues in the City Under the Sand turn their heads as you pass. In the central square stands one with a sword, and its plinth reads: whoever wins, rules.",
+   "choices": [
+    {
+     "text": "Fight the statue",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.9
+     },
+     "risky": true,
+     "ok": {
+      "flag": "realm_desert_deep",
+      "fame": 8,
+      "log": "Its sword arm shatters, and every statue in the city bows to you."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a statue in a buried city",
+      "log": "The statue's sword is faster than stone has any right to be. You crawl out of the square with every statue watching, and none of them bows."
+     }
+    },
+    {
+     "text": "Bow to the statue instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "realm_desert_deep",
+      "alignment": 4,
+      "log": "It bows back, after a long time, and steps aside."
+     },
+     "fail": {
+      "health": -15,
+      "log": "It does not bow back, and it does not step aside. A sandstorm comes out of nowhere, and you leave the square the hard way."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_desert_3",
+   "cat": "explore",
+   "arc": "The City Under the Sand",
+   "when": {
+    "flags": [
+     "realm_desert_deep"
+    ],
+    "age": [
+     18,
+     99
+    ],
+    "after": [
+     "dc_realm_desert_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The palace of the buried king: a sealed vault, and a voice asking what crime buried the city. You have read the walls. You know the answer is greed.",
+   "choices": [
+    {
+     "text": "Say greed, and take nothing",
+     "effects": {
+      "alignment": 10,
+      "comprehension": 8,
+      "lifespan": 4,
+      "flag": "realm_desert_wise",
+      "log": "The vault opens on an empty room with one cushion. You sit, and the king's whole understanding of the sword pours into you like sand through a glass."
+     }
+    },
+    {
+     "text": "Take the treasure",
+     "effects": {
+      "taels": 800,
+      "fame": 6,
+      "flag": "realm_desert_gold",
+      "log": "Gold enough for three lives. The sand starts moving as you leave. You are fast enough. Just."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_tomb_1",
+   "cat": "explore",
+   "arc": "The Sword Tomb",
+   "when": {
+    "realm": [
+     1,
+     9
+    ],
+    "age": [
+     16,
+     80
+    ],
+    "stat": {
+     "sword": 35
+    },
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "A mountain where a thousand swordsmen were buried with their swords, and the swords still hum on windy nights. Any swordsman may enter. Not every swordsman leaves.",
+   "choices": [
+    {
+     "text": "Enter the Sword Tomb",
+     "effects": {
+      "flag": "realm_tomb_entered",
+      "log": "The humming gets louder. Then it starts to sound like voices."
+     }
+    },
+    {
+     "text": "Listen from the foot of the mountain",
+     "effects": {
+      "comprehension": 5,
+      "log": "One sword's voice is clearer than the rest. You learn a single cut from it, through the wind."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_tomb_2",
+   "cat": "explore",
+   "arc": "The Sword Tomb",
+   "when": {
+    "flags": [
+     "realm_tomb_entered"
+    ],
+    "age": [
+     16,
+     95
+    ],
+    "after": [
+     "dc_realm_tomb_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A thousand swords stand in the Sword Tomb's earth. Each will let itself be drawn by one person only. Some have waited a long time. One is already turning toward you.",
+   "choices": [
+    {
+     "text": "Draw the sword that turned",
+     "roll": {
+      "stat": "sword",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "realm_tomb_deep",
+      "artYears": 2,
+      "fame": 6,
+      "log": "It comes out like it was waiting for exactly this hand."
+     },
+     "fail": {
+      "health": -20,
+      "flag": "realm_tomb_deep",
+      "log": "The sword resists, and bites on the way out. You let go; it settles back into the earth, still turned toward you."
+     }
+    },
+    {
+     "text": "Walk past them all",
+     "effects": {
+      "comprehension": 6,
+      "flag": "realm_tomb_deep",
+      "log": "The swords go quiet as you pass. The deepest one stays loud."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_tomb_3",
+   "cat": "explore",
+   "arc": "The Sword Tomb",
+   "when": {
+    "flags": [
+     "realm_tomb_deep"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_realm_tomb_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "At the bottom of the Sword Tomb sits the founder, a skeleton with a sword across its knees, and the sword is speaking: whoever can take me from these hands may take my name.",
+   "choices": [
+    {
+     "text": "Take the founder's sword",
+     "roll": {
+      "stat": "sword",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "artYears": 4,
+      "flag": "realm_tomb_heir",
+      "log": "The skeleton's fingers open. The sword is cold, then warm. Every swordsman in the province felt it, and knows your name by the next new moon."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the founder of the Sword Tomb",
+      "log": "The founder's fingers do not open. Every sword in the tomb answers the insult at once, and you are lucky to crawl out of the mountain."
+     }
+    },
+    {
+     "text": "Bow and leave the founder his sword",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 8,
+      "flag": "realm_tomb_bowed",
+      "log": "The skeleton nods, which a skeleton should not do. On the way out every sword in the tomb hums a short phrase of farewell, and you remember all of it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_fog_1",
+   "cat": "explore",
+   "arc": "The Island in the Fog",
+   "when": {
+    "realm": [
+     1,
+     9
+    ],
+    "age": [
+     16,
+     85
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "A fishing village says there is an island in the eastern fog that only appears to people who are lost. An old fisherman offers to row you out and get you lost on purpose.",
+   "choices": [
+    {
+     "text": "Get lost on purpose",
+     "effects": {
+      "flag": "realm_fog_entered",
+      "log": "Three days of grey. Then a shore, black sand, and a gate made of whale bones."
+     }
+    },
+    {
+     "text": "Thank him and stay on land",
+     "effects": {
+      "luck": 3,
+      "log": "He rows out alone that night. He is not seen again, and the village says he was smiling."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_fog_2",
+   "cat": "explore",
+   "arc": "The Island in the Fog",
+   "when": {
+    "flags": [
+     "realm_fog_entered"
+    ],
+    "age": [
+     16,
+     95
+    ],
+    "after": [
+     "dc_realm_fog_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "On the Island in the Fog the people do not age. They are very polite, very still, and very interested in whether you would like to stay, and how long you plan to.",
+   "choices": [
+    {
+     "text": "Stay one season",
+     "effects": {
+      "lifespan": 3,
+      "comprehension": 6,
+      "flag": "realm_fog_deep",
+      "log": "A season that is also an afternoon. You learn their breathing method, which is mostly patience."
+     }
+    },
+    {
+     "text": "Ask what happens to people who stay",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "realm_fog_deep",
+      "comprehension": 4,
+      "log": "They take you to the orchard where the people who stay become trees. They are very happy trees."
+     },
+     "fail": {
+      "health": -10,
+      "flag": "realm_fog_deep",
+      "log": "They smile and say nothing. The orchard goes quiet around you, and you feel very much like fruit that is not yet ripe."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_fog_3",
+   "cat": "explore",
+   "arc": "The Island in the Fog",
+   "when": {
+    "flags": [
+     "realm_fog_deep"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_realm_fog_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The island's elder offers you the fruit of the oldest tree: a hundred more years, and you can never leave the fog again.",
+   "choices": [
+    {
+     "text": "Eat it and leave anyway",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "lifespan": 20,
+      "flag": "realm_fog_fruit",
+      "log": "You eat, and walk into the sea, and the fog lets you go, which it has never done before. Twenty of the hundred years walk out with you. The elder laughs, for the first time in a thousand years."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the fruit of the Island in the Fog",
+      "log": "The fruit burns going down and the fog closes on you like a fist. You wake on a beach far from the island with the taste of it in your mouth and none of its years."
+     }
+    },
+    {
+     "text": "Refuse it kindly",
+     "effects": {
+      "alignment": 6,
+      "lifespan": 4,
+      "comprehension": 6,
+      "flag": "realm_fog_refused",
+      "log": "The elder is pleased. You leave with a seed in your pocket that will not grow anywhere you have tried."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_forest_1",
+   "cat": "explore",
+   "arc": "The Spirit Forest",
+   "when": {
+    "realm": [
+     1,
+     6
+    ],
+    "age": [
+     15,
+     40
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "Every hundred years the Spirit Forest opens its borders for the length of one moon. Sects send their best young disciples. The forest sends back about half.",
+   "choices": [
+    {
+     "text": "Go in with a sect party",
+     "effects": {
+      "flag": "realm_forest_entered",
+      "fame": 3,
+      "log": "Twenty disciples, five elders' blessings and one rule: never eat anything that tells you its name."
+     }
+    },
+    {
+     "text": "Go in alone, by the back way",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "realm_forest_entered",
+      "luck": 3,
+      "log": "No sect party, no rules, no one to slow you down or help you."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The back way is not a way. You come out of it days later, scratched and humbled, at the edge of the forest you started from."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_forest_2",
+   "cat": "explore",
+   "arc": "The Spirit Forest",
+   "when": {
+    "flags": [
+     "realm_forest_entered"
+    ],
+    "age": [
+     15,
+     95
+    ],
+    "after": [
+     "dc_realm_forest_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A spirit beast of the forest, a white tiger the size of a house, is caught in a hunter's iron trap. Two sect disciples are already arguing about how much its core will sell for.",
+   "choices": [
+    {
+     "text": "Free the tiger",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "flag": "realm_forest_deep",
+      "alignment": 10,
+      "fame": 4,
+      "log": "It looks at you a long time when it is free, and walks away slowly, so you can follow."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a white tiger in the Spirit Forest",
+      "log": "The tiger cannot tell you from the hunters. You are lucky it takes only the one swipe."
+     }
+    },
+    {
+     "text": "Kill it with the disciples",
+     "effects": {
+      "alignment": -8,
+      "qi": 8,
+      "taels": 200,
+      "flag": "realm_forest_deep",
+      "log": "Its core is enormous. The forest is silent around you for the rest of the moon. Silent and watching."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_forest_3",
+   "cat": "explore",
+   "arc": "The Spirit Forest",
+   "when": {
+    "flags": [
+     "realm_forest_deep"
+    ],
+    "age": [
+     15,
+     99
+    ],
+    "after": [
+     "dc_realm_forest_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The forest's heart: the Thousand-Year Ginseng, which is also a small child made of roots, who has been expecting you.",
+   "choices": [
+    {
+     "text": "Ask what it wants",
+     "effects": {
+      "alignment": 8,
+      "lifespan": 8,
+      "meridianUp": true,
+      "flag": "realm_forest_friend",
+      "log": "It wants someone to remember it when the forest closes. You promise. It touches your wrist, and your meridians open like a door."
+     }
+    },
+    {
+     "text": "Take it",
+     "effects": {
+      "alignment": -12,
+      "qi": 20,
+      "lifespan": 10,
+      "flag": "realm_forest_root",
+      "log": "It does not scream. The forest does, and keeps screaming in your dreams for years. Your qi is enormous."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_stairs_1",
+   "cat": "explore",
+   "arc": "The Eclipse Stairs",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     25,
+     90
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "When the sun is eaten by the moon, a stair of light appears on the highest peak and climbs into the dark. Ninety-nine steps. Legend says the top is a hall of the immortals. Nobody who climbed past the fiftieth has been seen since.",
+   "choices": [
+    {
+     "text": "Climb the stair of light",
+     "effects": {
+      "flag": "realm_stairs_entered",
+      "log": "Each step is heavier. By the thirtieth you are carrying your whole life on your back."
+     }
+    },
+    {
+     "text": "Climb thirty steps and come down",
+     "effects": {
+      "comprehension": 6,
+      "log": "Thirty steps is enough to see the shape of the whole world for one moment. You remember it for the rest of your life."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_stairs_2",
+   "cat": "explore",
+   "arc": "The Eclipse Stairs",
+   "when": {
+    "flags": [
+     "realm_stairs_entered"
+    ],
+    "age": [
+     25,
+     95
+    ],
+    "after": [
+     "dc_realm_stairs_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The fiftieth step. Here the stair asks each climber a question, aloud, and the question is always the one they least want to answer.",
+   "choices": [
+    {
+     "text": "Answer honestly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "flag": "realm_stairs_deep",
+      "comprehension": 8,
+      "alignment": 4,
+      "log": "Your voice shakes, then steadies. The stair grows lighter."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the fiftieth step of the Eclipse Stairs",
+      "log": "Your answer is a lie, and the stair does not forgive it. You wake at the bottom, bruised from fifty steps of falling."
+     }
+    },
+    {
+     "text": "Turn and go down",
+     "effects": {
+      "lifespan": 2,
+      "comprehension": 4,
+      "log": "Fifty steps is more than most. You will wonder about the other forty-nine for the rest of your life."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_realm_stairs_3",
+   "cat": "explore",
+   "arc": "The Eclipse Stairs",
+   "when": {
+    "flags": [
+     "realm_stairs_deep"
+    ],
+    "age": [
+     25,
+     99
+    ],
+    "after": [
+     "dc_realm_stairs_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The ninety-ninth step. A hall with no walls, a table with two cups, and someone who looks exactly like you, much older, who has been waiting a very long time.",
+   "choices": [
+    {
+     "text": "Sit and drink with yourself",
+     "effects": {
+      "lifespan": 10,
+      "comprehension": 12,
+      "fame": 15,
+      "flag": "realm_stairs_top",
+      "log": "You talk until the eclipse ends. Then you are standing on the peak in sunlight, alone, older in a way no mirror shows, and certain."
+     }
+    },
+    {
+     "text": "Ask yourself how you die",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "lifespan": 6,
+      "luck": 10,
+      "flag": "realm_stairs_top",
+      "log": "Your older self laughs and tells you. It is a good death, and a long way off, and you decide not to tell anyone."
+     },
+     "fail": {
+      "lifespan": -5,
+      "log": "Your older self laughs and will not answer. The asking costs you five years, and you do not remember what they were."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

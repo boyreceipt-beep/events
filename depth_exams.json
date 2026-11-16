@@ -1,0 +1,711 @@
+{
+ "events": [
+  {
+   "id": "dc_exam_qi_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_qi",
+   "arc": "The Examination of Qi",
+   "text": "The examination hall of the {exam_sect} is empty except for a bowl of water and an old examiner. \"Put your palm over the water,\" she says. \"Do not touch it. Make it turn.\" Forty applicants this morning. Three have made it ripple.",
+   "choices": [
+    {
+     "text": "Breathe, and let your qi go down into the water",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "The water turns, slowly, then faster, until there is a small whirlpool in the bowl. The examiner writes your name down without looking up."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "The water does not move. Neither does the examiner's face. \"Next year,\" she says."
+     }
+    },
+    {
+     "text": "Ask her what the water is supposed to teach",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "\"That qi is water,\" she says, \"and you are the riverbed.\" You understand, and the water turns. She smiles for the first time today."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "\"If you have to ask,\" she says, \"not this year.\""
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "Before your palm is even over the bowl, the water leaps up to meet it. The examiner stands so fast her stool falls over. She sends for an elder."
+     }
+    },
+    {
+     "text": "Lay your other palm on the testing stone beside the bowl",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The testing stone beside the bowl lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The examiners stop pretending to be calm."
+     }
+    },
+    {
+     "text": "Bow, and leave the hall",
+     "effects": {
+      "examDecline": true,
+      "log": "You bow over the still water and walk out of the hall into the morning. Nobody stops you, and the examiner is already calling the next applicant."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_endurance_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_endurance",
+   "arc": "The Thousand Steps",
+   "text": "The examination of the {exam_sect}: two buckets of water on a pole, a thousand stone steps up the mountain, and a monk at the top with a stick of incense. Arrive before it burns out, with the buckets still full.",
+   "choices": [
+    {
+     "text": "Climb at a steady pace, step after step",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "At the nine hundredth step your legs stop belonging to you. You arrive anyway, with an inch of incense left and both buckets full. The monk nods once."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You arrive after the incense is ash, with half the water gone. The monk pours you a cup from what is left. \"Next year.\""
+     }
+    },
+    {
+     "text": "Run the first half and walk the rest",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "A gamble, and it holds: you reach the top with the last of the incense still glowing and the water trembling at the brim."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You spill a bucket on the five hundredth step. You finish the climb anyway, which the monk notes. But not this year."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "You climb the thousand steps without spilling a drop, and you are not even breathing hard. The monk lets the incense burn out while he stares at you, and then rings the bell for the abbot."
+     }
+    },
+    {
+     "text": "Lay a palm on the testing stone at the top of the steps",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "At the top, the monk has you lay a palm on the testing stone. It lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The monks stop pretending to be calm."
+     }
+    },
+    {
+     "text": "Set the buckets down, and walk back down",
+     "effects": {
+      "examDecline": true,
+      "log": "You set the buckets down on the step where you stand, bow to the monk far above, and walk home the way you came. Nobody calls after you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_sword_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_sword",
+   "arc": "The Examination of the Sword",
+   "text": "In the yard of the {exam_sect} a senior disciple waits with a wooden sword and a bored face. The examination is simple: touch any part of the senior with your sword within a hundred breaths. Nobody has done it this year.",
+   "choices": [
+    {
+     "text": "Attack, and keep attacking",
+     "roll": {
+      "stat": "sword",
+      "dc": 35
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "Ninety breaths of being knocked back. On the ninety-first you feint high and touch the senior's sleeve. The bored face is gone."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "A hundred breaths, and you never get close. The senior is not even sweating. \"Come back with more than enthusiasm,\" the examiner says."
+     }
+    },
+    {
+     "text": "Watch for fifty breaths, then strike once",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "Fifty breaths of watching. The senior favours the left foot. One strike, at the right moment, and the wooden blade taps a shoulder. The examiners look at each other."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You watch for fifty breaths and strike once, and the senior was waiting for exactly that. Not this year."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The wooden sword in your hand hums before you have moved. The senior steps back without meaning to. The examination ends there: an elder walks down from the hall to see who did that."
+     }
+    },
+    {
+     "text": "Lay a palm on the testing stone by the yard gate",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The testing stone by the gate lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The senior forgets to look bored."
+     }
+    },
+    {
+     "text": "Bow to the senior, and leave the yard",
+     "effects": {
+      "examDecline": true,
+      "log": "You bow to the senior and hand back the wooden sword. The bored face does not change. Nobody stops you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_mind_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_mind",
+   "arc": "The Examination of the Mind",
+   "text": "The {exam_sect} examines with a board, not a blade: a game set halfway, with your side losing. \"Win from here,\" says the examiner, \"or lose well. We will know the difference.\"",
+   "choices": [
+    {
+     "text": "Play for the win",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "Forty moves of digging out. On the forty-first you turn the corner, and the examiner sets down the stones. \"Enough. We will take you.\""
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You lose, and not well. The examiner explains why, at length, and tells you to come back next year."
+     }
+    },
+    {
+     "text": "Lose on purpose, slowly, to see what they are testing",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "You lose by half a stone, and every move of your losing is a move they wanted to see. The examiner laughs out loud. You are in."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You lose by a great deal more than you meant to. \"Interesting,\" says the examiner, which is not a yes."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "Halfway through the game the examiner stops looking at the board and starts looking at you. \"Your qi moves while you think,\" they say. \"Like a second player.\" Someone runs to fetch an elder."
+     }
+    },
+    {
+     "text": "Let the examiner read your roots with the testing stone, and leave the board",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The testing stone beside the board lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The examiner forgets the game entirely."
+     }
+    },
+    {
+     "text": "Bow to the board, and leave the game",
+     "effects": {
+      "examDecline": true,
+      "log": "You bow to the board, leave the stones where they lie, and walk out. The examiner turns the board over without a word."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_poison_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_poison",
+   "arc": "The Examination of Poisons",
+   "text": "Nine cups of tea on a table in the {exam_sect}'s hall. Eight are only tea. The examiner smiles very pleasantly. \"Drink one,\" she says. \"Choose well. We do keep an antidote. Usually.\"",
+   "choices": [
+    {
+     "text": "Smell every cup, and choose",
+     "roll": {
+      "stat": "medicine",
+      "dc": 40
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "The seventh cup smells faintly of almonds. You drink the second. The examiner pours the seventh into a plant pot, and the plant dies. \"Welcome.\""
+     },
+     "fail": {
+      "examFail": true,
+      "log": "You choose wrong. The antidote is real, but the night is very long. They tell you to come back next year, if you still want to."
+     }
+    },
+    {
+     "text": "Ask her to drink one first",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "She laughs, picks a cup and drinks it without looking. You drink the same one. \"That,\" she says, \"is the right answer.\""
+     },
+     "fail": {
+      "examFail": true,
+      "log": "\"No,\" she says pleasantly, and waits. You leave instead. Not this year."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "You reach for a cup and your meridians go cold in warning before your hand is halfway there. You point at the poisoned cup without smelling it. The examiner stops smiling and sends for an elder."
+     }
+    },
+    {
+     "text": "Lay a palm on the testing stone beside the tea",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The testing stone beside the tea lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The examiner stops smiling and starts writing."
+     }
+    },
+    {
+     "text": "Bow, and leave the tea untouched",
+     "effects": {
+      "examDecline": true,
+      "log": "You bow, leave all nine cups full, and walk out. Behind you the examiner pours them into a plant pot, one by one. Nobody stops you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_blood_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_blood",
+   "arc": "The Examination of the Fist",
+   "text": "The examination of the {exam_sect} is a ring of rope in a muddy yard, and a scarred brute inside it. \"Still standing when the drum stops,\" the chief says, \"and you eat with us tonight.\"",
+   "choices": [
+    {
+     "text": "Fight",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The scarred brute"
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "The drum stops. You are still standing, just. The brute laughs and puts an arm round your neck, which you learn is affection."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "The drum is still going when you hit the mud for the last time. They throw you out of the gate with a bowl of soup. Next year."
+     }
+    },
+    {
+     "text": "Stay out of reach until the drum stops",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "You dance round the ring until the brute is roaring and the crowd is laughing at the brute, not at you. The drum stops. You are in."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "Out of reach, for a while. Then not. Next year."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The brute takes one swing, it lands, and it is the brute who staggers. The yard goes quiet. The chief comes down from the platform to look at you in person."
+     }
+    },
+    {
+     "text": "Slap a palm on the testing stone at the edge of the ring",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The testing stone at the edge of the ring lights up one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The drum stops by itself."
+     }
+    },
+    {
+     "text": "Duck under the rope, and walk away",
+     "effects": {
+      "examDecline": true,
+      "log": "You duck under the rope and walk out of the yard. The drum stops. Nobody throws anything, which you take as a courtesy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_shadow_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_shadow",
+   "arc": "The Examination of Shadows",
+   "text": "There is no gate. A note slipped under your door says: tonight, take the jade from the magistrate's desk and leave it on the {exam_sect}'s table at the crossroads inn. Be seen by anyone and do not come.",
+   "choices": [
+    {
+     "text": "Over the roofs",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "Roof to roof, in and out, in the time it takes the watchman to yawn. The jade is on the table before dawn. A second note appears in its place: welcome."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "A dog barks. A lamp is lit. You get away, but you were seen, and you know it. No note comes."
+     }
+    },
+    {
+     "text": "Through the front door, dressed as a servant",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "Nobody looks at a servant. You carry the jade out on a tea tray. Someone at the inn laughs very quietly in the dark."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "The steward asks your name, and you give the wrong one. No note comes."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "You move through the magistrate's house and the cold in your meridians moves with you: the lamps you pass gutter, the guards shiver and look away. At the inn, someone is already waiting for you in person."
+     }
+    },
+    {
+     "text": "Leave nothing behind but a pure root, quiet as still water",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "Your pure roots leave no more trace than still water. The lamps do not flicker, the dogs do not wake, and at the inn a second note is already waiting: welcome."
+     }
+    },
+    {
+     "text": "Burn the note, and go back to bed",
+     "effects": {
+      "examDecline": true,
+      "log": "You hold the note in the lamp flame until it is ash, and go back to bed. The magistrate keeps his jade. No second note comes, and you do not look for one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_exam_demon_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": false,
+   "trigger": "exam_demon",
+   "arc": "The Trial of the Heart",
+   "text": "The {exam_sect} does not test your fists. It tests your heart. A prisoner kneels in a cave lit by red lamps, and the cult elder holds out a knife, handle first. \"He betrayed us,\" the elder says. \"Or he did not. Show us what you are.\"",
+   "choices": [
+    {
+     "text": "Take the knife",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "You take it. What happens next you will not think about again for many years. The elder nods. The cult opens its arms."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "Your hand shakes. The elder takes the knife back, gently. \"Not yet,\" he says. \"Next year, perhaps.\""
+     }
+    },
+    {
+     "text": "Cut the prisoner's ropes instead, and look the elder in the eye",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "examPass": "good",
+      "log": "A long silence. Then the elder laughs. \"The Heavenly Demon did that once,\" he says. \"It was a test of the test.\" You are in, and the prisoner lives."
+     },
+     "fail": {
+      "examFail": true,
+      "log": "The elder does not laugh. You are thrown out of the cave, alive, which they tell you is a kindness. Next year."
+     }
+    },
+    {
+     "text": "Let the examiners feel your meridians",
+     "req": {
+      "meridians": [
+       "heavenly",
+       "nineYin",
+       "nineYang",
+       "demonBody",
+       "profoundYin",
+       "swordBones",
+       "frostJade",
+       "fiveElements",
+       "chaosBody"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "Before the elder has said a word, the red lamps lean toward you, every flame at once. The prisoner whimpers. The elder drops the knife and goes down on one knee."
+     }
+    },
+    {
+     "text": "Hold your palm out over the red lamps and let them read your roots",
+     "req": {
+      "flags": [
+       "root_pure"
+      ]
+     },
+     "effects": {
+      "examPass": "great",
+      "log": "The red lamps lean toward your palm and burn one clear colour, edge to edge, the way it is supposed to and almost never does. A pure root. The elder lowers the knife."
+     }
+    },
+    {
+     "text": "Lay down the knife, and leave",
+     "effects": {
+      "examDecline": true,
+      "log": "You lay the knife on the stone, bow, and walk out between the red lamps. Nobody follows. The prisoner watches you to the mouth of the cave."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_recruit_1",
+   "cat": "sect",
+   "weight": 5,
+   "once": true,
+   "trigger": "sect_recruit",
+   "arc": "The Envoy at the Door",
+   "text": "An elder of the {exam_sect} is at your family's door, travel-stained and out of breath, as if afraid someone else would get here first. \"Your meridians,\" the elder says, before even sitting down. \"We felt them from the mountain. The {exam_sect} was made for a body like yours. Come with me, and you will not start at the bottom.\"",
+   "choices": [
+    {
+     "text": "Go with the envoy",
+     "effects": {
+      "examPass": "great",
+      "log": "You leave that week, with a bundle and your family waving from the gate. No examination: the elder's word is the examination."
+     }
+    },
+    {
+     "text": "Say no. You will choose your own sect when you are ready",
+     "effects": {
+      "examDecline": true,
+      "alignment": 2,
+      "luck": 3,
+      "log": "The elder stares, then bows. \"When you are ready,\" the elder says, \"the gate will be open.\" You are not sure it will be."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_sectfit_1",
+   "cat": "sect",
+   "weight": 6,
+   "once": true,
+   "arc": "Made for This Sect",
+   "when": {
+    "flags": [
+     "sect_fit"
+    ],
+    "realm": [
+     1,
+     9
+    ]
+   },
+   "text": "An old elder of {sect} who never speaks to anyone watches you train for a whole morning. At noon the elder says: \"Our founder had a body like yours. Everything we teach was written for it. You are not learning our arts. You are remembering them.\" Then the elder opens a cabinet nobody has opened in forty years.",
+   "choices": [
+    {
+     "text": "Read what is in the cabinet",
+     "effects": {
+      "comprehension": 6,
+      "qi": 25,
+      "log": "The founder's own notes, written for a body exactly like yours. For a year you train twice as hard and it feels like half."
+     }
+    },
+    {
+     "text": "Ask the elder to teach it to you",
+     "effects": {
+      "qi": 20,
+      "strength": 4,
+      "merit": 40,
+      "log": "The elder teaches you for a season, slowly, the way the founder taught the elder. The sect notices who the old one has chosen."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

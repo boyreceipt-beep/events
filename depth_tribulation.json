@@ -1,0 +1,258 @@
+{
+ "events": [
+  {
+   "id": "dc_trib_watcher_1",
+   "cat": "insight",
+   "arc": "The Tribulation Watcher",
+   "when": {
+    "realm": [
+     2,
+     9
+    ],
+    "age": [
+     18,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "An old man sits on the hill every time someone in the province faces a heavenly tribulation. He has watched three hundred. He came to watch yours, and he is taking notes.",
+   "choices": [
+    {
+     "text": "Ask what he writes",
+     "effects": {
+      "comprehension": 5,
+      "flag": "trib_watcher_met",
+      "log": "'How they stand,' he says. 'Most lean forward. The ones who live lean back.'"
+     }
+    },
+    {
+     "text": "Ignore him",
+     "effects": {
+      "log": "He does not mind. He writes it down."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trib_watcher_2",
+   "cat": "insight",
+   "arc": "The Tribulation Watcher",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     20,
+     99
+    ],
+    "after": [
+     "dc_trib_watcher_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "The tribulation watcher is dying, and wants to give his notes to someone who has stood under the bolts and lived. Three hundred tribulations, every one described.",
+   "choices": [
+    {
+     "text": "Read every page",
+     "effects": {
+      "comprehension": 10,
+      "lifespan": 3,
+      "flag": "trib_watcher_notes",
+      "log": "Three hundred ways to stand under the sky. You understand, finally, why the ones who live lean back."
+     }
+    },
+    {
+     "text": "Copy it for every sect",
+     "effects": {
+      "fame": 10,
+      "alignment": 8,
+      "log": "The next generation's tribulations go a little better because of him. You put his name on the cover."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trib_wood_1",
+   "cat": "explore",
+   "arc": "Lightning-Struck Wood",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     20,
+     99
+    ],
+    "chance": 0.5
+   },
+   "weight": 8,
+   "text": "The tree you sheltered under during your last tribulation is dead, black, and humming. A carpenter of the old school says lightning-struck wood from a tribulation is worth a sect's treasury.",
+   "choices": [
+    {
+     "text": "Carve a sword from it",
+     "effects": {
+      "fame": 6,
+      "strength": 4,
+      "flag": "trib_wood_sword",
+      "log": "A black wooden sword that cuts like steel and crackles in the rain."
+     }
+    },
+    {
+     "text": "Sell it to the carpenter",
+     "effects": {
+      "taels": 500,
+      "log": "He nearly cries with joy. You buy a house with a better tree."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trib_debt_1",
+   "cat": "life",
+   "arc": "The Tribulation's Debt",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     18,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "A farmer comes to your gate: your last tribulation's lightning burned his barn and his ox. He is not angry. He would like to know who to send the bill to.",
+   "choices": [
+    {
+     "text": "Pay him three times over",
+     "effects": {
+      "taels": -150,
+      "alignment": 8,
+      "flag": "trib_debt_paid",
+      "log": "He goes home happy. Heaven, they say, notices that kind of thing."
+     }
+    },
+    {
+     "text": "Tell him to send it to heaven",
+     "effects": {
+      "fame": 3,
+      "alignment": -4,
+      "log": "He actually does: a letter burned at the temple. The next storm misses his farm and hits yours."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trib_debt_2",
+   "cat": "life",
+   "arc": "The Tribulation's Debt",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     25,
+     99
+    ],
+    "flags": [
+     "trib_debt_paid"
+    ],
+    "after": [
+     "dc_trib_debt_1"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "The farmer's son, now grown, faces his own first tribulation. Your old debt makes him family, in a way. He asks you to stand on the hill.",
+   "choices": [
+    {
+     "text": "Stand beside him under the bolts",
+     "roll": {
+      "stat": "body",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "alignment": 8,
+      "flag": "trib_debt_stood",
+      "log": "Heaven's bolts split between two people. He lives. You take half of a stranger's storm and stand up after."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "someone else's tribulation",
+      "log": "The bolts do not split. You take the weight of both of you and wake under the hill with the farmer's son kneeling over you, alive, and weeping."
+     }
+    },
+    {
+     "text": "Teach him how to stand",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 6,
+      "log": "Lean back. He does, and lives, and names his first son after you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trib_rival_1",
+   "cat": "rival",
+   "arc": "Two Tribulations",
+   "when": {
+    "realm": [
+     3,
+     9
+    ],
+    "age": [
+     20,
+     99
+    ],
+    "chance": 0.4
+   },
+   "weight": 8,
+   "text": "{npc}, your rival of many years, faces a tribulation on the same night as yours. Heaven, in a hurry, sends one storm for both of you. You are on two peaks a li apart.",
+   "choices": [
+    {
+     "text": "Draw the bolts toward yourself",
+     "roll": {
+      "stat": "body",
+      "dc": 65
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "alignment": 10,
+      "flag": "trib_rival_saved",
+      "log": "Two storms' worth of lightning. You stand up afterwards, and look across, and {npc} is standing too, staring."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a storm meant for two",
+      "log": "Too much sky for one body. You wake in a crater with every bone complaining, and across the valley your rival stands, singed and furious, alive."
+     }
+    },
+    {
+     "text": "Weather your own and watch",
+     "effects": {
+      "comprehension": 6,
+      "log": "You both live. Afterwards neither of you mentions it, and both of you remember."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "rival"
+   }
+  }
+ ],
+ "mwPass": 1
+}

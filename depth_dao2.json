@@ -1,0 +1,367 @@
+{
+ "events": [
+  {
+   "id": "dc_dao_fire_1",
+   "cat": "insight",
+   "arc": "The Dao of Fire",
+   "when": {
+    "stat": {
+     "alchemy": 60
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "The furnace speaks to you now. Not words, a temperature: a pill wants three breaths more heat, and you give it, and the pill comes out with a cloud of fragrance that brings the neighbours to the door.",
+   "choices": [
+    {
+     "text": "Listen to the fire for a season",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_fire_1",
+      "log": "You learn its moods: patient, greedy, sulky, generous. By winter it will do anything you ask."
+     }
+    },
+    {
+     "text": "Sell the pill to the neighbours",
+     "effects": {
+      "taels": 120,
+      "flag": "dao_fire_1",
+      "log": "Good business. The fire waits, crackling."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_fire_2",
+   "cat": "insight",
+   "arc": "The Dao of Fire",
+   "when": {
+    "stat": {
+     "alchemy": 70
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_fire_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The furnace explodes in the night, and you walk into the flame instead of away from it, because something in you knows the fire will not hurt someone who understands it.",
+   "choices": [
+    {
+     "text": "Stand in the fire",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 75
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_fire",
+      "fame": 12,
+      "lifespan": 4,
+      "log": "The Dao of Fire. You come out with your hair smoking and your skin untouched, carrying the best pill of your life."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "an alchemy furnace, from the inside",
+      "log": "The fire is not merciful. You crawl out burned and humbled, and the new furnace sits cold and smug in the ashes."
+     }
+    },
+    {
+     "text": "Put it out and rebuild",
+     "effects": {
+      "comprehension": 5,
+      "flag": "dao_fire_declined",
+      "log": "Sensible. The new furnace is better. The fire forgives you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_metal_1",
+   "cat": "insight",
+   "arc": "The Dao of Metal",
+   "when": {
+    "stat": {
+     "refining": 60
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "At the forge you can hear the iron: where it is tired, where it wants to bend, where it will break. A master smith watching you work goes quiet, and then asks to watch again.",
+   "choices": [
+    {
+     "text": "Forge by hearing alone",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_metal_1",
+      "log": "Eyes closed, hammer singing. The blade comes out true on the first quench."
+     }
+    },
+    {
+     "text": "Teach the smith what you hear",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "flag": "dao_metal_1",
+      "log": "He hears it too, faintly, after a month. He is seventy and he cries about it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_metal_2",
+   "cat": "insight",
+   "arc": "The Dao of Metal",
+   "when": {
+    "stat": {
+     "refining": 70
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_metal_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sword from a fallen sect, shattered into a hundred pieces. Its owner's grandson asks you to remake it, and every piece still remembers a shape.",
+   "choices": [
+    {
+     "text": "Listen to every piece",
+     "roll": {
+      "stat": "refining",
+      "dc": 75
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_metal",
+      "fame": 15,
+      "comprehension": 8,
+      "log": "The Dao of Metal. The sword is whole again, and better, and it knows your name. No blade in the murim will cut you cleanly again."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "a sword that did not want to be remade",
+      "log": "A hundred pieces, a hundred edges. The sword does not want to be remade, and makes its point on your hands."
+     }
+    },
+    {
+     "text": "Forge a new sword from the pieces",
+     "effects": {
+      "fame": 8,
+      "flag": "dao_metal_declined",
+      "log": "A fine new sword, and the grandson is grateful. The old shape stays in the pieces you did not use."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dao_space_1",
+   "cat": "insight",
+   "arc": "The Dao of Space",
+   "when": {
+    "stat": {
+     "arrays": 60
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You lay an array in the garden and step into it, and step out of it on the other side of the house, and for a moment you did not cross the space between. You simply were not in it.",
+   "choices": [
+    {
+     "text": "Try it again, further",
+     "roll": {
+      "stat": "arrays",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 8,
+      "flag": "dao_space_1",
+      "log": "The village well, the market, the next hill. You come back each time a little dizzier and a lot more sure."
+     },
+     "fail": {
+      "health": -15,
+      "flag": "dao_space_1",
+      "log": "The array drops you into the village well instead of the market. You climb out wet and dizzy, and sure you were not in the water the whole time."
+     }
+    },
+    {
+     "text": "Erase the array",
+     "effects": {
+      "comprehension": 4,
+      "flag": "dao_space_1",
+      "log": "Some doors should open slowly. You know where this one is."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_space_2",
+   "cat": "insight",
+   "arc": "The Dao of Space",
+   "when": {
+    "stat": {
+     "arrays": 70
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_space_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sealed tomb that no one has entered in a thousand years, guarded by an array so old it has become part of the mountain. You can see the fold in it, a gap no wider than a thought.",
+   "choices": [
+    {
+     "text": "Step through the fold",
+     "roll": {
+      "stat": "arrays",
+      "dc": 75
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_space",
+      "fame": 15,
+      "manual": 3,
+      "log": "The Dao of Space. The tomb's master left a manual for whoever could arrive like that. You can be somewhere else now, for one breath, whenever you choose."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "a fold in an ancient array",
+      "log": "The fold shuts early. You come out on the wrong side with half your robe left behind, and the tomb is sealed again."
+     }
+    },
+    {
+     "text": "Leave the tomb sealed",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 6,
+      "flag": "dao_space_declined",
+      "log": "The fold closes politely behind your decision. You understand space very well, and respect it more."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_distance_1",
+   "cat": "insight",
+   "arc": "The Dao of Distance",
+   "when": {
+    "stat": {
+     "archery": 55
+    },
+    "age": [
+     20,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "You loose an arrow at a crow on a far ridge and know, before it leaves the string, that it will land. Distance has stopped being a thing between you and what you aim at.",
+   "choices": [
+    {
+     "text": "Shoot farther",
+     "effects": {
+      "comprehension": 6,
+      "flag": "dao_distance_1",
+      "log": "A li. Two li. The arrows land where you look. Hunters in the hills start leaving offerings at your door."
+     }
+    },
+    {
+     "text": "Let the crow go",
+     "effects": {
+      "alignment": 4,
+      "flag": "dao_distance_1",
+      "log": "You loose the next one into the sky, at nothing, and feel it find something anyway."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dao_distance_2",
+   "cat": "insight",
+   "arc": "The Dao of Distance",
+   "when": {
+    "stat": {
+     "archery": 65
+    },
+    "age": [
+     22,
+     95
+    ],
+    "after": [
+     "dc_dao_distance_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A bandit king holds a town from a tower five li away, out of any bow's range. The townsfolk look at you, because they have heard the stories.",
+   "choices": [
+    {
+     "text": "Shoot from the town wall",
+     "roll": {
+      "stat": "archery",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "flag": "dao_distance",
+      "fame": 18,
+      "alignment": 6,
+      "log": "One arrow, five li. The Dao of Distance: from now on there is no such thing as too far, for you."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -3,
+      "deathCause": "a bandit king's tower",
+      "log": "The arrow falls short, and so does the town's hope. The tower's archers return the favour, and you leave with a wound and a worse name."
+     }
+    },
+    {
+     "text": "Walk to the tower instead",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 10,
+      "flag": "dao_distance_declined",
+      "log": "Five li on foot and a fight at the end. Some things you want to see up close."
+     },
+     "fail": {
+      "health": -30,
+      "log": "Five li on foot, and the bandit king meets you at the end with forty men. You are carried home on a door."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

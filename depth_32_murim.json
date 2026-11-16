@@ -1,0 +1,2344 @@
+{
+ "events": [
+  {
+   "id": "dp32m_shrine_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "A village on the river keeps a shrine with a clay figure in it. The figure has your face, badly, and holds a sword the wrong way round. {npc}, its keeper, explains: five hundred years ago a wanderer saved the first families from a flood, and they have lit a lamp for that wanderer every night since. {He} does not know who you are.",
+   "npc": {
+    "role": "dp32m_keeper",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_keeper",
+     "opinion": 30,
+     "ageAbs": 52
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Shrine at Willow Ford",
+   "choices": [
+    {
+     "text": "Tell {npc} who you are",
+     "effects": {
+      "log": "{npc} looks at you, at the clay figure, at you again, and sits down on the shrine step. \"The sword,\" {he} says at last. \"We always wondered about the sword.\"",
+      "fame": 4,
+      "flag": "dp32m_shrine_told",
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "Light the lamp yourself tonight, and say nothing",
+     "effects": {
+      "log": "You light it. {npc} thanks the polite stranger and goes home to supper. The flame in front of your own face burns very straight.",
+      "alignment": 3,
+      "comprehension": 2,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "Turn the clay sword the right way round while nobody looks",
+     "effects": {
+      "log": "In the morning {npc} finds it turned and calls the whole village. By noon it is a miracle. By evening there are three versions of what it means.",
+      "luck": 3,
+      "flag": "dp32m_shrine_sword",
+      "npcFlag": "dp32m_shrine_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_shrine_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} sends word down the river: a county magistrate wants the shrine's land for a granary, and has said the village may keep its superstitions somewhere smaller. The keeper asks, carefully, whether the wanderer of the shrine has an opinion.",
+   "npc": {
+    "role": "dp32m_keeper"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_shrine_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "dp32m_shrine_who"
+    ]
+   },
+   "arc": "The Shrine at Willow Ford",
+   "choices": [
+    {
+     "text": "Go to the magistrate in person",
+     "effects": {
+      "log": "The magistrate is young and sure of the law. You are very old and sure of the river. You point out where the flood came to five hundred years ago, by the old marks on the granary site. The granary is built on the other bank.",
+      "fame": 5,
+      "alignment": 3,
+      "flag": "dp32m_shrine_saved",
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "Buy the land outright and give it to the village",
+     "effects": {
+      "log": "Silver settles it in an afternoon. {npc} files the deed in the shrine box, under the clay feet, where the important things go.",
+      "taels": -60,
+      "alignment": 4,
+      "flag": "dp32m_shrine_saved",
+      "npcFlag": "dp32m_shrine_who"
+     },
+     "req": {
+      "minTaels": 60
+     }
+    },
+    {
+     "text": "Let the village decide its own fight",
+     "effects": {
+      "log": "They decide to petition. It takes them two years and every brush in the county, and they win, and they are prouder of it than of any wanderer.",
+      "comprehension": 3,
+      "charm": 2,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_shrine_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The shrine has a new problem: pilgrims. Word of the turned sword or the old wanderer has gone up and down the river, and now there are incense sellers, a fortune-teller and two different men selling your sword. {npc} is tired.",
+   "npc": {
+    "role": "dp32m_keeper"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_shrine_2"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "dp32m_shrine_who"
+    ]
+   },
+   "arc": "The Shrine at Willow Ford",
+   "choices": [
+    {
+     "text": "Ask the river for one more flood, a small one",
+     "effects": {
+      "log": "It comes up to the ankles of the incense stalls and no further. The sellers decide the shrine is unlucky for business. {npc} sweeps out the mud singing.",
+      "luck": 3,
+      "alignment": 2,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "Let it grow: a village needs a living",
+     "effects": {
+      "log": "Within ten years the ford has an inn, a ferry and a school. The clay figure gets a new coat of paint every spring and looks less like you each time.",
+      "fame": 6,
+      "charm": 2,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "Teach {npc} a few forms, so the shrine has a guardian",
+     "effects": {
+      "log": "{npc} is a poor student and a stubborn one. In the end {he} can stand in the gate with a staff and look as if {he} knows what {he} is doing, which is most of it.",
+      "strength": 2,
+      "comprehension": 2,
+      "flag": "dp32m_shrine_guard",
+      "npcFlag": "dp32m_shrine_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_shrine_4",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is old now, and has chosen the next keeper: a child of the ferry family who argues with everyone. Before {he} hands over the key, {he} asks you one thing: what to tell the new keeper about the wanderer.",
+   "npc": {
+    "role": "dp32m_keeper"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_shrine_3"
+    ],
+    "minYearsAfter": 12,
+    "npcFlags": [
+     "dp32m_shrine_who"
+    ]
+   },
+   "arc": "The Shrine at Willow Ford",
+   "choices": [
+    {
+     "text": "\"Tell the truth, and that I am still about\"",
+     "effects": {
+      "log": "{npc} tells it. The new keeper does not believe a word until you walk in, and then argues with you about the sword. The lamp is in good hands.",
+      "fame": 4,
+      "alignment": 3,
+      "flag": "dp32m_shrine_heir",
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "\"Say the wanderer moved on\"",
+     "effects": {
+      "log": "So the story ends where stories should, with somebody walking away along a river. You watch the new keeper light the lamp from across the water, and it is enough.",
+      "comprehension": 5,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    },
+    {
+     "text": "\"Say nothing. Let the child find a wanderer of their own\"",
+     "effects": {
+      "log": "{npc} laughs until {he} has to sit down. \"That is exactly what you would say,\" {he} says. The key changes hands. The lamp does not go out.",
+      "luck": 4,
+      "charm": 2,
+      "npcFlag": "dp32m_shrine_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_feud_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A young swordsman blocks the mountain path, very formal and very pale. {npc} is the great-great-great-grandchild of a man you fought six hundred years ago, and the family has kept the grudge like an heirloom. {He} has come to end it, one way or the other.",
+   "npc": {
+    "role": "dp32m_heir",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_heir",
+     "opinion": -30,
+     "ageAbs": 22
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Feud of the Fifth Generation",
+   "choices": [
+    {
+     "text": "Ask {npc} what the grudge was about",
+     "effects": {
+      "log": "{npc} opens {his} mouth, closes it, and admits that nobody in the family is sure any more. A horse, perhaps. Or an insult at a wedding. {He} goes home to ask {his} grandmother.",
+      "comprehension": 3,
+      "flag": "dp32m_feud_asked",
+      "npcFlag": "dp32m_feud_who"
+     }
+    },
+    {
+     "text": "Accept the challenge, gently",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You take {his} sword away with two fingers and hand it back hilt first. {npc} stares at it for a long time.",
+      "fame": 4,
+      "flag": "dp32m_feud_won",
+      "npcFlag": "dp32m_feud_who"
+     },
+     "fail": {
+      "log": "{npc} is better than {his} family deserved. The cut is shallow and the shame is all yours. {He} leaves shaking, as surprised as you.",
+      "health": -12,
+      "flag": "dp32m_feud_lost",
+      "woundOnly": true,
+      "npcFlag": "dp32m_feud_who"
+     }
+    },
+    {
+     "text": "Walk past as if {he} were not there",
+     "effects": {
+      "log": "You walk round {him} the way water walks round a stone. Behind you {npc} shouts the family's words at your back, and they sound much smaller in the open air.",
+      "alignment": -1,
+      "luck": 2,
+      "npcFlag": "dp32m_feud_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_feud_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes back with a box of family papers and a grandmother's guess. The grudge began with a debt of twelve taels, a borrowed horse and a wedding song with the wrong name in it. The family has spent more than that on swords every year since.",
+   "npc": {
+    "role": "dp32m_heir"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_feud_1"
+    ],
+    "minYearsAfter": 3,
+    "npcFlags": [
+     "dp32m_feud_who"
+    ]
+   },
+   "arc": "The Feud of the Fifth Generation",
+   "choices": [
+    {
+     "text": "Pay the twelve taels, with five centuries of interest in kindness",
+     "effects": {
+      "log": "You pay the twelve taels into {his} hands and walk {him} through every form the old man taught you before you fought. {npc} goes home with silver and a better guard.",
+      "taels": -12,
+      "alignment": 4,
+      "flag": "dp32m_feud_paid",
+      "npcFlag": "dp32m_feud_who"
+     },
+     "req": {
+      "minTaels": 12
+     }
+    },
+    {
+     "text": "Sing the wedding song with the right name",
+     "effects": {
+      "log": "You remember it. That is the strange part. {npc} writes it down and carries it home, and the family sings it at the next wedding, and somebody cries.",
+      "charm": 4,
+      "flag": "dp32m_feud_paid",
+      "npcFlag": "dp32m_feud_who"
+     }
+    },
+    {
+     "text": "Tell {him} a grudge is a choice made every morning",
+     "effects": {
+      "log": "{npc} listens with the face of the very young being told something true. {He} does not answer. {He} does not draw a sword either.",
+      "comprehension": 4,
+      "npcFlag": "dp32m_feud_who"
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "dp32m_feud_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A letter in {npc}'s hand, years later: the family has taken down the old banner and put up a plain board with your name on it among the guests of honour. {He} has a child now, and asks whether you would come to the naming.",
+   "npc": {
+    "role": "dp32m_heir"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_feud_2"
+    ],
+    "minYearsAfter": 8,
+    "flags": [
+     "dp32m_feud_paid"
+    ],
+    "npcFlags": [
+     "dp32m_feud_who"
+    ]
+   },
+   "arc": "The Feud of the Fifth Generation",
+   "choices": [
+    {
+     "text": "Go, and bring a gift",
+     "effects": {
+      "log": "You give the child a wooden horse, which makes the old men of the family laugh until they wheeze. Six hundred years of grudge end with a toy on the floor.",
+      "alignment": 5,
+      "fame": 3,
+      "flag": "dp32m_feud_ended",
+      "npcFlag": "dp32m_feud_who"
+     }
+    },
+    {
+     "text": "Send a blessing and stay away",
+     "effects": {
+      "log": "You write the child a name-blessing in your best hand. The family frames it and hangs it where the banner used to be.",
+      "comprehension": 3,
+      "charm": 2,
+      "npcFlag": "dp32m_feud_who"
+     }
+    },
+    {
+     "text": "Go, and tell the whole story at the feast",
+     "effects": {
+      "log": "The feast hears about the horse, the song and the twelve taels, and the tale gets better with every cup of tea poured. {npc} laughs louder than anyone.",
+      "charm": 4,
+      "fame": 2,
+      "flag": "dp32m_feud_ended",
+      "npcFlag": "dp32m_feud_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_history_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A young scholar of the Imperial Academy arrives with brushes, paper and a list of questions. {npc} is writing the official history of the last six centuries of the murim, and in three of its chapters you appear as a monster, a god and a misprint. {He} would like to know which.",
+   "npc": {
+    "role": "dp32m_scholar",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_scholar",
+     "opinion": 10,
+     "ageAbs": 26
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Official History",
+   "choices": [
+    {
+     "text": "Answer every question honestly",
+     "effects": {
+      "log": "It takes a month. {npc} fills nine notebooks and grows very quiet near the end, the way people do when they find out how much of history was weather and luck.",
+      "comprehension": 4,
+      "flag": "dp32m_hist_true",
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Tell {him} a better story than the truth",
+     "effects": {
+      "log": "You give {him} a dragon, a lost love and a duel on a frozen lake. {npc} writes it all down with shining eyes. It is not true. It will be.",
+      "fame": 6,
+      "flag": "dp32m_hist_myth",
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Decline to be history while still alive",
+     "effects": {
+      "log": "{npc} bows and goes. The chapter on you ends with \"of whom little is certain\", which is the best line in the book.",
+      "luck": 3,
+      "npcFlag": "dp32m_history_who"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dp32m_history_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The history is finished, and the Academy has a problem. The Grand Secretary wants the chapter on you cut: a living master who outlasted eight emperors is bad for the court's sense of permanence. {npc} asks what to do.",
+   "npc": {
+    "role": "dp32m_scholar"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_history_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dp32m_history_who"
+    ]
+   },
+   "arc": "The Official History",
+   "choices": [
+    {
+     "text": "Tell {npc} to keep it and take the consequences",
+     "effects": {
+      "log": "{npc} keeps it. {He} is sent to a provincial post for ten years and writes the best local gazetteer the empire has ever had.",
+      "alignment": 4,
+      "comprehension": 2,
+      "flag": "dp32m_hist_kept",
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Let them cut it",
+     "effects": {
+      "log": "The chapter goes. The book is shorter, and the court sleeps better. {npc} keeps the notebooks in a lacquered box under {his} bed.",
+      "luck": 2,
+      "charm": 2,
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Visit the Grand Secretary yourself",
+     "effects": {
+      "log": "The Grand Secretary is seventy, and you have known the family since it sold vegetables. The chapter stays. At the door, the Grand Secretary asks how long you think the dynasty has.",
+      "fame": 5,
+      "flag": "dp32m_hist_kept",
+      "npcFlag": "dp32m_history_who"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dp32m_history_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Generations of students have now read the official history. A boy from a far county walks for two months to see if the master in chapter forty is real, and finds {npc} first, white-haired, keeping the Academy's archive.",
+   "npc": {
+    "role": "dp32m_scholar"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_history_2"
+    ],
+    "minYearsAfter": 40,
+    "flags": [
+     "dp32m_hist_kept"
+    ],
+    "npcFlags": [
+     "dp32m_history_who"
+    ]
+   },
+   "arc": "The Official History",
+   "choices": [
+    {
+     "text": "Let {npc} introduce you",
+     "effects": {
+      "log": "{npc} does it beautifully, as if presenting an old book. The boy faints. You both laugh about it for a week.",
+      "fame": 3,
+      "charm": 3,
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Teach the boy one thing and send the boy home",
+     "effects": {
+      "log": "You teach the boy how to sit still. The boy goes home, sits still for forty years and becomes the best judge that county ever had.",
+      "alignment": 4,
+      "comprehension": 2,
+      "npcFlag": "dp32m_history_who"
+     }
+    },
+    {
+     "text": "Give {npc} the last chapter: the one nobody wrote",
+     "effects": {
+      "log": "You tell {npc} what happened after the book ended. {He} writes it in a small hand on extra pages and sews them in. It is called \"Addenda\", and it is the only part with jokes.",
+      "comprehension": 5,
+      "npcFlag": "dp32m_history_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_blade_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, a dealer in old weapons, sends you a catalogue with one page folded down. Lot nineteen is a sword you carried four hundred years ago and lost in a river. The catalogue says it is cursed, haunted and very expensive.",
+   "npc": {
+    "role": "dp32m_broker",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_broker",
+     "opinion": 0,
+     "ageAbs": 45
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Blade at the Auction",
+   "choices": [
+    {
+     "text": "Go to the auction and watch",
+     "effects": {
+      "log": "Three great houses bid for it, two of them with money they do not have. It goes to a fat merchant who wants it over the bed. You know where it is now.",
+      "comprehension": 2,
+      "flag": "dp32m_blade_seen",
+      "npcFlag": "dp32m_blade_who"
+     }
+    },
+    {
+     "text": "Write to {npc}: the sword is not haunted, only old",
+     "effects": {
+      "log": "{npc} writes back that this is very bad for the price and asks whether you would at least say it hums.",
+      "luck": 3,
+      "charm": 1,
+      "flag": "dp32m_blade_seen",
+      "npcFlag": "dp32m_blade_who"
+     }
+    },
+    {
+     "text": "Let it go. Things should have other lives",
+     "effects": {
+      "log": "You burn the catalogue in the stove. Somewhere a sword you knew is sold to a stranger. That is what swords are for.",
+      "comprehension": 4,
+      "alignment": 1,
+      "npcFlag": "dp32m_blade_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_blade_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The merchant who bought your old sword sends {npc} back to you in a hurry. The blade cuts the bed-curtains at night. It is not haunted, the merchant writes. It is lonely, and would the old owner please make it stop.",
+   "npc": {
+    "role": "dp32m_broker"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_blade_1"
+    ],
+    "minYearsAfter": 2,
+    "flags": [
+     "dp32m_blade_seen"
+    ],
+    "npcFlags": [
+     "dp32m_blade_who"
+    ]
+   },
+   "arc": "The Blade at the Auction",
+   "choices": [
+    {
+     "text": "Go and sit with the sword one night",
+     "effects": {
+      "log": "You sit with it in the dark and tell it where you have been. In the morning it is quiet. The merchant sells it to you for half the auction price, and asks no questions.",
+      "taels": -40,
+      "comprehension": 4,
+      "flag": "dp32m_blade_home",
+      "npcFlag": "dp32m_blade_who"
+     },
+     "req": {
+      "minTaels": 40
+     }
+    },
+    {
+     "text": "Tell the merchant to give it to a young fighter",
+     "effects": {
+      "log": "It goes to a ferry hand who has never held a sword. The blade is quiet at once in those new hands. {npc} tells you the ferry hand is learning fast.",
+      "alignment": 4,
+      "luck": 2,
+      "flag": "dp32m_blade_given",
+      "npcFlag": "dp32m_blade_who"
+     }
+    },
+    {
+     "text": "Ask {npc} to throw it back in the river",
+     "effects": {
+      "log": "It goes in off the bridge at dawn. You feel it sink, slowly, into the same mud as before, and settle, and sleep.",
+      "qi": 10,
+      "comprehension": 2,
+      "npcFlag": "dp32m_blade_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_blade_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Years on, {npc} brings news: the ferry hand who was given your old sword has become a name on the river, and has heard where the blade came from. The ferry hand would like to meet its first owner, and is too proud to ask.",
+   "npc": {
+    "role": "dp32m_broker"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_blade_2"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "dp32m_blade_given"
+    ],
+    "npcFlags": [
+     "dp32m_blade_who"
+    ]
+   },
+   "arc": "The Blade at the Auction",
+   "choices": [
+    {
+     "text": "Go to the river and be found",
+     "effects": {
+      "log": "The ferry hand finds you on the boat, sword on back, and says nothing for three crossings. On the fourth comes the question: will you show the form the sword remembers? You do.",
+      "fame": 3,
+      "comprehension": 3,
+      "flag": "dp32m_blade_met",
+      "npcFlag": "dp32m_blade_who"
+     }
+    },
+    {
+     "text": "Send the scabbard, which you kept",
+     "effects": {
+      "log": "You kept it four hundred years without knowing why. {npc} carries it down to the river. Sword and scabbard are worn together now.",
+      "charm": 3,
+      "alignment": 2,
+      "npcFlag": "dp32m_blade_who"
+     }
+    },
+    {
+     "text": "Leave the story as it is",
+     "effects": {
+      "log": "Some people should not meet their legends. The ferry hand has the sword. You have the river. {npc} sighs, and goes back to selling things.",
+      "luck": 3,
+      "npcFlag": "dp32m_blade_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_town_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "You go back to the valley where you built your first hermitage and find a market town on top of it. The river has moved half a li west. Your meditation stone is the base of a noodle stall. {npc}, the town's elder, would like to know why the old stranger keeps staring at the noodle stall.",
+   "npc": {
+    "role": "dp32m_mayor",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_mayor",
+     "opinion": 0,
+     "ageAbs": 55
+    }
+   },
+   "when": {
+    "age": [
+     800,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Town on the Old Hermitage",
+   "choices": [
+    {
+     "text": "Tell {npc} the stone is yours",
+     "effects": {
+      "log": "{npc} is a practical person and offers you a bowl of noodles a day for the rest of your life in exchange for not taking it back. You accept. They are good noodles.",
+      "charm": 3,
+      "health": 4,
+      "flag": "dp32m_town_told",
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "Buy a bowl and sit on your own stone",
+     "effects": {
+      "log": "The stone remembers you. Halfway through the noodles, something old and quiet settles in your chest. The stall-keeper charges you double for staying so long.",
+      "comprehension": 4,
+      "qi": 8,
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "Walk the old riverbed instead",
+     "effects": {
+      "log": "You walk the dry bed where the river was. Under the gravel you find the stepping stones you laid seven hundred years ago, still in a row.",
+      "luck": 3,
+      "comprehension": 2,
+      "npcFlag": "dp32m_town_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_town_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The river wants its old bed back. A wet spring, a broken dyke, and the town is going to flood. {npc} comes up the hill to the old stranger who knew the valley before the town.",
+   "npc": {
+    "role": "dp32m_mayor"
+   },
+   "when": {
+    "age": [
+     800,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_town_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "dp32m_town_who"
+    ]
+   },
+   "arc": "The Town on the Old Hermitage",
+   "choices": [
+    {
+     "text": "Show them where the river wants to go, and dig with them",
+     "effects": {
+      "log": "You know every bend it ever took. The town digs a channel along your line for four days. The river takes it like a horse taking a known road.",
+      "fame": 5,
+      "strength": 2,
+      "flag": "dp32m_town_saved",
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "Hold the dyke yourself through the night",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "You stand in the breach with your back to the water until the carts of stones arrive. The town calls it the night the mountain leaned on the dyke.",
+      "fame": 7,
+      "flag": "dp32m_town_saved",
+      "npcFlag": "dp32m_town_who"
+     },
+     "fail": {
+      "log": "The water is stronger than one old body. You are carried a li and fished out by a boy with a pole. The town floods to the knees, and recovers.",
+      "health": -15,
+      "woundOnly": true,
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "Tell {npc} to move the town to higher ground",
+     "effects": {
+      "log": "They grumble for a season and move. In ten years the old site is a water meadow full of herons, and the noodle stall is on a hill.",
+      "comprehension": 3,
+      "alignment": 2,
+      "npcFlag": "dp32m_town_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_town_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The town has put up a stone marker on the new dyke. {npc} wants to carve your name on it, and needs to know what that is, since the town only calls you the Old Stranger.",
+   "npc": {
+    "role": "dp32m_mayor"
+   },
+   "when": {
+    "age": [
+     800,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_town_2"
+    ],
+    "minYearsAfter": 4,
+    "flags": [
+     "dp32m_town_saved"
+    ],
+    "npcFlags": [
+     "dp32m_town_who"
+    ]
+   },
+   "arc": "The Town on the Old Hermitage",
+   "choices": [
+    {
+     "text": "Give your real name",
+     "effects": {
+      "log": "It is carved deep. Children trace it with their fingers and do not know it is the name of a living person, which you find you like.",
+      "fame": 4,
+      "flag": "dp32m_town_named",
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "\"The Old Stranger is fine\"",
+     "effects": {
+      "log": "They carve THE OLD STRANGER KNEW THE RIVER. It becomes the town's proverb for listening to the elderly, and the town's elderly are insufferable about it.",
+      "charm": 4,
+      "luck": 2,
+      "npcFlag": "dp32m_town_who"
+     }
+    },
+    {
+     "text": "Ask them to carve the river's name instead",
+     "effects": {
+      "log": "Nobody remembers it. You do. They carve it, and the river, as far as anyone can tell, is pleased.",
+      "comprehension": 5,
+      "npcFlag": "dp32m_town_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_heaven_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "An immortal in plain grey robes sits down across from you at a roadside tea stall, uninvited. {npc} has been sent from above with a question the Jade Court has been asking for two centuries: a master who could climb has stayed. Why?",
+   "npc": {
+    "role": "dp32m_envoy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_envoy",
+     "opinion": 20,
+     "ageAbs": 3200,
+     "immortal": 2
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "realm": [
+     9,
+     11
+    ]
+   },
+   "arc": "Why Do You Stay?",
+   "choices": [
+    {
+     "text": "\"Because the tea is better down here\"",
+     "effects": {
+      "log": "{npc} tastes the tea, considers, and does not disagree. {He} writes something in a small book and pays for both bowls.",
+      "charm": 4,
+      "flag": "dp32m_heaven_asked",
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "\"Because nobody would be left who remembers\"",
+     "effects": {
+      "log": "{npc} is quiet for a long time. \"That is a reason,\" {he} says. \"It is not one we have a form for.\"",
+      "comprehension": 5,
+      "alignment": 2,
+      "flag": "dp32m_heaven_asked",
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "\"Ask me again in a hundred years\"",
+     "effects": {
+      "log": "{npc} nods as if this were the expected answer, and is gone between one sip and the next. The cup is still warm.",
+      "luck": 4,
+      "flag": "dp32m_heaven_asked",
+      "npcFlag": "dp32m_heaven_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_heaven_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes back, as promised or threatened, and this time {he} has brought a picture of what is waiting above: a cloud-hall with your name on its gate, an order that would take you, a sky without old age. {He} asks the question again, more gently.",
+   "npc": {
+    "role": "dp32m_envoy"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "after": [
+     "dp32m_heaven_1"
+    ],
+    "minYearsAfter": 100,
+    "npcFlags": [
+     "dp32m_heaven_who"
+    ]
+   },
+   "arc": "Why Do You Stay?",
+   "choices": [
+    {
+     "text": "Ask what {npc} misses about the world below",
+     "effects": {
+      "log": "{npc} thinks about it honestly. \"Rain on a roof,\" {he} says. \"Being tired.\" {He} stays the whole afternoon and watches it rain.",
+      "comprehension": 4,
+      "charm": 2,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "Say you are not finished here",
+     "effects": {
+      "log": "\"Nobody is,\" says {npc}, and leaves the picture with you. It hangs in your house for a century and you look at it on bad days.",
+      "luck": 3,
+      "qi": 10,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "Show {npc} what you would be leaving",
+     "effects": {
+      "log": "You take {him} through the town, the river, the graves, the children whose names you know. {npc} walks the whole way without speaking, and bows to you at the end.",
+      "alignment": 4,
+      "fame": 2,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_heaven_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The third visit. {npc} comes without a question this time. {He} is tired of the cloud-halls, {he} says, and would like to know whether a person who went up can ever come back down to stay.",
+   "npc": {
+    "role": "dp32m_envoy"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "realm": [
+     9,
+     11
+    ],
+    "after": [
+     "dp32m_heaven_2"
+    ],
+    "minYearsAfter": 100,
+    "npcFlags": [
+     "dp32m_heaven_who"
+    ]
+   },
+   "arc": "Why Do You Stay?",
+   "choices": [
+    {
+     "text": "Tell {npc} the truth: you do not know, but stay a while",
+     "effects": {
+      "log": "{npc} stays a year. {He} learns to fish badly and to mend a roof well. When {he} goes back up, {he} takes a bag of the river's pebbles.",
+      "comprehension": 5,
+      "alignment": 3,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "Tell {npc} heaven needs people who remember rain",
+     "effects": {
+      "log": "{npc} laughs for the first time in your acquaintance, and goes back up with a purpose. You hear later that the Jade Court has a new rule about leave.",
+      "fame": 4,
+      "luck": 3,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    },
+    {
+     "text": "Give {npc} your old hermitage key",
+     "effects": {
+      "log": "It opens nothing now. {npc} hangs it on {his} belt anyway, and comes down to visit every hundred years, and sits on the noodle stall's stone.",
+      "charm": 4,
+      "comprehension": 2,
+      "npcFlag": "dp32m_heaven_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_hall_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Tea pickers on a terraced hillside sing a work song with a rhythm you know: it is the breathing count of a martial hall that was famous when you were young and has been gone four hundred years. {npc}, the loudest singer, has no idea.",
+   "npc": {
+    "role": "dp32m_picker",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_picker",
+     "opinion": 10,
+     "ageAbs": 24
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Last Name of a Fallen Hall",
+   "choices": [
+    {
+     "text": "Teach {npc} what the song is",
+     "effects": {
+      "log": "{npc} learns the count in a week, and the forms in a year. The hillside starts to look at the old song differently.",
+      "comprehension": 4,
+      "flag": "dp32m_hall_taught",
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Pick tea beside them for a season",
+     "effects": {
+      "log": "You pick tea badly and sing well. By autumn you know every family on the hill and which of them has the old hall's blood.",
+      "charm": 4,
+      "health": 3,
+      "flag": "dp32m_hall_known",
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Leave the song as a song",
+     "effects": {
+      "log": "Some things end as music. It is not the worst way to end.",
+      "luck": 3,
+      "comprehension": 2,
+      "npcFlag": "dp32m_hall_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_hall_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has found the old hall's founding stone in a tea terrace wall, and the hillside has a choice. A rich sect from the province would pay well to own the old name. Others want to raise the hall again themselves. {npc} asks what the old master thinks.",
+   "npc": {
+    "role": "dp32m_picker"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_hall_1"
+    ],
+    "minYearsAfter": 4,
+    "flags": [
+     "dp32m_hall_taught"
+    ],
+    "npcFlags": [
+     "dp32m_hall_who"
+    ]
+   },
+   "arc": "The Last Name of a Fallen Hall",
+   "choices": [
+    {
+     "text": "Help them raise it themselves",
+     "effects": {
+      "log": "It is a hall of three rooms and twelve students and it smells of tea. It is the best martial hall in the county within twenty years.",
+      "fame": 5,
+      "alignment": 3,
+      "flag": "dp32m_hall_raised",
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Let them sell the name and buy land",
+     "effects": {
+      "log": "The tea families own their own terraces for the first time in four hundred years. The rich sect gets a name. Both sides think they won.",
+      "luck": 4,
+      "charm": 2,
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Say the stone should stay in the wall",
+     "effects": {
+      "log": "{npc} agrees, a little sadly. The stone stays, and every picker who passes touches it, and nobody remembers why.",
+      "comprehension": 4,
+      "npcFlag": "dp32m_hall_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_hall_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The new hall at the tea terraces holds its first ceremony. {npc}, its first master, has kept the seat of honour empty and is looking up the road.",
+   "npc": {
+    "role": "dp32m_picker"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ],
+    "after": [
+     "dp32m_hall_2"
+    ],
+    "minYearsAfter": 10,
+    "flags": [
+     "dp32m_hall_raised"
+    ],
+    "npcFlags": [
+     "dp32m_hall_who"
+    ]
+   },
+   "arc": "The Last Name of a Fallen Hall",
+   "choices": [
+    {
+     "text": "Take the seat for one day",
+     "effects": {
+      "log": "You sit. The twelve students bow, terrified. You bow back, which terrifies them more. Then you all go and pick tea.",
+      "fame": 4,
+      "charm": 3,
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Give {npc} the old hall's last form, which only you remember",
+     "effects": {
+      "log": "{npc} learns it in the evening, alone, weeping and laughing. The old hall is whole again.",
+      "comprehension": 5,
+      "alignment": 2,
+      "flag": "dp32m_hall_whole",
+      "npcFlag": "dp32m_hall_who"
+     }
+    },
+    {
+     "text": "Watch from the road, and go on",
+     "effects": {
+      "log": "{npc} sees you on the road and lifts a hand. You lift yours. That is the ceremony, really.",
+      "luck": 4,
+      "npcFlag": "dp32m_hall_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_pilgrim",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 25,
+   "maxPerLife": 4,
+   "text": "{npc} has climbed for nine days to reach your door, with blistered feet and a question {he} has carried for years: whether a life spent on the sword was wasted.",
+   "variants": [
+    "Someone is sleeping on your doorstep. {npc}, a fighter past {his} prime, has come to ask the oldest master alive whether it is too late to begin again.",
+    "{npc} arrives in the rain, holding a scroll {he} has copied out by hand from a book about you. {He} wants to know which parts are true, and whether it matters.",
+    "A young physician, {npc}, has walked from the coast to ask how a body lasts six centuries. {He} has brought a notebook and is visibly prepared to be disappointed."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Visitors to the Old Master",
+   "choices": [
+    {
+     "text": "Answer the question",
+     "effects": {
+      "log": "You talk until dark. {npc} goes down the mountain lighter than {he} came up, and the question goes with {him}, answered or not.",
+      "comprehension": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Make {npc} chop wood for a month first",
+     "effects": {
+      "log": "By the end of the month {npc} has forgotten the question and remembered how to sleep. {He} thanks you for the answer.",
+      "strength": 2,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Send {npc} back down with a cup of tea",
+     "effects": {
+      "log": "\"Some questions only get heavier at the top,\" you say. {npc} drinks the tea, which is very good, and goes.",
+      "luck": 2,
+      "qi": 6
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_pilgrim",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_pilgrim",
+     "opinion": 20,
+     "ageAbs": 40
+    }
+   }
+  },
+  {
+   "id": "dp32m_prodigy",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 20,
+   "maxPerLife": 3,
+   "text": "{npc}, the prodigy of the age, stands in your yard. {He} has beaten every master of {his} generation and has come to the last name on the list, which is yours.",
+   "variants": [
+    "The yard gate bangs open: {npc}, nineteen and undefeated, with a sword {he} has named after the dawn. {He} would like the oldest master in the murim to make it a fair fight.",
+    "{npc} has been sitting outside your gate for a week, refusing food, waiting to be granted a duel. The village is worried and also selling {him} buns."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Young Challengers",
+   "choices": [
+    {
+     "text": "Cross swords with {npc}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It is over in four exchanges. {npc} sits in the dust and starts to laugh, and asks to come back next year.",
+      "fame": 4,
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "{npc} is the real thing. The cut on your arm is small and the lesson is large: the world has not been standing still.",
+      "health": -14,
+      "comprehension": 3,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Show {npc} a single form instead",
+     "effects": {
+      "log": "You show {him} a form older than {his} family name. {npc} watches it three times and leaves without drawing, very thoughtful.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Send {npc} to someone worse first",
+     "effects": {
+      "log": "\"Beat the ferryman,\" you say. {npc} goes off offended, and comes back a year later, very humble, with a wet sleeve.",
+      "luck": 3,
+      "fame": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_prodigy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_prodigy",
+     "opinion": -5,
+     "ageAbs": 19
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dp32m_season",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 15,
+   "maxPerLife": 4,
+   "text": "The plum tree by your door flowers for the six hundredth time you have watched it. It occurs to you that it is the fourth plum tree in that spot, and you did not notice the other three die.",
+   "variants": [
+    "Snow again. You have seen so much snow that you can tell this year's by its weight on the pine branches: heavy and wet, a spring snow pretending to be winter.",
+    "The cicadas come out after seventeen years under the ground. You remember the last time, and the time before that, and the one where you were not alone to hear them.",
+    "An autumn so clear that from your door you can see three provinces. Somewhere in each of them is something you built, or ruined, or loved, a very long time ago."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Long Seasons",
+   "choices": [
+    {
+     "text": "Sit under it until the petals fall",
+     "effects": {
+      "log": "Four days. You do not move and you do not think, and at the end something in your energy has settled a finger lower.",
+      "qi": 12,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Plant a fifth beside it",
+     "effects": {
+      "log": "You dig the hole yourself. A sapling the height of your knee. You will watch it too.",
+      "health": 4,
+      "luck": 3
+     }
+    },
+    {
+     "text": "Write down the date, this once",
+     "effects": {
+      "log": "You start a calendar of flowerings on the wall. Within a century it covers the wall, and you have learned more from it than from most books.",
+      "comprehension": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_graves",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 30,
+   "maxPerLife": 3,
+   "text": "Grave-sweeping day. Your list of graves has grown so long that you keep it in a book, and it takes a month to walk.",
+   "variants": [
+    "A grave you had forgotten: an old rival, in a field you pass by chance. Nobody has swept it in a hundred years. The stone has sunk to the shoulders.",
+    "On grave-sweeping day you find someone has already swept the graves on your list, every one, and left a plum on each. You do not know who."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Those Who Went Before",
+   "choices": [
+    {
+     "text": "Walk the whole list, every grave",
+     "effects": {
+      "log": "A month of hills and weeds and names. At the last grave you sit for a long time. Your heart is lighter, and older.",
+      "alignment": 3,
+      "health": -2,
+      "comprehension": 4
+     }
+    },
+    {
+     "text": "Sweep only the three that matter most",
+     "effects": {
+      "log": "You know which three. You always knew. You take the good brush and the good incense.",
+      "charm": 2,
+      "qi": 8
+     }
+    },
+    {
+     "text": "Pay a village family to sweep them, and visit the living",
+     "effects": {
+      "log": "You spend the month with the great-grandchildren instead. The dead, you think, would have preferred it.",
+      "taels": -10,
+      "luck": 3,
+      "charm": 2
+     },
+     "req": {
+      "minTaels": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_news",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 20,
+   "maxPerLife": 3,
+   "text": "{npc}, a peddler who comes through twice a year, brings the news: a new war on the frontier, a new Alliance Leader, a new fashion for wide sleeves. {He} asks what the old master thinks of the young world.",
+   "variants": [
+    "{npc}, a courier who brings your letters once a year, sits on the step with the news of three provinces and the price of salt, and waits to see which one you ask about first.",
+    "A tinker, {npc}, mends your pot and talks the whole time: an emperor dead, a sect fallen, a comet in the east. {He} has no idea how many of these you have heard before."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The World Goes On",
+   "choices": [
+    {
+     "text": "Ask about the war, and go if you are needed",
+     "effects": {
+      "log": "You go down to look. It is a small, stupid war and you end one battle of it by standing on a bridge. The peddler sells the story for a year.",
+      "fame": 4,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Buy wide sleeves",
+     "effects": {
+      "log": "You look ridiculous. {npc} tells everyone the old master is keeping up with the times. Children follow you for a week.",
+      "charm": 4,
+      "taels": -3
+     }
+    },
+    {
+     "text": "Say it is the same world with new clothes",
+     "effects": {
+      "log": "{npc} writes that down. It becomes a saying on the road, credited to {him}.",
+      "comprehension": 3,
+      "luck": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_peddler",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_peddler",
+     "opinion": 15,
+     "ageAbs": 45
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dp32m_impostor",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 40,
+   "maxPerLife": 2,
+   "text": "Word reaches you that someone in the next province is going about as you: same name, a borrowed scar, a stolen story. {npc} has a following, collects tribute and has just challenged a magistrate.",
+   "variants": [
+    "Two villages away, {npc} is selling blessings in your name, at a steep price. The blessings, alarmingly, seem to work."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Other You",
+   "choices": [
+    {
+     "text": "Go and meet your double",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You meet {npc} on a market square. {He} draws. You do not. By evening {he} has handed back the tribute and taken up an honest trade.",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "{npc} has learned some real tricks. You walk away with a cut and a reputation for being slower than yourself, which is a strange thing to lose to.",
+      "health": -12,
+      "fame": -2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Write to the magistrate with a plain description of yourself",
+     "effects": {
+      "log": "The magistrate compares the description with {npc}, who is twenty years younger and two inches taller, and has {him} arrested for forgery.",
+      "luck": 3,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Let the double carry it: it is a heavy name",
+     "effects": {
+      "log": "You hear for years about the other you, who gets into fights you would have avoided. In the end {npc} retires and writes memoirs. They are very good.",
+      "charm": 3,
+      "luck": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_double",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_double",
+     "opinion": -20,
+     "ageAbs": 30
+    }
+   }
+  },
+  {
+   "id": "dp32m_ambush",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 15,
+   "maxPerLife": 2,
+   "text": "Six bandits on the old road, young, hungry and new to the trade. They see an old traveller with a good walking stick and decide it is their lucky day. {npc}, their leader, is very polite about it.",
+   "variants": [
+    "A rope across the road, a shout, and five hungry youngsters with farm tools. {npc}, the eldest, explains that this is a robbery and apologises for it."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Bandits Who Never Heard of You",
+   "choices": [
+    {
+     "text": "Teach them manners",
+     "roll": {
+      "stat": "power",
+      "foeRel": -3,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It takes less time than tying a sandal. The six sit in the ditch and listen to a lecture on career choices.",
+      "fame": 2,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "One of them is better than the rest. You win, but not cleanly, and walk on with a bruised rib and a new respect for the youth.",
+      "health": -10,
+      "fame": 1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Give them your purse and some advice",
+     "effects": {
+      "log": "You give them a little silver and a lot of advice. {npc} keeps the advice. Ten years later {he} runs a ferry.",
+      "taels": -8,
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Tell them who you are",
+     "effects": {
+      "log": "{npc} does not believe you, and then, looking at your eyes, does. They run. One of them drops a sandal.",
+      "fame": 3,
+      "luck": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_bandit",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_bandit",
+     "opinion": -10,
+     "ageAbs": 20
+    }
+   }
+  },
+  {
+   "id": "dp32m_plague",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 60,
+   "maxPerLife": 2,
+   "text": "A fever in the river villages, the kind you have seen come back every hundred years. {npc}, a young country doctor, has run out of everything except stubbornness.",
+   "variants": [
+    "The red fever is back in the hill country. {npc}, a herbalist half your height and a fraction of your age, is standing in the road telling everyone to go home and boil water."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Fever Villages",
+   "choices": [
+    {
+     "text": "Stay and nurse with {npc}",
+     "effects": {
+      "log": "Two months. You know this fever: where it goes, what it wants. Most of the river villages live. {npc} writes everything you say into a book that outlasts you both.",
+      "alignment": 5,
+      "health": -6,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Tell {npc} what the cure was last time",
+     "effects": {
+      "log": "You remember. A bitter root from the north side of hills, boiled three times. {npc} sends runners out by nightfall.",
+      "comprehension": 3,
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Pay for medicine from the county town",
+     "effects": {
+      "log": "Carts of medicine arrive within the week. It is not enough, but it is a great deal.",
+      "taels": -30,
+      "alignment": 3
+     },
+     "req": {
+      "minTaels": 30
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_doctor",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_doctor",
+     "opinion": 20,
+     "ageAbs": 28
+    }
+   }
+  },
+  {
+   "id": "dp32m_assassin",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 50,
+   "maxPerLife": 2,
+   "text": "Someone has paid a great deal for your death: a family that remembers a slight you have forgotten. The killer, {npc}, is the best of {his} trade, and makes the mistake of being curious about you first.",
+   "variants": [
+    "The tea tastes wrong. You put the cup down. Across the room {npc}, the new servant, sees you put it down, and understands that the long way will have to do."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "An Old Grudge Pays Well",
+   "choices": [
+    {
+     "text": "Meet {npc} in the dark",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It is the best fight you have had in a century, and you win it. {npc} lies in the yard and asks, sincerely, how.",
+      "fame": 3,
+      "comprehension": 3
+     },
+     "fail": {
+      "log": "{npc} gets a blade in before you can turn it. You live, which surprises {him} very much, and {he} leaves the money on your step.",
+      "health": -18,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Invite {npc} in for tea",
+     "effects": {
+      "log": "You pour. {npc}, against every rule of {his} trade, sits. By the second pot {he} has told you who paid, and by the third {he} has decided not to.",
+      "charm": 4,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Go to the family that paid",
+     "effects": {
+      "log": "The family is three generations past the slight and ashamed of it. They withdraw the money. {npc} is professionally insulted and keeps the deposit.",
+      "alignment": 4,
+      "fame": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_killer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_killer",
+     "opinion": -30,
+     "ageAbs": 35
+    }
+   }
+  },
+  {
+   "id": "dp32m_lineage",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 30,
+   "maxPerLife": 3,
+   "text": "{npc} bows at your gate with the formality of someone who has practised it all the way up the mountain. {He} is a disciple of a disciple of a disciple of yours, nine generations down, and {his} hall has a problem only the founder of the line can settle.",
+   "variants": [
+    "A letter sealed with a crest you designed six hundred years ago and have not seen since: your line, many generations on. {npc}, who carries it, has been told to wait for an answer.",
+    "{npc}, of a lineage that names you as its first ancestor, has walked from the south to ask whether the story the hall tells about your death is true. You assure {him} that it is not."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Disciples' Disciples",
+   "choices": [
+    {
+     "text": "Settle it",
+     "effects": {
+      "log": "Two elders of the hall are quarrelling over which of them learned your third form correctly. Both learned it wrong, in different ways. You teach it again. The hall is very quiet for a year.",
+      "comprehension": 3,
+      "fame": 3
+     }
+    },
+    {
+     "text": "Ask {npc} to show you what the line has become",
+     "effects": {
+      "log": "{npc} shows you nine generations of changes to your art. Some are mistakes. Two are better than anything you taught. You keep those.",
+      "comprehension": 5
+     }
+    },
+    {
+     "text": "Tell {npc} the line must settle its own quarrels now",
+     "effects": {
+      "log": "{npc} goes down the mountain worried and comes back a decade later as the hall's master, having settled it. You are very proud.",
+      "luck": 2,
+      "alignment": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_grandheir",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_grandheir",
+     "opinion": 40,
+     "ageAbs": 30
+    }
+   }
+  },
+  {
+   "id": "dp32m_fragment",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 50,
+   "maxPerLife": 2,
+   "text": "In a junk-stall at a provincial market, under a broken lantern, there is a scrap of a manual in your own handwriting from five centuries ago. You do not remember writing it. The stall-keeper wants three taels.",
+   "variants": [
+    "A copy of a letter you wrote to a friend six centuries ago is being sold as a famous master's secret teaching. Having read it again, you think it is mostly about a cat."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Pieces of Your Own Art",
+   "choices": [
+    {
+     "text": "Buy it and read it",
+     "effects": {
+      "log": "You read it on the road home. The young person who wrote it was wrong about almost everything and right about one thing you have since forgotten.",
+      "taels": -3,
+      "comprehension": 5
+     },
+     "req": {
+      "minTaels": 3
+     }
+    },
+    {
+     "text": "Leave it for someone who needs it more",
+     "effects": {
+      "log": "A month later a farm boy buys it with his only coins. You hear about him, years on, and are not surprised.",
+      "luck": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Tell the stall-keeper who wrote it",
+     "effects": {
+      "log": "The stall-keeper does not believe you and raises the price to three hundred. You laugh all the way down the street.",
+      "charm": 2,
+      "luck": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_hermit",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 20,
+   "maxPerLife": 2,
+   "text": "On the next mountain lives {npc}, a recluse nearly as old as you, with whom you have played the same game of go for two hundred years, one move a decade. This decade it is your move.",
+   "variants": [
+    "{npc}, the hermit of the next peak, has sent a crow with a note: your move is overdue by four years, and is this a strategy or are you dead?"
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Other Hermit",
+   "choices": [
+    {
+     "text": "Play the move you have been thinking about for ten years",
+     "effects": {
+      "log": "You walk over and place the stone. {npc} looks at it for a day and a night and says, \"Ah.\" It is the best thing anyone has said to you this century.",
+      "comprehension": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Play a move you thought of this morning",
+     "effects": {
+      "log": "{npc} frowns at it for a month. It turns out to be very good, which annoys you both.",
+      "luck": 4,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Stay and talk instead of playing",
+     "effects": {
+      "log": "You talk for three days about people you both knew who are gone. The board waits. It has waited before.",
+      "alignment": 2,
+      "comprehension": 3
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_hermit",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_hermit",
+     "opinion": 30,
+     "ageAbs": 700
+    }
+   }
+  },
+  {
+   "id": "dp32m_drought",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 60,
+   "maxPerLife": 2,
+   "text": "Drought in the plains below your mountain, the third year of it. The wells have gone down past the rope, and the county magistrate has asked the temples to pray and the old master to do something more useful.",
+   "variants": [
+    "Locusts this year, then drought behind them. The plains below your mountain are brown to the horizon, and a delegation of headmen is climbing your path with their hats in their hands."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Dry Years",
+   "choices": [
+    {
+     "text": "Find the deep water and show them where to dig",
+     "effects": {
+      "log": "You walk the plain for a month with your palm flat to the earth. Twelve new wells by the end of summer, and every one sweet.",
+      "alignment": 4,
+      "fame": 3
+     }
+    },
+    {
+     "text": "Open the stores you have kept for centuries",
+     "effects": {
+      "log": "Grain from a cellar nobody knew you had, some of it older than the county. It is still good. You made sure of that a long time ago.",
+      "taels": -30,
+      "alignment": 5
+     },
+     "req": {
+      "minTaels": 30
+     }
+    },
+    {
+     "text": "Teach the villages the old way to keep water",
+     "effects": {
+      "log": "The old way is a lot of digging. The villages grumble, dig, and are the only ones in the county with water the next dry year.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_lostchild",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 40,
+   "maxPerLife": 2,
+   "text": "A child is lost in your woods, the third this century. You can hear the crying from your door, and the searchers' torches on the wrong side of the valley.",
+   "variants": [
+    "Snow, and a child's red scarf in it, far up the path where no child should be. The tracks lead toward the old shrine."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "A Child in the Woods",
+   "choices": [
+    {
+     "text": "Go and bring the child home",
+     "effects": {
+      "log": "The child is sitting under a pine, cross and cold. You carry the child down. The searchers look at you as if you were a ghost, and then as if you were a grandparent.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Lead the searchers to the child without being seen",
+     "effects": {
+      "log": "A lantern moves on the hill. The searchers follow it, and find the child, and never find who held the lantern.",
+      "luck": 3,
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Teach the child the way home",
+     "effects": {
+      "log": "You walk the child halfway and point. The child walks the rest alone, very proud, and tells the village a tall story about the mountain's ghost.",
+      "comprehension": 2,
+      "fame": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32m_school",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 12,
+   "maxPerLife": 2,
+   "text": "The village at the foot of your mountain has opened a school, and the schoolteacher, {npc}, has come up to ask whether the old master would give the children one lesson a year.",
+   "variants": [
+    "{npc}, the village schoolteacher, is back with this year's children and a question from the cleverest of them, written out in large careful characters: \"Are you older than the mountain?\""
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "The Village School",
+   "choices": [
+    {
+     "text": "Teach them to sit still and breathe",
+     "effects": {
+      "log": "Thirty children sitting still and breathing, for very nearly a minute. {npc} says it is a miracle.",
+      "alignment": 3,
+      "charm": 3
+     }
+    },
+    {
+     "text": "Teach them the history nobody wrote down",
+     "effects": {
+      "log": "You tell them about the village as it was six hundred years ago. They do not believe the part about the river, and draw it anyway.",
+      "comprehension": 3,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Teach them the first form, and nothing more",
+     "effects": {
+      "log": "One form, done well. Twenty years later the village has the steadiest militia in the county, and none of them know why.",
+      "strength": 2,
+      "fame": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_teacher",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_teacher",
+     "opinion": 30,
+     "ageAbs": 35
+    }
+   }
+  },
+  {
+   "id": "dp32m_sects",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 30,
+   "maxPerLife": 1,
+   "text": "Two sects have chosen your valley to settle a quarrel in, a hundred fighters on each side. The farmers have fled uphill to your door. {npc}, a young officer of one of the sects, comes up after them, sword drawn.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Wars in Your Valley",
+   "choices": [
+    {
+     "text": "Go down and stand between the lines",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The two sects"
+     },
+     "ok": {
+      "log": "You walk into the middle of the valley and stand there. Nobody wants to be the one who strikes first at you. By evening both sects have gone home.",
+      "fame": 5,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "Someone does strike first. You end the battle, but not before a blade finds your side. Both sects send apologies and physicians.",
+      "health": -15,
+      "fame": 3,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Send {npc} down with a message",
+     "effects": {
+      "log": "The message says only your name. {npc} reads it, goes pale, and carries it down. The sects move their quarrel to another valley.",
+      "fame": 3,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Keep the farmers safe and let the sects fight",
+     "effects": {
+      "log": "The sects fight all day. Your door stays shut and the farmers eat your rice. In the evening the valley is quiet, and both sects claim the victory.",
+      "alignment": 2,
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32m_officer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32m_officer",
+     "opinion": -10,
+     "ageAbs": 24
+    }
+   }
+  },
+  {
+   "id": "dp32m_wakebeast",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 60,
+   "maxPerLife": 1,
+   "text": "Something under the old mountains has woken, a beast that was asleep before the first sects were founded. The hunters say it is the size of a house. The hunters, you know from experience, always say that.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "notFlags": [
+     "pw_life",
+     "upper_realm"
+    ]
+   },
+   "arc": "Old Things Waking",
+   "choices": [
+    {
+     "text": "Go and meet it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "log": "It is the size of two houses. You fight it to a standstill in a gorge, and it looks at you, and decides to go back to sleep for another thousand years.",
+      "fame": 5,
+      "strength": 2
+     },
+     "fail": {
+      "log": "It is old and very strong. You turn it back to its cave, and carry the mark of its claws for a decade.",
+      "health": -18,
+      "fame": 2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Sing it back to sleep",
+     "effects": {
+      "log": "You remember the song the old hunters sang to beasts like this. It takes all night. The beast lies down in the snow and sighs.",
+      "comprehension": 4,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Warn the villages and let it pass",
+     "effects": {
+      "log": "It walks through the hills for a week, ignoring everything, and goes back under the mountain. The villages talk about nothing else for a generation.",
+      "luck": 3,
+      "charm": 1
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

@@ -1,0 +1,1074 @@
+{
+ "events": [
+  {
+   "id": "dp32u_drift_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "A small isle has slipped its moorings in the cloud-sea and is drifting, very slowly, toward the edge where the clouds thin into nothing. {npc}, its warden, has rowed a cloud-skiff across to ask for help. Three hundred immortals live on it, and a great many goats.",
+   "npc": {
+    "role": "dp32u_warden",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_warden",
+     "opinion": 15,
+     "ageAbs": 900,
+     "immortal": 0
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Isle That Drifts",
+   "choices": [
+    {
+     "text": "Go and look at the moorings",
+     "effects": {
+      "log": "The old anchor-chains of qi have rusted through in two places. You can see it at once. {npc} cannot. That is the difference between you.",
+      "comprehension": 4,
+      "flag": "dp32u_drift_looked",
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Tow it back yourself for a season",
+     "effects": {
+      "log": "It is like pulling a mountain with a thread. Three months of it, and the isle is back where it was. You sleep for a year afterwards.",
+      "qi": -20,
+      "fame": 5,
+      "strength": 3,
+      "flag": "dp32u_drift_towed",
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Tell {npc} to ask the Jade Court",
+     "effects": {
+      "log": "{npc} goes to the Jade Court and waits in its hall for twelve years. The isle drifts a little further. You hear about it on and off.",
+      "luck": 2,
+      "comprehension": 1,
+      "npcFlag": "dp32u_drift_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_drift_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is back: the isle has drifted far enough that its spring is drying and its orchards dying. The people are arguing about whether to stay, move to another isle, or follow the drift and see what is past the edge.",
+   "npc": {
+    "role": "dp32u_warden"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "after": [
+     "dp32u_drift_1"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "dp32u_drift_who"
+    ]
+   },
+   "arc": "The Isle That Drifts",
+   "choices": [
+    {
+     "text": "Forge new anchor-chains with them",
+     "effects": {
+      "log": "A year of work in the warden's yard. The chains you make together are ugly and very strong. The isle stops drifting the day the last link is set.",
+      "comprehension": 3,
+      "alignment": 4,
+      "flag": "dp32u_drift_moored",
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Help them move to your own neighbourhood of the sky",
+     "effects": {
+      "log": "Three hundred immortals and the goats move in next door. It is noisy. It is also the first time in a thousand years you have had neighbours.",
+      "charm": 4,
+      "flag": "dp32u_drift_moved",
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Go to the edge with the ones who want to see",
+     "effects": {
+      "log": "Past the edge there is more sky, and below it, very far, something like a sea of light. Nobody comes back the same. {npc} takes notes the whole way.",
+      "comprehension": 6,
+      "luck": 2,
+      "flag": "dp32u_drift_edge",
+      "npcFlag": "dp32u_drift_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_drift_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Generations later by the Isles' slow count, {npc} has written the drifting isle's story for its children, and the children have made it a festival. They want the one who was there to light the first lantern.",
+   "npc": {
+    "role": "dp32u_warden"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "after": [
+     "dp32u_drift_2"
+    ],
+    "minYearsAfter": 60,
+    "npcFlags": [
+     "dp32u_drift_who"
+    ]
+   },
+   "arc": "The Isle That Drifts",
+   "choices": [
+    {
+     "text": "Light it",
+     "effects": {
+      "log": "You light it. Three hundred lanterns follow, and a goat eats one. It is exactly right.",
+      "charm": 4,
+      "fame": 3,
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Tell the children what really happened",
+     "effects": {
+      "log": "The real story has more arguing and fewer heroes. The children like it better. {npc} pretends to be offended.",
+      "comprehension": 3,
+      "alignment": 2,
+      "npcFlag": "dp32u_drift_who"
+     }
+    },
+    {
+     "text": "Let {npc} light it, and stand at the back",
+     "effects": {
+      "log": "From the back you can see the whole festival at once, which is the best place to see anything from.",
+      "luck": 4,
+      "npcFlag": "dp32u_drift_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_archive_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, the archivist of an old order of the Isles, has found a gap in the order's records: a scroll that was catalogued, borrowed eight hundred years ago by a disciple whose name was cut out, and never returned. The only clue is a note in the margin with your name on it.",
+   "npc": {
+    "role": "dp32u_archivist",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_archivist",
+     "opinion": 10,
+     "ageAbs": 1500,
+     "immortal": 1
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Archive of an Order",
+   "choices": [
+    {
+     "text": "Search your own shelves",
+     "effects": {
+      "log": "It is there, behind a box of letters you never answered. You do not remember borrowing it. {npc} does not believe this.",
+      "luck": 3,
+      "flag": "dp32u_archive_found",
+      "npcFlag": "dp32u_archive_who"
+     }
+    },
+    {
+     "text": "Help {npc} trace the borrower",
+     "effects": {
+      "log": "You follow the cut-out name through three orders and a quarrel. The borrower was a friend of yours who fell in a tribulation. The scroll was a gift meant for you.",
+      "comprehension": 4,
+      "flag": "dp32u_archive_traced",
+      "npcFlag": "dp32u_archive_who"
+     }
+    },
+    {
+     "text": "Say you have never heard of it",
+     "effects": {
+      "log": "{npc} writes \"denied\" in the margin, under your name, in very small and very neat characters.",
+      "charm": -1,
+      "luck": 2,
+      "npcFlag": "dp32u_archive_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_archive_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The scroll is a method nobody has read in eight centuries, and the order is divided. The elders want it locked away. The young want it copied. {npc} wants to know what the scroll's last reader thinks.",
+   "npc": {
+    "role": "dp32u_archivist"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "after": [
+     "dp32u_archive_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dp32u_archive_who"
+    ]
+   },
+   "arc": "The Archive of an Order",
+   "choices": [
+    {
+     "text": "Read it with {npc} first",
+     "effects": {
+      "log": "Two months of reading. The method is strange and very good, and the reason it was locked is only that it is strange. You both come out of it changed.",
+      "comprehension": 6,
+      "qi": 15,
+      "flag": "dp32u_archive_read",
+      "npcFlag": "dp32u_archive_who"
+     }
+    },
+    {
+     "text": "Tell them to copy it",
+     "effects": {
+      "log": "Forty copies go out across the Isles. Ten years later two schools of the method are fighting over what it means, which is how a method stays alive.",
+      "fame": 4,
+      "charm": 2,
+      "npcFlag": "dp32u_archive_who"
+     }
+    },
+    {
+     "text": "Lock it again, and leave a note for the next reader",
+     "effects": {
+      "log": "You write a note that says only \"read slowly\". {npc} adds it to the catalogue as a separate item.",
+      "comprehension": 3,
+      "alignment": 2,
+      "npcFlag": "dp32u_archive_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_whale_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A cloud-whale calf has lost its pod in a storm and beached itself on your terrace, the size of a house and crying like a kettle. {npc}, a young herder of the sky-pastures, arrives breathless: the pod will not come back for it for a hundred years.",
+   "npc": {
+    "role": "dp32u_herder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_herder",
+     "opinion": 20,
+     "ageAbs": 600,
+     "immortal": -1
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Cloud-Whale Calf",
+   "choices": [
+    {
+     "text": "Keep it and raise it",
+     "effects": {
+      "log": "It eats a cloud a day and follows you everywhere. Your terrace is ruined. You have never been so cheerful.",
+      "charm": 4,
+      "alignment": 3,
+      "flag": "dp32u_whale_kept",
+      "npcFlag": "dp32u_whale_who"
+     }
+    },
+    {
+     "text": "Give it to {npc} to raise",
+     "effects": {
+      "log": "{npc} is overwhelmed and grateful and the calf is in good hands. You visit once a season and it remembers you.",
+      "alignment": 3,
+      "luck": 2,
+      "flag": "dp32u_whale_herd",
+      "npcFlag": "dp32u_whale_who"
+     }
+    },
+    {
+     "text": "Find the pod now",
+     "effects": {
+      "log": "You fly for a month through weather nobody flies through. You find them. The calf goes home under its mother's fin, and sings back at you for a day and a night.",
+      "qi": -15,
+      "fame": 5,
+      "comprehension": 3,
+      "npcFlag": "dp32u_whale_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_whale_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The calf is grown, and the pod has come back for it as {npc} said it would. The great whales hang in the sky over the pasture, singing. The calf does not want to go.",
+   "npc": {
+    "role": "dp32u_herder"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "after": [
+     "dp32u_whale_1"
+    ],
+    "minYearsAfter": 100,
+    "npcFlags": [
+     "dp32u_whale_who"
+    ]
+   },
+   "arc": "The Cloud-Whale Calf",
+   "choices": [
+    {
+     "text": "Fly up with it to the pod",
+     "effects": {
+      "log": "You fly beside it to the great whales and then turn back alone. It does not look back. Good.",
+      "comprehension": 5,
+      "alignment": 2,
+      "npcFlag": "dp32u_whale_who"
+     }
+    },
+    {
+     "text": "Let it choose to stay",
+     "effects": {
+      "log": "It stays. In a hundred years it is the largest thing on the Isles, and children ride it to school. The pod passes by every century to sing at it.",
+      "charm": 4,
+      "luck": 3,
+      "npcFlag": "dp32u_whale_who"
+     }
+    },
+    {
+     "text": "Sing to it the way {npc} taught you",
+     "effects": {
+      "log": "Badly. But it listens, and goes. {npc} says it was the worst singing {he} has ever heard, and that it worked.",
+      "luck": 3,
+      "charm": 3,
+      "npcFlag": "dp32u_whale_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_newcomer_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} has just come up through the gate from the world below and is standing on the white stairs with a bundle, an old sword and no idea where to go. Every order on the Isles has a reason to want {him}, and most of the reasons are bad.",
+   "npc": {
+    "role": "dp32u_newcomer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_newcomer",
+     "opinion": 20,
+     "ageAbs": 320,
+     "immortal": -2
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Newly Ascended",
+   "choices": [
+    {
+     "text": "Take {npc} under your wing for a year",
+     "effects": {
+      "log": "A year of being asked where things are. {npc} learns the Isles fast. You learn how strange they are to a new eye.",
+      "charm": 3,
+      "comprehension": 3,
+      "flag": "dp32u_new_guided",
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    },
+    {
+     "text": "Warn {npc} about the orders and let {him} choose",
+     "effects": {
+      "log": "{npc} listens closely, chooses the order you warned about least, and does well there.",
+      "comprehension": 2,
+      "luck": 3,
+      "flag": "dp32u_new_warned",
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    },
+    {
+     "text": "Point {npc} to the Jade Court's clerks and go",
+     "effects": {
+      "log": "The clerks take {him}. You hear in a century that {npc} is a clerk too now, and very good at it.",
+      "luck": 2,
+      "fame": 1,
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_newcomer_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} comes to you in trouble. {He} has refused an order's elder something, and the elder has decided to make an example of the new arrival from below.",
+   "npc": {
+    "role": "dp32u_newcomer"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ],
+    "after": [
+     "dp32u_newcomer_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "dp32u_newcomer_who"
+    ]
+   },
+   "arc": "The Newly Ascended",
+   "choices": [
+    {
+     "text": "Stand with {npc} when the elder comes",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The elder"
+     },
+     "ok": {
+      "log": "The elder comes, sees who is standing in the doorway, and remembers an appointment. {npc} is left alone after that.",
+      "fame": 4,
+      "alignment": 3,
+      "npcFlag": "dp32u_newcomer_who"
+     },
+     "fail": {
+      "log": "The elder is strong and you are tired. You take a hard blow for {npc}, and the elder, embarrassed to have struck you, lets the matter go.",
+      "health": -14,
+      "alignment": 3,
+      "woundOnly": true,
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    },
+    {
+     "text": "Take it to the Jade Court",
+     "effects": {
+      "log": "The Court is slow and very fair. Twelve years later the elder is reprimanded. {npc} has moved on by then, wiser about Courts.",
+      "comprehension": 3,
+      "luck": 2,
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    },
+    {
+     "text": "Teach {npc} to handle it alone",
+     "effects": {
+      "log": "A month of hard lessons. When the elder comes, {npc} handles it, not gracefully but well. You watch from across the cloud.",
+      "strength": 2,
+      "comprehension": 3,
+      "npcFlag": "dp32u_newcomer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_raiders",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 120,
+   "maxPerLife": 6,
+   "text": "Cloud-raiders: a skiff of renegade immortals who live by stripping the outer isles of their spirit stones. Tonight they have come to your isle, and {npc}, their captain, is standing in your garden with a grin.",
+   "variants": [
+    "A grappling hook bites into the edge of your terrace. Over the rail come the cloud-raiders, led by {npc}, who bows very low and asks you to stand away from the stone-store.",
+    "The bells of the outer isles ring one after another, coming nearer: raiders. Then {npc}'s skiff is at your jetty, and {npc} is waving cheerfully, as if visiting.",
+    "Smoke on the horizon of the cloud-sea, and then sails: cloud-raiders, and at the prow {npc}, who has been stripping the outer isles all season and has finally worked inward as far as you.",
+    "{npc} has sent a polite letter ahead: the raiders will call on your isle at the next new moon, and would be grateful if the stone-store were left unlocked to save everyone trouble.",
+    "Your isle's lookout comes running: a black skiff under the terraces, grapnels in the air, and {npc} laughing on the rail as if this were a festival."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "Raiders of the Cloud-Sea",
+   "choices": [
+    {
+     "text": "Drive them off",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It is a short, loud, very bright fight. The skiff limps away over the cloud with its sail on fire. The isle cheers from its windows.",
+      "fame": 4,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "{npc} is better than a raider has any right to be. They take a chest of stones and leave you a cut to remember them by.",
+      "health": -14,
+      "fame": -1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Offer {npc} honest work",
+     "effects": {
+      "log": "{npc} laughs. Then, at the gate, stops laughing and asks what kind of work. Ten years later {npc} captains the order's supply skiff.",
+      "charm": 3,
+      "alignment": 4
+     }
+    },
+    {
+     "text": "Pay them off and send word to the Jade Court",
+     "effects": {
+      "log": "A pouch of stones and a crane to the Court. The raiders are caught on the next isle, with your pouch.",
+      "luck": 3,
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32u_raider",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_raider",
+     "opinion": -20,
+     "ageAbs": 700,
+     "immortal": 0
+    }
+   }
+  },
+  {
+   "id": "dp32u_rival",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 250,
+   "maxPerLife": 5,
+   "text": "{npc}, an immortal of a rival order, has decided that the Isles are not large enough for both your reputations. The challenge is delivered by crane, formally, on red paper.",
+   "variants": [
+    "A red crane on your windowsill: {npc} challenges you before witnesses, at the hour of the snake, over a matter of a word you said in a hall two centuries ago.",
+    "{npc} has been telling the Isles that your fame is borrowed. Now {npc} has come to your gate to prove it, with half an order behind for applause.",
+    "{npc} has had a portrait of you painted, very unflatteringly, and hung it in the hall of a rival order. Under it is an open challenge, and a date.",
+    "At a banquet of the Jade Court, {npc} stands, raises a cup of tea, and invites you, before every order of the Isles, to settle a centuries-old account on the duelling cloud."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "An Immortal With a Grudge",
+   "choices": [
+    {
+     "text": "Meet {npc} on the duelling cloud",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "The order's whole hall comes to watch, and goes home talking about it for a century. {npc} bows at the end, stiffly.",
+      "fame": 5,
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "{npc} wins the exchange that matters. You are carried from the cloud with your pride in pieces and a wound that takes a year to close.",
+      "health": -16,
+      "fame": -2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Send back a poem instead",
+     "effects": {
+      "log": "You decline in verse. It is a very good poem. The Isles prefer it to a duel and {npc} is never quite taken seriously again.",
+      "charm": 4,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Visit {npc} and ask what the grudge is",
+     "effects": {
+      "log": "It is three hundred years old and about a seat at a banquet. You give {npc} the seat. It costs you nothing at all.",
+      "alignment": 3,
+      "luck": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32u_rival",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_rival",
+     "opinion": -30,
+     "ageAbs": 1200,
+     "immortal": 1
+    }
+   }
+  },
+  {
+   "id": "dp32u_storm",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 200,
+   "maxPerLife": 5,
+   "text": "A storm between the isles, the kind that comes once a century: a wall of black cloud full of lightning that hunts for qi. You are halfway across the open sky when it finds you.",
+   "variants": [
+    "The lightning-season of the outer Isles. The sky goes green at noon, and the cloud under your skiff starts to boil.",
+    "The wind between two isles has turned, as it does once in a lifetime of the Isles, and your skiff is in the middle of it, pitching like a leaf.",
+    "Black cloud rolls in over the outer isles faster than any skiff can fly. Lightning walks across it on legs. You are in the open sky.",
+    "A tribulation not your own has gone wrong somewhere on the Isles, and its thunder has broken loose across the cloud-sea, looking for anyone with qi."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "Weather Between the Isles",
+   "choices": [
+    {
+     "text": "Ride it out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "log": "You hold your qi still as a stone and the lightning loses interest. On the far side your robes are smoking and your mind is very clear.",
+      "qi": 15,
+      "comprehension": 3
+     },
+     "fail": {
+      "log": "The storm takes its toll before you find calm air. You come down on a strange isle singed and limping.",
+      "health": -15,
+      "luck": 1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Turn back and wait for clear skies",
+     "effects": {
+      "log": "A year, as it turns out. You spend it on a small isle teaching a family of cloud-farmers to read. It is a good year.",
+      "charm": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Fly up through the storm and above it",
+     "effects": {
+      "log": "Above the storm the sky is blue-black and very quiet, and you can see the stars in daylight. You stay there a while.",
+      "comprehension": 4,
+      "luck": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_visitor",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 200,
+   "maxPerLife": 3,
+   "text": "{npc} has ascended from the world below in this century and has heard there is an elder of the Isles who still remembers what it was like. {He} has brought a gift from below: a bag of ordinary salt.",
+   "variants": [
+    "A newly ascended immortal, {npc}, sits on your step, plainly homesick, holding a letter from below that {he} has read a hundred times.",
+    "{npc} came up through the gate a decade ago and has finally found the courage to call on the oldest elder of the Isles, with a list of questions and a basket of dumplings."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "Callers on the Cloud",
+   "choices": [
+    {
+     "text": "Talk with {npc} about the world below",
+     "effects": {
+      "log": "A long afternoon. {npc} tells you the world below is much the same, and much changed. The salt tastes of home.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Show {npc} the best view on the Isles",
+     "effects": {
+      "log": "From your peak the whole cloud-sea is gold at sunset. {npc} cries a little. You do not mention that you did too, once.",
+      "alignment": 2,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Give {npc} something back: a spirit stone from your first year above",
+     "effects": {
+      "log": "It is small and dull and you have kept it for longer than {npc} has been alive. {npc} understands what it is.",
+      "charm": 4,
+      "alignment": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32u_caller",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_caller",
+     "opinion": 25,
+     "ageAbs": 330,
+     "immortal": -2
+    }
+   }
+  },
+  {
+   "id": "dp32u_tribulation",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 400,
+   "maxPerLife": 2,
+   "text": "Heaven's thunder is gathering over the isle next to yours. {npc}, who has been your neighbour for four hundred years and borrows your ladders, is facing a tribulation and is not ready.",
+   "variants": [
+    "The sky over {npc}'s order goes the colour of a bruise. {npc}, an old friend of yours, has a tribulation tonight, and has come to say goodbye in case."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "A Neighbour's Tribulation",
+   "choices": [
+    {
+     "text": "Sit with {npc} through the night before",
+     "effects": {
+      "log": "You talk about nothing until dawn. When the thunder comes, {npc} meets it calm, and passes.",
+      "alignment": 4,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Stand under the first strike to break it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 2,
+      "foeName": "Heaven's thunder"
+     },
+     "ok": {
+      "log": "The first bolt breaks on your shoulders and the rest come weaker. {npc} passes, and owes you ladders forever.",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "Heaven does not like interference. The bolt is meant for {npc} and is twice as hard for you. You both survive it, just.",
+      "health": -18,
+      "alignment": 3,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Give {npc} a talisman you made a long time ago",
+     "effects": {
+      "log": "It holds through three strikes and breaks on the fourth. The fourth is the last. {npc} keeps the pieces.",
+      "luck": 3,
+      "charm": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32u_neighbour",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_neighbour",
+     "opinion": 40,
+     "ageAbs": 1100,
+     "immortal": 0
+    }
+   }
+  },
+  {
+   "id": "dp32u_long",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 300,
+   "maxPerLife": 3,
+   "text": "A thousand years on the Isles have taught you to see the slow things: the cloud-sea's tides, which take a century to turn; the isles' drift; the way the stars of the Jade Court's sky are moving, very slightly, east.",
+   "variants": [
+    "The Isles' great bell, which rings once each thousand years, rings tonight. You remember the last time, and who was standing next to you then.",
+    "You notice that the cloud-garden on your terrace has become a forest. You planted it as a hedge."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "The Long Sky",
+   "choices": [
+    {
+     "text": "Sit and watch a century of tide",
+     "effects": {
+      "log": "You sit on your terrace for a hundred days and see a hundred years of tide in your mind's eye. Something in your Dao turns over in its sleep.",
+      "comprehension": 5,
+      "qi": 10
+     }
+    },
+    {
+     "text": "Write it down for the young immortals",
+     "effects": {
+      "log": "You write a short book called \"Things That Move Slowly\". It is read by almost nobody and they are all changed by it.",
+      "fame": 3,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Go and see an isle you have never visited",
+     "effects": {
+      "log": "There is still one. After all this time there is still one. The people there are surprised to meet you, and so are you.",
+      "luck": 3,
+      "charm": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_skybeast",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 250,
+   "maxPerLife": 4,
+   "text": "A thunder-roc has nested on the peak of your isle, and it does not like neighbours. It has already knocked two skiffs out of the sky and torn the roof off the order's library.",
+   "variants": [
+    "Something huge and silver is swimming through the cloud-sea under your isle, rubbing its back on the roots. Every time it does, the isle shakes and a terrace falls.",
+    "A storm-serpent has wound itself around the root of your isle to sleep off a meal, and every breath it takes shakes a terrace loose.",
+    "The cloud-whales of the outer sky are fleeing inward, and behind them comes the thing they flee: a sky-beast with a mouth like a gate."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "Beasts of the High Sky",
+   "choices": [
+    {
+     "text": "Drive it off your peak",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "log": "A fight in the clouds that the whole isle watches from its windows. The roc goes, screaming, and nests on a rock nobody wanted.",
+      "fame": 4,
+      "strength": 2
+     },
+     "fail": {
+      "log": "The roc is older and angrier than you. You drive it off at last with a gash across your back that the isle's physicians are very interested in.",
+      "health": -16,
+      "fame": 1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Find out why it came",
+     "effects": {
+      "log": "Its old rock was mined hollow by an order for spirit stones. You shame the order into giving the roc another. The roc moves. The order sulks.",
+      "alignment": 4,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Let it stay, and build a new library",
+     "effects": {
+      "log": "The roc stays. It is very loud and very beautiful, and nobody on the isle is ever robbed again.",
+      "luck": 3,
+      "charm": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32u_thief",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 400,
+   "maxPerLife": 1,
+   "text": "Someone has been in your treasury: a clean cut through three wards, nothing taken but one thing, the oldest spirit stone you own. {npc}, a thief of the Isles with a name on every wanted board, has left a calling card.",
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "notFlags": [
+     "divine_realm",
+     "pw_life"
+    ]
+   },
+   "arc": "A Thief in the Treasury",
+   "choices": [
+    {
+     "text": "Track {npc} to the outer isles",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You find {npc} on a rock at the edge of the cloud-sea, admiring the stone. The fight is short. {npc} hands it back with real regret.",
+      "fame": 3,
+      "luck": 2
+     },
+     "fail": {
+      "log": "{npc} is quicker than any thief has a right to be. You get the stone back and lose a strip of your sleeve and some blood.",
+      "health": -12,
+      "fame": -1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Leave a note asking for it back",
+     "effects": {
+      "log": "{npc} returns it within the month, with a note: \"Nobody has ever asked.\" The next calling card is a pressed flower.",
+      "charm": 4,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Let {npc} keep it",
+     "effects": {
+      "log": "It was only a stone. The cut through your wards was art. You mend them, better.",
+      "comprehension": 3,
+      "alignment": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32u_thief",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32u_thief",
+     "opinion": -10,
+     "ageAbs": 500,
+     "immortal": -1
+    }
+   }
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

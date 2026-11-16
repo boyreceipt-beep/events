@@ -1,0 +1,938 @@
+{
+ "events": [
+  {
+   "id": "dc_dao_trial_sword_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "Your meditation opens onto a plain of swords: every sword ever forged, standing point down in the grass, to the edge of sight. One of them pulls itself free and hangs in the air before you. It does not want to be held. It wants to know whether you deserve to hold anything at all.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Sword Dao: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Take the sword and cross blades with it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The sword"
+     },
+     "ok": {
+      "flag": "gdao_trial_sword",
+      "comprehension": 2,
+      "log": "The sword strikes, and you answer, and somewhere in the third exchange you stop being two things. When it settles back into the grass, every sword on the plain has turned its edge toward you, like a field of grain bowing to the wind."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The sword passes your guard and stops a hair from your throat, which is its way of saying not yet. You wake on the clouds with a thin cold line on your skin. (-10 health)"
+     }
+    },
+    {
+     "text": "Put your own sword down and meet it with an empty hand",
+     "roll": {
+      "stat": "sword",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_sword",
+      "comprehension": 2,
+      "log": "You meet the falling edge with an open palm, and the edge stops, because a sword is only a question and you have answered it. The plain of swords goes quiet. You understand a little more of what a blade is for."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The sword does not stop for an empty hand that is only pretending. It knocks you out of the meditation like a door slammed in a storm. (-10 health)"
+     }
+    },
+    {
+     "text": "Bow to the sword and leave the plain",
+     "effects": {
+      "comprehension": 1,
+      "log": "You bow, and the sword bows back, very slightly. It will be here when you return."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_blade_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "In the meditation you stand in a smithy at the end of time. A smith with no face holds out a blade that has never been finished. \"A sword asks,\" the smith says. \"A blade decides. Decide something.\"",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Blade Dao: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Take the blade and cut the anvil in two",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The faceless smith"
+     },
+     "ok": {
+      "flag": "gdao_trial_blade",
+      "comprehension": 2,
+      "log": "One stroke. The anvil falls in two halves that ring like bells, and the smith nods as if this happens every day, which perhaps it does. Your understanding of the blade sharpens by a whole edge."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The blade turns in your hand and chooses its own line. The anvil keeps its shape; your shoulder does not. (-10 health)"
+     }
+    },
+    {
+     "text": "Finish the blade yourself, at the fire",
+     "roll": {
+      "stat": "strength",
+      "dc": 85
+     },
+     "ok": {
+      "flag": "gdao_trial_blade",
+      "comprehension": 2,
+      "log": "You work the blade at the fire until your arms do not exist. When you plunge it into the water, the steam spells out a word you will never say aloud. The smith takes the blade, and gives you back its meaning."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The blade cracks in the water. The smith sweeps up the pieces without a word. You wake with the smell of the forge in your hair. (-10 health)"
+     }
+    },
+    {
+     "text": "Hand the blade back undecided",
+     "effects": {
+      "comprehension": 1,
+      "log": "You give the blade back. \"Then come back when you have decided,\" the smith says, and goes on hammering."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_life_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation opens on a garden where every plant is dying at once: blossoms browning, roots gone soft, a whole spring folding in on itself. A voice like rain asks you only one thing: what is it worth to you, that things go on living?",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Life: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Pour your own vitality into the garden",
+     "roll": {
+      "stat": "health",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "gdao_trial_life",
+      "comprehension": 2,
+      "log": "You give, and keep giving, and the garden drinks. When you are nearly empty, a single shoot pushes up through the dark earth, then a thousand. The Dao of Life fills you back up, and more."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You give everything you can, and it is not yet enough. The garden folds away, and you wake on the clouds, tired to the bone. (-10 health)"
+     }
+    },
+    {
+     "text": "Find the one root that is still sound, and tend it",
+     "roll": {
+      "stat": "medicine",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_life",
+      "comprehension": 2,
+      "log": "You find it under the rot: one root, white and stubborn. You tend it for what feels like a hundred years. When you stand, the whole garden is green again, because it was always all one plant."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Every root you touch crumbles. You wake with earth under your nails and an ache you cannot place. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the garden be, for now",
+     "effects": {
+      "comprehension": 1,
+      "log": "You leave the garden as it is. Behind you, very quietly, something keeps trying to grow."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_death_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "Your meditation brings you to a riverbank in grey light. A ferryman waits with a lantern and an empty boat. \"Everyone crosses,\" the ferryman says, without unkindness. \"You only want to understand the river. Then get in, and come back.\"",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Death: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Get in the boat and cross",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_death",
+      "comprehension": 2,
+      "log": "You cross. On the far bank there is nothing to fear and nothing to want, only a great quiet. You come back across with the quiet still in your hands, and the river no longer frightens you."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Halfway across, the cold reaches you, and you turn back too soon. You wake shivering on the clouds. (-10 health)"
+     }
+    },
+    {
+     "text": "Ask the ferryman to sit with you on the bank instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_death",
+      "comprehension": 2,
+      "log": "The ferryman sits. For a long time you both watch the river, and the ferryman tells you what every crossing is like. When you leave, death is not a stranger to you any more."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The ferryman shakes their head. \"Not yet,\" they say, and the bank fades. You wake with the grey light still behind your eyes. (-10 health)"
+     }
+    },
+    {
+     "text": "Stay on this side of the river",
+     "effects": {
+      "comprehension": 1,
+      "log": "You stay on the bank. The ferryman waves the lantern once, patient as stone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_void_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation opens on nothing. Not darkness: nothing. No up, no down, no body, no breath. Something in the nothing waits to see whether you will fill it with yourself, the way everyone else has.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of the Void: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Let go of everything, even the letting go",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 85
+     },
+     "ok": {
+      "flag": "gdao_trial_void",
+      "comprehension": 2,
+      "log": "You let go. There is no you, and that turns out to be very spacious. When you come back there is a you again, but it fits more loosely, and there is room in it for the whole sky."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You grab for something to hold, anything, and the nothing spits you out. You wake gasping on the clouds. (-10 health)"
+     }
+    },
+    {
+     "text": "Count your breaths until there is no one counting",
+     "roll": {
+      "stat": "strategy",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_void",
+      "comprehension": 2,
+      "log": "One breath. Ten. Ten thousand. Somewhere past the counting, the counter is gone, and the Void opens like a hand. You come back holding nothing, which is what you came for."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You lose count, and in losing count you panic, and the Void is gone before you reach the bottom of it. (-10 health)"
+     }
+    },
+    {
+     "text": "Open your eyes",
+     "effects": {
+      "comprehension": 1,
+      "log": "You open your eyes on the ordinary sky. The nothing will still be there. It is very good at waiting."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_time_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "In the meditation you sit in a room with a single water clock, dripping. Each drop is a year. Through the window you watch yourself being born, growing, climbing the white stairs, all at once. The water clock is nearly empty. You are asked to make it run backward.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Time: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Hold one drop in the air until it forgets to fall",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 85
+     },
+     "ok": {
+      "flag": "gdao_trial_time",
+      "comprehension": 2,
+      "log": "You hold one drop, and the world holds with it. Outside, a bird stops in mid-flight. You understand that time is not a river but a decision, and you make it."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The drop falls. They always fall. You wake with the sound of it still in your ears, older by a moment that felt like a year. (-10 health)"
+     }
+    },
+    {
+     "text": "Live the same moment over until you know it perfectly",
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "gdao_trial_time",
+      "comprehension": 2,
+      "log": "Ten thousand times you live the same breath, until you know every speck of light in it. On the ten-thousand-and-first, the water clock fills itself from the bottom up."
+     },
+     "fail": {
+      "health": -10,
+      "log": "On the hundredth repetition you lose the thread, and the room ages around you all at once. You wake tired. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the clock run",
+     "effects": {
+      "comprehension": 1,
+      "log": "You let it drip. There will be other years for this. That is, after all, the whole point of time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_flame_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation becomes a forest on fire, and you are standing in the middle of it, unburned, for now. The fire is not angry. It is curious. It asks to be let in.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Flame: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Let the fire into your meridians",
+     "roll": {
+      "stat": "health",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_flame",
+      "comprehension": 2,
+      "log": "You let it in, and it runs through you like a second blood. When the forest burns down, new green is already rising from the ash, and the fire lives in your chest now, warm and steady."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The fire is more than your meridians can hold. You wake on the clouds, the air shimmering around you. (-10 health)"
+     }
+    },
+    {
+     "text": "Burn your doubts in it, one by one",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_flame",
+      "comprehension": 2,
+      "log": "You hand the fire your doubts one at a time. It takes each gladly. When the last one is ash, you are lighter than smoke, and the fire bows to you as to an old friend."
+     },
+     "fail": {
+      "health": -10,
+      "log": "One doubt will not burn: you held it back. The fire turns from curious to scorching. You wake with your skin warm for a week. (-10 health)"
+     }
+    },
+    {
+     "text": "Step out of the fire",
+     "effects": {
+      "comprehension": 1,
+      "log": "You step out of the burning forest. Behind you the fire keeps your shape, as if it wants to remember you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_water_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "You meditate and become a drop of water at the top of a mountain. Below lies the long way to the sea: rocks, gorges, still pools, a dam built by someone long dead. Water does not fight. Water arrives. Arrive.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Water: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Flow around every obstacle, never against",
+     "roll": {
+      "stat": "lightness",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_water",
+      "comprehension": 2,
+      "log": "You find the way around every stone. Somewhere in the gorge you stop choosing the path and simply are the path. You reach the sea, and the sea says welcome back."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You push against a stone instead of going around, and water that pushes is only a wave breaking. You wake soaked through. (-10 health)"
+     }
+    },
+    {
+     "text": "Wait at the dam until it gives way by itself",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_water",
+      "comprehension": 2,
+      "log": "You wait a thousand years at the dam. The dam does not. It cracks, and you go through with a whole lake behind you, gentle and unstoppable."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You grow impatient at the dam and try to climb it. Water does not climb. You wake heavy and cold. (-10 health)"
+     }
+    },
+    {
+     "text": "Become a still pool, and rest",
+     "effects": {
+      "comprehension": 1,
+      "log": "You rest as a still pool, reflecting the sky. The sea will keep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_thunder_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation opens in the heart of a storm. Lightning hangs in the air around you like the bars of a cage. A voice made of thunder says: you have survived heaven's anger many times. Now stand inside it, and be it.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Thunder: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Catch a bolt in your bare hands",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The storm"
+     },
+     "ok": {
+      "flag": "gdao_trial_thunder",
+      "comprehension": 2,
+      "log": "You catch it. The bolt writhes, then goes still, and then it is not a bolt but a word you understand. Every storm from now on will be speaking your language."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The bolt is faster than understanding. You wake on the clouds, your hair standing on end, smelling of rain. (-10 health)"
+     }
+    },
+    {
+     "text": "Breathe in time with the storm",
+     "roll": {
+      "stat": "strength",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_thunder",
+      "comprehension": 2,
+      "log": "You breathe with the storm until your heartbeat and the thunder are the same sound. When the clouds part, they part around you, out of respect."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You fall out of step with the storm and it rolls over you. You wake with a ringing in your ears that lasts a season. (-10 health)"
+     }
+    },
+    {
+     "text": "Let the storm pass over",
+     "effects": {
+      "comprehension": 1,
+      "log": "You let the storm go by. Thunder is patient too, in its loud way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_earth_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation sets you on a plain, and the plain begins to rise beneath you: hills, then mountains, then a range older than any name. The mountain asks whether you can hold still as long as it has.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Earth: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Sit like a mountain for a thousand years",
+     "roll": {
+      "stat": "health",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_earth",
+      "comprehension": 2,
+      "log": "You sit. Rains come and go. Forests grow on your shoulders and fall. When you open your eyes the mountain is beside you, and you are both very calm, and very heavy, and very glad."
+     },
+     "fail": {
+      "health": -10,
+      "log": "A thousand years is long, and a moment of restlessness shakes the mountain off you. You wake aching in every bone. (-10 health)"
+     }
+    },
+    {
+     "text": "Carry the mountain on your back for one step",
+     "roll": {
+      "stat": "strength",
+      "dc": 85
+     },
+     "ok": {
+      "flag": "gdao_trial_earth",
+      "comprehension": 2,
+      "log": "One step, with all the earth on your back. It is the hardest step you have ever taken. The mountain sets itself down where you stop, and the ground remembers you."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You lift, and the mountain does not. You wake with your back bent like an old farmer's, for a while. (-10 health)"
+     }
+    },
+    {
+     "text": "Lie down on the earth, and listen",
+     "effects": {
+      "comprehension": 1,
+      "log": "You lie down and listen to the earth. It says nothing, slowly, which is its way of saying come back."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_wind_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "You meditate and the clouds are gone; you are the wind, crossing a whole world in a breath. Below, a kite string is about to snap, a fire is about to spread, a ship's sail is slack. Wind touches everything and holds nothing.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Wind: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Touch them all, and hold none",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_wind",
+      "comprehension": 2,
+      "log": "The kite rises, the fire goes the other way, the ship finds its sail. You are already gone before anyone knows you were there. You come back light as dawn air."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You try to hold one thing, and the wind that holds is only a gust that dies. You wake breathless. (-10 health)"
+     }
+    },
+    {
+     "text": "Choose one: lift the kite and let the rest be",
+     "roll": {
+      "stat": "luck",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "gdao_trial_wind",
+      "comprehension": 2,
+      "log": "You lift one kite, for one child, and leave the rest of the world to itself. It is enough. The wind tells you that it was always enough."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You choose, and then you doubt the choice, and a wind that doubts is still. You wake heavy on the clouds. (-10 health)"
+     }
+    },
+    {
+     "text": "Settle, and be still air",
+     "effects": {
+      "comprehension": 1,
+      "log": "You settle and become still air for a while. Even the wind sleeps."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_karma_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation spreads every life you have lived before you like threads on a loom: the kindnesses, the debts, the people you left. Some threads are bright. Some are knotted. A weaver with your face asks you to untie one knot, by hand.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Karma: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Untie the knot of the person you wronged most",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_karma",
+      "comprehension": 2,
+      "log": "The knot is tight, and old, and every loop of it is a reason you once gave yourself. You loosen them all. The thread runs smooth, and far away, in another life, someone sleeps better."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The knot tightens the harder you pull. The weaver puts a hand over yours: not yet. You wake heavy-hearted. (-10 health)"
+     }
+    },
+    {
+     "text": "Follow one bright thread back to where it began",
+     "roll": {
+      "stat": "charm",
+      "dc": 75
+     },
+     "ok": {
+      "flag": "gdao_trial_karma",
+      "comprehension": 2,
+      "log": "The bright thread leads back to a small kindness you had forgotten, a bowl of rice to a stranger. Everything good you have done since came from there. The weaver smiles with your face."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The thread snaps where you grip it too hard. You wake with a name on your lips that you cannot place. (-10 health)"
+     }
+    },
+    {
+     "text": "Leave the loom as it is",
+     "effects": {
+      "comprehension": 1,
+      "log": "You leave the threads as they are. The weaver goes on weaving. There will be more to see next time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_balance_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation sets a great scale in front of you, as tall as a pagoda. On one pan, everything you have done for others. On the other, everything you have done for yourself. The beam trembles. You are asked to stand on it, in the middle.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Balance: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Walk out onto the beam",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_balance",
+      "comprehension": 2,
+      "log": "You walk out. The beam dips one way and then the other, and you go with it, and with it, until it is not moving and neither are you. Balance was never stillness. It was listening."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You lean too far, and then too far back, and fall off the scale entirely. You wake on the clouds, dizzy. (-10 health)"
+     }
+    },
+    {
+     "text": "Take something from each pan until it settles",
+     "roll": {
+      "stat": "strategy",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_balance",
+      "comprehension": 2,
+      "log": "You take a little from each side, carefully, the way a cook seasons. The beam settles level. You find you did not need either pile as much as you thought."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You take too much from one side, and the scale swings hard enough to knock you out of the meditation. (-10 health)"
+     }
+    },
+    {
+     "text": "Step back and watch the scale",
+     "effects": {
+      "comprehension": 1,
+      "log": "You watch the scale tremble for a long time. It is an education in itself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_illusion_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "In the meditation you walk into a hall of mirrors. In each one is a version of you: the one who never left home, the one who fell, the one who rules a kingdom below. One of them is real. They all insist it is them.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Illusion: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Find the real one",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_illusion",
+      "comprehension": 2,
+      "log": "You look a long time and then laugh, because none of them is real and neither, entirely, are you. The mirrors laugh with you, and then they are only glass, and you can see through all of them."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You choose one, and it smiles a smile that is not yours. The hall shatters. You wake with a headache like a cracked bell. (-10 health)"
+     }
+    },
+    {
+     "text": "Convince them all that none of them is",
+     "roll": {
+      "stat": "charm",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_illusion",
+      "comprehension": 2,
+      "log": "You talk to each reflection in turn until every one of them is unsure, and then the hall is empty except for you, and you are no longer sure either, and that is the beginning of the Dao."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The reflections convince you instead. For a whole day after you wake, you are not sure which way your own hand will move. (-10 health)"
+     }
+    },
+    {
+     "text": "Close your eyes in the hall",
+     "effects": {
+      "comprehension": 1,
+      "log": "You close your eyes. The reflections fall silent. They will be here, smiling, the next time you look."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_space_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "The meditation folds the sky like a letter. A mountain on the far side of the world is suddenly one step away; a cup in your hand is suddenly a thousand miles off. Distance is a habit, says the folded sky. Break it.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Space: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Take one step to the far side of the world",
+     "roll": {
+      "stat": "lightness",
+      "dc": 80
+     },
+     "ok": {
+      "flag": "gdao_trial_space",
+      "comprehension": 2,
+      "log": "One step, and you are standing in a valley you have never seen, with snow on your shoulders. One step back, and the clouds. Distance is a word you no longer need."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You step, and half of you arrives. The rest catches up a moment later, unhappily. You wake dizzy. (-10 health)"
+     }
+    },
+    {
+     "text": "Draw the shape of the fold, line by line",
+     "roll": {
+      "stat": "arrays",
+      "dc": 70
+     },
+     "ok": {
+      "flag": "gdao_trial_space",
+      "comprehension": 2,
+      "log": "You draw the fold the way an array master draws a seal, and once it is drawn you can see it everywhere: in the sky, in a sleeve, in the space between two thoughts."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Your lines do not close. The fold snaps open, and the whole sky rings like a struck gong. (-10 health)"
+     }
+    },
+    {
+     "text": "Unfold the sky and rest",
+     "effects": {
+      "comprehension": 1,
+      "log": "You smooth the sky flat again. Everything goes back to being far away, for now."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_dao_trial_slaughter_1",
+   "cat": "life",
+   "weight": 1,
+   "once": false,
+   "maxPerLife": 99,
+   "text": "Your meditation opens on a battlefield after the battle: broken banners, silent armour, ten thousand blades in the mud. Nothing moves. A general made of rust rises and asks why you came here, of all places, to learn.",
+   "when": {
+    "upper": true,
+    "realm": [
+     12,
+     28
+    ]
+   },
+   "arc": "The Dao of Slaughter: the Trial",
+   "trigger": "dao_trial",
+   "choices": [
+    {
+     "text": "Answer by defeating the general",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The rust general"
+     },
+     "ok": {
+      "flag": "gdao_trial_slaughter",
+      "comprehension": 2,
+      "log": "You fight the rust general across the whole field. When the general falls, every blade in the mud turns to point at the sky, and you understand that the Dao of Slaughter is a weight, and you can carry it."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The rust general is everything that was ever lost on the field. You wake on the clouds, very tired. (-10 health)"
+     }
+    },
+    {
+     "text": "Answer that you came to learn when to stop",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 85
+     },
+     "ok": {
+      "flag": "gdao_trial_slaughter",
+      "comprehension": 2,
+      "log": "The general is quiet a long time. Then the rust general kneels, and the field goes still in a different way, the way a field goes still when the war is finally over. You carry the lesson out with you."
+     },
+     "fail": {
+      "health": -10,
+      "log": "Your answer is not yet true, and the general can tell. You wake with the field's silence still pressing on you. (-10 health)"
+     }
+    },
+    {
+     "text": "Leave the field",
+     "effects": {
+      "comprehension": 1,
+      "log": "You walk off the field without looking back. Behind you, the general sits down to wait."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

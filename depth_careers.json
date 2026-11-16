@@ -1,0 +1,2048 @@
+{
+ "events": [
+  {
+   "id": "dc_tavern_1",
+   "cat": "life",
+   "arc": "The House That Pours",
+   "when": {
+    "anyFlags": [
+     "job_waiter",
+     "job_head_waiter"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A regular who never pays his tab is found dead in the alley behind the tavern, a dagger in his back and a sect token in his sleeve. The keeper wants it swept away before the magistrate wakes. You poured his last cup.",
+   "choices": [
+    {
+     "text": "Sweep it away, as told",
+     "effects": {
+      "performance": 8,
+      "alignment": -4,
+      "flag": "tavern_secret",
+      "log": "By dawn there was never a body. You learn how a tavern really keeps its doors open."
+     }
+    },
+    {
+     "text": "Take the token to the magistrate",
+     "effects": {
+      "alignment": 6,
+      "fame": 3,
+      "performance": -6,
+      "flag": "tavern_honest",
+      "log": "The keeper does not forgive you for a year. Three sects send men to ask who found the token."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_tavern_2",
+   "cat": "life",
+   "arc": "The House That Pours",
+   "when": {
+    "anyFlags": [
+     "job_waiter",
+     "job_head_waiter",
+     "job_tavern_keeper",
+     "job_inn_owner",
+     "job_inn_magnate"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_tavern_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sect lord books the whole house for a night and tells you to serve a man he calls his brother. Halfway through the wine the brother's cup smells wrong. Nobody else has noticed.",
+   "choices": [
+    {
+     "text": "Knock the cup over, as if by accident",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 6,
+      "flag": "tavern_saved_lord",
+      "performance": 10,
+      "log": "The brother lives. A week later a purse arrives with no note, and the house is suddenly very popular with one sect."
+     },
+     "fail": {
+      "taels": -20,
+      "performance": -8,
+      "log": "Nobody believes it was an accident. The lord has you thrown into the street, and the broken crockery goes on your account."
+     }
+    },
+    {
+     "text": "Serve it. Guests' quarrels are not yours",
+     "effects": {
+      "alignment": -8,
+      "taels": 30,
+      "flag": "tavern_secret",
+      "log": "The brother dies at the table. The lord tips you more than a year's wage and looks you in the eye while he does it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_tavern_3",
+   "cat": "life",
+   "arc": "The House That Pours",
+   "when": {
+    "anyFlags": [
+     "job_tavern_keeper",
+     "job_inn_owner",
+     "job_inn_magnate"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_tavern_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Your name is on the sign now. The old keeper, drunk and small in the corner, tells you the house was built over a sealed cellar, and that every keeper opens it once. He never did.",
+   "choices": [
+    {
+     "text": "Open the cellar",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "risky": true,
+     "ok": {
+      "taels": 300,
+      "item": "manual_basic",
+      "fame": 5,
+      "log": "Jars of wine older than the dynasty, a chest of silver, and a breathing manual wrapped in oilcloth. The old keeper weeps."
+     },
+     "fail": {
+      "health": -20,
+      "deathCause": "the cellar under your own tavern",
+      "log": "The cellar door opens on bad air and a floor that is not there. You climb out at dawn, bruised and wiser, and nail it shut again."
+     }
+    },
+    {
+     "text": "Leave it sealed. Some houses keep their own counsel",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 3,
+      "log": "You pour the old man a cup from the top shelf instead. Whatever is down there stays down there, and the house stays lucky."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_farm_1",
+   "cat": "life",
+   "arc": "Seed Grain",
+   "when": {
+    "anyFlags": [
+     "job_farmer"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "The rains fail. The landlord's agent arrives before the harvest does, to say the rent is the same as a good year. Every farmer on the hill is looking at you because you were the one who spoke up last time.",
+   "choices": [
+    {
+     "text": "Speak for the hill",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 6,
+      "flag": "farm_spokesman",
+      "performance": 8,
+      "log": "The agent cuts the rent by a third rather than face forty farmers with hoes. They remember who stood up."
+     },
+     "fail": {
+      "taels": -30,
+      "performance": -4,
+      "flag": "farm_spokesman",
+      "log": "The agent laughs in your face and takes the rent anyway, with a fine for your tongue. The hill nods at you in the lane, quietly."
+     }
+    },
+    {
+     "text": "Pay and keep your head down",
+     "effects": {
+      "taels": -40,
+      "performance": 4,
+      "log": "You pay. Two families on the hill do not, and leave in the night with what they can carry."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_farm_2",
+   "cat": "life",
+   "arc": "Seed Grain",
+   "when": {
+    "anyFlags": [
+     "job_farmer",
+     "job_smallholder",
+     "job_village_head",
+     "job_landlord"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_farm_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A stranger buys the dead orchard nobody wanted and starts digging at night. The village says ghosts. You say the ground there was always warmer than it should be.",
+   "choices": [
+    {
+     "text": "Dig there yourself first",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 120,
+      "item": "spirit_herb",
+      "flag": "farm_hot_spring",
+      "fame": 4,
+      "log": "A hot spring, and around it herbs that should not grow this far north. You fence it before the stranger wakes."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The earth gives way into scalding mud. You crawl out blistered, and the stranger's men have fenced the orchard by morning."
+     }
+    },
+    {
+     "text": "Tell the stranger what you know, for a share",
+     "effects": {
+      "taels": 60,
+      "alignment": 2,
+      "log": "He pays honestly. Years later his medicine hall still sends you a jar of its best every winter."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_farm_3",
+   "cat": "life",
+   "arc": "Seed Grain",
+   "when": {
+    "anyFlags": [
+     "job_village_head",
+     "job_landlord"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_farm_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The hill answers to you now. The young farmers come to ask what the hill asked once: the rains have failed, and the rent is the same as a good year.",
+   "choices": [
+    {
+     "text": "Cut the rent. You remember",
+     "effects": {
+      "alignment": 8,
+      "fame": 8,
+      "taels": -150,
+      "flag": "farm_kind_landlord",
+      "log": "They do not thank you. They stay, which is better. The hill is full of children the next spring."
+     }
+    },
+    {
+     "text": "The rent is the rent",
+     "effects": {
+      "taels": 200,
+      "alignment": -8,
+      "fame": -4,
+      "log": "You collect every grain. The hill empties by half, and the ones who stay look at you the way you once looked at the agent."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_docks_1",
+   "cat": "life",
+   "arc": "Wet Rope",
+   "when": {
+    "anyFlags": [
+     "job_porter"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A crate splits on the gangplank and spills silver ingots stamped with a prefecture seal. The foreman is already shouting that nobody saw anything. The Water Gang's man on the pier saw.",
+   "choices": [
+    {
+     "text": "Help nail the crate shut",
+     "effects": {
+      "performance": 8,
+      "taels": 15,
+      "flag": "docks_gang_favour",
+      "log": "The gang man nods at you. From now on the heavy crates somehow go to the other porters."
+     }
+    },
+    {
+     "text": "Walk away and say nothing to anyone",
+     "effects": {
+      "alignment": 2,
+      "performance": 2,
+      "log": "You carry rope the rest of the day. The ingots are gone by evening and so is the foreman's cough."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_docks_2",
+   "cat": "life",
+   "arc": "Wet Rope",
+   "when": {
+    "anyFlags": [
+     "job_porter",
+     "job_dock_foreman",
+     "job_dock_boss",
+     "job_water_gang"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_docks_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The river rises in the night and the lower pier goes under with a loaded junk tied to it. The crew is in the water, and the cargo is a merchant's whole year.",
+   "choices": [
+    {
+     "text": "Into the water for the crew",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "alignment": 8,
+      "flag": "docks_hero",
+      "performance": 10,
+      "log": "Six men pulled out, the last one by the hair. The whole waterfront knows your name by morning."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "the river in flood",
+      "log": "The current takes you under the pier and spits you out half a li downstream. You live, which is more than the junk does."
+     }
+    },
+    {
+     "text": "Save the cargo; the crew can swim",
+     "effects": {
+      "taels": 80,
+      "alignment": -6,
+      "performance": 6,
+      "log": "You and three others haul bales till dawn. The merchant pays well. Two of the crew do not come up."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_docks_3",
+   "cat": "life",
+   "arc": "Wet Rope",
+   "when": {
+    "anyFlags": [
+     "job_dock_boss",
+     "job_water_gang"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_docks_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The docks are yours. A magistrate's clerk comes with a ledger and a smile: the prefecture will look away from the gang's cargo for a tenth of everything, forever.",
+   "choices": [
+    {
+     "text": "Pay the tenth and keep the peace",
+     "effects": {
+      "taels": -120,
+      "performance": 8,
+      "flag": "docks_paid_off",
+      "log": "The clerk comes every spring. The docks run quiet and rich, and you never sleep as well again."
+     }
+    },
+    {
+     "text": "Throw the ledger in the river",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 4,
+      "flag": "docks_defied",
+      "log": "The clerk's guards learn what the gang keeps under the piers. The prefecture finds other docks to tax."
+     },
+     "fail": {
+      "taels": -200,
+      "health": -15,
+      "flag": "docks_defied",
+      "log": "The guards fish the ledger out of the river, and the prefecture takes the tenth and a fine besides. You pay the rest in bruises."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trade_1",
+   "cat": "life",
+   "arc": "Forty Camels West",
+   "when": {
+    "anyFlags": [
+     "job_merchant"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Your first caravan west. At the last well before the sand, a guide offers a shortcut that saves ten days, for a fee, and will not say why the old route is longer.",
+   "choices": [
+    {
+     "text": "Take the shortcut",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "taels": 150,
+      "performance": 10,
+      "flag": "trade_shortcut",
+      "log": "Ten days saved and a buyer waiting. The guide knew the wells. You note his name."
+     },
+     "fail": {
+      "taels": -100,
+      "health": -15,
+      "deathCause": "the desert shortcut",
+      "log": "The guide's shortcut ends at a dry well. You crawl back to the old route with half your goods and none of your pride."
+     }
+    },
+    {
+     "text": "The old route. Slow is alive",
+     "effects": {
+      "taels": 40,
+      "performance": 5,
+      "comprehension": 2,
+      "log": "Twenty-one days of sand. You pass the bones of a caravan that took the shortcut."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trade_2",
+   "cat": "life",
+   "arc": "Forty Camels West",
+   "when": {
+    "anyFlags": [
+     "job_merchant",
+     "job_caravan_master",
+     "job_guild_master",
+     "job_merchant_prince"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_trade_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A rival house dumps silk at half price to break you. You have a warehouse full and a loan due. The rival's agent offers to buy you out for the loan and a bow.",
+   "choices": [
+    {
+     "text": "Sell everything at a quarter and ride it out",
+     "effects": {
+      "taels": -150,
+      "comprehension": 4,
+      "performance": 6,
+      "flag": "trade_survived",
+      "log": "You lose a year. The rival loses two: silk at half price ruins their own suppliers, who come to you."
+     }
+    },
+    {
+     "text": "Take the buyout",
+     "effects": {
+      "taels": 200,
+      "performance": -10,
+      "fame": -4,
+      "log": "You walk out with silver and no house. It takes four years to be trusted again."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_trade_3",
+   "cat": "life",
+   "arc": "Forty Camels West",
+   "when": {
+    "anyFlags": [
+     "job_guild_master",
+     "job_merchant_prince"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_trade_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The League's high table has a seat for you. An imperial envoy wants a monopoly on salt for the court's friends, with your seal on it. The small traders who built your house will be finished.",
+   "choices": [
+    {
+     "text": "Refuse, and tell the traders why",
+     "effects": {
+      "alignment": 10,
+      "fame": 10,
+      "taels": -300,
+      "flag": "trade_refused_crown",
+      "log": "The court finds another league. Yours is poorer, and every small trader in the province would die for you."
+     }
+    },
+    {
+     "text": "Seal it. Salt is salt",
+     "effects": {
+      "taels": 800,
+      "alignment": -12,
+      "fame": 6,
+      "flag": "trade_salt_monopoly",
+      "log": "The money is beyond counting. So are the shuttered stalls. Your old partners cross the street."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_medicine_1",
+   "cat": "life",
+   "arc": "The Black-Rimmed Sores",
+   "when": {
+    "anyFlags": [
+     "job_physician"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A child is carried in with sores rimmed in black. The old texts call it the thing that empties villages. The hall master is away and the parents are watching your face.",
+   "choices": [
+    {
+     "text": "Quarantine the house and treat it alone",
+     "roll": {
+      "stat": "medicine",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 6,
+      "performance": 10,
+      "flag": "med_plague_stopped",
+      "log": "Nine days of needles and bitter broth. The child lives. Nobody else catches it, which the town counts as a miracle."
+     },
+     "fail": {
+      "health": -15,
+      "performance": -5,
+      "flag": "med_plague_seen",
+      "log": "The child lives, barely. The fever takes you instead for a week, and the town whispers that you brought the sickness in."
+     }
+    },
+    {
+     "text": "Send for the prefecture physicians",
+     "effects": {
+      "performance": 2,
+      "alignment": 2,
+      "flag": "med_plague_seen",
+      "log": "They come in masks, burn the house, and take the credit. The child lives, somewhere else."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_medicine_2",
+   "cat": "life",
+   "arc": "The Black-Rimmed Sores",
+   "when": {
+    "anyFlags": [
+     "job_physician",
+     "job_hall_physician",
+     "job_imperial_physician",
+     "job_divine_physician"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_medicine_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sect elder comes at night with a poison no text names. He will pay anything, and he will not say who poisoned him, or why you must tell nobody.",
+   "choices": [
+    {
+     "text": "Treat him and ask nothing",
+     "roll": {
+      "stat": "medicine",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 200,
+      "fame": 6,
+      "flag": "med_sect_debt",
+      "performance": 8,
+      "log": "Three nights. He walks out on his own feet and leaves a token: the sect owes you one life."
+     },
+     "fail": {
+      "taels": 50,
+      "flag": "med_sect_grudge",
+      "log": "He survives on his own iron and curses your slowness. The purse is lighter than promised and the token never comes."
+     }
+    },
+    {
+     "text": "Refuse a patient who hides the poison",
+     "effects": {
+      "alignment": 4,
+      "performance": -2,
+      "log": "He curses you and goes. You hear he lived. You also hear what he did with his life, and sleep fine."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_medicine_3",
+   "cat": "life",
+   "arc": "The Black-Rimmed Sores",
+   "when": {
+    "anyFlags": [
+     "job_imperial_physician",
+     "job_divine_physician"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_medicine_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The court's own physicians have given up, and so the court sends for you: a prince is dying of something that is not a disease: he has been cultivating a forbidden method and his meridians are burning out.",
+   "choices": [
+    {
+     "text": "Cut the method out of him, meridian by meridian",
+     "roll": {
+      "stat": "medicine",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "fame": 25,
+      "taels": 500,
+      "flag": "med_saved_prince",
+      "lifespan": 3,
+      "log": "Forty days. He will never cultivate again, and he will live to be old. The court remembers both halves of that."
+     },
+     "fail": {
+      "fame": -10,
+      "deathCause": "a prince's family",
+      "log": "The meridians burn out under your needles. The prince's family does not forgive the physician, however true the diagnosis was."
+     }
+    },
+    {
+     "text": "Tell them the truth: nothing can be done",
+     "effects": {
+      "alignment": 6,
+      "fame": 4,
+      "comprehension": 4,
+      "log": "He dies in a month. His mother sends you a letter thanking you for not lying to her, and a second letter ten years later."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_scholar_1",
+   "cat": "life",
+   "arc": "The Lantern Rival",
+   "when": {
+    "anyFlags": [
+     "job_teacher"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Your pupils' parents cannot pay in silver, so they pay in rice, firewood and a goose. One boy, the poorest, writes characters better than you did at his age. His father wants him in the fields.",
+   "choices": [
+    {
+     "text": "Teach him for nothing, at night",
+     "effects": {
+      "alignment": 6,
+      "performance": 6,
+      "comprehension": 2,
+      "flag": "scholar_prodigy",
+      "log": "He walks two li each way after the fields. In five years he passes the county examination."
+     }
+    },
+    {
+     "text": "The father is right; fields feed people",
+     "effects": {
+      "performance": 2,
+      "alignment": -2,
+      "log": "The boy grows up to be a good farmer who reads everything he can find. He never blames you. You do."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_scholar_2",
+   "cat": "life",
+   "arc": "The Lantern Rival",
+   "when": {
+    "anyFlags": [
+     "job_teacher",
+     "job_graduate"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_scholar_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The provincial examination. The night before, a candidate from a great family offers you the questions, already answered, as a kindness between scholars.",
+   "choices": [
+    {
+     "text": "Refuse, loudly enough to be heard",
+     "effects": {
+      "alignment": 8,
+      "fame": 6,
+      "flag": "scholar_honest",
+      "performance": 6,
+      "log": "You pass on your own answers, two places below him. Within a year his paper is found to be bought and he is struck from the rolls. You are not."
+     }
+    },
+    {
+     "text": "Take them",
+     "effects": {
+      "alignment": -10,
+      "performance": 10,
+      "flag": "scholar_cheated",
+      "log": "You place first. Every honour after it tastes of that night."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_scholar_3",
+   "cat": "life",
+   "arc": "The Lantern Rival",
+   "when": {
+    "anyFlags": [
+     "court_magistrate",
+     "court_minister",
+     "court_chancellor"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_scholar_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sect has murdered a merchant on your road and everyone knows which sect. The Alliance asks you, quietly, to find the evidence insufficient. The merchant's widow is in your courtyard every morning.",
+   "choices": [
+    {
+     "text": "Try the case as the law reads",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "alignment": 12,
+      "flag": "scholar_defied_sect",
+      "log": "The verdict stands. The sect's elder is exiled. For a decade afterwards your gate has unasked-for guards from three other sects."
+     },
+     "fail": {
+      "fame": 5,
+      "alignment": 8,
+      "deathCause": "a sect that did not like the verdict",
+      "flag": "scholar_defied_sect",
+      "log": "The verdict stands, but the sect's answer arrives in the night. You live, barely, and the widow gets her judgement all the same."
+     }
+    },
+    {
+     "text": "Find the evidence insufficient",
+     "effects": {
+      "alignment": -12,
+      "taels": 300,
+      "performance": 6,
+      "log": "The widow stops coming. The Alliance remembers a reasonable official. So does the sect."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_escort_1",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_escort",
+     "job_senior_escort"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Tonight's cargo is a sealed red chest and the client's only instruction: never open it, never set it down. On the second night a child in the inn says it is crying.",
+   "choices": [
+    {
+     "text": "Open it",
+     "effects": {
+      "alignment": 8,
+      "performance": -8,
+      "flag": "escort_opened_chest",
+      "log": "A girl of six, drugged, bound for a buyer in the capital. The agency loses the fee and the client. Your chief says nothing for a long time, then says 'good'."
+     }
+    },
+    {
+     "text": "A chest is a chest. Deliver it",
+     "effects": {
+      "taels": 60,
+      "alignment": -12,
+      "performance": 10,
+      "flag": "escort_delivered_chest",
+      "log": "You deliver it and are paid double. You do not ask. You never stop hearing the inn."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_escort_2",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_escort",
+     "job_senior_escort",
+     "job_chief_escort",
+     "job_escort_deputy",
+     "job_escort_master",
+     "job_escort_lord"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_escort_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The Greenwood wants a toll on the whole northern road: a tenth of every cargo your agency carries, forever, or the road closes with blood.",
+   "choices": [
+    {
+     "text": "Pay the tenth and keep the road open",
+     "effects": {
+      "taels": -80,
+      "performance": 6,
+      "flag": "escort_pays_toll",
+      "log": "The road stays open. The agency grows fat and careful, and the bandits grow fat and bold."
+     }
+    },
+    {
+     "text": "Fight for the road",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "performance": 12,
+      "flag": "escort_broke_toll",
+      "log": "Three ambushes in a month, and then no more. The northern road belongs to the agency, and the agency belongs to you."
+     },
+     "fail": {
+      "health": -25,
+      "taels": -100,
+      "deathCause": "the Greenwood's chain across the road",
+      "log": "The Greenwood's chain holds. You limp home with a third of the agency and a larger toll to pay."
+     }
+    },
+    {
+     "text": "Send the carts the long way around the mountains",
+     "effects": {
+      "performance": -8,
+      "fame": -3,
+      "log": "Every trip is a week longer and the merchants grumble at every gate. The agency stays whole, and the Greenwood keep the northern road for themselves."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_escort_3",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_escort_master",
+     "job_escort_lord"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_escort_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The Nine Roads League looks to you. A dying rival agency offers to merge, which is a kind word for surrender. Its people are good and its debts are enormous.",
+   "choices": [
+    {
+     "text": "Take them in, debts and all",
+     "effects": {
+      "taels": -400,
+      "fame": 12,
+      "alignment": 8,
+      "flag": "escort_merged",
+      "log": "Two lean years. Then the best agency the roads have seen, with your name on every gate from here to the sand."
+     }
+    },
+    {
+     "text": "Let them fall and hire the best",
+     "effects": {
+      "taels": 100,
+      "alignment": -4,
+      "performance": 6,
+      "log": "You pick the bones. It is good business. Their old master drinks himself to death in a tavern you own."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_bounty_1",
+   "cat": "life",
+   "arc": "The Name in the Hills",
+   "when": {
+    "anyFlags": [
+     "job_bounty_hunter"
+    ],
+    "age": [
+     12,
+     90
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 14,
+   "text": "The poster says murderer and pays well. The man you track to a hill village has been its teacher for six years and the children call him uncle.",
+   "choices": [
+    {
+     "text": "Take him in. The law is the law",
+     "effects": {
+      "taels": 120,
+      "performance": 10,
+      "alignment": -6,
+      "flag": "bounty_took_teacher",
+      "log": "The village stones your horse on the way out. The man thanks you for not doing it in front of the children."
+     }
+    },
+    {
+     "text": "Report the trail cold",
+     "effects": {
+      "alignment": 8,
+      "performance": -6,
+      "flag": "bounty_let_go",
+      "log": "Years later a letter: he is dead of old age, the village school has forty pupils, and they still say your name there."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_bounty_2",
+   "cat": "life",
+   "arc": "The Name in the Hills",
+   "when": {
+    "anyFlags": [
+     "job_bounty_hunter",
+     "job_bounty_veteran",
+     "job_bounty_legend"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_bounty_1"
+    ],
+    "minYearsAfter": 3,
+    "notFlags": [
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 6,
+   "text": "Another hunter has your quarry cornered and is going to kill him for the easier half of the bounty: dead pays less but travels light. The poster said alive.",
+   "choices": [
+    {
+     "text": "Stop him",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 6,
+      "taels": 150,
+      "performance": 8,
+      "log": "You take the quarry alive and the other hunter's grudge for free."
+     },
+     "fail": {
+      "health": -20,
+      "performance": -4,
+      "log": "The other hunter is faster. The quarry dies in the scuffle, and you carry home bruises and no silver."
+     }
+    },
+    {
+     "text": "Split the dead bounty",
+     "effects": {
+      "taels": 80,
+      "alignment": -8,
+      "performance": 4,
+      "flag": "bounty_split",
+      "log": "Easy silver. The other hunter becomes a friend of sorts, the kind who would do the same to you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_bounty_3",
+   "cat": "life",
+   "arc": "The Name in the Hills",
+   "when": {
+    "anyFlags": [
+     "job_bounty_veteran",
+     "job_bounty_legend"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_bounty_2"
+    ],
+    "minYearsAfter": 3,
+    "notFlags": [
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 6,
+   "text": "The Black List's first name is a Peak Master who killed a magistrate's family. Everyone who went after him is dead. The bounty would buy a town.",
+   "choices": [
+    {
+     "text": "Go",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "risky": true,
+     "ok": {
+      "fame": 40,
+      "taels": 1500,
+      "flag": "bounty_black_list",
+      "log": "Nine days of tracking and a fight on a frozen river. You bring him in alive. The murim will tell it for a hundred years."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the first name on the Black List",
+      "log": "The frozen river holds him up and cracks under you. You are dragged out half dead, and the list keeps its first name."
+     }
+    },
+    {
+     "text": "Some names stay on the list",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 2,
+      "log": "You take smaller names for the rest of your life, and have a life."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_dojo_1",
+   "cat": "life",
+   "arc": "One Promotion, Two Disciples",
+   "when": {
+    "anyFlags": [
+     "job_dojo_instructor"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Two of your pupils want the same senior's place. One is gifted and lazy, the other plain and tireless. The master wants your word by morning.",
+   "choices": [
+    {
+     "text": "The tireless one",
+     "effects": {
+      "alignment": 4,
+      "performance": 6,
+      "flag": "dojo_chose_grit",
+      "log": "The gifted one leaves for a rival school. The tireless one becomes the best instructor the school has had, after you."
+     }
+    },
+    {
+     "text": "The gifted one",
+     "effects": {
+      "performance": 8,
+      "flag": "dojo_chose_talent",
+      "log": "He wins the school three trophies and leaves for a sect the moment one asks. The plain one stays and never quite trusts you again."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dojo_2",
+   "cat": "life",
+   "arc": "One Promotion, Two Disciples",
+   "when": {
+    "anyFlags": [
+     "job_dojo_instructor",
+     "job_dojo_master",
+     "job_grandmaster"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_dojo_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A sect sends a young disciple to 'exchange pointers' with your school, which means to humiliate it. He has already broken two instructors' arms.",
+   "choices": [
+    {
+     "text": "Face him yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 12,
+      "performance": 12,
+      "flag": "dojo_beat_sect",
+      "log": "You break nothing of his but his certainty. The sect sends a letter of apology and two pupils."
+     },
+     "fail": {
+      "health": -20,
+      "fame": -6,
+      "log": "He is better than his reputation. You are carried off the floor, and the school hears the sect's laughter for a month."
+     }
+    },
+    {
+     "text": "Close the school for the week he is in town",
+     "effects": {
+      "performance": -6,
+      "alignment": 2,
+      "log": "The town laughs for a season. The school still stands, which the other two in the province cannot say."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_dojo_3",
+   "cat": "life",
+   "arc": "One Promotion, Two Disciples",
+   "when": {
+    "anyFlags": [
+     "job_dojo_master",
+     "job_grandmaster"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_dojo_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A hundred schools carry your forms. A boy of twelve shows you a mistake in the third form that has been there, you realise, since your own master's time.",
+   "choices": [
+    {
+     "text": "Correct it, and say who found it",
+     "effects": {
+      "alignment": 8,
+      "fame": 10,
+      "comprehension": 6,
+      "flag": "dojo_corrected_form",
+      "log": "A hundred schools reteach the third form. The boy's name goes into the manual beside yours."
+     }
+    },
+    {
+     "text": "The form is the form",
+     "effects": {
+      "comprehension": -2,
+      "performance": 4,
+      "log": "You send him away. The mistake stays in the form for another hundred years, and the boy founds a school of his own."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_wanderer_1",
+   "cat": "life",
+   "arc": "The Road Without an End",
+   "when": {
+    "anyFlags": [
+     "job_wandering_hero"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "A village begs you to deal with the bandit who takes a girl every autumn. The bandit, when you find him, is sixteen and the girls are his sisters, sold back to him by the village head.",
+   "choices": [
+    {
+     "text": "Deal with the village head instead",
+     "effects": {
+      "alignment": 10,
+      "fame": 8,
+      "flag": "wanderer_true_justice",
+      "log": "The village gets a new head and a bad reputation among village heads. The boy and his sisters disappear with your purse."
+     }
+    },
+    {
+     "text": "Do what you were asked",
+     "effects": {
+      "alignment": -10,
+      "taels": 50,
+      "fame": 4,
+      "log": "The village is grateful. You are a hero. You ride a long way before you can eat."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_wanderer_2",
+   "cat": "life",
+   "arc": "The Road Without an End",
+   "when": {
+    "anyFlags": [
+     "job_wandering_hero",
+     "job_knight_errant",
+     "job_great_hero"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_wanderer_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "An old knight-errant, famous when you were a child, is dying in a ditch of a wound nobody treated. He has a sword that should not be in a ditch and a name nobody says anymore.",
+   "choices": [
+    {
+     "text": "Carry him to a physician and pay",
+     "effects": {
+      "taels": -80,
+      "alignment": 8,
+      "flag": "wanderer_old_hero",
+      "comprehension": 4,
+      "log": "He lives another year, in your company, and teaches you one thing a week. The sword is yours when he goes."
+     }
+    },
+    {
+     "text": "Take the sword; he does not need it",
+     "effects": {
+      "alignment": -12,
+      "item": "manual_sect",
+      "log": "You tell yourself he was dead already. The sword is fine steel, heavy in a way steel is not, and the scabbard's lining hides a worn manual of his school."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_wanderer_3",
+   "cat": "life",
+   "arc": "The Road Without an End",
+   "when": {
+    "anyFlags": [
+     "job_knight_errant",
+     "job_great_hero"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_wanderer_2"
+    ],
+    "minYearsAfter": 3,
+    "rep": {
+     "orthodox": [
+      -20,
+      100
+     ]
+    },
+    "notFlags": [
+     "fugitive"
+    ]
+   },
+   "weight": 6,
+   "text": "Great Hero of the Jianghu. Three sects and the Alliance all want you to settle under their banner, with a hall, a title and a leash.",
+   "choices": [
+    {
+     "text": "Stay on the road",
+     "effects": {
+      "fame": 10,
+      "alignment": 4,
+      "flag": "wanderer_stayed_free",
+      "log": "You will end on the road someday, which is how it should end. Every tavern in the murim already has a story about where."
+     }
+    },
+    {
+     "text": "Take the Alliance's hall",
+     "effects": {
+      "taels": 500,
+      "fame": 6,
+      "flag": "wanderer_settled",
+      "faction": "orthodox",
+      "log": "You have a roof, a seat, and an old sword on the wall that you take down some nights and look at."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_greenwood_1",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_bandit"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Your first raid. The caravan's guard is a boy younger than you and he will not drop the spear. The lieutenant tells you to make an example.",
+   "choices": [
+    {
+     "text": "Knock the spear away and let him run",
+     "effects": {
+      "alignment": 6,
+      "performance": -4,
+      "flag": "greenwood_mercy",
+      "log": "The lieutenant beats you for it. Years later a chief escort you have never met lets your wounded men pass."
+     }
+    },
+    {
+     "text": "Make the example",
+     "effects": {
+      "alignment": -14,
+      "performance": 10,
+      "flag": "greenwood_cruel",
+      "log": "Caravans surrender faster after that. You stop looking at the guards' faces, which helps."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_greenwood_2",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_bandit",
+     "job_bandit_lieutenant",
+     "job_bandit_chief",
+     "job_greenwood_king"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_greenwood_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The chief wants the toll chain across the northern road: a tenth of everything, forever. The escort agencies will fight. You know the road better than anyone.",
+   "choices": [
+    {
+     "text": "Plan the ambushes",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "performance": 14,
+      "taels": 200,
+      "flag": "greenwood_chain_won",
+      "log": "Three ambushes in a month. The agencies pay. The chief gives you the lieutenant's seat and the lieutenant's grudge."
+     },
+     "fail": {
+      "health": -20,
+      "performance": -6,
+      "flag": "greenwood_chain_lost",
+      "log": "The ambush meets an escort who was waiting for it. You lose two good men and the chief's trust."
+     }
+    },
+    {
+     "text": "Warn the agencies, quietly",
+     "effects": {
+      "alignment": 8,
+      "taels": 100,
+      "flag": "greenwood_informer",
+      "log": "The ambushes fail. Nobody knows why. The chief kills two men for it who were not you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_greenwood_3",
+   "cat": "life",
+   "arc": "The Chain Across the Road",
+   "when": {
+    "anyFlags": [
+     "job_bandit_chief",
+     "job_greenwood_king"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_greenwood_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "King of the Greenwood. The Alliance offers a pardon for every man under your banner if the forests become theirs and you become a story.",
+   "choices": [
+    {
+     "text": "Take the pardon for them",
+     "req": {
+      "notFlags": [
+       "sect_head"
+      ]
+     },
+     "effects": {
+      "alignment": 12,
+      "fame": 8,
+      "flag": "greenwood_pardoned",
+      "unflag": "greenwood_cruel",
+      "faction": "wanderer",
+      "log": "Nine hundred men walk out of the forest as farmers, guards and fathers. You walk out as nobody, which was the price."
+     }
+    },
+    {
+     "text": "The forest is ours",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "flag": "greenwood_held",
+      "log": "You hold the forest. The Alliance stops coming. Your men call you king without laughing."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "the Alliance's war on the Greenwood",
+      "log": "The Alliance's war bands burn their way through the forest. You live, barely, and the forest does not."
+     }
+    },
+    {
+     "text": "Take the pardon for your men, but not for yourself",
+     "effects": {
+      "alignment": 10,
+      "fame": 4,
+      "flag": "greenwood_pardoned",
+      "unflag": "greenwood_cruel",
+      "log": "Nine hundred men walk out of the forest as farmers, guards and fathers. You do not sign for yourself: you walk back to what is still yours, and the Alliance lets you, this once. The forest is theirs now."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_assassin_1",
+   "cat": "life",
+   "arc": "The Contract on Black Paper",
+   "when": {
+    "anyFlags": [
+     "job_assassin"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Your first contract is a merchant who cheated a sect. You find him asleep beside a child. The contract says tonight.",
+   "choices": [
+    {
+     "text": "Tonight means tonight",
+     "effects": {
+      "alignment": -14,
+      "performance": 12,
+      "flag": "night_clean_kill",
+      "log": "The child does not wake. You are very good at this, which is the worst thing you learn about yourself."
+     }
+    },
+    {
+     "text": "Tomorrow, on the road, alone",
+     "effects": {
+      "alignment": -6,
+      "performance": 4,
+      "flag": "night_own_rules",
+      "log": "The Pavilion docks your fee for the day. The child grows up with a father for one more morning and no father after."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_assassin_2",
+   "cat": "life",
+   "arc": "The Contract on Black Paper",
+   "when": {
+    "anyFlags": [
+     "job_assassin",
+     "job_night_blade",
+     "job_pavilion_lord"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_assassin_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A contract arrives on black paper: your own master in the Pavilion, bought by a rival inside it. Refusing a black paper is death. So is failing.",
+   "choices": [
+    {
+     "text": "Carry it out",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "risky": true,
+     "ok": {
+      "performance": 20,
+      "alignment": -16,
+      "flag": "night_killed_master",
+      "log": "He sees you coming and nods, as if he always knew the paper would be yours. You rise two ranks."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "your own master's blade",
+      "log": "He is faster than you remember. You live only because he lets you, and you know the Pavilion will ask why."
+     }
+    },
+    {
+     "text": "Warn him and run together",
+     "effects": {
+      "alignment": 6,
+      "taels": -100,
+      "flag": "night_fled",
+      "unflag": "job_assassin",
+      "log": "The two of you vanish into the far west. The Pavilion's hunters find the trail three times and lose it three times."
+     }
+    },
+    {
+     "text": "Show the black paper to the man it names",
+     "effects": {
+      "performance": -8,
+      "alignment": 2,
+      "log": "He reads it, burns it, and says nothing. Within the month the rival who bought it is no longer inside the Pavilion, or anywhere. He watches you more carefully after that, and the Pavilion trusts you less."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_assassin_3",
+   "cat": "life",
+   "arc": "The Contract on Black Paper",
+   "when": {
+    "anyFlags": [
+     "job_night_blade",
+     "job_pavilion_lord"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_assassin_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "Lord of the Hushed Lantern. A contract comes for a child, from a very great house, for more silver than the Pavilion has seen in a decade.",
+   "choices": [
+    {
+     "text": "Burn the paper",
+     "effects": {
+      "alignment": 14,
+      "taels": -500,
+      "fame": 4,
+      "flag": "night_burned_paper",
+      "log": "The great house sends its own men. You bury four of yours and the house buries nine. The Pavilion takes no children after that."
+     }
+    },
+    {
+     "text": "The Pavilion takes what it is paid for",
+     "effects": {
+      "alignment": -20,
+      "taels": 3000,
+      "flag": "night_took_child_contract",
+      "log": "It is done. The silver builds a new hall. You never go into it."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_cult_1",
+   "cat": "life",
+   "arc": "Black Robes",
+   "when": {
+    "anyFlags": [
+     "job_cult_guard",
+     "job_cult_warrior"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Your first purge. A hall of the Cult is accused of plotting against the Heavenly Demon, and the squad is told that nobody in it leaves alive. Half of them are cooks.",
+   "choices": [
+    {
+     "text": "Kill who you are told",
+     "effects": {
+      "alignment": -16,
+      "performance": 12,
+      "flag": "cult_purge_obeyed",
+      "log": "The hall is quiet by dawn. Your captain says you have the stomach for the Cult. You do not eat for two days."
+     }
+    },
+    {
+     "text": "Let the cooks run out the back",
+     "effects": {
+      "alignment": 6,
+      "performance": -6,
+      "flag": "cult_purge_mercy",
+      "log": "Nobody counts cooks. Years later one of them, now a hall master elsewhere, remembers your face."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_cult_2",
+   "cat": "life",
+   "arc": "Black Robes",
+   "when": {
+    "anyFlags": [
+     "job_cult_guard",
+     "job_cult_warrior",
+     "job_cult_captain",
+     "job_cult_commander",
+     "job_cult_guardian",
+     "job_cult_elder",
+     "job_cult_vice",
+     "job_heavenly_demon"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_cult_1"
+    ],
+    "minYearsAfter": 3,
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 6,
+   "text": "A hall master offers you his seat: help him poison the elder above him and the two of you rise together. The elder taught you the breathing method you use every day.",
+   "choices": [
+    {
+     "text": "Poison the elder",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "performance": 20,
+      "alignment": -14,
+      "flag": "cult_betrayed_elder",
+      "log": "The elder dies at dinner. You stand at the new hall master's right hand, and you watch his cup very carefully."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "an elder who tasted the poison",
+      "log": "The elder tastes the cup and smiles. You are alive only because he wants to know who sent you."
+     }
+    },
+    {
+     "text": "Warn the elder",
+     "effects": {
+      "alignment": 8,
+      "performance": 10,
+      "flag": "cult_loyal",
+      "log": "The hall master is dragged to the yard and put to the sword. The elder promotes you and never, ever turns his back to you."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_cult_3",
+   "cat": "life",
+   "arc": "Black Robes",
+   "when": {
+    "anyFlags": [
+     "job_cult_commander",
+     "job_cult_guardian",
+     "job_cult_elder",
+     "job_cult_vice",
+     "job_heavenly_demon"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_cult_2"
+    ],
+    "minYearsAfter": 3,
+    "notFlags": [
+     "job_heavenly_demon"
+    ]
+   },
+   "weight": 6,
+   "text": "The Heavenly Demon's seat is a blade's width away. The old Demon is dying and has named no heir. The elders are counting swords, and you have the most.",
+   "choices": [
+    {
+     "text": "Take the seat by blade",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "risky": true,
+     "ok": {
+      "fame": 40,
+      "promote": true,
+      "flag": "cult_seized_throne",
+      "log": "Four elders die in a night. You sit on the black throne with blood to the elbow, and the Cult kneels."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the fight for the Demon's seat",
+      "log": "Four elders against you is three too many. You are carried out of the hall alive, and the Cult remembers."
+     }
+    },
+    {
+     "text": "Wait, and let the elders come to you",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "promote": true,
+      "flag": "cult_chosen_throne",
+      "log": "They come, one by one, in the dark. The seat is yours with no blood on it, which the Cult finds unsettling."
+     },
+     "fail": {
+      "fame": -10,
+      "performance": -10,
+      "log": "The elders do not come. They find a seat for another, and the Cult learns how little your name is worth after dark."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_alliance_1",
+   "cat": "life",
+   "arc": "The Patrol Road",
+   "when": {
+    "anyFlags": [
+     "job_alliance_officer",
+     "job_alliance_captain"
+    ],
+    "age": [
+     12,
+     90
+    ]
+   },
+   "weight": 14,
+   "text": "Tonight's patrol finds a sect's disciples beating a farmer who would not sell his field. The sect sits on the Alliance's council. Your captain is looking the other way very hard.",
+   "choices": [
+    {
+     "text": "Stop them, in the Alliance's name",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 8,
+      "flag": "alliance_true",
+      "performance": 6,
+      "log": "The disciples go home with bruises and a story. The sect complains. Your captain writes a report that mentions no names, including yours."
+     },
+     "fail": {
+      "health": -15,
+      "performance": -4,
+      "flag": "alliance_true",
+      "log": "The disciples are many and angry. You are beaten into the mud, and your captain writes nothing at all."
+     }
+    },
+    {
+     "text": "Look the other way too",
+     "effects": {
+      "alignment": -8,
+      "performance": 6,
+      "flag": "alliance_looked_away",
+      "log": "The farmer sells. You patrol well for years, and the road is safe for everyone with a sect behind them."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_alliance_2",
+   "cat": "life",
+   "arc": "The Patrol Road",
+   "when": {
+    "anyFlags": [
+     "job_alliance_officer",
+     "job_alliance_captain",
+     "job_alliance_pavilion",
+     "job_alliance_guardian",
+     "job_alliance_vice",
+     "job_alliance_leader"
+    ],
+    "age": [
+     14,
+     95
+    ],
+    "after": [
+     "dc_alliance_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "A Cult spy is caught in your post: a clerk who has worked beside you for six years and has a daughter. The Alliance's law is clear.",
+   "choices": [
+    {
+     "text": "Hand him over",
+     "effects": {
+      "alignment": -4,
+      "performance": 10,
+      "flag": "alliance_handed_spy",
+      "log": "He is executed at the gate. His daughter is taken in by Emei, and you pay for it without telling anyone."
+     }
+    },
+    {
+     "text": "Give him a night's start",
+     "effects": {
+      "alignment": 6,
+      "performance": -10,
+      "flag": "alliance_let_spy_go",
+      "log": "He is gone by dawn. Years later a Cult hall master lets your patrol pass unseen, and you understand why."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_alliance_3",
+   "cat": "life",
+   "arc": "The Patrol Road",
+   "when": {
+    "anyFlags": [
+     "job_alliance_vice"
+    ],
+    "age": [
+     16,
+     99
+    ],
+    "after": [
+     "dc_alliance_2"
+    ],
+    "minYearsAfter": 3,
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader"
+    ]
+   },
+   "weight": 6,
+   "text": "Vice Leader, and the Leader is dying. The sects' votes are bought and counted, and the Cult's envoy offers to deliver the three votes you lack, for a border town.",
+   "choices": [
+    {
+     "text": "Refuse, and lose the vote",
+     "effects": {
+      "alignment": 12,
+      "fame": 10,
+      "flag": "alliance_lost_clean",
+      "log": "Another man takes the seat. He sells the Cult two border towns within the year. The murim remembers who would not."
+     }
+    },
+    {
+     "text": "Take the three votes",
+     "effects": {
+      "alignment": -14,
+      "promote": true,
+      "flag": "alliance_bought_seat",
+      "log": "You lead the Alliance. The border town is a Cult town now, and its people are the first thing you see when you close your eyes."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

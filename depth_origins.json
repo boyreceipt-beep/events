@@ -1,0 +1,375 @@
+{
+ "events": [
+  {
+   "id": "dc_or_blood_1",
+   "cat": "world",
+   "arc": "The Name Under the Name",
+   "when": {
+    "flags": [
+     "fate_old_blood"
+    ],
+    "age": [
+     16,
+     50
+    ]
+   },
+   "weight": 14,
+   "text": "A stranger at the market stops dead at the sight of your face and says a surname that is not yours. He is old, frightened, and sure. Then he is gone into the crowd.",
+   "choices": [
+    {
+     "text": "Follow him",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "origin_blood_hint",
+      "comprehension": 3,
+      "log": "You catch him at the city gate. He says your blood was not always called what you are called, and that the old name is on a list somewhere, and that he will say no more."
+     },
+     "fail": {
+      "flag": "origin_blood_hint",
+      "log": "He is quicker than he looks. You lose him among the carts with nothing but the surname, and it follows you home."
+     }
+    },
+    {
+     "text": "Let him go",
+     "effects": {
+      "luck": 2,
+      "flag": "origin_blood_hint",
+      "log": "You tell yourself old men see faces. You dream of the surname three nights running."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_blood_2",
+   "cat": "world",
+   "arc": "The Name Under the Name",
+   "when": {
+    "flags": [
+     "origin_blood_hint"
+    ],
+    "age": [
+     17,
+     60
+    ],
+    "after": [
+     "dc_or_blood_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "In the shrine where you grew up, behind the tablets, a false back. Behind it: a jade seal with the surname the stranger said, and a manual with the first pages torn out by someone in a hurry.",
+   "choices": [
+    {
+     "text": "Study what is left of the manual",
+     "effects": {
+      "manual": 3,
+      "comprehension": 6,
+      "flag": "origin_blood_manual",
+      "log": "The method is a great clan's, and it fits your meridians like it was written for them. It was."
+     }
+    },
+    {
+     "text": "Take the seal to a scholar",
+     "effects": {
+      "fame": 6,
+      "comprehension": 4,
+      "flag": "origin_blood_seal",
+      "log": "The scholar goes white. The clan was destroyed to the last child a hundred years ago, by a sect that still exists. Except, he says, not to the last child."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_blood_3",
+   "cat": "world",
+   "arc": "The Name Under the Name",
+   "when": {
+    "flags": [
+     "origin_blood_hint"
+    ],
+    "age": [
+     20,
+     70
+    ],
+    "after": [
+     "dc_or_blood_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The sect that destroyed your clan sends a polite elder to ask whether the rumours are true. He is not here to apologise. He is here to count how many of you there are.",
+   "choices": [
+    {
+     "text": "Claim the name, in front of everyone",
+     "effects": {
+      "fame": 20,
+      "flag": "origin_blood_claimed",
+      "alignment": 4,
+      "log": "The murim learns that the clan has an heir. Half of it is thrilled. The sect is not, and you have an enemy with a long memory and a longer reach."
+     }
+    },
+    {
+     "text": "Deny it and carry the name quietly",
+     "effects": {
+      "luck": 6,
+      "comprehension": 4,
+      "flag": "origin_blood_hidden",
+      "log": "The elder leaves satisfied. You keep the seal, the method and the name, and pass all three on, one day, with the same warning."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_or_legend_1",
+   "cat": "insight",
+   "arc": "A Life You Do Not Remember",
+   "when": {
+    "flags": [
+     "fate_legend_born"
+    ],
+    "age": [
+     14,
+     45
+    ]
+   },
+   "weight": 14,
+   "text": "You dream, again, of a mountain you have never seen, in such detail that you draw it on waking. A travelling monk recognises it: the retreat of a master who died the year you were born.",
+   "choices": [
+    {
+     "text": "Travel to the mountain",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "origin_legend_hint",
+      "comprehension": 4,
+      "log": "You know the path before you see it. At the top, a hut, a grave, and a feeling like coming home to a house you have never entered."
+     },
+     "fail": {
+      "flag": "origin_legend_hint",
+      "health": -8,
+      "log": "The path is steep and the mountain does not want visitors. You turn back with a twisted ankle and the dream, undiminished."
+     }
+    },
+    {
+     "text": "Burn the drawing",
+     "effects": {
+      "flag": "origin_legend_hint",
+      "luck": 2,
+      "log": "You dream of it anyway. In the dream, somebody keeps calling you by another name."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_legend_2",
+   "cat": "insight",
+   "arc": "A Life You Do Not Remember",
+   "when": {
+    "flags": [
+     "origin_legend_hint"
+    ],
+    "age": [
+     15,
+     55
+    ],
+    "after": [
+     "dc_or_legend_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "In the hut on the mountain, under a loose board you knew to look under, a manual in a hand that looks like yours. The method in it is one your body already half-knows.",
+   "choices": [
+    {
+     "text": "Read it through the night",
+     "effects": {
+      "manual": 4,
+      "comprehension": 8,
+      "flag": "origin_legend_manual",
+      "log": "By morning you have the method entire, and a headache, and a memory that is not yours of writing the last page."
+     }
+    },
+    {
+     "text": "Bury it with the master",
+     "effects": {
+      "alignment": 8,
+      "comprehension": 4,
+      "flag": "origin_legend_buried",
+      "log": "Whoever you were, you let him rest. The dreams stop. Your own path is suddenly very clear."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_legend_3",
+   "cat": "insight",
+   "arc": "A Life You Do Not Remember",
+   "when": {
+    "flags": [
+     "origin_legend_hint"
+    ],
+    "age": [
+     18,
+     70
+    ],
+    "after": [
+     "dc_or_legend_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The dead master's last disciple finds you. He is seventy, and he knows the way you hold your cup, and he kneels in the road and calls you by his master's name.",
+   "choices": [
+    {
+     "text": "Raise him up and let him call you what he likes",
+     "effects": {
+      "alignment": 6,
+      "fame": 10,
+      "flag": "origin_legend_known",
+      "log": "He stays with you until he dies, two years later, teaching you the things, he says, you taught him. The murim starts to whisper."
+     }
+    },
+    {
+     "text": "Tell him you are nobody's master",
+     "effects": {
+      "comprehension": 6,
+      "flag": "origin_legend_denied",
+      "log": "He weeps and goes. You are only yourself after that, and you find it is enough, and you find you are better at the sword than you have any right to be."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_or_lost_1",
+   "cat": "world",
+   "arc": "The Temple's Secret",
+   "when": {
+    "flags": [
+     "born_orphan"
+    ],
+    "age": [
+     16,
+     45
+    ]
+   },
+   "weight": 14,
+   "text": "The old monk who raised you is dying, and gives you, instead of a blessing, a key, and the name of a sect you have never heard of. Yours, he says. Not the temple's. Yours.",
+   "choices": [
+    {
+     "text": "Ask what he means",
+     "effects": {
+      "flag": "origin_lost_hint",
+      "comprehension": 3,
+      "log": "A sect in the western hills, destroyed when you were an infant; a monk who carried the last child down the mountain in a rice basket. He dies before he says who ordered it."
+     }
+    },
+    {
+     "text": "Take the key and let him rest",
+     "effects": {
+      "alignment": 6,
+      "flag": "origin_lost_hint",
+      "log": "He goes easily. You hold the key for a year before you go looking for the lock."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_lost_2",
+   "cat": "world",
+   "arc": "The Temple's Secret",
+   "when": {
+    "flags": [
+     "origin_lost_hint"
+    ],
+    "age": [
+     17,
+     55
+    ],
+    "after": [
+     "dc_or_lost_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The western hills. A gate with the sect's name, overgrown, and a vault under the main hall that the key opens: three manuals, a seal, and a list of the sect's enemies, with one name circled.",
+   "choices": [
+    {
+     "text": "Take the manuals",
+     "effects": {
+      "manual": 3,
+      "item": "manual_sect",
+      "comprehension": 6,
+      "flag": "origin_lost_manuals",
+      "log": "The sect's whole art, in three books, and nobody left to teach it but the books. You are a disciple of the dead."
+     }
+    },
+    {
+     "text": "Take the list",
+     "effects": {
+      "fame": 4,
+      "comprehension": 4,
+      "flag": "origin_lost_list",
+      "log": "The circled name is a sect leader who still lives. You now know who ordered the sect's end. He does not yet know you exist."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_or_lost_3",
+   "cat": "world",
+   "arc": "The Temple's Secret",
+   "when": {
+    "flags": [
+     "origin_lost_hint"
+    ],
+    "age": [
+     20,
+     70
+    ],
+    "after": [
+     "dc_or_lost_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "You stand at the overgrown gate with a seal in your hand. You could raise the sect again with your own name on it, or let the hills keep it.",
+   "choices": [
+    {
+     "text": "Raise the sect",
+     "effects": {
+      "fame": 15,
+      "flag": "origin_lost_refounded",
+      "comprehension": 4,
+      "log": "You clear the gate yourself. The first disciple arrives in the spring, a farmer's child who heard a story. The sect lives, and so does its enemy's interest."
+     }
+    },
+    {
+     "text": "Let the hills keep it",
+     "effects": {
+      "alignment": 8,
+      "lifespan": 2,
+      "flag": "origin_lost_let_rest",
+      "log": "You carry the sect's art and name inside you, and teach the art without the name. Some things end well by ending."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

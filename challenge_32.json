@@ -1,0 +1,168 @@
+{
+ "events": [
+  {
+   "id": "b4_challenge_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge",
+   "text": "You send word to {npc}: a duel, at dawn, on the old threshing floor outside town, before witnesses. {He} sends back one word. Yes.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "Challenges",
+   "choices": [
+    {
+     "text": "Meet {him} at dawn",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true
+     },
+     "ok": {
+      "log": "Before the sun is fully up, {npc} is on one knee and the witnesses are very quiet."
+     },
+     "fail": {
+      "log": "{npc} is better than you hoped. The witnesses will talk about it for a month."
+     }
+    },
+    {
+     "text": "Send word that you have changed your mind",
+     "effects": {
+      "log": "You withdraw the challenge. Some of the witnesses laugh, quietly, and you hear them.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_2",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge",
+   "text": "Your challenge reaches {npc} at a teahouse, read aloud by the messenger so that the whole room hears it. {He} puts down {his} cup and names the place: the river bank, at noon.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "Challenges",
+   "choices": [
+    {
+     "text": "Go to the river bank",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true
+     },
+     "ok": {
+      "log": "At noon the river bank is yours, and {npc} is down in the reeds."
+     },
+     "fail": {
+      "log": "At noon {npc} is the one standing. You walk home along the bank alone."
+     }
+    },
+    {
+     "text": "Let noon pass",
+     "effects": {
+      "log": "Noon passes, and the teahouse talks.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_death_1",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge_death",
+   "text": "You send {npc} a challenge with no limits written on it: a duel to the death. Witnesses gather at the old shrine. Only one of you is meant to walk away. {He} comes, and does not smile.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "Challenges",
+   "choices": [
+    {
+     "text": "Fight to the death",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true,
+      "toDeath": true
+     },
+     "ok": {
+      "log": "The fight is long and silent. When it ends, {npc} is on the ground and cannot rise, and everyone waits to see what you will do."
+     },
+     "fail": {
+      "log": "It goes the wrong way from the first exchange.",
+      "deathCause": "a duel to the death with {npc}"
+     },
+     "risky": true
+    },
+    {
+     "text": "Call it off before the first exchange",
+     "effects": {
+      "log": "You lower your weapon before the first exchange. {npc} looks at you for a long time, and goes. The witnesses do not.",
+      "fame": -2
+     }
+    }
+   ]
+  },
+  {
+   "id": "b4_challenge_death_2",
+   "cat": "life",
+   "weight": 5,
+   "once": false,
+   "cooldown": 0,
+   "trigger": "b4_challenge_death",
+   "text": "{npc} accepts your challenge to the death in writing, in a fine hand, and adds at the bottom that {he} has put {his} affairs in order. The meeting is on a bare hill at dusk, with the wind against you both.",
+   "when": {
+    "age": [
+     16,
+     1000000
+    ]
+   },
+   "arc": "Challenges",
+   "choices": [
+    {
+     "text": "Climb the hill",
+     "roll": {
+      "stat": "power",
+      "npcMult": 1.0,
+      "duel": true,
+      "toDeath": true
+     },
+     "ok": {
+      "log": "At dusk, on the bare hill, {npc} falls, and stays down. The wind keeps blowing as if nothing had happened."
+     },
+     "fail": {
+      "log": "On the bare hill, {npc} is the stronger.",
+      "deathCause": "a duel to the death with {npc}"
+     },
+     "risky": true
+    },
+    {
+     "text": "Send a letter instead",
+     "effects": {
+      "log": "You send a letter calling it off. {npc} reads it and burns it, and tells everyone what it said.",
+      "fame": -2
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

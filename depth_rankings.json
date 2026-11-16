@@ -1,0 +1,2445 @@
+{
+ "events": [
+  {
+   "id": "rk_dragons_last_farmhand",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_last"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "A farm youth nobody has heard of walks into the teahouse with an iron rod and asks which table belongs to the last of the {ranklist}. The whole room points at you. The youth calls themself {challenger_title}.",
+   "choices": [
+    {
+     "text": "Take the challenge in the street",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The rod is heavy and honest. Your blade is neither. The youth bows in the dust and asks to be told where they went wrong."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The rod finds your ribs on the third exchange. {challenger} takes your place on the list and buys the whole teahouse a round with your loss."
+     }
+    },
+    {
+     "text": "Ask the youth who taught them",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "A dead uncle, a single manual, a field to practise in. You talk until dark, and the challenge somehow never happens."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The youth will not be talked out of anything. You fight tired, and lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_last_seclusion",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_last"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "A great sect has let its hidden genius out of five years' seclusion, and the first thing {challenger} does is send a letter: your place, at the sect's foot, in a month.",
+   "choices": [
+    {
+     "text": "Go to the sect's gate",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Five years alone taught {challenger} everything except how to fight someone who does not follow the manual. You do not."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Five years alone were well spent. {challenger} takes the last place and you take the long road home."
+     }
+    },
+    {
+     "text": "Ask for the duel on neutral ground",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "On an open riverbank, away from the sect's cheering disciples, the genius is only a gifted youth. You keep your place."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The sect refuses and the murim calls it fear. You lose the place without a blow."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_dragons_last_teahouse_claim",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_last"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "In a teahouse, {challenger} is already telling a crowd how the last of the {ranklist} will be beaten tomorrow. You are sitting two tables away. Nobody has noticed.",
+   "choices": [
+    {
+     "text": "Stand up and settle it tonight",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Tomorrow's story is told tonight, and it ends with {challenger} paying for everyone's tea."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} turns out to be as good as the boast. The crowd has its story, and you are in it the wrong way round."
+     }
+    },
+    {
+     "text": "Finish your tea and leave",
+     "effects": {
+      "rankFall": true,
+      "comprehension": 3,
+      "log": "You never fight for a place you have to defend in teahouses. {challenger} takes it unopposed, and finds that a place won without a fight is a thin thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_last_twins",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_last"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "Twins arrive at your door: {challenger} and a sibling who does all the talking. The sibling explains that only one of them will fight you, and will not say which.",
+   "choices": [
+    {
+     "text": "Fight whichever one steps forward",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "It was the quiet one. It was also the stronger one. You win anyway, and the sibling stops talking for the first time."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "It was the quiet one, and the quiet one is very good. {challenger} takes the last place."
+     }
+    },
+    {
+     "text": "Watch their feet, and name the fighter",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "You point at the right twin. The sibling laughs, the fighter blushes, and the challenge is withdrawn with a bow."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You point at the wrong twin. The right one fights you angry, and wins."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_low_crowd",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_low"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "{challenger}, one place below you on the {ranklist}, arrives with forty friends from a rich family's sect to watch you lose {myrank}.",
+   "choices": [
+    {
+     "text": "Fight before the forty",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The forty go home quieter than they came. The story of the duel travels faster than they do."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The forty cheer. {challenger} takes {myrank} and you get a lesson in fighting before a hostile crowd."
+     }
+    },
+    {
+     "text": "Insist on fighting where nobody can watch",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "No crowd, no cheering, no one to fight for but themself. {challenger} loses the nerve and the bout."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Alone in the bamboo, {challenger} is still the better fighter today."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_low_poison",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_low"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "The night before your bout with {challenger}, the inn's tea smells of almonds. Someone on {challenger}'s side, or someone who wants it to look that way.",
+   "choices": [
+    {
+     "text": "Fight anyway, and say nothing",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.15
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You fight with a heavy head and win with a clear one. {challenger} never knew, and you decide never to tell."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You fight half-poisoned and lose {myrank}. Later you learn the poisoner was a gambler with money on the bout."
+     }
+    },
+    {
+     "text": "Find the poisoner first",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "A gambler with money on the bout. You hand him to {challenger}, who is so ashamed that the challenge is withdrawn."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You find no one. You fight distracted, and lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_low_student",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_low"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "{challenger} challenges you, loses the first exchange on purpose, and asks to start again. Then does it again. Something is being studied.",
+   "choices": [
+    {
+     "text": "Fight the third time for real",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Let them study. You change your whole style on the third exchange and the notes are worthless."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The notes were good. {challenger} takes {myrank} with your own best form turned against you."
+     }
+    },
+    {
+     "text": "Stop, and offer to teach instead",
+     "effects": {
+      "rankFall": true,
+      "alignment": 4,
+      "charm": 3,
+      "log": "{challenger} takes the place, and then a lesson a week from you for a year, and becomes the best friend the young murim has seen in a generation."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_dragons_low_lantern",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_low"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "On the night of the Lantern Festival, {challenger} challenges you on a boat in the middle of the river, with every lantern in the city watching.",
+   "choices": [
+    {
+     "text": "Fight on the boat",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "One of you goes into the river. It is not you. The whole city sees, by lantern light."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You go into the river, lanterns all around, and climb out to applause that is not for you."
+     }
+    },
+    {
+     "text": "Fight on the bridge instead, on your terms",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Solid stone and your footwork. {challenger} never finds a rhythm."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Even on the bridge, {challenger} has the better night."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_high_great_family",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_high"
+    ],
+    "age": [
+     14,
+     29
+    ],
+    "married": false
+   },
+   "text": "{challenger}, heir of a great family, sends an invitation embossed in gold: a duel for {myrank} in the family's courtyard, with the patriarch watching and a betrothal hinted at for the winner.",
+   "choices": [
+    {
+     "text": "Fight in the courtyard",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You win cleanly. The patriarch watches you leave with an expression that will cause you trouble for years."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The heir wins, and the patriarch is relieved. You leave with a bruise and an invitation to dinner you decline."
+     }
+    },
+    {
+     "text": "Decline the betrothal in advance, politely",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "The patriarch laughs, the heir relaxes, and the duel becomes a friendly bout in which you keep your place."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The patriarch is insulted, the heir furious, and the duel brutal. You lose the place."
+     }
+    }
+   ],
+   "po": true
+  },
+  {
+   "id": "rk_dragons_high_masked",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_high"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "A masked fighter calling themself {challenger_title} challenges you for {myrank}. The mask, the voice and the style are all false. The skill is not.",
+   "choices": [
+    {
+     "text": "Fight the mask",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "On the last exchange the mask falls. You know the face from your childhood. Neither of you says a word, and you keep your place."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The mask stays on. {challenger} takes {myrank} and disappears into the crowd before you can ask."
+     }
+    },
+    {
+     "text": "Read the style under the false one",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "You name the true style aloud on the first exchange. The mask bows and withdraws."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You guess wrong, and fight the wrong style, and lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_high_sect_order",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_high"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "{challenger} has been ordered by an elder to take {myrank} from you, and is plainly unhappy about it. The order is in writing.",
+   "choices": [
+    {
+     "text": "Give {challenger} the fight the elder ordered",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "An honest bout. You win; {challenger} bows, relieved, and the elder has to accept a loss nobody can blame anyone for."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "An honest bout, and {challenger} wins it. Neither of you looks at the elder."
+     }
+    },
+    {
+     "text": "Lose on purpose, and let the elder have the place",
+     "effects": {
+      "rankFall": true,
+      "alignment": 3,
+      "log": "{challenger} knows exactly what you did. A debt is opened between you that lasts the rest of your lives."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_high_storm",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_high"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "{challenger} names the place and the hour: the cliff path above the gorge, at the height of the summer storm. Only those who can stand in the wind deserve {myrank}.",
+   "choices": [
+    {
+     "text": "Climb up into the storm",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The wind takes half your stances and all of {challenger}'s. You keep {myrank}, soaked to the bone."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The wind favours the one who chose it. {challenger} takes {myrank} with the gorge roaring below."
+     }
+    },
+    {
+     "text": "Name a different hour, and wait out the storm",
+     "roll": {
+      "stat": "strategy",
+      "dc": 45
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} waits too, and gets cold, and loses the patience the duel needed."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The murim calls it fear. {challenger} takes the place without a blow."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_dragons_first_whole_jianghu",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_first"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "The first place of the {ranklist}. {challenger} challenges you in front of every young name in the murim, gathered for the summer meeting at the Alliance hall.",
+   "choices": [
+    {
+     "text": "Fight for the first place",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep the first place in front of everyone who wanted it. Some of them will be your rivals for life."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes the first place in front of everyone. You are second, and the second of a generation is not nothing."
+     }
+    },
+    {
+     "text": "Offer a contest of forms instead of blood",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "The hall agrees. Your forms are cleaner. You keep the first place with no one hurt."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The hall wants blood. Denied it, they give the place to {challenger}."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_dragons_first_old_champion",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_first"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "The disciple of the last generation's first Dragon comes for you, carrying the old champion's sword and the old champion's grudge against the list.",
+   "choices": [
+    {
+     "text": "Fight the sword and the grudge",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The sword is old and so is the grudge. You keep the first place and the disciple leaves the sword with you, saying it is lighter that way."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The old champion's sword is still the best on the list. {challenger} takes the first place."
+     }
+    },
+    {
+     "text": "Hand the place over and ask about the old champion",
+     "effects": {
+      "rankFall": true,
+      "comprehension": 5,
+      "log": "{challenger} takes the first place and tells you the story of the old champion, which is worth more than a place."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_dragons_first_assassin_rumour",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_first"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "A rumour says the Hushed Lantern has been paid to make sure you lose to {challenger}. The duel is at dawn. {challenger} seems to know nothing about it.",
+   "choices": [
+    {
+     "text": "Fight at dawn and watch the rooftops",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "An arrow comes from a rooftop in the second exchange. {challenger} cuts it out of the air for you, then fights on, and loses honestly."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Watching the rooftops costs you the duel. {challenger} takes the first place and learns about the arrow later, with shame."
+     }
+    },
+    {
+     "text": "Tell {challenger} before the duel",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} postpones the duel and hunts the paymaster with you. The duel, a month later, is clean. You win it."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} thinks it is a trick. You fight distracted at dawn, and lose."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_dragons_first_child_challenger",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_dragons",
+     "rankband_first"
+    ],
+    "age": [
+     14,
+     29
+    ]
+   },
+   "text": "The challenger for the first place is twelve. {challenger} is the youngest name ever to stand second on the {ranklist}, and is shaking with nerves.",
+   "choices": [
+    {
+     "text": "Fight the child properly",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You fight properly, which is the only respect a fighter wants. You win. {challenger} cries, and then asks for a rematch next year."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You fight properly and the child wins. The youngest first Dragon in history, and you were the one standing there."
+     }
+    },
+    {
+     "text": "Give the child the first place",
+     "effects": {
+      "rankFall": true,
+      "alignment": 6,
+      "fame": 2,
+      "log": "{challenger} takes it and knows why, and spends the next ten years earning it. The murim calls you either generous or soft."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_masters_last_general",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A retired general, {challenger}, has decided after thirty years of war that martial arts are more honest, and wants the last place on the {ranklist} to prove it.",
+   "choices": [
+    {
+     "text": "Fight the general",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The general fights like an army: well, and predictably. You keep your place, and the general keeps your hand a long time afterwards."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Thirty years of war is its own kind of method. {challenger} takes the last place and salutes you."
+     }
+    },
+    {
+     "text": "Talk strategy over tea first",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "By the third pot of tea the general concedes the duel and asks you to lunch next spring."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "By the third pot of tea the general has learned how you think, and beats you the next morning."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_last_hired",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A merchant prince has hired {challenger} to take a place on the {ranklist}, because his guild wants a ranked master on its letterhead.",
+   "choices": [
+    {
+     "text": "Fight the hireling",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Hired skill is still skill, but hired nerve is not. {challenger} breaks on the fourth exchange."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The merchant got his money's worth. {challenger} takes the place and the letterhead is printed by morning."
+     }
+    },
+    {
+     "text": "Offer {challenger} a better contract",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} laughs, tears up the merchant's contract, and drinks with you instead."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} is offended, which helps nobody. You lose the place."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_last_ascetic",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A wandering ascetic from a temple no one can find on a map, {challenger}, asks politely for your place on the {ranklist}. The temple needs the alms a ranked name brings.",
+   "choices": [
+    {
+     "text": "Fight the ascetic",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "{challenger} fights with a string of prayer beads you never quite see coming. You keep your place by a hair, and give the temple a donation."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The beads find your wrists, then your throat, very gently. {challenger} takes the place and blesses you for it."
+     }
+    },
+    {
+     "text": "Give up the place, and the alms besides",
+     "effects": {
+      "rankFall": true,
+      "alignment": 8,
+      "taels": -50,
+      "log": "{challenger} takes the place and your silver, and a temple on no map gets a roof. You are oddly happy all year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_last_deserter",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "unorthodox",
+     "family",
+     "demonic"
+    ],
+    "hasSect": true
+   },
+   "text": "{challenger} was expelled from your own sect long ago, and has come back with a method nobody in the sect has seen, to take your place on the {ranklist}.",
+   "choices": [
+    {
+     "text": "Fight for your sect's honour",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The new method is real and so is the old grudge. You keep your place, and send a letter to the sect asking them to reconsider an old expulsion."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes your place in front of your own sect's disciples. The elders are very quiet at dinner."
+     }
+    },
+    {
+     "text": "Ask why they were expelled",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "An old injustice, an elder long dead. You promise to raise it. {challenger} withdraws the challenge to see if you will."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} does not want to talk about it. The fight happens anyway, and you lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_low_vengeance",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger}'s sect was shamed by you years ago, and {challenger} has climbed the {ranklist} to stand one place below you for exactly this day.",
+   "choices": [
+    {
+     "text": "Meet the vengeance head on",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Vengeance makes a fighter fast and careless. You keep {myrank}, and suggest the grudge be buried with your blood still in you."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Vengeance makes a fighter fast. {challenger} takes {myrank} and the old shame is paid."
+     }
+    },
+    {
+     "text": "Apologise for the old shame, publicly",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "alignment": 5,
+      "log": "Nobody has ever apologised to {challenger}'s sect before. The challenge is withdrawn and the sects trade disciples within a year."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The apology is taken as weakness. You lose {myrank} without a blow."
+     }
+    }
+   ],
+   "variants": [
+    "Years ago you shamed {challenger}'s sect. {challenger} has climbed the {ranklist} one rung at a time to stand just below you, for this day."
+   ]
+  },
+  {
+   "id": "rk_masters_low_debt",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} holds a debt your family owes, and offers to cancel it in exchange for {myrank} on the {ranklist}. Or to fight you for it, debt and all.",
+   "choices": [
+    {
+     "text": "Fight for both",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep {myrank} and the debt is cancelled in the same exchange. Your family never learns how."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You lose {myrank} and the debt stands. Your family never learns that either."
+     }
+    },
+    {
+     "text": "Trade the place for the debt",
+     "effects": {
+      "rankFall": true,
+      "taels": 200,
+      "alignment": 2,
+      "log": "{challenger} takes {myrank} and tears up the debt in front of you. Your family breathes for the first time in years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_low_old_friend",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} has climbed the lists in the same years you did, and now stands one place below you. The challenge comes in a letter that starts, 'I have waited long enough for this fight.'",
+   "choices": [
+    {
+     "text": "Give the fight",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Years of watching each other's names, and the same answer. You both laugh until you cannot stand, and the place is still yours."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Years of watching each other's names, and a different answer. {challenger} takes {myrank}, and you buy the wine."
+     }
+    },
+    {
+     "text": "Propose fighting for the wine, not the place",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "The place stays where it is and a great deal of wine does not."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} wants the place, not the wine. The fight happens, and you lose it."
+     }
+    }
+   ],
+   "variants": [
+    "{challenger} has risen through the lists alongside you for years and now stands one place below. The challenge arrives by letter: 'I have waited long enough for this fight.'"
+   ]
+  },
+  {
+   "id": "rk_masters_low_stake",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "unorthodox",
+     "family",
+     "demonic"
+    ],
+    "hasSect": true
+   },
+   "text": "{challenger} challenges you for {myrank} and puts a stake on the table: a lost manual, against your own sect's secret method.",
+   "choices": [
+    {
+     "text": "Accept the stakes",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You win the place and the manual. The lost method fills a gap in your art you did not know was there."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You lose the place, and your sect's method goes with {challenger}. The elders will not forgive this one."
+     }
+    },
+    {
+     "text": "Fight for the place only, no stakes",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 0.95
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "No stakes, cleaner nerves. You keep {myrank}."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "No stakes, and still a loss. {challenger} takes {myrank}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_high_mount_tai",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} names Mount Tai at dawn for the duel for {myrank}: the oldest stage in the murim, where the masters of every age fought.",
+   "choices": [
+    {
+     "text": "Climb Mount Tai",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Dawn on the oldest stage. You keep {myrank}, and the monks of the summit temple write your names in the stone book."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Dawn on the oldest stage. {challenger} takes {myrank}, and the stone book has your name in it as the one who lost, which is still a name in the stone book."
+     }
+    },
+    {
+     "text": "Ask to fight in your own yard instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} agrees, curious. In your yard, among your trees, you keep the place."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The murim calls it fear of the mountain. {challenger} takes the place."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_masters_high_disciple_gift",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} challenges you for {myrank} and asks only one thing if the challenge is won: that you take one of {challenger}'s disciples into your school.",
+   "choices": [
+    {
+     "text": "Fight, and promise either way",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep {myrank} and take the disciple anyway. The disciple is the most gifted pupil you will ever have."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes {myrank}. You take the disciple, as promised, and are glad of it."
+     }
+    },
+    {
+     "text": "Give the place and take the disciple",
+     "effects": {
+      "rankFall": true,
+      "comprehension": 3,
+      "fame": 2,
+      "log": "The disciple arrives with one bag and a terrifying talent. {challenger} takes the place and visits often."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_high_pupil_of_great",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} has trained under one of the Ten Greatest for twenty years and comes for {myrank} to prove the master's teaching before the master dies.",
+   "choices": [
+    {
+     "text": "Fight the master's teaching",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You beat the teaching, which is not the same as beating the master. The master sends a note: 'Good. Come and see me.'"
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The teaching holds. {challenger} takes {myrank}, and an old master somewhere smiles."
+     }
+    },
+    {
+     "text": "Visit the dying master first",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "You sit by the master's bed for a day. {challenger} withdraws the challenge: the master wanted you to meet, not to fight."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The master is too ill to see you. The fight comes, and you lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_high_two_at_once",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} and an ally from the masters' list arrive together, asking for {myrank} from you and the place above from the master who stands there. Two duels, one afternoon.",
+   "choices": [
+    {
+     "text": "Fight yours, and help the other master after",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You win yours, then stand by the other master, and the pair goes home with nothing. Two masters owe you."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You lose yours. {challenger} takes {myrank}. The other master holds, and does not let you forget it."
+     }
+    },
+    {
+     "text": "Propose a two-against-two",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "Side by side with the master above you, you break the pair. The list is unchanged and four people have stories."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Two-against-two goes badly. {challenger} takes {myrank}."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_first_summit",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "The first of the Murim Masters. {challenger} sends challenge cards to every sect in the murim, so that nobody can say they were not told.",
+   "choices": [
+    {
+     "text": "Answer the cards with a blade",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The whole murim was told, and the whole murim hears that you are still first."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The whole murim was told. {challenger} is first, and you are second in front of everyone."
+     }
+    },
+    {
+     "text": "Answer with a card of your own: the day, the place, and no audience",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "A private duel. You are better in private. The murim learns the result and nothing else."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The murim calls it fear. {challenger} is first without a blow."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_masters_first_greats_herald",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "One of the Ten Greatest has sent {challenger} to fight you for the first place, and to bring back word of whether you are worth inviting up.",
+   "choices": [
+    {
+     "text": "Fight to be worth inviting",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep the first place. The word that goes back to the Ten Greatest is a single sentence, and a good one."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes the first place, and the word that goes back is kind, and not enough."
+     }
+    },
+    {
+     "text": "Ask {challenger} to tell the Great to come in person",
+     "effects": {
+      "rankFall": true,
+      "fame": 4,
+      "log": "{challenger} takes the place and delivers the message. Whether the Great will come is another story."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_first_old_master_return",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger}, the first master of a generation ago, has come out of retirement at eighty, because nobody since has been interesting enough to fight.",
+   "choices": [
+    {
+     "text": "Be interesting",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You are interesting enough. The old master laughs, loses, and goes back into retirement delighted."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The old master was right about everyone, including you. {challenger} is first again, at eighty."
+     }
+    },
+    {
+     "text": "Ask the old master to teach instead",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "The old master teaches you one form, in one afternoon, and goes home. The place is yours."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The old master did not come to teach. The duel happens. You lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_masters_first_night_duel",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_masters",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A letter with no seal: {challenger} will come for the first place on the night of the new moon, in your own house, while your household sleeps.",
+   "choices": [
+    {
+     "text": "Wait up in the dark",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You hear {challenger} at the third watch, before the door moves. You keep the first place and your household never wakes."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} is past you before you hear a sound. A cut sleeve, a bow, and the first place gone."
+     }
+    },
+    {
+     "text": "Lay your house out like a trap",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} walks into every trap, laughing, and concedes on the threshold."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} walks around every trap. You lose the first place in your own kitchen."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_last_newcomer",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A name nobody knew a year ago, {challenger}, has climbed through every list in twelve months and stands at your door for the last place among the {ranklist}.",
+   "choices": [
+    {
+     "text": "Meet the year's wonder",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The fastest rise in a generation stops at your gate. {challenger} bows, and promises to be back."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The fastest rise in a generation does not stop at your gate. {challenger} is among the Ten Greatest, and you are not."
+     }
+    },
+    {
+     "text": "Ask how anyone climbs that fast",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "An inheritance from a ruin in the west, half-understood. You point out the half {challenger} misunderstood. The challenge is withdrawn, gratefully."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} will not say. You fight, and lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_last_hermit",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A hermit from the snow mountains, {challenger}, has not spoken to anyone in forty years and comes down only to take the last place among the {ranklist}.",
+   "choices": [
+    {
+     "text": "Fight the silence",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Forty years of silence, and still a person. You keep your place, and the hermit says one word before leaving: 'Enough.'"
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Forty years of silence is forty years of practice. {challenger} takes the last place without a word."
+     }
+    },
+    {
+     "text": "Bow, and let the mountains have the place",
+     "effects": {
+      "rankFall": true,
+      "comprehension": 6,
+      "log": "The hermit takes the place, nods, and goes back up the mountain. The murim does not see {challenger} again for twenty years."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_last_cult_saint",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "notFactions": [
+     "demonic"
+    ],
+    "factions": [
+     "orthodox",
+     "family"
+    ]
+   },
+   "text": "The Demonic Cult's chosen champion, {challenger}, wants a place among the {ranklist} to prove the Cult is not only an army. The orthodox sects beg you not to lose.",
+   "choices": [
+    {
+     "text": "Fight for the orthodox sects",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep the last place. The orthodox sects celebrate. {challenger} does not seem to mind, which worries everyone."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes the last place among the Ten Greatest. The orthodox sects will remember who stood there."
+     }
+    },
+    {
+     "text": "Ask what the Cult would do with the place",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "A long conversation. {challenger} withdraws, saying you are the first orthodox master worth talking to."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} does not explain anything to the orthodox. The duel happens, and the Cult wins it."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_last_foreign",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_last"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "A master from beyond the western passes, {challenger}, has heard of the Ten Greatest and wants to know if the list is real. Your place is the easiest door.",
+   "choices": [
+    {
+     "text": "Show the west the list is real",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The western style is strange and fast and not enough. {challenger} goes home with a story."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The western style is strange and fast and exactly enough. {challenger} is among the Ten Greatest, and the murim does not know what to think."
+     }
+    },
+    {
+     "text": "Trade techniques instead of blows",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "A month of exchange. You both leave with something new, and the place stays where it is."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} came to fight, not to trade. You lose the place."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_low_rival_of_old",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger}, who stood beside you on the lists since you were both young, has finally caught you on the {ranklist} and comes for {myrank}.",
+   "choices": [
+    {
+     "text": "Finish a lifetime of rivalry",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "A lifetime, one more duel, the same answer. You keep {myrank}, and you both know there will not be another."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "A lifetime, one more duel, a different answer. {challenger} takes {myrank}, and holds your hand afterwards."
+     }
+    },
+    {
+     "text": "Give the old rival the place",
+     "effects": {
+      "rankFall": true,
+      "alignment": 6,
+      "log": "{challenger} takes {myrank} and knows exactly what you did. It is the only thing you could give that would mean anything."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_low_emperor",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "text": "The Emperor wants a duel between two of the Ten Greatest for the court's amusement, and has chosen you and {challenger}, the one below you, with {myrank} as the prize.",
+   "choices": [
+    {
+     "text": "Fight for the court",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep {myrank} before the throne. The Emperor gives you a title neither of you wanted."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes {myrank} before the throne. The Emperor applauds; the murim does not."
+     }
+    },
+    {
+     "text": "Refuse the court together with {challenger}",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "You both refuse. The Emperor is furious and then impressed. The list is unchanged, and the murim is proud of you both."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} does not refuse. You fight before the court, and lose."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_low_ruin_power",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} has come back from a secret realm in the west changed: the eyes are different, the qi is different. The first thing {challenger} asks for is {myrank}.",
+   "choices": [
+    {
+     "text": "Test the new power",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.15
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The inheritance is real but not yet {challenger}'s own. You keep {myrank}, and warn {challenger} about what is living in that power."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The inheritance is real. {challenger} takes {myrank} with power that is not entirely human."
+     }
+    },
+    {
+     "text": "Find out what the ruin gave",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "You name the inheritance and its price. {challenger} goes pale and returns to the west to give it back."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "You learn nothing. The fight happens, and the inheritance wins."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_low_last_wish",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_low"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} is dying, and wants one last duel with someone worthy: you, for {myrank}, so that the end comes as a fighter.",
+   "choices": [
+    {
+     "text": "Give the duel its due",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You fight the dying master with everything, which is the only kindness either of you wants. You keep {myrank}. {challenger} dies in the spring, content.",
+      "rankRetire": true
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The dying master fights like the living do not. {challenger} takes {myrank} and gives it back, in a will, to you.",
+      "rankRetire": true
+     }
+    },
+    {
+     "text": "Let the dying master win",
+     "effects": {
+      "rankFall": true,
+      "alignment": 4,
+      "rankRetire": true,
+      "log": "{challenger} knows, of course. 'Thank you,' the letter says, after. 'Do not do that again.' It is the last letter that comes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_high_heavens_gate",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} wants {myrank} before walking through the Last Door: one last proof in this world before leaving it.",
+   "choices": [
+    {
+     "text": "Be the last proof",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You keep {myrank}. {challenger} walks through the Gate anyway, laughing, and the sky is quiet for a day.",
+      "rankRetire": true
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes {myrank} and, a week later, walks through the Gate. The place is empty again, and yours to win back.",
+      "rankRetire": true
+     }
+    },
+    {
+     "text": "Ask what is on the other side",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} tells you, for an hour, and withdraws the challenge, saying you are closer to the Gate than you think."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} does not know either. The duel happens, and you lose."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_high_alliance_order",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "notFlags": [
+     "alliance_leader",
+     "job_alliance_leader",
+     "imp_emperor",
+     "imp_regent"
+    ]
+   },
+   "text": "The Martial Alliance asks you, through {challenger}, to step down from {myrank} for the sake of the alliance's balance of power. Or to be removed.",
+   "choices": [
+    {
+     "text": "Be removed, then",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The Alliance learns what removal costs. You keep {myrank}, and the Alliance changes the subject."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The Alliance's champion removes you. {challenger} takes {myrank}, and the balance of power is restored."
+     }
+    },
+    {
+     "text": "Step down for the balance",
+     "effects": {
+      "rankFall": true,
+      "fame": 4,
+      "alignment": 4,
+      "log": "{challenger} takes {myrank}. The Alliance owes you, and knows it, and will pay in ways you cannot yet see."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_high_sect_war_stake",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "unorthodox",
+     "family",
+     "demonic"
+    ],
+    "hasSect": true
+   },
+   "text": "Your sect and {challenger}'s are at the edge of war. {challenger} proposes that {myrank} decide it instead: one duel, no armies.",
+   "choices": [
+    {
+     "text": "Fight for two sects",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "One duel, no armies. You keep {myrank}, and a war that would have killed hundreds never happens."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "One duel, no armies. {challenger} takes {myrank}, and the war is avoided anyway, which is what you both wanted."
+     }
+    },
+    {
+     "text": "Settle the sects' quarrel at the table",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "The sects settle. The duel is never fought, and the list does not change."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The table fails. The duel happens, and {challenger} wins it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_high_blind",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_high"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger} has gone blind in old age and asks for {myrank} anyway, in a dark room, so that you are equal.",
+   "choices": [
+    {
+     "text": "Fight in the dark",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "In the dark you learn how much you rely on your eyes. Not enough to lose. {challenger} laughs and calls it fair."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "In the dark, {challenger} has a lifetime on you. {myrank} goes to a blind master."
+     }
+    },
+    {
+     "text": "Fight in daylight, and tie your own eyes",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Blindfolded in daylight, you win, and {challenger} insists on buying dinner."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "Blindfolded, you lose. {challenger} takes {myrank} and gives you the blindfold to keep."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_first_first_under_heaven",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "First Under Heaven. {challenger}, second on the list, comes to your mountain for the oldest duel in the murim: the first place, the first light, no witnesses but the sky.",
+   "choices": [
+    {
+     "text": "Meet the dawn",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "The sun comes up on two masters and one first place. Still yours."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "The sun comes up and {challenger} is First Under Heaven. You walk down the mountain lighter than you have been in years."
+     }
+    },
+    {
+     "text": "Step aside for the next age",
+     "effects": {
+      "rankFall": true,
+      "fame": 10,
+      "alignment": 6,
+      "log": "You give the first place to {challenger} at the top of the mountain, and walk down a legend rather than a champion."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_first_whole_list",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "Three of the Ten Greatest, led by {challenger}, propose that First Under Heaven should be decided again, among all of you, by a contest no one has held in a century.",
+   "choices": [
+    {
+     "text": "Defend the first place in the contest",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.15
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "A week of duels. On the seventh day the first place is still yours, and nobody will ask again for a generation."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "On the seventh day {challenger} is First Under Heaven. The murim will talk about the contest for a hundred years."
+     }
+    },
+    {
+     "text": "Convince them the contest is beneath them",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "They agree, sheepishly. The first place stays with you, and the murim never learns how close it came."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "They do not agree. The contest happens without your heart in it, and {challenger} wins."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "rk_greats_first_successor",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "{challenger}, second on the list, has studied every duel you ever fought, and comes for First Under Heaven the way you would: without mercy and without asking twice.",
+   "choices": [
+    {
+     "text": "Fight the student you never taught",
+     "roll": {
+      "stat": "power",
+      "rank": true
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "You win, barely, and you have never been prouder of anyone you beat."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} is First Under Heaven. Everything of yours, used well. You walk home happy."
+     }
+    },
+    {
+     "text": "Hand the first place to the one who learned from you",
+     "effects": {
+      "rankFall": true,
+      "fame": 6,
+      "alignment": 4,
+      "log": "You hand it over with a bow. {challenger} weeps, takes it, and keeps it for a generation."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rk_greats_first_calamity",
+   "trigger": "rank_defend",
+   "cat": "world",
+   "once": true,
+   "weight": 1,
+   "when": {
+    "flags": [
+     "onlist_greats",
+     "rankband_first"
+    ],
+    "age": [
+     18,
+     999
+    ]
+   },
+   "text": "Heaven itself seems to send {challenger}: a master no one knew existed, who arrived with a thunderstorm and asks for First Under Heaven as if it were owed.",
+   "choices": [
+    {
+     "text": "Face heaven's champion",
+     "roll": {
+      "stat": "power",
+      "rank": true,
+      "foeMult": 1.15
+     },
+     "ok": {
+      "rankHold": true,
+      "fame": 4,
+      "log": "Thunder all through the duel, and then silence. You are still First Under Heaven, and the sky clears as if embarrassed."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} takes First Under Heaven with lightning in the eyes. Heaven, it seems, had its favourite."
+     }
+    },
+    {
+     "text": "Ask who sent them",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "rankHold": true,
+      "log": "{challenger} does not know. Neither do you. The duel is set aside while you both find out."
+     },
+     "fail": {
+      "rankFall": true,
+      "log": "{challenger} does not answer questions. You lose the first place in the storm."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

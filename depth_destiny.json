@@ -1,0 +1,591 @@
+{
+ "events": [
+  {
+   "id": "dc_fate_chosen_1",
+   "cat": "world",
+   "arc": "Heaven's Chosen",
+   "when": {
+    "flags": [
+     "fate_heavens_chosen"
+    ],
+    "age": [
+     12,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "Since your destiny changed, doors open before you knock. A sect elder you have never met sends you his own manual, with a note: heaven told me in a dream.",
+   "choices": [
+    {
+     "text": "Accept it humbly",
+     "effects": {
+      "manual": 2,
+      "alignment": 4,
+      "comprehension": 4,
+      "log": "You read it by lamplight and feel the road open under your feet."
+     }
+    },
+    {
+     "text": "Send it back",
+     "effects": {
+      "alignment": 6,
+      "fame": 4,
+      "log": "'Heaven can tell me itself,' you write. The elder is delighted and sends it again, with a better note."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_chosen_2",
+   "cat": "world",
+   "arc": "Heaven's Chosen",
+   "when": {
+    "flags": [
+     "fate_heavens_chosen"
+    ],
+    "age": [
+     14,
+     99
+    ],
+    "after": [
+     "dc_fate_chosen_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "Being chosen makes enemies of everyone who was not. A sect's heir, raised all his life to be the chosen one, comes to see what heaven saw in you.",
+   "choices": [
+    {
+     "text": "Duel him",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "risky": true,
+     "ok": {
+      "fame": 12,
+      "flag": "fate_chosen_heir_beaten",
+      "log": "You win, barely. He shakes your hand afterwards, which is the hardest thing he has ever done."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "an heir who was not chosen",
+      "log": "He is better than he looks, and angrier than he admits. You lose the duel, but he cannot bring himself to finish it, and walks away without a word."
+     }
+    },
+    {
+     "text": "Ask him to travel with you",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "fate_chosen_friend",
+      "charm": 4,
+      "log": "He is quiet for a long time, and then he comes. Heaven chose one; two walk the road."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "He listens, and says he did not ask to be anyone's companion. You walk on alone, a little poorer in friends."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_chosen_3",
+   "cat": "world",
+   "arc": "Heaven's Chosen",
+   "when": {
+    "flags": [
+     "fate_heavens_chosen"
+    ],
+    "age": [
+     17,
+     99
+    ],
+    "after": [
+     "dc_fate_chosen_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "An old immortal comes down from the clouds to see heaven's newest favourite, looks at you, and sighs: chosen means watched, and watched means tested, and the tests get harder.",
+   "choices": [
+    {
+     "text": "Ask for the hardest test now",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "risky": true,
+     "ok": {
+      "lifespan": 8,
+      "comprehension": 10,
+      "flag": "fate_chosen_tested",
+      "log": "It takes a year and a day. You pass it, and the immortal bows to you before leaving."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "an immortal's test",
+      "log": "The test is harder than the immortal said. You break at the last gate, and the immortal carries you down with a look that is almost an apology."
+     }
+    },
+    {
+     "text": "Ask how to be ordinary again",
+     "effects": {
+      "alignment": 6,
+      "lifespan": 3,
+      "flag": "fate_chosen_humble",
+      "log": "'You cannot,' says the immortal. 'But you can act like it.' You do, and heaven likes you better for it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_calamity_1",
+   "cat": "world",
+   "arc": "The Calamity Star",
+   "when": {
+    "flags": [
+     "fate_calamity_star"
+    ],
+    "age": [
+     12,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "Since your destiny turned, misfortune follows a step behind you and lands on whoever stands closest. A friend's house burns down the day after you visit.",
+   "choices": [
+    {
+     "text": "Stay away from people",
+     "effects": {
+      "alignment": 4,
+      "charm": -3,
+      "flag": "fate_calamity_alone",
+      "log": "You live on a mountain for a while. The misfortune lands on rocks, which do not mind."
+     }
+    },
+    {
+     "text": "Find someone the calamity cannot touch",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "fate_calamity_friend",
+      "luck": 4,
+      "log": "A blind fortune-teller who was born on the same night. Your misfortunes cancel each other out. You become very good friends, very carefully."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The one you pick is kind, and unlucky, and a roof falls in a day after you meet. You dig them out with your hands and leave before the next thing falls."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_calamity_2",
+   "cat": "world",
+   "arc": "The Calamity Star",
+   "when": {
+    "flags": [
+     "fate_calamity_star"
+    ],
+    "age": [
+     14,
+     99
+    ],
+    "after": [
+     "dc_fate_calamity_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The Orthodox sects decide the Calamity Star must be stopped before it ripens, and a hunting party of twelve is coming up your road.",
+   "choices": [
+    {
+     "text": "Meet them on the road",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "risky": true,
+     "ok": {
+      "fame": 15,
+      "alignment": -4,
+      "flag": "fate_calamity_hunted",
+      "log": "Twelve came. Twelve go home, carrying each other. They do not come back."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a hunting party sent for the Calamity Star",
+      "log": "Twelve is too many. They break you on the road and leave you for dead, and the one who could not bring himself to finish it is why you are still breathing."
+     }
+    },
+    {
+     "text": "Disappear before they arrive",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "fate_calamity_hidden",
+      "luck": 4,
+      "log": "They find an empty house and a cup of tea, still warm, and a note: I was never here."
+     },
+     "fail": {
+      "health": -20,
+      "log": "They find you before you find your hiding place. A scuffle in the road, and you slip away with bruises and a head start."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_fate_calamity_3",
+   "cat": "world",
+   "arc": "The Calamity Star",
+   "when": {
+    "flags": [
+     "fate_calamity_star"
+    ],
+    "age": [
+     17,
+     99
+    ],
+    "after": [
+     "dc_fate_calamity_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The Calamity Star is said to bring one great calamity in its life. Yours arrives: a flood, a war, a plague, all at once, all near you, all waiting to see what you do.",
+   "choices": [
+    {
+     "text": "Stand in front of all three",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.9
+     },
+     "risky": true,
+     "ok": {
+      "fame": 25,
+      "alignment": 12,
+      "flag": "fate_calamity_turned",
+      "log": "You do not stop the calamity. You stand in it until it breaks against you. Afterwards they say the star was never cursed. It was a lightning rod."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "the great calamity of the Calamity Star",
+      "log": "The flood, the war and the plague find you all at once. You hold until you cannot, and are carried out of it by people you once saved."
+     }
+    },
+    {
+     "text": "Run, and let it fall behind you",
+     "effects": {
+      "alignment": -10,
+      "lifespan": 4,
+      "flag": "fate_calamity_fled",
+      "log": "You run. The calamity lands on the place you were. You live a long time, and do not talk about that year."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_demonic_1",
+   "cat": "world",
+   "arc": "The Demonic Prodigy",
+   "when": {
+    "flags": [
+     "fate_demonic_prodigy"
+    ],
+    "age": [
+     12,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "Since your destiny turned dark, your qi has a taste like iron and smoke. Demonic arts you have never read come to you in dreams, whole, and they work.",
+   "choices": [
+    {
+     "text": "Practise what the dreams teach",
+     "effects": {
+      "qi": 10,
+      "alignment": -6,
+      "flag": "fate_demonic_dreams",
+      "log": "Your power climbs faster than anyone's. So does the voice in the back of your head."
+     }
+    },
+    {
+     "text": "Refuse the dreams",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "comprehension": 6,
+      "alignment": 6,
+      "log": "You wake every night with your teeth clenched. It is a long fight, but it is yours."
+     },
+     "fail": {
+      "health": -15,
+      "alignment": -2,
+      "log": "The dreams win a night, then another. You wake with the arts on your tongue and your teeth bloody, and part of you is relieved."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_demonic_2",
+   "cat": "world",
+   "arc": "The Demonic Prodigy",
+   "when": {
+    "flags": [
+     "fate_demonic_prodigy"
+    ],
+    "age": [
+     14,
+     99
+    ],
+    "after": [
+     "dc_fate_demonic_1"
+    ],
+    "minYearsAfter": 2,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The Heavenly Demon Cult hears of a prodigy whose qi tastes of smoke. An elder in black comes to your door with a gift box and very good manners.",
+   "choices": [
+    {
+     "text": "Accept the Cult's offer",
+     "req": {
+      "notFlags": [
+       "sect_head"
+      ]
+     },
+     "effects": {
+      "sect": "Heavenly Demon Cult",
+      "faction": "demonic",
+      "fame": 6,
+      "flag": "fate_demonic_cult",
+      "log": "A black robe, a rank, and a hundred people bowing who would kill you for a reason. You fit in alarmingly well."
+     }
+    },
+    {
+     "text": "Refuse, with equal manners",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 6,
+      "log": "The elder leaves the gift box anyway. It contains a single black flower and a note: we can wait."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The elder's manners wear thin. A hand on your shoulder, a breath of black qi, and you wake on your own floor. The gift box is on the table, open."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_fate_demonic_3",
+   "cat": "world",
+   "arc": "The Demonic Prodigy",
+   "when": {
+    "flags": [
+     "fate_demonic_prodigy"
+    ],
+    "age": [
+     17,
+     99
+    ],
+    "after": [
+     "dc_fate_demonic_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The demon inside your qi finally speaks with your own voice, and it is offering a bargain: everything you want, if it gets to want things too.",
+   "choices": [
+    {
+     "text": "Make the bargain",
+     "effects": {
+      "qi": 20,
+      "lifespan": 10,
+      "alignment": -15,
+      "flag": "fate_demonic_bargain",
+      "log": "You and the demon want the same things, it turns out. That is the frightening part."
+     }
+    },
+    {
+     "text": "Fight the demon in your own heart",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "comprehension": 12,
+      "alignment": 10,
+      "flag": "fate_demonic_master",
+      "log": "A month of fever. When you wake, the demon is still there, but it is yours. A prodigy of the dark who chooses, every morning, what to be."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the demon in your own heart",
+      "log": "A month of fever, and the demon is winning. You come out of it by a thread, hollowed out, and it is only waiting."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_immortal_1",
+   "cat": "world",
+   "arc": "The Reincarnated Immortal",
+   "when": {
+    "flags": [
+     "fate_reincarnated_immortal"
+    ],
+    "age": [
+     20,
+     99
+    ]
+   },
+   "weight": 14,
+   "text": "Since you reached the great realms with your old life still in you, the memories of a third life have begun to wake: one before either, in a palace in the clouds.",
+   "choices": [
+    {
+     "text": "Follow the memories",
+     "effects": {
+      "comprehension": 8,
+      "flag": "fate_immortal_remembers",
+      "log": "A name. A cloud palace. A betrayal you do not yet understand. You were somebody, very long ago."
+     }
+    },
+    {
+     "text": "Bury them",
+     "effects": {
+      "alignment": 4,
+      "lifespan": 3,
+      "log": "One life to repeat is enough. The third life knocks politely and waits."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_immortal_2",
+   "cat": "world",
+   "arc": "The Reincarnated Immortal",
+   "when": {
+    "flags": [
+     "fate_reincarnated_immortal"
+    ],
+    "age": [
+     22,
+     99
+    ],
+    "after": [
+     "dc_fate_immortal_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "An immortal from your oldest memories descends in a carriage of cranes, recognises you at once, and asks whether you have come back for revenge or for forgiveness.",
+   "choices": [
+    {
+     "text": "Revenge",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.85
+     },
+     "risky": true,
+     "ok": {
+      "fame": 20,
+      "qi": 10,
+      "flag": "fate_immortal_revenge",
+      "log": "He fights like he remembers you too. When you win, he laughs, and gives you back the thing he stole three lives ago."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "an immortal from a life before this one",
+      "log": "He fights like he remembers you too, and he remembers more. When you fall, he does not follow it up. He turns away, and you live."
+     }
+    },
+    {
+     "text": "Forgiveness",
+     "effects": {
+      "alignment": 12,
+      "lifespan": 6,
+      "flag": "fate_immortal_forgave",
+      "log": "He weeps. He has been waiting a thousand years to hear it, and you only had to live three times to say it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fate_immortal_3",
+   "cat": "world",
+   "arc": "The Reincarnated Immortal",
+   "when": {
+    "flags": [
+     "fate_reincarnated_immortal"
+    ],
+    "age": [
+     25,
+     99
+    ],
+    "after": [
+     "dc_fate_immortal_2"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "The memories are all back now. You know what you were, and how high you were, and how you fell. The road up is shorter the second time, and the third.",
+   "choices": [
+    {
+     "text": "Climb it again",
+     "effects": {
+      "comprehension": 12,
+      "lifespan": 10,
+      "fame": 15,
+      "flag": "fate_immortal_returning",
+      "log": "A road you have walked twice before, every step known. The murim watches a legend climb, and does not know it is a homecoming."
+     }
+    },
+    {
+     "text": "Stay mortal this time",
+     "effects": {
+      "alignment": 10,
+      "lifespan": 5,
+      "charm": 6,
+      "flag": "fate_immortal_mortal",
+      "log": "Three lives, and this is the first one you have liked. You stay."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

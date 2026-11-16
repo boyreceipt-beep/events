@@ -1,0 +1,943 @@
+{
+ "events": [
+  {
+   "id": "dc_love_rain_1",
+   "cat": "romance",
+   "arc": "Shelter From the Rain",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     40
+    ]
+   },
+   "weight": 14,
+   "text": "A sudden storm, a single pavilion, and a stranger already in it. {npc} offers you half the bench and half a steamed bun and talks about the rain as if it were an old friend.",
+   "choices": [
+    {
+     "text": "Talk until the rain stops",
+     "effects": {
+      "charm": 2,
+      "npcFlag": "love_rain",
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "talked through a storm"
+      },
+      "log": "The rain stops at dusk. Neither of you notices for an hour."
+     }
+    },
+    {
+     "text": "Eat the bun and leave",
+     "effects": {
+      "npcFlag": "love_rain",
+      "log": "A good bun. You think about the stranger more than the bun, which is saying something."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_rain_2",
+   "cat": "romance",
+   "arc": "Shelter From the Rain",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_rain"
+    ],
+    "after": [
+     "dc_love_rain_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} turns up at the same pavilion every time it rains. So do you, it turns out. This time {he} has brought two umbrellas and is holding only one of them.",
+   "choices": [
+    {
+     "text": "Share the one umbrella",
+     "effects": {
+      "npcFlag": "love_rain_close",
+      "mem": {
+       "deed": "love",
+       "w": 20,
+       "note": "shared an umbrella"
+      },
+      "log": "Neither of you mentions the second umbrella. You walk the long way home."
+     }
+    },
+    {
+     "text": "Take the other umbrella",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "took the other umbrella"
+      },
+      "log": "{He} laughs at you, a little sadly. The rain is very loud."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_rain_3",
+   "cat": "romance",
+   "arc": "Shelter From the Rain",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_rain",
+     "love_rain_close"
+    ],
+    "after": [
+     "dc_love_rain_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A spring with too little rain. {npc} waits at the pavilion anyway, in the sun, and when you arrive {he} says {he} has run out of excuses.",
+   "choices": [
+    {
+     "text": "Ask {him} to marry you",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "A wedding in the pavilion, in the rain, because you waited for it. Everyone gets wet. Nobody minds."
+     }
+    },
+    {
+     "text": "Tell {him} you are not ready",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": -5,
+       "note": "said not yet"
+      },
+      "log": "{He} nods, and still waits at the pavilion when it rains, for a while."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_rival_1",
+   "cat": "romance",
+   "arc": "The Rival Across the Arena",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     35
+    ],
+    "realm": [
+     1,
+     6
+    ]
+   },
+   "weight": 14,
+   "text": "The tournament pairs you with {npc} in the first round. {He} fights like a storm and insults your footwork the whole time. You lose. {He} buys you tea afterwards, still insulting it.",
+   "choices": [
+    {
+     "text": "Demand a rematch",
+     "effects": {
+      "npcFlag": "love_rival",
+      "mem": {
+       "deed": "spar",
+       "w": 12,
+       "note": "demanded a rematch"
+      },
+      "log": "'Every year,' {he} says. 'Until one of us gets it right.'"
+     }
+    },
+    {
+     "text": "Insult {his} footwork back",
+     "effects": {
+      "npcFlag": "love_rival",
+      "charm": 2,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "insulted my footwork back"
+      },
+      "log": "{He} laughs so hard {he} spills the drink."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_love_rival_2",
+   "cat": "romance",
+   "arc": "The Rival Across the Arena",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_rival"
+    ],
+    "after": [
+     "dc_love_rival_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The rematch. You win this time, and {npc} sits in the dust looking up at you with an expression you have not seen on a defeated face before.",
+   "choices": [
+    {
+     "text": "Help {him} up and hold on",
+     "effects": {
+      "npcFlag": "love_rival_close",
+      "mem": {
+       "deed": "love",
+       "w": 22,
+       "note": "held on after the rematch"
+      },
+      "log": "Neither of you lets go for a moment too long. The crowd notices before you do."
+     }
+    },
+    {
+     "text": "Bow and walk off",
+     "effects": {
+      "fame": 3,
+      "log": "{He} watches you go. The next rematch, {he} wins, and does not look pleased about it."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_rival_3",
+   "cat": "romance",
+   "arc": "The Rival Across the Arena",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_rival",
+     "love_rival_close"
+    ],
+    "after": [
+     "dc_love_rival_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Yet another rematch. {npc} stops in the middle of the bout, lowers {his} sword, and says {he} would rather spend the rest of the years fighting beside you than against you.",
+   "choices": [
+    {
+     "text": "Lower your sword too",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry in the arena, under the same banners, and the tournament officials argue for a week about who won."
+     }
+    },
+    {
+     "text": "Finish the bout",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 6,
+      "log": "{He} smiles and raises {his} sword again. Some loves are better at sword's length."
+     },
+     "fail": {
+      "health": -10,
+      "log": "{He} beats you back across the sand, laughing, and does not ask again. The years go on, side by side and at sword's length."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_love_healer_1",
+   "cat": "romance",
+   "arc": "The Healer's Hands",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     40
+    ]
+   },
+   "weight": 14,
+   "text": "You are carried into a medicine hall half-dead after a fight, and {npc}, the youngest healer, stitches you up while telling you exactly how stupid you were.",
+   "choices": [
+    {
+     "text": "Thank {him}",
+     "effects": {
+      "npcFlag": "love_healer",
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "said thank you, for once"
+      },
+      "log": "'Do not come back,' {he} says. You come back the next week with a very small cut."
+     }
+    },
+    {
+     "text": "Argue that you were not stupid",
+     "effects": {
+      "npcFlag": "love_healer",
+      "charm": 2,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "argued with a needle in"
+      },
+      "log": "{He} pulls the next stitch tighter. You both enjoy the argument."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_healer_2",
+   "cat": "romance",
+   "arc": "The Healer's Hands",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_healer"
+    ],
+    "after": [
+     "dc_love_healer_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A plague in the next town and {npc} is going. The hall says it is too dangerous. {He} asks you to carry the medicine chest, since you are so good at getting hurt.",
+   "choices": [
+    {
+     "text": "Carry the chest",
+     "effects": {
+      "alignment": 6,
+      "npcFlag": "love_healer_close",
+      "mem": {
+       "deed": "love",
+       "w": 24,
+       "note": "carried the chest into the plague"
+      },
+      "log": "A month of plague. {He} sleeps on your shoulder in the wagon home."
+     }
+    },
+    {
+     "text": "Ask {him} not to go",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": -4,
+       "note": "asked me not to go"
+      },
+      "log": "{He} goes anyway. You worry the whole month."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_healer_3",
+   "cat": "romance",
+   "arc": "The Healer's Hands",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_healer",
+     "love_healer_close"
+    ],
+    "after": [
+     "dc_love_healer_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} stitches your newest wound, very slowly, and then does not let go of your hand. 'I am tired,' {he} says, 'of only seeing you when you are bleeding.'",
+   "choices": [
+    {
+     "text": "Promise to come home whole",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry. You come home bleeding anyway, often. {He} stitches you up every time, and complains, and you both like it."
+     }
+    },
+    {
+     "text": "Say you cannot promise that",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": -6,
+       "note": "would not promise"
+      },
+      "log": "{He} finishes the stitch in silence. That is the honest answer, and it hurts you both."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_thief_1",
+   "cat": "romance",
+   "arc": "The Thief Who Stole Back",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     38
+    ]
+   },
+   "weight": 14,
+   "text": "Someone picks your pocket in the market. You catch {npc} by the wrist, and {he} grins and puts back your purse, plus a coin {he} stole from someone else, as an apology.",
+   "choices": [
+    {
+     "text": "Let {him} go",
+     "effects": {
+      "npcFlag": "love_thief",
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "let me go"
+      },
+      "log": "{He} winks and vanishes into the crowd. Your purse is a little heavier."
+     }
+    },
+    {
+     "text": "Buy {him} lunch instead",
+     "effects": {
+      "npcFlag": "love_thief",
+      "taels": -5,
+      "mem": {
+       "deed": "time",
+       "w": 15,
+       "note": "bought me lunch"
+      },
+      "log": "{He} eats like a wolf and tells you the history of every merchant in the market, most of it true."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_thief_2",
+   "cat": "romance",
+   "arc": "The Thief Who Stole Back",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_thief"
+    ],
+    "after": [
+     "dc_love_thief_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has been caught by the constables and faces ten years in the magistrate's cells. {He} sees you in the crowd and does not ask for anything.",
+   "choices": [
+    {
+     "text": "Pay the fine",
+     "effects": {
+      "taels": -80,
+      "npcFlag": "love_thief_close",
+      "mem": {
+       "deed": "love",
+       "w": 22,
+       "note": "paid my fine"
+      },
+      "log": "{He} walks out free and walks straight to you."
+     },
+     "req": {
+      "minTaels": 80
+     }
+    },
+    {
+     "text": "Break {him} out",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "npcFlag": "love_thief_close",
+      "mem": {
+       "deed": "love",
+       "w": 26,
+       "note": "broke me out"
+      },
+      "log": "Over the roof and out of the city by dawn, laughing."
+     },
+     "fail": {
+      "health": -15,
+      "jail": 1,
+      "log": "A guard sees the rope. You and {him} both spend the night behind the same bars, which is a story of its own."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_thief_3",
+   "cat": "romance",
+   "arc": "The Thief Who Stole Back",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_thief",
+     "love_thief_close"
+    ],
+    "after": [
+     "dc_love_thief_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has gone straight. {He} has a stall in the market, mends locks, and has not stolen anything in a year, except, {he} says, your attention.",
+   "choices": [
+    {
+     "text": "Steal {him} back",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "A wedding in the market. Half the guests are reformed thieves. Nobody's purse goes missing, which everyone agrees is a miracle."
+     }
+    },
+    {
+     "text": "Buy a lock and go",
+     "effects": {
+      "alignment": 2,
+      "log": "{He} sells you the lock, smiling. It is a very good lock. You never forget the smile."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_letters_1",
+   "cat": "romance",
+   "arc": "Letters Across the River",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     45
+    ]
+   },
+   "weight": 14,
+   "text": "A letter floats down the river in a sealed bottle. It is from {npc}, who lives upstream, and is a poem about loneliness that is also very funny.",
+   "choices": [
+    {
+     "text": "Write back",
+     "effects": {
+      "npcFlag": "love_letters",
+      "comprehension": 2,
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "wrote back"
+      },
+      "log": "You put your reply in a bottle and throw it upstream, which does not work. You walk it up instead."
+     }
+    },
+    {
+     "text": "Keep the letter",
+     "effects": {
+      "npcFlag": "love_letters",
+      "log": "You read it so often the ink fades. Then a second bottle comes."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_letters_2",
+   "cat": "romance",
+   "arc": "Letters Across the River",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_letters"
+    ],
+    "after": [
+     "dc_love_letters_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A hundred letters, back and forth. {npc} writes that {he} is coming down the river, and that you should meet {him} at the bridge, and that {he} is afraid you will not like {his} face.",
+   "choices": [
+    {
+     "text": "Meet {him} at the bridge",
+     "effects": {
+      "npcFlag": "love_letters_close",
+      "mem": {
+       "deed": "love",
+       "w": 24,
+       "note": "met me at the bridge"
+      },
+      "log": "You know {him} at once, by the way {he} stands. You like {his} face very much."
+     }
+    },
+    {
+     "text": "Write that you are afraid too",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "was afraid too"
+      },
+      "log": "{He} writes back that this is the bravest letter yet. The meeting waits another year."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_letters_3",
+   "cat": "romance",
+   "arc": "Letters Across the River",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_letters",
+     "love_letters_close"
+    ],
+    "after": [
+     "dc_love_letters_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} puts a last letter in your hand, sealed, and asks you to open it in front of {him}. It has one line on it.",
+   "choices": [
+    {
+     "text": "Say yes",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry on the bridge between your two villages. Both villages throw letters into the river, for luck."
+     }
+    },
+    {
+     "text": "Write your answer instead",
+     "effects": {
+      "charm": 3,
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "answered in a letter"
+      },
+      "log": "You write a long answer that does not say yes or no. {He} reads it many times."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_guard_1",
+   "cat": "romance",
+   "arc": "The Guard at the Gate",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     40
+    ]
+   },
+   "weight": 14,
+   "text": "{npc} guards the gate of the sect you are visiting and refuses to let you in without a token. You argue for an hour. {He} enjoys every minute and still does not let you in.",
+   "choices": [
+    {
+     "text": "Come back every day",
+     "effects": {
+      "npcFlag": "love_guard",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "came back every day"
+      },
+      "log": "On the ninth day {he} lets you in. On the tenth you do not go in, you just talk at the gate."
+     }
+    },
+    {
+     "text": "Climb the wall instead",
+     "roll": {
+      "stat": "lightness",
+      "dc": 40
+     },
+     "ok": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "climbed my wall"
+      },
+      "log": "{He} is waiting on the other side, arms folded, trying very hard not to smile."
+     },
+     "fail": {
+      "health": -5,
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "fell off my wall"
+      },
+      "log": "You make it halfway up and the wall makes the rest of the decision. {He} catches you on the way down, and lets you think it was an accident."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_guard_2",
+   "cat": "romance",
+   "arc": "The Guard at the Gate",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     60
+    ],
+    "npcFlags": [
+     "love_guard"
+    ],
+    "after": [
+     "dc_love_guard_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Raiders hit the sect at night and {npc} is alone at the gate when they come. You are there because you always are.",
+   "choices": [
+    {
+     "text": "Hold the gate with {him}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.85,
+      "foeName": "The raiders"
+     },
+     "risky": true,
+     "ok": {
+      "npcFlag": "love_guard_close",
+      "mem": {
+       "deed": "love",
+       "w": 26,
+       "note": "held the gate with me"
+      },
+      "log": "The raiders break on the two of you. The sect master finds you at dawn, back to back, still standing."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "raiders at a sect gate",
+      "log": "There are too many. You go down at the gate with {him} beside you, and the sect arrives just in time to find you both breathing."
+     }
+    },
+    {
+     "text": "Run for help",
+     "effects": {
+      "npcFlag": "love_guard_close",
+      "mem": {
+       "deed": "love",
+       "w": 14,
+       "note": "brought help"
+      },
+      "log": "You bring the whole sect down on the raiders. {He} says thank you, and that you could have stayed."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_guard_3",
+   "cat": "romance",
+   "arc": "The Guard at the Gate",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     65
+    ],
+    "npcFlags": [
+     "love_guard",
+     "love_guard_close"
+    ],
+    "after": [
+     "dc_love_guard_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has been offered a post as an inner disciple, far from the gate. {He} asks whether there is a reason to stay.",
+   "choices": [
+    {
+     "text": "Give {him} one",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry at the gate, of course. {He} takes the inner post anyway, and you go with {him}, and nobody needs a token."
+     }
+    },
+    {
+     "text": "Tell {him} to take the post",
+     "effects": {
+      "alignment": 4,
+      "log": "{He} goes. The new gate guard is very strict and nothing like {him}."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  }
+ ],
+ "mwPass": 1
+}

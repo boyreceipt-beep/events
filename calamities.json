@@ -1,0 +1,498 @@
+{
+ "events": [
+  {
+   "id": "cal_fl_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The water is in the street by midnight and at the windowsills by dawn. A neighbour's old grandmother is calling from her roof, and the rice sacks of the whole street are floating away towards the river.",
+   "trigger": "era_cal_flood",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Shout until the boatmen come for the grandmother",
+     "effects": {
+      "alignment": 4,
+      "fame": 2,
+      "log": "You shout until your voice is gone. A boat comes, and the grandmother is lifted down, scolding everyone. She remembers your name."
+     }
+    },
+    {
+     "text": "Swim for the drifting rice",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 15,
+      "strength": 1,
+      "log": "You drag three sacks back on a door you use as a raft. The street eats that winter because of you."
+     },
+     "fail": {
+      "health": -12,
+      "log": "The current takes you past the last house before it lets you go. You come home soaked, bruised and empty-handed."
+     }
+    },
+    {
+     "text": "Hold on to the roof beam and wait",
+     "effects": {
+      "health": -4,
+      "log": "You hold on for a day and a night. When the water goes down you can still feel the grain of the beam in your palms."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_fl_end",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The river goes back to its bed. Everything it touched is grey with silt, and the whole town is out with shovels and buckets, digging the houses out one by one.",
+   "trigger": "era_cal_flood",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Dig with the others from dawn to dark",
+     "effects": {
+      "strength": 2,
+      "alignment": 2,
+      "log": "Your hands blister and then harden. By the end of the month you can lift a full bucket of silt with one arm."
+     }
+    },
+    {
+     "text": "Mark the height of the water on the temple wall",
+     "effects": {
+      "comprehension": 2,
+      "log": "You climb the temple wall and cut a line where the water reached. Some day, you think, somebody will need to know."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_pl_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The fever reaches the town on a merchant's cart. Within a month the markets are shut, the healers are exhausted, and a family on the next street has chalked the grey mark on its door.",
+   "trigger": "era_cal_plague",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Help the healers boil cloth and carry water",
+     "roll": {
+      "stat": "medicine",
+      "dc": 40
+     },
+     "ok": {
+      "fame": 5,
+      "alignment": 5,
+      "log": "You work beside the healers for a whole season. More of the sick get up than lie down, and people notice whose hands they were in."
+     },
+     "fail": {
+      "health": -15,
+      "alignment": 3,
+      "log": "You catch the fever yourself and lie grey for two weeks. You live. Some of those you nursed do not."
+     }
+    },
+    {
+     "text": "Leave food at the marked door every night",
+     "req": {
+      "minTaels": 20
+     },
+     "effects": {
+      "taels": -20,
+      "alignment": 6,
+      "log": "Twenty taels of rice and broth, left on the step at night. In spring the door opens, and the family thanks a stranger they never saw."
+     }
+    },
+    {
+     "text": "Shut yourself away until it passes",
+     "effects": {
+      "qi": 6,
+      "log": "You bar the door and cultivate through the worst of it. The fever passes you by. So does everything else."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_pl_end",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The first frost comes and the fever goes with it. The markets open again. People stand a little further apart than they used to, and greet each other a little more warmly.",
+   "trigger": "era_cal_plague",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Burn incense for the ones it took",
+     "effects": {
+      "luck": 2,
+      "log": "The temple is so full of smoke that the monks open every door. Nobody minds."
+     }
+    },
+    {
+     "text": "Go back to work as if nothing happened",
+     "effects": {
+      "taels": 15,
+      "log": "Somebody has to be the first to open a shutter. You are. The street follows."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_qk_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The ground rolls under you like the deck of a ship. A tea house folds in on itself across the road, and from under the beams someone is knocking, steady and slow.",
+   "trigger": "era_cal_quake",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Lift the beams yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.7,
+      "foeName": "The fallen beams"
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 5,
+      "log": "You put your back under the ridge-beam and push until it rises. Four people crawl out, and the last of them is a child."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a collapsing tea house in the great earthquake",
+      "log": "The beam shifts the wrong way and comes down across your shoulders. They dig you out too, in the end."
+     },
+     "risky": true
+    },
+    {
+     "text": "Run for help and tools",
+     "effects": {
+      "alignment": 3,
+      "fame": 2,
+      "log": "You come back with ten men and a pry-bar. It takes all afternoon, but the knocking stops only when the last one is out."
+     }
+    },
+    {
+     "text": "Get clear before the next shock",
+     "effects": {
+      "health": -3,
+      "log": "You run for open ground as the second shock comes. Behind you the road splits, and you do not look back to see who was on it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_qk_end",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The aftershocks grow fewer, and then stop. Where the road used to run there is a new cliff, and people are already arguing about where the new road should go.",
+   "trigger": "era_cal_quake",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Pay for a stretch of the new road",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "fame": 5,
+      "log": "Forty taels of stone and labour. The stretch you paid for is the one people call by your name."
+     }
+    },
+    {
+     "text": "Sit on the new cliff and watch the dust settle",
+     "effects": {
+      "comprehension": 3,
+      "log": "From up there the whole plain is a map of what moved and what held. You understand something about stillness you did not before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_rf_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The seam in the sky above the western mountains widens every night. The young masters who climbed up to close it have not come down. People are looking at you now, at the way you stand and the way you breathe.",
+   "trigger": "era_cal_rift",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Climb up and seal it yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The things of the rift"
+     },
+     "ok": {
+      "fame": 20,
+      "flag": "fc_sealed",
+      "alignment": 5,
+      "log": "You climb all night and stand in the red light of the seam with every form you ever learned. At dawn the edges begin to close. They will tell this one for a long time."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the things that came down through the Sky Rift",
+      "log": "You reach the seam, and something with too many eyes reaches you. You come down the mountain on a stretcher."
+     },
+     "risky": true
+    },
+    {
+     "text": "Teach the young ones how to hold the passes",
+     "effects": {
+      "fame": 6,
+      "comprehension": 2,
+      "log": "You cannot climb the way you used to, but you can teach. The passes hold that year, and the young ones hold them."
+     }
+    },
+    {
+     "text": "Bar the doors at dusk and wait",
+     "effects": {
+      "health": -5,
+      "log": "Every night something scratches at the shutters. Every morning you are still there. It is not glorious, but it is a kind of victory."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cal_rf_end",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The rift is closed. On the mountain where it opened the snow has fallen red for three days, and then white again. The town holds a quiet festival with no music.",
+   "trigger": "era_cal_rift",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Go to the festival",
+     "effects": {
+      "charm": 2,
+      "log": "Nobody dances. Everyone eats together. It is, somehow, the best festival you remember."
+     }
+    },
+    {
+     "text": "Climb up to where the seam was",
+     "effects": {
+      "qi": 8,
+      "log": "There is a smell of iron and lightning in the air up there still. Your energy drinks it in."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fc_tide_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Every beast of the mountains goes mad at once. Deer, boar, wolves and worse pour down the valleys in a single roaring flood of bodies, and the small ones are trampled in their dens.",
+   "trigger": "fc_tide",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Stand across the valley and hold it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9,
+      "foeName": "The Beast Tide"
+     },
+     "ok": {
+      "tally": {
+       "legend": 5,
+       "virtue": 3
+      },
+      "log": "You plant yourself across the mouth of the valley and the tide splits around you like water round a rock. Behind you the dens are safe."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the Beast Tide",
+      "log": "The tide does not split. It goes over you, and you wake far downstream with nothing in you but pain."
+     },
+     "risky": true
+    },
+    {
+     "text": "Run with the tide and turn it from the villages",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "tally": {
+       "legend": 3
+      },
+      "log": "You run at the edge of the tide and lean, and lean, until its whole weight bends away from the human fields."
+     },
+     "fail": {
+      "health": -12,
+      "log": "You are swept along with it for a whole day before you can break free."
+     }
+    },
+    {
+     "text": "Go to ground until it passes",
+     "effects": {
+      "health": -5,
+      "log": "You lie in the deepest part of your den and listen to the mountain shake above you until it is over."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fc_war_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The jade bridges between the islands are burning. Two of the great courts above the clouds have gone to war, and an envoy in white is standing on your doorstep, waiting to hear whose side you are on.",
+   "trigger": "fc_war",
+   "when": {
+    "upper": true
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Fight for the court that wronged no one first",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0,
+      "foeName": "An immortal general"
+     },
+     "ok": {
+      "fame": 15,
+      "qi": 10,
+      "log": "You hold a bridge alone for three days. When the war ends, the bridge is named for you, and so is the peace."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the War of the Immortals",
+      "log": "An immortal general takes your measure with one stroke. You fall through a cloud and wake on your own island, alive by a thread."
+     },
+     "risky": true
+    },
+    {
+     "text": "Shelter the refugees of both sides",
+     "effects": {
+      "alignment": 6,
+      "fame": 5,
+      "log": "Your island fills with the families of soldiers from both banners. Nobody fights under your roof. Both courts remember that."
+     }
+    },
+    {
+     "text": "Seal your island until it is over",
+     "effects": {
+      "health": -5,
+      "log": "You raise every array you know around your island. The war goes past outside like weather."
+     }
+    }
+   ]
+  },
+  {
+   "id": "fc_pw_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Far below your feet, in the world you made, the calamity it was always going to meet has come. The temples are full day and night, and every prayer is the same prayer, said in your name.",
+   "trigger": "fc_pw",
+   "when": {
+    "age": [
+     0,
+     1000000
+    ]
+   },
+   "arc": "The Fixed Calamities",
+   "choices": [
+    {
+     "text": "Reach down and hold it back yourself",
+     "effects": {
+      "flag": "fcw_shield",
+      "qi": -5,
+      "log": "You set your hands against it from above. It is heavy, heavier than anything in this life, but your world does not break."
+     }
+    },
+    {
+     "text": "Send your spirit beast down to guard the world for good",
+     "req": {
+      "flags": [
+       "sb_with"
+      ]
+     },
+     "effects": {
+      "flag": "fcw_guard",
+      "alignment": 3,
+      "log": "Your spirit beast looks at you for a long moment, then goes down into the world you made. You know it will not come back up."
+     }
+    },
+    {
+     "text": "Let the world weather it alone",
+     "effects": {
+      "flag": "fcw_let",
+      "comprehension": 2,
+      "log": "You watch and do nothing. A world that is never tested never grows, you tell yourself. The prayers go on all year."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

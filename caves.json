@@ -1,0 +1,1659 @@
+{
+ "events": [
+  {
+   "id": "cv_hermit_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The cave the hermit sealed is shut by a round stone door with no handle. Nine characters are cut around its rim, and under them, smaller: \"Whoever opens this the wrong way will be very tired by evening.\"",
+   "trigger": "cv_gate",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hermit"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Read the characters as an array and press them in order",
+     "roll": {
+      "stat": "arrays",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The ninth character sinks under your thumb, and the door rolls aside with a sigh of air a century old."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You press the wrong one. The door hums, the ground shakes, and you are thrown down the slope on your back."
+     }
+    },
+    {
+     "text": "Put your shoulder to it and push",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "It moves a finger, then a hand, then all at once. Behind it the cave breathes out cold, clean air."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You push until your shoulder is numb. The door does not care."
+     }
+    },
+    {
+     "text": "Mark the place and come back next year",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You pile three stones by the door, the old sign for \"I will return\", and go home thinking about it."
+     }
+    }
+   ],
+   "variants": [
+    "The hermit's cave is still shut by its round stone door with no handle, nine characters cut round the rim and, smaller, the warning: \"Whoever opens this the wrong way will be very tired by evening.\""
+   ]
+  },
+  {
+   "id": "cv_hermit_trial_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Past the door the cave floor is a field of stone tiles, and half of them are not tiles at all but the tops of pits. A line of footprints worn into the stone leads across, and the hermit has painted a second, different line beside it.",
+   "trigger": "cv_trial",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hermit"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Trust your feet and cross light as a leaf",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You cross on the tips of your toes and every tile holds. On the far side someone has left a cup of tea, long dry."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "A tile drops under you. You catch the edge and climb out, scraped and shaking."
+     }
+    },
+    {
+     "text": "Work out which line is the lie",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The worn path is the trap: anyone can follow footprints. You take the painted line, and the cave lets you pass."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You choose the worn path. Halfway across, the floor opens, and you crawl back the way you came."
+     }
+    },
+    {
+     "text": "Go back the way you came and think about it",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You walk out carefully, putting your feet exactly where you put them coming in. A year to think is not a bad thing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hermit_guard_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "A stone figure sits cross-legged in the middle of the cave, a hermit carved from the rock itself. As you come near, its eyes open, and it stands up with the sound of a mountain clearing its throat.",
+   "trigger": "cv_guard",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hermit"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Fight the stone guardian",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The stone guardian"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights in the hermit's style, patient and heavy, and you learn as it hits you. At last it sits down again, bows its stone head, and is still."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "It knocks you the length of the cave. When you can stand again, it is sitting with its eyes closed, waiting for the next attempt."
+     }
+    },
+    {
+     "text": "Bow to it, and ask to be tested in words",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The figure tilts its head and asks you a question about the nature of stillness. Your answer makes it laugh, stone on stone, and it sits back down."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "Your answer is wrong in a way that makes the figure sigh. It walks you to the door with a heavy hand on your shoulder."
+     }
+    },
+    {
+     "text": "Back away slowly",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "The figure watches you go, and closes its eyes again when you reach the door."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hermit_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The inner cave is empty except for a bronze mirror on the wall. In it you see yourself, older, at the end of a life you have not lived yet, looking back at you with a question in its face.",
+   "trigger": "cv_heart",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hermit"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Look until you understand the question",
+     "effects": {
+      "flag": "cvx_pass",
+      "comprehension": 2,
+      "log": "The question is: \"Was it worth it?\" You do not have an answer yet, but you are not afraid of it. The mirror goes dark, and a passage opens behind it."
+     }
+    },
+    {
+     "text": "Tell the reflection what you mean to become",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 2,
+      "log": "You say it aloud, in the empty cave. The old face in the mirror smiles, and the mirror swings open like a door."
+     }
+    },
+    {
+     "text": "Turn away from it",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You cannot look at it today. The mirror will still be there next year. So will you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hermit_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The last chamber is a small room with a sleeping mat, a teapot, and walls covered from floor to ceiling in carved forms. A wooden chest stands in one corner, and in the air, faint as breath on glass, the hermit is waiting.",
+   "trigger": "cv_legacy",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hermit"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Study the forms on the walls",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You study the walls until the forms move behind your eyes when you close them."
+     }
+    },
+    {
+     "text": "Open the chest",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The chest is heavier than it looks. The hermit had more silver than a hermit should."
+     }
+    },
+    {
+     "text": "Kneel to the lingering spirit",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You kneel, and the faint shape in the air bends down to look at you closely."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_sect_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The vault of the fallen sect is behind a cave mouth bricked up a hundred years ago, with the sect's crest pressed into every brick. Somebody wanted it found, and somebody else did not.",
+   "trigger": "cv_gate",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_sect"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Find the one brick that is a key",
+     "roll": {
+      "stat": "arrays",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "One crest is upside down. You turn it the right way up, and the whole wall slides into the floor."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You press the wrong crest, and a cloud of choking dust comes down on you from the roof."
+     }
+    },
+    {
+     "text": "Take the wall down brick by brick",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "It takes all day and all your strength. Behind the last brick is a stair going down into the cave."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The wall is backed with iron. Your hands are raw by sunset, and the wall is still a wall."
+     }
+    },
+    {
+     "text": "Leave it bricked for now",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You set a loose brick back in place and walk away. A wall that waited a hundred years can wait one more."
+     }
+    }
+   ],
+   "variants": [
+    "The fallen sect's vault waits behind its bricked cave mouth, the crest pressed into every brick. Someone meant it to be found. Someone else meant very much that it would not be.",
+    "You are back at the bricked-up cave of the fallen sect, a crest on every brick and moss in every seam. One brick is not like the others. It never was.",
+    "Ivy has grown over half the bricked cave mouth, but the fallen sect's crest still shows on every brick. One of them is not mortared like the others. Someone made it that way on purpose."
+   ]
+  },
+  {
+   "id": "cv_sect_trial_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The stair goes down into a hall of training dummies, wooden and iron, rank after rank of them. When you step onto the floor they all turn their heads towards you at once, and begin to move.",
+   "trigger": "cv_trial",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_sect"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Weave between them without being touched",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You pass through the ranks like water through reeds. At the far end the dummies stop, and bow."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "An iron arm catches you across the ribs, and the whole hall throws you out like a bad student."
+     }
+    },
+    {
+     "text": "Read the drill they are running, and answer it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "It is the sect's first lesson, the one every disciple learned. You answer it form for form, and the dummies let you pass."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You read the drill wrong. The dummies are not cruel, but they are thorough."
+     }
+    },
+    {
+     "text": "Climb back up the stair",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You climb back to daylight with the clatter of wooden arms behind you. They will be waiting next year."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_sect_guard_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the vault's antechamber stands the sect's last guardian elder, or what the cave has made of the elder in a hundred years: a figure of grey qi in grey robes, sword drawn, eyes on the stair.",
+   "trigger": "cv_guard",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_sect"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Cross swords with the guardian elder",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The guardian elder"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights with the sect's own forms, one after another, each harder than the last. When you match the last of them, the grey figure lowers its sword and steps aside."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "The elder's forms come faster than you can read them. It drives you back up the stair and stands guard again."
+     }
+    },
+    {
+     "text": "Give the sect's old greeting, and ask to pass",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You give the greeting the way the dummies taught it. The grey elder hesitates, then returns it, and lets you by."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The greeting is almost right. Almost is not good enough for a guardian. The sword comes up."
+     }
+    },
+    {
+     "text": "Bow, and go",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "The guardian elder watches you leave. It does not follow. It has never once left that room."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_sect_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The vault's inner door is carved with the names of every disciple the sect ever had, thousands of them. The last line is blank, and under it lies a brush, and a pot of ink that has not dried in a hundred years.",
+   "trigger": "cv_heart",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_sect"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Write your own name on the blank line",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 3,
+      "log": "You write your name under all the others. The ink sinks into the stone, and the door opens for one of its own."
+     }
+    },
+    {
+     "text": "Read every name aloud before you go on",
+     "effects": {
+      "flag": "cvx_pass",
+      "comprehension": 2,
+      "log": "It takes most of a day. When you read the last name, the cave is very quiet, and then the door opens."
+     }
+    },
+    {
+     "text": "Leave the brush where it lies",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You do not feel you have earned a place on that door yet. You leave the brush exactly where it was."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_sect_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Inside the vault are the sect's treasures, kept from the fire that ended it: shelves of manuals, chests of silver, and at the back, sitting before the founder's tablet, the faint shape of the last sect master, still keeping watch.",
+   "trigger": "cv_legacy",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_sect"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Take up the sect's greatest manual",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You take the founder's own manual down from its shelf. The binding is new; it has been rebound by somebody, every ten years, for a century."
+     }
+    },
+    {
+     "text": "Take what the sect saved for its rebuilding",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The sect saved its silver for the day it would rise again. You do not think it will mind."
+     }
+    },
+    {
+     "text": "Bow to the last sect master",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You bow, and the faint figure at the founder's tablet turns around for the first time in a hundred years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_demon_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The cave is sealed with talismans of yellow paper, hundreds of them, pasted over a crack in a black cliff. They were put there to keep something in. Some of them have already begun to peel.",
+   "trigger": "cv_gate",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_demon"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Peel the talismans in the order they were laid",
+     "roll": {
+      "stat": "arrays",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You lift them away one at a time, last laid first. The crack in the cliff sighs open, and the air that comes out is warm."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "One talisman flares as you touch it, and the burst throws you off your feet."
+     }
+    },
+    {
+     "text": "Tear through them with your energy",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You push your energy into the seal until it gives with a sound like tearing silk. The crack opens."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The seal pushes back harder than you push. You come round lying on the rocks with a headache like a struck bell."
+     }
+    },
+    {
+     "text": "Leave the seals as they are, for now",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You smooth down the peeling corners of the talismans before you go. Whatever is in there can wait a year."
+     }
+    }
+   ],
+   "variants": [
+    "Hundreds of yellow paper talismans still cover the crack in the black cliff, put there long ago to keep something in. More of them have peeled since you were last here."
+   ]
+  },
+  {
+   "id": "cv_demon_trial_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The cave beyond is full of a thin red mist, and in the mist are voices: old friends, old enemies, the people you have lost. All of them are asking you to come closer. None of them are really there.",
+   "trigger": "cv_trial",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_demon"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Walk through with your breath held and your mind still",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You walk through without answering a single voice. At the far side the mist thins, and the voices go quiet."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -6,
+      "log": "You answer one of them, just one. When you come to yourself you are outside the cave again, your face wet."
+     }
+    },
+    {
+     "text": "Run for the far side before the mist takes hold",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You are through it in a dozen breaths. The voices call after you, then give up."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The mist is thicker than it looks. You stumble, and the voices close in until you crawl back out."
+     }
+    },
+    {
+     "text": "Step back out into the daylight",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You step back out into the sun and sit down for a long time. The voices fade as soon as you leave."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_demon_guard_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Chained in the centre of the cave sits the elder's guardian, a thing of red qi shaped like a crouching tiger. The chains are rusted almost through. As you step into the light it rises, and the last of them snaps.",
+   "trigger": "cv_guard",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_demon"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Fight the demon tiger",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The demon tiger"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It is fast and furious and it has waited a long time. But it has not been fed in a century, and you have. At last it lies down, and fades like smoke."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "It drives you back to the cave mouth and stands there snarling, and does not follow you into the sunlight."
+     }
+    },
+    {
+     "text": "Calm it, the way the elder must have",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You speak to it quietly, without fear. The red tiger listens, and then it lies down and puts its head on its paws."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "It does not want to be calmed. It wants to be fed. You get out quickly."
+     }
+    },
+    {
+     "text": "Get out while it is still waking",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You are back in the sunlight before it is fully on its feet. It does not come after you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_demon_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The elder's inner cave holds only a black stone basin full of dark water. In it, as you lean over, you see every wrong thing you have ever done, one after another, and the water asks you quietly whether you would do them again.",
+   "trigger": "cv_heart",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_demon"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Answer truthfully, every time",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 3,
+      "log": "Some of the answers are hard. You say them anyway. When the water is clear, a door opens in the back of the cave."
+     }
+    },
+    {
+     "text": "Tell it you would do every one of them again",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": -3,
+      "log": "The water goes still and approving. Somewhere in the stone, a lock turns."
+     }
+    },
+    {
+     "text": "Step back from the basin",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You do not want to see the rest of it today. You come back out with your hands shaking a little."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_demon_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The demonic elder's last chamber is lined with red lacquer and black jade. On the walls are forms no righteous sect would teach; on the floor, a chest bound in iron; and on the elder's chair, a shadow that turns its head to look at you.",
+   "trigger": "cv_legacy",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_demon"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Learn the forms on the walls",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You learn them. They are not evil, only merciless, and very, very good."
+     }
+    },
+    {
+     "text": "Break open the iron chest",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The chest is full of the treasures of sects the elder robbed, a century ago. None of them are left to ask for them back."
+     }
+    },
+    {
+     "text": "Face the shadow on the chair",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You stand in front of the chair, and the shadow leans forward to see you better."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_immortal_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "On a small isle that drifts at the edge of the cloud sea there is a cave, and across its mouth hangs a curtain of light. An old immortal sealed it before the Jade Court was built, and nobody above the clouds remembers how.",
+   "trigger": "cv_gate",
+   "when": {
+    "upper": true,
+    "flags": [
+     "cv_k_immortal"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Unpick the array that holds the curtain",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The curtain is a thousand small arrays, knotted together. You untie them one by one, and the light parts like silk."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "One knot pulls tight instead of loose. The curtain flares, and you are thrown off the isle into the clouds."
+     }
+    },
+    {
+     "text": "Wait for the hour the light grows thin",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "At the turn of the night the light thins to almost nothing for the space of a breath. You step through in it."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You miss the hour by a breath, and the curtain closes on your sleeve and burns it away."
+     }
+    },
+    {
+     "text": "Let the isle drift on for a year",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You mark the isle's course in the clouds and let it drift. It will come round again."
+     }
+    }
+   ],
+   "variants": [
+    "The drifting isle at the edge of the cloud sea is back in view, and so is its cave, and so is the curtain of light across the mouth, sealed by an immortal older than the Jade Court.",
+    "The curtain of light still hangs across the cave on the drifting isle. Nobody above the clouds remembers who hung it, only that it has never once opened for anyone in a hurry.",
+    "The little isle has drifted round to the edge of the cloud sea again, and the cave mouth on it still shines: a curtain of light, older than the Jade Court, that no one alive has opened.",
+    "Mist has settled round the drifting isle, and through it the cave's curtain of light glows like a lamp behind paper. Older than the Jade Court, says every story; opened by no one, says every immortal you ask.",
+    "You find the drifting isle again by the light of its cave: the curtain across the mouth is brighter this year, humming faintly, as if whoever sealed it were still somewhere listening."
+   ]
+  },
+  {
+   "id": "cv_immortal_trial_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Inside, the cave is a bridge of floating stones over an empty sky, and every stone drifts a little when it is stepped on. Far below, the world turns slowly through the clouds.",
+   "trigger": "cv_trial",
+   "when": {
+    "upper": true,
+    "flags": [
+     "cv_k_immortal"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Cross the drifting stones",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You cross like a crane, never resting long enough for a stone to tip. At the far end the bridge settles behind you."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "A stone tips. You fall a long way through cold cloud before you catch yourself on the wind."
+     }
+    },
+    {
+     "text": "Bind the stones still with your energy",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You lay a small array on each stone as you go, and each one holds still under your foot."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "Your array slips on the third stone. You fall, and climb back up the long way."
+     }
+    },
+    {
+     "text": "Turn back to the cave mouth",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You turn back. The stones drift on without you, patient as stars."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_immortal_guard_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "At the end of the bridge stands a guardian of white jade, an immortal general carved by the old immortal's own hand. It raises a spear of light, and says, in a voice like a bell: \"Show me you are worth a thousand years.\"",
+   "trigger": "cv_guard",
+   "when": {
+    "upper": true,
+    "flags": [
+     "cv_k_immortal"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Show it, with your art",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The jade general"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights like the old immortal must have, without one wasted movement. When you finally land a touch on its jade chest, it lowers the spear."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "The spear of light catches you at the end of the bridge, and the jade general waits there for you to try again."
+     }
+    },
+    {
+     "text": "Show it with the Dao you have understood",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You do not fight. You show it the shape of what you understand. The jade general looks for a long time, then kneels."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "What you understand is not yet enough. The general shakes its head, gently, and points back along the bridge."
+     }
+    },
+    {
+     "text": "Step back across the bridge",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You bow to the jade general and step back. It bows too. It has all the time in the world."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_immortal_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the heart of the cave is a pool of starlight, and in it you see the world below as it will be in a thousand years: the sects you knew are gone, the cities are new, and your name is a story nobody quite believes.",
+   "trigger": "cv_heart",
+   "when": {
+    "upper": true,
+    "flags": [
+     "cv_k_immortal"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Accept it, and let it go",
+     "effects": {
+      "flag": "cvx_pass",
+      "comprehension": 3,
+      "log": "It does not hurt as much as you thought. When you let it go, the pool ripples, and a door of light opens."
+     }
+    },
+    {
+     "text": "Promise the world below you will not forget it",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 3,
+      "log": "You make the promise aloud. The starlight brightens, as if somebody far away had heard, and the door opens."
+     }
+    },
+    {
+     "text": "Look away from the pool",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You are not ready to see the end of everything you knew. You turn away, and the cave lets you go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_immortal_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The old immortal's last chamber is a garden under a roof of stars, with a stone table set for two. On one side is a jade slip of the immortal's art; on the other, a casket of treasures; and in the second chair, waiting, the immortal.",
+   "trigger": "cv_legacy",
+   "when": {
+    "upper": true,
+    "flags": [
+     "cv_k_immortal"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Take up the jade slip",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You press the jade slip to your brow, and the old immortal's art pours into you like light into water."
+     }
+    },
+    {
+     "text": "Open the casket",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The casket holds what an immortal thought worth keeping. Some of it is very strange, and all of it is precious."
+     }
+    },
+    {
+     "text": "Sit down in the other chair",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You sit, and the old immortal pours you a cup of tea that has been waiting since before the Jade Court."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_den_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Deep under the roots of the mountain there is a den older than any village, and a boulder rolled across its mouth by something far larger than you. The smell from inside is of old power, and older bones.",
+   "trigger": "cv_gate",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ],
+    "flags": [
+     "cv_k_den"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Shoulder the boulder aside",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You throw your whole weight against it, again and again, until it groans and rolls. The den breathes out at you."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You throw yourself at the boulder until you are bruised all down one side. It does not move."
+     }
+    },
+    {
+     "text": "Find the gap the old king used",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You circle the hill three times, and on the third you find it: a narrow gap behind a waterfall, worn smooth."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You circle the hill until dark and find nothing but thorns."
+     }
+    },
+    {
+     "text": "Leave it for another year",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You leave your mark on the boulder and go. It is your den now, whether you are ready or not."
+     }
+    }
+   ],
+   "variants": [
+    "A den in the roots of the mountain, older than the forest above it, its mouth stopped with a boulder that something far larger than you once rolled there. The stone is scored with old claw-marks.",
+    "Behind a curtain of falling water there is a den, and across its mouth a great stone, polished smooth by some body that used to push it aside every evening. That body is gone. Its smell is not.",
+    "Under a split in the ridge, where the snow never lies, a den goes down into the mountain. A boulder sits in its mouth like a stopper in a jar, and the moss on it has not been disturbed in a very long time.",
+    "The path of some great old beast still shows on the slope, though nothing has walked it for an age: it ends at a den, and a stone across the den that you could not have moved last year.",
+    "A den at the bottom of a dry gorge, its mouth closed by one round stone. Small animals will not cross the gorge. You find that you are walking softly, as if someone inside were asleep.",
+    "Wind comes out of the mountain here, warm in winter, from behind a boulder that seals a den. Whatever kept it left the stone, the warmth and a long, slow smell of power, and nothing else.",
+    "Where three old pines grow out of one rock there is a den, and across its mouth a boulder with a groove worn into it, just where a great shoulder would push. The groove is too big for yours. For now.",
+    "High on the mountain, under an overhang the rain never reaches, a den is closed with a stone heavier than a house. Old bones lie around it, picked clean long ago, and none of them came from inside."
+   ]
+  },
+  {
+   "id": "cv_den_trial_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The den goes down in a long throat of rock, and in the dark the old king laid traps of its own: falls of loose stone, pools of sucking mud, and a smell that makes every hair on your body stand up.",
+   "trigger": "cv_trial",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ],
+    "flags": [
+     "cv_k_den"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Go slowly, testing every step",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You test each step before you trust it. Twice the stone gives way where you were about to tread. You are through."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The rockfall catches your back half. You drag yourself out, bruised and furious."
+     }
+    },
+    {
+     "text": "Run it in one rush",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You go through the dark like a thrown spear, and the traps close on empty air behind you."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The mud takes you halfway through. You fight free of it and limp back the way you came."
+     }
+    },
+    {
+     "text": "Back out of the dark",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You back out of the dark one careful step at a time. The den will keep."
+     }
+    }
+   ],
+   "variants": [
+    "The way into the den narrows to a crack in the rock, and in the crack the dark has a shape: an old trial, left by whatever kept this den, for whatever comes after.",
+    "Deeper in, the den slopes down through rooms of cold stone, and in each one the air is thicker, as if the den itself were deciding whether you belong."
+   ]
+  },
+  {
+   "id": "cv_den_guard_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the great chamber of the den the old king's guardian is waiting: a shadow beast as big as the king was, made of the king's last anger. It lowers its head, and its eyes are two coals.",
+   "trigger": "cv_guard",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ],
+    "flags": [
+     "cv_k_den"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Fight the shadow of the king",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The shadow beast"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights the way the king fought, all weight and fury. You fight the way you have learned to. At last it bows its great head and comes apart like smoke in the wind."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "It throws you the length of the chamber. When you can stand, it is waiting at the far side, unhurt."
+     }
+    },
+    {
+     "text": "Stand your ground and do not look away",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You hold its gaze until the coals of its eyes dim. Then it lies down, as a beast lies down before a king."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You look away first. It does not forgive that."
+     }
+    },
+    {
+     "text": "Retreat before it charges",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You slip back up the throat of rock before it can charge. It does not leave the chamber."
+     }
+    }
+   ],
+   "variants": [
+    "Something is still guarding the den. It has been guarding it for so long that it has forgotten for whom, and it rises out of the dark to meet you all the same.",
+    "In the deep room the guard is waiting: older than you, patient as stone, and not at all surprised to see you back."
+   ]
+  },
+  {
+   "id": "cv_den_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The innermost den is quiet and warm. Here the old king lay down to die, and here its shape is pressed into the stone. When you lie down in it, you are the size of the king for one long moment, and you feel what it felt.",
+   "trigger": "cv_heart",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ],
+    "flags": [
+     "cv_k_den"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Feel all of it",
+     "effects": {
+      "flag": "cvx_pass",
+      "comprehension": 2,
+      "log": "Hunger and pride and loneliness and, at the very end, peace. When it passes, you are yourself again, and wiser."
+     }
+    },
+    {
+     "text": "Take only its pride",
+     "effects": {
+      "flag": "cvx_pass",
+      "strength": 2,
+      "log": "You take the king's pride and leave the rest. You rise from the hollow taller than you lay down."
+     }
+    },
+    {
+     "text": "Get up out of the hollow",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "It is too much, too soon. You climb out of the hollow, and the warmth fades."
+     }
+    }
+   ],
+   "variants": [
+    "At the heart of the den the old king's bed is still there, a hollow worn into the rock by centuries of sleep. The air above it is warm, as if the king had only just got up.",
+    "The den's heart is a round room under the mountain, and in its floor the hollow of a body much larger than yours. Something of the old king's strength is still soaked into the stone."
+   ]
+  },
+  {
+   "id": "cv_den_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the last chamber lie the old king's treasures: the stone where it slept, glowing faintly with the strength it left there, a hoard of spirit herbs older than the forest, and above it all, the king's great shadow, watching you.",
+   "trigger": "cv_legacy",
+   "when": {
+    "beastAny": true,
+    "stage": [
+     1,
+     99
+    ],
+    "flags": [
+     "cv_k_den"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Lie on the glowing stone",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You lie on the stone where the king slept, and its strength rises into you."
+     }
+    },
+    {
+     "text": "Eat from the hoard",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "You eat from the hoard of the old king, herbs a thousand years in the making."
+     }
+    },
+    {
+     "text": "Bow to the shadow of the king",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You bow your head to the great shadow, and it bends down to look at you."
+     }
+    }
+   ],
+   "variants": [
+    "In the last room of the den, among bones too old to smell of anything, lies what the old king left: whatever a great beast keeps, at the end, for whoever is strong enough to come this far.",
+    "The den's last room is dry and very quiet. Here the old king kept the one thing worth keeping, and here it is still, waiting for a beast who earned the way in."
+   ]
+  },
+  {
+   "id": "cv_hero_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the hills of this world there is a cave that a hero of its old days sealed, a hero the temple songs still sing about. Across its mouth hangs a door of woven willow, and on it is painted the same sign that stands over every temple.",
+   "trigger": "cv_gate",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hero",
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Answer the riddle painted under the sign",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The riddle asks who made the world. You know the answer better than anyone alive, and the willow door unweaves itself."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You give the answer the priests give. It is not the right one. The door stays shut, and stings your hand."
+     }
+    },
+    {
+     "text": "Cut through the willow",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The willow is tougher than iron, but you are tougher still. It parts, and the cave is open."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The willow springs back and knocks you down the slope."
+     }
+    },
+    {
+     "text": "Leave it sealed for now",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You touch the painted sign before you go. For a moment it feels warm, as if it knew you."
+     }
+    }
+   ],
+   "variants": [
+    "The hero's cave in the hills of this world is still closed by its door of woven willow, the temple sign painted on it, the riddle beneath. The songs say the hero is waiting for someone.",
+    "You come again to the willow door in the hills, under the temple sign the old hero painted. The paint has never faded. The riddle has never been answered.",
+    "Children of the nearest village dare each other to touch the willow door of the hero's cave. None of them has read the riddle under the temple sign. You have, many times.",
+    "Spring rain has darkened the woven willow across the hero's cave, but the painted temple sign is as bright as the day it was made, and the riddle under it is as unanswered.",
+    "A temple singer is resting by the hero's cave when you arrive, humming the old song about the one who sealed it. The willow door does not stir. The song has a verse about a riddle, and no verse about an answer."
+   ]
+  },
+  {
+   "id": "cv_hero_trial_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The hero's cave is a maze of tunnels painted with the story of this world: its first people, its first kingdom, its first prayers. Only one tunnel tells it truly. The others tell it the way people wish it had happened.",
+   "trigger": "cv_trial",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hero",
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Follow the true story",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You know which tunnel is true, because you remember. It leads you straight through the hill."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You follow the prettier story, and it leads you in a circle back to the door."
+     }
+    },
+    {
+     "text": "Run the maze before it can turn you round",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You take every turning at a run, and come out of the last one before the maze can work out where you are."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The maze turns you round until you do not know which way is out. You find it at last, by luck."
+     }
+    },
+    {
+     "text": "Go back out into the hills",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You go back out into the hills of a world that does not know who you are."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hero_guard_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "At the end of the maze the hero's guardian waits: a warrior of painted clay, armed with the spear the songs say the hero carried, and painted on its chest is the temple sign.",
+   "trigger": "cv_guard",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hero",
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Fight the clay warrior",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The clay warrior"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights the way the songs say the hero fought, bravely and well. When at last it cracks, it kneels, and the paint on its chest shines."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "The clay warrior is braver than the songs said. You are driven back into the maze."
+     }
+    },
+    {
+     "text": "Show it the sign, the way the hero would",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You trace the sign in the air. The clay warrior lowers its spear and steps aside, bowing deeply."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You trace the sign wrong. The clay warrior raises its spear."
+     }
+    },
+    {
+     "text": "Step back into the maze",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You step back. The clay warrior does not follow; it was told to guard, not to hunt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hero_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The hero's inner cave holds one thing: a little shrine with an offering bowl, and in it a letter, written by the hero long ago to whoever made the world, asking if it had all been worth it.",
+   "trigger": "cv_heart",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hero",
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Answer the letter",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 3,
+      "log": "You write an answer on the back of the hero's letter. Nobody will ever read it but you. The shrine slides aside."
+     }
+    },
+    {
+     "text": "Pray at the shrine, as the hero did",
+     "effects": {
+      "flag": "cvx_pass",
+      "luck": 2,
+      "log": "You pray as the hero prayed, and feel it go up and up, and come back down to you. The shrine slides aside."
+     }
+    },
+    {
+     "text": "Leave the letter in the bowl",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You leave the letter where it lies, unanswered. You do not know the answer yet."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cv_hero_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The hero's last chamber holds what the hero left for the next one: forms of the hero's art scratched on the walls, a chest of the old kingdom's gold, and in the corner, very faint, the hero, still waiting to meet a god.",
+   "trigger": "cv_legacy",
+   "when": {
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "cv_k_hero",
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Learn the hero's forms",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "You learn the forms the hero scratched there, and the hero's courage with them."
+     }
+    },
+    {
+     "text": "Open the chest of old gold",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The old kingdom's gold is heavier than it looks, and still bright."
+     }
+    },
+    {
+     "text": "Speak to the hero",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "You speak, and the faint shape in the corner turns, and its eyes go wide."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

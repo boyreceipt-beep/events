@@ -1,0 +1,305 @@
+{
+ "events": [
+  {
+   "id": "b11cv_gd_gate_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "Under a mountain whose shrine fell silent, a god's vault stands behind a door of cold bronze with no keyhole. The god who sealed it was forgotten when the last worshipper died, and the door, it is said, opens only to someone who remembers the name.",
+   "trigger": "cv_gate",
+   "when": {
+    "upper": true,
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "divine_realm",
+     "cv_k_god"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Speak every name the old pantheons used for it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You speak them one after another, and the sixth is the one. The bronze warms under your palm and swings inward without a sound."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You say a name that is almost right. The door answers with a note like a struck bell, and the note throws you down the steps."
+     }
+    },
+    {
+     "text": "Light an offering fire on the threshold",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The smoke rises, bends toward the bronze, and is drawn in at the seam. The door opens, as if it had been waiting for a prayer."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The fire gutters out. The door stays shut, and the cold of it settles in your bones."
+     }
+    },
+    {
+     "text": "Leave a stone of remembrance and come back next year",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You set a small stone on the threshold, the old sign of a prayer postponed, and go. A forgotten god can wait a little longer."
+     }
+    }
+   ],
+   "variants": [
+    "The bronze door under the silent shrine has no keyhole still. The god who sealed it is forgotten, and the door, they say, will open only for someone who remembers the name.",
+    "Again the mountain with the silent shrine, and the cold bronze door beneath it. No keyhole, no handle: only the old story that it opens for whoever remembers its god's name.",
+    "Frost has formed on the bronze door under the silent shrine, though no other stone on the mountain is cold. It is waiting for a name nobody alive still says.",
+    "A wandering priest has left a tally of names scratched beside the bronze door: every name the priest could think of. The door has ignored them all. Its god is still forgotten.",
+    "The silent shrine has lost another tile to the wind. Below it the bronze vault door stands exactly as before, without a keyhole, listening for one name."
+   ]
+  },
+  {
+   "id": "b11cv_gd_trial_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The first hall of the vault is a long gallery of altars, each laid for a feast, with cups still full and bread still warm. Every altar offers you something: a name, a title, a bit of old worship. One of them is genuine. The rest are the vault's tests.",
+   "trigger": "cv_trial",
+   "when": {
+    "upper": true,
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "divine_realm",
+     "cv_k_god"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Taste nothing and look for the altar that offers nothing",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "The last altar in the row is bare, and you stop at it. The gallery sighs, and the other cups go dry at once."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You take a bread from the third altar. It turns to ash in your hand, and the gallery turns you out into the cold."
+     }
+    },
+    {
+     "text": "Cross the gallery without stopping",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You cross it at a run, past every offered name, and the far door opens for you before you reach it."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "The altars pull at your sleeves with a hundred small voices. You stumble, and find your way back to the door by luck."
+     }
+    },
+    {
+     "text": "Turn back to the bronze door",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You back out between the altars, careful not to touch a cup. The vault watches you leave and seems to approve."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b11cv_gd_guard_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "In the great hall a statue of the fallen god stands on a plinth, bigger than life and hollow-eyed. It was meant to guard the vault against any god who would claim it. As you come near, it steps down off the plinth and takes up a stance, and the floor rings.",
+   "trigger": "cv_guard",
+   "when": {
+    "upper": true,
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "divine_realm",
+     "cv_k_god"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Face the statue in a contest of strength",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The fallen god's statue"
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "fame": 3,
+      "log": "It fights with a god's patience, and you fight with what you have learned. At the last it lowers its stone fists and returns to the plinth, content."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -20,
+      "log": "It hits you across the hall. When you can stand, it is back on its plinth, waiting for someone better."
+     }
+    },
+    {
+     "text": "Offer it a prayer in the old form",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "cvx_pass",
+      "log": "You speak the old words to the statue as to a god, and it remembers being one. It bows its stone head and steps aside."
+     },
+     "fail": {
+      "flag": "cvx_fail",
+      "health": -8,
+      "log": "You pray, and the statue hears a worshipper who is not yet a believer. It raises a fist, and you are driven back."
+     }
+    },
+    {
+     "text": "Step back and let it return to the plinth",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You retreat without turning your back. The statue returns to its plinth and is still, as if you had never come."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b11cv_gd_heart_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The inner chamber holds only a well of dark water, and over it a single lamp that has burned since the god's last prayer was said. In the water you see a thousand faces turned up toward you: every worshipper the fallen god ever had, waiting.",
+   "trigger": "cv_heart",
+   "when": {
+    "upper": true,
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "divine_realm",
+     "cv_k_god"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Name the god aloud, so someone will remember",
+     "effects": {
+      "flag": "cvx_pass",
+      "alignment": 3,
+      "log": "You say the name. The faces in the water smile, and one by one they close their eyes. The well drains away, and a stair appears beneath it."
+     }
+    },
+    {
+     "text": "Look into the faces until you know their needs",
+     "effects": {
+      "flag": "cvx_pass",
+      "comprehension": 2,
+      "log": "Every face asks for something small: a harvest, a safe road, a child. The lamp flickers, and a way opens behind it."
+     }
+    },
+    {
+     "text": "Turn away from the well",
+     "effects": {
+      "flag": "cvx_wait",
+      "log": "You cannot look at them today. The well will keep, and so will the lamp."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b11cv_gd_legacy_1",
+   "cat": "insight",
+   "weight": 5,
+   "once": false,
+   "cooldown": 1,
+   "text": "The last chamber is a small shrine, an altar and nothing more, with a chest of offerings piled beside it, the last the god ever received. In the lamplight, faint as incense smoke, the fallen god sits cross-legged on the altar and looks at you with great weariness.",
+   "trigger": "cv_legacy",
+   "when": {
+    "upper": true,
+    "age": [
+     14,
+     1000000
+    ],
+    "flags": [
+     "divine_realm",
+     "cv_k_god"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Hidden Caves",
+   "choices": [
+    {
+     "text": "Take up the god's old domain-art",
+     "effects": {
+      "flag": "cvx_g1",
+      "log": "The art passes into you like a blessing: a god's way of tending a harvest, a road, a hearth, a hundred small things."
+     }
+    },
+    {
+     "text": "Open the chest of offerings",
+     "effects": {
+      "flag": "cvx_g2",
+      "log": "The offerings are old, worn, and still warm with faith. You carry out the fortune the god's last worshippers left."
+     }
+    },
+    {
+     "text": "Bow to the fallen god's lingering spirit",
+     "effects": {
+      "flag": "cvx_g3",
+      "log": "The faint shape on the altar bends toward you, and for a moment you hear the god say your name, as if you had always been its worshipper."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

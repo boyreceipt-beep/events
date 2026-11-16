@@ -1,0 +1,660 @@
+{
+ "events": [
+  {
+   "id": "dc_sp_1",
+   "cat": "family",
+   "arc": "Two Names on One Door",
+   "when": {
+    "married": true,
+    "age": [
+     20,
+     80
+    ]
+   },
+   "weight": 14,
+   "text": "{npc} has started leaving the house before dawn and coming back with ink on {his} hands and nothing to say. Tonight you find a half-written letter to a sect you have never heard {him} mention.",
+   "choices": [
+    {
+     "text": "Ask, gently",
+     "effects": {
+      "mem": {
+       "deed": "trusted",
+       "w": 10,
+       "note": "asked instead of accusing"
+      },
+      "flag": "sp_secret_known",
+      "npcFlag": "sp_arc",
+      "log": "{He} is writing to the sect that raised {him}, which {he} left without permission and which has found {him} again. {He} has been afraid to tell you for a year."
+     }
+    },
+    {
+     "text": "Read the rest of the letter",
+     "effects": {
+      "mem": {
+       "deed": "snooped",
+       "w": -8,
+       "note": "read my letters"
+      },
+      "flag": "sp_secret_known",
+      "npcFlag": "sp_arc",
+      "alignment": -3,
+      "log": "The letter is a refusal. The sect wants {him} back. {He} finds you reading it, and the house is cold for a season."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "dc_sp_2",
+   "cat": "family",
+   "arc": "Two Names on One Door",
+   "when": {
+    "married": true,
+    "age": [
+     21,
+     85
+    ],
+    "npcFlags": [
+     "sp_arc"
+    ],
+    "after": [
+     "dc_sp_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "weight": 6,
+   "text": "The sect's envoy comes for {npc} in daylight: {he} swore an oath, and oaths are not undone by marriage. {He} looks at you, not at the envoy.",
+   "choices": [
+    {
+     "text": "Stand between them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The sect's envoy"
+     },
+     "ok": {
+      "fame": 8,
+      "mem": {
+       "deed": "defended",
+       "w": 16,
+       "note": "stood between me and my sect"
+      },
+      "flag": "sp_defended",
+      "log": "The envoy leaves without {him}. The sect sends a letter: the oath is released, in return for a favour they will name later."
+     },
+     "fail": {
+      "health": -20,
+      "mem": {
+       "deed": "defended",
+       "w": 12,
+       "note": "bled for me at our own gate"
+      },
+      "flag": "sp_defended",
+      "log": "The envoy is the stronger, and you are on the ground when {npc} steps over you and agrees to settle the oath properly. {He} goes for a year, and comes back thinner, free, and {his} own."
+     }
+    },
+    {
+     "text": "Let {him} choose",
+     "effects": {
+      "alignment": 6,
+      "mem": {
+       "deed": "respected",
+       "w": 8,
+       "note": "let me choose my own oath"
+      },
+      "flag": "sp_chose",
+      "log": "{He} goes with the envoy for a year to settle the oath, and comes back thinner, free, and {his} own."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "spouse"
+   },
+   "po": true
+  },
+  {
+   "id": "dc_sp_3",
+   "cat": "family",
+   "arc": "Two Names on One Door",
+   "when": {
+    "married": true,
+    "age": [
+     24,
+     90
+    ],
+    "npcFlags": [
+     "sp_arc"
+    ],
+    "after": [
+     "dc_sp_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "{npc} falls ill in the autumn with a wasting sickness the physicians cannot name. The best of them says a year, perhaps two, and that a certain snow lotus in the far mountains might be more.",
+   "choices": [
+    {
+     "text": "Go for the lotus yourself",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "risky": true,
+     "ok": {
+      "mem": {
+       "deed": "saved",
+       "w": 25,
+       "note": "crossed the mountains for my life"
+      },
+      "flag": "sp_saved",
+      "fame": 6,
+      "log": "Four months. You come back frostbitten with the lotus wrapped in your shirt. {He} lives, and tells the story better than you do."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "the mountains, for a snow lotus",
+      "log": "The cold takes everything you have. You turn back below the pass with frostbite and no lotus, and spend the year the physicians promised at the bedside."
+     }
+    },
+    {
+     "text": "Buy every year the physicians can give",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "taels": -300,
+      "mem": {
+       "deed": "cared",
+       "w": 14,
+       "note": "spent everything to keep me"
+      },
+      "flag": "sp_nursed",
+      "log": "Two years, then three, then the sickness simply stops, as such things sometimes do. The house is poor and full of {his} laughter."
+     }
+    },
+    {
+     "text": "Stay home and nurse {him} yourself",
+     "effects": {
+      "health": -5,
+      "mem": {
+       "deed": "cared",
+       "w": 12,
+       "note": "stayed by my bed through the bad nights"
+      },
+      "flag": "sp_nursed",
+      "log": "You learn the physicians' broths and sit up through the bad nights. It is a long, poor year, then a second. Slowly, the way such things sometimes go, the sickness loosens its hold. {He} lives."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "dc_sp_4",
+   "cat": "family",
+   "arc": "Two Names on One Door",
+   "when": {
+    "married": true,
+    "age": [
+     50,
+     99
+    ],
+    "npcFlags": [
+     "sp_arc"
+    ],
+    "after": [
+     "dc_sp_3"
+    ],
+    "minYearsAfter": 8
+   },
+   "weight": 6,
+   "text": "An old age. {npc} finds the letter from the first year, the half-written one, in a chest, and reads it aloud to you with {his} glasses on, laughing at {his} own handwriting.",
+   "choices": [
+    {
+     "text": "Laugh with {him}",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "laughed with me at the end"
+      },
+      "health": 5,
+      "lifespan": 1,
+      "log": "You spend the evening reading old letters. It is the best one of the year, and there have been many good ones."
+     }
+    },
+    {
+     "text": "Ask {him} if {he} ever regretted staying",
+     "effects": {
+      "mem": {
+       "deed": "asked",
+       "w": 6,
+       "note": "asked the question"
+      },
+      "comprehension": 4,
+      "log": "{He} thinks about it honestly, which is why you married {him}, and says no. Then {he} says: once, for an afternoon."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "spouse"
+   }
+  },
+  {
+   "id": "dc_kid_1",
+   "cat": "family",
+   "arc": "The Child Who Watched",
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "age": [
+     22,
+     70
+    ]
+   },
+   "weight": 14,
+   "text": "{npc} is small and has been copying your forms from the doorway for a month, badly and in secret. Today {he} asks if {he} may learn.",
+   "choices": [
+    {
+     "text": "Teach {him}, properly, from the first stance",
+     "effects": {
+      "flag": "kid_taught",
+      "mem": {
+       "deed": "taught",
+       "w": 12,
+       "note": "taught me the first stance"
+      },
+      "log": "An hour every dawn. {He} is not gifted, and does not care, and that is the gift."
+     }
+    },
+    {
+     "text": "Not yet. Let {him} be a child",
+     "effects": {
+      "flag": "kid_waited",
+      "alignment": 3,
+      "log": "{He} keeps copying from the doorway. At ten {he} shows you a form you never taught, learned entirely from watching."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "child",
+    "minAge": 5,
+    "maxAge": 8
+   }
+  },
+  {
+   "id": "dc_kid_2",
+   "cat": "family",
+   "arc": "The Child Who Watched",
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "age": [
+     26,
+     75
+    ],
+    "after": [
+     "dc_kid_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "{npc} comes home from the village school with a split lip and a story: the magistrate's son said your name in the wrong tone, and {he} answered it.",
+   "choices": [
+    {
+     "text": "Tell {him} fighting over a name is foolish",
+     "effects": {
+      "comprehension": 2,
+      "mem": {
+       "deed": "lesson",
+       "w": 4,
+       "note": "told me names are not worth blood"
+      },
+      "flag": "kid_peaceful",
+      "log": "{He} nods and does not believe you, which is fair, because you did not believe your own parent either."
+     }
+    },
+    {
+     "text": "Teach {him} to answer it better next time",
+     "effects": {
+      "mem": {
+       "deed": "pride",
+       "w": 10,
+       "note": "took my side"
+      },
+      "flag": "kid_fighter",
+      "log": "Three months of footwork. The magistrate's son learns a new tone."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "child",
+    "minAge": 8,
+    "maxAge": 13
+   }
+  },
+  {
+   "id": "dc_kid_3",
+   "cat": "family",
+   "arc": "The Child Who Watched",
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "age": [
+     34,
+     80
+    ],
+    "after": [
+     "dc_kid_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "{npc} is nearly grown and wants to leave for a sect that is not yours, three provinces away, because, {he} says, {he} will never be more than your child here.",
+   "choices": [
+    {
+     "text": "Let {him} go, with a letter and a purse",
+     "req": {
+      "minTaels": 100
+     },
+     "effects": {
+      "taels": -100,
+      "alignment": 6,
+      "mem": {
+       "deed": "freed",
+       "w": 16,
+       "note": "let me go my own way"
+      },
+      "flag": "kid_left_home",
+      "log": "{He} writes twice a year. The sect makes {him} an inner disciple in three. {His} letters stop calling you by your title."
+     }
+    },
+    {
+     "text": "Keep {him} home another two years",
+     "effects": {
+      "mem": {
+       "deed": "held",
+       "w": -8,
+       "note": "kept me home"
+      },
+      "flag": "kid_kept_home",
+      "log": "Two sullen years. Then {he} leaves anyway, the day {he} can, without the letter or the purse."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "child",
+    "minAge": 15,
+    "maxAge": 19
+   }
+  },
+  {
+   "id": "dc_kid_4",
+   "cat": "family",
+   "arc": "The Child Who Watched",
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "age": [
+     40,
+     90
+    ],
+    "after": [
+     "dc_kid_3"
+    ],
+    "minYearsAfter": 5
+   },
+   "weight": 6,
+   "text": "A letter from {npc}: {he} has passed a gate that took you years to cross, and {he} wants to know, honestly, whether you are proud or jealous.",
+   "choices": [
+    {
+     "text": "Proud. Say so plainly",
+     "effects": {
+      "mem": {
+       "deed": "proud",
+       "w": 14,
+       "note": "said they were proud of me"
+      },
+      "alignment": 4,
+      "log": "{His} reply is one line long and you keep it in your sleeve for a year."
+     }
+    },
+    {
+     "text": "Both, and say that",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "honest",
+       "w": 10,
+       "note": "told me the truth about pride"
+      },
+      "log": "{He} laughs, in the letter, and says that is the first time you have talked to {him} as a martial artist rather than a child."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "child",
+    "minAge": 20,
+    "maxAge": 40
+   }
+  },
+  {
+   "id": "dc_kid_5",
+   "cat": "family",
+   "arc": "The Child Who Watched",
+   "when": {
+    "flags": [
+     "has_child"
+    ],
+    "age": [
+     55,
+     99
+    ],
+    "after": [
+     "dc_kid_4"
+    ],
+    "minYearsAfter": 8
+   },
+   "weight": 6,
+   "text": "{npc} comes home grey at the temples, with a child of {his} own who copies your forms from the doorway, badly and in secret.",
+   "choices": [
+    {
+     "text": "Teach the grandchild the first stance",
+     "effects": {
+      "lifespan": 2,
+      "health": 5,
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "taught my child as they taught me"
+      },
+      "flag": "kid_circle",
+      "log": "An hour every dawn. {npc} watches from the doorway, and says nothing, and does not need to."
+     }
+    },
+    {
+     "text": "Let {npc} teach, and watch",
+     "effects": {
+      "comprehension": 4,
+      "mem": {
+       "deed": "respected",
+       "w": 10,
+       "note": "let me be the teacher"
+      },
+      "log": "{He} teaches it exactly as you did, including the mistake you made. You decide not to mention it."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "child",
+    "minAge": 30,
+    "maxAge": 60
+   }
+  },
+  {
+   "id": "dc_par_1",
+   "cat": "family",
+   "arc": "The House You Came From",
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     25,
+     60
+    ]
+   },
+   "weight": 14,
+   "text": "{npc}'s hands have started to shake. She hides it by keeping them busy, and by sending you to market so you will not see her try to thread a needle.",
+   "choices": [
+    {
+     "text": "Bring a physician without asking",
+     "req": {
+      "minTaels": 60
+     },
+     "effects": {
+      "taels": -60,
+      "alignment": 6,
+      "mem": {
+       "deed": "cared",
+       "w": 12,
+       "note": "brought the physician I would not ask for"
+      },
+      "flag": "par_physician",
+      "log": "The physician says years, not months, if she rests. She does not rest. She has years anyway."
+     }
+    },
+    {
+     "text": "Thread the needles and say nothing",
+     "effects": {
+      "alignment": 4,
+      "mem": {
+       "deed": "kind",
+       "w": 8,
+       "note": "threaded my needles"
+      },
+      "flag": "par_quiet",
+      "log": "You thread them every evening for a decade. Neither of you ever says why."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "mother"
+   }
+  },
+  {
+   "id": "dc_par_2",
+   "cat": "family",
+   "arc": "The House You Came From",
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     28,
+     65
+    ],
+    "after": [
+     "dc_par_1"
+    ],
+    "minYearsAfter": 3
+   },
+   "weight": 6,
+   "text": "{npc}, who has never asked you for anything, asks you to come home for a season: the roof, the field, the debt he has not mentioned for six years.",
+   "choices": [
+    {
+     "text": "Go home for the season",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "taels": -150,
+      "alignment": 8,
+      "mem": {
+       "deed": "came_home",
+       "w": 16,
+       "note": "came home when I asked"
+      },
+      "flag": "par_came_home",
+      "log": "You mend the roof and pay the debt and he pretends the money was his. It is the last season you spend under his roof."
+     }
+    },
+    {
+     "text": "Write that you cannot come this year",
+     "effects": {
+      "mem": {
+       "deed": "stayed_away",
+       "w": -4,
+       "note": "wrote instead of coming"
+      },
+      "flag": "par_sent_letter",
+      "log": "He writes back that he understands, in a hand shakier than you remember. The roof is patched by a neighbour. He never asks again."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "father"
+   }
+  },
+  {
+   "id": "dc_par_3",
+   "cat": "family",
+   "arc": "The House You Came From",
+   "when": {
+    "flags": [
+     "has_parents"
+    ],
+    "age": [
+     40,
+     90
+    ],
+    "after": [
+     "dc_par_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "The house you came from is being cleared out. In the rafters, where the family kept things, there is a box with your baby teeth, every letter you sent, and a manual nobody in the family could read.",
+   "choices": [
+    {
+     "text": "Read the manual",
+     "effects": {
+      "manual": 2,
+      "comprehension": 6,
+      "flag": "par_manual",
+      "log": "A breathing method, old and plain, in your great-grandmother's hand. The family was never ordinary. It had simply forgotten."
+     }
+    },
+    {
+     "text": "Keep the box closed and the house standing",
+     "effects": {
+      "alignment": 6,
+      "lifespan": 1,
+      "flag": "par_kept_house",
+      "log": "You pay a neighbour to keep the roof whole. Every few years you sit in the empty kitchen for an hour."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

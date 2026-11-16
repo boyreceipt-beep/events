@@ -1,0 +1,1109 @@
+{
+ "events": [
+  {
+   "id": "dg_bandits_pass",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 3,
+   "text": "On a mountain pass, a dozen bandits step onto the road. Their leader grins. 'Toll's everything you have. Including the boots.'",
+   "choices": [
+    {
+     "text": "Fight",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 5,
+      "taels": 30,
+      "health": -15,
+      "log": "When it is over, the bandits are running and their leader is not. You take the toll money back, plus interest.",
+      "flag": "beat_bandits"
+     },
+     "fail": {
+      "health": -55,
+      "taels": -9999,
+      "deathCause": "bandits on the mountain pass",
+      "log": "There are too many. You wake in a ditch, robbed of everything, including the boots."
+     }
+    },
+    {
+     "text": "Pay them",
+     "effects": {
+      "taels": -9999,
+      "log": "You hand over everything. The leader pats your cheek. 'Smart. Smart ones live long.'"
+     }
+    },
+    {
+     "text": "Run for the cliffs",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "health": -10,
+      "log": "You slide down a scree slope that no sane bandit would follow."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a fall from the cliffs",
+      "log": "The slope is steeper than it looked. You break two ribs, but you are free."
+     }
+    },
+    {
+     "text": "(I remember this) Take the goat trail around the pass",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "log": "A feeling older than memory says where the bandits wait. You take the goat trail and pass them unseen, waving politely from a ridge.",
+      "logPast": "You remember this ambush from a life that ended here. You take the goat trail and pass the bandits unseen, waving politely from a ridge."
+     }
+    }
+   ],
+   "variants": [
+    "A dozen bandits block the mountain pass. Their leader grins. 'The toll is everything you own. Boots too.'"
+   ]
+  },
+  {
+   "id": "dg_plague",
+   "cat": "danger",
+   "cooldown": 20,
+   "when": {
+    "age": [
+     10,
+     999
+    ],
+    "chance": 0.35
+   },
+   "weight": 2,
+   "text": "A plague comes up the river with the rice boats. By autumn, half the houses on your street have a white cloth on the door.",
+   "choices": [
+    {
+     "text": "Flee to the hills",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "health": -5,
+      "log": "You sleep in a cave until the first snow. When you come back, the town is quieter. Much quieter."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "the river plague",
+      "log": "The fever finds you anyway, in the hills, alone. You survive it. Barely."
+     }
+    },
+    {
+     "text": "Stay and help the sick",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 10,
+      "health": -20,
+      "log": "You carry water and bury the dead for three months. People remember who stayed.",
+      "flag": "plague_hero"
+     },
+     "fail": {
+      "alignment": 10,
+      "health": -65,
+      "deathCause": "the river plague",
+      "log": "You catch it in the second month. Strangers you once nursed nurse you now."
+     }
+    }
+   ],
+   "variants": [
+    "Sickness comes upriver on the rice barges. By the end of summer, white cloths hang on half the doors of your street.",
+    "The boats from downriver bring a fever with them. Within a season, every other house on your lane has a white cloth on its door."
+   ]
+  },
+  {
+   "id": "dg_inn_poison",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 15,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "minFame": 20
+   },
+   "weight": 2,
+   "text": "At a roadside inn, the tea tastes faintly of almonds. The waiter is suddenly very interested in the ceiling.",
+   "choices": [
+    {
+     "text": "Force the poison out with internal energy",
+     "req": {
+      "realm": [
+       2,
+       11
+      ]
+     },
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -20,
+      "fame": 4,
+      "log": "You circulate your energy and sweat the poison out through your fingertips. The waiter is already gone."
+     },
+     "fail": {
+      "health": -45,
+      "qi": -30,
+      "flag": "poisoned",
+      "deathCause": "poison that never left your blood",
+      "log": "You get most of it out. Most."
+     }
+    },
+    {
+     "text": "Throw up and chase the waiter",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "health": -20,
+      "log": "You catch him in the stables. He was paid by a man in a bamboo hat. He never saw the face."
+     },
+     "fail": {
+      "health": -50,
+      "flag": "poisoned",
+      "deathCause": "almond-scented tea",
+      "log": "You make it three steps before your legs give out. A doctor finds you just in time."
+     }
+    },
+    {
+     "text": "Take an antidote",
+     "req": {
+      "items": [
+       "antidote"
+      ]
+     },
+     "effects": {
+      "item": {
+       "antidote": -1
+      },
+      "log": "You swallow the antidote. It tastes worse than the poison. It works."
+     }
+    },
+    {
+     "text": "(I remember this) Swap cups with the waiter",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "fame": 4,
+      "log": "Something about this tea sets your teeth on edge. You swap the cups while he looks at the ceiling. He drinks. He does not enjoy it.",
+      "logPast": "In another life, this tea killed you. This time you swap the cups while he looks at the ceiling. He drinks. He does not enjoy it."
+     }
+    },
+    {
+     "text": "(Ten-Thousand-Poison Body) Shrug it off",
+     "req": {
+      "talent": [
+       "ten_thousand_poison_body"
+      ]
+     },
+     "effects": {
+      "fame": 4,
+      "log": "The poison goes through you like water through a sieve. You feel slightly warm. Everyone watching feels slightly afraid."
+     }
+    },
+    {
+     "text": "Lie down and drink water until it passes",
+     "effects": {
+      "health": -12,
+      "log": "You stagger to a back room and drink jug after jug of water while the ceiling spins. It passes, slowly, over two days. The waiter is long gone, and so is your strength for a while."
+     }
+    }
+   ],
+   "variants": [
+    "The tea at the roadside inn has a faint taste of bitter almonds. The waiter suddenly finds the rafters fascinating."
+   ]
+  },
+  {
+   "id": "dg_young_genius",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 6,
+   "when": {
+    "age": [
+     18,
+     999
+    ],
+    "minFame": 40
+   },
+   "weight": 3,
+   "text": "A seventeen-year-old in a spotless white robe walks into the teahouse and points his sword at you. 'You are famous. After today, I will be.'",
+   "choices": [
+    {
+     "text": "Teach the brat a lesson",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.05
+     },
+     "ok": {
+      "fame": 6,
+      "log": "It takes three moves. He leaves with a bruise and, you hope, some humility."
+     },
+     "fail": {
+      "fame": -8,
+      "health": -35,
+      "log": "It takes three moves. They are his. The whole teahouse saw."
+     }
+    },
+    {
+     "text": "Tell him to come back in ten years",
+     "effects": {
+      "fame": -3,
+      "log": "He goes red and storms out. You suspect you will see him again."
+     }
+    },
+    {
+     "text": "Buy him tea and talk",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 2,
+      "log": "By the third pot, he is telling you about his mother. By the fourth, he wants to be your disciple."
+     },
+     "fail": {
+      "health": -20,
+      "log": "He throws the tea in your face, then the teapot, then himself."
+     }
+    }
+   ],
+   "variants": [
+    "A youth of seventeen in a spotless white robe marches into the teahouse and levels his sword at you. 'You are famous. After today, I will be.'"
+   ]
+  },
+  {
+   "id": "dg_assassin",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     20,
+     999
+    ],
+    "minFame": 80,
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "You wake at the third watch. Someone is standing at the foot of your bed, perfectly still, holding a needle that catches the moonlight.",
+   "choices": [
+    {
+     "text": "Strike before they do",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.2
+     },
+     "ok": {
+      "fame": 8,
+      "log": "Your palm lands first. The assassin goes through the window. There is a tattoo of a black lotus on the wrist."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "a needle in the dark",
+      "log": "The needle finds your shoulder instead of your throat. The assassin is gone before you can scream."
+     }
+    },
+    {
+     "text": "Pretend to sleep",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "log": "A long, long minute. Then the figure leaves. In the morning there is a black lotus on your pillow. A warning."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "a needle in the dark",
+      "log": "It was not a warning. You wake up two days later, alive only because the poison was old."
+     }
+    },
+    {
+     "text": "(I remember this) Roll aside before the needle falls",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "fame": 6,
+      "log": "A chill you cannot name says the needle is coming. You are already moving when it drops, and your counter-palm sends the assassin fleeing into the night.",
+      "logPast": "You have died in this bed before. This time you are already moving when the needle drops, and your counter-palm sends the assassin fleeing into the night."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dg_demonic_raid",
+   "cat": "danger",
+   "cooldown": 25,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "chance": 0.4,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 2,
+   "text": "Red banners on the horizon. The Demonic Cult is raiding the valley, and the Orthodox Alliance is three days away.",
+   "choices": [
+    {
+     "text": "Defend the village",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": 15,
+      "health": -30,
+      "log": "You hold the bridge until dawn. When the Alliance finally arrives, they find you asleep on a pile of red banners.",
+      "flag": "raid_hero"
+     },
+     "fail": {
+      "alignment": 10,
+      "health": -70,
+      "deathCause": "the Demonic Cult's raid",
+      "log": "You hold the bridge for an hour. It is enough for the children to escape. It is nearly the end of you."
+     }
+    },
+    {
+     "text": "Get the villagers into the mountains",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 6,
+      "alignment": 10,
+      "log": "You lead forty people over a goat path in the dark. Every one of them makes it."
+     },
+     "fail": {
+      "health": -25,
+      "log": "Panic. People scatter. You save who you can."
+     }
+    },
+    {
+     "text": "Hide",
+     "effects": {
+      "alignment": -10,
+      "log": "You hide in the grain cellar and listen. You will hear it for years."
+     }
+    },
+    {
+     "text": "(I remember this) You warned the village last spring",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "fame": 12,
+      "alignment": 15,
+      "flag": "raid_hero",
+      "log": "You remembered the red banners from a past life, so the village had walls, traps and an escape path ready. The Cult finds nothing but an empty valley and a very rude welcome."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dg_tiger",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 15,
+   "when": {
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     0,
+     2
+    ],
+    "chance": 0.6
+   },
+   "weight": 1,
+   "text": "Gathering firewood at dusk, you realise the orange rock in the bamboo has been breathing this whole time.",
+   "choices": [
+    {
+     "text": "Stand tall and shout",
+     "roll": {
+      "stat": "strength",
+      "dc": 35
+     },
+     "ok": {
+      "fame": 3,
+      "log": "The tiger considers you, decides you are too loud to be worth it, and leaves."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a tiger in the bamboo forest",
+      "log": "The tiger does not care how tall you are. You escape up a tree, bleeding."
+     }
+    },
+    {
+     "text": "Fight it",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foe": 1,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 12,
+      "taels": 60,
+      "log": "You kill a tiger with your bare hands. You will never, ever stop telling this story.",
+      "flag": "killed_tiger"
+     },
+     "fail": {
+      "health": -70,
+      "deathCause": "a tiger in the bamboo forest",
+      "log": "You lose. Luckily, so does the tiger's interest. A woodcutter finds you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dg_winter_famine",
+   "cat": "danger",
+   "cooldown": 20,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "chance": 0.3,
+    "realm": [
+     0,
+     3
+    ]
+   },
+   "weight": 2,
+   "text": "The harvest fails. By midwinter, people are boiling tree bark and belts.",
+   "choices": [
+    {
+     "text": "Share what you have (30 taels of rice)",
+     "effects": {
+      "taels": -30,
+      "alignment": 10,
+      "health": -25,
+      "fame": 3,
+      "log": "You go hungry so a family down the road does not. You are thin by spring, and not sorry."
+     },
+     "req": {
+      "minTaels": 30
+     }
+    },
+    {
+     "text": "Hunt in the frozen mountains",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "health": -10,
+      "fame": 4,
+      "log": "You bring back a frozen deer. The whole street eats for a week."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the cold of a hungry winter",
+      "log": "The mountain takes two of your toes and nearly the rest of you."
+     }
+    },
+    {
+     "text": "Tighten your belt and endure",
+     "effects": {
+      "health": -35,
+      "deathCause": "a hungry winter",
+      "log": "You survive the winter on rice-water and stubbornness."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dg_sect_war",
+   "cat": "danger",
+   "cooldown": 15,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "orthodox",
+     "unorthodox",
+     "demonic",
+     "family"
+    ],
+    "junior": true
+   },
+   "weight": 2,
+   "text": "War between the sects. {sect} calls every disciple to the front. The elders do not ask. They tell.",
+   "choices": [
+    {
+     "text": "Fight on the front line",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 18,
+      "health": -30,
+      "log": "Three months of mud and blood. You come home with a scar across your face and a name people whisper."
+     },
+     "fail": {
+      "health": -65,
+      "deathCause": "the sect war",
+      "log": "You are carried off the field on a door. The war ends without you."
+     }
+    },
+    {
+     "text": "Volunteer for the supply lines",
+     "effects": {
+      "fame": 3,
+      "health": -10,
+      "log": "You carry rice and bandages for a season. Less glory. More of you left."
+     }
+    },
+    {
+     "text": "Desert in the night",
+     "effects": {
+      "fame": -20,
+      "faction": "wanderer",
+      "sect": "",
+      "log": "You slip away. By morning you are a wanderer with no sect and a price on your head, a small one."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dg_bounty",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 8,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "factions": [
+     "unorthodox",
+     "demonic"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "imp_regent",
+     "imp_rank_4"
+    ]
+   },
+   "weight": 3,
+   "text": "Your face is on a wanted poster at the crossroads. The drawing is terrible. The reward is not.",
+   "choices": [
+    {
+     "text": "Tear it down and move on",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "log": "No one recognises you. The drawing really is terrible."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "bounty hunters at the crossroads",
+      "log": "Three bounty hunters recognise you anyway. You get away, carrying one of their arrows."
+     }
+    },
+    {
+     "text": "Hunt the hunters first",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 10,
+      "taels": 80,
+      "log": "You find the bounty hunters' camp before they find you. You keep their silver."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "bounty hunters at the crossroads",
+      "log": "They were waiting for exactly that."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "dg_madman",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 20,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "chance": 0.5
+   },
+   "weight": 1,
+   "text": "A wild-haired old man is screaming at a tree on the roadside. His eyes are red from qi deviation. He turns to you, and the tree behind him falls over.",
+   "choices": [
+    {
+     "text": "Back away slowly",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "log": "He goes back to screaming at the tree stump. You walk very quickly for a very long time."
+     },
+     "fail": {
+      "health": -40,
+      "log": "He hits you once, apologises, and hits you again."
+     }
+    },
+    {
+     "text": "Try to calm his qi",
+     "req": {
+      "realm": [
+       3,
+       11
+      ]
+     },
+     "risky": true,
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 40,
+      "comprehension": 5,
+      "fame": 5,
+      "log": "You press your palm to his back and guide his energy home. He weeps, and teaches you a breathing trick from sixty years ago."
+     },
+     "fail": {
+      "health": -60,
+      "qi": -40,
+      "deathCause": "a madman's deviated qi",
+      "log": "His qi floods into your meridians like a river through a paper wall."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dg_flood",
+   "cat": "danger",
+   "cooldown": 25,
+   "when": {
+    "age": [
+     10,
+     999
+    ],
+    "chance": 0.3
+   },
+   "weight": 1,
+   "text": "The river breaks its banks in the night. You wake to water at your bed.",
+   "choices": [
+    {
+     "text": "Get to the roof",
+     "roll": {
+      "stat": "strength",
+      "dc": 40
+     },
+     "ok": {
+      "taels": -40,
+      "log": "Two days on the roof, eating a wet cabbage. You lose most of what you own, but not yourself."
+     },
+     "fail": {
+      "health": -45,
+      "taels": -40,
+      "deathCause": "the great flood",
+      "log": "The current takes you a mile before a tree catches you. The tree is the only reason you are alive."
+     }
+    },
+    {
+     "text": "Save the neighbours' children first",
+     "risky": true,
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 12,
+      "health": -15,
+      "log": "You get all four of them out. Their mother still sends you rice cakes every New Year."
+     },
+     "fail": {
+      "alignment": 10,
+      "health": -65,
+      "deathCause": "the great flood",
+      "log": "You get them out. The water nearly does not let you follow."
+     }
+    },
+    {
+     "text": "Let everything go and ride the door out",
+     "effects": {
+      "health": -10,
+      "log": "You tear the door off its hinges and ride it into the dark. By dawn you are on a hillside a mile away, cold and bruised, and everything you owned is somewhere in the river."
+     }
+    }
+   ],
+   "variants": [
+    "In the night the river comes over its banks. You wake with water lapping at your bed.",
+    "A roar in the dark, then the cold: the river has broken through, and water is already rising around your bed."
+   ]
+  },
+  {
+   "id": "dg_swindle",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 12,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "minTaels": 50
+   },
+   "weight": 1,
+   "text": "A man in a very clean robe sells you a map to the tomb of a legendary sword master. Only 50 taels. He has, he says, just the one.",
+   "choices": [
+    {
+     "text": "Buy it and follow the map",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 90,
+      "log": "The tomb is fake. The map is fake. But the cave it leads to has a real bandit stash in it. You feel this counts."
+     },
+     "fail": {
+      "taels": -50,
+      "health": -25,
+      "log": "The map leads to a cliff, a wasp nest, and the realisation that he had a whole bag of the maps."
+     }
+    },
+    {
+     "text": "Ask where he got it",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 2,
+      "log": "His story changes three times in one breath. You wish him a good day. He does not have one: the guards were listening."
+     },
+     "fail": {
+      "taels": -50,
+      "log": "His answer is so moving that you buy two."
+     }
+    },
+    {
+     "text": "Walk away",
+     "effects": {
+      "log": "You walk away. The next customer buys four."
+     }
+    },
+    {
+     "text": "(I remember this) Call the guards",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "taels": 20,
+      "fame": 3,
+      "log": "You remember this man, and the bag of maps. The guards find forty-one of them. They give you a reward. He gives you a look."
+     }
+    }
+   ],
+   "variants": [
+    "A man in a suspiciously clean robe offers you a map to the tomb of a legendary sword master. Only 50 taels. It is, he swears, the only one."
+   ]
+  },
+  {
+   "id": "dg_snake",
+   "cat": "explore",
+   "once": false,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 2,
+   "text": "Reaching for a herb under a rock, you feel two tiny, precise pricks on your wrist.",
+   "choices": [
+    {
+     "text": "Cut and suck the wound",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "health": -15,
+      "log": "Disgusting. Effective. You are fine, give or take a swollen arm."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "a snake under a rock",
+      "log": "Your arm swells to twice its size. You spend a week in a fever, talking to your ancestors."
+     }
+    },
+    {
+     "text": "Take an antidote",
+     "req": {
+      "items": [
+       "antidote"
+      ]
+     },
+     "effects": {
+      "item": {
+       "antidote": -1
+      },
+      "log": "The antidote works. You make a mental note: look under rocks with a stick."
+     }
+    },
+    {
+     "text": "(Ten-Thousand-Poison Body) Shrug it off",
+     "req": {
+      "talent": [
+       "ten_thousand_poison_body"
+      ]
+     },
+     "effects": {
+      "fame": 4,
+      "log": "The poison goes through you like water through a sieve. You feel slightly warm. Everyone watching feels slightly afraid."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dg_duel_offense",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     16,
+     999
+    ],
+    "realm": [
+     1,
+     11
+    ]
+   },
+   "weight": 2,
+   "text": "You bump into a young master in the market. His tea spills. His four bodyguards put their hands on their swords. 'Kneel,' he says, 'and I will only break a hand.'",
+   "choices": [
+    {
+     "text": "Kneel",
+     "effects": {
+      "fame": -6,
+      "log": "You kneel. He laughs and walks away. You burn the memory into your bones."
+     }
+    },
+    {
+     "text": "Fight all five",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.15
+     },
+     "ok": {
+      "fame": 12,
+      "log": "Five against one. When it is over, the young master is the one kneeling. The market applauds."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "a young master's bodyguards",
+      "log": "There were five of them. There were always going to be five of them."
+     }
+    },
+    {
+     "text": "Talk your way out",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "log": "You praise his robe, his sword, and his father. He decides you are not worth the effort."
+     },
+     "fail": {
+      "health": -30,
+      "log": "Your praise sounds exactly as sarcastic as it was. The bodyguards teach you a lesson."
+     }
+    }
+   ],
+   "variants": [
+    "You jostle a young master in the market and his tea goes everywhere. Four bodyguards reach for their swords. 'Kneel,' he says, 'and I will only break a hand.'"
+   ]
+  },
+  {
+   "id": "dg_old_wound",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 10,
+   "when": {
+    "age": [
+     45,
+     999
+    ],
+    "flags": [
+     "poisoned"
+    ]
+   },
+   "weight": 3,
+   "text": "The old poison stirs in your blood again. Your hands go numb every morning now.",
+   "choices": [
+    {
+     "text": "Seek a famous healer",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "taels": -150,
+      "unflag": "poisoned",
+      "health": 20,
+      "log": "The healer needles you for a week and charges you a fortune. The numbness is gone."
+     }
+    },
+    {
+     "text": "Press it down with internal energy",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "qi": -15,
+      "log": "You press the poison back into the corner of your body where it lives. For now."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "poison that never left your blood",
+      "log": "The poison wins this round. You spend the season in bed."
+     }
+    }
+   ],
+   "maxPerLife": 2
+  },
+  {
+   "id": "dg_rockslide",
+   "cat": "danger",
+   "once": false,
+   "cooldown": 15,
+   "when": {
+    "age": [
+     16,
+     999
+    ]
+   },
+   "weight": 1,
+   "text": "A rumble on the mountain road. You look up. Half the mountain is coming down to meet you.",
+   "choices": [
+    {
+     "text": "Run",
+     "roll": {
+      "stat": "strength",
+      "dc": 45
+     },
+     "ok": {
+      "log": "You outrun a mountain. You sit in the dust afterwards and laugh until you cough."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "a rockslide on the mountain road",
+      "log": "A boulder clips you. You dig yourself out after an hour, with a new appreciation for being alive."
+     }
+    },
+    {
+     "text": "Use lightness technique across the falling rocks",
+     "req": {
+      "realm": [
+       2,
+       11
+      ]
+     },
+     "risky": true,
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "log": "You run up the falling rocks like stairs. A passing merchant tells the story in every town for a year."
+     },
+     "fail": {
+      "health": -65,
+      "deathCause": "a rockslide on the mountain road",
+      "log": "One of the stairs was not a stair."
+     }
+    },
+    {
+     "text": "(I remember this) Take the lower path today",
+     "req": {
+      "flags": [
+       "mem_foresight"
+      ]
+     },
+     "effects": {
+      "log": "Something in your bones says this mountain will move. You take the lower path and watch the rockslide from a safe distance, eating a rice ball.",
+      "logPast": "You remember this mountain coming down on you. You take the lower path and watch the rockslide from a safe distance, eating a rice ball."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

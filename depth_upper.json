@@ -1,0 +1,1242 @@
+{
+ "events": [
+  {
+   "id": "dc_upper_arrival_1",
+   "cat": "life",
+   "weight": 1000,
+   "once": true,
+   "text": "At the top of the white jade stairs an immortal is sitting on a stool, writing in a ledger. {He} does not look up. \"Name,\" {he} says. \"World of origin. And what you did there that was so important you thought you could come up here.\"",
+   "npc": {
+    "role": "gate_warden",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 1,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "gate_warden"
+    }
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "The Stairs of Cloud",
+   "choices": [
+    {
+     "text": "Tell the truth, all of it",
+     "effects": {
+      "charm": 5,
+      "comprehension": 3,
+      "log": "{He} writes for a long time. When {he} finally looks up, it is with something like respect. \"Most of them lie,\" {he} says. \"Welcome to the Upper Realm.\""
+     }
+    },
+    {
+     "text": "Tell {him} you were the strongest in your world",
+     "effects": {
+      "fame": 15,
+      "log": "\"So was everyone,\" {he} says, and writes it down, and underlines it twice. You suspect the underlining is not a compliment."
+     }
+    },
+    {
+     "text": "Say nothing, and wait",
+     "effects": {
+      "comprehension": 5,
+      "log": "You wait. {He} waits. After an hour {he} closes the ledger. \"Good,\" {he} says. \"You will need patience up here.\""
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_arrival_2",
+   "cat": "life",
+   "weight": 400,
+   "once": true,
+   "text": "Your first lesson in the Upper Realm comes from a child: a girl of about ten, who knocks you off a floating island with one finger and then helps you climb back up. \"Everyone up here was the strongest in their world,\" she says. \"That is why nobody up here is.\" She is four thousand years old.",
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_arrival_1"
+    ],
+    "minYearsAfter": 1,
+    "maxYearsAfter": 4
+   },
+   "arc": "The Stairs of Cloud",
+   "choices": [
+    {
+     "text": "Ask her to teach you",
+     "effects": {
+      "qi": 25,
+      "comprehension": 4,
+      "log": "She laughs, and then, to your surprise, she does: a season of being knocked off islands, until you stop falling off them."
+     }
+    },
+    {
+     "text": "Thank her, and find your own way",
+     "effects": {
+      "strength": 6,
+      "luck": 3,
+      "log": "\"Good,\" she says. \"The ones who want teachers never go far.\" She drifts away on a cloud the size of a cart."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_legend_1",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "Under a pine on a drifting isle, an old immortal is playing go against nobody. {He} looks up as you land. \"You are from the world below,\" {he} says, \"from the murim. I can smell the tea-smoke on you.\" {He} ascended from your world twelve hundred years ago, and asks, before anything else, whether people still argue about the best noodles.",
+   "npc": {
+    "role": "old_immortal",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 1,
+     "ageAbs": 1240,
+     "opinion": 10,
+     "tag": "old_immortal"
+    }
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "The Old Immortal Under the Pine",
+   "choices": [
+    {
+     "text": "Play a game of go with {him}",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "comprehension": 6,
+      "fame": 10,
+      "log": "You win by half a stone. {He} stares at the board for a long time and then laughs until {he} falls off the stool. You have made a friend for the next thousand years."
+     },
+     "fail": {
+      "comprehension": 4,
+      "log": "{He} beats you by eighty stones and teaches you why, which takes a year and is worth more than winning."
+     }
+    },
+    {
+     "text": "Tell {him} everything about the world below as it is now",
+     "effects": {
+      "charm": 4,
+      "alignment": 3,
+      "log": "The sects {he} knew are gone, the ones {he} did not know are great, and yes, they still argue about noodles. {He} listens to every word like someone drinking water after a desert."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_upper_legend_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The old immortal under the pine sends a crane for you. When you arrive the go board is put away. \"I have been up here long enough,\" {he} says. \"I am going back to the Void. I wanted to give something away first, to someone from home.\" It is a thread of starlight wound on a small loom.",
+   "npc": {
+    "role": "old_immortal"
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_legend_1"
+    ],
+    "minYearsAfter": 5,
+    "notFlags": [
+     "artefact_sky_loom"
+    ],
+    "npcFlags": [
+     "old_immortal"
+    ]
+   },
+   "arc": "The Old Immortal Under the Pine",
+   "choices": [
+    {
+     "text": "Accept it, and stay with {him} until the end",
+     "effects": {
+      "flag": [
+       "artefact_sky_loom"
+      ],
+      "alignment": 4,
+      "log": "You sit with {him} until {he} goes, a thousand points of light rising and some of them falling. The Loom of the Heavenly Weaver stays warm in your hand. (Artefact: training x1.25)"
+     }
+    },
+    {
+     "text": "Ask {him} to stay a little longer",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "flag": [
+       "artefact_sky_loom"
+      ],
+      "charm": 5,
+      "log": "\"A little longer,\" {he} agrees, and lingers another season, and gives you the loom anyway. (Artefact: training x1.25)"
+     },
+     "fail": {
+      "flag": [
+       "artefact_sky_loom"
+      ],
+      "log": "\"No,\" {he} says gently, and goes. The loom is left on the stool. (Artefact: training x1.25)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_court_1",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "The Jade Court has two halves, and both of them want you. The Eastern Pavilion keeps the old laws of heaven; the Western Pavilion wants to change them. Each sends an envoy with a jade token, and each envoy explains that accepting the other's token would be a very serious mistake.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "jade_court_1"
+    ]
+   },
+   "arc": "The Jade Court",
+   "choices": [
+    {
+     "text": "Take the Eastern token: the old laws",
+     "effects": {
+      "flag": [
+       "court_east"
+      ],
+      "fame": 20,
+      "alignment": 3,
+      "log": "The Eastern Pavilion gives you a seat. The Western Pavilion gives you a long look."
+     }
+    },
+    {
+     "text": "Take the Western token: the new laws",
+     "effects": {
+      "flag": [
+       "court_west"
+      ],
+      "fame": 20,
+      "comprehension": 3,
+      "log": "The Western Pavilion gives you a seat. The Eastern Pavilion stops inviting you to tea."
+     }
+    },
+    {
+     "text": "Take neither, and say so in front of the whole court",
+     "roll": {
+      "stat": "charm",
+      "dc": 65
+     },
+     "ok": {
+      "flag": [
+       "court_none"
+      ],
+      "fame": 35,
+      "log": "A silence you could stand a cup on. Then the oldest immortal in the court starts to laugh. You are the only immortal in ten thousand years whom both Pavilions now court."
+     },
+     "fail": {
+      "flag": [
+       "court_none"
+      ],
+      "fame": 5,
+      "log": "Both Pavilions decide you are rude. You decide you can live with that, for a very long time."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_court_2",
+   "cat": "life",
+   "weight": 10,
+   "once": true,
+   "text": "An immortal is murdered at the Jade Court, which has not happened in three thousand years. The court is in uproar, both Pavilions blame each other, and somebody has to find out what really happened. Everyone turns, slowly, to look at you.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "jade_court_2"
+    ],
+    "after": [
+     "dc_upper_court_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Jade Court",
+   "choices": [
+    {
+     "text": "Investigate",
+     "roll": {
+      "stat": "strategy",
+      "dc": 65
+     },
+     "ok": {
+      "fame": 40,
+      "comprehension": 5,
+      "log": "It was neither Pavilion. It was a gardener of the Peach Garden, with a grudge older than both of them. The court is ashamed, and grateful, in that order."
+     },
+     "fail": {
+      "fame": 10,
+      "log": "You find out a great deal about the court and nothing about the murder. The case is never closed. Up here, that means for ever."
+     }
+    },
+    {
+     "text": "Refuse: the court can solve its own murders",
+     "effects": {
+      "alignment": 2,
+      "luck": 4,
+      "log": "The court is offended for about a decade, which up here passes like an afternoon."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_court_3",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The Jade Emperor's seat has been empty since before the oldest immortal ascended. Now both Pavilions, for once, agree on something: the court needs a regent, and they want it to be someone with no old grudges. Someone new. You.",
+   "when": {
+    "upper": true,
+    "flags": [
+     "jade_court_3"
+    ],
+    "after": [
+     "dc_upper_court_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Jade Court",
+   "choices": [
+    {
+     "text": "Accept the regency",
+     "effects": {
+      "flag": [
+       "jade_regent"
+      ],
+      "fame": 80,
+      "comprehension": 4,
+      "log": "Regent of the Jade Court. The ceremony takes nine days. The ledger at the top of the stairs is rewritten with your name in it, in gold."
+     }
+    },
+    {
+     "text": "Decline: you came up here to climb, not to rule",
+     "effects": {
+      "qi": 40,
+      "alignment": 4,
+      "log": "They are astonished. Nobody has declined anything at the Jade Court in living memory, which up here is a very long memory."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_upper_rival_1",
+   "cat": "danger",
+   "weight": 7,
+   "once": true,
+   "text": "An immortal from another world entirely, a world of iron and long winters, has heard that the newcomer from the murim is strong. {He} lands on your island uninvited and plants {his} spear in the rock. \"In my world,\" {he} says, \"we greet the strong by fighting them.\"",
+   "npc": {
+    "role": "upper_rival",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 1,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "upper_rival"
+    }
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "The Spear From the Iron World",
+   "choices": [
+    {
+     "text": "Greet {him} the way {his} world does",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 40,
+      "flag": [
+       "upper_rival_beaten"
+      ],
+      "log": "A day and a night across three islands. At the end {he} pulls {his} spear out of the rock and bows. \"A good greeting,\" {he} says. {He} will be back."
+     },
+     "fail": {
+      "health": -25,
+      "flag": [
+       "upper_rival_lost"
+      ],
+      "log": "{He} wins, barely, and helps you up. \"A good greeting,\" {he} says. {He} will be back, and so will you."
+     }
+    },
+    {
+     "text": "Offer {him} tea instead. That is how your world greets the strong",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "charm": 5,
+      "flag": [
+       "upper_rival_friend"
+      ],
+      "log": "{He} has never been offered tea by anyone {he} came to fight. {He} drinks three cups and stays a month."
+     },
+     "fail": {
+      "health": -12,
+      "log": "{He} knocks the cup out of your hand. Then {he} fights you anyway, briefly, and leaves."
+     }
+    },
+    {
+     "text": "Pull the spear out of your rock and hand it back",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 2,
+      "log": "{He} takes it, looks at you for a long moment, and laughs. \"Next time,\" {he} says. There is clearly going to be a next time."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "dc_upper_rival_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The immortal from the iron world is back, as promised, with the same spear and a cask of something that smells like it could strip paint. \"Rematch,\" {he} says. \"And then we drink. Or we drink, and then rematch. I have come a long way, so I have thought about the order.\"",
+   "npc": {
+    "role": "upper_rival"
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_rival_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "upper_rival"
+    ]
+   },
+   "arc": "The Spear From the Iron World",
+   "choices": [
+    {
+     "text": "Rematch first",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "fame": 50,
+      "strength": 6,
+      "log": "Better than last time, on both sides. You win. The drink afterwards is worse than the fight."
+     },
+     "fail": {
+      "health": -25,
+      "strength": 4,
+      "log": "You lose, and learn exactly why. The drink afterwards helps more than it should.",
+      "deathCause": "a rematch with an immortal of another world"
+     },
+     "risky": true
+    },
+    {
+     "text": "Drink first",
+     "effects": {
+      "charm": 5,
+      "luck": 4,
+      "log": "You never get round to the rematch. To this day the two of you still argue about who would have won."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_peach_1",
+   "cat": "explore",
+   "weight": 6,
+   "once": true,
+   "text": "In the Peach Garden of the Upper Realm a peach has ripened. They ripen once every three thousand years, they are the size of a child's head, and the old gardener guarding them is the most dangerous immortal you have met.",
+   "when": {
+    "upper": true
+   },
+   "arc": "The Peach Garden",
+   "choices": [
+    {
+     "text": "Steal one",
+     "roll": {
+      "stat": "lightness",
+      "dc": 70
+     },
+     "ok": {
+      "qi": 60,
+      "comprehension": 6,
+      "flag": [
+       "peach_thief"
+      ],
+      "log": "In and out between two of the gardener's breaths. The peach tastes like a whole spring at once. The gardener knows, of course. The gardener always knows."
+     },
+     "fail": {
+      "health": -30,
+      "flag": [
+       "peach_thief"
+      ],
+      "log": "The gardener catches you by the collar with a rake and throws you three islands away.",
+      "deathCause": "the gardener of the Peach Garden"
+     },
+     "risky": true
+    },
+    {
+     "text": "Ask the gardener for one",
+     "roll": {
+      "stat": "charm",
+      "dc": 70
+     },
+     "ok": {
+      "qi": 50,
+      "alignment": 3,
+      "log": "Nobody has asked in nine thousand years. The gardener is so surprised that you get half."
+     },
+     "fail": {
+      "comprehension": 3,
+      "log": "\"No,\" says the gardener. Then, grudgingly: \"Come back in three thousand years.\""
+     }
+    },
+    {
+     "text": "Admire the tree, and leave",
+     "effects": {
+      "alignment": 2,
+      "luck": 4,
+      "log": "The gardener watches you go and nods, very slightly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_peach_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The old gardener of the Peach Garden finds you, rake in hand. \"You,\" {he} says. \"The one who stood under my tree. The trees have a blight. I am too old to climb the high branches. You are not.\"",
+   "npc": {
+    "role": "peach_gardener",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 1,
+     "ageAbs": 9000,
+     "opinion": 10,
+     "tag": "peach_gardener"
+    }
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_peach_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "The Peach Garden",
+   "choices": [
+    {
+     "text": "Climb for {him}, all season",
+     "effects": {
+      "qi": 30,
+      "alignment": 5,
+      "log": "A season in the high branches, cutting out the blight leaf by leaf. At the end {he} hands you a peach without a word."
+     }
+    },
+    {
+     "text": "Ask what {he} will give you for it",
+     "effects": {
+      "luck": 3,
+      "log": "\"Nothing,\" {he} says. \"And the trees will remember.\" You climb anyway. The trees, it turns out, remember."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_abyss_1",
+   "cat": "danger",
+   "weight": 6,
+   "once": true,
+   "text": "At the edge of the Upper Realm the islands end in an abyss, and out of the abyss, every thousand years, something climbs. This is a thousandth year. Shadow-things are coming up the cliffs, and you are the immortal nearest the edge.",
+   "when": {
+    "upper": true
+   },
+   "arc": "The Abyss Beneath Heaven",
+   "choices": [
+    {
+     "text": "Hold the edge alone",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "fame": 60,
+      "flag": [
+       "abyss_held"
+      ],
+      "log": "A night and a day on the edge, and nothing gets past you. When help arrives, there is nothing left to help with."
+     },
+     "fail": {
+      "health": -35,
+      "log": "They get past you, and the court has to come. You live, and are not allowed to forget it.",
+      "deathCause": "the things that climb out of the abyss"
+     },
+     "risky": true
+    },
+    {
+     "text": "Light the warning beacons and fight with the others",
+     "effects": {
+      "fame": 25,
+      "health": -12,
+      "log": "Twenty immortals on the edge by midnight. It is a long, ugly night, and in the morning the abyss is quiet for another thousand years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_abyss_2",
+   "cat": "danger",
+   "weight": 6,
+   "once": true,
+   "text": "The things from the abyss did not all go back down. One of them has nested under a drifting isle, and the island is sinking. There are immortals living on it who are too proud to leave.",
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_abyss_1"
+    ],
+    "minYearsAfter": 6
+   },
+   "arc": "The Abyss Beneath Heaven",
+   "choices": [
+    {
+     "text": "Seal the nest with an array",
+     "roll": {
+      "stat": "arrays",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 40,
+      "comprehension": 5,
+      "log": "Nine flags in the rock and one word of power. The island steadies. The proud immortals pretend it was never in danger."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The array cracks. You hold the island up with your own qi for a month until the court sends help."
+     }
+    },
+    {
+     "text": "Go down under the island and finish it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "fame": 55,
+      "strength": 6,
+      "log": "It is bigger than you were told, and older. It is also dead, eventually."
+     },
+     "fail": {
+      "health": -35,
+      "log": "You come back up without finishing it. The island sinks a little further.",
+      "deathCause": "a thing from the abyss nesting under an island"
+     },
+     "risky": true
+    },
+    {
+     "text": "Carry the proud immortals off the island, one by one",
+     "effects": {
+      "alignment": 4,
+      "fame": 15,
+      "log": "They protest all the way. The island sinks into the clouds behind the last of them, and none of them ever mentions it again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_throne_1",
+   "cat": "insight",
+   "weight": 8,
+   "once": true,
+   "text": "At the very top of the Upper Realm there is a stairway of cloud, and at the top of it a jade throne carved with nine dragons, empty for ten thousand years. You have never climbed the stairs. Today, for no reason you can name, your feet are on the first step.",
+   "when": {
+    "upper": true,
+    "realm": [
+     16,
+     21
+    ]
+   },
+   "arc": "The Empty Throne",
+   "choices": [
+    {
+     "text": "Climb to the top, and look at the throne",
+     "effects": {
+      "comprehension": 8,
+      "qi": 30,
+      "log": "You do not sit. You only look. But the dragons turn their jade heads to watch you go back down, and you know you will climb these stairs again."
+     }
+    },
+    {
+     "text": "Turn back. Not yet",
+     "effects": {
+      "alignment": 3,
+      "luck": 5,
+      "log": "Not yet. The throne has waited ten thousand years. It can wait for you to be ready."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_storm_1",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "A heavenly tribulation storm rolls across the Upper Realm: purple clouds, lightning that falls upward, thunder that you feel in your teeth. The storms up here are not for anyone in particular. That does not make them miss.",
+   "when": {
+    "upper": true
+   },
+   "arc": "Heavenly Storms",
+   "choices": [
+    {
+     "text": "Stand in it and take the lightning",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "qi": 35,
+      "fame": 10,
+      "log": "Every bolt goes into you and none of it comes out. When the storm has passed you are humming like a struck bell."
+     },
+     "fail": {
+      "health": -28,
+      "log": "One bolt too many. You come round on another island, smoking slightly.",
+      "deathCause": "a heavenly tribulation storm"
+     },
+     "risky": true
+    },
+    {
+     "text": "Shelter until it passes",
+     "effects": {
+      "comprehension": 2,
+      "log": "You shelter in a grotto with three other immortals and a crane. Nobody talks about it afterwards."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_crane_1",
+   "cat": "life",
+   "weight": 6,
+   "once": false,
+   "text": "A white crane lands on your island with a letter tied to its leg. It has flown up from the world below, which cranes are not supposed to be able to do. The letter is from {npc}.",
+   "npc": {
+    "role": "child",
+    "minAge": 8
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "Letters From Below",
+   "choices": [
+    {
+     "text": "Write back",
+     "effects": {
+      "charm": 3,
+      "alignment": 2,
+      "log": "You write a long letter and give it to the crane, who looks at the length of it with open dismay, and goes."
+     }
+    },
+    {
+     "text": "Read it many times, and keep it",
+     "effects": {
+      "comprehension": 2,
+      "luck": 2,
+      "log": "You keep it under a stone on your island. Some years you read it every day."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_upper_crane_2",
+   "cat": "life",
+   "weight": 6,
+   "once": false,
+   "text": "A crane comes up through the clouds carrying a letter from your old disciple {npc}, written very carefully, as if {he} were afraid the letters would fall off the page on the way up.",
+   "npc": {
+    "role": "own_disciple"
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "Letters From Below",
+   "choices": [
+    {
+     "text": "Write back with one last lesson",
+     "effects": {
+      "comprehension": 2,
+      "alignment": 2,
+      "log": "One page, one lesson, the one you never had time to teach. The crane takes it down."
+     }
+    },
+    {
+     "text": "Send back only: \"I am proud of you\"",
+     "effects": {
+      "charm": 3,
+      "log": "Five words. The crane goes down with them like it is carrying something heavy."
+     }
+    }
+   ],
+   "cooldown": 8,
+   "maxPerLife": 3
+  },
+  {
+   "id": "dc_upper_prayer_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A prayer comes up through the clouds, the way smoke does. Someone in a village far below has been burning incense in front of a little shrine with your name on it, and asking you, very politely, to stop the drought.",
+   "when": {
+    "upper": true
+   },
+   "arc": "Prayers From Below",
+   "choices": [
+    {
+     "text": "Answer it: bring the rain",
+     "effects": {
+      "alignment": 5,
+      "qi": -10,
+      "log": "You gather a cloud and push it gently down. In the village, it rains for three days. A new shrine goes up the next spring, slightly bigger."
+     }
+    },
+    {
+     "text": "Let the world below take care of itself",
+     "effects": {
+      "comprehension": 2,
+      "log": "Up here, they tell you, you answer one prayer and you never stop. You listen to it burn out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_whale_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "text": "A whale made entirely of cloud swims past your island, slow as a season, so big that the shadow of it takes an hour to cross. Something small is riding on its back and waving to you.",
+   "when": {
+    "upper": true
+   },
+   "arc": "The Cloud Whale",
+   "choices": [
+    {
+     "text": "Jump on",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "qi": 25,
+      "luck": 4,
+      "log": "You ride the cloud whale for a year round the edge of the Upper Realm. The small thing on its back turns out to be a very old fox, and excellent company."
+     },
+     "fail": {
+      "health": -8,
+      "log": "You go straight through the whale, which is, after all, a cloud. The fox laughs for a long time."
+     }
+    },
+    {
+     "text": "Wave back",
+     "effects": {
+      "charm": 2,
+      "log": "The small thing waves harder. The whale, very slowly, waves a fin."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_stars_1",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "text": "On a rock at the edge of the night side of the Upper Realm, an immortal is fishing with a line cast into the stars. {He} offers you the spare rod without a word.",
+   "npc": {
+    "role": "star_fisher",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 0,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "star_fisher"
+    }
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "Fishing the Stars",
+   "choices": [
+    {
+     "text": "Fish with {him} until dawn",
+     "roll": {
+      "stat": "luck",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 30,
+      "comprehension": 4,
+      "log": "Just before dawn you catch a star the size of a plum. It is warm, and then it is gone into you."
+     },
+     "fail": {
+      "comprehension": 3,
+      "log": "Nothing bites. {He} says that is the point, and you almost understand."
+     }
+    },
+    {
+     "text": "Ask {him} what {he} is fishing for",
+     "effects": {
+      "comprehension": 4,
+      "log": "\"The one that fell,\" {he} says, and will not say more, and you sit with {him} all night anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_tea_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, an immortal you half know, invites you to tea on a pavilion over the cloud sea. Up here tea takes a week, and gossip is the main course: who has fallen out with whom over what, and for how many thousand years.",
+   "npc": {
+    "role": "tea_immortal",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 0,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "tea_immortal"
+    }
+   },
+   "when": {
+    "upper": true
+   },
+   "arc": "Tea Above the Clouds",
+   "choices": [
+    {
+     "text": "Listen, and remember everything",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "A week of tea. You come away knowing which immortal never to sit next to at court, which is worth more than most manuals."
+     }
+    },
+    {
+     "text": "Tell your own stories from the world below",
+     "effects": {
+      "charm": 4,
+      "fame": 8,
+      "log": "They have never heard of inn brawls, sect feuds or the price of noodles. Your name is on every guest list in the pavilion by the end of the week."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_storm_2",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "Another storm, and this one has a shape: a dragon of black cloud with lightning for a spine, coiling slowly round the isles as if looking for something it left here. It is not looking for you. It is going through your island anyway.",
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_storm_1"
+    ]
+   },
+   "arc": "Heavenly Storms",
+   "choices": [
+    {
+     "text": "Meet it head on",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "qi": 40,
+      "fame": 12,
+      "log": "You throw yourself at the dragon's spine and come out the other side with a scale of lightning in your fist. It does not look back."
+     },
+     "fail": {
+      "health": -30,
+      "log": "It is looking for something, and it does not care what is in its way. You wake in a pool of cloud-water with your hair standing straight up.",
+      "deathCause": "a dragon of storm cloud"
+     },
+     "risky": true
+    },
+    {
+     "text": "Open the island's array and let it pass",
+     "roll": {
+      "stat": "arrays",
+      "dc": 50
+     },
+     "ok": {
+      "comprehension": 4,
+      "qi": 15,
+      "log": "The array bends around the dragon like a held breath. It passes through the island without touching a stone, and leaves a hum in the rock that stays."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The array stutters. The dragon brushes the island, and the island remembers it for a week."
+     }
+    },
+    {
+     "text": "Shelter in the grotto under the island until it passes",
+     "effects": {
+      "comprehension": 2,
+      "log": "You sit out the dragon's passing in a grotto under the island, listening to it go over like a held breath. When you come out, every pine on the island leans the same way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_storm_3",
+   "cat": "danger",
+   "weight": 5,
+   "once": true,
+   "text": "The storms have a calendar, it turns out, and this is the one that falls on the last day of a cycle no one remembers starting. The old immortals gather at the edges of their islands to watch it, as at a festival, with tea and sweet cakes.",
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_storm_2"
+    ]
+   },
+   "arc": "Heavenly Storms",
+   "choices": [
+    {
+     "text": "Watch it with them, and share the tea",
+     "effects": {
+      "charm": 3,
+      "comprehension": 2,
+      "log": "The old immortals pass the teapot round and call every bolt by name. By the end you can name a few yourself."
+     }
+    },
+    {
+     "text": "Sit in the storm's eye, where it is quiet",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 30,
+      "comprehension": 5,
+      "log": "In the eye there is no sound at all. You sit in it all night, and it teaches you what silence weighs."
+     },
+     "fail": {
+      "health": -6,
+      "comprehension": 2,
+      "log": "The eye moves. You do not, for a moment, and the wall of the storm sweeps over you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_prayer_2",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A prayer comes up that is not about rain. A child in a village far below has set a bowl of rice before the shrine with your name on it, and is telling you, very seriously, about a bully at school.",
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_prayer_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Prayers From Below",
+   "choices": [
+    {
+     "text": "Send a small sign to the bully",
+     "effects": {
+      "alignment": 3,
+      "luck": 2,
+      "log": "A feather lands on the bully's head. It is a very large feather. He is unusually thoughtful for the rest of the week."
+     }
+    },
+    {
+     "text": "Say nothing, and let the child learn",
+     "effects": {
+      "comprehension": 2,
+      "charm": 2,
+      "log": "You say nothing. When you next look, the child has solved it alone, and the rice bowl at the shrine is a little fuller than before."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_prayer_3",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "A prayer comes up from an old soldier at a roadside shrine: no incense, only a name, the name you had before you were an immortal. He asks for nothing. He only wants someone to know that he remembered.",
+   "when": {
+    "upper": true
+   },
+   "arc": "Prayers From Below",
+   "choices": [
+    {
+     "text": "Answer in a dream",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "You step into his dream and sit on the stone beside him at the roadside. Neither of you says very much. He wakes with the shrine candle burned down and a smile on his face."
+     }
+    },
+    {
+     "text": "Keep the remembering, and send nothing",
+     "effects": {
+      "comprehension": 3,
+      "log": "Some prayers are not for answering. You hold it a while, as you would a warm cup, and set it down again."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_stars_2",
+   "cat": "explore",
+   "weight": 5,
+   "once": true,
+   "text": "The immortal who fishes the stars is on the rock again, but tonight {he} has hooked something that does not want to be caught: a great dim star with a long tail, thrashing on the line, and {he} is losing. {He} holds out a hand without looking round.",
+   "npc": {
+    "role": "star_fisher",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 0,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "star_fisher"
+    }
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_stars_1"
+    ]
+   },
+   "arc": "Fishing the Stars",
+   "choices": [
+    {
+     "text": "Take the line and haul",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "qi": 35,
+      "strength": 4,
+      "log": "Together you land it. It is the size of a cartwheel, and it goes back into the sky as soon as {he} unhooks it, trailing sparks. {He} says it was the best fight in a thousand years."
+     },
+     "fail": {
+      "health": -6,
+      "comprehension": 2,
+      "log": "The star wins. It drags you both across the rock and into a small cloud, and goes off laughing, if stars laugh."
+     }
+    },
+    {
+     "text": "Cut the line",
+     "effects": {
+      "luck": 4,
+      "alignment": 2,
+      "log": "The line parts. The star shoots away, free, and the immortal sits looking at the slack line for a long time. \"Thank you,\" {he} says at last, and means it, a little."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_tea_2",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} invites you to tea again, but this time the pavilion is empty except for the two of you, and {he} does not gossip at all. {He} has a question. Up here the old immortals only ask real questions over tea.",
+   "npc": {
+    "role": "tea_immortal",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 0,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "tea_immortal"
+    }
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_tea_1"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Tea Above the Clouds",
+   "choices": [
+    {
+     "text": "Answer honestly",
+     "effects": {
+      "comprehension": 4,
+      "charm": 2,
+      "log": "{He} listens to the answer for a long time. \"Hm,\" {he} says, which from {him} is a speech."
+     }
+    },
+    {
+     "text": "Ask {him} the question back",
+     "effects": {
+      "comprehension": 3,
+      "luck": 3,
+      "log": "{He} opens {his} mouth, closes it, and pours the tea instead. It turns out the question was the whole point of the tea."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_upper_tea_3",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "The pavilion over the cloud sea has a new teamaster, a very young immortal who has never made tea for anyone senior and is so nervous that the cups rattle on their saucers. {npc} watches from the corner with open enjoyment.",
+   "npc": {
+    "role": "tea_immortal",
+    "spawn": {
+     "role": "immortal",
+     "immortal": 0,
+     "ageAbs": 900,
+     "opinion": 10,
+     "tag": "tea_immortal"
+    }
+   },
+   "when": {
+    "upper": true,
+    "after": [
+     "dc_upper_tea_2"
+    ],
+    "minYearsAfter": 2
+   },
+   "arc": "Tea Above the Clouds",
+   "choices": [
+    {
+     "text": "Praise the tea, whatever it tastes like",
+     "effects": {
+      "charm": 3,
+      "alignment": 2,
+      "log": "It tastes like boiled cloud. You say it is the best you have had in a thousand years, which is only slightly a lie. The young teamaster nearly weeps."
+     }
+    },
+    {
+     "text": "Show them how it is done",
+     "effects": {
+      "comprehension": 3,
+      "charm": 2,
+      "log": "A short lesson on the temperature of the water and the patience of the wrist. The next cup is excellent, and the young immortal bows lower than the situation requires."
+     }
+    }
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

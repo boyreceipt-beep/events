@@ -1,0 +1,854 @@
+{
+ "events": [
+  {
+   "id": "dc_mentor_blind_1",
+   "cat": "master",
+   "arc": "The Blind Swordswoman",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     8,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "A blind swordswoman sits at the crossroads every morning and asks passers-by to throw a pebble at {him}. Nobody has hit {him} in eleven years. You hit {him} on the third try, and {he} laughs out loud.",
+   "choices": [
+    {
+     "text": "Ask {him} to teach you",
+     "effects": {
+      "master": true,
+      "npcFlag": "mentor_blind",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "manual": 2,
+      "log": "{npc} taps your wrist with {his} stick. 'You threw where I was going to be. That cannot be taught. Everything else can.' {He} teaches you for years, at the crossroads, with pebbles."
+     }
+    },
+    {
+     "text": "Apologise and run",
+     "effects": {
+      "luck": 2,
+      "log": "{He} is still laughing when you are out of earshot."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": false,
+     "ageAbs": 62,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_blind_2",
+   "cat": "master",
+   "arc": "The Blind Swordswoman",
+   "when": {
+    "age": [
+     12,
+     95
+    ],
+    "npcFlags": [
+     "mentor_blind"
+    ],
+    "after": [
+     "dc_mentor_blind_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc} is very old now and sends for you. {He} gives you {his} sword, which has never had a name, and asks you to throw one last pebble.",
+   "choices": [
+    {
+     "text": "Throw it",
+     "effects": {
+      "comprehension": 8,
+      "fame": 6,
+      "log": "{He} catches it without moving, smiles, and says your form has finally become yours. {He} dies that winter, at the crossroads, in the sun.",
+      "npcDie": "old age, at the crossroads"
+     }
+    },
+    {
+     "text": "Refuse, and sit with {him}",
+     "effects": {
+      "alignment": 6,
+      "lifespan": 2,
+      "log": "You sit until evening. {He} tells you everything {he} never told you about the sword, which turns out to be about you."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_drunk_monk_1",
+   "cat": "master",
+   "arc": "The Monk Who Drank",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     12,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "A monk expelled from Shaolin for drinking wins a bet against you, a whole jar of wine, by standing on one finger for an hour. {He} offers to teach you, if you keep the jars coming.",
+   "choices": [
+    {
+     "text": "Keep the jars coming",
+     "effects": {
+      "master": true,
+      "npcFlag": "mentor_drunk_monk",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "manual": 2,
+      "taels": -20,
+      "log": "{npc} is drunk every afternoon and terrifying every morning. {His} palm method is the real Shaolin one, with the wine added in."
+     }
+    },
+    {
+     "text": "Report {him} to the temple",
+     "effects": {
+      "alignment": 2,
+      "log": "The abbot sighs. '{He} is still the best of us,' {he} says. 'Do not tell {him} I said so.'"
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": true,
+     "ageAbs": 66,
+     "realm": 2
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_mentor_drunk_monk_2",
+   "cat": "master",
+   "arc": "The Monk Who Drank",
+   "when": {
+    "age": [
+     16,
+     95
+    ],
+    "npcFlags": [
+     "mentor_drunk_monk"
+    ],
+    "after": [
+     "dc_mentor_drunk_monk_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc} has stopped drinking. That is how you know it is serious. {He} asks you to carry {him} to the temple gate {he} was thrown out of, decades ago.",
+   "choices": [
+    {
+     "text": "Carry {him} up the steps",
+     "effects": {
+      "strength": 6,
+      "alignment": 6,
+      "log": "The abbot meets you at the gate and bows to {him}. {He} dies inside the walls, forgiven, with a jar of wine you smuggled in under your robe.",
+      "npcDie": "old age, inside the temple walls"
+     }
+    },
+    {
+     "text": "Ask {him} for the last lesson first",
+     "effects": {
+      "comprehension": 8,
+      "log": "'Drink less than I did,' {he} says, 'and fight more than I did.' Then {he} walks up the steps alone."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_exile_general_1",
+   "cat": "master",
+   "arc": "The Exiled General",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     10,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "A ragged old man is teaching village boys to march with sticks. {He} moves like an army. {He} was one: the general the court exiled for winning a war the wrong way.",
+   "choices": [
+    {
+     "text": "Ask to learn from {him}",
+     "roll": {
+      "stat": "charm",
+      "dc": 35
+     },
+     "ok": {
+      "master": true,
+      "npcFlag": "mentor_exile_general",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "log": "{npc} teaches you the spear, the formation and the long patience of a siege. 'One person is a small army,' {he} says. 'Train like one.'"
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "{He} watches you stumble through the first drill, shakes {his} head, and goes back to the boys. The offer is not repeated."
+     }
+    },
+    {
+     "text": "Join the stick-drill with the boys",
+     "effects": {
+      "strength": 3,
+      "charm": 2,
+      "log": "It is surprisingly hard work. The old man nods at you once, which the boys tell you is a great honour."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": true,
+     "ageAbs": 64,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_exile_general_2",
+   "cat": "master",
+   "arc": "The Exiled General",
+   "when": {
+    "age": [
+     14,
+     95
+    ],
+    "npcFlags": [
+     "mentor_exile_general"
+    ],
+    "after": [
+     "dc_mentor_exile_general_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true,
+    "notFlags": [
+     "imp_emperor"
+    ]
+   },
+   "weight": 6,
+   "text": "A pardon arrives for {npc} from the new Emperor, years too late. {He} reads it twice and hands it to you.",
+   "choices": [
+    {
+     "text": "Ride with {him} to the capital",
+     "effects": {
+      "fame": 10,
+      "merit": 20,
+      "log": "{He} walks into the throne room in {his} old armour, bows exactly as low as {he} must, and walks out again. On the road home {he} laughs the whole way."
+     }
+    },
+    {
+     "text": "Burn it with {him}",
+     "effects": {
+      "alignment": 4,
+      "comprehension": 6,
+      "log": "'I did not need their word,' {he} says, 'only yours.' {He} teaches you {his} last formation by the fire."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_mentor_herbalist_1",
+   "cat": "master",
+   "arc": "The Herb Woman of the Mountain",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     10,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "You are dying of a snake bite in the mountains when an old woman finds you, cuts the wound, sucks the poison, and slaps you for being stupid. {His} hut smells of a hundred herbs.",
+   "choices": [
+    {
+     "text": "Stay and learn from {him}",
+     "effects": {
+      "master": true,
+      "npcFlag": "mentor_herbalist",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "manual": 1,
+      "health": 10,
+      "log": "{npc} teaches medicine first, poison second and the martial arts third, which {he} says is the right order. {He} is right."
+     }
+    },
+    {
+     "text": "Thank {him} and go",
+     "effects": {
+      "health": 10,
+      "alignment": 2,
+      "log": "{He} gives you a pouch of herbs and tells you not to come back stupid."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": false,
+     "ageAbs": 70,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_herbalist_2",
+   "cat": "master",
+   "arc": "The Herb Woman of the Mountain",
+   "when": {
+    "age": [
+     14,
+     95
+    ],
+    "npcFlags": [
+     "mentor_herbalist"
+    ],
+    "after": [
+     "dc_mentor_herbalist_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc} asks you to find a herb that grows only where a tribulation struck. {He} does not say what it is for. You suspect it is for {him}.",
+   "choices": [
+    {
+     "text": "Find it",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "lifespan": 3,
+      "comprehension": 6,
+      "log": "It gives {him} two more years. {He} spends them teaching you the last of {his} art, the part {he} said {he} would never teach anyone."
+     },
+     "fail": {
+      "comprehension": 4,
+      "log": "The herb is not where the maps say. You come back with mud to the knees, and {he} says it was a long shot, and teaches you a little regardless."
+     }
+    },
+    {
+     "text": "Ask {him} what it is for",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 4,
+      "log": "'For you,' {he} says. 'A pill for the day you face your own tribulation.' {He} brews it, and you keep it."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_assassin_1",
+   "cat": "master",
+   "arc": "The Retired Assassin",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     10,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "The quiet man who sells tofu at the end of your street catches a falling roof tile behind {his} back without turning around. Then {he} looks at you, because you saw.",
+   "choices": [
+    {
+     "text": "Promise to keep {his} secret",
+     "roll": {
+      "stat": "charm",
+      "dc": 40
+     },
+     "ok": {
+      "master": true,
+      "npcFlag": "mentor_assassin",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "log": "{npc} teaches you, at night, everything a retired assassin knows about not being where the blade lands. {He} never teaches you how to kill. You learn it anyway."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "The promise rings hollow, and {he} hears it. The tofu is not sold to you for a month, and the secret stays between you."
+     }
+    },
+    {
+     "text": "Pretend you saw nothing",
+     "effects": {
+      "luck": 3,
+      "log": "{He} nods slowly. The tofu is very good. You never mention it."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": true,
+     "ageAbs": 55,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_assassin_2",
+   "cat": "master",
+   "arc": "The Retired Assassin",
+   "when": {
+    "age": [
+     14,
+     95
+    ],
+    "npcFlags": [
+     "mentor_assassin"
+    ],
+    "after": [
+     "dc_mentor_assassin_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc}'s past arrives at the tofu shop: three blades from the guild {he} left. {He} asks you to go home. You do not go home.",
+   "choices": [
+    {
+     "text": "Stand beside {him}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 0.8,
+      "foeName": "The guild's blades"
+     },
+     "risky": true,
+     "ok": {
+      "fame": 10,
+      "alignment": 6,
+      "log": "Two of them leave. One stays, buried behind the shop. Your master sells tofu for another ten years."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "an assassin guild's blades at a tofu shop",
+      "log": "Two of the three blades are better than you. Your master finishes the work, and you carry the wounds."
+     }
+    },
+    {
+     "text": "Bargain with the guild",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "taels": -100,
+      "alignment": 4,
+      "log": "A great deal of silver and a promise. The guild takes both and leaves. Your master never asks what it cost."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The guild takes your offer as an insult and your master's name as the price. You leave with a broken rib and a deadline."
+     },
+     "req": {
+      "minTaels": 100
+     }
+    },
+    {
+     "text": "Run for the town watch",
+     "effects": {
+      "fame": -3,
+      "mem": {
+       "deed": "neglected",
+       "w": -4,
+       "note": "ran for the watch when the blades came"
+      },
+      "log": "By the time you come back with the watch, it is over. One blade lies behind the shop; the other two are gone. {npc} is cutting tofu with a bandaged hand and does not look up."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_scholar_1",
+   "cat": "master",
+   "arc": "The Scholar of the Empty Hall",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     8,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "A failed scholar who never passed the exams runs a school with no students. {He} insists the martial arts are a branch of the classics, and proves it by disarming a thief with a calligraphy brush.",
+   "choices": [
+    {
+     "text": "Become {his} only student",
+     "effects": {
+      "master": true,
+      "npcFlag": "mentor_scholar",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "comprehension": 4,
+      "log": "{npc} teaches you the classics and the brush and, somewhere in between, a sword method written as poetry. You read it for years before you realise you are fighting."
+     }
+    },
+    {
+     "text": "Ask {him} to teach you to read instead",
+     "effects": {
+      "comprehension": 5,
+      "log": "{He} is delighted. You read a great deal. The sword in the poems waits for someone else."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": true,
+     "ageAbs": 58,
+     "realm": 1
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_scholar_2",
+   "cat": "master",
+   "arc": "The Scholar of the Empty Hall",
+   "when": {
+    "age": [
+     12,
+     95
+    ],
+    "npcFlags": [
+     "mentor_scholar"
+    ],
+    "after": [
+     "dc_mentor_scholar_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc} is going blind and asks you to read {him} {his} own commentary on the classics, all forty volumes, before {he} forgets what {he} wrote.",
+   "choices": [
+    {
+     "text": "Read every volume",
+     "effects": {
+      "comprehension": 10,
+      "lifespan": 2,
+      "log": "It takes a winter. In the thirty-eighth volume you find the sword method, complete, hidden in the commentary. {He} smiles when you stop reading."
+     }
+    },
+    {
+     "text": "Copy them for the academy",
+     "effects": {
+      "fame": 8,
+      "alignment": 6,
+      "log": "The academy that failed {him} puts {his} name in the library. {He} cannot see it. You describe it to {him} every day."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_ferrywoman_1",
+   "cat": "master",
+   "arc": "The Ferrywoman",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     10,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "The old ferrywoman poles {his} boat across the river with {his} eyes closed, and when bandits try to board {him}, they all somehow end up in the water. {He} does not stop poling.",
+   "choices": [
+    {
+     "text": "Pay {him} for a lesson",
+     "effects": {
+      "master": true,
+      "npcFlag": "mentor_ferrywoman",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "taels": -5,
+      "log": "{npc} takes your coin and teaches you to stand in a boat. That takes a year. Then {he} teaches you the rest, which takes many more."
+     }
+    },
+    {
+     "text": "Ride across and say nothing",
+     "effects": {
+      "luck": 2,
+      "log": "{He} winks at you at the far bank."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": false,
+     "ageAbs": 68,
+     "realm": 2
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_ferrywoman_2",
+   "cat": "master",
+   "arc": "The Ferrywoman",
+   "when": {
+    "age": [
+     14,
+     95
+    ],
+    "npcFlags": [
+     "mentor_ferrywoman"
+    ],
+    "after": [
+     "dc_mentor_ferrywoman_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "The river is flooding and {npc} will not leave {his} boat, because people on the far bank are trapped and no one else will go.",
+   "choices": [
+    {
+     "text": "Go with {him}",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "alignment": 10,
+      "fame": 10,
+      "npcPass": "old age, a year after the great flood",
+      "log": "Twenty-three crossings in a night. {He} dies a year later, in {his} sleep, and the whole river town carries {his} boat to the grave."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "a flood, in an old woman's boat",
+      "log": "The current is stronger than either of you. {He} gets you both across, barely, and the far bank is emptier than you hoped."
+     }
+    },
+    {
+     "text": "Take the pole from {him} and go alone",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "alignment": 10,
+      "fame": 12,
+      "strength": 4,
+      "log": "{He} shouts instructions from the bank all night. In the morning {he} says you are ready, and gives you the boat."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "a flood, alone in a ferry",
+      "log": "The pole is too long and the river too wide. {He} shouts from the bank, then takes it back and crosses anyway."
+     }
+    },
+    {
+     "text": "Keep a signal fire burning on the bank",
+     "effects": {
+      "fame": -2,
+      "alignment": 3,
+      "log": "All night you feed a fire on the bank so {npc} can find the landing in the dark. {He} makes eleven crossings alone. In the morning {he} is grey with cold and says nothing about the fire, which from {him} is thanks."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  },
+  {
+   "id": "dc_mentor_hermit_1",
+   "cat": "master",
+   "arc": "The Hermit of the Cold Peak",
+   "when": {
+    "hasMaster": false,
+    "age": [
+     12,
+     50
+    ],
+    "realm": [
+     0,
+     4
+    ]
+   },
+   "weight": 26,
+   "text": "You climb the Cold Peak on a dare and find a hermit who has not spoken in twenty years. {He} breaks {his} silence to tell you that you are holding your breath wrong.",
+   "choices": [
+    {
+     "text": "Ask {him} to show you how",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 35
+     },
+     "ok": {
+      "master": true,
+      "npcFlag": "mentor_hermit",
+      "mem": {
+       "deed": "respect",
+       "w": 25,
+       "note": "became my disciple"
+      },
+      "qi": 10,
+      "log": "{npc} speaks again, a little, and only about breathing. Your qi doubles in a year. {He} says that is the least of it."
+     },
+     "fail": {
+      "comprehension": 2,
+      "log": "The breath will not come as {he} wants it. {He} says nothing, and you climb down with a headache and a blush."
+     }
+    },
+    {
+     "text": "Climb back down",
+     "effects": {
+      "comprehension": 3,
+      "log": "You breathe differently the whole way down, without meaning to."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "master",
+     "male": true,
+     "ageAbs": 80,
+     "realm": 3
+    }
+   }
+  },
+  {
+   "id": "dc_mentor_hermit_2",
+   "cat": "master",
+   "arc": "The Hermit of the Cold Peak",
+   "when": {
+    "age": [
+     16,
+     95
+    ],
+    "npcFlags": [
+     "mentor_hermit"
+    ],
+    "after": [
+     "dc_mentor_hermit_1"
+    ],
+    "minYearsAfter": 6,
+    "hasMaster": true
+   },
+   "weight": 6,
+   "text": "{npc} says {he} will go into {his} final seclusion and not come out. {He} asks you to seal the cave behind {him}, and to come back in a hundred years.",
+   "choices": [
+    {
+     "text": "Seal the cave",
+     "effects": {
+      "comprehension": 8,
+      "lifespan": 4,
+      "log": "{He} gives you the last breath of {his} method through the closing gap. You come back every year anyway, and talk to the stone."
+     }
+    },
+    {
+     "text": "Ask {him} to stay a little longer",
+     "effects": {
+      "alignment": 4,
+      "charm": 3,
+      "log": "{He} stays a year, and talks more in that year than in the twenty before it. Then {he} seals the cave with {his} own hands."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "master"
+   }
+  }
+ ],
+ "mwPass": 1
+}

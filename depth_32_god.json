@@ -1,0 +1,1091 @@
+{
+ "events": [
+  {
+   "id": "dp32g_prayer_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "Among the prayers of your domain this year is one from {npc}, a farmer, who asked for rain. You sent rain. You sent rather a lot of rain, and {npc}'s whole valley is a lake.",
+   "npc": {
+    "role": "dp32g_farmer",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_farmer",
+     "opinion": 30,
+     "ageAbs": 40
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Prayer Answered Wrong",
+   "choices": [
+    {
+     "text": "Go down and drain it yourself",
+     "effects": {
+      "log": "You stand in the valley and the water goes back into the hills like a rope drawn in. {npc} watches from the roof of the house and does not know what to pray now.",
+      "alignment": 4,
+      "fame": 3,
+      "flag": "dp32g_prayer_fixed",
+      "npcFlag": "dp32g_prayer_who"
+     }
+    },
+    {
+     "text": "Send {npc} fish",
+     "effects": {
+      "log": "If there is to be a lake, there should be fish in it. In a generation the valley is a fishing village, and {npc} is its headman.",
+      "luck": 3,
+      "charm": 2,
+      "flag": "dp32g_prayer_fish",
+      "npcFlag": "dp32g_prayer_who"
+     }
+    },
+    {
+     "text": "Let the valley learn to pray more exactly",
+     "effects": {
+      "log": "The temple scribes add a line to the prayer-forms about the amount of rain. Your faithful, you notice, have begun to be very specific.",
+      "comprehension": 4,
+      "npcFlag": "dp32g_prayer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_prayer_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}'s valley has built a new shrine to you, half-sunk in the lake or high and dry on the hill, and the valley is arguing about what you meant by the flood. The priests say punishment. {npc} says a joke.",
+   "npc": {
+    "role": "dp32g_farmer"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "after": [
+     "dp32g_prayer_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dp32g_prayer_who"
+    ]
+   },
+   "arc": "A Prayer Answered Wrong",
+   "choices": [
+    {
+     "text": "Appear in a dream and say it was a mistake",
+     "effects": {
+      "log": "Gods do not usually admit mistakes. The valley is astonished and then devoted, and the priests rewrite their sermons.",
+      "alignment": 4,
+      "charm": 3,
+      "npcFlag": "dp32g_prayer_who"
+     }
+    },
+    {
+     "text": "Let {npc} be right",
+     "effects": {
+      "log": "{npc} is right. The valley becomes known across your domain for laughing at festivals, and you find you enjoy its prayers most.",
+      "luck": 3,
+      "charm": 3,
+      "npcFlag": "dp32g_prayer_who"
+     }
+    },
+    {
+     "text": "Let the priests be right",
+     "effects": {
+      "log": "The valley becomes very well-behaved and rather dull. Its prayers come in neat rows, like taxes.",
+      "fame": 2,
+      "comprehension": 2,
+      "npcFlag": "dp32g_prayer_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_crossroads_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, a very small god, the god of one crossroads in the mortal world, has walked all the way up into the Divine Realm to ask for a place in your domain. The crossroads has become a town, and the town has stopped praying to {him}.",
+   "npc": {
+    "role": "dp32g_small",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_small",
+     "opinion": 20,
+     "ageAbs": 2000,
+     "immortal": -3
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Small God of a Crossroads",
+   "choices": [
+    {
+     "text": "Take {npc} into your domain",
+     "effects": {
+      "log": "{npc} becomes the god of all the crossroads in your lands. It is a small office. {npc} takes it more seriously than any god you know.",
+      "alignment": 4,
+      "charm": 2,
+      "flag": "dp32g_small_taken",
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    },
+    {
+     "text": "Go down and look at the town",
+     "effects": {
+      "log": "The town has a shrine to {npc} under a market stall, covered with baskets. You move the baskets. Three people notice, and pray.",
+      "luck": 3,
+      "comprehension": 2,
+      "flag": "dp32g_small_shrine",
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    },
+    {
+     "text": "Tell {npc} that small gods last longest",
+     "effects": {
+      "log": "{npc} goes home thoughtful. A hundred years later the town is gone and the crossroads is still there, and so is {npc}.",
+      "comprehension": 4,
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_crossroads_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A great god of your pantheon has noticed {npc} in your domain, or at the crossroads, and does not approve of small gods getting ideas. The great god demands {npc} be returned to the dust.",
+   "npc": {
+    "role": "dp32g_small"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "after": [
+     "dp32g_crossroads_1"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "dp32g_crossroads_who"
+    ]
+   },
+   "arc": "The Small God of a Crossroads",
+   "choices": [
+    {
+     "text": "Stand between them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 2,
+      "foeName": "The great god"
+     },
+     "ok": {
+      "log": "The great god looks at you, looks at the small one, and decides it is not worth a quarrel. {npc} brings you a pebble from every crossroads, every year.",
+      "fame": 4,
+      "alignment": 4,
+      "npcFlag": "dp32g_crossroads_who"
+     },
+     "fail": {
+      "log": "The great god is stronger. You protect {npc} at the cost of a wound and a cold place in the pantheon.",
+      "health": -16,
+      "alignment": 4,
+      "woundOnly": true,
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    },
+    {
+     "text": "Make {npc} useful to the great god",
+     "effects": {
+      "log": "You arrange for {npc} to guard the crossroads of the great god's pilgrim road. The great god is delighted with this clever idea, which was yours.",
+      "charm": 4,
+      "luck": 2,
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    },
+    {
+     "text": "Let the pantheon decide",
+     "effects": {
+      "log": "The pantheon debates for ninety years and decides that small gods are allowed. {npc} is famous for a century as the god who caused the debate.",
+      "comprehension": 3,
+      "fame": 2,
+      "npcFlag": "dp32g_crossroads_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_star_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "One of the stars of your domain has come loose and fallen into the mortal world, into a field. {npc}, a shepherd child, has found it, and is keeping it in a box under the bed because it is warm.",
+   "npc": {
+    "role": "dp32g_finder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_finder",
+     "opinion": 10,
+     "ageAbs": 14
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Star That Fell",
+   "choices": [
+    {
+     "text": "Go down and ask for it back",
+     "effects": {
+      "log": "You ask politely. {npc} considers you, and the star, and says no. You find that you cannot argue with this.",
+      "charm": 3,
+      "flag": "dp32g_star_asked",
+      "npcFlag": "dp32g_star_who"
+     }
+    },
+    {
+     "text": "Let {npc} keep it",
+     "effects": {
+      "log": "The star lights the child's house for a lifetime. The village thinks the family is blessed. The family is.",
+      "luck": 3,
+      "alignment": 3,
+      "flag": "dp32g_star_kept",
+      "npcFlag": "dp32g_star_who"
+     }
+    },
+    {
+     "text": "Take it back at night",
+     "effects": {
+      "log": "You take it. {npc} wakes in the morning to an empty box and cries for a week. The sky is whole. You are not sure it was worth it.",
+      "fame": 2,
+      "comprehension": 2,
+      "npcFlag": "dp32g_star_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_star_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} has grown up, and so has the star. It is too bright now for a box: it lights the whole valley at night, and the people of three villages have begun to pray to it, and not to you.",
+   "npc": {
+    "role": "dp32g_finder"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "after": [
+     "dp32g_star_1"
+    ],
+    "minYearsAfter": 30,
+    "npcFlags": [
+     "dp32g_star_who"
+    ]
+   },
+   "arc": "The Star That Fell",
+   "choices": [
+    {
+     "text": "Set the star back in the sky with {npc} watching",
+     "effects": {
+      "log": "You take {npc} up for one night. The star goes back where it belongs, and {npc} can point to it for the rest of a long life.",
+      "alignment": 4,
+      "charm": 3,
+      "npcFlag": "dp32g_star_who"
+     }
+    },
+    {
+     "text": "Make {npc} its priest",
+     "effects": {
+      "log": "The star-shrine becomes part of your domain's faith, with {npc} at its door. The villages pray to both. You do not mind sharing.",
+      "fame": 4,
+      "luck": 2,
+      "npcFlag": "dp32g_star_who"
+     }
+    },
+    {
+     "text": "Let the valley have a star of its own",
+     "effects": {
+      "log": "The sky of your domain has one dark place in it now, and a valley in the mortal world has a light. It seems a fair trade.",
+      "comprehension": 4,
+      "alignment": 2,
+      "npcFlag": "dp32g_star_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_valley_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "Your priests report a valley in the far mountains that worships you with great devotion and gets everything wrong: your face, your name, your gifts. {npc}, their priest, has never met anyone from your temples and is very proud of the valley's version of you.",
+   "npc": {
+    "role": "dp32g_priest",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_priest",
+     "opinion": 15,
+     "ageAbs": 50
+    }
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Valley That Worships You Wrong",
+   "choices": [
+    {
+     "text": "Visit the valley in disguise",
+     "effects": {
+      "log": "You are three times taller in their statues, and blue. You find it very touching. {npc} gives the stranger a guided tour.",
+      "charm": 4,
+      "flag": "dp32g_valley_seen",
+      "npcFlag": "dp32g_valley_who"
+     }
+    },
+    {
+     "text": "Send your priests to correct them",
+     "effects": {
+      "log": "Your priests correct them. The valley is hurt, and some of them stop praying. You think about that for a long time.",
+      "fame": 2,
+      "comprehension": 3,
+      "npcFlag": "dp32g_valley_who"
+     }
+    },
+    {
+     "text": "Let the valley keep its own version",
+     "effects": {
+      "log": "Somewhere in your domain there is a blue god three times your height who loves the mountain goats. It is, you decide, also you.",
+      "luck": 3,
+      "alignment": 3,
+      "npcFlag": "dp32g_valley_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_valley_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The valley's version of you is spreading. Pilgrims come to the blue god, and some of your own priests are arguing that two of you is one too many. {npc} has written to ask which of you is real.",
+   "npc": {
+    "role": "dp32g_priest"
+   },
+   "when": {
+    "age": [
+     400,
+     1000000
+    ],
+    "upper": true,
+    "flags": [
+     "divine_realm",
+     "dp32g_valley_seen"
+    ],
+    "notFlags": [
+     "pw_life"
+    ],
+    "after": [
+     "dp32g_valley_1"
+    ],
+    "minYearsAfter": 15,
+    "npcFlags": [
+     "dp32g_valley_who"
+    ]
+   },
+   "arc": "A Valley That Worships You Wrong",
+   "choices": [
+    {
+     "text": "Write back: both",
+     "effects": {
+      "log": "{npc} frames the letter. The blue god and you share a feast day now. Your faith is a little stranger and a great deal larger.",
+      "fame": 5,
+      "charm": 2,
+      "npcFlag": "dp32g_valley_who"
+     }
+    },
+    {
+     "text": "Go to the valley as yourself",
+     "effects": {
+      "log": "{npc} looks at you for a very long time, and then at the statue. \"You are smaller,\" {npc} says. \"We will keep the statue.\"",
+      "comprehension": 5,
+      "luck": 2,
+      "npcFlag": "dp32g_valley_who"
+     }
+    },
+    {
+     "text": "Let the priests settle it",
+     "effects": {
+      "log": "The priests hold a council for thirty years and settle on a compromise nobody understands. The valley ignores it.",
+      "luck": 3,
+      "comprehension": 2,
+      "npcFlag": "dp32g_valley_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_raid",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 6,
+   "text": "Something has come over the edge of your domain from the dark between the heavens: a host of hungry spirits led by {npc}, who was a god once, and is now very little but appetite.",
+   "variants": [
+    "The far shrines of your domain go dark one by one, like lamps being pinched out. {npc}'s host is coming through the border-lands, eating faith as it goes.",
+    "A watcher at the edge of your domain sends word: {npc}, a fallen god, is gathering the lost and the hungry at your border, and the border is thin there.",
+    "The border-gods of your domain have gone silent one after another. Beyond them, in the dark, {npc} is leading a host that remembers being worshipped and wants it back.",
+    "A prayer comes up from the last village of your domain that is not a prayer, only a scream, and then nothing. {npc}'s host is at the edge.",
+    "Your faithful dream all on the same night of a grey tide coming over the hills. {npc}, a god who fell long ago, is walking at its head."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "At the Edge of the Domain",
+   "choices": [
+    {
+     "text": "Meet them at the border yourself",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "The border holds. {npc}'s host scatters into the dark, and your faithful never know how close it came.",
+      "fame": 4,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "You drive them back, but they take a bite out of you on the way. Your domain is dim for a season while you mend.",
+      "health": -16,
+      "fame": 1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Call on your pantheon for help",
+     "effects": {
+      "log": "Three gods come. The host is driven off. Now you owe three gods a favour each, and gods remember.",
+      "luck": 2,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Speak to {npc}, who was a god once",
+     "effects": {
+      "log": "You ask {npc} what was lost. It takes an age. At the end there is a little less appetite in the dark, and a little more grief, which is better.",
+      "comprehension": 4,
+      "alignment": 3
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_fallen",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_fallen",
+     "opinion": -40,
+     "ageAbs": 8000,
+     "immortal": 0
+    }
+   }
+  },
+  {
+   "id": "dp32g_rival",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 250,
+   "maxPerLife": 4,
+   "text": "{npc}, a god of a neighbouring domain, has been taking your worshippers: one village at a time, with better miracles and worse intentions. Today {npc} has come to tell you so in person.",
+   "variants": [
+    "The priests of your domain report miracles that are not yours on your side of the border. {npc}, the god of the next domain, has stopped pretending not to be poaching.",
+    "{npc}'s priests have begun preaching in your temples, politely, on your own feast days. {npc} has come to see how you will take it.",
+    "A whole city of your domain has turned its faith to {npc} in a single season, and {npc} has sent you a gift to mark the occasion: a bell from its temple."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Rival God",
+   "choices": [
+    {
+     "text": "Settle it god to god",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It shakes the mountains of three worlds and is over by evening. {npc} withdraws, and the villages come home.",
+      "fame": 5,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "{npc} is stronger this age. You lose the exchange and two villages, and {npc} gloats for a century.",
+      "health": -16,
+      "fame": -2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Win the villages back with better gifts",
+     "effects": {
+      "log": "A good harvest, a cured fever, a well where there was none. The villages come home by themselves, and {npc} is left with nothing to say.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Propose a border and a feast-day treaty",
+     "effects": {
+      "log": "{npc} accepts, sourly. The border is kept for an age, and the feast is surprisingly pleasant.",
+      "charm": 3,
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_rivalgod",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_rivalgod",
+     "opinion": -25,
+     "ageAbs": 6000,
+     "immortal": 1
+    }
+   }
+  },
+  {
+   "id": "dp32g_petition",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 3,
+   "text": "The prayers of your domain pile up like leaves. Most are for rain, sons, daughters, a cure or a little luck. One, this year, is from {npc}, who asks for nothing at all, only to say thank you.",
+   "variants": [
+    "Among this year's prayers: {npc}, who has prayed to you every day for sixty years, asks for the first time for something of {his} own: one more spring.",
+    "A child in your domain, {npc}, has prayed to you for a puppy. The prayer is very detailed about the puppy. The temple priests, who read it, are smiling."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Prayers of the Domain",
+   "choices": [
+    {
+     "text": "Answer {npc} in a dream",
+     "effects": {
+      "log": "You thank {npc} back. {npc} wakes up and tells nobody, and is happy for a month for no reason {he} can name.",
+      "alignment": 3,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Answer every prayer in the pile for a year",
+     "effects": {
+      "log": "A year of small miracles. Your domain glows. You are very tired at the end of it, and very loved.",
+      "fame": 4,
+      "qi": -10,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Send {npc} something unasked",
+     "effects": {
+      "log": "A lost ring turns up. An old pain stops. {npc} never connects these with the prayer, which is how it should be.",
+      "luck": 3,
+      "alignment": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_faithful",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_faithful",
+     "opinion": 50,
+     "ageAbs": 60
+    }
+   }
+  },
+  {
+   "id": "dp32g_envoy",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 300,
+   "maxPerLife": 2,
+   "text": "An envoy from another pantheon, {npc}, arrives at your domain with gifts and a proposal: an alliance, a marriage of two lesser gods, or a war against a third pantheon, depending on how the conversation goes.",
+   "variants": [
+    "{npc} of the far pantheons arrives on a cloud the colour of bronze, with a hundred attendants and a list of grievances about a river you share."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Envoys of the Pantheons",
+   "choices": [
+    {
+     "text": "Hear the whole proposal",
+     "effects": {
+      "log": "It takes a month, because envoys of that pantheon only speak at dawn. At the end you have a treaty, a lesser alliance and a headache.",
+      "charm": 3,
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Send {npc} home with better gifts than {he} brought",
+     "effects": {
+      "log": "It is a gesture the other pantheon understands. Your name is spoken warmly there for an age.",
+      "fame": 4,
+      "luck": 1
+     }
+    },
+    {
+     "text": "Refuse every part of it, courteously",
+     "effects": {
+      "log": "{npc} leaves with nothing and admiration. \"You are the first god who has said no to us all at once,\" {npc} says.",
+      "fame": 2,
+      "comprehension": 3
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_envoy",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_envoy",
+     "opinion": 0,
+     "ageAbs": 5000,
+     "immortal": 0
+    }
+   },
+   "po": true
+  },
+  {
+   "id": "dp32g_mortal",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 400,
+   "maxPerLife": 2,
+   "text": "A mortal has climbed into the Divine Realm by a road nobody has used in an age. {npc} is ragged, half-frozen and furious, and has come to complain to a god in person about the state of the world.",
+   "variants": [
+    "{npc}, a mortal scholar, has walked a road of clouds for nine years to ask a god one question: why there is suffering. {npc} has brought notes."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Mortal Who Climbed",
+   "choices": [
+    {
+     "text": "Hear the complaint",
+     "effects": {
+      "log": "It is a long complaint, and fair. You change three things in your domain because of it. {npc} goes home and never knows.",
+      "alignment": 4,
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Feed {npc} first, then hear it",
+     "effects": {
+      "log": "After soup the complaint is shorter and kinder. {npc} goes home with a story nobody believes.",
+      "charm": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Send {npc} back down with a gift",
+     "effects": {
+      "log": "A seed that will grow into a tree that never fails. {npc} plants it in the middle of the village, still grumbling.",
+      "luck": 3,
+      "fame": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_climber",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_climber",
+     "opinion": 0,
+     "ageAbs": 45
+    }
+   }
+  },
+  {
+   "id": "dp32g_hunt",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 200,
+   "maxPerLife": 5,
+   "text": "A great beast of the Divine Realm, older than your godhood, has wandered into your domain and is eating your faithful's dreams. Mortals in three cities have stopped dreaming at all.",
+   "variants": [
+    "Something huge is grazing on the clouds over your highest temple, and every grain of incense lit beneath it goes out.",
+    "A beast of the wild heavens has come down into your domain to calve, and while it calves it eats prayers. Your temples are going quiet one by one.",
+    "Something enormous is drinking from the river of offerings that runs through your domain. Downstream, the shrines are running dry.",
+    "Children in your domain have started to draw the same thing: a beast with seven eyes sitting on the clouds over the temple. It is there. It is hungry."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "Beasts of the Divine Realm",
+   "choices": [
+    {
+     "text": "Hunt it",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "log": "A chase across the sky for a month. You drive it back to the wild heavens, and the cities dream again, very vividly, for a year.",
+      "fame": 4,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "It is older and stronger than you thought. You turn it out of your domain, but it marks you as it goes.",
+      "health": -15,
+      "fame": 1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Feed it your own dreams instead",
+     "effects": {
+      "log": "It eats them slowly and leaves content. You do not dream for a century. You find you do not miss it as much as you feared.",
+      "alignment": 4,
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Lead it gently to a pantheon that worships it",
+     "effects": {
+      "log": "It is a god there. It is very happy. Your cities dream again.",
+      "luck": 3,
+      "charm": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_age",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 500,
+   "maxPerLife": 2,
+   "text": "An age has turned since you took your domain. The faithful who first prayed to you are a legend among their own descendants, and some of your temples are older than the cities around them.",
+   "variants": [
+    "The oldest prayer-book of your domain has been copied so many times that a word in it has changed. Your faithful now pray to you for patience instead of rain. You find you like it."
+   ],
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Ages of a God",
+   "choices": [
+    {
+     "text": "Walk among your oldest temples",
+     "effects": {
+      "log": "You walk them in a single night. Some have fallen, some have grown. In one, a child is asleep on the altar, and you let the child sleep.",
+      "alignment": 3,
+      "comprehension": 3
+     }
+    },
+    {
+     "text": "Renew your covenant with the faithful",
+     "effects": {
+      "log": "A sign in every temple at once: a bell that rings by itself. Faith rises like a tide across the domain.",
+      "fame": 4,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Let the age turn quietly",
+     "effects": {
+      "log": "You do nothing, and watch. A god, you think, should sometimes be the one who does nothing and watches.",
+      "comprehension": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32g_usurper",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 400,
+   "maxPerLife": 3,
+   "text": "{npc}, a lesser god of your own domain, the god of its western hills, has been taking more faith than the hills give, and this age has said aloud at a feast that the domain needs a younger god.",
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "A Lesser God Grows Bold",
+   "choices": [
+    {
+     "text": "Answer {npc} at the feast",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You stand. The hall goes silent. {npc} feels what you are and sits down, and stays the god of the western hills, a little smaller.",
+      "fame": 4,
+      "alignment": 1
+     },
+     "fail": {
+      "log": "{npc} has grown stronger than you knew. You put {him} down, but the feast sees you bleed, and the domain talks.",
+      "health": -15,
+      "fame": -1,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Give {npc} more to do",
+     "effects": {
+      "log": "You give {npc} the eastern marshes too. Two domains of faith keep {him} very busy, and very loyal.",
+      "charm": 3,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Ask {npc} what the hills need",
+     "effects": {
+      "log": "The hills are dying: a drought, a failing faith. You help. {npc} never speaks of younger gods again.",
+      "alignment": 4,
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32g_lesser",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32g_lesser",
+     "opinion": -15,
+     "ageAbs": 3000,
+     "immortal": 0
+    }
+   },
+   "variants": [
+    "{npc}, god of your western hills, has begun to call the hills a domain, and the hill-folk have started to pray past you, straight to {him}.",
+    "At the feast of your domain {npc} has taken the seat next to yours, which is not {his}, and is smiling at the other gods as if it were."
+   ]
+  },
+  {
+   "id": "dp32g_demon",
+   "cat": "danger",
+   "weight": 3,
+   "once": false,
+   "cooldown": 400,
+   "maxPerLife": 3,
+   "text": "Faith casts a shadow. In a city of your domain, the prayers of fear have pooled into something with your face and none of your mercy, and it is answering prayers in your name.",
+   "when": {
+    "upper": true,
+    "age": [
+     400,
+     1000000
+    ],
+    "flags": [
+     "divine_realm"
+    ],
+    "notFlags": [
+     "pw_life"
+    ]
+   },
+   "arc": "The Shadow of Worship",
+   "choices": [
+    {
+     "text": "Face your shadow",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0
+     },
+     "ok": {
+      "log": "It is you, as the frightened see you. You beat it, and it is smaller every time you look at the city after.",
+      "comprehension": 4,
+      "fame": 2
+     },
+     "fail": {
+      "log": "It knows everything you know. You win only by refusing to fight as it fights, and come away hurt and very thoughtful.",
+      "health": -15,
+      "comprehension": 3,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Give the city reasons not to be afraid",
+     "effects": {
+      "log": "A year of small mercies. The shadow thins and goes out, like a lamp with no oil.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Speak to the city in its dreams",
+     "effects": {
+      "log": "You tell them who you are. Some of them believe you. It is enough to starve the shadow, slowly.",
+      "luck": 2,
+      "comprehension": 3
+     }
+    }
+   ],
+   "variants": [
+    "In a city of your domain a figure in your robes walks the streets at night and grants the wishes of the frightened, all of them, exactly, cruelly.",
+    "Your priests report a new image in one city's shrine: your face, but with teeth. The people say it answers faster than you do."
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

@@ -1,0 +1,675 @@
+{
+ "events": [
+  {
+   "id": "dc_omen_clouds_1",
+   "cat": "childhood",
+   "arc": "Nine Clouds Over the Cradle",
+   "when": {
+    "flags": [
+     "fate_nine_clouds"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "weight": 14,
+   "text": "The nine clouds that hung over your birth come back every year on your birthday. This year the village elder asks you, very respectfully, to stop it, because the farmers want sun.",
+   "choices": [
+    {
+     "text": "Ask the clouds to go",
+     "roll": {
+      "stat": "luck",
+      "dc": 40
+     },
+     "ok": {
+      "luck": 4,
+      "fame": 3,
+      "log": "They drift apart, a little sulky. The farmers cheer."
+     },
+     "fail": {
+      "charm": -1,
+      "log": "The clouds hold their ground, and the farmers hold theirs. Nobody is pleased, you least of all."
+     }
+    },
+    {
+     "text": "Keep the clouds",
+     "effects": {
+      "comprehension": 3,
+      "log": "You lie in the field and watch them all day. They make shapes only you can read."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_clouds_2",
+   "cat": "world",
+   "arc": "Nine Clouds Over the Cradle",
+   "when": {
+    "flags": [
+     "fate_nine_clouds"
+    ],
+    "age": [
+     15,
+     40
+    ],
+    "after": [
+     "dc_omen_clouds_1"
+    ],
+    "minYearsAfter": 4,
+    "notFactions": [
+     "demonic"
+    ],
+    "notFlags": [
+     "sect_head",
+     "own_sect",
+     "fugitive",
+     "imp_emperor"
+    ]
+   },
+   "weight": 6,
+   "text": "A Taoist sect that reads clouds arrives to examine you, because nine clouds have only appeared over a birth twice in recorded history, and the other one became an immortal.",
+   "choices": [
+    {
+     "text": "Go with them",
+     "effects": {
+      "sect": "Wudang Sect",
+      "faction": "orthodox",
+      "comprehension": 6,
+      "flag": "omen_clouds_taoist",
+      "log": "They are kind, and strict, and they read the clouds over your head every morning like a letter."
+     }
+    },
+    {
+     "text": "Ask what happened to the other one",
+     "effects": {
+      "comprehension": 5,
+      "flag": "omen_clouds_asked",
+      "log": "'She became an immortal,' they say, 'and then she came back down, because she was lonely.'"
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_clouds_3",
+   "cat": "world",
+   "arc": "Nine Clouds Over the Cradle",
+   "when": {
+    "flags": [
+     "fate_nine_clouds"
+    ],
+    "age": [
+     28,
+     99
+    ],
+    "after": [
+     "dc_omen_clouds_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "On your birthday this year the nine clouds come back for the last time and form a stair. At the top is a woman in white you have seen in your dreams since you were small.",
+   "choices": [
+    {
+     "text": "Climb the cloud stair",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "lifespan": 10,
+      "comprehension": 10,
+      "flag": "omen_clouds_climbed",
+      "log": "The other one. The immortal who came back. She has been waiting for someone born the same way, to talk to."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The stair is not for you today. The first step gives under your foot, and you come down hard, to the sound of a woman's laughter somewhere above, not unkind."
+     }
+    },
+    {
+     "text": "Wave, and stay",
+     "effects": {
+      "lifespan": 4,
+      "alignment": 4,
+      "flag": "omen_clouds_waved",
+      "log": "She waves back. The clouds scatter, light as laughter, and do not return."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_dragon_1",
+   "cat": "childhood",
+   "arc": "The Dragon at the Birth",
+   "when": {
+    "flags": [
+     "fate_dragon_omen"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "weight": 14,
+   "text": "A storm on your birthday every year, and every year a fisherman swears he saw something long and gold in it. This year you see it too: an eye the size of a cart, looking back.",
+   "choices": [
+    {
+     "text": "Wave at the eye",
+     "effects": {
+      "luck": 5,
+      "flag": "omen_dragon_waved",
+      "log": "It blinks, slowly. The storm ends early."
+     }
+    },
+    {
+     "text": "Hide under the bed",
+     "effects": {
+      "health": 2,
+      "log": "Very sensible. The eye looks in the window anyway, and seems amused."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_dragon_2",
+   "cat": "world",
+   "arc": "The Dragon at the Birth",
+   "when": {
+    "flags": [
+     "fate_dragon_omen"
+    ],
+    "age": [
+     15,
+     40
+    ],
+    "after": [
+     "dc_omen_dragon_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "A dragon-hunting sect hears about the omen and wants your blood, a little, to make a compass that points to dragons.",
+   "choices": [
+    {
+     "text": "Give it",
+     "effects": {
+      "taels": 200,
+      "health": -10,
+      "flag": "omen_dragon_compass",
+      "log": "They make the compass. It points at you."
+     }
+    },
+    {
+     "text": "Refuse them",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 8,
+      "log": "They leave without your blood. The storm that night breaks their camp in half, which you did not ask for, but appreciate."
+     },
+     "fail": {
+      "health": -25,
+      "log": "They take the blood anyway, a little, and a beating with it. The compass they make is crude, but it works."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_dragon_3",
+   "cat": "world",
+   "arc": "The Dragon at the Birth",
+   "when": {
+    "flags": [
+     "fate_dragon_omen"
+    ],
+    "age": [
+     28,
+     99
+    ],
+    "after": [
+     "dc_omen_dragon_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "The dragon from your birth lands in the river below your house, old now, its gold gone grey. It has come to give back what it took: a scale it pulled from you the night you were born.",
+   "choices": [
+    {
+     "text": "Take back the scale",
+     "effects": {
+      "meridianUp": true,
+      "lifespan": 8,
+      "flag": "omen_dragon_scale",
+      "log": "It sinks into your chest and your blood runs hot and gold. You were never entirely human. Now you are a little less."
+     }
+    },
+    {
+     "text": "Tell it to keep the scale",
+     "effects": {
+      "alignment": 8,
+      "lifespan": 4,
+      "flag": "omen_dragon_friend",
+      "log": "It rumbles, which you understand is laughter, and rests in the river for a year, and you have tea on the bank every evening."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_sent_1",
+   "cat": "childhood",
+   "arc": "Sent From Heaven",
+   "when": {
+    "flags": [
+     "fate_heaven_sent"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "weight": 14,
+   "text": "You remember things a child should not: the shape of the stars from above, a voice that sent you down. The old nurse who raised you hears you say so and makes you promise never to tell anyone else.",
+   "choices": [
+    {
+     "text": "Keep the promise",
+     "effects": {
+      "alignment": 4,
+      "charm": 2,
+      "log": "You keep it until she dies. Then you keep it a little longer, for her."
+     }
+    },
+    {
+     "text": "Tell the village priest",
+     "effects": {
+      "fame": 3,
+      "flag": "omen_sent_told",
+      "log": "The priest tells everyone. Pilgrims come to touch your sleeve. The old nurse sighs."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_sent_2",
+   "cat": "world",
+   "arc": "Sent From Heaven",
+   "when": {
+    "flags": [
+     "fate_heaven_sent"
+    ],
+    "age": [
+     15,
+     40
+    ],
+    "after": [
+     "dc_omen_sent_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "A messenger in white finds you at a crossroads and asks, politely, whether you have finished the task you were sent down for. You do not remember any task.",
+   "choices": [
+    {
+     "text": "Ask what the task was",
+     "effects": {
+      "comprehension": 6,
+      "flag": "omen_sent_task",
+      "log": "'You will know,' says the messenger, 'when you have done it.' Which is no help at all, and also true."
+     }
+    },
+    {
+     "text": "Say you are not finished yet",
+     "effects": {
+      "fame": 4,
+      "luck": 4,
+      "log": "The messenger nods and leaves. You feel, for some reason, that you have just been given more time."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_sent_3",
+   "cat": "world",
+   "arc": "Sent From Heaven",
+   "when": {
+    "flags": [
+     "fate_heaven_sent"
+    ],
+    "age": [
+     28,
+     99
+    ],
+    "after": [
+     "dc_omen_sent_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "You realise one evening, putting a sword away after a fight that saved a town, that this is the task. Not one thing: all of it. The messenger is standing in your doorway, smiling.",
+   "choices": [
+    {
+     "text": "Say you will go back, when you are ready",
+     "effects": {
+      "lifespan": -5,
+      "fame": 20,
+      "flag": "omen_sent_returned",
+      "log": "You do not go yet. 'When you are ready,' they say. You decide you will be ready when you are old, and they agree that is fair."
+     }
+    },
+    {
+     "text": "Ask to stay",
+     "effects": {
+      "lifespan": 10,
+      "alignment": 6,
+      "flag": "omen_sent_stayed",
+      "log": "'Everyone asks that,' says the messenger, and grants it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_comet_1",
+   "cat": "childhood",
+   "arc": "Born Under the Comet",
+   "when": {
+    "age": [
+     6,
+     14
+    ],
+    "talent": [
+     "born_under_comet"
+    ]
+   },
+   "weight": 14,
+   "text": "The comet that crossed the sky on your birth night returns every seven years. This year it is close enough to read by. The old men in the village say you should not leave the house.",
+   "choices": [
+    {
+     "text": "Go outside",
+     "roll": {
+      "stat": "luck",
+      "dc": 45
+     },
+     "ok": {
+      "luck": 6,
+      "flag": "omen_comet_saw",
+      "log": "The comet's tail touches the ground somewhere in the hills. You know exactly where."
+     },
+     "fail": {
+      "health": -10,
+      "log": "You walk out into a light too bright to look at, and the ground hits you from below. You wake in your bed with a singed eyebrow and no memory of how you got there."
+     }
+    },
+    {
+     "text": "Stay inside",
+     "effects": {
+      "log": "The house shakes once. In the morning there is a crater in the hills."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_comet_2",
+   "cat": "world",
+   "arc": "Born Under the Comet",
+   "when": {
+    "age": [
+     15,
+     40
+    ],
+    "after": [
+     "dc_omen_comet_1"
+    ],
+    "minYearsAfter": 4,
+    "talent": [
+     "born_under_comet"
+    ]
+   },
+   "weight": 6,
+   "text": "A crater in the hills, from the comet's last pass. In the middle of it a black stone that is warm in winter, and martial artists from three provinces want it.",
+   "choices": [
+    {
+     "text": "Take the stone first",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "omen_comet_stone",
+      "fame": 6,
+      "log": "It is heavier than it looks, and it hums when you hold it, and it does not like anyone else holding it."
+     },
+     "fail": {
+      "health": -25,
+      "log": "Three provinces' worth of fighters arrive at once. You leave the crater with a cracked rib and no stone."
+     }
+    },
+    {
+     "text": "Sell the location",
+     "effects": {
+      "taels": 300,
+      "flag": "omen_comet_sold",
+      "log": "Three sects fight over the crater for a month. You buy a house."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_comet_3",
+   "cat": "world",
+   "arc": "Born Under the Comet",
+   "when": {
+    "age": [
+     28,
+     99
+    ],
+    "after": [
+     "dc_omen_comet_2"
+    ],
+    "minYearsAfter": 6,
+    "talent": [
+     "born_under_comet"
+    ]
+   },
+   "weight": 6,
+   "text": "The comet's seventh return. It is coming straight down this time, at your province, and the court astrologers say only one person can turn it: the one born under it.",
+   "choices": [
+    {
+     "text": "Stand in its path",
+     "roll": {
+      "stat": "power",
+      "foeRel": 2,
+      "foeMult": 0.7
+     },
+     "risky": true,
+     "ok": {
+      "fame": 30,
+      "lifespan": 5,
+      "flag": "omen_comet_turned",
+      "log": "You hold up both hands. The sky turns white. The comet goes around you, by a li, and burns out over the sea."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "a comet, turned",
+      "log": "You hold up your hands, and it is not enough. The light takes you, and the province is spared by a few li."
+     }
+    },
+    {
+     "text": "Evacuate the province",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 12,
+      "fame": 15,
+      "flag": "omen_comet_saved",
+      "log": "Everyone out in nine days. The comet lands in an empty province. Afterwards you are the person who saved a million lives without drawing a sword."
+     },
+     "fail": {
+      "alignment": 6,
+      "log": "Half the province will not leave. You get out the half that will, and the comet is kinder to the rest than you feared."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_noble_1",
+   "cat": "childhood",
+   "arc": "The Noble House",
+   "when": {
+    "flags": [
+     "born_noble"
+    ],
+    "age": [
+     6,
+     14
+    ]
+   },
+   "weight": 14,
+   "text": "Your noble family's tutors teach you calligraphy, music and etiquette, and nothing at all about the sword, which the family considers vulgar. A guard teaches you in secret.",
+   "choices": [
+    {
+     "text": "Keep training in secret",
+     "effects": {
+      "strength": 4,
+      "flag": "omen_noble_secret",
+      "log": "Every night in the stables. The guard is good, and grumpy, and proud."
+     }
+    },
+    {
+     "text": "Tell the head of the house",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "strength": 3,
+      "fame": 2,
+      "log": "The head of the house is horrified, then intrigued, then pays for a real master."
+     },
+     "fail": {
+      "charm": -2,
+      "log": "The head of the house forbids it outright. The guard is dismissed, and you are given a lute."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_omen_noble_2",
+   "cat": "world",
+   "arc": "The Noble House",
+   "when": {
+    "flags": [
+     "born_noble"
+    ],
+    "age": [
+     15,
+     40
+    ],
+    "after": [
+     "dc_omen_noble_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "The noble house is accused of treason by a rival family. The soldiers will come at dawn. The head of the house hands you the family seal and tells you to run.",
+   "choices": [
+    {
+     "text": "Run with the seal",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "omen_noble_seal",
+      "fame": 4,
+      "log": "Out the back gate, over the wall, into the murim with a name nobody can know."
+     },
+     "fail": {
+      "health": -25,
+      "flag": "omen_noble_seal",
+      "log": "The back gate is watched. You get over the wall with an arrow in your side and the seal still in your fist."
+     }
+    },
+    {
+     "text": "Stay and fight for the house",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "risky": true,
+     "ok": {
+      "fame": 12,
+      "flag": "omen_noble_defended",
+      "log": "You hold the gate until the magistrate arrives with a pardon. The rival family's lie unravels."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "soldiers at the noble house's gate",
+      "log": "There are too many of them, and the gate falls at dawn. You go down in the courtyard, and the captain, not unkindly, steps over you."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_omen_noble_3",
+   "cat": "world",
+   "arc": "The Noble House",
+   "when": {
+    "flags": [
+     "born_noble"
+    ],
+    "age": [
+     28,
+     99
+    ],
+    "after": [
+     "dc_omen_noble_2"
+    ],
+    "minYearsAfter": 6
+   },
+   "weight": 6,
+   "text": "Years later, the rival family's patriarch is old and the treason was his invention. You hold the seal, and the proof, and the patriarch's grandson is your friend.",
+   "choices": [
+    {
+     "text": "Clear your house's name",
+     "effects": {
+      "fame": 15,
+      "taels": 400,
+      "flag": "omen_noble_restored",
+      "log": "The court restores the house. You are the only noble heir in the land who can also fight."
+     }
+    },
+    {
+     "text": "Let it go, for the grandson's sake",
+     "effects": {
+      "alignment": 12,
+      "flag": "omen_noble_forgave",
+      "log": "The patriarch dies without knowing you knew. The grandson finds out years later and comes to kneel at your door."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

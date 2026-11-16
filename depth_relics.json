@@ -1,0 +1,158 @@
+{
+ "events": [
+  {
+   "id": "dc_relic_gourd_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": true,
+   "text": "Behind a waterfall, in a cave nobody has mapped, a dried gourd hangs in the air above a spring. Not from anything. It just hangs there, and a thin river of blue qi runs out of the sky, through the cave mouth, and into it.",
+   "when": {
+    "realm": [
+     4,
+     11
+    ],
+    "notFlags": [
+     "artefact_heaven_gourd"
+    ]
+   },
+   "arc": "The Gourd That Drinks the Sky",
+   "choices": [
+    {
+     "text": "Take it down carefully",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "flag": [
+       "artefact_heaven_gourd"
+      ],
+      "log": "You talk to it like a skittish horse, and it lets you. The Heaven-Swallowing Gourd: it drinks the sky's qi and pours it into whoever carries it. (Artefact: training x1.15)"
+     },
+     "fail": {
+      "qi": 20,
+      "log": "It drifts away from your hand, politely, and keeps drifting. You drink from the spring instead. It was a very good spring."
+     }
+    },
+    {
+     "text": "Drink from the spring, and leave the gourd for whoever needs it more",
+     "effects": {
+      "qi": 25,
+      "alignment": 4,
+      "log": "The water tastes of clouds. When you look back from the cave mouth, the gourd has turned to watch you go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_relic_lamp_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": true,
+   "text": "In a tomb under a dead city, past coffins that crumbled a thousand years ago, a small bronze lamp is still burning. Beside it sits the ghost of an old woman in court robes, who has been keeping it lit, and who looks up at you with great interest.",
+   "when": {
+    "realm": [
+     5,
+     11
+    ],
+    "notFlags": [
+     "artefact_eternal_lamp"
+    ]
+   },
+   "arc": "The Lamp Under the Dead City",
+   "choices": [
+    {
+     "text": "Bow to her and ask about the lamp",
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "flag": [
+       "artefact_eternal_lamp"
+      ],
+      "alignment": 3,
+      "log": "\"It burns as long as someone carries it,\" she says. \"I have carried it long enough.\" She puts it in your hands and is gone. The Ten-Thousand-Year Lamp. (Artefact: +15 years of life)"
+     },
+     "fail": {
+      "luck": 3,
+      "log": "\"Not you,\" she says kindly. \"Not yet.\" You are outside the tomb before you remember walking."
+     }
+    },
+    {
+     "text": "Take the lamp. She is only a ghost",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1
+     },
+     "ok": {
+      "flag": [
+       "artefact_eternal_lamp"
+      ],
+      "alignment": -5,
+      "log": "She fights harder than any ghost has a right to. You win, and carry the lamp out. It burns a little colder than it did. (Artefact: +15 years of life)"
+     },
+     "fail": {
+      "health": -25,
+      "log": "She is only a ghost, and you are thrown out of the tomb by one, which is worse.",
+      "deathCause": "the guardian of a lamp that would not go out"
+     },
+     "risky": true
+    },
+    {
+     "text": "Leave her to her lamp",
+     "effects": {
+      "alignment": 2,
+      "comprehension": 2,
+      "log": "Some things should keep doing what they are doing. You leave a stick of incense by the door."
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_relic_bell_1",
+   "cat": "explore",
+   "weight": 4,
+   "once": true,
+   "text": "On a mountain shrine nobody visits, a small bronze bell hangs from a dead tree. There is no wind, and it rings anyway: once, as you arrive, as if it had been expecting you.",
+   "when": {
+    "realm": [
+     3,
+     11
+    ],
+    "notFlags": [
+     "artefact_soul_bell"
+    ]
+   },
+   "arc": "The Bell That Rings Itself",
+   "choices": [
+    {
+     "text": "Sit under it and meditate",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": [
+       "artefact_soul_bell"
+      ],
+      "qi": 10,
+      "log": "Every time your thoughts wander, it rings, and they come back. At sunset it comes off the branch into your lap. The Soul-Calming Bell. (Artefact: your energy can never twist into a qi deviation)"
+     },
+     "fail": {
+      "comprehension": 3,
+      "log": "It rings so often you laugh out loud. It stops ringing. You think you have offended it."
+     }
+    },
+    {
+     "text": "Ring it yourself",
+     "effects": {
+      "luck": 2,
+      "log": "It makes no sound at all when you ring it. The tree, however, puts out one green leaf."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,503 @@
+{
+ "events": [
+  {
+   "id": "dc_legacy_student_1",
+   "cat": "life",
+   "arc": "The Student Who Stayed",
+   "when": {
+    "age": [
+     32,
+     80
+    ]
+   },
+   "weight": 16,
+   "text": "A young fighter has been watching you train from the fence for a month. Today {npc} climbs over it, kneels, and asks you to teach {him} everything you know.",
+   "choices": [
+    {
+     "text": "Take {him} as your student",
+     "effects": {
+      "flag": "legacy_student_begun",
+      "npcFlag": "legacy_student",
+      "role": "disciple",
+      "mem": {
+       "deed": "taught",
+       "w": 25,
+       "note": "took me as a student"
+      },
+      "log": "{npc} is clumsy, stubborn, and up before you every morning. You find that you have a great deal to teach."
+     }
+    },
+    {
+     "text": "Tell {him} to find a better teacher",
+     "effects": {
+      "flag": "legacy_student_begun",
+      "npcFlag": "legacy_student",
+      "mem": {
+       "deed": "time",
+       "w": 8,
+       "note": "sent me away kindly"
+      },
+      "log": "{He} goes, and comes back a month later, and climbs the fence again. You give up and start teaching."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 15,
+     "realm": -1
+    }
+   }
+  },
+  {
+   "id": "dc_legacy_student_2",
+   "cat": "life",
+   "arc": "The Student Who Stayed",
+   "when": {
+    "flags": [
+     "legacy_student_begun"
+    ],
+    "age": [
+     35,
+     99
+    ],
+    "npcFlags": [
+     "legacy_student"
+    ],
+    "after": [
+     "dc_legacy_student_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "weight": 6,
+   "text": "{npc}, your student, wins a great tournament, using a form you invented and never finished. {He} bows to you from the ring, in front of everyone.",
+   "choices": [
+    {
+     "text": "Bow back",
+     "effects": {
+      "fame": 10,
+      "flag": "legacy_student",
+      "log": "Your art will outlive you now. The murim calls it by {his} name, and {he} corrects them every time: it is yours."
+     }
+    },
+    {
+     "text": "Leave before {he} sees you cry",
+     "effects": {
+      "alignment": 4,
+      "flag": "legacy_student",
+      "log": "{He} sees anyway. {He} finds you on the road home and walks the rest of it with you."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "legacy_student"
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_legacy_book_1",
+   "cat": "life",
+   "arc": "The Book of Your Art",
+   "when": {
+    "age": [
+     35,
+     85
+    ]
+   },
+   "weight": 16,
+   "text": "You realise one winter that everything you know about the martial way exists only in your body, and your body will not last forever. You buy ink, and a great deal of paper.",
+   "choices": [
+    {
+     "text": "Write it down honestly, mistakes and all",
+     "effects": {
+      "comprehension": 4,
+      "flag": "legacy_book_begun",
+      "log": "The first page takes a month. You write about the things you got wrong. They turn out to be the useful part."
+     }
+    },
+    {
+     "text": "Write down only the best of it",
+     "effects": {
+      "comprehension": 3,
+      "flag": "legacy_book_begun",
+      "log": "Clean forms, clean lessons. It reads beautifully. Something is missing, and you will find out what."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_book_2",
+   "cat": "life",
+   "arc": "The Book of Your Art",
+   "when": {
+    "flags": [
+     "legacy_book_begun"
+    ],
+    "age": [
+     38,
+     99
+    ],
+    "after": [
+     "dc_legacy_book_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "weight": 6,
+   "text": "The book is finished: three volumes, drawings in your own hand. A sect wants to buy it. A village school wants to borrow it. A young stranger wants to copy it.",
+   "choices": [
+    {
+     "text": "Let anyone copy it",
+     "effects": {
+      "alignment": 10,
+      "fame": 12,
+      "flag": "wrote_manual",
+      "log": "It is copied in three provinces within ten years. Your art becomes something people learn from strangers, which is how arts survive."
+     }
+    },
+    {
+     "text": "Give it to the village school",
+     "effects": {
+      "alignment": 6,
+      "fame": 6,
+      "flag": "wrote_manual",
+      "log": "The children learn from it badly and enthusiastically. One of them, twenty years later, learns it well."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_orphan_1",
+   "cat": "life",
+   "arc": "The Orphan at the Gate",
+   "when": {
+    "age": [
+     28,
+     75
+    ]
+   },
+   "weight": 16,
+   "text": "A child is asleep on your doorstep in the snow, with a note pinned to the coat: please. {npc} wakes, looks at you, and does not cry, which is worse.",
+   "choices": [
+    {
+     "text": "Take the child in",
+     "effects": {
+      "flag": [
+       "legacy_orphan_begun",
+       "has_child"
+      ],
+      "npcFlag": "legacy_orphan",
+      "role": "child",
+      "mem": {
+       "deed": "raised",
+       "w": 30,
+       "note": "took me in from the snow"
+      },
+      "alignment": 8,
+      "log": "A bowl of rice, a blanket, a name for the register. You did not plan on this. Plans are overrated."
+     }
+    },
+    {
+     "text": "Find the child a good family",
+     "effects": {
+      "flag": "legacy_orphan_begun",
+      "npcFlag": "legacy_orphan",
+      "alignment": 5,
+      "mem": {
+       "deed": "kind",
+       "w": 12,
+       "note": "found me a family"
+      },
+      "log": "A kind family in the next village. {npc} visits you every new year, without fail, for the rest of your life."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "role": "stranger",
+     "ageAbs": 6
+    }
+   }
+  },
+  {
+   "id": "dc_legacy_orphan_2",
+   "cat": "life",
+   "arc": "The Orphan at the Gate",
+   "when": {
+    "flags": [
+     "legacy_orphan_begun"
+    ],
+    "age": [
+     40,
+     99
+    ],
+    "npcFlags": [
+     "legacy_orphan"
+    ],
+    "npcAge": [
+     16,
+     999
+    ],
+    "after": [
+     "dc_legacy_orphan_1"
+    ],
+    "minYearsAfter": 12
+   },
+   "weight": 6,
+   "text": "{npc}, the child from the snow, is grown, and comes to tell you {he} has a shop of {his} own now, a small one, and has turned out well. {He} brings the note from the coat. It still says please.",
+   "choices": [
+    {
+     "text": "Tell {him} you are proud",
+     "effects": {
+      "alignment": 6,
+      "charm": 4,
+      "flag": "legacy_orphan",
+      "log": "{He} holds your hands a long time. Somewhere out in the world now is a whole life that exists because you opened the door."
+     }
+    },
+    {
+     "text": "Give {him} something of yours",
+     "effects": {
+      "alignment": 6,
+      "flag": "legacy_orphan",
+      "log": "Your old coat, the one that is warm and is not what it was. {He} keeps it until {he} is old too, and then gives it to someone in the snow."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "legacy_orphan"
+   }
+  },
+  {
+   "id": "dc_legacy_school_1",
+   "cat": "life",
+   "arc": "The Village School",
+   "when": {
+    "age": [
+     30,
+     80
+    ]
+   },
+   "weight": 16,
+   "text": "The village has no school. The children run wild, and the old schoolmaster died last winter. The headman looks at you, because you can read, and write, and hit things.",
+   "choices": [
+    {
+     "text": "Open a school",
+     "effects": {
+      "flag": "legacy_school_begun",
+      "charm": 3,
+      "log": "Twelve children, a barn, a stack of borrowed books, and martial arts in the afternoon, which is the only reason half of them come."
+     }
+    },
+    {
+     "text": "Find a teacher and pay for it",
+     "req": {
+      "minTaels": 100
+     },
+     "effects": {
+      "taels": -100,
+      "flag": "legacy_school_begun",
+      "alignment": 4,
+      "log": "A young scholar who failed the exams and is glad of the work. You visit every month to teach the afternoon class."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_school_2",
+   "cat": "life",
+   "arc": "The Village School",
+   "when": {
+    "flags": [
+     "legacy_school_begun"
+    ],
+    "age": [
+     45,
+     99
+    ],
+    "after": [
+     "dc_legacy_school_1"
+    ],
+    "minYearsAfter": 15
+   },
+   "weight": 6,
+   "text": "The school has run for years. One of its first students comes back as a magistrate, another as a physician, a third as a famous fighter. They all come back on the same day, which is not an accident.",
+   "choices": [
+    {
+     "text": "Ring the school bell for them",
+     "effects": {
+      "fame": 10,
+      "alignment": 8,
+      "flag": "legacy_school",
+      "log": "They have a feast in the barn. Someone makes a speech. You hide behind the rice wine."
+     }
+    },
+    {
+     "text": "Make them teach a class each",
+     "effects": {
+      "comprehension": 4,
+      "alignment": 8,
+      "flag": "legacy_school",
+      "log": "The children are delighted. The magistrate is a terrible teacher. The fighter is a wonderful one."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_bridge_1",
+   "cat": "life",
+   "arc": "The Bridge You Built",
+   "when": {
+    "age": [
+     30,
+     80
+    ]
+   },
+   "weight": 16,
+   "text": "Every spring the river takes someone at the ford. This spring it was a child. You stand at the water and decide that it will not happen again.",
+   "choices": [
+    {
+     "text": "Build a bridge yourself",
+     "effects": {
+      "strength": 3,
+      "flag": "legacy_bridge_begun",
+      "log": "Stone by stone, between the seasons. People laugh, then help."
+     }
+    },
+    {
+     "text": "Raise the money for a bridge",
+     "req": {
+      "minTaels": 150
+     },
+     "effects": {
+      "taels": -150,
+      "flag": "legacy_bridge_begun",
+      "charm": 2,
+      "log": "You shame every merchant in the province into giving something. Masons arrive in the summer."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_bridge_2",
+   "cat": "life",
+   "arc": "The Bridge You Built",
+   "when": {
+    "flags": [
+     "legacy_bridge_begun"
+    ],
+    "age": [
+     33,
+     99
+    ],
+    "after": [
+     "dc_legacy_bridge_1"
+    ],
+    "minYearsAfter": 5
+   },
+   "weight": 6,
+   "text": "The bridge is finished, and the village wants to name it after you. Nobody has drowned at the ford since it was built.",
+   "choices": [
+    {
+     "text": "Let them",
+     "effects": {
+      "fame": 8,
+      "alignment": 6,
+      "flag": "legacy_bridge",
+      "log": "Your name on a bridge. People will walk over it every day for three hundred years, and most of them will not know who you were. That is the right amount of fame."
+     }
+    },
+    {
+     "text": "Name it after the child",
+     "effects": {
+      "alignment": 10,
+      "flag": "legacy_bridge",
+      "log": "The child's name on the bridge. The mother comes every morning to touch it."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_tree_1",
+   "cat": "life",
+   "arc": "The Tree at the Gate",
+   "when": {
+    "age": [
+     35,
+     85
+    ]
+   },
+   "weight": 16,
+   "text": "You plant a plum tree at your gate, knowing you will not see it at its best. An old neighbour watches and says that is the only kind of tree worth planting.",
+   "choices": [
+    {
+     "text": "Plant a whole row",
+     "effects": {
+      "flag": "legacy_tree_begun",
+      "alignment": 3,
+      "log": "Nine trees along the road. The children help, and argue about which one is theirs."
+     }
+    },
+    {
+     "text": "Plant one, and tend it",
+     "effects": {
+      "flag": "legacy_tree_begun",
+      "comprehension": 2,
+      "log": "One tree, watered every morning. It becomes the way you begin the day."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_legacy_tree_2",
+   "cat": "life",
+   "arc": "The Tree at the Gate",
+   "when": {
+    "flags": [
+     "legacy_tree_begun"
+    ],
+    "age": [
+     45,
+     99
+    ],
+    "after": [
+     "dc_legacy_tree_1"
+    ],
+    "minYearsAfter": 10
+   },
+   "weight": 6,
+   "text": "The plum trees are tall now. In spring the whole road is white with blossom, and strangers stop to sit under them, and young couples meet there.",
+   "choices": [
+    {
+     "text": "Sit under them with a cup of tea",
+     "effects": {
+      "lifespan": 2,
+      "alignment": 4,
+      "flag": "legacy_tree",
+      "log": "You watch a pair of children climb the tree you planted for them. They will plant their own one day. That is how a place remembers people."
+     }
+    },
+    {
+     "text": "Give the trees to the village",
+     "effects": {
+      "alignment": 6,
+      "flag": "legacy_tree",
+      "log": "The village calls the road Plum Blossom Road. Nobody remembers why. The trees remember."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}

@@ -1,0 +1,1572 @@
+{
+ "events": [
+  {
+   "id": "dp32p_ferry_1",
+   "cat": "life",
+   "weight": 6,
+   "once": true,
+   "text": "{npc} runs the ferry across the narrow sea of {pw_world}, as {his} mother did and {his} mother's mother. The family has a story about you: that their first boat was built from a tree you showed them. They would like to know if it is true.",
+   "npc": {
+    "role": "dp32p_ferry",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_ferry",
+     "opinion": 20,
+     "ageAbs": 40
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Ferry Across the First Sea",
+   "choices": [
+    {
+     "text": "Tell {npc} which tree, and where its stump is",
+     "effects": {
+      "log": "You walk {him} up the headland to a stump gone soft as cake. {npc} kneels and touches it, and takes a piece of it home for the new boat.",
+      "charm": 3,
+      "flag": "dp32p_ferry_tree",
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Say you do not remember",
+     "effects": {
+      "log": "{npc} looks relieved and disappointed at once. \"Then we built it ourselves,\" {he} says, and straightens.",
+      "comprehension": 3,
+      "alignment": 2,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Ride the ferry across and back, saying nothing",
+     "effects": {
+      "log": "You ride it all day. The boat is well built. By sunset {npc} has decided you are either a fool or a spirit, and gives you the evening crossing free.",
+      "luck": 3,
+      "qi": 6,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_ferry_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A storm wrecks the ferry family's boat. {npc} has a new hull half-built and no time: the harvest of the far shore has to come across before the cold, or it rots and {pw_kingdom} goes hungry.",
+   "npc": {
+    "role": "dp32p_ferry"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_ferry_1"
+    ],
+    "minYearsAfter": 5,
+    "npcFlags": [
+     "dp32p_ferry_who"
+    ]
+   },
+   "arc": "The Ferry Across the First Sea",
+   "choices": [
+    {
+     "text": "Work on the hull with {npc} day and night",
+     "effects": {
+      "log": "Nine days. You plane and caulk and argue about the keel. The boat goes in the water on the tenth, and the harvest comes home.",
+      "strength": 3,
+      "alignment": 3,
+      "flag": "dp32p_ferry_built",
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Carry the grain across yourself, a cart at a time",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "For a week the fishermen watch a figure walk the shallows with sacks, back and forth, in the cold. They tell their children about it forever.",
+      "fame": 6,
+      "flag": "dp32p_ferry_built",
+      "npcFlag": "dp32p_ferry_who"
+     },
+     "fail": {
+      "log": "The sea is colder than you are strong. You get half the harvest across and spend a season coughing.",
+      "health": -12,
+      "woundOnly": true,
+      "alignment": 2,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Let the far shore keep its harvest this year",
+     "effects": {
+      "log": "The far shore eats well. The near shore eats less. {npc} never says a word about it, and that is worse.",
+      "luck": 2,
+      "comprehension": 2,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_ferry_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc}'s grandchild takes the ferry now. {npc} sits on the jetty and mends nets, and asks you to take a last crossing with {him} in the old boat, before it is broken up.",
+   "npc": {
+    "role": "dp32p_ferry"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_ferry_2"
+    ],
+    "minYearsAfter": 20,
+    "npcFlags": [
+     "dp32p_ferry_who"
+    ]
+   },
+   "arc": "The Ferry Across the First Sea",
+   "choices": [
+    {
+     "text": "Row, and let {npc} steer",
+     "effects": {
+      "log": "You row. {npc} steers by memory, eyes half-closed. Halfway across {he} says \"here\" and you both stop and let the boat drift, and listen to the water.",
+      "comprehension": 4,
+      "charm": 2,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Tell {npc} the story of the first boat, the true one",
+     "effects": {
+      "log": "{npc} listens to the end. \"Better than ours,\" {he} says, \"but we will keep ours.\"",
+      "luck": 3,
+      "alignment": 2,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    },
+    {
+     "text": "Carve the family's name on the bow before it is broken",
+     "effects": {
+      "log": "They keep the bow-board and hang it in the house. You carved it a little crooked. Nobody minds.",
+      "fame": 2,
+      "charm": 3,
+      "npcFlag": "dp32p_ferry_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_queen_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc}, the young queen of {pw_kingdom}, comes to your door with two guards and no ceremony. {He} has been told that you are the oldest person in {pw_world} and wants to ask how {his} kingdom looked when it was small.",
+   "npc": {
+    "role": "dp32p_queen",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_queen",
+     "opinion": 10,
+     "ageAbs": 19,
+     "male": false
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Queen Who Asked the Oldest Living",
+   "choices": [
+    {
+     "text": "Tell {him} honestly: muddy, loud and happy",
+     "effects": {
+      "log": "{He} laughs, and then listens closely, and asks about the mud. When {he} leaves {he} has a plan for the drains.",
+      "comprehension": 3,
+      "charm": 3,
+      "flag": "dp32p_queen_met",
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Show {him} the old border stones in your fields",
+     "effects": {
+      "log": "They are knee-high and sunk in grass. {He} sits on one and looks at {his} kingdom from outside it for the first time.",
+      "alignment": 3,
+      "flag": "dp32p_queen_met",
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Say kingdoms look better from far off",
+     "effects": {
+      "log": "{He} frowns, then nods. {He} does not come back for ten years, and when {he} does, {he} is wiser and less polite.",
+      "luck": 3,
+      "npcFlag": "dp32p_queen_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_queen_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is at war with a neighbour over a river valley, and losing. {He} comes back, older, and asks the question {he} should not: will you fight for {pw_kingdom}?",
+   "npc": {
+    "role": "dp32p_queen"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "dp32p_queen_met"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_queen_1"
+    ],
+    "minYearsAfter": 10,
+    "npcFlags": [
+     "dp32p_queen_who"
+    ]
+   },
+   "arc": "The Queen Who Asked the Oldest Living",
+   "choices": [
+    {
+     "text": "Refuse, and tell {him} why",
+     "effects": {
+      "log": "\"If I fight for one crown I belong to it.\" {He} does not like it. {He} respects it. {He} makes peace instead, at a price, and reigns another forty years.",
+      "comprehension": 4,
+      "alignment": 3,
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Stand at the ford for one day only",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The other army"
+     },
+     "ok": {
+      "log": "The other army sees who is standing at the ford, and decides the valley was never worth it. The war ends without a battle.",
+      "fame": 6,
+      "alignment": 2,
+      "flag": "dp32p_queen_ford",
+      "npcFlag": "dp32p_queen_who"
+     },
+     "fail": {
+      "log": "They come anyway. You hold the ford until dark and are carried home on a door. The war ends a month later in a draw.",
+      "health": -16,
+      "fame": 3,
+      "woundOnly": true,
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Go and talk to the other ruler",
+     "effects": {
+      "log": "The other ruler is a frightened young man who also came to ask you a question once. You make them have dinner together. The valley is shared.",
+      "charm": 5,
+      "flag": "dp32p_queen_peace",
+      "npcFlag": "dp32p_queen_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_queen_3",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "{npc} is old, and has written down everything you told {him} about the small kingdom for {his} heirs. {He} sends the book to you with a note asking what {he} got wrong.",
+   "npc": {
+    "role": "dp32p_queen"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_queen_2"
+    ],
+    "minYearsAfter": 25,
+    "npcFlags": [
+     "dp32p_queen_who"
+    ]
+   },
+   "arc": "The Queen Who Asked the Oldest Living",
+   "choices": [
+    {
+     "text": "Correct it gently, in the margins",
+     "effects": {
+      "log": "Your notes are longer than {his} book. The heirs of {pw_kingdom} read them both, the book for the history and the margins for the jokes.",
+      "comprehension": 4,
+      "fame": 2,
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Send it back with no changes",
+     "effects": {
+      "log": "\"Your memory is the kingdom's now,\" you write. {He} keeps the note in the front of the book.",
+      "charm": 3,
+      "alignment": 2,
+      "npcFlag": "dp32p_queen_who"
+     }
+    },
+    {
+     "text": "Bring it back to {him} in person",
+     "effects": {
+      "log": "You read it to {him} aloud, by a window. {He} corrects you twice. It is a good afternoon, and {he} is smiling at the end of it.",
+      "charm": 4,
+      "luck": 2,
+      "npcFlag": "dp32p_queen_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_map_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} is drawing the first map of the whole of {pw_world}. {He} has walked for twenty years and filled most of it, but there are blanks, and the old people say you have walked where nobody else has.",
+   "npc": {
+    "role": "dp32p_mapper",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_mapper",
+     "opinion": 10,
+     "ageAbs": 35
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Map of the Whole World",
+   "choices": [
+    {
+     "text": "Draw the blanks for {him} from memory",
+     "effects": {
+      "log": "You fill in a mountain range, a salt lake and a forest older than the kingdoms. {npc} checks the forest. It is exactly where you said.",
+      "comprehension": 4,
+      "flag": "dp32p_map_drawn",
+      "npcFlag": "dp32p_map_who"
+     }
+    },
+    {
+     "text": "Walk the blanks with {npc}",
+     "effects": {
+      "log": "Three years on the road. {npc} is good company and terrible at cooking. The map gets its blanks and a great many notes about soup.",
+      "health": 4,
+      "charm": 3,
+      "flag": "dp32p_map_drawn",
+      "npcFlag": "dp32p_map_who"
+     }
+    },
+    {
+     "text": "Leave some places blank on purpose",
+     "effects": {
+      "log": "You tell {him} about all of it but one valley. Some places should stay unmapped. {npc} draws it in as \"here are wonders\" and is not wrong.",
+      "luck": 4,
+      "npcFlag": "dp32p_map_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_map_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The map is copied and sold all over {pw_world}. A rich trader wants {npc} to mark the old places of power on the next edition, the springs and caves where the energy pools. {npc} asks you.",
+   "npc": {
+    "role": "dp32p_mapper"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "dp32p_map_drawn"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_map_1"
+    ],
+    "minYearsAfter": 8,
+    "npcFlags": [
+     "dp32p_map_who"
+    ]
+   },
+   "arc": "The Map of the Whole World",
+   "choices": [
+    {
+     "text": "Tell {him} to leave them off",
+     "effects": {
+      "log": "{npc} leaves them off and loses the trader's money. The springs stay clean. Pilgrims still find them, the slow way.",
+      "alignment": 4,
+      "comprehension": 2,
+      "npcFlag": "dp32p_map_who"
+     }
+    },
+    {
+     "text": "Mark only the ones that can take the crowds",
+     "effects": {
+      "log": "You choose three that will not be ruined by visitors. They become famous. The others stay quiet.",
+      "fame": 3,
+      "luck": 2,
+      "npcFlag": "dp32p_map_who"
+     }
+    },
+    {
+     "text": "Mark them all: the world is everyone's",
+     "effects": {
+      "log": "The springs fill with seekers. Some are ruined, and some make masters out of farmers. {npc} is rich, and not sure how to feel.",
+      "charm": 2,
+      "fame": 4,
+      "npcFlag": "dp32p_map_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_tongue_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} is the last who speaks the old tongue of {pw_people} as a mother tongue. {He} is very old and very cross that nobody listens, and has heard that you might.",
+   "npc": {
+    "role": "dp32p_elder",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_elder",
+     "opinion": 20,
+     "ageAbs": 90
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Old Tongue of the First People",
+   "choices": [
+    {
+     "text": "Learn it from {him}",
+     "effects": {
+      "log": "It takes four years. The old tongue has eleven words for the light before dawn and none for owning land. You understand {pw_people} better than you did.",
+      "comprehension": 5,
+      "flag": "dp32p_tongue_learned",
+      "npcFlag": "dp32p_tongue_who"
+     }
+    },
+    {
+     "text": "Write it down as {he} speaks",
+     "effects": {
+      "log": "You fill a chest with paper. {npc} reads none of it and corrects all of it.",
+      "comprehension": 3,
+      "charm": 2,
+      "flag": "dp32p_tongue_written",
+      "npcFlag": "dp32p_tongue_who"
+     }
+    },
+    {
+     "text": "Find the children who will learn it",
+     "effects": {
+      "log": "Three children, one of them very reluctant. {npc} is a terrible teacher and they love {him}.",
+      "alignment": 4,
+      "charm": 2,
+      "flag": "dp32p_tongue_children",
+      "npcFlag": "dp32p_tongue_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_tongue_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "The old tongue is coming back, a little: songs at weddings, names for children. {npc} wants one more thing before {he} is done: the old prayer to the maker of the world spoken aloud at the high stone, once, by someone who understands it.",
+   "npc": {
+    "role": "dp32p_elder"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_tongue_1"
+    ],
+    "minYearsAfter": 4,
+    "npcFlags": [
+     "dp32p_tongue_who"
+    ]
+   },
+   "arc": "The Old Tongue of the First People",
+   "choices": [
+    {
+     "text": "Speak it yourself at the high stone",
+     "effects": {
+      "log": "You speak it. Something in the sky over {pw_world} listens, the way a parent listens from the next room. {npc} hears it too, and weeps.",
+      "comprehension": 5,
+      "luck": 3,
+      "npcFlag": "dp32p_tongue_who"
+     }
+    },
+    {
+     "text": "Let the reluctant child speak it",
+     "effects": {
+      "log": "The child stumbles twice and finishes. The whole village holds its breath and lets it go. {npc} is prouder than if {he} had said it alone.",
+      "alignment": 4,
+      "charm": 3,
+      "npcFlag": "dp32p_tongue_who"
+     }
+    },
+    {
+     "text": "Let it be spoken by everyone, badly",
+     "effects": {
+      "log": "Two hundred voices, all wrong in different places. It is the most beautiful thing you have heard in a century.",
+      "fame": 3,
+      "charm": 4,
+      "npcFlag": "dp32p_tongue_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_lodge_1",
+   "cat": "life",
+   "weight": 5,
+   "once": true,
+   "text": "{npc} has founded a lodge of fighters in a market town and wants an old master to sit on its bench, so that the young ones will believe the arts are older than {npc}. {He} offers a room, rice and a great deal of respect.",
+   "npc": {
+    "role": "dp32p_lodge",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_lodge",
+     "opinion": 15,
+     "ageAbs": 40
+    }
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Lodge of Lamps",
+   "choices": [
+    {
+     "text": "Accept, for a while",
+     "effects": {
+      "log": "You sit on the bench. The young ones are frightened of you for a month and then not, which is better. The lodge grows.",
+      "fame": 4,
+      "charm": 2,
+      "flag": "dp32p_lodge_bench",
+      "npcFlag": "dp32p_lodge_who"
+     }
+    },
+    {
+     "text": "Teach one lesson a year, no more",
+     "effects": {
+      "log": "Your one lesson a year becomes the lodge's great day. Fighters walk from across {pw_kingdom} to hear it.",
+      "comprehension": 3,
+      "fame": 3,
+      "flag": "dp32p_lodge_bench",
+      "npcFlag": "dp32p_lodge_who"
+     }
+    },
+    {
+     "text": "Decline: a lodge should grow its own elders",
+     "effects": {
+      "log": "{npc} is hurt, then thoughtful. In thirty years the lodge has elders of its own, and they are good.",
+      "luck": 3,
+      "alignment": 2,
+      "npcFlag": "dp32p_lodge_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_lodge_2",
+   "cat": "life",
+   "weight": 8,
+   "once": true,
+   "text": "A rival lodge has challenged {npc}'s lodge to a contest of champions, and {npc}'s best student has broken an arm. The rival lodge has made it very clear that an old bench-sitter cannot stand in.",
+   "npc": {
+    "role": "dp32p_lodge"
+   },
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life",
+     "dp32p_lodge_bench"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ],
+    "after": [
+     "dp32p_lodge_1"
+    ],
+    "minYearsAfter": 6,
+    "npcFlags": [
+     "dp32p_lodge_who"
+    ]
+   },
+   "arc": "The Lodge of Lamps",
+   "choices": [
+    {
+     "text": "Train the second-best student for a month",
+     "effects": {
+      "log": "The student is fast and frightened. You make that speed slower and braver. The student wins by a hair, and nobody at {npc}'s lodge ever lets the matter drop.",
+      "comprehension": 3,
+      "charm": 3,
+      "npcFlag": "dp32p_lodge_who"
+     }
+    },
+    {
+     "text": "Stand in anyway, and dare them to object",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "The rival champion"
+     },
+     "ok": {
+      "log": "They object loudly, and then their champion steps in and very quickly steps out again. The rival lodge sends a gift by morning.",
+      "fame": 5,
+      "npcFlag": "dp32p_lodge_who"
+     },
+     "fail": {
+      "log": "Their champion is good, and young, and lucky. You lose a hard bout with grace, and both lodges toast you with tea.",
+      "health": -10,
+      "charm": 2,
+      "woundOnly": true,
+      "npcFlag": "dp32p_lodge_who"
+     }
+    },
+    {
+     "text": "Make both lodges cancel and hold a feast",
+     "effects": {
+      "log": "{npc} is furious and then relieved. The two lodges eat together and find they hate the same tax collector.",
+      "alignment": 3,
+      "charm": 3,
+      "npcFlag": "dp32p_lodge_who"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_pilgrim",
+   "cat": "life",
+   "weight": 4,
+   "once": false,
+   "cooldown": 125,
+   "maxPerLife": 3,
+   "text": "{npc} has come from the far side of {pw_world} to ask you one thing: what the world was like before {pw_kingdom}, when there were only {pw_people} and the empty land.",
+   "variants": [
+    "A child of {pw_people}, {npc}, has been sent by {his} village with a basket of eggs and a list of questions in a careful hand. The first question is how old you are.",
+    "{npc}, a singer, has come to learn the oldest songs of {pw_world}. {He} sings you the ones {he} knows, to see which you remember differently."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Visitors to the Oldest Living",
+   "choices": [
+    {
+     "text": "Tell {npc} about the empty land",
+     "effects": {
+      "log": "You tell {him} about the first fires, and the long quiet. {npc} goes home and tells it to {his} grandchildren, who tell it wrong, beautifully.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Take {npc} to see a place that has not changed",
+     "effects": {
+      "log": "There is one valley that looks the way it did. You take {him} there, and {he} sits down in the grass and does not speak.",
+      "luck": 3,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Say you do not remember, so the past stays theirs",
+     "effects": {
+      "log": "{npc} is disappointed, and then not. \"Then we can make it up,\" {he} says, and goes home happy.",
+      "luck": 2,
+      "charm": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_pilgrim",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_pilgrim",
+     "opinion": 20,
+     "ageAbs": 35
+    }
+   }
+  },
+  {
+   "id": "dp32p_challenger",
+   "cat": "danger",
+   "weight": 5,
+   "once": false,
+   "cooldown": 100,
+   "maxPerLife": 2,
+   "text": "{npc}, the best young fighter in {pw_kingdom}, has come to test the oldest master in {pw_world}, because nobody else is left to test.",
+   "variants": [
+    "{npc} has walked a month to find you, and stands in your yard with a staff and a great deal of hope. {He} has been told you are the strongest thing in {pw_world} that is not a god."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Young of the World",
+   "choices": [
+    {
+     "text": "Accept the test",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You give {him} a long fight and a clear lesson. {npc} bows to the ground and asks to come back in ten years.",
+      "fame": 4,
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "{npc} is stronger than you thought the world could make anyone yet. You lose a hard exchange, and are glad.",
+      "health": -12,
+      "comprehension": 3,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Set {npc} a task instead",
+     "effects": {
+      "log": "\"Climb the high stone and tell me what you see.\" {npc} goes, offended, and comes back three days later having seen something. You talk until dawn.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Send {npc} home to {his} teacher",
+     "effects": {
+      "log": "\"Beat your teacher first.\" {npc} goes home and does, and the teacher writes you a very rude letter.",
+      "luck": 3,
+      "fame": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_young",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_young",
+     "opinion": 0,
+     "ageAbs": 18
+    }
+   }
+  },
+  {
+   "id": "dp32p_season",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 75,
+   "maxPerLife": 5,
+   "text": "The first frost of the year in {pw_world}, on the same morning as always. You have seen it so many times that you notice what is different: the frost is thinner, the world a little warmer than when it was young.",
+   "variants": [
+    "The long rains of {pw_world}. You remember when the world had no rains at all, only the first dew, and the first people lay on their backs to drink it from the air.",
+    "Spring in {pw_world}, and the birds that came back are the great-great-grandchildren of birds you fed. They do not know you. They sit on your fence anyway.",
+    "Summer in {pw_world}, and the heat sits on the land like a hand. You remember summers when the world was young and had no idea how hot it could get.",
+    "The geese of {pw_world} are going south over your roof in a line that stretches from one horizon to the other. They have done it every year since there were geese."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Seasons of the World",
+   "choices": [
+    {
+     "text": "Sit out in it until noon",
+     "effects": {
+      "log": "The frost melts around you in a ring. Something of the world's slow breath comes into yours.",
+      "qi": 12,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Walk to the old frost-line and mark the change",
+     "effects": {
+      "log": "You set a stone where the frost reaches now. It is a good way from the stone you set last time.",
+      "comprehension": 4
+     }
+    },
+    {
+     "text": "Bring in the late gourds before they spoil",
+     "effects": {
+      "log": "Practical work in cold air. Your hands are red and your mind is very clear.",
+      "health": 4,
+      "luck": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_beast",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 4,
+   "text": "A beast has come down from the high places of {pw_world}, older and larger than anything the villages have seen, and it is standing in the barley. {npc}, the headwoman, asks the old master to do something.",
+   "variants": [
+    "Something huge is in the river shallows of the kingdom, blocking the ferry. {npc}, who runs the ferry, has come to ask the old master whether it can be argued with.",
+    "The beasts of the high places are restless this year, and one of them has come down to the river meadows of the kingdom. {npc} asks the old master to come and see it.",
+    "Something old has come down from the mountains of {pw_world} and is sleeping in the middle of the high road. {npc}, whose village is on the other side, has come for help."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Beasts of the High Places",
+   "choices": [
+    {
+     "text": "Face the beast",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeName": "The beast"
+     },
+     "ok": {
+      "log": "It is old and proud. You meet it in the barley, and it decides, after a long look, to go home. The barley is flat for an acre.",
+      "fame": 4,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "It is stronger than you. You turn it back up the slope at the cost of a torn shoulder, and the village bandages you with great ceremony.",
+      "health": -14,
+      "fame": 2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Find out why it came down",
+     "effects": {
+      "log": "A fire on the high slopes, a dry spring. You go up and clear the spring. The beast follows you back up, curious, and stays there.",
+      "comprehension": 3,
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Tell the village to give it the field",
+     "effects": {
+      "log": "It eats an acre of barley and lies down in the sun and is still there a hundred years later, a hill with a heartbeat. The children climb it.",
+      "luck": 3,
+      "charm": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_head",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_head",
+     "opinion": 20,
+     "ageAbs": 50
+    }
+   }
+  },
+  {
+   "id": "dp32p_graves",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 2,
+   "text": "The day of the dead in {pw_world}. Your list of graves is longer than any family's in {pw_kingdom}, and some of the stones are older than the kingdom.",
+   "variants": [
+    "You find a grave of the people you did not know you would find: a friend from the first centuries, under a road. The carts go over it every day. It is, you think, the kind of grave they would have liked."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Those Who Went Before",
+   "choices": [
+    {
+     "text": "Visit every one",
+     "effects": {
+      "log": "A month of walking. At the oldest stone, whose words are gone, you say the name aloud for whoever is listening.",
+      "alignment": 3,
+      "comprehension": 4
+     }
+    },
+    {
+     "text": "Tell the young the names",
+     "effects": {
+      "log": "You sit in the market and tell anyone who stops whose the old stones were. Some of them come back next year to hear more.",
+      "charm": 3,
+      "fame": 2
+     }
+    },
+    {
+     "text": "Plant a tree for the ones without stones",
+     "effects": {
+      "log": "There are a great many. You plant one tree for all of them, in the middle of {pw_kingdom}, where everyone passes.",
+      "luck": 3,
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_robbers",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 75,
+   "maxPerLife": 4,
+   "text": "A gang has been robbing the long road through {pw_kingdom}, and tonight they stop the oldest traveller in the world. {npc}, the one in charge, has a speech prepared.",
+   "variants": [
+    "Three robbers in masks made from flour sacks step out of the trees. {npc}, the smallest, has a voice that has not broken yet.",
+    "On the long road through {pw_kingdom}, a fallen tree, and behind it a gang with clubs. {npc}, at the front, has clearly never done this before.",
+    "{npc} and a dozen others have been taking a toll at the old bridge, at knifepoint. Tonight the oldest traveller in the world wants to cross."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Robbers on the Long Road",
+   "choices": [
+    {
+     "text": "Let {npc} finish the speech, then answer it",
+     "roll": {
+      "stat": "power",
+      "foeRel": -2,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "It is a short answer. The gang wakes up in a heap by the road, tied with their own belts.",
+      "fame": 2,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "There are more of them than the speech implied. You get home with a black eye and most of your bag.",
+      "health": -10,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Ask {npc} why {he} took to the road",
+     "effects": {
+      "log": "A burned farm, a debt, a winter. You give {him} work on your land. {npc} is a bad farmer and a loyal one.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Hand over the bag: it is mostly turnips",
+     "effects": {
+      "log": "{npc} is very disappointed in the turnips. You walk on, lighter.",
+      "luck": 3,
+      "comprehension": 1
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_robber",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_robber",
+     "opinion": -10,
+     "ageAbs": 22
+    }
+   }
+  },
+  {
+   "id": "dp32p_festival",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 100,
+   "maxPerLife": 5,
+   "text": "{pw_kingdom} holds its great harvest feast. The people have a custom now: the oldest living person sets the first lantern on the water. They come for you with a lantern and a great deal of noise.",
+   "variants": [
+    "The midwinter fires of the world. The young of the people jump the flames for luck, and they have decided this year that the oldest living must jump first.",
+    "The spring feast of {pw_kingdom}: blossom on every roof, and a procession that will not start until the oldest living has walked at its head.",
+    "The feast of the first harvest of the world, older than {pw_kingdom}. The children have made a crown of wheat, and they are looking for the oldest head to put it on.",
+    "The night of lamps in {pw_kingdom}. Every window has a light in it, and the people have decided yours should be lit first."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Feasts of the World",
+   "choices": [
+    {
+     "text": "Set the lantern on the water",
+     "effects": {
+      "log": "It floats out, and a thousand more follow it. You stand on the bank until the last one goes round the bend, and feel the world loved.",
+      "charm": 4,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Give the lantern to the youngest child there",
+     "effects": {
+      "log": "The child sets it down so carefully that it tips over. Everyone cheers anyway. The custom changes that night, for good.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Make a lantern for each of the dead you remember",
+     "effects": {
+      "log": "It takes all day. When you set them on the water the people go quiet, and set theirs after, one at a time.",
+      "comprehension": 4,
+      "alignment": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_disciples",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 4,
+   "text": "Three young people of {pw_people} are sitting outside your door, as they have been for nine days. They want to be taught, and have decided that sitting is how one asks.",
+   "variants": [
+    "A girl of {pw_people} has been throwing stones at your roof every morning for a month. When you finally come out she asks, very loudly, to be your student.",
+    "A boy of {pw_people} has followed you home from the market, at a respectful distance, for the third day running. Today he has brought a staff.",
+    "Two sisters of {pw_people} have walked from the far side of the kingdom with a letter from their village, which says only: teach them."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Young of the World",
+   "choices": [
+    {
+     "text": "Teach them",
+     "effects": {
+      "log": "You teach them for ten years. They are very different and all good, and when they go they take your arts into three corners of {pw_world}.",
+      "comprehension": 3,
+      "fame": 4
+     }
+    },
+    {
+     "text": "Teach the one who left first",
+     "effects": {
+      "log": "On the tenth morning one gave up and went home to the farm. You follow, and teach that one in the evenings, between the ploughing.",
+      "alignment": 3,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Send them to the lodges in {pw_kingdom}",
+     "effects": {
+      "log": "They go, disappointed, and do well. The lodges hear where they came from and treat them with suspicious respect.",
+      "luck": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_drought",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 300,
+   "maxPerLife": 1,
+   "text": "The rains have failed in {pw_kingdom} for the second year. The fields are cracked, the river is a string of pools, and the people of the villages are walking to your door to ask the oldest living what was done before.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Dry Years in the World",
+   "choices": [
+    {
+     "text": "Show them the old water roads under the hills",
+     "effects": {
+      "log": "You remember where the water ran before the kingdom. They dig where you point, and find it, cold and sweet.",
+      "alignment": 4,
+      "fame": 3
+     }
+    },
+    {
+     "text": "Pray at the high stone to the maker of the world",
+     "effects": {
+      "log": "You climb the high stone and speak plainly. Three days later it rains. Whether it was the prayer, nobody can say.",
+      "luck": 4,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Teach them to save the water they have",
+     "effects": {
+      "log": "Cisterns, terraces, covered channels. It is hard work and slow, and the next drought does not touch them.",
+      "comprehension": 3,
+      "charm": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_lostchild",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 200,
+   "maxPerLife": 3,
+   "text": "A child of {pw_people} has wandered off into the hills and the village is out with lanterns. You can hear the child, very small and far off, singing to keep brave.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "A Child of the World",
+   "choices": [
+    {
+     "text": "Follow the song and bring the child down",
+     "effects": {
+      "log": "The child is sitting on a rock, still singing, and stops in the middle of a line to ask who you are. You carry the child home on your shoulders.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Light a fire where the searchers will see it",
+     "effects": {
+      "log": "They see it, and find the child beside it, warm. The village argues for a week about who lit it.",
+      "luck": 3,
+      "alignment": 2
+     }
+    }
+   ],
+   "variants": [
+    "Fog in the hills of the kingdom, and somewhere in it a child calling for a dog. The dog is home. The child is not.",
+    "A child of {pw_people} has gone into the old forest after a fox, and the fox has come out alone."
+   ]
+  },
+  {
+   "id": "dp32p_ancient",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 250,
+   "maxPerLife": 1,
+   "text": "{npc} is the only other person in {pw_world} nearly as old as you. Every fifty years the two of you meet on the same bridge and argue about what really happened in the first century of {pw_kingdom}.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The Other Old One",
+   "choices": [
+    {
+     "text": "Argue, as always",
+     "effects": {
+      "log": "You argue all day. Neither of you is right. You part the best of friends, as always.",
+      "charm": 3,
+      "comprehension": 2
+     }
+    },
+    {
+     "text": "Concede a point, for once",
+     "effects": {
+      "log": "{npc} is so astonished that {he} concedes one back. It is the most interesting conversation the bridge has heard in a thousand years.",
+      "comprehension": 4
+     }
+    },
+    {
+     "text": "Bring the young to listen",
+     "effects": {
+      "log": "A crowd gathers. By evening the two oldest people in {pw_world} are a festival, and somebody is selling buns.",
+      "fame": 3,
+      "luck": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_ancient",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_ancient",
+     "opinion": 30,
+     "ageAbs": 900
+    }
+   }
+  },
+  {
+   "id": "dp32p_maker",
+   "cat": "life",
+   "weight": 3,
+   "once": false,
+   "cooldown": 200,
+   "maxPerLife": 4,
+   "text": "You dream of the one who made {pw_world}: not a face, only a sense of being looked at, kindly, from very far away, the way a gardener looks at a bed of seedlings.",
+   "variants": [
+    "You dream that {pw_world} is very small and held in two hands, and that the hands are tired, and careful. You wake up wanting to be careful too.",
+    "You dream that you are walking through {pw_world} beside someone very tall, who is looking at everything as if seeing how it turned out.",
+    "In the dream there is a workbench, and on it {pw_world}, half-finished, and the tools laid down very carefully, as if someone meant to come back."
+   ],
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Dreams of the Maker",
+   "choices": [
+    {
+     "text": "Look back",
+     "effects": {
+      "log": "In the dream you look back, and for a moment the gardener is surprised. You wake with a feeling that you have been recognised.",
+      "comprehension": 5,
+      "luck": 2
+     }
+    },
+    {
+     "text": "Ask the dream a question",
+     "effects": {
+      "log": "You ask why the world was made. The dream does not answer, but the feeling of being looked at grows warmer, which may be the answer.",
+      "qi": 10,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Let it be only a dream",
+     "effects": {
+      "log": "You wake and go about your day, and the day is very good, for no reason.",
+      "luck": 3,
+      "health": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "dp32p_raid",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 125,
+   "maxPerLife": 1,
+   "text": "Raiders from the wild borderlands of {pw_world} have come down on a village of {pw_people} at harvest. {npc}, their chief, has heard the village has an old protector and has come to see for themselves.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "Raiders of the Borderlands",
+   "choices": [
+    {
+     "text": "Show {npc}",
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeName": "{npc}"
+     },
+     "ok": {
+      "log": "You show {him}. The raiders go home without the harvest, and the borderlands sing about it, not kindly.",
+      "fame": 4,
+      "alignment": 2
+     },
+     "fail": {
+      "log": "{npc} is as strong as the songs say. You drive the raiders off at a cost, and the village nurses you through the winter.",
+      "health": -14,
+      "fame": 2,
+      "woundOnly": true
+     }
+    },
+    {
+     "text": "Offer {npc} a share of the harvest, freely given",
+     "effects": {
+      "log": "{npc} takes it, puzzled. The next year the borderlands trade with the village instead of raiding it.",
+      "alignment": 4,
+      "charm": 2
+     }
+    },
+    {
+     "text": "Hide the village in the hills until they pass",
+     "effects": {
+      "log": "The raiders find empty houses and a burned field. The village lives, and rebuilds, and is angry with you for a decade.",
+      "luck": 2,
+      "comprehension": 2
+     }
+    }
+   ],
+   "npc": {
+    "role": "dp32p_chief",
+    "spawn": {
+     "role": "stranger",
+     "tag": "dp32p_chief",
+     "opinion": -20,
+     "ageAbs": 40
+    }
+   }
+  },
+  {
+   "id": "dp32p_sea",
+   "cat": "danger",
+   "weight": 4,
+   "once": false,
+   "cooldown": 150,
+   "maxPerLife": 4,
+   "text": "A storm on the first sea of {pw_world}, the worst in a century, and three fishing boats are still out. The harbour of {pw_kingdom} is full of people shouting at the waves.",
+   "when": {
+    "age": [
+     600,
+     1000000
+    ],
+    "flags": [
+     "pw_life"
+    ],
+    "notFlags": [
+     "upper_realm"
+    ]
+   },
+   "arc": "The First Sea in Storm",
+   "choices": [
+    {
+     "text": "Go out to them",
+     "roll": {
+      "stat": "strength",
+      "dc": 60
+     },
+     "ok": {
+      "log": "You walk out on the breakwater and further, and bring the boats in one by one through the rocks. Nobody in the harbour ever forgets it.",
+      "fame": 5,
+      "alignment": 3
+     },
+     "fail": {
+      "log": "The sea is stronger. Two boats come home; the third is found on a beach in the morning, its crew alive. You are half-drowned.",
+      "health": -15,
+      "woundOnly": true,
+      "alignment": 2
+     }
+    },
+    {
+     "text": "Light the old beacon on the headland",
+     "effects": {
+      "log": "Nobody has lit it in two hundred years. It still burns. The boats follow it home.",
+      "luck": 3,
+      "alignment": 3
+     }
+    },
+    {
+     "text": "Stand on the harbour wall and wait with them",
+     "effects": {
+      "log": "All night. All three boats come in at dawn. You are cold to the bone and the whole harbour shares its soup with you.",
+      "charm": 3,
+      "health": -2
+     }
+    }
+   ],
+   "variants": [
+    "The first sea of {pw_world} has risen in a night-storm, and the bells of the harbour are ringing for boats that have not come in.",
+    "A wind from nowhere has turned the first sea white. Out past the headland a fishing fleet is running for home, and losing the race.",
+    "A great wave is coming in from the open sea of {pw_world}, the kind the oldest songs have a word for and nobody living has seen."
+   ]
+  }
+ ],
+ "ladder": 2,
+ "mwPass": 1
+}

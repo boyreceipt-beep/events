@@ -1,0 +1,944 @@
+{
+ "events": [
+  {
+   "id": "dc_love_lantern_1",
+   "cat": "romance",
+   "arc": "The Lantern Festival",
+   "when": {
+    "married": false,
+    "age": [
+     16,
+     50
+    ]
+   },
+   "weight": 18,
+   "text": "The Lantern Festival. Your lantern catches fire, and so does the sleeve of the stranger next to you, and {npc} puts both out with a cup of tea and a very straight face.",
+   "choices": [
+    {
+     "text": "Buy {him} a new lantern",
+     "effects": {
+      "npcFlag": "love_lantern",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "log": "{He} chooses the ugliest one in the market, on purpose, and makes you carry it all night."
+     }
+    },
+    {
+     "text": "Offer to pay for the sleeve",
+     "effects": {
+      "npcFlag": "love_lantern",
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "met"
+      },
+      "log": "{He} laughs and says the sleeve was ugly anyway. You walk the whole festival together without deciding to."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_lantern_2",
+   "cat": "romance",
+   "arc": "The Lantern Festival",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     75
+    ],
+    "npcFlags": [
+     "love_lantern"
+    ],
+    "after": [
+     "dc_love_lantern_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Another Lantern Festival. {npc} is standing in exactly the same place, holding the ugly lantern, pretending not to be waiting.",
+   "choices": [
+    {
+     "text": "Walk straight to {him}",
+     "effects": {
+      "npcFlag": "love_lantern_close",
+      "mem": {
+       "deed": "love",
+       "w": 22,
+       "note": "came back to the festival"
+      },
+      "log": "'You're late,' {he} says. 'By a whole festival.' You light the lantern together."
+     }
+    },
+    {
+     "text": "Watch from a distance first",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "watched from the crowd"
+      },
+      "log": "{He} sees you anyway. {He} always does."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_lantern_3",
+   "cat": "romance",
+   "arc": "The Lantern Festival",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     80
+    ],
+    "npcFlags": [
+     "love_lantern",
+     "love_lantern_close"
+    ],
+    "after": [
+     "dc_love_lantern_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The third Lantern Festival. {npc} has written something on the ugly lantern, and holds it up so you can read it before {he} lets it go into the sky.",
+   "choices": [
+    {
+     "text": "Catch it before it rises",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry under a sky full of lanterns. Every year after, you buy the ugliest one in the market."
+     }
+    },
+    {
+     "text": "Let it rise",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": -4,
+       "note": "let the lantern go"
+      },
+      "log": "It rises over the river, and you both watch it, and neither of you says anything for a long time."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_smith_1",
+   "cat": "romance",
+   "arc": "The Swordsmith's Forge",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     50
+    ]
+   },
+   "weight": 18,
+   "text": "Your blade breaks in a duel, and the swordsmith who mends it is {npc}, who tells you the break was entirely your fault and then explains why, at length, beautifully.",
+   "choices": [
+    {
+     "text": "Listen to all of it",
+     "effects": {
+      "npcFlag": "love_smith",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "comprehension": 2,
+      "log": "An hour on how steel remembers. You understand perhaps half. You come back the next day for the other half."
+     }
+    },
+    {
+     "text": "Argue about your technique",
+     "effects": {
+      "npcFlag": "love_smith",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "strength": 2,
+      "log": "{He} hands you a hammer and says 'show me, then'. It is a long afternoon."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_smith_2",
+   "cat": "romance",
+   "arc": "The Swordsmith's Forge",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     75
+    ],
+    "npcFlags": [
+     "love_smith"
+    ],
+    "after": [
+     "dc_love_smith_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has forged you a new sword without being asked, and will not take money for it, and will not look at you while {he} says so.",
+   "choices": [
+    {
+     "text": "Take it and stay for supper",
+     "effects": {
+      "npcFlag": "love_smith_close",
+      "mem": {
+       "deed": "love",
+       "w": 22,
+       "note": "stayed for supper"
+      },
+      "log": "Supper turns into a habit. The sword turns out to be the best you have ever held."
+     }
+    },
+    {
+     "text": "Insist on paying",
+     "req": {
+      "minTaels": 50
+     },
+     "effects": {
+      "taels": -50,
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "insisted on paying"
+      },
+      "log": "{He} takes the money, and gives it to the temple, and does not forge you anything for a while."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_smith_3",
+   "cat": "romance",
+   "arc": "The Swordsmith's Forge",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     80
+    ],
+    "npcFlags": [
+     "love_smith",
+     "love_smith_close"
+    ],
+    "after": [
+     "dc_love_smith_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has forged two rings, crooked, because rings are much harder than swords, {he} says, and holds them out in a hand black with soot.",
+   "choices": [
+    {
+     "text": "Take the crooked ring",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry in the forge, among the sparks. The rings stay crooked forever. They are perfect."
+     }
+    },
+    {
+     "text": "Say you need time",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": -5,
+       "note": "needed time"
+      },
+      "log": "{He} puts the rings back in the drawer, and the forge is quieter for a season."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_enemy_heir_1",
+   "cat": "romance",
+   "arc": "The Heir of the Other Sect",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     45
+    ],
+    "factions": [
+     "orthodox",
+     "family",
+     "unorthodox",
+     "demonic"
+    ]
+   },
+   "weight": 18,
+   "text": "A sect war, and on the other side of the line {npc}, the heir of the sect you are fighting, who spares you in a skirmish and then looks shocked at {him}self.",
+   "choices": [
+    {
+     "text": "Spare {him} back the next day",
+     "effects": {
+      "npcFlag": "love_enemy_heir",
+      "mem": {
+       "deed": "time",
+       "w": 14,
+       "note": "met"
+      },
+      "log": "Neither of you can explain it to your sects. You meet at the river to try to explain it to each other."
+     }
+    },
+    {
+     "text": "Send a message across the lines",
+     "effects": {
+      "npcFlag": "love_enemy_heir",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "log": "A message in an arrow. An answer in another. The war goes on around a very strange correspondence."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   },
+   "mw": true
+  },
+  {
+   "id": "dc_love_enemy_heir_2",
+   "cat": "romance",
+   "arc": "The Heir of the Other Sect",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     75
+    ],
+    "npcFlags": [
+     "love_enemy_heir"
+    ],
+    "after": [
+     "dc_love_enemy_heir_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "Peace talks between the two sects, and you and {npc} are both at the table, not looking at each other so hard that everyone notices.",
+   "choices": [
+    {
+     "text": "Speak for peace, openly",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "npcFlag": "love_enemy_heir_close",
+      "mem": {
+       "deed": "love",
+       "w": 24,
+       "note": "spoke for peace"
+      },
+      "log": "The elders on both sides look at the two of you, and then at each other, and sign."
+     },
+     "fail": {
+      "fame": -2,
+      "log": "Your voice shakes, and half the table pretends not to hear. {He} hears it, and stays after the others have gone.",
+      "npcFlag": "love_enemy_heir_close",
+      "mem": {
+       "deed": "love",
+       "w": 18,
+       "note": "tried"
+      }
+     }
+    },
+    {
+     "text": "Stay silent, for your own side",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": -6,
+       "note": "chose the sect"
+      },
+      "log": "The talks fail. {He} leaves without looking back."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_enemy_heir_3",
+   "cat": "romance",
+   "arc": "The Heir of the Other Sect",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     80
+    ],
+    "npcFlags": [
+     "love_enemy_heir",
+     "love_enemy_heir_close"
+    ],
+    "after": [
+     "dc_love_enemy_heir_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} says the only way to end the feud for good is to join the two houses. {He} says this very calmly, as if it were strategy, and is blushing to the ears.",
+   "choices": [
+    {
+     "text": "Agree, as strategy",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "Two sects at one wedding, both sides armed to the teeth, and nothing happens except a very good feast. The feud ends that night."
+     }
+    },
+    {
+     "text": "Say the feud is not a reason",
+     "effects": {
+      "alignment": 2,
+      "mem": {
+       "deed": "time",
+       "w": -3,
+       "note": "said no to strategy"
+      },
+      "log": "{He} smiles, a little sadly. 'It wasn't,' {he} says, and goes home."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_scout_1",
+   "cat": "romance",
+   "arc": "The Caravan Scout",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     50
+    ]
+   },
+   "weight": 18,
+   "text": "The caravan to the west hires a scout, {npc}, who rides ahead of everyone, sleeps under the stars, and finds you water in a desert twice before you think to ask.",
+   "choices": [
+    {
+     "text": "Ride ahead with {him}",
+     "effects": {
+      "npcFlag": "love_scout",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "luck": 2,
+      "log": "Two horses, a thousand li of sand, and a lot of silence that turns out to be easy."
+     }
+    },
+    {
+     "text": "Share your water at night",
+     "effects": {
+      "npcFlag": "love_scout",
+      "mem": {
+       "deed": "time",
+       "w": 10,
+       "note": "met"
+      },
+      "log": "You talk under the desert stars until the fire is ash. {He} knows the name of every one of them."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_scout_2",
+   "cat": "romance",
+   "arc": "The Caravan Scout",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     75
+    ],
+    "npcFlags": [
+     "love_scout"
+    ],
+    "after": [
+     "dc_love_scout_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "A sandstorm separates {npc} from the caravan. The caravan master says to wait it out. The storm will last three days.",
+   "choices": [
+    {
+     "text": "Go into the storm for {him}",
+     "roll": {
+      "stat": "lightness",
+      "dc": 45
+     },
+     "risky": true,
+     "ok": {
+      "npcFlag": "love_scout_close",
+      "mem": {
+       "deed": "love",
+       "w": 26,
+       "note": "came into the storm for me"
+      },
+      "log": "You find {him} in the lee of a dune, half-buried and laughing. 'You came,' {he} says, as if that is the most surprising thing in the desert."
+     },
+     "fail": {
+      "health": -25,
+      "deathCause": "a desert sandstorm, searching for someone",
+      "log": "The storm takes the dunes, the sky and the path back. You are still looking when the sand closes over the last of it."
+     }
+    },
+    {
+     "text": "Wait it out",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 2,
+       "note": "waited out the storm"
+      },
+      "log": "{He} walks out of the storm on the fourth day, by {him}self, and gives you a long look."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_scout_3",
+   "cat": "romance",
+   "arc": "The Caravan Scout",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     80
+    ],
+    "npcFlags": [
+     "love_scout",
+     "love_scout_close"
+    ],
+    "after": [
+     "dc_love_scout_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The end of the western road. {npc} could ride on alone, as {he} always has. {He} asks whether you would like to ride on too, together, or settle somewhere with a well.",
+   "choices": [
+    {
+     "text": "Find somewhere with a well",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry at an oasis, with the caravan for guests. The well is very good. {He} still rides out sometimes, and always comes back."
+     }
+    },
+    {
+     "text": "Let {him} ride on",
+     "effects": {
+      "alignment": 2,
+      "log": "{He} rides west at dawn. You watch until {he} is a speck, and then nothing."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_second_spring_1",
+   "cat": "romance",
+   "arc": "A Second Spring",
+   "when": {
+    "married": false,
+    "age": [
+     40,
+     75
+    ]
+   },
+   "weight": 18,
+   "text": "You are past forty and have stopped expecting anything of the sort, when {npc}, who keeps the tea stall by the temple, starts saving you the last of the good leaves.",
+   "choices": [
+    {
+     "text": "Sit and drink it slowly",
+     "effects": {
+      "npcFlag": "love_second_spring",
+      "mem": {
+       "deed": "time",
+       "w": 14,
+       "note": "met"
+      },
+      "log": "An hour, then two. It turns out you have a great deal to say, and so does {he}."
+     }
+    },
+    {
+     "text": "Bring {him} something back",
+     "effects": {
+      "npcFlag": "love_second_spring",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "log": "A pastry from the town. {He} pretends to be annoyed and eats it in three bites."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_second_spring_2",
+   "cat": "romance",
+   "arc": "A Second Spring",
+   "when": {
+    "married": false,
+    "age": [
+     41,
+     75
+    ],
+    "npcFlags": [
+     "love_second_spring"
+    ],
+    "after": [
+     "dc_love_second_spring_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} is ill for a winter, and the tea stall is closed. The temple steps look wrong without it.",
+   "choices": [
+    {
+     "text": "Look after {him}",
+     "effects": {
+      "alignment": 4,
+      "npcFlag": "love_second_spring_close",
+      "mem": {
+       "deed": "love",
+       "w": 24,
+       "note": "looked after me"
+      },
+      "log": "Soups, quilts, terrible jokes. By spring the stall is open again, and you are behind the counter half the time."
+     }
+    },
+    {
+     "text": "Send a physician",
+     "req": {
+      "minTaels": 40
+     },
+     "effects": {
+      "taels": -40,
+      "mem": {
+       "deed": "time",
+       "w": 6,
+       "note": "sent a physician"
+      },
+      "log": "{He} gets better, and sends you a jar of the good leaves with no note."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_second_spring_3",
+   "cat": "romance",
+   "arc": "A Second Spring",
+   "when": {
+    "married": false,
+    "age": [
+     42,
+     80
+    ],
+    "npcFlags": [
+     "love_second_spring",
+     "love_second_spring_close"
+    ],
+    "after": [
+     "dc_love_second_spring_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} says that at your age there is no point in waiting, and no point in a big wedding, and no point in pretending, and then cannot finish the sentence.",
+   "choices": [
+    {
+     "text": "Finish it for {him}",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "A small wedding at the temple, with the monks for guests and the best tea in the province. It is the happiest day either of you can remember, and you both remember a long way back."
+     }
+    },
+    {
+     "text": "Say you are too old to change",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": -4,
+       "note": "said too old"
+      },
+      "log": "{He} pours you another cup. You come every day anyway. Perhaps that is its own kind of marriage."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   },
+   "po": true
+  },
+  {
+   "id": "dc_love_poet_1",
+   "cat": "romance",
+   "arc": "The Poet of the Pavilion",
+   "when": {
+    "married": false,
+    "age": [
+     17,
+     55
+    ]
+   },
+   "weight": 18,
+   "text": "A poetry contest at the Pavilion of Clear Wind, and {npc} wins with a poem about a fighter who loses every battle and is happy anyway. You have the strange feeling it is about you.",
+   "choices": [
+    {
+     "text": "Ask whom the poem was about",
+     "effects": {
+      "npcFlag": "love_poet",
+      "mem": {
+       "deed": "time",
+       "w": 14,
+       "note": "met"
+      },
+      "log": "'Nobody,' {he} says. 'Everyone.' And then, after a moment, 'You, a little.'"
+     }
+    },
+    {
+     "text": "Answer with a poem of your own",
+     "effects": {
+      "npcFlag": "love_poet",
+      "mem": {
+       "deed": "time",
+       "w": 12,
+       "note": "met"
+      },
+      "comprehension": 2,
+      "log": "It is a bad poem. {He} laughs, and writes a better reply on your sleeve."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "spawn": {
+     "opposite": true,
+     "role": "love",
+     "age": 0,
+     "opinion": 35
+    }
+   }
+  },
+  {
+   "id": "dc_love_poet_2",
+   "cat": "romance",
+   "arc": "The Poet of the Pavilion",
+   "when": {
+    "married": false,
+    "age": [
+     18,
+     75
+    ],
+    "npcFlags": [
+     "love_poet"
+    ],
+    "after": [
+     "dc_love_poet_1"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "{npc} has been writing a book of poems for a year, and asks you to read the last one before anyone else. It is about the person {he} loves, and it does not say who.",
+   "choices": [
+    {
+     "text": "Say you know who it is",
+     "effects": {
+      "npcFlag": "love_poet_close",
+      "mem": {
+       "deed": "love",
+       "w": 24,
+       "note": "knew who the poem was for"
+      },
+      "log": "'Good,' {he} says. 'I was running out of ways to say it.'"
+     }
+    },
+    {
+     "text": "Say it is beautiful, and nothing else",
+     "effects": {
+      "mem": {
+       "deed": "time",
+       "w": 4,
+       "note": "only said it was beautiful"
+      },
+      "log": "{He} nods, and puts the book away, and writes nothing for a month."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  },
+  {
+   "id": "dc_love_poet_3",
+   "cat": "romance",
+   "arc": "The Poet of the Pavilion",
+   "when": {
+    "married": false,
+    "age": [
+     19,
+     80
+    ],
+    "npcFlags": [
+     "love_poet",
+     "love_poet_close"
+    ],
+    "after": [
+     "dc_love_poet_2"
+    ],
+    "minYearsAfter": 1
+   },
+   "weight": 6,
+   "text": "The book is printed. On the first page, in {npc}'s own hand: for you, if you will have the rest of it too.",
+   "choices": [
+    {
+     "text": "Write yes beneath it",
+     "effects": {
+      "spouse": true,
+      "mem": {
+       "deed": "love",
+       "w": 30,
+       "note": "married me"
+      },
+      "log": "You marry at the Pavilion of Clear Wind. Every guest brings a poem. Most of them are terrible. It is perfect."
+     }
+    },
+    {
+     "text": "Close the book gently",
+     "effects": {
+      "alignment": 2,
+      "log": "{He} understands. The book sells very well. The last poem is the one everybody quotes."
+     }
+    }
+   ],
+   "once": true,
+   "npc": {
+    "role": "love"
+   }
+  }
+ ],
+ "mwPass": 1
+}

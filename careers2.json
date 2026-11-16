@@ -1,0 +1,1261 @@
+{
+ "events": [
+  {
+   "id": "cr_head_waiter_rival_tavern",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_head_waiter"
+    ]
+   },
+   "weight": 4,
+   "text": "The new tavern across the street is stealing your regulars with cheaper wine. The owner asks you, the head waiter, what to do.",
+   "choices": [
+    {
+     "text": "Win them back with service",
+     "roll": {
+      "stat": "charm",
+      "dc": 45
+     },
+     "ok": {
+      "taels": 15,
+      "charm": 2,
+      "log": "You learn every regular's name and every regular's troubles. By autumn they are all back."
+     },
+     "fail": {
+      "log": "Cheap wine beats a warm smile, it turns out. For now."
+     }
+    },
+    {
+     "text": "Find out where their wine comes from",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 20,
+      "log": "Watered down, and from a smuggler. One word to the magistrate's clerk, and the problem solves itself."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The smugglers catch you snooping and teach you a lesson in the alley."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_tavern_keeper_murim_brawl",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_tavern_keeper"
+    ]
+   },
+   "weight": 4,
+   "text": "Two murim sects start a fight on your second floor. Tables are already flying. Your tavern will not survive a real duel.",
+   "choices": [
+    {
+     "text": "Step between them",
+     "risky": true,
+     "roll": {
+      "stat": "charm",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 5,
+      "taels": 30,
+      "log": "\"Gentlemen. My wine is too good to spill.\" Both sides laugh, pay for the damage, and share a table, and you pour."
+     },
+     "fail": {
+      "health": -35,
+      "log": "A stray palm strike finds you. You wake up under the bar.",
+      "deathCause": "a stray palm strike in your own tavern"
+     }
+    },
+    {
+     "text": "Send for the magistrate's men",
+     "effects": {
+      "taels": -20,
+      "log": "The constables arrive after the fight. The repairs cost you a month's takings."
+     }
+    },
+    {
+     "text": "Hide behind the bar until it is over",
+     "effects": {
+      "fame": -4,
+      "log": "You crouch among the wine jars while the second floor comes apart above you. When it goes quiet, the sects are gone, and so are half your tables. The regulars tease you about it for a month."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_inn_owner_mysterious_guest",
+   "cat": "encounter",
+   "when": {
+    "flags": [
+     "job_inn_owner"
+    ]
+   },
+   "weight": 4,
+   "text": "A guest pays for a year in advance, never leaves his room, and three strangers now watch your inn from the street every night.",
+   "choices": [
+    {
+     "text": "Warn the guest",
+     "effects": {
+      "alignment": 3,
+      "flag": "inn_warned_guest",
+      "luck": 3,
+      "log": "He listens, nods, and is gone by morning. On his pillow: a jade token and a note. \"I owe you.\""
+     }
+    },
+    {
+     "text": "Sell him out to the strangers",
+     "effects": {
+      "taels": 80,
+      "alignment": -8,
+      "log": "They pay well. You hear the fight from the kitchen. You do not go upstairs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_inn_magnate_empire",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_inn_magnate"
+    ]
+   },
+   "weight": 4,
+   "text": "Your inns stand on every great road. The Beggars' Sect offers a deal: shelter for their people, and in return, every rumour they hear goes to you.",
+   "choices": [
+    {
+     "text": "Accept",
+     "effects": {
+      "fame": 10,
+      "comprehension": 2,
+      "flag": "beggar_network",
+      "log": "Within a year you know more about the murim than most sect leaders."
+     }
+    },
+    {
+     "text": "Stay neutral",
+     "effects": {
+      "taels": 60,
+      "log": "Neutral ground is your business. Every faction trusts your inns because they belong to no one."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_smallholder_drought",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_smallholder"
+    ]
+   },
+   "weight": 4,
+   "text": "Drought. The river runs low, and the big landlord upstream has dammed what is left for his own fields.",
+   "choices": [
+    {
+     "text": "Break the dam at night",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 20,
+      "alignment": 3,
+      "log": "By dawn the water reaches every small farm in the valley. No one saw who did it. Everyone knows."
+     },
+     "fail": {
+      "health": -20,
+      "taels": -15,
+      "log": "The landlord's guards catch you. You pay the fine and nurse the bruises."
+     }
+    },
+    {
+     "text": "Dig a well instead",
+     "effects": {
+      "strength": 3,
+      "health": -5,
+      "log": "Forty days of digging. The water is sweet and it is yours."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_village_head_bandit_tax",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_village_head"
+    ]
+   },
+   "weight": 4,
+   "text": "Bandits from the hills demand a third of the harvest from your village, or they will burn it.",
+   "choices": [
+    {
+     "text": "Pay them",
+     "effects": {
+      "taels": -40,
+      "log": "The village eats less this winter, but it is still standing."
+     }
+    },
+    {
+     "text": "Hire a wandering swordsman",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 6,
+      "taels": -20,
+      "log": "She arrives with a straw hat and a chipped blade. The bandits never come down the hill again."
+     },
+     "fail": {
+      "taels": -30,
+      "log": "The swordsman takes the silver and vanishes. You pay the bandits anyway."
+     },
+     "req": {
+      "minTaels": 30
+     }
+    },
+    {
+     "text": "Refuse: the village will defend itself",
+     "roll": {
+      "stat": "strategy",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "log": "Sharpened bamboo, a ditch and every farmer with a flail. The bandits look at it and go elsewhere."
+     },
+     "fail": {
+      "health": -15,
+      "fame": -2,
+      "log": "They burn two barns before they leave. The village blames you, and also thanks you."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_landlord_famine",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_landlord"
+    ]
+   },
+   "weight": 4,
+   "text": "Famine in the next province. Your granaries are full, and grain prices have tripled.",
+   "choices": [
+    {
+     "text": "Open the granaries",
+     "effects": {
+      "fame": 12,
+      "alignment": 10,
+      "taels": -60,
+      "log": "Thousands eat because of you. Years later, a famous general stops at your gate to bow. He was one of them."
+     }
+    },
+    {
+     "text": "Sell at the new price",
+     "effects": {
+      "taels": 180,
+      "alignment": -8,
+      "fame": -5,
+      "log": "You grow very rich. The songs they sing about you are not kind ones."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_dock_foreman_smuggling",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dock_foreman"
+    ]
+   },
+   "weight": 4,
+   "text": "One of the barges is too heavy for the rice it claims to carry. The captain slips a purse into your hand and smiles.",
+   "choices": [
+    {
+     "text": "Take the purse and look away",
+     "effects": {
+      "taels": 40,
+      "alignment": -4,
+      "log": "You never ask what was in the barge. Sometimes, at night, you wonder."
+     }
+    },
+    {
+     "text": "Open the cargo",
+     "roll": {
+      "stat": "strength",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 5,
+      "log": "Crates of stolen weapons, bound for the Greenwood. The magistrate rewards you. The Greenwood remembers you."
+     },
+     "fail": {
+      "health": -25,
+      "log": "The captain's men do not want the crates opened. You end up in the river."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_dock_boss_water_gang",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_dock_boss"
+    ]
+   },
+   "weight": 4,
+   "text": "The Water Gang wants your docks. Their envoy offers you a place among them, or a quiet drowning.",
+   "choices": [
+    {
+     "text": "Fight for the docks",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 10,
+      "log": "Your porters fight like tigers. The Water Gang's envoy goes back up the river in pieces of his own boat."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "the Water Gang, at the bottom of the river",
+      "log": "They almost drown you. Almost."
+     }
+    },
+    {
+     "text": "Make an alliance",
+     "effects": {
+      "taels": 30,
+      "alignment": -3,
+      "log": "Your docks, their boats. Everyone's silver grows. For now."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_water_gang_lord_flood",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_water_gang"
+    ]
+   },
+   "weight": 4,
+   "text": "The great river floods. The towns downstream are drowning, and only your boats can reach them.",
+   "choices": [
+    {
+     "text": "Send every boat, free",
+     "effects": {
+      "fame": 15,
+      "alignment": 10,
+      "log": "Ten thousand people are carried to high ground by men the Orthodox call river pirates. The Orthodox stop calling you that."
+     }
+    },
+    {
+     "text": "Charge for passage",
+     "effects": {
+      "taels": 200,
+      "alignment": -10,
+      "fame": -8,
+      "log": "You grow richer than a prince. The drowned towns never forgive the Water Gang."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_caravan_master_desert",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_caravan_master"
+    ]
+   },
+   "weight": 4,
+   "text": "Your silk caravan is in the western desert when the sandstorm hits. The guides disagree: shelter in the ruins, or push on.",
+   "choices": [
+    {
+     "text": "Shelter in the ruins",
+     "roll": {
+      "stat": "luck",
+      "dc": 50
+     },
+     "ok": {
+      "taels": 60,
+      "manual": 2,
+      "log": "In the ruins you find more than shelter: an old martial manual under the sand. The silk arrives, too."
+     },
+     "fail": {
+      "taels": -40,
+      "health": -15,
+      "log": "The ruins are a bandit den. You lose half the silk buying your way out."
+     }
+    },
+    {
+     "text": "Push on",
+     "roll": {
+      "stat": "strength",
+      "dc": 55
+     },
+     "ok": {
+      "taels": 50,
+      "log": "You arrive a week early. The western markets pay double for the first silk of the year."
+     },
+     "fail": {
+      "health": -30,
+      "taels": -30,
+      "log": "Three camels and two men are lost. You barely make it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_merchant_prince_war_loan",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_merchant_prince"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 4,
+   "text": "Both the Martial Alliance and the Demonic Cult send envoys. Each wants a war loan. Each would take it badly if you lent to the other.",
+   "choices": [
+    {
+     "text": "Lend to the Alliance",
+     "effects": {
+      "fame": 10,
+      "alignment": 5,
+      "log": "The Orthodox call you a patriot. The Cult puts your name on a list."
+     }
+    },
+    {
+     "text": "Lend to both, quietly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 300,
+      "log": "Whoever wins, you win. The oldest rule of the Merchant League."
+     },
+     "fail": {
+      "fame": -15,
+      "health": -25,
+      "log": "Both sides find out. Both send assassins. You survive, but you will never be trusted again."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_hall_physician_plague",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_hall_physician"
+    ]
+   },
+   "weight": 4,
+   "text": "A strange fever spreads through the poor quarter. The other medicine halls have closed their doors.",
+   "choices": [
+    {
+     "text": "Open your doors",
+     "roll": {
+      "stat": "medicine",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 12,
+      "alignment": 8,
+      "log": "You find the cure: a well poisoned by a dead ox. The poor quarter burns incense for you every year after."
+     },
+     "fail": {
+      "health": -30,
+      "fame": 5,
+      "log": "You catch the fever yourself, but your apprentices keep the hall open. People remember that."
+     }
+    },
+    {
+     "text": "Close the hall to protect your apprentices",
+     "effects": {
+      "fame": -5,
+      "log": "You wait out the fever safely. Your apprentices do not look at you the same way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_divine_physician_demon",
+   "cat": "encounter",
+   "when": {
+    "flags": [
+     "job_divine_physician"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 4,
+   "text": "A masked man carries a dying woman to your door. He is a Demonic Cult elder, and she is his daughter.",
+   "choices": [
+    {
+     "text": "Save her",
+     "roll": {
+      "stat": "medicine",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 10,
+      "flag": "cult_owes_you",
+      "log": "She lives. The elder kneels, the first time in thirty years. \"The Cult owes you one life.\""
+     },
+     "fail": {
+      "health": -20,
+      "log": "She dies on your table. The elder leaves without a word. You do not sleep for a month."
+     }
+    },
+    {
+     "text": "Refuse him",
+     "effects": {
+      "alignment": 2,
+      "log": "\"I do not treat demons.\" He carries her away into the rain. You tell yourself you were right."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_graduate_capital_exam",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_graduate"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 4,
+   "text": "The palace examination in the capital. A candidate from a great family offers you the questions in advance, for a price.",
+   "choices": [
+    {
+     "text": "Refuse, and sit it honestly",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 8,
+      "comprehension": 2,
+      "log": "Your essay is read aloud before the court. The examiner writes one word in red ink: \"Excellent.\""
+     },
+     "fail": {
+      "log": "You pass, but only just. The rich boy passes higher. The world is what it is."
+     }
+    },
+    {
+     "text": "Buy the questions",
+     "effects": {
+      "taels": -80,
+      "fame": 5,
+      "alignment": -6,
+      "flag": "exam_cheat",
+      "log": "You pass near the top. Someday someone may ask how."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_prefect_corrupt_general",
+   "cat": "world",
+   "when": {
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ],
+    "flags": [
+     "court_magistrate"
+    ]
+   },
+   "weight": 4,
+   "text": "The border general on your roll is selling army grain to the Greenwood. He is the Chancellor's nephew.",
+   "choices": [
+    {
+     "text": "Report him to the throne",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": 6,
+      "log": "Your memorial is so carefully written that even the Chancellor cannot defend him. The Emperor remembers your name."
+     },
+     "fail": {
+      "fame": -10,
+      "log": "The Chancellor buries your memorial and sends you a polite warning."
+     }
+    },
+    {
+     "text": "Take your share",
+     "effects": {
+      "taels": 150,
+      "alignment": -10,
+      "log": "The grain keeps disappearing. Your treasury keeps growing."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_minister_succession",
+   "cat": "world",
+   "when": {
+    "notFlags": [
+     "imp_emperor",
+     "fugitive",
+     "imp_regent"
+    ],
+    "anyFlags": [
+     "court_minister",
+     "court_chancellor"
+    ]
+   },
+   "weight": 4,
+   "text": "The Emperor is ill. Two princes, two factions at court, and every minister must choose.",
+   "choices": [
+    {
+     "text": "Back the elder prince",
+     "effects": {
+      "fame": 10,
+      "log": "The proper order of things. The elder prince is dull but safe."
+     }
+    },
+    {
+     "text": "Back the clever younger prince",
+     "roll": {
+      "stat": "strategy",
+      "dc": 60
+     },
+     "ok": {
+      "fame": 20,
+      "taels": 200,
+      "log": "Your prince takes the throne. You become the most powerful official in the empire."
+     },
+     "fail": {
+      "health": -40,
+      "fame": -20,
+      "log": "The younger prince fails. You are exiled to the south with nothing but your brush."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_senior_escort_ambush",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_senior_escort"
+    ]
+   },
+   "weight": 4,
+   "text": "Your caravan is ambushed in a narrow pass. The chief escort is down. The younger guards are looking at you.",
+   "choices": [
+    {
+     "text": "Lead the defence",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.9
+     },
+     "ok": {
+      "fame": 8,
+      "taels": 25,
+      "log": "You hold the pass until the bandits break. The agency master hears the whole story twice."
+     },
+     "fail": {
+      "health": -45,
+      "deathCause": "bandits in a narrow pass",
+      "log": "The cargo is saved, but you are carried home on a cart."
+     }
+    },
+    {
+     "text": "Retreat with the cargo",
+     "effects": {
+      "fame": -2,
+      "log": "You save the cargo and most of the men. Not a hero's story, but a true one."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_escort_deputy_betrayal",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_escort_deputy"
+    ]
+   },
+   "weight": 4,
+   "text": "Three caravans in a row have been robbed at exactly the right place. Someone inside the agency is selling the routes.",
+   "choices": [
+    {
+     "text": "Set a trap with a fake route",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "log": "The bandits come for an empty wagon and meet twenty guards. The traitor is the master's own nephew."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "The traitor smells the trap. The robberies stop, but so does your chance to catch him."
+     }
+    },
+    {
+     "text": "Tell the master and let him handle it",
+     "effects": {
+      "log": "The master thanks you and does nothing. Some things stay in the family."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_escort_lord_imperial_tribute",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_escort_lord"
+    ],
+    "notFlags": [
+     "imp_emperor",
+     "fugitive"
+    ]
+   },
+   "weight": 4,
+   "text": "The court asks your league to escort the Imperial tribute across nine provinces. Every Greenwood stronghold will want it.",
+   "choices": [
+    {
+     "text": "Lead it yourself",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 25,
+      "taels": 250,
+      "log": "Nine provinces, forty days, no losses. The Emperor sends you a plaque in his own hand."
+     },
+     "fail": {
+      "health": -55,
+      "fame": 5,
+      "deathCause": "the Greenwood's attack on the Imperial tribute",
+      "log": "The tribute arrives, but you arrive on a stretcher."
+     }
+    },
+    {
+     "text": "Negotiate safe passage with the Greenwood",
+     "roll": {
+      "stat": "charm",
+      "dc": 60
+     },
+     "ok": {
+      "taels": 150,
+      "fame": 10,
+      "log": "A cup of wine with the King of the Greenwood, a small gift, and not one arrow flies."
+     },
+     "fail": {
+      "fame": -10,
+      "log": "The Greenwood takes your gift and attacks anyway. The court is not pleased."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_bounty_veteran_innocent",
+   "cat": "encounter",
+   "when": {
+    "flags": [
+     "job_bounty_veteran"
+    ]
+   },
+   "weight": 4,
+   "text": "You finally corner the man on the wanted poster. He swears the magistrate who posted the bounty framed him, and he has the papers to show it.",
+   "choices": [
+    {
+     "text": "Read the papers",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 8,
+      "alignment": 8,
+      "log": "He is telling the truth. Instead of him, you bring the magistrate's ledgers to the prefect."
+     },
+     "fail": {
+      "log": "The papers make no sense to you. You let him go, just in case."
+     }
+    },
+    {
+     "text": "A bounty is a bounty",
+     "effects": {
+      "taels": 60,
+      "alignment": -5,
+      "log": "You bring him in. The magistrate pays very promptly. Too promptly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_bounty_legend_black_list",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_bounty_legend"
+    ]
+   },
+   "weight": 4,
+   "text": "The first name on the Black List: the Blood Blade, who has killed eleven hunters before you.",
+   "choices": [
+    {
+     "text": "Hunt him",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "fame": 25,
+      "taels": 300,
+      "log": "Twelve hunters came for him. Only one came back. Now the teahouses tell your story."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the Blood Blade, first name on the Black List",
+      "log": "He is better than the stories. You barely escape."
+     }
+    },
+    {
+     "text": "Take a smaller name",
+     "effects": {
+      "taels": 60,
+      "log": "Legends last longer when they choose their fights."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_dojo_instructor_bully",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_dojo_instructor"
+    ]
+   },
+   "weight": 4,
+   "text": "The richest student in your class is bullying the poorest one. His father pays for half the school.",
+   "choices": [
+    {
+     "text": "Discipline him anyway",
+     "effects": {
+      "alignment": 5,
+      "fame": 2,
+      "taels": -10,
+      "log": "His father pulls him from the school. The poor student later becomes your best disciple."
+     }
+    },
+    {
+     "text": "Look away",
+     "effects": {
+      "taels": 15,
+      "alignment": -3,
+      "log": "The school's silver is safe. The poor student stops coming."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_grandmaster_challenge",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_grandmaster"
+    ]
+   },
+   "weight": 4,
+   "text": "A young genius arrives at your gate to challenge the school's name, as you once did at another's.",
+   "choices": [
+    {
+     "text": "Accept the duel",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 15,
+      "log": "You win, then invite him to stay and teach. Your school gains a second master."
+     },
+     "fail": {
+      "health": -40,
+      "fame": -10,
+      "log": "He wins. You bow. He is kinder in victory than you expected.",
+      "deathCause": "a young genius at your gate"
+     }
+    },
+    {
+     "text": "Send your best disciple",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "log": "Your disciple wins. The murim says your school's students are as good as other schools' masters."
+     },
+     "fail": {
+      "fame": -8,
+      "log": "Your disciple loses. The challenger leaves with your school's pride."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_knight_errant_village",
+   "cat": "danger",
+   "when": {
+    "flags": [
+     "job_knight_errant"
+    ]
+   },
+   "weight": 4,
+   "text": "A runner finds you on the road: a Greenwood gang has taken over his mountain village and is working the villagers to death.",
+   "choices": [
+    {
+     "text": "Go alone",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 0.95
+     },
+     "ok": {
+      "fame": 15,
+      "alignment": 8,
+      "log": "You walk in at noon and out at dusk. The villagers carve your name on the shrine."
+     },
+     "fail": {
+      "health": -50,
+      "deathCause": "a Greenwood gang in a mountain village",
+      "log": "Too many of them. You get the villagers out, and yourself, barely."
+     }
+    },
+    {
+     "text": "Gather other wanderers first",
+     "roll": {
+      "stat": "charm",
+      "dc": 50
+     },
+     "ok": {
+      "fame": 10,
+      "alignment": 5,
+      "log": "Five wandering swordsmen and one plan. The gang never stands a chance."
+     },
+     "fail": {
+      "log": "No one comes. By the time you arrive, the gang has moved on."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_great_hero_tournament",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_great_hero"
+    ]
+   },
+   "weight": 4,
+   "text": "The Murim Martial Tournament invites you as the guest of honour. The sects hope you will join one of them, at last.",
+   "choices": [
+    {
+     "text": "Stay free",
+     "effects": {
+      "fame": 10,
+      "alignment": 3,
+      "log": "\"The road is my sect.\" The young wanderers in the crowd cheer louder than for any champion."
+     }
+    },
+    {
+     "text": "Fight an exhibition match",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 20,
+      "log": "You fight the tournament champion to a draw, and laugh the whole time."
+     },
+     "fail": {
+      "health": -35,
+      "fame": 5,
+      "log": "The champion is younger and hungrier. The crowd respects you for trying.",
+      "deathCause": "an exhibition match that stopped being one"
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_sect_instructor_prodigy",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_sect_instructor"
+    ]
+   },
+   "weight": 4,
+   "text": "Among the new disciples is a boy with blocked meridians and more heart than anyone you have taught. The elders want him expelled.",
+   "choices": [
+    {
+     "text": "Train him yourself",
+     "effects": {
+      "alignment": 6,
+      "fame": 4,
+      "flag": "taught_prodigy",
+      "log": "Ten years later, he is the youngest Peak Master in the sect's history, and still calls you teacher."
+     }
+    },
+    {
+     "text": "Follow the elders",
+     "effects": {
+      "log": "Rules are rules. You watch him walk down the mountain and wonder."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_vice_leader_rival_elder",
+   "cat": "sect",
+   "when": {
+    "flags": [
+     "job_vice_leader"
+    ]
+   },
+   "weight": 4,
+   "text": "The Great Elder wants the sect leader's seat for himself, and is spreading rumours that you learned forbidden arts.",
+   "choices": [
+    {
+     "text": "Challenge him openly",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.0
+     },
+     "ok": {
+      "fame": 15,
+      "log": "Before the whole sect you fight him and show your arts are clean. The rumours die with his ambitions."
+     },
+     "fail": {
+      "health": -45,
+      "fame": -10,
+      "log": "He wins the duel. The rumours spread faster.",
+      "deathCause": "the Great Elder's hand"
+     }
+    },
+    {
+     "text": "Find proof of his lies",
+     "roll": {
+      "stat": "strategy",
+      "dc": 55
+     },
+     "ok": {
+      "fame": 10,
+      "log": "His own disciple brings you the letters. The Great Elder retires to a cave to meditate. Forever."
+     },
+     "fail": {
+      "fame": -5,
+      "log": "You find nothing. The whispers follow you through the halls."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_bandit_lieutenant_merchant",
+   "cat": "life",
+   "when": {
+    "flags": [
+     "job_bandit_lieutenant"
+    ]
+   },
+   "weight": 4,
+   "text": "The chief sends you to collect from a merchant who has not paid the road toll. The merchant's family is standing behind him.",
+   "choices": [
+    {
+     "text": "Collect",
+     "effects": {
+      "taels": 40,
+      "alignment": -5,
+      "log": "He pays. His children watch you count it."
+     }
+    },
+    {
+     "text": "Pay the toll from your own pocket",
+     "effects": {
+      "taels": -30,
+      "alignment": 6,
+      "log": "You tell the chief he paid. The merchant never knows why he was spared."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_greenwood_king_orthodox",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_greenwood_king"
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 4,
+   "text": "The Martial Alliance offers the Greenwood a pardon, if your strongholds will fight the Demonic Cult alongside them.",
+   "choices": [
+    {
+     "text": "Accept the pardon",
+     "effects": {
+      "fame": 15,
+      "alignment": 10,
+      "log": "Seventy-two strongholds march under the Alliance banner. Bandits, for once, are called heroes."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "taels": 100,
+      "log": "The Greenwood answers to no one. While the great sects bleed each other, your strongholds grow rich."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "cr_night_blade_child",
+   "cat": "encounter",
+   "when": {
+    "flags": [
+     "job_night_blade"
+    ]
+   },
+   "weight": 4,
+   "text": "The contract is an official in the capital. When you arrive, he is reading to his little daughter.",
+   "choices": [
+    {
+     "text": "Finish the contract",
+     "effects": {
+      "taels": 120,
+      "alignment": -10,
+      "log": "The Pavilion pays in full. You do not remember the official's face. You remember the girl's."
+     }
+    },
+    {
+     "text": "Walk away",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "alignment": 6,
+      "log": "You vanish before anyone knows you were there. You tell the Pavilion he was too well guarded."
+     },
+     "fail": {
+      "health": -30,
+      "log": "The Pavilion does not believe you. Their punishment is educational."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cr_pavilion_lord_contract",
+   "cat": "world",
+   "when": {
+    "flags": [
+     "job_pavilion_lord"
+    ]
+   },
+   "weight": 4,
+   "text": "A contract arrives with more gold than the Pavilion earns in ten years. The name on it: the Martial Alliance Leader.",
+   "choices": [
+    {
+     "text": "Accept",
+     "risky": true,
+     "roll": {
+      "stat": "power",
+      "foeRel": 0,
+      "foeMult": 1.1
+     },
+     "ok": {
+      "taels": 600,
+      "alignment": -15,
+      "fame": 10,
+      "log": "The murim will argue for a century about who did it. You never will."
+     },
+     "fail": {
+      "health": -60,
+      "deathCause": "the Martial Alliance Leader's guards",
+      "log": "The Alliance Leader was waiting for you. You barely escape."
+     }
+    },
+    {
+     "text": "Refuse, and warn the Alliance",
+     "effects": {
+      "fame": 5,
+      "alignment": 8,
+      "log": "An anonymous letter reaches the Alliance. The Leader lives. The client sends assassins after you instead."
+     }
+    }
+   ],
+   "mw": true
+  }
+ ],
+ "mwPass": 1
+}

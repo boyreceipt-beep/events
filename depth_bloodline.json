@@ -1,0 +1,799 @@
+{
+ "events": [
+  {
+   "id": "dc_root_1",
+   "cat": "insight",
+   "arc": "Blood That Stirs",
+   "when": {
+    "meridians": [
+     "ordinary",
+     "blocked"
+    ],
+    "age": [
+     28,
+     70
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "After years of a method, your meridians ache in a new way: not blocked, but widening, like a riverbed in flood. The old texts call it the second opening, and say it kills a third of those it visits.",
+   "choices": [
+    {
+     "text": "Open them. Sit in the river for seven days",
+     "roll": {
+      "stat": "body",
+      "dc": 55
+     },
+     "risky": true,
+     "ok": {
+      "meridianUp": true,
+      "fame": 6,
+      "flag": "root_opened",
+      "log": "Seven days. On the eighth the ache is gone and the energy moves like it never has."
+     },
+     "fail": {
+      "health": -30,
+      "deathCause": "the second opening of the meridians",
+      "log": "The river takes more than it gives. You are fished out on the eighth day, cold and alive, and the ache is still there, waiting."
+     }
+    },
+    {
+     "text": "Let them close again. Live",
+     "effects": {
+      "comprehension": 4,
+      "lifespan": 2,
+      "flag": "root_declined",
+      "log": "The ache fades in a season. You remain what you were born, and alive, which is also a kind of talent."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_root_2",
+   "cat": "insight",
+   "arc": "Blood That Stirs",
+   "when": {
+    "meridians": [
+     "good"
+    ],
+    "age": [
+     30,
+     80
+    ],
+    "after": [
+     "dc_root_1"
+    ],
+    "minYearsAfter": 3,
+    "flags": [
+     "root_opened"
+    ]
+   },
+   "weight": 6,
+   "text": "A physician who studies such things asks to feel your pulse, and then to feel it again. Your meridians, he says, have changed since birth. It happens to one in a thousand, and he wants to know what you did.",
+   "choices": [
+    {
+     "text": "Tell him everything",
+     "effects": {
+      "fame": 8,
+      "comprehension": 4,
+      "flag": "root_studied",
+      "log": "He writes a treatise with your name in it. Cultivators you have never met send letters asking about the river."
+     }
+    },
+    {
+     "text": "Tell him nothing",
+     "effects": {
+      "luck": 4,
+      "log": "He goes away annoyed. Your roots stay your business."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_root_3",
+   "cat": "insight",
+   "arc": "Blood That Stirs",
+   "when": {
+    "meridians": [
+     "good"
+    ],
+    "age": [
+     35,
+     85
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_root_2"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "The third opening. Everything you have read says it does not happen to people born as you were born. Your meridians have not read it.",
+   "choices": [
+    {
+     "text": "Open them, at the top of the highest peak you can climb",
+     "roll": {
+      "stat": "body",
+      "dc": 70
+     },
+     "risky": true,
+     "ok": {
+      "meridianUp": true,
+      "fame": 15,
+      "lifespan": 5,
+      "flag": "root_heavenly",
+      "log": "The storm comes on the fourth night. On the fifth morning your meridians are the kind children are born with once a generation. You were not born with them."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the third opening, on a mountain",
+      "log": "The storm comes and the meridians do not answer. You come down the mountain on your hands and knees with exactly what you went up with."
+     }
+    },
+    {
+     "text": "This is enough",
+     "effects": {
+      "comprehension": 6,
+      "alignment": 4,
+      "lifespan": 3,
+      "log": "You climb down. What you have is more than anyone promised you, and you spend the rest of your life using it well."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_nineyang_1",
+   "cat": "insight",
+   "arc": "The Fire in the Blood",
+   "when": {
+    "meridians": [
+     "nineYang"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "Your Nine Yang blood boils in the summer heat until the well water steams when you drink it. An old monk says the fire can be a furnace instead of a fever, if you learn to burn on purpose.",
+   "choices": [
+    {
+     "text": "Learn to burn",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "nineyang_furnace",
+      "strength": 6,
+      "qi": 20,
+      "log": "A season on a bare rock in the sun. The fever becomes a furnace you can bank and stoke. Your palms leave scorch marks on the practice post."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The fire answers before you do. You come off the rock blistered and humbled, the fever as hot as before."
+     }
+    },
+    {
+     "text": "Cool it with every cold thing you can find",
+     "effects": {
+      "health": 8,
+      "lifespan": 2,
+      "log": "Ice baths, cold jade, northern winters. The fire sleeps. So does half of what it could have been."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_nineyang_2",
+   "cat": "insight",
+   "arc": "The Fire in the Blood",
+   "when": {
+    "meridians": [
+     "nineYang"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_nineyang_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "At the peak of summer, the furnace in you wants out. There is a story about a Nine Yang master who melted an iron gate with a palm. There is also a story about one who melted himself.",
+   "choices": [
+    {
+     "text": "Put your palm to the gate",
+     "roll": {
+      "stat": "body",
+      "dc": 65
+     },
+     "risky": true,
+     "ok": {
+      "flag": "nineyang_awakened",
+      "fame": 20,
+      "strength": 10,
+      "lifespan": 4,
+      "log": "The gate runs like wax. You stand in the steam, unhurt, and understand your blood for the first time. The murim calls you the Burning Palm."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the Nine Yang fire, turned inward",
+      "log": "The gate does not melt. You do, a little: your palm comes away burned to the wrist, and the furnace sulks for a year."
+     }
+    },
+    {
+     "text": "Leave the gate alone",
+     "effects": {
+      "comprehension": 6,
+      "alignment": 4,
+      "log": "You bank the furnace and carry it quietly for the rest of your life. Nobody's gate melts, and nobody's master does either."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_demon_1",
+   "cat": "insight",
+   "arc": "The Demon in the Marrow",
+   "when": {
+    "meridians": [
+     "demonBody"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ],
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 14,
+   "text": "Your Heavenly Demon Body wakes when you are angry: the air goes cold around you and a man who insulted you at the inn has nightmares for a month. The Cult has sent two more envoys. The orthodox sects have sent one, with a sword.",
+   "choices": [
+    {
+     "text": "Learn to wake it on purpose",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "demon_awake",
+      "qi": 25,
+      "alignment": -5,
+      "log": "A winter alone in a cave. You can call the cold now, and send it away. The nightmares are yours to give."
+     },
+     "fail": {
+      "health": -15,
+      "alignment": -8,
+      "log": "The cold comes up uninvited and will not go back. You wake on the cave floor with the air still frosting and your temper worse."
+     }
+    },
+    {
+     "text": "Chain it with a monk's method",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 45
+     },
+     "ok": {
+      "flag": "demon_chained",
+      "alignment": 8,
+      "comprehension": 6,
+      "log": "A year of sutras. The body sleeps under them like a tiger under a net. The net holds, mostly."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The sutras slide off. The body wakes angrier for being read to, and you spend a month apologising to the monks."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_demon_2",
+   "cat": "insight",
+   "arc": "The Demon in the Marrow",
+   "when": {
+    "meridians": [
+     "demonBody"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_demon_1"
+    ],
+    "minYearsAfter": 4,
+    "notFactions": [
+     "demonic"
+    ]
+   },
+   "weight": 6,
+   "text": "The body wants a master or a leash. The Cult offers a throne. A hermit offers a method that would make the demon body serve any path, orthodox or not, if you survive the thirty-day fast it needs.",
+   "choices": [
+    {
+     "text": "The hermit's fast",
+     "roll": {
+      "stat": "body",
+      "dc": 65
+     },
+     "risky": true,
+     "ok": {
+      "flag": "demon_mastered",
+      "fame": 20,
+      "qi": 40,
+      "lifespan": 5,
+      "log": "Thirty days. The thing in your marrow stops being a demon and becomes a depth. Nobody's path owns you now."
+     },
+     "fail": {
+      "health": -40,
+      "deathCause": "the thirty-day fast of the demon body",
+      "log": "On the twentieth day the fast takes more than you have. The hermit carries you down, alive, with the demon still in the marrow."
+     }
+    },
+    {
+     "text": "The Cult's throne",
+     "req": {
+      "notFlags": [
+       "sect_head"
+      ]
+     },
+     "effects": {
+      "alignment": -20,
+      "fame": 15,
+      "faction": "demonic",
+      "sect": "Heavenly Demon Cult",
+      "flag": "demon_cult",
+      "log": "You walk into the Hundred Thousand Mountains and the black robes part. The body is at home. You are not sure you are."
+     }
+    },
+    {
+     "text": "Send both away: the body will serve you, not them",
+     "effects": {
+      "alignment": 2,
+      "fame": 4,
+      "log": "You send the black robes down the mountain with a cup of tea each, and the hermit with a bow. The body grumbles for a month, then settles. It is yours: leashed by nobody, mastered by nobody, for now."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_profound_1",
+   "cat": "insight",
+   "arc": "Frost in the Veins",
+   "when": {
+    "meridians": [
+     "profoundYin"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "The Profound Yin body makes you cold in summer and calm in a fight, too calm: a bandit put a blade through your shoulder last autumn and you noticed a minute later. A nun from Emei says the cold can be a blade of its own.",
+   "choices": [
+    {
+     "text": "Learn the nun's method",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "yin_blade",
+      "qi": 20,
+      "comprehension": 4,
+      "log": "Frost forms on your blade when you breathe out. Opponents slow in your reach as if wading through water."
+     },
+     "fail": {
+      "health": -10,
+      "log": "The nun's method needs a stillness you do not yet have. The frost bites inward, and you spend the season thawing."
+     }
+    },
+    {
+     "text": "Warm the body with hot broth and company",
+     "effects": {
+      "charm": 6,
+      "health": 6,
+      "log": "You are the warmest cold person in the province. The yin sleeps. So does its edge."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_profound_2",
+   "cat": "insight",
+   "arc": "Frost in the Veins",
+   "when": {
+    "meridians": [
+     "profoundYin"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_profound_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "At the winter solstice the yin peaks. The old texts say a Profound Yin body that bathes in the first snow of a true north winter either freezes or becomes the Frost Jade that cannot be poisoned, cannot be burned, and does not age as others do.",
+   "choices": [
+    {
+     "text": "Bathe in the first snow",
+     "roll": {
+      "stat": "body",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "meridians": "frostJade",
+      "fame": 15,
+      "lifespan": 8,
+      "flag": "yin_frostjade",
+      "log": "You walk out of the snow at dawn and the snow does not melt where you stand. Your roots are Frost Jade now, and you have time."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the first snow of the north",
+      "log": "The first snow wins. You are dragged from the drift blue and barely breathing, and the winter keeps its Frost Jade for another year."
+     }
+    },
+    {
+     "text": "Stay by the fire",
+     "effects": {
+      "lifespan": 2,
+      "comprehension": 4,
+      "log": "You keep your profound yin and your fingers. It is a good body. It was never going to be more, and that is fine."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_swordbones_1",
+   "cat": "insight",
+   "arc": "Bones That Remember a Blade",
+   "when": {
+    "meridians": [
+     "swordBones"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "Your Sword Bones ache whenever a true blade is near, and sing when you hold one. An old swordsmith says bones like yours are why some swords are forged at all, and asks to forge one for you, if you will stand in the heat while he does.",
+   "choices": [
+    {
+     "text": "Stand in the forge",
+     "roll": {
+      "stat": "body",
+      "dc": 50
+     },
+     "ok": {
+      "flag": "bones_sword",
+      "item": "manual_sect",
+      "strength": 6,
+      "log": "Nine days beside the fire. The sword he quenches is the only one that has ever felt like part of your arm. With it comes his family's manual."
+     },
+     "fail": {
+      "health": -15,
+      "log": "The forge is hotter than your patience. You leave on the fifth day, scorched, and the swordsmith sets the blade aside."
+     }
+    },
+    {
+     "text": "Decline. A sword is a sword",
+     "effects": {
+      "comprehension": 3,
+      "log": "He forges it anyway and gives it to a disciple who does not have your bones. It is a fine sword. It is not yours."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_swordbones_2",
+   "cat": "insight",
+   "arc": "Bones That Remember a Blade",
+   "when": {
+    "meridians": [
+     "swordBones"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_swordbones_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "Sword Bones, fully awake, want one thing: the sword path to its end. A hermit who walked it says the last step is to hold no sword at all for a year and let the bones become the blade.",
+   "choices": [
+    {
+     "text": "A year without a sword",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "flag": "bones_awakened",
+      "fame": 15,
+      "comprehension": 8,
+      "qi": 30,
+      "log": "You cut a falling leaf with your finger on the last day of the year, and understand that you have never needed steel."
+     },
+     "fail": {
+      "strength": -5,
+      "log": "A year of nothing in your hand, and on the last day you reach for a sword anyway. The bones sulk, and take a little of your edge with them."
+     }
+    },
+    {
+     "text": "Keep the sword. The bones can want",
+     "effects": {
+      "strength": 6,
+      "log": "You are the finest swordsman in three provinces, which is enough for anyone who is not made of sword bones."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_frostjade_1",
+   "cat": "insight",
+   "arc": "The Jade That Does Not Age",
+   "when": {
+    "meridians": [
+     "frostJade"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "Your Frost Jade body does not age as others do, and people have started to notice. A great family offers a fortune to study your blood. A sect offers a seat. A poisoner offers to test whether the stories are true.",
+   "choices": [
+    {
+     "text": "Let the poisoner try, in public",
+     "roll": {
+      "stat": "body",
+      "dc": 45
+     },
+     "ok": {
+      "fame": 15,
+      "flag": "jade_proven",
+      "log": "He uses the Tang's best. You drink it like tea. The whole market sees, and the stories stop being stories."
+     },
+     "fail": {
+      "health": -20,
+      "fame": 5,
+      "flag": "jade_proven",
+      "log": "The poison is better than the stories. You live, ill and furious, and the market has seen it all, which is its own kind of proof."
+     }
+    },
+    {
+     "text": "Disappear for a few years",
+     "effects": {
+      "luck": 6,
+      "lifespan": 3,
+      "flag": "jade_hidden",
+      "log": "You come back with a different name in a different province. The body keeps its secret longer than people keep their interest."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_frostjade_2",
+   "cat": "insight",
+   "arc": "The Jade That Does Not Age",
+   "when": {
+    "meridians": [
+     "frostJade"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_frostjade_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "Decades on, you have buried people you grew up with and look like their child. The jade wants the Harmony realm; the texts say a Frost Jade body that reaches it does not die of age at all.",
+   "choices": [
+    {
+     "text": "Walk the path to its end",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 65
+     },
+     "ok": {
+      "flag": "jade_eternal",
+      "lifespan": 15,
+      "fame": 20,
+      "log": "You stop counting years. The murim starts counting the masters who have known you, and loses the count."
+     },
+     "fail": {
+      "health": -20,
+      "log": "The Harmony gate does not open yet. You come back from the attempt thinner and slower, with the years still counting."
+     }
+    },
+    {
+     "text": "Let the years come",
+     "effects": {
+      "alignment": 6,
+      "comprehension": 4,
+      "lifespan": 4,
+      "log": "You grow old slowly and on purpose, and die in a bed, which for a Frost Jade body is a choice."
+     }
+    }
+   ],
+   "once": true,
+   "mw": true
+  },
+  {
+   "id": "dc_fiveel_1",
+   "cat": "insight",
+   "arc": "Five Rivers in One Body",
+   "when": {
+    "meridians": [
+     "fiveElements"
+    ],
+    "age": [
+     16,
+     60
+    ],
+    "realm": [
+     2,
+     11
+    ]
+   },
+   "weight": 14,
+   "text": "The Five Elements Harmony Body takes to every art you try and masters none: fire, water, metal, wood and earth each pull a fifth of you. A Taoist says the body is not for mastering one art but for joining five.",
+   "choices": [
+    {
+     "text": "Train five arts at once, as he says",
+     "effects": {
+      "comprehension": 6,
+      "flag": "five_training",
+      "artYears": 1,
+      "log": "A decade of being merely good at everything. Then, one morning, the five fall into one movement and nobody in the yard can touch you."
+     }
+    },
+    {
+     "text": "Pick one and ignore the rest",
+     "effects": {
+      "strength": 6,
+      "flag": "five_narrowed",
+      "log": "You become excellent at one thing with a body made for five. It is like running on one leg very fast."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "dc_fiveel_2",
+   "cat": "insight",
+   "arc": "Five Rivers in One Body",
+   "when": {
+    "meridians": [
+     "fiveElements"
+    ],
+    "age": [
+     20,
+     80
+    ],
+    "realm": [
+     3,
+     11
+    ],
+    "after": [
+     "dc_fiveel_1"
+    ],
+    "minYearsAfter": 4
+   },
+   "weight": 6,
+   "text": "The five elements in you want to turn as one wheel. The Taoist's last lesson is a cave with five springs: hot, cold, iron-tasting, mossy and muddy. Drink from all five in one breath and the wheel turns, or it breaks you.",
+   "choices": [
+    {
+     "text": "Drink from the five springs",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "risky": true,
+     "ok": {
+      "flag": "five_awakened",
+      "fame": 20,
+      "comprehension": 10,
+      "qi": 40,
+      "lifespan": 4,
+      "log": "The wheel turns. Every art you ever learned becomes one art, and every element answers when you call it."
+     },
+     "fail": {
+      "health": -35,
+      "deathCause": "the five springs, drunk in one breath",
+      "log": "The springs do not agree with each other. You drag yourself out of the cave with five tastes in your mouth and five fevers in your blood."
+     }
+    },
+    {
+     "text": "One spring at a time, over five years",
+     "effects": {
+      "comprehension": 6,
+      "lifespan": 2,
+      "log": "Slower, safer, and the wheel never quite closes. You are the most versatile master in the province, and know what you missed."
+     }
+    }
+   ],
+   "once": true
+  }
+ ],
+ "mwPass": 1
+}
