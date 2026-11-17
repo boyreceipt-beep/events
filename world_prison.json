@@ -1,0 +1,506 @@
+{
+ "events": [
+  {
+   "id": "pr_first_night",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ],
+    "flags": [
+     "jail_new"
+    ]
+   },
+   "weight": 4,
+   "text": "Your first night in the county prison. The straw is wet, the rice is grey, and the man in the next cell will not stop singing.",
+   "choices": [
+    {
+     "text": "Sing with him",
+     "effects": {
+      "charm": 2,
+      "log": "By dawn the whole block is singing. The guards give up and join in."
+     }
+    },
+    {
+     "text": "Meditate through it",
+     "effects": {
+      "qi": 5,
+      "log": "You find a stillness under the noise. Prison is a strange kind of seclusion."
+     }
+    }
+   ],
+   "once": true
+  },
+  {
+   "id": "pr_cell_master",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "The old man in the corner cell has been here forty years. The guards are afraid of him, and nobody says why.",
+   "choices": [
+    {
+     "text": "Bring him your rice",
+     "effects": {
+      "qi": 8,
+      "comprehension": 2,
+      "log": "He eats it slowly, then taps your wrist twice. \"Your breathing is wrong.\" He fixes it in a sentence."
+     }
+    },
+    {
+     "text": "Keep your distance",
+     "effects": {
+      "luck": 1,
+      "log": "Wise, perhaps. At night you hear him breathing like a tide."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_yard_fight",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "In the prison yard, a gang boss decides your rice is his rice.",
+   "choices": [
+    {
+     "text": "Refuse, loudly",
+     "roll": {
+      "stat": "power",
+      "foeRel": -1
+     },
+     "ok": {
+      "fame": 1,
+      "strength": 1,
+      "log": "He tests you once. After that the yard gives you room."
+     },
+     "fail": {
+      "health": -15,
+      "log": "His gang teaches you prison manners."
+     }
+    },
+    {
+     "text": "Share it",
+     "effects": {
+      "alignment": 1,
+      "charm": 1,
+      "log": "He is surprised. You have made a strange sort of friend."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_escape_tunnel",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "Your cellmate has been digging a tunnel behind the latrine bucket for three years. It is nearly done. He invites you.",
+   "choices": [
+    {
+     "text": "Go through the tunnel",
+     "roll": {
+      "stat": "luck",
+      "dc": 55
+     },
+     "ok": {
+      "free": true,
+      "fame": 1,
+      "flag": "escaped_prison",
+      "log": "Out under the wall at midnight. The river carries you to freedom."
+     },
+     "fail": {
+      "health": -10,
+      "jail": 2,
+      "log": "The tunnel collapses. Guards drag you both out, and the warden watches you closely from then on."
+     }
+    },
+    {
+     "text": "Stay and serve your time",
+     "effects": {
+      "alignment": 2,
+      "log": "He goes alone. You never learn if he made it."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_bribe_guard",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "A guard lets it be known that ten taels would lose your paperwork somewhere very far away.",
+   "choices": [
+    {
+     "text": "Pay the guard",
+     "effects": {
+      "taels": -10,
+      "free": true,
+      "alignment": -2,
+      "log": "Your name vanishes from the rolls. You walk out with the morning rubbish."
+     },
+     "req": {
+      "minTaels": 10
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "health": -3,
+      "log": "He shrugs. Your rice gets greyer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_letters",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "A letter reaches you in prison, the seal already broken by the warden. It is from someone who has not forgotten you.",
+   "choices": [
+    {
+     "text": "Read it a hundred times",
+     "effects": {
+      "health": 5,
+      "log": "It says nothing important. It means everything."
+     }
+    },
+    {
+     "text": "Write back on the wall",
+     "effects": {
+      "charm": 1,
+      "log": "You scratch your answer into the stone. Someone will read it someday."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_warden_request",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "The warden's son is sick, and the prison physician is drunk. The warden has heard you know herbs.",
+   "choices": [
+    {
+     "text": "Treat the boy",
+     "roll": {
+      "stat": "medicine",
+      "dc": 45
+     },
+     "ok": {
+      "alignment": 3,
+      "flag": "warden_favour",
+      "log": "The fever breaks. The warden remembers it kindly."
+     },
+     "fail": {
+      "alignment": 1,
+      "log": "The boy recovers slowly, no thanks to you."
+     }
+    },
+    {
+     "text": "Refuse",
+     "effects": {
+      "health": -3,
+      "log": "The warden remembers. Your cell gets draughtier."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_hard_labour",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "The prisoners are sent to rebuild the city wall. Stones, sun and a whip that is mostly for show.",
+   "choices": [
+    {
+     "text": "Work hard",
+     "effects": {
+      "strength": 3,
+      "health": -5,
+      "log": "Your body grows hard as the stones."
+     }
+    },
+    {
+     "text": "Work slowly and watch the guards",
+     "effects": {
+      "comprehension": 1,
+      "flag": "knows_guard_shifts",
+      "log": "You learn their shifts. It might be useful."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_amnesty",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 1,
+   "text": "A new emperor's accession: an amnesty is announced for minor crimes. Your name is on the list, spelled wrong.",
+   "choices": [
+    {
+     "text": "Walk out before they notice",
+     "effects": {
+      "free": true,
+      "luck": 1,
+      "log": "Nobody checks the spelling. You are free."
+     }
+    },
+    {
+     "text": "Correct the spelling",
+     "effects": {
+      "free": true,
+      "alignment": 2,
+      "log": "The clerk is so surprised by your honesty that he lets you out anyway."
+     }
+    }
+   ],
+   "mw": true
+  },
+  {
+   "id": "pr_riot",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "A riot breaks out over the rice. Torches, shouting, and a gate left open in the chaos.",
+   "choices": [
+    {
+     "text": "Slip out through the gate",
+     "roll": {
+      "stat": "lightness",
+      "dc": 55
+     },
+     "ok": {
+      "free": true,
+      "flag": "escaped_prison",
+      "alignment": -2,
+      "log": "You are three streets away before anyone counts heads."
+     },
+     "fail": {
+      "jail": 1,
+      "health": -10,
+      "log": "A guard catches your collar at the gate and drags you back inside."
+     }
+    },
+    {
+     "text": "Protect the old prisoners",
+     "effects": {
+      "alignment": 4,
+      "flag": "warden_favour",
+      "log": "You hold a doorway so the old men are not trampled. The warden notices."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_teach_inmates",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "A young thief in your block begs you to teach him to fight so he can survive when he gets out.",
+   "choices": [
+    {
+     "text": "Teach him",
+     "effects": {
+      "alignment": 3,
+      "comprehension": 1,
+      "log": "Every night, in the dark, stance by stance. He is released a year before you, and waves from the gate."
+     }
+    },
+    {
+     "text": "Teach him to read instead",
+     "effects": {
+      "alignment": 4,
+      "log": "Harder. Better. He writes you letters after he gets out."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_cell_meditation",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "Stone walls, one window, nothing to do but breathe. Some masters seek this silence on purpose.",
+   "choices": [
+    {
+     "text": "Breathe",
+     "effects": {
+      "qi": 10,
+      "log": "A season of perfect stillness. Your internal energy deepens."
+     }
+    },
+    {
+     "text": "Exercise until you drop",
+     "effects": {
+      "strength": 3,
+      "log": "Push-ups on the stone floor, a thousand a day."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_released_early",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "flags": [
+     "warden_favour"
+    ],
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 4,
+   "text": "The warden calls you in. 'Good behaviour,' he says, as if it pains him. The gate opens early.",
+   "choices": [
+    {
+     "text": "Walk out without looking back",
+     "effects": {
+      "free": true,
+      "health": 3,
+      "log": "The sky is very big."
+     }
+    },
+    {
+     "text": "Thank him",
+     "effects": {
+      "free": true,
+      "alignment": 1,
+      "log": "He looks surprised. \"Do not come back,\" he says, almost kindly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_old_cellmate_name",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 1,
+   "text": "The old man in the corner cell tells you his name at last. It is in the history books, under 'died in battle, forty years ago'.",
+   "choices": [
+    {
+     "text": "Keep his secret",
+     "effects": {
+      "comprehension": 4,
+      "qi": 8,
+      "log": "He nods. Before you leave, he teaches you a technique no one has seen in forty years."
+     }
+    },
+    {
+     "text": "Ask why he hides here",
+     "effects": {
+      "comprehension": 2,
+      "log": "'Out there,' he says, 'people want things from that name.'"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr_food_smuggling",
+   "cat": "life",
+   "when": {
+    "inPrison": true,
+    "age": [
+     14,
+     110
+    ]
+   },
+   "weight": 2,
+   "text": "Someone is smuggling meat buns into the prison in a laundry basket. The price is a favour.",
+   "choices": [
+    {
+     "text": "Buy a bun with a favour",
+     "effects": {
+      "health": 4,
+      "alignment": -1,
+      "log": "You carry a message for the smuggler. You never learn what it said."
+     }
+    },
+    {
+     "text": "Report it",
+     "effects": {
+      "alignment": 1,
+      "charm": -2,
+      "log": "The buns stop. So do the smiles in your block."
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}

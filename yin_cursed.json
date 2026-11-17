@@ -1,0 +1,300 @@
+{
+ "events": [
+  {
+   "id": "dc_trial_yin_cursed_1",
+   "cat": "childhood",
+   "weight": 8,
+   "once": true,
+   "text": "A physician from the capital, passing through, holds your wrist for a long time. \"A Ghost Yin body,\" the physician says at last, very quietly, \"in a yang-born child. I have read of it twice. Neither of them saw thirty.\" A pause. \"One of the books names a cure: the Taiji Returning Elixir. Half of it from the fire of noon, half from the deepest cold, brewed together. Nobody in the book found both.\"",
+   "when": {
+    "trial": [
+     "yin_cursed"
+    ],
+    "age": [
+     5,
+     12
+    ],
+    "notFlags": [
+     "yc_cured"
+    ]
+   },
+   "arc": "The Yin-Cursed",
+   "choices": [
+    {
+     "text": "Ask where the two halves are found",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 40
+     },
+     "ok": {
+      "log": "\"Noon fire lives in the beasts of the southern hills, and in the sun-writs of the old talisman masters,\" the physician says. \"The deepest cold sleeps in hidden caves and sealed tombs.\" You remember every word.",
+      "flag": "yc_told",
+      "comprehension": 3
+     },
+     "fail": {
+      "log": "The physician only shakes their head and writes two words on a scrap of paper: fire, cold. You keep the paper for the rest of your life.",
+      "flag": "yc_told",
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Ask how long there is",
+     "effects": {
+      "log": "\"Twenty-five years, if heaven is mean. Thirty, if it is kind.\" The physician does not soften it, and you are grateful for that later.",
+      "flag": "yc_told",
+      "strength": 2
+     }
+    },
+    {
+     "text": "Say you will live anyway",
+     "effects": {
+      "log": "The physician laughs, for the first time, and pats your head. \"Then live fast, and look hard.\" You take it as an order.",
+      "flag": "yc_told",
+      "luck": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_yin_cursed_2",
+   "cat": "danger",
+   "weight": 6,
+   "once": false,
+   "text": "The cold in your chest has grown a winter deeper. In a tavern in the south you hear of a Flame Lion in the hills, a beast whose mane smokes at noon, and of an old talisman master in the same town who still writes the sun-writ, the talisman that holds a day of noon in a square of yellow paper. Either one is the fire half of the elixir.",
+   "when": {
+    "trial": [
+     "yin_cursed"
+    ],
+    "age": [
+     13,
+     27
+    ],
+    "notFlags": [
+     "yc_cured",
+     "yc_yang"
+    ]
+   },
+   "arc": "The Yin-Cursed",
+   "choices": [
+    {
+     "text": "Hunt the Flame Lion",
+     "roll": {
+      "stat": "power",
+      "foeRel": 1,
+      "foeMult": 1.0,
+      "foeName": "The Flame Lion"
+     },
+     "ok": {
+      "log": "It comes down the hillside at noon like a grass fire. When it is over you kneel by the great still body and take one ember-red claw, and for the first time in years your hands are warm.",
+      "flag": "yc_yang",
+      "fame": 4
+     },
+     "fail": {
+      "log": "The heat of it drives you back down the hill with your sleeves smouldering. The lion watches you go from a rock in the sun. There will be another noon.",
+      "health": -15
+     }
+    },
+    {
+     "text": "Buy a sun-writ from the talisman master (300 taels)",
+     "req": {
+      "minTaels": 300
+     },
+     "effects": {
+      "log": "The master writes it at noon on the roof, a single stroke that takes an hour. The paper is warm as a loaf from the oven when it is folded into your hands.",
+      "flag": "yc_yang",
+      "taels": -300
+     }
+    },
+    {
+     "text": "Not yet",
+     "effects": {
+      "log": "You leave the south with the cold sitting a little higher than before. Next year, you tell yourself. There is still a next year.",
+      "health": -4
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_yin_cursed_3",
+   "cat": "danger",
+   "weight": 6,
+   "once": false,
+   "text": "A hermit tells you of a hidden cave beyond the third ridge where the water at the bottom never freezes and never warms, and of the Cold Marrow Pearl that lies in it. Another old story tells of a tomb whose jars are sealed with talismans no one alive can read, and of the cold kept in them. Either one is the yin half of the elixir.",
+   "when": {
+    "trial": [
+     "yin_cursed"
+    ],
+    "age": [
+     13,
+     27
+    ],
+    "notFlags": [
+     "yc_cured",
+     "yc_yin"
+    ]
+   },
+   "arc": "The Yin-Cursed",
+   "choices": [
+    {
+     "text": "Dive for the pearl",
+     "roll": {
+      "stat": "lightness",
+      "dc": 50
+     },
+     "ok": {
+      "log": "Down and down in the black water, past the last of the light. Your Ghost Yin body does not feel the cold the way another would. Your hand closes on something round and colder than the pool.",
+      "flag": "yc_yin",
+      "luck": 2
+     },
+     "fail": {
+      "log": "The cold of the pool meets the cold already in you and your breath goes out of you in a rush of bubbles. You come up gasping and empty-handed.",
+      "health": -12
+     }
+    },
+    {
+     "text": "Read the talismans on the tomb jars",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 55
+     },
+     "ok": {
+      "log": "The seal is a riddle more than a lock. On the third night you see it, and the paper lifts away by itself. Inside the jar there is only a frost that does not melt, and that is enough.",
+      "flag": "yc_yin",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "You read it wrong. The seal flares, the jar stays shut, and for a month your hands shake with a chill that is not yours.",
+      "health": -8
+     }
+    },
+    {
+     "text": "Leave it for another year",
+     "effects": {
+      "log": "You turn back at the second ridge. The way down is warm in the sun and you cannot feel it at all.",
+      "health": -4
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_yin_cursed_4",
+   "cat": "life",
+   "weight": 8,
+   "once": false,
+   "text": "The fire half and the cold half lie side by side on the table, and the air above them shimmers like a road in summer. The old book is open at the page for the Taiji Returning Elixir. It is a short page, and most of it is a warning.",
+   "when": {
+    "trial": [
+     "yin_cursed"
+    ],
+    "age": [
+     14,
+     29
+    ],
+    "notFlags": [
+     "yc_cured",
+     "yc_elixir"
+    ],
+    "flags": [
+     "yc_yang",
+     "yc_yin"
+    ]
+   },
+   "arc": "The Yin-Cursed",
+   "choices": [
+    {
+     "text": "Brew it yourself",
+     "roll": {
+      "stat": "alchemy",
+      "dc": 45
+     },
+     "ok": {
+      "log": "Nine days at the furnace, turning the fire up for the yang and down for the yin. On the ninth night the cauldron goes quiet, and in it is one pill, half black, half white.",
+      "flag": "yc_elixir",
+      "qi": 5
+     },
+     "fail": {
+      "log": "The halves fight in the cauldron and the fire goes out. Nothing is lost but the nine days, and you learn which mistake not to make.",
+      "health": -6,
+      "comprehension": 1
+     }
+    },
+    {
+     "text": "Follow the old book to the letter",
+     "roll": {
+      "stat": "comprehension",
+      "dc": 60
+     },
+     "ok": {
+      "log": "You do exactly what the page says and nothing it does not, even where it makes no sense. On the last night the pill is there, half black, half white.",
+      "flag": "yc_elixir",
+      "comprehension": 2
+     },
+     "fail": {
+      "log": "Somewhere a word meant something else. The cauldron cracks across with a sound like ice on a river, and you start again.",
+      "health": -5
+     }
+    },
+    {
+     "text": "Pay a great alchemist to brew it (500 taels)",
+     "req": {
+      "minTaels": 500
+     },
+     "effects": {
+      "log": "The alchemist looks at the two halves for a long time before agreeing. A month later a small jade box comes to your door, and in it is one pill, half black, half white.",
+      "flag": "yc_elixir",
+      "taels": -500
+     }
+    },
+    {
+     "text": "Wait until your hands are steadier",
+     "effects": {
+      "log": "You wrap the two halves in silk and put them away. The cold does not wait with you.",
+      "health": -3
+     }
+    }
+   ]
+  },
+  {
+   "id": "dc_trial_yin_cursed_5",
+   "cat": "life",
+   "weight": 12,
+   "once": true,
+   "text": "The pill is half black and half white, and it is warm on one side and cold on the other. When it goes down, the cold in your chest stops climbing for the first time in your life. In the night it begins to turn, and you dream. In the dream there is a choice: let the turning remake the body, or follow it down to a cave you have never seen, where something is written under a stone.",
+   "when": {
+    "trial": [
+     "yin_cursed"
+    ],
+    "age": [
+     14,
+     30
+    ],
+    "notFlags": [
+     "yc_cured"
+    ],
+    "flags": [
+     "yc_elixir"
+    ]
+   },
+   "arc": "The Yin-Cursed",
+   "choices": [
+    {
+     "text": "Let the turning remake the body",
+     "effects": {
+      "log": "You let go, and the yin and the yang in you begin to chase each other like the two fish of the old diagram.",
+      "flag": "ycx_taiji",
+      "health": 10
+     }
+    },
+    {
+     "text": "Follow the dream to the cave",
+     "effects": {
+      "log": "You follow the cold down into the dark of the dream, to a flat stone, and the words cut into its underside.",
+      "flag": "ycx_manual",
+      "comprehension": 3
+     }
+    }
+   ]
+  }
+ ],
+ "mwPass": 1
+}
